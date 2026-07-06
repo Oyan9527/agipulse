@@ -1,0 +1,813 @@
+[
+  {
+    "id": "acfb4aa7a36179a4",
+    "source_id": "reddit-localllama",
+    "title": "possible evidence of literal prompt injection by anthropic",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unif51/possible_evidence_of_literal_prompt_injection_by/",
+    "published_at": "2026-07-04T19:54:57+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unif51/possible_evidence_of_literal_prompt_injection_by/\"> <img alt=\"possible evidence of literal prompt injection by anthropic\" src=\"https://external-preview.redd.it/72by0vodw29h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=dfb9ad67cbfcd984d14aac149c8be3cc9f6d7ad2\" title=\"possible evidence of literal prompt injection by anthropic\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/johnnyApplePRNG\"> /u/johnnyApplePRNG </a> <br /> <span><a href=\"https://old.reddit.com/r/LLMDevs/comments/1udpw9h/just_got_this_response_from_claude_what_is_going/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unif51/possible_evidence_of_literal_prompt_injection_by/\">[comments]</a></span> </td></tr></table>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 22 小时前",
+    "weighted_score": 0.5794,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.537,
+      "impact": 0.545,
+      "practical_value": 0.72
+    },
+    "story_id": "8aadb2b1402d5e9e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unif51/possible_evidence_of_literal_prompt_injection_by/"
+      }
+    ]
+  },
+  {
+    "id": "75a536a53f383565",
+    "source_id": "hn-ai",
+    "title": "Retrieval is not the future of AI – if it was, Google would have won already",
+    "url": "https://news.ycombinator.com/item?id=48788520",
+    "published_at": "2026-07-04T20:09:03+00:00",
+    "raw_text": "retrieval is not the future of Ai<p>if it was, google would have won already<p>there is another way, that doesn&#x27;t require retrieval at all<p>it costs more per conversation, but its better than a sh*ty graphRAG<p>i am shocked by how few people know this<p>but it seems the industry is not paying much attention to memory yet (hell z.ai doesn&#x27;t have longterm memory at all)<p>humans don&#x27;t really remember the exact experience that happened,<p>we remember a layer that sits on top of that<p>something that got built at the same day the experience happened<p>but is not a transcript or a summary<p>why would the brain do that! isn&#x27;t it easier to save the actual memory?<p>just like LLMs, our brain will be overwhelmed if we remembered every single experience (people with photographic memory go through hell)<p>Ai agents can&#x27;t remember everything, or retrieval will be hell too<p>just ask google; 30 years of trying to give you the best search results of a simple recipe &amp; it",
+    "category_hint": [
+      "行业动态",
+      "观点技巧"
+    ],
+    "category": "行业动态",
+    "reason_zh": "[mock] 来自 hn-ai，发布于 22 小时前",
+    "weighted_score": 0.6197,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.542,
+      "impact": 0.577,
+      "practical_value": 0.8
+    },
+    "story_id": "3a67362a4ea9d4c8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "hn-ai",
+        "url": "https://news.ycombinator.com/item?id=48788520"
+      }
+    ]
+  },
+  {
+    "id": "b177613c01838c6e",
+    "source_id": "gh-llamacpp",
+    "title": "ggerganov/llama.cpp b9873",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9873",
+    "published_at": "2026-07-04T21:09:56+00:00",
+    "raw_text": "<details open>\n\nllama : add guard for K/V rotation input when buffer is unallocated (#25215)\n\nllm_graph_input_attn_kv::set_input and llm_graph_input_attn_kv_iswa::set_input\ncall set_input_k_rot / set_input_v_rot whenever the rotation tensor pointer is\nnon-null, but the tensor's buffer can be unallocated (NULL) when a graph only\nstores K/V without attending -- e.g. DFlash speculative decoding's KV-injection\npass. set_input_k_rot then calls ggml_backend_buffer_is_host() on a NULL buffer\nand aborts with GGML_ASSERT(buffer).\n\nGuard the four k_rot/v_rot inputs with the same \"&& ->buffer\" check that the\nadjacent kq_mask inputs already use in these two functions. When the buffer is\nunallocated there is no data to upload, so skipping is correct.\n\nFixes #25191\n\nSigned-off-by: liminfei-amd <91481003+liminfei-amd@users.noreply.github.com>\n\n</details>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9873/llama-b9873-bin-macos-arm64.tar.gz)\n- ",
+    "category_hint": [
+      "开源项目"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 gh-llamacpp，发布于 21 小时前",
+    "weighted_score": 0.6946,
+    "score_breakdown": {
+      "source_authority": 0.75,
+      "novelty": 0.563,
+      "impact": 0.675,
+      "practical_value": 0.8
+    },
+    "story_id": "55fb926618ee0bc0",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-llamacpp",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9873"
+      }
+    ]
+  },
+  {
+    "id": "15c2d95103d61279",
+    "source_id": "reddit-machinelearning",
+    "title": "If your GPU can run inference, it should be able to fine-tune too. [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1unl62q/if_your_gpu_can_run_inference_it_should_be_able/",
+    "published_at": "2026-07-04T21:56:48+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1unl62q/if_your_gpu_can_run_inference_it_should_be_able/\"> <img alt=\"If your GPU can run inference, it should be able to fine-tune too. [P]\" src=\"https://external-preview.redd.it/tJiyaDh2kitc1_2PamSep77jZzZKRn0ulQtOKK2KIHk.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=162da8eb861430b130052c274775e37372a5a4f1\" title=\"If your GPU can run inference, it should be able to fine-tune too. [P]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I spent the last few months building a new sparse fine-tuning method for MoE models called **USAF**.</p> <p>The goal was simple: if your GPU can run inference on an MoE model, it should also be able to fine-tune it.</p> <p>On my AMD RX 6750 XT (12 GB), I can fine-tune Qwen3-30B-A3B by training sparse expert weights and the router instead of adapters.</p> <p>The project is completely open source under the Apache 2.0 license. I'm not trying to build a business, sell anything, ",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "category": "论文研究",
+    "reason_zh": "[mock] 来自 reddit-machinelearning，发布于 20 小时前",
+    "weighted_score": 0.6328,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.579,
+      "impact": 0.592,
+      "practical_value": 0.8
+    },
+    "story_id": "625f6e074d85645e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1unl62q/if_your_gpu_can_run_inference_it_should_be_able/"
+      }
+    ]
+  },
+  {
+    "id": "71284014af6c5d15",
+    "source_id": "reddit-localllama",
+    "title": "Appreciation post!",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unn4j3/appreciation_post/",
+    "published_at": "2026-07-04T23:28:26+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unn4j3/appreciation_post/\"> <img alt=\"Appreciation post!\" src=\"https://preview.redd.it/xokoffoerabh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=f2b1fafaf2adf5fb4935393cf2497f090bca41da\" title=\"Appreciation post!\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Brought my first 3090 and been running Qwen 27B with 200K context, couldn't be happier.</p> <p>I'm using the club 3090 configuration and I highly recommend it! <a href=\"https://github.com/noonghunna/club-3090/tree/master\">https://github.com/noonghunna/club-3090/tree/master</a> </p> <p>Thanks to the community!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Top_Outlandishness78\"> /u/Top_Outlandishness78 </a> <br /> <span><a href=\"https://i.redd.it/xokoffoerabh1.png\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unn4j3/appreciation_post/\">[comments]</a></span> </td></tr></ta",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 19 小时前",
+    "weighted_score": 0.6214,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.611,
+      "impact": 0.574,
+      "practical_value": 0.8
+    },
+    "story_id": "d92ecc9d5fd6fc18",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unn4j3/appreciation_post/"
+      }
+    ]
+  },
+  {
+    "id": "d045777dee4bfb50",
+    "source_id": "reddit-localllama",
+    "title": "Using \"applications\" to make a smaller model more effective at bigger tasks.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unobl4/using_applications_to_make_a_smaller_model_more/",
+    "published_at": "2026-07-05T00:26:43+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unobl4/using_applications_to_make_a_smaller_model_more/\"> <img alt=\"Using &quot;applications&quot; to make a smaller model more effective at bigger tasks.\" src=\"https://external-preview.redd.it/a2trYXYycGQxYmJoMQOMtfLW9qQAqQIbYBl9X-_SecivjLtvcNzJDduqVZH6.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=9ce35e8f486dc72429ac830bb3e906cf65b1135e\" title=\"Using &quot;applications&quot; to make a smaller model more effective at bigger tasks.\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>deleted and reposted due to accidental inclusion of personal information in original post.</p> <p>Demo of an idea I had for my personal JARVIS, quickly put together with a vibe coded browser based display so I could easily see what the agent sees.</p> <p>Giving the agent a limited scope, a view similar to that of a dedicated application. It has a limited number of actions it can take inside of these applications, with a dedicated c",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 18 小时前",
+    "weighted_score": 0.6285,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.631,
+      "impact": 0.583,
+      "practical_value": 0.8
+    },
+    "story_id": "5f7c59fea0712d65",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unobl4/using_applications_to_make_a_smaller_model_more/"
+      }
+    ]
+  },
+  {
+    "id": "b4b773b996ae37e6",
+    "source_id": "reddit-localllama",
+    "title": "Getting close to 100K context on 32GB VRAM with Qwen3.6-27 at Q8",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unpelb/getting_close_to_100k_context_on_32gb_vram_with/",
+    "published_at": "2026-07-05T01:24:03+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Not really a tutorial, but more of sharing my attempts at getting higher contexts on Q8 of Qwen3.6-27 with 32GB VRAM.</p> <p><strong>Disclaimer</strong>: Not in-depth research. Crowd wisdom suggests that Qwen is more tolerant of model quantization, but my experience suggests otherwise. I have nothing quantitative to back this up, only my personal experience in using it for vibe coding a couple of personal projects (which aren't very big either, but have been working on them for a few weeks).</p> <p><strong>Context</strong>: I am able to run Q8 at ~60K context easily and found that it works better than Q6 or Q5 (purely subjective experience). But I can easily get 128K context with Q5 with unquantized kv, so I wanted to see how much I could push with Q8.</p> <p><strong>System</strong>: 5090 with 64GB system RAM. Remote server running headless Ubuntu.</p> <p>After a few trial and error approaches, I find the following are working. Some notes:</p> <ul> <li",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 17 小时前",
+    "weighted_score": 0.6355,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.651,
+      "impact": 0.591,
+      "practical_value": 0.8
+    },
+    "story_id": "1adb317f5f973609",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unpelb/getting_close_to_100k_context_on_32gb_vram_with/"
+      }
+    ]
+  },
+  {
+    "id": "a04136918e677b54",
+    "source_id": "reddit-localllama",
+    "title": "I benchmarked 13 models at 65K-128K context to find out what actually matters for agentic workloads",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unrse9/i_benchmarked_13_models_at_65k128k_context_to/",
+    "published_at": "2026-07-05T03:37:23+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><h1>I benchmarked 13 models at 65K-128K context to find out what actually matters for agentic workloads — prefill dominates everything, and KV head count beats parameter count</h1> <p>I've been running local LLMs for agentic workflows (tool use, coding agents, RAG) and kept seeing people obsess over tg128 (token generation speed) as the headline performance metric. So I ran a structured long-context benchmark to figure out what <em>actually</em> matters when your context window is full. The answer surprised me.</p> <hr /> <p><strong>Setup</strong></p> <ul> <li><strong>GPU</strong>: RX 7900 XT 20GB (Vulkan backend, RADV/Mesa)</li> <li><strong>Backend</strong>: llama.cpp / llama-bench (build 9860)</li> <li><strong>Flags</strong>: <code>-ngl 99</code> (GTT spill), <code>-fa on</code>, <code>-ub 2048 -b 16384</code>, ASPM=performance, bare TTY to free VRAM</li> <li><strong>13 models</strong>: 5 dense, 6 MoE, 1 Mamba2 hybrid, 1 MLA MoE — ranging from 5GB to 18",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 15 小时前",
+    "weighted_score": 0.6517,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.698,
+      "impact": 0.609,
+      "practical_value": 0.8
+    },
+    "story_id": "41f781c9b0a0d702",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unrse9/i_benchmarked_13_models_at_65k128k_context_to/"
+      }
+    ]
+  },
+  {
+    "id": "c10939e2a8d723f2",
+    "source_id": "reddit-localllama",
+    "title": "5060 worth it?",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unsbbi/5060_worth_it/",
+    "published_at": "2026-07-05T04:06:25+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I had built a pc in 2023 for pretty cheap, it has a RTX 4090 and intel i9 13900K. I’m thinking of adding a 5060Ti for additional LLM workloads. I primarily use my GPU for training SLMs and llama.cpp inference.<br /> Since the memory bandwidth of 5060 is way lower than 4090 and the fact that it’s only 16gigs extra is it worth the current price and effort to get one?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Dry_Long3157\"> /u/Dry_Long3157 </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unsbbi/5060_worth_it/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unsbbi/5060_worth_it/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 14 小时前",
+    "weighted_score": 0.6297,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.708,
+      "impact": 0.613,
+      "practical_value": 0.672
+    },
+    "story_id": "a16d5441ffa9445b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unsbbi/5060_worth_it/"
+      }
+    ]
+  },
+  {
+    "id": "ec23922848f7c443",
+    "source_id": "reddit-machinelearning",
+    "title": "I built a open source neural network shape validator [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1unvbdb/i_built_a_open_source_neural_network_shape/",
+    "published_at": "2026-07-05T06:58:02+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1unvbdb/i_built_a_open_source_neural_network_shape/\"> <img alt=\"I built a open source neural network shape validator [P]\" src=\"https://preview.redd.it/1c6x0ugqzcbh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2d17e9599717c4e79b4a2243573ecb9da31241d7\" title=\"I built a open source neural network shape validator [P]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Built a visual editor that validates tensor shapes, counts params, estimates FLOPs/VRAM while you design. Catches incompatible residuals, mismatched Linear layers, all that before you waste GPU time. 63 ops. Proper shape inference. Exports PyTorch code that actually runs. </p> <p>URL- <a href=\"http://tensey.vercel.app\">tensey.vercel.app</a></p> <p>Github- <a href=\"https://github.com/aarocy/tensey\">github.com/aarocy/tensey</a> – MIT licensed.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/uselessfuh\"> /u/u",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "category": "论文研究",
+    "reason_zh": "[mock] 来自 reddit-machinelearning，发布于 11 小时前",
+    "weighted_score": 0.6986,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.767,
+      "impact": 0.667,
+      "practical_value": 0.8
+    },
+    "story_id": "cea994166077bf5a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1unvbdb/i_built_a_open_source_neural_network_shape/"
+      }
+    ]
+  },
+  {
+    "id": "9593579a58695dbc",
+    "source_id": "reddit-machinelearning",
+    "title": "Competence Gate: gating tool-use on a small model's internal confidence signal instead of its verbalised one — Qwen3.5-4B, open weights [P]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1unw5un/competence_gate_gating_tooluse_on_a_small_models/",
+    "published_at": "2026-07-05T07:49:09+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I made a 10MB LoRA adapter for Qwen3.5-4B plus a small orchestration layer. It decides, per query, whether to answer directly, search the web, or retrieve from your own local documents and it refuses to make things up when it can't verify an answer.</p> <p>It runs locally (Apple Silicon / MLX, with a GGUF build for llama.cpp/Ollama).</p> <p>Basically small instruct models are poor at telling users how confident they really are. They can't verbalise it and tend to say they are confident for everyhting. In my past research I tested seven 3-9b models and they all hit a confidence ceiling. But the information is there in the internal activations. The adapter reads the internal signal directly and gates tool use on it. </p> <p>The main elements are that:</p> <p>- it catches its own errors better than the base model's tool calling (d′ improvement of 0.46 (95% CI [0.01, 0.89])). Of the cases the gate flagged that the base model didn't, 87% were genuinely wron",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "category": "论文研究",
+    "reason_zh": "[mock] 来自 reddit-machinelearning，发布于 10 小时前",
+    "weighted_score": 0.7048,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.785,
+      "impact": 0.674,
+      "practical_value": 0.8
+    },
+    "story_id": "1e94e9111a4dc4b5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1unw5un/competence_gate_gating_tooluse_on_a_small_models/"
+      }
+    ]
+  },
+  {
+    "id": "09d857536d7a73c0",
+    "source_id": "reddit-machinelearning",
+    "title": "ECCV travel support program [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1unx5f8/eccv_travel_support_program_d/",
+    "published_at": "2026-07-05T08:49:12+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Has anyone gotten a response from the eccv travel support program listed on their website? <a href=\"https://eccv.ecva.net/Conferences/2026/DEI\">https://eccv.ecva.net/Conferences/2026/DEI</a></p> <p>Edit: also have anyone applied for this program as an accepted author? I have an independent research paper accepted and am currently looking for funds for paying for the registration fees</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/tedd235\"> /u/tedd235 </a> <br /> <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1unx5f8/eccv_travel_support_program_d/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1unx5f8/eccv_travel_support_program_d/\">[comments]</a></span>",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "category": "论文研究",
+    "reason_zh": "[mock] 来自 reddit-machinelearning，发布于 9 小时前",
+    "weighted_score": 0.6917,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.806,
+      "impact": 0.682,
+      "practical_value": 0.698
+    },
+    "story_id": "8b6a23500ccfd090",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1unx5f8/eccv_travel_support_program_d/"
+      }
+    ]
+  },
+  {
+    "id": "6a703970ba3c7603",
+    "source_id": "reddit-localllama",
+    "title": "Best choice of model 40B+ Parameters",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unxohg/best_choice_of_model_40b_parameters/",
+    "published_at": "2026-07-05T09:21:17+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>currently using Qwen3.6 35B as my main assistant model + coding agent</p> <p>but I think sometimes it misses basical general knowledge things, and it is more like executioner that assistant.</p> <p>That's why I though should I go with bigger models, But I don't want to lose speed </p> <p>I am on Strix Halo</p> <p>Having 30-40 t/s roughly on 131k context</p> <p>Thinking to switch on Qwen3.5 122B</p> <p>Any Suggestions?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/FeiX7\"> /u/FeiX7 </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unxohg/best_choice_of_model_40b_parameters/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unxohg/best_choice_of_model_40b_parameters/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 9 小时前",
+    "weighted_score": 0.6764,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.817,
+      "impact": 0.657,
+      "practical_value": 0.714
+    },
+    "story_id": "6dcdceba2684ffdc",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unxohg/best_choice_of_model_40b_parameters/"
+      }
+    ]
+  },
+  {
+    "id": "062bb8c33e743bb8",
+    "source_id": "reddit-localllama",
+    "title": "[Paper] Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unxqw5/paper_multiresolution_flow_matching_trainingfree/",
+    "published_at": "2026-07-05T09:25:25+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unxqw5/paper_multiresolution_flow_matching_trainingfree/\"> <img alt=\"[Paper] Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling\" src=\"https://preview.redd.it/s2clfrqgqdbh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=16ea8ed2154524ec0a6e3823cb2f2c629fe0396d\" title=\"[Paper] Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><blockquote> <p>Hardware-agnostic strategies for accelerating text-to-image diffusion, such as timestep distillation and feature caching, can reduce inference time without custom kernels or system-level optimization. Among them, multi-resolution generation strategies have recently received broad attention, attaining more than 5x speedup without any training. However, the design of performing upsampling in the latent space, together with the selective modification of pa",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 9 小时前",
+    "weighted_score": 0.694,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.818,
+      "impact": 0.657,
+      "practical_value": 0.8
+    },
+    "story_id": "2647fbb12ad8546a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unxqw5/paper_multiresolution_flow_matching_trainingfree/"
+      }
+    ]
+  },
+  {
+    "id": "da92054568c1e62c",
+    "source_id": "reddit-localllama",
+    "title": "Agents-A1-Q8_0-GGUF works pretty well for me (anecdotal feedback)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unxrjw/agentsa1q8_0gguf_works_pretty_well_for_me/",
+    "published_at": "2026-07-05T09:26:34+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>For the last day or so I've been using <a href=\"https://huggingface.co/InternScience/Agents-A1-Q8_0-GGUF\">Agents A1 Q8</a> <code>InternScience/Agents-A1-Q8_0-GGUF</code> on my M1 Max mac (64GB) just like this:</p> <p><code>llama-server -hf InternScience/Agents-A1-Q8_0-GGUF --host 0.0.0.0 --port 8080 --temp 0.85 --top-p 0.95 --top-k 20 --min-p 0.0 --presence-penalty 1.1 --repeat-penalty 1.0</code></p> <p>(these are the parameters they recommend)</p> <p>With full 262K context available I am getting about 500 t/s pp and about 40 t/s tg. I've been using opencode with it and it seems to be roughly Qwen level - but it's early days.</p> <p>I assume there are other parameters I can tweak, I just haven't looked yet.</p> <p>Anyone else playing with it?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/FastHotEmu\"> /u/FastHotEmu </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unxrjw/agentsa1q8_0gguf_wo",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 9 小时前",
+    "weighted_score": 0.6941,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.819,
+      "impact": 0.658,
+      "practical_value": 0.8
+    },
+    "story_id": "b2c5d7de9e3003bf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unxrjw/agentsa1q8_0gguf_works_pretty_well_for_me/"
+      }
+    ]
+  },
+  {
+    "id": "230a537567d8d3a8",
+    "source_id": "reddit-localllama",
+    "title": "Any word on Qwen 3.7 9B? (Also looking for 9B-class alternatives to Qwen 3.5)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uny822/any_word_on_qwen_37_9b_also_looking_for_9bclass/",
+    "published_at": "2026-07-05T09:55:48+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Given that Alibaba went proprietary/API-only for the Qwen 3.7 Max and Plus launches back in May, do we have any rumors or roadmap for a local 9B open-weights release?</p> <p>In the meantime, I'm trying to figure out my next step for a small local setup. Is there <strong>any</strong> model in the ~8B to 9B class that currently beats <strong>Qwen 3.5 9B?</strong></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/HitarthSurana\"> /u/HitarthSurana </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uny822/any_word_on_qwen_37_9b_also_looking_for_9bclass/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uny822/any_word_on_qwen_37_9b_also_looking_for_9bclass/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 8 小时前",
+    "weighted_score": 0.6788,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.829,
+      "impact": 0.662,
+      "practical_value": 0.706
+    },
+    "story_id": "d1cd3fb24c363a1d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uny822/any_word_on_qwen_37_9b_also_looking_for_9bclass/"
+      }
+    ]
+  },
+  {
+    "id": "d409717b8a5a6a5f",
+    "source_id": "reddit-localllama",
+    "title": "Considering Buying Another RTX 3090 - Benefits?",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unyhom/considering_buying_another_rtx_3090_benefits/",
+    "published_at": "2026-07-05T10:11:50+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Currently using dual RTX 3090s, and am happy with it. But never satisfied lol :) </p> <p>I know I've basically maxed out my single stream TPS. (140+ on standard benchmarks now).</p> <p>But I only have 48GB VRAM, So I can only do two concurrent requests @ 256k Context Length, anymore and my KV-Cache will cause OOM errors.</p> <p>So I am considering adding a 3rd RTX 3090, and putting the 3rd one in Pipeline Parallel with the other two. That way I don't lose performance due to bandwidth bottlenecks, but get more room for concurrent requests. </p> <p>I am likely to move to concurrent agents soon, but honestly have limited experience with them.</p> <pre><code> INPUT │ ├─────────────────────────────────┐ │ │ ▼ ▼ ┌──────────┐ PCIe 4.0 8x ┌──────────┐ │ GPU 1 │ 16 GB/s │ GPU 2 │ │ (Node A) │◄════════════════════►│ (Node B) │ └────┬─────┘ └────┬─────┘ │ │ │ │ └─────────────────────────────────┘ │ PCIe 4.0 4x - 8GB/s ▼ ┌──────────┐ │ GPU 3 │ │ (Node C) │ └────┬─",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 8 小时前",
+    "weighted_score": 0.6996,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.835,
+      "impact": 0.664,
+      "practical_value": 0.8
+    },
+    "story_id": "2ea02e0151f78377",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unyhom/considering_buying_another_rtx_3090_benefits/"
+      }
+    ]
+  },
+  {
+    "id": "7f218e72fa4c4d5f",
+    "source_id": "reddit-localllama",
+    "title": "longcat 2.0 (1.6T, ~48B active) weights are now open under MIT license",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unyvnz/longcat_20_16t_48b_active_weights_are_now_open/",
+    "published_at": "2026-07-05T10:35:23+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unyvnz/longcat_20_16t_48b_active_weights_are_now_open/\"> <img alt=\"longcat 2.0 (1.6T, ~48B active) weights are now open under MIT license\" src=\"https://external-preview.redd.it/Tl4T00m03mXi9dnysuPMT3ZoHlKwgeMAyvE7uTJqM4o.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=13c43b98a88d05ab28ba5000aec6daa339a442bf\" title=\"longcat 2.0 (1.6T, ~48B active) weights are now open under MIT license\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>From:</p> <p>elie on 𝕏: <a href=\"https://x.com/eliebakouch/status/2073690402503487902\">https://x.com/eliebakouch/status/2073690402503487902</a></p> <p>ModelScope on 𝕏: <a href=\"https://x.com/ModelScope2022/status/2073710226365165679\">https://x.com/ModelScope2022/status/2073710226365165679</a></p> <p>Technical blog post (June, 30): <a href=\"https://longcat.chat/blog/longcat-2.0/\">https://longcat.chat/blog/longcat-2.0/</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"h",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 8 小时前",
+    "weighted_score": 0.7025,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.843,
+      "impact": 0.667,
+      "practical_value": 0.8
+    },
+    "story_id": "684e49b065580f44",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unyvnz/longcat_20_16t_48b_active_weights_are_now_open/"
+      }
+    ]
+  },
+  {
+    "id": "c5dcbc573173beb6",
+    "source_id": "reddit-localllama",
+    "title": "Using llama.cpp with pi",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unzxs1/using_llamacpp_with_pi/",
+    "published_at": "2026-07-05T11:35:30+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1unzxs1/using_llamacpp_with_pi/\"> <img alt=\"Using llama.cpp with pi\" src=\"https://preview.redd.it/xq7nlx6gdebh1.gif?width=640&amp;crop=smart&amp;s=23ce3bfe77c7782dc1491ae24862d1c2073a7179\" title=\"Using llama.cpp with pi\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>A lot of people have their own setups using pi with llama.cpp. I have my own so thought I'll share. This is the extension I and deepseek wrote: <a href=\"https://github.com/am17an/pi-llama-server\">https://github.com/am17an/pi-llama-server</a> . It allows you to do two very simple things: auto detect a llama-server running and list the models available. Here is a demo gif (sorry about poor quality):</p> <p>That's it - that's the post. Enjoy more free software! I am infact trying to make this a completely local AI driven repo since it's a simple plugin, so any feature request/bug will be routed through Deepseek V4-flash running on my DGX Spark first.<",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 7 小时前",
+    "weighted_score": 0.7098,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.864,
+      "impact": 0.675,
+      "practical_value": 0.8
+    },
+    "story_id": "8b37d5e6722efde9",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1unzxs1/using_llamacpp_with_pi/"
+      }
+    ]
+  },
+  {
+    "id": "4fa791ae7fe747f6",
+    "source_id": "reddit-machinelearning",
+    "title": "Is machine learning research worth it for now? [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1uo0dqi/is_machine_learning_research_worth_it_for_now_d/",
+    "published_at": "2026-07-05T11:58:49+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I am a scientist who just applied machine learning to my research (JEPA/Representation/Geometric branch) and it did wonder! Allowed me to see so many papers that I am still struggling to write up.</p> <p>From what I see, there are clearly a million possibilities not done yet, e.g., industrial data, patterns in nature, etc.</p> <p>Why is the job perspective so pessimistic? We clearly have problems unsolved, and for many, the potential of ML will be proven for sure. We also have money (according to the news), and then why are jobs almost impossible? </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/nebula7293\"> /u/nebula7293 </a> <br /> <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uo0dqi/is_machine_learning_research_worth_it_for_now_d/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uo0dqi/is_machine_learning_research_worth_it_for_now_d/\">[comments]</a><",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "category": "论文研究",
+    "reason_zh": "[mock] 来自 reddit-machinelearning，发布于 6 小时前",
+    "weighted_score": 0.7351,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.872,
+      "impact": 0.709,
+      "practical_value": 0.8
+    },
+    "story_id": "edf9ad4da71644b3",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1uo0dqi/is_machine_learning_research_worth_it_for_now_d/"
+      }
+    ]
+  },
+  {
+    "id": "69171f92e13b1936",
+    "source_id": "reddit-localllama",
+    "title": "Qwen 3.6 27B - VLLM Performance Benchmark Results (BF16, FP8, NVFP4)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo32yw/qwen_36_27b_vllm_performance_benchmark_results/",
+    "published_at": "2026-07-05T14:06:23+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Sharing some testing of Qwen 3.6 27B using VLLM across the popular quants on my development system. I used llama benchy to generate the results, then fed it into an LLM to format it the tables for readibility.</p> <p>While NVFP4 is blazing fast, have had looping issues in copilot that I don't get with BF16, and the responses in general when used in agent mode seem to be less thorough than the higher quants. Based on these results, FP8 seems to be the right choice. Some of the parameters can be further tuned I'm sure to get better performance but these are were all plenty fast enough for coding purposes.</p> <p>I used to use llama.cpp, but have found that VLLM is in practice is faster (due to paged attention), as well as more stable (llama.cpp would give me random errors that happen frequently, requiring me to reset the prompt or restart the service).</p> <p>If you have any comments or suggestions to improve let me know.</p> <h1>Test System:</h1> <p>Mot",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 4 小时前",
+    "weighted_score": 0.7281,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.916,
+      "impact": 0.696,
+      "practical_value": 0.8
+    },
+    "story_id": "1f543a61bb3b81b2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo32yw/qwen_36_27b_vllm_performance_benchmark_results/"
+      }
+    ]
+  },
+  {
+    "id": "a598e85ead0a8373",
+    "source_id": "reddit-machinelearning",
+    "title": "Is Intrinsic Motivation a Viable PhD Topic in 2026? [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1uo5kg6/is_intrinsic_motivation_a_viable_phd_topic_in/",
+    "published_at": "2026-07-05T15:50:02+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I started a PhD in CS about a year an a half ago. Generally speaking my topic is on intrinsic motivation (more commonly people refer to it as unsupervised RL).</p> <p>Intrinsic motivation (IM) is a niche field within AI. It seeks to develop reward signals which are not specific to any task but rather something closer to the low level motivators that drive intelligent behaviors in animals. Some prominent examples are:</p> <ul> <li>Empowerment: <a href=\"https://arxiv.org/abs/2301.00005\">https://arxiv.org/abs/2301.00005</a></li> <li>Diversity is all you need: <a href=\"https://arxiv.org/abs/1802.06070\">https://arxiv.org/abs/1802.06070</a></li> <li>Intrinsic curiosity module: <a href=\"https://arxiv.org/abs/1705.05363\">https://arxiv.org/abs/1705.05363</a></li> <li>Random network distillation: <a href=\"https://arxiv.org/abs/1810.12894\">https://arxiv.org/abs/1810.12894</a></li> </ul> <p>and many more...</p> <p>My question is: is this topic still &quot;worth&qu",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "category": "论文研究",
+    "reason_zh": "[mock] 来自 reddit-machinelearning，发布于 2 小时前",
+    "weighted_score": 0.7632,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.952,
+      "impact": 0.741,
+      "practical_value": 0.8
+    },
+    "story_id": "9eb51e6d422b2c69",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1uo5kg6/is_intrinsic_motivation_a_viable_phd_topic_in/"
+      }
+    ]
+  },
+  {
+    "id": "db78f8f74df85dc6",
+    "source_id": "reddit-localllama",
+    "title": "I would like to have a strong local ollama with tooling alike GitHub’s Copilot that works through terminal..",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo6s0a/i_would_like_to_have_a_strong_local_ollama_with/",
+    "published_at": "2026-07-05T16:38:27+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I’ve already been experimenting with some larger models on my Apple M3 Ultra 96GB (can fit multiples up to around 65 GB total) and I’ve noticed it’s just stupid<br /> Using OpenCode to connect too a local ollama proxy I can access the models, add custom instructions, etc. This gives me an alike experience to copilot through terminal but even using decent models I have to walk it through every little command in the prompts to even get it to list the file directory and can’t even get it to summarize a small hello world project I built specifically to test it with written in python. </p> <p>Anyone can point me in a better direction or advice would be great!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/IntrigueMe_1337\"> /u/IntrigueMe_1337 </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo6s0a/i_would_like_to_have_a_strong_local_ollama_with/\">[link]</a></span> &#32; <span><a href=\"https://ww",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 1 小时前",
+    "weighted_score": 0.7466,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.969,
+      "impact": 0.718,
+      "practical_value": 0.8
+    },
+    "story_id": "c1ad8058159dd241",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo6s0a/i_would_like_to_have_a_strong_local_ollama_with/"
+      }
+    ]
+  },
+  {
+    "id": "03019de9e58392bb",
+    "source_id": "reddit-localllama",
+    "title": "[RELEASE] Supra-Router-51M - a tiny prompt routing model/orchestrator",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo826q/release_suprarouter51m_a_tiny_prompt_routing/",
+    "published_at": "2026-07-05T17:28:53+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo826q/release_suprarouter51m_a_tiny_prompt_routing/\"> <img alt=\"[RELEASE] Supra-Router-51M - a tiny prompt routing model/orchestrator\" src=\"https://external-preview.redd.it/h2PaHC_KTRbn5W3MkZwz6oFNrcirmHzlY3LSdeG7MPE.png?width=140&amp;height=75&amp;auto=webp&amp;s=297d253274dce69c9154909232d008f9b57fb00d\" title=\"[RELEASE] Supra-Router-51M - a tiny prompt routing model/orchestrator\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hey <a href=\"/r/LocalLLaMA\">r/LocalLLaMA</a> !</p> <p>SupraLabs is back with a new model. Supra-Router-51M.</p> <p>Basically, this is a model which is made for routing requests to smaller or bigger models - based on the user prompt/request. This is so cool, because it has only 51M parameters and so it can be used in low-latency environments.</p> <p>Here are some samples:</p> <p><a href=\"https://preview.redd.it/wsaja08i4gbh1.png?width=1320&amp;format=png&amp;auto=webp&amp;s=860931c14efd",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 1 小时前",
+    "weighted_score": 0.7527,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.986,
+      "impact": 0.725,
+      "practical_value": 0.8
+    },
+    "story_id": "c8e9138b958c857b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo826q/release_suprarouter51m_a_tiny_prompt_routing/"
+      }
+    ]
+  },
+  {
+    "id": "493389502884b92c",
+    "source_id": "reddit-localllama",
+    "title": "How a 128gb ddr5 ram + 16gb vram, would work for a Moe model like Qwen 3.5 122b?",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo85td/how_a_128gb_ddr5_ram_16gb_vram_would_work_for_a/",
+    "published_at": "2026-07-05T17:32:47+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Who has results for this?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Stock-Union6934\"> /u/Stock-Union6934 </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo85td/how_a_128gb_ddr5_ram_16gb_vram_would_work_for_a/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo85td/how_a_128gb_ddr5_ram_16gb_vram_would_work_for_a/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 1 小时前",
+    "weighted_score": 0.7009,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.988,
+      "impact": 0.725,
+      "practical_value": 0.538
+    },
+    "story_id": "43a563adae37ed29",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo85td/how_a_128gb_ddr5_ram_16gb_vram_would_work_for_a/"
+      }
+    ]
+  },
+  {
+    "id": "2fb8a66f4bc5dd5e",
+    "source_id": "reddit-localllama",
+    "title": "Built Kivarro, an all-in-one local inference workbench. Looking for brutal feedback from people who actually run models locally.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo88oq/built_kivarro_an_allinone_local_inference/",
+    "published_at": "2026-07-05T17:36:04+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo88oq/built_kivarro_an_allinone_local_inference/\"> <img alt=\"Built Kivarro, an all-in-one local inference workbench. Looking for brutal feedback from people who actually run models locally.\" src=\"https://external-preview.redd.it/MG5mdDNjcXk1Z2JoMWf2BvQFlc4I9nMY2kBxQYPrD8KT8Zz4vcuQvvpsO5Hn.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=340e74b65a0cb94f7b4d9ead253ca5f0d0422055\" title=\"Built Kivarro, an all-in-one local inference workbench. Looking for brutal feedback from people who actually run models locally.\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I’ve been building <strong>Kivarro</strong>, a desktop app for local model inference.</p> <p>The idea is simple:</p> <p>Most local LLM tools solve one slice of the workflow.</p> <p>One app for chat. One app for model files. One script for llama.cpp flags. One dashboard for memory. One terminal for logs. One random note somewhere for benchmark results.</p>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 1 小时前",
+    "weighted_score": 0.7536,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.989,
+      "impact": 0.726,
+      "practical_value": 0.8
+    },
+    "story_id": "d5574e3511d29544",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo88oq/built_kivarro_an_allinone_local_inference/"
+      }
+    ]
+  },
+  {
+    "id": "984388d69972395a",
+    "source_id": "reddit-localllama",
+    "title": "eval-harness: A solution for generating personal evaluations that I have put together to evaluate agentic-cli harnesses",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo8lik/evalharness_a_solution_for_generating_personal/",
+    "published_at": "2026-07-05T17:50:17+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo8lik/evalharness_a_solution_for_generating_personal/\"> <img alt=\"eval-harness: A solution for generating personal evaluations that I have put together to evaluate agentic-cli harnesses\" src=\"https://external-preview.redd.it/5EI2V02Y7pYAaM9_zx6STbVocgcXUObRpFJheGrMaS8.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=2cc28c4c88bf7324698911457b8a54a8c3a1df7d\" title=\"eval-harness: A solution for generating personal evaluations that I have put together to evaluate agentic-cli harnesses\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hello LocalLLaMA,</p> <p>I wanted to build out my own personal list of evaluations, early on into putting this together I realised I wanted a way to not just evaluate the model but also the agentic harness that the model is running within, as I find the majority of my use of LLMs is more and more inside of a suite of CLI agentic harnesses. </p> <p>I've listed in the video a multitutd",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 0 小时前",
+    "weighted_score": 0.7553,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.994,
+      "impact": 0.728,
+      "practical_value": 0.8
+    },
+    "story_id": "26a8b1d5b203bba1",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo8lik/evalharness_a_solution_for_generating_personal/"
+      }
+    ]
+  },
+  {
+    "id": "4650d90ca14c7ec1",
+    "source_id": "reddit-localllama",
+    "title": "I built an opensource AI notepad alternative to Granola, need help to improve it",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo91it/i_built_an_opensource_ai_notepad_alternative_to/",
+    "published_at": "2026-07-05T18:07:22+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uo91it/i_built_an_opensource_ai_notepad_alternative_to/\"> <img alt=\"I built an opensource AI notepad alternative to Granola, need help to improve it\" src=\"https://external-preview.redd.it/cHdndnAyN2tiZ2JoMUy3akEFp-4JVDK4ygcG4JEJcqLiACm0eQW6zE8lo0VW.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6b7376ac7517ef410742769f8465e10f6d29a082\" title=\"I built an opensource AI notepad alternative to Granola, need help to improve it\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hey, I built a project called steno. Steno is an AI notepad for confidential conversations. It runs fully locally on your device with local llms like Gemma 4 quantised. The quality has gotten pretty good now so wanted to share to the communities like LocalLLM that helped me during the engineering phase.</p> <p>We are on our 80th release now - 0.5.7 and we added some cool new features. I basically wanted to build an app exactly like Granola cau",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "category": "开源项目",
+    "reason_zh": "[mock] 来自 reddit-localllama，发布于 0 小时前",
+    "weighted_score": 0.7574,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 1.0,
+      "impact": 0.73,
+      "practical_value": 0.8
+    },
+    "story_id": "9579d648e625878d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uo91it/i_built_an_opensource_ai_notepad_alternative_to/"
+      }
+    ]
+  }
+]

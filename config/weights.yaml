@@ -1,0 +1,26 @@
+# 打分维度权重（对齐 AIHOT 的四维度设计）与质量门控阈值
+scoring_weights:
+  source_authority: 0.30
+  novelty: 0.25
+  impact: 0.25
+  practical_value: 0.20
+
+quality_gate:
+  min_weighted_score: 0.72
+  min_multi_source_count: 2
+  # 命中任一条件即可进入精选流（latest-24h.json / daily-brief.json）
+  # 否则仅进入完整流（latest-24h-all.json）
+
+story_merge:
+  window_hours: 36
+  similarity_threshold: 0.55   # TF-IDF cosine 相似度阈值
+
+dedupe:
+  fuzzy_title_threshold: 90    # rapidfuzz token_sort_ratio
+  window_hours: 48
+
+daily_brief:
+  top_n: 12
+
+freshness:
+  decay_window_hours: 48

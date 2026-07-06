@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>信号场 · AI Signal Field</title>
+<meta name="description" content="AI 行业信息聚合：从噪音里，把信号打捞出来。多源确认、四维打分、故事合并，24 小时信号频谱。">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到主内容</a>
+
+<header class="topbar">
+  <div class="topbar__brand">
+    <span class="topbar__mark" aria-hidden="true"></span>
+    <div class="topbar__title-group">
+      <h1 class="topbar__title">信号场</h1>
+      <span class="topbar__subtitle">AI SIGNAL FIELD</span>
+    </div>
+  </div>
+
+  <div class="topbar__meta">
+    <span class="topbar__updated" id="updated-at">读取中&hellip;</span>
+    <button class="btn-icon" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
+      <span class="kbd">⌘K</span> 搜索
+    </button>
+    <button class="btn-icon" id="theme-toggle" type="button" aria-pressed="false">
+      <span class="theme-toggle__label">日间读数</span>
+    </button>
+  </div>
+</header>
+
+<section class="spectrum" aria-label="过去24小时信息密度频谱">
+  <div class="spectrum__header">
+    <h2 class="spectrum__title">24H 频谱</h2>
+    <ul class="spectrum__legend" id="spectrum-legend"></ul>
+  </div>
+  <div class="spectrum__chart" id="spectrum-chart" role="img" aria-label="按小时和分类统计的信息密度频谱图">
+    <div class="spectrum__empty" id="spectrum-empty" hidden>今日信号平静，暂无密集时段</div>
+  </div>
+  <div class="spectrum__axis" id="spectrum-axis"></div>
+</section>
+
+<main class="layout" id="main">
+  <section class="feed-panel" aria-label="信息流">
+    <div class="feed-panel__toolbar">
+      <div class="tabs" id="view-tabs" role="tablist">
+        <button class="tab is-active" role="tab" aria-selected="true" data-view="curated">精选</button>
+        <button class="tab" role="tab" aria-selected="false" data-view="all">全部动态</button>
+      </div>
+      <div class="chip-row" id="category-filters" role="group" aria-label="按分类筛选"></div>
+    </div>
+
+    <ol class="feed-list" id="feed-list" aria-live="polite"></ol>
+    <p class="feed-empty" id="feed-empty" hidden>这段时间没有信号越过门槛，稍后再来看看。</p>
+  </section>
+
+  <aside class="brief-panel" aria-label="今日简报">
+    <h2 class="brief-panel__title">今日简报</h2>
+    <p class="brief-panel__date" id="brief-date"></p>
+    <ol class="brief-list" id="brief-list"></ol>
+    <p class="brief-empty" id="brief-empty" hidden>今天比较安静，没有凑数的内容。</p>
+
+    <div class="source-health" id="source-health">
+      <h3 class="source-health__title">信源健康度</h3>
+      <ul class="source-health__list" id="source-health-list"></ul>
+    </div>
+  </aside>
+</main>
+
+<footer class="sitefooter">
+  <p>数据来自公开 RSS / GitHub / arXiv / Hacker News / Reddit 等信源，经两级 AI 打分与多源确认后收录。原始内容版权归各来源所有。</p>
+</footer>
+
+<div class="palette-overlay" id="command-palette" role="dialog" aria-modal="true" aria-label="命令面板搜索" hidden>
+  <div class="palette">
+    <div class="palette__input-row">
+      <span class="palette__prompt" aria-hidden="true">&gt;</span>
+      <input class="palette__input" id="palette-input" type="text" placeholder="搜索标题 / 来源 / 分类&hellip;" autocomplete="off" spellcheck="false">
+      <span class="kbd">ESC</span>
+    </div>
+    <ol class="palette__results" id="palette-results"></ol>
+  </div>
+</div>
+
+<template id="feed-row-template">
+  <li class="feed-row">
+    <span class="feed-row__bar" aria-hidden="true"></span>
+    <div class="feed-row__body">
+      <div class="feed-row__meta">
+        <time class="feed-row__time"></time>
+        <span class="feed-row__sources" title="多源确认数"></span>
+        <span class="feed-row__category"></span>
+      </div>
+      <a class="feed-row__title" target="_blank" rel="noopener noreferrer"></a>
+      <p class="feed-row__reason"></p>
+      <div class="feed-row__expand" hidden>
+        <p class="feed-row__expand-label">来源：</p>
+        <ul class="feed-row__source-list"></ul>
+      </div>
+    </div>
+  </li>
+</template>
+
+<template id="brief-row-template">
+  <li class="brief-row">
+    <span class="brief-row__rank"></span>
+    <div class="brief-row__body">
+      <a class="brief-row__title" target="_blank" rel="noopener noreferrer"></a>
+      <p class="brief-row__reason"></p>
+    </div>
+  </li>
+</template>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

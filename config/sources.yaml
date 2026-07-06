@@ -1,0 +1,244 @@
+# 信息源注册表
+# type: rss | github_releases | arxiv | hn_algolia | reddit | generic_json
+# authority_weight: 0-1，用于打分维度之一（也作为兜底排序权重）
+# poll_minutes: 建议轮询间隔（实际由 Actions cron 频率统一控制，此字段仅供未来精细化调度参考）
+# status: confirmed(已验证可用) | verify(构建时需校验) | broken(暂时禁用) | optional(可选/非核心)
+
+sources:
+  # ---------------- 官方博客 / 更新日志 ----------------
+  - id: openai-blog
+    type: rss
+    url: https://openai.com/blog/rss.xml
+    category_hint: [模型发布, 产品发布]
+    authority_weight: 0.95
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：1028 条，正常
+
+  - id: anthropic-news
+    type: rss
+    url: https://www.anthropic.com/rss.xml
+    category_hint: [模型发布, 产品发布]
+    authority_weight: 0.95
+    poll_minutes: 60
+    status: broken
+    notes: "实测 404，官方无稳定公开RSS。Phase3 用 Jina Reader(r.jina.ai/https://www.anthropic.com/news) 做静态页兜底抓取"
+
+  - id: deepmind-blog
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+    category_hint: [模型发布, 论文研究]
+    authority_weight: 0.95
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：77KB 正常内容（首次请求偶发SSL瞬时错误，已加重试）
+
+  - id: google-ai-blog
+    type: rss
+    url: https://blog.google/technology/ai/rss/
+    category_hint: [模型发布, 产品发布]
+    authority_weight: 0.9
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：重试后 20 条，正常（首次请求偶发SSL瞬时错误）
+
+  - id: huggingface-blog
+    type: rss
+    url: https://huggingface.co/blog/feed.xml
+    category_hint: [开源项目, 产品发布]
+    authority_weight: 0.85
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：814 条，正常
+
+  - id: microsoft-ai-blog
+    type: rss
+    url: https://blogs.microsoft.com/ai/feed/
+    category_hint: [行业动态, 产品发布]
+    authority_weight: 0.8
+    poll_minutes: 60
+    status: broken
+    notes: "实测 410 Gone，且备用地址均 403(反爬)。Phase3 需另找可用源或 Jina 兜底"
+
+  - id: nvidia-ai-blog
+    type: rss
+    url: https://blogs.nvidia.com/feed/
+    category_hint: [行业动态, 产品发布]
+    authority_weight: 0.8
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：重试后 18 条，正常（首次请求偶发SSL瞬时错误）
+
+  - id: github-changelog
+    type: rss
+    url: https://github.blog/changelog/feed/
+    category_hint: [产品发布, 开源项目]
+    authority_weight: 0.8
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：正常
+
+  - id: github-ai-blog
+    type: rss
+    url: https://github.blog/ai-and-ml/feed/
+    category_hint: [行业动态, 产品发布]
+    authority_weight: 0.75
+    poll_minutes: 60
+    status: confirmed  # 实测 2026-07-06：正常
+
+  # ---------------- GitHub 项目动态（releases） ----------------
+  - id: gh-transformers
+    type: github_releases
+    repo: huggingface/transformers
+    category_hint: [开源项目]
+    authority_weight: 0.85
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-vllm
+    type: github_releases
+    repo: vllm-project/vllm
+    category_hint: [开源项目]
+    authority_weight: 0.8
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-ollama
+    type: github_releases
+    repo: ollama/ollama
+    category_hint: [开源项目]
+    authority_weight: 0.8
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-llamacpp
+    type: github_releases
+    repo: ggerganov/llama.cpp
+    category_hint: [开源项目]
+    authority_weight: 0.75
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-langchain
+    type: github_releases
+    repo: langchain-ai/langchain
+    category_hint: [开源项目]
+    authority_weight: 0.75
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-autogen
+    type: github_releases
+    repo: microsoft/autogen
+    category_hint: [开源项目]
+    authority_weight: 0.7
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-llamaindex
+    type: github_releases
+    repo: run-llama/llama_index
+    category_hint: [开源项目]
+    authority_weight: 0.7
+    poll_minutes: 60
+    status: confirmed
+
+  # ---------------- 论文 ----------------
+  # 实测 2026-07-06(周日) 返回 0 条属正常：arXiv 官方 skipDays 包含周六日不出新提交，
+  # 这正是"冷清日"应有的行为，前端对应区块应自然收起而非报错。
+  - id: arxiv-cs-ai
+    type: arxiv
+    category: cs.AI
+    category_hint: [论文研究]
+    authority_weight: 0.7
+    poll_minutes: 120
+    status: confirmed
+
+  - id: arxiv-cs-cl
+    type: arxiv
+    category: cs.CL
+    category_hint: [论文研究]
+    authority_weight: 0.7
+    poll_minutes: 120
+    status: confirmed
+
+  - id: arxiv-cs-lg
+    type: arxiv
+    category: cs.LG
+    category_hint: [论文研究]
+    authority_weight: 0.7
+    poll_minutes: 120
+    status: confirmed
+
+  - id: arxiv-cs-ro
+    type: arxiv
+    category: cs.RO
+    category_hint: [论文研究]
+    authority_weight: 0.65
+    poll_minutes: 120
+    status: confirmed
+
+  # ---------------- 社区热点 ----------------
+  - id: hn-ai
+    type: hn_algolia
+    query: "AI OR LLM OR GPT OR agent"
+    category_hint: [行业动态, 观点技巧]
+    authority_weight: 0.6
+    poll_minutes: 60
+    status: confirmed
+
+  # 注：Reddit 对匿名/共享出口IP限流较严，实测偶发 429（已加重试+退避）。
+  # GitHub Actions 各次运行IP不同，通常不会持续触发限流；若持续失败可考虑降低这4个源的 poll 频率。
+  - id: reddit-machinelearning
+    type: reddit
+    subreddit: MachineLearning
+    category_hint: [论文研究, 行业动态]
+    authority_weight: 0.6
+    poll_minutes: 60
+    status: confirmed
+
+  - id: reddit-localllama
+    type: reddit
+    subreddit: LocalLLaMA
+    category_hint: [开源项目, 技巧与观点]
+    authority_weight: 0.55
+    poll_minutes: 60
+    status: confirmed
+
+  - id: reddit-singularity
+    type: reddit
+    subreddit: singularity
+    category_hint: [行业动态, 观点技巧]
+    authority_weight: 0.5
+    poll_minutes: 60
+    status: confirmed
+
+  - id: reddit-openai
+    type: reddit
+    subreddit: OpenAI
+    category_hint: [产品发布, 行业动态]
+    authority_weight: 0.5
+    poll_minutes: 60
+    status: confirmed
+
+  # ---------------- 可选 / Phase 3 补充（默认禁用，需单独部署桥接服务后启用） ----------------
+  - id: rsshub-x-bridge
+    type: rss
+    url: "PLACEHOLDER_SELF_HOSTED_RSSHUB_URL"
+    category_hint: [观点技巧, 行业动态]
+    authority_weight: 0.6
+    poll_minutes: 60
+    status: optional
+    notes: "需自建 RSSHub 实例并配置关注的创始人/研究员 X 列表，见 README"
+
+  - id: wewe-rss-bridge
+    type: rss
+    url: "PLACEHOLDER_SELF_HOSTED_WEWE_RSS_URL"
+    category_hint: [观点技巧, 行业动态]
+    authority_weight: 0.55
+    poll_minutes: 120
+    status: optional
+    notes: "需自建 wewe-rss 实例镜像公众号内容，见 README"
+
+  - id: zhihu-hot
+    type: generic_json
+    url: "https://www.zhihu.com/api/v4/creators/rank-list/total?content_type=article"
+    category_hint: [行业动态]
+    authority_weight: 0.4
+    poll_minutes: 120
+    status: broken
+    notes: "实测 404，该端点已下线。Phase3 需寻找替代的知乎公开端点，暂不影响主流程(status:broken即被run_pipeline跳过)"
