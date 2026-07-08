@@ -517,11 +517,18 @@ a { color: inherit; }
   .feed-panel { border-right: none; border-bottom: 1px solid var(--rule-dark); padding-right: 0; }
 }
 
-/* 头条 */
+/* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+  gap: 22px;
+  align-items: start;
   border-bottom: 1px solid var(--rule-dark);
   padding-bottom: 16px;
   margin-bottom: 4px;
+}
+@media (max-width: 720px) {
+  .lead { grid-template-columns: 1fr; gap: 12px; }
 }
 
 .lead__kicker {
@@ -538,15 +545,20 @@ a { color: inherit; }
   font-family: var(--font-serif);
   font-weight: 900;
   font-size: clamp(1.5rem, 3.2vw, 2.1rem);
-  line-height: 1.35;
+  line-height: 1.4;
   text-decoration: none;
   color: var(--ink);
 }
 .lead__title a:hover { color: var(--accent); }
 
+/* 英文原题副题行：斜体拉丁衬线，报纸 deck style */
 .lead__orig {
-  margin: 0 0 6px;
-  font-size: 0.85rem;
+  margin: 2px 0 8px;
+  font-family: var(--font-latin-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.98rem;
+  line-height: 1.5;
   color: var(--mist);
 }
 
@@ -559,6 +571,31 @@ a { color: inherit; }
   color: var(--mist);
 }
 .lead__meta .lead__cat { color: var(--accent); font-weight: 600; }
+
+.lead__media {
+  margin: 0;
+  border: 1px solid var(--rule-dark);
+  padding: 5px;                       /* 报纸相框：细黑边 + 纸面留白 */
+  background: var(--panel);
+}
+
+.lead__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.lead__placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
+    var(--bg);
+}
 
 .feed-panel__toolbar {
   display: flex;
@@ -666,19 +703,15 @@ a { color: inherit; }
 }
 .feed-row__title:hover { color: var(--accent); }
 
-.feed-row__title-zh {
+/* 英文原题副题行：斜体拉丁衬线（主标题为中文译题时出现） */
+.feed-row__deck {
   margin: 0 0 3px;
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-.feed-row__title-zh::before {
-  content: "译";
-  font-size: 0.6rem;
-  color: var(--accent);
-  border: 1px solid var(--accent-soft);
-  padding: 0 4px;
-  margin-right: 6px;
-  vertical-align: 1px;
+  font-family: var(--font-latin-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--mist);
 }
 
 .feed-row__reason {

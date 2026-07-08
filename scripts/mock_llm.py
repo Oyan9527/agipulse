@@ -59,7 +59,7 @@ def mock_score_items(items, categories, weights, source_authority_by_id):
 
         # 英文标题给占位译文演示版式；正式部署由 DeepSeek 在打分调用中一并生成真实翻译
         has_cjk = bool(_CJK_RE.search(it["title"]))
-        title_zh = None if has_cjk else f"〔示例译文〕{it['title'][:34]}（部署后由 DeepSeek 翻译）"
+        title_zh = None if has_cjk else f"示例译文：{it['title'][:48]}"
 
         enriched = dict(it)
         enriched.update(

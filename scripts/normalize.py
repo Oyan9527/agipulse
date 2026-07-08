@@ -23,6 +23,7 @@ def normalize_items(raw_items, source):
                 "published_at": to_iso(published_at),
                 "raw_text": (raw.get("raw_text") or "")[:1000],
                 "category_hint": category_hint,
+                "image_url": raw.get("image_url"),
             }
         )
     return normalized

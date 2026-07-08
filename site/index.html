@@ -8,7 +8,7 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,500;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -46,11 +46,27 @@
 <main class="layout" id="main">
   <section class="feed-panel" aria-label="信息流">
     <article class="lead" id="lead-story" hidden>
-      <p class="lead__kicker">头条 · TOP SIGNAL</p>
-      <h2 class="lead__title"><a id="lead-link" target="_blank" rel="noopener noreferrer"></a></h2>
-      <p class="lead__orig" id="lead-orig" hidden></p>
-      <p class="lead__reason" id="lead-reason"></p>
-      <p class="lead__meta" id="lead-meta"></p>
+      <div class="lead__text">
+        <p class="lead__kicker">头条 · TOP SIGNAL</p>
+        <h2 class="lead__title"><a id="lead-link" target="_blank" rel="noopener noreferrer"></a></h2>
+        <p class="lead__orig" id="lead-orig" hidden></p>
+        <p class="lead__reason" id="lead-reason"></p>
+        <p class="lead__meta" id="lead-meta"></p>
+      </div>
+      <figure class="lead__media" aria-hidden="false">
+        <img class="lead__img" id="lead-img" alt="" referrerpolicy="no-referrer" loading="lazy" hidden>
+        <svg class="lead__placeholder" id="lead-placeholder" viewBox="0 0 400 240" role="img" aria-label="脉冲信号示意图" preserveAspectRatio="xMidYMid slice">
+          <rect x="0" y="0" width="400" height="240" fill="none"/>
+          <g stroke="currentColor" stroke-width="0.5" opacity="0.25">
+            <line x1="0" y1="60" x2="400" y2="60"/>
+            <line x1="0" y1="120" x2="400" y2="120"/>
+            <line x1="0" y1="180" x2="400" y2="180"/>
+          </g>
+          <polyline points="0,130 60,130 78,130 88,96 100,164 112,60 126,180 138,116 150,130 210,130 226,122 240,138 254,130 330,130 344,110 356,150 368,130 400,130"
+            fill="none" stroke="#a8332a" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="200" y="216" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" letter-spacing="6" fill="currentColor" opacity="0.55">AGI · PULSE</text>
+        </svg>
+      </figure>
     </article>
 
     <div class="feed-panel__toolbar">
@@ -110,7 +126,7 @@
         <span class="feed-row__score" title="加权分"></span>
       </div>
       <a class="feed-row__title" target="_blank" rel="noopener noreferrer"></a>
-      <p class="feed-row__title-zh" hidden></p>
+      <p class="feed-row__deck" hidden></p>
       <p class="feed-row__reason"></p>
       <div class="feed-row__expand" hidden>
         <p class="feed-row__expand-label">来源：</p>

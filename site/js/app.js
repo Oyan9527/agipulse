@@ -27,6 +27,8 @@ const els = {
   leadOrig: document.getElementById("lead-orig"),
   leadReason: document.getElementById("lead-reason"),
   leadMeta: document.getElementById("lead-meta"),
+  leadImg: document.getElementById("lead-img"),
+  leadPlaceholder: document.getElementById("lead-placeholder"),
   viewTabs: document.getElementById("view-tabs"),
   categoryFilters: document.getElementById("category-filters"),
   feedList: document.getElementById("feed-list"),
@@ -154,6 +156,23 @@ function renderLead() {
   const sources = lead.multi_source_count > 1 ? ` · ${lead.multi_source_count} 源确认` : "";
   els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources}`;
   els.leadMeta.querySelector(".lead__cat").textContent = lead.category || "";
+
+  // 配图：有 image_url 用原图；加载失败或超时(5s)回落到脉冲占位图
+  if (lead.image_url) {
+    const fallback = () => {
+      els.leadImg.hidden = true;
+      els.leadPlaceholder.style.display = "";
+    };
+    const timer = setTimeout(() => {
+      if (!(els.leadImg.complete && els.leadImg.naturalWidth > 0)) fallback();
+    }, 5000);
+    els.leadImg.addEventListener("load", () => clearTimeout(timer), { once: true });
+    els.leadImg.addEventListener("error", () => { clearTimeout(timer); fallback(); }, { once: true });
+    els.leadImg.src = lead.image_url;
+    els.leadImg.hidden = false;
+    els.leadPlaceholder.style.display = "none";
+  }
+
   els.leadStory.hidden = false;
 }
 

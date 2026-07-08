@@ -69,15 +69,15 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
       scoreEl.textContent = "";
     }
 
+    // 报纸主题+副题结构：有译文时中文做主标题、英文原题做斜体副题行
     const titleEl = node.querySelector(".feed-row__title");
-    titleEl.textContent = item.title;
+    titleEl.textContent = item.title_zh || item.title;
     titleEl.href = item.url;
 
-    // 英文标题附中文译文（title_zh 由 DeepSeek 打分调用一并生成；中文标题无此字段）
-    const titleZhEl = node.querySelector(".feed-row__title-zh");
+    const deckEl = node.querySelector(".feed-row__deck");
     if (item.title_zh) {
-      titleZhEl.textContent = item.title_zh;
-      titleZhEl.hidden = false;
+      deckEl.textContent = item.title;
+      deckEl.hidden = false;
     }
 
     const reasonEl = node.querySelector(".feed-row__reason");
