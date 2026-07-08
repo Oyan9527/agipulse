@@ -21,6 +21,7 @@ from .story_merge import merge_stories
 from .quality_gate import apply_gate
 from .daily_brief import build_daily_brief
 from .source_health import build_source_status
+from .trends import build_trends
 
 log = get_logger(__name__)
 
@@ -127,12 +128,14 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     latest_24h = filter_output_window(curated, hours=24)
     daily_brief = build_daily_brief(curated, weights_cfg)
     status = build_source_status(fetch_results, normalized_by_source, kept_ids)
+    trends = build_trends(merged_items, stories, weights_cfg)
 
     atomic_write_json(out_dir / "latest-24h.json", latest_24h)
     atomic_write_json(out_dir / "latest-24h-all.json", all_24h)
     atomic_write_json(out_dir / "daily-brief.json", daily_brief)
     atomic_write_json(out_dir / "stories-merged.json", stories)
     atomic_write_json(out_dir / "source-status.json", status)
+    atomic_write_json(out_dir / "trends.json", trends)
 
     log.info(
         "pipeline done: %d curated / %d all / %d stories",

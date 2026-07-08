@@ -1,11 +1,13 @@
 import { renderSpectrum } from "./components/spectrum.js";
 import { renderFeed } from "./components/feed.js";
-import { renderBrief, renderSourceHealth } from "./components/brief.js";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js";
 import { initPalette } from "./components/palette.js";
+import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const THEME_KEY = "signal-field-theme";
 const LAST_SEEN_KEY = "signal-field-last-seen";
+const PAGE_SIZE = 120;
 
 const state = {
   curated: [],
@@ -13,9 +15,11 @@ const state = {
   brief: null,
   stories: [],
   sourceStatus: [],
+  trends: null,
   view: "curated",
   categoryFilter: null,
   hourFilter: null,
+  visibleCount: PAGE_SIZE,
 };
 
 const els = {
@@ -24,11 +28,18 @@ const els = {
   spectrumLegend: document.getElementById("spectrum-legend"),
   spectrumAxis: document.getElementById("spectrum-axis"),
   spectrumEmpty: document.getElementById("spectrum-empty"),
+  spectrumTooltip: document.getElementById("spectrum-tooltip"),
+  statsRow: document.getElementById("stats-row"),
+  categoryMomentum: document.getElementById("category-momentum"),
+  trendKeywords: document.getElementById("trend-keywords"),
   viewTabs: document.getElementById("view-tabs"),
   categoryFilters: document.getElementById("category-filters"),
   feedList: document.getElementById("feed-list"),
   feedEmpty: document.getElementById("feed-empty"),
+  feedMore: document.getElementById("feed-more"),
   feedRowTemplate: document.getElementById("feed-row-template"),
+  hotList: document.getElementById("hot-list"),
+  hotEmpty: document.getElementById("hot-empty"),
   briefList: document.getElementById("brief-list"),
   briefDate: document.getElementById("brief-date"),
   briefEmpty: document.getElementById("brief-empty"),
@@ -39,6 +50,8 @@ const els = {
   paletteInput: document.getElementById("palette-input"),
   paletteResults: document.getElementById("palette-results"),
 };
+
+let paletteApi = null;
 
 async function fetchJson(path, fallback) {
   try {
@@ -66,22 +79,32 @@ function currentFeedItems() {
   return items.slice().sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 }
 
-function renderAll() {
+function renderFeedSection() {
+  const items = currentFeedItems();
+  const visible = items.slice(0, state.visibleCount);
   renderFeed({
     listEl: els.feedList,
     emptyEl: els.feedEmpty,
     template: els.feedRowTemplate,
-    items: currentFeedItems(),
+    items: visible,
   });
+  els.feedMore.hidden = items.length <= state.visibleCount;
+  els.feedMore.textContent = `加载更多（还有 ${Math.max(items.length - state.visibleCount, 0)} 条）`;
+}
+
+function renderAll() {
+  renderFeedSection();
 
   renderSpectrum({
     chartEl: els.spectrumChart,
     legendEl: els.spectrumLegend,
     axisEl: els.spectrumAxis,
     emptyEl: els.spectrumEmpty,
+    tooltipEl: els.spectrumTooltip,
     items: state.all,
     onSelectHour: (hourIdx) => {
       state.hourFilter = state.hourFilter === hourIdx ? null : hourIdx;
+      state.visibleCount = PAGE_SIZE;
       renderAll();
     },
   });
@@ -96,7 +119,8 @@ function setupTabs() {
       c.setAttribute("aria-selected", String(c === btn));
     });
     state.view = btn.dataset.view;
-    renderAll();
+    state.visibleCount = PAGE_SIZE;
+    renderFeedSection();
   });
 }
 
@@ -109,12 +133,20 @@ function setupCategoryFilters() {
     btn.textContent = cat;
     btn.addEventListener("click", () => {
       state.categoryFilter = state.categoryFilter === cat ? null : cat;
+      state.visibleCount = PAGE_SIZE;
       [...els.categoryFilters.children].forEach((c) =>
         c.classList.toggle("is-active", c.textContent === state.categoryFilter)
       );
-      renderAll();
+      renderFeedSection();
     });
     els.categoryFilters.appendChild(btn);
+  });
+}
+
+function setupFeedMore() {
+  els.feedMore.addEventListener("click", () => {
+    state.visibleCount += PAGE_SIZE;
+    renderFeedSection();
   });
 }
 
@@ -146,14 +178,16 @@ function formatUpdatedAt(iso) {
 async function bootstrap() {
   setupTabs();
   setupCategoryFilters();
+  setupFeedMore();
   setupTheme();
 
-  const [curated, all, brief, stories, sourceStatus] = await Promise.all([
+  const [curated, all, brief, stories, sourceStatus, trends] = await Promise.all([
     fetchJson("./data/latest-24h.json", []),
     fetchJson("./data/latest-24h-all.json", []),
     fetchJson("./data/daily-brief.json", null),
     fetchJson("./data/stories-merged.json", []),
     fetchJson("./data/source-status.json", []),
+    fetchJson("./data/trends.json", null),
   ]);
 
   state.curated = curated;
@@ -161,14 +195,38 @@ async function bootstrap() {
   state.brief = brief;
   state.stories = stories;
   state.sourceStatus = sourceStatus;
+  state.trends = trends;
 
-  els.updatedAt.textContent = formatUpdatedAt(brief?.generated_at);
+  els.updatedAt.textContent = formatUpdatedAt(trends?.generated_at || brief?.generated_at);
 
   renderAll();
+  renderStats({
+    el: els.statsRow,
+    all24h: all,
+    curated24h: curated,
+    sourceStatus,
+    stories,
+  });
+  renderCategoryMomentum({
+    el: els.categoryMomentum,
+    momentum: trends?.category_momentum || [],
+  });
+  renderKeywords({
+    el: els.trendKeywords,
+    keywords: trends?.keywords || [],
+    onSelect: (term) => {
+      if (paletteApi) {
+        paletteApi.open();
+        els.paletteInput.value = term;
+        els.paletteInput.dispatchEvent(new Event("input"));
+      }
+    },
+  });
+  renderHotStories({ listEl: els.hotList, emptyEl: els.hotEmpty, stories: trends?.hot_stories || [] });
   renderBrief({ listEl: els.briefList, dateEl: els.briefDate, emptyEl: els.briefEmpty, brief });
   renderSourceHealth({ listEl: els.sourceHealthList, statuses: sourceStatus });
 
-  initPalette({
+  paletteApi = initPalette({
     overlayEl: els.paletteOverlay,
     triggerEl: els.paletteTrigger,
     inputEl: els.paletteInput,
@@ -184,10 +242,11 @@ async function bootstrap() {
   });
 
   const lastSeen = localStorage.getItem(LAST_SEEN_KEY);
-  if (brief?.generated_at && (!lastSeen || new Date(brief.generated_at) > new Date(lastSeen))) {
+  const freshStamp = trends?.generated_at || brief?.generated_at;
+  if (freshStamp && (!lastSeen || new Date(freshStamp) > new Date(lastSeen))) {
     document.querySelector(".topbar__mark")?.classList.add("has-fresh");
   }
-  if (brief?.generated_at) localStorage.setItem(LAST_SEEN_KEY, brief.generated_at);
+  if (freshStamp) localStorage.setItem(LAST_SEEN_KEY, freshStamp);
 }
 
 bootstrap();

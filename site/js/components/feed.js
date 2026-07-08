@@ -62,6 +62,13 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
     const catEl = node.querySelector(".feed-row__category");
     catEl.textContent = item.category || "未分类";
 
+    const scoreEl = node.querySelector(".feed-row__score");
+    if (item.weighted_score != null) {
+      scoreEl.textContent = item.weighted_score.toFixed(2);
+    } else {
+      scoreEl.textContent = "";
+    }
+
     const titleEl = node.querySelector(".feed-row__title");
     titleEl.textContent = item.title;
     titleEl.href = item.url;

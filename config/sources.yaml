@@ -80,6 +80,131 @@ sources:
     poll_minutes: 60
     status: confirmed  # 实测 2026-07-06：正常
 
+  # ---------------- 研究机构 / 云厂商（2026-07-06 批量实测通过） ----------------
+  - id: google-research-blog
+    type: rss
+    url: https://research.google/blog/rss/
+    category_hint: [论文研究, 模型发布]
+    authority_weight: 0.9
+    poll_minutes: 120
+    status: confirmed
+
+  - id: microsoft-research
+    type: rss
+    url: https://www.microsoft.com/en-us/research/feed/
+    category_hint: [论文研究, 行业动态]
+    authority_weight: 0.85
+    poll_minutes: 120
+    status: confirmed
+
+  - id: aws-ml-blog
+    type: rss
+    url: https://aws.amazon.com/blogs/machine-learning/feed/
+    category_hint: [技巧与观点, 产品发布]
+    authority_weight: 0.7
+    poll_minutes: 120
+    status: confirmed
+
+  # ---------------- 高信号个人（对标 AGI Hunt 的"追踪一手观点"路线） ----------------
+  - id: simonwillison
+    type: rss
+    url: https://simonwillison.net/atom/everything/
+    category_hint: [技巧与观点, 开源项目]
+    authority_weight: 0.8
+    poll_minutes: 60
+    status: confirmed
+
+  - id: interconnects
+    type: rss
+    url: https://www.interconnects.ai/feed
+    category_hint: [技巧与观点, 论文研究]
+    authority_weight: 0.75
+    poll_minutes: 120
+    status: confirmed
+
+  - id: oneusefulthing
+    type: rss
+    url: https://www.oneusefulthing.org/feed
+    category_hint: [技巧与观点]
+    authority_weight: 0.75
+    poll_minutes: 120
+    status: confirmed
+
+  - id: lilianweng
+    type: rss
+    url: https://lilianweng.github.io/index.xml
+    category_hint: [论文研究, 技巧与观点]
+    authority_weight: 0.8
+    poll_minutes: 240
+    status: confirmed
+
+  # ---------------- 科技媒体 AI 频道 ----------------
+  - id: techcrunch-ai
+    type: rss
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+    category_hint: [行业动态, 产品发布]
+    authority_weight: 0.65
+    poll_minutes: 60
+    status: confirmed
+
+  - id: verge-ai
+    type: rss
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+    category_hint: [行业动态, 产品发布]
+    authority_weight: 0.6
+    poll_minutes: 60
+    status: confirmed
+
+  - id: venturebeat-ai
+    type: rss
+    url: https://venturebeat.com/category/ai/feed/
+    category_hint: [行业动态]
+    authority_weight: 0.6
+    poll_minutes: 60
+    status: confirmed
+
+  - id: mit-tech-review-ai
+    type: rss
+    url: https://www.technologyreview.com/topic/artificial-intelligence/feed
+    category_hint: [行业动态, 论文研究]
+    authority_weight: 0.75
+    poll_minutes: 120
+    status: confirmed
+
+  - id: ars-technica-ai
+    type: rss
+    url: https://arstechnica.com/ai/feed/
+    category_hint: [行业动态]
+    authority_weight: 0.65
+    poll_minutes: 60
+    status: confirmed
+
+  # ---------------- 中文源 ----------------
+  - id: qbitai
+    type: rss
+    url: https://www.qbitai.com/feed
+    category_hint: [行业动态, 模型发布]
+    authority_weight: 0.65
+    poll_minutes: 60
+    status: confirmed
+
+  - id: infoq-cn-ai
+    type: rss
+    url: https://www.infoq.cn/feed/AI
+    category_hint: [行业动态, 技巧与观点]
+    authority_weight: 0.6
+    poll_minutes: 120
+    status: confirmed
+
+  - id: jiqizhixin
+    type: rss
+    url: https://www.jiqizhixin.com/rss
+    category_hint: [行业动态, 论文研究]
+    authority_weight: 0.7
+    poll_minutes: 120
+    status: verify
+    notes: "实测返回200但content-type非feed格式，需确认feedparser能否解析；不能则寻找替代端点"
+
   # ---------------- GitHub 项目动态（releases） ----------------
   - id: gh-transformers
     type: github_releases
@@ -137,6 +262,46 @@ sources:
     poll_minutes: 60
     status: confirmed
 
+  - id: gh-sglang
+    type: github_releases
+    repo: sgl-project/sglang
+    category_hint: [开源项目]
+    authority_weight: 0.7
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-open-webui
+    type: github_releases
+    repo: open-webui/open-webui
+    category_hint: [开源项目]
+    authority_weight: 0.7
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-comfyui
+    type: github_releases
+    repo: comfyanonymous/ComfyUI
+    category_hint: [开源项目]
+    authority_weight: 0.7
+    poll_minutes: 60
+    status: confirmed
+
+  - id: gh-pytorch
+    type: github_releases
+    repo: pytorch/pytorch
+    category_hint: [开源项目]
+    authority_weight: 0.8
+    poll_minutes: 120
+    status: confirmed
+
+  - id: gh-browser-use
+    type: github_releases
+    repo: browser-use/browser-use
+    category_hint: [开源项目]
+    authority_weight: 0.65
+    poll_minutes: 120
+    status: confirmed
+
   # ---------------- 论文 ----------------
   # 实测 2026-07-06(周日) 返回 0 条属正常：arXiv 官方 skipDays 包含周六日不出新提交，
   # 这正是"冷清日"应有的行为，前端对应区块应自然收起而非报错。
@@ -172,11 +337,19 @@ sources:
     poll_minutes: 120
     status: confirmed
 
+  - id: arxiv-cs-cv
+    type: arxiv
+    category: cs.CV
+    category_hint: [论文研究]
+    authority_weight: 0.65
+    poll_minutes: 120
+    status: confirmed
+
   # ---------------- 社区热点 ----------------
   - id: hn-ai
     type: hn_algolia
     query: "AI OR LLM OR GPT OR agent"
-    category_hint: [行业动态, 观点技巧]
+    category_hint: [行业动态, 技巧与观点]
     authority_weight: 0.6
     poll_minutes: 60
     status: confirmed
@@ -202,7 +375,7 @@ sources:
   - id: reddit-singularity
     type: reddit
     subreddit: singularity
-    category_hint: [行业动态, 观点技巧]
+    category_hint: [行业动态, 技巧与观点]
     authority_weight: 0.5
     poll_minutes: 60
     status: confirmed
@@ -219,7 +392,7 @@ sources:
   - id: rsshub-x-bridge
     type: rss
     url: "PLACEHOLDER_SELF_HOSTED_RSSHUB_URL"
-    category_hint: [观点技巧, 行业动态]
+    category_hint: [技巧与观点, 行业动态]
     authority_weight: 0.6
     poll_minutes: 60
     status: optional
@@ -228,7 +401,7 @@ sources:
   - id: wewe-rss-bridge
     type: rss
     url: "PLACEHOLDER_SELF_HOSTED_WEWE_RSS_URL"
-    category_hint: [观点技巧, 行业动态]
+    category_hint: [技巧与观点, 行业动态]
     authority_weight: 0.55
     poll_minutes: 120
     status: optional

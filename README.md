@@ -1,6 +1,8 @@
 # 信号场 · AI Signal Field
 
-一个零后端、零服务器成本的 AI 行业信息聚合网站。GitHub Actions 定时抓取公开信源 → DeepSeek 两级打分/去重/故事合并 → 静态 JSON → GitHub Pages 直接托管，前端运行时 fetch 数据渲染，没有任何构建步骤。
+一个零后端、零服务器成本的 AI 行业信息聚合网站。GitHub Actions 定时抓取 40+ 公开信源 → DeepSeek 两级打分/去重/故事合并/趋势分析 → 静态 JSON → GitHub Pages 直接托管，前端运行时 fetch 数据渲染，没有任何构建步骤。
+
+功能：24H 信息密度频谱、数据看板（信号量/精选率/信源健康/多源确认）、分类动量、趋势关键词、热点雷达（多源确认×新鲜度）、今日简报、命令面板搜索（Ctrl/Cmd+K）、深浅双主题。
 
 对标 [AI News Radar](https://learnprompt.github.io/ai-news-radar/)、[AIHOT](https://aihot.virxact.com/)、[AGI Hunt](https://agihunt.info/) 三个产品的信息覆盖范围与设计思路，细节见 `.claude/plans/` 下的建站方案文档。
 
@@ -57,23 +59,88 @@ python -m http.server 8778 --directory site
 
 ## 部署到 GitHub Pages（详细步骤）
 
-1. **建仓库**：在 GitHub 新建一个 **Public** 仓库（Public 才有免费无限 Actions 分钟数）。
-2. **推送代码**：
-   ```bash
-   git init
-   git add .
-   git commit -m "init: AI signal field"
-   git branch -M main
-   git remote add origin https://github.com/<你的用户名>/<仓库名>.git
-   git push -u origin main
-   ```
-3. **配置密钥**：仓库 Settings → Secrets and variables → Actions → New repository secret
-   - `DEEPSEEK_API_KEY`：你自己的 DeepSeek API Key（必需）
-   - `GH_PAT`：一个有 `public_repo` 读权限的 GitHub Personal Access Token（可选，用于把 GitHub API 限额从 60次/小时提升到 5000次/小时；不设置也能跑，只是并发抓取 GitHub releases 时更容易触发限流）
-4. **开启 Pages**：仓库 Settings → Pages → Build and deployment → Source 选择 "Deploy from a branch" → Branch 选 `main`，目录选 `/site`。
-5. **首次种子数据**：仓库 Actions 页面 → 选择 "Update AI signal data" workflow → Run workflow（手动触发一次 `workflow_dispatch`），等待跑完，确认 `site/data/*.json` 被更新并提交。
-6. **验证站点**：访问 `https://<你的用户名>.github.io/<仓库名>/`，确认页面能正常加载频谱图和信息流（此时应该是真实 DeepSeek 打分的数据，不再带 `[mock]` 前缀）。
-7. **之后**：workflow 每小时自动跑一次，无需人工干预。改 `config/sources.yaml` 后 push 到 `main`，下一次运行就会生效。
+### 第 1 步：建仓库
+
+登录 GitHub（本项目对应账号 `Oyan9527`）→ 右上角 `+` → **New repository**：
+- Repository name：例如 `ai-signal-field`
+- 可见性选 **Public**（Public 仓库才有免费无限的 Actions 分钟数；Private 每月只有 2000 分钟额度，每小时跑一次很快就会用完）
+- 不要勾选 "Add a README"（本地已有，勾了会产生冲突）
+- 点 **Create repository**
+
+### 第 2 步：推送代码
+
+在项目目录（本机是 `C:\Users\Yan\ccstudy`）执行：
+
+```bash
+git branch -M main
+git remote add origin https://github.com/Oyan9527/ai-signal-field.git
+git push -u origin main
+```
+
+> 首次推送会要求登录。Windows 会弹出浏览器授权（Git Credential Manager），登录 `Oyan9527` 账号授权即可。
+
+### 第 3 步：配置密钥
+
+仓库页面 → **Settings**（顶栏最右）→ 左侧 **Secrets and variables** → **Actions** → 绿色按钮 **New repository secret**：
+
+| Name | Value | 必需？ |
+|---|---|---|
+| `DEEPSEEK_API_KEY` | 你在 [platform.deepseek.com](https://platform.deepseek.com/) 创建的 API Key（`sk-` 开头） | ✅ 必需，没有它流水线会直接报错 |
+| `GH_PAT` | 一个勾选了 `public_repo` 权限的 [Personal Access Token](https://github.com/settings/tokens) | 可选。把 GitHub API 限额从 60次/小时 提升到 5000次/小时；不设也能跑 |
+
+### 第 4 步：确认 Actions 权限（重要，最容易漏）
+
+仓库 **Settings** → 左侧 **Actions** → **General** → 拉到最下面 **Workflow permissions**：
+- 确认选中 **"Read and write permissions"**，然后 **Save**。
+- 工作流要把抓到的数据 commit 回仓库，没有写权限会报 `Permission denied` / 403。（workflow 文件里已声明 `permissions: contents: write`，但如果组织/账号级别禁用了写权限，这里的仓库级开关是最终开关。）
+
+### 第 5 步：开启 Pages（对应你问的"目录选 /site"）
+
+仓库 **Settings** → 左侧 **Pages**（在 "Code and automation" 分组下）：
+
+1. **Build and deployment** 区域 → **Source** 下拉框 → 选 **"Deploy from a branch"**
+2. 下方会出现 **Branch** 行，有两个下拉框：
+   - 第一个选 **`main`**
+   - 第二个（默认显示 `/(root)`）点开 → 选 **`/site`** ← 这一步就是"目录选 /site"。这个下拉框只有 `/(root)` 和仓库根下的一级目录可选，`site` 推上去之后它就会出现在列表里
+3. 点 **Save**
+4. 等 1-2 分钟，页面顶部会出现绿色横幅 "Your site is live at `https://oyan9527.github.io/ai-signal-field/`"，这就是你的站点地址
+
+> 如果 Source 下拉里看到 "GitHub Actions" 选项，不要选它——那是给自定义构建流程用的，我们这种纯静态站直接 "Deploy from a branch" 最简单。
+
+### 第 6 步：手动触发首次数据抓取（种子数据）
+
+仓库顶栏 **Actions** → 左侧列表选 **"Update AI signal data"** → 右侧 **Run workflow** 按钮 → 保持 `main` 分支 → 绿色 **Run workflow**。
+
+- 运行约 3-6 分钟。点进运行记录可以看每一步日志：抓了多少条、DeepSeek 筛掉多少、精选多少。
+- 成功后仓库会多一个 `data: update feeds @ ...` 的提交，`site/data/*.json` 变成真实 DeepSeek 打分的数据（`reason_zh` 不再带 `[mock]` 前缀）。
+- 这个提交会自动触发 Pages 重新发布（1-2 分钟生效）。
+
+### 第 7 步：验证站点
+
+访问 `https://oyan9527.github.io/ai-signal-field/`，检查：
+- [ ] 频谱图有数据、随时间分布
+- [ ] 看板四个指标卡有数字
+- [ ] 信息流条目的推荐理由是真实中文理由（无 `[mock]`）
+- [ ] 右侧"热点雷达"和"今日简报"有内容
+- [ ] Ctrl/Cmd+K 能搜索
+
+### 之后的日常运维
+
+- workflow 每小时整点自动跑，无需人工干预；每次有新数据才会产生提交，没有新数据就静默跳过。
+- **加/删信源**：改 `config/sources.yaml` 后 push 到 `main`，下一次运行生效。
+- **调打分权重/门槛**：改 `config/weights.yaml`。
+- **换 DeepSeek Key**：直接在 Settings → Secrets 里更新 `DEEPSEEK_API_KEY` 的值，即时生效。
+- **调抓取频率**：改 `.github/workflows/pipeline.yml` 里的 cron（比如 `"0 */2 * * *"` 是每2小时一次，成本减半）。
+
+### 常见问题排查
+
+| 症状 | 原因与处理 |
+|---|---|
+| Actions 报 `DEEPSEEK_API_KEY not set` | 第 3 步的 secret 没配或名字打错（必须全大写完全一致） |
+| Actions 报 403 / `Permission denied` 推不上代码 | 第 4 步的 Workflow permissions 没开 Read and write |
+| 站点 404 | Pages 还没发布完（等2分钟）；或第 5 步目录选成了 `/(root)`——必须选 `/site` |
+| 页面能开但一直"读取中" | `site/data/*.json` 还没被真实数据覆盖，先跑第 6 步；或浏览器控制台看 fetch 报错 |
+| Reddit 源持续 429 | 正常现象，单次失败不影响其他源；GitHub Actions 每次运行 IP 不同，通常下轮就恢复 |
 
 ### 成本
 

@@ -1,4 +1,4 @@
-// 今日简报：真正的排序榜单，编号是有意义的（不是装饰性 01/02/03）。
+// 今日简报 + 热点雷达：两个都是真正的排序榜单，编号是有意义的（不是装饰性 01/02/03）。
 export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
   const items = (brief && brief.items) || [];
   emptyEl.hidden = items.length > 0;
@@ -19,6 +19,33 @@ export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
     a.textContent = item.title;
     a.href = item.url;
     li.querySelector(".brief-row__reason").textContent = item.reason_zh || "";
+    listEl.appendChild(li);
+  });
+}
+
+export function renderHotStories({ listEl, emptyEl, stories }) {
+  const top = (stories || []).slice(0, 5);
+  emptyEl.hidden = top.length > 0;
+
+  listEl.innerHTML = "";
+  top.forEach((story, idx) => {
+    const li = document.createElement("li");
+    li.className = "hot-row";
+    li.innerHTML = `
+      <span class="hot-row__rank">${String(idx + 1).padStart(2, "0")}</span>
+      <div class="hot-row__body">
+        <a class="hot-row__title" target="_blank" rel="noopener noreferrer"></a>
+        <p class="hot-row__meta">
+          <span class="hot-row__sources"></span><span class="hot-row__heat"></span>
+        </p>
+      </div>
+    `;
+    const a = li.querySelector(".hot-row__title");
+    a.textContent = story.title;
+    if (story.url) a.href = story.url;
+    li.querySelector(".hot-row__sources").textContent =
+      story.source_count >= 2 ? `${story.source_count} 源确认` : "单源";
+    li.querySelector(".hot-row__heat").textContent = ` · 热度 ${story.heat.toFixed(1)}`;
     listEl.appendChild(li);
   });
 }

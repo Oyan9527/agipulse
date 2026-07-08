@@ -41,8 +41,23 @@
   </div>
   <div class="spectrum__chart" id="spectrum-chart" role="img" aria-label="按小时和分类统计的信息密度频谱图">
     <div class="spectrum__empty" id="spectrum-empty" hidden>今日信号平静，暂无密集时段</div>
+    <div class="spectrum__tooltip" id="spectrum-tooltip" hidden></div>
   </div>
   <div class="spectrum__axis" id="spectrum-axis"></div>
+</section>
+
+<section class="dashboard" aria-label="信号看板">
+  <div class="stats-row" id="stats-row"></div>
+  <div class="dash-panels">
+    <div class="dash-panel">
+      <h2 class="dash-panel__title">分类动量 <span class="dash-panel__sub">近24h · 环比前24h</span></h2>
+      <div class="momentum" id="category-momentum"></div>
+    </div>
+    <div class="dash-panel">
+      <h2 class="dash-panel__title">趋势关键词 <span class="dash-panel__sub">按提及次数 · 点击可搜索</span></h2>
+      <div class="trend-chips" id="trend-keywords"></div>
+    </div>
+  </div>
 </section>
 
 <main class="layout" id="main">
@@ -57,10 +72,16 @@
 
     <ol class="feed-list" id="feed-list" aria-live="polite"></ol>
     <p class="feed-empty" id="feed-empty" hidden>这段时间没有信号越过门槛，稍后再来看看。</p>
+    <button class="btn-more" id="feed-more" type="button" hidden>加载更多</button>
   </section>
 
-  <aside class="brief-panel" aria-label="今日简报">
-    <h2 class="brief-panel__title">今日简报</h2>
+  <aside class="brief-panel" aria-label="热点与简报">
+    <h2 class="brief-panel__title">热点雷达</h2>
+    <p class="brief-panel__date">多源确认 × 新鲜度</p>
+    <ol class="hot-list" id="hot-list"></ol>
+    <p class="brief-empty" id="hot-empty" hidden>还没有形成多源热点。</p>
+
+    <h2 class="brief-panel__title brief-panel__title--gap">今日简报</h2>
     <p class="brief-panel__date" id="brief-date"></p>
     <ol class="brief-list" id="brief-list"></ol>
     <p class="brief-empty" id="brief-empty" hidden>今天比较安静，没有凑数的内容。</p>
@@ -95,6 +116,7 @@
         <time class="feed-row__time"></time>
         <span class="feed-row__sources" title="多源确认数"></span>
         <span class="feed-row__category"></span>
+        <span class="feed-row__score" title="加权分"></span>
       </div>
       <a class="feed-row__title" target="_blank" rel="noopener noreferrer"></a>
       <p class="feed-row__reason"></p>
