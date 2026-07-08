@@ -1,4 +1,4 @@
-# 信号场 · AI Signal Field
+# 硅基脉动 · AGI Pulse
 
 一个零后端、零服务器成本的 AI 行业信息聚合网站。GitHub Actions 定时抓取 **200+ 公开信源** → DeepSeek 两级打分/中文翻译/去重/故事合并/趋势分析 → 静态 JSON → GitHub Pages 直接托管，前端运行时 fetch 数据渲染，没有任何构建步骤。
 
@@ -64,7 +64,7 @@ python -m http.server 8778 --directory site
 ### 第 1 步：建仓库
 
 登录 GitHub（本项目对应账号 `Oyan9527`）→ 右上角 `+` → **New repository**：
-- Repository name：例如 `ai-signal-field`
+- Repository name：例如 `agi-pulse`
 - 可见性选 **Public**（Public 仓库才有免费无限的 Actions 分钟数；Private 每月只有 2000 分钟额度，每小时跑一次很快就会用完）
 - 不要勾选 "Add a README"（本地已有，勾了会产生冲突）
 - 点 **Create repository**
@@ -75,7 +75,7 @@ python -m http.server 8778 --directory site
 
 ```bash
 git branch -M main
-git remote add origin https://github.com/Oyan9527/ai-signal-field.git
+git remote add origin https://github.com/Oyan9527/agi-pulse.git
 git push -u origin main
 ```
 
@@ -105,7 +105,7 @@ git push -u origin main
    - 第一个选 **`main`**
    - 第二个（默认显示 `/(root)`）点开 → 选 **`/site`** ← 这一步就是"目录选 /site"。这个下拉框只有 `/(root)` 和仓库根下的一级目录可选，`site` 推上去之后它就会出现在列表里
 3. 点 **Save**
-4. 等 1-2 分钟，页面顶部会出现绿色横幅 "Your site is live at `https://oyan9527.github.io/ai-signal-field/`"，这就是你的站点地址
+4. 等 1-2 分钟，页面顶部会出现绿色横幅 "Your site is live at `https://oyan9527.github.io/agi-pulse/`"，这就是你的站点地址
 
 > 如果 Source 下拉里看到 "GitHub Actions" 选项，不要选它——那是给自定义构建流程用的，我们这种纯静态站直接 "Deploy from a branch" 最简单。
 
@@ -119,7 +119,7 @@ git push -u origin main
 
 ### 第 7 步：验证站点
 
-访问 `https://oyan9527.github.io/ai-signal-field/`，检查：
+访问 `https://oyan9527.github.io/agi-pulse/`，检查：
 - [ ] 频谱图有数据、随时间分布
 - [ ] 看板四个指标卡有数字
 - [ ] 信息流条目的推荐理由是真实中文理由（无 `[mock]`）

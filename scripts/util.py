@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 import requests
 import yaml
 
-USER_AGENT = "ai-signal-field/1.0 (+https://github.com; contact: repo-owner)"
+USER_AGENT = "agi-pulse/1.0 (+https://github.com; contact: repo-owner)"
 
 logging.basicConfig(
     level=logging.INFO,

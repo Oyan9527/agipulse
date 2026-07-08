@@ -5,7 +5,7 @@ import { initPalette } from "./components/palette.js";
 import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
-const LAST_SEEN_KEY = "signal-field-last-seen";
+const LAST_SEEN_KEY = "agi-pulse-last-seen";
 const PAGE_SIZE = 120;
 
 const state = {
@@ -47,7 +47,6 @@ const els = {
   briefDate: document.getElementById("brief-date"),
   briefEmpty: document.getElementById("brief-empty"),
   sourceHealthList: document.getElementById("source-health-list"),
-  themeToggle: document.getElementById("theme-toggle"),
   paletteOverlay: document.getElementById("command-palette"),
   paletteTrigger: document.getElementById("palette-trigger"),
   paletteInput: document.getElementById("palette-input"),
