@@ -520,9 +520,10 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
-  gap: 22px;
-  align-items: start;
+  /* 文字58% / 图42%：图片顶满右列，避免中间留白 */
+  grid-template-columns: minmax(0, 58fr) minmax(280px, 42fr);
+  gap: 24px;
+  align-items: center;
   border-bottom: 1px solid var(--rule-dark);
   padding-bottom: 16px;
   margin-bottom: 4px;
