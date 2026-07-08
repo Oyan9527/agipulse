@@ -1,8 +1,6 @@
-import { renderSpectrum } from "./components/spectrum.js";
 import { renderFeed } from "./components/feed.js";
 import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js";
 import { initPalette } from "./components/palette.js";
-import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -17,9 +15,7 @@ const state = {
   trends: null,
   view: "curated",
   categoryFilter: null,
-  hourFilter: null,
   visibleCount: PAGE_SIZE,
-  trendDim: "day",
 };
 
 const els = {
@@ -31,17 +27,6 @@ const els = {
   leadOrig: document.getElementById("lead-orig"),
   leadReason: document.getElementById("lead-reason"),
   leadMeta: document.getElementById("lead-meta"),
-  spectrumChart: document.getElementById("spectrum-chart"),
-  spectrumLegend: document.getElementById("spectrum-legend"),
-  spectrumAxis: document.getElementById("spectrum-axis"),
-  spectrumEmpty: document.getElementById("spectrum-empty"),
-  spectrumTooltip: document.getElementById("spectrum-tooltip"),
-  statsRow: document.getElementById("stats-row"),
-  categoryMomentum: document.getElementById("category-momentum"),
-  trendKeywords: document.getElementById("trend-keywords"),
-  trendDimTabs: document.getElementById("trend-dim-tabs"),
-  trendDimNote: document.getElementById("trend-dim-note"),
-  momentumSub: document.getElementById("momentum-sub"),
   viewTabs: document.getElementById("view-tabs"),
   categoryFilters: document.getElementById("category-filters"),
   feedList: document.getElementById("feed-list"),
@@ -83,13 +68,6 @@ function currentFeedItems() {
   if (state.categoryFilter) {
     items = items.filter((it) => it.category === state.categoryFilter);
   }
-  if (state.hourFilter !== null) {
-    items = items.filter((it) => {
-      const ageHours = (Date.now() - new Date(it.published_at).getTime()) / 3600000;
-      const bucketAge = 23 - state.hourFilter;
-      return Math.floor(ageHours) === bucketAge;
-    });
-  }
   return items.slice().sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
 }
 
@@ -106,23 +84,6 @@ function renderFeedSection() {
   els.feedMore.textContent = `加载更多（还有 ${Math.max(items.length - state.visibleCount, 0)} 条）`;
 }
 
-function renderAll() {
-  renderFeedSection();
-
-  renderSpectrum({
-    chartEl: els.spectrumChart,
-    legendEl: els.spectrumLegend,
-    axisEl: els.spectrumAxis,
-    emptyEl: els.spectrumEmpty,
-    tooltipEl: els.spectrumTooltip,
-    items: state.all,
-    onSelectHour: (hourIdx) => {
-      state.hourFilter = state.hourFilter === hourIdx ? null : hourIdx;
-      state.visibleCount = PAGE_SIZE;
-      renderAll();
-    },
-  });
-}
 
 function setupTabs() {
   els.viewTabs.addEventListener("click", (e) => {
@@ -164,51 +125,6 @@ function setupFeedMore() {
   });
 }
 
-const DIM_SUBS = {
-  day: "近24h · 环比前24h",
-  week: "近7天 · 环比前7天",
-  month: "近30天 · 环比前30天",
-};
-
-function renderTrendPanels() {
-  const dims = state.trends?.dimensions || {};
-  const dim = dims[state.trendDim] || { keywords: [], category_momentum: [] };
-  els.momentumSub.textContent = DIM_SUBS[state.trendDim];
-
-  const archiveDays = state.trends?.archive_days ?? 0;
-  els.trendDimNote.textContent =
-    state.trendDim !== "day" && archiveDays < (state.trendDim === "week" ? 14 : 60)
-      ? `归档已积累 ${archiveDays} 天，环比将随时间完整`
-      : "";
-
-  renderCategoryMomentum({ el: els.categoryMomentum, momentum: dim.category_momentum, dim: state.trendDim });
-  renderKeywords({
-    el: els.trendKeywords,
-    keywords: dim.keywords,
-    dim: state.trendDim,
-    onSelect: (term) => {
-      if (paletteApi) {
-        paletteApi.open();
-        els.paletteInput.value = term;
-        els.paletteInput.dispatchEvent(new Event("input"));
-      }
-    },
-  });
-}
-
-function setupTrendDimTabs() {
-  els.trendDimTabs.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab");
-    if (!btn) return;
-    [...els.trendDimTabs.children].forEach((c) => {
-      c.classList.toggle("is-active", c === btn);
-      c.setAttribute("aria-selected", String(c === btn));
-    });
-    state.trendDim = btn.dataset.dim;
-    renderTrendPanels();
-  });
-}
-
 function formatUpdatedAt(iso) {
   if (!iso) return "暂无数据";
   const d = new Date(iso);
@@ -245,7 +161,6 @@ async function bootstrap() {
   setupTabs();
   setupCategoryFilters();
   setupFeedMore();
-  setupTrendDimTabs();
 
   const [curated, all, brief, stories, sourceStatus, trends] = await Promise.all([
     fetchJson("./data/latest-24h.json", []),
@@ -268,15 +183,7 @@ async function bootstrap() {
   els.issueNo.textContent = String(Math.max(trends?.archive_days ?? 1, 1));
 
   renderLead();
-  renderAll();
-  renderStats({
-    el: els.statsRow,
-    all24h: all,
-    curated24h: curated,
-    sourceStatus,
-    stories,
-  });
-  renderTrendPanels();
+  renderFeedSection();
   renderHotStories({ listEl: els.hotList, emptyEl: els.hotEmpty, stories: trends?.hot_stories || [] });
   renderBrief({ listEl: els.briefList, dateEl: els.briefDate, emptyEl: els.briefEmpty, brief });
   renderSourceHealth({ listEl: els.sourceHealthList, statuses: sourceStatus });

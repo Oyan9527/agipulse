@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>数据版 · 硅基脉动 AGI Pulse</title>
+<meta name="description" content="硅基脉动数据版：24 小时信号频谱、精选率与信源健康指标、日/周/月分类动量与趋势关键词。">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳转到主内容</a>
+
+<header class="masthead">
+  <div class="masthead__dateline">
+    <span id="dateline-date"></span>
+    <span class="masthead__updated" id="updated-at">读取中&hellip;</span>
+    <button class="btn-plain" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
+      <span class="kbd">⌘K</span> 检索
+    </button>
+  </div>
+
+  <h1 class="masthead__title"><a class="masthead__homelink" href="./index.html">硅基脉动</a></h1>
+
+  <div class="masthead__latin-row" aria-hidden="true">
+    <span class="masthead__rule"></span>
+    <span class="masthead__latin">AGI&nbsp;&middot;&nbsp;PULSE</span>
+    <span class="masthead__rule"></span>
+  </div>
+
+  <p class="masthead__motto">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    每小时侦测硅基世界的脉搏 · 200+ 信源 · 第 <span id="issue-no">—</span> 期
+  </p>
+</header>
+
+<nav class="pages-nav" aria-label="版面导航">
+  <a class="pages-nav__link" href="./index.html">头版</a>
+  <span class="pages-nav__sep" aria-hidden="true">·</span>
+  <a class="pages-nav__link is-active" href="./trends.html" aria-current="page">数据版</a>
+</nav>
+
+<main id="main">
+  <section class="spectrum" aria-label="过去24小时信息密度频谱">
+    <div class="spectrum__header">
+      <h2 class="spectrum__title">24H 频谱 <span class="spectrum__note">柱高按 √条数 缩放</span></h2>
+      <ul class="spectrum__legend" id="spectrum-legend"></ul>
+    </div>
+    <div class="spectrum__chart" id="spectrum-chart" role="img" aria-label="按小时和分类统计的信息密度频谱图">
+      <div class="spectrum__empty" id="spectrum-empty" hidden>今日信号平静，暂无密集时段</div>
+      <div class="spectrum__tooltip" id="spectrum-tooltip" hidden></div>
+    </div>
+    <div class="spectrum__axis" id="spectrum-axis"></div>
+  </section>
+
+  <section class="dashboard" aria-label="信号看板">
+    <div class="stats-row" id="stats-row"></div>
+    <div class="dashboard__head">
+      <h2 class="dashboard__title">趋势看板</h2>
+      <div class="tabs tabs--small" id="trend-dim-tabs" role="tablist" aria-label="趋势统计维度">
+        <button class="tab is-active" role="tab" aria-selected="true" data-dim="day">日</button>
+        <button class="tab" role="tab" aria-selected="false" data-dim="week">周</button>
+        <button class="tab" role="tab" aria-selected="false" data-dim="month">月</button>
+      </div>
+      <span class="dashboard__note" id="trend-dim-note"></span>
+    </div>
+    <div class="dash-panels">
+      <div class="dash-panel">
+        <h2 class="dash-panel__title">分类动量 <span class="dash-panel__sub" id="momentum-sub">近24h · 环比前24h</span></h2>
+        <div class="momentum" id="category-momentum"></div>
+      </div>
+      <div class="dash-panel">
+        <h2 class="dash-panel__title">趋势关键词 <span class="dash-panel__sub">按提及次数 · 点击可搜索</span></h2>
+        <div class="trend-chips" id="trend-keywords"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sitefooter">
+  <p>数据来自公开 RSS / GitHub / arXiv / Hacker News / Reddit 等信源，经两级 AI 打分与多源确认后收录。原始内容版权归各来源所有。</p>
+</footer>
+
+<div class="palette-overlay" id="command-palette" role="dialog" aria-modal="true" aria-label="命令面板搜索" hidden>
+  <div class="palette">
+    <div class="palette__input-row">
+      <span class="palette__prompt" aria-hidden="true">&gt;</span>
+      <input class="palette__input" id="palette-input" type="text" placeholder="搜索标题 / 来源 / 分类&hellip;" autocomplete="off" spellcheck="false">
+      <span class="kbd">ESC</span>
+    </div>
+    <ol class="palette__results" id="palette-results"></ol>
+  </div>
+</div>
+
+<script type="module" src="js/trends.js"></script>
+</body>
+</html>
