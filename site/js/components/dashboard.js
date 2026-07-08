@@ -28,14 +28,16 @@ export function renderStats({ el, all24h, curated24h, sourceStatus, stories }) {
   el.appendChild(statTile({ value: String(multiConfirmed), label: "多源确认", hint: "≥2 信源同报故事" }));
 }
 
-export function renderCategoryMomentum({ el, momentum }) {
+const DIM_LABELS = { day: "24小时", week: "7天", month: "30天" };
+
+export function renderCategoryMomentum({ el, momentum, dim = "day" }) {
   el.innerHTML = "";
-  const max = Math.max(1, ...momentum.map((m) => m.count_24h));
+  const max = Math.max(1, ...momentum.map((m) => m.count));
 
   momentum.forEach((m) => {
     const row = document.createElement("div");
     row.className = "momentum-row";
-    const pct = Math.max((m.count_24h / max) * 100, 2);
+    const pct = Math.max((m.count / max) * 100, 2);
     const deltaText = m.delta > 0 ? `▲${m.delta}` : m.delta < 0 ? `▼${Math.abs(m.delta)}` : "—";
     row.innerHTML = `
       <span class="momentum-row__label"></span>
@@ -47,22 +49,22 @@ export function renderCategoryMomentum({ el, momentum }) {
     const bar = row.querySelector(".momentum-row__bar");
     bar.style.width = `${pct}%`;
     bar.style.background = categoryColor(m.category);
-    row.querySelector(".momentum-row__count").textContent = String(m.count_24h);
+    row.querySelector(".momentum-row__count").textContent = String(m.count);
     row.querySelector(".momentum-row__delta").textContent = deltaText;
-    row.querySelector(".momentum-row__delta").title = `环比前一个24小时 ${m.delta >= 0 ? "+" : ""}${m.delta}`;
+    row.querySelector(".momentum-row__delta").title =
+      `环比前一个${DIM_LABELS[dim]} ${m.delta >= 0 ? "+" : ""}${m.delta}`;
     el.appendChild(row);
   });
 
-  // 保证固定顺序渲染时没数据的分类也不会漏排 —— momentum 已按 count 排序展示，此处不强制 CATEGORY_ORDER
   void CATEGORY_ORDER;
 }
 
-export function renderKeywords({ el, keywords, onSelect }) {
+export function renderKeywords({ el, keywords, dim = "day", onSelect }) {
   el.innerHTML = "";
   if (!keywords.length) {
     const p = document.createElement("p");
     p.className = "trend-empty";
-    p.textContent = "近24小时没有形成聚集的关键词。";
+    p.textContent = `近${DIM_LABELS[dim]}没有形成聚集的关键词${dim !== "day" ? "（历史归档从部署当天开始积累）" : ""}。`;
     el.appendChild(p);
     return;
   }
@@ -77,8 +79,8 @@ export function renderKeywords({ el, keywords, onSelect }) {
         : "";
     btn.innerHTML = `<span class="trend-chip__term"></span><span class="trend-chip__count"></span>${badge}`;
     btn.querySelector(".trend-chip__term").textContent = kw.term;
-    btn.querySelector(".trend-chip__count").textContent = `×${kw.count_24h}`;
-    btn.title = `近24h被 ${kw.count_24h} 条信号提及，点击搜索`;
+    btn.querySelector(".trend-chip__count").textContent = `×${kw.count}`;
+    btn.title = `近${DIM_LABELS[dim]}被 ${kw.count} 条信号提及，点击搜索`;
     btn.addEventListener("click", () => onSelect(kw.term));
     el.appendChild(btn);
   });

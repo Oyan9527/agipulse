@@ -1,8 +1,10 @@
 # 信号场 · AI Signal Field
 
-一个零后端、零服务器成本的 AI 行业信息聚合网站。GitHub Actions 定时抓取 40+ 公开信源 → DeepSeek 两级打分/去重/故事合并/趋势分析 → 静态 JSON → GitHub Pages 直接托管，前端运行时 fetch 数据渲染，没有任何构建步骤。
+一个零后端、零服务器成本的 AI 行业信息聚合网站。GitHub Actions 定时抓取 **200+ 公开信源** → DeepSeek 两级打分/中文翻译/去重/故事合并/趋势分析 → 静态 JSON → GitHub Pages 直接托管，前端运行时 fetch 数据渲染，没有任何构建步骤。
 
-功能：24H 信息密度频谱、数据看板（信号量/精选率/信源健康/多源确认）、分类动量、趋势关键词、热点雷达（多源确认×新鲜度）、今日简报、命令面板搜索（Ctrl/Cmd+K）、深浅双主题。
+功能：24H 信息密度频谱（√缩放）、数据看板（信号量/精选率/信源健康/多源确认）、**日/周/月三维度**分类动量与趋势关键词、热点雷达（多源确认×新鲜度）、今日简报、英文标题自动附中文译文、精选分类配额（论文≤10、开源项目保底5）、命令面板搜索（Ctrl/Cmd+K）。界面为浅色"纸面示波器"设计。
+
+信源构成：52 个官方博客/研究机构/高信号个人/科技媒体/中文源 RSS + 111 个重点 GitHub 仓库 releases + 19 个 arXiv 分类 + 20 个 Reddit 社区 + 5 组 Hacker News 主题查询。
 
 对标 [AI News Radar](https://learnprompt.github.io/ai-news-radar/)、[AIHOT](https://aihot.virxact.com/)、[AGI Hunt](https://agihunt.info/) 三个产品的信息覆盖范围与设计思路，细节见 `.claude/plans/` 下的建站方案文档。
 
@@ -86,7 +88,7 @@ git push -u origin main
 | Name | Value | 必需？ |
 |---|---|---|
 | `DEEPSEEK_API_KEY` | 你在 [platform.deepseek.com](https://platform.deepseek.com/) 创建的 API Key（`sk-` 开头） | ✅ 必需，没有它流水线会直接报错 |
-| `GH_PAT` | 一个勾选了 `public_repo` 权限的 [Personal Access Token](https://github.com/settings/tokens) | 可选。把 GitHub API 限额从 60次/小时 提升到 5000次/小时；不设也能跑 |
+| `GH_PAT` | 一个勾选了 `public_repo` 权限的 [Personal Access Token](https://github.com/settings/tokens) | ⚠️ 强烈建议。注册表里有 111 个 GitHub 仓库源，匿名限额只有 60 次/小时，不配 PAT 大部分 GitHub 源会被限流跳过（其他源不受影响）；配上后限额 5000 次/小时 |
 
 ### 第 4 步：确认 Actions 权限（重要，最容易漏）
 
@@ -128,7 +130,8 @@ git push -u origin main
 
 - workflow 每小时整点自动跑，无需人工干预；每次有新数据才会产生提交，没有新数据就静默跳过。
 - **加/删信源**：改 `config/sources.yaml` 后 push 到 `main`，下一次运行生效。
-- **调打分权重/门槛**：改 `config/weights.yaml`。
+- **调打分权重/门槛/分类配额**：改 `config/weights.yaml`（`category_quotas` 控制精选里各分类的上限/保底，当前：论文研究最多10条、开源项目保底5条）。
+- **周/月趋势**：依赖 `site/data/archive/` 下的每日聚合日档（由流水线自动生成、自动清理62天前的旧档）。部署首日周/月环比会显示"新"，随归档积累自动完整，无需任何操作。
 - **换 DeepSeek Key**：直接在 Settings → Secrets 里更新 `DEEPSEEK_API_KEY` 的值，即时生效。
 - **调抓取频率**：改 `.github/workflows/pipeline.yml` 里的 cron（比如 `"0 */2 * * *"` 是每2小时一次，成本减半）。
 

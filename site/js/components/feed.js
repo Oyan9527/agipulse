@@ -73,6 +73,13 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
     titleEl.textContent = item.title;
     titleEl.href = item.url;
 
+    // 英文标题附中文译文（title_zh 由 DeepSeek 打分调用一并生成；中文标题无此字段）
+    const titleZhEl = node.querySelector(".feed-row__title-zh");
+    if (item.title_zh) {
+      titleZhEl.textContent = item.title_zh;
+      titleZhEl.hidden = false;
+    }
+
     const reasonEl = node.querySelector(".feed-row__reason");
     reasonEl.textContent = item.reason_zh || "";
 

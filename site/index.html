@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,15 +28,12 @@
     <button class="btn-icon" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
       <span class="kbd">⌘K</span> 搜索
     </button>
-    <button class="btn-icon" id="theme-toggle" type="button" aria-pressed="false">
-      <span class="theme-toggle__label">日间读数</span>
-    </button>
   </div>
 </header>
 
 <section class="spectrum" aria-label="过去24小时信息密度频谱">
   <div class="spectrum__header">
-    <h2 class="spectrum__title">24H 频谱</h2>
+    <h2 class="spectrum__title">24H 频谱 <span class="spectrum__note">柱高按 √条数 缩放</span></h2>
     <ul class="spectrum__legend" id="spectrum-legend"></ul>
   </div>
   <div class="spectrum__chart" id="spectrum-chart" role="img" aria-label="按小时和分类统计的信息密度频谱图">
@@ -48,9 +45,18 @@
 
 <section class="dashboard" aria-label="信号看板">
   <div class="stats-row" id="stats-row"></div>
+  <div class="dashboard__head">
+    <h2 class="dashboard__title">趋势看板</h2>
+    <div class="tabs tabs--small" id="trend-dim-tabs" role="tablist" aria-label="趋势统计维度">
+      <button class="tab is-active" role="tab" aria-selected="true" data-dim="day">日</button>
+      <button class="tab" role="tab" aria-selected="false" data-dim="week">周</button>
+      <button class="tab" role="tab" aria-selected="false" data-dim="month">月</button>
+    </div>
+    <span class="dashboard__note" id="trend-dim-note"></span>
+  </div>
   <div class="dash-panels">
     <div class="dash-panel">
-      <h2 class="dash-panel__title">分类动量 <span class="dash-panel__sub">近24h · 环比前24h</span></h2>
+      <h2 class="dash-panel__title">分类动量 <span class="dash-panel__sub" id="momentum-sub">近24h · 环比前24h</span></h2>
       <div class="momentum" id="category-momentum"></div>
     </div>
     <div class="dash-panel">
@@ -119,6 +125,7 @@
         <span class="feed-row__score" title="加权分"></span>
       </div>
       <a class="feed-row__title" target="_blank" rel="noopener noreferrer"></a>
+      <p class="feed-row__title-zh" hidden></p>
       <p class="feed-row__reason"></p>
       <div class="feed-row__expand" hidden>
         <p class="feed-row__expand-label">来源：</p>

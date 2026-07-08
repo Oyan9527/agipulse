@@ -11,6 +11,13 @@ quality_gate:
   # 命中任一条件即可进入精选流（latest-24h.json / daily-brief.json）
   # 否则仅进入完整流（latest-24h-all.json）
 
+# 精选流分类配额：max=该分类精选上限(按分数保最高)；min=保底数量(不足时从未过门槛条目按分数补足)
+category_quotas:
+  论文研究:
+    max: 10
+  开源项目:
+    min: 5
+
 story_merge:
   window_hours: 36
   similarity_threshold: 0.55   # TF-IDF cosine 相似度阈值

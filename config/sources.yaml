@@ -205,6 +205,40 @@ sources:
     status: verify
     notes: "实测返回200但content-type非feed格式，需确认feedparser能否解析；不能则寻找替代端点"
 
+  # ---------------- 大厂研究/云厂商 第二批（2026-07-08 批量实测通过，紧凑格式） ----------------
+  - {id: apple-ml, type: rss, url: "https://machinelearning.apple.com/rss.xml", category_hint: [论文研究, 模型发布], authority_weight: 0.85, poll_minutes: 240, status: confirmed}
+  - {id: amazon-science, type: rss, url: "https://www.amazon.science/index.rss", category_hint: [论文研究, 行业动态], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: google-cloud-ai, type: rss, url: "https://cloudblog.withgoogle.com/products/ai-machine-learning/rss/", category_hint: [产品发布, 技巧与观点], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: pytorch-blog, type: rss, url: "https://pytorch.org/blog/feed.xml", category_hint: [开源项目, 技巧与观点], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: together-blog, type: rss, url: "https://www.together.ai/blog/rss.xml", category_hint: [产品发布, 技巧与观点], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: qdrant-blog, type: rss, url: "https://qdrant.tech/blog/index.xml", category_hint: [开源项目, 技巧与观点], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: weaviate-blog, type: rss, url: "https://weaviate.io/blog/rss.xml", category_hint: [开源项目, 技巧与观点], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+
+  # ---------------- 学术机构 ----------------
+  - {id: bair-berkeley, type: rss, url: "https://bair.berkeley.edu/blog/feed.xml", category_hint: [论文研究], authority_weight: 0.85, poll_minutes: 240, status: confirmed}
+  - {id: mit-news-ai, type: rss, url: "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml", category_hint: [论文研究, 行业动态], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: cmu-ml-blog, type: rss, url: "https://blog.ml.cmu.edu/feed/", category_hint: [论文研究], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: eleuther, type: rss, url: "https://blog.eleuther.ai/index.xml", category_hint: [论文研究, 开源项目], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: the-gradient, type: rss, url: "https://thegradient.pub/rss/", category_hint: [技巧与观点, 论文研究], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+
+  # ---------------- 高信号个人/Newsletter 第二批 ----------------
+  - {id: karpathy, type: rss, url: "https://karpathy.github.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.85, poll_minutes: 240, status: confirmed}
+  - {id: chiphuyen, type: rss, url: "https://huyenchip.com/feed.xml", category_hint: [技巧与观点], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: fastai, type: rss, url: "https://www.fast.ai/index.xml", category_hint: [技巧与观点, 开源项目], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: answerai, type: rss, url: "https://www.answer.ai/index.xml", category_hint: [技巧与观点, 开源项目], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: raschka, type: rss, url: "https://magazine.sebastianraschka.com/feed", category_hint: [技巧与观点, 论文研究], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: latent-space, type: rss, url: "https://www.latent.space/feed", category_hint: [技巧与观点, 行业动态], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: import-ai, type: rss, url: "https://importai.substack.com/feed", category_hint: [行业动态, 技巧与观点], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: semianalysis, type: rss, url: "https://www.semianalysis.com/feed", category_hint: [行业动态], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
+  - {id: zvi, type: rss, url: "https://thezvi.substack.com/feed", category_hint: [技巧与观点, 行业动态], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gary-marcus, type: rss, url: "https://garymarcus.substack.com/feed", category_hint: [技巧与观点, 行业动态], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+
+  # ---------------- 中文源 第二批 ----------------
+  - {id: ruanyifeng, type: rss, url: "https://www.ruanyifeng.com/blog/atom.xml", category_hint: [技巧与观点], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: ifanr, type: rss, url: "https://www.ifanr.com/feed", category_hint: [产品发布, 行业动态], authority_weight: 0.55, poll_minutes: 120, status: confirmed}
+  - {id: 36kr, type: rss, url: "https://36kr.com/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 120, status: confirmed}
+  - {id: baoyu, type: rss, url: "https://baoyu.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+
   # ---------------- GitHub 项目动态（releases） ----------------
   - id: gh-transformers
     type: github_releases
@@ -302,6 +336,118 @@ sources:
     poll_minutes: 120
     status: confirmed
 
+  # ---- GitHub releases 批量扩充（API 模式已验证，紧凑格式；建议配 GH_PAT 提升限额） ----
+  # 推理/部署
+  - {id: gh-tgi, type: github_releases, repo: huggingface/text-generation-inference, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-tensorrt-llm, type: github_releases, repo: NVIDIA/TensorRT-LLM, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-mlc-llm, type: github_releases, repo: mlc-ai/mlc-llm, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-exllamav2, type: github_releases, repo: turboderp-org/exllamav2, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-koboldcpp, type: github_releases, repo: LostRuins/koboldcpp, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-lmdeploy, type: github_releases, repo: InternLM/lmdeploy, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-openllm, type: github_releases, repo: bentoml/OpenLLM, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-mlx, type: github_releases, repo: ml-explore/mlx, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  # 训练/微调
+  - {id: gh-deepspeed, type: github_releases, repo: microsoft/DeepSpeed, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-megatron, type: github_releases, repo: NVIDIA/Megatron-LM, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-colossalai, type: github_releases, repo: hpcaitech/ColossalAI, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-axolotl, type: github_releases, repo: axolotl-ai-cloud/axolotl, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-unsloth, type: github_releases, repo: unslothai/unsloth, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-llama-factory, type: github_releases, repo: hiyouga/LLaMA-Factory, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-litgpt, type: github_releases, repo: Lightning-AI/litgpt, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-torchtune, type: github_releases, repo: pytorch/torchtune, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-peft, type: github_releases, repo: huggingface/peft, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-trl, type: github_releases, repo: huggingface/trl, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-accelerate, type: github_releases, repo: huggingface/accelerate, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  # 基础框架
+  - {id: gh-tensorflow, type: github_releases, repo: tensorflow/tensorflow, category_hint: [开源项目], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: gh-jax, type: github_releases, repo: jax-ml/jax, category_hint: [开源项目], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: gh-keras, type: github_releases, repo: keras-team/keras, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-diffusers, type: github_releases, repo: huggingface/diffusers, category_hint: [开源项目], authority_weight: 0.75, poll_minutes: 120, status: confirmed}
+  - {id: gh-datasets, type: github_releases, repo: huggingface/datasets, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-onnxruntime, type: github_releases, repo: microsoft/onnxruntime, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-openvino, type: github_releases, repo: openvinotoolkit/openvino, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-triton, type: github_releases, repo: triton-lang/triton, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  # Agent/编排
+  - {id: gh-langgraph, type: github_releases, repo: langchain-ai/langgraph, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-crewai, type: github_releases, repo: crewAIInc/crewAI, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-metagpt, type: github_releases, repo: geekan/MetaGPT, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-semantic-kernel, type: github_releases, repo: microsoft/semantic-kernel, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-letta, type: github_releases, repo: letta-ai/letta, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-autogpt, type: github_releases, repo: Significant-Gravitas/AutoGPT, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-openhands, type: github_releases, repo: All-Hands-AI/OpenHands, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-swe-agent, type: github_releases, repo: SWE-agent/SWE-agent, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-aider, type: github_releases, repo: Aider-AI/aider, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-cline, type: github_releases, repo: cline/cline, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-continue, type: github_releases, repo: continuedev/continue, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-tabby, type: github_releases, repo: TabbyML/tabby, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-dspy, type: github_releases, repo: stanfordnlp/dspy, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 120, status: confirmed}
+  - {id: gh-litellm, type: github_releases, repo: BerriAI/litellm, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-guidance, type: github_releases, repo: guidance-ai/guidance, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-outlines, type: github_releases, repo: dottxt-ai/outlines, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-instructor, type: github_releases, repo: jxnl/instructor, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  # 应用/UI
+  - {id: gh-lobe-chat, type: github_releases, repo: lobehub/lobe-chat, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-anything-llm, type: github_releases, repo: Mintplex-Labs/anything-llm, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-jan, type: github_releases, repo: janhq/jan, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-librechat, type: github_releases, repo: danny-avila/LibreChat, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-textgen-webui, type: github_releases, repo: oobabooga/text-generation-webui, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-sd-webui, type: github_releases, repo: AUTOMATIC1111/stable-diffusion-webui, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-invokeai, type: github_releases, repo: invoke-ai/InvokeAI, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-fooocus, type: github_releases, repo: lllyasviel/Fooocus, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  # 语音/音频
+  - {id: gh-whisper, type: github_releases, repo: openai/whisper, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-whispercpp, type: github_releases, repo: ggml-org/whisper.cpp, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-faster-whisper, type: github_releases, repo: SYSTRAN/faster-whisper, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-coqui-tts, type: github_releases, repo: coqui-ai/TTS, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-chattts, type: github_releases, repo: 2noise/ChatTTS, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-fish-speech, type: github_releases, repo: fishaudio/fish-speech, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-openvoice, type: github_releases, repo: myshell-ai/OpenVoice, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  # 视觉
+  - {id: gh-ultralytics, type: github_releases, repo: ultralytics/ultralytics, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-sam, type: github_releases, repo: facebookresearch/segment-anything, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-mmdetection, type: github_releases, repo: open-mmlab/mmdetection, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-supervision, type: github_releases, repo: roboflow/supervision, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-timm, type: github_releases, repo: huggingface/timm, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-open-clip, type: github_releases, repo: mlfoundations/open_clip, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  # RAG/数据
+  - {id: gh-ragflow, type: github_releases, repo: infiniflow/ragflow, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-onyx, type: github_releases, repo: onyx-dot-app/onyx, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-quivr, type: github_releases, repo: QuivrHQ/quivr, category_hint: [开源项目], authority_weight: 0.55, poll_minutes: 240, status: confirmed}
+  - {id: gh-mem0, type: github_releases, repo: mem0ai/mem0, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-chroma, type: github_releases, repo: chroma-core/chroma, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-qdrant, type: github_releases, repo: qdrant/qdrant, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-weaviate, type: github_releases, repo: weaviate/weaviate, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-milvus, type: github_releases, repo: milvus-io/milvus, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-faiss, type: github_releases, repo: facebookresearch/faiss, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-pgvector, type: github_releases, repo: pgvector/pgvector, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-sentence-transformers, type: github_releases, repo: UKPLab/sentence-transformers, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-flagembedding, type: github_releases, repo: FlagOpen/FlagEmbedding, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-unstructured, type: github_releases, repo: Unstructured-IO/unstructured, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-docling, type: github_releases, repo: docling-project/docling, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-markitdown, type: github_releases, repo: microsoft/markitdown, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-firecrawl, type: github_releases, repo: mendableai/firecrawl, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-crawl4ai, type: github_releases, repo: unclecode/crawl4ai, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  # 官方 SDK / CLI 编码智能体
+  - {id: gh-openai-python, type: github_releases, repo: openai/openai-python, category_hint: [开源项目, 产品发布], authority_weight: 0.8, poll_minutes: 120, status: confirmed}
+  - {id: gh-openai-node, type: github_releases, repo: openai/openai-node, category_hint: [开源项目, 产品发布], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: gh-anthropic-sdk, type: github_releases, repo: anthropics/anthropic-sdk-python, category_hint: [开源项目, 产品发布], authority_weight: 0.8, poll_minutes: 120, status: confirmed}
+  - {id: gh-claude-code, type: github_releases, repo: anthropics/claude-code, category_hint: [开源项目, 产品发布], authority_weight: 0.8, poll_minutes: 120, status: confirmed}
+  - {id: gh-codex, type: github_releases, repo: openai/codex, category_hint: [开源项目, 产品发布], authority_weight: 0.8, poll_minutes: 120, status: confirmed}
+  - {id: gh-gemini-cli, type: github_releases, repo: google-gemini/gemini-cli, category_hint: [开源项目, 产品发布], authority_weight: 0.75, poll_minutes: 120, status: confirmed}
+  - {id: gh-opencode, type: github_releases, repo: sst/opencode, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}
+  - {id: gh-mcp-servers, type: github_releases, repo: modelcontextprotocol/servers, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-mcp-python, type: github_releases, repo: modelcontextprotocol/python-sdk, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  # 强化学习/机器人
+  - {id: gh-lerobot, type: github_releases, repo: huggingface/lerobot, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-gymnasium, type: github_releases, repo: Farama-Foundation/Gymnasium, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-sb3, type: github_releases, repo: DLR-RM/stable-baselines3, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-mujoco, type: github_releases, repo: google-deepmind/mujoco, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  # 评测/可观测
+  - {id: gh-lm-eval, type: github_releases, repo: EleutherAI/lm-evaluation-harness, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
+  - {id: gh-ragas, type: github_releases, repo: explodinggradients/ragas, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: gh-promptfoo, type: github_releases, repo: promptfoo/promptfoo, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: gh-langfuse, type: github_releases, repo: langfuse/langfuse, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+
   # ---------------- 论文 ----------------
   # 实测 2026-07-06(周日) 返回 0 条属正常：arXiv 官方 skipDays 包含周六日不出新提交，
   # 这正是"冷清日"应有的行为，前端对应区块应自然收起而非报错。
@@ -345,6 +491,22 @@ sources:
     poll_minutes: 120
     status: confirmed
 
+  # ---- arXiv 分类批量扩充（官方端点模式一致） ----
+  - {id: arxiv-cs-ne, type: arxiv, category: cs.NE, category_hint: [论文研究], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-ir, type: arxiv, category: cs.IR, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-hc, type: arxiv, category: cs.HC, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-se, type: arxiv, category: cs.SE, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-cr, type: arxiv, category: cs.CR, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-dc, type: arxiv, category: cs.DC, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-ma, type: arxiv, category: cs.MA, category_hint: [论文研究], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-sd, type: arxiv, category: cs.SD, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-mm, type: arxiv, category: cs.MM, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-cs-cy, type: arxiv, category: cs.CY, category_hint: [论文研究], authority_weight: 0.55, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-stat-ml, type: arxiv, category: stat.ML, category_hint: [论文研究], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-eess-as, type: arxiv, category: eess.AS, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-eess-iv, type: arxiv, category: eess.IV, category_hint: [论文研究], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
+  - {id: arxiv-eess-sy, type: arxiv, category: eess.SY, category_hint: [论文研究], authority_weight: 0.55, poll_minutes: 240, status: confirmed}
+
   # ---------------- 社区热点 ----------------
   - id: hn-ai
     type: hn_algolia
@@ -387,6 +549,30 @@ sources:
     authority_weight: 0.5
     poll_minutes: 60
     status: confirmed
+
+  # ---- Reddit 批量扩充（.rss 模式一致；限流由重试+跨源容错兜底） ----
+  - {id: reddit-stablediffusion, type: reddit, subreddit: StableDiffusion, category_hint: [开源项目, 技巧与观点], authority_weight: 0.5, poll_minutes: 120, status: confirmed}
+  - {id: reddit-comfyui, type: reddit, subreddit: comfyui, category_hint: [开源项目, 技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-ollama, type: reddit, subreddit: ollama, category_hint: [开源项目, 技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-mlops, type: reddit, subreddit: mlops, category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-computervision, type: reddit, subreddit: computervision, category_hint: [论文研究, 技巧与观点], authority_weight: 0.5, poll_minutes: 240, status: confirmed}
+  - {id: reddit-rl, type: reddit, subreddit: reinforcementlearning, category_hint: [论文研究], authority_weight: 0.5, poll_minutes: 240, status: confirmed}
+  - {id: reddit-langchain, type: reddit, subreddit: LangChain, category_hint: [开源项目, 技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-claudeai, type: reddit, subreddit: ClaudeAI, category_hint: [产品发布, 技巧与观点], authority_weight: 0.5, poll_minutes: 120, status: confirmed}
+  - {id: reddit-chatgptcoding, type: reddit, subreddit: ChatGPTCoding, category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-artificial, type: reddit, subreddit: artificial, category_hint: [行业动态], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-agi, type: reddit, subreddit: agi, category_hint: [行业动态, 技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-llmdevs, type: reddit, subreddit: LLMDevs, category_hint: [技巧与观点, 开源项目], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-rag, type: reddit, subreddit: Rag, category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-promptengineering, type: reddit, subreddit: PromptEngineering, category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-huggingface, type: reddit, subreddit: huggingface, category_hint: [开源项目], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: reddit-geminiai, type: reddit, subreddit: GoogleGeminiAI, category_hint: [产品发布, 技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+
+  # ---- Hacker News 多主题查询 ----
+  - {id: hn-anthropic, type: hn_algolia, query: "anthropic OR claude", category_hint: [行业动态, 产品发布], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: hn-openai, type: hn_algolia, query: "openai OR chatgpt OR gpt-5", category_hint: [行业动态, 产品发布], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: hn-gemini, type: hn_algolia, query: "gemini OR deepmind", category_hint: [行业动态, 产品发布], authority_weight: 0.6, poll_minutes: 120, status: confirmed}
+  - {id: hn-openweights, type: hn_algolia, query: "\"open source\" model weights", category_hint: [开源项目, 模型发布], authority_weight: 0.55, poll_minutes: 120, status: confirmed}
 
   # ---------------- 可选 / Phase 3 补充（默认禁用，需单独部署桥接服务后启用） ----------------
   - id: rsshub-x-bridge

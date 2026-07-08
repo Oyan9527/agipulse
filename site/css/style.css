@@ -1,20 +1,21 @@
 /* ==========================================================================
-   信号场 · Design tokens — 示波器/频谱仪美学
-   双通道配色（琥珀=主信号/青=副通道），呼应"信号 vs 噪音"的产品内核
+   信号场 · Design tokens — "纸面示波器"日间读数美学（仅浅色）
+   双通道配色（琥珀=主信号/青=副通道），呼应"信号 vs 噪音"的产品内核；
+   强调色为深化版本，保证白底可读性。
    ========================================================================== */
 
 :root {
-  --ink: #0b0e14;
-  --panel: #131826;
-  --panel-raised: #1a2032;
-  --line: #232a3d;
-  --amber: #ffb454;
-  --amber-dim: #8a6530;
-  --cyan: #4fd8ea;
-  --cyan-dim: #2f6e78;
-  --mist: #8b93a7;
-  --paper: #eceef3;
-  --danger: #ef6a6a;
+  --ink: #f2f3f7;          /* 页面底色：微冷的仪表纸面灰 */
+  --panel: #ffffff;
+  --panel-raised: #ffffff;
+  --line: #dfe3ec;
+  --amber: #b3690f;        /* 主信号色（深琥珀） */
+  --amber-dim: #d9a55c;
+  --cyan: #0e7f93;         /* 副通道色（深青） */
+  --cyan-dim: #7ec4cf;
+  --mist: #5d6578;
+  --paper: #191c24;
+  --danger: #c94747;
 
   --font-display: "Space Grotesk", "PingFang SC", "HarmonyOS Sans", "Microsoft YaHei", sans-serif;
   --font-body: "PingFang SC", "HarmonyOS Sans", "Microsoft YaHei", "Space Grotesk", sans-serif;
@@ -23,29 +24,20 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme="light"] {
-  --ink: #f4f5f8;
-  --panel: #ffffff;
-  --panel-raised: #ffffff;
-  --line: #dde1ea;
-  /* 浅色模式强调色加深，保证在白底上的可读性（深色模式的荧光色在纸面上会发灰发飘） */
-  --amber: #b3690f;
-  --amber-dim: #d9a55c;
-  --cyan: #0e7f93;
-  --cyan-dim: #7ec4cf;
-  --mist: #656d80;
-  --paper: #14161c;
+  --content-max: 1560px;
 }
 
 * { box-sizing: border-box; }
 
 [hidden] { display: none !important; }
 
-html { color-scheme: dark; }
-[data-theme="light"] html,
-html[data-theme="light"] { color-scheme: light; }
+html { color-scheme: light; }
+
+/* 宽屏下内容收拢居中，避免超宽行影响可读性 */
+.topbar, .spectrum, .dashboard, .layout, .sitefooter {
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
 
 body {
   margin: 0;
@@ -202,6 +194,14 @@ a { color: inherit; }
   margin: 0;
 }
 
+.spectrum__note {
+  letter-spacing: 0;
+  font-size: 0.65rem;
+  color: var(--mist);
+  opacity: 0.75;
+  margin-left: 8px;
+}
+
 .spectrum__legend {
   display: flex;
   gap: 14px;
@@ -303,6 +303,28 @@ a { color: inherit; }
   flex-direction: column;
   gap: 16px;
 }
+
+.dashboard__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dashboard__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard__note {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--mist);
+}
+
+.tabs--small .tab { padding: 4px 12px; font-size: 0.76rem; }
 
 .stats-row {
   display: grid;
@@ -604,17 +626,37 @@ a { color: inherit; }
 .feed-row__title {
   display: block;
   font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 0.98rem;
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.45;
   color: var(--paper);
   text-decoration: none;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 .feed-row__title:hover { color: var(--amber); }
+
+/* 英文标题的中文译文：以"译"字标记，正文色保证可读性 */
+.feed-row__title-zh {
+  margin: 0 0 3px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--paper);
+}
+.feed-row__title-zh::before {
+  content: "译";
+  font-size: 0.62rem;
+  color: var(--cyan);
+  border: 1px solid var(--cyan-dim);
+  border-radius: 3px;
+  padding: 0 4px;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
 
 .feed-row__reason {
   margin: 0;
   font-size: 0.82rem;
+  line-height: 1.5;
   color: var(--mist);
 }
 

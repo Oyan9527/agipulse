@@ -26,7 +26,11 @@ function orderedEntries(bucket) {
 
 export function renderSpectrum({ chartEl, legendEl, axisEl, emptyEl, tooltipEl, items, onSelectHour }) {
   const buckets = bucketItems(items);
-  const maxTotal = Math.max(1, ...buckets.map((b) => Object.values(b).reduce((a, c) => a + c, 0)));
+  // √缩放：arXiv 等批量投放源会造成单小时尖峰，线性刻度下其他时段全被压扁；
+  // 平方根缩放保留量级感又能看清低谷时段的结构，页面上有明确标注。
+  const sqrtMax = Math.sqrt(
+    Math.max(1, ...buckets.map((b) => Object.values(b).reduce((a, c) => a + c, 0)))
+  );
   const total = buckets.reduce((sum, b) => sum + Object.values(b).reduce((a, c) => a + c, 0), 0);
 
   emptyEl.hidden = total > 0;
@@ -46,10 +50,12 @@ export function renderSpectrum({ chartEl, legendEl, axisEl, emptyEl, tooltipEl, 
     group.setAttribute("aria-label", `${hoursAgo} 小时前，共 ${bucketTotal} 条`);
 
     const entries = orderedEntries(bucket);
+    const groupHeightPct = bucketTotal ? (Math.sqrt(bucketTotal) / sqrtMax) * 100 : 0;
     entries.forEach(([cat, count]) => {
       const seg = document.createElement("div");
       seg.className = "spectrum__segment";
-      const heightPct = (count / maxTotal) * 100;
+      // 柱子总高按√缩放，柱内各分类分段按原始占比切分
+      const heightPct = groupHeightPct * (count / bucketTotal);
       seg.style.height = `${Math.max(heightPct, 2)}%`;
       seg.style.background = categoryColor(cat);
       seg.style.animationDelay = `${hourIdx * 12}ms`;

@@ -5,7 +5,6 @@ import { initPalette } from "./components/palette.js";
 import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
-const THEME_KEY = "signal-field-theme";
 const LAST_SEEN_KEY = "signal-field-last-seen";
 const PAGE_SIZE = 120;
 
@@ -20,6 +19,7 @@ const state = {
   categoryFilter: null,
   hourFilter: null,
   visibleCount: PAGE_SIZE,
+  trendDim: "day",
 };
 
 const els = {
@@ -32,6 +32,9 @@ const els = {
   statsRow: document.getElementById("stats-row"),
   categoryMomentum: document.getElementById("category-momentum"),
   trendKeywords: document.getElementById("trend-keywords"),
+  trendDimTabs: document.getElementById("trend-dim-tabs"),
+  trendDimNote: document.getElementById("trend-dim-note"),
+  momentumSub: document.getElementById("momentum-sub"),
   viewTabs: document.getElementById("view-tabs"),
   categoryFilters: document.getElementById("category-filters"),
   feedList: document.getElementById("feed-list"),
@@ -150,23 +153,49 @@ function setupFeedMore() {
   });
 }
 
-function setupTheme() {
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved) document.documentElement.setAttribute("data-theme", saved);
-  updateThemeLabel();
+const DIM_SUBS = {
+  day: "近24h · 环比前24h",
+  week: "近7天 · 环比前7天",
+  month: "近30天 · 环比前30天",
+};
 
-  els.themeToggle.addEventListener("click", () => {
-    const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem(THEME_KEY, next);
-    updateThemeLabel();
+function renderTrendPanels() {
+  const dims = state.trends?.dimensions || {};
+  const dim = dims[state.trendDim] || { keywords: [], category_momentum: [] };
+  els.momentumSub.textContent = DIM_SUBS[state.trendDim];
+
+  const archiveDays = state.trends?.archive_days ?? 0;
+  els.trendDimNote.textContent =
+    state.trendDim !== "day" && archiveDays < (state.trendDim === "week" ? 14 : 60)
+      ? `归档已积累 ${archiveDays} 天，环比将随时间完整`
+      : "";
+
+  renderCategoryMomentum({ el: els.categoryMomentum, momentum: dim.category_momentum, dim: state.trendDim });
+  renderKeywords({
+    el: els.trendKeywords,
+    keywords: dim.keywords,
+    dim: state.trendDim,
+    onSelect: (term) => {
+      if (paletteApi) {
+        paletteApi.open();
+        els.paletteInput.value = term;
+        els.paletteInput.dispatchEvent(new Event("input"));
+      }
+    },
   });
 }
 
-function updateThemeLabel() {
-  const isLight = document.documentElement.getAttribute("data-theme") === "light";
-  els.themeToggle.querySelector(".theme-toggle__label").textContent = isLight ? "夜间读数" : "日间读数";
-  els.themeToggle.setAttribute("aria-pressed", String(isLight));
+function setupTrendDimTabs() {
+  els.trendDimTabs.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    [...els.trendDimTabs.children].forEach((c) => {
+      c.classList.toggle("is-active", c === btn);
+      c.setAttribute("aria-selected", String(c === btn));
+    });
+    state.trendDim = btn.dataset.dim;
+    renderTrendPanels();
+  });
 }
 
 function formatUpdatedAt(iso) {
@@ -179,7 +208,7 @@ async function bootstrap() {
   setupTabs();
   setupCategoryFilters();
   setupFeedMore();
-  setupTheme();
+  setupTrendDimTabs();
 
   const [curated, all, brief, stories, sourceStatus, trends] = await Promise.all([
     fetchJson("./data/latest-24h.json", []),
@@ -207,21 +236,7 @@ async function bootstrap() {
     sourceStatus,
     stories,
   });
-  renderCategoryMomentum({
-    el: els.categoryMomentum,
-    momentum: trends?.category_momentum || [],
-  });
-  renderKeywords({
-    el: els.trendKeywords,
-    keywords: trends?.keywords || [],
-    onSelect: (term) => {
-      if (paletteApi) {
-        paletteApi.open();
-        els.paletteInput.value = term;
-        els.paletteInput.dispatchEvent(new Event("input"));
-      }
-    },
-  });
+  renderTrendPanels();
   renderHotStories({ listEl: els.hotList, emptyEl: els.hotEmpty, stories: trends?.hot_stories || [] });
   renderBrief({ listEl: els.briefList, dateEl: els.briefDate, emptyEl: els.briefEmpty, brief });
   renderSourceHealth({ listEl: els.sourceHealthList, statuses: sourceStatus });

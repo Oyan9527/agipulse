@@ -41,15 +41,15 @@ def to_iso(dt):
     return dt.astimezone(timezone.utc).isoformat()
 
 
-_session = None
+_local = __import__("threading").local()
 
 
 def get_session():
-    global _session
-    if _session is None:
-        _session = requests.Session()
-        _session.headers.update({"User-Agent": USER_AGENT})
-    return _session
+    # 每线程一个 Session：requests.Session 并非严格线程安全，抓取器在线程池里并发运行
+    if getattr(_local, "session", None) is None:
+        _local.session = requests.Session()
+        _local.session.headers.update({"User-Agent": USER_AGENT})
+    return _local.session
 
 
 def env(name, default=None):

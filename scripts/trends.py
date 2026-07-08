@@ -66,12 +66,8 @@ def _parse_iso(s):
     return datetime.fromisoformat(s)
 
 
-def build_trends(items, stories, weights_config):
-    """items: 已打分合并的条目（48h窗口）；stories: 故事列表。"""
-    now = datetime.now(timezone.utc)
-    day = timedelta(hours=24)
-
-    # ---- 1. 热点故事：多源确认 × 新鲜度衰减 ----
+def _build_hot_stories(items, stories, weights_config, now):
+    """热点故事：多源确认 × 新鲜度衰减 × 最高分。"""
     decay_hours = weights_config.get("freshness", {}).get("decay_window_hours", 48)
     items_by_id = {it["id"]: it for it in items}
     hot = []
@@ -91,6 +87,7 @@ def build_trends(items, stories, weights_config):
             {
                 "story_id": story["story_id"],
                 "title": story["canonical_title"],
+                "title_zh": canonical.get("title_zh"),
                 "url": canonical.get("url"),
                 "category": story.get("category"),
                 "source_count": story["source_count"],
@@ -100,67 +97,109 @@ def build_trends(items, stories, weights_config):
             }
         )
     hot.sort(key=lambda x: x["heat"], reverse=True)
-    hot_stories = hot[:10]
+    return hot[:10]
 
-    # ---- 2. 关键词动量：近24h vs 前24h ----
-    recent_counts, prior_counts = Counter(), Counter()
+
+def _dimension_from_window(items, now, window, keyword_samples_limit=3):
+    """day 维度：直接从当前处理窗口的条目算 近window vs 前window。"""
+    recent_kw, prior_kw = Counter(), Counter()
+    recent_cat, prior_cat = Counter(), Counter()
     keyword_samples = defaultdict(list)
-    for it in items:
-        published = _parse_iso(it["published_at"])
-        age = now - published
-        kws = _extract_keywords(it["title"])
-        bucket = recent_counts if age <= day else prior_counts
-        for kw in kws:
-            bucket[kw] += 1
-            if age <= day and len(keyword_samples[kw]) < 3:
-                keyword_samples[kw].append(it["id"])
 
+    for it in items:
+        age = now - _parse_iso(it["published_at"])
+        if age > window * 2:
+            continue
+        is_recent = age <= window
+        for kw in _extract_keywords(it["title"]):
+            (recent_kw if is_recent else prior_kw)[kw] += 1
+            if is_recent and len(keyword_samples[kw]) < keyword_samples_limit:
+                keyword_samples[kw].append(it["id"])
+        cat = it.get("category")
+        if cat:
+            (recent_cat if is_recent else prior_cat)[cat] += 1
+
+    return _pack_dimension(recent_kw, prior_kw, recent_cat, prior_cat, keyword_samples)
+
+
+def _dimension_from_archive(daily_archives, now, days):
+    """week/month 维度：聚合日档。近 N 天 vs 前 N 天。历史不足时前段为空 → delta 显示为'新'。"""
+    today = now.date()
+    recent_kw, prior_kw = Counter(), Counter()
+    recent_cat, prior_cat = Counter(), Counter()
+
+    for date_str, payload in daily_archives.items():
+        d = datetime.fromisoformat(date_str).date()
+        age_days = (today - d).days
+        if age_days < 0 or age_days >= days * 2:
+            continue
+        target_kw, target_cat = (recent_kw, recent_cat) if age_days < days else (prior_kw, prior_cat)
+        for kw, c in payload.get("keyword_counts", {}).items():
+            target_kw[kw] += c
+        for cat, c in payload.get("by_category", {}).items():
+            target_cat[cat] += c
+
+    return _pack_dimension(recent_kw, prior_kw, recent_cat, prior_cat, {})
+
+
+def _pack_dimension(recent_kw, prior_kw, recent_cat, prior_cat, keyword_samples):
     keywords = []
-    for kw, count in recent_counts.most_common(30):
+    for kw, count in recent_kw.most_common(30):
         if count < 2:
             continue  # 单次提及不构成趋势
-        prev = prior_counts.get(kw, 0)
+        prev = prior_kw.get(kw, 0)
         delta_pct = round(((count - prev) / prev) * 100) if prev else None
         keywords.append(
             {
                 "term": kw,
-                "count_24h": count,
-                "count_prev_24h": prev,
-                "delta_pct": delta_pct,  # None 表示新出现
-                "sample_item_ids": keyword_samples[kw],
+                "count": count,
+                "count_prev": prev,
+                "delta_pct": delta_pct,  # None 表示前一周期没出现过（新）
+                "sample_item_ids": keyword_samples.get(kw, []),
             }
         )
     keywords = keywords[:16]
 
-    # ---- 3. 分类动量 ----
-    cat_recent, cat_prior = Counter(), Counter()
-    for it in items:
-        cat = it.get("category")
-        if not cat:
-            continue
-        age = now - _parse_iso(it["published_at"])
-        (cat_recent if age <= day else cat_prior)[cat] += 1
-
     category_momentum = []
-    for cat in sorted(set(cat_recent) | set(cat_prior)):
-        cur, prev = cat_recent.get(cat, 0), cat_prior.get(cat, 0)
+    for cat in sorted(set(recent_cat) | set(prior_cat)):
+        cur, prev = recent_cat.get(cat, 0), prior_cat.get(cat, 0)
         category_momentum.append(
-            {
-                "category": cat,
-                "count_24h": cur,
-                "count_prev_24h": prev,
-                "delta": cur - prev,
-            }
+            {"category": cat, "count": cur, "count_prev": prev, "delta": cur - prev}
         )
-    category_momentum.sort(key=lambda x: x["count_24h"], reverse=True)
+    category_momentum.sort(key=lambda x: x["count"], reverse=True)
+
+    return {"keywords": keywords, "category_momentum": category_momentum}
+
+
+def build_trends(items, stories, weights_config, daily_archives=None):
+    """items: 已打分合并的条目（处理窗口）；stories: 故事列表；daily_archives: 日档 {date: payload}。
+
+    输出三个维度：
+      day   —— 近24h vs 前24h（当前窗口内直接计算）
+      week  —— 近7天 vs 前7天（日档聚合）
+      month —— 近30天 vs 前30天（日档聚合；部署初期历史不足时环比显示为"新"）
+    """
+    now = datetime.now(timezone.utc)
+    daily_archives = daily_archives or {}
+
+    dimensions = {
+        "day": _dimension_from_window(items, now, timedelta(hours=24)),
+        "week": _dimension_from_archive(daily_archives, now, days=7),
+        "month": _dimension_from_archive(daily_archives, now, days=30),
+    }
+
+    hot_stories = _build_hot_stories(items, stories, weights_config, now)
 
     log.info(
-        "trends: %d hot stories, %d trending keywords, %d categories",
-        len(hot_stories), len(keywords), len(category_momentum),
+        "trends: %d hot stories; day %d kw / week %d kw / month %d kw",
+        len(hot_stories),
+        len(dimensions["day"]["keywords"]),
+        len(dimensions["week"]["keywords"]),
+        len(dimensions["month"]["keywords"]),
     )
     return {
         "generated_at": now.isoformat(),
         "hot_stories": hot_stories,
-        "keywords": keywords,
-        "category_momentum": category_momentum,
+        "dimensions": dimensions,
+        "archive_days": len(daily_archives),
     }

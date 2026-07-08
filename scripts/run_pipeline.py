@@ -7,6 +7,7 @@
 import argparse
 import json
 import os
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -21,7 +22,8 @@ from .story_merge import merge_stories
 from .quality_gate import apply_gate
 from .daily_brief import build_daily_brief
 from .source_health import build_source_status
-from .trends import build_trends
+from .trends import build_trends, _extract_keywords
+from .archive import update_daily_archive, load_daily_archives
 
 log = get_logger(__name__)
 
@@ -35,28 +37,34 @@ def load_config():
     return sources_cfg, categories_cfg, weights_cfg
 
 
+FETCH_WORKERS = 10
+
+
 def fetch_and_normalize(sources_cfg):
     fetch_results = {}
     normalized_by_source = {}
     all_items = []
 
-    for source in sources_cfg:
-        if source.get("status") == "broken":
-            continue
-        if str(source.get("url", "")).startswith("PLACEHOLDER"):
-            continue
+    active = [
+        s for s in sources_cfg
+        if s.get("status") != "broken" and not str(s.get("url", "")).startswith("PLACEHOLDER")
+    ]
 
+    def worker(source):
         raw_items, error = fetch_source(source)
-        fetch_results[source["id"]] = error
-        if error:
-            log.warning("source %s failed: %s", source["id"], error)
-            normalized_by_source[source["id"]] = []
-            continue
+        return source, raw_items, error
 
-        normalized = normalize_items(raw_items, source)
-        normalized_by_source[source["id"]] = normalized
-        all_items.extend(normalized)
-        log.info("source %s: %d items", source["id"], len(normalized))
+    with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as pool:
+        for source, raw_items, error in pool.map(worker, active):
+            fetch_results[source["id"]] = error
+            if error:
+                log.warning("source %s failed: %s", source["id"], error)
+                normalized_by_source[source["id"]] = []
+                continue
+            normalized = normalize_items(raw_items, source)
+            normalized_by_source[source["id"]] = normalized
+            all_items.extend(normalized)
+            log.info("source %s: %d items", source["id"], len(normalized))
 
     return fetch_results, normalized_by_source, all_items
 
@@ -128,7 +136,10 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     latest_24h = filter_output_window(curated, hours=24)
     daily_brief = build_daily_brief(curated, weights_cfg)
     status = build_source_status(fetch_results, normalized_by_source, kept_ids)
-    trends = build_trends(merged_items, stories, weights_cfg)
+
+    update_daily_archive(merged_items, _extract_keywords, out_dir)
+    daily_archives = load_daily_archives(out_dir)
+    trends = build_trends(merged_items, stories, weights_cfg, daily_archives)
 
     atomic_write_json(out_dir / "latest-24h.json", latest_24h)
     atomic_write_json(out_dir / "latest-24h-all.json", all_24h)

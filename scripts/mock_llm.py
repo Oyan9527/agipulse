@@ -9,6 +9,8 @@ from .util import get_logger
 
 log = get_logger(__name__)
 
+_CJK_RE = re.compile(r"[一-鿿]")
+
 _NOISE_PATTERNS = re.compile(
     r"\b(sponsored|advertisement|hiring|discount code|giveaway)\b", re.IGNORECASE
 )
@@ -55,10 +57,15 @@ def mock_score_items(items, categories, weights, source_authority_by_id):
             + weights["practical_value"] * practical_value
         )
 
+        # 英文标题给占位译文演示版式；正式部署由 DeepSeek 在打分调用中一并生成真实翻译
+        has_cjk = bool(_CJK_RE.search(it["title"]))
+        title_zh = None if has_cjk else f"〔示例译文〕{it['title'][:34]}（部署后由 DeepSeek 翻译）"
+
         enriched = dict(it)
         enriched.update(
             {
                 "category": _guess_category(it, categories),
+                "title_zh": title_zh,
                 "reason_zh": f"[mock] 来自 {it['source_id']}，发布于 {age_hours:.0f} 小时前",
                 "weighted_score": round(weighted, 4),
                 "score_breakdown": {
