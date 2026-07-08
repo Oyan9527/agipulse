@@ -116,22 +116,28 @@
 </div>
 
 <template id="feed-row-template">
-  <li class="feed-row">
-    <span class="feed-row__bar" aria-hidden="true"></span>
-    <div class="feed-row__body">
-      <div class="feed-row__meta">
-        <time class="feed-row__time"></time>
-        <span class="feed-row__sources" title="多源确认数"></span>
-        <span class="feed-row__category"></span>
-        <span class="feed-row__score" title="加权分"></span>
-      </div>
-      <a class="feed-row__title" target="_blank" rel="noopener noreferrer"></a>
-      <p class="feed-row__deck" hidden></p>
-      <p class="feed-row__reason"></p>
-      <div class="feed-row__expand" hidden>
-        <p class="feed-row__expand-label">来源：</p>
-        <ul class="feed-row__source-list"></ul>
-      </div>
+  <li class="feed-card">
+    <div class="feed-card__top">
+      <span class="feed-card__category"></span>
+      <span class="feed-card__badges">
+        <span class="feed-card__score" title="加权分"></span>
+        <button class="feed-card__multi" type="button" title="多源确认，点击展开来源" hidden></button>
+        <a class="feed-card__out" target="_blank" rel="noopener noreferrer" aria-label="打开原文">↗</a>
+      </span>
+    </div>
+    <a class="feed-card__title" target="_blank" rel="noopener noreferrer"></a>
+    <p class="feed-card__deck" hidden></p>
+    <figure class="feed-card__media" hidden>
+      <img class="feed-card__img" alt="" referrerpolicy="no-referrer" loading="lazy">
+    </figure>
+    <p class="feed-card__excerpt"></p>
+    <div class="feed-card__expand" hidden>
+      <p class="feed-card__expand-label">来源：</p>
+      <ul class="feed-card__source-list"></ul>
+    </div>
+    <div class="feed-card__bottom">
+      <span class="feed-card__source"></span>
+      <time class="feed-card__time"></time>
     </div>
   </li>
 </template>
