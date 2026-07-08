@@ -520,12 +520,12 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 文字58% / 图42%：图片顶满右列，避免中间留白 */
+  /* 文字58% / 图42%：窄缝隙让图文咬合更紧 */
   grid-template-columns: minmax(0, 58fr) minmax(280px, 42fr);
-  gap: 24px;
+  gap: 14px;
   align-items: center;
   border-bottom: 1px solid var(--rule-dark);
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   margin-bottom: 4px;
 }
 @media (max-width: 720px) {
@@ -552,14 +552,12 @@ a { color: inherit; }
 }
 .lead__title a:hover { color: var(--accent); }
 
-/* 英文原题副题行：斜体拉丁衬线，报纸 deck style */
+/* 中文译题副题行：英文原题为主标题时，译文附于其下 */
 .lead__orig {
   margin: 2px 0 8px;
-  font-family: var(--font-latin-serif);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 0.98rem;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--mist);
 }
 
@@ -640,7 +638,7 @@ a { color: inherit; }
 
 /* 卡片：AGI Hunt 式结构 —— 顶行 / 标题 / 副题 / 配图 / 摘要 / 底行 */
 .feed-card {
-  padding: 16px 6px 14px;
+  padding: 22px 18px 20px;
   border-bottom: 1px solid var(--rule);
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
@@ -709,18 +707,16 @@ a { color: inherit; }
   line-height: 1.5;
   color: var(--ink);
   text-decoration: none;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .feed-card__title:hover { color: var(--accent); }
 
-/* 英文原题副题行：斜体拉丁衬线（主标题为中文译题时出现） */
+/* 中文译题副题行：英文原题为主标题时，译文以小一号正文体附于其下 */
 .feed-card__deck {
-  margin: 0 0 6px;
-  font-family: var(--font-latin-serif);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 0.84rem;
-  line-height: 1.5;
+  margin: 0 0 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.55;
   color: var(--mist);
 }
 

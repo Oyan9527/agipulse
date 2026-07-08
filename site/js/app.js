@@ -146,10 +146,11 @@ function renderLead() {
   if (!lead) return;
   leadId = lead.id;
 
-  els.leadLink.textContent = lead.title_zh || lead.title;
+  // 英文原题为主标题（大），中文译文为副题行（小）
+  els.leadLink.textContent = lead.title;
   els.leadLink.href = lead.url;
   if (lead.title_zh) {
-    els.leadOrig.textContent = lead.title;
+    els.leadOrig.textContent = lead.title_zh;
     els.leadOrig.hidden = false;
   }
   els.leadReason.textContent = lead.reason_zh || "";

@@ -16,9 +16,9 @@ export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
       </div>
     `;
     const a = li.querySelector(".brief-row__title");
-    // 侧栏空间有限：有译文时以中文为主，原文放 title 提示
-    a.textContent = item.title_zh || item.title;
-    if (item.title_zh) a.title = item.title;
+    // 与主栏一致：英文原题为主，译文放 title 提示
+    a.textContent = item.title;
+    if (item.title_zh) a.title = item.title_zh;
     a.href = item.url;
     li.querySelector(".brief-row__reason").textContent = item.reason_zh || "";
     listEl.appendChild(li);
@@ -43,8 +43,8 @@ export function renderHotStories({ listEl, emptyEl, stories }) {
       </div>
     `;
     const a = li.querySelector(".hot-row__title");
-    a.textContent = story.title_zh || story.title;
-    if (story.title_zh) a.title = story.title;
+    a.textContent = story.title;
+    if (story.title_zh) a.title = story.title_zh;
     if (story.url) a.href = story.url;
     li.querySelector(".hot-row__sources").textContent =
       story.source_count >= 2 ? `${story.source_count} 源确认` : "单源";

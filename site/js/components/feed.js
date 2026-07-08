@@ -109,14 +109,14 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
     const outEl = node.querySelector(".feed-card__out");
     outEl.href = item.url;
 
-    // 报纸主题+副题结构：有译文时中文做主标题、英文原题做斜体副题行
+    // 标题层级：英文原题为主标题（大），中文译文为副题行（小）
     const titleEl = node.querySelector(".feed-card__title");
-    titleEl.textContent = item.title_zh || item.title;
+    titleEl.textContent = item.title;
     titleEl.href = item.url;
 
     const deckEl = node.querySelector(".feed-card__deck");
     if (item.title_zh) {
-      deckEl.textContent = item.title;
+      deckEl.textContent = item.title_zh;
       deckEl.hidden = false;
     }
 
