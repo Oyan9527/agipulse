@@ -625,14 +625,26 @@ a { color: inherit; }
 .chip:hover { color: var(--ink); }
 .chip.is-active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
 
-/* 信息流 */
-.feed-list { list-style: none; margin: 0; padding: 0; }
+/* 信息流：报纸双栏排版，条目先填满左栏再流向右栏，栏间细分隔线 */
+.feed-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 32px;
+  column-rule: 1px solid var(--rule);
+}
+@media (max-width: 800px) {
+  .feed-list { columns: 1; }
+}
 
 .feed-row {
   display: flex;
   gap: 12px;
   padding: 13px 4px;
   border-bottom: 1px solid var(--rule);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
   opacity: 0;
   transform: translateY(6px);
   animation: row-in 0.4s var(--ease) forwards;
