@@ -8,27 +8,33 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <a class="skip-link" href="#main">跳转到主内容</a>
 
-<header class="topbar">
-  <div class="topbar__brand">
-    <span class="topbar__mark" aria-hidden="true"></span>
-    <div class="topbar__title-group">
-      <h1 class="topbar__title">硅基脉动</h1>
-      <span class="topbar__subtitle">AGI PULSE</span>
-    </div>
-  </div>
-
-  <div class="topbar__meta">
-    <span class="topbar__updated" id="updated-at">读取中&hellip;</span>
-    <button class="btn-icon" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
-      <span class="kbd">⌘K</span> 搜索
+<header class="masthead">
+  <div class="masthead__dateline">
+    <span id="dateline-date"></span>
+    <span class="masthead__updated" id="updated-at">读取中&hellip;</span>
+    <button class="btn-plain" id="palette-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette">
+      <span class="kbd">⌘K</span> 检索
     </button>
   </div>
+
+  <h1 class="masthead__title">硅基脉动</h1>
+
+  <div class="masthead__latin-row" aria-hidden="true">
+    <span class="masthead__rule"></span>
+    <span class="masthead__latin">AGI&nbsp;&middot;&nbsp;PULSE</span>
+    <span class="masthead__rule"></span>
+  </div>
+
+  <p class="masthead__motto">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    每小时侦测硅基世界的脉搏 · 200+ 信源 · 第 <span id="issue-no">—</span> 期
+  </p>
 </header>
 
 <section class="spectrum" aria-label="过去24小时信息密度频谱">
@@ -68,6 +74,14 @@
 
 <main class="layout" id="main">
   <section class="feed-panel" aria-label="信息流">
+    <article class="lead" id="lead-story" hidden>
+      <p class="lead__kicker">头条 · TOP SIGNAL</p>
+      <h2 class="lead__title"><a id="lead-link" target="_blank" rel="noopener noreferrer"></a></h2>
+      <p class="lead__orig" id="lead-orig" hidden></p>
+      <p class="lead__reason" id="lead-reason"></p>
+      <p class="lead__meta" id="lead-meta"></p>
+    </article>
+
     <div class="feed-panel__toolbar">
       <div class="tabs" id="view-tabs" role="tablist">
         <button class="tab is-active" role="tab" aria-selected="true" data-view="curated">精选</button>

@@ -24,6 +24,13 @@ const state = {
 
 const els = {
   updatedAt: document.getElementById("updated-at"),
+  datelineDate: document.getElementById("dateline-date"),
+  issueNo: document.getElementById("issue-no"),
+  leadStory: document.getElementById("lead-story"),
+  leadLink: document.getElementById("lead-link"),
+  leadOrig: document.getElementById("lead-orig"),
+  leadReason: document.getElementById("lead-reason"),
+  leadMeta: document.getElementById("lead-meta"),
   spectrumChart: document.getElementById("spectrum-chart"),
   spectrumLegend: document.getElementById("spectrum-legend"),
   spectrumAxis: document.getElementById("spectrum-axis"),
@@ -66,8 +73,13 @@ async function fetchJson(path, fallback) {
   }
 }
 
+let leadId = null;
+
 function currentFeedItems() {
   let items = state.view === "curated" ? state.curated : state.all;
+  if (leadId) {
+    items = items.filter((it) => it.id !== leadId); // 头条已在上方大字号展示，流内不重复
+  }
   if (state.categoryFilter) {
     items = items.filter((it) => it.category === state.categoryFilter);
   }
@@ -203,6 +215,32 @@ function formatUpdatedAt(iso) {
   return `更新于 ${d.getHours().toString().padStart(2, "0")}:${d.getMinutes().toString().padStart(2, "0")}`;
 }
 
+function renderDateline() {
+  const now = new Date();
+  const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+  els.datelineDate.textContent =
+    `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 星期${weekdays[now.getDay()]}`;
+}
+
+function renderLead() {
+  // 头条 = 今日简报榜首（分数最高的精选故事）
+  const lead = state.brief?.items?.[0];
+  if (!lead) return;
+  leadId = lead.id;
+
+  els.leadLink.textContent = lead.title_zh || lead.title;
+  els.leadLink.href = lead.url;
+  if (lead.title_zh) {
+    els.leadOrig.textContent = lead.title;
+    els.leadOrig.hidden = false;
+  }
+  els.leadReason.textContent = lead.reason_zh || "";
+  const sources = lead.multi_source_count > 1 ? ` · ${lead.multi_source_count} 源确认` : "";
+  els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources}`;
+  els.leadMeta.querySelector(".lead__cat").textContent = lead.category || "";
+  els.leadStory.hidden = false;
+}
+
 async function bootstrap() {
   setupTabs();
   setupCategoryFilters();
@@ -226,7 +264,10 @@ async function bootstrap() {
   state.trends = trends;
 
   els.updatedAt.textContent = formatUpdatedAt(trends?.generated_at || brief?.generated_at);
+  renderDateline();
+  els.issueNo.textContent = String(Math.max(trends?.archive_days ?? 1, 1));
 
+  renderLead();
   renderAll();
   renderStats({
     el: els.statsRow,
@@ -258,7 +299,7 @@ async function bootstrap() {
   const lastSeen = localStorage.getItem(LAST_SEEN_KEY);
   const freshStamp = trends?.generated_at || brief?.generated_at;
   if (freshStamp && (!lastSeen || new Date(freshStamp) > new Date(lastSeen))) {
-    document.querySelector(".topbar__mark")?.classList.add("has-fresh");
+    document.querySelector(".pulse-dot")?.classList.add("has-fresh");
   }
   if (freshStamp) localStorage.setItem(LAST_SEEN_KEY, freshStamp);
 }
