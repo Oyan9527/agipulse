@@ -85,11 +85,16 @@ function stripHtml(html) {
   return _parser.parseFromString(html, "text/html").body.textContent?.replace(/\s+/g, " ").trim() || "";
 }
 
-function excerptFor(item, maxLen = 160) {
-  // 正式数据优先用 DeepSeek 中文推荐理由；mock 占位则回落到原文摘要
+function excerptFor(item, maxLen = 160, preferRaw = false) {
+  // 卡片：优先 DeepSeek 一句话推荐理由（简洁）；
+  // 头条(preferRaw)：优先原文正文摘要（要填满多行），理由仅作兜底
   const reason = item.reason_zh || "";
-  if (reason && !reason.startsWith("[mock]")) return reason;
   const text = stripHtml(item.raw_text);
+  if (preferRaw) {
+    if (text.length > 60) return text.slice(0, maxLen);
+    return (reason && !reason.startsWith("[mock]")) ? reason : text.slice(0, maxLen);
+  }
+  if (reason && !reason.startsWith("[mock]")) return reason;
   if (text.length > 12) return text.slice(0, maxLen);
   return reason;
 }
@@ -124,7 +129,7 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
     titleEl.href = item.url;
 
     const deckEl = node.querySelector(".feed-card__deck");
-    if (item.title_zh) {
+    if (item.title_zh && item.title_zh.trim() !== item.title.trim()) {
       deckEl.textContent = item.title_zh;
       deckEl.hidden = false;
     }

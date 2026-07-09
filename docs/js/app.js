@@ -156,11 +156,11 @@ function renderLead() {
   // 英文原题为主标题（大），中文译文为副题行（小）
   els.leadLink.textContent = lead.title;
   els.leadLink.href = lead.url;
-  if (lead.title_zh) {
+  if (lead.title_zh && lead.title_zh.trim() !== lead.title.trim()) {
     els.leadOrig.textContent = lead.title_zh;
     els.leadOrig.hidden = false;
   }
-  els.leadReason.textContent = excerptFor(lead, 420);
+  els.leadReason.textContent = excerptFor(lead, 420, true);
   const sources = lead.multi_source_count > 1 ? ` · ${lead.multi_source_count} 源确认` : "";
   els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources}`;
   const leadCat = els.leadMeta.querySelector(".lead__cat");
