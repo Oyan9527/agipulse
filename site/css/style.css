@@ -576,13 +576,13 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 瘦高头版头条：限宽735、竖幅配图、四周留白、栏内居中 */
+  /* 头版头条：限宽920、竖幅配图、窄侧边距、栏内居中 */
   grid-template-columns: minmax(0, 62fr) minmax(220px, 38fr);
   gap: 12px;
   align-items: center;
-  max-width: 735px;
+  max-width: 920px;
   border-bottom: 1px solid var(--rule-dark);
-  padding: 18px 20px;
+  padding: 18px 8px;
   margin: 0 auto 4px;
 }
 @media (max-width: 720px) {
@@ -709,13 +709,20 @@ a { color: inherit; }
   border-bottom: 1px solid var(--rule);
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
-  opacity: 0;
-  transform: translateY(6px);
-  animation: row-in 0.4s var(--ease) forwards;
+  /* 入场动画用 backwards 填充：动画结束后回到自然样式，悬浮的 transform 过渡才能生效 */
+  animation: row-in 0.4s var(--ease) backwards;
+  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), background 0.18s var(--ease);
 }
-.feed-card:hover { background: color-mix(in srgb, var(--accent) 3%, var(--panel)); }
 
-@keyframes row-in { to { opacity: 1; transform: none; } }
+.feed-card:hover {
+  background: color-mix(in srgb, var(--accent) 3%, var(--panel));
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px color-mix(in srgb, var(--ink) 9%, transparent),
+    0 1px 3px color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+@keyframes row-in { from { opacity: 0; transform: translateY(6px); } }
 
 .feed-card__top {
   display: flex;
@@ -1080,7 +1087,8 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   .spectrum__segment { animation: none; transform: scaleY(1); }
-  .feed-card { animation: none; opacity: 1; transform: none; }
+  .feed-card { animation: none; }
+  .feed-card:hover { transform: none; }
   .momentum-row__bar { animation: none; }
   .pulse-dot.has-fresh { animation: none; }
   .trace-beat { animation: none; }
