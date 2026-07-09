@@ -573,13 +573,13 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 图列改窄(4:3更高的画幅)，整块更瘦高 */
-  grid-template-columns: minmax(0, 62fr) minmax(230px, 38fr);
-  gap: 10px;
+  /* 瘦高头版头条：限宽735、竖幅配图、四周留白 */
+  grid-template-columns: minmax(0, 62fr) minmax(220px, 38fr);
+  gap: 12px;
   align-items: center;
-  max-width: 980px;
+  max-width: 735px;
   border-bottom: 1px solid var(--rule-dark);
-  padding-bottom: 14px;
+  padding: 18px 20px;
   margin-bottom: 4px;
 }
 @media (max-width: 720px) {
@@ -643,7 +643,7 @@ a { color: inherit; }
 .lead__img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   filter: saturate(0.92) contrast(1.02);
 }
@@ -651,7 +651,7 @@ a { color: inherit; }
 .lead__placeholder {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
