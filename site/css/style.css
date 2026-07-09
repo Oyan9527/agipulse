@@ -116,30 +116,71 @@ a { color: inherit; }
   font-weight: 900;
   font-size: clamp(3rem, 8vw, 5.2rem);
   line-height: 1.15;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-align: center;
-  margin: 18px 0 6px;
+  margin: 18px 0 4px;
   /* 视觉补偿：letter-spacing 会在末字后多出一段空隙 */
-  text-indent: 0.12em;
+  text-indent: 0.1em;
+  /* 动感：整字前倾，如脉冲上升沿 */
+  transform: skewX(-5deg);
 }
 
 .masthead__latin-row {
   display: flex;
   align-items: center;
-  gap: 18px;
-  max-width: 560px;
+  gap: 14px;
+  max-width: 760px;
   margin: 0 auto 16px;
 }
 
-.masthead__rule { flex: 1; border-top: 1px solid var(--rule-dark); }
+/* 电路走线渐变为心电波形：硅基(焊盘+直角轨) → 脉动(心电尖峰) */
+.masthead__trace {
+  flex: 1;
+  height: 26px;
+  min-width: 60px;
+  overflow: visible;
+}
+
+.masthead__trace--flip { transform: scaleX(-1); }
+
+.trace-circuit {
+  fill: none;
+  stroke: var(--rule-dark);
+  stroke-width: 1.6;
+}
+
+.trace-pad { fill: var(--rule-dark); }
+
+.trace-ekg {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.trace-beat {
+  fill: var(--accent);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: trace-beat 2s ease-in-out infinite;
+}
+
+@keyframes trace-beat {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  18% { transform: scale(1.9); opacity: 0.35; }
+  36% { transform: scale(1); opacity: 0.9; }
+}
 
 .masthead__latin {
   font-family: var(--font-latin-serif);
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.42em;
-  text-indent: 0.42em;
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
   white-space: nowrap;
+  color: var(--ink);
 }
 
 .masthead__motto {
@@ -532,10 +573,11 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 文字58% / 图42%：窄缝隙让图文咬合更紧 */
-  grid-template-columns: minmax(0, 58fr) minmax(280px, 42fr);
-  gap: 14px;
+  /* 图列改窄(4:3更高的画幅)，整块更瘦高 */
+  grid-template-columns: minmax(0, 62fr) minmax(230px, 38fr);
+  gap: 10px;
   align-items: center;
+  max-width: 980px;
   border-bottom: 1px solid var(--rule-dark);
   padding-bottom: 14px;
   margin-bottom: 4px;
@@ -573,7 +615,15 @@ a { color: inherit; }
   color: var(--mist);
 }
 
-.lead__reason { margin: 4px 0 6px; font-size: 0.92rem; }
+.lead__reason {
+  margin: 4px 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .lead__meta {
   margin: 0;
@@ -593,7 +643,7 @@ a { color: inherit; }
 .lead__img {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   filter: saturate(0.92) contrast(1.02);
 }
@@ -601,7 +651,7 @@ a { color: inherit; }
 .lead__placeholder {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  aspect-ratio: 4 / 3;
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
@@ -1004,4 +1054,5 @@ a { color: inherit; }
   .feed-card { animation: none; opacity: 1; transform: none; }
   .momentum-row__bar { animation: none; }
   .pulse-dot.has-fresh { animation: none; }
+  .trace-beat { animation: none; }
 }

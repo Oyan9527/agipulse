@@ -83,12 +83,12 @@ function stripHtml(html) {
   return _parser.parseFromString(html, "text/html").body.textContent?.replace(/\s+/g, " ").trim() || "";
 }
 
-function excerptFor(item) {
+function excerptFor(item, maxLen = 160) {
   // 正式数据优先用 DeepSeek 中文推荐理由；mock 占位则回落到原文摘要
   const reason = item.reason_zh || "";
   if (reason && !reason.startsWith("[mock]")) return reason;
   const text = stripHtml(item.raw_text);
-  if (text.length > 12) return text.slice(0, 160);
+  if (text.length > 12) return text.slice(0, maxLen);
   return reason;
 }
 
@@ -161,4 +161,4 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
   });
 }
 
-export { sourceLabel, relativeTime };
+export { sourceLabel, relativeTime, excerptFor };

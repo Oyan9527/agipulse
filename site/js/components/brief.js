@@ -26,7 +26,7 @@ export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
 }
 
 export function renderHotStories({ listEl, emptyEl, stories }) {
-  const top = (stories || []).slice(0, 5);
+  const top = (stories || []).slice(0, 10);
   emptyEl.hidden = top.length > 0;
 
   listEl.innerHTML = "";
