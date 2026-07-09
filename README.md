@@ -13,8 +13,8 @@
 ```
 config/            信息源注册表、分类定义、打分权重与质量门控阈值
 scripts/           抓取/归一化/去重/DeepSeek打分/故事合并/编排入口
-site/              纯静态前端（无构建步骤）
-site/data/         流水线产出的 JSON，前端运行时直接 fetch
+docs/              纯静态前端（无构建步骤；命名为 docs 是因为 GitHub Pages 分支模式只认 /(root) 或 /docs）
+docs/data/         流水线产出的 JSON，前端运行时直接 fetch
 .github/workflows/ 定时抓取工作流
 ```
 
@@ -24,24 +24,24 @@ site/data/         流水线产出的 JSON，前端运行时直接 fetch
 pip install -r requirements.txt
 
 # 只跑抓取/归一化/去重，验证数据源是否可用，不调用任何 LLM
-python -m scripts.run_pipeline --skip-llm --output-dir site/data
+python -m scripts.run_pipeline --skip-llm --output-dir docs/data
 
 # 用确定性启发式打分代替真实 DeepSeek 调用，产出可用于前端联调的真实数据（推荐日常前端开发用这个）
-python -m scripts.run_pipeline --mock-llm --output-dir site/data
+python -m scripts.run_pipeline --mock-llm --output-dir docs/data
 
 # 生产模式：真实调用 DeepSeek 两级打分（需要设置环境变量 DEEPSEEK_API_KEY）
 export DEEPSEEK_API_KEY=sk-xxx
-python -m scripts.run_pipeline --output-dir site/data
+python -m scripts.run_pipeline --output-dir docs/data
 ```
 
 预览前端：
 
 ```bash
-python -m http.server 8778 --directory site
+python -m http.server 8778 --directory docs
 # 打开 http://localhost:8778
 ```
 
-> 当前仓库里 `site/data/*.json` 是用 `--mock-llm` 生成的示例数据（条目里的 `reason_zh` 会带 `[mock]` 前缀），仅用于前端开发联调。部署后由 GitHub Actions 用真实 DeepSeek Key 跑出的数据会覆盖它。
+> 当前仓库里 `docs/data/*.json` 是用 `--mock-llm` 生成的示例数据（条目里的 `reason_zh` 会带 `[mock]` 前缀），仅用于前端开发联调。部署后由 GitHub Actions 用真实 DeepSeek Key 跑出的数据会覆盖它。
 
 ## 加一个新信源
 
@@ -57,7 +57,7 @@ python -m http.server 8778 --directory site
   status: verify                  # 先标 verify，本地跑一次 --skip-llm 确认能抓到数据后改成 confirmed
 ```
 
-单个源抓取失败不会影响整体流水线——失败信息会记录在 `site/data/source-status.json` 里，前端"信源健康度"面板会显示出来。
+单个源抓取失败不会影响整体流水线——失败信息会记录在 `docs/data/source-status.json` 里，前端"信源健康度"面板会显示出来。
 
 ## 部署到 GitHub Pages（详细步骤）
 
@@ -96,14 +96,14 @@ git push -u origin main
 - 确认选中 **"Read and write permissions"**，然后 **Save**。
 - 工作流要把抓到的数据 commit 回仓库，没有写权限会报 `Permission denied` / 403。（workflow 文件里已声明 `permissions: contents: write`，但如果组织/账号级别禁用了写权限，这里的仓库级开关是最终开关。）
 
-### 第 5 步：开启 Pages（对应你问的"目录选 /site"）
+### 第 5 步：开启 Pages
 
 仓库 **Settings** → 左侧 **Pages**（在 "Code and automation" 分组下）：
 
 1. **Build and deployment** 区域 → **Source** 下拉框 → 选 **"Deploy from a branch"**
 2. 下方会出现 **Branch** 行，有两个下拉框：
    - 第一个选 **`main`**
-   - 第二个（默认显示 `/(root)`）点开 → 选 **`/site`** ← 这一步就是"目录选 /site"。这个下拉框只有 `/(root)` 和仓库根下的一级目录可选，`site` 推上去之后它就会出现在列表里
+   - 第二个（默认显示 `/(root)`）点开 → 选 **`/docs`**（GitHub 分支部署模式只支持 `/(root)` 和 `/docs` 两个选项，所以前端目录命名为 docs）
 3. 点 **Save**
 4. 等 1-2 分钟，页面顶部会出现绿色横幅 "Your site is live at `https://oyan9527.github.io/agipulse/`"，这就是你的站点地址
 
@@ -114,7 +114,7 @@ git push -u origin main
 仓库顶栏 **Actions** → 左侧列表选 **"Update AI signal data"** → 右侧 **Run workflow** 按钮 → 保持 `main` 分支 → 绿色 **Run workflow**。
 
 - 运行约 3-6 分钟。点进运行记录可以看每一步日志：抓了多少条、DeepSeek 筛掉多少、精选多少。
-- 成功后仓库会多一个 `data: update feeds @ ...` 的提交，`site/data/*.json` 变成真实 DeepSeek 打分的数据（`reason_zh` 不再带 `[mock]` 前缀）。
+- 成功后仓库会多一个 `data: update feeds @ ...` 的提交，`docs/data/*.json` 变成真实 DeepSeek 打分的数据（`reason_zh` 不再带 `[mock]` 前缀）。
 - 这个提交会自动触发 Pages 重新发布（1-2 分钟生效）。
 
 ### 第 7 步：验证站点
@@ -131,7 +131,7 @@ git push -u origin main
 - workflow 每小时整点自动跑，无需人工干预；每次有新数据才会产生提交，没有新数据就静默跳过。
 - **加/删信源**：改 `config/sources.yaml` 后 push 到 `main`，下一次运行生效。
 - **调打分权重/门槛/分类配额**：改 `config/weights.yaml`（`category_quotas` 控制精选里各分类的上限/保底，当前：论文研究最多10条、开源项目保底5条）。
-- **周/月趋势**：依赖 `site/data/archive/` 下的每日聚合日档（由流水线自动生成、自动清理62天前的旧档）。部署首日周/月环比会显示"新"，随归档积累自动完整，无需任何操作。
+- **周/月趋势**：依赖 `docs/data/archive/` 下的每日聚合日档（由流水线自动生成、自动清理62天前的旧档）。部署首日周/月环比会显示"新"，随归档积累自动完整，无需任何操作。
 - **换 DeepSeek Key**：直接在 Settings → Secrets 里更新 `DEEPSEEK_API_KEY` 的值，即时生效。
 - **调抓取频率**：改 `.github/workflows/pipeline.yml` 里的 cron（比如 `"0 */2 * * *"` 是每2小时一次，成本减半）。
 
@@ -141,8 +141,8 @@ git push -u origin main
 |---|---|
 | Actions 报 `DEEPSEEK_API_KEY not set` | 第 3 步的 secret 没配或名字打错（必须全大写完全一致） |
 | Actions 报 403 / `Permission denied` 推不上代码 | 第 4 步的 Workflow permissions 没开 Read and write |
-| 站点 404 | Pages 还没发布完（等2分钟）；或第 5 步目录选成了 `/(root)`——必须选 `/site` |
-| 页面能开但一直"读取中" | `site/data/*.json` 还没被真实数据覆盖，先跑第 6 步；或浏览器控制台看 fetch 报错 |
+| 站点 404 | Pages 还没发布完（等2分钟）；或第 5 步目录选成了 `/(root)`——必须选 `/docs` |
+| 页面能开但一直"读取中" | `docs/data/*.json` 还没被真实数据覆盖，先跑第 6 步；或浏览器控制台看 fetch 报错 |
 | Reddit 源持续 429 | 正常现象，单次失败不影响其他源；GitHub Actions 每次运行 IP 不同，通常下轮就恢复 |
 
 ### 成本

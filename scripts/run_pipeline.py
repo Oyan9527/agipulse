@@ -156,7 +156,7 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output-dir", default="site/data")
+    parser.add_argument("--output-dir", default="docs/data")
     parser.add_argument("--skip-llm", action="store_true")
     parser.add_argument("--mock-llm", action="store_true")
     parser.add_argument("--window-hours", type=int, default=48)
