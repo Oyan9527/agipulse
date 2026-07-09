@@ -39,7 +39,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.masthead, .spectrum, .dashboard, .layout, .sitefooter {
+.masthead, .spectrum, .dashboard, .layout, .sitefooter, .social-hot, .gh-trending {
   max-width: var(--content-max);
   margin-inline: auto;
   padding-inline: clamp(16px, 4vw, 48px);
@@ -566,6 +566,166 @@ a { color: inherit; }
 
 .trend-empty { color: var(--mist); font-size: 0.78rem; margin: 0; }
 
+/* ---------------- 社媒热点 + GitHub 涨星榜（数据版） ---------------- */
+
+.social-hot, .gh-trending {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--rule-dark);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 14px;
+}
+
+.section-title__sub {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 400;
+  color: var(--mist);
+  margin-left: 8px;
+}
+
+/* 社媒热点：多平台卡片网格 */
+.social-hot__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.social-hot__card {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  padding: 14px 16px;
+}
+
+.social-hot__platform {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.social-hot__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-hot__item {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+  padding: 5px 0;
+}
+
+.social-hot__rank {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--mist);
+  width: 18px;
+  flex-shrink: 0;
+}
+.social-hot__item:nth-child(-n+3) .social-hot__rank { color: var(--accent); font-weight: 600; }
+
+.social-hot__link {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.social-hot__link:hover { color: var(--accent); }
+
+.social-hot__empty { color: var(--mist); font-size: 0.82rem; margin: 0; }
+
+/* GitHub 涨星榜：编号 + 仓库名 + 描述 + 星数徽章 */
+.gh-trending__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 32px;
+}
+@media (max-width: 800px) { .gh-trending__list { grid-template-columns: 1fr; } }
+
+.gh-trending__row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.gh-trending__rank {
+  font-family: var(--font-latin-serif);
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 24px;
+  line-height: 1.4;
+}
+
+.gh-trending__body { flex: 1; min-width: 0; }
+
+.gh-trending__repo {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  margin-bottom: 3px;
+}
+.gh-trending__repo:hover { color: var(--accent); }
+
+.gh-trending__desc {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--mist);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gh-trending__meta {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.gh-trending__stars {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--copper);
+  white-space: nowrap;
+}
+
+.gh-trending__lang {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--mist);
+  white-space: nowrap;
+}
+
+.gh-trending__empty { color: var(--mist); font-size: 0.82rem; margin: 8px 0 0; }
+
 /* ---------------- 主栏 + 侧栏 ---------------- */
 
 .layout {
@@ -588,8 +748,8 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 头版头条：限宽920、方形配图、文字列与图等高（两端对齐分布） */
-  grid-template-columns: minmax(0, 62fr) minmax(220px, 38fr);
+  /* 头版头条：限宽920、图片列进一步收窄、文字列与图等高（两端对齐分布） */
+  grid-template-columns: minmax(0, 70fr) minmax(170px, 30fr);
   gap: 12px;
   align-items: stretch;
   max-width: 920px;
@@ -677,7 +837,7 @@ a { color: inherit; }
 .lead__media {
   margin: 0;
   border: 1px solid var(--rule-dark);
-  padding: 5px;                       /* 报纸相框：细黑边 + 纸面留白 */
+  padding: 24px;                      /* 报纸相框：细黑边 + 更宽的纸面留白，让图进一步收小 */
   background: var(--panel);
   display: flex;
   flex-direction: column;
@@ -736,26 +896,35 @@ a { color: inherit; }
 
 /* 信息流：报纸双栏排版，条目先填满左栏再流向右栏，栏间细分隔线 */
 /* 双栏改用 Grid：multicol 在 Chromium 下会把带图的高卡片拆栏并绘制越界 */
+/* 瀑布流双栏：两个独立纵向流的 <ol>，各自按内容高度自然排布，
+   不强制逐行配对——左栏矮卡可以连放两张，配右栏一张带图的高卡。
+   分隔线用绝对定位撑满容器高度（较高的一栏决定总高度）。 */
 .feed-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  column-gap: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
   position: relative;
 }
 .feed-list::before {
   content: "";
   position: absolute;
-  left: 50%;
+  left: calc(50% - 16px);
   top: 0;
   bottom: 0;
   width: 1px;
   background: var(--rule);
 }
+.feed-list__col {
+  flex: 1 1 0;
+  min-width: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 @media (max-width: 800px) {
-  .feed-list { grid-template-columns: 1fr; }
   .feed-list::before { display: none; }
 }
 
