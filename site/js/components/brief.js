@@ -7,7 +7,7 @@ export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
   listEl.innerHTML = "";
   items.forEach((item, idx) => {
     const li = document.createElement("li");
-    li.className = "brief-row";
+    li.className = "brief-row" + (idx < 3 ? " is-top" : "");
     li.innerHTML = `
       <span class="brief-row__rank">${String(idx + 1).padStart(2, "0")}</span>
       <div class="brief-row__body">
@@ -32,7 +32,7 @@ export function renderHotStories({ listEl, emptyEl, stories }) {
   listEl.innerHTML = "";
   top.forEach((story, idx) => {
     const li = document.createElement("li");
-    li.className = "hot-row";
+    li.className = "hot-row" + (idx < 3 ? " is-top" : "");
     li.innerHTML = `
       <span class="hot-row__rank">${String(idx + 1).padStart(2, "0")}</span>
       <div class="hot-row__body">
