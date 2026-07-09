@@ -704,6 +704,33 @@ sources:
     poll_minutes: 60
     status: confirmed
 
+  - id: weibo-hot
+    type: weibo_hot
+    role: social_hot
+    platform: 微博
+    poll_minutes: 60
+    status: confirmed
+    notes: "通用热搜榜(非关键词搜索——微博搜索需登录访客系统JS指纹校验，实测无法绕过)。AI话题是否上榜取决于当天热点，经AI过滤后常态是空(非故障)"
+
+  # 知乎/X：官方均无免费可用接口，实测记录如下，预留接入位——自建对应 RSSHub 路由后把 url 换成真实地址、status 改 confirmed 即可生效
+  - id: zhihu-ai-social
+    type: rss
+    role: social_hot
+    platform: 知乎
+    url: "PLACEHOLDER_SELF_HOSTED_RSSHUB_ZHIHU_URL"
+    poll_minutes: 60
+    status: optional
+    notes: "实测(2026-07-10)：/search/v3 返回404(端点已下线)，/hot-lists/total 401(需登录)，/billboard 页403。需自建 RSSHub 的 /zhihu/hot 或 /zhihu/search/:keyword 路由"
+
+  - id: x-ai-social
+    type: rss
+    role: social_hot
+    platform: X（Twitter）
+    url: "PLACEHOLDER_SELF_HOSTED_RSSHUB_X_URL"
+    poll_minutes: 60
+    status: optional
+    notes: "X 官方免费API已取消搜索/趋势权限，无法直连。需自建 RSSHub 的 /twitter/keyword/:keyword 路由(需配置登录Cookie环境变量)，见 README Phase 3"
+
   # ---------------- GitHub 涨星榜（role: gh_trending，同样独立于AI主流程） ----------------
   - id: gh-star-trending
     type: gh_star_trending

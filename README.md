@@ -2,7 +2,7 @@
 
 一个零后端、零服务器成本的 AI 行业信息聚合网站。GitHub Actions 定时抓取 **300+ 公开信源** → DeepSeek 两级打分/中文翻译/去重/故事合并/趋势分析 → 静态 JSON → GitHub Pages 直接托管，前端运行时 fetch 数据渲染，没有任何构建步骤。
 
-两个版面：**头版**（`index.html`：头条大字号 + 精选/全部信息流 + 热点雷达 + 今日简报）与**数据版**（`trends.html`：24H 信息密度频谱√缩放、信号量/精选率/信源健康/多源确认指标、**日/周/月三维度**分类动量与趋势关键词、**社媒热点**（百度/B站/知乎热搜 + Hacker News 前台，不限 AI 话题）、**GitHub 涨星榜**（近24h 新增 star 最多的仓库））。通用能力：英文标题自动附中文译文、精选分类配额（论文≤10、开源项目保底5）、命令面板搜索（Ctrl/Cmd+K）。界面为中文报纸头版风格：米白纸面、衬线大刊头、朱红强调色、细线分栏。
+两个版面：**头版**（`index.html`：头条大字号 + 精选/全部信息流 + 热点雷达 + 今日简报）与**数据版**（`trends.html`：24H 信息密度频谱√缩放、信号量/精选率/信源健康/多源确认指标、**日/周/月三维度**分类动量与趋势关键词、**社媒 AI 热点**（B站/微博/Hacker News/Reddit 上正热的 AI 话题，关键词过滤+英文标题自动翻译）、**GitHub 涨星榜**（近24h 新增 star 最多的仓库））。通用能力：英文标题自动附中文译文、精选分类配额（论文≤10、开源项目保底5）、命令面板搜索（Ctrl/Cmd+K）。界面为中文报纸头版风格：米白纸面、衬线大刊头、朱红强调色、细线分栏。
 
 信源构成（共 308）：152 个 RSS（官方博客/研究机构/高信号个人/科技媒体 52 + 中文媒体与独立博客 100）+ 111 个重点 GitHub 仓库 releases + 19 个 arXiv 分类 + 20 个 Reddit 社区 + 5 组 Hacker News 主题查询。中文源第三批为批量实测导入（媒体 12 + 独立博客 88，AI 标签优先），依赖 DeepSeek 粗筛过滤非 AI 内容。此外另有 5 个独立展示源（`role: social_hot` / `gh_trending`）：百度/B站/知乎热搜、Hacker News 前台、GitHub 涨星榜——不进 AI 打分主流程，仅供数据版对应面板展示。
 
@@ -150,14 +150,17 @@ git push -u origin main
 - GitHub Actions / Pages：Public 仓库完全免费。
 - DeepSeek API：按量计费。以约 700 条/天、每小时跑一次估算，配合两级过滤（粗筛丢弃大部分噪声后才进入更贵的打分调用），日均成本预计在几毛钱人民币以内。
 
-## Phase 3：补充 X/Twitter 与微信公众号覆盖（可选）
+## Phase 3：补充 X/Twitter、知乎、微信公众号覆盖（可选）
 
-这两类信源没有稳定免费的官方 API，`config/sources.yaml` 里已经预留了两个 `status: optional` 的占位源，接入方式是"自建一个转 RSS 的桥接服务，把它的输出 URL 当成普通 RSS 源注册进来"，不需要为它们单独写抓取逻辑：
+这几类信源没有稳定免费的官方 API，`config/sources.yaml` 里已经预留了 `status: optional` 的占位源，接入方式是"自建一个转 RSS 的桥接服务，把它的输出 URL 当成普通 RSS 源注册进来"，不需要为它们单独写抓取逻辑：
 
-- **X/Twitter**：自建一个 [RSSHub](https://github.com/DIYgod/RSSHub) 实例（可以另开一个仓库用 GitHub Actions/Railway/Render 免费额度跑），配置好想关注的创始人/研究员的 X 列表，拿到类似 `https://your-rsshub.example.com/twitter/list/xxxx` 的 RSS 地址，填入 `rsshub-x-bridge` 这条源的 `url` 字段，把 `status` 改成 `confirmed`。
-- **微信公众号**：自建开源的 [wewe-rss](https://github.com/cooderl/wewe-rss)（公众号转 RSS 镜像工具），同样拿到输出的 RSS 地址填进 `wewe-rss-bridge` 条目。
+- **X/Twitter**（社媒热点面板用）：自建一个 [RSSHub](https://github.com/DIYgod/RSSHub) 实例（可以另开一个仓库用 GitHub Actions/Railway/Render 免费额度跑），配置好关键词/列表订阅，把输出 RSS 地址填入 `x-ai-social`（数据版"社媒AI热点"用）或 `rsshub-x-bridge`（主信息流用）的 `url` 字段，`status` 改成 `confirmed`。
+- **知乎**（社媒热点面板用）：实测(2026-07-10) `/search/v3` 404、`/hot-lists/total` 401、`/billboard` 页 403，均需登录态或签名头，无免费直连路径。同样通过自建 RSSHub 的 `/zhihu/hot` 或 `/zhihu/search/:keyword` 路由，填入 `zhihu-ai-social` 的 `url` 字段激活。
+- **微信公众号**（主信息流用）：自建开源的 [wewe-rss](https://github.com/cooderl/wewe-rss)（公众号转 RSS 镜像工具），同样拿到输出的 RSS 地址填进 `wewe-rss-bridge` 条目。
 
-这样两类"不稳定"信源被隔离在独立部署的桥接服务里，即使它们挂了也不会影响主站抓取流水线。
+这样"不稳定"信源被隔离在独立部署的桥接服务里，即使它们挂了也不会影响主站抓取流水线。
+
+> 社媒 AI 热点面板目前实际生效的是 **B站**（关键词"AI 大模型"搜索）、**微博**（热搜榜，AI话题上榜与否取决于当天热点，常态是空很正常）、**Hacker News**（前台热榜）、**Reddit**（r/singularity）——都经同一套中英文关键词过滤器（`scripts/ai_relevance.py`）只保留 AI 相关条目，英文标题由 DeepSeek 顺带译成中文。
 
 ## 已知限制 / 后续可做的事
 

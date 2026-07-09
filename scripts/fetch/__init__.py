@@ -17,6 +17,7 @@ DISPATCH = {
     "hn_algolia": hn_algolia_fetcher.fetch,
     "reddit": reddit_fetcher.fetch,
     "generic_json": generic_json_fetcher.fetch,
+    "weibo_hot": social_hot_fetcher.fetch_weibo_hot,
     "baidu_hot": social_hot_fetcher.fetch_baidu,
     "bili_hot": social_hot_fetcher.fetch_bili,
     "bili_search": social_hot_fetcher.fetch_bili_search,

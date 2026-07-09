@@ -59,6 +59,35 @@ def fetch_bili_search(source):
     return items
 
 
+def fetch_weibo_hot(source):
+    """微博热搜榜（实时榜）。需要 Referer: weibo.com，否则直接 403。
+    这是通用热搜（非关键词搜索——微博搜索需要登录态访客系统JS指纹校验，实测无法绕过），
+    AI 话题是否上榜取决于当天热点，经 ai_relevance 过滤后可能为空，属正常现象。
+    """
+    session = get_session()
+    resp = session.get(
+        "https://weibo.com/ajax/side/hotSearch",
+        headers={"Referer": "https://weibo.com/"},
+        timeout=15,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    items = []
+    for entry in data.get("data", {}).get("realtime", []):
+        if entry.get("is_ad"):
+            continue
+        word = entry.get("word") or entry.get("word_scheme")
+        if word:
+            items.append(
+                {
+                    "title": word,
+                    "url": f"https://s.weibo.com/weibo?q={quote(word)}",
+                    "raw_text": "",
+                }
+            )
+    return items
+
+
 def fetch_baidu(source):
     # 百度热搜榜的 cards[].content 嵌套深度不固定，递归展开找出所有 {word,url} 叶子节点。
     session = get_session()

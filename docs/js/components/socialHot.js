@@ -39,7 +39,13 @@ export function renderSocialHot({ gridEl, platforms }) {
       a.href = item.url;
       a.target = "_blank";
       a.rel = "noopener noreferrer";
-      a.textContent = item.title;
+      // 英文标题优先显示中文译文（空间紧凑的单行列表放不下双语两行），英文原题放 title 悬浮提示
+      if (item.title_zh && item.title_zh.trim() !== item.title.trim()) {
+        a.textContent = item.title_zh;
+        a.title = item.title;
+      } else {
+        a.textContent = item.title;
+      }
       li.append(rank, a);
       list.appendChild(li);
     });

@@ -25,6 +25,7 @@ from .source_health import build_source_status
 from .trends import build_trends, _extract_keywords
 from .archive import update_daily_archive, load_daily_archives
 from .ai_relevance import is_ai_related
+from .social_translate import translate_titles
 
 log = get_logger(__name__)
 
@@ -98,25 +99,32 @@ def atomic_write_json(path, data):
     os.replace(tmp, path)
 
 
-def build_social_hot(sources_cfg):
-    """社媒热点：百度/B站/知乎热搜 + HN前台。独立于AI主流程，不打分，
-    但只保留 AI 相关话题（关键词过滤，见 ai_relevance.is_ai_related）。
-    单平台抓取失败或无AI话题时该平台 items 为空数组，前端对应区块直接隐藏。
+def build_social_hot(sources_cfg, skip_llm=False, mock_llm=False):
+    """社媒热点：B站/微博/HN/Reddit（+知乎/X，需自建RSSHub才生效）。独立于AI主流程，不打分，
+    但只保留 AI 相关话题（关键词过滤，见 ai_relevance.is_ai_related），
+    并把英文标题翻译成中文（见 social_translate.translate_titles）。
+    单平台抓取失败/未配置/无AI话题时该平台 items 为空数组，前端对应区块直接隐藏。
     """
     platforms = []
     for source in sources_cfg:
         if source.get("role") != "social_hot":
             continue
-        raw_items, error = fetch_source(source)
-        if error:
-            log.warning("social_hot source %s failed: %s", source["id"], error)
+        if str(source.get("url", "")).startswith("PLACEHOLDER"):
+            log.info("social_hot %s: not configured yet (placeholder), skipped", source["id"])
             items = []
         else:
-            items = [
-                {"title": it["title"], "url": it["url"]}
-                for it in raw_items
-                if it.get("title") and it.get("url") and is_ai_related(it["title"])
-            ][:10]
+            raw_items, error = fetch_source(source)
+            if error:
+                log.warning("social_hot source %s failed: %s", source["id"], error)
+                items = []
+            else:
+                items = [
+                    {"title": it["title"], "url": it["url"]}
+                    for it in raw_items
+                    if it.get("title") and it.get("url") and is_ai_related(it["title"])
+                ][:10]
+            if items and not skip_llm:
+                translate_titles(items, mock=mock_llm)
         platforms.append(
             {
                 "platform": source.get("platform", source["id"]),
@@ -167,7 +175,7 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 社媒热点 / GitHub 涨星榜：独立分支，任何模式下都产出，不经过 AI 打分流程
-    social_hot = build_social_hot(sources_cfg)
+    social_hot = build_social_hot(sources_cfg, skip_llm=skip_llm, mock_llm=mock_llm)
     github_trending = build_github_trending(sources_cfg)
     atomic_write_json(out_dir / "social-hot.json", social_hot)
     atomic_write_json(out_dir / "github-trending.json", github_trending)
