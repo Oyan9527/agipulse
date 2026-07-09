@@ -153,7 +153,7 @@ function renderLead() {
     els.leadOrig.textContent = lead.title_zh;
     els.leadOrig.hidden = false;
   }
-  els.leadReason.textContent = excerptFor(lead, 120);
+  els.leadReason.textContent = excerptFor(lead, 200);
   const sources = lead.multi_source_count > 1 ? ` · ${lead.multi_source_count} 源确认` : "";
   els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources}`;
   els.leadMeta.querySelector(".lead__cat").textContent = lead.category || "";
