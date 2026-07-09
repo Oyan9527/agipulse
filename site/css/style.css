@@ -13,6 +13,7 @@
   --rule-dark: #17211b;     /* 刊头粗线 */
   --accent: #0e7a5f;        /* 深松石绿（青瓷） */
   --accent-soft: #7fb8a6;
+  --copper: #8f5d28;        /* PCB铜箔：唯一的暖色张力，极少量使用 */
 
   --font-serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", "Playfair Display", serif;
   --font-latin-serif: "Playfair Display", "Noto Serif SC", serif;
@@ -573,14 +574,14 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 瘦高头版头条：限宽735、竖幅配图、四周留白 */
+  /* 瘦高头版头条：限宽735、竖幅配图、四周留白、栏内居中 */
   grid-template-columns: minmax(0, 62fr) minmax(220px, 38fr);
   gap: 12px;
   align-items: center;
   max-width: 735px;
   border-bottom: 1px solid var(--rule-dark);
   padding: 18px 20px;
-  margin-bottom: 4px;
+  margin: 0 auto 4px;
 }
 @media (max-width: 720px) {
   .lead { grid-template-columns: 1fr; gap: 12px; }
