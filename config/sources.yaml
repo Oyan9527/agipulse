@@ -676,6 +676,42 @@ sources:
   - {id: zh-daimajia-com, type: rss, url: "https://daimajia.com/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "代码家"}
   - {id: zh-droidyue-com, type: rss, url: "https://droidyue.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "技术小黑屋"}
 
+  # ---------------- 社媒 AI 热点（role: social_hot，独立于AI主流程；在各平台内检索AI话题，
+  #                    再经 ai_relevance 关键词过滤，仅保留AI相关条目，供数据版"社媒热点"面板展示） ----------------
+  #  说明：百度/知乎/微博的"通用热搜榜"里 AI 话题极少或接口受限，故改为"平台内AI检索"；
+  #  下方保留 baidu_hot / bili_hot / zhihu_top_search 抓取器代码，未来若有稳定AI榜单可复用。
+  - id: bili-ai-search
+    type: bili_search
+    role: social_hot
+    platform: B站 · AI
+    query: "AI 大模型"
+    poll_minutes: 60
+    status: confirmed
+
+  - id: hn-front-page
+    type: hn_algolia
+    mode: front_page
+    role: social_hot
+    platform: Hacker News
+    poll_minutes: 60
+    status: confirmed
+
+  - id: reddit-ai-social
+    type: reddit
+    subreddit: singularity
+    role: social_hot
+    platform: Reddit · AI
+    poll_minutes: 60
+    status: confirmed
+
+  # ---------------- GitHub 涨星榜（role: gh_trending，同样独立于AI主流程） ----------------
+  - id: gh-star-trending
+    type: gh_star_trending
+    role: gh_trending
+    period: past_24_hours
+    poll_minutes: 60
+    status: confirmed
+
   # ---------------- 可选 / Phase 3 补充（默认禁用，需单独部署桥接服务后启用） ----------------
   - id: rsshub-x-bridge
     type: rss

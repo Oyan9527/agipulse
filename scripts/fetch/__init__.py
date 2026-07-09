@@ -6,6 +6,8 @@ from . import (
     hn_algolia_fetcher,
     reddit_fetcher,
     generic_json_fetcher,
+    social_hot_fetcher,
+    gh_trending_fetcher,
 )
 
 DISPATCH = {
@@ -15,6 +17,11 @@ DISPATCH = {
     "hn_algolia": hn_algolia_fetcher.fetch,
     "reddit": reddit_fetcher.fetch,
     "generic_json": generic_json_fetcher.fetch,
+    "baidu_hot": social_hot_fetcher.fetch_baidu,
+    "bili_hot": social_hot_fetcher.fetch_bili,
+    "bili_search": social_hot_fetcher.fetch_bili_search,
+    "zhihu_top_search": social_hot_fetcher.fetch_zhihu,
+    "gh_star_trending": gh_trending_fetcher.fetch,
 }
 
 

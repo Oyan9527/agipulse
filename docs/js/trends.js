@@ -1,7 +1,8 @@
-// 数据版页面脚本：24H 频谱 + 统计指标 + 日/周/月趋势看板。
+// 数据版页面脚本：24H 频谱 + 统计指标 + 日/周/月趋势看板 + 社媒热点 + GitHub 涨星榜。
 import { renderSpectrum } from "./components/spectrum.js";
 import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js";
 import { initPalette } from "./components/palette.js";
+import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js";
 
 const state = {
   all: [],
@@ -25,6 +26,10 @@ const els = {
   trendDimTabs: document.getElementById("trend-dim-tabs"),
   trendDimNote: document.getElementById("trend-dim-note"),
   momentumSub: document.getElementById("momentum-sub"),
+  socialHotGrid: document.getElementById("social-hot-grid"),
+  ghTrendingList: document.getElementById("gh-trending-list"),
+  ghTrendingEmpty: document.getElementById("gh-trending-empty"),
+  ghTrendingPeriod: document.getElementById("gh-trending-period"),
   paletteOverlay: document.getElementById("command-palette"),
   paletteTrigger: document.getElementById("palette-trigger"),
   paletteInput: document.getElementById("palette-input"),
@@ -105,12 +110,14 @@ function formatUpdatedAt(iso) {
 async function bootstrap() {
   setupTrendDimTabs();
 
-  const [all, curated, stories, sourceStatus, trends] = await Promise.all([
+  const [all, curated, stories, sourceStatus, trends, socialHot, ghTrending] = await Promise.all([
     fetchJson("./data/latest-24h-all.json", []),
     fetchJson("./data/latest-24h.json", []),
     fetchJson("./data/stories-merged.json", []),
     fetchJson("./data/source-status.json", []),
     fetchJson("./data/trends.json", null),
+    fetchJson("./data/social-hot.json", null),
+    fetchJson("./data/github-trending.json", null),
   ]);
 
   state.all = all;
@@ -133,6 +140,14 @@ async function bootstrap() {
 
   renderStats({ el: els.statsRow, all24h: all, curated24h: curated, sourceStatus, stories });
   renderTrendPanels();
+
+  renderSocialHot({ gridEl: els.socialHotGrid, platforms: socialHot?.platforms });
+  renderGithubTrending({
+    listEl: els.ghTrendingList,
+    emptyEl: els.ghTrendingEmpty,
+    periodEl: els.ghTrendingPeriod,
+    data: ghTrending,
+  });
 
   paletteApi = initPalette({
     overlayEl: els.paletteOverlay,
