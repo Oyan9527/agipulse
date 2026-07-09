@@ -679,20 +679,24 @@ a { color: inherit; }
   border: 1px solid var(--rule-dark);
   padding: 5px;                       /* 报纸相框：细黑边 + 纸面留白 */
   background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .lead__img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  filter: saturate(0.92) contrast(1.02);
+  aspect-ratio: 4 / 3;
+  object-fit: contain;   /* 配图多为图表/架构图，完整显示不裁切 */
+  background: var(--panel);
+  filter: saturate(0.95);
 }
 
 .lead__placeholder {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
@@ -849,17 +853,20 @@ a { color: inherit; }
 
 /* 原文配图 */
 .feed-card__media {
-  margin: 4px 0 8px;
+  width: 92%;
+  margin: 12px auto 14px;             /* 缩小一档并与上下文字留白 */
   border: 1px solid var(--rule);
+  padding: 6px;
   background: var(--panel);
 }
 
 .feed-card__img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  filter: saturate(0.92);
+  aspect-ratio: 16 / 10;
+  object-fit: contain;                /* 图表/架构图完整显示不裁切 */
+  background: var(--panel);
+  filter: saturate(0.95);
 }
 
 .feed-card__excerpt {
