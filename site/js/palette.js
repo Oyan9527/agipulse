@@ -13,6 +13,20 @@ export const CATEGORY_COLORS = {
 
 export const FALLBACK_COLOR = "#4a5468";
 
+// 加深变体：用作小号文字色（数据色本身对比度不足 4.5:1，只作色点/图形）
+export const CATEGORY_TEXT_COLORS = {
+  "模型发布": "#8f5a12",
+  "产品发布": "#10677c",
+  "开源项目": "#227247",
+  "行业动态": "#6f44ab",
+  "论文研究": "#a13a60",
+  "技巧与观点": "#3d5fae",
+};
+
 export function categoryColor(cat) {
   return CATEGORY_COLORS[cat] || FALLBACK_COLOR;
+}
+
+export function categoryTextColor(cat) {
+  return CATEGORY_TEXT_COLORS[cat] || FALLBACK_COLOR;
 }

@@ -50,9 +50,11 @@ export function renderCategoryMomentum({ el, momentum, dim = "day" }) {
     bar.style.width = `${pct}%`;
     bar.style.background = categoryColor(m.category);
     row.querySelector(".momentum-row__count").textContent = String(m.count);
-    row.querySelector(".momentum-row__delta").textContent = deltaText;
-    row.querySelector(".momentum-row__delta").title =
-      `环比前一个${DIM_LABELS[dim]} ${m.delta >= 0 ? "+" : ""}${m.delta}`;
+    const deltaEl = row.querySelector(".momentum-row__delta");
+    deltaEl.textContent = deltaText;
+    deltaEl.classList.toggle("is-up", m.delta > 0);
+    deltaEl.classList.toggle("is-down", m.delta < 0);
+    deltaEl.title = `环比前一个${DIM_LABELS[dim]} ${m.delta >= 0 ? "+" : ""}${m.delta}`;
     el.appendChild(row);
   });
 

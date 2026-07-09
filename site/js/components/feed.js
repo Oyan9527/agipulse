@@ -1,4 +1,6 @@
 // 信息流：AGI Hunt 式卡片 —— 顶行(分类+徽章) / 衬线标题 / 英文副题 / 配图 / 摘要 / 底行(来源+时间)。
+import { categoryColor, categoryTextColor } from "../palette.js";
+
 const SOURCE_LABELS = {
   "openai-blog": "OpenAI Blog",
   "anthropic-news": "Anthropic",
@@ -101,7 +103,14 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
     node.dataset.curated = String(!!item.curated);
     node.style.animationDelay = `${Math.min(idx, 12) * 25}ms`;
 
-    node.querySelector(".feed-card__category").textContent = item.category || "未分类";
+    // 分类标签：数据色色点 + 同色系加深文字，与频谱/动量条的颜色一一对应
+    const catEl = node.querySelector(".feed-card__category");
+    const cat = item.category || "未分类";
+    const dot = document.createElement("i");
+    dot.className = "cat-dot";
+    dot.style.background = categoryColor(cat);
+    catEl.append(dot, cat);
+    catEl.style.color = categoryTextColor(cat);
 
     const scoreEl = node.querySelector(".feed-card__score");
     scoreEl.textContent = item.weighted_score != null ? item.weighted_score.toFixed(2) : "";

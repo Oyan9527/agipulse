@@ -62,6 +62,16 @@ body {
 
 a { color: inherit; }
 
+/* 分类色点：印刷色票式小方块，让六个数据色贯通到筛选/卡片/头条 */
+.cat-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: 1px;
+}
+
 .kbd {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -520,6 +530,8 @@ a { color: inherit; }
   color: var(--mist);
   text-align: right;
 }
+.momentum-row__delta.is-up { color: var(--accent); }     /* 涨=青瓷 */
+.momentum-row__delta.is-down { color: var(--copper); }   /* 跌=铜 */
 
 /* 趋势关键词 */
 .trend-chips { display: flex; flex-wrap: wrap; gap: 7px; }
@@ -576,10 +588,10 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 头版头条：限宽920、竖幅配图、窄侧边距、栏内居中 */
+  /* 头版头条：限宽920、方形配图、文字列与图等高（两端对齐分布） */
   grid-template-columns: minmax(0, 62fr) minmax(220px, 38fr);
   gap: 12px;
-  align-items: center;
+  align-items: stretch;
   max-width: 920px;
   border-bottom: 1px solid var(--rule-dark);
   padding: 18px 8px;
@@ -596,13 +608,22 @@ a { color: inherit; }
   color: var(--accent);
   margin: 0 0 8px;
 }
+.lead__kicker::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+  margin-right: 8px;
+  vertical-align: 3px;
+}
 
 .lead__title { margin: 0 0 4px; }
 
 .lead__title a {
   font-family: var(--font-serif);
   font-weight: 900;
-  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
   line-height: 1.4;
   text-decoration: none;
   color: var(--ink);
@@ -618,14 +639,19 @@ a { color: inherit; }
   color: var(--mist);
 }
 
-.lead__text { padding-left: 2em; }  /* 文字块整体左缩进2字符列 */
+.lead__text {
+  padding-left: 2em;  /* 文字块整体左缩进2字符列 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* 与图片等高：引题/标题在上、摘要居中、元信息落底 */
+}
 
 .lead__reason {
   margin: 4px 0 8px;
   font-size: 0.9rem;
   line-height: 1.7;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -648,7 +674,7 @@ a { color: inherit; }
 .lead__img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   filter: saturate(0.92) contrast(1.02);
 }
@@ -656,7 +682,7 @@ a { color: inherit; }
 .lead__placeholder {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
@@ -688,7 +714,11 @@ a { color: inherit; }
   border-bottom: 2px solid transparent;
 }
 .chip:hover { color: var(--ink); }
-.chip.is-active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+.chip.is-active {
+  color: var(--cat-text, var(--accent));
+  border-bottom-color: var(--cat, var(--accent));
+  font-weight: 600;
+}
 
 /* 信息流：报纸双栏排版，条目先填满左栏再流向右栏，栏间细分隔线 */
 .feed-list {
@@ -732,12 +762,12 @@ a { color: inherit; }
   margin-bottom: 7px;
 }
 
-/* 分类标签：报纸栏目字 */
+/* 分类标签：色点 + 分类专属深色文字（JS 按分类着色） */
 .feed-card__category {
   font-family: var(--font-body);
   font-size: 0.74rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--accent);  /* JS 覆盖为分类深色变体，此处为兜底 */
   white-space: nowrap;
 }
 
@@ -904,8 +934,13 @@ a { color: inherit; }
 .hot-row, .brief-row {
   display: flex;
   gap: 10px;
-  padding: 9px 0;
+  padding: 9px 6px;
+  margin-inline: -6px;
   border-bottom: 1px solid var(--rule);
+  transition: background 0.15s var(--ease);
+}
+.hot-row:hover, .brief-row:hover {
+  background: color-mix(in srgb, var(--accent) 3%, transparent);
 }
 
 .hot-row__rank, .brief-row__rank {
@@ -991,8 +1026,8 @@ a { color: inherit; }
 }
 
 .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-.status-dot.ok { background: #33a365; }
-.status-dot.err { background: var(--accent); }
+.status-dot.ok { background: var(--accent); }
+.status-dot.err { background: #b0413e; }  /* 故障=赭红；换青瓷主题后不能再用accent(绿) */
 
 /* ---------------- 页脚 ---------------- */
 

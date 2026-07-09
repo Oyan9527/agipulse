@@ -1,6 +1,7 @@
 import { renderFeed, excerptFor } from "./components/feed.js";
 import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js";
 import { initPalette } from "./components/palette.js";
+import { categoryColor, categoryTextColor } from "./palette.js";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -107,7 +108,13 @@ function setupCategoryFilters() {
     const btn = document.createElement("button");
     btn.className = "chip";
     btn.type = "button";
-    btn.textContent = cat;
+    const dot = document.createElement("i");
+    dot.className = "cat-dot";
+    dot.style.background = categoryColor(cat);
+    btn.append(dot, cat);
+    // 激活态用各分类自己的颜色（下划线=数据色，文字=加深变体）
+    btn.style.setProperty("--cat", categoryColor(cat));
+    btn.style.setProperty("--cat-text", categoryTextColor(cat));
     btn.addEventListener("click", () => {
       state.categoryFilter = state.categoryFilter === cat ? null : cat;
       state.visibleCount = PAGE_SIZE;
@@ -153,10 +160,15 @@ function renderLead() {
     els.leadOrig.textContent = lead.title_zh;
     els.leadOrig.hidden = false;
   }
-  els.leadReason.textContent = excerptFor(lead, 200);
+  els.leadReason.textContent = excerptFor(lead, 420);
   const sources = lead.multi_source_count > 1 ? ` · ${lead.multi_source_count} 源确认` : "";
   els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources}`;
-  els.leadMeta.querySelector(".lead__cat").textContent = lead.category || "";
+  const leadCat = els.leadMeta.querySelector(".lead__cat");
+  const catDot = document.createElement("i");
+  catDot.className = "cat-dot";
+  catDot.style.background = categoryColor(lead.category);
+  leadCat.append(catDot, lead.category || "");
+  leadCat.style.color = categoryTextColor(lead.category);
 
   // 配图：有 image_url 用原图；加载失败或超时(5s)回落到脉冲占位图
   if (lead.image_url) {
