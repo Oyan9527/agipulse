@@ -588,8 +588,8 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 头版头条：限宽920、方形配图、文字列与图等高（两端对齐分布） */
-  grid-template-columns: minmax(0, 62fr) minmax(220px, 38fr);
+  /* 头版头条：限宽920、图片列进一步收窄、文字列与图等高（两端对齐分布） */
+  grid-template-columns: minmax(0, 70fr) minmax(170px, 30fr);
   gap: 12px;
   align-items: stretch;
   max-width: 920px;
@@ -677,7 +677,7 @@ a { color: inherit; }
 .lead__media {
   margin: 0;
   border: 1px solid var(--rule-dark);
-  padding: 5px;                       /* 报纸相框：细黑边 + 纸面留白 */
+  padding: 24px;                      /* 报纸相框：细黑边 + 更宽的纸面留白，让图进一步收小 */
   background: var(--panel);
   display: flex;
   flex-direction: column;
@@ -736,26 +736,35 @@ a { color: inherit; }
 
 /* 信息流：报纸双栏排版，条目先填满左栏再流向右栏，栏间细分隔线 */
 /* 双栏改用 Grid：multicol 在 Chromium 下会把带图的高卡片拆栏并绘制越界 */
+/* 瀑布流双栏：两个独立纵向流的 <ol>，各自按内容高度自然排布，
+   不强制逐行配对——左栏矮卡可以连放两张，配右栏一张带图的高卡。
+   分隔线用绝对定位撑满容器高度（较高的一栏决定总高度）。 */
 .feed-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  column-gap: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
   position: relative;
 }
 .feed-list::before {
   content: "";
   position: absolute;
-  left: 50%;
+  left: calc(50% - 16px);
   top: 0;
   bottom: 0;
   width: 1px;
   background: var(--rule);
 }
+.feed-list__col {
+  flex: 1 1 0;
+  min-width: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 @media (max-width: 800px) {
-  .feed-list { grid-template-columns: 1fr; }
   .feed-list::before { display: none; }
 }
 

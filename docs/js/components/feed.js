@@ -99,80 +99,110 @@ function excerptFor(item, maxLen = 160, preferRaw = false) {
   return reason;
 }
 
+function buildCardNode(item, idx, template) {
+  const node = template.content.firstElementChild.cloneNode(true);
+  node.dataset.curated = String(!!item.curated);
+  node.style.animationDelay = `${Math.min(idx, 12) * 25}ms`;
+
+  // 分类标签：数据色色点 + 同色系加深文字，与频谱/动量条的颜色一一对应
+  const catEl = node.querySelector(".feed-card__category");
+  const cat = item.category || "未分类";
+  const dot = document.createElement("i");
+  dot.className = "cat-dot";
+  dot.style.background = categoryColor(cat);
+  catEl.append(dot, cat);
+  catEl.style.color = categoryTextColor(cat);
+
+  const scoreEl = node.querySelector(".feed-card__score");
+  scoreEl.textContent = item.weighted_score != null ? item.weighted_score.toFixed(2) : "";
+
+  const outEl = node.querySelector(".feed-card__out");
+  outEl.href = item.url;
+
+  // 标题层级：英文原题为主标题（大），中文译文为副题行（小）
+  const titleEl = node.querySelector(".feed-card__title");
+  titleEl.textContent = item.title;
+  titleEl.href = item.url;
+
+  const deckEl = node.querySelector(".feed-card__deck");
+  if (item.title_zh && item.title_zh.trim() !== item.title.trim()) {
+    deckEl.textContent = item.title_zh;
+    deckEl.hidden = false;
+  }
+
+  // 原文配图：加载失败直接收起，不留破图
+  if (item.image_url) {
+    const media = node.querySelector(".feed-card__media");
+    const img = node.querySelector(".feed-card__img");
+    img.src = item.image_url;
+    media.hidden = false;
+    img.addEventListener("error", () => { media.hidden = true; }, { once: true });
+  }
+
+  node.querySelector(".feed-card__excerpt").textContent = excerptFor(item);
+
+  node.querySelector(".feed-card__source").textContent = sourceLabel(item.source_id);
+  const timeEl = node.querySelector(".feed-card__time");
+  timeEl.textContent = relativeTime(item.published_at);
+  timeEl.dateTime = item.published_at;
+
+  // 多源确认徽章：×N，点击展开来源列表
+  const count = item.multi_source_count || 1;
+  const multiEl = node.querySelector(".feed-card__multi");
+  const expandEl = node.querySelector(".feed-card__expand");
+  if (count > 1) {
+    multiEl.textContent = `×${count}`;
+    multiEl.hidden = false;
+    const sourceListEl = node.querySelector(".feed-card__source-list");
+    (item.sources || []).forEach((s) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = s.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = sourceLabel(s.source_id);
+      li.appendChild(a);
+      sourceListEl.appendChild(li);
+    });
+    multiEl.addEventListener("click", () => { expandEl.hidden = !expandEl.hidden; });
+  }
+
+  return node;
+}
+
+// 卡片高度粗估：用于瀑布流按列分配，不需要精确，只需相对准确
+function estimateCardHeight(item) {
+  let h = 130; // 顶行 + 底行 + 内边距等固定开销
+  const titleLen = (item.title || "").length;
+  h += Math.max(1, Math.ceil(titleLen / 42)) * 34; // 标题行数
+  if (item.title_zh && item.title_zh.trim() !== item.title.trim()) h += 26; // 副题行
+  const excerptLen = excerptFor(item).length;
+  h += Math.min(3, Math.max(1, Math.ceil(excerptLen / 55))) * 22; // 摘要最多3行截断
+  if (item.image_url) h += 210; // 配图区块（92%宽×16:10 + 相框留白）
+  return h;
+}
+
 export function renderFeed({ listEl, emptyEl, template, items }) {
   listEl.innerHTML = "";
   emptyEl.hidden = items.length > 0;
+  if (!items.length) return;
+
+  // 瀑布流双栏：贪心地把每条内容放进当前"预估高度更矮"的一栏，
+  // 而不是强制左右逐行配对——左边没图的短卡可以连放两张，配右边一张带图的长卡。
+  const isNarrow = window.matchMedia("(max-width: 800px)").matches;
+  const colCount = isNarrow ? 1 : 2;
+  const cols = Array.from({ length: colCount }, () => document.createElement("ol"));
+  cols.forEach((col) => col.className = "feed-list__col");
+  const colHeights = new Array(colCount).fill(0);
 
   items.forEach((item, idx) => {
-    const node = template.content.firstElementChild.cloneNode(true);
-    node.dataset.curated = String(!!item.curated);
-    node.style.animationDelay = `${Math.min(idx, 12) * 25}ms`;
-
-    // 分类标签：数据色色点 + 同色系加深文字，与频谱/动量条的颜色一一对应
-    const catEl = node.querySelector(".feed-card__category");
-    const cat = item.category || "未分类";
-    const dot = document.createElement("i");
-    dot.className = "cat-dot";
-    dot.style.background = categoryColor(cat);
-    catEl.append(dot, cat);
-    catEl.style.color = categoryTextColor(cat);
-
-    const scoreEl = node.querySelector(".feed-card__score");
-    scoreEl.textContent = item.weighted_score != null ? item.weighted_score.toFixed(2) : "";
-
-    const outEl = node.querySelector(".feed-card__out");
-    outEl.href = item.url;
-
-    // 标题层级：英文原题为主标题（大），中文译文为副题行（小）
-    const titleEl = node.querySelector(".feed-card__title");
-    titleEl.textContent = item.title;
-    titleEl.href = item.url;
-
-    const deckEl = node.querySelector(".feed-card__deck");
-    if (item.title_zh && item.title_zh.trim() !== item.title.trim()) {
-      deckEl.textContent = item.title_zh;
-      deckEl.hidden = false;
-    }
-
-    // 原文配图：加载失败直接收起，不留破图
-    if (item.image_url) {
-      const media = node.querySelector(".feed-card__media");
-      const img = node.querySelector(".feed-card__img");
-      img.src = item.image_url;
-      media.hidden = false;
-      img.addEventListener("error", () => { media.hidden = true; }, { once: true });
-    }
-
-    node.querySelector(".feed-card__excerpt").textContent = excerptFor(item);
-
-    node.querySelector(".feed-card__source").textContent = sourceLabel(item.source_id);
-    const timeEl = node.querySelector(".feed-card__time");
-    timeEl.textContent = relativeTime(item.published_at);
-    timeEl.dateTime = item.published_at;
-
-    // 多源确认徽章：×N，点击展开来源列表
-    const count = item.multi_source_count || 1;
-    const multiEl = node.querySelector(".feed-card__multi");
-    const expandEl = node.querySelector(".feed-card__expand");
-    if (count > 1) {
-      multiEl.textContent = `×${count}`;
-      multiEl.hidden = false;
-      const sourceListEl = node.querySelector(".feed-card__source-list");
-      (item.sources || []).forEach((s) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = s.url;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        a.textContent = sourceLabel(s.source_id);
-        li.appendChild(a);
-        sourceListEl.appendChild(li);
-      });
-      multiEl.addEventListener("click", () => { expandEl.hidden = !expandEl.hidden; });
-    }
-
-    listEl.appendChild(node);
+    const node = buildCardNode(item, idx, template);
+    const shortestCol = colHeights.indexOf(Math.min(...colHeights));
+    cols[shortestCol].appendChild(node);
+    colHeights[shortestCol] += estimateCardHeight(item);
   });
+
+  cols.forEach((col) => listEl.appendChild(col));
 }
 
 export { sourceLabel, relativeTime, excerptFor };
