@@ -840,7 +840,7 @@ a { color: inherit; }
 .lead__orig {
   margin: 2px 0 8px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.1rem;   /* 译题是中文读者的主要入口，比正文摘要(0.9rem)大一档 */
   line-height: 1.55;
   color: var(--mist);
 }
@@ -886,19 +886,27 @@ a { color: inherit; }
   border: 1px solid var(--rule-dark);
   padding: 14px;       /* 报纸相框：细黑边 + 一圈纸面留白 */
   background: var(--panel);
-  display: flex;
-  min-height: 0;       /* 允许被行高压缩，否则图片自身高度会把行撑高 */
+  position: relative;  /* 给下面绝对定位的图/占位图做定位父级 */
+  overflow: hidden;    /* cover 裁掉的部分不外溢到相框之外 */
+  min-height: 0;
 }
 
 /* 图/占位图铺满整个相框：标题限3行 + 摘要固定5行后，文字列高度可预测，
    画框比例稳定在 1.2~1.3 之间，与常见横构图接近，cover 只会裁掉很少的边缘。
-   不用 contain：那样图片在画框里会留下大片空白（比例不匹配时可达58%）。 */
+   不用 contain：那样图片在画框里会留下大片空白（比例不匹配时可达58%）。
+
+   绝对定位(偏移=相框留白)让图片脱离文档流：否则图片的固有高度会反过来把画框撑高，
+   画框就不再严格等于文字列高度、底边与正文对不齐（摘要偏短时尤其明显）。
+   尺寸必须显式写死：绝对定位的替换元素在 width/height:auto 时会用固有尺寸，
+   只给 inset 并不会把它拉伸到相框大小，反而会溢出。 */
 .lead__img,
 .lead__placeholder {
   display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
   object-fit: cover;
 }
 
@@ -928,9 +936,10 @@ a { color: inherit; }
   .lead__media,
   .lead__meta { grid-column: auto; grid-row: auto; }
   .lead__media { align-self: auto; }
-  /* 单列时画框不再有栅格行给定高度，height:100% 会塌陷成 0——改回按自身比例定高 */
+  /* 单列时画框不再有栅格行给定高度：图片必须回到文档流里按自身比例撑起画框，
+     否则绝对定位会让画框塌陷成 0 */
   .lead__img,
-  .lead__placeholder { height: auto; aspect-ratio: 16 / 9; }
+  .lead__placeholder { position: static; top: auto; left: auto; width: 100%; height: auto; aspect-ratio: 16 / 9; }
   /* 标题独占整行，可以多放一行 */
   .lead__title a { -webkit-line-clamp: 4; }
 }
@@ -1083,11 +1092,12 @@ a { color: inherit; }
 }
 .feed-card__title:hover { color: var(--accent); }
 
-/* 中文译题副题行：英文原题为主标题时，译文以小一号正文体附于其下 */
+/* 中文译题副题行：英文原题为主标题时，译文附于其下。
+   中文读者主要靠它扫读，字号贴近主标题(1.06rem)，只低半档 */
 .feed-card__deck {
   margin: 0 0 8px;
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.98rem;
   line-height: 1.55;
   color: var(--mist);
 }

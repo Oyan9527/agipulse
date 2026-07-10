@@ -1,6 +1,6 @@
 // 频谱条：把 latest-24h-all.json 按"小时 x 分类"分桶，渲染成竖条频谱图（signature element）。
 // 分类颜色使用经校验的共享色板；悬停有 tooltip 读数，键盘可操作。
-import { categoryColor, CATEGORY_ORDER } from "../palette.js?v=20260710j";
+import { categoryColor, CATEGORY_ORDER } from "../palette.js?v=20260710m";
 
 const BUCKET_HOURS = 24;
 
