@@ -9,6 +9,8 @@ const state = {
   curated: [],
   trends: null,
   trendDim: "day",
+  ghTrending: null,
+  ghPeriod: "past_24_hours",
 };
 
 const els = {
@@ -30,6 +32,7 @@ const els = {
   ghTrendingList: document.getElementById("gh-trending-list"),
   ghTrendingEmpty: document.getElementById("gh-trending-empty"),
   ghTrendingPeriod: document.getElementById("gh-trending-period"),
+  ghPeriodTabs: document.getElementById("gh-period-tabs"),
   paletteOverlay: document.getElementById("command-palette"),
   paletteTrigger: document.getElementById("palette-trigger"),
   paletteInput: document.getElementById("palette-input"),
@@ -94,6 +97,29 @@ function setupTrendDimTabs() {
   });
 }
 
+function renderGhTrending() {
+  renderGithubTrending({
+    listEl: els.ghTrendingList,
+    emptyEl: els.ghTrendingEmpty,
+    periodEl: els.ghTrendingPeriod,
+    data: state.ghTrending,
+    period: state.ghPeriod,
+  });
+}
+
+function setupGhPeriodTabs() {
+  els.ghPeriodTabs.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    [...els.ghPeriodTabs.children].forEach((c) => {
+      c.classList.toggle("is-active", c === btn);
+      c.setAttribute("aria-selected", String(c === btn));
+    });
+    state.ghPeriod = btn.dataset.period;
+    renderGhTrending();
+  });
+}
+
 function renderDateline() {
   const now = new Date();
   const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
@@ -109,6 +135,7 @@ function formatUpdatedAt(iso) {
 
 async function bootstrap() {
   setupTrendDimTabs();
+  setupGhPeriodTabs();
 
   const [all, curated, stories, sourceStatus, trends, socialHot, ghTrending] = await Promise.all([
     fetchJson("./data/latest-24h-all.json", []),
@@ -123,6 +150,7 @@ async function bootstrap() {
   state.all = all;
   state.curated = curated;
   state.trends = trends;
+  state.ghTrending = ghTrending;
 
   renderDateline();
   els.updatedAt.textContent = formatUpdatedAt(trends?.generated_at);
@@ -142,12 +170,7 @@ async function bootstrap() {
   renderTrendPanels();
 
   renderSocialHot({ gridEl: els.socialHotGrid, platforms: socialHot?.platforms });
-  renderGithubTrending({
-    listEl: els.ghTrendingList,
-    emptyEl: els.ghTrendingEmpty,
-    periodEl: els.ghTrendingPeriod,
-    data: ghTrending,
-  });
+  renderGhTrending();
 
   paletteApi = initPalette({
     overlayEl: els.paletteOverlay,

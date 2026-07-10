@@ -6,6 +6,7 @@
 
 独立于 AI 主流程：不进 dedupe / DeepSeek 打分，只走 build_social_hot 轻量分支。
 """
+import html
 import re
 from urllib.parse import quote
 
@@ -23,7 +24,9 @@ _BROWSER_UA = (
 
 
 def _strip(text):
-    return _TAG_RE.sub("", text or "").strip()
+    # B站搜索结果标题里关键词高亮用 <em> 包裹，且引号等符号是 HTML 实体（&quot;）——
+    # 先去标签再反转义，否则会显示成字面的 &quot; 而不是引号。
+    return html.unescape(_TAG_RE.sub("", text or "")).strip()
 
 
 def fetch_bili_search(source):

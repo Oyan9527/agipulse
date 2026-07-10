@@ -12,10 +12,7 @@ API_URL = "https://api.ossinsight.io/v1/trends/repos/"
 MAX_RETRIES = 2
 
 
-def fetch(source):
-    period = source.get("period", "past_24_hours")
-    session = get_session()
-
+def _fetch_period(session, period):
     last_err = None
     resp = None
     for attempt in range(MAX_RETRIES + 1):
@@ -55,3 +52,19 @@ def fetch(source):
             }
         )
     return items
+
+
+def fetch(source):
+    """按 source['periods']（默认日/周/月三档）分别抓取，返回 {period_key: [items]}。
+    单个周期请求失败不影响其他周期（各自 try/except，交由上层记录）。
+    """
+    session = get_session()
+    periods = source.get("periods") or [source.get("period", "past_24_hours")]
+    result = {}
+    for period in periods:
+        try:
+            result[period] = _fetch_period(session, period)
+        except Exception as e:  # noqa: BLE001 - 单周期失败不影响其他周期
+            log.warning("gh_trending period %s failed: %s", period, e)
+            result[period] = []
+    return result
