@@ -11,14 +11,14 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from .util import load_yaml, get_logger, now_utc
+from .util import load_yaml, get_logger, now_utc, safe_http_url
 from .fetch import fetch_source
 from .normalize import normalize_items
 from .dedupe import dedupe
 from .llm_prefilter import prefilter
 from .llm_score import score_items
 from .mock_llm import mock_prefilter, mock_score_items
-from .story_merge import merge_stories
+from .story_merge import merge_stories, collapse_stories
 from .quality_gate import apply_gate
 from .daily_brief import build_daily_brief
 from .source_health import build_source_status
@@ -178,10 +178,11 @@ def build_social_hot(sources_cfg, skip_llm=False, mock_llm=False):
             else:
                 # 判据用标题+正文摘要：知乎热榜的问题描述里常有 AI 线索，只看标题会漏。
                 # 社媒条目正文都很短，不存在主流程里"资讯汇编夹带AI词"的假阳性问题。
+                # 这一支不走 normalize，需自行做 URL 安全校验（见 util.safe_http_url）。
                 items = [
-                    {"title": it["title"], "url": it["url"]}
+                    {"title": it["title"], "url": safe_http_url(it.get("url"))}
                     for it in raw_items
-                    if it.get("title") and it.get("url")
+                    if it.get("title") and safe_http_url(it.get("url"))
                     and is_ai_related(f"{it['title']} {(it.get('raw_text') or '')[:200]}")
                 ][:10]
             if items and not skip_llm:
@@ -214,16 +215,18 @@ def build_github_trending(sources_cfg, skip_llm=False, mock_llm=False):
         dimensions = empty
     else:
         for period, raw_items in raw_by_period.items():
+            # 同样不走 normalize，URL 需自行做安全校验
             repos = [
                 {
                     "repo": it["title"],
-                    "url": it["url"],
+                    "url": safe_http_url(it.get("url")),
                     "description": it.get("raw_text", ""),
                     "stars_gained": it.get("stars_gained", 0),
                     "stars_metric": it.get("stars_metric", "gained"),
                     "language": it.get("language", ""),
                 }
                 for it in raw_items[:10]
+                if safe_http_url(it.get("url"))
             ]
             if repos and not skip_llm:
                 translate_field(repos, "description", "description_zh", mock=mock_llm, mock_len=40)
@@ -294,15 +297,20 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
 
     merged_items, stories = merge_stories(scored, weights_cfg)
 
-    curated = apply_gate(merged_items, weights_cfg)
+    # 展示流按故事折叠：同一事件被多家同时报道时(如"GPT-5.6 发布")只出一条卡片，
+    # 其余来源收在卡片的 ×N 徽章里。趋势/归档仍用全量 merged_items 做统计。
+    representative = collapse_stories(merged_items)
 
-    # latest-24h-all.json：全部条目（含未打分的），做前端"全部动态"视图
-    all_output_items = merged_items + [dict(it, weighted_score=None, category=it.get("category_hint", [None])[0]) for it in unscored]
+    curated = apply_gate(representative, weights_cfg)
+
+    # latest-24h-all.json：全部条目（含未打分的），做前端"全部动态"视图。
+    # 这里也折叠：同一事件重复出现同样会淹没信息流；未打分条目没有 story_id，原样保留。
+    all_output_items = representative + [dict(it, weighted_score=None, category=it.get("category_hint", [None])[0]) for it in unscored]
     all_24h = filter_output_window(all_output_items, hours=24)
 
     latest_24h = filter_output_window(curated, hours=24)
     # 传全部已打分条目(而非精选流)：深度推荐自成一套筛选，见 daily_brief.py 顶部说明
-    daily_brief = build_daily_brief(merged_items, weights_cfg)
+    daily_brief = build_daily_brief(representative, weights_cfg)
     status = build_source_status(fetch_results, normalized_by_source, kept_ids)
 
     update_daily_archive(merged_items, _extract_keywords, out_dir)

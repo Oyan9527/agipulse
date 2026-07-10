@@ -41,6 +41,9 @@ category_quotas:
 story_merge:
   window_hours: 36
   similarity_threshold: 0.55   # TF-IDF cosine 相似度阈值
+  # 同一时间窗内谈同一个带版本号的模型/产品(GPT-5.6、Claude Fable 5…)也算同一事件。
+  # 跨源报道措辞差异太大，词袋相似度抓不住：实测 GPT-5.6 发布当天 15 条报道被拆成 13 个"故事"。
+  merge_by_entity: true
 
 dedupe:
   fuzzy_title_threshold: 90    # rapidfuzz token_sort_ratio
