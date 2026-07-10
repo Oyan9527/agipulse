@@ -157,10 +157,11 @@ def atomic_write_json(path, data):
 
 
 def build_social_hot(sources_cfg, skip_llm=False, mock_llm=False):
-    """社媒热点：B站/微博/HN/Reddit（+知乎/X，需自建RSSHub才生效）。独立于AI主流程，不打分，
+    """社媒热点：B站/微博/知乎/HN/Reddit/X。独立于AI主流程，不打分，
     但只保留 AI 相关话题（关键词过滤，见 ai_relevance.is_ai_related），
     并把英文标题翻译成中文（见 social_translate.translate_titles）。
-    单平台抓取失败/未配置/无AI话题时该平台 items 为空数组，前端对应区块直接隐藏。
+    单平台抓取失败/无AI话题时该平台 items 为空数组，前端对应区块直接隐藏——
+    微博/知乎是通用热榜，AI 话题是否上榜取决于当天热点，为空属正常现象。
     """
     platforms = []
     for source in sources_cfg:
@@ -175,10 +176,13 @@ def build_social_hot(sources_cfg, skip_llm=False, mock_llm=False):
                 log.warning("social_hot source %s failed: %s", source["id"], error)
                 items = []
             else:
+                # 判据用标题+正文摘要：知乎热榜的问题描述里常有 AI 线索，只看标题会漏。
+                # 社媒条目正文都很短，不存在主流程里"资讯汇编夹带AI词"的假阳性问题。
                 items = [
                     {"title": it["title"], "url": it["url"]}
                     for it in raw_items
-                    if it.get("title") and it.get("url") and is_ai_related(it["title"])
+                    if it.get("title") and it.get("url")
+                    and is_ai_related(f"{it['title']} {(it.get('raw_text') or '')[:200]}")
                 ][:10]
             if items and not skip_llm:
                 translate_titles(items, mock=mock_llm)

@@ -712,24 +712,31 @@ sources:
     status: confirmed
     notes: "通用热搜榜(非关键词搜索——微博搜索需登录访客系统JS指纹校验，实测无法绕过)。AI话题是否上榜取决于当天热点，经AI过滤后常态是空(非故障)"
 
-  # 知乎/X：官方均无免费可用接口，实测记录如下，预留接入位——自建对应 RSSHub 路由后把 url 换成真实地址、status 改 confirmed 即可生效
+  # 知乎：官方接口全部不可用(实测2026-07-10：/search/v3 404、/hot-lists/total 401、/billboard 403)，
+  # 公共 RSSHub 的 /zhihu/topic、/zhihu/search 路由需登录Cookie(实测五个实例均 503)。
+  # 唯一可用的是 RSSHub 公共实例的知乎热榜。热榜是通用榜，AI 话题是否上榜取决于当天热点，
+  # 经 ai_relevance 过滤后可能为空——与微博同理，属正常现象而非故障。
   - id: zhihu-ai-social
     type: rss
     role: social_hot
     platform: 知乎
-    url: "PLACEHOLDER_SELF_HOSTED_RSSHUB_ZHIHU_URL"
+    url: "https://rsshub.rssforever.com/zhihu/hot"
     poll_minutes: 60
-    status: optional
-    notes: "实测(2026-07-10)：/search/v3 返回404(端点已下线)，/hot-lists/total 401(需登录)，/billboard 页403。需自建 RSSHub 的 /zhihu/hot 或 /zhihu/search/:keyword 路由"
+    status: confirmed
+    notes: "第三方 RSSHub 公共实例(rssforever)。实例不稳时该栏留空，不影响其他平台"
 
+  # X：官方免费API已取消搜索/趋势权限；公共 RSSHub 的 /twitter/* 需登录Cookie(实测 404/503)，
+  # Nitter 实例 403。改走 syndication.twitter.com —— X 官方给第三方嵌入时间线用的公开端点，
+  # 无需 Key。因此这一栏不是"X 全站 AI 热搜"，而是"AI 高信号账号最近在说什么"(对齐 AGI Hunt 思路)，
+  # 合并下列账号推文按互动量排序，再经 ai_relevance 过滤掉闲聊。
   - id: x-ai-social
-    type: rss
+    type: x_syndication
     role: social_hot
-    platform: X（Twitter）
-    url: "PLACEHOLDER_SELF_HOSTED_RSSHUB_X_URL"
+    platform: X · AI 前沿
+    accounts: [OpenAI, AnthropicAI, GoogleDeepMind, sama, karpathy, ylecun, demishassabis, _akhaliq, MistralAI, deepseek_ai]
+    max_age_hours: 168   # 一周：这些账号发推不密集，72h 窗口下常态只剩个位数条目
     poll_minutes: 60
-    status: optional
-    notes: "X 官方免费API已取消搜索/趋势权限，无法直连。需自建 RSSHub 的 /twitter/keyword/:keyword 路由(需配置登录Cookie环境变量)，见 README Phase 3"
+    status: confirmed
 
   # ---------------- GitHub 涨星榜（role: gh_trending，同样独立于AI主流程；日/周/月/年/总榜五档周期） ----------------
   # 日/周/月走 OSSInsight 涨星API（新增star数排序）；OSSInsight不支持年度/总榜周期，

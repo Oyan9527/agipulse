@@ -8,6 +8,7 @@ from . import (
     generic_json_fetcher,
     social_hot_fetcher,
     gh_trending_fetcher,
+    x_syndication_fetcher,
 )
 
 DISPATCH = {
@@ -23,6 +24,7 @@ DISPATCH = {
     "bili_search": social_hot_fetcher.fetch_bili_search,
     "zhihu_top_search": social_hot_fetcher.fetch_zhihu,
     "gh_star_trending": gh_trending_fetcher.fetch,
+    "x_syndication": x_syndication_fetcher.fetch,
 }
 
 

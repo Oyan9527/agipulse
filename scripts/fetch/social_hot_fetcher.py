@@ -1,13 +1,16 @@
-"""社媒 AI 热点抓取器：在各平台内检索 AI 话题（而非取通用热搜榜——
-通用热榜里 AI 话题极少，见 run_pipeline.build_social_hot 的 AI 关键词过滤）。
+"""社媒 AI 热点抓取器。能做"平台内 AI 检索"的就检索，不能的只好取通用热榜再过滤。
 
-- B站：关键词搜索按播放量排序，取 AI 相关热门视频
-- 百度/知乎：保留通用热搜抓取器（当前配置未启用；通用榜无 AI 内容 + 接口受限）
+- B站：关键词搜索按播放量排序，取 AI 相关热门视频（真正的平台内 AI 检索）
+- 微博：只有通用热搜榜可用（搜索/用户时间线均需过访客系统JS指纹校验），AI 话题看当天热点
+- 百度/知乎(zhihu_top_search)：旧的通用热搜抓取器，接口已失效，保留代码备查
+  知乎现改走 RSSHub 公共实例的热榜 RSS，见 sources.yaml
+- X：见 x_syndication_fetcher.py（追踪 AI 高信号账号）
 
 独立于 AI 主流程：不进 dedupe / DeepSeek 打分，只走 build_social_hot 轻量分支。
 """
 import html
 import re
+import time
 from urllib.parse import quote
 
 from ..util import get_session, get_logger
@@ -64,16 +67,28 @@ def fetch_bili_search(source):
 
 def fetch_weibo_hot(source):
     """微博热搜榜（实时榜）。需要 Referer: weibo.com，否则直接 403。
-    这是通用热搜（非关键词搜索——微博搜索需要登录态访客系统JS指纹校验，实测无法绕过），
+    这是通用热搜（非关键词搜索——微博搜索/用户时间线都要过访客系统JS指纹校验，实测无法绕过），
     AI 话题是否上榜取决于当天热点，经 ai_relevance 过滤后可能为空，属正常现象。
     """
     session = get_session()
-    resp = session.get(
-        "https://weibo.com/ajax/side/hotSearch",
-        headers={"Referer": "https://weibo.com/"},
-        timeout=15,
-    )
-    resp.raise_for_status()
+    last_error = None
+    resp = None
+    for attempt in range(3):
+        try:
+            resp = session.get(
+                "https://weibo.com/ajax/side/hotSearch",
+                headers={"Referer": "https://weibo.com/"},
+                timeout=15,
+            )
+            resp.raise_for_status()
+            break
+        except Exception as e:  # noqa: BLE001 - 偶发瞬时 SSL EOF，重试后通常恢复
+            last_error = e
+            resp = None
+            if attempt < 2:
+                time.sleep(2 ** attempt)
+    if resp is None:
+        raise last_error
     data = resp.json()
     items = []
     for entry in data.get("data", {}).get("realtime", []):
