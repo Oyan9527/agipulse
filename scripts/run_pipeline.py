@@ -25,7 +25,8 @@ from .source_health import build_source_status
 from .trends import build_trends, _extract_keywords
 from .archive import update_daily_archive, load_daily_archives
 from .ai_relevance import is_ai_related
-from .social_translate import translate_titles
+from .social_translate import translate_titles, translate_field
+from . import llm_cache
 
 log = get_logger(__name__)
 
@@ -136,8 +137,10 @@ def build_social_hot(sources_cfg, skip_llm=False, mock_llm=False):
     return {"generated_at": now_utc().isoformat(), "platforms": platforms}
 
 
-def build_github_trending(sources_cfg):
-    """GitHub 涨星榜：独立于AI主流程，日/周/月三档周期各取新增 star 数最多的10个仓库。"""
+def build_github_trending(sources_cfg, skip_llm=False, mock_llm=False):
+    """GitHub 涨星榜：独立于AI主流程，日/周/月三档周期各取新增 star 数最多的10个仓库。
+    描述文案是英文时翻译成中文（description_zh，仓库名本身是标识符不翻译）。
+    """
     source = next((s for s in sources_cfg if s.get("role") == "gh_trending"), None)
     periods = (source or {}).get("periods") or ["past_24_hours"]
     empty = {p: [] for p in periods}
@@ -151,7 +154,7 @@ def build_github_trending(sources_cfg):
         dimensions = empty
     else:
         for period, raw_items in raw_by_period.items():
-            dimensions[period] = [
+            repos = [
                 {
                     "repo": it["title"],
                     "url": it["url"],
@@ -161,6 +164,9 @@ def build_github_trending(sources_cfg):
                 }
                 for it in raw_items[:10]
             ]
+            if repos and not skip_llm:
+                translate_field(repos, "description", "description_zh", mock=mock_llm, mock_len=40)
+            dimensions[period] = repos
     return {"generated_at": now_utc().isoformat(), "periods": dimensions}
 
 
@@ -176,12 +182,13 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
 
     # 社媒热点 / GitHub 涨星榜：独立分支，任何模式下都产出，不经过 AI 打分流程
     social_hot = build_social_hot(sources_cfg, skip_llm=skip_llm, mock_llm=mock_llm)
-    github_trending = build_github_trending(sources_cfg)
+    github_trending = build_github_trending(sources_cfg, skip_llm=skip_llm, mock_llm=mock_llm)
     atomic_write_json(out_dir / "social-hot.json", social_hot)
     atomic_write_json(out_dir / "github-trending.json", github_trending)
     log.info(
-        "social_hot: %d platforms; github_trending: %d repos",
-        len(social_hot["platforms"]), len(github_trending["repos"]),
+        "social_hot: %d platforms; github_trending: %s",
+        len(social_hot["platforms"]),
+        {p: len(r) for p, r in github_trending["periods"].items()},
     )
 
     if skip_llm:
@@ -200,9 +207,27 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
             kept, categories_cfg, weights_cfg["scoring_weights"], authority_by_id
         )
     else:
-        kept = prefilter(processable)
-        kept_ids = {it["id"] for it in kept}
-        scored, unscored = score_items(kept, categories_cfg, weights_cfg["scoring_weights"])
+        # 结果缓存：同一条目在48h窗口内会被连续抓到多次，命中过的直接复用，
+        # 只把从未见过的新内容真正送去 DeepSeek——大幅降低消耗（见 llm_cache.py 顶部说明）。
+        cache = llm_cache.load_cache(out_dir)
+        cached_scored, cached_rejected_ids, uncached = llm_cache.split_by_cache(processable, cache)
+
+        kept = prefilter(uncached)
+        newly_kept_ids = {it["id"] for it in kept}
+        newly_rejected_ids = {it["id"] for it in uncached} - newly_kept_ids
+        llm_cache.record_rejected(cache, newly_rejected_ids)
+
+        newly_scored, unscored = score_items(kept, categories_cfg, weights_cfg["scoring_weights"])
+        llm_cache.record_scored(cache, newly_scored)
+
+        scored = cached_scored + newly_scored
+        kept_ids = {it["id"] for it in cached_scored} | newly_kept_ids
+
+        llm_cache.save_cache(out_dir, cache, retain_ids={it["id"] for it in processable})
+        log.info(
+            "llm_cache: %d cached-scored, %d cached-rejected, %d new (of %d processable)",
+            len(cached_scored), len(cached_rejected_ids), len(uncached), len(processable),
+        )
 
     merged_items, stories = merge_stories(scored, weights_cfg)
 

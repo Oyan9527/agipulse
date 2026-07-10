@@ -858,12 +858,15 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* .lead 是 align-items:stretch，不设 align-self:start 的话画框会被拉伸到和文字列等高；
+     改成按自身内容(更矮的宽高比)定高，画框高度显著降低，不再跟随文字长短变化 */
+  align-self: start;
 }
 
 .lead__img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;  /* 由4:3改为更矮的16:9，配合 align-self:start 显著降低画框高度 */
   object-fit: contain;   /* 配图多为图表/架构图，完整显示不裁切 */
   background: var(--panel);
   filter: saturate(0.95);
@@ -872,7 +875,7 @@ a { color: inherit; }
 .lead__placeholder {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
@@ -1060,7 +1063,7 @@ a { color: inherit; }
   line-height: 1.6;
   color: color-mix(in srgb, var(--ink) 78%, var(--mist));
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;  /* 摘要字数上限翻倍(40->80字)，行数配套放宽避免截断 */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

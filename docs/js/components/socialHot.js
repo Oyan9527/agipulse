@@ -77,9 +77,15 @@ export function renderGithubTrending({ listEl, emptyEl, periodEl, data, period =
       </div>
     `;
     const a = li.querySelector(".gh-trending__repo");
-    a.textContent = repo.repo;
+    a.textContent = repo.repo;  // 仓库名是标识符，不翻译
     a.href = repo.url;
-    li.querySelector(".gh-trending__desc").textContent = repo.description || "";
+    const descEl = li.querySelector(".gh-trending__desc");
+    if (repo.description_zh && repo.description_zh.trim() !== (repo.description || "").trim()) {
+      descEl.textContent = repo.description_zh;
+      descEl.title = repo.description;
+    } else {
+      descEl.textContent = repo.description || "";
+    }
     li.querySelector(".gh-trending__stars").textContent = `★ +${repo.stars_gained}`;
     const langEl = li.querySelector(".gh-trending__lang");
     if (repo.language) langEl.textContent = repo.language;

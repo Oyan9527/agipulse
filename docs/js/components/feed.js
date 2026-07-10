@@ -85,7 +85,7 @@ function stripHtml(html) {
   return _parser.parseFromString(html, "text/html").body.textContent?.replace(/\s+/g, " ").trim() || "";
 }
 
-function excerptFor(item, maxLen = 160, preferRaw = false) {
+function excerptFor(item, maxLen = 320, preferRaw = false) {
   // 卡片：优先 DeepSeek 一句话推荐理由（简洁）；
   // 头条(preferRaw)：优先原文正文摘要（要填满多行），理由仅作兜底
   const reason = item.reason_zh || "";
