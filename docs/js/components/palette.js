@@ -1,5 +1,5 @@
 // 命令面板：Ctrl/Cmd+K 打开，模糊搜索已加载的全部条目。
-import { safeUrl } from "../safe.js?v=20260710o";
+import { safeUrl } from "../safe.js?v=20260710p";
 export function initPalette({ overlayEl, triggerEl, inputEl, resultsEl, getSearchIndex }) {
   let activeIndex = -1;
   let currentResults = [];

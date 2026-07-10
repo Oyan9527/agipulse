@@ -1,8 +1,8 @@
-import { renderFeed, excerptFor } from "./components/feed.js?v=20260710o";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710o";
-import { initPalette } from "./components/palette.js?v=20260710o";
-import { categoryColor, categoryTextColor } from "./palette.js?v=20260710o";
-import { safeUrl, setSafeHref } from "./safe.js?v=20260710o";
+import { renderFeed, excerptFor } from "./components/feed.js?v=20260710p";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710p";
+import { initPalette } from "./components/palette.js?v=20260710p";
+import { categoryColor, categoryTextColor } from "./palette.js?v=20260710p";
+import { safeUrl, setSafeHref } from "./safe.js?v=20260710p";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -148,9 +148,22 @@ function renderDateline() {
     `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 星期${weekdays[now.getDay()]}`;
 }
 
+// 头版头条 = 当天最重要的新闻，不是最有深度的那篇。
+// 这里曾直接取"今日简报"榜首；简报后来改成按 depth_score 排序的"今日深度推荐"，
+// 头条的语义就跟着漂了——结果头条是一篇 arXiv 论文，而当天 15 家同时报道的
+// GPT-5.6 发布反倒被埋进信息流。
+// 重要性判据：先看几家独立信源同时报道（跨源确认是最强的重要性信号），再看加权分。
+function pickHeadline(curated) {
+  return curated
+    .slice()
+    .sort((a, b) =>
+      (b.multi_source_count || 1) - (a.multi_source_count || 1) ||
+      (b.weighted_score || 0) - (a.weighted_score || 0)
+    )[0];
+}
+
 function renderLead() {
-  // 头条 = 今日简报榜首（分数最高的精选故事）
-  const lead = state.brief?.items?.[0];
+  const lead = pickHeadline(state.curated);
   if (!lead) return;
   leadId = lead.id;
 
