@@ -764,8 +764,11 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 头版头条：限宽920、图片列进一步收窄、文字列与图等高（两端对齐分布） */
+  /* 头版头条：限宽920、图片列进一步收窄。
+     三行栅格让画框只占中间一行——引题(row1)与元信息(row3)都只在文字列，
+     画框(col2/row2)因此上边与标题上边齐平、下边与正文下边齐平。 */
   grid-template-columns: minmax(0, 70fr) minmax(170px, 30fr);
+  grid-template-rows: auto 1fr auto;
   gap: 12px;
   align-items: stretch;
   max-width: 920px;
@@ -782,17 +785,17 @@ a { color: inherit; }
     0 8px 20px color-mix(in srgb, var(--ink) 9%, transparent),
     0 1px 3px color-mix(in srgb, var(--ink) 6%, transparent);
 }
-@media (max-width: 720px) {
-  .lead { grid-template-columns: 1fr; gap: 12px; }
-}
+/* 头条的单列(移动端)覆盖规则统一放在 .lead__* 各定义之后，见文件下方 “头条 · 移动端单列” */
 
 .lead__kicker {
+  grid-column: 1;
+  grid-row: 1;
   font-family: var(--font-mono);
   font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   color: var(--accent);
-  margin: 0 0 8px;
+  margin: 0;
 }
 .lead__kicker::before {
   content: "";
@@ -826,11 +829,14 @@ a { color: inherit; }
 }
 
 .lead__text {
+  grid-column: 1;
+  grid-row: 2;
   padding-left: 2em;  /* 文字块整体左缩进2字符列 */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  /* 与图片等高：引题/标题在上、摘要居中、元信息落底 */
 }
+/* 末元素(正文)的下外边距会撑高本行，使画框底边低于正文底边——消掉它才能精确对齐 */
+.lead__text > :last-child { margin-bottom: 0; }
 
 .lead__reason {
   margin: 4px 0 8px;
@@ -843,6 +849,9 @@ a { color: inherit; }
 }
 
 .lead__meta {
+  grid-column: 1;
+  grid-row: 3;
+  padding-left: 2em;  /* 与文字列同缩进 */
   margin: 0;
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -851,6 +860,9 @@ a { color: inherit; }
 .lead__meta .lead__cat { color: var(--accent); font-weight: 600; }
 
 .lead__media {
+  grid-column: 2;
+  grid-row: 2;         /* 只占中间行：上边齐标题、下边齐正文 */
+  align-self: stretch; /* 撑满该行，跟随文字列高度 */
   margin: 0;
   border: 1px solid var(--rule-dark);
   padding: 24px;                      /* 报纸相框：细黑边 + 更宽的纸面留白，让图进一步收小 */
@@ -858,15 +870,16 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* .lead 是 align-items:stretch，不设 align-self:start 的话画框会被拉伸到和文字列等高；
-     改成按自身内容(更矮的宽高比)定高，画框高度显著降低，不再跟随文字长短变化 */
-  align-self: start;
+  min-height: 0;       /* 允许被行高压缩，否则图片自身高度会把行撑高 */
 }
 
+/* 画框内的图/占位图填满相框可用高度，不再用 aspect-ratio 自定高——
+   高度已由所在栅格行(标题→正文)决定 */
 .lead__img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;  /* 由4:3改为更矮的16:9，配合 align-self:start 显著降低画框高度 */
+  flex: 1;
+  min-height: 0;
   object-fit: contain;   /* 配图多为图表/架构图，完整显示不裁切 */
   background: var(--panel);
   filter: saturate(0.95);
@@ -875,11 +888,26 @@ a { color: inherit; }
 .lead__placeholder {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  flex: 1;
+  min-height: 0;
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
     var(--bg);
+}
+
+/* 头条 · 移动端单列：必须放在上面各 .lead__* 定义之后，否则同特异性下被后者覆盖。
+   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）；
+   配图不再跟随文字列高度，改回自身 16:9。 */
+@media (max-width: 720px) {
+  .lead { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
+  .lead__kicker,
+  .lead__text,
+  .lead__media,
+  .lead__meta { grid-column: auto; grid-row: auto; }
+  .lead__media { align-self: auto; }
+  .lead__img,
+  .lead__placeholder { flex: none; aspect-ratio: 16 / 9; }
 }
 
 .feed-panel__toolbar {
