@@ -74,6 +74,29 @@ def fetch_and_normalize(sources_cfg):
     return fetch_results, normalized_by_source, all_items
 
 
+def filter_ai_relevance(items, weights_config):
+    """严格AI相关性过滤：只对"通用源"(中文综合科技站/个人技术博客)按标题关键词过滤，
+    天然AI源(官方AI博客/arXiv/AI媒体/AI项目仓库)直接放行。
+    分层理由与"只查标题不查正文"的理由见 config/weights.yaml 的 ai_relevance 段。
+    """
+    cfg = weights_config.get("ai_relevance") or {}
+    prefixes = tuple(cfg.get("strict_source_prefixes") or ())
+    strict_ids = set(cfg.get("strict_sources") or ())
+    if not prefixes and not strict_ids:
+        return items
+
+    def needs_filter(item):
+        sid = item.get("source_id", "")
+        return sid in strict_ids or (prefixes and sid.startswith(prefixes))
+
+    kept = [it for it in items if not needs_filter(it) or is_ai_related(it.get("title", ""))]
+    dropped = len(items) - len(kept)
+    if dropped:
+        log.info("ai_relevance: %d -> %d items (dropped %d non-AI from general sources)",
+                 len(items), len(kept), dropped)
+    return kept
+
+
 def apply_intake_quotas(items, weights_config):
     """原始抓取配额：部分类别源特别多(如论文研究)，抓取量会远超其他类别，
     在进入去重后的处理流程前按新鲜度(published_at)截断，只保留最新的一批。
@@ -209,6 +232,7 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
 
     fetch_results, normalized_by_source, all_items = fetch_and_normalize(sources_cfg)
     all_items = dedupe(all_items, weights_cfg)
+    all_items = filter_ai_relevance(all_items, weights_cfg)
     all_items = apply_intake_quotas(all_items, weights_cfg)
     processable = filter_processing_window(all_items, hours=window_hours)
 

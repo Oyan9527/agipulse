@@ -43,11 +43,25 @@ _EN_WORD_RE = re.compile(
 )
 
 
+# 型号噪声：把"AI"当型号名/营销后缀的消费硬件（AMD 锐龙 AI 9 HX、Ryzen AI Max、
+# Intel Core Ultra 的 AI Boost 等）。这些标题的报道主体是笔记本/CPU 本身而非 AI，
+# 判断前先剔除这些片段——剔除后若标题不再含任何 AI 词，就正确地判为不相关。
+# 注意不能顺手剔除 "AI PC/AI 手机/AI 眼镜"，那些是真的 AI 品类。
+_MODEL_NOISE_RE = re.compile(
+    r"锐龙\s*ai\s*\d*\s*[a-z]*\s*\d*"      # 锐龙 AI 9 HX 470
+    r"|ryzen\s*ai(\s*max)?\s*\d*\s*[a-z]*\s*\d*"  # Ryzen AI 9 / Ryzen AI Max
+    r"|\bai\s*\d+\s*hx\b"                  # AI 9 HX
+    r"|\bai\s*boost\b"                     # Intel AI Boost (NPU 营销名)
+)
+
+
 def is_ai_related(text):
-    """标题是否与 AI 话题相关。中文子串 + 英文词边界 + 英文短语三路匹配。"""
+    """标题是否与 AI 话题相关。中文子串 + 英文词边界 + 英文短语三路匹配。
+    匹配前先剔除把 AI 当型号名的消费硬件片段（见 _MODEL_NOISE_RE）。
+    """
     if not text:
         return False
-    low = text.lower()
+    low = _MODEL_NOISE_RE.sub(" ", text.lower())
     for t in _ZH_TERMS:
         if t in low:
             return True

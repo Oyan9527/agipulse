@@ -11,6 +11,20 @@ quality_gate:
   # 命中任一条件即可进入精选流（latest-24h.json / daily-brief.json）
   # 否则仅进入完整流（latest-24h-all.json）
 
+# AI相关性过滤：只对"通用源"做严格的标题关键词过滤(见 ai_relevance.is_ai_related)。
+#
+# 为什么不对所有源过滤：官方AI博客/arXiv/AI媒体/AI项目仓库这类"天然AI源"，源本身
+# 已经保证了相关性，其标题默认读者已知语境、往往不再出现"AI"字样——实测对全部源
+# 一刀切过滤会误杀43%的真AI内容(如 openai-blog "Introducing GeneBench-Pro"、
+# deepmind-blog "DiffusionGemma"、大量 arXiv cs.CL/cs.LG 论文)。默认放行，零误杀。
+#
+# 为什么只查标题不查正文：正文关键词有两类假阳性——(1)"氪星晚报"类多条打包的资讯
+# 汇编，正文任意一条提到AI就整篇放行；(2)"AI大模型充电桩""AMD锐龙AI 9"把AI当营销词/
+# 型号名塞进正文，但报道主体(充电桩、笔记本)与AI无关。标题是编辑对主题的直接概括。
+ai_relevance:
+  strict_source_prefixes: [zh-]          # 中文通用科技站 + 个人技术博客
+  strict_sources: [36kr, ifanr, ruanyifeng]
+
 # 原始抓取配额：部分类别源特别多(如论文研究17个arXiv分类源)，抓取量会远超其他类别、
 # 淹没"全部动态"展示且拉高LLM调用量；在进入处理流程前按新鲜度截断。
 intake_quotas:
