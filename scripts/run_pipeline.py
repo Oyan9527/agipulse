@@ -21,9 +21,11 @@ from .mock_llm import mock_prefilter, mock_score_items
 from .story_merge import merge_stories, collapse_stories
 from .quality_gate import apply_gate
 from .daily_brief import build_daily_brief
+from .daily_digest import build_daily_digest
 from .feed import build_feed
 from .source_health import build_source_status
 from .trends import build_trends, _extract_keywords
+from .topics import build_topics
 from .archive import update_daily_archive, load_daily_archives
 from .ai_relevance import is_ai_related
 from .social_translate import translate_titles, translate_field
@@ -326,9 +328,16 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     daily_archives = load_daily_archives(out_dir)
     trends = build_trends(merged_items, stories, weights_cfg, daily_archives)
 
+    # AI 每日总结：真实模式调 DeepSeek（额外一次调用，成本可忽略），mock 出占位文本
+    daily_digest = build_daily_digest(curated, mock=mock_llm)
+    # 话题追踪：纯聚合归档里的每日关键词，零 LLM 成本
+    topics = build_topics(daily_archives)
+
     atomic_write_json(out_dir / "latest-24h.json", latest_24h)
     atomic_write_json(out_dir / "latest-24h-all.json", all_24h)
     atomic_write_json(out_dir / "daily-brief.json", daily_brief)
+    atomic_write_json(out_dir / "daily-digest.json", daily_digest)
+    atomic_write_json(out_dir / "topics.json", topics)
     atomic_write_json(out_dir / "stories-merged.json", stories)
     atomic_write_json(out_dir / "source-status.json", status)
     atomic_write_json(out_dir / "trends.json", trends)
