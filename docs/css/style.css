@@ -770,10 +770,11 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 .lead {
   display: grid;
-  /* 头版头条：限宽920、图片列进一步收窄。
-     三行栅格让画框只占中间一行——引题(row1)与元信息(row3)都只在文字列，
-     画框(col2/row2)因此上边与标题上边齐平、下边与正文下边齐平。 */
-  grid-template-columns: minmax(0, 70fr) minmax(170px, 30fr);
+  /* 头版头条：限宽920。三行栅格让画框只占中间一行——引题(row1)与元信息(row3)
+     都只在文字列，画框(col2/row2)因此上边与标题上边齐平、下边与正文下边齐平。
+     摘要保底5行后文字列更高，画框随之变高；配图多为横构图，图片列须相应加宽
+     (30fr->38fr)，否则图在竖长的画框里只占一小条、上下留出大片空白。 */
+  grid-template-columns: minmax(0, 62fr) minmax(210px, 38fr);
   grid-template-rows: auto 1fr auto;
   gap: 12px;
   align-items: stretch;
@@ -848,6 +849,9 @@ a { color: inherit; }
   margin: 4px 0 8px;
   font-size: 0.9rem;
   line-height: 1.7;
+  /* 至少占 5 行、最多 7 行：摘要短时也撑满 5 行，头条画框(与本行同高)不会缩得太扁；
+     5 × 1.7 = 8.5em（em 基于本元素 0.9rem 字号） */
+  min-height: 8.5em;
   display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
@@ -867,26 +871,24 @@ a { color: inherit; }
 
 .lead__media {
   grid-column: 2;
-  grid-row: 2;         /* 只占中间行：上边齐标题、下边齐正文 */
-  align-self: stretch; /* 撑满该行，跟随文字列高度 */
+  grid-row: 2;         /* 与标题同一行起始：上边齐标题上边 */
+  /* 按图片自身比例定高，不拉伸到与正文等高。头条配图多为横构图(约1.29:1~16:9)，
+     而"上下都对齐正文"会把画框撑成竖长形，图片完整显示时框内过半是空白
+     (实测58%)。改为画框高度=图片自然高度：图完整、无裁切、无留白，
+     代价是画框底边不再与正文底边齐平。 */
+  align-self: start;
   margin: 0;
   border: 1px solid var(--rule-dark);
-  padding: 24px;                      /* 报纸相框：细黑边 + 更宽的纸面留白，让图进一步收小 */
+  padding: 14px;       /* 报纸相框：细黑边 + 一圈纸面留白 */
   background: var(--panel);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 0;       /* 允许被行高压缩，否则图片自身高度会把行撑高 */
+  display: block;
 }
 
-/* 画框内的图/占位图填满相框可用高度，不再用 aspect-ratio 自定高——
-   高度已由所在栅格行(标题→正文)决定 */
+/* 图/占位图按列宽铺满，高度随比例自适应——画框高度即由此决定 */
 .lead__img {
   display: block;
   width: 100%;
-  flex: 1;
-  min-height: 0;
-  object-fit: contain;   /* 配图多为图表/架构图，完整显示不裁切 */
+  height: auto;
   background: var(--panel);
   filter: saturate(0.95);
 }
@@ -894,8 +896,8 @@ a { color: inherit; }
 .lead__placeholder {
   display: block;
   width: 100%;
-  flex: 1;
-  min-height: 0;
+  height: auto;
+  aspect-ratio: 4 / 3;   /* 占位图无自然尺寸，按其 viewBox(400×300) 比例定高 */
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
@@ -903,8 +905,8 @@ a { color: inherit; }
 }
 
 /* 头条 · 移动端单列：必须放在上面各 .lead__* 定义之后，否则同特异性下被后者覆盖。
-   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）；
-   配图不再跟随文字列高度，改回自身 16:9。 */
+   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）。
+   配图仍按自身比例定高（与桌面一致），无需再覆盖。 */
 @media (max-width: 720px) {
   .lead { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
   .lead__kicker,
@@ -912,8 +914,6 @@ a { color: inherit; }
   .lead__media,
   .lead__meta { grid-column: auto; grid-row: auto; }
   .lead__media { align-self: auto; }
-  .lead__img,
-  .lead__placeholder { flex: none; aspect-ratio: 16 / 9; }
 }
 
 .feed-panel__toolbar {
