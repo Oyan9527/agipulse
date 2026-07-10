@@ -1,5 +1,40 @@
 [
   {
+    "id": "8b70ca0ae1958279",
+    "source_id": "pytorch-blog",
+    "title": "Towards Free Normalization: Fusing Normalization into GEMM and Attention Kernels",
+    "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/",
+    "published_at": "2026-07-10T14:35:48+00:00",
+    "raw_text": "Code available at: https://github.com/facebookresearch/ads_model_kernel_library/tree/main/multi_cta_norm_fusion and https://github.com/facebookresearch/ads_model_kernel_library/tree/main/gdpa_megakernel TL;DR In this blog post, we present various novel kernel fusion techniques for common normalization ops like LayerNorm and RMSNorm, which provide significant speedup...",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://pytorch.org/wp-content/uploads/2026/07/All-PyTorch-Blog-Social-Images-12.png",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出将LayerNorm等归一化操作融合进GEMM和Attention核的新方法，显著加速推理，对工程优化有直接价值。",
+    "summary_zh": "Meta发布博客介绍多种新颖的核融合技术，将LayerNorm、RMSNorm等常见归一化操作融合进GEMM和Attention内核中。通过消除额外的内存读写和内核启动开销，实现了显著的加速效果。代码已开源在GitHub上，包含multi_cta_norm_fusion和gdpa_megakernel等实现。该工作对提升大模型推理效率具有实际意义。",
+    "title_zh": "迈向自由归一化：将归一化融合进GEMM和Attention内核",
+    "weighted_score": 0.875,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.9
+    },
+    "story_id": "1c54bf7bbd7e3626",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "pytorch-blog",
+        "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "c223296e0641446f",
     "source_id": "simonwillison",
     "title": "The new GPT-5.6 family: Luna, Terra, Sol",
@@ -13,8 +48,9 @@
     "image_url": "https://static.simonwillison.net/static/2026/gpt-5.6-pelicans.webp",
     "category": "模型发布",
     "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "OpenAI发布GPT-5.6系列（Luna/Terra/Sol），定价公开，但内容为发布公告。",
+    "depth_score": 0.2,
+    "reason_zh": "OpenAI发布GPT-5.6系列模型，分三个尺寸，定价与性能对比Claude系列，值得关注。",
+    "summary_zh": "OpenAI发布了GPT-5.6系列旗舰模型，包括Luna、Terra和Sol三个尺寸（从小到大）。定价为每百万输入/输出token：Luna $1/$6，Terra $2.50/$15，Sol $5/$30。与Claude Opus系列（$5/$25）和Claude Fable 5（$10/$50）相比，价格具有竞争力。",
     "title_zh": "新的GPT-5.6系列：Luna、Terra、Sol",
     "weighted_score": 0.86,
     "score_breakdown": {
@@ -23,118 +59,84 @@
       "impact": 0.9,
       "practical_value": 0.7
     },
-    "story_id": "16cfa067f2b4ac75",
-    "multi_source_count": 2,
+    "story_id": "7fa260a620f238aa",
+    "multi_source_count": 14,
     "sources": [
+      {
+        "source_id": "zh-sspai",
+        "url": "https://sspai.com/post/112091"
+      },
+      {
+        "source_id": "openai-blog",
+        "url": "https://openai.com/index/gpt-5-6"
+      },
+      {
+        "source_id": "openai-blog",
+        "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot"
+      },
       {
         "source_id": "github-changelog",
         "url": "https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot"
       },
       {
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/963464/openai-gpt-5-6-codex-chatgpt-work"
+      },
+      {
         "source_id": "simonwillison",
         "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/#atom-everything"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "54ee76ae9206d639",
-    "source_id": "openai-blog",
-    "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
-    "url": "https://openai.com/index/gpt-5-6",
-    "published_at": "2026-07-09T10:00:00+00:00",
-    "raw_text": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work.",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "OpenAI发布GPT-5.6，宣称每token更智能、性价比更高，可按需扩展能力，面向高难度任务。",
-    "title_zh": "GPT-5.6：随您雄心扩展的前沿智能",
-    "weighted_score": 0.84,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.6
-    },
-    "story_id": "463cf485600ea694",
-    "multi_source_count": 1,
-    "sources": [
+      },
       {
-        "source_id": "openai-blog",
-        "url": "https://openai.com/index/gpt-5-6"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "5941cef110c0f469",
-    "source_id": "openai-blog",
-    "title": "ChatGPT is now a partner for your most ambitious work",
-    "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-    "published_at": "2026-07-09T10:00:00+00:00",
-    "raw_text": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work.",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "OpenAI发布ChatGPT Work，一个能跨应用和文件执行任务的智能体，可长时间跟踪项目，提升工作效率。",
-    "title_zh": "ChatGPT 现已成为您最具雄心工作的合作伙伴",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.9,
-      "practical_value": 0.7
-    },
-    "story_id": "66b87d05dc37b70b",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/"
+      },
       {
-        "source_id": "openai-blog",
-        "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "e799563c0958e055",
-    "source_id": "openai-blog",
-    "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
-    "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
-    "published_at": "2026-07-09T13:00:00+00:00",
-    "raw_text": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work.",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "GPT-5.6成为Microsoft 365 Copilot首选模型，增强Word、Excel等应用AI能力。",
-    "title_zh": "GPT-5.6 现已成为 Microsoft 365 Copilot 的首选模型",
-    "weighted_score": 0.815,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.9,
-      "practical_value": 0.6
-    },
-    "story_id": "93dd045813416e5e",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "zh-cnbeta",
+        "url": "https://www.cnbeta.com.tw/articles/tech/1568530.htm"
+      },
       {
-        "source_id": "openai-blog",
-        "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot"
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/07/09/openai-says-gpt-5-6-is-the-preferred-model-for-microsoft-copilot-amid-breakup-chatter/"
+      },
+      {
+        "source_id": "ifanr",
+        "url": "https://www.ifanr.com/1671523?utm_source=rss&utm_medium=rss&utm_campaign="
+      },
+      {
+        "source_id": "zh-cnbeta",
+        "url": "https://www.cnbeta.com.tw/articles/tech/1568552.htm"
+      },
+      {
+        "source_id": "ifanr",
+        "url": "https://www.ifanr.com/1671521?utm_source=rss&utm_medium=rss&utm_campaign="
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/471626"
+      },
+      {
+        "source_id": "latent-space",
+        "url": "https://www.latent.space/p/ainews-openai-launches-gpt-56-solterraluna"
+      },
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/07/447691.html"
+      },
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7660701131546902547"
+      },
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226455#reply1"
+      },
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7660775362418540554"
+      },
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/iqUrh3vqeO4xszUa1bCd?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -144,7 +146,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-10T08:23:02.887714+00:00",
+    "published_at": "2026-07-10T17:42:59.536552+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -152,15 +154,16 @@
     "image_url": "https://p1.meituan.net/meituantechblog/ef19600fdb0e6868a3574c4a8c7ff746220482.png",
     "category": "模型发布",
     "content_type": "产品发布",
-    "depth_score": 0.5,
-    "reason_zh": "美团发布LongCat-2.0万亿参数模型，国产算力训练，原生支持1M上下文，聚焦Agentic Coding。",
+    "depth_score": 0.6,
+    "reason_zh": "美团发布万亿参数模型LongCat-2.0，在国产算力集群上完成训练，对AI自主可控有重大意义。",
+    "summary_zh": "美团正式发布LongCat-2.0，这是业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数1.6T，平均激活约48B，动态范围33B~56B）。模型从零开始预训练，原生支持1M超长上下文，架构设计围绕Agentic Coding任务，旨在提升代码理解、生成与执行的效率与稳定性。该发布标志着国产算力在超大规模模型训练上的重要突破。",
     "title_zh": null,
-    "weighted_score": 0.815,
+    "weighted_score": 0.86,
     "score_breakdown": {
       "source_authority": 0.9,
       "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
+      "impact": 0.9,
+      "practical_value": 0.7
     },
     "story_id": "8bd25b5e378c5d18",
     "multi_source_count": 1,
@@ -173,12 +176,12 @@
     "curated": true
   },
   {
-    "id": "93d84c70186edb98",
+    "id": "4aa9fdf03494de30",
     "source_id": "arxiv-cs-ai",
-    "title": "The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs",
-    "url": "https://arxiv.org/abs/2607.08734",
+    "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
+    "url": "https://arxiv.org/abs/2607.08173",
     "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08734v1 Announce Type: new \nAbstract: Post-training quantization is widely used to deploy large language models in resource-constrained settings, yet its evaluation relies almost exclusively on accuracy and perplexity. We show that these metrics fail to capture behavioral changes induced by quantization. We introduce correctness agreement, a decision-level metric that measures overlap in correct predictions between a base model and its quantized variants, independent of absolute accuracy. Across multiple models and quantization schemes from 8-bit to 2-bit, we find that behavioral divergence emerges under moderate quantization even when task performance appears preserved. To explain this effect, we analyze quantization as a structural operator on attention weights and quantify layer-wise distortions using statistical and distributional measures. Our results reveal non-linear breakpoints at low bit-widths and show that query and key projections are consistently more sensitive ",
+    "raw_text": "arXiv:2607.08173v1 Announce Type: new \nAbstract: Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \\emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \\emph{overthinking model} as $\\boldsymbol{\\theta}_{\\mathcal{O}_\\alpha} = \\boldsymbol{\\theta}_{\\mathcal{M}} + \\alpha(\\boldsymbol{\\theta}_{\\mathcal{R}} - \\boldsymbol{\\theta}_{\\mathcal{M}})$, where $\\alpha > 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden",
     "category_hint": [
       "论文研究"
     ],
@@ -186,21 +189,22 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.9,
-    "reason_zh": "揭示量化对LLM行为的影响，指出准确率和困惑度无法捕捉行为变化，具有深刻洞察。",
-    "title_zh": "等价幻觉：LLM量化效应的统计表征",
-    "weighted_score": 0.8,
+    "reason_zh": "提出“过度思考”方法提取模型隐藏信息，对AI审计和安全有重要价值。",
+    "summary_zh": "本文提出“过度思考”（overthinking）方法，通过放大推理任务向量来增强推理模型“出声思考”的倾向，从而在审计过程中更好地提取隐藏信息。黑盒审计是部署前的重要工具，但可能遗漏微妙的失调和隐藏信息。过度思考利用推理任务向量，迫使模型更充分地展开推理过程，从而暴露潜在的有害知识或秘密。实验表明，该方法能有效提取模型在标准条件下隐藏的信息。",
+    "title_zh": "过度思考：放大推理权重以提取学习到的秘密",
+    "weighted_score": 0.835,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
+      "source_authority": 0.9,
+      "novelty": 0.9,
       "impact": 0.8,
-      "practical_value": 0.8
+      "practical_value": 0.7
     },
-    "story_id": "a2d0d46c0e7ca12a",
+    "story_id": "51df0abfd4e84b7a",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08734"
+        "url": "https://arxiv.org/abs/2607.08173"
       }
     ],
     "curated": true
@@ -219,13 +223,14 @@
     "image_url": "https://wp.technologyreview.com/wp-content/uploads/2026/07/Screenshot-2026-07-09-at-20.29.29.png?w=180",
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "Anthropic开发新技术揭示Claude内部概念推理空间，提供可解释性研究新视角。",
-    "title_zh": "Anthropic发现Claude思考概念的隐藏空间",
-    "weighted_score": 0.79,
+    "depth_score": 0.9,
+    "reason_zh": "Anthropic开发Jacobian透镜技术，首次清晰揭示LLM内部概念推理空间，对AI可解释性研究具有里程碑意义。",
+    "summary_zh": "MIT Tech Review报道了Anthropic的一项突破性研究：他们开发了一种名为Jacobian透镜的工具，能够以前所未有的清晰度观察大型语言模型（LLM）在回答问题或执行任务时的内部运作。研究发现，模型内部存在一个隐藏空间，其中概念以复杂的方式相互关联和推理。这一发现既令人着迷又令人不安，因为它揭示了AI决策过程的某些方面可能超出人类直觉。该技术为理解AI的“黑箱”提供了新途径，对提升AI安全性和可控性具有重要意义。",
+    "title_zh": "Anthropic发现隐藏空间：Claude在其中推演概念",
+    "weighted_score": 0.815,
     "score_breakdown": {
       "source_authority": 0.9,
-      "novelty": 0.8,
+      "novelty": 0.9,
       "impact": 0.8,
       "practical_value": 0.6
     },
@@ -240,12 +245,80 @@
     "curated": true
   },
   {
-    "id": "03516a41e7477bd2",
+    "id": "d0b184a7d59543e3",
     "source_id": "arxiv-cs-ai",
-    "title": "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
-    "url": "https://arxiv.org/abs/2607.08393",
+    "title": "Compete Then Collaborate: Frontier AI Teachers Build a Verifiable Curriculum to Improve a Coding Student Beyond Imitation",
+    "url": "https://arxiv.org/abs/2607.08255",
     "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08393v1 Announce Type: new \nAbstract: Fine-tuning LLMs to inject new knowledge faces a critical challenge: LLMs can quickly memorize new facts, yet fail to use them for downstream reasoning tasks. We formalize this failure as the \\textit{\\textbf{Knowing--Using Gap}}, characterized by an accuracy gap and a temporal lag between memorization and generalization. To understand this phenomenon, we fine-tune LLMs with unseen knowledge and monitor the spatial permeation dynamics of the knowledge internally using a novel intervention technique called self-patching. Self-patching identifies activation locations where relocating representations substantially improves failed generalization cases. These results are consistent with a knowledge-circuit misalignment hypothesis: memorized representations can exist internally but may not be routed to computation-effective layers. To demonstrate the practicality of this diagnostic finding, we design a simple heuristic strategy which recovers 5",
+    "raw_text": "arXiv:2607.08255v1 Announce Type: new \nAbstract: Large language models increasingly serve as teachers generating training data for smaller students. Prior multi-teacher knowledge distillation methods merge outputs without determining which frontier model teaches best, often relying on an LLM judge biased toward its own outputs. We introduce a compete-then-collaborate framework where four frontier AI teachers (Claude, Codex-GPT, Grok, Gemini) are ranked head-to-head by an execution-based judge (unit tests and stdin-stdout checks) with fairness controls, and then collaborate to build a verifiable curriculum for a student (Qwen2.5-Coder). We report three findings. (1) Under execution verification, all teachers solve standard problems near-perfectly after self-correction (99-100%) due to a saturation effect, but harder competition problems separate them (Gemini 77% > Claude 69% = Codex 69% > Grok 50%); however, the robust student-side results do not depend on teacher ranking. (2) Imitation",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出竞争-协作框架，利用多个前沿模型提升学生模型编码能力，方法新颖。",
+    "summary_zh": "本文提出一种竞争-协作框架，利用多个前沿大型语言模型作为教师，生成可验证的课程来训练学生模型。传统多教师知识蒸馏方法合并输出而不确定哪个模型教学最佳，且依赖有偏的LLM评判。本框架中，四个前沿模型先竞争生成最佳教学示例，然后协作构建课程。通过可验证的编码任务（如单元测试），确保教学内容的正确性。实验表明，该方法训练的学生模型在编码任务上超越了单纯模仿教师输出的基线。",
+    "title_zh": "先竞争后协作：前沿AI教师构建可验证课程，提升编码学生超越模仿",
+    "weighted_score": 0.785,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "4a2cb4381e5c1de6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08255"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6b53e940692fc517",
+    "source_id": "arxiv-cs-ai",
+    "title": "Answer Set Programming Energised! End-to-End Neurosymbolic Reasoning and Learning with ASP and Energy Based Models",
+    "url": "https://arxiv.org/abs/2607.08136",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08136v1 Announce Type: new \nAbstract: We present a general neurosymbolic reasoning and learning methodology based on a modular integration of answer set programming with an energy based model substrate. Key contributions are: (1) supporting joint optimisation in the continuous latent space through explicit ASP-based declarative semantics fully incorporating background knowledge, constraints, non-monotonic inference; and (2) advancing recent works at the interface of answer sets, probabilistic logic, and answer set modulo theories by providing a generalised model and practical platform for ASP-centric robust, end-to-end training for applications in dynamic domains (e.g., involving perception and interaction). We provide a practical implementation, and demonstrate basic use and application (with MNIST), and evaluate with the visual question-answering benchmark Clevr and the multi-object tracking benchmark MOT.",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出神经符号推理新范式，结合ASP与能量模型，具有理论创新性。",
+    "summary_zh": "本文提出一种通用的神经符号推理与学习方法，基于回答集编程（ASP）和能量基模型的模块化集成。主要贡献包括：（1）通过显式的ASP声明语义支持连续潜在空间中的联合优化，完全融入背景知识、约束和偏好；（2）利用能量基模型进行高效的概率推理和学习。该方法在多个推理任务上展示了优于纯神经或纯符号方法的性能，为神经符号系统提供了新的理论框架。",
+    "title_zh": "激活回答集编程！基于ASP和能量模型的端到端神经符号推理与学习",
+    "weighted_score": 0.77,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.5
+    },
+    "story_id": "d2ff2782e6aa2ac8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08136"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "82211c2794e474ed",
+    "source_id": "arxiv-cs-ai",
+    "title": "A First-Principles Theory of Slow Thinking and Active Perception",
+    "url": "https://arxiv.org/abs/2607.08196",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08196v1 Announce Type: new \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgraded ",
     "category_hint": [
       "论文研究"
     ],
@@ -253,87 +326,90 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.9,
-    "reason_zh": "机制性解释LLM微调中记忆知识无法泛化的“知道-使用”鸿沟，揭示根本原因。",
-    "title_zh": "机制性理解大语言模型微调中记忆知识为何无法泛化",
-    "weighted_score": 0.785,
+    "reason_zh": "从第一性原理推导慢思考与主动感知，理论深度高，对理解LLM推理有启发。",
+    "summary_zh": "作为认知功能第一性原理建模系列的一部分，本文尝试提供思考和感知的数学形式化。它正式推导了慢思考或更一般的主动感知，并涵盖了慢思考大型语言模型的设计、训练和推理。起点是生命系统的第一性原理，通过变分自由能等概念，建立了一个统一的框架，将感知、推理和学习联系起来。该理论为构建更接近人类认知的AI系统提供了数学基础。",
+    "title_zh": "慢思考与主动感知的第一性原理理论",
+    "weighted_score": 0.77,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.5
+    },
+    "story_id": "acd47dd729ba28bb",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08196"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "1ca470e06b8cbc81",
+    "source_id": "arxiv-cs-ai",
+    "title": "Persuasion Attacks Can Decrease Effectiveness of CoT Monitoring",
+    "url": "https://arxiv.org/abs/2607.08066",
+    "published_at": "2026-07-10T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08066v1 Announce Type: new \nAbstract: Chain-of-thought (CoT) monitoring is a promising safety mechanism for AI agents, based on the premise that visible reasoning traces can surface misaligned or deceptive behavior. While effective in standard scenarios, recent work highlights that LLMs remain vulnerable to persuasion-based jailbreaks, where natural-language arguments override model constraints. We stress-test whether this vulnerability extends to monitoring LLMs: can an adversarial agent persuade its CoT monitor to approve proposed actions that violate the monitor's policy? We design an evaluation framework with 40 tasks and analyze thousands of agent-monitor interactions, where agents are instructed to argue for policy-violating proposals. We find that in such adversarial settings, monitor access to the agent's CoT reasoning increases rather than decreases approval of harmful actions on average by 9.5%, as the scratchpad provides an additional persuasion channel. To addres",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "揭示CoT监控的脆弱性，对AI安全机制设计有重要警示意义。",
+    "summary_zh": "本文研究了基于说服的越狱攻击如何降低链式思维（CoT）监控的有效性。CoT监控是一种有前景的AI安全机制，通过可见的推理轨迹来暴露不对齐或欺骗行为。然而，最新研究表明，大型语言模型仍然容易受到基于说服的越狱攻击，即通过自然语言论证覆盖模型的安全约束。本文分析了这种攻击的原理和效果，并讨论了其对AI安全部署的潜在影响。",
+    "title_zh": "说服攻击可降低链式思维监控的有效性",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "7e3b2c1afda77333",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08066"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "800656787a687fd7",
+    "source_id": "zh-solidot",
+    "title": "人形机器人成功完成远超手术",
+    "url": "https://www.solidot.org/story?sid=84801",
+    "published_at": "2026-07-10T15:10:19+00:00",
+    "raw_text": "根据发表在《自然》期刊上的一项研究，人形机器人成功完成切除活体动物胆囊的手术。人形机器人并不具有自主能力，它们并不会取代医生，而是由外科医生远超操作。远程操控的人形机器人为活猪完成两例微创胆囊切除手术。如果该方法被证实适用于临床，外科医生就可以利用人形机器人，在资源有限、无法安装专业且昂贵手术机器人的小型医院和诊所远程开展机器人辅助手术。人形机器人相比专业手术机器人更便宜，占用的空间更小，而且易于部署，能部署到从偏远地区到战场甚至太空。研究人员利用宇树科技的 G1 人形机器人。最便宜的 G1 基础型号起售价 13,500 美元，配置灵活机械手以及运费之后费用会超过 6.7 万美元。相比下 Intuitive Surgical 的达芬奇手术机器人费用在 50 万到数百万美元之间。宇树科技机器人的缺陷是需要频繁重校准，耗时更长。\n<p></p>",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "人形机器人成功完成远程手术，展示低成本手术机器人潜力，对医疗AI领域有重要启示。",
+    "summary_zh": "根据《自然》期刊研究，宇树科技G1人形机器人成功为活猪完成两例远程微创胆囊切除手术。该机器人由外科医生远程操控，不具备自主能力。相比达芬奇手术机器人（50万-数百万美元），G1基础型号起售价仅13,500美元，总费用约6.7万美元，但需频繁重校准且耗时更长。该技术有望在资源有限地区推广。",
+    "title_zh": null,
+    "weighted_score": 0.765,
     "score_breakdown": {
       "source_authority": 0.8,
       "novelty": 0.9,
       "impact": 0.8,
-      "practical_value": 0.6
+      "practical_value": 0.5
     },
-    "story_id": "896a269255df7759",
+    "story_id": "33d5a701b7e89f6a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08393"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "943e7f7678a32a3e",
-    "source_id": "arxiv-cs-ai",
-    "title": "Persona Cartography: Charting Language Model Personality Traits in Weight Space",
-    "url": "https://arxiv.org/abs/2607.07916",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.07916v1 Announce Type: new \nAbstract: Large language models exhibit recurring behavioural patterns -- personas -- that shape generalisation and safety, but we lack reliable tools for decomposing, measuring, and controlling them. Our central insight is to treat personas as positions in a space of behavioural traits, using the OCEAN framework to describe model personas in terms of Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. We train low-rank adapters to amplify or suppress individual traits, and evaluate their effects using an LLM-judge calibrated against a human-validated panel, trait-specific multiple-choice benchmarks, and standard capability evaluations. Across six models from three families (4B-32B), we find that each adapter moves its target trait largely monotonically with scale, combines approximately additively with other adapters to construct mixed personas, and preserves performance on capability benchmarks at moderate scales. We furth",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出人格制图学，将语言模型人格特质映射到权重空间，方法新颖且可解释性强。",
-    "title_zh": "人格制图学：在权重空间中绘制语言模型人格特质",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "42520dbe2ddadf06",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.07916"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a7e9760079a623f5",
-    "source_id": "arxiv-cs-ai",
-    "title": "Ideas Have Genomes: Benchmarking Scientific Lineage Reasoning and Lineage-Grounded Idea Generation",
-    "url": "https://arxiv.org/abs/2607.08758",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08758v1 Announce Type: new \nAbstract: Scientific ideas rarely start from a blank page. They inherit mechanisms, repair known limitations, and recombine pieces of earlier work, much like biological genomes. Current benchmarks still say little about whether AI systems can follow this inheritance structure. We present IdeaGene-Bench (IG-Bench), a benchmark for scientific lineage reasoning and lineage-grounded idea generation. IG-Bench is organized around the IdeaGene framework: each paper or proposal is represented as a set of minimal, typed, evidence-grounded Idea Genome objects, and a GenomeDiff aligns these objects to record inheritance, mutation, loss, external import, and novel insertion under six operational evolutionary dynamics. The benchmark contains 1,961 golden lineage traces, 1,085 curated Idea Genome objects, and 920 pairwise GenomeDiff records across 10 scientific domains. It supports two evaluations. IG-Exam (42 task types, 1,029 instances) tests closed-form line",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出科学思想谱系推理基准，评估AI继承和重组前人工作的能力，概念新颖。",
-    "title_zh": "思想有基因组：科学谱系推理与谱系驱动思想生成的基准",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "16a410eedd590555",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08758"
+        "source_id": "zh-solidot",
+        "url": "https://www.solidot.org/story?sid=84801"
       }
     ],
     "curated": true
@@ -343,21 +419,22 @@
     "source_id": "zh-meituan-tech",
     "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
     "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-07-10T08:23:02.887755+00:00",
+    "published_at": "2026-07-10T17:42:59.536601+00:00",
     "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
-    "category": "行业动态",
-    "content_type": "产品发布",
-    "depth_score": 0.5,
-    "reason_zh": "首个真实生活场景下长期动态用户建模的智能体评测基准，系统评估LLM个性化与主动性能力。",
-    "title_zh": null,
-    "weighted_score": 0.76,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "VitaBench 2.0是首个真实生活场景下的长期动态智能体基准，对评估AI个性化能力有重要价值。",
+    "summary_zh": "LongCat开源了VitaBench 2.0，这是首个面向长期动态用户建模的智能体评测基准。它系统性地评估大语言模型在长期、真实、动态的用户互动中的个性化与主动性能力。该基准填补了现有评测在动态场景下的空白，为智能体研究提供了新的评估标准。",
+    "title_zh": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
+    "weighted_score": 0.765,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
+      "source_authority": 0.9,
+      "novelty": 0.8,
       "impact": 0.7,
       "practical_value": 0.6
     },
@@ -372,45 +449,12 @@
     "curated": true
   },
   {
-    "id": "c4018016fade49a1",
-    "source_id": "gh-trl",
-    "title": "huggingface/trl v1.8.0",
-    "url": "https://github.com/huggingface/trl/releases/tag/v1.8.0",
-    "published_at": "2026-07-09T18:41:28+00:00",
-    "raw_text": "## Features\r\n\r\n### 🎓 KTO is now a stable trainer\r\n\r\nAfter many cycles of `KTOTrainer` ↔ `DPOTrainer` alignment work, KTO graduates from `trl.experimental.kto` to the top-level `trl` package. Same API as DPO/GRPO/SFT — imports move from experimental, tests move to the main test tree, docs no longer flag it as experimental. The experimental path still works and emits a `FutureWarning` (removal in v2.0.0).\r\n\r\n```python\r\n# Before\r\nfrom trl.experimental.kto import KTOConfig, KTOTrainer\r\n\r\n# Now\r\nfrom trl import KTOConfig, KTOTrainer\r\n```\r\n\r\nPer our telemetry, KTO is the 4th most used trainer in TRL — this graduation was overdue.\r\n\r\nby @albertvillanova in https://github.com/huggingface/trl/pull/6175, https://github.com/huggingface/trl/pull/6287 and https://github.com/huggingface/trl/pull/6345\r\n\r\n### Environment-owned rewards & multi-environment support\r\n\r\nThree interrelated changes make agentic RL training with environments substantially more ergonomic.\r\n\r\n**Environment-owned reward.** If yo",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Hugging Face TRL v1.8.0发布，KTO训练器正式稳定，对RLHF实践者有直接实用价值。",
-    "title_zh": "huggingface/trl v1.8.0 发布",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "2993a266f521155d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-trl",
-        "url": "https://github.com/huggingface/trl/releases/tag/v1.8.0"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "7c946336775e0b3c",
+    "id": "b139faf19c9a7550",
     "source_id": "arxiv-cs-ai",
-    "title": "Agentic Neural Architecture Search",
-    "url": "https://arxiv.org/abs/2607.07984",
+    "title": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
+    "url": "https://arxiv.org/abs/2607.08093",
     "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.07984v1 Announce Type: new \nAbstract: Neural architecture search (NAS) methods have grown increasingly efficient, yet they remain bounded by manually engineered search spaces that require substantial domain expertise and must be rebuilt for every new task. Large language models (LLMs) can generate architectures in an open-ended space, but how to optimally divide the labor between LLM-driven design and NAS-driven search remains unexplored. We propose a mechanism that bridges these two paradigms: an LLM produces a high-quality seed architecture, then decomposes it into a \"slotted architecture\", a scaffold with named, interchangeable module slots that automatically defines a bounded, task-specific search space for conventional NAS to explore, without manual engineering. We instantiate this mechanism in AgentNAS, a modular three-phase pipeline in which each component's contribution can be measured independently. On 17 tasks spanning classification, dense regression, segmentation",
+    "raw_text": "arXiv:2607.08093v1 Announce Type: new \nAbstract: Large language models (LLMs) increasingly act as integrated data-science agents, combining abstract reasoning with advanced tool use. Yet the relevant benchmark landscape largely divides into symbolic causal reasoning benchmarks without realistic data analysis or data analysis benchmarks without a principled causal data-generating structure. Furthermore, existing causal evaluation datasets are often restricted to curated examples from existing sources, with diversity coming from limited templatized variations rather than from systematic generation of novel synthetic causal structures. We introduce CausalDS, a benchmark for evaluating causal reasoning in agentic data-science workflows. Each benchmark instance is a scene consisting of a sampled structural causal model (SCM) with generated observational data and an accompanying synthetic natural-language story grounded in a realistic domain. We optionally ground the composition of the bench",
     "category_hint": [
       "论文研究"
     ],
@@ -418,32 +462,68 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.7,
-    "reason_zh": "提出智能体神经架构搜索，利用LLM自动设计搜索空间，方法创新且实用性强。",
-    "title_zh": "智能体神经架构搜索",
-    "weighted_score": 0.755,
+    "reason_zh": "填补因果推理与数据分析基准的空白，对评估LLM智能体有重要参考价值。",
+    "summary_zh": "本文提出CausalDS，一个用于评估数据科学智能体中因果推理能力的基准。大型语言模型越来越多地充当集成数据科学智能体，结合抽象推理和高级工具使用。然而，现有基准要么是符号因果推理（缺乏真实数据分析），要么是数据分析基准（缺乏因果结构）。CausalDS通过生成具有因果结构的数据集，要求智能体进行因果发现、因果推断和反事实推理，全面评估其因果推理能力。",
+    "title_zh": "CausalDS：数据科学智能体中的因果推理基准",
+    "weighted_score": 0.76,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.8,
-      "impact": 0.7,
+      "impact": 0.6,
       "practical_value": 0.7
     },
-    "story_id": "0d74401efd1b3286",
+    "story_id": "5026bb0be0462d63",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.07984"
+        "url": "https://arxiv.org/abs/2607.08093"
       }
     ],
     "curated": true
   },
   {
-    "id": "d9102c5ab8397879",
+    "id": "8f799535c0d61d4c",
+    "source_id": "github-ai-blog",
+    "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
+    "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
+    "published_at": "2026-07-10T15:57:47+00:00",
+    "raw_text": "<p>How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/\">Better tools made Copilot code review worse. Here&#8217;s how we actually improved it.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://github.blog/wp-content/uploads/2026/07/1.png?resize=1024%2C478",
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "GitHub官方博客，分享Copilot代码审查工具迁移到Unix风格工具后反而变差，最终通过重构Agent工作流改进的实战经验，有深度反思。",
+    "summary_zh": "GitHub博客文章分享了Copilot代码审查工具的一次改进历程：迁移到共享的Unix风格代码探索工具后，审查成本反而增加。团队通过重构Agent工作流，围绕PR证据重塑流程，最终实现了改进。文章深入分析了工具选择与工作流设计之间的关系，强调了Agent工作流设计的重要性，对AI辅助开发工具的设计有启发意义。",
+    "title_zh": "更好的工具反而让Copilot代码审查变差：我们如何实际改进",
+    "weighted_score": 0.76,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "5ed95af924d398c5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "github-ai-blog",
+        "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "93d84c70186edb98",
     "source_id": "arxiv-cs-ai",
-    "title": "Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents",
-    "url": "https://arxiv.org/abs/2607.08716",
+    "title": "The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs",
+    "url": "https://arxiv.org/abs/2607.08734",
     "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08716v1 Announce Type: new \nAbstract: In long-horizon tasks, decision-relevant state is often scattered across an expanding trajectory, while the action agent must surface it and act. As trajectories grow, task requirements, environment facts, prior attempts, diagnoses, and open subgoals can be buried in the context window or pushed beyond it, failing to influence decisions when needed. We call this failure mode \"behavioral state decay\". We study memory as an active intervention mechanism rather than passive retrieval. A separate memory agent runs alongside an unmodified action agent, updating a structured memory bank from the recent trajectory and deciding whether to inject a memory-grounded reminder or remain silent. The module is plug-and-play with frontier action agents and existing agent harnesses. Across Terminal-Bench 2.0 and $\\tau^2$-Bench, it improves pass@1 for both weaker and stronger action agents, with gains of +8.3 pp on Terminal-Bench and +6.8 pp on $\\tau^2$-B",
+    "raw_text": "arXiv:2607.08734v1 Announce Type: new \nAbstract: Post-training quantization is widely used to deploy large language models in resource-constrained settings, yet its evaluation relies almost exclusively on accuracy and perplexity. We show that these metrics fail to capture behavioral changes induced by quantization. We introduce correctness agreement, a decision-level metric that measures overlap in correct predictions between a base model and its quantized variants, independent of absolute accuracy. Across multiple models and quantization schemes from 8-bit to 2-bit, we find that behavioral divergence emerges under moderate quantization even when task performance appears preserved. To explain this effect, we analyze quantization as a structural operator on attention weights and quantify layer-wise distortions using statistical and distributional measures. Our results reveal non-linear breakpoints at low bit-widths and show that query and key projections are consistently more sensitive ",
     "category_hint": [
       "论文研究"
     ],
@@ -451,8 +531,9 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "提出主动记忆代理，解决长时域任务中决策相关状态的检索问题，方法新颖且实用。",
-    "title_zh": "在关键时刻记住：面向长时域代理的主动记忆代理",
+    "reason_zh": "揭示量化仅用准确率和困惑度评估的不足，提出决策级一致性指标。",
+    "summary_zh": "本文指出后训练量化评估过度依赖准确率和困惑度，这些指标无法捕捉量化引起的行为变化。作者提出正确性一致性（correctness agreement），一种决策级指标，衡量量化前后模型在单个样本上的决策重叠。实验表明，即使准确率相近，量化模型的行为也可能显著偏离原始模型，该指标能更全面反映量化影响。",
+    "title_zh": "等价幻觉：LLM量化效应的统计刻画",
     "weighted_score": 0.755,
     "score_breakdown": {
       "source_authority": 0.8,
@@ -460,144 +541,47 @@
       "impact": 0.7,
       "practical_value": 0.7
     },
-    "story_id": "bd084d60247d0413",
+    "story_id": "a2d0d46c0e7ca12a",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08716"
+        "url": "https://arxiv.org/abs/2607.08734"
       }
     ],
     "curated": true
   },
   {
-    "id": "f6f94ac29e0e3d52",
-    "source_id": "arxiv-cs-ai",
-    "title": "ReCoLoRA: Spectrum-Aware Recursive Consolidation for Continual LLM Fine-Tuning",
-    "url": "https://arxiv.org/abs/2607.07719",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.07719v1 Announce Type: cross \nAbstract: Parameter-efficient fine-tuning adapts a large language model to one task cheaply, but across a task sequence LoRA-style methods keep stacking low-rank updates on the same frozen weight, so each new task tends to overwrite the previous ones. We present ReCoLoRA (Recursive Consolidation of Low-Rank Adapters), a spectrum-aware framework for continual fine-tuning: adapters are initialized from a randomized SVD of the pretrained weight, per-layer effective ranks are selected by an elbow criterion, and the principal subspace is adapted before residual capacity is opened. Before each new task, ReCoLoRA re-decomposes the current effective weight, rather than the original one, into a frozen residual, a slowly updated principal component, and a fresh adapter (recursive consolidation), so every task starts from the model that has already absorbed its predecessors. On a six-task continual GLUE sequence over four 7-8B backbones, ReCoLoRA attains t",
+    "id": "036dfce9f8c6ba61",
+    "source_id": "aws-ml-blog",
+    "title": "Disaggregated prefill and decode for LLM inference on SageMaker HyperPod",
+    "url": "https://aws.amazon.com/blogs/machine-learning/disaggregated-prefill-and-decode-for-llm-inference-on-sagemaker-hyperpod/",
+    "published_at": "2026-07-10T15:20:16+00:00",
+    "raw_text": "In this post, we show how to implement DPD with vLLM on Amazon SageMaker HyperPod using the HyperPod Inference Operator.",
     "category_hint": [
-      "论文研究"
+      "技巧与观点",
+      "产品发布"
     ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出谱感知递归整合方法，解决持续微调中的灾难性遗忘问题，实用性强。",
-    "title_zh": "ReCoLoRA：面向持续LLM微调的谱感知递归整合",
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/07/ML-20985-1.jpg",
+    "category": "产品发布",
+    "content_type": "教程方法",
+    "depth_score": 0.5,
+    "reason_zh": "AWS官方教程展示如何在SageMaker HyperPod上实现LLM推理的预填充和解码分离，对部署优化有实用价值。",
+    "summary_zh": "本文介绍如何使用vLLM在Amazon SageMaker HyperPod上实现LLM推理的预填充（prefill）和解码（decode）分离（DPD）。通过HyperPod推理算子，可以优化资源利用，降低延迟。文章提供了具体实现步骤和配置方法，适合需要大规模部署LLM的工程师参考。",
+    "title_zh": "在SageMaker HyperPod上实现LLM推理的预填充和解码分离",
     "weighted_score": 0.755,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
     },
-    "story_id": "ba5fc20a1a5b831e",
+    "story_id": "51378c641bc0cf88",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.07719"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "346211f4f90a19b2",
-    "source_id": "zh-cnbeta",
-    "title": "宇树G1被送进手术室 完成全球首例机器人活体外科手术",
-    "url": "https://www.cnbeta.com.tw/articles/tech/1568460.htm",
-    "published_at": "2026-07-09T13:35:22+00:00",
-    "raw_text": "<p>7月9日，中国宇树科技（Unitree）G1人形机器人在海外成功完成<strong>全球首例活体外科手术</strong>。美国加州大学圣迭戈分校（UC San Diego）研究团队利用两台宇树G1人形机器人开展临床前试验，成功完成了两例<strong>大型非灵长类动物的活体胆囊切除手术</strong>，相关研究成果已于当地时间7月8日发表在国际顶级学术期刊《Nature》上。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1568460.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "宇树G1人形机器人完成全球首例活体外科手术，成果发表于Nature，展示机器人手术潜力。",
-    "title_zh": null,
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.4
-    },
-    "story_id": "ac34406f9578aa41",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1568460.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "aa588f104531f1db",
-    "source_id": "zh-ithome",
-    "title": "我国首个：中科曙光官宣全国产 10 万卡 AI 超集群“曙光 8000（登峰）”落成",
-    "url": "https://www.ithome.com/0/974/966.htm",
-    "published_at": "2026-07-10T04:22:40+00:00",
-    "raw_text": "<p>IT之家 7 月 10 日消息，中科曙光官方公众号今天（7 月 10 日）发布博文，宣布中国首个<strong>全国产</strong> 10 万卡 AI 超集群“曙光 8000（登峰）”正式落成，并接入国家超算互联网，标志着 AI 基础设施建设开始从万卡级迈向十万卡级部署阶段。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/c6685f45-447f-4af7-85c7-a293be8894ca.jpg?x-bce-process=image/format,f_auto\" /></p><p>中科曙光称，曙光 8000（登峰）采用“超智融合”技术路线，面向高精度科学计算与低精度智能计算的复合需求，支持 FP64 到 INT8 全精度，可覆盖科学计算、大模型训练、AI 推理、工业仿真等场景。</p><p>在系统能力方面，中科曙光称，该集群具备“芯片、计算、存储、网络、散热、应用、服务”全链路全自研能力。</p><p>IT之家援引博文介绍，<strong>海光等国产芯片提供底层支撑</strong>，scaleFabric 类 IB 原生 RDMA 高速网络用于实现 10 万卡集群连接，ParaStor 分布式存储用于支撑大模型训练和科学计算中的海量数据读写。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/c8a1483e-ae35-4487-b77c-8603068fb800.png?x-bce-process=image/format,f_auto\" /></p><figcaption>图源：中科曙光公众号</figcaption><p>冷却与部署方面，中科曙光称，系统采用浸没式相变液冷技术，可支撑单机柜 MW 级高功率密度部署，并通过国产冷媒、全年自然冷却等方式提升集群能效。</p><p>光合组织 2026 智能计算应用大会期间，曙光还与北京科学智能研究院达成战略合作，启动第二套全国产十万卡超智融合算力系统研制与建设。<",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/c6685f45-447f-4af7-85c7-a293be8894ca.jpg?x-bce-process=image/format,f_auto",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "中科曙光建成全国首个全国产10万卡AI超集群，标志AI基础设施迈入十万卡阶段。",
-    "title_zh": null,
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.4
-    },
-    "story_id": "f624ebeb04b2fbaf",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/974/966.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "4aa9fdf03494de30",
-    "source_id": "arxiv-cs-ai",
-    "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
-    "url": "https://arxiv.org/abs/2607.08173",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08173v1 Announce Type: new \nAbstract: Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \\emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \\emph{overthinking model} as $\\boldsymbol{\\theta}_{\\mathcal{O}_\\alpha} = \\boldsymbol{\\theta}_{\\mathcal{M}} + \\alpha(\\boldsymbol{\\theta}_{\\mathcal{R}} - \\boldsymbol{\\theta}_{\\mathcal{M}})$, where $\\alpha > 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出“过度思考”方法放大推理权重以提取隐藏信息，对黑盒审计有重要价值。",
-    "title_zh": "过度思考：放大推理权重以提取学习到的秘密",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "51df0abfd4e84b7a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08173"
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/disaggregated-prefill-and-decode-for-llm-inference-on-sagemaker-hyperpod/"
       }
     ],
     "curated": true
@@ -607,20 +591,21 @@
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-10T08:23:02.887764+00:00",
+    "published_at": "2026-07-10T17:42:59.536633+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": "https://p0.meituan.net/meituantechblog/861434cef3a148ae0093da6666e149361816826.png",
-    "category": "行业动态",
+    "category": "产品发布",
     "content_type": "产品发布",
-    "depth_score": 0.6,
-    "reason_zh": "美团智能创作团队构建海报生成AIGC技术闭环，已落地并开源，具有较高实用价值。",
+    "depth_score": 0.5,
+    "reason_zh": "美团海报生成AIGC技术体系已开源，对实际应用有直接帮助，技术细节丰富。",
+    "summary_zh": "美团智能创作团队围绕海报生成AIGC构建了完整技术体系，包括生成、编辑、评判三个环节，形成技术闭环。该体系已在美团外卖、品牌IP等场景落地，并已全部开源。文章介绍了技术架构和实际应用效果，为相关开发者提供了可参考的实践方案。",
     "title_zh": null,
-    "weighted_score": 0.725,
+    "weighted_score": 0.755,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.7,
       "impact": 0.6,
       "practical_value": 0.8
@@ -636,193 +621,81 @@
     "curated": true
   },
   {
-    "id": "cb5ff66744c23668",
-    "source_id": "infoq-cn-ai",
-    "title": "HubSpot 如何将语义搜索扩展至 200 亿个向量",
-    "url": "https://www.infoq.cn/article/eRl25z5ewrRHjReWhOUX?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-10T12:00:00+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/eRl25z5ewrRHjReWhOUX?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "id": "59fab7095156b639",
+    "source_id": "aws-ml-blog",
+    "title": "How KTern.AI built agentic AI for SAP on Amazon Bedrock AgentCore",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/",
+    "published_at": "2026-07-10T15:23:25+00:00",
+    "raw_text": "Evolving from a traditional software as a service (SaaS) platform into a next-generation agentic AI platform meant orchestrating multiple specialized agents across long-running enterprise programs. Each agent operates with persistent context, secure tool access, and production-grade reliability. We built that system on Amazon Bedrock AgentCore using the Strands Agents SDK. This post walks through how we architected it, which agents we built, and the outcomes for our customers.",
     "category_hint": [
-      "行业动态",
-      "技巧与观点"
+      "技巧与观点",
+      "产品发布"
     ],
-    "image_url": null,
-    "category": "行业动态",
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/09/ktern_blog_diagram_final.png",
+    "category": "产品发布",
     "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "HubSpot分享将语义搜索扩展至200亿个向量的实践经验，对大规模向量搜索有重要参考。",
-    "title_zh": "HubSpot 如何将语义搜索扩展至 200 亿个向量",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "50ec96b5634b01b1",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/eRl25z5ewrRHjReWhOUX?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "281a7d3afe46b7a5",
-    "source_id": "github-changelog",
-    "title": "OpenAI’s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot",
-    "url": "https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
-    "published_at": "2026-07-09T16:41:29+00:00",
-    "raw_text": "<p>OpenAI&#8217;s GPT-5.6 family is now rolling out in GitHub Copilot. GPT-5.6 comes in three variants, Sol, Terra, and Luna, so you can match the model to the job, whether that&#8217;s&#8230;</p>\n<p>The post <a href=\"https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot\">OpenAI&#8217;s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
-    "category_hint": [
-      "产品发布",
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "OpenAI GPT-5.6 系列（Sol、Terra、Luna）在 GitHub Copilot 中推出。",
-    "title_zh": "OpenAI 的 GPT-5.6 Sol、Terra 和 Luna 现已在 GitHub Copilot 中可用",
-    "weighted_score": 0.695,
+    "depth_score": 0.6,
+    "reason_zh": "KTern.AI分享在Amazon Bedrock上构建SAP Agentic AI平台的经验，涉及多Agent编排与生产级可靠性，有实践参考价值。",
+    "summary_zh": "KTern.AI分享了从传统SaaS平台演进为下一代Agentic AI平台的经验，该平台基于Amazon Bedrock AgentCore和Strands Agents SDK构建，能够编排多个专业Agent，支持长期企业程序。每个Agent具有持久上下文、安全工具访问和生产级可靠性。文章详细介绍了系统架构和实现要点。",
+    "title_zh": "KTern.AI如何在Amazon Bedrock AgentCore上为SAP构建Agentic AI",
+    "weighted_score": 0.735,
     "score_breakdown": {
       "source_authority": 0.9,
       "novelty": 0.7,
       "impact": 0.6,
-      "practical_value": 0.5
+      "practical_value": 0.7
     },
-    "story_id": "16cfa067f2b4ac75",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "github-changelog",
-        "url": "https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot"
-      },
-      {
-        "source_id": "simonwillison",
-        "url": "https://simonwillison.net/2026/Jul/9/gpt-5-6/#atom-everything"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "3233698fdd37d620",
-    "source_id": "zh-ithome",
-    "title": "全球首张 AI 原生信用卡，消息称 Kimi 信用卡合作方敲定美国运通、农业银行",
-    "url": "https://www.ithome.com/0/975/035.htm",
-    "published_at": "2026-07-10T06:36:35+00:00",
-    "raw_text": "<p>IT之家 7 月 10 日消息，每日经济新闻 10 日（今天）发布消息称，全球首张 AI 原生信用卡“Kimi 信用卡”合作方已经敲定<strong>美国运通、农业银行</strong>，即将正式对外发行。</p><p>相关知情人士评价称，这次合作“一拍即合”。该项目从今年 4 月开始酝酿，短短几个月，农业银行和运通内部<strong>一路绿灯加急</strong>。</p><p>上述知情人士透露，目前已达成的意向是，持卡人的<strong>日常消费积分可八折兑换 Kimi 会员权益</strong>。积分商城的积分兑换比例是 1000∶1，最高支持 50% 用积分兑换。未来，三方还将探索<strong>智能体支付、Token 额度和信用额度挂钩、积分和算力双向打通</strong>等更多可能性。</p><p>报道提到，运通持卡人群以白领、跨境从业者、商务精英为主，这类人群是 Kimi 智能体等生产力 AI 服务的核心付费目标群体。借助运通，Kimi 或可以降低海外市场获客成本，加速全球化用户扩张。</p><p>据IT之家此前报道，该卡已经于 6 月 12 日开启预约。Kimi 方面称，相信 AI 应当如水、电、网络一般，成为<strong>普惠的生活基础设施</strong>，因此将和银行、卡组织伙伴一道，探索 Token、信用卡积分相互流通的全新金融范式。</p><p style=\"text-align: center;\"><img alt=\"图片\" src=\"https://img.ithome.com/newsuploadfiles/2026/6/2a42d231-c910-429a-b1c1-e27769ad47bc.jpg?x-bce-process=image/quality,q_75\" /></p><p>核心权益如下：</p><ul class=\" list-paddingleft-2\"><li><p>算力回馈：消费积分可兑换一定形式的 Kimi 算力额度，实现“消费即获生产力”的价值闭环。</p></li><li><p>新模型抢先体验：Kimi 最新模型能力迭代，持卡人享有优先内测机会。</p></li><li><p>AI 行业闭门沙龙：定期邀请持卡人专属线下活动，分享 AI 领域前沿认知与行业洞察。</p></li></ul>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/6/2a42d231-c910-429a-b1c1-e27769ad47bc.jpg?x-bce-process=image/quality,q_75",
-    "category": "行业动态",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "全球首张AI原生信用卡Kimi信用卡合作方敲定美国运通和农业银行，即将发行，属于金融与AI结合的新产品动态。",
-    "title_zh": null,
-    "weighted_score": 0.565,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.8,
-      "impact": 0.5,
-      "practical_value": 0.3
-    },
-    "story_id": "92b443286c9619b0",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/975/035.htm"
-      },
-      {
-        "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3889464915556866?f=rss"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "22a3d8a40e40e16f",
-    "source_id": "36kr",
-    "title": "AI原生信用卡Kimi信用卡敲定美国运通、农业银行",
-    "url": "https://36kr.com/newsflashes/3889464915556866?f=rss",
-    "published_at": "2026-07-10T06:48:18+00:00",
-    "raw_text": "全球首张AI（人工智能）原生信用卡“Kimi信用卡”合作方已经敲定美国运通、农业银行，并将于当日正式对外发行。对于合作，相关知情人士评价称“一拍即合”。该项目从今年4月开始酝酿，短短几个月，农业银行和运通内部一路绿灯加急。具体到本次合作规则，上述知情人士透露，目前已达成的意向是，持卡人的日常消费积分可八折兑换Kimi会员权益。积分商城的积分兑换比例是1000∶1，最高支持50%用积分兑换。未来，三方还将探索智能体支付、Token额度和信用额度挂钩、积分和算力双向打通等更多可能性。（每日经济新闻）",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "与上条内容重复，全球首张AI原生信用卡Kimi信用卡合作方敲定，即将发行。",
-    "title_zh": null,
-    "weighted_score": 0.54,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.3
-    },
-    "story_id": "92b443286c9619b0",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/975/035.htm"
-      },
-      {
-        "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3889464915556866?f=rss"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "28e34ad7821b8f5e",
-    "source_id": "infoq-cn-ai",
-    "title": "首个具身视频基模开源！LingBot-Video 如何为“机器人大脑”构建物理引擎？",
-    "url": "https://www.infoq.cn/article/SCC8javdsA2zgBg0c2C1?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-09T15:32:04+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/SCC8javdsA2zgBg0c2C1?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "首个具身视频基模LingBot-Video开源，为机器人提供物理世界理解能力，具有重要研究价值。",
-    "title_zh": null,
-    "weighted_score": 0.655,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "234980da77ab3dc2",
+    "story_id": "0eddb7a055cd8af3",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/SCC8javdsA2zgBg0c2C1?utm_source=rss&utm_medium=article"
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "87cb63602eeaa030",
-    "source_id": "gh-ultralytics",
-    "title": "ultralytics/ultralytics v8.4.91",
-    "url": "https://github.com/ultralytics/ultralytics/releases/tag/v8.4.91",
-    "published_at": "2026-07-09T20:37:11+00:00",
-    "raw_text": "## 🌟 Summary\n\nUltralytics `v8.4.91` improves YOLO26 deployment quality—especially TensorRT INT8 confidence calibration—while adding stronger automated CLI fuzz testing, better export reliability, and many training/inference bug fixes 🚀\n\n## 📊 Key Changes\n\n- **Improved TensorRT INT8 exports for YOLO26 confidence scores ⚡**\n  - Excludes the `Sigmoid` operation from INT8 quantization in TensorRT export paths.\n  - Applies higher precision for `Sigmoid` across TensorRT 7 through TensorRT 11+ using the appropriate backend mechanisms.\n  - Adds GPU export test coverage for static INT8 detection exports.\n\n- **Added daily YOLO CLI fuzz testing 🧪**\n  - Introduces a new Monte Carlo fuzzing workflow for the `yolo` CLI across train, export, predict, validation, and chaos-style command variations.\n  - Automatically classifies failures, confirms reproducible issues, deduplicates findings, and can file GitHub issues for confirmed bugs.\n\n- **Improved ONNX INT8 export reliability 🔧**\n  - ONNX INT8 quantiz",
+    "id": "4234573e485c5194",
+    "source_id": "zh-cnbeta",
+    "title": "OpenAI推出GPT‑5.6 Sol、Terra与Luna全新模型家族",
+    "url": "https://www.cnbeta.com.tw/articles/tech/1568492.htm",
+    "published_at": "2026-07-09T22:18:32+00:00",
+    "raw_text": "<p>OpenAI 今日正式面向全球开放其最新一代 GPT‑5.6 系列模型的使用权限，相关模型已从此前仅向少数受信合作伙伴开放的“限量预览”阶段，进入面向所有用户的全面发布。GPT‑5.6 系列包括三款定位各异的模型：旗舰型 GPT‑5.6 Sol、均衡型 GPT‑5.6 Terra，以及轻量高性价比的 GPT‑5.6 Luna。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1568492.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "OpenAI发布GPT-5.6系列三款模型，覆盖旗舰、均衡和轻量级，影响广泛。",
+    "summary_zh": "OpenAI正式发布GPT-5.6系列模型，包括旗舰型GPT-5.6 Sol、均衡型GPT-5.6 Terra和轻量高性价比的GPT-5.6 Luna。该系列从限量预览转为全面开放，在多个领域（包括网络安全）带来改进，标志着OpenAI模型能力的又一次升级。",
+    "title_zh": "OpenAI推出GPT-5.6 Sol、Terra与Luna全新模型家族",
+    "weighted_score": 0.73,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "5581293092acbdda",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-cnbeta",
+        "url": "https://www.cnbeta.com.tw/articles/tech/1568492.htm"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "cdc98bb5429b2414",
+    "source_id": "gh-onyx",
+    "title": "onyx-dot-app/onyx v4.3.2",
+    "url": "https://github.com/onyx-dot-app/onyx/releases/tag/v4.3.2",
+    "published_at": "2026-07-09T23:01:10+00:00",
+    "raw_text": "## Warning\r\nDo not upgrade to this release if you want to preserve your existing indexed documents but have not yet run the document index migration, which can be done from any version v3.x. [See additional documentation here](https://docs.onyx.app/admins/advanced_configs/opensearch_document_index_migration#opensearch-document-index-migration).\r\n\r\nSee the assets to download this version and install.\r\n\r\n## What's Changed\r\n* refactor: agent knowledge pane (#12752) to release v4.3 by @onyx-cherry-pick[bot] in https://github.com/onyx-dot-app/onyx/pull/12770\r\n* fix(files): render xlsx chat attachments via backend-parsed spreadsheet preview (#12764) to release v4.3 by @onyx-cherry-pick[bot] in https://github.com/onyx-dot-app/onyx/pull/12785\r\n* fix(prompts): stress stateless sandbox + batching in python tool guidance (#12763) to release v4.3 by @onyx-cherry-pick[bot] in https://github.com/onyx-dot-app/onyx/pull/12786\r\n* fix(chat): render full multi-model comparison in shared chats (#12792) to",
     "category_hint": [
       "开源项目"
     ],
@@ -830,55 +703,128 @@
     "category": "开源项目",
     "content_type": "产品发布",
     "depth_score": 0.3,
-    "reason_zh": "Ultralytics v8.4.91发布，改进YOLO26的TensorRT INT8校准与CLI测试，提升部署质量。",
-    "title_zh": "ultralytics/ultralytics v8.4.91",
-    "weighted_score": 0.635,
+    "reason_zh": "Onyx v4.3.2发布，包含文档索引迁移警告，对自部署用户有实用价值。",
+    "summary_zh": "Onyx v4.3.2版本发布，警告用户若未运行文档索引迁移（从v3.x版本开始），升级后将无法保留现有索引文档。提供了迁移文档链接，用户需谨慎升级。",
+    "title_zh": "onyx-dot-app/onyx v4.3.2",
+    "weighted_score": 0.73,
     "score_breakdown": {
       "source_authority": 0.9,
-      "novelty": 0.5,
-      "impact": 0.4,
-      "practical_value": 0.7
+      "novelty": 0.7,
+      "impact": 0.5,
+      "practical_value": 0.8
     },
-    "story_id": "aa9084ecb61b9c23",
+    "story_id": "039b6068572646b7",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-ultralytics",
-        "url": "https://github.com/ultralytics/ultralytics/releases/tag/v8.4.91"
+        "source_id": "gh-onyx",
+        "url": "https://github.com/onyx-dot-app/onyx/releases/tag/v4.3.2"
+      },
+      {
+        "source_id": "gh-onyx",
+        "url": "https://github.com/onyx-dot-app/onyx/releases/tag/v4.1.10"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "64590b9367af1f0e",
-    "source_id": "gh-langfuse",
-    "title": "langfuse/langfuse v3.210.0",
-    "url": "https://github.com/langfuse/langfuse/releases/tag/v3.210.0",
-    "published_at": "2026-07-09T14:41:43+00:00",
-    "raw_text": "# What's Changed\r\n\r\n## Features\r\n* feat(rbac): let cloud admins view org & project settings pages by @Steffen911 in https://github.com/langfuse/langfuse/pull/14072\r\n* feat(agents): add posthog-instrumentation skill (LFE-10785) by @nkabardin in https://github.com/langfuse/langfuse/pull/14940\r\n* feat(assistant): show live reasoning in the in-app agent (LFE-10706) by @LysanderKie in https://github.com/langfuse/langfuse/pull/14878\r\n* feat(dashboard): make Home a dashboard — preset widgets, curated default, per-project selection (LFE-10693) by @nkabardin in https://github.com/langfuse/langfuse/pull/14824\r\n* feat(trace): graph view mode switcher — aggregated vs expanded as-it-ran DAG (LFE-10676) by @nkabardin in https://github.com/langfuse/langfuse/pull/14934\r\n\r\n## Fixes\r\n* revert(evals): remove eval prompt_cache_key feature by @hassiebp in https://github.com/langfuse/langfuse/pull/14944\r\n* fix(prompts): suppress 404 warning toast during prompt version deletion by @Tkgmuuuu in https://github",
+    "id": "68706db09e42592e",
+    "source_id": "zh-solidot",
+    "title": "美国国会调查美国公司使用中国 AI 模型",
+    "url": "https://www.solidot.org/story?sid=84796",
+    "published_at": "2026-07-10T07:33:05+00:00",
+    "raw_text": "美国国会议员正在调查美国公司使用中国 AI 模型。议员们担心审查、安全风险，以及美国 AI 公司的模型是否过于昂贵或限制过多。Cursor 和 Airbnb 等公司是调查重点。众议院国土安全委员会和众议院中国问题特别委员会致函 Cursor 和 Airbnb 询问他们使用中国 AI 模型的风险。美国部分政府部门已禁止使用 DeepSeek 等中国模型，但美国公司并未被禁止使用中国 AI 模型。有很多美国公司一直用中国 AI 模型降低使用成本，其中就包括了即将被 SpaceX 公司以 600 亿美元收购的 Cursor 公司，该公司的 Composer 2 模型是基于北京月之暗面（Moonshot AI）的 Kimi 模型。美国国会还在调查美国公司的开源 AI 模型战略，确保美国公司不需要在昂贵或受到限制的本国模型与廉价且功能强大的中国 AI 模型之间做选择。\n<p></p>",
     "category_hint": [
-      "开源项目"
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.4,
+    "reason_zh": "美国国会调查企业使用中国AI模型，涉及Cursor等知名公司，对理解中美AI竞争格局有重要价值。",
+    "summary_zh": "美国国会议员正在调查美国公司使用中国AI模型的情况，担忧审查、安全风险以及美国本土模型成本过高或限制过多。调查重点包括Cursor和Airbnb等公司。Cursor的Composer 2模型基于北京月之暗面（Moonshot AI）的Kimi模型。美国部分政府部门已禁用DeepSeek等中国模型，但私营公司尚未被禁止。国会还关注美国公司的开源AI模型战略，以确保美国公司不必在昂贵受限的本国模型与廉价强大的中国模型之间做选择。",
+    "title_zh": "美国国会调查美国公司使用中国AI模型",
+    "weighted_score": 0.73,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "c9d5ce0e2ef03cf1",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-solidot",
+        "url": "https://www.solidot.org/story?sid=84796"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "20bed373b9121b60",
+    "source_id": "zh-v2ex",
+    "title": "[AI Agent 智能体] Claude Steer: 为什么我们要为 Agent 时代重新设计人机交互",
+    "url": "https://www.v2ex.com/t/1226454#reply0",
+    "published_at": "2026-07-10T10:20:34+00:00",
+    "raw_text": "<h2>Claude Steer: 为什么我们要为 Agent 时代重新设计人机交互</h2>\n<blockquote>\n<p>\"Steer\" 的意思是\"掌舵\"——人定方向,AI 负责把船跑起来,连接两者的,就是这副舵轮。船开得稳不稳,终究看舵手,但好舵手,也需要一副趁手的舵轮。</p>\n<p>以下是这个项目最核心的三个设计理念。</p>\n</blockquote>\n<h3>01 可视化：信息密度决定使用体验</h3>\n<p>命令行有一个天生的缺陷：所有文字的大小、字体、颜色（永远只有黑白两色）都长一个样，很难让人第一时间抓住重点——就像没人喜欢看写满字的 PPT 。</p>\n<p>Claude Code 原生终端在不展开的时候文字已经密密麻麻，展开后信息量更大、更容易迷失方向。如果再叠加 subagent 、多 Agent 并行的场景，原生终端会更难看懂。图形界面传递信息的效率，和视频相对纯文字的效率是同一个道理。</p>\n<p>Claude Code 的配置更是散落各处：<code>.claude/settings.json</code>、用户级配置、项目级配置，加上 skills 、MCP 、plugin……真正用起来的时候，没人有时间和耐心把这些一一摸清楚。</p>\n<p>所以第一件事，是把这些信息收集、提炼、重组到一个统一入口，让人一眼看出哪些是常用的、重要的。第二件事，是效率：同样一个操作，命令行可能要敲一长串指令，图形界面往往只需要点一下。第三件事，是把 subagent 、branch 、loop 、insight 等等这些 Claude Code 里强大却鲜为人知的机制，放到它们该出现的使用场景里，让用户\"看见\"并用起来。</p>\n<p>更进一步，这也是一次学习的机会——理解 Agent 运行的底层原理（ ReAct ），理解一个集成了人类智慧的 AI 究竟是如何思考、如何行动的。</p>\n<blockquote>\n<p>Claude Steer 的解法是：\n捕获（把 Claude Code 几乎所有概念和机制都抽象、接口化）→ 处理（按真实使用场景聚类重组，比如基于 ReAct 原理和实际工作流程，提炼出\"Agent 工具\"和\"经验\"两个全新的概念集合）→ 可视化（按不同颗粒度呈现信息，既可以扫视迅速了解全局，也可以展开仔细阅读微观细节，且重点始",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "深入探讨Agent时代人机交互设计理念，可视化、可编程、可验证三大原则对开发者有直接启发。",
+    "summary_zh": "文章介绍了Claude Steer项目，旨在为Agent时代重新设计人机交互。核心设计理念包括：可视化——通过图形界面提升信息密度和可读性，解决命令行难以突出重点的问题；可编程——允许用户通过代码或配置自定义交互逻辑；可验证——提供调试和监控工具确保Agent行为可控。作者认为，好的交互设计应像舵轮一样，让人能精准掌控AI的方向。",
+    "title_zh": null,
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "c30a4c8ac88d2557",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226454#reply0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "5a6e3b7070e9375c",
+    "source_id": "zh-juejin",
+    "title": "11 万 Star 的生成式 AI 入门课，Microsoft 做对了什么",
+    "url": "https://juejin.cn/post/7660718708204666914",
+    "published_at": "2026-07-10T10:34:29+00:00",
+    "raw_text": "Microsoft Generative AI for Beginners 已有 112K Star，60K Fork。拆解这 21 课的课程设计思路，适合谁学、学到什么、有什么坑。",
+    "category_hint": [
+      "技巧与观点"
     ],
     "image_url": null,
     "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "Langfuse v3.210.0发布，新增RBAC和PostHog集成功能，对开发者有实用价值。",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "拆解微软11万Star入门课的设计思路，对课程开发者和学习者均有参考价值。",
+    "summary_zh": "文章分析了Microsoft Generative AI for Beginners课程（112K Star）的成功原因。课程共21课，覆盖从基础概念到实际应用的全流程。设计亮点包括：循序渐进的知识体系、丰富的动手实验、与Azure服务的深度集成。同时指出课程对初学者友好，但部分内容更新滞后，且依赖微软生态。适合想系统学习生成式AI的入门者。",
     "title_zh": null,
-    "weighted_score": 0.63,
+    "weighted_score": 0.675,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.4,
-      "practical_value": 0.7
+      "novelty": 0.5,
+      "impact": 0.6,
+      "practical_value": 0.8
     },
-    "story_id": "c88b04fad0e9fe7b",
+    "story_id": "3949c4bce879e3e4",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-langfuse",
-        "url": "https://github.com/langfuse/langfuse/releases/tag/v3.210.0"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7660718708204666914"
       }
     ],
     "curated": true,
@@ -899,7 +845,8 @@
     "category": "开源项目",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "Claude Code v2.1.206新增目录路径建议、/doctor检查及自动允许git push等功能。",
+    "reason_zh": "Claude Code新增目录路径建议和/doctor检查，优化git推送行为，对日常使用有实用改进。",
+    "summary_zh": "Claude Code v2.1.206版本新增了目录路径建议功能，匹配/add-dir行为；新增/doctor检查，可建议修剪已检入的CLAUDE.md文件；/commit-push-pr现在自动允许git push到配置的远程仓库。",
     "title_zh": "anthropics/claude-code v2.1.206",
     "weighted_score": 0.615,
     "score_breakdown": {

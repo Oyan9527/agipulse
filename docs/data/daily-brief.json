@@ -1,14 +1,14 @@
 {
   "date": "2026-07-10",
-  "generated_at": "2026-07-10T08:31:08.189865+00:00",
+  "generated_at": "2026-07-10T17:56:14.928846+00:00",
   "items": [
     {
-      "id": "93d84c70186edb98",
+      "id": "4aa9fdf03494de30",
       "source_id": "arxiv-cs-ai",
-      "title": "The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs",
-      "url": "https://arxiv.org/abs/2607.08734",
+      "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
+      "url": "https://arxiv.org/abs/2607.08173",
       "published_at": "2026-07-10T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08734v1 Announce Type: new \nAbstract: Post-training quantization is widely used to deploy large language models in resource-constrained settings, yet its evaluation relies almost exclusively on accuracy and perplexity. We show that these metrics fail to capture behavioral changes induced by quantization. We introduce correctness agreement, a decision-level metric that measures overlap in correct predictions between a base model and its quantized variants, independent of absolute accuracy. Across multiple models and quantization schemes from 8-bit to 2-bit, we find that behavioral divergence emerges under moderate quantization even when task performance appears preserved. To explain this effect, we analyze quantization as a structural operator on attention weights and quantify layer-wise distortions using statistical and distributional measures. Our results reveal non-linear breakpoints at low bit-widths and show that query and key projections are consistently more sensitive ",
+      "raw_text": "arXiv:2607.08173v1 Announce Type: new \nAbstract: Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \\emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \\emph{overthinking model} as $\\boldsymbol{\\theta}_{\\mathcal{O}_\\alpha} = \\boldsymbol{\\theta}_{\\mathcal{M}} + \\alpha(\\boldsymbol{\\theta}_{\\mathcal{R}} - \\boldsymbol{\\theta}_{\\mathcal{M}})$, where $\\alpha > 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden",
       "category_hint": [
         "论文研究"
       ],
@@ -16,85 +16,22 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "揭示量化对LLM行为的影响，指出准确率和困惑度无法捕捉行为变化，具有深刻洞察。",
-      "title_zh": "等价幻觉：LLM量化效应的统计表征",
-      "weighted_score": 0.8,
+      "reason_zh": "提出“过度思考”方法提取模型隐藏信息，对AI审计和安全有重要价值。",
+      "summary_zh": "本文提出“过度思考”（overthinking）方法，通过放大推理任务向量来增强推理模型“出声思考”的倾向，从而在审计过程中更好地提取隐藏信息。黑盒审计是部署前的重要工具，但可能遗漏微妙的失调和隐藏信息。过度思考利用推理任务向量，迫使模型更充分地展开推理过程，从而暴露潜在的有害知识或秘密。实验表明，该方法能有效提取模型在标准条件下隐藏的信息。",
+      "title_zh": "过度思考：放大推理权重以提取学习到的秘密",
+      "weighted_score": 0.835,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.8
-      },
-      "story_id": "a2d0d46c0e7ca12a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.08734"
-        }
-      ]
-    },
-    {
-      "id": "03516a41e7477bd2",
-      "source_id": "arxiv-cs-ai",
-      "title": "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
-      "url": "https://arxiv.org/abs/2607.08393",
-      "published_at": "2026-07-10T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08393v1 Announce Type: new \nAbstract: Fine-tuning LLMs to inject new knowledge faces a critical challenge: LLMs can quickly memorize new facts, yet fail to use them for downstream reasoning tasks. We formalize this failure as the \\textit{\\textbf{Knowing--Using Gap}}, characterized by an accuracy gap and a temporal lag between memorization and generalization. To understand this phenomenon, we fine-tune LLMs with unseen knowledge and monitor the spatial permeation dynamics of the knowledge internally using a novel intervention technique called self-patching. Self-patching identifies activation locations where relocating representations substantially improves failed generalization cases. These results are consistent with a knowledge-circuit misalignment hypothesis: memorized representations can exist internally but may not be routed to computation-effective layers. To demonstrate the practicality of this diagnostic finding, we design a simple heuristic strategy which recovers 5",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "机制性解释LLM微调中记忆知识无法泛化的“知道-使用”鸿沟，揭示根本原因。",
-      "title_zh": "机制性理解大语言模型微调中记忆知识为何无法泛化",
-      "weighted_score": 0.785,
-      "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.9,
         "novelty": 0.9,
         "impact": 0.8,
-        "practical_value": 0.6
+        "practical_value": 0.7
       },
-      "story_id": "896a269255df7759",
+      "story_id": "51df0abfd4e84b7a",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.08393"
-        }
-      ]
-    },
-    {
-      "id": "82211c2794e474ed",
-      "source_id": "arxiv-cs-ai",
-      "title": "A First-Principles Theory of Slow Thinking and Active Perception",
-      "url": "https://arxiv.org/abs/2607.08196",
-      "published_at": "2026-07-10T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08196v1 Announce Type: new \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgraded ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "从第一性原理推导慢思考与主动感知的数学形式，理论深度极高，启发性强。",
-      "title_zh": "慢思考与主动感知的第一性原理理论",
-      "weighted_score": 0.72,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.4
-      },
-      "story_id": "acd47dd729ba28bb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.08196"
+          "url": "https://arxiv.org/abs/2607.08173"
         }
       ]
     },
@@ -112,13 +49,14 @@
       "image_url": "https://wp.technologyreview.com/wp-content/uploads/2026/07/Screenshot-2026-07-09-at-20.29.29.png?w=180",
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "Anthropic开发新技术揭示Claude内部概念推理空间，提供可解释性研究新视角。",
-      "title_zh": "Anthropic发现Claude思考概念的隐藏空间",
-      "weighted_score": 0.79,
+      "depth_score": 0.9,
+      "reason_zh": "Anthropic开发Jacobian透镜技术，首次清晰揭示LLM内部概念推理空间，对AI可解释性研究具有里程碑意义。",
+      "summary_zh": "MIT Tech Review报道了Anthropic的一项突破性研究：他们开发了一种名为Jacobian透镜的工具，能够以前所未有的清晰度观察大型语言模型（LLM）在回答问题或执行任务时的内部运作。研究发现，模型内部存在一个隐藏空间，其中概念以复杂的方式相互关联和推理。这一发现既令人着迷又令人不安，因为它揭示了AI决策过程的某些方面可能超出人类直觉。该技术为理解AI的“黑箱”提供了新途径，对提升AI安全性和可控性具有重要意义。",
+      "title_zh": "Anthropic发现隐藏空间：Claude在其中推演概念",
+      "weighted_score": 0.815,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.8,
+        "novelty": 0.9,
         "impact": 0.8,
         "practical_value": 0.6
       },
@@ -132,67 +70,169 @@
       ]
     },
     {
-      "id": "6e3d753372af510e",
-      "source_id": "infoq-cn-ai",
-      "title": "Agent 进化论：从对话到协作",
-      "url": "https://www.infoq.cn/article/6StbVmZr0cicGREVjwZu?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-09T17:58:01+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/6StbVmZr0cicGREVjwZu?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "82211c2794e474ed",
+      "source_id": "arxiv-cs-ai",
+      "title": "A First-Principles Theory of Slow Thinking and Active Perception",
+      "url": "https://arxiv.org/abs/2607.08196",
+      "published_at": "2026-07-10T04:00:00+00:00",
+      "raw_text": "arXiv:2607.08196v1 Announce Type: new \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgraded ",
       "category_hint": [
-        "行业动态",
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "探讨AI Agent从对话到协作的进化路径，提供可迁移的认知框架。",
-      "title_zh": null,
-      "weighted_score": 0.695,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "从第一性原理推导慢思考与主动感知，理论深度高，对理解LLM推理有启发。",
+      "summary_zh": "作为认知功能第一性原理建模系列的一部分，本文尝试提供思考和感知的数学形式化。它正式推导了慢思考或更一般的主动感知，并涵盖了慢思考大型语言模型的设计、训练和推理。起点是生命系统的第一性原理，通过变分自由能等概念，建立了一个统一的框架，将感知、推理和学习联系起来。该理论为构建更接近人类认知的AI系统提供了数学基础。",
+      "title_zh": "慢思考与主动感知的第一性原理理论",
+      "weighted_score": 0.77,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.5
       },
-      "story_id": "45c9b059a5018591",
+      "story_id": "acd47dd729ba28bb",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/6StbVmZr0cicGREVjwZu?utm_source=rss&utm_medium=article"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.08196"
         }
       ]
     },
     {
-      "id": "8e7c8091ba9ab69a",
-      "source_id": "zh-oschina",
-      "title": "GPT-5.6 今日全量开放，AI 开发正在进入新阶段，与 Claude Fable 5、GLM-5.2 相比，它意味着什么",
-      "url": "https://www.oschina.net/news/471626",
-      "published_at": "2026-07-10T02:56:07+00:00",
-      "raw_text": "一个月内，OpenAI、Anthropic、智谱先后落子。热闹之外，真正值得工程师关心的是：当模型能连续跑几个小时不掉线，我们的开发方式会变成什么样？ 本文先讲清新闻与三家模型的差异，再谈范式迁移，最后落到两个可用的工程答案。 一、先看新闻：一个月内，三家前沿模型接连落子 GPT-5.6（OpenAI）：6 月 26 日以限量预览形...",
+      "id": "8b70ca0ae1958279",
+      "source_id": "pytorch-blog",
+      "title": "Towards Free Normalization: Fusing Normalization into GEMM and Attention Kernels",
+      "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/",
+      "published_at": "2026-07-10T14:35:48+00:00",
+      "raw_text": "Code available at: https://github.com/facebookresearch/ads_model_kernel_library/tree/main/multi_cta_norm_fusion and https://github.com/facebookresearch/ads_model_kernel_library/tree/main/gdpa_megakernel TL;DR In this blog post, we present various novel kernel fusion techniques for common normalization ops like LayerNorm and RMSNorm, which provide significant speedup...",
       "category_hint": [
-        "开源项目"
+        "开源项目",
+        "技巧与观点"
       ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": "https://pytorch.org/wp-content/uploads/2026/07/All-PyTorch-Blog-Social-Images-12.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "对比GPT-5.6、Claude Fable 5、GLM-5.2，探讨模型长时运行对开发范式的影响，并给出工程实践建议，有深度和启发性。",
-      "title_zh": "GPT-5.6今日全量开放，AI开发正在进入新阶段，与Claude Fable 5、GLM-5.2相比，它意味着什么",
-      "weighted_score": 0.69,
+      "reason_zh": "提出将LayerNorm等归一化操作融合进GEMM和Attention核的新方法，显著加速推理，对工程优化有直接价值。",
+      "summary_zh": "Meta发布博客介绍多种新颖的核融合技术，将LayerNorm、RMSNorm等常见归一化操作融合进GEMM和Attention内核中。通过消除额外的内存读写和内核启动开销，实现了显著的加速效果。代码已开源在GitHub上，包含multi_cta_norm_fusion和gdpa_megakernel等实现。该工作对提升大模型推理效率具有实际意义。",
+      "title_zh": "迈向自由归一化：将归一化融合进GEMM和Attention内核",
+      "weighted_score": 0.875,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.8
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.9
       },
-      "story_id": "0218d97371c2bda9",
+      "story_id": "1c54bf7bbd7e3626",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/471626"
+          "source_id": "pytorch-blog",
+          "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/"
+        }
+      ]
+    },
+    {
+      "id": "20bed373b9121b60",
+      "source_id": "zh-v2ex",
+      "title": "[AI Agent 智能体] Claude Steer: 为什么我们要为 Agent 时代重新设计人机交互",
+      "url": "https://www.v2ex.com/t/1226454#reply0",
+      "published_at": "2026-07-10T10:20:34+00:00",
+      "raw_text": "<h2>Claude Steer: 为什么我们要为 Agent 时代重新设计人机交互</h2>\n<blockquote>\n<p>\"Steer\" 的意思是\"掌舵\"——人定方向,AI 负责把船跑起来,连接两者的,就是这副舵轮。船开得稳不稳,终究看舵手,但好舵手,也需要一副趁手的舵轮。</p>\n<p>以下是这个项目最核心的三个设计理念。</p>\n</blockquote>\n<h3>01 可视化：信息密度决定使用体验</h3>\n<p>命令行有一个天生的缺陷：所有文字的大小、字体、颜色（永远只有黑白两色）都长一个样，很难让人第一时间抓住重点——就像没人喜欢看写满字的 PPT 。</p>\n<p>Claude Code 原生终端在不展开的时候文字已经密密麻麻，展开后信息量更大、更容易迷失方向。如果再叠加 subagent 、多 Agent 并行的场景，原生终端会更难看懂。图形界面传递信息的效率，和视频相对纯文字的效率是同一个道理。</p>\n<p>Claude Code 的配置更是散落各处：<code>.claude/settings.json</code>、用户级配置、项目级配置，加上 skills 、MCP 、plugin……真正用起来的时候，没人有时间和耐心把这些一一摸清楚。</p>\n<p>所以第一件事，是把这些信息收集、提炼、重组到一个统一入口，让人一眼看出哪些是常用的、重要的。第二件事，是效率：同样一个操作，命令行可能要敲一长串指令，图形界面往往只需要点一下。第三件事，是把 subagent 、branch 、loop 、insight 等等这些 Claude Code 里强大却鲜为人知的机制，放到它们该出现的使用场景里，让用户\"看见\"并用起来。</p>\n<p>更进一步，这也是一次学习的机会——理解 Agent 运行的底层原理（ ReAct ），理解一个集成了人类智慧的 AI 究竟是如何思考、如何行动的。</p>\n<blockquote>\n<p>Claude Steer 的解法是：\n捕获（把 Claude Code 几乎所有概念和机制都抽象、接口化）→ 处理（按真实使用场景聚类重组，比如基于 ReAct 原理和实际工作流程，提炼出\"Agent 工具\"和\"经验\"两个全新的概念集合）→ 可视化（按不同颗粒度呈现信息，既可以扫视迅速了解全局，也可以展开仔细阅读微观细节，且重点始",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入探讨Agent时代人机交互设计理念，可视化、可编程、可验证三大原则对开发者有直接启发。",
+      "summary_zh": "文章介绍了Claude Steer项目，旨在为Agent时代重新设计人机交互。核心设计理念包括：可视化——通过图形界面提升信息密度和可读性，解决命令行难以突出重点的问题；可编程——允许用户通过代码或配置自定义交互逻辑；可验证——提供调试和监控工具确保Agent行为可控。作者认为，好的交互设计应像舵轮一样，让人能精准掌控AI的方向。",
+      "title_zh": null,
+      "weighted_score": 0.72,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "c30a4c8ac88d2557",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1226454#reply0"
+        }
+      ]
+    },
+    {
+      "id": "50c7aafdebfc4c1d",
+      "source_id": "zh-tmtpost",
+      "title": "被238MTr/mm²掩盖的真相：AI算力链的颠覆不在晶体管，在“去DSP”",
+      "url": "https://www.tmtpost.com/8056791.html",
+      "published_at": "2026-07-10T10:39:33+00:00",
+      "raw_text": "行业都在关注晶体管密度，但真正颠覆在光互联。Hi-ONE创造新赛道，产业链价值从DSP迁移到光芯片和封装。判断胜负看用量、时间、生态三条线。这不是技术竞争，是认知框架的较量。",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/2r3t43gret3.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "提出AI算力链颠覆性观点，从晶体管转向光互联，认知框架新颖。",
+      "summary_zh": "文章指出AI算力链的真正颠覆不在晶体管密度，而在“去DSP”和光互联。Hi-ONE技术创造新赛道，将产业链价值从DSP迁移到光芯片和封装。判断胜负需看用量、时间、生态三条线。作者认为这不是技术竞争，而是认知框架的较量，传统关注晶体管密度的思维已过时。",
+      "title_zh": null,
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "f7dbccbd9717417a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8056791.html"
+        }
+      ]
+    },
+    {
+      "id": "8f799535c0d61d4c",
+      "source_id": "github-ai-blog",
+      "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
+      "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
+      "published_at": "2026-07-10T15:57:47+00:00",
+      "raw_text": "<p>How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/\">Better tools made Copilot code review worse. Here&#8217;s how we actually improved it.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://github.blog/wp-content/uploads/2026/07/1.png?resize=1024%2C478",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "GitHub官方博客，分享Copilot代码审查工具迁移到Unix风格工具后反而变差，最终通过重构Agent工作流改进的实战经验，有深度反思。",
+      "summary_zh": "GitHub博客文章分享了Copilot代码审查工具的一次改进历程：迁移到共享的Unix风格代码探索工具后，审查成本反而增加。团队通过重构Agent工作流，围绕PR证据重塑流程，最终实现了改进。文章深入分析了工具选择与工作流设计之间的关系，强调了Agent工作流设计的重要性，对AI辅助开发工具的设计有启发意义。",
+      "title_zh": "更好的工具反而让Copilot代码审查变差：我们如何实际改进",
+      "weighted_score": 0.76,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "5ed95af924d398c5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "github-ai-blog",
+          "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/"
         }
       ]
     },
@@ -209,15 +249,16 @@
       "image_url": "https://pub-b65afb21c951453a872a026d19411abe.r2.dev/images/hermes-agent-kanban-multiagent/cover-d5ef55fc.webp",
       "category": "技巧与观点",
       "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "详细拆解多Agent协作框架Hermes Kanban，涵盖看板机制、协作模式、委派策略等，实操性强，对构建复杂Agent系统有直接指导价值。",
-      "title_zh": null,
-      "weighted_score": 0.66,
+      "depth_score": 0.7,
+      "reason_zh": "详细拆解多Agent协作的看板机制与委派模式，提供完整实操步骤，对构建复杂Agent系统有直接指导意义。",
+      "summary_zh": "Hermes Kanban是一种持久化任务板，支持多个命名Agent跨进程、跨重启协作。文章详细拆解了六列看板机制、九种协作模式、delegate_task子代理委派、五种委派模式、Kanban Codex Lane、Orchestrator铁律，并附四个用户故事的完整实操步骤和8问FAQ。",
+      "title_zh": "Hermes Kanban 多 Agent 编排：让多个 Agent 并行协作完成复杂任务",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
+        "source_authority": 0.5,
+        "novelty": 0.8,
         "impact": 0.5,
-        "practical_value": 0.9
+        "practical_value": 0.8
       },
       "story_id": "21a9bc0bca44c4fe",
       "multi_source_count": 1,
@@ -229,165 +270,136 @@
       ]
     },
     {
-      "id": "cb5ff66744c23668",
-      "source_id": "infoq-cn-ai",
-      "title": "HubSpot 如何将语义搜索扩展至 200 亿个向量",
-      "url": "https://www.infoq.cn/article/eRl25z5ewrRHjReWhOUX?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-10T12:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/eRl25z5ewrRHjReWhOUX?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "HubSpot分享将语义搜索扩展至200亿个向量的实践经验，对大规模向量搜索有重要参考。",
-      "title_zh": "HubSpot 如何将语义搜索扩展至 200 亿个向量",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "50ec96b5634b01b1",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/eRl25z5ewrRHjReWhOUX?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "7fbaaf91396af84f",
-      "source_id": "aws-ml-blog",
-      "title": "MCP tool design: Practical approaches and tradeoffs",
-      "url": "https://aws.amazon.com/blogs/machine-learning/mcp-tool-design-practical-approaches-and-tradeoffs/",
-      "published_at": "2026-07-09T16:40:16+00:00",
-      "raw_text": "In this post, we show where MCP tool design goes wrong and how to fix it with practical context engineering approaches.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/06/26/ML-20889-1.png",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨 MCP 工具设计中的常见错误与修复方法，提供实用的上下文工程策略。",
-      "title_zh": "MCP 工具设计：实用方法与权衡",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "6bcc5270893ce36e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/mcp-tool-design-practical-approaches-and-tradeoffs/"
-        }
-      ]
-    },
-    {
-      "id": "28e34ad7821b8f5e",
-      "source_id": "infoq-cn-ai",
-      "title": "首个具身视频基模开源！LingBot-Video 如何为“机器人大脑”构建物理引擎？",
-      "url": "https://www.infoq.cn/article/SCC8javdsA2zgBg0c2C1?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-09T15:32:04+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/SCC8javdsA2zgBg0c2C1?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "首个具身视频基模LingBot-Video开源，为机器人提供物理世界理解能力，具有重要研究价值。",
-      "title_zh": null,
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "234980da77ab3dc2",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/SCC8javdsA2zgBg0c2C1?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "780368822256d3c7",
+      "id": "4e436ba958a6de6a",
       "source_id": "zh-tmtpost",
-      "title": "The Architect of Panic Joins the Age of AI",
-      "url": "https://www.tmtpost.com/8060033.html",
-      "published_at": "2026-07-10T07:21:02+00:00",
-      "raw_text": "Ben Bernanke’s move to Anthropic signals the moment tech outgrew its engineering phase and braced for systemic economic risk.",
+      "title": "最快半年AI跑通自进化？与陈天桥首席科学家聊聊硅谷模型必争之地",
+      "url": "https://www.tmtpost.com/8059130.html",
+      "published_at": "2026-07-10T10:20:43+00:00",
+      "raw_text": "我们怎么知道AI有没有偷偷跑偏？",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4t5hyjtngf3.png",
+      "image_url": "https://images.tmtpost.com/uploads/images/wx/2026/07/20260709194458063552.jpg",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "分析前美联储主席伯南克加入Anthropic的意义，标志AI行业从工程阶段转向系统性经济风险管理，有深度洞察。",
-      "title_zh": "恐慌的建筑师加入AI时代",
-      "weighted_score": 0.615,
+      "reason_zh": "探讨AI自进化前沿方向，涉及对齐与监控核心问题，有技术深度。",
+      "summary_zh": "文章通过与陈天桥首席科学家的对话，探讨了AI自进化的可能性与挑战。核心问题包括：如何确保AI在自我改进过程中不偏离人类意图？目前硅谷多家公司正在研究可验证的自进化框架，但距离实际应用至少还需半年。文章还讨论了监控AI行为的方法，如使用可解释性工具和对抗性测试，以防止模型偷偷“跑偏”。",
+      "title_zh": null,
+      "weighted_score": 0.635,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.4
+        "practical_value": 0.5
       },
-      "story_id": "a40739c1937e1995",
+      "story_id": "8d9ab4986a88c13d",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8060033.html"
+          "url": "https://www.tmtpost.com/8059130.html"
         }
       ]
     },
     {
-      "id": "ac4e10e35da61753",
-      "source_id": "zh-v2ex",
-      "title": "[分享创造] 分享一下自建的 AI Agent 记忆系统——生产级， 171",
-      "url": "https://www.v2ex.com/t/1226408#reply0",
-      "published_at": "2026-07-10T07:43:53+00:00",
-      "raw_text": "<p>问题很简单：AI 智能体记不住事。每次新会话都是\"陌生人\"。</p>\n<blockquote>\n<p>解决思路也不复杂：外挂一个 sidecar 进程，专门负责记忆。</p>\n<ul>\n<li>用 gbrain （知识图谱）存概念关系</li>\n<li>用 Hindsight （向量记忆）存事实</li>\n<li>用 FTS5 做全文检索</li>\n<li>三层混排召回，每天跑维护/压缩/健康检查</li>\n<li>装好后几乎无感，Agent 自动受益</li>\n</ul>\n<p>🔗 <a href=\"https://github.com/mage0535/hermes-memory-installer\" rel=\"nofollow\">https://github.com/mage0535/hermes-memory-installer</a></p>\n<p>目前已经迭代到 v3.5.2 ，支持多智能体隔离、DeepSeek/OpenAI 多种 embedding 模型可选、dashboard 可视化运维。</p>\n<p>配合 KMM （ Knowledge-and-Memory-Management ）插件采集知识，支持 Scrapling （绕过 Cloudflare ）、抖音视频采集、40+ 采集工具。</p>\n<p>全 MIT 开源，欢迎 star / fork / 提 issue 。</p>\n</blockquote>",
+      "id": "d0432abd11fc09fd",
+      "source_id": "infoq-cn-ai",
+      "title": "GitHub 的旧模式被 AI 击穿，Cursor、GitLab、Zed 各自开打",
+      "url": "https://www.infoq.cn/article/7ZSdewTwDBz1mrx6wmat?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-10T13:14:51+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/7ZSdewTwDBz1mrx6wmat?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "InfoQ 深度分析 AI 如何改变 GitHub 模式，Cursor、GitLab、Zed 等工具竞争，有行业洞察。",
+      "summary_zh": "本文分析了 AI 对 GitHub 传统开发模式的冲击，以及 Cursor、GitLab、Zed 等工具如何各自应对。文章探讨了 AI 辅助编程如何改变代码协作、版本控制等流程，并对比了不同工具的差异化策略。",
+      "title_zh": "GitHub 的旧模式被 AI 击穿，Cursor、GitLab、Zed 各自开打",
+      "weighted_score": 0.635,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "66266ecff6bae170",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/7ZSdewTwDBz1mrx6wmat?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "473bc60af886ecda",
+      "source_id": "zh-juejin",
+      "title": "为什么AI生成的单测，覆盖率看起来很高但上线还是出Bug？",
+      "url": "https://juejin.cn/post/7660718708204716066",
+      "published_at": "2026-07-10T10:56:02+00:00",
+      "raw_text": "本文梳理Claude Code、Cursor生成单测的真实工作流，重点讲Mock失控、测试脆化、假断言三个坑，附可复用Prompt模板。",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "开源项目",
+      "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "自建AI Agent记忆系统，使用知识图谱、向量记忆和全文检索，生产级方案。",
+      "reason_zh": "深入剖析AI生成单测的三大陷阱，提供可复用Prompt模板，实用性强。",
+      "summary_zh": "本文梳理了Claude Code、Cursor等工具生成单元测试的真实工作流，重点分析了Mock失控、测试脆化、假断言三个常见问题，并提供了可复用的Prompt模板。作者指出，AI生成的单测虽然覆盖率看似很高，但由于这些陷阱，上线后仍可能出现Bug。文章为开发者提供了实用的改进建议。",
       "title_zh": null,
-      "weighted_score": 0.525,
+      "weighted_score": 0.555,
       "score_breakdown": {
-        "source_authority": 0.3,
-        "novelty": 0.7,
-        "impact": 0.4,
+        "source_authority": 0.4,
+        "novelty": 0.6,
+        "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "77b0011a6760eaa5",
+      "story_id": "e51de57a8e0adf13",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1226408#reply0"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7660718708204716066"
+        }
+      ]
+    },
+    {
+      "id": "59fab7095156b639",
+      "source_id": "aws-ml-blog",
+      "title": "How KTern.AI built agentic AI for SAP on Amazon Bedrock AgentCore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/",
+      "published_at": "2026-07-10T15:23:25+00:00",
+      "raw_text": "Evolving from a traditional software as a service (SaaS) platform into a next-generation agentic AI platform meant orchestrating multiple specialized agents across long-running enterprise programs. Each agent operates with persistent context, secure tool access, and production-grade reliability. We built that system on Amazon Bedrock AgentCore using the Strands Agents SDK. This post walks through how we architected it, which agents we built, and the outcomes for our customers.",
+      "category_hint": [
+        "技巧与观点",
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/09/ktern_blog_diagram_final.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "KTern.AI分享在Amazon Bedrock上构建SAP Agentic AI平台的经验，涉及多Agent编排与生产级可靠性，有实践参考价值。",
+      "summary_zh": "KTern.AI分享了从传统SaaS平台演进为下一代Agentic AI平台的经验，该平台基于Amazon Bedrock AgentCore和Strands Agents SDK构建，能够编排多个专业Agent，支持长期企业程序。每个Agent具有持久上下文、安全工具访问和生产级可靠性。文章详细介绍了系统架构和实现要点。",
+      "title_zh": "KTern.AI如何在Amazon Bedrock AgentCore上为SAP构建Agentic AI",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "0eddb7a055cd8af3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/"
         }
       ]
     }
