@@ -20,7 +20,7 @@ from ..util import get_session, get_logger
 log = get_logger(__name__)
 
 # 该端点按 IP 限流：单轮抓十个账号没问题，但短时间内反复抓会累积触发 429。
-# 流水线两小时才跑一轮，账号间留间隔 + 429 退避重试即可。
+# 流水线 4 小时才跑一轮，账号间留间隔 + 429 退避重试即可。
 REQUEST_GAP_SECONDS = 2.5
 MAX_RETRIES = 2
 RETRY_BACKOFF_SECONDS = 10
