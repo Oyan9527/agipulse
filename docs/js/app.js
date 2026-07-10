@@ -1,8 +1,8 @@
-import { renderFeed, excerptFor } from "./components/feed.js?v=20260710p";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710p";
-import { initPalette } from "./components/palette.js?v=20260710p";
-import { categoryColor, categoryTextColor } from "./palette.js?v=20260710p";
-import { safeUrl, setSafeHref } from "./safe.js?v=20260710p";
+import { renderFeed, excerptFor } from "./components/feed.js?v=20260710q";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710q";
+import { initPalette } from "./components/palette.js?v=20260710q";
+import { categoryColor, categoryTextColor } from "./palette.js?v=20260710q";
+import { safeUrl, setSafeHref } from "./safe.js?v=20260710q";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";

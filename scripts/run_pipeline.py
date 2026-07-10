@@ -21,6 +21,7 @@ from .mock_llm import mock_prefilter, mock_score_items
 from .story_merge import merge_stories, collapse_stories
 from .quality_gate import apply_gate
 from .daily_brief import build_daily_brief
+from .feed import build_feed
 from .source_health import build_source_status
 from .trends import build_trends, _extract_keywords
 from .archive import update_daily_archive, load_daily_archives
@@ -153,6 +154,14 @@ def atomic_write_json(path, data):
     tmp = path.with_suffix(path.suffix + ".tmp")
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, path)
+
+
+def atomic_write_text(path, text):
+    path = Path(path)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text)
     os.replace(tmp, path)
 
 
@@ -323,6 +332,10 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     atomic_write_json(out_dir / "stories-merged.json", stories)
     atomic_write_json(out_dir / "source-status.json", status)
     atomic_write_json(out_dir / "trends.json", trends)
+
+    # Atom 订阅源：放在站点根目录（out_dir 是 docs/data，feed 要在 docs/feed.xml），
+    # 否则 <link rel=alternate> 指不到。注意 workflow 提交时要一并 git add docs/feed.xml。
+    atomic_write_text(out_dir.parent / "feed.xml", build_feed(latest_24h))
 
     log.info(
         "pipeline done: %d curated / %d all / %d stories",
