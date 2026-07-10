@@ -41,7 +41,22 @@ jobs:
           git add docs/data
           if git diff --cached --quiet; then
             echo "no data changes, skipping commit"
-          else
-            git commit -m "data: update feeds @ $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
-            git push
+            exit 0
           fi
+          git commit -m "data: update feeds @ $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+          # 跑流水线期间若有人往 main 推了提交，直接 push 会因 non-fast-forward 被拒，
+          # 本轮抓到的数据就白白丢了。失败则 rebase 到最新 main 后重试。
+          # 冲突只会出现在 docs/data（全量重写的快照），-X theirs 在 rebase 语境下
+          # 指的是"正在应用的提交"，也就是本轮刚生成的数据——取新不取旧。
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected, rebasing onto latest main (attempt $attempt)"
+            git fetch origin main
+            git rebase --strategy-option=theirs origin/main || { git rebase --abort; exit 1; }
+          done
+          echo "push failed after 3 attempts" >&2
+          exit 1
