@@ -2,7 +2,7 @@ name: Update AI signal data
 
 on:
   schedule:
-    - cron: "0 * * * *"   # 每小时一次，兼顾新鲜度与 DeepSeek 调用成本
+    - cron: "0 */2 * * *"   # 每两小时一次（偶数点整点），兼顾新鲜度与 DeepSeek 调用成本
   workflow_dispatch: {}    # 支持手动触发（首次部署用于种子数据）
 
 concurrency:
