@@ -63,3 +63,9 @@ daily_brief:
 
 freshness:
   decay_window_hours: 48
+
+# 健康检查阈值（见 scripts/health_check.py）：低于这些值判定为"静默失效"，
+# 让 GitHub Actions job 标红并给仓库 owner 发失败邮件——数据仍照常提交，只是告警。
+health_check:
+  min_active_source_ratio: 0.5   # 抓取成功的源占比低于 50% -> 大面积抓取失败
+  min_scored_items: 1            # 全部动态里"有打分"的条目数为 0 -> DeepSeek 挂了

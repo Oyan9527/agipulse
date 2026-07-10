@@ -65,3 +65,10 @@ jobs:
           done
           echo "push failed after 3 attempts" >&2
           exit 1
+
+      # 放在提交之后：数据永远先落盘、先推送。这一步只在检测到静默失效（大批源挂掉 /
+      # DeepSeek 失效）时非零退出，让本次 job 标红并给仓库 owner 发失败邮件。
+      # if: always() 确保即使前面某步失败也照样体检，不被跳过。
+      - name: Health check
+        if: always()
+        run: python -m scripts.health_check --data-dir docs/data
