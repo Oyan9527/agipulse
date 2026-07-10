@@ -67,6 +67,22 @@ def _mock_content_type(item):
     return "观点评论"
 
 
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _mock_summary_zh(item):
+    """mock 的中文摘要占位：正文本就是中文的直接截断；英文正文给出固定中文占位，
+    绝不回落到英文原文——否则前端看不出"摘要未翻译"的问题。"""
+    text = _TAG_RE.sub("", item["raw_text"] or "").strip()
+    if _CJK_RE.search(text):
+        return text[:200]
+    return (
+        f"〔示例摘要〕本文来自 {item['source_id']}，正文为英文。"
+        "正式部署时此处由 DeepSeek 在打分阶段生成 120-200 字的中文内容摘要，"
+        "客观转述要点并保留模型名、公司名等专有名词的英文原文。"
+    )
+
+
 def _mock_depth_score(item, content_type):
     base = {"研究论文": 0.75, "深度分析": 0.8, "教程方法": 0.7, "观点评论": 0.5}.get(content_type, 0.15)
     # 正文越长略微加成，但上限受 content_type 主导——长通稿不会因此变成深度内容
@@ -107,6 +123,9 @@ def mock_score_items(items, categories, weights, source_authority_by_id):
                 "depth_score": _mock_depth_score(it, content_type),
                 "title_zh": title_zh,
                 "reason_zh": f"[mock] 来自 {it['source_id']}，发布于 {age_hours:.0f} 小时前",
+                # 生产由 DeepSeek 生成真实中文摘要；这里只产出等长的中文占位文本，
+                # 以便前端验证"摘要一定是中文"这条规则（英文原文不应再出现在摘要位）
+                "summary_zh": _mock_summary_zh(it),
                 "weighted_score": round(weighted, 4),
                 "score_breakdown": {
                     "source_authority": round(authority, 3),

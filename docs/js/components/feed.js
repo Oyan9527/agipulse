@@ -1,5 +1,5 @@
 // 信息流：AGI Hunt 式卡片 —— 顶行(分类+徽章) / 衬线标题 / 英文副题 / 配图 / 摘要 / 底行(来源+时间)。
-import { categoryColor, categoryTextColor } from "../palette.js";
+import { categoryColor, categoryTextColor } from "../palette.js?v=20260710c";
 
 const SOURCE_LABELS = {
   "openai-blog": "OpenAI Blog",
@@ -85,18 +85,18 @@ function stripHtml(html) {
   return _parser.parseFromString(html, "text/html").body.textContent?.replace(/\s+/g, " ").trim() || "";
 }
 
-function excerptFor(item, maxLen = 320, preferRaw = false) {
-  // 卡片：优先 DeepSeek 一句话推荐理由（简洁）；
-  // 头条(preferRaw)：优先原文正文摘要（要填满多行），理由仅作兜底
-  const reason = item.reason_zh || "";
-  const text = stripHtml(item.raw_text);
-  if (preferRaw) {
-    if (text.length > 60) return text.slice(0, maxLen);
-    return (reason && !reason.startsWith("[mock]")) ? reason : text.slice(0, maxLen);
+// 摘要一律用中文：summary_zh 是 DeepSeek 在打分阶段生成的中文内容摘要(120-200字)。
+// 英文原文只在条目未打分(打分批次失败，仅进入"全部动态")时兜底——此前头条无条件优先
+// raw_text，导致英文源的头条摘要始终是英文原文。
+// 头条(preferLong)要填满多行，优先更长的 summary_zh；卡片优先简洁的推荐理由 reason_zh。
+function excerptFor(item, maxLen = 320, preferLong = false) {
+  const summary = item.summary_zh || "";
+  const reason = (item.reason_zh && !item.reason_zh.startsWith("[mock]")) ? item.reason_zh : "";
+
+  for (const candidate of (preferLong ? [summary, reason] : [reason, summary])) {
+    if (candidate) return candidate.slice(0, maxLen);
   }
-  if (reason && !reason.startsWith("[mock]")) return reason;
-  if (text.length > 12) return text.slice(0, maxLen);
-  return reason;
+  return stripHtml(item.raw_text).slice(0, maxLen);  // 未打分条目：无任何中文字段
 }
 
 function buildCardNode(item, idx, template) {

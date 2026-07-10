@@ -1,7 +1,7 @@
-import { renderFeed, excerptFor } from "./components/feed.js";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js";
-import { initPalette } from "./components/palette.js";
-import { categoryColor, categoryTextColor } from "./palette.js";
+import { renderFeed, excerptFor } from "./components/feed.js?v=20260710c";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710c";
+import { initPalette } from "./components/palette.js?v=20260710c";
+import { categoryColor, categoryTextColor } from "./palette.js?v=20260710c";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
