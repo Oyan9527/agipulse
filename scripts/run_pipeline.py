@@ -297,7 +297,8 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     all_24h = filter_output_window(all_output_items, hours=24)
 
     latest_24h = filter_output_window(curated, hours=24)
-    daily_brief = build_daily_brief(curated, weights_cfg)
+    # 传全部已打分条目(而非精选流)：深度推荐自成一套筛选，见 daily_brief.py 顶部说明
+    daily_brief = build_daily_brief(merged_items, weights_cfg)
     status = build_source_status(fetch_results, normalized_by_source, kept_ids)
 
     update_daily_archive(merged_items, _extract_keywords, out_dir)

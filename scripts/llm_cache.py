@@ -21,8 +21,12 @@ log = get_logger(__name__)
 
 CACHE_FILENAME = "llm-cache.json"
 SCORE_FIELDS = [
-    "category", "reason_zh", "title_zh", "weighted_score", "score_breakdown",
+    "category", "content_type", "depth_score",
+    "reason_zh", "title_zh", "weighted_score", "score_breakdown",
 ]
+# 打分schema新增字段时，旧缓存条目缺这些键。用其中一个作哨兵：缺了就当没缓存过、
+# 重新送去打分，让缓存自然迁移到新schema（否则旧条目会带着 depth_score=None 混进来）。
+_SCHEMA_SENTINEL = "depth_score"
 
 
 def load_cache(output_dir):
@@ -62,7 +66,7 @@ def split_by_cache(items, cache):
             uncached.append(it)
         elif hit.get("status") == "rejected":
             cached_rejected_ids.add(it["id"])
-        elif hit.get("status") == "scored":
+        elif hit.get("status") == "scored" and _SCHEMA_SENTINEL in hit:
             merged = dict(it)
             merged.update({k: hit.get(k) for k in SCORE_FIELDS})
             cached_scored.append(merged)

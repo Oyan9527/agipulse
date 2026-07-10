@@ -46,12 +46,17 @@ dedupe:
   fuzzy_title_threshold: 90    # rapidfuzz token_sort_ratio
   window_hours: 48
 
+# 今日深度推荐：要"有深度/有启发性"的内容(可解释性研究、新方法论文、工程实践复盘、
+# 有论证的深度剖析)，不要资讯性内容。深度由 DeepSeek 判定 content_type + depth_score，
+# 不用正文字数衡量——长通稿可以毫无深度，精炼的机制发现可以很短。
+# 注意：不能按 category 排除"论文研究"，那恰恰是深度内容的主要来源之一。
 daily_brief:
   top_n: 12
-  min_raw_text_length: 500   # 深度长文门槛：正文(去标签)达到此长度才算"深度长文"，不足则从其余高分条目补齐
-  # 论文摘要/仓库更新日志本身就是长段落文字，长度门槛对它们没有区分度——
-  # 需要显式排除，否则简报会被arXiv摘要刷屏（不是用户想要的"深度长文"）
-  exclude_categories: [论文研究, 开源项目]
+  min_depth_score: 0.6
+  exclude_content_types: [资讯快讯, 产品发布, 营销推广]
+  # 单分类上限：arXiv 每轮进来上百篇论文且深度分普遍不低，不限制会把12条全占满，
+  # 挤掉工程实践复盘/深度剖析这类同样重要的内容
+  max_per_category: 4
 
 freshness:
   decay_window_hours: 48
