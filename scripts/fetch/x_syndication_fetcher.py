@@ -76,12 +76,14 @@ def _fetch_account(session, screen_name, max_age_hours):
 
     now = datetime.now(timezone.utc)
     items = []
+    seen_any_tweet = False
     for entry in entries:
         if entry.get("type") != "tweet":
             continue
         tweet = (entry.get("content") or {}).get("tweet")
         if not tweet:
             continue
+        seen_any_tweet = True
         text = tweet.get("full_text") or tweet.get("text") or ""
         if text.startswith("RT @"):
             continue  # 转推不算该账号的信号
@@ -99,6 +101,15 @@ def _fetch_account(session, screen_name, max_age_hours):
                 "raw_text": "",
                 "_heat": (tweet.get("favorite_count") or 0) + (tweet.get("retweet_count") or 0) * 2,
             }
+        )
+
+    if seen_any_tweet and not items:
+        # 该端点对部分账号只返回一份乱序的历史快照（最新一条常在数月前），
+        # 表现就是抓到了推文却一条都不在时间窗内。这类账号不产内容却照占限流配额，
+        # 见到这条日志就该把它从 sources.yaml 的 accounts 里删掉。
+        log.warning(
+            "x_syndication %s: 抓到推文但无一条在 %dh 内，疑似历史快照账号，建议移除",
+            screen_name, max_age_hours,
         )
     return items
 

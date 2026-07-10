@@ -726,15 +726,23 @@ sources:
     notes: "第三方 RSSHub 公共实例(rssforever)。实例不稳时该栏留空，不影响其他平台"
 
   # X：官方免费API已取消搜索/趋势权限；公共 RSSHub 的 /twitter/* 需登录Cookie(实测 404/503)，
-  # Nitter 实例 403。改走 syndication.twitter.com —— X 官方给第三方嵌入时间线用的公开端点，
-  # 无需 Key。因此这一栏不是"X 全站 AI 热搜"，而是"AI 高信号账号最近在说什么"(对齐 AGI Hunt 思路)，
-  # 合并下列账号推文按互动量排序，再经 ai_relevance 过滤掉闲聊。
+  # Nitter 实例 403。改走 syndication.twitter.com —— X 官方给第三方嵌入时间线用的公开端点，无需 Key。
+  #
+  # 两个实测得出的硬约束（2026-07-10）：
+  # 1. 该端点只对部分账号返回真实的近期时间线；对另一些账号返回的是一份乱序的历史快照
+  #    （最新一条往往是 8 个月前）。实测 sama / karpathy / ylecun / ilyasut / demishassabis /
+  #    _akhaliq / jackclarkSF / hardmaru / polynoamial / giffmana 这 10 个 AI 专业人士账号
+  #    无一例外全是历史快照，huggingface / MistralAI / deepseek_ai 亦然。因此这一栏只能做
+  #    "AI 机构官方动态"，做不了"AI 专业人士最新动态"——后者需要 X 付费 API 或自建
+  #    RSSHub 的 /twitter/user 路由（需配置登录 Cookie）。下列账号均已验证有近期推文。
+  # 2. 端点按 IP 限流，单轮约 11~12 次请求即触发 429（间隔 6 秒也挡不住，是总量配额而非速率）。
+  #    账号数必须控制在 10 个以内，无效账号不能留——它们不产内容却照样占配额。
   - id: x-ai-social
     type: x_syndication
     role: social_hot
-    platform: X · AI 前沿
-    accounts: [OpenAI, AnthropicAI, GoogleDeepMind, sama, karpathy, ylecun, demishassabis, _akhaliq, MistralAI, deepseek_ai]
-    max_age_hours: 168   # 一周：这些账号发推不密集，72h 窗口下常态只剩个位数条目
+    platform: X · AI 机构
+    accounts: [OpenAI, AnthropicAI, GoogleDeepMind, perplexity_ai, AIatMeta]
+    max_age_hours: 168   # 一周：机构发推不密集，72h 窗口下常态只剩个位数条目
     poll_minutes: 60
     status: confirmed
 
