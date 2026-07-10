@@ -1,8 +1,9 @@
-"""共享工具函数：配置加载、去重ID生成、HTTP会话、日志。"""
+"""共享工具函数：配置加载、去重ID生成、URL 安全校验、HTTP会话、日志。"""
 import hashlib
 import logging
 import os
 from datetime import datetime, timezone
+from urllib.parse import urlparse
 
 import requests
 import yaml
@@ -27,6 +28,29 @@ def load_yaml(path):
 def make_id(*parts):
     raw = "|".join(str(p) for p in parts if p is not None)
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:16]
+
+
+_SAFE_SCHEMES = ("http", "https")
+
+
+def safe_http_url(url):
+    """只放行 http/https 链接，其余（javascript:、data:、file: 等）返回 None。
+
+    条目的 url / image_url 直接来自第三方 RSS 与 API，会被前端写进 <a href> 和 <img src>。
+    javascript: 链接一旦被点击就是 XSS。在入库时就丢弃，前端另有兜底（docs/js/safe.js）。
+    """
+    if not isinstance(url, str):
+        return None
+    url = url.strip()
+    if not url:
+        return None
+    try:
+        parsed = urlparse(url)
+    except ValueError:
+        return None
+    if parsed.scheme.lower() not in _SAFE_SCHEMES or not parsed.netloc:
+        return None
+    return url
 
 
 def now_utc():

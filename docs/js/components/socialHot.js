@@ -1,4 +1,5 @@
 // 社媒热点 + GitHub 涨星榜：独立于 AI 主流程，不做相关性过滤，纯展示各平台当前热搜。
+import { setSafeHref } from "../safe.js?v=20260710n";
 
 const PERIOD_LABELS = {
   past_24_hours: "近24小时新增 star 最多的仓库",
@@ -44,7 +45,7 @@ export function renderSocialHot({ gridEl, platforms }) {
       rank.textContent = String(idx + 1).padStart(2, "0");
       const a = document.createElement("a");
       a.className = "social-hot__link";
-      a.href = item.url;
+      setSafeHref(a, item.url);
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       // 英文标题优先显示中文译文（空间紧凑的单行列表放不下双语两行），英文原题放 title 悬浮提示；
@@ -86,7 +87,7 @@ export function renderGithubTrending({ listEl, emptyEl, periodEl, data, period =
     `;
     const a = li.querySelector(".gh-trending__repo");
     a.textContent = repo.repo;  // 仓库名是标识符，不翻译
-    a.href = repo.url;
+    setSafeHref(a, repo.url);
     const descEl = li.querySelector(".gh-trending__desc");
     if (repo.description_zh && repo.description_zh.trim() !== (repo.description || "").trim()) {
       descEl.textContent = repo.description_zh;

@@ -1,4 +1,5 @@
 // 今日简报 + 热点雷达：两个都是真正的排序榜单，编号是有意义的（不是装饰性 01/02/03）。
+import { setSafeHref } from "../safe.js?v=20260710n";
 
 // 侧栏窄，放不下双语两行：与社媒热点一致——译文为主，英文原题放 title 悬浮提示；
 // 译文比原生中文标题醒目一档(is-translated)，帮助分辨"这是翻译过的"。
@@ -30,7 +31,7 @@ export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
     `;
     const a = li.querySelector(".brief-row__title");
     setTitleWithTranslation(a, item);
-    a.href = item.url;
+    setSafeHref(a, item.url);
     li.querySelector(".brief-row__reason").textContent = item.reason_zh || "";
     listEl.appendChild(li);
   });
@@ -55,7 +56,7 @@ export function renderHotStories({ listEl, emptyEl, stories }) {
     `;
     const a = li.querySelector(".hot-row__title");
     setTitleWithTranslation(a, story);
-    if (story.url) a.href = story.url;
+    setSafeHref(a, story.url);
     li.querySelector(".hot-row__sources").textContent =
       story.source_count >= 2 ? `${story.source_count} 源确认` : "单源";
     li.querySelector(".hot-row__heat").textContent = ` · 热度 ${story.heat.toFixed(1)}`;
@@ -72,10 +73,14 @@ export function renderSourceHealth({ listEl, statuses }) {
       const li = document.createElement("li");
       li.className = "source-health__item";
       const ok = !s.last_error;
+      // last_error 是第三方源返回的异常字符串，拼进 innerHTML 会被当成 HTML/属性解析
+      // （引号可闭合 title="" 并注入事件处理器）——一律走 textContent / setAttribute
       li.innerHTML = `
-        <span class="source-health__name">${s.source_id}</span>
-        <span class="status-dot ${ok ? "ok" : "err"}" title="${ok ? "正常" : s.last_error}"></span>
+        <span class="source-health__name"></span>
+        <span class="status-dot ${ok ? "ok" : "err"}"></span>
       `;
+      li.querySelector(".source-health__name").textContent = s.source_id;
+      li.querySelector(".status-dot").setAttribute("title", ok ? "正常" : String(s.last_error));
       listEl.appendChild(li);
     });
 }

@@ -1,7 +1,8 @@
-import { renderFeed, excerptFor } from "./components/feed.js?v=20260710m";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710m";
-import { initPalette } from "./components/palette.js?v=20260710m";
-import { categoryColor, categoryTextColor } from "./palette.js?v=20260710m";
+import { renderFeed, excerptFor } from "./components/feed.js?v=20260710n";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710n";
+import { initPalette } from "./components/palette.js?v=20260710n";
+import { categoryColor, categoryTextColor } from "./palette.js?v=20260710n";
+import { safeUrl, setSafeHref } from "./safe.js?v=20260710n";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -156,7 +157,7 @@ function renderLead() {
   // 英文原题为主标题（大），中文译文为副题行（小）
   els.leadLink.textContent = lead.title;
   els.leadLink.title = lead.title;   // 标题最多3行，被截断时可悬浮看全文
-  els.leadLink.href = lead.url;
+  setSafeHref(els.leadLink, lead.url);
   if (lead.title_zh && lead.title_zh.trim() !== lead.title.trim()) {
     els.leadOrig.textContent = lead.title_zh;
     els.leadOrig.hidden = false;
@@ -172,7 +173,8 @@ function renderLead() {
   leadCat.style.color = categoryTextColor(lead.category);
 
   // 配图：有 image_url 用原图；加载失败或超时(5s)回落到脉冲占位图
-  if (lead.image_url) {
+  const leadImageUrl = safeUrl(lead.image_url);
+  if (leadImageUrl) {
     const fallback = () => {
       els.leadImg.hidden = true;
       els.leadPlaceholder.style.display = "";
@@ -182,7 +184,7 @@ function renderLead() {
     }, 5000);
     els.leadImg.addEventListener("load", () => clearTimeout(timer), { once: true });
     els.leadImg.addEventListener("error", () => { clearTimeout(timer); fallback(); }, { once: true });
-    els.leadImg.src = lead.image_url;
+    els.leadImg.src = leadImageUrl;
     els.leadImg.hidden = false;
     els.leadPlaceholder.style.display = "none";
   }

@@ -1,5 +1,6 @@
 // 信息流：AGI Hunt 式卡片 —— 顶行(分类+徽章) / 衬线标题 / 英文副题 / 配图 / 摘要 / 底行(来源+时间)。
-import { categoryColor, categoryTextColor } from "../palette.js?v=20260710m";
+import { categoryColor, categoryTextColor } from "../palette.js?v=20260710n";
+import { safeUrl, setSafeHref } from "../safe.js?v=20260710n";
 
 const SOURCE_LABELS = {
   "openai-blog": "OpenAI Blog",
@@ -117,12 +118,12 @@ function buildCardNode(item, idx, template) {
   scoreEl.textContent = item.weighted_score != null ? item.weighted_score.toFixed(2) : "";
 
   const outEl = node.querySelector(".feed-card__out");
-  outEl.href = item.url;
+  setSafeHref(outEl, item.url);
 
   // 标题层级：英文原题为主标题（大），中文译文为副题行（小）
   const titleEl = node.querySelector(".feed-card__title");
   titleEl.textContent = item.title;
-  titleEl.href = item.url;
+  setSafeHref(titleEl, item.url);
 
   const deckEl = node.querySelector(".feed-card__deck");
   if (item.title_zh && item.title_zh.trim() !== item.title.trim()) {
@@ -131,10 +132,11 @@ function buildCardNode(item, idx, template) {
   }
 
   // 原文配图：加载失败直接收起，不留破图
-  if (item.image_url) {
+  const imageUrl = safeUrl(item.image_url);
+  if (imageUrl) {
     const media = node.querySelector(".feed-card__media");
     const img = node.querySelector(".feed-card__img");
-    img.src = item.image_url;
+    img.src = imageUrl;
     media.hidden = false;
     img.addEventListener("error", () => { media.hidden = true; }, { once: true });
   }
@@ -157,7 +159,7 @@ function buildCardNode(item, idx, template) {
     (item.sources || []).forEach((s) => {
       const li = document.createElement("li");
       const a = document.createElement("a");
-      a.href = s.url;
+      setSafeHref(a, s.url);
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       a.textContent = sourceLabel(s.source_id);

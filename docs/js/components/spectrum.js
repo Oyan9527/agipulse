@@ -1,6 +1,6 @@
 // 频谱条：把 latest-24h-all.json 按"小时 x 分类"分桶，渲染成竖条频谱图（signature element）。
 // 分类颜色使用经校验的共享色板；悬停有 tooltip 读数，键盘可操作。
-import { categoryColor, CATEGORY_ORDER } from "../palette.js?v=20260710m";
+import { categoryColor, CATEGORY_ORDER } from "../palette.js?v=20260710n";
 
 const BUCKET_HOURS = 24;
 
@@ -97,7 +97,11 @@ export function renderSpectrum({ chartEl, legendEl, axisEl, emptyEl, tooltipEl, 
   legendEl.innerHTML = "";
   CATEGORY_ORDER.filter((c) => categoriesPresent.has(c)).forEach((cat) => {
     const li = document.createElement("li");
-    li.innerHTML = `<span class="swatch" style="background:${categoryColor(cat)}"></span>${cat}`;
+    // 不用内联 style 属性：那会逼着 CSP 放开 style-src 'unsafe-inline'
+    const swatch = document.createElement("span");
+    swatch.className = "swatch";
+    swatch.style.background = categoryColor(cat);
+    li.append(swatch, cat);
     legendEl.appendChild(li);
   });
 

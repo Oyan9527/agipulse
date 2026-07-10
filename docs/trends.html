@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 内容安全策略：数据来自 300+ 第三方源，任何一条 XSS 都会落到访客浏览器里。
+     script-src 'self' 禁掉内联脚本与 eval，即便有注入也执行不了；img-src 放开 https 是因为
+     配图来自任意站点。GitHub Pages 无法自定义响应头，只能走 meta。 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="referrer" content="no-referrer">
 <title>数据版 · 硅基脉动 AGI Pulse</title>
 <meta name="description" content="硅基脉动数据版：24 小时信号频谱、精选率与信源健康指标、日/周/月分类动量与趋势关键词。">
 <link rel="icon" href="data:,">
@@ -11,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,600;1,700;1,900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <!-- 版本串用于 cache busting：头条版式依赖 style.css 里的栅格定位，
      若浏览器/CDN 用旧CSS配新HTML，头条图文会错位。改动 style.css 时同步改此版本号。 -->
-<link rel="stylesheet" href="css/style.css?v=20260710m">
+<link rel="stylesheet" href="css/style.css?v=20260710n">
 </head>
 <body>
 <a class="skip-link" href="#main">跳转到主内容</a>
@@ -129,6 +134,6 @@
   </div>
 </div>
 
-<script type="module" src="js/trends.js?v=20260710m"></script>
+<script type="module" src="js/trends.js?v=20260710n"></script>
 </body>
 </html>

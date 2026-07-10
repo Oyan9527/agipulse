@@ -1,4 +1,5 @@
 // 命令面板：Ctrl/Cmd+K 打开，模糊搜索已加载的全部条目。
+import { safeUrl } from "../safe.js?v=20260710n";
 export function initPalette({ overlayEl, triggerEl, inputEl, resultsEl, getSearchIndex }) {
   let activeIndex = -1;
   let currentResults = [];
@@ -32,7 +33,8 @@ export function initPalette({ overlayEl, triggerEl, inputEl, resultsEl, getSearc
       `;
       li.querySelector(".palette__result-title").textContent = item.title;
       li.querySelector(".palette__result-meta").textContent = `${item.source_id} · ${item.category || ""}`;
-      li.addEventListener("click", () => window.open(item.url, "_blank", "noopener,noreferrer"));
+      const url = safeUrl(item.url);
+      if (url) li.addEventListener("click", () => window.open(url, "_blank", "noopener,noreferrer"));
       resultsEl.appendChild(li);
     });
   }
