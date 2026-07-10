@@ -731,11 +731,11 @@ sources:
     status: optional
     notes: "X 官方免费API已取消搜索/趋势权限，无法直连。需自建 RSSHub 的 /twitter/keyword/:keyword 路由(需配置登录Cookie环境变量)，见 README Phase 3"
 
-  # ---------------- GitHub 涨星榜（role: gh_trending，同样独立于AI主流程） ----------------
+  # ---------------- GitHub 涨星榜（role: gh_trending，同样独立于AI主流程；日/周/月三档周期） ----------------
   - id: gh-star-trending
     type: gh_star_trending
     role: gh_trending
-    period: past_24_hours
+    periods: [past_24_hours, past_week, past_month]
     poll_minutes: 60
     status: confirmed
 

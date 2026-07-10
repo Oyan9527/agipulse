@@ -644,9 +644,25 @@ a { color: inherit; }
 }
 .social-hot__link:hover { color: var(--accent); }
 
+/* 翻译过的中文标题：比原生标题大一档、加粗，一眼看出"这是译文" */
+.social-hot__link.is-translated {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .social-hot__empty { color: var(--mist); font-size: 0.82rem; margin: 0; }
 
 /* GitHub 涨星榜：编号 + 仓库名 + 描述 + 星数徽章 */
+.gh-trending__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.gh-trending__head .section-title { margin-bottom: 0; }
+
 .gh-trending__list {
   list-style: none;
   margin: 0;

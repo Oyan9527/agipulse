@@ -96,7 +96,14 @@
   </section>
 
   <section class="gh-trending" aria-label="GitHub 涨星榜">
-    <h2 class="section-title">GitHub 涨星榜 <span class="section-title__sub" id="gh-trending-period">近24小时新增 star 最多的仓库</span></h2>
+    <div class="gh-trending__head">
+      <h2 class="section-title">GitHub 涨星榜 <span class="section-title__sub" id="gh-trending-period">近24小时新增 star 最多的仓库</span></h2>
+      <div class="tabs tabs--small" id="gh-period-tabs" role="tablist" aria-label="涨星榜统计周期">
+        <button class="tab is-active" role="tab" aria-selected="true" data-period="past_24_hours">日</button>
+        <button class="tab" role="tab" aria-selected="false" data-period="past_week">周</button>
+        <button class="tab" role="tab" aria-selected="false" data-period="past_month">月</button>
+      </div>
+    </div>
     <ol class="gh-trending__list" id="gh-trending-list"></ol>
     <p class="gh-trending__empty" id="gh-trending-empty" hidden>暂时没有取到涨星数据。</p>
   </section>

@@ -137,18 +137,21 @@ def build_social_hot(sources_cfg, skip_llm=False, mock_llm=False):
 
 
 def build_github_trending(sources_cfg):
-    """GitHub 涨星榜：独立于AI主流程，取当前周期内新增 star 数最多的仓库。"""
+    """GitHub 涨星榜：独立于AI主流程，日/周/月三档周期各取新增 star 数最多的10个仓库。"""
     source = next((s for s in sources_cfg if s.get("role") == "gh_trending"), None)
+    periods = (source or {}).get("periods") or ["past_24_hours"]
+    empty = {p: [] for p in periods}
     if not source:
-        return {"generated_at": now_utc().isoformat(), "period": None, "repos": []}
+        return {"generated_at": now_utc().isoformat(), "periods": empty}
 
-    raw_items, error = fetch_source(source)
-    repos = []
+    raw_by_period, error = fetch_source(source)
+    dimensions = {}
     if error:
-        log.warning("gh_trending source failed: %s", error)
+        log.warning("gh_trending source failed entirely: %s", error)
+        dimensions = empty
     else:
-        for it in raw_items[:10]:
-            repos.append(
+        for period, raw_items in raw_by_period.items():
+            dimensions[period] = [
                 {
                     "repo": it["title"],
                     "url": it["url"],
@@ -156,12 +159,9 @@ def build_github_trending(sources_cfg):
                     "stars_gained": it.get("stars_gained", 0),
                     "language": it.get("language", ""),
                 }
-            )
-    return {
-        "generated_at": now_utc().isoformat(),
-        "period": source.get("period", "past_24_hours"),
-        "repos": repos,
-    }
+                for it in raw_items[:10]
+            ]
+    return {"generated_at": now_utc().isoformat(), "periods": dimensions}
 
 
 def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
