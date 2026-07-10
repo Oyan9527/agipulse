@@ -772,9 +772,12 @@ a { color: inherit; }
   display: grid;
   /* 头版头条：限宽920。三行栅格让画框只占中间一行——引题(row1)与元信息(row3)
      都只在文字列，画框(col2/row2)因此上边与标题上边齐平、下边与正文下边齐平。
-     摘要保底5行后文字列更高，画框随之变高；配图多为横构图，图片列须相应加宽
-     (30fr->38fr)，否则图在竖长的画框里只占一小条、上下留出大片空白。 */
-  grid-template-columns: minmax(0, 62fr) minmax(210px, 38fr);
+
+     图片列用固定像素宽而非 fr：标题限3行 + 摘要固定5行使文字列高度恒定(约298px)，
+     此时若图片列宽随视口浮动，画框比例就跟着浮动，配图裁切量忽大忽小；固定宽度后
+     画框比例恒定(内框约 346×268 ≈ 1.29)，正好贴合常见横构图，cover 几乎不裁切。
+     文字列吃掉剩余宽度——它变宽只是每行多放几个字，行数固定所以高度不变。 */
+  grid-template-columns: minmax(0, 1fr) 376px;
   grid-template-rows: auto 1fr auto;
   gap: 12px;
   align-items: stretch;
@@ -816,13 +819,20 @@ a { color: inherit; }
 
 .lead__title { margin: 0 0 4px; }
 
+/* 标题最多3行：长标题(尤其论文标题)不设上限会占掉6行、把摘要和配图挤没，
+   文字列高度也就无法预测、配图难以适配。字号上限同时从 2.3rem 收到 2rem，
+   让每行容纳更多字，3行足以放下绝大多数标题。完整标题见 title 悬浮提示。 */
 .lead__title a {
   font-family: var(--font-serif);
   font-weight: 900;
-  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  font-size: clamp(1.5rem, 2.9vw, 2rem);
   line-height: 1.4;
   text-decoration: none;
   color: var(--ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .lead__title a:hover { color: var(--accent); }
 
@@ -849,11 +859,10 @@ a { color: inherit; }
   margin: 4px 0 8px;
   font-size: 0.9rem;
   line-height: 1.7;
-  /* 至少占 5 行、最多 7 行：摘要短时也撑满 5 行，头条画框(与本行同高)不会缩得太扁；
-     5 × 1.7 = 8.5em（em 基于本元素 0.9rem 字号） */
-  min-height: 8.5em;
+  /* 固定 5 行：内容由 summary_zh 提供(150-220字，见 llm_score.py)，靠真实文字填满而非
+     min-height 撑空白。标题已限 3 行，摘要固定 5 行，文字列高度因此可预测，配图才好适配。 */
   display: -webkit-box;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -871,42 +880,47 @@ a { color: inherit; }
 
 .lead__media {
   grid-column: 2;
-  grid-row: 2;         /* 与标题同一行起始：上边齐标题上边 */
-  /* 按图片自身比例定高，不拉伸到与正文等高。头条配图多为横构图(约1.29:1~16:9)，
-     而"上下都对齐正文"会把画框撑成竖长形，图片完整显示时框内过半是空白
-     (实测58%)。改为画框高度=图片自然高度：图完整、无裁切、无留白，
-     代价是画框底边不再与正文底边齐平。 */
-  align-self: start;
+  grid-row: 2;         /* 只占中间行：上边齐标题、下边齐正文 */
+  align-self: stretch; /* 撑满该行，跟随文字列高度 */
   margin: 0;
   border: 1px solid var(--rule-dark);
   padding: 14px;       /* 报纸相框：细黑边 + 一圈纸面留白 */
   background: var(--panel);
-  display: block;
+  display: flex;
+  min-height: 0;       /* 允许被行高压缩，否则图片自身高度会把行撑高 */
 }
 
-/* 图/占位图按列宽铺满，高度随比例自适应——画框高度即由此决定 */
-.lead__img {
+/* 图/占位图铺满整个相框：标题限3行 + 摘要固定5行后，文字列高度可预测，
+   画框比例稳定在 1.2~1.3 之间，与常见横构图接近，cover 只会裁掉很少的边缘。
+   不用 contain：那样图片在画框里会留下大片空白（比例不匹配时可达58%）。 */
+.lead__img,
+.lead__placeholder {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.lead__img {
   background: var(--panel);
   filter: saturate(0.95);
 }
 
 .lead__placeholder {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;   /* 占位图无自然尺寸，按其 viewBox(400×300) 比例定高 */
   color: var(--ink);
   background:
     radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 60%),
     var(--bg);
 }
 
+/* 中等宽度：固定 376px 的图片列会把文字列挤得过窄，收到 300px */
+@media (max-width: 1000px) {
+  .lead { grid-template-columns: minmax(0, 1fr) 300px; }
+}
+
 /* 头条 · 移动端单列：必须放在上面各 .lead__* 定义之后，否则同特异性下被后者覆盖。
-   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）。
-   配图仍按自身比例定高（与桌面一致），无需再覆盖。 */
+   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）。 */
 @media (max-width: 720px) {
   .lead { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
   .lead__kicker,
@@ -914,6 +928,11 @@ a { color: inherit; }
   .lead__media,
   .lead__meta { grid-column: auto; grid-row: auto; }
   .lead__media { align-self: auto; }
+  /* 单列时画框不再有栅格行给定高度，height:100% 会塌陷成 0——改回按自身比例定高 */
+  .lead__img,
+  .lead__placeholder { height: auto; aspect-ratio: 16 / 9; }
+  /* 标题独占整行，可以多放一行 */
+  .lead__title a { -webkit-line-clamp: 4; }
 }
 
 .feed-panel__toolbar {

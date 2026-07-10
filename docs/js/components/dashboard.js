@@ -1,6 +1,6 @@
 // 看板：统计指标瓦片 + 分类动量条 + 趋势关键词。
 // 遵循 dataviz 规范：数值/标签用文字色而非系列色；细条形 + 圆角端点；每个色块旁必有文字标签。
-import { categoryColor, CATEGORY_ORDER } from "../palette.js?v=20260710h";
+import { categoryColor, CATEGORY_ORDER } from "../palette.js?v=20260710j";
 
 function statTile({ value, label, hint }) {
   const div = document.createElement("div");
