@@ -74,6 +74,39 @@ def fetch_and_normalize(sources_cfg):
     return fetch_results, normalized_by_source, all_items
 
 
+def apply_intake_quotas(items, weights_config):
+    """原始抓取配额：部分类别源特别多(如论文研究)，抓取量会远超其他类别，
+    在进入去重后的处理流程前按新鲜度(published_at)截断，只保留最新的一批。
+    影响"全部动态"展示体量，也顺带降低该类别的LLM调用量。
+    """
+    quotas = weights_config.get("intake_quotas") or {}
+    if not quotas:
+        return items
+
+    others = []
+    by_cat = {}
+    for it in items:
+        cat = (it.get("category_hint") or [None])[0]
+        if cat not in quotas:
+            others.append(it)
+            continue
+        by_cat.setdefault(cat, []).append(it)
+
+    capped = others
+    for cat, cat_items in by_cat.items():
+        cap = quotas[cat].get("max")
+        if cap is None:
+            capped += cat_items
+            continue
+        cat_items.sort(key=lambda x: x["published_at"], reverse=True)
+        kept, dropped = cat_items[:cap], cat_items[cap:]
+        if dropped:
+            log.info("intake_quota: category %s capped at %d (dropped %d oldest of %d)",
+                     cat, cap, len(dropped), len(cat_items))
+        capped += kept
+    return capped
+
+
 def filter_processing_window(items, hours=48):
     now = now_utc()
     window = timedelta(hours=hours)
@@ -160,6 +193,7 @@ def build_github_trending(sources_cfg, skip_llm=False, mock_llm=False):
                     "url": it["url"],
                     "description": it.get("raw_text", ""),
                     "stars_gained": it.get("stars_gained", 0),
+                    "stars_metric": it.get("stars_metric", "gained"),
                     "language": it.get("language", ""),
                 }
                 for it in raw_items[:10]
@@ -175,6 +209,7 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
 
     fetch_results, normalized_by_source, all_items = fetch_and_normalize(sources_cfg)
     all_items = dedupe(all_items, weights_cfg)
+    all_items = apply_intake_quotas(all_items, weights_cfg)
     processable = filter_processing_window(all_items, hours=window_hours)
 
     out_dir = Path(output_dir)

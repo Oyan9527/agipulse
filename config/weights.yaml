@@ -11,6 +11,12 @@ quality_gate:
   # 命中任一条件即可进入精选流（latest-24h.json / daily-brief.json）
   # 否则仅进入完整流（latest-24h-all.json）
 
+# 原始抓取配额：部分类别源特别多(如论文研究17个arXiv分类源)，抓取量会远超其他类别、
+# 淹没"全部动态"展示且拉高LLM调用量；在进入处理流程前按新鲜度截断。
+intake_quotas:
+  论文研究:
+    max: 80
+
 # 精选流分类配额：max=该分类精选上限(按分数保最高)；min=保底数量(不足时从未过门槛条目按分数补足)
 category_quotas:
   论文研究:
@@ -28,6 +34,10 @@ dedupe:
 
 daily_brief:
   top_n: 12
+  min_raw_text_length: 500   # 深度长文门槛：正文(去标签)达到此长度才算"深度长文"，不足则从其余高分条目补齐
+  # 论文摘要/仓库更新日志本身就是长段落文字，长度门槛对它们没有区分度——
+  # 需要显式排除，否则简报会被arXiv摘要刷屏（不是用户想要的"深度长文"）
+  exclude_categories: [论文研究, 开源项目]
 
 freshness:
   decay_window_hours: 48

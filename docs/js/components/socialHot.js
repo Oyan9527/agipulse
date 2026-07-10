@@ -1,10 +1,18 @@
 // 社媒热点 + GitHub 涨星榜：独立于 AI 主流程，不做相关性过滤，纯展示各平台当前热搜。
 
 const PERIOD_LABELS = {
-  past_24_hours: "近24小时",
-  past_week: "近7天",
-  past_month: "近30天",
+  past_24_hours: "近24小时新增 star 最多的仓库",
+  past_week: "近7天新增 star 最多的仓库",
+  past_month: "近30天新增 star 最多的仓库",
+  past_year: "近1年内创建、总 star 数最多的仓库",
+  all_time: "历史总 star 数最多的仓库",
 };
+
+// star 数量紧凑显示：过万用"万"为单位，贴合中文阅读习惯
+function formatStars(n) {
+  if (n >= 10000) return `${(n / 10000).toFixed(1)}万`;
+  return String(n);
+}
 
 export function renderSocialHot({ gridEl, platforms }) {
   gridEl.innerHTML = "";
@@ -59,7 +67,7 @@ export function renderSocialHot({ gridEl, platforms }) {
 export function renderGithubTrending({ listEl, emptyEl, periodEl, data, period = "past_24_hours" }) {
   const repos = (data?.periods?.[period]) || [];
   emptyEl.hidden = repos.length > 0;
-  periodEl.textContent = `${PERIOD_LABELS[period] || period}新增 star 最多的仓库`;
+  periodEl.textContent = PERIOD_LABELS[period] || period;
 
   listEl.innerHTML = "";
   repos.forEach((repo, idx) => {
@@ -86,7 +94,8 @@ export function renderGithubTrending({ listEl, emptyEl, periodEl, data, period =
     } else {
       descEl.textContent = repo.description || "";
     }
-    li.querySelector(".gh-trending__stars").textContent = `★ +${repo.stars_gained}`;
+    const starsPrefix = repo.stars_metric === "total" ? "★ " : "★ +";
+    li.querySelector(".gh-trending__stars").textContent = `${starsPrefix}${formatStars(repo.stars_gained)}`;
     const langEl = li.querySelector(".gh-trending__lang");
     if (repo.language) langEl.textContent = repo.language;
     listEl.appendChild(li);
