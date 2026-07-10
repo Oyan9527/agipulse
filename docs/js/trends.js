@@ -1,8 +1,9 @@
 // 数据版页面脚本：24H 频谱 + 统计指标 + 日/周/月趋势看板 + 社媒热点 + GitHub 涨星榜。
-import { renderSpectrum } from "./components/spectrum.js?v=20260710q";
-import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js?v=20260710q";
-import { initPalette } from "./components/palette.js?v=20260710q";
-import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js?v=20260710q";
+import { renderSpectrum } from "./components/spectrum.js?v=20260711a";
+import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js?v=20260711a";
+import { initPalette } from "./components/palette.js?v=20260711a";
+import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js?v=20260711a";
+import { renderTopics } from "./components/topics.js?v=20260711a";
 
 const state = {
   all: [],
@@ -137,7 +138,7 @@ async function bootstrap() {
   setupTrendDimTabs();
   setupGhPeriodTabs();
 
-  const [all, curated, stories, sourceStatus, trends, socialHot, ghTrending] = await Promise.all([
+  const [all, curated, stories, sourceStatus, trends, socialHot, ghTrending, topics] = await Promise.all([
     fetchJson("./data/latest-24h-all.json", []),
     fetchJson("./data/latest-24h.json", []),
     fetchJson("./data/stories-merged.json", []),
@@ -145,6 +146,7 @@ async function bootstrap() {
     fetchJson("./data/trends.json", null),
     fetchJson("./data/social-hot.json", null),
     fetchJson("./data/github-trending.json", null),
+    fetchJson("./data/topics.json", null),
   ]);
 
   state.all = all;
@@ -169,6 +171,12 @@ async function bootstrap() {
   renderStats({ el: els.statsRow, all24h: all, curated24h: curated, sourceStatus, stories });
   renderTrendPanels();
 
+  renderTopics({
+    sectionEl: document.getElementById("topics-section"),
+    listEl: document.getElementById("topics-list"),
+    windowEl: document.getElementById("topics-window"),
+    data: topics,
+  });
   renderSocialHot({ gridEl: els.socialHotGrid, platforms: socialHot?.platforms });
   renderGhTrending();
 

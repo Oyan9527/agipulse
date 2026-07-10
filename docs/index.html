@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,600;1,700;1,900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <!-- 版本串用于 cache busting：头条版式依赖 style.css 里的栅格定位，
      若浏览器/CDN 用旧CSS配新HTML，头条图文会错位。改动 style.css 时同步改此版本号。 -->
-<link rel="stylesheet" href="css/style.css?v=20260710q">
+<link rel="stylesheet" href="css/style.css?v=20260711a">
 </head>
 <body>
 <a class="skip-link" href="#main">跳转到主内容</a>
@@ -64,6 +64,11 @@
 
 <main class="layout" id="main">
   <section class="feed-panel" aria-label="信息流">
+    <section class="digest" id="daily-digest" aria-label="AI 每日总结" hidden>
+      <h2 class="digest__title">今日综述 <span class="digest__badge">AI 生成</span></h2>
+      <p class="digest__body" id="digest-body"></p>
+    </section>
+
     <article class="lead" id="lead-story" hidden>
       <p class="lead__kicker">头条 · TOP SIGNAL</p>
       <div class="lead__text">
@@ -174,6 +179,6 @@
   </li>
 </template>
 
-<script type="module" src="js/app.js?v=20260710q"></script>
+<script type="module" src="js/app.js?v=20260711a"></script>
 </body>
 </html>

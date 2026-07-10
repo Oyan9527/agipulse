@@ -1,8 +1,8 @@
-import { renderFeed, excerptFor } from "./components/feed.js?v=20260710q";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260710q";
-import { initPalette } from "./components/palette.js?v=20260710q";
-import { categoryColor, categoryTextColor } from "./palette.js?v=20260710q";
-import { safeUrl, setSafeHref } from "./safe.js?v=20260710q";
+import { renderFeed, excerptFor } from "./components/feed.js?v=20260711a";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260711a";
+import { initPalette } from "./components/palette.js?v=20260711a";
+import { categoryColor, categoryTextColor } from "./palette.js?v=20260711a";
+import { safeUrl, setSafeHref } from "./safe.js?v=20260711a";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -25,6 +25,8 @@ const els = {
   datelineDate: document.getElementById("dateline-date"),
   issueNo: document.getElementById("issue-no"),
   leadStory: document.getElementById("lead-story"),
+  digestSection: document.getElementById("daily-digest"),
+  digestBody: document.getElementById("digest-body"),
   leadLink: document.getElementById("lead-link"),
   leadOrig: document.getElementById("lead-orig"),
   leadReason: document.getElementById("lead-reason"),
@@ -162,6 +164,13 @@ function pickHeadline(curated) {
     )[0];
 }
 
+function renderDigest(digest) {
+  const text = (digest && digest.summary || "").trim();
+  if (!text) return;               // 冷清日或未生成：区块保持 hidden
+  els.digestBody.textContent = text;
+  els.digestSection.hidden = false;
+}
+
 function renderLead() {
   const lead = pickHeadline(state.curated);
   if (!lead) return;
@@ -210,13 +219,14 @@ async function bootstrap() {
   setupCategoryFilters();
   setupFeedMore();
 
-  const [curated, all, brief, stories, sourceStatus, trends] = await Promise.all([
+  const [curated, all, brief, stories, sourceStatus, trends, digest] = await Promise.all([
     fetchJson("./data/latest-24h.json", []),
     fetchJson("./data/latest-24h-all.json", []),
     fetchJson("./data/daily-brief.json", null),
     fetchJson("./data/stories-merged.json", []),
     fetchJson("./data/source-status.json", []),
     fetchJson("./data/trends.json", null),
+    fetchJson("./data/daily-digest.json", null),
   ]);
 
   state.curated = curated;
@@ -228,6 +238,7 @@ async function bootstrap() {
 
   els.updatedAt.textContent = formatUpdatedAt(trends?.generated_at || brief?.generated_at);
   renderDateline();
+  renderDigest(digest);
   els.issueNo.textContent = String(Math.max(trends?.archive_days ?? 1, 1));
 
   renderLead();

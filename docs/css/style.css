@@ -768,6 +768,26 @@ a { color: inherit; }
 }
 
 /* 头条：文字 + 配图两栏（报纸头版结构） */
+/* 今日综述：AI 生成的当天全局导读，领起整个信息流 */
+.digest{border:1px solid var(--rule-dark);border-left:3px solid var(--accent);background:color-mix(in srgb, var(--accent) 4%, var(--panel));padding:14px 18px;margin:0 auto 18px;max-width:920px}
+.digest__title{margin:0 0 8px;font-family:var(--font-mono);font-size:0.82rem;font-weight:600;letter-spacing:0.14em;color:var(--accent);display:flex;align-items:center;gap:8px}
+.digest__badge{font-size:0.62rem;letter-spacing:0.1em;color:var(--mist);border:1px solid var(--rule-dark);border-radius:2px;padding:1px 5px}
+.digest__body{margin:0;font-family:var(--font-body);font-size:0.95rem;line-height:1.75;color:color-mix(in srgb, var(--ink) 88%, var(--mist))}
+
+/* 话题追踪：每个热点话题一行——名称 + 迷你曲线(sparkline) + 当前热度 + 升降 */
+.topics{margin-bottom:28px}
+.topics__list{list-style:none;margin:12px 0 0;padding:0}
+.topics__row{display:grid;grid-template-columns:minmax(90px,1fr) 2fr auto auto;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule-dark)}
+.topics__term{font-weight:700;font-size:0.9rem;color:var(--ink)}
+.topics__spark{width:100%;height:28px;display:block}
+.topics__total{font-family:var(--font-mono);font-size:0.78rem;color:var(--mist);white-space:nowrap}
+.topics__trend{font-size:0.78rem;white-space:nowrap}
+.topics__trend--up{color:var(--accent)}
+.topics__trend--down{color:#b0562a}
+.topics__trend--flat{color:var(--mist)}
+@media (max-width:560px){.topics__row{grid-template-columns:1fr auto;grid-auto-rows:auto}.topics__spark{grid-column:1 / -1}}
+
+
 .lead {
   display: grid;
   /* 头版头条：限宽920。三行栅格让画框只占中间一行——引题(row1)与元信息(row3)
