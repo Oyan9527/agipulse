@@ -1,0 +1,28 @@
+name: Tests
+
+# 定时流水线里也会跑一遍测试（失败就不写数据），但那是每 4 小时一次。
+# 这里让每次 push / PR 都立刻验证，改坏了当场就能看到。
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/data/**"      # Actions 自己提交的数据更新，没必要触发
+      - "**.md"
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest tests/ -q

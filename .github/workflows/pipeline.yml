@@ -26,7 +26,12 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r requirements-dev.txt
+
+      # 先跑测试再抓取：坏掉的过滤/合并/URL 校验逻辑会把脏数据写进 docs/data 并提交，
+      # 而这些问题在页面上往往没有症状（比如 XSS 防线失效），等发现就晚了。
+      - name: Run tests
+        run: python -m pytest tests/ -q
 
       - name: Run pipeline
         env:
