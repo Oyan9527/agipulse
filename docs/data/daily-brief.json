@@ -1,47 +1,14 @@
 {
   "date": "2026-07-11",
-  "generated_at": "2026-07-11T02:03:00.998366+00:00",
+  "generated_at": "2026-07-11T06:16:28.956346+00:00",
   "items": [
     {
-      "id": "4aa9fdf03494de30",
-      "source_id": "arxiv-cs-ai",
-      "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
-      "url": "https://arxiv.org/abs/2607.08173",
-      "published_at": "2026-07-10T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08173v1 Announce Type: new \nAbstract: Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \\emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \\emph{overthinking model} as $\\boldsymbol{\\theta}_{\\mathcal{O}_\\alpha} = \\boldsymbol{\\theta}_{\\mathcal{M}} + \\alpha(\\boldsymbol{\\theta}_{\\mathcal{R}} - \\boldsymbol{\\theta}_{\\mathcal{M}})$, where $\\alpha > 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出“过度思考”方法提取模型隐藏信息，对AI审计和安全有重要价值。",
-      "summary_zh": "本文提出“过度思考”（overthinking）方法，通过放大推理任务向量来增强推理模型“出声思考”的倾向，从而在审计过程中更好地提取隐藏信息。黑盒审计是部署前的重要工具，但可能遗漏微妙的失调和隐藏信息。过度思考利用推理任务向量，迫使模型更充分地展开推理过程，从而暴露潜在的有害知识或秘密。实验表明，该方法能有效提取模型在标准条件下隐藏的信息。",
-      "title_zh": "过度思考：放大推理权重以提取学习到的秘密",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "51df0abfd4e84b7a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.08173"
-        }
-      ]
-    },
-    {
       "id": "82211c2794e474ed",
-      "source_id": "arxiv-cs-ai",
+      "source_id": "arxiv-cs-cl",
       "title": "A First-Principles Theory of Slow Thinking and Active Perception",
       "url": "https://arxiv.org/abs/2607.08196",
-      "published_at": "2026-07-10T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08196v1 Announce Type: new \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgraded ",
+      "published_at": "2026-07-11T04:00:00+00:00",
+      "raw_text": "arXiv:2607.08196v1 Announce Type: cross \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgrade",
       "category_hint": [
         "论文研究"
       ],
@@ -63,7 +30,7 @@
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
+          "source_id": "arxiv-cs-cl",
           "url": "https://arxiv.org/abs/2607.08196"
         }
       ]
@@ -103,12 +70,12 @@
       ]
     },
     {
-      "id": "d0b184a7d59543e3",
-      "source_id": "arxiv-cs-ai",
-      "title": "Compete Then Collaborate: Frontier AI Teachers Build a Verifiable Curriculum to Improve a Coding Student Beyond Imitation",
-      "url": "https://arxiv.org/abs/2607.08255",
-      "published_at": "2026-07-10T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08255v1 Announce Type: new \nAbstract: Large language models increasingly serve as teachers generating training data for smaller students. Prior multi-teacher knowledge distillation methods merge outputs without determining which frontier model teaches best, often relying on an LLM judge biased toward its own outputs. We introduce a compete-then-collaborate framework where four frontier AI teachers (Claude, Codex-GPT, Grok, Gemini) are ranked head-to-head by an execution-based judge (unit tests and stdin-stdout checks) with fairness controls, and then collaborate to build a verifiable curriculum for a student (Qwen2.5-Coder). We report three findings. (1) Under execution verification, all teachers solve standard problems near-perfectly after self-correction (99-100%) due to a saturation effect, but harder competition problems separate them (Gemini 77% > Claude 69% = Codex 69% > Grok 50%); however, the robust student-side results do not depend on teacher ranking. (2) Imitation",
+      "id": "9fd4ef39e3944dee",
+      "source_id": "arxiv-cs-cl",
+      "title": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
+      "url": "https://arxiv.org/abs/2607.08057",
+      "published_at": "2026-07-11T04:00:00+00:00",
+      "raw_text": "arXiv:2607.08057v1 Announce Type: cross \nAbstract: Despite the rapid advancements of large language models (LLMs), LLM serving systems remain memory-intensive and costly. The key-value (KV) cache, which stores KV tensors during autoregressive decoding, is crucial for enabling low-latency, high-throughput LLM inference serving. In this survey, we focus on system-aware KV infrastructure for serving LLMs (abbreviated as sKis). We revisit recent work from a system behavior perspective, organizing existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Furthermore, we analyze cross-behavior co-design affinity and behavior-objective links, highlighting future opportunities. Our work systematizes a rapidly evolving area, providing a foundation for understanding and innovating KV cache designs in modern LLM serving infrastructure.",
       "category_hint": [
         "论文研究"
       ],
@@ -116,9 +83,42 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "提出竞争-协作框架，利用多个前沿模型提升学生模型编码能力，方法新颖。",
-      "summary_zh": "本文提出一种竞争-协作框架，利用多个前沿大型语言模型作为教师，生成可验证的课程来训练学生模型。传统多教师知识蒸馏方法合并输出而不确定哪个模型教学最佳，且依赖有偏的LLM评判。本框架中，四个前沿模型先竞争生成最佳教学示例，然后协作构建课程。通过可验证的编码任务（如单元测试），确保教学内容的正确性。实验表明，该方法训练的学生模型在编码任务上超越了单纯模仿教师输出的基线。",
-      "title_zh": "先竞争后协作：前沿AI教师构建可验证课程，提升编码学生超越模仿",
+      "reason_zh": "系统梳理KV缓存优化技术，对LLM推理部署有直接指导意义，适合工程师和研究者。",
+      "summary_zh": "本文综述了面向大语言模型（LLM）服务的高效KV缓存优化方法。KV缓存是自回归解码中存储键值张量的关键组件，直接影响推理延迟和吞吐量。文章从系统角度出发，分类讨论了缓存压缩、量化、预取、共享等优化策略，并分析了不同硬件和部署场景下的权衡。旨在为构建低延迟、高吞吐的LLM推理系统提供系统化的技术参考。",
+      "title_zh": "面向高效大语言模型服务的系统感知KV缓存优化综述",
+      "weighted_score": 0.805,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.8
+      },
+      "story_id": "4110c8447014945c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2607.08057"
+        }
+      ]
+    },
+    {
+      "id": "e4abaa2e480cce80",
+      "source_id": "arxiv-cs-cl",
+      "title": "Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents",
+      "url": "https://arxiv.org/abs/2607.08395",
+      "published_at": "2026-07-11T04:00:00+00:00",
+      "raw_text": "arXiv:2607.08395v1 Announce Type: cross \nAbstract: Persistent AI agents extend large language models (LLMs) beyond single-turn interaction into long-lived software systems. Unlike traditional chat assistants, unsafe content in these agents can propagate through persistent state, reusable skills, and tool-mediated interactions, creating a substantially larger semantic attack surface. We observe that most security-critical interactions in such agents are transmitted through natural-language token flows, including memory updates, tool arguments, retrieved files, and inter-component communications. This observation enables a new security formulation: unsafe behavior can be intercepted as risky semantic flows before reaching privileged runtime sinks. Based on this insight, we propose TokenWall, a runtime defense framework that acts as a semantic firewall over agent token flows. TokenWall performs boundary-aware semantic auditing over these flows, constructing structured source-sink audit re",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出持久化AI代理的语义运行时审计方法，填补了安全防护空白，对构建可靠代理系统有重要价值。",
+      "summary_zh": "本文提出Token-Flow Firewall，一种针对持久化AI代理的语义运行时审计框架。与传统聊天助手不同，持久化代理中的不安全内容可通过持久状态、可复用技能和工具交互传播，形成更大的语义攻击面。该方法通过监控token流和语义一致性，实时检测并阻断恶意行为，为长期运行的AI代理系统提供安全保障。",
+      "title_zh": "Token-Flow Firewall：面向持久化AI代理的语义运行时审计",
       "weighted_score": 0.785,
       "score_breakdown": {
         "source_authority": 0.9,
@@ -126,12 +126,12 @@
         "impact": 0.7,
         "practical_value": 0.7
       },
-      "story_id": "4a2cb4381e5c1de6",
+      "story_id": "ec64bc7f67eadabd",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.08255"
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2607.08395"
         }
       ]
     },
@@ -272,35 +272,35 @@
       ]
     },
     {
-      "id": "dd1ec9763e231568",
-      "source_id": "zh-leiphone",
-      "title": "把35B模型塞进32GB内存，智能体PC如何挑战端侧部署的「物理极限」？",
-      "url": "https://www.leiphone.com/category/chips/JCZ1098a28zh4gsH.html",
-      "published_at": "2026-07-10T03:58:00+00:00",
-      "raw_text": "<p>2026年4月，英特尔首次提出“智能体PC”概念。彼时，这套关于AI PC未来形态的构想，更多还停留在架构图与技术框架层面。</p><p>大约两个半月后，七家合作伙伴带着具体产品站到了台前——QClaw、Flowy、remio、TRAE、DuMate、YOYO Claw、Marvis，覆盖办公、娱乐、教育、游戏四个场景，逐一完成现场演示。</p><p>从概念提出到应用集中亮相用时两个半月，也是AI落地速度的一个真实刻度。</p><p>但另一个问题随之浮现——三个月拉来七家合作伙伴、跑通二十多项应用，这种“落地”的重量究竟是多少？用户真正用起来了，还是仅仅停留在Demo能跑的程度？那些应用里，有多少经得起日常消耗，又有多少只是秀肌肉的“样板间”？</p><p>用英特尔中国区技术部总经理高宇的话来说：“智能体PC依然是一个新生的概念，出现市场困惑是正常的。”</p><p>困惑在哪里？</p><p>在于一家普通企业的IT采购，面对五花八门的思路，依然分不清哪个适合自己；在于一个普通的知识工作者，面对一台预装了智能体能力的电脑，仍然不知道该从哪件事开始；在于行业热闹了三个月，但“落地”这个词究竟意味着什么，还没有一个足够清晰的答案。</p><p>这次集中亮相提供了一组回答的起点，但起点和终点之间，还隔着不少需要被追问的问题。</p><h2>感知层，用户真的在用吗？</h2><p>2026年初，OpenClaw的爆火让“桌面智能体”第一次进入大众视野，然而如果去问问身边的朋友，他们大概率从来没有亲自部署过龙虾。</p><p>交互方式是横在普通用户和智能体之间的一道门槛——几乎所有AI产品给用户的都是一个空白对话框。</p><p>QClaw产品经理孙桦阳描述了一个很常见的场景：“多数的用户面临的问题是用不起来，一个简单的对话框放在他们面前，更多的时候，用户就是在上面问一下天气，查一下科技资讯，使用就到此结束了。”</p><p>因此，怎么把AI变成生产力的工具，这道门槛比想象中更高——荣耀YOYO Claw发布两个月、积累了约100万用户之后，听到最多的声音是&quot;有很大一批人都不知道什么是龙虾&quot;。</p><p>一个连概念都不知道的用户群体，指望他们主动探索空白对话框里的可能性，几乎不现实。</p><p>于是，降低门槛成了ISV（独立软件开发商）们的第一要务",
+      "id": "e4010289a23634a9",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 为了省下每年几万的的费用，用 ai 做了完整的 erp",
+      "url": "https://www.v2ex.com/t/1226505#reply49",
+      "published_at": "2026-07-10T15:55:22+00:00",
+      "raw_text": "我们有自己的电商平台，当然也在各家电商上售卖产品。<br />然后对接云仓时，感觉那些 erp 卖的贵，系统还老旧，去对接到自己的业务定制化的电商流程也不见得好对接，<br />索性就自己开发了。<br /><br /><br />其实最花时间的地方是需求整理，<br />云仓的人沟通起来比想象中要难，体系复杂笨重且陈旧。<br />做完之后现在觉得需求也就这些了。<br />但是第一次接触电商，第一次接触云仓，对需求没有全局视角，没有经验指导，探索起来还是很痛苦的，很多数据模型也因为缺乏经验指导，后期才发现有问题又各种改。<br /><br />好在有 Claude code 加持，并行开发，对抗审查，浏览器模拟调用测试，<br />就这么吭哧吭哧的，还做了得有一周的时间。<br /><br />自己的脑力真的是有些跟不上了，为了提高开发效率就要并行思考很多事，尤其是 ai 开始工作时，你就一刻不歇的去思考其他事情了，然后各种事情贴了一堆待办，但是前面 AI 的产出又可能产生很多预期外的变化与分支，导致又影响了你原本计划记下来要做的事。<br /><br />过去开发体验还是很舒服的，但这次因为赶工期，又是从 0 构建，没有很多时间去好好 review 和消化产出。<br /><br />于是更深刻的感受到，ai 辅助编程对脑力的消耗真的很大，你要被 ai 推着去思考，再加上因为开发节奏快，很多写出来的东西自己本身就不熟，ai 再说很多黑话或者说简略的话，根本不知道他在说啥，扔一堆让我决策的我都听不懂，还得去先研究明白他在说啥。",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://static.leiphone.com/uploads/new/images/20260710/6a506d7fb9cd6.png?imageView2/2/w/740",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
       "depth_score": 0.6,
-      "reason_zh": "深度探讨智能体PC从概念到落地的真实进展，分析端侧部署35B模型的挑战与合作伙伴应用的实际价值。",
-      "summary_zh": "英特尔在2026年4月提出“智能体PC”概念，两个半月后七家合作伙伴展示了覆盖办公、娱乐、教育、游戏场景的应用。文章探讨了这些应用是否真正可用，还是仅停留在Demo阶段。英特尔中国区技术部总经理高宇承认智能体PC仍是新生概念，存在市场困惑。文章分析了端侧部署大模型（如35B模型塞进32GB内存）的物理极限和实际挑战。",
+      "reason_zh": "程序员分享用AI（Claude Code）自建ERP系统的实战经验，包含需求分析、开发流程和工具使用，对开发者有实用参考价值。",
+      "summary_zh": "一位程序员在V2EX发帖分享自己使用AI（Claude Code）为电商平台开发完整ERP系统的经历。由于市面ERP系统价格昂贵且老旧，难以对接云仓和定制化电商流程，他决定自行开发。最耗时的是需求整理，与云仓沟通困难，体系复杂。在Claude Code的加持下，通过并行开发、对抗审查、浏览器模拟调用测试，耗时约一周完成。他提到自己的脑力跟不上，需要并行思考多件事，尤其是AI开始工作时。该经验对考虑使用AI辅助开发复杂系统的开发者具有参考价值。",
       "title_zh": null,
-      "weighted_score": 0.625,
+      "weighted_score": 0.61,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
+        "source_authority": 0.5,
+        "novelty": 0.7,
         "impact": 0.5,
-        "practical_value": 0.7
+        "practical_value": 0.8
       },
-      "story_id": "faf82e748ab6d33e",
+      "story_id": "c7a0a8021e1deb9f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/chips/JCZ1098a28zh4gsH.html"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1226505#reply49"
         }
       ]
     },
@@ -338,68 +338,68 @@
       ]
     },
     {
-      "id": "31d69fb473e4b3e3",
-      "source_id": "zh-juejin",
-      "title": "AI 聊天长期记忆的向量化处理：从\"关键词匹配\"到\"换种说法也能找到\"",
-      "url": "https://juejin.cn/post/7660496737154498587",
-      "published_at": "2026-07-10T13:10:02+00:00",
-      "raw_text": "给 AI Chat 的长期用户记忆加上向量索引，用 pgvector + 豆包 embedding 实现语义召回。用户换种说法也能找到之前存的偏好，配上超时降级保证聊天不中断。",
+      "id": "04a76c2f24266279",
+      "source_id": "zh-ithome",
+      "title": "芝加哥大学法学院重新设计课程，确保学生使用 AI 前学会独立思考",
+      "url": "https://www.ithome.com/0/975/436.htm",
+      "published_at": "2026-07-11T05:08:44+00:00",
+      "raw_text": "<p>IT之家 7 月 11 日消息，科技媒体 Business Insider 昨日（7 月 10 日）发布博文，报道称 AI 影响教育方式，芝加哥大学法学院要求今年秋季一年级新生在上课时，必须要合上笔记本，<strong>从而确保学生学会独立思考。</strong></p><p>法学院院长 Adam Chilton 表示：“我们不能一刀切在校园内封杀 AI，也不会阻止学生了解和使用 AI，但我们需要确保学生学会独立思考”。</p><p>IT之家援引博文介绍，芝加哥大学法学院规划重新设计课程，目标是让学生先学会独立思考，再学习使用 AI。新策略还包括 1 年级无电脑课堂、禁止接触外部材料的线下监考考试，以及针对重要研究论文的口头答辩。</p><p>在 AI 教学方面，法学院正把相关技术纳入法律写作课程，增加更多 AI 方向课程，并向学生提供法律 AI 工具 Harvey 和 Legora。</p>",
       "category_hint": [
-        "技巧与观点"
+        "行业动态"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
+      "category": "行业动态",
+      "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "详细介绍了AI聊天长期记忆的向量化实现方案，包含pgvector和豆包embedding的具体用法，对开发者有实操价值。",
-      "summary_zh": "本文介绍了如何为AI聊天系统实现长期记忆的向量化处理。通过使用pgvector和豆包embedding，将用户偏好等记忆信息进行语义向量化，实现从关键词匹配到语义召回的升级。用户即使换种说法也能找到之前存储的偏好信息。同时设计了超时降级机制，确保聊天不中断。文章提供了具体的技术实现思路和代码示例。",
-      "title_zh": null,
-      "weighted_score": 0.585,
+      "reason_zh": "芝加哥大学法学院重新设计课程，强调先独立思考再使用AI，对教育领域有启发。",
+      "summary_zh": "芝加哥大学法学院要求今年秋季一年级新生上课时必须合上笔记本电脑，以确保学生学会独立思考。院长Adam Chilton表示，学校不会一刀切封杀AI，但需确保学生先具备独立思考能力。新策略包括一年级无电脑课堂、禁止接触外部材料的线下监考考试，以及针对重要研究论文的口头答辩。在AI教学方面，法学院将相关技术纳入法律写作课程，增加AI方向课程，并向学生提供法律AI工具Harvey和Legora。",
+      "title_zh": "芝加哥大学法学院重新设计课程，确保学生使用AI前学会独立思考",
+      "weighted_score": 0.575,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.4,
-        "practical_value": 0.8
+        "source_authority": 0.6,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.6
       },
-      "story_id": "be7b565f73beaa42",
+      "story_id": "1be9f6ada2e61230",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7660496737154498587"
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/975/436.htm"
         }
       ]
     },
     {
-      "id": "2d2021646a4258a8",
-      "source_id": "zh-juejin",
-      "title": "MCP 入门实战：写一个能读本地文件的极简服务",
-      "url": "https://juejin.cn/post/7660691112093777956",
-      "published_at": "2026-07-10T15:59:28+00:00",
-      "raw_text": "先搞懂：MCP 到底在中间干了啥 说实话，最开始我对 MCP 的概念特别模糊，以为又是啥新的微服务框架。翻了半天才搞明白，它全称是 Model Context Protocol，说白了就是一套「统一传",
+      "id": "e9ebfecc8402552e",
+      "source_id": "zh-v2ex",
+      "title": "[OpenAI] 我发现 Codex 经常会写入幽灵规则",
+      "url": "https://www.v2ex.com/t/1226552#reply2",
+      "published_at": "2026-07-11T05:18:41+00:00",
+      "raw_text": "<p>当我纠正、取消或排除一个当前不会使用的行为时，我的想法是默认让该行为从文档中消失</p>\n<p>但是 Codex 经常额外写入“明确不做”“暂不支持”“未来需要时再处理”等反向说明。</p>\n<p>现在的处理：</p>\n<pre><code class=\"language-md\">不要做 X\n→ 文档里写：X 被明确排除，未来需要时再……\n</code></pre>\n<p>实际的我想要的处理：</p>\n<pre><code class=\"language-md\">不要做 X\n→ 删除 X ，不留下任何痕迹\n</code></pre>\n<p>就比如我在<strong>优化笔记顾流程</strong>时，它根据之前的规则加入了年度回顾的流程。</p>\n<p>然后我纠正说：年度回顾用到的太少了，不需要这个流程，等年底我再单独设计这个流程。</p>\n<p>结果它的实际行为是：</p>\n<p>确实删了年度流程，但是却留下了一句：</p>\n<pre><code class=\"language-md\">年度回顾明确为“年底需要时再定义并确认独立流程”。\n</code></pre>\n<h2>问题原因</h2>\n<p>我估计很多时候就是因为我多说了一句：<strong>等年底我再单独设计这个流程</strong>。结果他就真把这个话写到文档了。</p>\n<p>感觉 AI 好像分不太清: 哪些是我单独给他解释的原因，哪些是需要沉淀到文档的规则。</p>\n<p>而从我的对话习惯来说，我确实是把 AI 当成聊天对象了，所以有时候会解释下为什么我不做这个。但实际上它还是个只会干活的机器，所以没必要说太多给他，不然就会污染他的理解。</p>\n<h2>我的解决办法</h2>\n<p>虽然这不影响整个流程，但感觉还是有点奇怪，而且他在做 Skill 设计、项目文档的时候也会存在这个问题，我遇到很多次了</p>\n<p>我想着如果我不改变我和 AI 的沟通方式的话，好像只能将它这种「幽灵判断」的行为加入了全局 <a href=\"http://AGENTS.md\" rel=\"nofollow\">AGENTS.md</a> 来限制了。</p>\n<h2>不知道大伙有没有遇到这种情况，其他模型会不会有这个问题</h2>",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "教程方法",
+      "content_type": "观点评论",
       "depth_score": 0.6,
-      "reason_zh": "MCP入门实战教程，从概念到实现一个读本地文件的服务，适合初学者。",
-      "summary_zh": "文章是MCP（Model Context Protocol）的入门实战教程。作者先解释了MCP是一套统一传输协议，并非微服务框架。然后逐步指导如何编写一个能读取本地文件的极简MCP服务，包括环境搭建、代码实现和测试。适合希望了解MCP并快速上手的开发者。",
-      "title_zh": "MCP入门实战：写一个能读本地文件的极简服务",
-      "weighted_score": 0.48,
+      "reason_zh": "揭示了Codex在文档生成中的“幽灵规则”问题，对使用AI辅助写作的用户有直接启发。",
+      "summary_zh": "作者发现OpenAI Codex在生成文档时，会不自觉地为被排除的行为添加反向说明（如“明确不做”“暂不支持”），而不是直接删除相关描述。作者认为这种“幽灵规则”会导致文档冗余和误导，并举例说明在优化笔记流程时，Codex根据旧规则加入了年度回顾流程，作者纠正后它反而写入了“等年底再单独设计”的说明。作者期望的行为是直接删除不需要的内容，不留痕迹。",
+      "title_zh": null,
+      "weighted_score": 0.475,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.5,
+        "source_authority": 0.3,
+        "novelty": 0.6,
         "impact": 0.3,
         "practical_value": 0.8
       },
-      "story_id": "afb1a4410e75f1d0",
+      "story_id": "c3ccdb276d797023",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7660691112093777956"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1226552#reply2"
         }
       ]
     }

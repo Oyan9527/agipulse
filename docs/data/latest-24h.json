@@ -39,7 +39,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-11T01:57:03.927381+00:00",
+    "published_at": "2026-07-11T06:08:16.174509+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -69,46 +69,12 @@
     "curated": true
   },
   {
-    "id": "4aa9fdf03494de30",
-    "source_id": "arxiv-cs-ai",
-    "title": "Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets",
-    "url": "https://arxiv.org/abs/2607.08173",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08173v1 Announce Type: new \nAbstract: Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \\emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \\emph{overthinking model} as $\\boldsymbol{\\theta}_{\\mathcal{O}_\\alpha} = \\boldsymbol{\\theta}_{\\mathcal{M}} + \\alpha(\\boldsymbol{\\theta}_{\\mathcal{R}} - \\boldsymbol{\\theta}_{\\mathcal{M}})$, where $\\alpha > 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "提出“过度思考”方法提取模型隐藏信息，对AI审计和安全有重要价值。",
-    "summary_zh": "本文提出“过度思考”（overthinking）方法，通过放大推理任务向量来增强推理模型“出声思考”的倾向，从而在审计过程中更好地提取隐藏信息。黑盒审计是部署前的重要工具，但可能遗漏微妙的失调和隐藏信息。过度思考利用推理任务向量，迫使模型更充分地展开推理过程，从而暴露潜在的有害知识或秘密。实验表明，该方法能有效提取模型在标准条件下隐藏的信息。",
-    "title_zh": "过度思考：放大推理权重以提取学习到的秘密",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "51df0abfd4e84b7a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08173"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d0b184a7d59543e3",
-    "source_id": "arxiv-cs-ai",
-    "title": "Compete Then Collaborate: Frontier AI Teachers Build a Verifiable Curriculum to Improve a Coding Student Beyond Imitation",
-    "url": "https://arxiv.org/abs/2607.08255",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08255v1 Announce Type: new \nAbstract: Large language models increasingly serve as teachers generating training data for smaller students. Prior multi-teacher knowledge distillation methods merge outputs without determining which frontier model teaches best, often relying on an LLM judge biased toward its own outputs. We introduce a compete-then-collaborate framework where four frontier AI teachers (Claude, Codex-GPT, Grok, Gemini) are ranked head-to-head by an execution-based judge (unit tests and stdin-stdout checks) with fairness controls, and then collaborate to build a verifiable curriculum for a student (Qwen2.5-Coder). We report three findings. (1) Under execution verification, all teachers solve standard problems near-perfectly after self-correction (99-100%) due to a saturation effect, but harder competition problems separate them (Gemini 77% > Claude 69% = Codex 69% > Grok 50%); however, the robust student-side results do not depend on teacher ranking. (2) Imitation",
+    "id": "9fd4ef39e3944dee",
+    "source_id": "arxiv-cs-cl",
+    "title": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
+    "url": "https://arxiv.org/abs/2607.08057",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08057v1 Announce Type: cross \nAbstract: Despite the rapid advancements of large language models (LLMs), LLM serving systems remain memory-intensive and costly. The key-value (KV) cache, which stores KV tensors during autoregressive decoding, is crucial for enabling low-latency, high-throughput LLM inference serving. In this survey, we focus on system-aware KV infrastructure for serving LLMs (abbreviated as sKis). We revisit recent work from a system behavior perspective, organizing existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Furthermore, we analyze cross-behavior co-design affinity and behavior-objective links, highlighting future opportunities. Our work systematizes a rapidly evolving area, providing a foundation for understanding and innovating KV cache designs in modern LLM serving infrastructure.",
     "category_hint": [
       "论文研究"
     ],
@@ -116,22 +82,56 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "提出竞争-协作框架，利用多个前沿模型提升学生模型编码能力，方法新颖。",
-    "summary_zh": "本文提出一种竞争-协作框架，利用多个前沿大型语言模型作为教师，生成可验证的课程来训练学生模型。传统多教师知识蒸馏方法合并输出而不确定哪个模型教学最佳，且依赖有偏的LLM评判。本框架中，四个前沿模型先竞争生成最佳教学示例，然后协作构建课程。通过可验证的编码任务（如单元测试），确保教学内容的正确性。实验表明，该方法训练的学生模型在编码任务上超越了单纯模仿教师输出的基线。",
-    "title_zh": "先竞争后协作：前沿AI教师构建可验证课程，提升编码学生超越模仿",
-    "weighted_score": 0.785,
+    "reason_zh": "系统梳理KV缓存优化技术，对LLM推理部署有直接指导意义，适合工程师和研究者。",
+    "summary_zh": "本文综述了面向大语言模型（LLM）服务的高效KV缓存优化方法。KV缓存是自回归解码中存储键值张量的关键组件，直接影响推理延迟和吞吐量。文章从系统角度出发，分类讨论了缓存压缩、量化、预取、共享等优化策略，并分析了不同硬件和部署场景下的权衡。旨在为构建低延迟、高吞吐的LLM推理系统提供系统化的技术参考。",
+    "title_zh": "面向高效大语言模型服务的系统感知KV缓存优化综述",
+    "weighted_score": 0.805,
     "score_breakdown": {
       "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.8
     },
-    "story_id": "4a2cb4381e5c1de6",
+    "story_id": "4110c8447014945c",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08255"
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2607.08057"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6e1951b5a243d6b1",
+    "source_id": "arxiv-cs-cl",
+    "title": "UltraX: Refining Pre-Training Data at Scale with Adaptive Programmatic Editing",
+    "url": "https://arxiv.org/abs/2607.08646",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08646v1 Announce Type: new \nAbstract: As available training data approaches its physical limit, gains from Scaling Laws have begun to diminish. Consequently, improving Large Language Models (LLMs) now depends less on data expansion and more on higher-quality data utilization. However, in the context of large-scale corpora, existing refinement methodologies face significant limitations in quality, efficiency, and reliability: Rule-based approaches are constrained by fixed heuristics and struggle with instance-level variations; LLM-based approaches improve quality but fail to meet the efficiency and reliability requirements of large-scale data processing. To address these challenges, we propose UltraX, a function-calling refinement framework for large-scale pre-training data that completes the editing function space by introducing insertion in addition to deletion and modification, enabling fine-grained instance-level editing. Specifically, UltraX builds a reliable program-sup",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出自适应编程编辑方法UltraX，大规模优化预训练数据质量，应对Scaling Law收益递减，实用性强。",
+    "summary_zh": "随着训练数据接近物理极限，Scaling Law收益开始递减，改进LLM更依赖于数据质量而非数量。现有数据精炼方法在大规模语料上存在局限。本文提出UltraX，一种自适应编程编辑方法，通过自动识别低质量数据并应用针对性编辑（如去重、纠错、格式化），在大规模语料上显著提升数据质量。实验表明，使用UltraX精炼后的数据训练的模型在下游任务上表现更优。",
+    "title_zh": "UltraX：通过自适应编程编辑大规模精炼预训练数据",
+    "weighted_score": 0.8,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "92e9631ce989b74f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2607.08646"
       }
     ],
     "curated": true
@@ -171,12 +171,12 @@
     "curated": true
   },
   {
-    "id": "6b53e940692fc517",
-    "source_id": "arxiv-cs-ai",
-    "title": "Answer Set Programming Energised! End-to-End Neurosymbolic Reasoning and Learning with ASP and Energy Based Models",
-    "url": "https://arxiv.org/abs/2607.08136",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08136v1 Announce Type: new \nAbstract: We present a general neurosymbolic reasoning and learning methodology based on a modular integration of answer set programming with an energy based model substrate. Key contributions are: (1) supporting joint optimisation in the continuous latent space through explicit ASP-based declarative semantics fully incorporating background knowledge, constraints, non-monotonic inference; and (2) advancing recent works at the interface of answer sets, probabilistic logic, and answer set modulo theories by providing a generalised model and practical platform for ASP-centric robust, end-to-end training for applications in dynamic domains (e.g., involving perception and interaction). We provide a practical implementation, and demonstrate basic use and application (with MNIST), and evaluate with the visual question-answering benchmark Clevr and the multi-object tracking benchmark MOT.",
+    "id": "e4abaa2e480cce80",
+    "source_id": "arxiv-cs-cl",
+    "title": "Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents",
+    "url": "https://arxiv.org/abs/2607.08395",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08395v1 Announce Type: cross \nAbstract: Persistent AI agents extend large language models (LLMs) beyond single-turn interaction into long-lived software systems. Unlike traditional chat assistants, unsafe content in these agents can propagate through persistent state, reusable skills, and tool-mediated interactions, creating a substantially larger semantic attack surface. We observe that most security-critical interactions in such agents are transmitted through natural-language token flows, including memory updates, tool arguments, retrieved files, and inter-component communications. This observation enables a new security formulation: unsafe behavior can be intercepted as risky semantic flows before reaching privileged runtime sinks. Based on this insight, we propose TokenWall, a runtime defense framework that acts as a semantic firewall over agent token flows. TokenWall performs boundary-aware semantic auditing over these flows, constructing structured source-sink audit re",
     "category_hint": [
       "论文研究"
     ],
@@ -184,33 +184,169 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "提出神经符号推理新范式，结合ASP与能量模型，具有理论创新性。",
-    "summary_zh": "本文提出一种通用的神经符号推理与学习方法，基于回答集编程（ASP）和能量基模型的模块化集成。主要贡献包括：（1）通过显式的ASP声明语义支持连续潜在空间中的联合优化，完全融入背景知识、约束和偏好；（2）利用能量基模型进行高效的概率推理和学习。该方法在多个推理任务上展示了优于纯神经或纯符号方法的性能，为神经符号系统提供了新的理论框架。",
-    "title_zh": "激活回答集编程！基于ASP和能量模型的端到端神经符号推理与学习",
-    "weighted_score": 0.77,
+    "reason_zh": "提出持久化AI代理的语义运行时审计方法，填补了安全防护空白，对构建可靠代理系统有重要价值。",
+    "summary_zh": "本文提出Token-Flow Firewall，一种针对持久化AI代理的语义运行时审计框架。与传统聊天助手不同，持久化代理中的不安全内容可通过持久状态、可复用技能和工具交互传播，形成更大的语义攻击面。该方法通过监控token流和语义一致性，实时检测并阻断恶意行为，为长期运行的AI代理系统提供安全保障。",
+    "title_zh": "Token-Flow Firewall：面向持久化AI代理的语义运行时审计",
+    "weighted_score": 0.785,
     "score_breakdown": {
       "source_authority": 0.9,
-      "novelty": 0.9,
+      "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.5
+      "practical_value": 0.7
     },
-    "story_id": "d2ff2782e6aa2ac8",
+    "story_id": "ec64bc7f67eadabd",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08136"
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2607.08395"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "b716d9e6ad011835",
+    "source_id": "arxiv-cs-cl",
+    "title": "ParamMute: Suppressing Knowledge-Critical FFNs for Faithful Retrieval-Augmented Generation",
+    "url": "https://arxiv.org/abs/2502.15543",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2502.15543v4 Announce Type: replace \nAbstract: Large language models (LLMs) integrated with retrieval-augmented generation (RAG) have improved factuality by grounding outputs in external evidence. However, they remain susceptible to unfaithful generation, where outputs contradict retrieved context despite its relevance and accuracy. Existing approaches aiming to improve faithfulness primarily focus on enhancing the utilization of external context, but often overlook the persistent influence of internal parametric knowledge during generation. In this work, we investigate the internal mechanisms behind unfaithful generation and identify a subset of mid-to-deep feed-forward networks (FFNs) that are disproportionately activated in such cases. Building on this insight, we propose Parametric Knowledge Muting through FFN Suppression (ParamMute), a framework that improves contextual faithfulness by suppressing the activation of unfaithfulness-associated FFNs and calibrating the model tow",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出抑制知识关键FFN层的方法提升RAG忠实度，思路新颖且实用性强。",
+    "summary_zh": "本文提出ParamMute，一种通过抑制知识关键FFN层来提升检索增强生成（RAG）忠实度的方法。尽管RAG通过外部证据提高了事实性，但模型仍可能生成与检索上下文矛盾的输出。ParamMute识别并抑制LLM中存储先验知识的FFN层，迫使模型更依赖检索到的上下文，从而减少不忠实生成。实验证明该方法有效提升了RAG的忠实度。",
+    "title_zh": "ParamMute：抑制知识关键FFN层以实现忠实检索增强生成",
+    "weighted_score": 0.78,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "9cea15d77a80d58d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2502.15543"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "aa77cd5c2175dedc",
+    "source_id": "arxiv-cs-cl",
+    "title": "Less Is More: Reducing Token Counts Without Compromising Performance",
+    "url": "https://arxiv.org/abs/2506.15138",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2506.15138v2 Announce Type: replace \nAbstract: Tokenization directly affects the inference efficiency of large language models, since fragmented tokenization increases sequence length and generation cost. Although longer, multi-word tokens can reduce fertility, naively adding them often degrades language model performance. We propose Thunder-Tok, a subword tokenizer that reduces fertility while preserving downstream performance. Thunder-Tok first constructs a large seed vocabulary from corpus substrings and filters structurally incomplete candidates, including invalid Unicode byte fragments and word-boundary violations. It then prunes the seed vocabulary using a likelihood-based token score derived from a uniform Jensen lower bound of the training-data probability. Experiments show that Thunder-Tok reduces fertility by approximately 25% in English and 9% in Korean compared with the standard BPE tokenizer while maintaining competitive performance.",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出Thunder-Tok分词器，在减少token数量的同时保持性能，对推理效率提升有直接帮助。",
+    "summary_zh": "本文提出Thunder-Tok，一种降低token生育率（fertility）的子词分词器。token化直接影响LLM推理效率，碎片化token增加序列长度和生成成本。Thunder-Tok通过设计更长的多词token，在减少token数量的同时避免性能下降。实验表明，该分词器在多个任务上保持甚至提升模型性能，同时显著降低推理成本。",
+    "title_zh": "少即是多：在不牺牲性能的前提下减少token数量",
+    "weighted_score": 0.78,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "b2535398f466f6cd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2506.15138"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "d931238cd9308a2e",
+    "source_id": "arxiv-cs-cl",
+    "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
+    "url": "https://arxiv.org/abs/2607.08010",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08010v1 Announce Type: new \nAbstract: Production LLM agents often waste latency and reliability by regenerating code for the same procedural steps on every request. We replace this inference-time coding loop with an agentic tool-making pipeline that compiles repeated SOP steps into validated, versioned tools before deployment. The tool-maker grounds synthesis in the live environment as it collects execution traces, observes backend schemas and values, generates candidate tools, and repairs them against labeled cases. At runtime, the production agent calls these tools directly and falls back to code generation only when needed. We deploy the approach in a Fulfillment Center alarm-triage system, where an agent diagnoses alarms against a 44-node SOP over heterogeneous metric backends. In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53% by suppressing run-to-run variance in repeated steps. Because tools ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出工具制造范式替代推理时代码循环，将重复SOP步骤编译为预验证工具，显著降低延迟并提升可靠性。",
+    "summary_zh": "本文针对生产环境中LLM agent因每次请求重新生成相同过程代码而导致的延迟和可靠性问题，提出一种agentic工具制造流水线。该流水线在部署前将重复的标准操作步骤（SOP）编译为经过验证、版本化的工具，从而避免推理时的代码循环。工具制造者基于实时环境进行合成，确保工具的准确性和适应性。实验表明该方法大幅降低了延迟并提升了系统可靠性。",
+    "title_zh": "低延迟系统中的工具制造与自演化LLM Agent",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "4e22d527cdd588ea",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2607.08010"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "de7d82246ceb9070",
+    "source_id": "arxiv-cs-cl",
+    "title": "When the Judge Changes, So Does the Measurement: Auditing LLM-as-Judge Reliability",
+    "url": "https://arxiv.org/abs/2607.08535",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08535v1 Announce Type: new \nAbstract: An LLM-as-judge score can move even when the candidate responses stay fixed, simply because the evaluator has changed. We treat this evaluator-replacement ambiguity as a measurement-validity problem. Across four judgment datasets, we compare two upgrade paths available in practice: scaling Qwen3 dense judges from 1.7B to 32B parameters and moving across MiniMax M2-M2.7 released APIs. The main pattern is that judge upgrades are not interchangeable: only Qwen3 1.7B to 4B gives a robust adjacent gain, while MiniMax adjacent releases do not. Stronger judges reduce but do not remove position and verbosity bias. Repeated-sample juries add little when errors are correlated. Structured debate can move decisions substantially, but without parser and fallback logs those shifts cannot be attributed to deliberation. We argue that LLM-as-judge reports should include dataset slices, bias probes, error-dependence estimates, and protocol audit trails.",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "系统审计LLM作为裁判的可靠性，揭示评估者更换导致评分变化的问题，对模型评估实践有重要指导。",
+    "summary_zh": "LLM作为裁判的评分可能因评估者改变而变动，即使候选回答保持不变。本文将这种评估者替换歧义视为测量有效性问题。在四个判断数据集上，比较了两种实际升级路径：扩展Qwen3密集裁判从1.7B到32B参数，以及从密集模型切换到MoE模型。结果发现，不同评估者导致评分不一致，且模型规模增大不一定提高可靠性，强调了审计LLM裁判的必要性。",
+    "title_zh": "当裁判改变，测量也随之改变：审计LLM作为裁判的可靠性",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "37c985a912411828",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2607.08535"
       }
     ],
     "curated": true
   },
   {
     "id": "82211c2794e474ed",
-    "source_id": "arxiv-cs-ai",
+    "source_id": "arxiv-cs-cl",
     "title": "A First-Principles Theory of Slow Thinking and Active Perception",
     "url": "https://arxiv.org/abs/2607.08196",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08196v1 Announce Type: new \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgraded ",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08196v1 Announce Type: cross \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgrade",
     "category_hint": [
       "论文研究"
     ],
@@ -232,42 +368,8 @@
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
+        "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2607.08196"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "1ca470e06b8cbc81",
-    "source_id": "arxiv-cs-ai",
-    "title": "Persuasion Attacks Can Decrease Effectiveness of CoT Monitoring",
-    "url": "https://arxiv.org/abs/2607.08066",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08066v1 Announce Type: new \nAbstract: Chain-of-thought (CoT) monitoring is a promising safety mechanism for AI agents, based on the premise that visible reasoning traces can surface misaligned or deceptive behavior. While effective in standard scenarios, recent work highlights that LLMs remain vulnerable to persuasion-based jailbreaks, where natural-language arguments override model constraints. We stress-test whether this vulnerability extends to monitoring LLMs: can an adversarial agent persuade its CoT monitor to approve proposed actions that violate the monitor's policy? We design an evaluation framework with 40 tasks and analyze thousands of agent-monitor interactions, where agents are instructed to argue for policy-violating proposals. We find that in such adversarial settings, monitor access to the agent's CoT reasoning increases rather than decreases approval of harmful actions on average by 9.5%, as the scratchpad provides an additional persuasion channel. To addres",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示CoT监控的脆弱性，对AI安全机制设计有重要警示意义。",
-    "summary_zh": "本文研究了基于说服的越狱攻击如何降低链式思维（CoT）监控的有效性。CoT监控是一种有前景的AI安全机制，通过可见的推理轨迹来暴露不对齐或欺骗行为。然而，最新研究表明，大型语言模型仍然容易受到基于说服的越狱攻击，即通过自然语言论证覆盖模型的安全约束。本文分析了这种攻击的原理和效果，并讨论了其对AI安全部署的潜在影响。",
-    "title_zh": "说服攻击可降低链式思维监控的有效性",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "7e3b2c1afda77333",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08066"
       }
     ],
     "curated": true
@@ -307,74 +409,6 @@
     "curated": true
   },
   {
-    "id": "f1dd95c5b8c0848f",
-    "source_id": "zh-meituan-tech",
-    "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
-    "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-07-11T01:57:03.927427+00:00",
-    "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "VitaBench 2.0是首个真实生活场景下的长期动态智能体基准，对评估AI个性化能力有重要价值。",
-    "summary_zh": "LongCat开源了VitaBench 2.0，这是首个面向长期动态用户建模的智能体评测基准。它系统性地评估大语言模型在长期、真实、动态的用户互动中的个性化与主动性能力。该基准填补了现有评测在动态场景下的空白，为智能体研究提供了新的评估标准。",
-    "title_zh": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "a690135a1a48a087",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "b139faf19c9a7550",
-    "source_id": "arxiv-cs-ai",
-    "title": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
-    "url": "https://arxiv.org/abs/2607.08093",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08093v1 Announce Type: new \nAbstract: Large language models (LLMs) increasingly act as integrated data-science agents, combining abstract reasoning with advanced tool use. Yet the relevant benchmark landscape largely divides into symbolic causal reasoning benchmarks without realistic data analysis or data analysis benchmarks without a principled causal data-generating structure. Furthermore, existing causal evaluation datasets are often restricted to curated examples from existing sources, with diversity coming from limited templatized variations rather than from systematic generation of novel synthetic causal structures. We introduce CausalDS, a benchmark for evaluating causal reasoning in agentic data-science workflows. Each benchmark instance is a scene consisting of a sampled structural causal model (SCM) with generated observational data and an accompanying synthetic natural-language story grounded in a realistic domain. We optionally ground the composition of the bench",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "填补因果推理与数据分析基准的空白，对评估LLM智能体有重要参考价值。",
-    "summary_zh": "本文提出CausalDS，一个用于评估数据科学智能体中因果推理能力的基准。大型语言模型越来越多地充当集成数据科学智能体，结合抽象推理和高级工具使用。然而，现有基准要么是符号因果推理（缺乏真实数据分析），要么是数据分析基准（缺乏因果结构）。CausalDS通过生成具有因果结构的数据集，要求智能体进行因果发现、因果推断和反事实推理，全面评估其因果推理能力。",
-    "title_zh": "CausalDS：数据科学智能体中的因果推理基准",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "5026bb0be0462d63",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08093"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "8f799535c0d61d4c",
     "source_id": "github-ai-blog",
     "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
@@ -405,40 +439,6 @@
       {
         "source_id": "github-ai-blog",
         "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "93d84c70186edb98",
-    "source_id": "arxiv-cs-ai",
-    "title": "The Illusion of Equivalency: Statistical Characterization of Quantization Effects in LLMs",
-    "url": "https://arxiv.org/abs/2607.08734",
-    "published_at": "2026-07-10T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08734v1 Announce Type: new \nAbstract: Post-training quantization is widely used to deploy large language models in resource-constrained settings, yet its evaluation relies almost exclusively on accuracy and perplexity. We show that these metrics fail to capture behavioral changes induced by quantization. We introduce correctness agreement, a decision-level metric that measures overlap in correct predictions between a base model and its quantized variants, independent of absolute accuracy. Across multiple models and quantization schemes from 8-bit to 2-bit, we find that behavioral divergence emerges under moderate quantization even when task performance appears preserved. To explain this effect, we analyze quantization as a structural operator on attention weights and quantify layer-wise distortions using statistical and distributional measures. Our results reveal non-linear breakpoints at low bit-widths and show that query and key projections are consistently more sensitive ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示量化仅用准确率和困惑度评估的不足，提出决策级一致性指标。",
-    "summary_zh": "本文指出后训练量化评估过度依赖准确率和困惑度，这些指标无法捕捉量化引起的行为变化。作者提出正确性一致性（correctness agreement），一种决策级指标，衡量量化前后模型在单个样本上的决策重叠。实验表明，即使准确率相近，量化模型的行为也可能显著偏离原始模型，该指标能更全面反映量化影响。",
-    "title_zh": "等价幻觉：LLM量化效应的统计刻画",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "a2d0d46c0e7ca12a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08734"
       }
     ],
     "curated": true
@@ -483,7 +483,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-11T01:57:03.927455+00:00",
+    "published_at": "2026-07-11T06:08:16.174623+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
