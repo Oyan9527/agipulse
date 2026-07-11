@@ -1,6 +1,6 @@
 {
   "date": "2026-07-11",
-  "generated_at": "2026-07-11T13:04:33.543337+00:00",
+  "generated_at": "2026-07-11T16:48:59.127885+00:00",
   "items": [
     {
       "id": "82211c2794e474ed",
@@ -32,40 +32,6 @@
         {
           "source_id": "arxiv-cs-cl",
           "url": "https://arxiv.org/abs/2607.08196"
-        }
-      ]
-    },
-    {
-      "id": "8b70ca0ae1958279",
-      "source_id": "pytorch-blog",
-      "title": "Towards Free Normalization: Fusing Normalization into GEMM and Attention Kernels",
-      "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/",
-      "published_at": "2026-07-10T14:35:48+00:00",
-      "raw_text": "Code available at: https://github.com/facebookresearch/ads_model_kernel_library/tree/main/multi_cta_norm_fusion and https://github.com/facebookresearch/ads_model_kernel_library/tree/main/gdpa_megakernel TL;DR In this blog post, we present various novel kernel fusion techniques for common normalization ops like LayerNorm and RMSNorm, which provide significant speedup...",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://pytorch.org/wp-content/uploads/2026/07/All-PyTorch-Blog-Social-Images-12.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出将LayerNorm等归一化操作融合进GEMM和Attention核的新方法，显著加速推理，对工程优化有直接价值。",
-      "summary_zh": "Meta发布博客介绍多种新颖的核融合技术，将LayerNorm、RMSNorm等常见归一化操作融合进GEMM和Attention内核中。通过消除额外的内存读写和内核启动开销，实现了显著的加速效果。代码已开源在GitHub上，包含multi_cta_norm_fusion和gdpa_megakernel等实现。该工作对提升大模型推理效率具有实际意义。",
-      "title_zh": "迈向自由归一化：将归一化融合进GEMM和Attention内核",
-      "weighted_score": 0.875,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.9
-      },
-      "story_id": "1c54bf7bbd7e3626",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "pytorch-blog",
-          "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/"
         }
       ]
     },
@@ -136,6 +102,39 @@
       ]
     },
     {
+      "id": "b716d9e6ad011835",
+      "source_id": "arxiv-cs-cl",
+      "title": "ParamMute: Suppressing Knowledge-Critical FFNs for Faithful Retrieval-Augmented Generation",
+      "url": "https://arxiv.org/abs/2502.15543",
+      "published_at": "2026-07-11T04:00:00+00:00",
+      "raw_text": "arXiv:2502.15543v4 Announce Type: replace \nAbstract: Large language models (LLMs) integrated with retrieval-augmented generation (RAG) have improved factuality by grounding outputs in external evidence. However, they remain susceptible to unfaithful generation, where outputs contradict retrieved context despite its relevance and accuracy. Existing approaches aiming to improve faithfulness primarily focus on enhancing the utilization of external context, but often overlook the persistent influence of internal parametric knowledge during generation. In this work, we investigate the internal mechanisms behind unfaithful generation and identify a subset of mid-to-deep feed-forward networks (FFNs) that are disproportionately activated in such cases. Building on this insight, we propose Parametric Knowledge Muting through FFN Suppression (ParamMute), a framework that improves contextual faithfulness by suppressing the activation of unfaithfulness-associated FFNs and calibrating the model tow",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出抑制知识关键FFN层的方法提升RAG忠实度，思路新颖且实用性强。",
+      "summary_zh": "本文提出ParamMute，一种通过抑制知识关键FFN层来提升检索增强生成（RAG）忠实度的方法。尽管RAG通过外部证据提高了事实性，但模型仍可能生成与检索上下文矛盾的输出。ParamMute识别并抑制LLM中存储先验知识的FFN层，迫使模型更依赖检索到的上下文，从而减少不忠实生成。实验证明该方法有效提升了RAG的忠实度。",
+      "title_zh": "ParamMute：抑制知识关键FFN层以实现忠实检索增强生成",
+      "weighted_score": 0.78,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "9cea15d77a80d58d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2502.15543"
+        }
+      ]
+    },
+    {
       "id": "ce7ca5a22aa7ef30",
       "source_id": "36kr",
       "title": "独家 | 智谱创始人唐杰发内部信：「GLM 时刻」之后，什么是更重要的事",
@@ -173,171 +172,68 @@
       ]
     },
     {
-      "id": "8f799535c0d61d4c",
-      "source_id": "github-ai-blog",
-      "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
-      "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
-      "published_at": "2026-07-10T15:57:47+00:00",
-      "raw_text": "<p>How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/\">Better tools made Copilot code review worse. Here&#8217;s how we actually improved it.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
-      "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": "https://github.blog/wp-content/uploads/2026/07/1.png?resize=1024%2C478",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "GitHub官方博客，分享Copilot代码审查工具迁移到Unix风格工具后反而变差，最终通过重构Agent工作流改进的实战经验，有深度反思。",
-      "summary_zh": "GitHub博客文章分享了Copilot代码审查工具的一次改进历程：迁移到共享的Unix风格代码探索工具后，审查成本反而增加。团队通过重构Agent工作流，围绕PR证据重塑流程，最终实现了改进。文章深入分析了工具选择与工作流设计之间的关系，强调了Agent工作流设计的重要性，对AI辅助开发工具的设计有启发意义。",
-      "title_zh": "更好的工具反而让Copilot代码审查变差：我们如何实际改进",
-      "weighted_score": 0.76,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "5ed95af924d398c5",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "github-ai-blog",
-          "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/"
-        }
-      ]
-    },
-    {
-      "id": "88876a49c28a1155",
+      "id": "7ef080db701cade3",
       "source_id": "zh-juejin",
-      "title": "中国首个十万卡集群落成！国产算力如何撑起\"十万卡时代\"",
-      "url": "https://juejin.cn/post/7660861087915606062",
-      "published_at": "2026-07-11T08:26:17+00:00",
-      "raw_text": "一、十万卡，不只是加一个零 从万卡到十万卡，不是简单的 10 倍扩列——这是一道完全不同的工程题。 网络怎么不堵？存储怎么不崩？散热怎么不烧？调度怎么不乱？规模每上一个量级，系统复杂度都是指数级翻倍。",
+      "title": "手搓 LangChain 工具调用：原来 Agent 的核心逻辑，就是个 while 循环",
+      "url": "https://juejin.cn/post/7660857644618399780",
+      "published_at": "2026-07-11T14:56:43+00:00",
+      "raw_text": "直到我把完整的 response 打印出来，才发现返回的 AIMessage 里藏了个tool_calls数组，里面清清楚楚写着要调用read_file，参数就是我传的文件路径。合着模型根本没执行工具",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "中国首个十万卡集群落成，深入解析从万卡到十万卡的工程挑战，对关注国产算力基础设施的读者有重要参考价值。",
-      "summary_zh": "文章指出从万卡到十万卡集群并非简单扩列，而是面临网络拥堵、存储崩溃、散热和调度等指数级增长的工程难题。作者详细分析了每个量级提升带来的系统复杂度翻倍问题，并探讨了国产算力如何应对这些挑战。文章强调十万卡集群的落成标志着中国算力进入新阶段，但背后的工程优化和资源管理才是关键。",
-      "title_zh": null,
-      "weighted_score": 0.73,
+      "reason_zh": "作者手搓 LangChain 工具调用，揭示 Agent 核心逻辑本质是 while 循环，对理解 Agent 机制有启发。",
+      "summary_zh": "作者通过手搓 LangChain 工具调用的实践，发现 Agent 的核心逻辑其实就是一个 while 循环。在调试过程中，作者打印出完整的 response，发现返回的 AIMessage 中包含了 tool_calls 数组，明确指示要调用的工具和参数。模型本身并未执行工具，而是由循环驱动。这一发现揭示了 Agent 框架的底层机制，对开发者理解和使用 Agent 有重要参考价值。",
+      "title_zh": "手搓 LangChain 工具调用：原来 Agent 的核心逻辑，就是个 while 循环",
+      "weighted_score": 0.53,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "source_authority": 0.4,
+        "novelty": 0.6,
+        "impact": 0.4,
+        "practical_value": 0.8
       },
-      "story_id": "adafc542a620caee",
+      "story_id": "5c2c8fba5de7dd26",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7660861087915606062"
+          "url": "https://juejin.cn/post/7660857644618399780"
         }
       ]
     },
     {
-      "id": "d0432abd11fc09fd",
-      "source_id": "infoq-cn-ai",
-      "title": "GitHub 的旧模式被 AI 击穿，Cursor、GitLab、Zed 各自开打",
-      "url": "https://www.infoq.cn/article/7ZSdewTwDBz1mrx6wmat?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-10T13:14:51+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/7ZSdewTwDBz1mrx6wmat?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "3c92479c2c36bad9",
+      "source_id": "zh-ithome",
+      "title": "智谱创始人唐杰发内部信：开启 Touch High 摸高计划，继续聚焦于 AGI 研究、而不是短期商业变现",
+      "url": "https://www.ithome.com/0/975/620.htm",
+      "published_at": "2026-07-11T14:35:31+00:00",
+      "raw_text": "<p>IT之家 7 月 11 日消息，据晚点 LastPost 报道，智谱创始人唐杰今日发布内部信，阐述智谱对 AGI 接下来竞争的理解。</p><p>唐杰在信中表示，智谱接下来将继续延续所谓“反直觉”路线，开启“Touch High（摸高）计划”，即<strong>继续聚焦于 AGI 研究，而不是短期商业变现</strong>。</p><p>唐杰称通往 AGI 终点的道路上，有几座必须翻越的山峰，它们也正是今天技术浪潮最汹涌的地方：</p><ul class=\" list-paddingleft-2\"><li><p>长程任务</p></li><li><p>自治智能体系统</p></li><li><p>完全自我训练</p></li><li><p>极致安全治理</p></li></ul><p>其中，极致安全治理被特别强调，智谱计划<strong>投入百亿级资源攻坚机械可解释性</strong>，这意味着厘清模型决策背后的神经元逻辑，推动黑盒系统向透明可解释系统转变。</p><p>IT之家附唐杰内部信全文如下：</p><blockquote><p style=\"text-align: center;\"><strong>巨浪已来</strong></p><p style=\"text-align: right;\">—— 致每一位智谱人和关心人工智能未来的伙伴</p><p>请允许我借这篇文章，谈三件事：我们是谁，我们如何看待这个时代，以及我们决定全力倾注的战略方向。</p><h3>（一）我们是谁：“本质、反直觉、专注”</h3><p>智谱从不是一家追风口的公司。它从一间实验室里长出来，带着这间实验室二十年的方法论。这套方法论可以用三个词概括：本质、反直觉、专注 —— 想得足够深，才敢选得足够反；选得足够反，就必须守得足够久。</p><p>回望来路，我们几乎每一个关键选择都曾经显得“反直觉”。2006 年，我们守着一台台式机上的学术搜索系统坐冷板凳，因为我们想清楚了那背后是“挖掘学科演化机理”这件值得用十年回答的事；2021 到 2022 年，当“让机器像人一样思考”被绝大多数人视为登月般的疯狂计划时，我们抽调资源、押注千亿参数，做出了 GLM-130B—— 那是 ChatGPT 引爆世界整整一年半之前；而在智谱 2026 年 1 月 8 日 H 股上市的那一天，我们把它当作一",
       "category_hint": [
-        "行业动态",
-        "技巧与观点"
+        "行业动态"
       ],
       "image_url": null,
       "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "InfoQ 深度分析 AI 如何改变 GitHub 模式，Cursor、GitLab、Zed 等工具竞争，有行业洞察。",
-      "summary_zh": "本文分析了 AI 对 GitHub 传统开发模式的冲击，以及 Cursor、GitLab、Zed 等工具如何各自应对。文章探讨了 AI 辅助编程如何改变代码协作、版本控制等流程，并对比了不同工具的差异化策略。",
-      "title_zh": "GitHub 的旧模式被 AI 击穿，Cursor、GitLab、Zed 各自开打",
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "66266ecff6bae170",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/7ZSdewTwDBz1mrx6wmat?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "59fab7095156b639",
-      "source_id": "aws-ml-blog",
-      "title": "How KTern.AI built agentic AI for SAP on Amazon Bedrock AgentCore",
-      "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/",
-      "published_at": "2026-07-10T15:23:25+00:00",
-      "raw_text": "Evolving from a traditional software as a service (SaaS) platform into a next-generation agentic AI platform meant orchestrating multiple specialized agents across long-running enterprise programs. Each agent operates with persistent context, secure tool access, and production-grade reliability. We built that system on Amazon Bedrock AgentCore using the Strands Agents SDK. This post walks through how we architected it, which agents we built, and the outcomes for our customers.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/09/ktern_blog_diagram_final.png",
-      "category": "产品发布",
-      "content_type": "深度分析",
+      "content_type": "观点评论",
       "depth_score": 0.6,
-      "reason_zh": "KTern.AI分享在Amazon Bedrock上构建SAP Agentic AI平台的经验，涉及多Agent编排与生产级可靠性，有实践参考价值。",
-      "summary_zh": "KTern.AI分享了从传统SaaS平台演进为下一代Agentic AI平台的经验，该平台基于Amazon Bedrock AgentCore和Strands Agents SDK构建，能够编排多个专业Agent，支持长期企业程序。每个Agent具有持久上下文、安全工具访问和生产级可靠性。文章详细介绍了系统架构和实现要点。",
-      "title_zh": "KTern.AI如何在Amazon Bedrock AgentCore上为SAP构建Agentic AI",
-      "weighted_score": 0.735,
+      "reason_zh": "智谱创始人内部信透露公司战略：坚持 AGI 研究而非短期变现，并计划投入百亿级资源攻坚机械可解释性。",
+      "summary_zh": "据晚点 LastPost 报道，智谱创始人唐杰发布内部信，宣布开启“Touch High（摸高）计划”，继续聚焦 AGI 研究而非短期商业变现。唐杰指出通往 AGI 需翻越四座山峰：长程任务、自治智能体系统、完全自我训练和极致安全治理。其中极致安全治理被特别强调，智谱计划投入百亿级资源攻坚机械可解释性。该战略延续了智谱一贯的“反直觉”路线。",
+      "title_zh": "智谱创始人唐杰发内部信：开启 Touch High 摸高计划，继续聚焦于 AGI 研究、而不是短期商业变现",
+      "weighted_score": 0.67,
       "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.8,
         "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "0eddb7a055cd8af3",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/"
-        }
-      ]
-    },
-    {
-      "id": "93fc8c737b1427ca",
-      "source_id": "infoq-cn-ai",
-      "title": "史上最高调的AI重写：Claude花11天搞定Bun，创始人花一个月才敢交底",
-      "url": "https://www.infoq.cn/article/uHkOoJ6Nfm6wNCsUryuO?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-10T13:21:31+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/uHkOoJ6Nfm6wNCsUryuO?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "Claude 用 11 天重写 Bun 项目，创始人一个月后才公开，故事性强，有技术管理启示。",
-      "summary_zh": "本文讲述了 Claude AI 在 11 天内重写了 Bun 项目的代码，而 Bun 的创始人 Jarred Sumner 花了一个月才敢向团队交底。文章探讨了 AI 辅助编程的潜力与风险，以及创始人面对 AI 生成代码时的复杂心态。",
-      "title_zh": "史上最高调的 AI 重写：Claude 花 11 天搞定 Bun，创始人花一个月才敢交底",
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
+        "impact": 0.7,
         "practical_value": 0.4
       },
-      "story_id": "21253e5a2777b021",
+      "story_id": "fc91b7d3640817ba",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/uHkOoJ6Nfm6wNCsUryuO?utm_source=rss&utm_medium=article"
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/975/620.htm"
         }
       ]
     },
@@ -404,6 +300,39 @@
         {
           "source_id": "zh-juejin",
           "url": "https://juejin.cn/post/7661087388796813350"
+        }
+      ]
+    },
+    {
+      "id": "ebba24f4f0d6e53a",
+      "source_id": "zh-juejin",
+      "title": "现在的\"AI 原生应用\"热潮，恰恰证明了大多数产品需求本身就是个草台班子",
+      "url": "https://juejin.cn/post/7660896500881408052",
+      "published_at": "2026-07-11T15:07:43+00:00",
+      "raw_text": "最近对\"AI 原生\"这股风有点想法，不吐不快。 废话不多说，开正文。 现在满世界都在喊\"AI 原生\"“用 AI 重构”，搞得好像不接个大模型都不好意思开发布会。但这股热潮从另一个角度看，恰恰说明了一件",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "对AI原生应用热潮的批判性反思，指出当前产品需求缺乏深度，值得从业者冷静思考。",
+      "summary_zh": "文章批判了当前“AI原生应用”热潮，认为许多产品只是简单接入大模型，缺乏真正的需求洞察和产品创新。作者指出，这种跟风现象恰恰说明大多数产品需求本身是“草台班子”，即缺乏扎实的用户研究和场景定义。文章呼吁开发者回归产品本质，而非盲目追逐技术热点。",
+      "title_zh": null,
+      "weighted_score": 0.44,
+      "score_breakdown": {
+        "source_authority": 0.3,
+        "novelty": 0.6,
+        "impact": 0.4,
+        "practical_value": 0.5
+      },
+      "story_id": "95254db1bef0821d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7660896500881408052"
         }
       ]
     }

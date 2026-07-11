@@ -1,45 +1,10 @@
 [
   {
-    "id": "8b70ca0ae1958279",
-    "source_id": "pytorch-blog",
-    "title": "Towards Free Normalization: Fusing Normalization into GEMM and Attention Kernels",
-    "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/",
-    "published_at": "2026-07-10T14:35:48+00:00",
-    "raw_text": "Code available at: https://github.com/facebookresearch/ads_model_kernel_library/tree/main/multi_cta_norm_fusion and https://github.com/facebookresearch/ads_model_kernel_library/tree/main/gdpa_megakernel TL;DR In this blog post, we present various novel kernel fusion techniques for common normalization ops like LayerNorm and RMSNorm, which provide significant speedup...",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://pytorch.org/wp-content/uploads/2026/07/All-PyTorch-Blog-Social-Images-12.png",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出将LayerNorm等归一化操作融合进GEMM和Attention核的新方法，显著加速推理，对工程优化有直接价值。",
-    "summary_zh": "Meta发布博客介绍多种新颖的核融合技术，将LayerNorm、RMSNorm等常见归一化操作融合进GEMM和Attention内核中。通过消除额外的内存读写和内核启动开销，实现了显著的加速效果。代码已开源在GitHub上，包含multi_cta_norm_fusion和gdpa_megakernel等实现。该工作对提升大模型推理效率具有实际意义。",
-    "title_zh": "迈向自由归一化：将归一化融合进GEMM和Attention内核",
-    "weighted_score": 0.875,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.9
-    },
-    "story_id": "1c54bf7bbd7e3626",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "pytorch-blog",
-        "url": "https://pytorch.org/blog/towards-free-normalization-fusing-normalization-into-gemm-and-attention-kernels/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "5c7effdc9843c408",
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-11T13:01:37.035887+00:00",
+    "published_at": "2026-07-11T16:46:31.462203+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -413,115 +378,11 @@
     "curated": true
   },
   {
-    "id": "800656787a687fd7",
-    "source_id": "zh-solidot",
-    "title": "人形机器人成功完成远超手术",
-    "url": "https://www.solidot.org/story?sid=84801",
-    "published_at": "2026-07-10T15:10:19+00:00",
-    "raw_text": "根据发表在《自然》期刊上的一项研究，人形机器人成功完成切除活体动物胆囊的手术。人形机器人并不具有自主能力，它们并不会取代医生，而是由外科医生远超操作。远程操控的人形机器人为活猪完成两例微创胆囊切除手术。如果该方法被证实适用于临床，外科医生就可以利用人形机器人，在资源有限、无法安装专业且昂贵手术机器人的小型医院和诊所远程开展机器人辅助手术。人形机器人相比专业手术机器人更便宜，占用的空间更小，而且易于部署，能部署到从偏远地区到战场甚至太空。研究人员利用宇树科技的 G1 人形机器人。最便宜的 G1 基础型号起售价 13,500 美元，配置灵活机械手以及运费之后费用会超过 6.7 万美元。相比下 Intuitive Surgical 的达芬奇手术机器人费用在 50 万到数百万美元之间。宇树科技机器人的缺陷是需要频繁重校准，耗时更长。\n<p></p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "人形机器人成功完成远程手术，展示低成本手术机器人潜力，对医疗AI领域有重要启示。",
-    "summary_zh": "根据《自然》期刊研究，宇树科技G1人形机器人成功为活猪完成两例远程微创胆囊切除手术。该机器人由外科医生远程操控，不具备自主能力。相比达芬奇手术机器人（50万-数百万美元），G1基础型号起售价仅13,500美元，总费用约6.7万美元，但需频繁重校准且耗时更长。该技术有望在资源有限地区推广。",
-    "title_zh": null,
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "33d5a701b7e89f6a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-solidot",
-        "url": "https://www.solidot.org/story?sid=84801"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "8f799535c0d61d4c",
-    "source_id": "github-ai-blog",
-    "title": "Better tools made Copilot code review worse. Here’s how we actually improved it.",
-    "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
-    "published_at": "2026-07-10T15:57:47+00:00",
-    "raw_text": "<p>How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/\">Better tools made Copilot code review worse. Here&#8217;s how we actually improved it.</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": "https://github.blog/wp-content/uploads/2026/07/1.png?resize=1024%2C478",
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "GitHub官方博客，分享Copilot代码审查工具迁移到Unix风格工具后反而变差，最终通过重构Agent工作流改进的实战经验，有深度反思。",
-    "summary_zh": "GitHub博客文章分享了Copilot代码审查工具的一次改进历程：迁移到共享的Unix风格代码探索工具后，审查成本反而增加。团队通过重构Agent工作流，围绕PR证据重塑流程，最终实现了改进。文章深入分析了工具选择与工作流设计之间的关系，强调了Agent工作流设计的重要性，对AI辅助开发工具的设计有启发意义。",
-    "title_zh": "更好的工具反而让Copilot代码审查变差：我们如何实际改进",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "5ed95af924d398c5",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "github-ai-blog",
-        "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "036dfce9f8c6ba61",
-    "source_id": "aws-ml-blog",
-    "title": "Disaggregated prefill and decode for LLM inference on SageMaker HyperPod",
-    "url": "https://aws.amazon.com/blogs/machine-learning/disaggregated-prefill-and-decode-for-llm-inference-on-sagemaker-hyperpod/",
-    "published_at": "2026-07-10T15:20:16+00:00",
-    "raw_text": "In this post, we show how to implement DPD with vLLM on Amazon SageMaker HyperPod using the HyperPod Inference Operator.",
-    "category_hint": [
-      "技巧与观点",
-      "产品发布"
-    ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/07/ML-20985-1.jpg",
-    "category": "产品发布",
-    "content_type": "教程方法",
-    "depth_score": 0.5,
-    "reason_zh": "AWS官方教程展示如何在SageMaker HyperPod上实现LLM推理的预填充和解码分离，对部署优化有实用价值。",
-    "summary_zh": "本文介绍如何使用vLLM在Amazon SageMaker HyperPod上实现LLM推理的预填充（prefill）和解码（decode）分离（DPD）。通过HyperPod推理算子，可以优化资源利用，降低延迟。文章提供了具体实现步骤和配置方法，适合需要大规模部署LLM的工程师参考。",
-    "title_zh": "在SageMaker HyperPod上实现LLM推理的预填充和解码分离",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "51378c641bc0cf88",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/disaggregated-prefill-and-decode-for-llm-inference-on-sagemaker-hyperpod/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "478400fd36f67f37",
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-11T13:01:37.035994+00:00",
+    "published_at": "2026-07-11T16:46:31.462349+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
@@ -549,110 +410,6 @@
       }
     ],
     "curated": true
-  },
-  {
-    "id": "59fab7095156b639",
-    "source_id": "aws-ml-blog",
-    "title": "How KTern.AI built agentic AI for SAP on Amazon Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/",
-    "published_at": "2026-07-10T15:23:25+00:00",
-    "raw_text": "Evolving from a traditional software as a service (SaaS) platform into a next-generation agentic AI platform meant orchestrating multiple specialized agents across long-running enterprise programs. Each agent operates with persistent context, secure tool access, and production-grade reliability. We built that system on Amazon Bedrock AgentCore using the Strands Agents SDK. This post walks through how we architected it, which agents we built, and the outcomes for our customers.",
-    "category_hint": [
-      "技巧与观点",
-      "产品发布"
-    ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/09/ktern_blog_diagram_final.png",
-    "category": "产品发布",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "KTern.AI分享在Amazon Bedrock上构建SAP Agentic AI平台的经验，涉及多Agent编排与生产级可靠性，有实践参考价值。",
-    "summary_zh": "KTern.AI分享了从传统SaaS平台演进为下一代Agentic AI平台的经验，该平台基于Amazon Bedrock AgentCore和Strands Agents SDK构建，能够编排多个专业Agent，支持长期企业程序。每个Agent具有持久上下文、安全工具访问和生产级可靠性。文章详细介绍了系统架构和实现要点。",
-    "title_zh": "KTern.AI如何在Amazon Bedrock AgentCore上为SAP构建Agentic AI",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "0eddb7a055cd8af3",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/how-ktern-ai-built-agentic-ai-for-sap-on-amazon-bedrock-agentcore/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "88876a49c28a1155",
-    "source_id": "zh-juejin",
-    "title": "中国首个十万卡集群落成！国产算力如何撑起\"十万卡时代\"",
-    "url": "https://juejin.cn/post/7660861087915606062",
-    "published_at": "2026-07-11T08:26:17+00:00",
-    "raw_text": "一、十万卡，不只是加一个零 从万卡到十万卡，不是简单的 10 倍扩列——这是一道完全不同的工程题。 网络怎么不堵？存储怎么不崩？散热怎么不烧？调度怎么不乱？规模每上一个量级，系统复杂度都是指数级翻倍。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "中国首个十万卡集群落成，深入解析从万卡到十万卡的工程挑战，对关注国产算力基础设施的读者有重要参考价值。",
-    "summary_zh": "文章指出从万卡到十万卡集群并非简单扩列，而是面临网络拥堵、存储崩溃、散热和调度等指数级增长的工程难题。作者详细分析了每个量级提升带来的系统复杂度翻倍问题，并探讨了国产算力如何应对这些挑战。文章强调十万卡集群的落成标志着中国算力进入新阶段，但背后的工程优化和资源管理才是关键。",
-    "title_zh": null,
-    "weighted_score": 0.73,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "adafc542a620caee",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7660861087915606062"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "7b2fdf9de9cfef7d",
-    "source_id": "gh-lobe-chat",
-    "title": "lobehub/lobe-chat v2.2.11-canary.1",
-    "url": "https://github.com/lobehub/lobehub/releases/tag/v2.2.11-canary.1",
-    "published_at": "2026-07-10T17:40:42+00:00",
-    "raw_text": "## 🐤 Canary Build — v2.2.11-canary.1\n\n> Automated canary build from `canary` branch.\n\n### Commit Information\n\n- Based on changes since `v2.2.10-canary.65`\n- Commit count: 9\n\n- `8188e914e7` ♻️ refactor: extract server call llm finalizer (#16984) (Arvin Xu)\n- `d1533b5777` 🐛 fix: preflight OpenAI context limit errors (#16896) (Arvin Xu)\n- `392d617ad1` 🔒 chore(deps): lock @lobehub/editor to 4.18.0 (ONLY-yours)\n- `936a21e492` 🔒 chore(deps): lock @lobehub/editor to 4.19.2 (ONLY-yours)\n- `588c0692df` 🔖 chore(release): release version v2.2.9 [skip ci] (lobehubbot)\n\n### ⚠️ Important Notes\n\n- **This is an automated canary build and is NOT intended for production use.**\n- Canary builds are triggered by `build`/`fix`/`style` commits on the `canary` branch.\n- May contain **unstable or incomplete changes**. **Use at your own risk.**\n- It is strongly recommended to **back up your data** before using a canary build.\n\n### 📦 Installation\n\nDownload the appropriate installer for your platform from the ass",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "Lobe Chat 新版本重构服务端 LLM 调用并修复 OpenAI 上下文限制问题，提升稳定性。",
-    "summary_zh": "Lobe Chat 发布 v2.2.11-canary.1 版本，基于 canary 分支的 9 次提交构建。主要更新包括：重构服务端 LLM 调用终结器（#16984）、修复 OpenAI 上下文限制错误（#16896）、锁定 @lobehub/editor 依赖至 4.18.0。该版本为 canary 构建，适合测试新功能。",
-    "title_zh": "lobehub/lobe-chat v2.2.11-canary.1 发布",
-    "weighted_score": 0.635,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.6
-    },
-    "story_id": "850980a200be1d6b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-lobe-chat",
-        "url": "https://github.com/lobehub/lobehub/releases/tag/v2.2.11-canary.1"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
   },
   {
     "id": "9cb62c08f685880e",
