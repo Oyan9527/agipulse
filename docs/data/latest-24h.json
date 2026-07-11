@@ -4,7 +4,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-11T16:46:31.462203+00:00",
+    "published_at": "2026-07-11T20:40:56.160994+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -208,6 +208,40 @@
     "curated": true
   },
   {
+    "id": "4eb03014e2a9fc6f",
+    "source_id": "gh-vllm",
+    "title": "vllm-project/vllm v0.25.0",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0",
+    "published_at": "2026-07-11T20:06:44+00:00",
+    "raw_text": "# vLLM v0.25.0 Release Notes\r\n\r\n## Highlights\r\n\r\nThis release features 558 commits from 232 contributors (64 new)!\r\n\r\n* **Model Runner V2 is now the default for all dense models** (#44443). Building on quantized-model support from the previous release, MRv2 is now the standard execution path, with new support for EVS (#46535), realtime embeddings (#46762), prefix caching for Mamba hybrid models (#42406), multimodal-prefix bidirectional attention (#46942), and dynamic speculative decoding compatible with full CUDA graphs (#45953).\r\n* **PagedAttention has been removed** (#47361). The legacy attention implementation is deleted now that V1/MRv2 backends are the standard path.\r\n* **The Transformers modeling backend is now as fast as native vLLM** (#47187), and gained FP8 MoE support (#46820), CUDA graph + embed scaling fixes (#48010), and migration of GPTBigCode/Starcoder2 (#30966) and RoBERTa (#47452).\r\n* **New models**: LLaVA-OneVision-2 (#44785), Unlimited OCR (#46564, #47102), MOSS-Tran",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "vLLM v0.25.0默认启用Model Runner V2，支持更多模型和功能，是LLM推理的重要更新。",
+    "summary_zh": "vLLM v0.25.0发布，包含558次提交和232位贡献者。主要亮点：Model Runner V2成为所有密集模型的默认执行路径，新增对EVS、实时嵌入、Mamba混合模型前缀缓存等支持。该版本提升了推理性能和模型兼容性，对LLM部署有重要影响。",
+    "title_zh": "vllm-project/vllm v0.25.0",
+    "weighted_score": 0.785,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "a5356c5081b97523",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-vllm",
+        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "b716d9e6ad011835",
     "source_id": "arxiv-cs-cl",
     "title": "ParamMute: Suppressing Knowledge-Critical FFNs for Faithful Retrieval-Augmented Generation",
@@ -378,11 +412,45 @@
     "curated": true
   },
   {
+    "id": "a9327fbb6965e165",
+    "source_id": "arxiv-cs-cl",
+    "title": "IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation",
+    "url": "https://arxiv.org/abs/2509.26076",
+    "published_at": "2026-07-11T04:00:00+00:00",
+    "raw_text": "arXiv:2509.26076v2 Announce Type: replace \nAbstract: As the mathematical capabilities of large language models (LLMs) improve, it becomes increasingly important to evaluate their performance on research-level tasks at the frontier of mathematical knowledge. However, existing benchmarks are limited, as they focus solely on final-answer questions or high-school competition problems. To address this gap, we introduce IMProofBench, a private benchmark consisting of 77 peer-reviewed problems developed by expert mathematicians. Each problem requires a detailed proof and is paired with subproblems that have final answers, supporting both an evaluation by human experts and a large-scale quantitative analysis through automated grading. Furthermore, unlike prior benchmarks, the evaluation setup simulates a realistic research environment: models operate in an agentic framework with tools like web search for literature review and mathematical software such as SageMath. Our results show that curren",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出研究级数学证明生成基准，填补了现有基准仅关注高中竞赛题的空白。",
+    "summary_zh": "本文提出IMProofBench，一个评估LLM在研究级数学证明生成能力上的基准。现有数学基准多聚焦于最终答案问题或高中竞赛题，无法衡量模型在数学前沿的推理能力。IMProofBench包含来自真实研究论文的证明任务，要求模型生成完整的证明步骤，为评估LLM的高级数学推理提供了更具挑战性的测试平台。",
+    "title_zh": "IMProofBench：评估AI在研究级数学证明生成上的基准",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "cfd25a55824bfe7f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2509.26076"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "478400fd36f67f37",
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-11T16:46:31.462349+00:00",
+    "published_at": "2026-07-11T20:40:56.161134+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
@@ -416,8 +484,8 @@
     "source_id": "gh-browser-use",
     "title": "browser-use/browser-use 0.13.4",
     "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.4",
-    "published_at": "2026-07-11T00:47:15+00:00",
-    "raw_text": "## What's Changed\n- Fix navigation readiness detection: per-target lifecycle event storage, and handle same-document navigations without burning the readiness timeout.\n- Fix markdown extraction destroying URLs and dropping long link lines.\n- Detect LLM output truncation instead of failing with misleading parse errors, and let truncation errors switch to the fallback LLM.\n- Keep plain BrowserErrors recoverable and preserve structured error memory through execute_action.\n- Fix visibility check mutating shared snapshot bounds.\n- Pin Browser Harness to `0.1.5` (Windows reliability, more robust telemetry, cloud-browser suggestion).\n- CLI polish: shim for legacy CLI commands, hints for unknown commands, faster startup, better error tracking.\n- Restructure README quickstart around the CLI and Python library paths.\n\n**Full Changelog**: https://github.com/browser-use/browser-use/compare/0.13.3...0.13.4",
+    "published_at": "2026-07-11T18:50:05+00:00",
+    "raw_text": "## What's Changed\n- MCP server for CLI 3.0: shared MCP runner, `max_dim` guard.\n- Fix navigation readiness detection: per-target lifecycle event storage, and handle same-document navigations without burning the readiness timeout.\n- Fix markdown extraction destroying URLs and dropping long link lines.\n- Detect LLM output truncation instead of failing with misleading parse errors, and let truncation errors switch to the fallback LLM.\n- Keep plain BrowserErrors recoverable and preserve structured error memory through execute_action.\n- Fix visibility check mutating shared snapshot bounds.\n- Pin Browser Harness to `0.1.5` (Windows reliability fixes, cloud-browser suggestion).\n- CLI polish: shim for legacy CLI commands, hints for unknown commands, faster startup.\n- Restructure README quickstart around the CLI and Python library paths.\n\n**Full Changelog**: https://github.com/browser-use/browser-use/compare/0.13.3...0.13.4",
     "category_hint": [
       "开源项目"
     ],
