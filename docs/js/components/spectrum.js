@@ -65,7 +65,7 @@ export function renderSpectrum({ chartEl, legendEl, axisEl, emptyEl, tooltipEl, 
       const seg = document.createElement("div");
       seg.className = "spectrum__segment";
       seg.style.height = "2%";
-      seg.style.background = "var(--line)";
+      seg.style.background = "var(--rule)";
       seg.style.animationDelay = `${hourIdx * 12}ms`;
       group.appendChild(seg);
     }

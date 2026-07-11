@@ -5,7 +5,7 @@
 相当于给同一条内容打分 12 遍，是最大的隐性浪费。
 
 这个缓存把每条内容的判定结果（prefilter 拒绝 / 打分完成）按 id 持久化，
-随 site/data 一起提交进仓库、跨 GitHub Actions 的每次全新 checkout 生效。
+随 docs/data 一起提交进仓库、跨 GitHub Actions 的每次全新 checkout 生效。
 下一轮遇到同一 id：拒绝的直接跳过、打分过的直接复用，不再调用 DeepSeek，
 只有真正首次出现的新内容才会真正花钱调用两级判定。
 

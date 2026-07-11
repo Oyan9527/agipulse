@@ -1,7 +1,7 @@
 """每日聚合归档：为周/月维度的趋势分析积累历史。
 
 每次运行把"当天(UTC)发布的条目"聚合成一个紧凑的日档文件：
-  site/data/archive/day-YYYY-MM-DD.json
+  docs/data/archive/day-YYYY-MM-DD.json
   { date, total, by_category: {分类: 数量}, keyword_counts: {关键词: 次数} }
 
 - 当天的文件每轮运行整体重算覆盖（当天数据随时间增长，最后一轮即全天定稿）

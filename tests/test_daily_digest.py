@@ -1,7 +1,7 @@
 """AI 每日总结的回归测试（不触真实 DeepSeek，只测选材、mock 路径与空态）。"""
 from datetime import datetime, timedelta, timezone
 
-from scripts.daily_digest import build_daily_digest, _todays_top
+from scripts.daily_digest import BEIJING_TZ, build_daily_digest, _todays_top
 
 NOW = datetime.now(timezone.utc)
 
@@ -44,3 +44,19 @@ def test_top_prefers_translated_title_in_payload():
 def test_top_capped_at_max_input():
     items = [_item(str(i), f"t{i}", msc=1, score=i / 100) for i in range(30)]
     assert len(_todays_top(items)) == 12   # MAX_INPUT_STORIES
+
+
+def test_top_includes_beijing_early_morning_item_with_yesterday_utc_date():
+    """北京时间凌晨(0-8点)发布的条目，其 UTC 日期仍是"昨天"，但北京日历上属于"今天"，
+    不应被"今日头条"漏掉（回归：曾经按 UTC 日期比对导致这类条目被排除）。"""
+    now_bj = datetime.now(BEIJING_TZ)
+    published_bj = now_bj.replace(hour=2, minute=0, second=0, microsecond=0)
+    published_at = published_bj.astimezone(timezone.utc).isoformat()
+
+    # 确认这条目确实落在"UTC 日期属于昨天"的场景，否则这个回归测试没有意义
+    assert published_at[:10] != now_bj.date().isoformat()
+
+    item = _item("early-bj", "凌晨新闻", msc=1)
+    item["published_at"] = published_at
+    top = _todays_top([item])
+    assert top and top[0]["id"] == "early-bj"

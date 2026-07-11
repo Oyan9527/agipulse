@@ -62,12 +62,33 @@ export function initPalette({ overlayEl, triggerEl, inputEl, resultsEl, getSearc
     renderResults(matches);
   });
 
+  function getFocusable() {
+    return [...overlayEl.querySelectorAll('a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])')]
+      .filter((el) => !el.disabled);
+  }
+
   overlayEl.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();
     if (e.key === "ArrowDown") { e.preventDefault(); updateActive(1); }
     if (e.key === "ArrowUp") { e.preventDefault(); updateActive(-1); }
     if (e.key === "Enter" && currentResults[activeIndex]) {
-      window.open(currentResults[activeIndex].url, "_blank", "noopener,noreferrer");
+      const url = safeUrl(currentResults[activeIndex].url);
+      if (url) window.open(url, "_blank", "noopener,noreferrer");
+    }
+    if (e.key === "Tab") {
+      const focusable = getFocusable();
+      if (!focusable.length) { e.preventDefault(); return; }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first || !overlayEl.contains(document.activeElement)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else if (document.activeElement === last || !overlayEl.contains(document.activeElement)) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 

@@ -31,6 +31,7 @@ def test_extracts_model_identifiers():
     assert _strong_entities("OpenAI says GPT 5.6 is preferred") == {"gpt5.6"}       # 空格分隔
     assert _strong_entities("美团 LongCat-2.0 正式发布") == {"longcat2.0"}          # 中文标题里的英文名
     assert _strong_entities("Introducing Gemini 3.5 Flash") == {"gemini3.5"}
+    assert _strong_entities("LongCat v2 released today") == {"longcat2"}           # "v" 前缀版本号
 
 
 def test_ignores_generic_noun_number_pairs():
@@ -70,6 +71,17 @@ def test_unrelated_items_stay_separate():
     items = [
         _item("a", "GPT-5.6 launches", source="s1"),
         _item("b", "宇树 G1 完成机器人外科手术", source="s2"),
+    ]
+    _, stories = merge_stories(items, WEIGHTS)
+    assert len(stories) == 2
+
+
+def test_same_entity_but_different_event_stays_separate():
+    # 共享实体 {'model3'}，但讲的是两件不相关的事——仅凭实体交集不该合并，
+    # 否则任何两条提到同一产品的无关新闻都会被并成一个故事。
+    items = [
+        _item("a", "Model 3 gets software update", hours_ago=18, source="s1"),
+        _item("b", "Model 3 recall issued by regulators", source="s2"),
     ]
     _, stories = merge_stories(items, WEIGHTS)
     assert len(stories) == 2

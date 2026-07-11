@@ -92,9 +92,7 @@ function renderFeedSection() {
 
 
 function setupTabs() {
-  els.viewTabs.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab");
-    if (!btn) return;
+  const selectTab = (btn) => {
     [...els.viewTabs.children].forEach((c) => {
       c.classList.toggle("is-active", c === btn);
       c.setAttribute("aria-selected", String(c === btn));
@@ -102,6 +100,27 @@ function setupTabs() {
     state.view = btn.dataset.view;
     state.visibleCount = PAGE_SIZE;
     renderFeedSection();
+  };
+  els.viewTabs.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    selectTab(btn);
+  });
+  // ArrowLeft/Right（及 Home/End）在同组 tab 间移动焦点并直接激活，匹配原生 tablist 行为
+  els.viewTabs.addEventListener("keydown", (e) => {
+    const tabs = [...els.viewTabs.children];
+    const currentIndex = tabs.indexOf(document.activeElement);
+    if (currentIndex === -1) return;
+    let newIndex;
+    if (e.key === "ArrowRight") newIndex = (currentIndex + 1) % tabs.length;
+    else if (e.key === "ArrowLeft") newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") newIndex = 0;
+    else if (e.key === "End") newIndex = tabs.length - 1;
+    else return;
+    e.preventDefault();
+    const newTab = tabs[newIndex];
+    newTab.focus();
+    selectTab(newTab);
   });
 }
 
@@ -207,6 +226,7 @@ function renderLead() {
     els.leadImg.addEventListener("load", () => clearTimeout(timer), { once: true });
     els.leadImg.addEventListener("error", () => { clearTimeout(timer); fallback(); }, { once: true });
     els.leadImg.src = leadImageUrl;
+    els.leadImg.alt = lead.title || "";
     els.leadImg.hidden = false;
     els.leadPlaceholder.style.display = "none";
   }

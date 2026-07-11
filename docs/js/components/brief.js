@@ -66,6 +66,13 @@ export function renderHotStories({ listEl, emptyEl, stories }) {
 
 export function renderSourceHealth({ listEl, statuses }) {
   listEl.innerHTML = "";
+  if (!statuses.length) {
+    const li = document.createElement("li");
+    li.className = "trend-empty";
+    li.textContent = "暂无信源健康数据";
+    listEl.appendChild(li);
+    return;
+  }
   statuses
     .slice()
     .sort((a, b) => (a.last_error ? 1 : 0) - (b.last_error ? 1 : 0))

@@ -18,7 +18,30 @@ _CJK_RE = re.compile(r"[一-鿿]")
 # 强实体 = 带版本号的模型/产品标识（GPT-5.6、Claude Fable 5、LongCat-2.0、Gemini 3.5 …）。
 # 同一事件的跨源报道措辞差别极大（中英混排、角度各异），TF-IDF 词袋抓不住它们，
 # 但几乎必然共享这个标识符——实测 GPT-5.6 发布当天有 15 条报道分散成 13 个"故事"。
-_ENTITY_RE = re.compile(r"([A-Za-z][A-Za-z]{2,})[\s\-]?(\d+(?:\.\d+)?)")
+_ENTITY_RE = re.compile(r"([A-Za-z][A-Za-z]{2,})[\s\-]?v?[\s\-]?(\d+(?:\.\d+)?)")
+
+# 实体匹配分支的兜底：同实体但不同事件的报道（如"Model 3 软件升级"与"Model 3 遭监管召回"）
+# 不该仅凭共享实体就合并。但不能靠余弦相似度兜底——跨语言/措辞差异极大的同一事件报道
+# （GPT-5.6 那次，词袋几乎不重叠）余弦反而比"同实体不同事件"的报道更低，没有一个固定
+# 阈值能同时接住两边。改用"事件类别词冲突"判断：只有当两条标题分别命中不同类别
+# （如一条是"召回/故障"类，另一条是"发布/更新"类）时才拦截合并；只要有一边没命中任何
+# 类别词，或双方命中同一类别，就仍按实体合并（保留跨语言同事件的救援效果）。
+_EVENT_CATEGORY_TERMS = {
+    "incident": {
+        "召回", "故障", "缺陷", "诉讼", "起火", "禁令", "调查", "处罚", "泄露", "崩溃", "裁员", "停产",
+        "recall", "lawsuit", "ban", "investigation", "fine", "breach", "crash", "layoff", "defect",
+    },
+    "release": {
+        "发布", "推出", "更新", "升级", "上线", "新版",
+        "release", "launch", "update", "upgrade", "unveil", "announce", "debut",
+    },
+}
+
+
+def _event_categories(title):
+    """标题命中的事件类别集合（可能为空，也可能同时属于多个类别）。"""
+    low = title.lower()
+    return {cat for cat, terms in _EVENT_CATEGORY_TERMS.items() if any(t in low for t in terms)}
 
 # 形如"名词+数字"但并非产品名的常见组合，否则 "Part 4"/"Top 10" 会把无关文章并到一起
 _ENTITY_STOPWORDS = frozenset({
@@ -96,6 +119,7 @@ def merge_stories(items, weights_config):
     texts = [f"{it['title']} {it['raw_text'][:200]}" for it in items_sorted]
     vectors = _build_tfidf_vectors(texts)
     entities = [_strong_entities(it["title"]) for it in items_sorted]
+    categories = [_event_categories(it["title"]) for it in items_sorted]
 
     n = len(items_sorted)
     assigned = [-1] * n
@@ -117,9 +141,14 @@ def merge_stories(items, weights_config):
             if t_j - latest_t > window:
                 continue
             # 两条路径都算同一事件：措辞相近(词袋相似度)，或同一时间窗内谈同一个产品/模型
-            same_event = _cosine(vectors[i], vectors[j]) >= threshold
+            # ——但共享实体只是"辅助"信号，若两条标题分别命中互斥的事件类别词（发布 vs 召回
+            # 这类），说明是同一产品的两件不同事情，不该被判成同一故事。
+            cosine = _cosine(vectors[i], vectors[j])
+            same_event = cosine >= threshold
             if not same_event and merge_by_entity and (entities[i] & entities[j]):
-                same_event = True
+                cats_i, cats_j = categories[i], categories[j]
+                conflicting = bool(cats_i) and bool(cats_j) and not (cats_i & cats_j)
+                same_event = not conflicting
             if same_event:
                 assigned[j] = len(clusters)
                 cluster.append(j)

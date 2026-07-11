@@ -60,7 +60,7 @@ jobs:
               exit 0
             fi
             echo "push rejected, rebasing onto latest main (attempt $attempt)"
-            git fetch origin main
+            git fetch origin main || { echo "fetch failed, retrying"; continue; }
             git rebase --strategy-option=theirs origin/main || { git rebase --abort; exit 1; }
           done
           echo "push failed after 3 attempts" >&2

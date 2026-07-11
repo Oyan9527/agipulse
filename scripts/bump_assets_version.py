@@ -21,8 +21,8 @@ DOCS = Path(__file__).resolve().parent.parent / "docs"
 
 # (文件glob, 匹配资源引用的正则)。每个正则必须有 named group `path` 指向不带query的资源路径。
 PATTERNS = [
-    (["*.html"], re.compile(r'(?P<pre>href=")(?P<path>css/[\w./-]+\.css)(?:\?v=[\w.-]+)?(?P<post>")')),
-    (["*.html"], re.compile(r'(?P<pre>src=")(?P<path>js/[\w./-]+\.js)(?:\?v=[\w.-]+)?(?P<post>")')),
+    (["*.html"], re.compile(r'(?P<pre>href=")(?P<path>[\w./-]+\.css)(?:\?v=[\w.-]+)?(?P<post>")')),
+    (["*.html"], re.compile(r'(?P<pre>src=")(?P<path>[\w./-]+\.js)(?:\?v=[\w.-]+)?(?P<post>")')),
     (["js/*.js", "js/components/*.js"],
      re.compile(r'(?P<pre>from ")(?P<path>\.{1,2}/[\w./-]+\.js)(?:\?v=[\w.-]+)?(?P<post>")')),
 ]

@@ -32,6 +32,13 @@ const DIM_LABELS = { day: "24小时", week: "7天", month: "30天" };
 
 export function renderCategoryMomentum({ el, momentum, dim = "day" }) {
   el.innerHTML = "";
+  if (!momentum.length) {
+    const p = document.createElement("p");
+    p.className = "trend-empty";
+    p.textContent = "暂无分类动量数据";
+    el.appendChild(p);
+    return;
+  }
   const max = Math.max(1, ...momentum.map((m) => m.count));
 
   momentum.forEach((m) => {

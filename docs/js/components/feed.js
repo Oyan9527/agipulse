@@ -137,6 +137,7 @@ function buildCardNode(item, idx, template) {
     const media = node.querySelector(".feed-card__media");
     const img = node.querySelector(".feed-card__img");
     img.src = imageUrl;
+    img.alt = item.title || "";
     media.hidden = false;
     img.addEventListener("error", () => { media.hidden = true; }, { once: true });
   }
@@ -155,6 +156,9 @@ function buildCardNode(item, idx, template) {
   if (count > 1) {
     multiEl.textContent = `×${count}`;
     multiEl.hidden = false;
+    const expandId = `feed-card-expand-${idx}`;
+    expandEl.id = expandId;
+    multiEl.setAttribute("aria-controls", expandId);
     const sourceListEl = node.querySelector(".feed-card__source-list");
     (item.sources || []).forEach((s) => {
       const li = document.createElement("li");
@@ -166,7 +170,10 @@ function buildCardNode(item, idx, template) {
       li.appendChild(a);
       sourceListEl.appendChild(li);
     });
-    multiEl.addEventListener("click", () => { expandEl.hidden = !expandEl.hidden; });
+    multiEl.addEventListener("click", () => {
+      expandEl.hidden = !expandEl.hidden;
+      multiEl.setAttribute("aria-expanded", String(!expandEl.hidden));
+    });
   }
 
   return node;

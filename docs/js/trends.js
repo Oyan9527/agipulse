@@ -86,15 +86,33 @@ function renderTrendPanels() {
 }
 
 function setupTrendDimTabs() {
-  els.trendDimTabs.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab");
-    if (!btn) return;
+  const selectTab = (btn) => {
     [...els.trendDimTabs.children].forEach((c) => {
       c.classList.toggle("is-active", c === btn);
       c.setAttribute("aria-selected", String(c === btn));
     });
     state.trendDim = btn.dataset.dim;
     renderTrendPanels();
+  };
+  els.trendDimTabs.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    selectTab(btn);
+  });
+  els.trendDimTabs.addEventListener("keydown", (e) => {
+    const tabs = [...els.trendDimTabs.children];
+    const currentIndex = tabs.indexOf(document.activeElement);
+    if (currentIndex === -1) return;
+    let newIndex;
+    if (e.key === "ArrowRight") newIndex = (currentIndex + 1) % tabs.length;
+    else if (e.key === "ArrowLeft") newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") newIndex = 0;
+    else if (e.key === "End") newIndex = tabs.length - 1;
+    else return;
+    e.preventDefault();
+    const newTab = tabs[newIndex];
+    newTab.focus();
+    selectTab(newTab);
   });
 }
 
@@ -109,15 +127,33 @@ function renderGhTrending() {
 }
 
 function setupGhPeriodTabs() {
-  els.ghPeriodTabs.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab");
-    if (!btn) return;
+  const selectTab = (btn) => {
     [...els.ghPeriodTabs.children].forEach((c) => {
       c.classList.toggle("is-active", c === btn);
       c.setAttribute("aria-selected", String(c === btn));
     });
     state.ghPeriod = btn.dataset.period;
     renderGhTrending();
+  };
+  els.ghPeriodTabs.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    selectTab(btn);
+  });
+  els.ghPeriodTabs.addEventListener("keydown", (e) => {
+    const tabs = [...els.ghPeriodTabs.children];
+    const currentIndex = tabs.indexOf(document.activeElement);
+    if (currentIndex === -1) return;
+    let newIndex;
+    if (e.key === "ArrowRight") newIndex = (currentIndex + 1) % tabs.length;
+    else if (e.key === "ArrowLeft") newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") newIndex = 0;
+    else if (e.key === "End") newIndex = tabs.length - 1;
+    else return;
+    e.preventDefault();
+    const newTab = tabs[newIndex];
+    newTab.focus();
+    selectTab(newTab);
   });
 }
 

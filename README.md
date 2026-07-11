@@ -4,7 +4,7 @@
 
 两个版面：**头版**（`index.html`：头条大字号 + 精选/全部信息流 + 热点雷达 + 今日简报）与**数据版**（`trends.html`：24H 信息密度频谱√缩放、信号量/精选率/信源健康/多源确认指标、**日/周/月三维度**分类动量与趋势关键词、**社媒 AI 热点**（B站/微博/Hacker News/Reddit 上正热的 AI 话题，关键词过滤+英文标题自动翻译）、**GitHub 涨星榜**（近24h 新增 star 最多的仓库））。通用能力：英文标题自动附中文译文、精选分类配额（论文≤10、开源项目保底5）、命令面板搜索（Ctrl/Cmd+K）。界面为中文报纸头版风格：米白纸面、衬线大刊头、朱红强调色、细线分栏。
 
-信源构成（共 308）：152 个 RSS（官方博客/研究机构/高信号个人/科技媒体 52 + 中文媒体与独立博客 100）+ 111 个重点 GitHub 仓库 releases + 19 个 arXiv 分类 + 20 个 Reddit 社区 + 5 组 Hacker News 主题查询。中文源第三批为批量实测导入（媒体 12 + 独立博客 88，AI 标签优先），依赖 DeepSeek 粗筛过滤非 AI 内容。此外另有 5 个独立展示源（`role: social_hot` / `gh_trending`）：百度/B站/知乎热搜、Hacker News 前台、GitHub 涨星榜——不进 AI 打分主流程，仅供数据版对应面板展示。
+信源构成（共 308）：152 个 RSS（官方博客/研究机构/高信号个人/科技媒体 52 + 中文媒体与独立博客 100）+ 111 个重点 GitHub 仓库 releases + 19 个 arXiv 分类 + 20 个 Reddit 社区 + 5 组 Hacker News 主题查询。中文源第三批为批量实测导入（媒体 12 + 独立博客 88，AI 标签优先），依赖 DeepSeek 粗筛过滤非 AI 内容。此外另有 7 个独立展示源（`role: social_hot` / `gh_trending`）：B站 AI 搜索、微博热搜、知乎热榜、Hacker News 前台、Reddit AI（r/singularity）、X AI 机构动态、GitHub 涨星榜——不进 AI 打分主流程，仅供数据版对应面板展示。
 
 对标 [AI News Radar](https://learnprompt.github.io/ai-news-radar/)、[AIHOT](https://aihot.virxact.com/)、[AGI Hunt](https://agihunt.info/) 三个产品的信息覆盖范围与设计思路，细节见 `.claude/plans/` 下的建站方案文档。
 
@@ -149,19 +149,18 @@ git push -u origin main
 
 - GitHub Actions / Pages：Public 仓库完全免费。
 - DeepSeek API：按量计费。以约 700 条/天、每 4 小时跑一次估算，配合两级过滤（粗筛丢弃大部分噪声后才进入更贵的打分调用），日均成本预计在几毛钱人民币以内。
-- **结果缓存**（`docs/data/llm-cache.json`）进一步压低成本：处理窗口是 48 小时，同一条内容在被淘汰出窗口前会被连续抓到多次（每小时一次，最多约48次）；缓存把每条内容的判定结果（prefilter拒绝 / 打分完成）按内容id持久化下来，命中过的下一轮直接复用、不再调用DeepSeek，只有真正首次出现的新内容才会真正花钱调用两级判定——相当于把重复调用次数从"最多48次"降到"1次"。缓存随数据一起提交进仓库，跟着GitHub Actions的每次全新checkout生效，超出48h窗口的旧条目会自动从缓存清理，不会无限增长。
+- **结果缓存**（`docs/data/llm-cache.json`）进一步压低成本：处理窗口是 48 小时，同一条内容在被淘汰出窗口前会被连续抓到多次（每4小时一次，最多约12次）；缓存把每条内容的判定结果（prefilter拒绝 / 打分完成）按内容id持久化下来，命中过的下一轮直接复用、不再调用DeepSeek，只有真正首次出现的新内容才会真正花钱调用两级判定——相当于把重复调用次数从"最多12次"降到"1次"。缓存随数据一起提交进仓库，跟着GitHub Actions的每次全新checkout生效，超出48h窗口的旧条目会自动从缓存清理，不会无限增长。
 
-## Phase 3：补充 X/Twitter、知乎、微信公众号覆盖（可选）
+## Phase 3：补充 X/Twitter 主信息流、微信公众号覆盖（可选）
 
-这几类信源没有稳定免费的官方 API，`config/sources.yaml` 里已经预留了 `status: optional` 的占位源，接入方式是"自建一个转 RSS 的桥接服务，把它的输出 URL 当成普通 RSS 源注册进来"，不需要为它们单独写抓取逻辑：
+X 和知乎的"社媒 AI 热点"面板已经生效（见下方说明），无需额外操作。仍待补的是两个真正的占位源——`config/sources.yaml` 里 `status: optional` 且 `url` 还是 `PLACEHOLDER_...` 的 `rsshub-x-bridge`（X 主信息流）和 `wewe-rss-bridge`（微信公众号），接入方式是"自建一个转 RSS 的桥接服务，把它的输出 URL 当成普通 RSS 源注册进来"，不需要为它们单独写抓取逻辑：
 
-- **X/Twitter**（社媒热点面板用）：自建一个 [RSSHub](https://github.com/DIYgod/RSSHub) 实例（可以另开一个仓库用 GitHub Actions/Railway/Render 免费额度跑），配置好关键词/列表订阅，把输出 RSS 地址填入 `x-ai-social`（数据版"社媒AI热点"用）或 `rsshub-x-bridge`（主信息流用）的 `url` 字段，`status` 改成 `confirmed`。
-- **知乎**（社媒热点面板用）：实测(2026-07-10) `/search/v3` 404、`/hot-lists/total` 401、`/billboard` 页 403，均需登录态或签名头，无免费直连路径。同样通过自建 RSSHub 的 `/zhihu/hot` 或 `/zhihu/search/:keyword` 路由，填入 `zhihu-ai-social` 的 `url` 字段激活。
+- **X/Twitter 主信息流**（区别于下方已生效的"社媒AI热点"面板，这一路是进 AI 打分主流程的）：自建一个 [RSSHub](https://github.com/DIYgod/RSSHub) 实例（可以另开一个仓库用 GitHub Actions/Railway/Render 免费额度跑），配置好关注的创始人/研究员列表订阅，把输出 RSS 地址填入 `rsshub-x-bridge` 的 `url` 字段，`status` 改成 `confirmed`。
 - **微信公众号**（主信息流用）：自建开源的 [wewe-rss](https://github.com/cooderl/wewe-rss)（公众号转 RSS 镜像工具），同样拿到输出的 RSS 地址填进 `wewe-rss-bridge` 条目。
 
 这样"不稳定"信源被隔离在独立部署的桥接服务里，即使它们挂了也不会影响主站抓取流水线。
 
-> 社媒 AI 热点面板目前实际生效的是 **B站**（关键词"AI 大模型"搜索）、**微博**（热搜榜，AI话题上榜与否取决于当天热点，常态是空很正常）、**Hacker News**（前台热榜）、**Reddit**（r/singularity）——都经同一套中英文关键词过滤器（`scripts/ai_relevance.py`）只保留 AI 相关条目，英文标题由 DeepSeek 顺带译成中文。
+> 社媒 AI 热点面板目前实际生效的是 **B站**（关键词"AI 大模型"搜索）、**微博**（热搜榜，AI话题上榜与否取决于当天热点，常态是空很正常）、**知乎**（热榜，走第三方 RSSHub 公共实例 `rsshub.rssforever.com`，实例不稳定时该栏可能留空）、**Hacker News**（前台热榜）、**Reddit**（r/singularity）、**X**（`scripts/fetch/x_syndication_fetcher.py` 直连官方 `syndication.twitter.com` 嵌入时间线端点，非 RSSHub，追踪 OpenAI/AnthropicAI/GoogleDeepMind/perplexity_ai/AIatMeta 五个机构账号）——都经同一套中英文关键词过滤器（`scripts/ai_relevance.py`）只保留 AI 相关条目，英文标题由 DeepSeek 顺带译成中文。
 
 ## 已知限制 / 后续可做的事
 

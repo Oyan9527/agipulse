@@ -19,7 +19,7 @@ DISPATCH = {
     "reddit": reddit_fetcher.fetch,
     "generic_json": generic_json_fetcher.fetch,
     "weibo_hot": social_hot_fetcher.fetch_weibo_hot,
-    "baidu_hot": social_hot_fetcher.fetch_baidu,
+    "baidu_hot": social_hot_fetcher.fetch_baidu,  # 预留/未使用：config/sources.yaml 里目前没有任何 baidu_hot 类型的源
     "bili_hot": social_hot_fetcher.fetch_bili,
     "bili_search": social_hot_fetcher.fetch_bili_search,
     "zhihu_top_search": social_hot_fetcher.fetch_zhihu,

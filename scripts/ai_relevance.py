@@ -26,10 +26,13 @@ _EN_PHRASE_TERMS = [
 ]
 
 # 中文关键词（直接子串匹配）
+# 注意："显卡"/"算力"/"机器人" 不在此列——它们是歧义词，常见于非 AI 语境
+# （显卡促销、比特币挖矿、扫地机器人等），改由 _has_ambiguous_zh_term 结合
+# 上下文判断，避免误判（见下方注释）。
 _ZH_TERMS = [
     "人工智能", "大模型", "大语言模型", "语言模型", "生成式", "生成式ai",
     "智能体", "智能助手", "机器学习", "深度学习", "神经网络", "多模态",
-    "机器人", "具身智能", "自动驾驶", "无人驾驶", "算力", "英伟达", "显卡",
+    "具身智能", "自动驾驶", "无人驾驶", "英伟达",
     "文心", "通义", "千问", "豆包", "混元", "星火", "盘古", "文小言",
     "智谱", "月之暗面", "面壁", "阶跃", "商汤", "旷视", "科大讯飞", "讯飞",
     "百度智能", "算法模型", "aigc", "提示词", "微调", "推理模型", "扩散模型",
@@ -55,9 +58,45 @@ _MODEL_NOISE_RE = re.compile(
 )
 
 
+# 歧义词：字面命中不代表话题相关，需结合上下文，否则会在通用硬件/金融/
+# 消费类新闻里造成误判（strict_source_prefixes 的通用中文源尤其容易踩中）。
+# - "显卡"：多见于纯硬件降价/首发新闻，伴随促销或型号词（跌价/降价/首发价/
+#   开售/RTX/GTX 等）时不计入 AI 信号。
+# - "算力"：比特币/矿机报道里的"挖矿算力"与 AI 算力无关，伴随这类词时不计入。
+# - "机器人"：扫地机器人等消费硬件报道极常见，要求同一标题里还出现别的
+#   真实 AI 信号词（_ZH_TERMS 中的任一词）才计入，否则通用机器人新闻会被
+#   误判为 AI 相关。
+_GPU_SALE_NOISE_RE = re.compile(r"跌价|降价|涨价|首发价|开售|发售|预售|冰点价|优惠价|促销|特价|rtx|gtx")
+_HASHRATE_NOISE_RE = re.compile(r"比特币|挖矿|矿机|以太坊|加密货币|虚拟货币|区块链")
+
+
+def _has_ambiguous_zh_term(low):
+    """歧义中文词是否在当前上下文里应计入 AI 信号（见上方逐词说明）。
+
+    注意："机器人"的共现检查必须在这里自己判断中/英文信号词，不能指望调用方
+    "先查完 _ZH_TERMS 再调用本函数"这个顺序——is_ai_related 正是先查完
+    _ZH_TERMS 才会走到这里，届时 _ZH_TERMS 必然已经不命中，若只检查
+    _ZH_TERMS 共现，这个分支就永远是死代码（机器人+英文AI词的报道会被漏判）。
+    """
+    if "显卡" in low and not _GPU_SALE_NOISE_RE.search(low):
+        return True
+    if "算力" in low and not _HASHRATE_NOISE_RE.search(low):
+        return True
+    if "机器人" in low:
+        has_other_signal = (
+            any(t in low for t in _ZH_TERMS)
+            or any(t in low for t in _EN_PHRASE_TERMS)
+            or bool(_EN_WORD_RE.search(low))
+        )
+        if has_other_signal:
+            return True
+    return False
+
+
 def is_ai_related(text):
     """标题是否与 AI 话题相关。中文子串 + 英文词边界 + 英文短语三路匹配。
-    匹配前先剔除把 AI 当型号名的消费硬件片段（见 _MODEL_NOISE_RE）。
+    匹配前先剔除把 AI 当型号名的消费硬件片段（见 _MODEL_NOISE_RE）；
+    歧义中文词（显卡/算力/机器人）另需上下文判断（见 _has_ambiguous_zh_term）。
     """
     if not text:
         return False
@@ -65,6 +104,8 @@ def is_ai_related(text):
     for t in _ZH_TERMS:
         if t in low:
             return True
+    if _has_ambiguous_zh_term(low):
+        return True
     for t in _EN_PHRASE_TERMS:
         if t in low:
             return True
