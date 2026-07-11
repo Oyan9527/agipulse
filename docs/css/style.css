@@ -643,12 +643,10 @@ a { color: inherit; }
   overflow-wrap: anywhere;
 }
 .social-hot__link:hover { color: var(--accent); }
+/* 社媒热点卡片不分平台统一同一套字号/字重（B站/微博/知乎原生中文标题的样子）——
+   不因为 HN/Reddit/X 的标题走了翻译就单独放大加粗，否则同一个网格里几个平台
+   的卡片看起来像用了不同字体。 */
 
-/* 翻译过的中文标题：比原生标题大一档、加粗，一眼看出"这是译文" */
-.social-hot__link.is-translated {
-  font-size: 0.92rem;
-  font-weight: 700;
-}
 /* 侧栏两个榜单同理（窄栏，同样是译文为主、原题走悬浮提示） */
 .brief-row__title.is-translated,
 .hot-row__title.is-translated {
