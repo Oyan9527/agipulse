@@ -1,136 +1,71 @@
 {
   "date": "2026-07-12",
-  "generated_at": "2026-07-12T02:05:42.416080+00:00",
+  "generated_at": "2026-07-12T06:33:20.261874+00:00",
   "items": [
     {
-      "id": "82211c2794e474ed",
-      "source_id": "arxiv-cs-cl",
-      "title": "A First-Principles Theory of Slow Thinking and Active Perception",
-      "url": "https://arxiv.org/abs/2607.08196",
-      "published_at": "2026-07-11T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08196v1 Announce Type: cross \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgrade",
+      "id": "4249d26078bd9ce6",
+      "source_id": "hn-ai",
+      "title": "Bitemporal provenance in agent memory: What did we believe, when, and why",
+      "url": "https://news.ycombinator.com/item?id=48875749",
+      "published_at": "2026-07-11T20:52:15+00:00",
+      "raw_text": "CozoDB, a transactional relational-graph-vector database with embedded Datalog in Rust, went dormant in December 2024. We hard-forked it as MnesticDB (not official CozoDB), under an MPL-2.0 license, to continue Ziyang Hu and the Cozo Project Authors&#x27; vision of building a &quot;Hippocampus for AI&quot;, or agentic memory.<p>But agentic memory isn&#x27;t a pile of current facts with a log of past decisions. It has to track change over time, and be auditable. We&#x27;ve recently shipped several features that make this possible.<p>First, we added a distinction between valid time (when a fact is true about the world) and transaction time (when the database came to believe it). This allows time travel, the ability to audit the memory at any point and see what knowledge any past decision was based on. Every write draws its transaction time from a crash-safe monotone commit clock, an atomic high-water mark persisted inside the same transaction that commits the data, so the clock can never",
       "category_hint": [
-        "论文研究"
+        "行业动态",
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "从第一性原理推导慢思考与主动感知，理论深度高，对理解LLM推理有启发。",
-      "summary_zh": "作为认知功能第一性原理建模系列的一部分，本文尝试提供思考和感知的数学形式化。它正式推导了慢思考或更一般的主动感知，并涵盖了慢思考大型语言模型的设计、训练和推理。起点是生命系统的第一性原理，通过变分自由能等概念，建立了一个统一的框架，将感知、推理和学习联系起来。该理论为构建更接近人类认知的AI系统提供了数学基础。",
-      "title_zh": "慢思考与主动感知的第一性原理理论",
-      "weighted_score": 0.77,
+      "depth_score": 0.8,
+      "reason_zh": "提出双时态溯源用于智能体记忆，概念新颖，对AI记忆系统设计有启发。",
+      "summary_zh": "CozoDB是一个集成了Datalog的事务性关系-图-向量数据库，于2024年12月进入休眠状态。作者将其硬分叉为MnesticDB（非官方CozoDB），采用MPL-2.0许可，以延续Ziyang Hu和Cozo项目作者构建“AI海马体”或智能体记忆的愿景。文章指出，智能体记忆不应只是一堆当前事实加上过去日志，而应具备双时态溯源能力，即记录“我们相信什么、何时相信、以及为何相信”，从而支持更丰富的推理和审计。",
+      "title_zh": "智能体记忆中的双时态溯源：我们相信什么、何时相信、以及为何相信",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.6,
         "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.5
+        "impact": 0.5,
+        "practical_value": 0.6
       },
-      "story_id": "acd47dd729ba28bb",
+      "story_id": "7f4b22d4282cd496",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.08196"
+          "source_id": "hn-ai",
+          "url": "https://news.ycombinator.com/item?id=48875749"
         }
       ]
     },
     {
-      "id": "9fd4ef39e3944dee",
-      "source_id": "arxiv-cs-cl",
-      "title": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
-      "url": "https://arxiv.org/abs/2607.08057",
-      "published_at": "2026-07-11T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08057v1 Announce Type: cross \nAbstract: Despite the rapid advancements of large language models (LLMs), LLM serving systems remain memory-intensive and costly. The key-value (KV) cache, which stores KV tensors during autoregressive decoding, is crucial for enabling low-latency, high-throughput LLM inference serving. In this survey, we focus on system-aware KV infrastructure for serving LLMs (abbreviated as sKis). We revisit recent work from a system behavior perspective, organizing existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Furthermore, we analyze cross-behavior co-design affinity and behavior-objective links, highlighting future opportunities. Our work systematizes a rapidly evolving area, providing a foundation for understanding and innovating KV cache designs in modern LLM serving infrastructure.",
+      "id": "5833bbe9e9741c9f",
+      "source_id": "zh-juejin",
+      "title": "第 8 章 vLLM/LMDeploy/Triton 适配 DeepSeek 源码改造",
+      "url": "https://juejin.cn/post/7661153673080160265",
+      "published_at": "2026-07-12T03:35:03+00:00",
+      "raw_text": "第 8 章 vLLM/LMDeploy/Triton 适配 DeepSeek 源码改造 8.1 原生推理引擎性能瓶颈定位 8.1.1 性能分析工具 8.1.2 性能瓶颈分析 常见性能瓶颈： KV Ca",
       "category_hint": [
-        "论文研究"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "系统梳理KV缓存优化技术，对LLM推理部署有直接指导意义，适合工程师和研究者。",
-      "summary_zh": "本文综述了面向大语言模型（LLM）服务的高效KV缓存优化方法。KV缓存是自回归解码中存储键值张量的关键组件，直接影响推理延迟和吞吐量。文章从系统角度出发，分类讨论了缓存压缩、量化、预取、共享等优化策略，并分析了不同硬件和部署场景下的权衡。旨在为构建低延迟、高吞吐的LLM推理系统提供系统化的技术参考。",
-      "title_zh": "面向高效大语言模型服务的系统感知KV缓存优化综述",
-      "weighted_score": 0.805,
+      "reason_zh": "深入分析vLLM等推理引擎适配DeepSeek的源码改造，揭示性能瓶颈与优化方法，对工程实践有高价值。",
+      "summary_zh": "本文是系列第8章，聚焦vLLM/LMDeploy/Triton适配DeepSeek的源码改造。首先使用性能分析工具定位原生推理引擎的性能瓶颈，如KV Cache管理、注意力计算等，然后介绍针对性的优化策略，包括算子融合、内存管理、调度优化等。内容详实，适合AI系统工程师阅读。",
+      "title_zh": "第8章 vLLM/LMDeploy/Triton适配DeepSeek源码改造",
+      "weighted_score": 0.565,
       "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.8
-      },
-      "story_id": "4110c8447014945c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.08057"
-        }
-      ]
-    },
-    {
-      "id": "e4abaa2e480cce80",
-      "source_id": "arxiv-cs-cl",
-      "title": "Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents",
-      "url": "https://arxiv.org/abs/2607.08395",
-      "published_at": "2026-07-11T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08395v1 Announce Type: cross \nAbstract: Persistent AI agents extend large language models (LLMs) beyond single-turn interaction into long-lived software systems. Unlike traditional chat assistants, unsafe content in these agents can propagate through persistent state, reusable skills, and tool-mediated interactions, creating a substantially larger semantic attack surface. We observe that most security-critical interactions in such agents are transmitted through natural-language token flows, including memory updates, tool arguments, retrieved files, and inter-component communications. This observation enables a new security formulation: unsafe behavior can be intercepted as risky semantic flows before reaching privileged runtime sinks. Based on this insight, we propose TokenWall, a runtime defense framework that acts as a semantic firewall over agent token flows. TokenWall performs boundary-aware semantic auditing over these flows, constructing structured source-sink audit re",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出持久化AI代理的语义运行时审计方法，填补了安全防护空白，对构建可靠代理系统有重要价值。",
-      "summary_zh": "本文提出Token-Flow Firewall，一种针对持久化AI代理的语义运行时审计框架。与传统聊天助手不同，持久化代理中的不安全内容可通过持久状态、可复用技能和工具交互传播，形成更大的语义攻击面。该方法通过监控token流和语义一致性，实时检测并阻断恶意行为，为长期运行的AI代理系统提供安全保障。",
-      "title_zh": "Token-Flow Firewall：面向持久化AI代理的语义运行时审计",
-      "weighted_score": 0.785,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
+        "source_authority": 0.5,
+        "novelty": 0.6,
+        "impact": 0.5,
         "practical_value": 0.7
       },
-      "story_id": "ec64bc7f67eadabd",
+      "story_id": "851acfb2ac705b3e",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.08395"
-        }
-      ]
-    },
-    {
-      "id": "b716d9e6ad011835",
-      "source_id": "arxiv-cs-cl",
-      "title": "ParamMute: Suppressing Knowledge-Critical FFNs for Faithful Retrieval-Augmented Generation",
-      "url": "https://arxiv.org/abs/2502.15543",
-      "published_at": "2026-07-11T04:00:00+00:00",
-      "raw_text": "arXiv:2502.15543v4 Announce Type: replace \nAbstract: Large language models (LLMs) integrated with retrieval-augmented generation (RAG) have improved factuality by grounding outputs in external evidence. However, they remain susceptible to unfaithful generation, where outputs contradict retrieved context despite its relevance and accuracy. Existing approaches aiming to improve faithfulness primarily focus on enhancing the utilization of external context, but often overlook the persistent influence of internal parametric knowledge during generation. In this work, we investigate the internal mechanisms behind unfaithful generation and identify a subset of mid-to-deep feed-forward networks (FFNs) that are disproportionately activated in such cases. Building on this insight, we propose Parametric Knowledge Muting through FFN Suppression (ParamMute), a framework that improves contextual faithfulness by suppressing the activation of unfaithfulness-associated FFNs and calibrating the model tow",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出抑制知识关键FFN层的方法提升RAG忠实度，思路新颖且实用性强。",
-      "summary_zh": "本文提出ParamMute，一种通过抑制知识关键FFN层来提升检索增强生成（RAG）忠实度的方法。尽管RAG通过外部证据提高了事实性，但模型仍可能生成与检索上下文矛盾的输出。ParamMute识别并抑制LLM中存储先验知识的FFN层，迫使模型更依赖检索到的上下文，从而减少不忠实生成。实验证明该方法有效提升了RAG的忠实度。",
-      "title_zh": "ParamMute：抑制知识关键FFN层以实现忠实检索增强生成",
-      "weighted_score": 0.78,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "9cea15d77a80d58d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2502.15543"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661153673080160265"
         }
       ]
     },
@@ -164,10 +99,244 @@
         {
           "source_id": "36kr",
           "url": "https://36kr.com/p/3891132709206784?f=rss"
+        }
+      ]
+    },
+    {
+      "id": "f1dd95c5b8c0848f",
+      "source_id": "zh-meituan-tech",
+      "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
+      "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
+      "published_at": "2026-07-12T06:27:31.331541+00:00",
+      "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "VitaBench 2.0是首个真实生活场景下的长期动态智能体基准，对评估AI个性化能力有重要价值。",
+      "summary_zh": "LongCat开源了VitaBench 2.0，这是首个面向长期动态用户建模的智能体评测基准。它系统性地评估大语言模型在长期、真实、动态的用户互动中的个性化与主动性能力。该基准填补了现有评测在动态场景下的空白，为智能体研究提供了新的评估标准。",
+      "title_zh": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "a690135a1a48a087",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
+        }
+      ]
+    },
+    {
+      "id": "3428877f21906448",
+      "source_id": "zh-juejin",
+      "title": "一个 5KB 的 skill 文件，三个月砍下 9 万 star，省掉 65% 的 AI 输出 token",
+      "url": "https://juejin.cn/post/7660896500882358324",
+      "published_at": "2026-07-12T04:02:23+00:00",
+      "raw_text": "拆解 caveman 项目，看它如何用一个穴居人语言风格的 Claude Code skill，让 AI agent 的输出 token 减少 65%，以及诚实的数字背后到底省了多少钱",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "拆解caveman项目，用5KB skill文件减少65% token消耗，创意与实用性兼备，值得AI开发者学习。",
+      "summary_zh": "本文拆解caveman项目，它通过一个仅5KB的Claude Code skill文件，让AI agent的输出token减少65%。文章详细分析了其穴居人语言风格的设计原理，以及实际节省的成本。该项目在GitHub上获得9万星，展示了通过巧妙设计大幅降低AI使用成本的潜力。",
+      "title_zh": "一个5KB的skill文件，三个月砍下9万star，省掉65%的AI输出token",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "d29c2d6e34543250",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7660896500882358324"
+        }
+      ]
+    },
+    {
+      "id": "1d9f53f43a0a1937",
+      "source_id": "zh-v2ex",
+      "title": "[grok] Grok Cli 会上传本地 git 仓库的完整提交历史",
+      "url": "https://www.v2ex.com/t/1226640#reply3",
+      "published_at": "2026-07-11T20:20:59+00:00",
+      "raw_text": "我在本地已经复现此行为，官方 Grok Build CLI 在普通消费者登录和服务端默认设置下，即使收到“不要读取或打开任何文件”的提示，也会独立执行：<br /><br />```text<br />git -C &lt;repo&gt; -c pack.threads=1 bundle create &lt;temp-file&gt; HEAD<br />```<br /><br />随后会把 Git bundle 、仓库状态归档以及其他 session/trace 工件传给 `<a href=\"http://cli-chat-proxy.grok.com\" rel=\"nofollow noopener\" target=\"_blank\">cli-chat-proxy.grok.com</a>`，日志把最终对象位置标记为 `gs://grok-code-session-traces/...`。<br /><br />详见： <a href=\"https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547\" rel=\"nofollow noopener\" target=\"_blank\">https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547</a>",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "发现Grok CLI自动上传完整git历史，涉及隐私风险，技术细节清晰，值得开发者警惕。",
+      "summary_zh": "用户发现官方Grok Build CLI在普通消费者登录和服务端默认设置下，即使收到“不要读取或打开任何文件”的提示，也会独立执行git bundle命令，将本地git仓库的完整提交历史打包，并与仓库状态归档等工件一起上传至cli-chat-proxy.grok.com，日志显示最终对象存储在gs://grok-code-session-traces/。这一行为可能泄露敏感代码历史，引发隐私担忧。",
+      "title_zh": "Grok Cli 会上传本地 git 仓库的完整提交历史",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "d0b90baa61962f59",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1226640#reply3"
+        }
+      ]
+    },
+    {
+      "id": "b0fd3e333833c27d",
+      "source_id": "zh-juejin",
+      "title": "我用 AI 写代码快了 3 倍——然后同事的 Code Review 全变成了我的",
+      "url": "https://juejin.cn/post/7661030491453407232",
+      "published_at": "2026-07-12T04:02:41+00:00",
+      "raw_text": "AI 让团队里最快的人变成了最累的人。他们产出翻倍，但 Review 负担暴增、隐形工作在看板上看不到、节省的时间被管理层转化成了更多需求。本文分析了\"AI 效率陷阱\"的完整链条，并给出了建议...",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "揭示AI提升效率背后的隐性负担，对团队管理有深刻洞察，值得所有AI开发者和管理者阅读。",
+      "summary_zh": "本文分析了AI辅助编程带来的“效率陷阱”：虽然个人产出翻倍，但Code Review负担暴增，隐形工作在看板上不可见，节省的时间被管理层转化为更多需求。文章完整梳理了从个人效率提升到团队协作失衡的链条，并给出了平衡效率与可持续性的建议。",
+      "title_zh": "我用AI写代码快了3倍——然后同事的Code Review全变成了我的",
+      "weighted_score": 0.615,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "d6adbfd157b57715",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661030491453407232"
+        }
+      ]
+    },
+    {
+      "id": "386da9e240e84ed5",
+      "source_id": "zh-juejin",
+      "title": "聊一下复杂 Agent 架构的性能优化设计",
+      "url": "https://juejin.cn/post/7660902254526578728",
+      "published_at": "2026-07-12T04:27:08+00:00",
+      "raw_text": "背景：为什么 Agent 系统的性能优化如此困难？ 与传统的 Web 服务不同，AI Agent 系统的请求处理链路具有几个独特的特征，使得性能优化变得格外复杂，我们在开发业务整合Agent时，遇到了",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "系统性地剖析Agent性能优化难点，提供真实工程经验，对开发者极具参考价值。",
+      "summary_zh": "本文深入探讨了复杂Agent架构在性能优化方面面临的独特挑战。与传统的Web服务不同，AI Agent系统的请求处理链路具有多个独特特征，如长上下文依赖、多轮交互状态管理、外部工具调用延迟等，使得性能优化变得格外复杂。作者结合自身在开发业务整合Agent时的实际经验，分析了常见的性能瓶颈，包括模型推理延迟、上下文窗口限制、Agent循环中的冗余计算等，并提出了针对性的优化策略，如异步化处理、缓存机制、任务分解与并行化等。文章还讨论了如何平衡性能与准确性，以及在不同场景下选择合适优化方案的决策框架。",
+      "title_zh": null,
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "30b4530a660f1644",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7660902254526578728"
+        }
+      ]
+    },
+    {
+      "id": "65908dd1ce5d06ff",
+      "source_id": "zh-ithome",
+      "title": "仅用一小时，OpenAI GPT-5.6 Sol Ultra 证明了一个已有 50 年历史的数学猜想",
+      "url": "https://www.ithome.com/0/975/646.htm",
+      "published_at": "2026-07-12T00:44:43+00:00",
+      "raw_text": "<p>IT之家 7 月 12 日消息，OpenAI 于 7 月 10 日宣布，旗下 GPT-5.6 Sol Ultra 模型在不到 1 小时内，成功生成了“循环双覆盖猜想”（Cycle Double Cover Conjecture）的完整证明。这一猜想是图论领域悬而未决长达 50 多年的重要难题。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/5ac4c635-2028-48fc-8d36-0fab3e9f18f8.png?x-bce-process=image/format,f_auto\" /></p><p>OpenAI 已将这份证明以及用于生成证明的提示词（Prompt）以 PDF 形式发布到公司的内容分发网络（CDN），并表示整套数学证明均由 AI 模型独立完成。</p><p>循环双覆盖猜想由数学家 George Szekeres 于 1973 年、Paul Seymour 于 1979 年分别独立提出。该猜想指出：对于任意无桥图（bridgeless graph），是否都存在一组循环（cycle），使得图中的每一条边都恰好出现在两个循环中？</p><p>这一问题长期以来被认为是图论最重要的公开难题之一。</p><p>OpenAI 研究员 Ethan Knight 在 X 平台宣布了这一成果。他表示：“昨天，我们正式向所有用户开放 GPT-5.6 Sol Ultra。今天，我们分享一个消息：它利用 64 个子智能体（subagents），在不到一小时内证明了已有 50 年历史的循环双覆盖猜想。”</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/18f3f85d-09fe-4ad1-a8cd-2c0bd2940afe.png?x-bce-process=image/format,f_auto\" /></p><p>根据 OpenAI 公布的提示词，GPT-5.6 Sol Ultra 被要求：最多同时调用 64 个并行子智能体；",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/5ac4c635-2028-48fc-8d36-0fab3e9f18f8.png?x-bce-process=image/format,f_auto",
+      "category": "模型发布",
+      "content_type": "研究论文",
+      "depth_score": 0.6,
+      "reason_zh": "GPT-5.6 Sol Ultra一小时证明50年数学猜想，展示AI推理能力重大突破。",
+      "summary_zh": "OpenAI宣布，GPT-5.6 Sol Ultra模型在一小时内生成了图论中悬而未决50多年的“循环双覆盖猜想”的完整证明。OpenAI已将证明和提示词以PDF形式发布。这一成果展示了大型语言模型在数学推理方面的巨大潜力。",
+      "title_zh": null,
+      "weighted_score": 0.695,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.3
+      },
+      "story_id": "ed8b6f4e3995b89a",
+      "multi_source_count": 6,
+      "sources": [
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/07/447691.html"
         },
         {
-          "source_id": "36kr",
-          "url": "https://36kr.com/newsflashes/3891162734689031?f=rss"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/iqUrh3vqeO4xszUa1bCd?utm_source=rss&utm_medium=article"
+        },
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/07/447873.html"
+        },
+        {
+          "source_id": "reddit-openai",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1utcwgo/gpt56_sol_is_now_available_for_plus_users_has/"
+        },
+        {
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8061074.html"
+        },
+        {
+          "source_id": "reddit-openai",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1utgszp/i_challenged_gpt_56_sol_and_it_completed_the/"
+        },
+        {
+          "source_id": "reddit-openai",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1utwqhd/gpt_56_i_dont_see_max_thinking_as_an_effort_option/"
+        },
+        {
+          "source_id": "reddit-openai",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1utyf2l/main_gpt_56_terra_or_sol/"
+        },
+        {
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/975/641.htm"
+        },
+        {
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/975/646.htm"
+        },
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1226701#reply2"
         }
       ]
     },
@@ -205,6 +374,39 @@
       ]
     },
     {
+      "id": "d93361873022d5cb",
+      "source_id": "36kr",
+      "title": "全网骂Claude变笨，Anthropic下场揭秘：坑你的不是模型",
+      "url": "https://36kr.com/p/3892222176574211?f=rss",
+      "published_at": "2026-07-12T05:47:23+00:00",
+      "raw_text": "<p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260712/v2_b77ea2d60b684a10ac185e0ffbb5c0f8@5579416_oswg84131oswg1080oswg460_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">换更大的模型就等于更聪明？</p>\n  <p><strong>【导读】</strong>换更大的模型就等于更聪明？这可能是Claude Code用户最深的误会。很多人为此一路换到最贵的Fable，近日，Anthropic，亲手澄清了这个误区。</p>\n  <p>你有没有过这种时刻：Claude Code写代码写砸了，第一反应，就是赶紧换个更强的模型。</p>\n  <p>但这一招，很多时候并不管用，甚至是在白花钱。</p>\n  <p>近日，Anthropic官方发了一篇长文专门来讲这件事。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260712/v2_f0da2168d5e0493eae856ef521034b31@5579416_oswg102418oswg1080oswg618_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">Anthropic官方长文</p>\n  <p>起因是太多人把Claude Code里的两个选项搞混了：</p>\n  <p>一个是模型选择（Model），一个是努力度（Effort）。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260712/v2_f74399f38f3d4a689f0ee87e59238936@5579416_oswg91179oswg1080oswg502_img_000?x-oss-process=image/format,jpg/interlace,1\"",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://img.36krcdn.com/hsossms/20260712/v2_b77ea2d60b684a10ac185e0ffbb5c0f8@5579416_oswg84131oswg1080oswg460_img_000?x-oss-process=image/format,jpg/interlace,1",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "Anthropic官方澄清Claude变笨的误解，揭示模型选择与任务匹配的深层问题。",
+      "summary_zh": "针对用户普遍反映Claude变笨的抱怨，Anthropic官方下场揭秘，指出问题可能不在于模型本身，而在于用户的使用方式。很多人认为换更大的模型（如Fable）就能获得更好结果，但Anthropic澄清这是一个误区。文章分析了Claude Code用户常见的错误做法，例如不根据任务特性选择合适的模型、过度依赖单一模型等。Anthropic建议用户应根据具体任务需求选择模型，并合理配置参数，而不是盲目追求大模型。这一澄清有助于用户更有效地使用Claude系列模型，避免资源浪费。",
+      "title_zh": "全网骂Claude变笨，Anthropic下场揭秘：坑你的不是模型",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "994cd6396f032cda",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "36kr",
+          "url": "https://36kr.com/p/3892222176574211?f=rss"
+        }
+      ]
+    },
+    {
       "id": "43f1e3b928b049e8",
       "source_id": "zh-cnbeta",
       "title": "苹果与OpenAI反目始末：AI硬件野心之下，人才挖角如何演变为法律大战？",
@@ -234,39 +436,6 @@
         {
           "source_id": "zh-cnbeta",
           "url": "https://www.cnbeta.com.tw/articles/tech/1568712.htm"
-        }
-      ]
-    },
-    {
-      "id": "83254b333e180920",
-      "source_id": "zh-v2ex",
-      "title": "[grok] Grok Cli 会上传本地 git 仓库的完整提交历史",
-      "url": "https://www.v2ex.com/t/1226640#reply1",
-      "published_at": "2026-07-11T20:20:59+00:00",
-      "raw_text": "我在本地已经复现此行为，官方 Grok Build CLI 在普通消费者登录和服务端默认设置下，即使收到“不要读取或打开任何文件”的提示，也会独立执行：<br /><br />```text<br />git -C &lt;repo&gt; -c pack.threads=1 bundle create &lt;temp-file&gt; HEAD<br />```<br /><br />随后会把 Git bundle 、仓库状态归档以及其他 session/trace 工件传给 `<a href=\"http://cli-chat-proxy.grok.com\" rel=\"nofollow noopener\" target=\"_blank\">cli-chat-proxy.grok.com</a>`，日志把最终对象位置标记为 `gs://grok-code-session-traces/...`。<br /><br />详见： <a href=\"https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547\" rel=\"nofollow noopener\" target=\"_blank\">https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547</a>",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "揭露Grok CLI自动上传本地Git仓库完整提交历史的安全隐患，对使用AI编程助手的开发者有重要警示。",
-      "summary_zh": "用户发现Grok Build CLI在普通消费者登录和服务端默认设置下，即使收到“不要读取或打开任何文件”的提示，也会独立执行git bundle命令，将本地Git仓库的完整提交历史打包，连同仓库状态归档和其他session/trace工件上传至cli-chat-proxy.grok.com，日志显示最终对象存储在gs://grok-code-session-traces/。该行为可能泄露敏感代码历史，引发隐私担忧。",
-      "title_zh": "Grok CLI 会上传本地 Git 仓库的完整提交历史",
-      "weighted_score": 0.61,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "a97aaaaef748cd69",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1226640#reply1"
         }
       ]
     }

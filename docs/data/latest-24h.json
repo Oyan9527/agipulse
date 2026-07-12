@@ -4,7 +4,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-12T02:00:37.249944+00:00",
+    "published_at": "2026-07-12T06:27:31.331458+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -29,108 +29,6 @@
       {
         "source_id": "zh-meituan-tech",
         "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "9fd4ef39e3944dee",
-    "source_id": "arxiv-cs-cl",
-    "title": "Towards Efficient Large Language Model Serving: A Survey on System-Aware KV Cache Optimization",
-    "url": "https://arxiv.org/abs/2607.08057",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08057v1 Announce Type: cross \nAbstract: Despite the rapid advancements of large language models (LLMs), LLM serving systems remain memory-intensive and costly. The key-value (KV) cache, which stores KV tensors during autoregressive decoding, is crucial for enabling low-latency, high-throughput LLM inference serving. In this survey, we focus on system-aware KV infrastructure for serving LLMs (abbreviated as sKis). We revisit recent work from a system behavior perspective, organizing existing efforts into three dimensions: execution and scheduling (temporal), placement and migration (spatial), and representation and retention (structural). Furthermore, we analyze cross-behavior co-design affinity and behavior-objective links, highlighting future opportunities. Our work systematizes a rapidly evolving area, providing a foundation for understanding and innovating KV cache designs in modern LLM serving infrastructure.",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "系统梳理KV缓存优化技术，对LLM推理部署有直接指导意义，适合工程师和研究者。",
-    "summary_zh": "本文综述了面向大语言模型（LLM）服务的高效KV缓存优化方法。KV缓存是自回归解码中存储键值张量的关键组件，直接影响推理延迟和吞吐量。文章从系统角度出发，分类讨论了缓存压缩、量化、预取、共享等优化策略，并分析了不同硬件和部署场景下的权衡。旨在为构建低延迟、高吞吐的LLM推理系统提供系统化的技术参考。",
-    "title_zh": "面向高效大语言模型服务的系统感知KV缓存优化综述",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.8
-    },
-    "story_id": "4110c8447014945c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.08057"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6e1951b5a243d6b1",
-    "source_id": "arxiv-cs-cl",
-    "title": "UltraX: Refining Pre-Training Data at Scale with Adaptive Programmatic Editing",
-    "url": "https://arxiv.org/abs/2607.08646",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08646v1 Announce Type: new \nAbstract: As available training data approaches its physical limit, gains from Scaling Laws have begun to diminish. Consequently, improving Large Language Models (LLMs) now depends less on data expansion and more on higher-quality data utilization. However, in the context of large-scale corpora, existing refinement methodologies face significant limitations in quality, efficiency, and reliability: Rule-based approaches are constrained by fixed heuristics and struggle with instance-level variations; LLM-based approaches improve quality but fail to meet the efficiency and reliability requirements of large-scale data processing. To address these challenges, we propose UltraX, a function-calling refinement framework for large-scale pre-training data that completes the editing function space by introducing insertion in addition to deletion and modification, enabling fine-grained instance-level editing. Specifically, UltraX builds a reliable program-sup",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出自适应编程编辑方法UltraX，大规模优化预训练数据质量，应对Scaling Law收益递减，实用性强。",
-    "summary_zh": "随着训练数据接近物理极限，Scaling Law收益开始递减，改进LLM更依赖于数据质量而非数量。现有数据精炼方法在大规模语料上存在局限。本文提出UltraX，一种自适应编程编辑方法，通过自动识别低质量数据并应用针对性编辑（如去重、纠错、格式化），在大规模语料上显著提升数据质量。实验表明，使用UltraX精炼后的数据训练的模型在下游任务上表现更优。",
-    "title_zh": "UltraX：通过自适应编程编辑大规模精炼预训练数据",
-    "weighted_score": 0.8,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "92e9631ce989b74f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.08646"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "e4abaa2e480cce80",
-    "source_id": "arxiv-cs-cl",
-    "title": "Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents",
-    "url": "https://arxiv.org/abs/2607.08395",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08395v1 Announce Type: cross \nAbstract: Persistent AI agents extend large language models (LLMs) beyond single-turn interaction into long-lived software systems. Unlike traditional chat assistants, unsafe content in these agents can propagate through persistent state, reusable skills, and tool-mediated interactions, creating a substantially larger semantic attack surface. We observe that most security-critical interactions in such agents are transmitted through natural-language token flows, including memory updates, tool arguments, retrieved files, and inter-component communications. This observation enables a new security formulation: unsafe behavior can be intercepted as risky semantic flows before reaching privileged runtime sinks. Based on this insight, we propose TokenWall, a runtime defense framework that acts as a semantic firewall over agent token flows. TokenWall performs boundary-aware semantic auditing over these flows, constructing structured source-sink audit re",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出持久化AI代理的语义运行时审计方法，填补了安全防护空白，对构建可靠代理系统有重要价值。",
-    "summary_zh": "本文提出Token-Flow Firewall，一种针对持久化AI代理的语义运行时审计框架。与传统聊天助手不同，持久化代理中的不安全内容可通过持久状态、可复用技能和工具交互传播，形成更大的语义攻击面。该方法通过监控token流和语义一致性，实时检测并阻断恶意行为，为长期运行的AI代理系统提供安全保障。",
-    "title_zh": "Token-Flow Firewall：面向持久化AI代理的语义运行时审计",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "ec64bc7f67eadabd",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.08395"
       }
     ],
     "curated": true
@@ -165,10 +63,6 @@
       {
         "source_id": "36kr",
         "url": "https://36kr.com/p/3891132709206784?f=rss"
-      },
-      {
-        "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3891162734689031?f=rss"
       }
     ],
     "curated": true
@@ -208,192 +102,22 @@
     "curated": true
   },
   {
-    "id": "b716d9e6ad011835",
-    "source_id": "arxiv-cs-cl",
-    "title": "ParamMute: Suppressing Knowledge-Critical FFNs for Faithful Retrieval-Augmented Generation",
-    "url": "https://arxiv.org/abs/2502.15543",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2502.15543v4 Announce Type: replace \nAbstract: Large language models (LLMs) integrated with retrieval-augmented generation (RAG) have improved factuality by grounding outputs in external evidence. However, they remain susceptible to unfaithful generation, where outputs contradict retrieved context despite its relevance and accuracy. Existing approaches aiming to improve faithfulness primarily focus on enhancing the utilization of external context, but often overlook the persistent influence of internal parametric knowledge during generation. In this work, we investigate the internal mechanisms behind unfaithful generation and identify a subset of mid-to-deep feed-forward networks (FFNs) that are disproportionately activated in such cases. Building on this insight, we propose Parametric Knowledge Muting through FFN Suppression (ParamMute), a framework that improves contextual faithfulness by suppressing the activation of unfaithfulness-associated FFNs and calibrating the model tow",
+    "id": "f1dd95c5b8c0848f",
+    "source_id": "zh-meituan-tech",
+    "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
+    "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
+    "published_at": "2026-07-12T06:27:31.331541+00:00",
+    "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
     "category_hint": [
-      "论文研究"
+      "技巧与观点"
     ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出抑制知识关键FFN层的方法提升RAG忠实度，思路新颖且实用性强。",
-    "summary_zh": "本文提出ParamMute，一种通过抑制知识关键FFN层来提升检索增强生成（RAG）忠实度的方法。尽管RAG通过外部证据提高了事实性，但模型仍可能生成与检索上下文矛盾的输出。ParamMute识别并抑制LLM中存储先验知识的FFN层，迫使模型更依赖检索到的上下文，从而减少不忠实生成。实验证明该方法有效提升了RAG的忠实度。",
-    "title_zh": "ParamMute：抑制知识关键FFN层以实现忠实检索增强生成",
-    "weighted_score": 0.78,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "9cea15d77a80d58d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2502.15543"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "aa77cd5c2175dedc",
-    "source_id": "arxiv-cs-cl",
-    "title": "Less Is More: Reducing Token Counts Without Compromising Performance",
-    "url": "https://arxiv.org/abs/2506.15138",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2506.15138v2 Announce Type: replace \nAbstract: Tokenization directly affects the inference efficiency of large language models, since fragmented tokenization increases sequence length and generation cost. Although longer, multi-word tokens can reduce fertility, naively adding them often degrades language model performance. We propose Thunder-Tok, a subword tokenizer that reduces fertility while preserving downstream performance. Thunder-Tok first constructs a large seed vocabulary from corpus substrings and filters structurally incomplete candidates, including invalid Unicode byte fragments and word-boundary violations. It then prunes the seed vocabulary using a likelihood-based token score derived from a uniform Jensen lower bound of the training-data probability. Experiments show that Thunder-Tok reduces fertility by approximately 25% in English and 9% in Korean compared with the standard BPE tokenizer while maintaining competitive performance.",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
+    "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.7,
-    "reason_zh": "提出Thunder-Tok分词器，在减少token数量的同时保持性能，对推理效率提升有直接帮助。",
-    "summary_zh": "本文提出Thunder-Tok，一种降低token生育率（fertility）的子词分词器。token化直接影响LLM推理效率，碎片化token增加序列长度和生成成本。Thunder-Tok通过设计更长的多词token，在减少token数量的同时避免性能下降。实验表明，该分词器在多个任务上保持甚至提升模型性能，同时显著降低推理成本。",
-    "title_zh": "少即是多：在不牺牲性能的前提下减少token数量",
-    "weighted_score": 0.78,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "b2535398f466f6cd",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2506.15138"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d931238cd9308a2e",
-    "source_id": "arxiv-cs-cl",
-    "title": "Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems",
-    "url": "https://arxiv.org/abs/2607.08010",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08010v1 Announce Type: new \nAbstract: Production LLM agents often waste latency and reliability by regenerating code for the same procedural steps on every request. We replace this inference-time coding loop with an agentic tool-making pipeline that compiles repeated SOP steps into validated, versioned tools before deployment. The tool-maker grounds synthesis in the live environment as it collects execution traces, observes backend schemas and values, generates candidate tools, and repairs them against labeled cases. At runtime, the production agent calls these tools directly and falls back to code generation only when needed. We deploy the approach in a Fulfillment Center alarm-triage system, where an agent diagnoses alarms against a 44-node SOP over heterogeneous metric backends. In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53% by suppressing run-to-run variance in repeated steps. Because tools ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出工具制造范式替代推理时代码循环，将重复SOP步骤编译为预验证工具，显著降低延迟并提升可靠性。",
-    "summary_zh": "本文针对生产环境中LLM agent因每次请求重新生成相同过程代码而导致的延迟和可靠性问题，提出一种agentic工具制造流水线。该流水线在部署前将重复的标准操作步骤（SOP）编译为经过验证、版本化的工具，从而避免推理时的代码循环。工具制造者基于实时环境进行合成，确保工具的准确性和适应性。实验表明该方法大幅降低了延迟并提升了系统可靠性。",
-    "title_zh": "低延迟系统中的工具制造与自演化LLM Agent",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "4e22d527cdd588ea",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.08010"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "de7d82246ceb9070",
-    "source_id": "arxiv-cs-cl",
-    "title": "When the Judge Changes, So Does the Measurement: Auditing LLM-as-Judge Reliability",
-    "url": "https://arxiv.org/abs/2607.08535",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08535v1 Announce Type: new \nAbstract: An LLM-as-judge score can move even when the candidate responses stay fixed, simply because the evaluator has changed. We treat this evaluator-replacement ambiguity as a measurement-validity problem. Across four judgment datasets, we compare two upgrade paths available in practice: scaling Qwen3 dense judges from 1.7B to 32B parameters and moving across MiniMax M2-M2.7 released APIs. The main pattern is that judge upgrades are not interchangeable: only Qwen3 1.7B to 4B gives a robust adjacent gain, while MiniMax adjacent releases do not. Stronger judges reduce but do not remove position and verbosity bias. Repeated-sample juries add little when errors are correlated. Structured debate can move decisions substantially, but without parser and fallback logs those shifts cannot be attributed to deliberation. We argue that LLM-as-judge reports should include dataset slices, bias probes, error-dependence estimates, and protocol audit trails.",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "系统审计LLM作为裁判的可靠性，揭示评估者更换导致评分变化的问题，对模型评估实践有重要指导。",
-    "summary_zh": "LLM作为裁判的评分可能因评估者改变而变动，即使候选回答保持不变。本文将这种评估者替换歧义视为测量有效性问题。在四个判断数据集上，比较了两种实际升级路径：扩展Qwen3密集裁判从1.7B到32B参数，以及从密集模型切换到MoE模型。结果发现，不同评估者导致评分不一致，且模型规模增大不一定提高可靠性，强调了审计LLM裁判的必要性。",
-    "title_zh": "当裁判改变，测量也随之改变：审计LLM作为裁判的可靠性",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "37c985a912411828",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.08535"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "82211c2794e474ed",
-    "source_id": "arxiv-cs-cl",
-    "title": "A First-Principles Theory of Slow Thinking and Active Perception",
-    "url": "https://arxiv.org/abs/2607.08196",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08196v1 Announce Type: cross \nAbstract: As part of a series on first-principles modeling of cognitive functions, this paper attempts to provide a mathematical formulation of thinking and perception. It formally derives slow thinking or more generally, active perception, and encompasses the design, training and inference of slow thinking large language models. Our starting point is the lifting and projection of probability distributions on the observable and latent spaces, with the objective of representing complex data distributions by simple function families such as neural networks. A theory called \"active lifting\" is proposed, based on the sampling of latent sequences and an intrinsic drive to reduce uncertainty with maximum rate. It derives a large design space, containing the slow thinking models in a subspace that we call the static theory. These models are positioned on the representation hierarchy and sampler hierarchy induced by the static theory, and can be upgrade",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "从第一性原理推导慢思考与主动感知，理论深度高，对理解LLM推理有启发。",
-    "summary_zh": "作为认知功能第一性原理建模系列的一部分，本文尝试提供思考和感知的数学形式化。它正式推导了慢思考或更一般的主动感知，并涵盖了慢思考大型语言模型的设计、训练和推理。起点是生命系统的第一性原理，通过变分自由能等概念，建立了一个统一的框架，将感知、推理和学习联系起来。该理论为构建更接近人类认知的AI系统提供了数学基础。",
-    "title_zh": "慢思考与主动感知的第一性原理理论",
-    "weighted_score": 0.77,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "acd47dd729ba28bb",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.08196"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a9327fbb6965e165",
-    "source_id": "arxiv-cs-cl",
-    "title": "IMProofBench: Benchmarking AI on Research-Level Mathematical Proof Generation",
-    "url": "https://arxiv.org/abs/2509.26076",
-    "published_at": "2026-07-11T04:00:00+00:00",
-    "raw_text": "arXiv:2509.26076v2 Announce Type: replace \nAbstract: As the mathematical capabilities of large language models (LLMs) improve, it becomes increasingly important to evaluate their performance on research-level tasks at the frontier of mathematical knowledge. However, existing benchmarks are limited, as they focus solely on final-answer questions or high-school competition problems. To address this gap, we introduce IMProofBench, a private benchmark consisting of 77 peer-reviewed problems developed by expert mathematicians. Each problem requires a detailed proof and is paired with subproblems that have final answers, supporting both an evaluation by human experts and a large-scale quantitative analysis through automated grading. Furthermore, unlike prior benchmarks, the evaluation setup simulates a realistic research environment: models operate in an agentic framework with tools like web search for literature review and mathematical software such as SageMath. Our results show that curren",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出研究级数学证明生成基准，填补了现有基准仅关注高中竞赛题的空白。",
-    "summary_zh": "本文提出IMProofBench，一个评估LLM在研究级数学证明生成能力上的基准。现有数学基准多聚焦于最终答案问题或高中竞赛题，无法衡量模型在数学前沿的推理能力。IMProofBench包含来自真实研究论文的证明任务，要求模型生成完整的证明步骤，为评估LLM的高级数学推理提供了更具挑战性的测试平台。",
-    "title_zh": "IMProofBench：评估AI在研究级数学证明生成上的基准",
+    "reason_zh": "VitaBench 2.0是首个真实生活场景下的长期动态智能体基准，对评估AI个性化能力有重要价值。",
+    "summary_zh": "LongCat开源了VitaBench 2.0，这是首个面向长期动态用户建模的智能体评测基准。它系统性地评估大语言模型在长期、真实、动态的用户互动中的个性化与主动性能力。该基准填补了现有评测在动态场景下的空白，为智能体研究提供了新的评估标准。",
+    "title_zh": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
     "weighted_score": 0.765,
     "score_breakdown": {
       "source_authority": 0.9,
@@ -401,12 +125,12 @@
       "impact": 0.7,
       "practical_value": 0.6
     },
-    "story_id": "cfd25a55824bfe7f",
+    "story_id": "a690135a1a48a087",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2509.26076"
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
       }
     ],
     "curated": true
@@ -416,7 +140,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-12T02:00:37.250081+00:00",
+    "published_at": "2026-07-12T06:27:31.331594+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
@@ -446,78 +170,144 @@
     "curated": true
   },
   {
-    "id": "fad7e915aa9520fe",
-    "source_id": "gh-litellm",
-    "title": "BerriAI/litellm v1.93.0-rc.1",
-    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-rc.1",
-    "published_at": "2026-07-12T01:31:27+00:00",
-    "raw_text": "## Verify Docker Image Signature\n\nAll LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0).\n\n**Verify using the pinned commit hash (recommended):**\n\nA commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key:\n\n```bash\ncosign verify \\\n  --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\\n  ghcr.io/berriai/litellm:v1.93.0-rc.1\n```\n\n**Verify using the release tag (convenience):**\n\nTags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules:\n\n```bash\ncosign verify \\\n  --key https://raw.githubusercontent.com/BerriAI/litellm/v1.93.0-rc.1/cosign.pub \\\n  ghcr.io/berriai/litellm:v1.93.0-rc.1\n```\n\nExpected out",
+    "id": "65908dd1ce5d06ff",
+    "source_id": "zh-ithome",
+    "title": "仅用一小时，OpenAI GPT-5.6 Sol Ultra 证明了一个已有 50 年历史的数学猜想",
+    "url": "https://www.ithome.com/0/975/646.htm",
+    "published_at": "2026-07-12T00:44:43+00:00",
+    "raw_text": "<p>IT之家 7 月 12 日消息，OpenAI 于 7 月 10 日宣布，旗下 GPT-5.6 Sol Ultra 模型在不到 1 小时内，成功生成了“循环双覆盖猜想”（Cycle Double Cover Conjecture）的完整证明。这一猜想是图论领域悬而未决长达 50 多年的重要难题。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/5ac4c635-2028-48fc-8d36-0fab3e9f18f8.png?x-bce-process=image/format,f_auto\" /></p><p>OpenAI 已将这份证明以及用于生成证明的提示词（Prompt）以 PDF 形式发布到公司的内容分发网络（CDN），并表示整套数学证明均由 AI 模型独立完成。</p><p>循环双覆盖猜想由数学家 George Szekeres 于 1973 年、Paul Seymour 于 1979 年分别独立提出。该猜想指出：对于任意无桥图（bridgeless graph），是否都存在一组循环（cycle），使得图中的每一条边都恰好出现在两个循环中？</p><p>这一问题长期以来被认为是图论最重要的公开难题之一。</p><p>OpenAI 研究员 Ethan Knight 在 X 平台宣布了这一成果。他表示：“昨天，我们正式向所有用户开放 GPT-5.6 Sol Ultra。今天，我们分享一个消息：它利用 64 个子智能体（subagents），在不到一小时内证明了已有 50 年历史的循环双覆盖猜想。”</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/18f3f85d-09fe-4ad1-a8cd-2c0bd2940afe.png?x-bce-process=image/format,f_auto\" /></p><p>根据 OpenAI 公布的提示词，GPT-5.6 Sol Ultra 被要求：最多同时调用 64 个并行子智能体；",
     "category_hint": [
-      "开源项目"
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/5ac4c635-2028-48fc-8d36-0fab3e9f18f8.png?x-bce-process=image/format,f_auto",
+    "category": "模型发布",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "GPT-5.6 Sol Ultra一小时证明50年数学猜想，展示AI推理能力重大突破。",
+    "summary_zh": "OpenAI宣布，GPT-5.6 Sol Ultra模型在一小时内生成了图论中悬而未决50多年的“循环双覆盖猜想”的完整证明。OpenAI已将证明和提示词以PDF形式发布。这一成果展示了大型语言模型在数学推理方面的巨大潜力。",
+    "title_zh": null,
+    "weighted_score": 0.695,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "ed8b6f4e3995b89a",
+    "multi_source_count": 6,
+    "sources": [
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/07/447691.html"
+      },
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/iqUrh3vqeO4xszUa1bCd?utm_source=rss&utm_medium=article"
+      },
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/07/447873.html"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1utcwgo/gpt56_sol_is_now_available_for_plus_users_has/"
+      },
+      {
+        "source_id": "zh-tmtpost",
+        "url": "https://www.tmtpost.com/8061074.html"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1utgszp/i_challenged_gpt_56_sol_and_it_completed_the/"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1utwqhd/gpt_56_i_dont_see_max_thinking_as_an_effort_option/"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1utyf2l/main_gpt_56_terra_or_sol/"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/975/641.htm"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/975/646.htm"
+      },
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226701#reply2"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "3428877f21906448",
+    "source_id": "zh-juejin",
+    "title": "一个 5KB 的 skill 文件，三个月砍下 9 万 star，省掉 65% 的 AI 输出 token",
+    "url": "https://juejin.cn/post/7660896500882358324",
+    "published_at": "2026-07-12T04:02:23+00:00",
+    "raw_text": "拆解 caveman 项目，看它如何用一个穴居人语言风格的 Claude Code skill，让 AI agent 的输出 token 减少 65%，以及诚实的数字背后到底省了多少钱",
+    "category_hint": [
+      "技巧与观点"
     ],
     "image_url": null,
     "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "LiteLLM新版本发布，提供Docker镜像签名验证，对开发者有实用价值。",
-    "summary_zh": "BerriAI/litellm发布了v1.93.0-rc.1版本。该版本所有Docker镜像均使用cosign进行签名，每个版本使用相同的密钥进行签名。推荐使用固定的commit哈希进行验证，因为commit哈希是加密不可变的。此更新增强了安全性，对使用LiteLLM的开发者具有实用价值。",
-    "title_zh": "BerriAI/litellm v1.93.0-rc.1",
-    "weighted_score": 0.63,
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "拆解caveman项目，用5KB skill文件减少65% token消耗，创意与实用性兼备，值得AI开发者学习。",
+    "summary_zh": "本文拆解caveman项目，它通过一个仅5KB的Claude Code skill文件，让AI agent的输出token减少65%。文章详细分析了其穴居人语言风格的设计原理，以及实际节省的成本。该项目在GitHub上获得9万星，展示了通过巧妙设计大幅降低AI使用成本的潜力。",
+    "title_zh": "一个5KB的skill文件，三个月砍下9万star，省掉65%的AI输出token",
+    "weighted_score": 0.66,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.4,
-      "practical_value": 0.7
+      "source_authority": 0.5,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.8
     },
-    "story_id": "23bb1e4065862e7e",
+    "story_id": "d29c2d6e34543250",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-litellm",
-        "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-dev.3"
-      },
-      {
-        "source_id": "gh-litellm",
-        "url": "https://github.com/BerriAI/litellm/releases/tag/v1.91.2"
-      },
-      {
-        "source_id": "gh-litellm",
-        "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-rc.1"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7660896500882358324"
       }
     ],
     "curated": true,
     "gate_backfill": true
   },
   {
-    "id": "9cb62c08f685880e",
-    "source_id": "gh-browser-use",
-    "title": "browser-use/browser-use 0.13.4",
-    "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.4",
-    "published_at": "2026-07-11T18:50:05+00:00",
-    "raw_text": "## What's Changed\n- MCP server for CLI 3.0: shared MCP runner, `max_dim` guard.\n- Fix navigation readiness detection: per-target lifecycle event storage, and handle same-document navigations without burning the readiness timeout.\n- Fix markdown extraction destroying URLs and dropping long link lines.\n- Detect LLM output truncation instead of failing with misleading parse errors, and let truncation errors switch to the fallback LLM.\n- Keep plain BrowserErrors recoverable and preserve structured error memory through execute_action.\n- Fix visibility check mutating shared snapshot bounds.\n- Pin Browser Harness to `0.1.5` (Windows reliability fixes, cloud-browser suggestion).\n- CLI polish: shim for legacy CLI commands, hints for unknown commands, faster startup.\n- Restructure README quickstart around the CLI and Python library paths.\n\n**Full Changelog**: https://github.com/browser-use/browser-use/compare/0.13.3...0.13.4",
+    "id": "1d9f53f43a0a1937",
+    "source_id": "zh-v2ex",
+    "title": "[grok] Grok Cli 会上传本地 git 仓库的完整提交历史",
+    "url": "https://www.v2ex.com/t/1226640#reply3",
+    "published_at": "2026-07-11T20:20:59+00:00",
+    "raw_text": "我在本地已经复现此行为，官方 Grok Build CLI 在普通消费者登录和服务端默认设置下，即使收到“不要读取或打开任何文件”的提示，也会独立执行：<br /><br />```text<br />git -C &lt;repo&gt; -c pack.threads=1 bundle create &lt;temp-file&gt; HEAD<br />```<br /><br />随后会把 Git bundle 、仓库状态归档以及其他 session/trace 工件传给 `<a href=\"http://cli-chat-proxy.grok.com\" rel=\"nofollow noopener\" target=\"_blank\">cli-chat-proxy.grok.com</a>`，日志把最终对象位置标记为 `gs://grok-code-session-traces/...`。<br /><br />详见： <a href=\"https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547\" rel=\"nofollow noopener\" target=\"_blank\">https://gist.github.com/cereblab/dc9a40bc26120f4540e4e09b75ffb547</a>",
     "category_hint": [
-      "开源项目"
+      "技巧与观点"
     ],
     "image_url": null,
     "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "browser-use 新版本修复了导航检测、Markdown 提取等关键问题，对使用该工具的开发者有直接帮助。",
-    "summary_zh": "browser-use 0.13.4 版本发布，主要修复了导航就绪检测（按目标存储生命周期事件，处理同文档导航避免超时）、Markdown 提取破坏 URL 和丢弃长链接行的问题。同时改进了 LLM 输出截断检测，避免误导性解析错误，并允许截断错误切换到备用 LLM。此外，保留了纯 BrowserErrors 的处理。这些修复提升了工具的稳定性和可用性。",
-    "title_zh": null,
-    "weighted_score": 0.63,
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "发现Grok CLI自动上传完整git历史，涉及隐私风险，技术细节清晰，值得开发者警惕。",
+    "summary_zh": "用户发现官方Grok Build CLI在普通消费者登录和服务端默认设置下，即使收到“不要读取或打开任何文件”的提示，也会独立执行git bundle命令，将本地git仓库的完整提交历史打包，并与仓库状态归档等工件一起上传至cli-chat-proxy.grok.com，日志显示最终对象存储在gs://grok-code-session-traces/。这一行为可能泄露敏感代码历史，引发隐私担忧。",
+    "title_zh": "Grok Cli 会上传本地 git 仓库的完整提交历史",
+    "weighted_score": 0.64,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.4,
+      "source_authority": 0.5,
+      "novelty": 0.8,
+      "impact": 0.6,
       "practical_value": 0.7
     },
-    "story_id": "63a6ef7855cb0c7a",
+    "story_id": "d0b90baa61962f59",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-browser-use",
-        "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.4"
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226640#reply3"
       }
     ],
     "curated": true,
