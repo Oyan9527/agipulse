@@ -1,5 +1,47 @@
 [
   {
+    "id": "ad4dc8ab3db6e853",
+    "source_id": "reddit-localllama",
+    "title": "Working around Qwen3.6-27B's tool-call failures and looping",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uue278/working_around_qwen3627bs_toolcall_failures_and/",
+    "published_at": "2026-07-12T12:24:34+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Let's start a discussion about what can be done to make local models more reliable.</p> <p>I've been using Qwen3.6-27B a lot lately, and have noticed the same thing that many others talk about here, which is the tool-call failures and looping that really gets in the way of being able to use what is otherwise a pretty intelligent mode as a fully local stand-in for some of the frontier models.</p> <p>I found that I have to watch it like a hawk constantly, otherwise it'll start to loop after a while, or just randomly stop with a tool-call hallucination.</p> <p>I managed to work around this issue by creating an extension to the Pi coding agent, that monitors the JSON stream for looping, as well as checking to see if the user's goal has been reached, and if it hasn't and the main model has stopped, then it'll automatically inject some prompts encouraging the model to continue.</p> <p>That was my attempt to solve the issue and it seems to work pretty well. I",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "深入讨论Qwen3.6-27B工具调用失败和循环问题的解决方案，对本地模型用户极具实用价值。",
+    "summary_zh": "Reddit用户发起讨论，探讨如何提高本地模型的可靠性，特别是针对Qwen3.6-27B模型在工具调用时出现的失败和循环问题。用户分享了实际使用中的观察，并寻求社区建议。讨论可能涉及调整采样参数、优化提示词、使用外部工具链等方法。该问题普遍存在于本地模型中，因此解决方案对其他模型也有参考意义。",
+    "title_zh": "解决Qwen3.6-27B工具调用失败和循环问题",
+    "weighted_score": 0.58,
+    "score_breakdown": {
+      "source_authority": 0.5,
+      "novelty": 0.6,
+      "impact": 0.4,
+      "practical_value": 0.9
+    },
+    "story_id": "e64015dace6f5196",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1utb6io/qwen36_35ba3b_q8_0_no_kv_quant_single_prompt_in/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uue278/working_around_qwen3627bs_toolcall_failures_and/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uueuks/if_you_use_open_code_or_other_agenting_programs/"
+      }
+    ]
+  },
+  {
     "id": "fad7e915aa9520fe",
     "source_id": "gh-litellm",
     "title": "BerriAI/litellm v1.93.0-rc.1",
@@ -33,240 +75,6 @@
       {
         "source_id": "gh-litellm",
         "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-rc.1"
-      }
-    ]
-  },
-  {
-    "id": "e7fba57de10c4cc9",
-    "source_id": "techcrunch-ai",
-    "title": "OpenAI bets on families as ChatGPT goes deeper into households",
-    "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
-    "published_at": "2026-07-11T14:13:00+00:00",
-    "raw_text": "ChatGPT is hiring a dedicated product manager to build experiences for families, caregivers, and older adults, according to a job posting.",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "OpenAI 招聘家庭产品经理，表明其向家庭场景拓展的战略意图，值得关注。",
-    "summary_zh": "据 TechCrunch 报道，OpenAI 正在招聘一名专门负责家庭、看护者和老年人体验的产品经理。这标志着 ChatGPT 正从企业应用向家庭场景渗透，意图覆盖更广泛的用户群体。该职位将负责设计面向家庭场景的交互体验，可能涉及儿童教育、老年人陪伴等方向。此举反映了 OpenAI 在消费级市场的进一步布局。",
-    "title_zh": "OpenAI 押注家庭场景，ChatGPT 深入千家万户",
-    "weighted_score": 0.575,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.3
-    },
-    "story_id": "da04474295f60b3c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/"
-      }
-    ]
-  },
-  {
-    "id": "1cb9d73a62ae5f56",
-    "source_id": "reddit-machinelearning",
-    "title": "VultronRetriever family of models released on HuggingFace![R]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1utmxq8/vultronretriever_family_of_models_released_on/",
-    "published_at": "2026-07-11T15:22:33+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Thrilled to announce the VultronRetriever family of models, which were revealed during Raise Summit Paris and demonstrated running Q&amp;A and embedding documents on the iPhone, fully offline! 📱</p> <p>Some highlights from the VultronRetriever model family:<br /> 🥇 Each model ranks #1 in its respective class on the MTEB Leaderboard, with VultronRetrieverPrime-8B as the global #1<br /> 📦 VultronRetrieverPrime-8B has up to 16x smaller index storage footprint and 12x higher throughput versus previous 9B-class leaders<br /> 🎯 VultronRetrieverCore-4.5B ranks second only to Prime on the leaderboard, outperforming models twice its size<br /> ⚡ VultronRetrieverFlash-0.8B outperforms models up to 5x its size, runs cool on edge devices, and indexes up to 60 images per minute, fully offline!<br /> 🐍 Deploying the VultronRetriever models with the Hydra Architecture gives you late interaction retrieval at unparalleled precision, plus generation at up to half the me",
-    "category_hint": [
-      "论文研究",
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "VultronRetriever系列模型在MTEB排行榜上各尺寸均排名第一，且能在iPhone上离线运行，值得关注。",
-    "summary_zh": "VultronRetriever模型家族在Raise Summit Paris上发布，并在iPhone上演示了离线问答和文档嵌入功能。该系列每个尺寸的模型均在MTEB排行榜上排名第一，其中VultronRetrieverPrime-8B表现突出。模型已上传至HuggingFace，支持完全离线运行，适用于移动端和边缘设备。",
-    "title_zh": "VultronRetriever模型家族在HuggingFace上发布！[R]",
-    "weighted_score": 0.58,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.4
-    },
-    "story_id": "7834532a819c9f5a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1utmxq8/vultronretriever_family_of_models_released_on/"
-      }
-    ]
-  },
-  {
-    "id": "22429b46c412a3ef",
-    "source_id": "zh-solidot",
-    "title": "苹果起诉 OpenAI，指控前华裔员工窃取商业机密",
-    "url": "https://www.solidot.org/story?sid=84805",
-    "published_at": "2026-07-11T16:16:25+00:00",
-    "raw_text": "苹果起诉 OpenAI，指控该公司窃取其商业机密。这起诉讼的两位核心人物是 OpenAI 首席硬件官 Tang Tan 以及前苹果工程师 Chang Liu。苹果指控称，Tang Tan 会指导跳槽到 OpenAI 的苹果前员工如何规避苹果针对离职员工的安全流程。而 Chang Liu 被控秘密访问并下载了数十份苹果的机密硬件相关文件，其中包括大量关于未发布产品的详细信息、工程演示文稿、技术规格和私有项目数据。Liu 被控没有归还苹果配发的笔记本电脑，他还访问和使用了前同事的笔记本电脑，利用认证漏洞访问了苹果的共享网络文件夹。在发现漏洞之后，Liu 在前同事的笔记本电脑上留言说“LOL”。\n<p></p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "苹果起诉OpenAI窃取商业机密，涉及前员工，是重大行业法律事件。",
-    "summary_zh": "苹果起诉OpenAI，指控该公司窃取其商业机密。诉讼核心人物是OpenAI首席硬件官Tang Tan和前苹果工程师Chang Liu。苹果指控Tang Tan指导跳槽到OpenAI的前苹果员工如何规避安全流程；Chang Liu被控秘密访问并下载了数十份苹果机密硬件文件，包括未发布产品的详细信息、工程演示文稿、技术规格和私有项目数据。Liu未归还苹果配发的笔记本电脑，还利用认证漏洞访问了共享网络文件夹，并在前同事电脑上留言“LOL”。",
-    "title_zh": null,
-    "weighted_score": 0.645,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.3
-    },
-    "story_id": "e7a4807614a73edb",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-solidot",
-        "url": "https://www.solidot.org/story?sid=84805"
-      }
-    ]
-  },
-  {
-    "id": "5b5d6c7eca6febc0",
-    "source_id": "zh-solidot",
-    "title": "布朗大学经济学教授怀疑班级里多数学生使用 AI 作弊",
-    "url": "https://www.solidot.org/story?sid=84806",
-    "published_at": "2026-07-11T16:40:28+00:00",
-    "raw_text": "在去年 12 月学校发生枪击案之后，布朗大学经济学教授 Roberto Serrano 首次让学生在家中完成期中考试。期中考试成绩显示大部分学生获得了满分或接近满分，他怀疑学生大规模使用 AI 作弊。因此决定将期末考试改为线下进行。他没有立即宣布期中考试无效，而是决定先看看期末考试的得分。如果期末考试得分的分布与期中考试的分布基本相同，那么他会将期中考试得分计入成绩。结果是 18 名学生退课，9 名学生没有参加期末考试。3 名学生得了零分，期末考试的平均分只有 48.6%——这是他所教班级迄今的历史最低分。此前期末考试的平均分从未低于 65%。只有少数学生的期末考试成绩与期中考试的成绩相近。\n<p></p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "布朗大学教授怀疑学生用AI作弊，通过考试对比证实，引发教育领域思考。",
-    "summary_zh": "布朗大学经济学教授Roberto Serrano在去年12月学校枪击案后，首次让学生在家完成期中考试。成绩显示大部分学生满分或接近满分，他怀疑学生大规模使用AI作弊，因此决定将期末考试改为线下。他先观察期末考试成绩分布是否与期中相似，结果18名学生退课，9名缺考，3名零分，平均分仅48.6%，为历史最低。只有少数学生期末成绩与期中相近。",
-    "title_zh": null,
-    "weighted_score": 0.565,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.4
-    },
-    "story_id": "d99a3c7e8f07fb9a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-solidot",
-        "url": "https://www.solidot.org/story?sid=84806"
-      }
-    ]
-  },
-  {
-    "id": "cbc298ffe52838e7",
-    "source_id": "infoq-cn-ai",
-    "title": "苹果甩出41页PDF怒告OpenAI“偷师”其核心机密！网友：早知道就等印度开源了",
-    "url": "https://www.infoq.cn/article/Rzh9umgPl90MgGolBcWm?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-11T17:00:00+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/Rzh9umgPl90MgGolBcWm?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "苹果起诉OpenAI窃取核心机密，涉及AI行业知识产权重大争议，影响深远。",
-    "summary_zh": "苹果公司发布41页PDF，正式起诉OpenAI涉嫌窃取其核心机密。网友调侃早知道等印度开源版本。该事件引发对AI领域知识产权保护的广泛讨论。",
-    "title_zh": null,
-    "weighted_score": 0.67,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.3
-    },
-    "story_id": "8d578045cf165d2d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/Rzh9umgPl90MgGolBcWm?utm_source=rss&utm_medium=article"
-      }
-    ]
-  },
-  {
-    "id": "9cb62c08f685880e",
-    "source_id": "gh-browser-use",
-    "title": "browser-use/browser-use 0.13.4",
-    "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.4",
-    "published_at": "2026-07-11T18:50:05+00:00",
-    "raw_text": "## What's Changed\n- MCP server for CLI 3.0: shared MCP runner, `max_dim` guard.\n- Fix navigation readiness detection: per-target lifecycle event storage, and handle same-document navigations without burning the readiness timeout.\n- Fix markdown extraction destroying URLs and dropping long link lines.\n- Detect LLM output truncation instead of failing with misleading parse errors, and let truncation errors switch to the fallback LLM.\n- Keep plain BrowserErrors recoverable and preserve structured error memory through execute_action.\n- Fix visibility check mutating shared snapshot bounds.\n- Pin Browser Harness to `0.1.5` (Windows reliability fixes, cloud-browser suggestion).\n- CLI polish: shim for legacy CLI commands, hints for unknown commands, faster startup.\n- Restructure README quickstart around the CLI and Python library paths.\n\n**Full Changelog**: https://github.com/browser-use/browser-use/compare/0.13.3...0.13.4",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "browser-use 新版本修复了导航检测、Markdown 提取等关键问题，对使用该工具的开发者有直接帮助。",
-    "summary_zh": "browser-use 0.13.4 版本发布，主要修复了导航就绪检测（按目标存储生命周期事件，处理同文档导航避免超时）、Markdown 提取破坏 URL 和丢弃长链接行的问题。同时改进了 LLM 输出截断检测，避免误导性解析错误，并允许截断错误切换到备用 LLM。此外，保留了纯 BrowserErrors 的处理。这些修复提升了工具的稳定性和可用性。",
-    "title_zh": null,
-    "weighted_score": 0.63,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.4,
-      "practical_value": 0.7
-    },
-    "story_id": "63a6ef7855cb0c7a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-browser-use",
-        "url": "https://github.com/browser-use/browser-use/releases/tag/0.13.4"
-      }
-    ]
-  },
-  {
-    "id": "4eb03014e2a9fc6f",
-    "source_id": "gh-vllm",
-    "title": "vllm-project/vllm v0.25.0",
-    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0",
-    "published_at": "2026-07-11T20:06:44+00:00",
-    "raw_text": "# vLLM v0.25.0 Release Notes\r\n\r\n## Highlights\r\n\r\nThis release features 558 commits from 232 contributors (64 new)!\r\n\r\n* **Model Runner V2 is now the default for all dense models** (#44443). Building on quantized-model support from the previous release, MRv2 is now the standard execution path, with new support for EVS (#46535), realtime embeddings (#46762), prefix caching for Mamba hybrid models (#42406), multimodal-prefix bidirectional attention (#46942), and dynamic speculative decoding compatible with full CUDA graphs (#45953).\r\n* **PagedAttention has been removed** (#47361). The legacy attention implementation is deleted now that V1/MRv2 backends are the standard path.\r\n* **The Transformers modeling backend is now as fast as native vLLM** (#47187), and gained FP8 MoE support (#46820), CUDA graph + embed scaling fixes (#48010), and migration of GPTBigCode/Starcoder2 (#30966) and RoBERTa (#47452).\r\n* **New models**: LLaVA-OneVision-2 (#44785), Unlimited OCR (#46564, #47102), MOSS-Tran",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "vLLM v0.25.0默认启用Model Runner V2，支持更多模型和功能，是LLM推理的重要更新。",
-    "summary_zh": "vLLM v0.25.0发布，包含558次提交和232位贡献者。主要亮点：Model Runner V2成为所有密集模型的默认执行路径，新增对EVS、实时嵌入、Mamba混合模型前缀缓存等支持。该版本提升了推理性能和模型兼容性，对LLM部署有重要影响。",
-    "title_zh": "vllm-project/vllm v0.25.0",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "a5356c5081b97523",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-vllm",
-        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.25.0"
       }
     ]
   },
@@ -335,6 +143,40 @@
       {
         "source_id": "hn-ai",
         "url": "https://news.ycombinator.com/item?id=48875749"
+      }
+    ]
+  },
+  {
+    "id": "f944e700dd2914e9",
+    "source_id": "reddit-localllama",
+    "title": "Ultra budget 20GB vram with 448GB/s for $100 bucks.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1utwqf8/ultra_budget_20gb_vram_with_448gbs_for_100_bucks/",
+    "published_at": "2026-07-11T21:49:49+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Here is the upper limit of what can be done with $100 bucks worth of video cards. </p> <p>You can have 3 concurrent users with plenty of context, better speeds or close enough speeds than a bunch of cards that provide less VRAM and cost 4+ times.</p> <pre><code>0.00.008.388 I log_info: verbosity = 3 (adjust with the `-lv N` CLI arg) 0.00.008.391 I device_info: 0.00.089.439 I - CUDA0 : NVIDIA P102-100 (10144 MiB, 10013 MiB free) 0.00.197.645 I - CUDA1 : NVIDIA P102-100 (10144 MiB, 10013 MiB free) 0.00.197.656 I - CPU : Intel(R) Xeon(R) W-2135 CPU @ 3.70GHz (128396 MiB, 128396 MiB free) 0.00.197.728 I system_info: n_threads = 6 (n_threads_batch = 6) / 12 | CUDA : ARCHS = 600,610,750,860,890 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 0.00.197.764 I srv init: running without SSL 0.00.197.849 I srv init: using 11 threads for HTTP s",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.4,
+    "reason_zh": "分享用100美元构建20GB显存、448GB/s带宽的硬件方案，对预算有限的本地推理用户极具实用价值。",
+    "summary_zh": "Reddit用户分享了一个超低预算的硬件方案：仅用100美元购买多张显卡，组合获得20GB显存和448GB/s的带宽。该配置可以支持3个并发用户，且速度优于许多更贵的显卡。帖子提供了具体的硬件选择和性能数据，对于希望在有限预算下运行本地大模型的用户来说非常实用。但方案可能涉及二手显卡和特定配置，需要一定动手能力。",
+    "title_zh": "100美元的超预算20GB显存、448GB/s带宽方案",
+    "weighted_score": 0.5,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.6,
+      "impact": 0.4,
+      "practical_value": 0.8
+    },
+    "story_id": "bc835906405e0141",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1utwqf8/ultra_budget_20gb_vram_with_448gbs_for_100_bucks/"
       }
     ]
   },
@@ -471,6 +313,73 @@
     ]
   },
   {
+    "id": "0ac9f5dca14ac698",
+    "source_id": "reddit-localllama",
+    "title": "China's DeepSeek developing its own AI chip, sources say",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu15mz/chinas_deepseek_developing_its_own_ai_chip/",
+    "published_at": "2026-07-12T01:04:07+00:00",
+    "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/TheRealMasonMac\"> /u/TheRealMasonMac </a> <br /> <span><a href=\"https://www.reuters.com/world/china/chinas-deepseek-developing-its-own-ai-chip-sources-say-2026-07-07/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uu15mz/chinas_deepseek_developing_its_own_ai_chip/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "路透社报道DeepSeek自研AI芯片，对AI芯片竞争格局有重要影响，值得关注。",
+    "summary_zh": "据路透社报道，中国AI公司DeepSeek正在开发自己的AI芯片。消息人士称，这一举措旨在减少对外部供应商的依赖，并提升其AI模型的性能和效率。DeepSeek此前以开源模型DeepSeek-R1等闻名，自研芯片可能进一步巩固其竞争力。该消息对AI芯片行业格局有潜在影响，但具体细节和发布时间尚未披露。",
+    "title_zh": "消息人士称中国DeepSeek正在开发自己的AI芯片",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "7fab3d0d2c4165a2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu15mz/chinas_deepseek_developing_its_own_ai_chip/"
+      }
+    ]
+  },
+  {
+    "id": "5adae2853fb32c99",
+    "source_id": "gh-llamacpp",
+    "title": "ggerganov/llama.cpp b9968",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9968",
+    "published_at": "2026-07-12T01:12:46+00:00",
+    "raw_text": "<details open>\n\nopencl: add int8 dp4 dense and MoE prefill optimization for Adreno GPUs (#25537)\n\n* opencl: add int8 dp4 dense and moe GEMM\n\n* opencl: refactor\n\n---------\n\nCo-authored-by: Li He <lih@qti.qualcomm.com>\n\n</details>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9968/llama-b9968-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9968/llama-b9968-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9968/llama-b9968-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9968/llama-b9968-bin-ubuntu-x64.tar.gz)\n- [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9968/llama-b9968-bin-ubuntu-arm64.tar.gz)\n- [Ubuntu s390x (CPU)](https://gith",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "llama.cpp新版本为Adreno GPU添加int8 DP4优化，提升移动端推理性能，对移动部署用户重要。",
+    "summary_zh": "llama.cpp发布b9968版本，主要更新包括：为Adreno GPU添加int8 DP4密集和MoE预填充优化，由Li He贡献。该优化可提升在Qualcomm Adreno GPU上的推理性能。同时提供了macOS Apple Silicon (arm64)的二进制下载。该版本对在移动设备上运行大模型的用户有实际价值。",
+    "title_zh": "ggerganov/llama.cpp b9968",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "ceeb2772f7921058",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-llamacpp",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9968"
+      }
+    ]
+  },
+  {
     "id": "c874780932d602d2",
     "source_id": "qbitai",
     "title": "近百名玩家涌入具身数据：一年融资44.7亿，谁能真靠“卖数据”赚钱？",
@@ -501,6 +410,40 @@
       {
         "source_id": "qbitai",
         "url": "https://www.qbitai.com/2026/07/447914.html"
+      }
+    ]
+  },
+  {
+    "id": "256dc34f92b86704",
+    "source_id": "reddit-localllama",
+    "title": "next best jump from qwen 3.6 27b",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu1g3m/next_best_jump_from_qwen_36_27b/",
+    "published_at": "2026-07-12T01:18:07+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>how much vram do you need and what model do you think is the next major upgrade from the good old qwen 3.6 27b as of today?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/WhatTheFlukz\"> /u/WhatTheFlukz </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uu1g3m/next_best_jump_from_qwen_36_27b/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uu1g3m/next_best_jump_from_qwen_36_27b/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "用户询问从Qwen3.6 27B升级的模型选择，对正在考虑升级的用户有参考意义。",
+    "summary_zh": "Reddit用户发帖询问：从Qwen3.6 27B模型升级，下一个主要升级是什么？需要多少显存？帖子旨在寻求社区建议，但本身没有提供具体信息或评测。回复可能包含各种模型推荐，如更大的Qwen版本、Llama系列等。该帖子对正在考虑模型升级的用户有一定参考价值，但信息零散。",
+    "title_zh": "从Qwen3.6 27B的下一个最佳升级",
+    "weighted_score": 0.285,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.3,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "68e8416dd250240b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu1g3m/next_best_jump_from_qwen_36_27b/"
       }
     ]
   },
@@ -572,36 +515,70 @@
     ]
   },
   {
-    "id": "6f9310c46371d027",
-    "source_id": "reddit-machinelearning",
-    "title": "Context and average best linear mappings [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/",
-    "published_at": "2026-07-12T02:18:08+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>The context (in a border sense) viewpoint of neural networks is not thought about too much but it leads to a simple best average linear mapping viewpoint of a layer.</p> <p><a href=\"https://archive.org/details/a-context-based-view-of-deep-neural-networks\">https://archive.org/details/a-context-based-view-of-deep-neural-networks</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/oatmealcraving\"> /u/oatmealcraving </a> <br /> <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/\">[comments]</a></span>",
+    "id": "ceeaa77175f8c11d",
+    "source_id": "reddit-localllama",
+    "title": "Interactive Jacobian-Lens visualizer and live steerer for GGUF models on llama.cpp",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu32z6/interactive_jacobianlens_visualizer_and_live/",
+    "published_at": "2026-07-12T02:37:07+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uu32z6/interactive_jacobianlens_visualizer_and_live/\"> <img alt=\"Interactive Jacobian-Lens visualizer and live steerer for GGUF models on llama.cpp\" src=\"https://preview.redd.it/cif34sq1mpch1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=07b2ff26a8a16845fdcf6c20b26726bc0fd23a5f\" title=\"Interactive Jacobian-Lens visualizer and live steerer for GGUF models on llama.cpp\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I saw a lot of (complete and abortive) jacobian lens projects for HF and PyTorch, but nothing for GGUFs or llama.cpp. So I set Fable 5 on xhigh to solve this problem (with close human supervision of course 😎). Inspired by Anthropic's paper and code, and of course by my favorite inference engine llama.cpp and GGML.</p> <p>I did a code review and a few test passes on it.</p> <p>It has a native GGUF server (based closely on llama.cpp and git synced to it) for model observation AND j-space swapping/ab",
     "category_hint": [
-      "论文研究",
-      "行业动态"
+      "开源项目",
+      "技巧与观点"
     ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
+    "image_url": "https://preview.redd.it/cif34sq1mpch1.png?width=640&crop=smart&auto=webp&s=07b2ff26a8a16845fdcf6c20b26726bc0fd23a5f",
+    "category": "开源项目",
+    "content_type": "产品发布",
     "depth_score": 0.5,
-    "reason_zh": "从上下文视角提出神经网络层的平均最佳线性映射观点，提供理解网络的新角度。",
-    "summary_zh": "Reddit用户分享了一篇论文，从广义上下文视角审视神经网络，提出每一层可以看作一个简单的平均最佳线性映射。该观点为理解深度神经网络提供了新的理论视角，但内容较为抽象，缺乏实验验证。论文链接指向Internet Archive。",
-    "title_zh": "上下文与平均最佳线性映射",
-    "weighted_score": 0.395,
+    "reason_zh": "为GGUF模型提供交互式Jacobian-Lens可视化和实时引导工具，有助于理解模型内部机制。",
+    "summary_zh": "Reddit用户发布了一个交互式Jacobian-Lens可视化和实时引导工具，专门用于llama.cpp上的GGUF模型。该工具基于Anthropic的Jacobian-Lens技术，允许用户可视化模型内部的雅可比空间，并实时调整模型行为。这对于理解模型内部工作机制、进行模型编辑和安全性研究具有实用价值。帖子包含截图，但未提供详细技术文档。",
+    "title_zh": "用于llama.cpp上GGUF模型的交互式Jacobian-Lens可视化和实时引导工具",
+    "weighted_score": 0.555,
     "score_breakdown": {
       "source_authority": 0.3,
-      "novelty": 0.6,
-      "impact": 0.3,
-      "practical_value": 0.4
+      "novelty": 0.8,
+      "impact": 0.5,
+      "practical_value": 0.7
     },
-    "story_id": "1d3bf12e0487ed44",
+    "story_id": "6e9388d79ed83ce9",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu32z6/interactive_jacobianlens_visualizer_and_live/"
+      }
+    ]
+  },
+  {
+    "id": "01629f5e4bd000b4",
+    "source_id": "reddit-localllama",
+    "title": "Qwenthropic",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu3545/qwenthropic/",
+    "published_at": "2026-07-12T02:40:01+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey guys,</p> <p>I've been running Qwen 3.6-27b locally on an RTX 3090 for a while now, and it's been genuinely great at solving software issues. However, life happened and I recently had to use Opus 4.8 alongside the Zed editor and the Claude Code agent.</p> <p>While I can definitely see a noticeable jump in pure code quality (Opus is just better in that regard), what really blew me away was the procedure. When assigned a task, the Claude Code agent divides it into actionable steps, always checks the context before acting, makes backups, and runs multiple verifications to ensure the changes didn't break the system. On top of that, it runs additional functionality evaluations, warning you about potential bugs, performance bottlenecks, or race conditions.</p> <p>Honestly, this feels less like a raw model capability and more like an incredibly well-crafted system prompt and agent logic.</p> <p>So, I have two questions for this sub:</p> <p>1) Prompt Engin",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "用户对比Qwen3.6-27B本地模型与Opus 4.8云端模型，分享实际使用体验。",
+    "summary_zh": "Reddit用户分享使用体验：之前一直本地运行Qwen3.6-27B（RTX 3090），解决软件问题效果很好。但最近因生活原因使用了Opus 4.8（可能指Claude Opus 4.8）配合Zed编辑器和Claude Code agent。用户认为Opus在纯代码质量上有明显提升，但未详细对比其他方面。帖子属于个人经验分享，缺乏系统评测。",
+    "title_zh": "Qwenthropic",
+    "weighted_score": 0.29,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.4,
+      "impact": 0.2,
+      "practical_value": 0.4
+    },
+    "story_id": "68a3d5cd56459fff",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu3545/qwenthropic/"
       }
     ]
   },
@@ -672,6 +649,183 @@
     ]
   },
   {
+    "id": "84f6b92563948441",
+    "source_id": "reddit-localllama",
+    "title": "I didn't give up - extGemma4-40_5B returned",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu4hxp/i_didnt_give_up_extgemma440_5b_returned/",
+    "published_at": "2026-07-12T03:49:53+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uu4hxp/i_didnt_give_up_extgemma440_5b_returned/\"> <img alt=\"I didn't give up - extGemma4-40_5B returned\" src=\"https://preview.redd.it/veg5nuao1rch1.png?width=140&amp;height=78&amp;auto=webp&amp;s=48320841a1cc5b00f95caadaf6d2be8aa1fbd037\" title=\"I didn't give up - extGemma4-40_5B returned\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Continue from my previous posts:</p> <p><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1ul0cx9/i_extended_gemma431b_to_44b_88_layers_since/\">https://www.reddit.com/r/LocalLLaMA/comments/1ul0cx9/i_extended_gemma431b_to_44b_88_layers_since/</a></p> <p><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1um20ev/why_new_inserted_layers_kill_the_gemma4/\">https://www.reddit.com/r/LocalLLaMA/comments/1um20ev/why_new_inserted_layers_kill_the_gemma4/</a></p> <p>(Warning : AI generated Post - due to my bad English)</p> <p>Hugging Face : <a href=\"https://huggingface.co/TOTORONG/ext",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/veg5nuao1rch1.png?width=140&height=78&auto=webp&s=48320841a1cc5b00f95caadaf6d2be8aa1fbd037",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "展示extGemma4-40_5B模型的回归，对关注Gemma扩展模型的用户有参考价值。",
+    "summary_zh": "Reddit用户发帖宣布extGemma4-40_5B模型回归，并附有截图。该模型可能是对Google Gemma 4的扩展版本，参数规模为40.5B。帖子没有提供详细的技术细节或性能数据，但表明作者在持续开发。对于关注Gemma系列模型扩展的社区成员来说，这是一个更新消息。",
+    "title_zh": "我没有放弃 - extGemma4-40_5B回归",
+    "weighted_score": 0.415,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.6,
+      "impact": 0.3,
+      "practical_value": 0.5
+    },
+    "story_id": "f3327bd325adf518",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu4hxp/i_didnt_give_up_extgemma440_5b_returned/"
+      }
+    ]
+  },
+  {
+    "id": "b15dfeac1dc74d0f",
+    "source_id": "reddit-localllama",
+    "title": "Anthropic found Claude reasoning in silence (J-space) — we ran the same lens on open Qwen3-8B",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/",
+    "published_at": "2026-07-12T14:22:37+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Anthropic’s research on Claude found a silent internal workspace they call J-space — hidden reasoning that never shows up as visible text.</p> <p>Classic example: the model answers <code>49</code>, but inside J-space they caught <code>21 → 42 → 49</code>.</p> <p>Important distinction:</p> <ul> <li>Chain-of-thought = text you can read</li> <li>J-space = silent concepts in activations (“what’s on its mind”)</li> </ul> <p>We fitted the open Jacobian lens (J-lens) on Qwen3-8B, ran it locally, and used it to catch prose drift before tool calls (model leaning toward “To, You, Do…” instead of JSON).</p> <p>Then we wired that into agent guards: stop / cancel / keep the useful space, and distill recoveries into LoRA data.</p> <p>Made an 8-min explainer demo:</p> <p><a href=\"https://www.youtube.com/watch?v=5UMN6hDONJk\">https://www.youtube.com/watch?v=5UMN6hDONJk</a></p> <p>Happy to answer questions about the probe setup or the guard loop.</p> </div><!-- SC_ON --",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "揭示模型内部隐藏推理空间，对理解AI思维机制有重要启发，技术深度高。",
+    "summary_zh": "Anthropic研究发现Claude模型存在一个名为J-space的静默内部工作空间，模型在其中进行隐藏推理，例如回答49时内部计算21→42→49，但输出文本中不显示。这与可读的思维链（CoT）不同。该研究团队将相同方法应用于开源模型Qwen3-8B，验证了类似现象。这一发现对理解大语言模型的内部推理机制具有重要意义，可能影响未来模型的可解释性和安全性设计。",
+    "title_zh": "Anthropic发现Claude静默推理空间（J-space）——我们在开源Qwen3-8B上验证了相同方法",
+    "weighted_score": 0.7,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "7b145e989c93c1f8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu61wb/i_mapped_anthropics_jspace_hallucination_signal/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/"
+      }
+    ]
+  },
+  {
+    "id": "695e443ce49e3e17",
+    "source_id": "reddit-localllama",
+    "title": "**Your $80 Tesla P100 has been doing silently noisy math in llama.cpp for years. Three lines fix it, for free.**",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu6p9o/your_80_tesla_p100_has_been_doing_silently_noisy/",
+    "published_at": "2026-07-12T05:41:12+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>## TLDR;</p> <p>Shipped — in turboquant v0.3.0, downloadable now. <a href=\"https://github.com/TheTom/llama-cpp-turboquant/releases/tag/tqp-v0.3.0\">https://github.com/TheTom/llama-cpp-turboquant/releases/tag/tqp-v0.3.0</a></p> <p>llama.cpp's CUDA code has a flag that means &quot;this GPU is fast at fp16, so do the math in fp16.&quot;<br /> The GTX 10-series and P40's (sm_61) were exempted from it long ago. The P100 (sm_60) was not, <br /> ironically, because it's the one Pascal card with fast fp16 hardware. Nvidia put fast FP16<br /> silicon on the P100, so it makes total sense they'd want to tap into that extra performance. <br /> What they didn't check, apparently, was the price.</p> <p>PR Status: TheTom (merged) <a href=\"https://github.com/TheTom/llama-cpp-turboquant/pull/212\">https://github.com/TheTom/llama-cpp-turboquant/pull/212</a><br /> spiritbuun (edit:merged) <a href=\"https://github.com/spiritbuun/buun-llama-cpp/pull/80\">https://github.com/spi",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.6,
+    "reason_zh": "发现llama.cpp中一个长期被忽视的精度问题，仅三行代码修复即可免费提升旧GPU性能，实用价值极高。",
+    "summary_zh": "作者发现llama.cpp的CUDA代码中有一个标志位，默认将GTX 10系列和P40等GPU视为fp16快速，导致这些GPU在量化推理时使用fp16数学运算，但实际上这些GPU的fp16计算存在精度问题，造成无声的数值误差。通过三行代码修复，可以强制使用fp32数学运算，显著提升模型输出的准确性。该修复已集成到turboquant v0.3.0中，免费下载。对于拥有旧款Tesla P100、P40等GPU的用户，这是一个简单而有效的性能提升方法。",
+    "title_zh": "你的80美元Tesla P100多年来一直在llama.cpp中默默做有噪声的数学运算——三行代码免费修复",
+    "weighted_score": 0.76,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.9
+    },
+    "story_id": "e707301a0f6aefc8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu6p9o/your_80_tesla_p100_has_been_doing_silently_noisy/"
+      }
+    ]
+  },
+  {
+    "id": "2ebe1413ee6528de",
+    "source_id": "reddit-localllama",
+    "title": "i would like to share my experience. working with huge LLMs and poor Machine",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu6qvh/i_would_like_to_share_my_experience_working_with/",
+    "published_at": "2026-07-12T05:43:37+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>hello people<br /> i wanted to share my experience with big and huge models (usually 100B+ models and 200B+ models and more)</p> <p>my laptop specs is very poor<br /> I7-8750H<br /> 20G Ram<br /> GTX 1050 Mobile 4G Vram<br /> but what nearly saved me is my NVMe from samsung<br /> i have 512G NVMe from samsung</p> <p>and yes as you expected. i run these huge models while throwing most of the parameters in my NVMe</p> <p>but i strictly use MoE models, Dense models will kill my machine</p> <p>always used mmap. and throwing experts in my CPU</p> <p>with Quantized KV Cache (Q4_0)</p> <p>and the Quantize i usually choose when it comes to download huge model is Q3, not Q4. and if the model was extremely huge (exceeding 700B+ with more than 20B Active parameters) i dont go lower than Q2</p> <p>now coming to my experience</p> <p>i use LM Studio not llama-cpp</p> <p>i used Deepseek-V4-Flash (specifically UD-IQ3_XXS)</p> <p>i got tok/sec: 1.0 - 1.8 (could go high",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.3,
+    "reason_zh": "个人经验分享，配置低但成功运行大模型，对硬件受限的用户有参考价值。",
+    "summary_zh": "作者分享了自己在配置较差的笔记本电脑（i7-8750H、20GB内存、GTX 1050 4GB显存、三星NVMe SSD）上运行100B+甚至200B+大语言模型的经验。尽管硬件条件有限，但依靠高速NVMe SSD的交换能力，仍然可以运行这些超大模型。文章主要描述了作者的个人经历和感受，但缺乏具体的技术细节和性能数据。",
+    "title_zh": "我想分享我的经验：使用超大LLM和低配机器",
+    "weighted_score": 0.34,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.4,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "5375b49f67726608",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu6qvh/i_would_like_to_share_my_experience_working_with/"
+      }
+    ]
+  },
+  {
+    "id": "2df5ad8e9e4f21db",
+    "source_id": "gh-lobe-chat",
+    "title": "lobehub/lobe-chat v0.0.0-nightly.pr17101.21155",
+    "url": "https://github.com/lobehub/lobehub/releases/tag/v0.0.0-nightly.pr17101.21155",
+    "published_at": "2026-07-12T14:02:29+00:00",
+    "raw_text": "\n## PR Build Information\n\n**Version**: `0.0.0-nightly.pr17101.21155`\n**Release Time**: `2026-07-12T14:02:28.632Z`\n**PR**: [#17101](https://github.com/lobehub/lobe-chat/pull/17101)\n\n\n## ⚠️ Important Notice\n\nThis is a **development build** specifically created for testing purposes. Please note:\n\n- This build is **NOT** intended for production use\n- Features may be incomplete or unstable\n- Use only for validating PR changes in a desktop environment\n- May contain experimental code that hasn't been fully reviewed\n- No guarantees are provided regarding stability or reliability\n\n### Intended Use\n\n- Focused testing of specific PR changes\n- Verification of desktop-specific behaviors\n- UI/UX validation on desktop platforms\n- Performance testing on target devices\n\nPlease report any issues found in this build directly in the PR discussion.\n\n---\n\n## PR 构建信息\n\n**版本**: `0.0.0-nightly.pr17101.21155`\n**发布时间**: `2026-07-12T14:02:28.633Z`\n**PR**: [#17101](https://github.com/lobehub/lobe-chat/pull/17101)\n\n",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "LobeChat夜间开发版发布，仅供测试，对普通用户无直接价值。",
+    "summary_zh": "LobeChat发布了夜间开发版本v0.0.0-nightly.pr17101.21155，对应PR #17101。该版本为测试用途的开发构建，不适用于生产环境，功能可能不完整或不稳定。发布说明强调仅供测试使用。对于普通用户而言，此版本无实际使用价值，仅对开发者测试新功能有意义。",
+    "title_zh": "LobeHub/Lobe-Chat v0.0.0-nightly.pr17101.21155",
+    "weighted_score": 0.325,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.3,
+      "impact": 0.2,
+      "practical_value": 0.1
+    },
+    "story_id": "c437c07e72037d51",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-lobe-chat",
+        "url": "https://github.com/lobehub/lobehub/releases/tag/v0.0.0-nightly.pr17020.21000"
+      },
+      {
+        "source_id": "gh-lobe-chat",
+        "url": "https://github.com/lobehub/lobehub/releases/tag/v0.0.0-nightly.pr17101.21155"
+      }
+    ]
+  },
+  {
     "id": "d93361873022d5cb",
     "source_id": "36kr",
     "title": "全网骂Claude变笨，Anthropic下场揭秘：坑你的不是模型",
@@ -705,101 +859,69 @@
     ]
   },
   {
-    "id": "a19c62f460181a24",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] [分享] AI 编程把网站搭出来以后，我又做了个让 Logo 动起来的工具",
-    "url": "https://www.v2ex.com/t/1226702#reply0",
-    "published_at": "2026-07-12T06:03:33+00:00",
-    "raw_text": "<p>最近 AI 编程确实很火。</p>\n<p>用 Cursor 、Claude Code 、Codex 这些工具，几天甚至几个小时就能搭出一个 SaaS 、独立站或者产品 Demo 。</p>\n<p>但我自己做产品时发现一个问题：</p>\n<p>网站能动、产品能跑、页面也越来越精致，但 Logo 往往还是一张静态 PNG 。</p>\n<p>如果想给产品做一段 Logo 动效，用在产品发布、社交媒体短视频、启动画面或者演示视频里，通常还得打开 After Effects 、找模板、调整关键帧，成本并没有因为 AI 编程而降低。</p>\n<p>所以我做了一个浏览器端的 Logo 动效工具：LogoFuse</p>\n<p><a href=\"https://logofuse.app\" rel=\"nofollow\">https://logofuse.app</a></p>\n<p>它不是用来生成 Logo 的，而是把你已有的 Logo 做成动态视频。</p>\n<p>目前可以：</p>\n<ul>\n<li>上传 PNG 、SVG 、JPEG 或 WebP Logo</li>\n<li>选择不同的动效和电影感场景</li>\n<li>调整 Logo 位置、大小和品牌颜色</li>\n<li>配置音乐与画面节奏</li>\n<li>在浏览器里实时预览</li>\n<li>导出 9:16 竖版 Logo Motion 视频</li>\n<li>支持 720p 免费导出</li>\n</ul>\n<p>比较适合最近正在用 AI 编程做 SaaS 、独立产品、应用 Demo 的开发者。网站做完以后，可以顺手给自己的品牌补一段能够用于发布和宣传的 Logo 动效。</p>\n<p>项目目前还在持续调整，如果大家愿意试一下，我比较想知道：</p>\n<ol>\n<li>现在的编辑流程是否足够直观？</li>\n<li>你更需要什么类型的 Logo 动效？</li>\n<li>除了竖版视频，还希望支持哪些尺寸或导出格式？</li>\n</ol>\n<p>欢迎直接拍砖，尤其想听听真正做过产品发布、Demo 视频或者独立站的朋友怎么评价。</p>",
+    "id": "05a517fe9bb9132e",
+    "source_id": "gh-lobe-chat",
+    "title": "lobehub/lobe-chat v2.2.11-canary.7",
+    "url": "https://github.com/lobehub/lobehub/releases/tag/v2.2.11-canary.7",
+    "published_at": "2026-07-12T06:07:12+00:00",
+    "raw_text": "## 🐤 Canary Build — v2.2.11-canary.7\n\n> Automated canary build from `canary` branch.\n\n### Commit Information\n\n- Based on changes since `v2.2.11-canary.6`\n- Commit count: 27\n\n- `9b41a57fd2` ♻️ refactor: move LLM finalization into agent runtime (#17078) (Arvin Xu)\n- `cc9927e134` 🚸 feat(desktop): gate the in-app Browser tab behind a Labs toggle (#17063) (Arvin Xu)\n- `202991d384` ♻️ refactor: move LLM retry orchestration into agent runtime (#17069) (Arvin Xu)\n- `5ab9fa34d1` 🐛 fix: adjust add member modal footer spacing (#16800) (Minamiyama)\n- `bcf99f1417` 🌐 (i18n): remove Chinese Trans fallback children (#17009) (H-TTTTT)\n- `0de7139e20` 🐛 fix(test): add required visibility field to device test factory (#17075) (AmAzing-)\n- `974d6054c8` 💄 style(topic): present \"completed\" as \"archive\" in the topic UI (#17073) (AmAzing-)\n- `a6e57eaef4` 🐛 fix(database): repair Zod 4 + drizzle-zod insert schema type inference (#17072) (AmAzing-)\n- `fbbedf3a85` 🐛 fix(agent): improve prompt save feedback and hea",
     "category_hint": [
-      "技巧与观点"
+      "开源项目"
     ],
     "image_url": null,
     "category": "产品发布",
     "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "作者分享了自己用AI编程搭建网站后，为解决Logo动效痛点而开发的工具，对独立开发者有实用参考。",
-    "summary_zh": "作者在利用Cursor、Claude Code等AI编程工具快速搭建网站后，发现Logo动效制作仍是痛点，通常需要After Effects等专业软件。为此，他开发了浏览器端Logo动效工具LogoFuse（logofuse.app），旨在降低动效制作门槛，让产品发布、社交媒体视频等场景更便捷。文章介绍了工具的背景和初衷，但未深入技术细节。",
-    "title_zh": null,
-    "weighted_score": 0.43,
+    "depth_score": 0.0,
+    "reason_zh": "Lobe Chat的canary构建版本，包含多项重构和功能更新，但仅面向开发者。",
+    "summary_zh": "这是Lobe Chat的canary构建版本（v2.2.11-canary.7），基于canary分支自动构建。包含27个提交，主要变更包括：将LLM finalization移入agent运行时（#17078）、在桌面版中为应用内浏览器标签添加Labs开关（#17063）、以及多项重构。该版本仅供测试，不适用于生产环境。",
+    "title_zh": "lobehub/lobe-chat v2.2.11-canary.7",
+    "weighted_score": 0.22,
     "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.6,
-      "impact": 0.2,
-      "practical_value": 0.7
-    },
-    "story_id": "835482c4df6bac38",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226702#reply0"
-      }
-    ]
-  },
-  {
-    "id": "7f9c6eebb3d8ee8a",
-    "source_id": "zh-v2ex",
-    "title": "[程序员] 理性讨论，大模型的客户端会不会吃光所有 agent 应用的份额",
-    "url": "https://www.v2ex.com/t/1226704#reply4",
-    "published_at": "2026-07-12T06:29:14+00:00",
-    "raw_text": "<p>最近更新了 gpt5.6,codex 的客户端也把 chatgpt 和 codex 融合在一起了。 </p>\n<p>目前自己已经越来越少对 ai 做任何约束性的动作，包括之前的 harness 也很少了，因为 codex 的客户端几乎能够完全完成我自然语言的全部要求。 </p>\n<p>之前都觉得大模型厂商是提供源头，agent 提供分发，但是大模型厂商目前的客户端感觉已经能够 agent 应用全部吞并。而且最关键的是，比如说 200 刀的 Codex 会员，它的那个 token 费用远远比我自己单独去买 API 接入各种 Agent 的应用来的划算。 </p>\n<p>哪怕 agent 厂商尝试着与它对抗，都不可能，因为你的货的源头就是它，它还要和你竞争</p>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.4,
-    "reason_zh": "从开发者视角讨论大模型客户端对Agent应用的潜在冲击，观点犀利，引发行业思考。",
-    "summary_zh": "作者以自身使用Codex客户端的体验为例，指出大模型厂商的客户端（如GPT-5.6、Codex）功能日益强大，能够完成用户自然语言的全部要求，且会员费用比单独购买API接入各种Agent应用更划算。作者认为，大模型厂商作为源头，其客户端可能吞并所有Agent应用，因为Agent厂商的货源来自大模型厂商，且面临直接竞争。文章引发了对AI应用生态格局的讨论。",
-    "title_zh": null,
-    "weighted_score": 0.445,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.4
-    },
-    "story_id": "740844e39e55e9d9",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226704#reply4"
-      }
-    ]
-  },
-  {
-    "id": "3a47d89e58a7cacb",
-    "source_id": "zh-v2ex",
-    "title": "[OpenAI] 火山 agent plan 送的 arkclaw,怎么穿透出来？",
-    "url": "https://www.v2ex.com/t/1226705#reply0",
-    "published_at": "2026-07-12T06:38:18+00:00",
-    "raw_text": "<p>火山 agent plan 送的 arkclaw,怎么穿透出来？</p>\n<p>整个 web 跑也行</p>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.1,
-    "reason_zh": "技术求助帖，内容简短，实用价值有限。",
-    "summary_zh": "用户询问如何将火山引擎Agent Plan赠送的arkclaw穿透出来，以便在Web上运行。帖子内容简短，未提供具体背景或解决方案，属于技术求助类。",
-    "title_zh": null,
-    "weighted_score": 0.2,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.3,
+      "source_authority": 0.5,
+      "novelty": 0.1,
       "impact": 0.1,
-      "practical_value": 0.2
+      "practical_value": 0.1
     },
-    "story_id": "4ef8bb029966f44a",
+    "story_id": "3374452758412bd2",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226705#reply0"
+        "source_id": "gh-lobe-chat",
+        "url": "https://github.com/lobehub/lobehub/releases/tag/v2.2.11-canary.7"
+      }
+    ]
+  },
+  {
+    "id": "7a522613e609466b",
+    "source_id": "reddit-localllama",
+    "title": "Xiaomi quietly uploaded MiMo-V2.5-DFlash — official DFlash weights are now on Hugging Face",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu8d1v/xiaomi_quietly_uploaded_mimov25dflash_official/",
+    "published_at": "2026-07-12T07:11:43+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash\">https://huggingface.co/XiaomiMiMo/MiMo-V2.5-DFlash</a></p> <p>Xiaomi appears to have quietly uploaded <strong>MiMo-V2.5-DFlash</strong> to Hugging Face: there is dedicated <code>dflash</code> directory containing the Dflash model, anyone willing to GGUF it and try? I'd do it but I can't today.<br /> This model is pretty good IMO (300B + params) and runs at about 8-10 tk/s on 2x24gb cards + vram offload (96/128gb drr5), dflash could double that speed and make it very interesting.</p> <p>EDIT: the main reason it's interesting, is because the MTP head was shared already, but doesn't work yet il llama cpp. I speculate (pun intended) the Dflash does work instead.</p> <p>EDIT2: very cool! they shared also the SEPARATE MTP model. the reason Llama doesn't work already is because it has trouble identifying the MTP layers. a separate MTP model might work too.</p> </div><!-- SC_ON --> &#32; submitted by",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "小米悄然发布MiMo-V2.5-DFlash模型权重，社区可尝试GGUF转换，值得关注。",
+    "summary_zh": "小米在Hugging Face上悄然上传了MiMo-V2.5-DFlash模型权重，包含专门的dflash目录。该模型是小米MiMo系列的最新版本，采用DFlash技术。社区用户可尝试将其转换为GGUF格式以便本地运行。目前模型页面信息有限，具体性能和改进尚待测试。",
+    "title_zh": "小米悄然上传MiMo-V2.5-DFlash——官方DFlash权重现已登陆Hugging Face",
+    "weighted_score": 0.595,
+    "score_breakdown": {
+      "source_authority": 0.5,
+      "novelty": 0.8,
+      "impact": 0.5,
+      "practical_value": 0.6
+    },
+    "story_id": "d9a02081b0d42e85",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu8d1v/xiaomi_quietly_uploaded_mimov25dflash_official/"
       }
     ]
   },
@@ -833,39 +955,6 @@
       {
         "source_id": "zh-tmtpost",
         "url": "https://www.tmtpost.com/8061647.html"
-      }
-    ]
-  },
-  {
-    "id": "c96febbd6a2655c0",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] 做了个 App：把 AI 生成的 HTML 小工具直接放进手机运行，求拍砖",
-    "url": "https://www.v2ex.com/t/1226712#reply3",
-    "published_at": "2026-07-12T07:26:27+00:00",
-    "raw_text": "<h1>做了个手机端 HTML 运行器，把 AI 生成的小工具直接放进手机用</h1>\n<p>这阵子经常用 AI 做些小工具：计算器、表格处理、数据面板、小游戏、计时器、临时表单……生成很快，最后通常就是一个 HTML 文件。</p>\n<p>麻烦出现在手机上。要么临时部署，找个地方托管；要么每次去文件里翻，而且手机浏览器也不支持直接打开运行 HTML 。</p>\n<p>很多东西只给自己用，专门配服务器、域名，再发布也很麻烦。</p>\n<p>要开发成原生 App ，走打包编译，处理跨平台，也不值当。</p>\n<p>现在的 HTML 其实已经能做很多事了。图表、文档、本地存储、图片处理、小游戏都能实现。对不少轻量、个人化的需求来说，一个静态 HTML 就够用。</p>\n<p>缺的是一个方便放进手机、随时打开的入口。</p>\n<p>于是我做了「 Vibe 小匣」。</p>\n<p><img alt=\"\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://zzqiniu.wzdxy.com/imgbed/vibeviewSnipaste_2026-07-12_10-36-40.png\" /></p>\n<h2>它能做什么</h2>\n<p>从聊天软件、文件 App 或云盘拿到 HTML / ZIP 后，可以直接分享到 Vibe 小匣：</p>\n<ul>\n<li>自动解压并识别 HTML 入口</li>\n<li>在手机里直接运行</li>\n<li>保存到“我的应用”，以后继续打开</li>\n<li>查看目录、README 、源码和运行日志</li>\n</ul>\n<p><img alt=\"\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://zzqiniu.wzdxy.com/imgbed/vibeviewvibeview-import-demo2.gif\" />\n<img alt=\"\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://zzqiniu.wzdxy.com/imgbed/Screenshot_2026-07-12-15-23-59-657_com.wzdxy.vibeview.jpg\" /></p>\n<",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://zzqiniu.wzdxy.com/imgbed/vibeviewSnipaste_2026-07-12_10-36-40.png",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "解决 AI 生成 HTML 在手机端运行痛点，实用性强。",
-    "summary_zh": "作者开发了「Vibe 小匣」App，用于在手机上直接运行 AI 生成的 HTML 小工具（如计算器、数据面板、小游戏等）。解决了手机浏览器不支持直接运行 HTML、部署麻烦的问题，适合个人轻量使用。",
-    "title_zh": null,
-    "weighted_score": 0.41,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.6,
-      "impact": 0.2,
-      "practical_value": 0.6
-    },
-    "story_id": "0ee04ae69e3c9792",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226712#reply3"
       }
     ]
   },
@@ -936,39 +1025,6 @@
     ]
   },
   {
-    "id": "fbe240e06dd21e84",
-    "source_id": "zh-v2ex",
-    "title": "[程序员] 突然发现 chatgpt 语音多了 live 功能，感觉练口语挺好的",
-    "url": "https://www.v2ex.com/t/1226716#reply23",
-    "published_at": "2026-07-12T07:52:36+00:00",
-    "raw_text": "以前拿 chatgpt 练口语，都是 chatgpt 一句，我语音读一句。现在用这个 live 模式，终于有点像实时真人对话了，比菲律宾人的英语课效果还要好，至少不要钱。<br /><br />现在唯一的难点，就是得坚持了。<br /><br /><a href=\"https://openai.com/zh-Hans-CN/index/introducing-gpt-live/\" rel=\"nofollow noopener\" target=\"_blank\">https://openai.com/zh-Hans-CN/index/introducing-gpt-live/</a>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "ChatGPT 语音新增 live 模式，适合口语练习，实用性强。",
-    "summary_zh": "用户发现 ChatGPT 语音新增了 live 模式，可实现实时对话，比之前的逐句跟读更自然，适合练习口语，且免费使用。",
-    "title_zh": null,
-    "weighted_score": 0.45,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.8
-    },
-    "story_id": "870e8d4f8bacc1b5",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226716#reply23"
-      }
-    ]
-  },
-  {
     "id": "f0b1660ed5be2b5e",
     "source_id": "zh-tmtpost",
     "title": "二代豆包手机要上桌：中兴不动筷，华米OV们干看着？",
@@ -978,7 +1034,7 @@
     "category_hint": [
       "行业动态"
     ],
-    "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/34t1gqerfav3.png",
+    "image_url": "https://images.tmtpost.com/uploads/images/2026/07/11/12e62dfa9314956e17ac984999d91be2_1783767226.jpeg",
     "category": "行业动态",
     "content_type": "资讯快讯",
     "depth_score": 0.1,
@@ -998,72 +1054,6 @@
       {
         "source_id": "zh-tmtpost",
         "url": "https://www.tmtpost.com/8061411.html"
-      }
-    ]
-  },
-  {
-    "id": "c09181566700a38d",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] 人在外面，怎么继续家里电脑上的 Cursor / Codex？我做了一个本地 AI Agent Gateway-PocketPilot",
-    "url": "https://www.v2ex.com/t/1226717#reply4",
-    "published_at": "2026-07-12T07:55:53+00:00",
-    "raw_text": "<h1>人在外面，怎么继续家里电脑上的 Cursor / Codex ？我做了一个本地 AI Agent Gateway</h1>\n<p>最近做了一个开源项目，叫 <strong>PocketPilot</strong>。</p>\n<ul>\n<li>GitHub：<a href=\"https://github.com/gong0019/pocket-pilot\" rel=\"nofollow\">https://github.com/gong0019/pocket-pilot</a></li>\n<li>在线体验：<a href=\"https://pp.95ym.cn/\" rel=\"nofollow\">https://pp.95ym.cn/</a></li>\n</ul>\n<p>它的定位是一个 <strong>本地 AI Agent Gateway</strong>：让运行在自己电脑上的 Cursor Agent CLI 、Codex CLI 、Claude CLI 等工具，可以通过手机或浏览器访问。</p>\n<p>先说明一下：它不是远程桌面，也不是把开发环境搬到云端。</p>\n<p>PocketPilot 主要做的是，在本地 AI Agent 和 Web 之间增加一层连接、会话恢复与多 Agent 管理能力。</p>\n<hr />\n<h2>为什么会做这个项目</h2>\n<p>最近使用 AI Coding Agent 的频率越来越高。</p>\n<p>Cursor 、Codex 、Claude Code 这类工具已经不只是补全几行代码了。很多时候，我会让 Agent 在本地项目里持续执行任务，例如：</p>\n<ul>\n<li>阅读项目代码；</li>\n<li>修改多个文件；</li>\n<li>运行测试；</li>\n<li>排查报错；</li>\n<li>继续之前没有完成的任务。</li>\n</ul>\n<p>但这些 Agent 通常依赖本地电脑上的代码、终端、依赖环境和登录状态。</p>\n<p>于是就有了一个很具体的问题：</p>\n<p><strong>Agent 在家里或办公室的电脑上运行，但人一离开电脑，就很难查看进度、回复问题，或者继续之前的 Session 。</strong></p>\n<p>我遇到过几种情况：</p>\n<ul>\n<li>出门之后，想看 Agent 是否已",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "开源项目 PocketPilot 实现远程访问本地 AI 开发环境，解决移动办公痛点。",
-    "summary_zh": "作者开源了 PocketPilot，一个本地 AI Agent Gateway，允许用户在外出时通过手机或平板远程连接家中电脑上的 Cursor、Codex 等 AI 编程工具，继续开发工作。项目已开源并提供在线体验。",
-    "title_zh": null,
-    "weighted_score": 0.48,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.7,
-      "impact": 0.3,
-      "practical_value": 0.7
-    },
-    "story_id": "3c06ef87f18d8d90",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226717#reply4"
-      }
-    ]
-  },
-  {
-    "id": "339dbaa577d0e1cb",
-    "source_id": "zh-v2ex",
-    "title": "[前端开发] 万能的 AI，有什么实现高保真 UI 的途径吗？",
-    "url": "https://www.v2ex.com/t/1226723#reply4",
-    "published_at": "2026-07-12T08:13:38+00:00",
-    "raw_text": "<p>用了好几个模型，前端给了线框图，界面提示让它简洁设计，vibe 出来的风格都是五彩斑斓。</p>\n<p>感觉回到了跑马灯时代，AI 喜欢搞的花里狐臊，这审美不知道从哪里学来的。</p>\n<p>请教前端大佬，都 2026 年了，万能的 AI，有什么实现高保真 UI 的途径吗？</p>\n<p>😓改样式已经改的魔怔了😓</p>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "讨论 AI 生成 UI 的审美问题，引发对高保真 UI 实现途径的思考。",
-    "summary_zh": "用户抱怨 AI 生成的 UI 风格花哨、审美不佳，询问在 2026 年如何实现高保真 UI。反映了当前 AI 在 UI 设计上的局限性。",
-    "title_zh": null,
-    "weighted_score": 0.31,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.4,
-      "impact": 0.2,
-      "practical_value": 0.5
-    },
-    "story_id": "b94eb752569c4401",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226723#reply4"
       }
     ]
   },
@@ -1135,6 +1125,40 @@
     ]
   },
   {
+    "id": "f1342ada33dc0106",
+    "source_id": "reddit-localllama",
+    "title": "Voodoo Quant beats Unsloth Dynamic 2.0 KLD by 95% in Qwen3.5 0.8B and 2B",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/",
+    "published_at": "2026-07-12T08:52:41+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/\"> <img alt=\"Voodoo Quant beats Unsloth Dynamic 2.0 KLD by 95% in Qwen3.5 0.8B and 2B\" src=\"https://preview.redd.it/6vq6mi13jrch1.png?width=140&amp;height=74&amp;auto=webp&amp;s=bb78f93d0151d629991a0482824ea4eb644ff882\" title=\"Voodoo Quant beats Unsloth Dynamic 2.0 KLD by 95% in Qwen3.5 0.8B and 2B\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hey all, here are two new high performance qwen3.5 gguf sets I created using a new state of the art technique for optimizing mixed precision called Voodoo Quant.</p> <p><a href=\"https://huggingface.co/voodooquant/Qwen3.5-0.8B-MTP-Voodoo\">https://huggingface.co/voodooquant/Qwen3.5-0.8B-MTP-Voodoo</a></p> <p><a href=\"https://huggingface.co/voodooquant/Qwen3.5-2B-MTP-Voodoo\">https://huggingface.co/voodooquant/Qwen3.5-2B-MTP-Voodoo</a></p> <p>Voodoo Quant operates on the same lines as Unsloth Dynamic in that it is simp",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/6vq6mi13jrch1.png?width=140&height=74&auto=webp&s=bb78f93d0151d629991a0482824ea4eb644ff882",
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出Voodoo Quant量化方法，在Qwen3.5小模型上KLD比Unsloth Dynamic 2.0低95%，有实验数据支撑。",
+    "summary_zh": "作者提出了一种名为Voodoo Quant的新型量化方法，并在Qwen3.5 0.8B和2B模型上进行了测试。实验结果显示，Voodoo Quant的KLD（KL散度）比Unsloth Dynamic 2.0低95%，表明其量化精度显著更高。文章附有对比图表，展示了不同量化方法的性能差异。该方法可能对低资源设备上的模型部署有重要意义。",
+    "title_zh": "Voodoo Quant在Qwen3.5 0.8B和2B上比Unsloth Dynamic 2.0 KLD低95%",
+    "weighted_score": 0.655,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.9,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "2b6ba27a3ef8025e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/"
+      }
+    ]
+  },
+  {
     "id": "a4ad334c5f9d44a2",
     "source_id": "zh-cnbeta",
     "title": "苹果公司正式起诉OpenAI指控其窃取商业秘密",
@@ -1197,39 +1221,6 @@
       {
         "source_id": "zh-cnbeta",
         "url": "https://www.cnbeta.com.tw/articles/tech/1568716.htm"
-      }
-    ]
-  },
-  {
-    "id": "d6761f3b2d8bc990",
-    "source_id": "zh-v2ex",
-    "title": "[程序员] [仅供参考] Codex/Claude Code 降智测试脚本",
-    "url": "https://www.v2ex.com/t/1226728#reply0",
-    "published_at": "2026-07-12T09:17:14+00:00",
-    "raw_text": "写了一个专门用来测试 codex/claude code 是否降智的脚本，各位可以下载下来用来测试<br /><a href=\"https://github.com/yukun181013/llm-iq-test\" rel=\"nofollow noopener\" target=\"_blank\">https://github.com/yukun181013/llm-iq-test</a>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "教程方法",
-    "depth_score": 0.4,
-    "reason_zh": "实用的降智测试脚本，帮助开发者评估Codex/Claude Code性能。",
-    "summary_zh": "开发者发布了一个用于测试Codex和Claude Code是否降智的脚本，托管在GitHub上（yukun181013/llm-iq-test）。用户可下载该脚本自行测试LLM编码助手的智能水平变化。",
-    "title_zh": "[程序员] [仅供参考] Codex/Claude Code降智测试脚本",
-    "weighted_score": 0.51,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.7,
-      "impact": 0.3,
-      "practical_value": 0.7
-    },
-    "story_id": "7649e6cdf950c12e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226728#reply0"
       }
     ]
   },
@@ -1333,68 +1324,35 @@
     ]
   },
   {
-    "id": "7fea1522c9a58cfb",
-    "source_id": "zh-v2ex",
-    "title": "[AI Agent 智能体] 对于传统前后端开发，大家觉得哪款 ai agent 比较顺手？",
-    "url": "https://www.v2ex.com/t/1226732#reply2",
-    "published_at": "2026-07-12T09:33:59+00:00",
-    "raw_text": "<p>大家喜欢用哪个？</p>",
+    "id": "123523cca30c629c",
+    "source_id": "zh-juejin",
+    "title": "前端做音画匹配这件事，我从\"随机塞\"到\"AI 自动对齐\"",
+    "url": "https://juejin.cn/post/7661325178647937064",
+    "published_at": "2026-07-12T09:40:46+00:00",
+    "raw_text": "async function detectScenes(videoFile: File): Promise { // 抽帧 → 相邻帧差异 → 超过阈值的标记为转场点",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": null,
     "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.1,
-    "reason_zh": "简单询问传统前后端开发者对 AI Agent 的偏好，信息量少。",
-    "summary_zh": "用户提问：对于传统前后端开发，大家觉得哪款 AI Agent 比较顺手？",
-    "title_zh": null,
-    "weighted_score": 0.265,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.3,
-      "impact": 0.2,
-      "practical_value": 0.4
-    },
-    "story_id": "62b6033485f0efd7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226732#reply2"
-      }
-    ]
-  },
-  {
-    "id": "025980b591e43dfd",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] AI accelerates output—and loss of control",
-    "url": "https://www.v2ex.com/t/1226733#reply0",
-    "published_at": "2026-07-12T09:34:14+00:00",
-    "raw_text": "Commercial Software Is Never Disposable<br /><br />AI has shortened the time required to produce a first version. <br />It has not shortened the years for which software remains accountable to the business.",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
+    "content_type": "教程方法",
     "depth_score": 0.5,
-    "reason_zh": "反思AI加速开发但可能带来长期维护风险，观点有启发性。",
-    "summary_zh": "V2EX 用户分享观点：AI 加速了第一版软件的产出，但并未缩短软件对业务负责的年限。商业软件并非一次性用品，AI 生成的代码可能缺乏长期可维护性和可问责性。文章提醒开发者，在追求速度的同时，不能忽视软件质量、技术债务和长期维护成本。这一观点对依赖 AI 辅助开发的团队具有警示意义。",
-    "title_zh": "[分享创造] AI 加速产出，也加速失控",
-    "weighted_score": 0.345,
+    "reason_zh": "前端实现音画匹配的实践分享，从随机到AI自动对齐，有代码示例，实用性强。",
+    "summary_zh": "作者分享了在前端实现音画匹配（音频与视频场景自动对齐）的经验。最初采用随机塞入的方式，效果不佳；后来利用AI技术，通过抽帧检测视频转场点，再与音频节奏进行对齐，实现了自动匹配。文章包含核心代码片段（detectScenes函数），展示了如何通过相邻帧差异检测转场。该方法适用于视频编辑、多媒体展示等场景。",
+    "title_zh": "前端做音画匹配这件事，我从\"随机塞\"到\"AI 自动对齐\"",
+    "weighted_score": 0.41,
     "score_breakdown": {
       "source_authority": 0.3,
-      "novelty": 0.4,
+      "novelty": 0.5,
       "impact": 0.3,
-      "practical_value": 0.4
+      "practical_value": 0.6
     },
-    "story_id": "98d159ebef0af16c",
+    "story_id": "3ee0e670178374fd",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226733#reply0"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661325178647937064"
       }
     ]
   },
@@ -1428,39 +1386,6 @@
       {
         "source_id": "zh-ithome",
         "url": "https://www.ithome.com/0/975/762.htm"
-      }
-    ]
-  },
-  {
-    "id": "f8eaf67e2c1c3470",
-    "source_id": "zh-v2ex",
-    "title": "[Claude] GT AI Gateway 支持本地 Agent 配置了",
-    "url": "https://www.v2ex.com/t/1226735#reply0",
-    "published_at": "2026-07-12T09:47:39+00:00",
-    "raw_text": "<p>大家好，</p>\n<p>给开源项目 <strong>GT AI Gateway</strong> 新增了一个非常实用的新功能，想和大家分享一下。</p>\n<h3>🎉 本次核心更新：本地客户端管理</h3>\n<p>之前在网关配置了模型之后，需要手动修改本地的客户端配置来接入，现在直接可以直接在网关进行配置，一步搞定（可以理解成内置了 ccswitch 的功能）：</p>\n<ul>\n<li>🛠 <strong>配置管理：</strong> 现在可以直接在程序中，为本地的 Claude Codex 进行快速配置，集中管理 API Key 和使用的模型，再也不用在各个软件里来回修改配置了。</li>\n<li>🔄 <strong>无缝协议转换：</strong> 无论你的客户端原本只支持哪种协议，网关都能在底层自动完成转换（比如 Anthropic 与 OpenAI 格式互转），彻底解决接口不兼容的烦恼。</li>\n</ul>\n<p><strong>另外还支持了之前 v 站 网友反馈的几个需求，包括供应商支持通过代理访问等，并且整体代码上，进行了很多优化</strong></p>\n<hr />\n<h3>💡 什么是 GT AI Gateway ？（写给还没用过的朋友）</h3>\n<p>如果你是第一次看到这个项目，简单来说，<strong>GT AI Gateway</strong> 是一个轻量级、开箱即用的 AI API 网关。</p>\n<p>它的核心作用是帮你<strong>聚合和管理各种大模型 API</strong>。当你手头有多个大模型接口（ OpenAI, Anthropic, Gemini 等）时，可以通过它实现：</p>\n<ul>\n<li>🔍 <strong>请求分析与改写</strong>: 深入解析请求上下文，支持在网关层对请求体和提示词进行拦截、分析及智能改写。</li>\n<li>🔄 <strong>协议转换与兼容</strong>: 统一 API 入口，支持主流大模型协议（ OpenAI 、Anthropic 等）的自动适配与双向转换。</li>\n<li>🔐 <strong>用户管理与鉴权</strong>: 支持把单个上游 API 分发给多用户使用，精准控制各自用量，有效防止上游 Key 泄漏。</li>\n<li>📝 <strong>完整请求记录<",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://i.imgur.com/Ub5hF7S.png",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "GT AI Gateway 新增本地客户端管理功能，简化多模型配置。",
-    "summary_zh": "开源项目 GT AI Gateway 新增本地客户端管理功能，允许直接在网关中配置本地客户端（如 Claude Codex），集中管理 API Key 和模型，并支持协议自动转换（如 Anthropic 与 OpenAI 格式互转），简化了多模型接入流程。",
-    "title_zh": null,
-    "weighted_score": 0.435,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.6,
-      "impact": 0.3,
-      "practical_value": 0.6
-    },
-    "story_id": "5c72d3926b8b57c7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226735#reply0"
       }
     ]
   },
@@ -1532,35 +1457,69 @@
     ]
   },
   {
-    "id": "aa8e942fb0664b61",
-    "source_id": "zh-v2ex",
-    "title": "[OpenAI] codex++ 都有中转聚合了",
-    "url": "https://www.v2ex.com/t/1226742#reply1",
-    "published_at": "2026-07-12T10:36:53+00:00",
-    "raw_text": "hermes  有类似的 中转聚合吗 <br /><br />有比 LiteLLM 更优解吗",
+    "id": "3136b9f522d6f9e0",
+    "source_id": "zh-juejin",
+    "title": "为什么 Agent 越聊越慢？聊聊 Context（上下文）管理",
+    "url": "https://juejin.cn/post/7661117411173105706",
+    "published_at": "2026-07-12T10:37:21+00:00",
+    "raw_text": "如果你经常使用 Agent，应该遇到过这种情况。 同一个模型，刚开始回答很快，思路也很清晰；但随着对话变的越来越长，它开始回复的很慢，可能会忘记前面讨论过的，有时候可能还会理解错需求。 很多",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": null,
     "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.1,
-    "reason_zh": "社区用户询问OpenAI Codex++的中转聚合方案，寻求比LiteLLM更优解，对开发者有实用参考。",
-    "summary_zh": "V2EX用户发帖询问是否有类似OpenAI Codex++的中转聚合服务，并寻求比LiteLLM更优的解决方案。该讨论反映了开发者对多模型API聚合工具的需求，但内容简短，缺乏具体技术细节或对比分析。",
-    "title_zh": null,
-    "weighted_score": 0.26,
+    "content_type": "教程方法",
+    "depth_score": 0.6,
+    "reason_zh": "深入分析Agent对话变慢的原因，聚焦Context管理，提供实用优化思路。",
+    "summary_zh": "文章探讨了AI Agent在长对话中响应变慢、遗忘上下文、理解偏差等问题，核心原因在于Context（上下文）管理不当。随着对话增长，上下文窗口被填满，导致计算开销增大和注意力分散。作者分析了常见的上下文管理策略，如滑动窗口、摘要压缩、检索增强等，并给出了优化建议。对于开发和使用Agent的读者具有实际指导意义。",
+    "title_zh": "为什么 Agent 越聊越慢？聊聊 Context（上下文）管理",
+    "weighted_score": 0.48,
     "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.3,
-      "impact": 0.1,
-      "practical_value": 0.5
+      "source_authority": 0.4,
+      "novelty": 0.4,
+      "impact": 0.4,
+      "practical_value": 0.8
     },
-    "story_id": "2c169a2e180bf565",
+    "story_id": "86d3af1bc25ed337",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226742#reply1"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661117411173105706"
+      }
+    ]
+  },
+  {
+    "id": "89eb14ce9017d14b",
+    "source_id": "reddit-localllama",
+    "title": "Current state of Voice-To-Voice models",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuc4dc/current_state_of_voicetovoice_models/",
+    "published_at": "2026-07-12T10:48:34+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi,</p> <p>Has there been any improvement to Voice models (like RVC) in the last two years, or has nothing changed?</p> <p>Thanks!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Iwishlife\"> /u/Iwishlife </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuc4dc/current_state_of_voicetovoice_models/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuc4dc/current_state_of_voicetovoice_models/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "询问语音模型（如RVC）近两年进展，但内容简短，信息量有限。",
+    "summary_zh": "这是一条来自Reddit的提问帖，用户询问语音到语音模型（如RVC）在过去两年中是否有改进，或者是否没有变化。帖子内容简短，没有提供具体信息或讨论，仅是一个问题。目前尚无回复。",
+    "title_zh": "语音到语音模型的当前状态",
+    "weighted_score": 0.195,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.2,
+      "impact": 0.1,
+      "practical_value": 0.3
+    },
+    "story_id": "973b7031dc0ce1a5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuc4dc/current_state_of_voicetovoice_models/"
       }
     ]
   },
@@ -1598,69 +1557,35 @@
     ]
   },
   {
-    "id": "daef98f733525e62",
-    "source_id": "reddit-machinelearning",
-    "title": "Obtaining Irregular Learning Curves with HyberBand Tuned ANN model for Price Prediction [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1uud3qj/obtaining_irregular_learning_curves_with/",
-    "published_at": "2026-07-12T11:38:41+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1uud3qj/obtaining_irregular_learning_curves_with/\"> <img alt=\"Obtaining Irregular Learning Curves with HyberBand Tuned ANN model for Price Prediction [P]\" src=\"https://preview.redd.it/qe783f41csch1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=1a5071286a10dd06d5aedc4ec40de6ad2a0a452a\" title=\"Obtaining Irregular Learning Curves with HyberBand Tuned ANN model for Price Prediction [P]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I have used Hyperband automatic tuning for an ANN model to predict price. After running HyberBand automatic tuning to get the 'best' architecture, I am obtaining a strange Val/Training loss learning curve. I cannot figure out if this is due to an error within the code or just a case of me not understanding the graph and not be able to interpret why the graph is showing as it is. I am also obtaining an R2 score of 1.00 which may suggest overfitting. I've not come across a learnin",
-    "category_hint": [
-      "论文研究",
-      "行业动态"
-    ],
-    "image_url": "https://preview.redd.it/qe783f41csch1.png?width=640&crop=smart&auto=webp&s=1a5071286a10dd06d5aedc4ec40de6ad2a0a452a",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.3,
-    "reason_zh": "使用HyperBand调优ANN模型进行价格预测，方法常规但学习曲线分析有参考价值。",
-    "summary_zh": "Reddit用户分享了一篇论文，使用HyperBand调优的人工神经网络（ANN）模型进行价格预测，并获得了不规则的学习曲线。论文展示了HyperBand超参数优化方法在时间序列预测中的应用，但内容较为常规，缺乏突破性创新。",
-    "title_zh": "使用HyperBand调优ANN模型获得不规则学习曲线进行价格预测",
-    "weighted_score": 0.32,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.4,
-      "impact": 0.2,
-      "practical_value": 0.4
-    },
-    "story_id": "1c1b1da0d391be60",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1uud3qj/obtaining_irregular_learning_curves_with/"
-      }
-    ]
-  },
-  {
-    "id": "bc1edf9652c26f9d",
+    "id": "80eb581cb0c831cc",
     "source_id": "zh-v2ex",
     "title": "[程序员] LLM 知识库，如何统一本地与云端修改",
-    "url": "https://www.v2ex.com/t/1226749#reply0",
+    "url": "https://www.v2ex.com/t/1226749#reply3",
     "published_at": "2026-07-12T11:50:50+00:00",
     "raw_text": "<h1>LLM 知识库，如何统一本地与云端修改</h1>\n<p><img alt=\"\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://static.notedeep.com/upload/1783844460854-cover.png\" /></p>\n<p><a href=\"https://www.notedeep.com\" rel=\"nofollow\">立即体验 NoteDeep</a></p>\n<p>做 NoteDeep Desktop 时，我希望本地知识库不只是云端数据的缓存：用户可以离线编辑 Markdown ，Codex 、Claude Code 或 Cursor 可以直接改文件，云端仍然保留富文本编辑、历史版本与协作能力。</p>\n<p>真正困难的不是上传文件，而是三类修改可能同时发生：它们从哪里进入、以谁为准、断网后如何恢复、云端领先时又如何合并？最后，我把它们收敛到同一套本地状态和 JSON0 同步链路中。</p>\n<h2>背景与目标</h2>\n<p>这个方案先确定了两个产品边界：本地目录必须在没有网络、甚至没有登录时正常工作； Markdown 必须是人和 AI 工具都能直接读写的开放文件，而不是某种只能由 NoteDeep 解析的缓存格式。</p>\n<p>因此，本地与云端分别拥有自己的事实源：</p>\n<ul>\n<li>页面正文的本地事实源是 Markdown 文件。</li>\n<li>页面树的本地事实源是 <code>.notedeep/manifest.json</code> 中的 <code>manifest.pages</code>。</li>\n<li>云端事实源是 ShareDB 的 <code>workspaces/{workspaceUuid}</code> 与 <code>pages/{pageUuid}</code>。</li>\n<li><code>.notedeep/state/</code> 保存同步基线和待提交 ops ，不冒充业务事实源。</li>\n<li><code>sync-index.json</code> 只用于跳过未变化文件，丢失后可以重建。</li>\n</ul>\n<p>这层区分很重要。如果把 snapshot 、文件索引和业务数据混在一起，同步异常后",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": "https://static.notedeep.com/upload/1783844460854-cover.png",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.6,
-    "reason_zh": "NoteDeep Desktop提出本地与云端知识库同步方案，解决离线编辑与协作冲突，对LLM知识库开发者有实践价值。",
-    "summary_zh": "NoteDeep Desktop项目介绍其本地知识库设计思路：不仅作为云端缓存，还支持离线编辑Markdown，并兼容Codex、Claude Code、Cursor等工具直接修改文件，同时云端保留富文本编辑、历史版本与协作能力。文章指出核心难点在于三类修改可能同时发生（本地、云端、工具），需要解决冲突同步问题。该方案为LLM知识库的本地-云端统一提供了实践参考。",
-    "title_zh": null,
-    "weighted_score": 0.525,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.5,
+    "reason_zh": "探讨LLM知识库本地与云端修改同步的难题，提出解决方案，对知识库开发者有参考价值。",
+    "summary_zh": "文章讨论了LLM知识库在本地与云端之间同步修改的挑战。作者在开发NoteDeep Desktop时，希望本地知识库不仅是云端数据的缓存，还能支持离线编辑Markdown，同时云端保留富文本编辑、历史版本和协作能力。核心难点在于三类修改可能同时发生：本地编辑、云端编辑、以及通过Codex等工具的直接修改。文章分析了冲突解决策略，如版本向量、操作变换等，并提出了统一修改的方案。",
+    "title_zh": "LLM 知识库，如何统一本地与云端修改",
+    "weighted_score": 0.41,
     "score_breakdown": {
       "source_authority": 0.3,
-      "novelty": 0.7,
-      "impact": 0.4,
-      "practical_value": 0.8
+      "novelty": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.6
     },
-    "story_id": "a2906155f7ca9c70",
+    "story_id": "493a03e7f84221db",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226749#reply0"
+        "url": "https://www.v2ex.com/t/1226749#reply3"
       }
     ]
   },
@@ -1699,69 +1624,136 @@
     ]
   },
   {
-    "id": "96075f109167b0c0",
+    "id": "7ebb97a559b94d92",
     "source_id": "zh-v2ex",
     "title": "[智谱] 智谱接下来一年搞出来 Fable 级别的模型概率有多大？",
-    "url": "https://www.v2ex.com/t/1226752#reply5",
+    "url": "https://www.v2ex.com/t/1226752#reply12",
     "published_at": "2026-07-12T12:08:50+00:00",
     "raw_text": "<a href=\"https://www.v2ex.com/i/TrI59MP5.jpeg\" rel=\"nofollow noopener\" target=\"_blank\" title=\"在新窗口打开图片 TrI59MP5.jpeg\"><img class=\"embedded_image\" src=\"https://i.v2ex.co/TrI59MP5.jpeg\" /></a>",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": "https://i.v2ex.co/TrI59MP5.jpeg",
-    "category": "技巧与观点",
+    "category": "行业动态",
     "content_type": "观点评论",
-    "depth_score": 0.1,
-    "reason_zh": "社区讨论智谱能否一年内达到Fable级别，反映对国产模型进展的期待，但缺乏实质信息。",
-    "summary_zh": "V2EX用户发帖讨论智谱AI能否在接下来一年内开发出Fable级别的模型，并附上一张图片（内容未显示）。该讨论反映了社区对国产大模型进展的关注和期待，但帖子本身缺乏具体论据或技术分析，仅为观点性提问。",
+    "depth_score": 0.2,
+    "reason_zh": "社区讨论智谱能否达到Fable级别，反映用户对国产模型进展的期待与疑虑。",
+    "summary_zh": "V2EX用户发帖讨论智谱AI在未来一年内能否开发出达到Fable级别的模型。帖子附有一张图片，但内容未提供具体论据或分析。评论区可能涉及对智谱技术路线、资源投入及行业竞争的看法，但摘要无法获取详细讨论内容。整体属于社区闲聊性质，缺乏深度信息。",
     "title_zh": null,
-    "weighted_score": 0.205,
+    "weighted_score": 0.21,
     "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.3,
+      "source_authority": 0.3,
+      "novelty": 0.2,
       "impact": 0.2,
       "practical_value": 0.1
     },
-    "story_id": "2463d51bab648daa",
+    "story_id": "f76b84e2a98b80cb",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1226752#reply5"
+        "url": "https://www.v2ex.com/t/1226752#reply12"
       }
     ]
   },
   {
-    "id": "cdd5972918cf269a",
-    "source_id": "reddit-machinelearning",
-    "title": "Zer0Fit: I took Google's new TabFM & TimesFM ML foundation models and made them available as an MCP server for zero-shot ML tasks (forecasts / classifications / regressions). 100% local. [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1uue8cc/zer0fit_i_took_googles_new_tabfm_timesfm_ml/",
-    "published_at": "2026-07-12T12:32:29+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1uue8cc/zer0fit_i_took_googles_new_tabfm_timesfm_ml/\"> <img alt=\"Zer0Fit: I took Google's new TabFM &amp; TimesFM ML foundation models and made them available as an MCP server for zero-shot ML tasks (forecasts / classifications / regressions). 100% local. [P]\" src=\"https://preview.redd.it/cy6kekuamsch1.jpg?width=140&amp;height=70&amp;auto=webp&amp;s=73676a2130325bec57d5a5677698a48d658477e2\" title=\"Zer0Fit: I took Google's new TabFM &amp; TimesFM ML foundation models and made them available as an MCP server for zero-shot ML tasks (forecasts / classifications / regressions). 100% local. [P]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>TL:DR: I’m a grad student in AI, I saw that Google released TabFM and TimesFM last week, I built an MCP wrapper to serve both transformer models in a single Docker container so you can connect their new ML transformer models to a local LLM via Open WebUI, Claude Code, or Cod",
+    "id": "a3bded9f0cb57b12",
+    "source_id": "reddit-localllama",
+    "title": "Zer0Fit: I took Google's new TabFM & TimesFM ML foundation models and made them available as an MCP server for zero-shot ML tasks (forecasts / classifications / regressions). 100% local.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uudxi8/zer0fit_i_took_googles_new_tabfm_timesfm_ml/",
+    "published_at": "2026-07-12T12:18:28+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uudxi8/zer0fit_i_took_googles_new_tabfm_timesfm_ml/\"> <img alt=\"Zer0Fit: I took Google's new TabFM &amp; TimesFM ML foundation models and made them available as an MCP server for zero-shot ML tasks (forecasts / classifications / regressions). 100% local.\" src=\"https://preview.redd.it/79g5plqsjsch1.jpg?width=140&amp;height=70&amp;auto=webp&amp;s=0a19f2787524bec3b952f867a0ebefa15ed14e0e\" title=\"Zer0Fit: I took Google's new TabFM &amp; TimesFM ML foundation models and made them available as an MCP server for zero-shot ML tasks (forecasts / classifications / regressions). 100% local.\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>TL:DR: I’m a grad student in AI. I saw that Google released TabFM and TimesFM last week. I built an MCP wrapper to serve both transformer models in a single Docker container so you can connect their new ML transformer models to a local LLM via Open WebUI, Claude Code, or Codex and do ML ",
     "category_hint": [
-      "论文研究",
-      "行业动态"
+      "开源项目",
+      "技巧与观点"
     ],
-    "image_url": "https://preview.redd.it/cy6kekuamsch1.jpg?width=140&height=70&auto=webp&s=73676a2130325bec57d5a5677698a48d658477e2",
+    "image_url": "https://preview.redd.it/79g5plqsjsch1.jpg?width=140&height=70&auto=webp&s=0a19f2787524bec3b952f867a0ebefa15ed14e0e",
     "category": "开源项目",
     "content_type": "产品发布",
     "depth_score": 0.4,
-    "reason_zh": "将Google TabFM和TimesFM模型封装为MCP服务器，实现零样本ML任务，本地运行，实用性强。",
-    "summary_zh": "Reddit用户发布Zer0Fit项目，将Google新发布的TabFM和TimesFM基础模型封装为MCP服务器，支持零样本机器学习任务，包括预测、分类和回归。所有计算在本地完成，无需云端依赖。该项目降低了使用前沿时序和表格基础模型的门槛，为开发者提供了便捷的本地推理工具。",
-    "title_zh": "Zer0Fit：将Google TabFM和TimesFM基础模型封装为MCP服务器，实现零样本ML任务，100%本地运行",
-    "weighted_score": 0.585,
+    "reason_zh": "将Google TabFM/TimesFM封装为MCP服务器，实现零样本ML任务本地运行，实用性强。",
+    "summary_zh": "开发者Zer0Fit将Google新发布的TabFM和TimesFM基础模型封装为MCP服务器，支持零样本机器学习任务，包括预测、分类和回归。该项目完全本地运行，无需联网，适用于隐私敏感场景。用户可通过MCP协议调用模型，简化了部署流程。代码已开源，适合开发者快速集成到现有工作流中。",
+    "title_zh": "Zer0Fit：将Google TabFM和TimesFM基础模型封装为MCP服务器，实现零样本ML任务本地运行",
+    "weighted_score": 0.58,
     "score_breakdown": {
       "source_authority": 0.4,
-      "novelty": 0.8,
+      "novelty": 0.7,
       "impact": 0.5,
-      "practical_value": 0.7
+      "practical_value": 0.8
     },
-    "story_id": "24dc1a26485cc97e",
+    "story_id": "5d4305f9c7afa097",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1uue8cc/zer0fit_i_took_googles_new_tabfm_timesfm_ml/"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uudxi8/zer0fit_i_took_googles_new_tabfm_timesfm_ml/"
+      }
+    ]
+  },
+  {
+    "id": "bce5badd90af667e",
+    "source_id": "reddit-localllama",
+    "title": "I got Nemotron Puzzle 75B running smoothly on a 64GB M2 Max",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uue46z/i_got_nemotron_puzzle_75b_running_smoothly_on_a/",
+    "published_at": "2026-07-12T12:27:04+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uue46z/i_got_nemotron_puzzle_75b_running_smoothly_on_a/\"> <img alt=\"I got Nemotron Puzzle 75B running smoothly on a 64GB M2 Max\" src=\"https://preview.redd.it/m243kv612sch1.gif?width=640&amp;crop=smart&amp;s=0149063c9d39255e6050c86b227f80679053d36e\" title=\"I got Nemotron Puzzle 75B running smoothly on a 64GB M2 Max\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p><strong>TL;DR:</strong> Added native <code>nemotron_h_puzzle</code> support to mlx-lm (<a href=\"https://github.com/ml-explore/mlx-lm/pull/1535\">PR #1535</a>), then compared 4-bit vs 5-bit expert quantization (both with 6-bit dense layers, BF16 output head, group size 64) on a 64GB M2 Max.</p> <p><strong>Results</strong> (same prompts, 5 seeds per task, temp 1.0 / top_p 0.95):</p> <table><thead> <tr> <th align=\"left\"></th> <th align=\"left\">4-bit experts</th> <th align=\"left\">5-bit experts</th> </tr> </thead><tbody> <tr> <td align=\"left\">Dense paths</td> ",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/m243kv612sch1.gif?width=640&crop=smart&s=0149063c9d39255e6050c86b227f80679053d36e",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.3,
+    "reason_zh": "分享在64GB M2 Max上运行75B模型的经验，对Mac用户有参考价值。",
+    "summary_zh": "Reddit用户分享在64GB M2 Max Mac上成功运行Nemotron Puzzle 75B模型的经验。帖子包含一张GIF动图展示运行效果。用户可能讨论了量化方法、内存优化、推理速度等细节，但摘要未提供具体步骤。该经验对希望在Apple Silicon设备上运行大型模型的用户具有参考意义。",
+    "title_zh": "我在64GB M2 Max上流畅运行Nemotron Puzzle 75B",
+    "weighted_score": 0.44,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.6
+    },
+    "story_id": "c63b0adcf9a37db8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uue46z/i_got_nemotron_puzzle_75b_running_smoothly_on_a/"
+      }
+    ]
+  },
+  {
+    "id": "b18c47eaa10dd153",
+    "source_id": "zh-ithome",
+    "title": "微软研究院推出开源可视化中间语言 Flint，让 AI 智能体“一句话生成专业图表”",
+    "url": "https://www.ithome.com/0/975/816.htm",
+    "published_at": "2026-07-12T12:45:22+00:00",
+    "raw_text": "<p>IT之家 7 月 12 日消息，微软研究院联合中国人民大学 IDEAS Lab 联合推出了开源可视化中间语言 Flint，可以让 AI 智能体“一句话生成” Vega-Lite、ECharts、<span class=\"link-text-start-with-http\">Chart.js</span> 的可渲染图表。</p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/7aec0f1f-317f-4ba7-8622-c90c66c58a3b.png?x-bce-process=image/format,f_auto\" /></p><p>据介绍，现有可视化库通常提供大量配置选项，若采用精简配置，生成的图表未必适合数据内容；若要求大语言模型直接输出完整配置，又容易因参数过多而出现冲突、遗漏或不一致。因此 Flint 在设计之初将图表意图与底层可视化库实现分离，以减少 AI 生成配置时的复杂度。</p><p>具体来看，Flint 的规格主要分为数据定义和图表定义两部分。数据部分可标注字段的语义类型，例如年月、价格、百分比、利润、国家或排名等；图表部分则用于指定图表类型，确认各字段映射到 X 轴、Y 轴、颜色、大小或分面（Facet）等视觉元素。其编译器能够结合数据语义、图表类型和字段映射，自动推导时间解析方式、聚合规则、数值格式、配色方案及布局。例如，利润字段可自动采用体现正负变化的发散色阶，而日期字段则会自动使用对应的时间解析规则和坐标轴格式。</p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/ad940b48-6eb7-4e56-84e9-8819c977c3c0.png?x-bce-process=image/format,f_auto\" /></p><p>开发人员同时发布了 flint-chart-mcp 服务器，使支持 MCP（Model Context Protocol）的 AI 智能体能够在对话中直接创建 / 预览图表，全",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/7aec0f1f-317f-4ba7-8622-c90c66c58a3b.png?x-bce-process=image/format,f_auto",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "微软开源可视化中间语言Flint，让AI智能体一句话生成专业图表，降低数据可视化门槛。",
+    "summary_zh": "微软研究院联合中国人民大学IDEAS Lab推出开源可视化中间语言Flint。该语言允许AI智能体通过一句话指令生成Vega-Lite、ECharts、Chart.js等库的可渲染图表。Flint解决了现有可视化库配置复杂的问题，使非专业用户也能快速创建高质量图表。项目已开源，有望推动AI辅助数据可视化的发展。",
+    "title_zh": null,
+    "weighted_score": 0.7,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "0cc208434becca82",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/975/816.htm"
       }
     ]
   },
@@ -1799,11 +1791,877 @@
     ]
   },
   {
+    "id": "250d458f219f9313",
+    "source_id": "zh-v2ex",
+    "title": "[程序员] 各位大佬每月在 AI 工具上的支出都是多少？多少是因为工作支出？",
+    "url": "https://www.v2ex.com/t/1226765#reply13",
+    "published_at": "2026-07-12T13:25:59+00:00",
+    "raw_text": "<p>最近看到一篇历史的 <a href=\"https://v2ex.com/t/1173165\" rel=\"nofollow\">https://v2ex.com/t/1173165</a> 的报告，现在 GLM5.2 也出来了，国内不仅有多重 coding plan 、token plan ，而且中转站也转了多次。</p>\n<p>本人是之前阿里有 40 元 coding plan 时就订阅直至没法续订了，现在就是靠之前 iflow cli 的免费套餐，xiaomi mimo 套餐赠送+续费 1 个月，美团 longcat 2.0 从测试阶段到现在赠送的 1 个月，每个月的费用大概是 40~90 元？</p>\n<p>主要都是工作上一些编程工作的，以前手工自己写，写完后比较方便改，但是面临需求变化快，写的过程很累。现在用 AI 后，就是感觉 AI 写比较快，自己要改还要读好几遍，才知道怎么改，但是面临需求变化，直接让 AI 重新写就行了，就是感觉用的模型都比较便宜，及时用 skills 或提示词各种约束了，还是会出现写的风格和方式不一致的情况。</p>\n<p>现在，因为工作需求量大，感觉现在 AI 工具的 token 不够用了，看了一下，这 1 个月，用 openroute 190M + Longcat 25M + Mimo 99 元套餐大概 1 半用量（ mimo 使用 credit ，换算 token 股则有点搞不清）。\n现在因为又有一些文本处理的工作，因为我会 AI 工具，也交给我处理了。\n想请教大家一下：</p>\n<p>1.大家一般每月会花多少钱？</p>\n<p>2.大概 100~400 元这个范围，大概购买什么最方便？国外直接购买，如果以后遇到网络问题，怎么办？比如 Gemini ，需要限制地区，这个感觉在很多网络环境下受限？</p>\n<p>3.大家怎么看到自己付费买 AI 工具用在工作里的呢？大概自己付费多少合适呢？</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "社区讨论AI工具月支出，反映开发者实际使用成本与付费意愿。",
+    "summary_zh": "V2EX程序员版块用户讨论每月在AI工具上的支出情况。发帖人提到自己曾订阅阿里40元coding plan，目前使用iflow cli免费套餐、xiaomi mimo套餐和美团longcat 2.0，月支出约40-90元。主要用途是编程工作，认为AI写代码快但修改时需要仔细阅读。其他用户可能分享了各自的订阅方案和费用。",
+    "title_zh": null,
+    "weighted_score": 0.275,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.3,
+      "impact": 0.2,
+      "practical_value": 0.3
+    },
+    "story_id": "63d878ed9ead7093",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226765#reply13"
+      }
+    ]
+  },
+  {
+    "id": "58e6c810157ad7f8",
+    "source_id": "zh-v2ex",
+    "title": "[程序员] 兄弟们的 codex 和 claude code 用中转吗",
+    "url": "https://www.v2ex.com/t/1226772#reply2",
+    "published_at": "2026-07-12T13:46:29+00:00",
+    "raw_text": "我看很多人用，几十块钱蹬不完。<br />我生产环境上没用，怕掺水事小，还植入点什么后门<br />但是价格有点遭老罪了，兄弟们都是什么解决方案",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "讨论Codex和Claude Code中转服务的安全性与成本，反映开发者对API代理的顾虑。",
+    "summary_zh": "V2EX用户询问是否使用Codex和Claude Code的中转服务。发帖人提到很多人用中转服务，价格低廉，但担心安全问题，如数据掺水或植入后门。生产环境不敢用，但直接使用官方API成本较高。希望了解其他开发者的解决方案。该讨论反映了开发者对API代理服务的普遍担忧。",
+    "title_zh": null,
+    "weighted_score": 0.27,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.2,
+      "impact": 0.2,
+      "practical_value": 0.4
+    },
+    "story_id": "d70b7dac2a246c25",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226772#reply2"
+      }
+    ]
+  },
+  {
+    "id": "443048f48f04be15",
+    "source_id": "reddit-localllama",
+    "title": "Local Image to 3D (<2gb RAM, <20s, Apple Silicon, iPhone)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuga40/local_image_to_3d_2gb_ram_20s_apple_silicon_iphone/",
+    "published_at": "2026-07-12T14:00:21+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuga40/local_image_to_3d_2gb_ram_20s_apple_silicon_iphone/\"> <img alt=\"Local Image to 3D (&lt;2gb RAM, &lt;20s, Apple Silicon, iPhone)\" src=\"https://preview.redd.it/ywn3uzqs1tch1.gif?width=640&amp;crop=smart&amp;s=7f71641995d159e68d8be8a739115d6debe2fbb6\" title=\"Local Image to 3D (&lt;2gb RAM, &lt;20s, Apple Silicon, iPhone)\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>TLDR checkout the app here: <a href=\"http://github.com/ZimengXiong/Modelr\">github.com/ZimengXiong/Modelr</a></p> <p>My swift-mlx/python mlx port of Hunyuan3D-Paint and Hunyuan3D-Shape is finally complete! It's also available as a standalone image to 3D desktop app, the only of its kind for Apple Silicon. Some quick benchmarks in FP16 on my M4 Max:</p> <table><thead> <tr> <th align=\"left\">run</th> <th align=\"left\">wall time</th> <th align=\"left\">peak memory</th> </tr> </thead><tbody> <tr> <td align=\"left\"><code>hy3d shape</code> (small)</td> <",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/ywn3uzqs1tch1.gif?width=640&crop=smart&s=7f71641995d159e68d8be8a739115d6debe2fbb6",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "本地图片转3D模型，内存低于2GB，速度小于20秒，支持Apple Silicon和iPhone，极具实用价值。",
+    "summary_zh": "Reddit用户发布了一个本地图片转3D模型的项目，特点是内存占用低于2GB，推理时间小于20秒，支持Apple Silicon和iPhone设备。帖子附有GIF动图展示效果。该项目可能基于轻量级神经网络，实现了高效的3D重建。对于需要快速生成3D模型的创作者和开发者来说，这是一个实用的工具。",
+    "title_zh": "本地图片转3D（<2GB内存，<20秒，Apple Silicon，iPhone）",
+    "weighted_score": 0.585,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.8,
+      "impact": 0.5,
+      "practical_value": 0.7
+    },
+    "story_id": "9981a83d49e7924a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuga40/local_image_to_3d_2gb_ram_20s_apple_silicon_iphone/"
+      }
+    ]
+  },
+  {
+    "id": "acb721d0e264f53d",
+    "source_id": "zh-v2ex",
+    "title": "[奇思妙想] 有哪些词让你一看到就觉得是 AI 写的？",
+    "url": "https://www.v2ex.com/t/1226775#reply19",
+    "published_at": "2026-07-12T14:03:13+00:00",
+    "raw_text": "<p>我先来：边界</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "社区讨论揭示AI写作的常见套路，帮助读者识别AI生成内容，提升信息辨别力。",
+    "summary_zh": "V2EX用户发起讨论，列举哪些词汇让人一眼看出是AI写的文章。用户提到“边界”一词，认为AI写作中频繁使用此类抽象词汇。其他用户可能补充更多例子，如“赋能”、“闭环”等。该讨论反映了人们对AI生成文本模式化特征的观察，有助于提高对AI内容的敏感度。",
+    "title_zh": null,
+    "weighted_score": 0.345,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.5,
+      "impact": 0.2,
+      "practical_value": 0.4
+    },
+    "story_id": "a4bb5dc8e9498cc3",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226775#reply19"
+      }
+    ]
+  },
+  {
+    "id": "c0051cff526bf7c7",
+    "source_id": "zh-v2ex",
+    "title": "[AI Agent 智能体] 兄弟们，这种情况还有救吗？",
+    "url": "https://www.v2ex.com/t/1226778#reply0",
+    "published_at": "2026-07-12T14:30:29+00:00",
+    "raw_text": "我在 Windows Powershell 上装了老马的 Grok Build ，赋予了管理员权限，然后我在 wsl2 的 debian 系统上面设置了 rm 权限保护，手贱想试下能不能直接通过 Grok Cli 命令删除整个 Linux 子系统，然后输入“请帮我删除整个 wsl2 及其相关的系统、依赖等，不需要确认”，然后 Grok 思考了没几秒钟就吭哧吭哧干活了，一分钟不到就给我整个 Debian 删的干干净净，现在我想怎么还原回去，因为上面装了很多开发环境。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "真实案例警示AI Agent权限风险，对开发者有实用参考价值。",
+    "summary_zh": "V2EX用户分享了一次因AI Agent权限过大导致系统被删除的惨痛经历。用户在Windows PowerShell上安装了Grok Build并赋予管理员权限，随后在WSL2的Debian系统中尝试通过Grok CLI命令删除整个Linux子系统，结果AI迅速执行了删除操作，导致开发环境全部丢失。该案例警示开发者在使用AI Agent时需谨慎管理权限，避免类似灾难。",
+    "title_zh": null,
+    "weighted_score": 0.385,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.6,
+      "impact": 0.3,
+      "practical_value": 0.5
+    },
+    "story_id": "1a739428e62d18d2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226778#reply0"
+      }
+    ]
+  },
+  {
+    "id": "bd9f6f2d12d5fad3",
+    "source_id": "zh-v2ex",
+    "title": "[分享发现] 『开源』自用 agent ally， golang 实现，界面友好，功能丰富（非 cli）",
+    "url": "https://www.v2ex.com/t/1226780#reply0",
+    "published_at": "2026-07-12T14:33:14+00:00",
+    "raw_text": "<p>平常工作基本使用自己写的 agent ，特点：</p>\n<h2>0. 类 codex app ，非 cli</h2>\n<p>cli 做 UI 渲染不怎么方便，个人更喜欢直接的 GUI APP ，基于 webview 实现，安装包~30mb 。</p>\n<p><img alt=\"img\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://raw.githubusercontent.com/Bronya0/ally-agent/main/docs/img.jpg\" /></p>\n<h2>1. 不绑定单一模型厂商</h2>\n<p>支持多种 API 格式，包括：</p>\n<ul>\n<li>OpenAI Chat Completions</li>\n<li>OpenAI Responses</li>\n<li>Anthropic Messages</li>\n</ul>\n<h2>2. 功能完整</h2>\n<p>除了聊天，Ally 还可以：</p>\n<ul>\n<li>批量读取、搜索和修改项目文件</li>\n<li>执行本地命令</li>\n<li>展示代码差异</li>\n<li>管理待办事项和长期目标</li>\n<li>调用 MCP 工具</li>\n<li>委派子任务给子 Agent</li>\n<li>创建定时执行的 Agent 任务</li>\n<li>保存跨项目使用的长期记忆</li>\n<li>通过 Skill 扩展特定工作流</li>\n<li>完整的 git 变更视图，不用特地打开 vscode 去瞅一眼了</li>\n</ul>\n<p>上面功能都是从零开始手撸，1w 多行 ReAct 。</p>\n<h2>Ally 适合谁？</h2>\n<p>比较适合：</p>\n<ul>\n<li>希望自由切换不同模型或 API 服务的开发者</li>\n<li>在意代码修改过程和 Diff 可见性的人</li>\n<li>想尝试 MCP 、Skill 、子 Agent 或目标模式的人</li>\n<li>偏好本地桌面应用，不想完全依赖在线 IDE 的用户</li>\n<li>愿意自己配置并逐步打磨 AI 编程工作流的人</li>\n</ul>\n<p>项目地址： <a href=\"https://github.com/Bronya0/ally-agen",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://raw.githubusercontent.com/Bronya0/ally-agent/main/docs/img.jpg",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "开源AI Agent工具，界面友好且功能丰富，适合开发者日常使用。",
+    "summary_zh": "作者分享自用的开源AI Agent工具ally-agent，使用Golang实现，基于Webview提供图形界面（非CLI），安装包约30MB。特点包括：不绑定单一模型厂商，支持OpenAI Chat Completions、OpenAI Responses、Anthropic Messages等多种API格式；功能丰富，适合日常开发工作。项目已在GitHub开源，并附有截图展示界面。",
+    "title_zh": null,
+    "weighted_score": 0.48,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.7,
+      "impact": 0.3,
+      "practical_value": 0.7
+    },
+    "story_id": "5c46506e11bb234f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226780#reply0"
+      }
+    ]
+  },
+  {
+    "id": "9eb29c12e1230ea1",
+    "source_id": "zh-v2ex",
+    "title": "[分享创造] 花一天做了一个儿童绘本的 agent，以后自家小孩想看故事书一键生成。人人都可以做 Agent 的时代！",
+    "url": "https://www.v2ex.com/t/1226783#reply0",
+    "published_at": "2026-07-12T14:47:55+00:00",
+    "raw_text": "<p>很多家里有小孩的，给小孩会买各种各样的儿童绘本，但是市面上儿童绘本千篇一律，小孩看来看去就那几本，都看腻了，想着自己开发了生成儿童绘本的 agent ，有什么想法和需求和 agent 沟通，沟通几句话就搞定，不需要专业的提示词，可以根据自家小孩喜好通过 agent 私人定制一个儿童绘本。需要的自取： <a href=\"https://aistorybook.art/\" rel=\"nofollow\">https://aistorybook.art/</a> 。</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "展示AI Agent在儿童绘本生成上的应用，创意有趣但技术深度有限。",
+    "summary_zh": "作者花一天时间开发了一个儿童绘本生成Agent，用户只需与Agent沟通需求，即可自动生成定制化儿童绘本，无需专业提示词。该工具旨在解决市面绘本千篇一律的问题，让家长根据孩子喜好私人定制故事书。项目已上线网站aistorybook.art，供用户自取使用。",
+    "title_zh": null,
+    "weighted_score": 0.36,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.6,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "e5ff628feb596b9d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226783#reply0"
+      }
+    ]
+  },
+  {
+    "id": "e3e59c14742347ad",
+    "source_id": "zh-juejin",
+    "title": "前端 AI 单元测试思考与落地",
+    "url": "https://juejin.cn/post/7661479243135008778",
+    "published_at": "2026-07-12T14:55:15+00:00",
+    "raw_text": "从 Command 到 Skill 的前端 AI 单测实战：迁移思路、六类测试场景与耗时/成本优化经验",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "前端AI单元测试实战经验，涵盖迁移思路、场景分类与成本优化，实用性强。",
+    "summary_zh": "文章分享了前端AI单元测试的思考与落地实践，从Command到Skill的迁移思路，总结了六类测试场景，并提供了耗时与成本优化的经验。内容涉及如何有效利用AI进行前端单元测试，包括测试用例设计、执行效率提升等，对前端开发者具有较高的参考价值。",
+    "title_zh": null,
+    "weighted_score": 0.61,
+    "score_breakdown": {
+      "source_authority": 0.5,
+      "novelty": 0.7,
+      "impact": 0.5,
+      "practical_value": 0.8
+    },
+    "story_id": "c74b1776b9f0b2d4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661479243135008778"
+      }
+    ]
+  },
+  {
+    "id": "832c48ff73977ece",
+    "source_id": "reddit-localllama",
+    "title": "Kreuzberg (local document extraction) is being renamed to Xberg - current version on LTS",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuhqlz/kreuzberg_local_document_extraction_is_being/",
+    "published_at": "2026-07-12T14:58:01+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi all,</p> <p>I'm the author of Kreuzberg. The next version of Kreuzberg will be released as Xberg - why? Well, we discovered that the name is not easy to pronounce or understand for people who don't have the German context, and this wasn't working well. Xberg is a common name for Kreuzberg in Berlin, and it has the advantage of being shorter and easier - so here we go.</p> <p>Anyhow, this brings me to the point of the post. Since renaming a repo is a complex business, and we had to rename the repo to preserve the stars - but we now need to overwrite tags, it becomes pretty messy. As a result, we decided to go for an LTS version - published from a different repo: <a href=\"https://github.com/kreuzberg-dev/kreuzberg-lts\">https://github.com/kreuzberg-dev/kreuzberg-lts</a>. LTS in this context means that we will continue to do bug fixes and security updates until the end of this year, but no newer feature work.</p> <p>We will announce Xberg v1.0.0 when it",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "开源项目更名公告，对现有用户有影响，但内容本身信息量有限。",
+    "summary_zh": "Kreuzberg（本地文档提取工具）的作者宣布该项目将更名为Xberg。原因是原名对非德语用户发音和理解困难，而Xberg是柏林Kreuzberg的常用简称，更短且易记。当前版本将进入LTS状态，后续版本将以Xberg名称发布。",
+    "title_zh": "Kreuzberg（本地文档提取）更名为Xberg——当前版本进入LTS",
+    "weighted_score": 0.355,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.5,
+      "impact": 0.2,
+      "practical_value": 0.3
+    },
+    "story_id": "4d0151027418ccf7",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuhqlz/kreuzberg_local_document_extraction_is_being/"
+      }
+    ]
+  },
+  {
+    "id": "f6c41c0990bf5bfc",
+    "source_id": "zh-v2ex",
+    "title": "[问与答] 这种类型的 AI 文案要怎么样才能迅速批量生成有大佬知道吗？",
+    "url": "https://www.v2ex.com/t/1226785#reply0",
+    "published_at": "2026-07-12T15:01:42+00:00",
+    "raw_text": "<p>如下面所示</p>\n<p><img alt=\"image.png\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/515bc7fd6fc749b99b3a258b383c928c%7Etplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5rSb6IGG5Li2:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiNDI0MjMzOTAzMTk0ODQ0MCJ9&amp;rk3s=e9ecf3d6&amp;x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&amp;x-orig-expires=1783954601&amp;x-orig-sign=YCvSHeGy1WLl1YMCE24LDO4mXT0%3D\" /></p>\n<p>我发现他的内容一看就是 AI 写的，但用 OpenClaw 批量模仿时，直接喂文案总是学不像——AI 味重、费 token 、上下文一丢风格就变。求教各位，有没有高效的解决办法？我尝试过各种方案都不太行，得到的效果都不太符合我的预期，想问问各位有没有好的解决方案？</p>\n<p>小弟我先谢谢各位解答了</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/515bc7fd6fc749b99b3a258b383c928c%7Etplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5rSb6IGG5Li2:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiNDI0MjMzOTAzMTk0ODQ0MCJ9&amp;rk3s=e9ecf3d6&amp;x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&amp;x-orig-expires=1783954601&amp;x-orig-sign=YCvSHeGy1WLl1YMCE24LDO4mXT0%3D",
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "询问AI文案批量生成方法，但问题过于笼统，缺乏具体技术细节。",
+    "summary_zh": "V2EX用户询问如何快速批量生成特定类型的AI文案，并附上了示例图片。该问题反映了用户对AI内容生成效率的需求，但未提供具体文案类型或技术细节，因此回答可能较为泛泛。",
+    "title_zh": null,
+    "weighted_score": 0.265,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.4,
+      "impact": 0.1,
+      "practical_value": 0.4
+    },
+    "story_id": "b4591adfb2ed0a3f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226785#reply0"
+      }
+    ]
+  },
+  {
+    "id": "07a597d9a78b1953",
+    "source_id": "zh-v2ex",
+    "title": "[职场话题] 准备开始面试了，感觉 agent 跟以前背八股一样。先整理一波资料。有需要的可拿",
+    "url": "https://www.v2ex.com/t/1226786#reply2",
+    "published_at": "2026-07-12T15:04:48+00:00",
+    "raw_text": "<p>如题，网络分享资料</p>\n<p>共勉，找工作的 佬们</p>\n<p>「 Agent 面试」，<a href=\"https://pan.quark.cn/s/9a8595b484a3\" rel=\"nofollow\">https://pan.quark.cn/s/9a8595b484a3</a></p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "分享Agent面试资料，对求职者有实用价值，但内容本身是资料链接。",
+    "summary_zh": "V2EX用户准备面试，整理了AI Agent相关的面试资料，并分享在夸克网盘。用户认为Agent面试与以前背八股类似，因此整理了资料供其他求职者参考。链接中包含Agent面试相关的内容。",
+    "title_zh": null,
+    "weighted_score": 0.305,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.3,
+      "impact": 0.2,
+      "practical_value": 0.6
+    },
+    "story_id": "abff477a4da35f97",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226786#reply2"
+      }
+    ]
+  },
+  {
+    "id": "7630b3e1b6a179f2",
+    "source_id": "zh-ithome",
+    "title": "Meta 发布多模态推理模型 Muse Spark 1.1，强化 AI 智能体任务能力",
+    "url": "https://www.ithome.com/0/975/832.htm",
+    "published_at": "2026-07-12T15:12:54+00:00",
+    "raw_text": "<p>IT之家 7 月 12 日消息，Meta 于 7 月 9 日正式发布适用于 AI 智能体的多模态推理模型 Muse Spark 1.1 版本，重点提升了模型在智能体任务中的规划、协同与执行能力，并增强了工具调用、代码开发、应用操作能力。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/1d47ee55-0c75-410b-889e-4674bfd1547e.png?x-bce-process=image/format,f_auto\" /></p><p>Meta 表示，Muse Spark 1.1 强化了多智能体协作机制，由主智能体负责收集信息、制定计划，再将任务拆分并分配给多个子智能体并行执行，从而缩短复杂项目的处理时间。同时模型支持最高 100 万 token 的上下文长度，可在长时间工作流程中持续保留关键信息，并调用较早阶段的内容。</p><p>在应用操作方面，Muse Spark 1.1 能够在多个应用之间持续执行长流程任务，并根据场景自主判断是直接点击界面、编写脚本进行自动化，还是一次性完成多个操作步骤，以减少人工干预并提升执行效率。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/96423773-37e3-4a27-9635-173fda424147.png?x-bce-process=image/format,f_auto\" /></p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/a0a6ee66-c0e2-4c71-a852-b0914324717b.png?x-bce-process=image/format,f_auto\" /></p><p>在代码开发方面，新版本可诊断并修复复杂程序错误、开发新功能，以及执行大规模代码迁移任务。模型还能提前规划开发步骤、拆分子任务，并在长时间开发过程中保留重要上下文。Meta 表示，公司内部的开发人员和研究人员已经每天使",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/1d47ee55-0c75-410b-889e-4674bfd1547e.png?x-bce-process=image/format,f_auto",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Meta发布多模态推理模型新版本，强化智能体任务能力，行业关注度高。",
+    "summary_zh": "Meta于7月9日发布多模态推理模型Muse Spark 1.1版本，重点提升AI智能体任务中的规划、协同与执行能力，增强工具调用、代码开发和应用操作能力。该版本强化了多智能体协作机制，由主智能体收集信息、制定计划，将任务拆分给多个子智能体并行执行，缩短复杂项目处理时间。模型支持最高100万token的上下文窗口。",
+    "title_zh": null,
+    "weighted_score": 0.685,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.5
+    },
+    "story_id": "0be75aafc33e03a5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/975/832.htm"
+      }
+    ]
+  },
+  {
+    "id": "122bd6e86bbc9a7c",
+    "source_id": "zh-v2ex",
+    "title": "[问与答] 求靠谱的 Grok 渠道",
+    "url": "https://www.v2ex.com/t/1226788#reply8",
+    "published_at": "2026-07-12T15:15:39+00:00",
+    "raw_text": "<p>之前一直用的 Grok 进行资料检索（因为可以搜 X ，所以很多最新咨询查询出来都比较准确）</p>\n<p>现在看它编码能力也上来了，响应速度也上来了，关键还不封号，那么用来编码就很香了</p>\n<p>所以各位有没有便宜靠谱的 Grok 渠道？</p>\n<p>我需求主要就是 coding ，可能一个月有一小段时间高密度使用，不是每天高频，所以所谓的“日抛号”，好像也在我的可以接受的范围之内。如果有其他区的低价方案，也可以推荐给我，谢谢。</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "社区用户分享Grok使用体验与渠道需求，对寻找低成本编码工具的用户有参考价值。",
+    "summary_zh": "V2EX用户发帖询问靠谱的Grok渠道，称之前用Grok进行资料检索（可搜X，最新资讯准确），现在发现其编码能力提升、响应快且不封号，适合编码。需求主要是coding，每月有短时高密度使用，可接受“日抛号”，希望获得便宜靠谱的渠道或其他低价方案。",
+    "title_zh": null,
+    "weighted_score": 0.285,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.2,
+      "impact": 0.1,
+      "practical_value": 0.6
+    },
+    "story_id": "2fa4baa179cc4945",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226788#reply8"
+      }
+    ]
+  },
+  {
+    "id": "e111bbc7ed068d4b",
+    "source_id": "reddit-localllama",
+    "title": "How is Codex as a harness for local models?",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuib36/how_is_codex_as_a_harness_for_local_models/",
+    "published_at": "2026-07-12T15:19:50+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I was surprised to see that Codex is actually open source, so to my understanding, if you use a local model, it works fully locally.</p> <p>How does it compare to the other popular harnesses like Pi Code and Open Code?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/A_Wild_Entei\"> /u/A_Wild_Entei </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuib36/how_is_codex_as_a_harness_for_local_models/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuib36/how_is_codex_as_a_harness_for_local_models/\">[comments]</a></span>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.3,
+    "reason_zh": "讨论Codex作为本地模型框架的实用性，与Pi Code、Open Code对比，适合本地模型用户参考。",
+    "summary_zh": "Reddit用户发帖询问Codex作为本地模型框架的表现，惊讶于Codex是开源的，若使用本地模型可完全本地运行。希望了解Codex与其他流行框架（如Pi Code和Open Code）的对比情况。",
+    "title_zh": "Codex作为本地模型的框架表现如何？",
+    "weighted_score": 0.395,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.5,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "d01271497655a83f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuib36/how_is_codex_as_a_harness_for_local_models/"
+      }
+    ]
+  },
+  {
+    "id": "32fd5531edecce14",
+    "source_id": "zh-juejin",
+    "title": "从 Git 贡献记录到人设画像报告：AI Stats Agent 的一次全栈实践",
+    "url": "https://juejin.cn/post/7661451496555528242",
+    "published_at": "2026-07-12T15:46:32+00:00",
+    "raw_text": "录一次把开发者统计卡片升级成 AI 画像工坊的实践：从 github-readme-stats 的卡片服务出发，延伸到 GitHub/CNB 数据源、AI 画像、三段式辣评、独立分享页和只读缓存回放。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "将Git贡献统计升级为AI画像工坊，结合多数据源与AI生成，有实用参考价值。",
+    "summary_zh": "文章记录了一次全栈实践：从github-readme-stats卡片服务出发，扩展到GitHub/CNB数据源，结合AI生成开发者画像、三段式辣评、独立分享页和只读缓存回放，将统计卡片升级为AI画像工坊。",
+    "title_zh": null,
+    "weighted_score": 0.54,
+    "score_breakdown": {
+      "source_authority": 0.5,
+      "novelty": 0.7,
+      "impact": 0.3,
+      "practical_value": 0.7
+    },
+    "story_id": "cc935b2e9eb83f7e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661451496555528242"
+      }
+    ]
+  },
+  {
+    "id": "0c1f6f5b343e8696",
+    "source_id": "zh-v2ex",
+    "title": "[问与答] 请问一下 grok 写代码的正确打开方式是什么",
+    "url": "https://www.v2ex.com/t/1226794#reply0",
+    "published_at": "2026-07-12T15:59:33+00:00",
+    "raw_text": "<p>好像有个 grok build ，但是比较抽象</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "简短提问Grok写代码的正确方式，信息量有限，但反映用户困惑。",
+    "summary_zh": "V2EX用户提问Grok写代码的正确打开方式，提到似乎有grok build但比较抽象，寻求具体使用方法。",
+    "title_zh": null,
+    "weighted_score": 0.245,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.2,
+      "impact": 0.1,
+      "practical_value": 0.4
+    },
+    "story_id": "ace0a678caf3f8b8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226794#reply0"
+      }
+    ]
+  },
+  {
+    "id": "d9ca340bc8abd7ec",
+    "source_id": "zh-ftz-is-a-dev",
+    "title": "WebTooys第4弹更新 —— AI知识图谱Oheya、连接选择器Selinkt、长图拼接、LessChat、生成终末地配方AI提示词",
+    "url": "https://ftz.is-a.dev/blog/posts/webtooys4/",
+    "published_at": "2026-07-12T16:00:00+00:00",
+    "raw_text": "![](https://ftz.is-a.dev/blog/posts/img/screenshot_1782573725882.png)\n\nWebTooys 第四弹更新\n\n可通过Netlify/Vercel/Cloudflare Pages\n\n我觉得我该改改我写博客的时候重要的东西写后面的习惯了，感觉不太有人会看到后面吧，该学学倒金字塔结构，这次就不按时间顺序写了，废话少说\n\n这次更新了5个tooys，其中主力项目是Oheya\n\nOheya\n\n自然，也是有Github的，但是视频不着急，想要搞成杂谈DLC杂谈2一部分\n\n这次用的是vue（PrimeVue+Tail...",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "WebTooys第四弹更新，包含AI知识图谱等工具，适合对AI小工具感兴趣的读者。",
+    "summary_zh": "WebTooys第四弹更新，包含5个工具：主力项目Oheya（AI知识图谱）、连接选择器Selinkt、长图拼接、LessChat、生成终末地配方AI提示词。可通过Netlify/Vercel/Cloudflare Pages部署。作者反思写作结构，决定采用倒金字塔结构。",
+    "title_zh": null,
+    "weighted_score": 0.39,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.6,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "c34106698c880d20",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ftz-is-a-dev",
+        "url": "https://ftz.is-a.dev/blog/posts/webtooys4/"
+      }
+    ]
+  },
+  {
+    "id": "eec18dd45055678f",
+    "source_id": "zh-v2ex",
+    "title": "[Claude] Claude 真不熟",
+    "url": "https://www.v2ex.com/t/1226797#reply7",
+    "published_at": "2026-07-12T16:20:34+00:00",
+    "raw_text": "<p>还有 5 次重置，我不得不跳起来蹬小甜甜了</p>\n<p><img alt=\"\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/fsoPx5I.png\" />\n<img alt=\"\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/RNRnNEp.png\" /></p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://i.imgur.com/fsoPx5I.png",
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "用户吐槽Claude使用体验，附截图，反映情绪但缺乏深度信息。",
+    "summary_zh": "V2EX用户发帖吐槽Claude，称还有5次重置，不得不跳起来蹬小甜甜，并附上截图。内容简短，表达对Claude的不满。",
+    "title_zh": null,
+    "weighted_score": 0.2,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.3,
+      "impact": 0.1,
+      "practical_value": 0.2
+    },
+    "story_id": "95b14999dec39720",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226797#reply7"
+      }
+    ]
+  },
+  {
+    "id": "5bbc3a5ef63f4579",
+    "source_id": "verge-ai",
+    "title": "Apple’s failed self-driving car program left a legacy of powerful AI chips",
+    "url": "https://www.theverge.com/tech/964519/apple-silicon-self-driving-car-ai-m7-ultra",
+    "published_at": "2026-07-12T16:27:06+00:00",
+    "raw_text": "Apple's self-driving car program never really got off the ground, but it may have been what made the company's chips the powerful AI performers they are. Early in the development of the self-driving platform, Apple realized that it would need powerful on-device AI processing. While the car processor was never finished, as Mark Gurman details [&#8230;]",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/apple_chips.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "揭示Apple自动驾驶项目虽失败但催生了强大AI芯片，对了解Apple技术路线有启发。",
+    "summary_zh": "据Mark Gurman报道，Apple的自动驾驶汽车项目虽未成功，但其开发过程中对设备端AI处理的需求促使Apple研发了强大的AI芯片。尽管汽车处理器最终未完成，但这一努力为Apple后续的AI芯片性能奠定了基础。",
+    "title_zh": "Apple失败的自动驾驶汽车项目留下了强大的AI芯片遗产",
+    "weighted_score": 0.545,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.5,
+      "practical_value": 0.3
+    },
+    "story_id": "f262b9045921fc4c",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/tech/964519/apple-silicon-self-driving-car-ai-m7-ultra"
+      }
+    ]
+  },
+  {
+    "id": "bdd8748a1ff3a374",
+    "source_id": "reddit-localllama",
+    "title": "24GB VRAM llama-server config exchange thread",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uukj2m/24gb_vram_llamaserver_config_exchange_thread/",
+    "published_at": "2026-07-12T16:43:42+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><strong>For whom is this tread</strong>:<br /> Everyone with a <strong>24GB GPU</strong> (rtx 3090, 7900xtx, rtx 4090) </p> <p><strong>What this Thread is for</strong>:<br /> Sharing proven/well working <strong>llama-server</strong> start configs.</p> <p><strong>Requirements for the configs:</strong><br /> - Utilizes the the VRAM as much as possible<br /> - Provides at least 200.000 tokens KV Cache</p> <p>State next to your start command, <strong>how much System RAM</strong> (normal RAM) you have, as this could very well influence caching performance/viability of your command.</p> <p>Also, if you possible, include infos regarding you OS and CPU, as this might affect available RAM/VRAM für llama-server.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Gold-Drag9242\"> /u/Gold-Drag9242 </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uukj2m/24gb_vram_llamaserver_config_exchange_thread/\">[link]<",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.4,
+    "reason_zh": "针对24GB显存GPU的llama-server配置分享，对本地模型用户有直接实用价值。",
+    "summary_zh": "Reddit帖子为拥有24GB GPU（如RTX 3090、7900XTX、RTX 4090）的用户提供llama-server启动配置分享。要求配置尽可能利用显存，并提供经过验证的配置。",
+    "title_zh": "24GB VRAM llama-server配置交流帖",
+    "weighted_score": 0.455,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.5,
+      "impact": 0.2,
+      "practical_value": 0.8
+    },
+    "story_id": "5ec8c91066c99b29",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uukj2m/24gb_vram_llamaserver_config_exchange_thread/"
+      }
+    ]
+  },
+  {
+    "id": "ab23329c09eba654",
+    "source_id": "interconnects",
+    "title": "6 months to live for open models",
+    "url": "https://www.interconnects.ai/p/6-months-to-live-for-open-models",
+    "published_at": "2026-07-12T16:47:42+00:00",
+    "raw_text": "The most serious test to date of open source AI&#8217;s viability is happening right now.",
+    "category_hint": [
+      "技巧与观点",
+      "论文研究"
+    ],
+    "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/2e40ce14-a532-4db6-a855-caee778250f7_3182x1790.png",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "对开源AI模型生存能力的严肃测试，分析当前局势，有深度洞察。",
+    "summary_zh": "文章指出，目前正在发生对开源AI生存能力最严峻的测试。开源模型面临来自闭源模型的竞争压力，其可行性正受到考验。",
+    "title_zh": "开源模型还有6个月的生命期",
+    "weighted_score": 0.61,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.4
+    },
+    "story_id": "b103be0e7c1df4eb",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "interconnects",
+        "url": "https://www.interconnects.ai/p/6-months-to-live-for-open-models"
+      }
+    ]
+  },
+  {
+    "id": "d7a81260cd97d8e3",
+    "source_id": "zh-v2ex",
+    "title": "[问与答] 你们使用大模型的输入输出比是多少？",
+    "url": "https://www.v2ex.com/t/1226798#reply0",
+    "published_at": "2026-07-12T17:10:07+00:00",
+    "raw_text": "<p>我个人的统计结果是，输入命中率在 90-95% 之间，输出的 Token 量大概是输入的 2-3% 左右。</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "用户分享大模型输入输出比数据，对了解实际使用模式有参考价值。",
+    "summary_zh": "V2EX用户提问大家使用大模型的输入输出比，并分享个人统计：输入命中率90-95%，输出Token量约为输入的2-3%。",
+    "title_zh": null,
+    "weighted_score": 0.27,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.3,
+      "impact": 0.1,
+      "practical_value": 0.4
+    },
+    "story_id": "2b4d808db5674352",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226798#reply0"
+      }
+    ]
+  },
+  {
+    "id": "1f687bb9e53de0f6",
+    "source_id": "zh-v2ex",
+    "title": "[OpenAI] oai 暂时取消五小时限额",
+    "url": "https://www.v2ex.com/t/1226802#reply6",
+    "published_at": "2026-07-12T18:16:51+00:00",
+    "raw_text": "<p><a href=\"https://x.com/thsottiaux/status/2076365965915467978\" rel=\"nofollow\">https://x.com/thsottiaux/status/2076365965915467978</a></p>\n<p>o 神 nb ，a➗是区</p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "OpenAI临时取消五小时限额，对API用户有直接影响，值得关注。",
+    "summary_zh": "据X平台用户thsottiaux消息，OpenAI暂时取消了五小时的使用限额。该消息来源为个人社交媒体，未经官方确认，但引发了社区讨论。目前OpenAI官方尚未发布正式公告，具体恢复时间未知。这一变动可能影响API调用频率和用户体验。",
+    "title_zh": null,
+    "weighted_score": 0.365,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.6,
+      "impact": 0.3,
+      "practical_value": 0.4
+    },
+    "story_id": "654ef0265e1dbfbb",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226802#reply6"
+      }
+    ]
+  },
+  {
+    "id": "2876732736381c5a",
+    "source_id": "reddit-localllama",
+    "title": "moondream3.1-9B-A2B",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uunqcz/moondream319ba2b/",
+    "published_at": "2026-07-12T18:40:55+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uunqcz/moondream319ba2b/\"> <img alt=\"moondream3.1-9B-A2B\" src=\"https://external-preview.redd.it/WWxow3DejdQrSxooiiUticd7tvDJBalzdbAzeZhd0qw.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=a5496f334215c7be0e5d2bbda5a2b0eafa7475eb\" title=\"moondream3.1-9B-A2B\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Moondream 3.1 is a vision language model with a mixture-of-experts architecture (9B total parameters, 2B active). It delivers state-of-the-art visual reasoning and detection while staying fast and cheap to deploy. Skills include <code>query</code>, <code>detect</code>, <code>point</code>, and <code>caption</code>, all native and all returning structured output.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/secopsml\"> /u/secopsml </a> <br /> <span><a href=\"https://huggingface.co/moondream/moondream3.1-9B-A2B\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/WWxow3DejdQrSxooiiUticd7tvDJBalzdbAzeZhd0qw.png?width=640&crop=smart&auto=webp&s=a5496f334215c7be0e5d2bbda5a2b0eafa7475eb",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Moondream 3.1发布，9B参数视觉语言模型，适合本地部署。",
+    "summary_zh": "Moondream 3.1是Moondream系列的最新版本，参数量为9B，采用A2B架构。该模型专注于视觉语言任务，支持图像理解和多模态交互。Reddit用户分享了相关链接和讨论，模型可能开源或提供权重下载，适合本地部署和二次开发。具体性能指标和基准测试结果尚未详细披露。",
+    "title_zh": "Moondream 3.1-9B-A2B 发布",
+    "weighted_score": 0.6,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.7,
+      "impact": 0.5,
+      "practical_value": 0.6
+    },
+    "story_id": "bff4da6b80d82ab0",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uunqcz/moondream319ba2b/"
+      }
+    ]
+  },
+  {
+    "id": "cce350f8b5fb2cbb",
+    "source_id": "zh-v2ex",
+    "title": "[程序员] 我开发了一个 AI 程序化建模的工具",
+    "url": "https://www.v2ex.com/t/1226804#reply0",
+    "published_at": "2026-07-12T20:04:49+00:00",
+    "raw_text": "<a href=\"https://i.imgur.com/nk6V0U7.png\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/nk6V0U7.png\" /></a><br /><br />现在的 AI 3D 很擅长生成第一版：输入一句话或一张图片，很快得到一个模型。<br /><br />但游戏生产更关心下一步。车身太窄，能否只改宽度？车顶太高，能否只改高度？材质错了，能否只换材质，不重做几何？半年后，能否用同样的输入重新得到同样的模型？<br /><br />如果每次修改都要重新生成完整模型、重新描述全部要求、再次消耗大量 Token ，模型就很难真正进入生产流程。<br /><br />Meshova 采用另一条路线：**模型就是脚本**。<br /><br />模型由 TypeScript 脚本和参数生成。AI 不只交付一次性的网格，还交付生成方法。结果不满意，只改相关参数或局部规则，不必从头再来。<br /><br />这样做有几个直接好处：<br /><br />- AI 易于阅读：代码、参数和结构都是大模型熟悉的表达。<br />- AI 易于校验：脚本能做类型检查、测试、截图对比和视觉评分。<br />- 文件小、易传播：分享脚本、参数、版本和随机种子，即可复现模型。<br />- 非节点化：不用让 AI 模拟鼠标连接复杂节点图。<br />- 可反复修改：局部修改即可，不必多次花费 Token 重做全部内容。<br />- 模板可复用：从现有案例出发，比每次从空白开始更稳定。<br /><br />## 一、什么是程序化建模<br /><br />传统建模常通过移动顶点、拉面、雕刻等方式直接修改网格。程序化建模则先写清生成规则，再由程序计算出网格。<br /><br />以汽车为例，脚本会描述车长、车宽、车高、轴距、轮胎尺寸、车窗位置等参数。修改车宽后，系统重新计算车身、玻璃、轮组和灯具的位置，得到一辆新车。<br /><br />它不是把模型“锁死”在一个结果里，而是保留一套可以继续调整的生成方法。<br /><br />这很适合需要批量变体的内容：车辆、建筑、道路、地形、",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://i.imgur.com/nk6V0U7.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "AI程序化建模工具Meshova，解决3D模型局部修改痛点，实用性强。",
+    "summary_zh": "开发者发布了一款名为Meshova的AI程序化建模工具，旨在解决当前AI 3D生成模型在游戏生产中的痛点：每次修改需重新生成完整模型，消耗大量Token且无法保持一致性。Meshova采用程序化方法，允许用户单独调整模型宽度、高度、材质等属性，无需重新生成几何体，并支持半年后复现相同模型。该工具面向游戏生产流程，提升可控性和效率。",
+    "title_zh": "我开发了一个AI程序化建模的工具",
+    "weighted_score": 0.53,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.8,
+      "impact": 0.4,
+      "practical_value": 0.7
+    },
+    "story_id": "69b5f9dd11d33b3e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1226804#reply0"
+      }
+    ]
+  },
+  {
+    "id": "795fd22cc6f50ca9",
+    "source_id": "verge-ai",
+    "title": "Lorde says Ray-Ban Meta AI glasses are ‘not sexy’",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/964539/lorde-says-ray-ban-meta-ai-glasses-are-not-sexy",
+    "published_at": "2026-07-12T20:10:19+00:00",
+    "raw_text": "Lorde was performing at the Real Cool Festival in Madrid on Thursday and took some time during her set to speak out against AI glasses. While she didn't specify any brands in particular, it's likely she was taking a shot at festival sponsor Ray-Ban, which has collaborated with Meta on a pair of AI smartglasses. [&#8230;]",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/gettyimages-2279420244.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "名人公开批评AI眼镜，反映公众对可穿戴AI的接受度问题。",
+    "summary_zh": "歌手Lorde在马德里Real Cool音乐节表演时，公开批评Ray-Ban Meta AI眼镜“不性感”。她未点名具体品牌，但矛头指向音乐节赞助商Ray-Ban及其与Meta合作的AI智能眼镜。Lorde的言论反映了部分公众对可穿戴AI设备外观和隐私的担忧，可能影响产品市场接受度。",
+    "title_zh": "Lorde称Ray-Ban Meta AI眼镜“不性感”",
+    "weighted_score": 0.405,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.5,
+      "impact": 0.2,
+      "practical_value": 0.1
+    },
+    "story_id": "f082ac5383bab3d6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/964539/lorde-says-ray-ban-meta-ai-glasses-are-not-sexy"
+      }
+    ]
+  },
+  {
     "id": "5c7effdc9843c408",
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-12T13:02:16.752853+00:00",
+    "published_at": "2026-07-12T20:37:16.135936+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -1836,7 +2694,7 @@
     "source_id": "zh-meituan-tech",
     "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
     "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-07-12T13:02:16.752925+00:00",
+    "published_at": "2026-07-12T20:37:16.136023+00:00",
     "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
     "category_hint": [
       "技巧与观点"
@@ -1869,7 +2727,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-12T13:02:16.752983+00:00",
+    "published_at": "2026-07-12T20:37:16.136074+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
