@@ -4,7 +4,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-11T20:40:56.160994+00:00",
+    "published_at": "2026-07-12T02:00:37.249944+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -97,40 +97,6 @@
       {
         "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2607.08646"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d43c4632fd58c231",
-    "source_id": "gh-sglang",
-    "title": "sgl-project/sglang v0.5.15",
-    "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.15",
-    "published_at": "2026-07-10T22:58:33+00:00",
-    "raw_text": "# Highlights\r\n\r\n**GLM-5.2 NVFP4, tuned for production**: We took time this cycle to tune GLM-5.2 NVFP4 on Blackwell for optimized production serving. It now runs at **500+ tok/s/user on 8x B300, 450 on 4x GB300** (bs=1). Run GLM-5.2 with our [cookbook](https://docs.sglang.io/cookbook/autoregressive/GLM/GLM-5.2).\r\n\r\n  * **Spec V2 by default**: zero-overhead scheduling via CUDA-graphable DSA draft-extend, dropped D2H/H2D syncs, fused metadata ops. +11% end-to-end TPS ([#29413](https://github.com/sgl-project/sglang/pull/29413), [#29343](https://github.com/sgl-project/sglang/pull/29343), [#29166](https://github.com/sgl-project/sglang/pull/29166), [#29077](https://github.com/sgl-project/sglang/pull/29077)).\r\n  * **IndexShare MTP**: reuses the indexer top-k across draft steps, up to 1.9x lower draft-step cost at long context ([#29959](https://github.com/sgl-project/sglang/pull/29959), [#29787](https://github.com/sgl-project/sglang/pull/29787), [#29654](https://github.com/sgl-project/sglang/p",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "SGLang v0.5.15优化GLM-5.2在Blackwell上的推理性能，达到500+ tok/s，技术亮点突出。",
-    "summary_zh": "SGLang发布v0.5.15版本，重点优化了GLM-5.2 NVFP4在Blackwell GPU上的生产推理性能，在8x B300上达到500+ tok/s/user，4x GB300上达到450 tok/s/user（bs=1）。新版本默认启用Spec V2调度，通过CUDA-graphable DSA草案实现零开销调度。同时提供了GLM-5.2的cookbook供用户参考。",
-    "title_zh": "sgl-project/sglang v0.5.15",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "185947c4050fc44e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-sglang",
-        "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.15"
       }
     ],
     "curated": true
@@ -450,7 +416,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-11T20:40:56.161134+00:00",
+    "published_at": "2026-07-12T02:00:37.250081+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
@@ -478,6 +444,49 @@
       }
     ],
     "curated": true
+  },
+  {
+    "id": "fad7e915aa9520fe",
+    "source_id": "gh-litellm",
+    "title": "BerriAI/litellm v1.93.0-rc.1",
+    "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-rc.1",
+    "published_at": "2026-07-12T01:31:27+00:00",
+    "raw_text": "## Verify Docker Image Signature\n\nAll LiteLLM Docker images are signed with [cosign](https://docs.sigstore.dev/cosign/overview/). Every release is signed with the same key introduced in [commit `0112e53`](https://github.com/BerriAI/litellm/commit/0112e53046018d726492c814b3644b7d376029d0).\n\n**Verify using the pinned commit hash (recommended):**\n\nA commit hash is cryptographically immutable, so this is the strongest way to ensure you are using the original signing key:\n\n```bash\ncosign verify \\\n  --key https://raw.githubusercontent.com/BerriAI/litellm/0112e53046018d726492c814b3644b7d376029d0/cosign.pub \\\n  ghcr.io/berriai/litellm:v1.93.0-rc.1\n```\n\n**Verify using the release tag (convenience):**\n\nTags are protected in this repository and resolve to the same key. This option is easier to read but relies on tag protection rules:\n\n```bash\ncosign verify \\\n  --key https://raw.githubusercontent.com/BerriAI/litellm/v1.93.0-rc.1/cosign.pub \\\n  ghcr.io/berriai/litellm:v1.93.0-rc.1\n```\n\nExpected out",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "LiteLLM新版本发布，提供Docker镜像签名验证，对开发者有实用价值。",
+    "summary_zh": "BerriAI/litellm发布了v1.93.0-rc.1版本。该版本所有Docker镜像均使用cosign进行签名，每个版本使用相同的密钥进行签名。推荐使用固定的commit哈希进行验证，因为commit哈希是加密不可变的。此更新增强了安全性，对使用LiteLLM的开发者具有实用价值。",
+    "title_zh": "BerriAI/litellm v1.93.0-rc.1",
+    "weighted_score": 0.63,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.6,
+      "impact": 0.4,
+      "practical_value": 0.7
+    },
+    "story_id": "23bb1e4065862e7e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-litellm",
+        "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-dev.3"
+      },
+      {
+        "source_id": "gh-litellm",
+        "url": "https://github.com/BerriAI/litellm/releases/tag/v1.91.2"
+      },
+      {
+        "source_id": "gh-litellm",
+        "url": "https://github.com/BerriAI/litellm/releases/tag/v1.93.0-rc.1"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
   },
   {
     "id": "9cb62c08f685880e",
