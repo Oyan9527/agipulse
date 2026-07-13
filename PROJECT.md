@@ -89,7 +89,7 @@ GitHub Actions（每 4 小时定时）
 
 ### 工程质量
 
-- **自动化测试 + CI**：96 项测试覆盖过滤、合并、安全校验、精选门控、首次发现时间、话题聚合等核心逻辑；每次提交与每轮抓取前自动运行，坏逻辑无法把脏数据写进站点。
+- **自动化测试 + CI**：101 项测试覆盖过滤、合并、安全校验、精选门控（含分类占比配额）、首次发现时间、话题聚合等核心逻辑；每次提交与每轮抓取前自动运行，坏逻辑无法把脏数据写进站点。
 - **静默失效告警**：大批信源失效或 AI 打分中断时，自动让任务标红并邮件告警——数据仍照常保留，只是提醒你介入。
 - **安全加固**：内容安全策略（CSP）+ URL 协议白名单 + 全程输出转义，防御来自第三方信源的注入攻击。
 
@@ -147,4 +147,4 @@ Three direct benefits: **near-zero running cost** (only pay-per-use DeepSeek API
 
 **Cost control** — a persistent result cache keyed by content id reuses prior verdicts within the 48-hour window, so only genuinely new content ever costs an API call.
 
-**Engineering quality** — 96 automated tests (filtering, merging, security, quality-gate, aggregation) run on every push and before every fetch; silent-failure alerts flag the run red if sources or scoring break; and a Content-Security-Policy + URL allowlist + output escaping defend against injection from third-party sources.
+**Engineering quality** — 101 automated tests (filtering, merging, security, quality-gate, aggregation) run on every push and before every fetch; silent-failure alerts flag the run red if sources or scoring break; and a Content-Security-Policy + URL allowlist + output escaping defend against injection from third-party sources.

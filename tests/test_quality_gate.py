@@ -134,3 +134,66 @@ def test_global_floor_stops_when_pool_exhausted():
     curated = apply_gate(items, cfg)
     assert len(curated) == 3
     assert sum(1 for c in curated if c.get("gate_backfill")) == 2
+
+
+# --- 比例配额（max_ratio）：占比而非固定数量的上限 ---
+
+def test_ratio_quota_caps_category_share_of_total():
+    # 8 篇论文 + 2 条资讯全部过门槛，另有 6 条未过门槛的资讯供补足池——
+    # 论文占比上限 25%：int(10*0.25)=2，裁掉 6 篇，用补足池的资讯填满总量
+    items = (
+        [_item(f"p{i}", 0.72 + i * 0.01, category="论文研究") for i in range(8)]
+        + [_item(f"news{i}", 0.90 - i * 0.01, category="行业动态") for i in range(2)]
+        + [_item(f"lo{i}", 0.60 - i * 0.01, category="行业动态") for i in range(6)]
+    )
+    cfg = _cfg(quotas={"论文研究": {"max_ratio": 0.25}})
+    curated = apply_gate(items, cfg)
+    assert len(curated) == 10   # 补足池够用，总量不变，只调整分类构成
+    papers = [c for c in curated if c["category"] == "论文研究"]
+    assert len(papers) == 2
+    assert {c["id"] for c in papers} == {"p6", "p7"}   # 分数最高的两篇 (0.78/0.79)
+
+
+def test_ratio_quota_noop_when_already_under_limit():
+    items = [_item("p0", 0.90, category="论文研究")] + [
+        _item(f"news{i}", 0.80, category="行业动态") for i in range(5)
+    ]
+    cfg = _cfg(quotas={"论文研究": {"max_ratio": 0.25}})
+    curated = apply_gate(items, cfg)
+    assert len(curated) == 6
+    papers = [c for c in curated if c["category"] == "论文研究"]
+    assert len(papers) == 1   # 1/6 ≈ 16.7% < 25%，不触发裁剪
+    assert not any(c.get("gate_backfill") for c in curated)
+
+
+def test_ratio_quota_uses_whichever_cap_is_stricter():
+    # 总量小(4条)时 max=10(绝对值)本身不会触发，但 max_ratio=0.25 应把论文限到 int(4*0.25)=1
+    items = [_item(f"p{i}", 0.75 + i * 0.01, category="论文研究") for i in range(3)] + [
+        _item("news", 0.90, category="行业动态")
+    ]
+    cfg = _cfg(quotas={"论文研究": {"max": 10, "max_ratio": 0.25}})
+    curated = apply_gate(items, cfg)
+    papers = [c for c in curated if c["category"] == "论文研究"]
+    assert len(papers) == 1
+    assert papers[0]["id"] == "p2"   # 0.77 最高
+
+
+def test_ratio_quota_shrinks_total_when_backfill_pool_exhausted():
+    # 8 篇论文全部过门槛，没有任何其它分类的候选可补——裁剪后补不满，总量应缩小而非报错
+    items = [_item(f"p{i}", 0.72 + i * 0.01, category="论文研究") for i in range(8)]
+    cfg = _cfg(quotas={"论文研究": {"max_ratio": 0.25}})
+    curated = apply_gate(items, cfg)
+    assert len(curated) == 2   # int(8*0.25)=2，补不满就接受总量缩小
+    assert {c["id"] for c in curated} == {"p6", "p7"}
+
+
+def test_ratio_quota_also_trims_global_floor_backfilled_papers():
+    # 全局保底先把总量从1拉到4(补3篇未过门槛的论文)；比例配额再基于总量4把论文限到
+    # int(4*0.25)=1，但没有其它分类的候选可补裁掉的名额，总量缩回2。
+    items = [_item("news", 0.90, category="行业动态")] + [
+        _item(f"paper{i}", 0.60 - i * 0.01, category="论文研究") for i in range(6)
+    ]
+    cfg = _cfg(min_curated=4, quotas={"论文研究": {"max_ratio": 0.25}})
+    curated = apply_gate(items, cfg)
+    assert len(curated) == 2
+    assert {c["id"] for c in curated} == {"news", "paper0"}
