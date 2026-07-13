@@ -10,6 +10,11 @@ quality_gate:
   min_multi_source_count: 2
   # 命中任一条件即可进入精选流（latest-24h.json / daily-brief.json）
   # 否则仅进入完整流（latest-24h-all.json）
+  min_curated_items: 12
+  # 全局保底：DeepSeek 冷清期打分普遍偏低时，达标条目可能个位数、首页近乎空白。
+  # 精选总数不足此值时，从"已打分但未过门槛"的次优内容里按分数从高到低补齐
+  # （跨分类，但仍尊重各分类 max 上限，避免论文刷屏），补足条目标记 gate_backfill。
+  # 忙碌日达标内容本就超过此值，此保底为空操作；池子本身不足时能补多少算多少。
 
 # AI相关性过滤：只对"通用源"做严格的标题关键词过滤(见 ai_relevance.is_ai_related)。
 #
