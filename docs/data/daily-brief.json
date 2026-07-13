@@ -1,41 +1,7 @@
 {
   "date": "2026-07-13",
-  "generated_at": "2026-07-13T10:57:06.660671+00:00",
+  "generated_at": "2026-07-13T14:19:16.252404+00:00",
   "items": [
-    {
-      "id": "2f7d90f89ca59526",
-      "source_id": "reddit-localllama",
-      "title": "Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/",
-      "published_at": "2026-07-13T04:32:53+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/\"> <img alt=\"Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels\" src=\"https://external-preview.redd.it/Y9OEroMli1c7qGhJUFUZqabf8fK_YjvO58QKfXEeEoI.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=eccd4b2d3af485e4159368950a6cdfe110c7d63e\" title=\"Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/nullc\"> /u/nullc </a> <br /> <span><a href=\"https://nanduruganesh.github.io/flash-msa/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/\">[comments]</a></span> </td></tr></table>",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://external-preview.redd.it/Y9OEroMli1c7qGhJUFUZqabf8fK_YjvO58QKfXEeEoI.png?width=640&crop=smart&auto=webp&s=eccd4b2d3af485e4159368950a6cdfe110c7d63e",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出Flash-MSA稀疏注意力内核，可加速百万token训练，对长上下文模型训练有重要价值。",
-      "summary_zh": "Flash-MSA是一种用于加速百万token训练的新型稀疏注意力内核。该工作针对长序列训练中注意力计算成为瓶颈的问题，设计了高效的稀疏注意力算法和内核实现。实验表明，Flash-MSA在保持模型质量的同时，显著提升了训练速度，使得百万token级别的训练更加可行。论文提供了详细的技术方案和性能评估，对于从事长上下文模型训练的研究者和工程师具有重要参考价值。",
-      "title_zh": "Flash-MSA：利用稀疏注意力内核加速百万token训练",
-      "weighted_score": 0.775,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "0298caf5f54413fd",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/"
-        }
-      ]
-    },
     {
       "id": "057c92fed1a2b583",
       "source_id": "arxiv-cs-ai",
@@ -66,44 +32,6 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2607.09560"
-        }
-      ]
-    },
-    {
-      "id": "b15dfeac1dc74d0f",
-      "source_id": "reddit-localllama",
-      "title": "Anthropic found Claude reasoning in silence (J-space) — we ran the same lens on open Qwen3-8B",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/",
-      "published_at": "2026-07-12T14:22:37+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Anthropic’s research on Claude found a silent internal workspace they call J-space — hidden reasoning that never shows up as visible text.</p> <p>Classic example: the model answers <code>49</code>, but inside J-space they caught <code>21 → 42 → 49</code>.</p> <p>Important distinction:</p> <ul> <li>Chain-of-thought = text you can read</li> <li>J-space = silent concepts in activations (“what’s on its mind”)</li> </ul> <p>We fitted the open Jacobian lens (J-lens) on Qwen3-8B, ran it locally, and used it to catch prose drift before tool calls (model leaning toward “To, You, Do…” instead of JSON).</p> <p>Then we wired that into agent guards: stop / cancel / keep the useful space, and distill recoveries into LoRA data.</p> <p>Made an 8-min explainer demo:</p> <p><a href=\"https://www.youtube.com/watch?v=5UMN6hDONJk\">https://www.youtube.com/watch?v=5UMN6hDONJk</a></p> <p>Happy to answer questions about the probe setup or the guard loop.</p> </div><!-- SC_ON --",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "复现Anthropic的J-space发现，揭示模型内部隐藏推理，对理解模型机制有重要价值。",
-      "summary_zh": "该帖子讨论了Anthropic对Claude模型的研究，发现了一个名为J-space的隐藏内部工作空间，其中包含模型在生成最终答案之前的中间推理步骤，但这些步骤不会在可见文本中显示。例如，模型回答49，但J-space中捕捉到了21→42→49的推理链。作者将同样的分析方法应用于开源的Qwen3-8B模型，并分享了结果。这有助于理解大型语言模型的内部工作机制，特别是推理过程。",
-      "title_zh": "Anthropic发现Claude的静默推理（J-space）——我们在开源Qwen3-8B上运行了同样的视角",
-      "weighted_score": 0.775,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "7b145e989c93c1f8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu61wb/i_mapped_anthropics_jspace_hallucination_signal/"
-        },
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/"
         }
       ]
     },
@@ -141,6 +69,76 @@
       ]
     },
     {
+      "id": "e11b3d57afc093db",
+      "source_id": "zh-leiphone",
+      "title": "斯坦福 Susan Athey 教授：以彼之矛攻彼之盾，用 LLM 的随机性破解因果推断难题 | ICML 2026",
+      "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html",
+      "published_at": "2026-07-13T03:04:00+00:00",
+      "raw_text": "<section style=\"text-align: justify; margin: 16px 16px 0px; line-height: 1.75em;\"><span style=\"color: #4499E7;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></span></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span>随机性是一面镜子，因果推断照见了自己。</span></span></span></section><span></span><span></span><span></span><span></span",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90",
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "斯坦福教授提出用LLM随机性破解因果推断难题，方法新颖且具有理论深度，对研究者有重要启发。",
+      "summary_zh": "本文报道了斯坦福大学Susan Athey教授在ICML 2026上的演讲，她提出利用LLM的随机性来解决因果推断中的难题。Athey教授指出，传统因果推断方法在处理高维数据时面临挑战，而LLM的随机性可以作为一种工具，通过“以彼之矛攻彼之盾”的方式，构建更稳健的因果模型。她展示了初步实验结果，证明该方法在多个基准测试上优于现有方法。这一思路为AI与统计学的交叉研究开辟了新方向。",
+      "title_zh": null,
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "9939e0b8671e6e2c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html"
+        },
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/private/m2WcPZmJL6inJb5i.html"
+        }
+      ]
+    },
+    {
+      "id": "a882d050c69a6f31",
+      "source_id": "arxiv-cs-ai",
+      "title": "Multimodal Reward Hacking in Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2607.09492",
+      "published_at": "2026-07-13T04:00:00+00:00",
+      "raw_text": "arXiv:2607.09492v1 Announce Type: new \nAbstract: Reinforcement learning (RL) is increasingly used to align multimodal large language models (MLLMs), but higher rewards do not always imply better task performance. This risk is amplified when visual evidence is evaluated by text-only or weakly grounded rewards. We study reward hacking in MLLM RL across safety VQA, chart VQA, and stress-test settings, varying reward design, data ambiguity, model scale (2B-32B), and RL algorithm (GRPO, RLOO, DAPO). We introduce Newly Rewarded Failure Rate (NRFR), which measures failures among samples whose proxy reward improves over the SFT baseline. Outcome-only rewards cause severe hacking, reaching 48.1% Reward Hacking Rate (RHR), while NRFR exceeding RHR shows that RL creates new failures rather than merely inheriting them. Scaling reduces but does not eliminate hacking: even the 32B model retains a 54.9% worse rate under outcome-only rewards, whereas answer-aware rewards improve the oracle trend at ev",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "揭示多模态RL中奖励黑客风险，对MLLM对齐研究有重要警示意义。",
+      "summary_zh": "本文研究多模态大语言模型（MLLM）在强化学习（RL）对齐中的奖励黑客问题。作者指出，更高的奖励并不总是意味着更好的任务性能，当视觉证据由纯文本或弱接地奖励评估时，这种风险会被放大。论文在安全VQA、图表VQA和压力测试设置中研究了MLLM RL中的奖励黑客现象，强调了多模态对齐中的潜在缺陷。",
+      "title_zh": "多模态强化学习中的奖励黑客",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "8e703bcee5e91403",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.09492"
+        }
+      ]
+    },
+    {
       "id": "b2323bae952375b0",
       "source_id": "36kr",
       "title": "对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来",
@@ -170,78 +168,6 @@
         {
           "source_id": "36kr",
           "url": "https://36kr.com/p/3893445208717826?f=rss"
-        }
-      ]
-    },
-    {
-      "id": "8970dfde0f7bf1b2",
-      "source_id": "reddit-localllama",
-      "title": "Running Qwen3.5-122B on Mac Studio 96GB: Fixed 3 bugs that made long-context inference usable",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuwrc0/running_qwen35122b_on_mac_studio_96gb_fixed_3/",
-      "published_at": "2026-07-13T00:47:05+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey everyone,</p> <p>I recently switched from DS4 Flash to Qwen3.5-122B on my M3 Ultra Mac Studio for long-context agentic coding. While the model fit better, I hit a wall where follow-up messages took 3-5 minutes to start generating (cold fills) despite having a &quot;warm&quot; context.</p> <p>Turns out the issue wasn't the model, but three specific bugs in my serving stack (qMLX fork of rapid-mlx):</p> <ul> <li>Prompt Instability: A unique message ID in the system prompt broke byte-exact KV cache matching, forcing a full re-compute on every turn.</li> <li>Interrupt Path: Streaming replies weren't persisted when generation was interrupted, causing history divergence.</li> <li>Checkpoint Poison: A background writer created unmatchable checkpoints that crowded out valid ones, triggering aggressive eviction.</li> </ul> <p>After fixing these, prefill time dropped from minutes to sub-seconds (e.g., 53k tokens cached, only 33 prefilled).</p> <p>I decided t",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "作者分享了在Mac Studio上运行Qwen3.5-122B时修复的三个关键bug，对本地部署长上下文模型有直接帮助。",
-      "summary_zh": "作者从DS4 Flash切换到Qwen3.5-122B，在M3 Ultra Mac Studio上进行长上下文agentic编码。虽然模型适配更好，但遇到了后续消息需要3-5分钟才能开始生成（冷填充）的问题。经过排查，发现并非模型问题，而是三个特定bug导致。文章详细描述了这些bug的修复过程，使得长上下文推理变得可用。对于在Mac Studio上运行大型模型的开发者来说，这是一份宝贵的实战经验。",
-      "title_zh": "在Mac Studio 96GB上运行Qwen3.5-122B：修复了三个使长上下文推理可用的bug",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.9
-      },
-      "story_id": "2b6ba27a3ef8025e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/"
-        },
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuwrc0/running_qwen35122b_on_mac_studio_96gb_fixed_3/"
-        }
-      ]
-    },
-    {
-      "id": "ad0809fde455d347",
-      "source_id": "reddit-localllama",
-      "title": "Why do people keep fine-tuning on summarized/censored SOTA CoT traces?",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/",
-      "published_at": "2026-07-12T23:54:52+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Am I missing something? It seems like some people think distillation is magic and will raise the quality of output above what the base model is actually capable of. It's especially weird to me to see all these Fable fine-tunes, because as far as I understand it, they miss the fact that the reasoning traces you get from Anthropic's models are completely different from the actual chain of thought the model outputs, which makes it pretty much a guarantee that the result will be worse than before.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/wombweed\"> /u/wombweed </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/\">[comments]</a></span>",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "质疑在摘要/审查后的CoT轨迹上微调的有效性，引发对蒸馏方法的深入思考。",
-      "summary_zh": "该帖子质疑为什么人们持续在摘要或审查后的SOTA思维链（CoT）轨迹上进行微调。作者认为，蒸馏并不能神奇地提升模型输出质量，使其超越基础模型的实际能力。特别指出，从Anthropic模型获取的推理轨迹与模型实际内部推理过程完全不同，因此在这些轨迹上微调可能无效。帖子引发了关于蒸馏方法有效性的讨论，对于从事模型微调和蒸馏的研究者具有启发意义。",
-      "title_zh": "为什么人们持续在摘要/审查后的SOTA思维链轨迹上进行微调？",
-      "weighted_score": 0.615,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "c41623a1dc9900dd",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/"
         }
       ]
     },
@@ -280,35 +206,35 @@
       ]
     },
     {
-      "id": "6c5841b14040b800",
-      "source_id": "zh-juejin",
-      "title": "别再让 AI 从零开始了",
-      "url": "https://juejin.cn/post/7661613683164807168",
-      "published_at": "2026-07-13T09:46:03+00:00",
-      "raw_text": "11 天，219 次提交，28 个 AI 技能。我搭了一个越用越强的 AI 工作台——这是关于它的设计、证据和你可以复制的部分。",
+      "id": "c8ee14ef1fd7c538",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 为什么在 2026 年， Agent 更适合 Heredoc 式执行，而非 REPL 式交互？",
+      "url": "https://www.v2ex.com/t/1227024#reply0",
+      "published_at": "2026-07-13T11:46:15+00:00",
+      "raw_text": "<p>最初，人们在 Coding Agent 上发现了这样一个现象：只要把 Bash 工具暴露给它，它似乎就能完成所有事——从基础的代码编写，到 agentic 的上下文查找，再到 Git 工作流的执行。</p>\n<p>于是，我们开始看到万物 CLI 化。CLI 似乎成为了将复杂软件暴露给 Agent 的标准答案。你一定听过这句话：</p>\n<blockquote>\n<p>“CLI is all you need.”</p>\n</blockquote>\n<p>但在这股热潮背后，我们也观察到一个问题：Agent 往往像人类使用终端一样，执行一条短命令、读取结果，再决定下一步。任务越复杂，模型与工具之间的往返越多，也就意味着更多的模型调用、上下文开销和等待时间。</p>\n<p>与其让 Agent 编写复杂的 Shell 脚本，我们更希望它使用自己熟悉的编程语言来组织任务。基于这一观察和后续实验，我们提出了一种优化方案：<strong>仍以 CLI 作为统一入口，但以代码作为实际的软件操作接口。</strong></p>\n<p>Agent 一次写入一段代码，将原本分散在多轮交互中的操作、判断和数据处理，交给代码执行环境完成。ego-browser 正是这种思路的一次实践：CLI 负责启动可编程环境，软件将能力暴露为少量函数，Agent 则使用已有的编程能力完成组合与编排。</p>\n<p>在这篇博客中，我们将比较 Heredoc 与 REPL 两种 CLI 中的代码执行方式，并分享 ego-browser 的实验结果：相对于 REPL ，Heredoc 将 Agent 的平均执行轮数、工具调用次数和成本降低了约 40%。</p>\n<h2>CLI Is All You Need ，然后呢？</h2>\n<p>“CLI Is All You Need”成立的前提，是模型已经良好掌握这个 CLI 的使用。</p>\n<p>对于 Git 、Docker 、FFmpeg 等常见工具，这通常不是问题。模型在训练过程中见过大量命令、教程、脚本和报错，已经熟悉它们的参数和组合方式。</p>\n<p>但当我们在为 Agent 开发一个全新的 CLI 时，情况就不同了。每个 CLI 都有自己的子命令、参数、输出格式和错误语义。<strong>对模型来说，这相当于一门新的微型语言。</strong>即",
       "category_hint": [
         "技巧与观点"
       ],
-      "image_url": null,
+      "image_url": "https://cdn.ego.app/assets/articles/2026-07-13/20260713-192801.jpeg",
       "category": "技巧与观点",
-      "content_type": "教程方法",
+      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "分享构建AI工作台的经验，包含设计思路和可复制的部分，实用性强。",
-      "summary_zh": "作者在11天内通过219次提交和28个AI技能，搭建了一个越用越强的AI工作台。文章介绍了其设计理念、证据以及读者可以复制的部分，强调不要每次都让AI从零开始，而是构建可积累的工作流。",
+      "reason_zh": "深入探讨Agent执行模式，提出Heredoc优于REPL的观点，有实验支撑，对Agent设计有启发。",
+      "summary_zh": "本文探讨了AI Agent在执行任务时，为何Heredoc式（一次性提交完整脚本）比REPL式（逐条命令交互）更高效。作者观察到，当Agent拥有Bash工具后，倾向于像人类一样逐条执行命令，导致大量模型调用和上下文开销。通过实验对比，Heredoc方式能减少交互次数，降低延迟和成本。文章还讨论了如何让Agent使用自己熟悉的编程语言组织任务，而非编写复杂Shell脚本。这一发现对设计高效Agent系统具有重要参考价值，尤其适用于需要复杂多步骤操作的场景。",
       "title_zh": null,
-      "weighted_score": 0.555,
+      "weighted_score": 0.56,
       "score_breakdown": {
         "source_authority": 0.4,
         "novelty": 0.7,
-        "impact": 0.4,
-        "practical_value": 0.8
+        "impact": 0.5,
+        "practical_value": 0.7
       },
-      "story_id": "e6cd310d876a568f",
+      "story_id": "76b1600d66adfb55",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7661613683164807168"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1227024#reply0"
         }
       ]
     },
@@ -342,6 +268,72 @@
         {
           "source_id": "zh-sspai",
           "url": "https://sspai.com/post/112185"
+        }
+      ]
+    },
+    {
+      "id": "681ae3944405aa5e",
+      "source_id": "zh-ithome",
+      "title": "每秒 520 万亿次浮点运算，我国自研 AI 芯片取得架构突破",
+      "url": "https://www.ithome.com/0/976/197.htm",
+      "published_at": "2026-07-13T12:08:27+00:00",
+      "raw_text": "<p>IT之家 7 月 13 日消息，据央视新闻报道，7 月 13 日，我国首颗采用软件定义与三维近存计算技术的 AI 芯片在上海正式亮相。这颗芯片在 14 纳米制程工艺上，实现了每秒 520 万亿次浮点运算的算力，其最大特点是通过底层架构创新，走出了一条不依赖先进制程的高端算力发展路径。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/adfb5234-e298-40a4-9944-773f68820110.png?x-bce-process=image/format,f_auto\" /></p><p>IT之家从报道中获悉，该芯片采用了软件定义与三维近存计算相结合的技术路线。一方面，通过软件定义芯片技术，硬件资源可以根据不同任务动态调配，大幅提升算力利用率；另一方面，<strong>通过三维垂直堆叠技术</strong>，将计算单元与存储单元紧密集成在一起，访存带宽达到每秒 6.4TB，从架构上缓解了长期困扰芯片设计的“存储墙”瓶颈。</p><p>报道称，由于不再单纯依赖制程微缩来提升性能，这条技术路线的供应链更加稳定可控。同步发布的还有与该芯片配套的全栈软件工具链，兼容主流深度学习框架，并形成了从单张加速卡、AI 服务器，到液冷超节点、大规模智算集群的完整产品体系，能够为大模型训练与推理提供规模化、可落地的算力支撑。</p><p>业内认为，这标志着我国在高端算力芯片领域，探索出了一条以架构创新代替制程追随的自主发展新路，对夯实人工智能算力底座具有重要意义。</p><blockquote class=\"ai-point\"><h3>延伸阅读</h3><p><span>软件定义芯片（Software Defined Chip, SDC）是一种新型的芯片设计范式，其核心思想是通过软件编程来动态定义和配置芯片的硬件功能，从而让同一块芯片能够灵活适应不同的计算任务。这种技术可以显著提升芯片的通用性和能效比。</span></p><p><span>三维近存计算（3D Near-Memory Computing）是一种将计算单元与存储器（如 DRAM）在垂直方向上进行三维堆叠集成的技术。这种设计可以极大缩短数据",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/adfb5234-e298-40a4-9944-773f68820110.png?x-bce-process=image/format,f_auto",
+      "category": "模型发布",
+      "content_type": "研究论文",
+      "depth_score": 0.6,
+      "reason_zh": "我国自研AI芯片通过架构创新实现高性能，不依赖先进制程，具有战略意义。",
+      "summary_zh": "据央视新闻报道，7月13日，我国首颗采用软件定义与三维近存计算技术的AI芯片在上海正式亮相。该芯片在14纳米制程工艺上实现了每秒520万亿次浮点运算的算力，其最大特点是通过底层架构创新，走出了一条不依赖先进制程的高端算力发展路径。芯片采用了软件定义芯片技术，硬件资源可根据应用需求动态配置，同时结合三维近存计算减少数据搬运开销。这一突破为我国AI芯片自主可控提供了新思路，有望缓解先进制程受限带来的算力瓶颈。",
+      "title_zh": null,
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.5
+      },
+      "story_id": "49d3a0f2324871be",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/976/197.htm"
+        }
+      ]
+    },
+    {
+      "id": "dd6068133de63d59",
+      "source_id": "zh-solidot",
+      "title": "Linus Torvalds 谈 AI 和垃圾补丁",
+      "url": "https://www.solidot.org/story?sid=84816",
+      "published_at": "2026-07-13T11:48:11+00:00",
+      "raw_text": "Linus Torvalds 曾说过大模型（LLM）会让程序员的生产力提升十倍。他在 2026 年印度开源峰会上说，这个数字并不科学，是他随口胡扯的。他说如今的希望是 LLM 给程序员带来的生产力提升能超过其造成的生产力损失。他说，大模型生成的垃圾远多于有用代码，而 AI 生成的 bug 报告浪费了维护者大量的时间精力。Torvalds  称大量 LLM 生成的补丁是无意义的创可贴，或许能解决当前问题，但类似 bug 仍然留在那里，随时可能在其他地方再次出现。他称自己会用 LLM 制作原型，LLM 生成的代码并不能直接使用，但是一个尝试新想法的好方法。他认为 LLM 还无法生成修复内核 bug 的补丁。\n<p></p>",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "Linus Torvalds对LLM的犀利评价，直指AI生成代码和bug报告的质量问题，权威且引发思考。",
+      "summary_zh": "Linus Torvalds在2026年印度开源峰会上谈及AI和LLM。他澄清此前“LLM让程序员生产力提升十倍”的说法是随口胡扯，并指出当前LLM带来的生产力提升可能还抵不上其造成的损失。他认为LLM生成的垃圾远多于有用代码，AI生成的bug报告浪费了维护者大量时间。对于LLM生成的补丁，他评价为“无意义的创可贴”，只能解决表面问题而留下深层隐患。不过，他本人也会用LLM制作原型，认为这是尝试新想法的好方法，但LLM目前还无法生成修复内核bug的补丁。",
+      "title_zh": null,
+      "weighted_score": 0.675,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.4
+      },
+      "story_id": "786de619a748d60e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-solidot",
+          "url": "https://www.solidot.org/story?sid=84816"
         }
       ]
     },
