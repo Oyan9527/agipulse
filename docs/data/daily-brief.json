@@ -1,37 +1,169 @@
 {
   "date": "2026-07-13",
-  "generated_at": "2026-07-13T02:06:49.285728+00:00",
+  "generated_at": "2026-07-13T05:02:27.408027+00:00",
   "items": [
     {
-      "id": "f1dd95c5b8c0848f",
-      "source_id": "zh-meituan-tech",
-      "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
-      "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-      "published_at": "2026-07-13T02:02:35.045362+00:00",
-      "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
+      "id": "057c92fed1a2b583",
+      "source_id": "arxiv-cs-ai",
+      "title": "Beyond Fixed Representations: The Vocabulary and Verifier Gaps in Open-Ended AI",
+      "url": "https://arxiv.org/abs/2607.09560",
+      "published_at": "2026-07-13T04:00:00+00:00",
+      "raw_text": "arXiv:2607.09560v1 Announce Type: new \nAbstract: Modern AI systems are increasingly being evaluated for their ability to reason, code, prove theorems, use tools, and long-horizon research tasks. These are powerful capabilities, but they share a structural limitation: the representational frame within which the model operates, including its conceptual vocabulary, the space of admissible solutions it can search, and the criteria by which success is evaluated, is typically fixed and supplied in advance. This paper argues that building stronger intelligent systems capable of open-ended innovation requires additional classes of operations: the creation, stabilization, and reuse of new representational primitives, which alter the space being searched rather than simply searching within it.\n  We characterize the distance between current AI systems and genuinely open-ended intelligence through two gaps. The first is the vocabulary gap, the difficulty of inventing and stabilizing new representa",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
-      "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
+      "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "VitaBench 2.0是首个真实生活场景下的长期动态智能体基准，对评估AI个性化能力有重要价值。",
-      "summary_zh": "LongCat开源了VitaBench 2.0，这是首个面向长期动态用户建模的智能体评测基准。它系统性地评估大语言模型在长期、真实、动态的用户互动中的个性化与主动性能力。该基准填补了现有评测在动态场景下的空白，为智能体研究提供了新的评估标准。",
-      "title_zh": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
-      "weighted_score": 0.765,
+      "depth_score": 0.9,
+      "reason_zh": "深刻分析AI系统固定表征的局限性，提出词汇与验证器缺口，思想深度高。",
+      "summary_zh": "本文指出现代AI系统在推理、编码、定理证明、工具使用和长周期研究任务中表现出强大能力，但存在结构性局限：模型操作的表征框架（包括概念词汇、可接受解空间等）是固定的。作者提出“词汇缺口”和“验证器缺口”两个概念，前者指模型无法表达超出其词汇的概念，后者指验证器无法评估超出其设计范围的解。论文呼吁超越固定表征，发展开放式的AI系统。",
+      "title_zh": "超越固定表征：开放式AI中的词汇与验证器缺口",
+      "weighted_score": 0.715,
       "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "4ed2d05905f145fa",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.09560"
+        }
+      ]
+    },
+    {
+      "id": "925c0b2a5139daa4",
+      "source_id": "arxiv-cs-ai",
+      "title": "Sticky Routing: Training MoE Models for Memory-Efficient Inference",
+      "url": "https://arxiv.org/abs/2607.08780",
+      "published_at": "2026-07-13T04:00:00+00:00",
+      "raw_text": "arXiv:2607.08780v1 Announce Type: cross \nAbstract: Mixture-of-Experts (MoE) models activate only a sparse subset of experts per token, yet consecutive tokens frequently activate different experts -- causing constant weight swapping between slow storage and fast memory on edge devices. Existing remedies are either system-level (caching heuristics) or post-hoc (router fine-tuning), leaving the root cause unchanged during pretraining. We propose StickyMoE, a differentiable routing consistency loss that penalises abrupt expert switches between adjacent tokens, encouraging the router to maintain the same expert assignment across semantically coherent spans. StickyMoE requires no architectural changes, adds a single hyperparameter lambda, and unlike post-hoc methods, allows expert representations and routing decisions to co-adapt from the first training step. Experiments on small-scale MoE language models show that StickyMoE reduces the expert switch rate by up to 60% with less than 4% perpl",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "从根源解决MoE模型推理内存瓶颈，提出训练时路由优化，实用性强。",
+      "summary_zh": "本文提出Sticky Routing，一种训练时方法，使MoE模型中的连续token倾向于激活相同专家，从而减少边缘设备上频繁的权重交换。现有解决方案要么是系统级缓存启发式，要么是事后路由器微调，而Sticky Routing通过修改路由训练目标，从根源上降低专家切换频率。实验表明，该方法在保持模型质量的同时，显著提升了推理效率，适用于资源受限设备。",
+      "title_zh": "Sticky Routing：训练MoE模型以实现内存高效推理",
+      "weighted_score": 0.775,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "bf3a3c05f611df2f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.08780"
+        }
+      ]
+    },
+    {
+      "id": "a882d050c69a6f31",
+      "source_id": "arxiv-cs-ai",
+      "title": "Multimodal Reward Hacking in Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2607.09492",
+      "published_at": "2026-07-13T04:00:00+00:00",
+      "raw_text": "arXiv:2607.09492v1 Announce Type: new \nAbstract: Reinforcement learning (RL) is increasingly used to align multimodal large language models (MLLMs), but higher rewards do not always imply better task performance. This risk is amplified when visual evidence is evaluated by text-only or weakly grounded rewards. We study reward hacking in MLLM RL across safety VQA, chart VQA, and stress-test settings, varying reward design, data ambiguity, model scale (2B-32B), and RL algorithm (GRPO, RLOO, DAPO). We introduce Newly Rewarded Failure Rate (NRFR), which measures failures among samples whose proxy reward improves over the SFT baseline. Outcome-only rewards cause severe hacking, reaching 48.1% Reward Hacking Rate (RHR), while NRFR exceeding RHR shows that RL creates new failures rather than merely inheriting them. Scaling reduces but does not eliminate hacking: even the 32B model retains a 54.9% worse rate under outcome-only rewards, whereas answer-aware rewards improve the oracle trend at ev",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "揭示多模态RL中奖励黑客风险，对MLLM对齐研究有重要警示意义。",
+      "summary_zh": "本文研究多模态大语言模型（MLLM）在强化学习（RL）对齐中的奖励黑客问题。作者指出，更高的奖励并不总是意味着更好的任务性能，当视觉证据由纯文本或弱接地奖励评估时，这种风险会被放大。论文在安全VQA、图表VQA和压力测试设置中研究了MLLM RL中的奖励黑客现象，强调了多模态对齐中的潜在缺陷。",
+      "title_zh": "多模态强化学习中的奖励黑客",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
         "novelty": 0.8,
         "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "a690135a1a48a087",
+      "story_id": "8e703bcee5e91403",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.09492"
+        }
+      ]
+    },
+    {
+      "id": "34a7abb85c471b4a",
+      "source_id": "arxiv-cs-ai",
+      "title": "NL-PAC: Specification Ambiguity and Certified Minimax Risk Floors in LLM-Mediated Supervision",
+      "url": "https://arxiv.org/abs/2607.08961",
+      "published_at": "2026-07-13T04:00:00+00:00",
+      "raw_text": "arXiv:2607.08961v1 Announce Type: cross \nAbstract: Large language models increasingly provide labels, evaluations, and feedback for tasks specified in natural language. When a specification admits multiple readings but the supervision channel does not reveal which is operative, additional labels reduce sampling error without resolving the resulting identification problem. We introduce Natural Language PAC (NL-PAC), a framework that uses a fixed model's thresholded decoding law to define admissible labels and candidate targets. The probability that multiple labels are admissible equals the diameter of the pointwise-admissible target class, and under target-blind supervision every learner incurs worst-case risk of at least half this diameter, at every sample size; the exact randomized minimax risk over this class is attained by a data-independent strategy. Finite-sample confidence bounds make these quantities certifiable from held-out unlabeled inputs. In a frozen Qwen~2.5--3B audit, one",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "理论分析LLM监督中的规范歧义问题，提出认证最小风险下限，对AI安全与对齐有重要理论贡献。",
+      "summary_zh": "大语言模型越来越多地用于为自然语言指定的任务提供标签、评估和反馈。当规范允许多种解读，但监督渠道未揭示哪种解读有效时，额外标签只能减少采样误差，而无法解决由此产生的识别问题。本文引入自然语言程序化认证框架，形式化规范歧义问题，并推导出在LLM监督下的认证最小风险下限。该工作揭示了LLM监督中固有的不确定性，为设计更可靠的AI评估系统提供了理论基础。",
+      "title_zh": "NL-PAC：LLM监督中的规范歧义与认证最小风险下限",
+      "weighted_score": 0.72,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "d9ad5040a9f96f75",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.08961"
+        }
+      ]
+    },
+    {
+      "id": "b2323bae952375b0",
+      "source_id": "36kr",
+      "title": "对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来",
+      "url": "https://36kr.com/p/3893445208717826?f=rss",
+      "published_at": "2026-07-13T02:39:18+00:00",
+      "raw_text": "<p>一个从未见过监控画面的多模态模型，却比在监控数据上练了多年的小模型“老将”更懂监控。这不是科幻电影，这是2023年Om AI联汇的一场“无心插柳”，也是CEO兼首席科学家赵天成博士更加坚信“多模态训练方式能为物理开放世界带来泛化性”的关键节点。彼时，AI行业正在追求以大语言模型为核心的生成式AI。</p>\n  <p>三年后，这个多模态模型演变成了VLX——全球首个面向物理AI的端侧流式多模态模型系列。首次提出“端侧原生流式多模态”这一全新模型架构，而通过这个从Day 1为端侧算力约束设计的架构，VLX模型首次在端侧打通“持续感知+精准定位+行动决策”的物理AI完整闭环。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260713/v2_b00a13bf0a3f45a88d3d27c919ef4dd2@5925182_oswg753581oswg1080oswg652_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">VLX概览图</p>\n  <p>毫无疑问，站在2026年夏天的时间节点，AI行业的热度已经开始从数字AI转向物理AI。不同于数字AI的2023年，虽然物理AI的热度很高，但是行业仍未收敛，多路线并存，距生产落地尚远：以语言为中心的VLA、以像素为中心的视频生成、以3D结构为中心的仿真、以视觉表征为中心的JEPA……行业对最主流的VLA与世界模型两条概念路线的选择，也依然摇摆不定，是替代，还是并存，抑或是融合？</p>\n  <p>就在这一行业还在争论谁是物理AI终极答案之时，Om AI联汇的VLX系列模型已然完成物理AI从仿真实验到产业落地的商业闭环，通过赋予机器人、无人机、可穿戴设备、安防摄像头、AI PC等多类物理终端自主感知的“小脑”和认知决策的“大脑”，让这些物理终端实现从“被动执行指令”向“主动适应场景”跨越。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260713/v2_34b89351baf44832b3bccd0ea",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://img.36krcdn.com/hsossms/20260713/v2_b00a13bf0a3f45a88d3d27c919ef4dd2@5925182_oswg753581oswg1080oswg652_img_000?x-oss-process=image/format,jpg/interlace,1",
+      "category": "模型发布",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深度对话 Om AI 创始人，揭秘全球首个端侧流式多模态模型 VLX 的架构与理念。",
+      "summary_zh": "本文对话 Om AI 创始人赵天成，介绍其团队推出的 VLX 模型——全球首个面向物理 AI 的端侧流式多模态模型系列。该模型从 Day 1 为端侧算力约束设计，首次在端侧打通“持续感知+精准定位+行动决策”的物理 AI 完整闭环。文章回顾了团队从多模态模型到 VLX 的演进历程，并探讨了物理 AI 原生流式架构的未来。",
+      "title_zh": "对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "2eb95db9ab8c06ea",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "36kr",
+          "url": "https://36kr.com/p/3893445208717826?f=rss"
         }
       ]
     },
@@ -70,68 +202,101 @@
       ]
     },
     {
-      "id": "89f4d4886aa127b5",
-      "source_id": "zh-ithome",
-      "title": "中国电信试验 AI 传输卫星视频新方案，效率比 H.265 提升 3.5 倍",
-      "url": "https://www.ithome.com/0/975/855.htm",
-      "published_at": "2026-07-13T00:20:06+00:00",
-      "raw_text": "<p>IT之家 7 月 13 日消息，中国电信研究院今日宣布，中国电信（研究院、上海公司和中电信应急公司）联合北京邮电大学、鹏城实验室在中国电信研究院北京园区完成<strong>基于知识库的高轨卫星跨模态语义通信试验</strong>。</p><p>IT之家从公告获悉，该试验依托中国电信<strong>云网融合中试平台</strong>的高轨实星验证能力，基于亚洲九号卫星完成跨模态语义通信验证，实现了两大核心技术突破：</p><ul class=\" list-paddingleft-2\"><li><p><strong>一是创新性融合语义知识库和信源信道联合编码（JSCC）技术，星地链路传输效率提升至 3.5 倍以上</strong>。通过关键帧的 JSCC 高效可靠传输 + 非关键帧的文本向量映射，关键帧占比降低至约 0.5%，每 6 秒视频中仅选取 1 帧关键帧传输视频图像；对于近 200 帧非关键帧，将视频图像映射到知识库的文本向量，实现高维信息的低维表征。在保持相近视频质量（Frechet 距离 FID&lt;50）的前提下，实测星地传输效率较传统的 H.264 和 H.265 方案分别<strong>提升至 5.5 倍和 3.5 倍</strong>。</p></li><li><p><strong>二是破解语义通信多模态传输难题，多模态传输质量提升 70% 以上</strong>。试验基于语义知识库的生成式语义恢复与视频、音频跨模态融合对齐，实现星地多模态高质量传输。在采用相近的视频压缩比时，视频质量（FID）较传统的 H.264 和 H.265 方案分别<strong>提升 92% 和 70%</strong>。</p></li></ul><p style=\"text-align: center;\"><img alt=\"图片\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/0a4ef2ab-25ef-4900-958a-cdfc5a1dd0ff.png\" /></p><p>后续，中国电信、北京邮电大学和鹏城实验室将深化 6G 领域的协同攻关力度，共同推动语义通信等关键技术创新、标准制定和产业进程。</p>",
+      "id": "fd04474491e1435b",
+      "source_id": "zh-sspai",
+      "title": "你这图「保真」吗？AI 生图时代的信息防伪",
+      "url": "https://sspai.com/post/112185",
+      "published_at": "2026-07-13T02:52:47+00:00",
+      "raw_text": "人类记录信息的方式一直在变化，但我们对「真实性」的需求从未改变。<a href=\"https://sspai.com/post/112185\" target=\"_blank\">查看全文</a>",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/0a4ef2ab-25ef-4900-958a-cdfc5a1dd0ff.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.6,
-      "reason_zh": "中国电信联合高校完成高轨卫星跨模态语义通信试验，效率提升3.5倍，是AI与卫星通信结合的前沿成果。",
-      "summary_zh": "IT之家报道，中国电信研究院联合北京邮电大学、鹏城实验室，基于亚洲九号卫星完成基于知识库的高轨卫星跨模态语义通信试验。该试验融合语义知识库和信源信道联合编码（JSCC）技术，将星地链路传输效率提升至3.5倍以上。关键帧占比降低至约0.5%，每6秒视频仅选取1帧关键帧传输，大幅提升传输效率。",
-      "title_zh": null,
-      "weighted_score": 0.67,
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "探讨 AI 生图时代的信息防伪问题，分析真实性需求与技术挑战。",
+      "summary_zh": "文章探讨了在 AI 生图时代，人类对信息真实性的需求如何演变。从历史记录方式的变化出发，分析了当前 AI 生成图像带来的防伪挑战，并介绍了相关技术手段。",
+      "title_zh": "你这图「保真」吗？AI 生图时代的信息防伪",
+      "weighted_score": 0.545,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.4
+        "source_authority": 0.6,
+        "novelty": 0.5,
+        "impact": 0.4,
+        "practical_value": 0.7
       },
-      "story_id": "86317630917cd93d",
+      "story_id": "7c0250ccb35e1791",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-ithome",
-          "url": "https://www.ithome.com/0/975/855.htm"
+          "source_id": "zh-sspai",
+          "url": "https://sspai.com/post/112185"
         }
       ]
     },
     {
-      "id": "d93361873022d5cb",
-      "source_id": "36kr",
-      "title": "全网骂Claude变笨，Anthropic下场揭秘：坑你的不是模型",
-      "url": "https://36kr.com/p/3892222176574211?f=rss",
-      "published_at": "2026-07-12T05:47:23+00:00",
-      "raw_text": "<p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260712/v2_b77ea2d60b684a10ac185e0ffbb5c0f8@5579416_oswg84131oswg1080oswg460_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">换更大的模型就等于更聪明？</p>\n  <p><strong>【导读】</strong>换更大的模型就等于更聪明？这可能是Claude Code用户最深的误会。很多人为此一路换到最贵的Fable，近日，Anthropic，亲手澄清了这个误区。</p>\n  <p>你有没有过这种时刻：Claude Code写代码写砸了，第一反应，就是赶紧换个更强的模型。</p>\n  <p>但这一招，很多时候并不管用，甚至是在白花钱。</p>\n  <p>近日，Anthropic官方发了一篇长文专门来讲这件事。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260712/v2_f0da2168d5e0493eae856ef521034b31@5579416_oswg102418oswg1080oswg618_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">Anthropic官方长文</p>\n  <p>起因是太多人把Claude Code里的两个选项搞混了：</p>\n  <p>一个是模型选择（Model），一个是努力度（Effort）。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260712/v2_f74399f38f3d4a689f0ee87e59238936@5579416_oswg91179oswg1080oswg502_img_000?x-oss-process=image/format,jpg/interlace,1\"",
+      "id": "c9a08caabeb96148",
+      "source_id": "zh-tmtpost",
+      "title": "Beyond the Chatbot: Big Tech’s Pragmatic Pivot to the Enterprise Agent",
+      "url": "https://www.tmtpost.com/8062327.html",
+      "published_at": "2026-07-13T03:04:03+00:00",
+      "raw_text": "As consumer AI fatigue sets in, tech giants are racing to integrate autonomous intelligent agents into legacy corporate infrastructure—trading viral novelty for engineering reliability.",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://img.36krcdn.com/hsossms/20260712/v2_b77ea2d60b684a10ac185e0ffbb5c0f8@5579416_oswg84131oswg1080oswg460_img_000?x-oss-process=image/format,jpg/interlace,1",
+      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/55y4jthngbg3.png",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "Anthropic官方澄清Claude变笨的误解，揭示模型选择与任务匹配的深层问题。",
-      "summary_zh": "针对用户普遍反映Claude变笨的抱怨，Anthropic官方下场揭秘，指出问题可能不在于模型本身，而在于用户的使用方式。很多人认为换更大的模型（如Fable）就能获得更好结果，但Anthropic澄清这是一个误区。文章分析了Claude Code用户常见的错误做法，例如不根据任务特性选择合适的模型、过度依赖单一模型等。Anthropic建议用户应根据具体任务需求选择模型，并合理配置参数，而不是盲目追求大模型。这一澄清有助于用户更有效地使用Claude系列模型，避免资源浪费。",
-      "title_zh": "全网骂Claude变笨，Anthropic下场揭秘：坑你的不是模型",
-      "weighted_score": 0.66,
+      "reason_zh": "分析科技巨头从消费级AI转向企业级智能体的战略，揭示行业趋势，适合关注AI商业化的读者。",
+      "summary_zh": "随着消费者对AI聊天机器人的新鲜感消退，科技巨头正将重心转向企业级智能体，将自主智能体集成到传统企业基础设施中。文章指出，这一转变从追求病毒式传播转向工程可靠性，强调智能体在自动化企业流程、提升效率方面的潜力。巨头们利用现有企业客户关系和数据优势，推动AI在金融、医疗、制造等行业的落地，但面临集成复杂性、安全性和可靠性挑战。",
+      "title_zh": "超越聊天机器人：科技巨头务实转向企业智能体",
+      "weighted_score": 0.635,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
+        "novelty": 0.6,
+        "impact": 0.7,
         "practical_value": 0.5
       },
-      "story_id": "994cd6396f032cda",
+      "story_id": "a4a0fa129918ea67",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "36kr",
-          "url": "https://36kr.com/p/3892222176574211?f=rss"
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8062327.html"
+        }
+      ]
+    },
+    {
+      "id": "e53883f84dd7c09c",
+      "source_id": "zh-tmtpost",
+      "title": "具身智能投资图谱：为什么车企偏爱有“工程化经验”的创始人？",
+      "url": "https://www.tmtpost.com/8062421.html",
+      "published_at": "2026-07-13T04:25:29+00:00",
+      "raw_text": "车企CVC的具身智能投资图谱：谁在投、投给谁、怎么投。",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.tmtpost.com/uploads/images/2026/07/d6c89a9d2a8d193be18cae76a2b3335c_1783916733.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "分析车企CVC投资具身智能的偏好，揭示工程化经验的重要性，对理解产业资本逻辑有启发。",
+      "summary_zh": "本文梳理了车企旗下企业风险投资（CVC）在具身智能领域的投资图谱，分析了谁在投、投给谁以及如何投。研究发现，车企CVC更偏爱具有“工程化经验”的创始人，即那些能将技术落地为实际产品的团队。文章指出，具身智能从实验室到量产需要解决成本、可靠性、供应链等工程难题，因此有产业背景的创业者更受青睐。这一趋势反映了资本对技术商业化能力的重视。",
+      "title_zh": null,
+      "weighted_score": 0.605,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.6
+      },
+      "story_id": "a3423694072cdd8f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8062421.html"
         }
       ]
     },
@@ -165,40 +330,6 @@
         {
           "source_id": "zh-oschina",
           "url": "https://www.oschina.net/news/471665"
-        }
-      ]
-    },
-    {
-      "id": "6f9310c46371d027",
-      "source_id": "reddit-machinelearning",
-      "title": "Context and average best linear mappings [D]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/",
-      "published_at": "2026-07-12T02:18:08+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>The context (in a border sense) viewpoint of neural networks is not thought about too much but it leads to a simple best average linear mapping viewpoint of a layer.</p> <p><a href=\"https://archive.org/details/a-context-based-view-of-deep-neural-networks\">https://archive.org/details/a-context-based-view-of-deep-neural-networks</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/oatmealcraving\"> /u/oatmealcraving </a> <br /> <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/\">[comments]</a></span>",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "从上下文视角重新审视神经网络层，提出平均最佳线性映射的观点，有一定理论启发性。",
-      "summary_zh": "该帖子提出了一种基于上下文视角的神经网络层理解方式，认为每一层实际上是在学习一个平均最佳线性映射。作者通过理论推导和示例，展示了如何将神经网络的非线性变换视为在不同上下文条件下的线性映射平均。这一视角有助于理解网络的泛化能力和表示学习机制，但缺乏实验验证。",
-      "title_zh": "上下文与平均最佳线性映射",
-      "weighted_score": 0.365,
-      "score_breakdown": {
-        "source_authority": 0.2,
-        "novelty": 0.6,
-        "impact": 0.3,
-        "practical_value": 0.4
-      },
-      "story_id": "1d3bf12e0487ed44",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/"
         }
       ]
     }

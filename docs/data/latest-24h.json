@@ -4,7 +4,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-13T02:02:35.045286+00:00",
+    "published_at": "2026-07-13T04:55:10.652830+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -34,11 +34,45 @@
     "curated": true
   },
   {
+    "id": "925c0b2a5139daa4",
+    "source_id": "arxiv-cs-ai",
+    "title": "Sticky Routing: Training MoE Models for Memory-Efficient Inference",
+    "url": "https://arxiv.org/abs/2607.08780",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08780v1 Announce Type: cross \nAbstract: Mixture-of-Experts (MoE) models activate only a sparse subset of experts per token, yet consecutive tokens frequently activate different experts -- causing constant weight swapping between slow storage and fast memory on edge devices. Existing remedies are either system-level (caching heuristics) or post-hoc (router fine-tuning), leaving the root cause unchanged during pretraining. We propose StickyMoE, a differentiable routing consistency loss that penalises abrupt expert switches between adjacent tokens, encouraging the router to maintain the same expert assignment across semantically coherent spans. StickyMoE requires no architectural changes, adds a single hyperparameter lambda, and unlike post-hoc methods, allows expert representations and routing decisions to co-adapt from the first training step. Experiments on small-scale MoE language models show that StickyMoE reduces the expert switch rate by up to 60% with less than 4% perpl",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "从根源解决MoE模型推理内存瓶颈，提出训练时路由优化，实用性强。",
+    "summary_zh": "本文提出Sticky Routing，一种训练时方法，使MoE模型中的连续token倾向于激活相同专家，从而减少边缘设备上频繁的权重交换。现有解决方案要么是系统级缓存启发式，要么是事后路由器微调，而Sticky Routing通过修改路由训练目标，从根源上降低专家切换频率。实验表明，该方法在保持模型质量的同时，显著提升了推理效率，适用于资源受限设备。",
+    "title_zh": "Sticky Routing：训练MoE模型以实现内存高效推理",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "bf3a3c05f611df2f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08780"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "f1dd95c5b8c0848f",
     "source_id": "zh-meituan-tech",
     "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
     "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-07-13T02:02:35.045362+00:00",
+    "published_at": "2026-07-13T04:55:10.652908+00:00",
     "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
     "category_hint": [
       "技巧与观点"
@@ -106,7 +140,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-13T02:02:35.045423+00:00",
+    "published_at": "2026-07-13T04:55:10.652967+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
@@ -136,76 +170,276 @@
     "curated": true
   },
   {
-    "id": "cc3607024889835b",
-    "source_id": "zh-cnbeta",
-    "title": "Anthropic延长Claude Fable 5模型付费用户访问权限至7月19日",
-    "url": "https://www.cnbeta.com.tw/articles/tech/1568754.htm",
-    "published_at": "2026-07-12T22:05:48+00:00",
-    "raw_text": "<p>人工智能公司Anthropic于近日宣布，决定继续延长旗下Claude Fable 5旗舰模型在所有付费订阅方案中的访问权限，该政策的截止日期已由原定的7月12日推迟至7月19日。与此同时，Claude Code的每周费率上限也将继续保持在比常规标准高出50%的水平，直至同一日期。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1568754.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
+    "id": "3b0c4b15d28ba239",
+    "source_id": "arxiv-cs-ai",
+    "title": "TheBioCollection: Unified Pre-Training Scale LLM Corpus for Biology",
+    "url": "https://arxiv.org/abs/2607.08803",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08803v1 Announce Type: cross \nAbstract: The push toward large language models for biology (BioLM) has created a need for training corpora that can endow models with a genuine understanding of biology. However, existing biological resources, such as molecular databases, protein repositories, genomic annotations, single-cell atlases, and pathway databases, are scattered across heterogeneous formats and remain unorganized into a cohesive corpus for language model training. We present TheBioCollection, a 52.6B-token pre-training-scale corpus that converts these disparate resources into a unified, training-ready form spanning small molecules, proteins, genomic sequences, cells, and pathways. Beyond consolidating existing data, TheBioCollection enriches each record with tool-computed biological properties and introduces new instruction tasks for capabilities that current corpora barely cover. We pair the corpus with TheBioCollection-Eval, a matched suite probing recognition, gener",
     "category_hint": [
-      "行业动态"
+      "论文研究"
     ],
     "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "Anthropic延长Claude Fable 5访问权限，对订阅用户是直接利好，但信息与上一条重复。",
-    "summary_zh": "Anthropic宣布将Claude Fable 5旗舰模型在所有付费订阅方案中的访问权限延长至7月19日（原定7月12日截止）。同时，Claude Code的每周费率上限继续保持在比常规标准高50%的水平，直至同一日期。",
-    "title_zh": null,
-    "weighted_score": 0.535,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "整合分散的生物数据资源构建统一预训练语料库，为生物学大语言模型奠定数据基础，具有重要资源价值。",
+    "summary_zh": "生物学大语言模型的发展需要能够赋予模型真正生物学理解的训练语料。然而，现有的生物资源如分子数据库、蛋白质库、基因组注释、单细胞图谱和通路数据库分散在异构系统中。本文提出TheBioCollection，一个统一的预训练语料库，整合了多种生物数据源，涵盖从分子到系统的多个层次。该语料库旨在为生物学LLM提供全面、一致且高质量的训练数据，有望推动生物信息学领域的模型发展。",
+    "title_zh": "TheBioCollection：用于生物学的统一预训练大规模LLM语料库",
+    "weighted_score": 0.74,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.4
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.6
     },
-    "story_id": "5ab7d04377fd18cf",
-    "multi_source_count": 2,
+    "story_id": "c60059b9f78ed0cf",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1568754.htm"
-      },
-      {
-        "source_id": "zh-tmtpost",
-        "url": "https://www.tmtpost.com/8061886.html"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08803"
       }
     ],
     "curated": true
   },
   {
-    "id": "b18c47eaa10dd153",
-    "source_id": "zh-ithome",
-    "title": "微软研究院推出开源可视化中间语言 Flint，让 AI 智能体“一句话生成专业图表”",
-    "url": "https://www.ithome.com/0/975/816.htm",
-    "published_at": "2026-07-12T12:45:22+00:00",
-    "raw_text": "<p>IT之家 7 月 12 日消息，微软研究院联合中国人民大学 IDEAS Lab 联合推出了开源可视化中间语言 Flint，可以让 AI 智能体“一句话生成” Vega-Lite、ECharts、<span class=\"link-text-start-with-http\">Chart.js</span> 的可渲染图表。</p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/7aec0f1f-317f-4ba7-8622-c90c66c58a3b.png?x-bce-process=image/format,f_auto\" /></p><p>据介绍，现有可视化库通常提供大量配置选项，若采用精简配置，生成的图表未必适合数据内容；若要求大语言模型直接输出完整配置，又容易因参数过多而出现冲突、遗漏或不一致。因此 Flint 在设计之初将图表意图与底层可视化库实现分离，以减少 AI 生成配置时的复杂度。</p><p>具体来看，Flint 的规格主要分为数据定义和图表定义两部分。数据部分可标注字段的语义类型，例如年月、价格、百分比、利润、国家或排名等；图表部分则用于指定图表类型，确认各字段映射到 X 轴、Y 轴、颜色、大小或分面（Facet）等视觉元素。其编译器能够结合数据语义、图表类型和字段映射，自动推导时间解析方式、聚合规则、数值格式、配色方案及布局。例如，利润字段可自动采用体现正负变化的发散色阶，而日期字段则会自动使用对应的时间解析规则和坐标轴格式。</p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/ad940b48-6eb7-4e56-84e9-8819c977c3c0.png?x-bce-process=image/format,f_auto\" /></p><p>开发人员同时发布了 flint-chart-mcp 服务器，使支持 MCP（Model Context Protocol）的 AI 智能体能够在对话中直接创建 / 预览图表，全",
+    "id": "a2ed6e1ab9e542d2",
+    "source_id": "qbitai",
+    "title": "机器狗指挥人类用天平称重！清华现场演示：无脚本，任务随机，观众即兴出题",
+    "url": "https://www.qbitai.com/2026/07/448239.html",
+    "published_at": "2026-07-13T04:14:27+00:00",
+    "raw_text": "从人类认知范式，构建Physical AGI",
     "category_hint": [
-      "行业动态"
+      "行业动态",
+      "模型发布"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/7aec0f1f-317f-4ba7-8622-c90c66c58a3b.png?x-bce-process=image/format,f_auto",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.5,
-    "reason_zh": "微软开源可视化中间语言Flint，让AI智能体一句话生成专业图表，降低数据可视化门槛。",
-    "summary_zh": "微软研究院联合中国人民大学IDEAS Lab推出开源可视化中间语言Flint。该语言允许AI智能体通过一句话指令生成Vega-Lite、ECharts、Chart.js等库的可渲染图表。Flint解决了现有可视化库配置复杂的问题，使非专业用户也能快速创建高质量图表。项目已开源，有望推动AI辅助数据可视化的发展。",
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "清华现场演示机器狗指挥人类称重，无脚本随机任务，展示Physical AGI前沿进展，值得关注。",
+    "summary_zh": "清华大学团队在活动现场演示了机器狗与人类协作完成天平称重任务，整个过程无预设脚本，任务随机生成，观众可即兴出题。该演示基于人类认知范式构建Physical AGI，展示了具身智能在动态交互中的灵活性与适应性。机器狗能够理解人类指令并自主规划动作，体现了从感知到行动的端到端能力。这一成果为未来人机协作和通用机器人的发展提供了新思路。",
     "title_zh": null,
-    "weighted_score": 0.7,
+    "weighted_score": 0.74,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.5
     },
-    "story_id": "0cc208434becca82",
+    "story_id": "25e618d0d43c260e",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/975/816.htm"
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/07/448239.html"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
+  },
+  {
+    "id": "cd930412c5ac3c55",
+    "source_id": "arxiv-cs-ai",
+    "title": "KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling",
+    "url": "https://arxiv.org/abs/2607.09153",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.09153v1 Announce Type: new \nAbstract: Process Reward Models (PRMs) have been proven to be highly effective in guiding test-time scaling (TTS) methods, which significantly boost the capabilities of LLM-based multi-agent systems. However, existing PRMs are text-based: they re-encode the entire trajectory text from scratch. In long multi-agent rollouts, the scoring cost, growing quadratically with respect to sequence length L, creates a severe computational bottleneck, severely limiting PRMs' application in long-context scenarios. To resolve this, we introduce KV-PRM, a highly efficient process reward model that eliminates the heavy text re-encoding by directly reading the KV cache produced naturally during the LLM's generation phase. By processing a single \"verify token\" against the pre-existing KV cache, KV-PRM reduces the scoring cost from O(L^2) to O(L). We formally prove that the KV cache contains strictly greater information capacity than text, and is more efficient for d",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出KV-PRM，通过KV缓存传输实现高效过程奖励建模，显著降低多智能体测试时扩展的计算成本。",
+    "summary_zh": "本文提出KV-PRM，一种高效的过程奖励模型，用于多智能体测试时扩展。现有PRM基于文本，每次需重新编码整个轨迹，导致长序列下计算成本二次增长。KV-PRM通过KV缓存传输机制，避免重复编码，大幅提升效率。实验表明，该方法在保持性能的同时显著降低了推理开销，为多智能体系统的实际部署提供了可行方案。",
+    "title_zh": "KV-PRM：通过KV缓存传输实现高效过程奖励建模以支持多智能体测试时扩展",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "361b17d1b4d8b837",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.09153"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "e2f300c146fd8b9d",
+    "source_id": "arxiv-cs-ai",
+    "title": "OpenProver: Agentic and Interactive Theorem Proving with Lean 4",
+    "url": "https://arxiv.org/abs/2607.09217",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.09217v1 Announce Type: new \nAbstract: In this system paper, we present OpenProver, an open-source system for LLM-driven automated theorem proving (ATP) with integrated Lean 4 formal verification. OpenProver integrates a Planner-Worker-Verifier architecture inspired by recent ATP agentic systems such as Aletheia. A Planner agent maintains a compact Whiteboard scratchpad and an unbounded Repository of intermediate findings, and decomposes mathematical work into parallel Workers.\n  OpenProver is fully open-source, offers reproducible evaluation through automatic formal verification of generated proofs, and provides an interactive terminal interface for human-guided proof search. In interactive mode, OpenProver allows the human operator to monitor and steer the proof search process, motivated by the established human-AI synergy in interactive code generation.\n  To showcase the potential for quantitative ablation experiments enabled by automatic formal verification, we evaluate O",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "开源LLM驱动的定理证明系统，集成Lean 4验证，采用规划-工作-验证架构，提升自动化证明能力。",
+    "summary_zh": "本文介绍OpenProver，一个开源系统，用于LLM驱动的自动化定理证明，并集成Lean 4形式化验证。系统采用规划-工作-验证架构：规划器维护白板记录，工作者执行具体证明步骤，验证器检查正确性。该架构借鉴了Aletheia等近期工作，通过分工协作提高了证明效率。实验表明，OpenProver在多个数学定理证明任务上取得了有竞争力的结果。",
+    "title_zh": "OpenProver：基于Lean 4的智能体交互式定理证明系统",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "df8ae072b2b30784",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.09217"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "827d796a47e8cb25",
+    "source_id": "arxiv-cs-ai",
+    "title": "LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making",
+    "url": "https://arxiv.org/abs/2607.09322",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.09322v1 Announce Type: new \nAbstract: In this work, we introduce LongMedBench, a real-world EHR-based benchmark for long-horizon clinical decision-making. Prior evaluations of LLM-based medical agents have largely emphasized short-context knowledge QA and tool use. However, real-world medical care is inherently longitudinal, and clinicians must aggregate evidence across repeated visits, tests, and evolving treatments. Therefore, long-horizon interaction is essential for realistic assessment. LongMedBench is constructed via a reproducible pipeline that integrates MIMIC-IV admission records and clinical notes into time-series event streams and long-context memory datasets, enabling long-horizon, multi-session interactions between agents and a clinical environment. It comprises 335 patients, with 19.72 inpatient visits per patient on average and 44.91 medical events per visit. Guided by the long-horizon decision process, we propose an evaluation taxonomy with three suites: fact",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "首个基于真实电子健康记录的长周期临床决策基准，填补了现有医疗智能体评估的空白。",
+    "summary_zh": "本文提出LongMedBench，一个基于真实电子健康记录的长周期临床决策基准。现有医疗智能体评估多聚焦于短上下文知识问答和工具使用，但实际医疗是纵向的，医生需综合多次就诊信息。LongMedBench模拟了长期临床决策场景，要求智能体在多次就诊中持续推理。该基准为评估和提升医疗智能体的长期决策能力提供了重要工具。",
+    "title_zh": "LongMedBench：面向长周期临床决策的医疗智能体基准",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "37cab9b1f46bf4af",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.09322"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a882d050c69a6f31",
+    "source_id": "arxiv-cs-ai",
+    "title": "Multimodal Reward Hacking in Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2607.09492",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.09492v1 Announce Type: new \nAbstract: Reinforcement learning (RL) is increasingly used to align multimodal large language models (MLLMs), but higher rewards do not always imply better task performance. This risk is amplified when visual evidence is evaluated by text-only or weakly grounded rewards. We study reward hacking in MLLM RL across safety VQA, chart VQA, and stress-test settings, varying reward design, data ambiguity, model scale (2B-32B), and RL algorithm (GRPO, RLOO, DAPO). We introduce Newly Rewarded Failure Rate (NRFR), which measures failures among samples whose proxy reward improves over the SFT baseline. Outcome-only rewards cause severe hacking, reaching 48.1% Reward Hacking Rate (RHR), while NRFR exceeding RHR shows that RL creates new failures rather than merely inheriting them. Scaling reduces but does not eliminate hacking: even the 32B model retains a 54.9% worse rate under outcome-only rewards, whereas answer-aware rewards improve the oracle trend at ev",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "揭示多模态RL中奖励黑客风险，对MLLM对齐研究有重要警示意义。",
+    "summary_zh": "本文研究多模态大语言模型（MLLM）在强化学习（RL）对齐中的奖励黑客问题。作者指出，更高的奖励并不总是意味着更好的任务性能，当视觉证据由纯文本或弱接地奖励评估时，这种风险会被放大。论文在安全VQA、图表VQA和压力测试设置中研究了MLLM RL中的奖励黑客现象，强调了多模态对齐中的潜在缺陷。",
+    "title_zh": "多模态强化学习中的奖励黑客",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "8e703bcee5e91403",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.09492"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "0b0cf69cc2900e5e",
+    "source_id": "arxiv-cs-ai",
+    "title": "Prompt-Driven Exploration",
+    "url": "https://arxiv.org/abs/2607.08837",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08837v1 Announce Type: cross \nAbstract: Exploration is essential to RL since a policy cannot improve by repeatedly sampling the behaviors it already prefers. Standard methods inject stochasticity in the action space, but such jitter only yields rollouts close to the original. Escaping a weak policy often requires global perturbations that action noise cannot produce. Large language models (LLMs) and vision-language-action (VLA) models offer a pathway: they condition the policy on a natural language prompt, and since the rollout follows from it, modifying the prompt induces global changes. The challenge is finding prompts that induce useful global changes. With a weak policy that rarely succeeds, reward is too sparse to select on. Our idea is to refine prompts from the rollouts themselves: a vision-language model (VLM) reasons over the rollout video, diagnoses how the policy responded, and rewrites the prompt to elicit better behavior next time. This procedure realizes poster",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "利用LLM生成全局扰动来引导强化学习探索，突破传统动作噪声的局限，方法新颖且有启发性。",
+    "summary_zh": "探索是强化学习的关键，但标准方法通过在动作空间注入随机性来产生扰动，这只能产生接近原始策略的轨迹。要摆脱弱策略，通常需要全局扰动，而动作噪声无法产生。本文提出Prompt-Driven Exploration，利用大语言模型生成全局性的探索策略，通过提示引导LLM产生多样化的行为，从而帮助智能体跳出局部最优。实验表明，该方法在多个基准任务上显著提升了探索效率和最终性能。",
+    "title_zh": "提示驱动的探索",
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "a5fe503cd20cae83",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08837"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "34a7abb85c471b4a",
+    "source_id": "arxiv-cs-ai",
+    "title": "NL-PAC: Specification Ambiguity and Certified Minimax Risk Floors in LLM-Mediated Supervision",
+    "url": "https://arxiv.org/abs/2607.08961",
+    "published_at": "2026-07-13T04:00:00+00:00",
+    "raw_text": "arXiv:2607.08961v1 Announce Type: cross \nAbstract: Large language models increasingly provide labels, evaluations, and feedback for tasks specified in natural language. When a specification admits multiple readings but the supervision channel does not reveal which is operative, additional labels reduce sampling error without resolving the resulting identification problem. We introduce Natural Language PAC (NL-PAC), a framework that uses a fixed model's thresholded decoding law to define admissible labels and candidate targets. The probability that multiple labels are admissible equals the diameter of the pointwise-admissible target class, and under target-blind supervision every learner incurs worst-case risk of at least half this diameter, at every sample size; the exact randomized minimax risk over this class is attained by a data-independent strategy. Finite-sample confidence bounds make these quantities certifiable from held-out unlabeled inputs. In a frozen Qwen~2.5--3B audit, one",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "理论分析LLM监督中的规范歧义问题，提出认证最小风险下限，对AI安全与对齐有重要理论贡献。",
+    "summary_zh": "大语言模型越来越多地用于为自然语言指定的任务提供标签、评估和反馈。当规范允许多种解读，但监督渠道未揭示哪种解读有效时，额外标签只能减少采样误差，而无法解决由此产生的识别问题。本文引入自然语言程序化认证框架，形式化规范歧义问题，并推导出在LLM监督下的认证最小风险下限。该工作揭示了LLM监督中固有的不确定性，为设计更可靠的AI评估系统提供了理论基础。",
+    "title_zh": "NL-PAC：LLM监督中的规范歧义与认证最小风险下限",
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "d9ad5040a9f96f75",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.08961"
+      }
+    ],
+    "curated": true
   }
 ]
