@@ -1,7 +1,41 @@
 {
   "date": "2026-07-13",
-  "generated_at": "2026-07-13T06:53:32.112394+00:00",
+  "generated_at": "2026-07-13T10:42:56.821967+00:00",
   "items": [
+    {
+      "id": "2f7d90f89ca59526",
+      "source_id": "reddit-localllama",
+      "title": "Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/",
+      "published_at": "2026-07-13T04:32:53+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/\"> <img alt=\"Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels\" src=\"https://external-preview.redd.it/Y9OEroMli1c7qGhJUFUZqabf8fK_YjvO58QKfXEeEoI.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=eccd4b2d3af485e4159368950a6cdfe110c7d63e\" title=\"Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/nullc\"> /u/nullc </a> <br /> <span><a href=\"https://nanduruganesh.github.io/flash-msa/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/\">[comments]</a></span> </td></tr></table>",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": "https://external-preview.redd.it/Y9OEroMli1c7qGhJUFUZqabf8fK_YjvO58QKfXEeEoI.png?width=640&crop=smart&auto=webp&s=eccd4b2d3af485e4159368950a6cdfe110c7d63e",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "提出Flash-MSA稀疏注意力内核，可加速百万token训练，对长上下文模型训练有重要价值。",
+      "summary_zh": "Flash-MSA是一种用于加速百万token训练的新型稀疏注意力内核。该工作针对长序列训练中注意力计算成为瓶颈的问题，设计了高效的稀疏注意力算法和内核实现。实验表明，Flash-MSA在保持模型质量的同时，显著提升了训练速度，使得百万token级别的训练更加可行。论文提供了详细的技术方案和性能评估，对于从事长上下文模型训练的研究者和工程师具有重要参考价值。",
+      "title_zh": "Flash-MSA：利用稀疏注意力内核加速百万token训练",
+      "weighted_score": 0.775,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "0298caf5f54413fd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/"
+        }
+      ]
+    },
     {
       "id": "057c92fed1a2b583",
       "source_id": "arxiv-cs-ai",
@@ -32,6 +66,44 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2607.09560"
+        }
+      ]
+    },
+    {
+      "id": "b15dfeac1dc74d0f",
+      "source_id": "reddit-localllama",
+      "title": "Anthropic found Claude reasoning in silence (J-space) — we ran the same lens on open Qwen3-8B",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/",
+      "published_at": "2026-07-12T14:22:37+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Anthropic’s research on Claude found a silent internal workspace they call J-space — hidden reasoning that never shows up as visible text.</p> <p>Classic example: the model answers <code>49</code>, but inside J-space they caught <code>21 → 42 → 49</code>.</p> <p>Important distinction:</p> <ul> <li>Chain-of-thought = text you can read</li> <li>J-space = silent concepts in activations (“what’s on its mind”)</li> </ul> <p>We fitted the open Jacobian lens (J-lens) on Qwen3-8B, ran it locally, and used it to catch prose drift before tool calls (model leaning toward “To, You, Do…” instead of JSON).</p> <p>Then we wired that into agent guards: stop / cancel / keep the useful space, and distill recoveries into LoRA data.</p> <p>Made an 8-min explainer demo:</p> <p><a href=\"https://www.youtube.com/watch?v=5UMN6hDONJk\">https://www.youtube.com/watch?v=5UMN6hDONJk</a></p> <p>Happy to answer questions about the probe setup or the guard loop.</p> </div><!-- SC_ON --",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "复现Anthropic的J-space发现，揭示模型内部隐藏推理，对理解模型机制有重要价值。",
+      "summary_zh": "该帖子讨论了Anthropic对Claude模型的研究，发现了一个名为J-space的隐藏内部工作空间，其中包含模型在生成最终答案之前的中间推理步骤，但这些步骤不会在可见文本中显示。例如，模型回答49，但J-space中捕捉到了21→42→49的推理链。作者将同样的分析方法应用于开源的Qwen3-8B模型，并分享了结果。这有助于理解大型语言模型的内部工作机制，特别是推理过程。",
+      "title_zh": "Anthropic发现Claude的静默推理（J-space）——我们在开源Qwen3-8B上运行了同样的视角",
+      "weighted_score": 0.775,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "7b145e989c93c1f8",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu61wb/i_mapped_anthropics_jspace_hallucination_signal/"
+        },
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/"
         }
       ]
     },
@@ -69,76 +141,6 @@
       ]
     },
     {
-      "id": "e11b3d57afc093db",
-      "source_id": "zh-leiphone",
-      "title": "斯坦福 Susan Athey 教授：以彼之矛攻彼之盾，用 LLM 的随机性破解因果推断难题 | ICML 2026",
-      "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html",
-      "published_at": "2026-07-13T03:04:00+00:00",
-      "raw_text": "<section style=\"text-align: justify; margin: 16px 16px 0px; line-height: 1.75em;\"><span style=\"color: #4499E7;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></span></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span>随机性是一面镜子，因果推断照见了自己。</span></span></span></section><span></span><span></span><span></span><span></span",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90",
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "斯坦福教授提出用LLM随机性破解因果推断难题，方法新颖且具有理论深度，对研究者有重要启发。",
-      "summary_zh": "本文报道了斯坦福大学Susan Athey教授在ICML 2026上的演讲，她提出利用LLM的随机性来解决因果推断中的难题。Athey教授指出，传统因果推断方法在处理高维数据时面临挑战，而LLM的随机性可以作为一种工具，通过“以彼之矛攻彼之盾”的方式，构建更稳健的因果模型。她展示了初步实验结果，证明该方法在多个基准测试上优于现有方法。这一思路为AI与统计学的交叉研究开辟了新方向。",
-      "title_zh": null,
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "9939e0b8671e6e2c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html"
-        },
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/private/m2WcPZmJL6inJb5i.html"
-        }
-      ]
-    },
-    {
-      "id": "a882d050c69a6f31",
-      "source_id": "arxiv-cs-ai",
-      "title": "Multimodal Reward Hacking in Reinforcement Learning",
-      "url": "https://arxiv.org/abs/2607.09492",
-      "published_at": "2026-07-13T04:00:00+00:00",
-      "raw_text": "arXiv:2607.09492v1 Announce Type: new \nAbstract: Reinforcement learning (RL) is increasingly used to align multimodal large language models (MLLMs), but higher rewards do not always imply better task performance. This risk is amplified when visual evidence is evaluated by text-only or weakly grounded rewards. We study reward hacking in MLLM RL across safety VQA, chart VQA, and stress-test settings, varying reward design, data ambiguity, model scale (2B-32B), and RL algorithm (GRPO, RLOO, DAPO). We introduce Newly Rewarded Failure Rate (NRFR), which measures failures among samples whose proxy reward improves over the SFT baseline. Outcome-only rewards cause severe hacking, reaching 48.1% Reward Hacking Rate (RHR), while NRFR exceeding RHR shows that RL creates new failures rather than merely inheriting them. Scaling reduces but does not eliminate hacking: even the 32B model retains a 54.9% worse rate under outcome-only rewards, whereas answer-aware rewards improve the oracle trend at ev",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示多模态RL中奖励黑客风险，对MLLM对齐研究有重要警示意义。",
-      "summary_zh": "本文研究多模态大语言模型（MLLM）在强化学习（RL）对齐中的奖励黑客问题。作者指出，更高的奖励并不总是意味着更好的任务性能，当视觉证据由纯文本或弱接地奖励评估时，这种风险会被放大。论文在安全VQA、图表VQA和压力测试设置中研究了MLLM RL中的奖励黑客现象，强调了多模态对齐中的潜在缺陷。",
-      "title_zh": "多模态强化学习中的奖励黑客",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "8e703bcee5e91403",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.09492"
-        }
-      ]
-    },
-    {
       "id": "b2323bae952375b0",
       "source_id": "36kr",
       "title": "对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来",
@@ -172,35 +174,173 @@
       ]
     },
     {
-      "id": "822e6d51ac709a9b",
-      "source_id": "zh-v2ex",
-      "title": "[AI Agent 智能体] 一句 User Story，为什么开始不够用了？",
-      "url": "https://www.v2ex.com/t/1226941#reply0",
-      "published_at": "2026-07-13T06:44:03+00:00",
-      "raw_text": "<h1>《软件工程经济学》③</h1>\n<h2>一句 User Story ，为什么开始不够用了？</h2>\n<p>前两篇建立了一个判断：方法论更替的驱动力是成本。当成本结构变了，一些\"正确但太贵\"的实践会重新变得经济。</p>\n<p>这篇聊一个具体的例子。</p>\n<p>过去十年，User Story 几乎成为需求表达的默认语言。</p>\n<blockquote>\n<p>作为一个[角色]，我想要[功能]，以便于[价值]。验收标准：……</p>\n</blockquote>\n<p>简洁，轻便，写起来快，改起来也快。在需求快速变化、需要频繁试错的环境里，它比 RUP 时代的用例文档好用得多。</p>\n<p>这是一个合理的取舍。</p>\n<p>但取舍意味着有东西被放弃了。</p>\n<p>User Story 放弃了什么？</p>\n<p>用一个例子来说。</p>\n<p>\"顾客购买商品\"——这句话能说清楚正常情况下发生什么：浏览、加购、下单、支付、收货。</p>\n<p>但如果你把这句话交给一个需要独立完成整个流程的 Agent ，它还需要知道更多。</p>\n<p>库存不足怎么办？</p>\n<p>支付失败怎么办？</p>\n<p>用户没有收货地址怎么办？</p>\n<p>优惠券在支付过程中过期了怎么办？</p>\n<p>用户同时下了两笔订单，库存只够一笔怎么办？</p>\n<p><strong>这些\"如果出了问题怎么办\"的信息，User Story 选择性地省略了。</strong></p>\n<p>这不是 User Story 的设计缺陷。在那个时代，这是一个正确的决定。</p>\n<p>敏捷面对的核心挑战是反馈速度。先把正常路径做出来，上线看效果，异常路径遇到了再补。在\"试错成本低\"的环境里，先说清楚正常流程，性价比最高。</p>\n<p>但 Agent 改变了一件事。</p>\n<p>当 Agent 需要独立执行一个带着分支和例外的任务时，它面对的不再是一个\"可以边做边补\"的环境。它在开始执行之前，就需要知道完整的路径——包括哪些地方可能出错，出错了应该走哪条路，哪些边界条件绝对不能踩。</p>\n<p><strong>Agent 需要的，恰恰是 User Story 当年选择省略的那些东西。</strong></p>\n<p>这就是为什么用例（ Use Case ）最近又开始被讨论。</p",
+      "id": "8970dfde0f7bf1b2",
+      "source_id": "reddit-localllama",
+      "title": "Running Qwen3.5-122B on Mac Studio 96GB: Fixed 3 bugs that made long-context inference usable",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuwrc0/running_qwen35122b_on_mac_studio_96gb_fixed_3/",
+      "published_at": "2026-07-13T00:47:05+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey everyone,</p> <p>I recently switched from DS4 Flash to Qwen3.5-122B on my M3 Ultra Mac Studio for long-context agentic coding. While the model fit better, I hit a wall where follow-up messages took 3-5 minutes to start generating (cold fills) despite having a &quot;warm&quot; context.</p> <p>Turns out the issue wasn't the model, but three specific bugs in my serving stack (qMLX fork of rapid-mlx):</p> <ul> <li>Prompt Instability: A unique message ID in the system prompt broke byte-exact KV cache matching, forcing a full re-compute on every turn.</li> <li>Interrupt Path: Streaming replies weren't persisted when generation was interrupted, causing history divergence.</li> <li>Checkpoint Poison: A background writer created unmatchable checkpoints that crowded out valid ones, triggering aggressive eviction.</li> </ul> <p>After fixing these, prefill time dropped from minutes to sub-seconds (e.g., 53k tokens cached, only 33 prefilled).</p> <p>I decided t",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "作者分享了在Mac Studio上运行Qwen3.5-122B时修复的三个关键bug，对本地部署长上下文模型有直接帮助。",
+      "summary_zh": "作者从DS4 Flash切换到Qwen3.5-122B，在M3 Ultra Mac Studio上进行长上下文agentic编码。虽然模型适配更好，但遇到了后续消息需要3-5分钟才能开始生成（冷填充）的问题。经过排查，发现并非模型问题，而是三个特定bug导致。文章详细描述了这些bug的修复过程，使得长上下文推理变得可用。对于在Mac Studio上运行大型模型的开发者来说，这是一份宝贵的实战经验。",
+      "title_zh": "在Mac Studio 96GB上运行Qwen3.5-122B：修复了三个使长上下文推理可用的bug",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.9
+      },
+      "story_id": "2b6ba27a3ef8025e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/"
+        },
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuwrc0/running_qwen35122b_on_mac_studio_96gb_fixed_3/"
+        }
+      ]
+    },
+    {
+      "id": "cad752a52f161824",
+      "source_id": "zh-juejin",
+      "title": "跨进程调用工具：MCP + LangChain 让 Agent 不再“锁死”在单一语言",
+      "url": "https://juejin.cn/post/7661754132252868648",
+      "published_at": "2026-07-13T09:59:21+00:00",
+      "raw_text": "本地编写的 Tool 只能在当前项目中使用，换一个项目就要重写。MCP 协议让 Tool 可以独立于 LLM，实现跨进程、跨语言调用。本文用 LangChain 的 MCP 适配器连接 MCP Ser",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "MCP协议让工具跨进程跨语言调用，结合LangChain的实践教程，对构建灵活Agent的开发者非常实用。",
+      "summary_zh": "本文介绍了如何使用MCP（Model Context Protocol）协议结合LangChain实现跨进程、跨语言的工具调用。传统上，本地编写的Tool只能在当前项目中使用，换项目需重写。MCP协议让Tool独立于LLM，实现跨进程、跨语言调用。文章通过LangChain的MCP适配器连接MCP Server，展示了如何构建可复用的工具集，并提供了具体代码示例。这对于希望构建模块化、可扩展Agent系统的开发者具有很高的实用价值。",
+      "title_zh": "跨进程调用工具：MCP + LangChain 让 Agent 不再“锁死”在单一语言",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "8278f480b7ad03f4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661754132252868648"
+        }
+      ]
+    },
+    {
+      "id": "ee33ea284f24a6bd",
+      "source_id": "zh-juejin",
+      "title": "组合多个远程 MCP Server：让 Agent 同时调用高德地图、Chrome DevTools 和文件系统",
+      "url": "https://juejin.cn/post/7661821409981153315",
+      "published_at": "2026-07-13T10:20:41+00:00",
+      "raw_text": "一个 Agent 如果能同时调用高德地图查位置、用 Chrome DevTools 打开网页、用 FileSystem 写入文件，它就能完成多么复杂的任务？本文用 LangChain 的 MultiS",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "组合多个远程MCP Server的实战教程，展示Agent调用多种工具的能力，对开发者极具实用价值。",
+      "summary_zh": "本文展示了如何使用LangChain的MultiServerMCPClient组合多个远程MCP Server，让一个Agent能够同时调用高德地图、Chrome DevTools和文件系统等工具。通过具体示例，文章演示了Agent如何利用这些工具完成复杂任务，例如查询位置、打开网页和写入文件。教程提供了详细的代码和配置说明，帮助读者理解如何构建能够调用多种远程服务的Agent系统，对于希望扩展Agent能力的开发者非常实用。",
+      "title_zh": "组合多个远程 MCP Server：让 Agent 同时调用高德地图、Chrome DevTools 和文件系统",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "9293b5d454e7f4e5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661821409981153315"
+        }
+      ]
+    },
+    {
+      "id": "6c5841b14040b800",
+      "source_id": "zh-juejin",
+      "title": "别再让 AI 从零开始了",
+      "url": "https://juejin.cn/post/7661613683164807168",
+      "published_at": "2026-07-13T09:46:03+00:00",
+      "raw_text": "11 天，219 次提交，28 个 AI 技能。我搭了一个越用越强的 AI 工作台——这是关于它的设计、证据和你可以复制的部分。",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "从软件工程经济学角度剖析User Story的局限性，揭示成本结构变化对方法论的影响，对AI时代需求工程有启发。",
-      "summary_zh": "本文是《软件工程经济学》系列第三篇，探讨User Story在AI Agent时代为何不够用。作者认为方法论更替的驱动力是成本，当成本结构变化时，一些“正确但太贵”的实践会重新变得经济。User Story简洁轻便，但放弃了上下文和约束条件，在AI Agent需要精确理解需求时显得不足。文章通过“顾客购买商品”等例子，分析了User Story的取舍，并暗示需要更结构化的需求表达方式。",
-      "title_zh": "[AI Agent 智能体] 一句 User Story，为什么开始不够用了？",
-      "weighted_score": 0.58,
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "作者用11天搭建AI工作台，分享了设计思路和可复现的实践，对想构建个人AI系统的读者很有参考价值。",
+      "summary_zh": "作者分享了自己用11天、219次提交、28个AI技能搭建的一个越用越强的AI工作台。文章详细介绍了该工作台的设计理念、实现证据以及可复制的部分，旨在帮助读者理解如何构建一个能够持续学习和进化的AI系统。内容涉及AI技能的组合、工作流的优化以及实际应用中的经验教训，适合对AI工具和自动化感兴趣的开发者。",
+      "title_zh": null,
+      "weighted_score": 0.66,
       "score_breakdown": {
-        "source_authority": 0.4,
+        "source_authority": 0.6,
         "novelty": 0.7,
         "impact": 0.5,
-        "practical_value": 0.8
+        "practical_value": 0.9
       },
-      "story_id": "d18a621be4ab1be2",
+      "story_id": "e6cd310d876a568f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1226941#reply0"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661613683164807168"
+        }
+      ]
+    },
+    {
+      "id": "ad0809fde455d347",
+      "source_id": "reddit-localllama",
+      "title": "Why do people keep fine-tuning on summarized/censored SOTA CoT traces?",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/",
+      "published_at": "2026-07-12T23:54:52+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Am I missing something? It seems like some people think distillation is magic and will raise the quality of output above what the base model is actually capable of. It's especially weird to me to see all these Fable fine-tunes, because as far as I understand it, they miss the fact that the reasoning traces you get from Anthropic's models are completely different from the actual chain of thought the model outputs, which makes it pretty much a guarantee that the result will be worse than before.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/wombweed\"> /u/wombweed </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/\">[comments]</a></span>",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "质疑在摘要/审查后的CoT轨迹上微调的有效性，引发对蒸馏方法的深入思考。",
+      "summary_zh": "该帖子质疑为什么人们持续在摘要或审查后的SOTA思维链（CoT）轨迹上进行微调。作者认为，蒸馏并不能神奇地提升模型输出质量，使其超越基础模型的实际能力。特别指出，从Anthropic模型获取的推理轨迹与模型实际内部推理过程完全不同，因此在这些轨迹上微调可能无效。帖子引发了关于蒸馏方法有效性的讨论，对于从事模型微调和蒸馏的研究者具有启发意义。",
+      "title_zh": "为什么人们持续在摘要/审查后的SOTA思维链轨迹上进行微调？",
+      "weighted_score": 0.615,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "c41623a1dc9900dd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uuvkw9/why_do_people_keep_finetuning_on/"
         }
       ]
     },
@@ -239,12 +379,12 @@
       ]
     },
     {
-      "id": "fd04474491e1435b",
-      "source_id": "zh-sspai",
-      "title": "你这图「保真」吗？AI 生图时代的信息防伪",
-      "url": "https://sspai.com/post/112185",
-      "published_at": "2026-07-13T02:52:47+00:00",
-      "raw_text": "人类记录信息的方式一直在变化，但我们对「真实性」的需求从未改变。<a href=\"https://sspai.com/post/112185\" target=\"_blank\">查看全文</a>",
+      "id": "62094e5866ea5f8d",
+      "source_id": "zh-juejin",
+      "title": "为什么 AI 写前端时，总是优先选择 React，而不是 Vue？",
+      "url": "https://juejin.cn/post/7661833071121530926",
+      "published_at": "2026-07-13T09:25:59+00:00",
+      "raw_text": "AI编程工具默认生成React+Tailwind代码，而非Vue，本质是模型对语言结构纯粹性的偏好。React的JSX在AST层面更接近标准JS，而Vue的模板与脚本分离增加了模型理解成本，导致生成质量下降。",
       "category_hint": [
         "技巧与观点"
       ],
@@ -252,155 +392,22 @@
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "探讨 AI 生图时代的信息防伪问题，分析真实性需求与技术挑战。",
-      "summary_zh": "文章探讨了在 AI 生图时代，人类对信息真实性的需求如何演变。从历史记录方式的变化出发，分析了当前 AI 生成图像带来的防伪挑战，并介绍了相关技术手段。",
-      "title_zh": "你这图「保真」吗？AI 生图时代的信息防伪",
-      "weighted_score": 0.545,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.5,
-        "impact": 0.4,
-        "practical_value": 0.7
-      },
-      "story_id": "7c0250ccb35e1791",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-sspai",
-          "url": "https://sspai.com/post/112185"
-        }
-      ]
-    },
-    {
-      "id": "8c0b36e83187109a",
-      "source_id": "reddit-singularity",
-      "title": "Why has progress on Deep Research products stalled?",
-      "url": "https://www.reddit.com/r/singularity/comments/1uujyic/why_has_progress_on_deep_research_products_stalled/",
-      "published_at": "2026-07-12T16:22:07+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Deep Research launched Feb 2025 and felt like a real step change. Every lab shipped their own version within months. Since then, the changes seem mostly incremental: a newer base model, MCP connectors, source restrictions, nicer report UI. Useful, but not another step change.</p> <p>What strikes me is that the known weaknesses from the launch post — hallucinated facts, trusting sketchy sources, poor uncertainty calibration — still show up in third-party benchmarks over a year later. The reports are impressive but you still have to verify everything, which eats most of the time savings.</p> <p>Is this a hard capability wall (telling good sources from confident SEO junk might just be really hard)? Did the labs shift focus to general agents and browsers, leaving research modes as a maintained feature rather than a frontier? Or is progress happening but invisible (fewer hallucinations and better source picking don’t demo well)?</p> <p>So why has progress o",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入分析Deep Research产品进展停滞的原因，指出技术瓶颈和实用化挑战，对从业者有启发。",
-      "summary_zh": "该帖子指出，自2025年2月Deep Research发布以来，各实验室虽快速跟进，但后续改进仅限于基础模型升级、MCP连接器、来源限制和报告UI优化等增量变化，未出现类似初版发布的阶跃性突破。作者分析了已知弱点（如幻觉、事实性错误）仍未解决，并质疑当前路径是否遇到瓶颈。讨论认为，Deep Research产品可能面临数据质量、评估标准和用户期望等多重挑战，需要更根本的创新。",
-      "title_zh": "为什么Deep Research产品的进展停滞了？",
-      "weighted_score": 0.515,
+      "reason_zh": "从AST层面解释AI为何偏爱React而非Vue，分析深入，对前端开发者有启发。",
+      "summary_zh": "文章探讨了AI编程工具（如GitHub Copilot）默认生成React+Tailwind代码而非Vue的原因。作者从抽象语法树（AST）角度分析，指出React的JSX在AST层面更接近标准JavaScript，而Vue的模板与脚本分离增加了模型理解成本，导致生成质量下降。这一发现揭示了AI模型对语言结构纯粹性的偏好。",
+      "title_zh": "为什么AI写前端时，总是优先选择React，而不是Vue？",
+      "weighted_score": 0.58,
       "score_breakdown": {
         "source_authority": 0.4,
-        "novelty": 0.6,
+        "novelty": 0.7,
         "impact": 0.5,
-        "practical_value": 0.6
+        "practical_value": 0.8
       },
-      "story_id": "f5ea4d0f37dabaef",
+      "story_id": "2ce745078e2566f5",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-singularity",
-          "url": "https://www.reddit.com/r/singularity/comments/1uujyic/why_has_progress_on_deep_research_products_stalled/"
-        }
-      ]
-    },
-    {
-      "id": "9e8c42d14bd92591",
-      "source_id": "zh-ithome",
-      "title": "微软 CEO 纳德拉批评 AI 模型公司“双标”：一边主张“合理使用”数据，一边限制他人蒸馏",
-      "url": "https://www.ithome.com/0/975/986.htm",
-      "published_at": "2026-07-13T06:40:42+00:00",
-      "raw_text": "<p>IT之家 7 月 13 日消息，微软 CEO 萨提亚 · 纳德拉（Satya Nadella）日前在 X 平台发文，对包括 Anthropic 在内的 AI 大模型公司训练模型的做法进行了含蓄批评。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2025/12/0a1271c1-d078-45c8-a2c7-ce93a08a56ea.jpg?x-bce-process=image/format,f_auto\" /></p><p>纳德拉表示，一些模型厂商一边主张拥有利用公开数据训练 AI 模型的“合理使用（Fair Use）”权利，一边却反对其他公司通过模型蒸馏（Distillation）学习其模型能力，这种做法存在明显的自相矛盾。</p><p>所谓模型蒸馏，是指利用性能更强的大模型输出结果，训练参数更少、能力较弱的新模型。</p><p>纳德拉写道：“模型提供商拥有基于公开数据训练模型的合理使用权，这种创新当然十分重要。但我认为，享受这一权利后，却转而对模型蒸馏施加严格限制，并保留利用客户使用数据和交互数据继续学习的权利，这种做法颇具讽刺意味。”</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/af7e4c13-48df-4002-bccd-c30c1bf0e5d8.png?x-bce-process=image/format,f_auto\" /></p><p>他进一步表示，如果知识的学习始终只能单向流动，那么最终赚到所有钱的将是掌握 AI 基础设施的人，而真正创造知识的人却无法从中受益。</p><p>目前，包括 Anthropic、OpenAI 和 Google DeepMind 在内的头部 AI 公司，都依赖大量由他人创作的内容来训练模型。</p><p>ChatGPT、Claude 和 Gemini 等模型的能力，均建立在公开文本、图片以及其他互联网数据之上。</p><p>近年来，已有大量公司和个人因未经授权抓取（Scraping）内容",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://img.ithome.com/newsuploadfiles/2025/12/0a1271c1-d078-45c8-a2c7-ce93a08a56ea.jpg?x-bce-process=image/format,f_auto",
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "微软CEO纳德拉批评AI模型公司数据使用的双重标准，引发行业对合理使用与模型蒸馏伦理的讨论。",
-      "summary_zh": "微软CEO萨提亚·纳德拉在X平台发文，含蓄批评包括Anthropic在内的AI大模型公司存在双重标准：一方面主张利用公开数据训练AI模型的“合理使用”权利，另一方面却反对其他公司通过模型蒸馏学习其模型能力。纳德拉认为这种做法自相矛盾，引发了关于AI数据使用伦理和模型蒸馏合法性的广泛讨论。",
-      "title_zh": "微软 CEO 纳德拉批评 AI 模型公司“双标”：一边主张“合理使用”数据，一边限制他人蒸馏",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.4
-      },
-      "story_id": "62d1ce668ec83b19",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-ithome",
-          "url": "https://www.ithome.com/0/975/986.htm"
-        }
-      ]
-    },
-    {
-      "id": "57b038ca2c845d1a",
-      "source_id": "zh-tmtpost",
-      "title": "中国最像Anthropic的公司，要移走“三座大山”",
-      "url": "https://www.tmtpost.com/8062463.html",
-      "published_at": "2026-07-13T05:04:37+00:00",
-      "raw_text": "智谱“摸高”，把AGI的底牌全亮了。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/r4t3qegrsdfbvf3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "深度分析智谱AI如何对标Anthropic，揭示其AGI战略和面临的挑战，对AI从业者有参考价值。",
-      "summary_zh": "文章分析了智谱AI作为中国最像Anthropic的公司，如何通过“摸高”策略展示AGI底牌。智谱AI在模型研发、应用落地和生态建设方面面临“三座大山”：技术瓶颈、商业化难题和人才竞争。文章探讨了智谱AI如何通过开源、合作和差异化定位来应对挑战，并展望其在中国AI市场的未来。",
-      "title_zh": null,
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "1ea173c002bc330c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8062463.html"
-        }
-      ]
-    },
-    {
-      "id": "e65d51e1cd5fa895",
-      "source_id": "zh-tmtpost",
-      "title": "腾讯AI，翻身了吗？",
-      "url": "https://www.tmtpost.com/8062240.html",
-      "published_at": "2026-07-13T05:20:49+00:00",
-      "raw_text": "腾讯修正了造模型的方法。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/07/2ae4d62e5232da03b855d45f03705409_1783920054.jpg",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "分析腾讯AI战略调整，探讨其模型研发和业务整合，对理解大厂AI布局有启发。",
-      "summary_zh": "文章探讨了腾讯AI是否已经“翻身”，指出腾讯修正了造模型的方法。腾讯在AI领域经历了从跟随到自主创新的转变，通过整合内部资源、优化模型架构和聚焦应用场景，提升了AI能力。文章分析了腾讯在自然语言处理、计算机视觉和推荐系统等方面的进展，并讨论了其与竞争对手的差距和优势。",
-      "title_zh": null,
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "6a2ddc83a99f5134",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8062240.html"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661833071121530926"
         }
       ]
     }

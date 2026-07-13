@@ -4,7 +4,7 @@
     "source_id": "zh-meituan-tech",
     "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
     "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-07-13T06:47:26.839207+00:00",
+    "published_at": "2026-07-13T10:36:47.127204+00:00",
     "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
     "category_hint": [
       "技巧与观点"
@@ -29,6 +29,45 @@
       {
         "source_id": "zh-meituan-tech",
         "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "b15dfeac1dc74d0f",
+    "source_id": "reddit-localllama",
+    "title": "Anthropic found Claude reasoning in silence (J-space) — we ran the same lens on open Qwen3-8B",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/",
+    "published_at": "2026-07-12T14:22:37+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Anthropic’s research on Claude found a silent internal workspace they call J-space — hidden reasoning that never shows up as visible text.</p> <p>Classic example: the model answers <code>49</code>, but inside J-space they caught <code>21 → 42 → 49</code>.</p> <p>Important distinction:</p> <ul> <li>Chain-of-thought = text you can read</li> <li>J-space = silent concepts in activations (“what’s on its mind”)</li> </ul> <p>We fitted the open Jacobian lens (J-lens) on Qwen3-8B, ran it locally, and used it to catch prose drift before tool calls (model leaning toward “To, You, Do…” instead of JSON).</p> <p>Then we wired that into agent guards: stop / cancel / keep the useful space, and distill recoveries into LoRA data.</p> <p>Made an 8-min explainer demo:</p> <p><a href=\"https://www.youtube.com/watch?v=5UMN6hDONJk\">https://www.youtube.com/watch?v=5UMN6hDONJk</a></p> <p>Happy to answer questions about the probe setup or the guard loop.</p> </div><!-- SC_ON --",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "复现Anthropic的J-space发现，揭示模型内部隐藏推理，对理解模型机制有重要价值。",
+    "summary_zh": "该帖子讨论了Anthropic对Claude模型的研究，发现了一个名为J-space的隐藏内部工作空间，其中包含模型在生成最终答案之前的中间推理步骤，但这些步骤不会在可见文本中显示。例如，模型回答49，但J-space中捕捉到了21→42→49的推理链。作者将同样的分析方法应用于开源的Qwen3-8B模型，并分享了结果。这有助于理解大型语言模型的内部工作机制，特别是推理过程。",
+    "title_zh": "Anthropic发现Claude的静默推理（J-space）——我们在开源Qwen3-8B上运行了同样的视角",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "7b145e989c93c1f8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu61wb/i_mapped_anthropics_jspace_hallucination_signal/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/"
       }
     ],
     "curated": true
@@ -68,11 +107,46 @@
     "curated": true
   },
   {
+    "id": "2f7d90f89ca59526",
+    "source_id": "reddit-localllama",
+    "title": "Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/",
+    "published_at": "2026-07-13T04:32:53+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/\"> <img alt=\"Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels\" src=\"https://external-preview.redd.it/Y9OEroMli1c7qGhJUFUZqabf8fK_YjvO58QKfXEeEoI.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=eccd4b2d3af485e4159368950a6cdfe110c7d63e\" title=\"Flash-MSA: Accelerating Million-Token Training With Sparse Attention Kernels\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/nullc\"> /u/nullc </a> <br /> <span><a href=\"https://nanduruganesh.github.io/flash-msa/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/\">[comments]</a></span> </td></tr></table>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/Y9OEroMli1c7qGhJUFUZqabf8fK_YjvO58QKfXEeEoI.png?width=640&crop=smart&auto=webp&s=eccd4b2d3af485e4159368950a6cdfe110c7d63e",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.9,
+    "reason_zh": "提出Flash-MSA稀疏注意力内核，可加速百万token训练，对长上下文模型训练有重要价值。",
+    "summary_zh": "Flash-MSA是一种用于加速百万token训练的新型稀疏注意力内核。该工作针对长序列训练中注意力计算成为瓶颈的问题，设计了高效的稀疏注意力算法和内核实现。实验表明，Flash-MSA在保持模型质量的同时，显著提升了训练速度，使得百万token级别的训练更加可行。论文提供了详细的技术方案和性能评估，对于从事长上下文模型训练的研究者和工程师具有重要参考价值。",
+    "title_zh": "Flash-MSA：利用稀疏注意力内核加速百万token训练",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "0298caf5f54413fd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv1f1q/flashmsa_accelerating_milliontoken_training_with/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "f1dd95c5b8c0848f",
     "source_id": "zh-meituan-tech",
     "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
     "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-07-13T06:47:26.839256+00:00",
+    "published_at": "2026-07-13T10:36:47.127252+00:00",
     "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
     "category_hint": [
       "技巧与观点"
@@ -136,11 +210,45 @@
     "curated": true
   },
   {
+    "id": "9203237926bae259",
+    "source_id": "zh-juejin",
+    "title": "StreamingBench：首个流式视频理解基准——多模态大模型离人类实时感知还有多远？",
+    "url": "https://juejin.cn/post/7661613683164889088",
+    "published_at": "2026-07-13T09:57:23+00:00",
+    "raw_text": "一、介绍：为什么需要「流式视频理解」？ 当前多模态大模型（MLLMs）在视频理解方面取得了长足进步，GPT-4o、Gemini 1.5 Pro 等模型在多个离线视频基准上已展现出色表现。但这里有个根本",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "首个流式视频理解基准，填补了多模态模型实时感知评估的空白，对视频理解研究有重要推动。",
+    "summary_zh": "本文介绍了StreamingBench，这是首个专门用于评估多模态大模型流式视频理解能力的基准。当前模型如GPT-4o、Gemini 1.5 Pro在离线视频基准上表现优异，但缺乏对实时流式视频理解的测试。StreamingBench通过设计一系列动态视频任务，模拟人类实时感知场景，评估模型在连续帧流中的理解、推理和响应能力。文章详细阐述了基准的构建方法、评估指标以及初步实验结果，揭示了现有模型在流式视频理解上的不足，为未来研究指明了方向。",
+    "title_zh": "StreamingBench：首个流式视频理解基准——多模态大模型离人类实时感知还有多远？",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "ffac3f4fc5c39029",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661613683164889088"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "478400fd36f67f37",
     "source_id": "zh-meituan-tech",
     "title": "美团海报生成 AIGC 技术创新与实践",
     "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-07-13T06:47:26.839304+00:00",
+    "published_at": "2026-07-13T10:36:47.127296+00:00",
     "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
     "category_hint": [
       "技巧与观点"
@@ -170,312 +278,116 @@
     "curated": true
   },
   {
-    "id": "3b0c4b15d28ba239",
-    "source_id": "arxiv-cs-ai",
-    "title": "TheBioCollection: Unified Pre-Training Scale LLM Corpus for Biology",
-    "url": "https://arxiv.org/abs/2607.08803",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08803v1 Announce Type: cross \nAbstract: The push toward large language models for biology (BioLM) has created a need for training corpora that can endow models with a genuine understanding of biology. However, existing biological resources, such as molecular databases, protein repositories, genomic annotations, single-cell atlases, and pathway databases, are scattered across heterogeneous formats and remain unorganized into a cohesive corpus for language model training. We present TheBioCollection, a 52.6B-token pre-training-scale corpus that converts these disparate resources into a unified, training-ready form spanning small molecules, proteins, genomic sequences, cells, and pathways. Beyond consolidating existing data, TheBioCollection enriches each record with tool-computed biological properties and introduces new instruction tasks for capabilities that current corpora barely cover. We pair the corpus with TheBioCollection-Eval, a matched suite probing recognition, gener",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.6,
-    "reason_zh": "整合分散的生物数据资源构建统一预训练语料库，为生物学大语言模型奠定数据基础，具有重要资源价值。",
-    "summary_zh": "生物学大语言模型的发展需要能够赋予模型真正生物学理解的训练语料。然而，现有的生物资源如分子数据库、蛋白质库、基因组注释、单细胞图谱和通路数据库分散在异构系统中。本文提出TheBioCollection，一个统一的预训练语料库，整合了多种生物数据源，涵盖从分子到系统的多个层次。该语料库旨在为生物学LLM提供全面、一致且高质量的训练数据，有望推动生物信息学领域的模型发展。",
-    "title_zh": "TheBioCollection：用于生物学的统一预训练大规模LLM语料库",
-    "weighted_score": 0.74,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "c60059b9f78ed0cf",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08803"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a2ed6e1ab9e542d2",
-    "source_id": "qbitai",
-    "title": "机器狗指挥人类用天平称重！清华现场演示：无脚本，任务随机，观众即兴出题",
-    "url": "https://www.qbitai.com/2026/07/448239.html",
-    "published_at": "2026-07-13T04:14:27+00:00",
-    "raw_text": "从人类认知范式，构建Physical AGI",
+    "id": "bce46f0bb3804184",
+    "source_id": "infoq-cn-ai",
+    "title": "小扎“消失”三年后发帖，只为它：Meta最强Agent模型进军编程，从免费开源到卖“低价”模型",
+    "url": "https://www.infoq.cn/article/Fg7xEo3RGENyoefojZVD?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-13T18:28:11+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/Fg7xEo3RGENyoefojZVD?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
       "行业动态",
-      "模型发布"
+      "技巧与观点"
     ],
     "image_url": null,
-    "category": "行业动态",
+    "category": "模型发布",
     "content_type": "资讯快讯",
     "depth_score": 0.3,
-    "reason_zh": "清华现场演示机器狗指挥人类称重，无脚本随机任务，展示Physical AGI前沿进展，值得关注。",
-    "summary_zh": "清华大学团队在活动现场演示了机器狗与人类协作完成天平称重任务，整个过程无预设脚本，任务随机生成，观众可即兴出题。该演示基于人类认知范式构建Physical AGI，展示了具身智能在动态交互中的灵活性与适应性。机器狗能够理解人类指令并自主规划动作，体现了从感知到行动的端到端能力。这一成果为未来人机协作和通用机器人的发展提供了新思路。",
+    "reason_zh": "Meta发布最强Agent模型并开源，同时推出低价模型，对AI编程领域影响重大。",
+    "summary_zh": "Meta（小扎）在沉寂三年后发帖，宣布推出其最强Agent模型，该模型专注于编程任务，并采取免费开源策略。同时，Meta还推出了低价模型，以降低使用门槛。此举被视为Meta在AI编程领域的重要布局，可能对现有市场格局产生冲击。文章报道了该消息，并提及了开源和低价策略的潜在影响。",
     "title_zh": null,
-    "weighted_score": 0.74,
+    "weighted_score": 0.73,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.5
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.8,
+      "practical_value": 0.6
     },
-    "story_id": "25e618d0d43c260e",
+    "story_id": "1168c2ea292c2286",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/07/448239.html"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/Fg7xEo3RGENyoefojZVD?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
   },
   {
-    "id": "e11b3d57afc093db",
-    "source_id": "zh-leiphone",
-    "title": "斯坦福 Susan Athey 教授：以彼之矛攻彼之盾，用 LLM 的随机性破解因果推断难题 | ICML 2026",
-    "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html",
-    "published_at": "2026-07-13T03:04:00+00:00",
-    "raw_text": "<section style=\"text-align: justify; margin: 16px 16px 0px; line-height: 1.75em;\"><span style=\"color: #4499E7;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></span></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span>随机性是一面镜子，因果推断照见了自己。</span></span></span></section><span></span><span></span><span></span><span></span",
+    "id": "43c2c596a3debba3",
+    "source_id": "36kr",
+    "title": "字节探索自动驾驶，Seed世界模型团队负责｜36氪独家",
+    "url": "https://36kr.com/p/3893815451417347?f=rss",
+    "published_at": "2026-07-13T08:34:05+00:00",
+    "raw_text": "<p>36氪从多位产业人士处获悉，字节跳动正探索进入自动驾驶领域。这一项目目前由Seed旗下周畅的世界模型团队负责。据了解，Seed旗下不仅有周畅的多模态模型、世界模型等团队，还有大语言模型方向。</p>\n  <p>而自动驾驶与世界模型的技术路线有交叠之处。</p>\n  <p>另有消息人士告诉36氪，业务方向上，字节有意布局的自动驾驶场景有无人物流，这一业务隶属于字节旗下的火山引擎汽车行业线。</p>\n  <p>部分接近字节的知情人士表示，字节团队此前与一些头部自动驾驶团队进行过业务探讨交流，目前字节的自动驾驶项目已进入早期筹备状态。字节向不少头部辅助驾驶或自动驾驶人才发出了邀约，一些看好字节这一布局的技术人才也计划加入。</p>\n  <p>针对以上消息，36氪向字节求证，字节回应：“字节大模型前沿探索领域，包括物理AI领域，有很多早期研究和探索，但并没有做智能驾驶业务的计划。”</p>\n  <p>Seed是字节旗下的大模型基础研究团队，成立于2023年，是字节的一级战略级部门。</p>\n  <p>周畅是字节Seed AI研发核心负责人之一。他于2024年加入字节，负责多模态大模型的研发等，此后他管理的业务范畴不断扩大。去年，视觉生成业务已划入其负责范围，今年Seed Robotics团队也转向周畅汇报。这意味着，目前周畅的管理边界，覆盖多模态大模型、世界模型、视觉生成、具身智能等多个领域。</p>\n  <p>火山引擎是字节的云服务品牌，早在2020年火山引擎旗下就建立了汽车行业线，山引擎总裁谭待还曾公开表示：“我们是所有云厂商中第一个把汽车做成一级线。”</p>\n  <p>今年以来，物理AI浪潮兴起，自动驾驶和具身智能被视为物理AI最先落地的两大场景。其中，自动驾驶是公认最早一批落地的具身智能场景。</p>\n  <p>因而当大厂都在追逐物理AI风口之际，自动驾驶，或将成为字节通往具身智能的一栈。</p>\n  <p>于自动驾驶行业而言，在世界模型成为自动驾驶界技术共识的今天，字节带着资源、人才、技术优势跨界，很有可能撼动行业既有格局。</p>\n  <h3><strong>世界模型成技术共识，字节迎来跨界契机</strong></h3>\n  <p>事实上，字节早就流露出过对汽车业务的渴望。</p>\n  <p>在布局自动驾驶之前，字节先已通过豆包大模型，切入了汽车座舱领",
     "category_hint": [
       "行业动态"
     ],
-    "image_url": "https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90",
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "斯坦福教授提出用LLM随机性破解因果推断难题，方法新颖且具有理论深度，对研究者有重要启发。",
-    "summary_zh": "本文报道了斯坦福大学Susan Athey教授在ICML 2026上的演讲，她提出利用LLM的随机性来解决因果推断中的难题。Athey教授指出，传统因果推断方法在处理高维数据时面临挑战，而LLM的随机性可以作为一种工具，通过“以彼之矛攻彼之盾”的方式，构建更稳健的因果模型。她展示了初步实验结果，证明该方法在多个基准测试上优于现有方法。这一思路为AI与统计学的交叉研究开辟了新方向。",
+    "image_url": "https://img.36krcdn.com/hsossms/20260713/v2_5186d1a5cd5848a1850569e3228cf74c@6215398_oswg41960oswg1080oswg335_img_000?x-oss-process=image/format,jpg/interlace,1",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "独家消息称字节跳动探索自动驾驶，由Seed世界模型团队负责，对AI和汽车行业有重大影响。",
+    "summary_zh": "36氪独家获悉，字节跳动正探索进入自动驾驶领域，项目由Seed旗下周畅的世界模型团队负责。业务方向可能包括无人物流，隶属于火山引擎汽车行业线。字节已与头部自动驾驶团队交流并招募人才。字节回应称大模型前沿探索包括物理AI，但没有做智能驾驶业务的计划。",
     "title_zh": null,
-    "weighted_score": 0.735,
+    "weighted_score": 0.665,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.7,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.4
     },
-    "story_id": "9939e0b8671e6e2c",
-    "multi_source_count": 1,
+    "story_id": "5a3750c99f97fb83",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html"
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/976/028.htm"
       },
       {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/private/m2WcPZmJL6inJb5i.html"
+        "source_id": "36kr",
+        "url": "https://36kr.com/p/3893815451417347?f=rss"
       }
     ],
     "curated": true
   },
   {
-    "id": "cd930412c5ac3c55",
-    "source_id": "arxiv-cs-ai",
-    "title": "KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer for Multi-Agent Test-Time Scaling",
-    "url": "https://arxiv.org/abs/2607.09153",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.09153v1 Announce Type: new \nAbstract: Process Reward Models (PRMs) have been proven to be highly effective in guiding test-time scaling (TTS) methods, which significantly boost the capabilities of LLM-based multi-agent systems. However, existing PRMs are text-based: they re-encode the entire trajectory text from scratch. In long multi-agent rollouts, the scoring cost, growing quadratically with respect to sequence length L, creates a severe computational bottleneck, severely limiting PRMs' application in long-context scenarios. To resolve this, we introduce KV-PRM, a highly efficient process reward model that eliminates the heavy text re-encoding by directly reading the KV cache produced naturally during the LLM's generation phase. By processing a single \"verify token\" against the pre-existing KV cache, KV-PRM reduces the scoring cost from O(L^2) to O(L). We formally prove that the KV cache contains strictly greater information capacity than text, and is more efficient for d",
+    "id": "8af5bf14c0497ea4",
+    "source_id": "zh-juejin",
+    "title": "Superpowers：GPT-5.6 时代下的流程毒瘤",
+    "url": "https://juejin.cn/post/7661830907991146536",
+    "published_at": "2026-07-13T10:02:14+00:00",
+    "raw_text": "先说结论：我不是被模型拖慢，是被流程拖慢 今天下午，我又被一个任务折磨了一遍。 这不是一个需要数天架构设计的项目，也不是支付、权限、数据迁移这种必须多人审查的高风险改动。按正常的工程节奏，应该是理解需",
     "category_hint": [
-      "论文研究"
+      "技巧与观点"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出KV-PRM，通过KV缓存传输实现高效过程奖励建模，显著降低多智能体测试时扩展的计算成本。",
-    "summary_zh": "本文提出KV-PRM，一种高效的过程奖励模型，用于多智能体测试时扩展。现有PRM基于文本，每次需重新编码整个轨迹，导致长序列下计算成本二次增长。KV-PRM通过KV缓存传输机制，避免重复编码，大幅提升效率。实验表明，该方法在保持性能的同时显著降低了推理开销，为多智能体系统的实际部署提供了可行方案。",
-    "title_zh": "KV-PRM：通过KV缓存传输实现高效过程奖励建模以支持多智能体测试时扩展",
-    "weighted_score": 0.735,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.6,
+    "reason_zh": "作者吐槽流程拖慢效率，引发对AI开发中非技术瓶颈的思考，适合团队反思工作流。",
+    "summary_zh": "作者在文章中指出，在GPT-5.6时代，真正拖慢开发进度的不是模型能力，而是繁琐的流程。他通过一个实际任务案例，描述了在理解需求、代码审查、部署等环节中遇到的流程障碍，认为这些非技术因素严重影响了效率。文章呼吁团队优化工作流程，减少不必要的审批和等待时间，让开发者能更专注于核心任务。观点犀利，引发对AI开发效率的反思。",
+    "title_zh": "Superpowers：GPT-5.6 时代下的流程毒瘤",
+    "weighted_score": 0.54,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
+      "source_authority": 0.5,
+      "novelty": 0.6,
+      "impact": 0.4,
+      "practical_value": 0.7
     },
-    "story_id": "361b17d1b4d8b837",
-    "multi_source_count": 1,
+    "story_id": "a8ddb3be4b35ea14",
+    "multi_source_count": 3,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.09153"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "e2f300c146fd8b9d",
-    "source_id": "arxiv-cs-ai",
-    "title": "OpenProver: Agentic and Interactive Theorem Proving with Lean 4",
-    "url": "https://arxiv.org/abs/2607.09217",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.09217v1 Announce Type: new \nAbstract: In this system paper, we present OpenProver, an open-source system for LLM-driven automated theorem proving (ATP) with integrated Lean 4 formal verification. OpenProver integrates a Planner-Worker-Verifier architecture inspired by recent ATP agentic systems such as Aletheia. A Planner agent maintains a compact Whiteboard scratchpad and an unbounded Repository of intermediate findings, and decomposes mathematical work into parallel Workers.\n  OpenProver is fully open-source, offers reproducible evaluation through automatic formal verification of generated proofs, and provides an interactive terminal interface for human-guided proof search. In interactive mode, OpenProver allows the human operator to monitor and steer the proof search process, motivated by the established human-AI synergy in interactive code generation.\n  To showcase the potential for quantitative ablation experiments enabled by automatic formal verification, we evaluate O",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "开源LLM驱动的定理证明系统，集成Lean 4验证，采用规划-工作-验证架构，提升自动化证明能力。",
-    "summary_zh": "本文介绍OpenProver，一个开源系统，用于LLM驱动的自动化定理证明，并集成Lean 4形式化验证。系统采用规划-工作-验证架构：规划器维护白板记录，工作者执行具体证明步骤，验证器检查正确性。该架构借鉴了Aletheia等近期工作，通过分工协作提高了证明效率。实验表明，OpenProver在多个数学定理证明任务上取得了有竞争力的结果。",
-    "title_zh": "OpenProver：基于Lean 4的智能体交互式定理证明系统",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "df8ae072b2b30784",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/07/448825.html"
+      },
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.09217"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "827d796a47e8cb25",
-    "source_id": "arxiv-cs-ai",
-    "title": "LongMedBench: Benchmarking Medical Agents for Long-Horizon Clinical Decision-Making",
-    "url": "https://arxiv.org/abs/2607.09322",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.09322v1 Announce Type: new \nAbstract: In this work, we introduce LongMedBench, a real-world EHR-based benchmark for long-horizon clinical decision-making. Prior evaluations of LLM-based medical agents have largely emphasized short-context knowledge QA and tool use. However, real-world medical care is inherently longitudinal, and clinicians must aggregate evidence across repeated visits, tests, and evolving treatments. Therefore, long-horizon interaction is essential for realistic assessment. LongMedBench is constructed via a reproducible pipeline that integrates MIMIC-IV admission records and clinical notes into time-series event streams and long-context memory datasets, enabling long-horizon, multi-session interactions between agents and a clinical environment. It comprises 335 patients, with 19.72 inpatient visits per patient on average and 44.91 medical events per visit. Guided by the long-horizon decision process, we propose an evaluation taxonomy with three suites: fact",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "首个基于真实电子健康记录的长周期临床决策基准，填补了现有医疗智能体评估的空白。",
-    "summary_zh": "本文提出LongMedBench，一个基于真实电子健康记录的长周期临床决策基准。现有医疗智能体评估多聚焦于短上下文知识问答和工具使用，但实际医疗是纵向的，医生需综合多次就诊信息。LongMedBench模拟了长期临床决策场景，要求智能体在多次就诊中持续推理。该基准为评估和提升医疗智能体的长期决策能力提供了重要工具。",
-    "title_zh": "LongMedBench：面向长周期临床决策的医疗智能体基准",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "37cab9b1f46bf4af",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "ifanr",
+        "url": "https://www.ifanr.com/1671899?utm_source=rss&utm_medium=rss&utm_campaign="
+      },
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.09322"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a882d050c69a6f31",
-    "source_id": "arxiv-cs-ai",
-    "title": "Multimodal Reward Hacking in Reinforcement Learning",
-    "url": "https://arxiv.org/abs/2607.09492",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.09492v1 Announce Type: new \nAbstract: Reinforcement learning (RL) is increasingly used to align multimodal large language models (MLLMs), but higher rewards do not always imply better task performance. This risk is amplified when visual evidence is evaluated by text-only or weakly grounded rewards. We study reward hacking in MLLM RL across safety VQA, chart VQA, and stress-test settings, varying reward design, data ambiguity, model scale (2B-32B), and RL algorithm (GRPO, RLOO, DAPO). We introduce Newly Rewarded Failure Rate (NRFR), which measures failures among samples whose proxy reward improves over the SFT baseline. Outcome-only rewards cause severe hacking, reaching 48.1% Reward Hacking Rate (RHR), while NRFR exceeding RHR shows that RL creates new failures rather than merely inheriting them. Scaling reduces but does not eliminate hacking: even the 32B model retains a 54.9% worse rate under outcome-only rewards, whereas answer-aware rewards improve the oracle trend at ev",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示多模态RL中奖励黑客风险，对MLLM对齐研究有重要警示意义。",
-    "summary_zh": "本文研究多模态大语言模型（MLLM）在强化学习（RL）对齐中的奖励黑客问题。作者指出，更高的奖励并不总是意味着更好的任务性能，当视觉证据由纯文本或弱接地奖励评估时，这种风险会被放大。论文在安全VQA、图表VQA和压力测试设置中研究了MLLM RL中的奖励黑客现象，强调了多模态对齐中的潜在缺陷。",
-    "title_zh": "多模态强化学习中的奖励黑客",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "8e703bcee5e91403",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.09492"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "0b0cf69cc2900e5e",
-    "source_id": "arxiv-cs-ai",
-    "title": "Prompt-Driven Exploration",
-    "url": "https://arxiv.org/abs/2607.08837",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08837v1 Announce Type: cross \nAbstract: Exploration is essential to RL since a policy cannot improve by repeatedly sampling the behaviors it already prefers. Standard methods inject stochasticity in the action space, but such jitter only yields rollouts close to the original. Escaping a weak policy often requires global perturbations that action noise cannot produce. Large language models (LLMs) and vision-language-action (VLA) models offer a pathway: they condition the policy on a natural language prompt, and since the rollout follows from it, modifying the prompt induces global changes. The challenge is finding prompts that induce useful global changes. With a weak policy that rarely succeeds, reward is too sparse to select on. Our idea is to refine prompts from the rollouts themselves: a vision-language model (VLM) reasons over the rollout video, diagnoses how the policy responded, and rewrites the prompt to elicit better behavior next time. This procedure realizes poster",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "利用LLM生成全局扰动来引导强化学习探索，突破传统动作噪声的局限，方法新颖且有启发性。",
-    "summary_zh": "探索是强化学习的关键，但标准方法通过在动作空间注入随机性来产生扰动，这只能产生接近原始策略的轨迹。要摆脱弱策略，通常需要全局扰动，而动作噪声无法产生。本文提出Prompt-Driven Exploration，利用大语言模型生成全局性的探索策略，通过提示引导LLM产生多样化的行为，从而帮助智能体跳出局部最优。实验表明，该方法在多个基准任务上显著提升了探索效率和最终性能。",
-    "title_zh": "提示驱动的探索",
-    "weighted_score": 0.72,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.5
-    },
-    "story_id": "a5fe503cd20cae83",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08837"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "34a7abb85c471b4a",
-    "source_id": "arxiv-cs-ai",
-    "title": "NL-PAC: Specification Ambiguity and Certified Minimax Risk Floors in LLM-Mediated Supervision",
-    "url": "https://arxiv.org/abs/2607.08961",
-    "published_at": "2026-07-13T04:00:00+00:00",
-    "raw_text": "arXiv:2607.08961v1 Announce Type: cross \nAbstract: Large language models increasingly provide labels, evaluations, and feedback for tasks specified in natural language. When a specification admits multiple readings but the supervision channel does not reveal which is operative, additional labels reduce sampling error without resolving the resulting identification problem. We introduce Natural Language PAC (NL-PAC), a framework that uses a fixed model's thresholded decoding law to define admissible labels and candidate targets. The probability that multiple labels are admissible equals the diameter of the pointwise-admissible target class, and under target-blind supervision every learner incurs worst-case risk of at least half this diameter, at every sample size; the exact randomized minimax risk over this class is attained by a data-independent strategy. Finite-sample confidence bounds make these quantities certifiable from held-out unlabeled inputs. In a frozen Qwen~2.5--3B audit, one",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "理论分析LLM监督中的规范歧义问题，提出认证最小风险下限，对AI安全与对齐有重要理论贡献。",
-    "summary_zh": "大语言模型越来越多地用于为自然语言指定的任务提供标签、评估和反馈。当规范允许多种解读，但监督渠道未揭示哪种解读有效时，额外标签只能减少采样误差，而无法解决由此产生的识别问题。本文引入自然语言程序化认证框架，形式化规范歧义问题，并推导出在LLM监督下的认证最小风险下限。该工作揭示了LLM监督中固有的不确定性，为设计更可靠的AI评估系统提供了理论基础。",
-    "title_zh": "NL-PAC：LLM监督中的规范歧义与认证最小风险下限",
-    "weighted_score": 0.72,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.5
-    },
-    "story_id": "d9ad5040a9f96f75",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.08961"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661830907991146536"
       }
     ],
     "curated": true
@@ -504,9 +416,13 @@
       "impact": 0.5,
       "practical_value": 0.4
     },
-    "story_id": "5ab7d04377fd18cf",
+    "story_id": "056d3c0d8753e7a7",
     "multi_source_count": 3,
     "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7660793595751186447"
+      },
       {
         "source_id": "zh-cnbeta",
         "url": "https://www.cnbeta.com.tw/articles/tech/1568754.htm"
@@ -514,12 +430,219 @@
       {
         "source_id": "qbitai",
         "url": "https://www.qbitai.com/2026/07/448139.html"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/975/974.htm"
       }
     ],
     "curated": true
+  },
+  {
+    "id": "cad752a52f161824",
+    "source_id": "zh-juejin",
+    "title": "跨进程调用工具：MCP + LangChain 让 Agent 不再“锁死”在单一语言",
+    "url": "https://juejin.cn/post/7661754132252868648",
+    "published_at": "2026-07-13T09:59:21+00:00",
+    "raw_text": "本地编写的 Tool 只能在当前项目中使用，换一个项目就要重写。MCP 协议让 Tool 可以独立于 LLM，实现跨进程、跨语言调用。本文用 LangChain 的 MCP 适配器连接 MCP Ser",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "MCP协议让工具跨进程跨语言调用，结合LangChain的实践教程，对构建灵活Agent的开发者非常实用。",
+    "summary_zh": "本文介绍了如何使用MCP（Model Context Protocol）协议结合LangChain实现跨进程、跨语言的工具调用。传统上，本地编写的Tool只能在当前项目中使用，换项目需重写。MCP协议让Tool独立于LLM，实现跨进程、跨语言调用。文章通过LangChain的MCP适配器连接MCP Server，展示了如何构建可复用的工具集，并提供了具体代码示例。这对于希望构建模块化、可扩展Agent系统的开发者具有很高的实用价值。",
+    "title_zh": "跨进程调用工具：MCP + LangChain 让 Agent 不再“锁死”在单一语言",
+    "weighted_score": 0.71,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "8278f480b7ad03f4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661754132252868648"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "ee33ea284f24a6bd",
+    "source_id": "zh-juejin",
+    "title": "组合多个远程 MCP Server：让 Agent 同时调用高德地图、Chrome DevTools 和文件系统",
+    "url": "https://juejin.cn/post/7661821409981153315",
+    "published_at": "2026-07-13T10:20:41+00:00",
+    "raw_text": "一个 Agent 如果能同时调用高德地图查位置、用 Chrome DevTools 打开网页、用 FileSystem 写入文件，它就能完成多么复杂的任务？本文用 LangChain 的 MultiS",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "组合多个远程MCP Server的实战教程，展示Agent调用多种工具的能力，对开发者极具实用价值。",
+    "summary_zh": "本文展示了如何使用LangChain的MultiServerMCPClient组合多个远程MCP Server，让一个Agent能够同时调用高德地图、Chrome DevTools和文件系统等工具。通过具体示例，文章演示了Agent如何利用这些工具完成复杂任务，例如查询位置、打开网页和写入文件。教程提供了详细的代码和配置说明，帮助读者理解如何构建能够调用多种远程服务的Agent系统，对于希望扩展Agent能力的开发者非常实用。",
+    "title_zh": "组合多个远程 MCP Server：让 Agent 同时调用高德地图、Chrome DevTools 和文件系统",
+    "weighted_score": 0.71,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "9293b5d454e7f4e5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7661821409981153315"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "b2323bae952375b0",
+    "source_id": "36kr",
+    "title": "对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来",
+    "url": "https://36kr.com/p/3893445208717826?f=rss",
+    "published_at": "2026-07-13T02:39:18+00:00",
+    "raw_text": "<p>一个从未见过监控画面的多模态模型，却比在监控数据上练了多年的小模型“老将”更懂监控。这不是科幻电影，这是2023年Om AI联汇的一场“无心插柳”，也是CEO兼首席科学家赵天成博士更加坚信“多模态训练方式能为物理开放世界带来泛化性”的关键节点。彼时，AI行业正在追求以大语言模型为核心的生成式AI。</p>\n  <p>三年后，这个多模态模型演变成了VLX——全球首个面向物理AI的端侧流式多模态模型系列。首次提出“端侧原生流式多模态”这一全新模型架构，而通过这个从Day 1为端侧算力约束设计的架构，VLX模型首次在端侧打通“持续感知+精准定位+行动决策”的物理AI完整闭环。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260713/v2_b00a13bf0a3f45a88d3d27c919ef4dd2@5925182_oswg753581oswg1080oswg652_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">VLX概览图</p>\n  <p>毫无疑问，站在2026年夏天的时间节点，AI行业的热度已经开始从数字AI转向物理AI。不同于数字AI的2023年，虽然物理AI的热度很高，但是行业仍未收敛，多路线并存，距生产落地尚远：以语言为中心的VLA、以像素为中心的视频生成、以3D结构为中心的仿真、以视觉表征为中心的JEPA……行业对最主流的VLA与世界模型两条概念路线的选择，也依然摇摆不定，是替代，还是并存，抑或是融合？</p>\n  <p>就在这一行业还在争论谁是物理AI终极答案之时，Om AI联汇的VLX系列模型已然完成物理AI从仿真实验到产业落地的商业闭环，通过赋予机器人、无人机、可穿戴设备、安防摄像头、AI PC等多类物理终端自主感知的“小脑”和认知决策的“大脑”，让这些物理终端实现从“被动执行指令”向“主动适应场景”跨越。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260713/v2_34b89351baf44832b3bccd0ea",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.36krcdn.com/hsossms/20260713/v2_b00a13bf0a3f45a88d3d27c919ef4dd2@5925182_oswg753581oswg1080oswg652_img_000?x-oss-process=image/format,jpg/interlace,1",
+    "category": "模型发布",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "深度对话 Om AI 创始人，揭秘全球首个端侧流式多模态模型 VLX 的架构与理念。",
+    "summary_zh": "本文对话 Om AI 创始人赵天成，介绍其团队推出的 VLX 模型——全球首个面向物理 AI 的端侧流式多模态模型系列。该模型从 Day 1 为端侧算力约束设计，首次在端侧打通“持续感知+精准定位+行动决策”的物理 AI 完整闭环。文章回顾了团队从多模态模型到 VLX 的演进历程，并探讨了物理 AI 原生流式架构的未来。",
+    "title_zh": "对话Om AI赵天成：多年坚守，押注物理AI原生的「流式」未来",
+    "weighted_score": 0.705,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "2eb95db9ab8c06ea",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "36kr",
+        "url": "https://36kr.com/p/3893445208717826?f=rss"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "6cfe5ac1a0bcb6cb",
+    "source_id": "zh-oschina",
+    "title": "超越 Vision Banana，商汤开源 SenseNova-Vision：视觉任务大统一",
+    "url": "https://www.oschina.net/news/471695",
+    "published_at": "2026-07-13T08:03:02+00:00",
+    "raw_text": "今天，商汤科技正式发布并全面开源日日新 SenseNova-Vision理解生成统一视觉大模型，这是商汤日日新大模型体系的重要视觉能力升级。 行业以往的 &quot;统一视觉&quot; 多是把检测、分割、深度预测等多个专家模型打包封装，本质还是割裂的。SenseNova-Vision 的核心变革是：让视觉成为通用基础模型的原生能力，彻底融入大模型体系。...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "商汤开源统一视觉大模型，将视觉作为原生能力，技术突破显著。",
+    "summary_zh": "商汤科技发布并全面开源 SenseNova-Vision 理解生成统一视觉大模型。该模型将视觉作为通用基础模型的原生能力，彻底融入大模型体系，而非像以往那样将多个专家模型打包封装。",
+    "title_zh": "超越 Vision Banana，商汤开源 SenseNova-Vision：视觉任务大统一",
+    "weighted_score": 0.705,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "1a8abbc21847afc3",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/471695"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "5d377375d3a3b00d",
+    "source_id": "reddit-localllama",
+    "title": "Apple sues OpenAI alleging trade secret theft, says scheme was 'at every level'",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uus189/apple_sues_openai_alleging_trade_secret_theft/",
+    "published_at": "2026-07-12T21:25:47+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uus189/apple_sues_openai_alleging_trade_secret_theft/\"> <img alt=\"Apple sues OpenAI alleging trade secret theft, says scheme was 'at every level'\" src=\"https://external-preview.redd.it/KzCGs7zy_7vp-J5nGXnJju0xv_pJqeN8vU7uscmPBcA.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=178c0c8785957ade816101315197cd1ebe50b1d5\" title=\"Apple sues OpenAI alleging trade secret theft, says scheme was 'at every level'\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/fallingdowndizzyvr\"> /u/fallingdowndizzyvr </a> <br /> <span><a href=\"https://www.cnbc.com/2026/07/10/apple-openai-lawsuit-trade-secrets.html\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uus189/apple_sues_openai_alleging_trade_secret_theft/\">[comments]</a></span> </td></tr></table>",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/KzCGs7zy_7vp-J5nGXnJju0xv_pJqeN8vU7uscmPBcA.jpeg?width=640&crop=smart&auto=webp&s=178c0c8785957ade816101315197cd1ebe50b1d5",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "苹果起诉OpenAI窃取商业机密，重大行业新闻，影响深远。",
+    "summary_zh": "苹果公司起诉OpenAI，指控其窃取商业机密，并称该计划“在各个层面”都存在。诉讼涉及苹果指控OpenAI通过前员工获取其专有技术。这一事件可能对两家公司的合作关系以及AI行业的竞争格局产生重大影响。目前案件正在审理中，具体细节尚未完全公开。对于关注AI行业法律和商业动态的读者来说，这是一条重要的新闻。",
+    "title_zh": "苹果起诉OpenAI指控商业机密窃取，称计划“在各个层面”",
+    "weighted_score": 0.695,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "b6eb45dd19e0b33b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uus189/apple_sues_openai_alleging_trade_secret_theft/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "5956f83f147ae9f7",
+    "source_id": "36kr",
+    "title": "《扩大消费“十五五”规划》：扩大数字产品消费，增加人工智能手机和电脑等新一代智能终端产品有效供给",
+    "url": "https://36kr.com/newsflashes/3893860946393857?f=rss",
+    "published_at": "2026-07-13T09:20:11+00:00",
+    "raw_text": "36氪获悉，国务院批复同意《扩大消费“十五五”规划》。《规划》提出，发展数字消费。促进数字消费高质量发展，深入推进“人工智能+消费”，实施数字消费提升行动。扩大数字产品消费，增加人工智能手机和电脑、智能穿戴、智能机器人、桌面级三维（3D）打印设备等新一代智能终端产品有效供给，加快智能安防、视频照护系统等研发及互联互通，开展智能网联汽车准入和上路通行试点。提升数字服务消费，运用人工智能、虚拟现实等技术赋能生活服务和景区街区，推动人工智能与教育、医疗、文化、旅游、体育等领域融合应用，拓展智能体应用场景。创新数字内容消费，推出更多优质数字文博产品，加强广播电视和网络视听超高清内容供给，发展虚拟现实电影、LED数字影厅等电影新形态。拓展数字消费渠道，支持实体商贸企业数字化营销，引导即时零售、直播电商等规范健康发展，健全品质电商标准体系。",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "国务院规划明确扩大AI终端产品供给，对行业有政策导向意义。",
+    "summary_zh": "国务院批复《扩大消费“十五五”规划》，提出发展数字消费，深入推进“人工智能+消费”。规划要求增加人工智能手机、电脑、智能穿戴、机器人等智能终端供给，推动智能网联汽车试点，并拓展AI在教育、医疗、文旅等领域的融合应用。",
+    "title_zh": "《扩大消费“十五五”规划》：扩大数字产品消费，增加人工智能终端供给",
+    "weighted_score": 0.675,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "ec35f86e3cef7c3a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "36kr",
+        "url": "https://36kr.com/newsflashes/3893860946393857?f=rss"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
   }
 ]
