@@ -1,8 +1,8 @@
-import { renderFeed, excerptFor } from "./components/feed.js?v=20260712a";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260712a";
-import { initPalette } from "./components/palette.js?v=20260712a";
-import { categoryColor, categoryTextColor } from "./palette.js?v=20260712a";
-import { safeUrl, setSafeHref } from "./safe.js?v=20260712a";
+import { renderFeed, excerptFor, relativeTime } from "./components/feed.js?v=20260713a";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260713a";
+import { initPalette } from "./components/palette.js?v=20260713a";
+import { categoryColor, categoryTextColor } from "./palette.js?v=20260713a";
+import { safeUrl, setSafeHref } from "./safe.js?v=20260713a";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -205,7 +205,9 @@ function renderLead() {
   }
   els.leadReason.textContent = excerptFor(lead, 420, true);
   const sources = lead.multi_source_count > 1 ? ` · ${lead.multi_source_count} 源确认` : "";
-  els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources}`;
+  els.leadMeta.innerHTML = `<span class="lead__cat"></span> · 加权分 ${lead.weighted_score?.toFixed(2) ?? "—"}${sources} · <time></time>`;
+  els.leadMeta.querySelector("time").textContent = relativeTime(lead.published_at);
+  els.leadMeta.querySelector("time").dateTime = lead.published_at;
   const leadCat = els.leadMeta.querySelector(".lead__cat");
   const catDot = document.createElement("i");
   catDot.className = "cat-dot";

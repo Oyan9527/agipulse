@@ -30,6 +30,7 @@ from .archive import update_daily_archive, load_daily_archives
 from .ai_relevance import is_ai_related
 from .social_translate import translate_titles, translate_field
 from . import llm_cache
+from . import first_seen
 
 log = get_logger(__name__)
 
@@ -248,14 +249,23 @@ def build_github_trending(sources_cfg, skip_llm=False, mock_llm=False):
 def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     sources_cfg, categories_cfg, weights_cfg = load_config()
 
+    out_dir = Path(output_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     fetch_results, normalized_by_source, all_items = fetch_and_normalize(sources_cfg)
+
+    # 部分信源(如美团技术团队博客)压根不提供发布时间，normalize.py 只能兜底成"现在"。
+    # 不钉住的话，同一条旧内容每轮都会被重新盖成"刚刚发布"，永远滑不出处理窗口，
+    # 一直占着高分位置——见 scripts/first_seen.py 顶部说明。
+    fs_cache = first_seen.load_first_seen(out_dir)
+    first_seen.pin_fallback_timestamps(all_items, fs_cache)
+
     all_items = dedupe(all_items, weights_cfg)
     all_items = filter_ai_relevance(all_items, weights_cfg)
     all_items = apply_intake_quotas(all_items, weights_cfg)
     processable = filter_processing_window(all_items, hours=window_hours)
 
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    first_seen.save_first_seen(out_dir, fs_cache, retain_ids={it["id"] for it in processable})
 
     # 社媒热点 / GitHub 涨星榜：独立分支，任何模式下都产出，不经过 AI 打分流程
     social_hot = build_social_hot(sources_cfg, skip_llm=skip_llm, mock_llm=mock_llm)

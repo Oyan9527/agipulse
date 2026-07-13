@@ -1,5 +1,6 @@
 // 今日简报 + 热点雷达：两个都是真正的排序榜单，编号是有意义的（不是装饰性 01/02/03）。
-import { setSafeHref } from "../safe.js?v=20260712a";
+import { setSafeHref } from "../safe.js?v=20260713a";
+import { relativeTime } from "./feed.js?v=20260713a";
 
 // 侧栏窄，放不下双语两行：与社媒热点一致——译文为主，英文原题放 title 悬浮提示；
 // 译文比原生中文标题醒目一档(is-translated)，帮助分辨"这是翻译过的"。
@@ -27,12 +28,16 @@ export function renderBrief({ listEl, dateEl, emptyEl, brief }) {
       <div class="brief-row__body">
         <a class="brief-row__title" target="_blank" rel="noopener noreferrer"></a>
         <p class="brief-row__reason"></p>
+        <p class="brief-row__meta"><time class="brief-row__time"></time></p>
       </div>
     `;
     const a = li.querySelector(".brief-row__title");
     setTitleWithTranslation(a, item);
     setSafeHref(a, item.url);
     li.querySelector(".brief-row__reason").textContent = item.reason_zh || "";
+    const timeEl = li.querySelector(".brief-row__time");
+    timeEl.textContent = relativeTime(item.published_at);
+    timeEl.dateTime = item.published_at;
     listEl.appendChild(li);
   });
 }
@@ -50,7 +55,7 @@ export function renderHotStories({ listEl, emptyEl, stories }) {
       <div class="hot-row__body">
         <a class="hot-row__title" target="_blank" rel="noopener noreferrer"></a>
         <p class="hot-row__meta">
-          <span class="hot-row__sources"></span><span class="hot-row__heat"></span>
+          <span class="hot-row__sources"></span><span class="hot-row__heat"></span> · <time class="hot-row__time"></time>
         </p>
       </div>
     `;
@@ -60,6 +65,9 @@ export function renderHotStories({ listEl, emptyEl, stories }) {
     li.querySelector(".hot-row__sources").textContent =
       story.source_count >= 2 ? `${story.source_count} 源确认` : "单源";
     li.querySelector(".hot-row__heat").textContent = ` · 热度 ${story.heat.toFixed(1)}`;
+    const timeEl = li.querySelector(".hot-row__time");
+    timeEl.textContent = relativeTime(story.first_seen);
+    timeEl.dateTime = story.first_seen;
     listEl.appendChild(li);
   });
 }

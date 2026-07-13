@@ -15,7 +15,8 @@ def normalize_items(raw_items, source):
         url = safe_http_url(raw.get("url"))
         if not title or not url:
             continue
-        published_at = raw.get("published_at") or now_utc()
+        raw_published = raw.get("published_at")
+        published_at = raw_published or now_utc()
         normalized.append(
             {
                 "id": make_id(url),
@@ -23,6 +24,11 @@ def normalize_items(raw_items, source):
                 "title": title,
                 "url": url,
                 "published_at": to_iso(published_at),
+                # 信源没给真实发布时间时才为 True——first_seen.pin_fallback_timestamps
+                # 会用它把 published_at 钉在"首次发现时间"，而不是每轮都重新盖成当前时间
+                # （否则这条内容永远滑不出处理窗口，见 scripts/first_seen.py 顶部说明）。
+                # 该字段是内部实现细节，pin_fallback_timestamps 处理完会 pop 掉，不进入输出 schema。
+                "_published_at_is_fallback": raw_published is None,
                 "raw_text": (raw.get("raw_text") or "")[:1000],
                 "category_hint": category_hint,
                 "image_url": safe_http_url(raw.get("image_url")),
