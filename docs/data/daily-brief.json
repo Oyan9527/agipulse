@@ -1,85 +1,13 @@
 {
-  "date": "2026-07-12",
-  "generated_at": "2026-07-12T20:43:00.181713+00:00",
+  "date": "2026-07-13",
+  "generated_at": "2026-07-13T02:06:49.285728+00:00",
   "items": [
-    {
-      "id": "b15dfeac1dc74d0f",
-      "source_id": "reddit-localllama",
-      "title": "Anthropic found Claude reasoning in silence (J-space) — we ran the same lens on open Qwen3-8B",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/",
-      "published_at": "2026-07-12T14:22:37+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Anthropic’s research on Claude found a silent internal workspace they call J-space — hidden reasoning that never shows up as visible text.</p> <p>Classic example: the model answers <code>49</code>, but inside J-space they caught <code>21 → 42 → 49</code>.</p> <p>Important distinction:</p> <ul> <li>Chain-of-thought = text you can read</li> <li>J-space = silent concepts in activations (“what’s on its mind”)</li> </ul> <p>We fitted the open Jacobian lens (J-lens) on Qwen3-8B, ran it locally, and used it to catch prose drift before tool calls (model leaning toward “To, You, Do…” instead of JSON).</p> <p>Then we wired that into agent guards: stop / cancel / keep the useful space, and distill recoveries into LoRA data.</p> <p>Made an 8-min explainer demo:</p> <p><a href=\"https://www.youtube.com/watch?v=5UMN6hDONJk\">https://www.youtube.com/watch?v=5UMN6hDONJk</a></p> <p>Happy to answer questions about the probe setup or the guard loop.</p> </div><!-- SC_ON --",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示模型内部隐藏推理空间，对理解AI思维机制有重要启发，技术深度高。",
-      "summary_zh": "Anthropic研究发现Claude模型存在一个名为J-space的静默内部工作空间，模型在其中进行隐藏推理，例如回答49时内部计算21→42→49，但输出文本中不显示。这与可读的思维链（CoT）不同。该研究团队将相同方法应用于开源模型Qwen3-8B，验证了类似现象。这一发现对理解大语言模型的内部推理机制具有重要意义，可能影响未来模型的可解释性和安全性设计。",
-      "title_zh": "Anthropic发现Claude静默推理空间（J-space）——我们在开源Qwen3-8B上验证了相同方法",
-      "weighted_score": 0.7,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "7b145e989c93c1f8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu61wb/i_mapped_anthropics_jspace_hallucination_signal/"
-        },
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uugulk/anthropic_found_claude_reasoning_in_silence/"
-        }
-      ]
-    },
-    {
-      "id": "4249d26078bd9ce6",
-      "source_id": "hn-ai",
-      "title": "Bitemporal provenance in agent memory: What did we believe, when, and why",
-      "url": "https://news.ycombinator.com/item?id=48875749",
-      "published_at": "2026-07-11T20:52:15+00:00",
-      "raw_text": "CozoDB, a transactional relational-graph-vector database with embedded Datalog in Rust, went dormant in December 2024. We hard-forked it as MnesticDB (not official CozoDB), under an MPL-2.0 license, to continue Ziyang Hu and the Cozo Project Authors&#x27; vision of building a &quot;Hippocampus for AI&quot;, or agentic memory.<p>But agentic memory isn&#x27;t a pile of current facts with a log of past decisions. It has to track change over time, and be auditable. We&#x27;ve recently shipped several features that make this possible.<p>First, we added a distinction between valid time (when a fact is true about the world) and transaction time (when the database came to believe it). This allows time travel, the ability to audit the memory at any point and see what knowledge any past decision was based on. Every write draws its transaction time from a crash-safe monotone commit clock, an atomic high-water mark persisted inside the same transaction that commits the data, so the clock can never",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出双时态溯源用于智能体记忆，概念新颖，对AI记忆系统设计有启发。",
-      "summary_zh": "CozoDB是一个集成了Datalog的事务性关系-图-向量数据库，于2024年12月进入休眠状态。作者将其硬分叉为MnesticDB（非官方CozoDB），采用MPL-2.0许可，以延续Ziyang Hu和Cozo项目作者构建“AI海马体”或智能体记忆的愿景。文章指出，智能体记忆不应只是一堆当前事实加上过去日志，而应具备双时态溯源能力，即记录“我们相信什么、何时相信、以及为何相信”，从而支持更丰富的推理和审计。",
-      "title_zh": "智能体记忆中的双时态溯源：我们相信什么、何时相信、以及为何相信",
-      "weighted_score": 0.65,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.9,
-        "impact": 0.5,
-        "practical_value": 0.6
-      },
-      "story_id": "7f4b22d4282cd496",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "hn-ai",
-          "url": "https://news.ycombinator.com/item?id=48875749"
-        }
-      ]
-    },
     {
       "id": "f1dd95c5b8c0848f",
       "source_id": "zh-meituan-tech",
       "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
       "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-      "published_at": "2026-07-12T20:37:16.136023+00:00",
+      "published_at": "2026-07-13T02:02:35.045362+00:00",
       "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
       "category_hint": [
         "技巧与观点"
@@ -104,73 +32,6 @@
         {
           "source_id": "zh-meituan-tech",
           "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
-        }
-      ]
-    },
-    {
-      "id": "f1342ada33dc0106",
-      "source_id": "reddit-localllama",
-      "title": "Voodoo Quant beats Unsloth Dynamic 2.0 KLD by 95% in Qwen3.5 0.8B and 2B",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/",
-      "published_at": "2026-07-12T08:52:41+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/\"> <img alt=\"Voodoo Quant beats Unsloth Dynamic 2.0 KLD by 95% in Qwen3.5 0.8B and 2B\" src=\"https://preview.redd.it/6vq6mi13jrch1.png?width=140&amp;height=74&amp;auto=webp&amp;s=bb78f93d0151d629991a0482824ea4eb644ff882\" title=\"Voodoo Quant beats Unsloth Dynamic 2.0 KLD by 95% in Qwen3.5 0.8B and 2B\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hey all, here are two new high performance qwen3.5 gguf sets I created using a new state of the art technique for optimizing mixed precision called Voodoo Quant.</p> <p><a href=\"https://huggingface.co/voodooquant/Qwen3.5-0.8B-MTP-Voodoo\">https://huggingface.co/voodooquant/Qwen3.5-0.8B-MTP-Voodoo</a></p> <p><a href=\"https://huggingface.co/voodooquant/Qwen3.5-2B-MTP-Voodoo\">https://huggingface.co/voodooquant/Qwen3.5-2B-MTP-Voodoo</a></p> <p>Voodoo Quant operates on the same lines as Unsloth Dynamic in that it is simp",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://preview.redd.it/6vq6mi13jrch1.png?width=140&height=74&auto=webp&s=bb78f93d0151d629991a0482824ea4eb644ff882",
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "提出Voodoo Quant量化方法，在Qwen3.5小模型上KLD比Unsloth Dynamic 2.0低95%，有实验数据支撑。",
-      "summary_zh": "作者提出了一种名为Voodoo Quant的新型量化方法，并在Qwen3.5 0.8B和2B模型上进行了测试。实验结果显示，Voodoo Quant的KLD（KL散度）比Unsloth Dynamic 2.0低95%，表明其量化精度显著更高。文章附有对比图表，展示了不同量化方法的性能差异。该方法可能对低资源设备上的模型部署有重要意义。",
-      "title_zh": "Voodoo Quant在Qwen3.5 0.8B和2B上比Unsloth Dynamic 2.0 KLD低95%",
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.9,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "2b6ba27a3ef8025e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uua3jd/voodoo_quant_beats_unsloth_dynamic_20_kld_by_95/"
-        }
-      ]
-    },
-    {
-      "id": "e3e59c14742347ad",
-      "source_id": "zh-juejin",
-      "title": "前端 AI 单元测试思考与落地",
-      "url": "https://juejin.cn/post/7661479243135008778",
-      "published_at": "2026-07-12T14:55:15+00:00",
-      "raw_text": "从 Command 到 Skill 的前端 AI 单测实战：迁移思路、六类测试场景与耗时/成本优化经验",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "前端AI单元测试实战经验，涵盖迁移思路、场景分类与成本优化，实用性强。",
-      "summary_zh": "文章分享了前端AI单元测试的思考与落地实践，从Command到Skill的迁移思路，总结了六类测试场景，并提供了耗时与成本优化的经验。内容涉及如何有效利用AI进行前端单元测试，包括测试用例设计、执行效率提升等，对前端开发者具有较高的参考价值。",
-      "title_zh": null,
-      "weighted_score": 0.61,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "c74b1776b9f0b2d4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7661479243135008778"
         }
       ]
     },
@@ -209,78 +70,35 @@
       ]
     },
     {
-      "id": "ad4dc8ab3db6e853",
-      "source_id": "reddit-localllama",
-      "title": "Working around Qwen3.6-27B's tool-call failures and looping",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uue278/working_around_qwen3627bs_toolcall_failures_and/",
-      "published_at": "2026-07-12T12:24:34+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Let's start a discussion about what can be done to make local models more reliable.</p> <p>I've been using Qwen3.6-27B a lot lately, and have noticed the same thing that many others talk about here, which is the tool-call failures and looping that really gets in the way of being able to use what is otherwise a pretty intelligent mode as a fully local stand-in for some of the frontier models.</p> <p>I found that I have to watch it like a hawk constantly, otherwise it'll start to loop after a while, or just randomly stop with a tool-call hallucination.</p> <p>I managed to work around this issue by creating an extension to the Pi coding agent, that monitors the JSON stream for looping, as well as checking to see if the user's goal has been reached, and if it hasn't and the main model has stopped, then it'll automatically inject some prompts encouraging the model to continue.</p> <p>That was my attempt to solve the issue and it seems to work pretty well. I",
+      "id": "89f4d4886aa127b5",
+      "source_id": "zh-ithome",
+      "title": "中国电信试验 AI 传输卫星视频新方案，效率比 H.265 提升 3.5 倍",
+      "url": "https://www.ithome.com/0/975/855.htm",
+      "published_at": "2026-07-13T00:20:06+00:00",
+      "raw_text": "<p>IT之家 7 月 13 日消息，中国电信研究院今日宣布，中国电信（研究院、上海公司和中电信应急公司）联合北京邮电大学、鹏城实验室在中国电信研究院北京园区完成<strong>基于知识库的高轨卫星跨模态语义通信试验</strong>。</p><p>IT之家从公告获悉，该试验依托中国电信<strong>云网融合中试平台</strong>的高轨实星验证能力，基于亚洲九号卫星完成跨模态语义通信验证，实现了两大核心技术突破：</p><ul class=\" list-paddingleft-2\"><li><p><strong>一是创新性融合语义知识库和信源信道联合编码（JSCC）技术，星地链路传输效率提升至 3.5 倍以上</strong>。通过关键帧的 JSCC 高效可靠传输 + 非关键帧的文本向量映射，关键帧占比降低至约 0.5%，每 6 秒视频中仅选取 1 帧关键帧传输视频图像；对于近 200 帧非关键帧，将视频图像映射到知识库的文本向量，实现高维信息的低维表征。在保持相近视频质量（Frechet 距离 FID&lt;50）的前提下，实测星地传输效率较传统的 H.264 和 H.265 方案分别<strong>提升至 5.5 倍和 3.5 倍</strong>。</p></li><li><p><strong>二是破解语义通信多模态传输难题，多模态传输质量提升 70% 以上</strong>。试验基于语义知识库的生成式语义恢复与视频、音频跨模态融合对齐，实现星地多模态高质量传输。在采用相近的视频压缩比时，视频质量（FID）较传统的 H.264 和 H.265 方案分别<strong>提升 92% 和 70%</strong>。</p></li></ul><p style=\"text-align: center;\"><img alt=\"图片\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/0a4ef2ab-25ef-4900-958a-cdfc5a1dd0ff.png\" /></p><p>后续，中国电信、北京邮电大学和鹏城实验室将深化 6G 领域的协同攻关力度，共同推动语义通信等关键技术创新、标准制定和产业进程。</p>",
       "category_hint": [
-        "开源项目",
-        "技巧与观点"
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "深入讨论Qwen3.6-27B工具调用失败和循环问题的解决方案，对本地模型用户极具实用价值。",
-      "summary_zh": "Reddit用户发起讨论，探讨如何提高本地模型的可靠性，特别是针对Qwen3.6-27B模型在工具调用时出现的失败和循环问题。用户分享了实际使用中的观察，并寻求社区建议。讨论可能涉及调整采样参数、优化提示词、使用外部工具链等方法。该问题普遍存在于本地模型中，因此解决方案对其他模型也有参考意义。",
-      "title_zh": "解决Qwen3.6-27B工具调用失败和循环问题",
-      "weighted_score": 0.58,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.6,
-        "impact": 0.4,
-        "practical_value": 0.9
-      },
-      "story_id": "e64015dace6f5196",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1utb6io/qwen36_35ba3b_q8_0_no_kv_quant_single_prompt_in/"
-        },
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uue278/working_around_qwen3627bs_toolcall_failures_and/"
-        },
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uueuks/if_you_use_open_code_or_other_agenting_programs/"
-        }
-      ]
-    },
-    {
-      "id": "695e443ce49e3e17",
-      "source_id": "reddit-localllama",
-      "title": "**Your $80 Tesla P100 has been doing silently noisy math in llama.cpp for years. Three lines fix it, for free.**",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu6p9o/your_80_tesla_p100_has_been_doing_silently_noisy/",
-      "published_at": "2026-07-12T05:41:12+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>## TLDR;</p> <p>Shipped — in turboquant v0.3.0, downloadable now. <a href=\"https://github.com/TheTom/llama-cpp-turboquant/releases/tag/tqp-v0.3.0\">https://github.com/TheTom/llama-cpp-turboquant/releases/tag/tqp-v0.3.0</a></p> <p>llama.cpp's CUDA code has a flag that means &quot;this GPU is fast at fp16, so do the math in fp16.&quot;<br /> The GTX 10-series and P40's (sm_61) were exempted from it long ago. The P100 (sm_60) was not, <br /> ironically, because it's the one Pascal card with fast fp16 hardware. Nvidia put fast FP16<br /> silicon on the P100, so it makes total sense they'd want to tap into that extra performance. <br /> What they didn't check, apparently, was the price.</p> <p>PR Status: TheTom (merged) <a href=\"https://github.com/TheTom/llama-cpp-turboquant/pull/212\">https://github.com/TheTom/llama-cpp-turboquant/pull/212</a><br /> spiritbuun (edit:merged) <a href=\"https://github.com/spiritbuun/buun-llama-cpp/pull/80\">https://github.com/spi",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "教程方法",
+      "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/0a4ef2ab-25ef-4900-958a-cdfc5a1dd0ff.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.6,
-      "reason_zh": "发现llama.cpp中一个长期被忽视的精度问题，仅三行代码修复即可免费提升旧GPU性能，实用价值极高。",
-      "summary_zh": "作者发现llama.cpp的CUDA代码中有一个标志位，默认将GTX 10系列和P40等GPU视为fp16快速，导致这些GPU在量化推理时使用fp16数学运算，但实际上这些GPU的fp16计算存在精度问题，造成无声的数值误差。通过三行代码修复，可以强制使用fp32数学运算，显著提升模型输出的准确性。该修复已集成到turboquant v0.3.0中，免费下载。对于拥有旧款Tesla P100、P40等GPU的用户，这是一个简单而有效的性能提升方法。",
-      "title_zh": "你的80美元Tesla P100多年来一直在llama.cpp中默默做有噪声的数学运算——三行代码免费修复",
-      "weighted_score": 0.76,
+      "reason_zh": "中国电信联合高校完成高轨卫星跨模态语义通信试验，效率提升3.5倍，是AI与卫星通信结合的前沿成果。",
+      "summary_zh": "IT之家报道，中国电信研究院联合北京邮电大学、鹏城实验室，基于亚洲九号卫星完成基于知识库的高轨卫星跨模态语义通信试验。该试验融合语义知识库和信源信道联合编码（JSCC）技术，将星地链路传输效率提升至3.5倍以上。关键帧占比降低至约0.5%，每6秒视频仅选取1帧关键帧传输，大幅提升传输效率。",
+      "title_zh": null,
+      "weighted_score": 0.67,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.9
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.4
       },
-      "story_id": "e707301a0f6aefc8",
+      "story_id": "86317630917cd93d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uu6p9o/your_80_tesla_p100_has_been_doing_silently_noisy/"
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/975/855.htm"
         }
       ]
     },
@@ -318,102 +136,69 @@
       ]
     },
     {
-      "id": "43f1e3b928b049e8",
-      "source_id": "zh-cnbeta",
-      "title": "苹果与OpenAI反目始末：AI硬件野心之下，人才挖角如何演变为法律大战？",
-      "url": "https://www.cnbeta.com.tw/articles/tech/1568712.htm",
-      "published_at": "2026-07-12T01:30:10+00:00",
-      "raw_text": "<p>7月12日，彭博社周六发文，披露了苹果起诉OpenAI的来龙去脉。文章称，OpenAI仍在摸索AI硬件，它的大力挖角引发了苹果的警惕。苹果认为，OpenAI试图在其内部复制苹果的产品开发体系。而且，本案的“主谋”曾与苹果候任CEO约翰·特努斯(John Ternus)争夺过硬件负责人一职，两人的关系并不融洽。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1568712.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
+      "id": "dcda45917d793f8e",
+      "source_id": "zh-oschina",
+      "title": "用 Solon AI ReActAgent 落地智能客服工单处理",
+      "url": "https://www.oschina.net/news/471665",
+      "published_at": "2026-07-13T01:55:00+00:00",
+      "raw_text": "某电商平台售后工单日均 5,000+，人工处理有三个老大难： 痛点 表现 后果 响应慢 首响经常要等很久 客户满意度下降 处理不一致 同样“丢件”，不同客服结果不同 投诉升级 重复劳动 大量工单是同一类问题 人力被低价值查询占满 核心矛盾：工单量增速明显快于客服团队扩编速度。 一、业务方案 1.1 目标 常见问题由 Agent ...",
       "category_hint": [
-        "行业动态"
+        "开源项目"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "深度披露苹果与OpenAI的人才争夺战内幕，揭示AI硬件竞争背后的战略博弈。",
-      "summary_zh": "彭博社发文披露苹果起诉OpenAI的来龙去脉。文章指出，OpenAI仍在摸索AI硬件，其大力挖角引发苹果警惕。苹果认为OpenAI试图在其内部复制苹果的产品开发体系。本案的“主谋”曾与苹果候任CEO John Ternus争夺硬件负责人一职，两人关系不融洽。该事件反映了AI巨头在硬件领域的激烈竞争。",
-      "title_zh": null,
-      "weighted_score": 0.62,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.3
-      },
-      "story_id": "69c927b6901746f8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-cnbeta",
-          "url": "https://www.cnbeta.com.tw/articles/tech/1568712.htm"
-        }
-      ]
-    },
-    {
-      "id": "c874780932d602d2",
-      "source_id": "qbitai",
-      "title": "近百名玩家涌入具身数据：一年融资44.7亿，谁能真靠“卖数据”赚钱？",
-      "url": "https://www.qbitai.com/2026/07/447914.html",
-      "published_at": "2026-07-12T01:14:50+00:00",
-      "raw_text": "为了帮你看清具身数据行业，我们总结了以下十个行业现状",
-      "category_hint": [
-        "行业动态",
-        "模型发布"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "深度分析具身数据行业融资现状与商业模式，对关注机器人领域的读者有启发。",
-      "summary_zh": "文章总结了具身数据行业的十个现状，指出近百名玩家涌入，一年融资44.7亿元。分析了谁能真正靠“卖数据”赚钱，包括数据采集、标注、合成等环节的商业模式和挑战。揭示了行业热度背后的真实盈利逻辑。",
-      "title_zh": null,
-      "weighted_score": 0.605,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "0d0531e63a3be83b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "qbitai",
-          "url": "https://www.qbitai.com/2026/07/447914.html"
-        }
-      ]
-    },
-    {
-      "id": "3136b9f522d6f9e0",
-      "source_id": "zh-juejin",
-      "title": "为什么 Agent 越聊越慢？聊聊 Context（上下文）管理",
-      "url": "https://juejin.cn/post/7661117411173105706",
-      "published_at": "2026-07-12T10:37:21+00:00",
-      "raw_text": "如果你经常使用 Agent，应该遇到过这种情况。 同一个模型，刚开始回答很快，思路也很清晰；但随着对话变的越来越长，它开始回复的很慢，可能会忘记前面讨论过的，有时候可能还会理解错需求。 很多",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
+      "category": "模型发布",
       "content_type": "教程方法",
       "depth_score": 0.6,
-      "reason_zh": "深入分析Agent对话变慢的原因，聚焦Context管理，提供实用优化思路。",
-      "summary_zh": "文章探讨了AI Agent在长对话中响应变慢、遗忘上下文、理解偏差等问题，核心原因在于Context（上下文）管理不当。随着对话增长，上下文窗口被填满，导致计算开销增大和注意力分散。作者分析了常见的上下文管理策略，如滑动窗口、摘要压缩、检索增强等，并给出了优化建议。对于开发和使用Agent的读者具有实际指导意义。",
-      "title_zh": "为什么 Agent 越聊越慢？聊聊 Context（上下文）管理",
-      "weighted_score": 0.48,
+      "reason_zh": "用Solon AI ReAct Agent落地智能客服工单处理，提供具体方案和代码实践，实用性强。",
+      "summary_zh": "文章介绍了某电商平台售后工单日均5000+的痛点：响应慢、处理不一致、重复劳动。核心矛盾是工单量增速快于客服团队扩编。业务方案目标是用Agent处理常见问题，实现自动分类、自动回复、自动流转。技术方案采用Solon AI ReAct Agent框架，结合大模型推理和工具调用，实现工单的智能处理。文章详细描述了Agent的设计、实现和部署过程，包括意图识别、信息抽取、决策执行等环节，并给出了代码示例。",
+      "title_zh": null,
+      "weighted_score": 0.56,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.4,
+        "source_authority": 0.5,
+        "novelty": 0.6,
         "impact": 0.4,
         "practical_value": 0.8
       },
-      "story_id": "86d3af1bc25ed337",
+      "story_id": "d4bd5557f01ecf49",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7661117411173105706"
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/471665"
+        }
+      ]
+    },
+    {
+      "id": "6f9310c46371d027",
+      "source_id": "reddit-machinelearning",
+      "title": "Context and average best linear mappings [D]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/",
+      "published_at": "2026-07-12T02:18:08+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>The context (in a border sense) viewpoint of neural networks is not thought about too much but it leads to a simple best average linear mapping viewpoint of a layer.</p> <p><a href=\"https://archive.org/details/a-context-based-view-of-deep-neural-networks\">https://archive.org/details/a-context-based-view-of-deep-neural-networks</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/oatmealcraving\"> /u/oatmealcraving </a> <br /> <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/\">[comments]</a></span>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "从上下文视角重新审视神经网络层，提出平均最佳线性映射的观点，有一定理论启发性。",
+      "summary_zh": "该帖子提出了一种基于上下文视角的神经网络层理解方式，认为每一层实际上是在学习一个平均最佳线性映射。作者通过理论推导和示例，展示了如何将神经网络的非线性变换视为在不同上下文条件下的线性映射平均。这一视角有助于理解网络的泛化能力和表示学习机制，但缺乏实验验证。",
+      "title_zh": "上下文与平均最佳线性映射",
+      "weighted_score": 0.365,
+      "score_breakdown": {
+        "source_authority": 0.2,
+        "novelty": 0.6,
+        "impact": 0.3,
+        "practical_value": 0.4
+      },
+      "story_id": "1d3bf12e0487ed44",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1uu2p63/context_and_average_best_linear_mappings_d/"
         }
       ]
     }
