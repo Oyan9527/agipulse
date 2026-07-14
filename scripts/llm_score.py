@@ -69,22 +69,28 @@ def score_items(items, categories, weights, batch_size=10):
         ]
         result = call_json(system_prompt, {"items": payload}, max_tokens=4500)
 
-        if result is None or "results" not in result:
+        if result is None or "results" not in result or not isinstance(result["results"], list):
             log.warning("scoring batch failed, %d items left unscored", len(batch))
             unscored.extend(batch)
             continue
 
-        by_id = {r["id"]: r for r in result["results"]}
+        # 单条结果缺 id、或整条不是 dict（畸形但 JSON 本身合法的 LLM 输出，真实发生过）
+        # 不该让整批甚至整条流水线 KeyError 崩掉——忽略这条判定，对应条目走下面的未打分兜底。
+        malformed = sum(1 for r in result["results"] if not isinstance(r, dict) or "id" not in r)
+        if malformed:
+            log.warning("scoring: %d/%d result entries missing id, ignoring them",
+                        malformed, len(result["results"]))
+        by_id = {r["id"]: r for r in result["results"] if isinstance(r, dict) and "id" in r}
         for it in batch:
             r = by_id.get(it["id"])
             if not r or r.get("category") not in category_ids:
                 unscored.append(it)
                 continue
             weighted = (
-                weights["source_authority"] * float(r.get("source_authority", 0))
-                + weights["novelty"] * float(r.get("novelty", 0))
-                + weights["impact"] * float(r.get("impact", 0))
-                + weights["practical_value"] * float(r.get("practical_value", 0))
+                weights["source_authority"] * _clamp01(r.get("source_authority", 0))
+                + weights["novelty"] * _clamp01(r.get("novelty", 0))
+                + weights["impact"] * _clamp01(r.get("impact", 0))
+                + weights["practical_value"] * _clamp01(r.get("practical_value", 0))
             )
             content_type = r.get("content_type")
             if content_type not in CONTENT_TYPES:

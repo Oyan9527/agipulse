@@ -22,11 +22,16 @@ export function initPalette({ overlayEl, triggerEl, inputEl, resultsEl, getSearc
     resultsEl.innerHTML = "";
     if (!items.length) {
       resultsEl.innerHTML = `<li class="palette__empty">没有匹配的结果</li>`;
+      inputEl.removeAttribute("aria-activedescendant");
       return;
     }
     items.forEach((item, idx) => {
       const li = document.createElement("li");
-      li.className = "palette__result" + (idx === activeIndex ? " is-active" : "");
+      const isActive = idx === activeIndex;
+      li.id = `palette-result-${idx}`;
+      li.className = "palette__result" + (isActive ? " is-active" : "");
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", String(isActive));
       li.innerHTML = `
         <span class="palette__result-title"></span>
         <span class="palette__result-meta"></span>
@@ -37,13 +42,28 @@ export function initPalette({ overlayEl, triggerEl, inputEl, resultsEl, getSearc
       if (url) li.addEventListener("click", () => window.open(url, "_blank", "noopener,noreferrer"));
       resultsEl.appendChild(li);
     });
+    syncActiveDescendant();
+  }
+
+  // 把当前高亮项同步给屏幕阅读器：aria-activedescendant 指向高亮 option 的 id
+  function syncActiveDescendant() {
+    if (activeIndex === -1) {
+      inputEl.removeAttribute("aria-activedescendant");
+    } else {
+      inputEl.setAttribute("aria-activedescendant", `palette-result-${activeIndex}`);
+    }
   }
 
   function updateActive(delta) {
     if (!currentResults.length) return;
     activeIndex = (activeIndex + delta + currentResults.length) % currentResults.length;
-    [...resultsEl.children].forEach((el, i) => el.classList.toggle("is-active", i === activeIndex));
+    [...resultsEl.children].forEach((el, i) => {
+      const isActive = i === activeIndex;
+      el.classList.toggle("is-active", isActive);
+      el.setAttribute("aria-selected", String(isActive));
+    });
     resultsEl.children[activeIndex]?.scrollIntoView({ block: "nearest" });
+    syncActiveDescendant();
   }
 
   inputEl.addEventListener("input", () => {

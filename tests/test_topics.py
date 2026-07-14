@@ -7,7 +7,14 @@ from scripts.topics import build_topics
 
 
 def _arch(date, keywords):
-    return {"date": date, "top_keywords": [{"term": t, "count": c} for t, c in keywords]}
+    # keyword_counts 是扁平 {关键词: 次数} 字典（真实 archive.py 的产出 schema，
+    # 见其 update_daily_archive 里的 dict(keyword_counts.most_common(200))）。
+    # 曾经这里错写成 top_keywords 列表，测试和生产代码"一起错"，谁都没发现
+    # build_topics 其实一直在读一个不存在的字段、话题追踪功能一直是空的。
+    counts = {}
+    for t, c in keywords:
+        counts[t] = counts.get(t, 0) + c
+    return {"date": date, "keyword_counts": counts}
 
 
 def test_aggregates_series_aligned_to_dates():

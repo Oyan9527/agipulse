@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone
 
 from rapidfuzz import fuzz
 
+from .story_merge import _strong_entities
 from .util import load_yaml, get_logger
 
 log = get_logger(__name__)
@@ -37,9 +38,19 @@ def dedupe(items, weights_config):
             if existing["source_id"] != item["source_id"]:
                 continue  # 跨源相似交给 story_merge 处理
             score = fuzz.token_sort_ratio(existing["title"], item["title"])
-            if score >= threshold:
-                is_dup = True
-                break
+            if score < threshold:
+                continue
+            # 模糊匹配对"只差一位版本号"不敏感：实测"OpenAI 发布 GPT-5"与"OpenAI 发布
+            # GPT-6"相似度 93.3、"iPhone 16 发布"与"iPhone 17 发布"相似度 91.7，都超过
+            # 90 的阈值，会把同源但真正不同的连续版本发布误判成重复而丢弃后一条。
+            # 若两条标题都能提取出明确的版本化实体（复用 story_merge 的判据）且完全不
+            # 重合，说明这是两条不同的具体发布，不该仅凭词形相似就当重复处理。
+            existing_entities = _strong_entities(existing["title"])
+            item_entities = _strong_entities(item["title"])
+            if existing_entities and item_entities and not (existing_entities & item_entities):
+                continue
+            is_dup = True
+            break
         if not is_dup:
             kept.append(item)
 

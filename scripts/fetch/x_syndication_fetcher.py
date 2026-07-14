@@ -88,8 +88,18 @@ def _fetch_account(session, screen_name, max_age_hours):
         if text.startswith("RT @"):
             continue  # 转推不算该账号的信号
         created = _parse_created_at(tweet.get("created_at"))
-        if created and max_age_hours and (now - created).total_seconds() > max_age_hours * 3600:
-            continue
+        if max_age_hours:
+            # created 是 None（时间戳解析失败，比如 X 改了格式）时，原来的写法
+            # `if created and ...` 会直接跳过新鲜度判断、把内容当"无限新"放行——
+            # 新鲜度验证不了应该保守丢弃，而不是默认通过；见下面 log.warning。
+            if created is None:
+                log.warning(
+                    "x_syndication %s: 一条推文的 created_at 无法解析(%r)，新鲜度无法验证，丢弃",
+                    screen_name, tweet.get("created_at"),
+                )
+                continue
+            if (now - created).total_seconds() > max_age_hours * 3600:
+                continue
         permalink = tweet.get("permalink") or ""
         cleaned = _clean_text(text)
         if not cleaned or not permalink:

@@ -1,7 +1,8 @@
 """话题追踪：把每日归档里的热门关键词，聚合成"某个话题过去 N 天的提及曲线"。
 
-数据全部来自 archive/day-*.json 的 top_keywords（每天已经算好的关键词及提及次数），
-纯聚合、零 DeepSeek 成本。前端数据版据此画迷你曲线，展示热点话题的升温/降温。
+数据全部来自 archive/day-*.json 的 keyword_counts（每天已经算好的关键词及提及次数，
+{关键词: 次数} 的扁平字典，见 archive.py），纯聚合、零 DeepSeek 成本。
+前端数据版据此画迷你曲线，展示热点话题的升温/降温。
 """
 from datetime import datetime, timezone
 
@@ -31,12 +32,10 @@ def build_topics(daily_archives, window_days=WINDOW_DAYS, top_n=TOP_TOPICS):
     # key -> {"dates": {date: 累计count}, "forms": {原始拼写: 总提及}} 以便挑规范显示形式
     by_key = {}
     for arch in archives:
-        for kw in arch.get("top_keywords") or []:
-            term = kw.get("term")
+        for term, count in (arch.get("keyword_counts") or {}).items():
             if not term:
                 continue
             key = term.lower()
-            count = kw.get("count", 0)
             slot = by_key.setdefault(key, {"dates": {}, "forms": {}})
             slot["dates"][arch["date"]] = slot["dates"].get(arch["date"], 0) + count
             slot["forms"][term] = slot["forms"].get(term, 0) + count

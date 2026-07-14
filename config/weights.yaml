@@ -81,6 +81,13 @@ health_check:
   # 因此对占全部源比例 >= min_type_share 的类型，单独检查该类型内部活跃占比。
   min_type_share: 0.2             # 某 source type 占全部源比例达到此值才纳入整类型检查
   min_type_active_ratio: 0.5      # 该类型内部活跃占比低于 50% -> 该类型疑似整体挂掉
+  # 纯份额阈值会漏掉"份额不高但绝对数量不小"的类型：reddit 只占全部源 6.7%(21个)，
+  # 永远碰不到 20% 的份额线，但实测这21个源确实全部429限流、完全静默失效。
+  # 份额 或 绝对数量任一达标就纳入检查。
+  min_type_absolute_count: 10     # 某 source type 的绝对源数量达到此值也纳入整类型检查
   # 原先是绝对数 min_scored_items=1：200 条里打对 1 条也能通过，对 DeepSeek 大面积
   # 限流/key 欠费（多数条目根本没打上分）毫无区分度，改成比例。
   min_scored_ratio: 0.5           # 全部动态里"有打分"的条目占比低于 50% -> DeepSeek 挂了
+  # 比例在样本很小时不可靠：冷清期只有1-2条打分，偶发2次瞬时超时就能把比例打到0、
+  # 误判成"DeepSeek全挂"。样本量不到这个数就不评判比例。
+  min_scored_sample_size: 10      # 已打分池条目数不到此值时,跳过 min_scored_ratio 检查

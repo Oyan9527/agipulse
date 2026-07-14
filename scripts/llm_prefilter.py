@@ -20,15 +20,21 @@ def prefilter(items, batch_size=20):
         ]
         result = call_json(SYSTEM_PROMPT, {"items": payload})
 
-        if result is None or "results" not in result:
+        if result is None or "results" not in result or not isinstance(result["results"], list):
             log.warning("prefilter batch failed, keeping all %d items as fallback", len(batch))
             kept.extend(batch)
             continue
 
-        keep_ids = {
-            r["id"] for r in result["results"] if r.get("keep", True)
-        }
-        judged_ids = {r["id"] for r in result["results"]}
+        # 单条结果缺 id（畸形但 JSON 本身合法的 LLM 输出，真实发生过）不该让整批甚至
+        # 整条流水线 KeyError 崩掉——忽略这条判定，对应的原始条目走下面"漏判保守放行"。
+        valid_results = [r for r in result["results"] if isinstance(r, dict) and "id" in r]
+        malformed = len(result["results"]) - len(valid_results)
+        if malformed:
+            log.warning("prefilter: %d/%d result entries missing id, ignoring them",
+                        malformed, len(result["results"]))
+
+        keep_ids = {r["id"] for r in valid_results if r.get("keep", True)}
+        judged_ids = {r["id"] for r in valid_results}
         for it in batch:
             if it["id"] in judged_ids:
                 if it["id"] in keep_ids:

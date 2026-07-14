@@ -94,13 +94,20 @@ function renderFeedSection() {
 function setupTabs() {
   const selectTab = (btn) => {
     [...els.viewTabs.children].forEach((c) => {
-      c.classList.toggle("is-active", c === btn);
-      c.setAttribute("aria-selected", String(c === btn));
+      const isActive = c === btn;
+      c.classList.toggle("is-active", isActive);
+      c.setAttribute("aria-selected", String(isActive));
+      c.tabIndex = isActive ? 0 : -1;
     });
     state.view = btn.dataset.view;
     state.visibleCount = PAGE_SIZE;
     renderFeedSection();
   };
+  // roving tabindex：初始时仅激活 tab 留在 Tab 顺序里，其余移出（tabindex=-1），
+  // 这样 Tab 键一次跳过整组，组内改用方向键移动，匹配原生 tablist 行为
+  [...els.viewTabs.children].forEach((c) => {
+    c.tabIndex = c.classList.contains("is-active") ? 0 : -1;
+  });
   els.viewTabs.addEventListener("click", (e) => {
     const btn = e.target.closest(".tab");
     if (!btn) return;

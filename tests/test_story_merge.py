@@ -87,6 +87,18 @@ def test_same_entity_but_different_event_stays_separate():
     assert len(stories) == 2
 
 
+def test_two_different_incident_types_stay_separate():
+    # 曾经的漏洞：召回/诉讼/泄露 全塞进一个"incident"大类，两件都属于该大类但实际
+    # 无关的不同事件（数据泄露 vs 版权诉讼）因为类别集合有交集被误判成可以合并。
+    # 拆分子类后，security_incident 和 legal 应该是不相交的类别，正确拦截合并。
+    items = [
+        _item("a", "GPT-5.6 suffers data breach", hours_ago=10, source="s1"),
+        _item("b", "OpenAI sued over GPT-5.6 copyright infringement", source="s2"),
+    ]
+    _, stories = merge_stories(items, WEIGHTS)
+    assert len(stories) == 2
+
+
 def test_entity_merge_can_be_disabled():
     cfg = {"story_merge": {**WEIGHTS["story_merge"], "merge_by_entity": False}}
     items = [

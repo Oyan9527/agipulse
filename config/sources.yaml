@@ -202,8 +202,8 @@ sources:
     category_hint: [行业动态, 论文研究]
     authority_weight: 0.7
     poll_minutes: 120
-    status: verify
-    notes: "实测返回200但content-type非feed格式，需确认feedparser能否解析；不能则寻找替代端点"
+    status: broken
+    notes: "实测该路径返回 HTML 页面(SPA壳)而非RSS，/rss.xml /feed /rss/all /api/v1/rss 均无效，官方已无可用RSS端点"
 
   # ---------------- 大厂研究/云厂商 第二批（2026-07-08 批量实测通过，紧凑格式） ----------------
   - {id: apple-ml, type: rss, url: "https://machinelearning.apple.com/rss.xml", category_hint: [论文研究, 模型发布], authority_weight: 0.85, poll_minutes: 240, status: confirmed}
@@ -407,7 +407,7 @@ sources:
   - {id: gh-sam, type: github_releases, repo: facebookresearch/segment-anything, category_hint: [开源项目], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
   - {id: gh-mmdetection, type: github_releases, repo: open-mmlab/mmdetection, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
   - {id: gh-supervision, type: github_releases, repo: roboflow/supervision, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
-  - {id: gh-timm, type: github_releases, repo: huggingface/timm, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}
+  - {id: gh-timm, type: github_releases, repo: huggingface/pytorch-image-models, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 240, status: confirmed}  # 原 huggingface/timm 已改名，实测该路径返回404
   - {id: gh-open-clip, type: github_releases, repo: mlfoundations/open_clip, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
   # RAG/数据
   - {id: gh-ragflow, type: github_releases, repo: infiniflow/ragflow, category_hint: [开源项目], authority_weight: 0.65, poll_minutes: 120, status: confirmed}

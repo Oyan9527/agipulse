@@ -30,6 +30,10 @@ DEFAULTS = {
     # 跌破 0.5 说明多数条目根本没打上分，与 min_active_source_ratio 取相同量级，
     # 两者含义类比："这一层大部分单元是否在正常工作"。
     "min_scored_ratio": 0.5,
+    # 但比例本身在样本很小时不可靠：冷清期只有1-2条进入打分，偶发的2次瞬时超时就能
+    # 把 scored_ratio 打到 0、误判成"DeepSeek 全挂"。样本量不到这个数就不评判比例，
+    # 等价于"数据点太少，不下结论"（呼应 total_items==0 时 scored_ratio 记 1.0 的既有逻辑）。
+    "min_scored_sample_size": 10,
     # 单一全局 active_ratio 会被"大类型稀释"：rss 约占源总数一半、github_releases
     # 约占三分之一，若其中整类源同时失效（parser 改版/上游站点改版），全局占比仍能
     # 维持在 min_active_source_ratio 之上，看不出这一整类源已经全灭。
@@ -37,6 +41,11 @@ DEFAULTS = {
     # 就单独检查该类型内部的活跃占比是否跌破 min_type_active_ratio。
     "min_type_share": 0.2,
     "min_type_active_ratio": 0.5,
+    # 但纯比例阈值会漏掉"占比不大、但绝对数量不小"的类型：reddit 只占全部源的
+    # 6.7%（21个），share 门槛(20%)永远碰不到，实测这21个源确实全部429限流、
+    # 完全静默失效，min_type_share 检测不到。改成"份额够高 或 绝对数量够多"任一
+    # 条件命中就检查，同时保留份额路径给未来可能出现的、份额高但绝对数不算多的类型。
+    "min_type_absolute_count": 10,
 }
 
 
@@ -75,6 +84,7 @@ def evaluate_health(statuses, all_items, cfg, source_types=None):
     # 按 source type 分组，检测"整类型静默失效"：全局占比达标、但占比重的某一类型全灭。
     min_type_share = cfg.get("min_type_share", DEFAULTS["min_type_share"])
     min_type_active_ratio = cfg.get("min_type_active_ratio", DEFAULTS["min_type_active_ratio"])
+    min_type_absolute_count = cfg.get("min_type_absolute_count", DEFAULTS["min_type_absolute_count"])
     type_stats = {}
     if total_sources:
         for s in statuses:
@@ -92,15 +102,17 @@ def evaluate_health(statuses, all_items, cfg, source_types=None):
         t_ratio = round(t_active / t_total, 3) if t_total else 0.0
         entry["share"] = share
         entry["ratio"] = t_ratio
-        if share >= min_type_share and t_ratio < min_type_active_ratio:
+        worth_checking = share >= min_type_share or t_total >= min_type_absolute_count
+        if worth_checking and t_ratio < min_type_active_ratio:
             problems.append(
                 f"源类型「{t}」大面积失效：{t_active}/{t_total} = {t_ratio:.0%}"
-                f"（占全部源 {share:.0%} ≥ {min_type_share:.0%}，阈值 {min_type_active_ratio:.0%}），"
-                f"疑似该类型整体挂掉（parser 回归/上游改版）"
+                f"（占全部源 {share:.0%}，阈值 {min_type_active_ratio:.0%}），"
+                f"疑似该类型整体挂掉（parser 回归/上游改版/限流）"
             )
 
     min_scored_ratio = cfg.get("min_scored_ratio", DEFAULTS["min_scored_ratio"])
-    if scored_ratio < min_scored_ratio:
+    min_scored_sample_size = cfg.get("min_scored_sample_size", DEFAULTS["min_scored_sample_size"])
+    if total_items >= min_scored_sample_size and scored_ratio < min_scored_ratio:
         problems.append(
             f"打分条目占比过低：{scored}/{total_items} = {scored_ratio:.0%}"
             f"（阈值 {min_scored_ratio:.0%}），疑似 DeepSeek API 失效（key 欠费 / 限流 / 服务中断）"

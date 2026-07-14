@@ -48,12 +48,10 @@ export function renderSocialHot({ gridEl, platforms }) {
       setSafeHref(a, item.url);
       a.target = "_blank";
       a.rel = "noopener noreferrer";
-      // 英文标题优先显示中文译文（空间紧凑的单行列表放不下双语两行），英文原题放 title 悬浮提示；
-      // 译文比原生中文标题更醒目一档（is-translated），帮助分辨"这是翻译过的"
+      // 英文标题优先显示中文译文（空间紧凑的单行列表放不下双语两行），英文原题放 title 悬浮提示
       if (item.title_zh && item.title_zh.trim() !== item.title.trim()) {
         a.textContent = item.title_zh;
         a.title = item.title;
-        a.classList.add("is-translated");
       } else {
         a.textContent = item.title;
       }

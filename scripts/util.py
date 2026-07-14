@@ -8,7 +8,10 @@ from urllib.parse import urlparse
 import requests
 import yaml
 
-USER_AGENT = "agi-pulse/1.0 (+https://github.com; contact: repo-owner)"
+# 之前指向占位根域名 https://github.com（不是具体仓库），部分信源(尤其 Reddit)的
+# 反爬规则会把这种看起来通用/身份不明的 UA 当成可疑爬虫处理。改成指向真实仓库地址，
+# 是一个真实、可核实的身份标识，符合大多数站点"请求方要能被追溯"的期望。
+USER_AGENT = "agi-pulse-news-aggregator/1.0 (+https://github.com/Oyan9527/agipulse)"
 
 logging.basicConfig(
     level=logging.INFO,

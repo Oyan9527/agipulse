@@ -262,10 +262,18 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
 
     all_items = dedupe(all_items, weights_cfg)
     all_items = filter_ai_relevance(all_items, weights_cfg)
+
+    # 缓存该保留哪些 id，要看"是否还在处理窗口内"，不能用 intake_quotas 筛完之后的
+    # processable 判断——intake_quotas 是按类别竞争排名的截断（如论文研究每轮最多80条），
+    # 被截掉只是这一轮排名没进前N，不代表内容已经过期。如果因为被截就清掉缓存条目，
+    # 下一轮同一条内容重新挤进前N名时会被当成"首次发现"重新盖成"现在"，first_seen
+    # 机制的意义就被 intake_quotas 绕过了。这里在配额截断前单独算一份"仍在窗口内"的
+    # id 集合专供缓存保留判断，不影响下面真正喂给 LLM 处理的 processable。
+    still_in_window_ids = {it["id"] for it in filter_processing_window(all_items, hours=window_hours)}
+    first_seen.save_first_seen(out_dir, fs_cache, retain_ids=still_in_window_ids)
+
     all_items = apply_intake_quotas(all_items, weights_cfg)
     processable = filter_processing_window(all_items, hours=window_hours)
-
-    first_seen.save_first_seen(out_dir, fs_cache, retain_ids={it["id"] for it in processable})
 
     # 社媒热点 / GitHub 涨星榜：独立分支，任何模式下都产出，不经过 AI 打分流程
     social_hot = build_social_hot(sources_cfg, skip_llm=skip_llm, mock_llm=mock_llm)

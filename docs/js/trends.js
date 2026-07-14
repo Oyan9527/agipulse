@@ -88,12 +88,19 @@ function renderTrendPanels() {
 function setupTrendDimTabs() {
   const selectTab = (btn) => {
     [...els.trendDimTabs.children].forEach((c) => {
-      c.classList.toggle("is-active", c === btn);
-      c.setAttribute("aria-selected", String(c === btn));
+      const isActive = c === btn;
+      c.classList.toggle("is-active", isActive);
+      c.setAttribute("aria-selected", String(isActive));
+      c.tabIndex = isActive ? 0 : -1;
     });
     state.trendDim = btn.dataset.dim;
     renderTrendPanels();
   };
+  // roving tabindex：初始时仅激活 tab 留在 Tab 顺序里，其余移出（tabindex=-1），
+  // 这样 Tab 键一次跳过整组，组内改用方向键移动，匹配原生 tablist 行为
+  [...els.trendDimTabs.children].forEach((c) => {
+    c.tabIndex = c.classList.contains("is-active") ? 0 : -1;
+  });
   els.trendDimTabs.addEventListener("click", (e) => {
     const btn = e.target.closest(".tab");
     if (!btn) return;
@@ -129,12 +136,19 @@ function renderGhTrending() {
 function setupGhPeriodTabs() {
   const selectTab = (btn) => {
     [...els.ghPeriodTabs.children].forEach((c) => {
-      c.classList.toggle("is-active", c === btn);
-      c.setAttribute("aria-selected", String(c === btn));
+      const isActive = c === btn;
+      c.classList.toggle("is-active", isActive);
+      c.setAttribute("aria-selected", String(isActive));
+      c.tabIndex = isActive ? 0 : -1;
     });
     state.ghPeriod = btn.dataset.period;
     renderGhTrending();
   };
+  // roving tabindex：初始时仅激活 tab 留在 Tab 顺序里，其余移出（tabindex=-1），
+  // 这样 Tab 键一次跳过整组，组内改用方向键移动，匹配原生 tablist 行为
+  [...els.ghPeriodTabs.children].forEach((c) => {
+    c.tabIndex = c.classList.contains("is-active") ? 0 : -1;
+  });
   els.ghPeriodTabs.addEventListener("click", (e) => {
     const btn = e.target.closest(".tab");
     if (!btn) return;
