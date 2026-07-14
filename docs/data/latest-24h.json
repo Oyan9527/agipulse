@@ -162,7 +162,7 @@
       "practical_value": 0.6
     },
     "story_id": "13c0fe59783ce336",
-    "multi_source_count": 6,
+    "multi_source_count": 4,
     "sources": [
       {
         "source_id": "ifanr",
@@ -179,14 +179,6 @@
       {
         "source_id": "qbitai",
         "url": "https://www.qbitai.com/2026/07/449842.html"
-      },
-      {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1uw2go5/gpt56_pro_solves_5_erdos_problems/"
-      },
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7662235238097616923"
       }
     ],
     "curated": true
@@ -328,6 +320,40 @@
     "curated": true
   },
   {
+    "id": "c2e456c86fac5a26",
+    "source_id": "gh-mcp-python",
+    "title": "modelcontextprotocol/python-sdk v2.0.0b2",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0b2",
+    "published_at": "2026-07-14T16:41:00+00:00",
+    "raw_text": "Second v2 beta. Pre-releases are opt-in only; `pip install mcp` still resolves to the stable 1.x line.\r\n\r\n```bash\r\npip install mcp==2.0.0b2\r\n# or\r\nuv add \"mcp==2.0.0b2\"\r\n```\r\n\r\nThe [documentation](https://py.sdk.modelcontextprotocol.io/v2/) has the full tutorial and API reference, and the [migration guide](https://py.sdk.modelcontextprotocol.io/v2/migration/) covers coming from v1. Stable v2 is still targeted for 2026-07-28 alongside the spec release - keep pinning an exact version.\r\n\r\n## Highlights\r\n\r\n### httpx is replaced by httpx2 (#2972)\r\n\r\nThe SDK's HTTP stack now runs on [httpx2](https://pypi.org/project/httpx2/) (`>=2.5.0`), the next-generation httpx fork with SSE support built in, replacing `httpx` + `httpx-sse`. Most code needs no changes; if you pass your own `http_client` into a transport, change the import to `httpx2`. Runtime behavior that changes:\r\n\r\n- TLS verification uses the operating system trust store (via `truststore`) instead of certifi's bundle. `SSL_CERT_FILE` / ",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "MCP Python SDK v2 beta发布，带来重大更新，对MCP开发者至关重要。",
+    "summary_zh": "Model Context Protocol (MCP) Python SDK v2.0.0b2发布，这是第二个v2 beta版本。预发布版本需手动安装，稳定版仍为1.x。新版本包含完整教程、API参考和从v1迁移指南，稳定版v2计划在几周后发布。",
+    "title_zh": "modelcontextprotocol/python-sdk v2.0.0b2",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "b7880eb018aa4ccd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-mcp-python",
+        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0b2"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "371ffc8a6a35301c",
     "source_id": "gh-litellm",
     "title": "BerriAI/litellm v1.90.4",
@@ -357,6 +383,41 @@
       {
         "source_id": "gh-litellm",
         "url": "https://github.com/BerriAI/litellm/releases/tag/v1.90.4"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "43be431cc4452310",
+    "source_id": "nvidia-ai-blog",
+    "title": "Why Performance per Watt Is the Ultimate Metric for AI Infrastructure Efficiency",
+    "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/",
+    "published_at": "2026-07-14T15:00:20+00:00",
+    "raw_text": "Power is AI infrastructure’s inescapable constraint. How many tokens an AI factory can generate within a fixed power budget determines its revenue and profitability. Because of this, performance per watt — a metric that can’t be gamed, only earned through real-world results — is the foundation for AI factories.  As agentic AI drives token demand [&#8230;]",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://blogs.nvidia.com/wp-content/uploads/2026/07/performance-per-watt-ai-infra-efficiency-842x450.jpg",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "NVIDIA官方博客深入分析每瓦性能作为AI基础设施效率的关键指标，对数据中心设计和运营有重要参考价值。",
+    "summary_zh": "文章指出电力是AI基础设施的硬约束，每瓦性能（Performance per Watt）是衡量AI工厂效率和盈利能力的关键指标。该指标无法被操纵，只能通过实际结果获得。随着代理式AI驱动token需求增长，优化每瓦性能变得至关重要。文章从NVIDIA视角阐述了这一指标的重要性。",
+    "title_zh": "为什么每瓦性能是AI基础设施效率的终极指标",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "5b52509a48067c29",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "nvidia-ai-blog",
+        "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/"
       }
     ],
     "curated": true
@@ -396,36 +457,70 @@
     "curated": true
   },
   {
-    "id": "bbdb3ced48136a98",
-    "source_id": "google-cloud-ai",
-    "title": "Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs",
-    "url": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/",
-    "published_at": "2026-07-13T16:00:00+00:00",
-    "raw_text": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">How should your security team manage shadow AI? Workloads deployed by developers without formal registration can often evade traditional security scanners, because organizations are reluctant to slow down development and compromise stability by demanding privileged Daemonsets, kernel-level access, and manual pod-spec edits.</span></p>\n<p><span style=\"vertical-align: baseline;\">To break this deadlock, today we are open-sourcing </span><a href=\"https://github.com/GoogleCloudPlatform/k8s-aibom\" rel=\"noopener\" target=\"_blank\"><span style=\"text-decoration: underline; vertical-align: baseline;\">k8s-aibom</span></a><span style=\"vertical-align: baseline;\">. This lightweight, unprivileged Kubernetes controller continuously monitors the cluster API and container environments to automatically detect running AI runtimes (like vLLM and Triton) and generate standard </span><a href=\"https://cyclonedx.org/capabilities/mlb",
+    "id": "650df455214592aa",
+    "source_id": "ars-technica-ai",
+    "title": "New York bans data center construction for a year, rattling AI industry",
+    "url": "https://arstechnica.com/tech-policy/2026/07/new-york-is-the-first-state-to-impose-a-data-center-moratorium/",
+    "published_at": "2026-07-14T15:06:28+00:00",
+    "raw_text": "New York’s data center moratorium may become the blueprint for anti-AI movement.",
     "category_hint": [
-      "产品发布",
-      "技巧与观点"
+      "行业动态"
     ],
-    "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/k8s-aibom.max-1000x1000.png",
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/07/GettyImages-2276391767-500x500.jpg",
     "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "Google Cloud提出k8s-aibom自动化AI物料清单，解决影子AI安全难题，对云安全从业者价值高。",
-    "summary_zh": "文章讨论了如何在GKE上保护AI供应链，介绍了k8s-aibom工具用于自动生成AI物料清单（AI BOM）。该工具旨在帮助安全团队管理影子AI——即开发人员未经正式注册部署的工作负载，这些工作负载常能逃避传统安全扫描。文章分析了现有安全方案的不足，并展示了k8s-aibom如何在不影响开发速度的前提下提供可见性和合规性。",
-    "title_zh": "在 GKE 上保护 AI 供应链：介绍用于自动化 AI BOM 的 k8s-aibom",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "纽约州暂停数据中心建设一年，可能成为反AI运动的先例，对AI行业布局有重大影响。",
+    "summary_zh": "纽约州宣布暂停数据中心建设一年，此举可能成为反AI运动的蓝图。该政策旨在控制电力成本、水资源和本地控制权，对AI行业的数据中心扩张计划构成直接挑战。",
+    "title_zh": "纽约州禁止数据中心建设一年，震动AI行业",
     "weighted_score": 0.735,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
+      "impact": 0.8,
+      "practical_value": 0.6
     },
-    "story_id": "7233c0a7f68e3098",
+    "story_id": "37ad46a21f3faf6a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "google-cloud-ai",
-        "url": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/"
+        "source_id": "ars-technica-ai",
+        "url": "https://arstechnica.com/tech-policy/2026/07/new-york-is-the-first-state-to-impose-a-data-center-moratorium/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "ef09d5bafff41ffd",
+    "source_id": "techcrunch-ai",
+    "title": "New York State halts construction of all new data centers",
+    "url": "https://techcrunch.com/2026/07/14/new-york-state-halts-construction-of-all-new-data-centers/",
+    "published_at": "2026-07-14T15:17:59+00:00",
+    "raw_text": "New York has become the first state to temporarily halt approval of large data centers, as Gov. Kathy Hochul argues the AI-driven building boom shouldn’t come at the expense of higher electricity costs, water supplies, or local control.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "纽约州成为首个暂停大型数据中心建设的州，对AI基础设施布局有直接影响。",
+    "summary_zh": "纽约州州长Kathy Hochul宣布暂停所有大型数据中心的审批，成为美国首个采取此措施的州。她认为AI驱动的建设热潮不应以更高的电力成本、水资源消耗或地方控制权为代价。此举可能影响AI行业的数据中心扩张计划。",
+    "title_zh": "纽约州暂停所有新建数据中心",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "81f8a87bf1c7fc98",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/07/14/new-york-state-halts-construction-of-all-new-data-centers/"
       }
     ],
     "curated": true
@@ -504,41 +599,6 @@
     "curated": true
   },
   {
-    "id": "fd90647b1f4bf4f1",
-    "source_id": "gh-llamacpp",
-    "title": "ggerganov/llama.cpp b9988",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9988",
-    "published_at": "2026-07-13T19:10:17+00:00",
-    "raw_text": "<details open>\n\ntests: Harmonize header use (#25616)\n\n* tests: Harmonize the use of private ggml includes\n\n* tests: In test-backend-ops, use quoted includes\n\nAs with all other tests. This is to ensure that the build uses shipped\nheaders over possibly system-installed ones.\n\n</details>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b9988/llama-b9988-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b9988/llama-b9988-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b9988/llama-b9988-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9988/llama-b9988-bin-ubuntu-x64.tar.gz)\n- [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b9988/llama-b9988-bin",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "llama.cpp新版本发布，包含测试头文件统一等改进，对开发者有实用价值。",
-    "summary_zh": "ggerganov/llama.cpp发布了b9988版本，主要变更包括测试中头文件使用的统一（#25616），以及为macOS/iOS提供Apple Silicon (arm64)的预编译二进制文件。该版本旨在确保构建使用发布的头文件而非系统安装的版本。对于使用llama.cpp的开发者，这是一个常规更新，提升了构建一致性。",
-    "title_zh": "ggerganov/llama.cpp b9988 发布",
-    "weighted_score": 0.685,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.5,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "a2f8b084f3d0d50d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-llamacpp",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b9988"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
     "id": "cc75259d5eebb23e",
     "source_id": "zh-leiphone",
     "title": "阶跃发布大模型原生AI终端品牌STEPX及Step AOS，全球首款大模型原生智能体手机同步亮相",
@@ -578,72 +638,72 @@
     "gate_backfill": true
   },
   {
-    "id": "f35fdbbfe824fe21",
-    "source_id": "techcrunch-ai",
-    "title": "Waze adds new AI-powered features and customization updates",
-    "url": "https://techcrunch.com/2026/07/13/waze-adds-new-ai-powered-features-and-customization-updates/",
-    "published_at": "2026-07-13T14:18:16+00:00",
-    "raw_text": "Some of the new features are powered by Google's Gemini AI assistant, which reflects the tech giant's broader push to integrate Gemini across its products while also better positioning Waze to compete with rival services such as Apple Maps.",
+    "id": "ed3a2198d15e778b",
+    "source_id": "github-changelog",
+    "title": "Security reviews now available in the GitHub Copilot app",
+    "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+    "published_at": "2026-07-14T12:54:12+00:00",
+    "raw_text": "<p>You can now run a security review on your in-flight code changes directly from the GitHub Copilot app. The /security-review slash command is shipping in public preview, bringing the same&#8230;</p>\n<p>The post <a href=\"https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app\">Security reviews now available in the GitHub Copilot app</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
     "category_hint": [
-      "行业动态",
-      "产品发布"
+      "产品发布",
+      "开源项目"
     ],
-    "image_url": null,
+    "image_url": "https://github.com/user-attachments/assets/a65d22c6-af38-472b-bffe-d4c7ef58e71d",
     "category": "产品发布",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "Waze集成Gemini AI推出新功能，展示AI在导航应用中的实际应用。",
-    "summary_zh": "Waze 推出了由 Google Gemini AI 驱动的新功能，包括更智能的路线建议、实时事件报告和个性化设置更新。这些功能旨在提升用户体验，并帮助 Waze 在与 Apple Maps 等竞争对手的竞争中保持优势。Gemini 的集成是 Google 将 AI 助手推广到其产品组合的更广泛战略的一部分。",
-    "title_zh": "Waze 新增 AI 驱动功能和个性化更新",
-    "weighted_score": 0.695,
+    "reason_zh": "GitHub Copilot 新增安全审查功能，直接在 IDE 中运行，提升开发安全性。",
+    "summary_zh": "GitHub 宣布在 Copilot 应用中推出安全审查功能，用户可通过 /security-review 命令对代码变更进行安全审查。该功能现已公开预览，将 GitHub 的安全审查能力直接集成到开发工作流中，有助于在编码阶段发现潜在安全问题。",
+    "title_zh": "GitHub Copilot 应用现支持安全审查",
+    "weighted_score": 0.71,
     "score_breakdown": {
       "source_authority": 0.9,
       "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.5
+      "impact": 0.5,
+      "practical_value": 0.7
     },
-    "story_id": "467000ca65ac2a61",
+    "story_id": "8451c7d7fa1e837e",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/07/13/waze-adds-new-ai-powered-features-and-customization-updates/"
+        "source_id": "github-changelog",
+        "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app"
       }
     ],
     "curated": true,
     "gate_backfill": true
   },
   {
-    "id": "9a89a6060686573f",
-    "source_id": "aws-ml-blog",
-    "title": "Implement on-behalf-of token exchange for multi-tenant agents with Amazon Bedrock AgentCore Gateway",
-    "url": "https://aws.amazon.com/blogs/machine-learning/implement-on-behalf-of-token-exchange-for-multi-tenant-agents-with-amazon-bedrock-agentcore-gateway/",
-    "published_at": "2026-07-13T17:27:40+00:00",
-    "raw_text": "Building multi-tenant agents with Amazon Bedrock AgentCore and Apply fine-grained access control with Bedrock AgentCore Gateway interceptors establish the conceptual foundation for on-behalf-of (OBO) token exchange in agentic systems. This post is the implementation guide. It walks through a complete multi-tenant OBO setup against Okta, shows the JSON Web Token (JWT) claim transformations on each hop, and demonstrates how audience binding produces defense in depth that scales across tenants.",
+    "id": "73715fdd62123af0",
+    "source_id": "infoq-cn-ai",
+    "title": "Claude Artifacts 一夜打通“全网公开分享+多人编辑”，AI 交付闭环彻底杀疯了",
+    "url": "https://www.infoq.cn/article/Pqcx0ktTdljvoQ3OMxze?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-14T22:01:15+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/Pqcx0ktTdljvoQ3OMxze?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
-      "技巧与观点",
-      "产品发布"
+      "行业动态",
+      "技巧与观点"
     ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/06/ML-20860-1.png",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.6,
-    "reason_zh": "提供了在Amazon Bedrock上实现多租户OBO令牌交换的完整实现指南，对构建安全的多租户Agent系统有直接参考价值。",
-    "summary_zh": "本文是Amazon Bedrock AgentCore Gateway实现多租户代理中OBO令牌交换的实施指南。文章首先介绍了使用Bedrock AgentCore构建多租户代理以及通过AgentCore Gateway拦截器实现细粒度访问控制的概念基础。然后，详细演示了针对Okta的完整多租户OBO设置流程，包括JSON Web Token声明转换的每个步骤。该实现指南为开发者提供了从理论到实践的清晰路径，帮助他们在多租户环境中安全地代理用户身份。",
-    "title_zh": "在Amazon Bedrock AgentCore Gateway中为多租户代理实现OBO令牌交换",
-    "weighted_score": 0.695,
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Claude Artifacts新增公开分享和多人编辑功能，大幅提升AI交付协作效率，值得关注。",
+    "summary_zh": "InfoQ报道，Claude Artifacts功能迎来重大更新：支持全网公开分享和多人实时编辑，使得AI交付闭环更加完整。用户可以将Artifacts分享给任何人，并支持多人协作编辑，极大提升了团队协作和内容分发的效率。这一变化被视为AI应用交付的重要里程碑。",
+    "title_zh": null,
+    "weighted_score": 0.7,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.9
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.7
     },
-    "story_id": "81ac4365020c8bda",
+    "story_id": "f7e4c3e27faa4d8d",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/implement-on-behalf-of-token-exchange-for-multi-tenant-agents-with-amazon-bedrock-agentcore-gateway/"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/Pqcx0ktTdljvoQ3OMxze?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true,

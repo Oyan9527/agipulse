@@ -1,6 +1,6 @@
 {
   "date": "2026-07-14",
-  "generated_at": "2026-07-14T13:23:53.087792+00:00",
+  "generated_at": "2026-07-14T17:11:58.224873+00:00",
   "items": [
     {
       "id": "949e8a92fd92355b",
@@ -270,12 +270,12 @@
       ]
     },
     {
-      "id": "efa17985761a6849",
+      "id": "a4703406582e3eaf",
       "source_id": "zh-juejin",
-      "title": "别再用AI debug了——这5种bug越修越烂",
-      "url": "https://juejin.cn/post/7661888962445803570",
-      "published_at": "2026-07-13T13:26:55+00:00",
-      "raw_text": "AI debug 的死亡循环 你一定经历过这个场景： 代码报错了。你把报错信息丢给 AI。AI 给你改了。跑了一下，原来的错没了，但出了一个新错。你又丢给 AI。AI 又改了。又出了一个新错...",
+      "title": "手写 AI 编程 Agent 的命令执行工具：我被 child_process 坑出来的实战经验",
+      "url": "https://juejin.cn/post/7662273240988057615",
+      "published_at": "2026-07-14T15:47:46+00:00",
+      "raw_text": "先说说为啥 Agent 非得用 child_process 我最开始其实也疑惑过，直接在 Node 里调命令不行吗，为啥非要整个子进程出来？后来想明白了，Node 本身是单线程跑 JS 的，主进程要处",
       "category_hint": [
         "技巧与观点"
       ],
@@ -283,56 +283,56 @@
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "深入剖析AI debug的常见陷阱，提供实用建议，对开发者有直接帮助。",
-      "summary_zh": "文章指出依赖AI调试代码可能导致“死亡循环”：AI修复一个bug却引入新bug，反复迭代后代码质量下降。作者列举了5种AI难以修复的bug类型，包括逻辑错误、边界条件、并发问题等，并建议开发者应理解代码逻辑而非盲目信任AI。文章强调AI作为辅助工具，不能替代人工审查和测试。",
+      "reason_zh": "手写AI编程Agent的命令执行工具，分享child_process实战经验，对开发者有高实用价值。",
+      "summary_zh": "文章作者分享了在开发AI编程Agent时使用child_process的实战经验，解释了为什么Agent需要使用子进程来执行命令，以及在此过程中遇到的坑和解决方案。内容涉及Node.js单线程模型、子进程管理、错误处理等，对构建AI Agent的开发者有参考价值。",
       "title_zh": null,
-      "weighted_score": 0.64,
+      "weighted_score": 0.505,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
+        "source_authority": 0.4,
+        "novelty": 0.6,
+        "impact": 0.3,
         "practical_value": 0.8
       },
-      "story_id": "004dfcc2d7fe17b6",
+      "story_id": "ae8ca2395bca3dc6",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7661888962445803570"
+          "url": "https://juejin.cn/post/7662273240988057615"
         }
       ]
     },
     {
-      "id": "bbdb3ced48136a98",
-      "source_id": "google-cloud-ai",
-      "title": "Securing the AI supply chain on GKE: Introducing k8s-aibom for automated AI BOMs",
-      "url": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/",
-      "published_at": "2026-07-13T16:00:00+00:00",
-      "raw_text": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">How should your security team manage shadow AI? Workloads deployed by developers without formal registration can often evade traditional security scanners, because organizations are reluctant to slow down development and compromise stability by demanding privileged Daemonsets, kernel-level access, and manual pod-spec edits.</span></p>\n<p><span style=\"vertical-align: baseline;\">To break this deadlock, today we are open-sourcing </span><a href=\"https://github.com/GoogleCloudPlatform/k8s-aibom\" rel=\"noopener\" target=\"_blank\"><span style=\"text-decoration: underline; vertical-align: baseline;\">k8s-aibom</span></a><span style=\"vertical-align: baseline;\">. This lightweight, unprivileged Kubernetes controller continuously monitors the cluster API and container environments to automatically detect running AI runtimes (like vLLM and Triton) and generate standard </span><a href=\"https://cyclonedx.org/capabilities/mlb",
+      "id": "43be431cc4452310",
+      "source_id": "nvidia-ai-blog",
+      "title": "Why Performance per Watt Is the Ultimate Metric for AI Infrastructure Efficiency",
+      "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/",
+      "published_at": "2026-07-14T15:00:20+00:00",
+      "raw_text": "Power is AI infrastructure’s inescapable constraint. How many tokens an AI factory can generate within a fixed power budget determines its revenue and profitability. Because of this, performance per watt — a metric that can’t be gamed, only earned through real-world results — is the foundation for AI factories.  As agentic AI drives token demand [&#8230;]",
       "category_hint": [
-        "产品发布",
-        "技巧与观点"
+        "行业动态",
+        "产品发布"
       ],
-      "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/k8s-aibom.max-1000x1000.png",
+      "image_url": "https://blogs.nvidia.com/wp-content/uploads/2026/07/performance-per-watt-ai-infra-efficiency-842x450.jpg",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "Google Cloud提出k8s-aibom自动化AI物料清单，解决影子AI安全难题，对云安全从业者价值高。",
-      "summary_zh": "文章讨论了如何在GKE上保护AI供应链，介绍了k8s-aibom工具用于自动生成AI物料清单（AI BOM）。该工具旨在帮助安全团队管理影子AI——即开发人员未经正式注册部署的工作负载，这些工作负载常能逃避传统安全扫描。文章分析了现有安全方案的不足，并展示了k8s-aibom如何在不影响开发速度的前提下提供可见性和合规性。",
-      "title_zh": "在 GKE 上保护 AI 供应链：介绍用于自动化 AI BOM 的 k8s-aibom",
-      "weighted_score": 0.735,
+      "reason_zh": "NVIDIA官方博客深入分析每瓦性能作为AI基础设施效率的关键指标，对数据中心设计和运营有重要参考价值。",
+      "summary_zh": "文章指出电力是AI基础设施的硬约束，每瓦性能（Performance per Watt）是衡量AI工厂效率和盈利能力的关键指标。该指标无法被操纵，只能通过实际结果获得。随着代理式AI驱动token需求增长，优化每瓦性能变得至关重要。文章从NVIDIA视角阐述了这一指标的重要性。",
+      "title_zh": "为什么每瓦性能是AI基础设施效率的终极指标",
+      "weighted_score": 0.755,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.8
       },
-      "story_id": "7233c0a7f68e3098",
+      "story_id": "5b52509a48067c29",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "google-cloud-ai",
-          "url": "https://cloud.google.com/blog/products/identity-security/introducing-k8s-aibom-on-gke-for-automated-ai-bills-of-materials/"
+          "source_id": "nvidia-ai-blog",
+          "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/"
         }
       ]
     },
