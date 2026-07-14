@@ -1,14 +1,14 @@
 {
   "date": "2026-07-14",
-  "generated_at": "2026-07-14T01:55:32.453033+00:00",
+  "generated_at": "2026-07-14T06:16:02.068116+00:00",
   "items": [
     {
-      "id": "057c92fed1a2b583",
+      "id": "949e8a92fd92355b",
       "source_id": "arxiv-cs-ai",
-      "title": "Beyond Fixed Representations: The Vocabulary and Verifier Gaps in Open-Ended AI",
-      "url": "https://arxiv.org/abs/2607.09560",
-      "published_at": "2026-07-13T04:00:00+00:00",
-      "raw_text": "arXiv:2607.09560v1 Announce Type: new \nAbstract: Modern AI systems are increasingly being evaluated for their ability to reason, code, prove theorems, use tools, and long-horizon research tasks. These are powerful capabilities, but they share a structural limitation: the representational frame within which the model operates, including its conceptual vocabulary, the space of admissible solutions it can search, and the criteria by which success is evaluated, is typically fixed and supplied in advance. This paper argues that building stronger intelligent systems capable of open-ended innovation requires additional classes of operations: the creation, stabilization, and reuse of new representational primitives, which alter the space being searched rather than simply searching within it.\n  We characterize the distance between current AI systems and genuinely open-ended intelligence through two gaps. The first is the vocabulary gap, the difficulty of inventing and stabilizing new representa",
+      "title": "Length Penalties Make Chain-of-Thought Less Monitorable",
+      "url": "https://arxiv.org/abs/2607.09786",
+      "published_at": "2026-07-14T04:00:00+00:00",
+      "raw_text": "arXiv:2607.09786v1 Announce Type: new \nAbstract: Length-penalized reinforcement learning can shorten chain-of-thought reasoning while hiding an influence that drives the model's answer. In our experiments, training with length penalties does not stop misleading hints from steering models, even though the models' chains of thought mention the hint much less often. A token-accuracy evaluation would count these runs as successful because they use fewer reasoning tokens with little accuracy loss; it would miss whether the remaining trace still shows what drove the answer. We train Qwen3-4B and Qwen3-14B variants with different target chain lengths, then evaluate them with biasing-hint interventions on held-out MMLU-Pro-R and four transfer benchmarks. Compression sharply cuts reasoning tokens, preserves most multiple-choice accuracy, and leaves hint influence near baseline. At the strongest target, lower-bound faithfulness falls to 63.1% of baseline for Qwen3-14B and 69.4% for Qwen3-4B; the",
       "category_hint": [
         "论文研究"
       ],
@@ -16,55 +16,121 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "深刻分析AI系统固定表征的局限性，提出词汇与验证器缺口，思想深度高。",
-      "summary_zh": "本文指出现代AI系统在推理、编码、定理证明、工具使用和长周期研究任务中表现出强大能力，但存在结构性局限：模型操作的表征框架（包括概念词汇、可接受解空间等）是固定的。作者提出“词汇缺口”和“验证器缺口”两个概念，前者指模型无法表达超出其词汇的概念，后者指验证器无法评估超出其设计范围的解。论文呼吁超越固定表征，发展开放式的AI系统。",
-      "title_zh": "超越固定表征：开放式AI中的词汇与验证器缺口",
-      "weighted_score": 0.715,
+      "reason_zh": "揭示长度惩罚强化学习会隐藏思维链中的误导信息，对AI安全监控有重要警示。",
+      "summary_zh": "本文发现，使用长度惩罚的强化学习虽然能缩短思维链推理过程，但同时会隐藏影响模型答案的误导信息。实验表明，即使模型在思维链中很少提及误导提示，长度惩罚训练并未阻止这些提示对模型答案的操纵。传统的token准确率评估无法检测到这种隐藏影响，因此作者呼吁在评估模型安全性时需采用更全面的方法。该研究对AI对齐和安全监控具有重要启示。",
+      "title_zh": "长度惩罚使思维链更难以监控",
+      "weighted_score": 0.805,
       "score_breakdown": {
         "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "4ed2d05905f145fa",
+      "story_id": "de62ed354cb0c29f",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.09560"
+          "url": "https://arxiv.org/abs/2607.09786"
         }
       ]
     },
     {
-      "id": "925c0b2a5139daa4",
+      "id": "773f9877f049e69d",
       "source_id": "arxiv-cs-ai",
-      "title": "Sticky Routing: Training MoE Models for Memory-Efficient Inference",
-      "url": "https://arxiv.org/abs/2607.08780",
-      "published_at": "2026-07-13T04:00:00+00:00",
-      "raw_text": "arXiv:2607.08780v1 Announce Type: cross \nAbstract: Mixture-of-Experts (MoE) models activate only a sparse subset of experts per token, yet consecutive tokens frequently activate different experts -- causing constant weight swapping between slow storage and fast memory on edge devices. Existing remedies are either system-level (caching heuristics) or post-hoc (router fine-tuning), leaving the root cause unchanged during pretraining. We propose StickyMoE, a differentiable routing consistency loss that penalises abrupt expert switches between adjacent tokens, encouraging the router to maintain the same expert assignment across semantically coherent spans. StickyMoE requires no architectural changes, adds a single hyperparameter lambda, and unlike post-hoc methods, allows expert representations and routing decisions to co-adapt from the first training step. Experiments on small-scale MoE language models show that StickyMoE reduces the expert switch rate by up to 60% with less than 4% perpl",
+      "title": "SPARK: Susceptibility-Guided Profiling and Steering of Latent Reasoning States in Large Language Models",
+      "url": "https://arxiv.org/abs/2607.10296",
+      "published_at": "2026-07-14T04:00:00+00:00",
+      "raw_text": "arXiv:2607.10296v1 Announce Type: new \nAbstract: Reasoning failures in large language models (LLMs) are usually evaluated from final answers, but a wrong answer does not reveal why the model failed. The same incorrect output may reflect missing capability, an unstable reasoning trajectory, or a failure to activate a reasoning state that is already available in the frozen model. Existing prompting and benchmark-based evaluation methods mostly operate at the output level, while generic activation-steering methods typically apply global directions without diagnosing which examples require intervention. In this paper, we introduce SPARK, which uses hidden-state response to diagnose whether a model internally enters an effective reasoning state and to guide lightweight test-time steering. The key observation is that raw hidden-state susceptibility is strongly confounded by prompt length, especially in programmatic and algorithmic reasoning where harder serialized instances naturally become ",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "从根源解决MoE模型推理内存瓶颈，提出训练时路由优化，实用性强。",
-      "summary_zh": "本文提出Sticky Routing，一种训练时方法，使MoE模型中的连续token倾向于激活相同专家，从而减少边缘设备上频繁的权重交换。现有解决方案要么是系统级缓存启发式，要么是事后路由器微调，而Sticky Routing通过修改路由训练目标，从根源上降低专家切换频率。实验表明，该方法在保持模型质量的同时，显著提升了推理效率，适用于资源受限设备。",
-      "title_zh": "Sticky Routing：训练MoE模型以实现内存高效推理",
-      "weighted_score": 0.775,
+      "depth_score": 0.9,
+      "reason_zh": "提出可解释性方法，从内部状态诊断LLM推理失败原因，超越仅看最终答案。",
+      "summary_zh": "论文指出，LLM的推理失败通常仅从最终答案评估，但错误答案无法揭示失败原因。相同的错误输出可能反映能力缺失、推理轨迹不稳定或未能激活已有推理状态。作者提出SPARK框架，通过敏感性引导的剖析和引导，识别和调整LLM的潜在推理状态，从而诊断并改善推理失败。",
+      "title_zh": "SPARK：大型语言模型潜在推理状态的敏感性引导剖析与引导",
+      "weighted_score": 0.79,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
+        "source_authority": 0.9,
+        "novelty": 0.9,
         "impact": 0.7,
-        "practical_value": 0.8
+        "practical_value": 0.6
       },
-      "story_id": "bf3a3c05f611df2f",
+      "story_id": "530c84d7eb1ebdf8",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.08780"
+          "url": "https://arxiv.org/abs/2607.10296"
+        }
+      ]
+    },
+    {
+      "id": "12d1a2381abc2c6d",
+      "source_id": "arxiv-cs-ai",
+      "title": "When Are Sparse Feature Interventions Actually Localized? Matched Evaluation for SAE-Based Safety Control",
+      "url": "https://arxiv.org/abs/2607.10226",
+      "published_at": "2026-07-14T04:00:00+00:00",
+      "raw_text": "arXiv:2607.10226v1 Announce Type: new \nAbstract: We evaluate when sparse autoencoder (SAE) features act as localized control handles for safety-relevant behavior. This question is difficult because apparent success can arise from weak interventions, mismatched baselines, model robustness, or degenerate outputs that automated safety judges mark as unsafe without representing meaningful harmful compliance. We introduce a matched coherence-gated evaluation protocol for runtime safety interventions: methods are compared at matched target-effect points, and the primary target metric counts harmful compliance only when an output is both judge-unsafe and coherent. Applying this protocol to three prompt splits on Gemma-2-9B-it with a Gemma Scope layer-20 residual SAE, we find that SAE feature ablation has a narrow useful regime. SAE top800 reaches a low-to-mid target effect with lower total perturbation and competitive utility, but SAE top1600 loses utility relative to a matched dense refusal-",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "严谨评估SAE特征的可定位性，揭示弱干预和基线不匹配导致的假阳性，对可解释性研究有重要警示。",
+      "summary_zh": "本文严格评估稀疏自编码器（SAE）特征是否真正作为局部化控制手柄用于安全相关行为。作者指出，表面上的成功可能源于弱干预、不匹配的基线、模型鲁棒性或退化输出。通过设计匹配的评估协议，包括控制干预强度、使用适当基线、检测模型鲁棒性和输出退化，实验发现许多SAE特征并不具备真正的局部控制能力，为可解释性研究提供了重要方法论指导。",
+      "title_zh": "稀疏特征干预何时真正局部化？基于匹配评估的SAE安全控制研究",
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "33e6e3fb0d1cbf07",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.10226"
+        }
+      ]
+    },
+    {
+      "id": "83da4ddb3341e4cf",
+      "source_id": "arxiv-cs-ai",
+      "title": "Interpreting Latent CoT Reasoning as Dynamical Systems",
+      "url": "https://arxiv.org/abs/2607.09698",
+      "published_at": "2026-07-14T04:00:00+00:00",
+      "raw_text": "arXiv:2607.09698v1 Announce Type: new \nAbstract: Recent latent reasoning methods, such as CODI and COCONUT, face a fundamental interpretability problem: they maintain multiple superimposed candidate traces in the hidden space at each step, unlike explicit- CoT, which follows a single transparent reasoning trace. Existing mechanistic methods show compression, shortcuts, and superposition without explaining how reasoning evolves across latent steps. To address this gap, we model latent token sequences as trajectories in representation space and apply dynamical systems analysis to characterize the evolution of reasoning. Using quantitative measures, such as step-to-step change, direction consistency, and Lyapunov sensitivity, alongside qualitative projections, such as UMAP and DMD/PHATE, we show that latent CoT exhibits structured, non-random dynamics with two distinct stability classes. CODI behaves as a stable attractor, while COCONUT behaves as an unstable expanding system, and SIM-CoT",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "将潜在CoT推理解释为动力系统，揭示隐藏空间中的叠加轨迹，理论深度高。",
+      "summary_zh": "本文针对潜在推理方法（如CODI、COCONUT）的可解释性问题，提出将其视为动力系统进行分析。这些方法在隐藏空间中维护多个叠加的候选推理轨迹，不同于显式CoT的单一透明轨迹。现有机制解释方法仅显示压缩、捷径和叠加现象，而未解释推理过程。本文通过动力系统视角，揭示了潜在推理的动态演化规律，为理解LLM内部推理机制提供了新框架。",
+      "title_zh": "将潜在思维链推理解释为动力系统",
+      "weighted_score": 0.67,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.4
+      },
+      "story_id": "bd46d84d3c987b92",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.09698"
         }
       ]
     },
@@ -102,139 +168,169 @@
       ]
     },
     {
-      "id": "ff339cb9b2acc4a3",
-      "source_id": "arxiv-cs-ai",
-      "title": "Interference and Retention in Continual Learning",
-      "url": "https://arxiv.org/abs/2607.09202",
-      "published_at": "2026-07-13T04:00:00+00:00",
-      "raw_text": "arXiv:2607.09202v1 Announce Type: cross \nAbstract: Continual learning commonly relies on post-hoc mechanisms such as replay, elastic regularization, or distillation. This work argues that forgetting should instead be modeled directly as interference between tasks. In the frozen-feature regime, forgetting from learning a new task is exactly the interference energy induced on the old task. In deep networks, the same quantity is recovered through path-averaged curvature with minimal additional forward passes.\n  When task supports are disjoint, forgetting can be eliminated structurally and when task supports overlap in conflicting directions, a non-zero distortion floor is unavoidable. The same geometry optimally merges models through task-aware orthogonalization. From this analysis we derive Interference-Gated Functional Allocation (IGFA), a replay-free, Fisher-free method that shares directions when tasks align and protects them when they conflict. Across benchmarks, IGFA achieves lossle",
+      "id": "7ad0d16087eec546",
+      "source_id": "zh-juejin",
+      "title": "大模型批量生成代码的质量衰减：为什么 AI 越写越敷衍？根因分析与系统性解决方案",
+      "url": "https://juejin.cn/post/7661878641710956550",
+      "published_at": "2026-07-14T04:14:23+00:00",
+      "raw_text": "本文从上下文窗口数学极限、注意力机制衰减、误差级联放大、对话历史污染四个维度，深度剖析大模型代码生成质量衰减的底层原因，并提出结构化规格驱动、外部上下文管理、多智能体协作、生成-验证闭环四层解决方案",
       "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "论文提出将遗忘建模为任务间干扰，为持续学习提供新视角，理论深度高。",
-      "summary_zh": "该论文挑战了持续学习中常用的回放、弹性正则化等后验机制，主张将遗忘直接建模为任务间的干扰。在冻结特征的情况下，学习新任务导致的遗忘恰好等于对旧任务产生的干扰能量。在深度网络中，作者推导了干扰与遗忘的定量关系，并提出了基于干扰最小化的新方法。实验表明，该方法在多个基准上优于现有技术，为理解持续学习提供了更本质的理论框架。",
-      "title_zh": "持续学习中的干扰与遗忘",
-      "weighted_score": 0.745,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "7471edf11a679e8f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.09202"
-        }
-      ]
-    },
-    {
-      "id": "e11b3d57afc093db",
-      "source_id": "zh-leiphone",
-      "title": "斯坦福 Susan Athey 教授：以彼之矛攻彼之盾，用 LLM 的随机性破解因果推断难题 | ICML 2026",
-      "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html",
-      "published_at": "2026-07-13T03:04:00+00:00",
-      "raw_text": "<section style=\"text-align: justify; margin: 16px 16px 0px; line-height: 1.75em;\"><span style=\"color: #4499E7;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></span></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span>随机性是一面镜子，因果推断照见了自己。</span></span></span></section><span></span><span></span><span></span><span></span",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://static.leiphone.com/uploads/new/images/20260713/6a545558af4fd.jpg?imageMogr2/quality/90",
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "斯坦福教授提出用LLM随机性破解因果推断难题，方法新颖且具有理论深度，对研究者有重要启发。",
-      "summary_zh": "本文报道了斯坦福大学Susan Athey教授在ICML 2026上的演讲，她提出利用LLM的随机性来解决因果推断中的难题。Athey教授指出，传统因果推断方法在处理高维数据时面临挑战，而LLM的随机性可以作为一种工具，通过“以彼之矛攻彼之盾”的方式，构建更稳健的因果模型。她展示了初步实验结果，证明该方法在多个基准测试上优于现有方法。这一思路为AI与统计学的交叉研究开辟了新方向。",
-      "title_zh": null,
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "9939e0b8671e6e2c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/private/u24ghF3YNhU0xxjJ.html"
-        },
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/private/m2WcPZmJL6inJb5i.html"
-        }
-      ]
-    },
-    {
-      "id": "2f9b9fbac05faeda",
-      "source_id": "reddit-localllama",
-      "title": "I benchmarked 15 \"E-Waste\" GPUs with Modern Workloads",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uvcjd0/i_benchmarked_15_ewaste_gpus_with_modern_workloads/",
-      "published_at": "2026-07-13T14:05:18+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1uvcjd0/i_benchmarked_15_ewaste_gpus_with_modern_workloads/\"> <img alt=\"I benchmarked 15 &quot;E-Waste&quot; GPUs with Modern Workloads\" src=\"https://preview.redd.it/oglzf8kb70dh1.jpg?width=140&amp;height=93&amp;auto=webp&amp;s=a66cae1309ebd3787c8d8b92f465286b6a6c6c41\" title=\"I benchmarked 15 &quot;E-Waste&quot; GPUs with Modern Workloads\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I've spent the last year building <a href=\"https://esologic.com/cooler/\">GPU coolers</a> and a <a href=\"https://github.com/esologic/gpu_box_benchmark\">custom benchmarking tool</a> to figure out if decommissioned NVIDIA enterprise GPUs have any use with modern workloads. Cards like the P100 (16GB) are going for around $75 and the V100 (16GB) for under $200. Combined with dirt-cheap X99 Xeon motherboards, they are a massive source of idle VRAM that's hard to ignore for the homelab.</p> <p>People often finger-wag and warn against th",
-      "category_hint": [
-        "开源项目",
         "技巧与观点"
       ],
-      "image_url": "https://preview.redd.it/oglzf8kb70dh1.jpg?width=140&height=93&auto=webp&s=a66cae1309ebd3787c8d8b92f465286b6a6c6c41",
+      "image_url": null,
       "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "实测15款“电子垃圾”GPU在现代AI工作负载下的表现，为预算有限的玩家提供极具价值的硬件选型参考。",
-      "summary_zh": "作者对15款被视为“电子垃圾”的旧GPU（如GTX 1060、RX 580等）进行了现代AI工作负载（如LLM推理、图像生成）的基准测试。测试涵盖了推理速度、显存占用、能效比等关键指标。结果显示，部分旧卡在特定任务中仍具性价比，例如某些6GB显存的卡可以运行小模型。文章提供了详细的性能数据和购买建议，帮助预算有限的用户做出明智选择。",
-      "title_zh": "我测试了15款“电子垃圾”GPU在现代工作负载下的表现",
-      "weighted_score": 0.68,
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深度剖析大模型代码生成质量衰减的根因，并提出系统性解决方案，对AI工程实践有高参考价值。",
+      "summary_zh": "本文从上下文窗口数学极限、注意力机制衰减、误差级联放大、对话历史污染四个维度，深度剖析大模型批量生成代码时质量衰减的底层原因。并提出结构化规格驱动、外部上下文管理、多智能体协作、生成-验证闭环四层系统性解决方案，为提升AI代码生成质量提供了可操作的思路。",
+      "title_zh": null,
+      "weighted_score": 0.655,
       "score_breakdown": {
         "source_authority": 0.5,
-        "novelty": 0.8,
+        "novelty": 0.7,
         "impact": 0.6,
         "practical_value": 0.9
       },
-      "story_id": "64afb0c83311b05e",
+      "story_id": "3db34288f7820a2f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uvcjd0/i_benchmarked_15_ewaste_gpus_with_modern_workloads/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661878641710956550"
         }
       ]
     },
     {
-      "id": "fd04474491e1435b",
-      "source_id": "zh-sspai",
-      "title": "你这图「保真」吗？AI 生图时代的信息防伪",
-      "url": "https://sspai.com/post/112185",
-      "published_at": "2026-07-13T02:52:47+00:00",
-      "raw_text": "人类记录信息的方式一直在变化，但我们对「真实性」的需求从未改变。<a href=\"https://sspai.com/post/112185\" target=\"_blank\">查看全文</a>",
+      "id": "fb819c2617386127",
+      "source_id": "zh-juejin",
+      "title": "Hermes 上下文压缩架构：长任务 Agent 不失忆的几个关键设计",
+      "url": "https://juejin.cn/post/7662002670141030451",
+      "published_at": "2026-07-14T03:34:19+00:00",
+      "raw_text": "长任务 Agent 最容易坏在一个很不起眼的地方：它不是没能力继续推理，而是已经看不完整自己刚才做过什么。 一次真实的工具型会话里，系统提示、历史消息、工具调用、终端输出、文件读取结果、截图、代码片段",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "探讨 AI 生图时代的信息防伪问题，分析真实性需求与技术挑战。",
-      "summary_zh": "文章探讨了在 AI 生图时代，人类对信息真实性的需求如何演变。从历史记录方式的变化出发，分析了当前 AI 生成图像带来的防伪挑战，并介绍了相关技术手段。",
-      "title_zh": "你这图「保真」吗？AI 生图时代的信息防伪",
-      "weighted_score": 0.545,
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析长任务Agent失忆问题，提出Hermes上下文压缩架构的关键设计，实用性强。",
+      "summary_zh": "文章指出长任务Agent最容易出现的问题不是推理能力不足，而是无法完整回顾自身历史操作。一次真实的工具型会话中，系统提示、历史消息、工具调用、终端输出、文件读取结果、截图、代码片段等大量上下文信息容易导致Agent失忆。作者提出了Hermes上下文压缩架构，通过关键设计如智能摘要、选择性保留和动态压缩，确保Agent在长任务中保持上下文连贯性，避免遗忘。该架构为构建可靠的长任务Agent提供了实用方案。",
+      "title_zh": "Hermes 上下文压缩架构：长任务 Agent 不失忆的几个关键设计",
+      "weighted_score": 0.63,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.5,
-        "impact": 0.4,
-        "practical_value": 0.7
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
       },
-      "story_id": "7c0250ccb35e1791",
+      "story_id": "b3d6c2ac2c06af34",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-sspai",
-          "url": "https://sspai.com/post/112185"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7662002670141030451"
+        }
+      ]
+    },
+    {
+      "id": "cc8830aa83e017fb",
+      "source_id": "infoq-cn-ai",
+      "title": "连Claude Code都搞不定的巨型代码库，我们靠一个“自愈循环”给盘活了",
+      "url": "https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-14T11:08:39+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "分享解决巨型代码库难题的“自愈循环”方法，实战经验丰富，有启发性。",
+      "summary_zh": "本文分享了作者团队如何通过一个“自愈循环”机制，成功处理连Claude Code都无法应对的巨型代码库。文章详细描述了问题背景：代码库规模庞大、依赖复杂，导致AI工具失效。作者提出了一种迭代式自愈方法，包括错误检测、自动修复、验证和回滚等步骤，并给出了具体实现细节。该方法显著提升了代码库的维护效率，对大型项目开发者有实用价值。",
+      "title_zh": null,
+      "weighted_score": 0.695,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "8cbc850abc8c1dd4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "f668e7188b57eef3",
+      "source_id": "infoq-cn-ai",
+      "title": "从上下文到经验资产：Agent 记忆系统的工程化路径与 MemOS 实践",
+      "url": "https://www.infoq.cn/article/RivZJwpYltVDJX5imMUX?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-14T10:30:34+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/RivZJwpYltVDJX5imMUX?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "深入探讨Agent记忆系统的工程化路径，结合MemOS实践，有系统设计思考。",
+      "summary_zh": "本文系统性地探讨了Agent记忆系统的工程化路径，从上下文管理到经验资产的构建，并介绍了MemOS的实践案例。作者分析了记忆系统在Agent中的关键作用，包括短期记忆、长期记忆和共享记忆的实现方案，以及如何通过记忆系统提升Agent的持续学习能力和任务执行效率。文章提供了具体的架构设计和代码示例，对构建复杂Agent系统有参考价值。",
+      "title_zh": null,
+      "weighted_score": 0.675,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "4713c90780eb7372",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/RivZJwpYltVDJX5imMUX?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "8ec818ef454bb9d6",
+      "source_id": "zh-juejin",
+      "title": "从“临时组局”到“俱乐部运营”：构建企业级多 Agent 协作的四层治理架构",
+      "url": "https://juejin.cn/post/7661939225986416674",
+      "published_at": "2026-07-14T05:58:00+00:00",
+      "raw_text": "阿里云 AgentTeams 聚焦企业级多 Agent 长期协同，首创“组织化”架构：四层落地体系（入口/身份/团队/资产）+零信任安全四防线+动态分层协作+弹性沙箱运行时+持续进化飞轮，让 Agen",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "提出企业级多Agent四层治理架构，系统性强，有工程落地参考价值。",
+      "summary_zh": "阿里云AgentTeams提出企业级多Agent长期协同的“组织化”架构，包括四层落地体系（入口/身份/团队/资产）、零信任安全四防线、动态分层协作、弹性沙箱运行时和持续进化飞轮。该架构旨在解决多Agent协作中的治理和安全问题，实现从临时组局到俱乐部运营的转变，为企业级AI应用提供了系统化方案。",
+      "title_zh": null,
+      "weighted_score": 0.54,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.6,
+        "impact": 0.4,
+        "practical_value": 0.7
+      },
+      "story_id": "5e55e7fa30cc0c60",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7661939225986416674"
         }
       ]
     },
@@ -273,73 +369,6 @@
       ]
     },
     {
-      "id": "338a570dc09134d2",
-      "source_id": "zh-ithome",
-      "title": "微软 CEO 纳德拉警告企业：你花钱用的 AI，最终可能会成为你的竞争对手",
-      "url": "https://www.ithome.com/0/976/271.htm",
-      "published_at": "2026-07-14T00:23:30+00:00",
-      "raw_text": "<p>IT之家 7 月 14 日消息，据外媒 TechCrunch 今天（14 日）报道，硅谷围绕人工智能风险的争论持续无休，最让 AI 拥护者坐立不安的，却是大型 AI 实验室可能借专有模型充当“特洛伊木马”。</p><p>初创企业和大型企业把敏感资料喂给模型后，模型提供商便能<strong>逐渐摸清客户的业务</strong>，还可能<strong>利用积累下来的知识开拓同类业务，最终与客户直接竞争</strong>。</p><p>当地时间 12 日，纳德拉在博客中警告，企业使用 AI 时其实<strong>付了两遍钱</strong>：一遍是明码标价的 token 费用，另一遍则是<strong>在毫无察觉的情况下交出有价值的数据</strong>。“你实际上付了两次钱，一次用金钱支付，另一次则用更加宝贵的东西支付，也就是为了让 AI 真正发挥作用而必须披露的专有知识。<strong>你越希望模型表现得更好，就越需要向模型提供更多知识</strong>！”</p><p>企业为了让模型更懂自身需求，实际上正在<strong>一点点把经营诀窍教给模型</strong>。“模型会从‘使用痕迹’中学习，包括人们输入的提示词、智能体调用的工具，尤其是模型犯错后人们给出的纠正。每一次纠正最终都会变成企业内部积累的经验。”</p><p>竞争对手无论花多少钱，都很难买到同样的经验，企业却在使用模型的过程中<strong>主动把经验交了出去</strong>。纳德拉因此主张，AI 企业既然可以抓取互联网内容训练模型，企业也应当有权反过来<strong>研究并“蒸馏”AI 企业的模型</strong>。</p><p>IT之家注：所谓“模型蒸馏”，就是分析一个模型给出的答案，从中摸清模型如何工作，再据此训练成本通常更低的新模型。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2024/10/1e49cd7b-4b1b-4d78-b322-580914f2f7fa.png?x-bce-process=image/watermark,text_QUnnlJ_miJA,type_RlpMYW5UaW5nSGVpU0JHQg==,si",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://img.ithome.com/newsuploadfiles/2024/10/1e49cd7b-4b1b-4d78-b322-580914f2f7fa.png?x-bce-process=image/watermark,text_QUnnlJ_miJA,type_RlpMYW5UaW5nSGVpU0JHQg==,size_23,color_ffffffdd,skw_1,skc_00000051,g_7,blr_50,bls_50,x_9,y_9",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "纳德拉警告企业使用AI可能泄露专有知识，模型提供商或成竞争对手，引发深度思考。",
-      "summary_zh": "微软CEO纳德拉警告企业，使用AI时可能面临双重成本：明码标价的token费用和无形中泄露的专有知识。大型AI实验室通过模型收集客户业务数据，可能利用这些知识开拓同类业务，最终与客户竞争。这一观点引发硅谷对AI风险的重新审视。",
-      "title_zh": null,
-      "weighted_score": 0.71,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "ee49628e286c44bc",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-ithome",
-          "url": "https://www.ithome.com/0/976/271.htm"
-        }
-      ]
-    },
-    {
-      "id": "9a89a6060686573f",
-      "source_id": "aws-ml-blog",
-      "title": "Implement on-behalf-of token exchange for multi-tenant agents with Amazon Bedrock AgentCore Gateway",
-      "url": "https://aws.amazon.com/blogs/machine-learning/implement-on-behalf-of-token-exchange-for-multi-tenant-agents-with-amazon-bedrock-agentcore-gateway/",
-      "published_at": "2026-07-13T17:27:40+00:00",
-      "raw_text": "Building multi-tenant agents with Amazon Bedrock AgentCore and Apply fine-grained access control with Bedrock AgentCore Gateway interceptors establish the conceptual foundation for on-behalf-of (OBO) token exchange in agentic systems. This post is the implementation guide. It walks through a complete multi-tenant OBO setup against Okta, shows the JSON Web Token (JWT) claim transformations on each hop, and demonstrates how audience binding produces defense in depth that scales across tenants.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/06/ML-20860-1.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.6,
-      "reason_zh": "提供了在Amazon Bedrock上实现多租户OBO令牌交换的完整实现指南，对构建安全的多租户Agent系统有直接参考价值。",
-      "summary_zh": "本文是Amazon Bedrock AgentCore Gateway实现多租户代理中OBO令牌交换的实施指南。文章首先介绍了使用Bedrock AgentCore构建多租户代理以及通过AgentCore Gateway拦截器实现细粒度访问控制的概念基础。然后，详细演示了针对Okta的完整多租户OBO设置流程，包括JSON Web Token声明转换的每个步骤。该实现指南为开发者提供了从理论到实践的清晰路径，帮助他们在多租户环境中安全地代理用户身份。",
-      "title_zh": "在Amazon Bedrock AgentCore Gateway中为多租户代理实现OBO令牌交换",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.9
-      },
-      "story_id": "81ac4365020c8bda",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/implement-on-behalf-of-token-exchange-for-multi-tenant-agents-with-amazon-bedrock-agentcore-gateway/"
-        }
-      ]
-    },
-    {
       "id": "797e80b695f704d0",
       "source_id": "zh-tmtpost",
       "title": "十分之一成本的中国模型，正在重塑全球AI版图",
@@ -369,39 +398,6 @@
         {
           "source_id": "zh-tmtpost",
           "url": "https://www.tmtpost.com/8062448.html"
-        }
-      ]
-    },
-    {
-      "id": "c85bf92a4484d739",
-      "source_id": "zh-tmtpost",
-      "title": "6个新趋势，看懂AI竞争正在发生什么",
-      "url": "https://www.tmtpost.com/8063056.html",
-      "published_at": "2026-07-13T10:28:58+00:00",
-      "raw_text": "模型越强，窗口越短。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/asd_a_3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "分析AI竞争六大新趋势，洞察行业变化，对理解市场格局有参考价值。",
-      "summary_zh": "文章指出AI竞争呈现六大新趋势：模型能力越强，应用窗口期越短；开源模型与闭源模型差距缩小；AI应用从通用走向垂直；算力成本下降推动普及；多模态成为标配；AI安全与监管日益重要。这些趋势反映了AI行业从技术突破向商业化落地的转变，企业需快速适应。",
-      "title_zh": "6个新趋势，看懂AI竞争正在发生什么",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "68c80a7ba6c043e0",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8063056.html"
         }
       ]
     }
