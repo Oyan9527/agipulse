@@ -1,6 +1,6 @@
 // 信息流：AGI Hunt 式卡片 —— 顶行(分类+徽章) / 衬线标题 / 英文副题 / 配图 / 摘要 / 底行(来源+时间)。
-import { categoryColor, categoryTextColor } from "../palette.js?v=20260713a";
-import { safeUrl, setSafeHref } from "../safe.js?v=20260713a";
+import { categoryColor, categoryTextColor } from "../palette.js?v=20260715a";
+import { safeUrl, setSafeHref } from "../safe.js?v=20260715a";
 
 const SOURCE_LABELS = {
   "openai-blog": "OpenAI Blog",

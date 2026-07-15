@@ -39,7 +39,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.masthead, .spectrum, .dashboard, .layout, .sitefooter, .social-hot, .gh-trending {
+.masthead, .spectrum, .dashboard, .layout, .sitefooter, .topics, .social-hot, .gh-trending {
   max-width: var(--content-max);
   margin-inline: auto;
   padding-inline: clamp(16px, 4vw, 48px);
@@ -1152,8 +1152,11 @@ a { color: inherit; }
 .feed-card__bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  /* 原先 space-between 把来源推最左、时间推最右，中间空出一大截——看起来像
+     两条不相关的信息，而不是"来源之后紧跟发布时间"。改成靠左紧凑排列，
+     时间前加分隔点，读起来是一句"◈ 来源 · N 天前"。 */
+  justify-content: flex-start;
+  gap: 6px;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--mist);
@@ -1163,13 +1166,22 @@ a { color: inherit; }
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
+  max-width: 65%;  /* 来源名过长时省略号截断，给右边的时间留出稳定空间 */
 }
 .feed-card__source::before {
   content: "◈ ";
   color: var(--copper);  /* 来源标记用铜：与焊盘同材质，标记"接点" */
 }
 
-.feed-card__time { white-space: nowrap; }
+.feed-card__time {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.feed-card__time::before {
+  content: "· ";
+  color: var(--rule-dark);
+}
 
 .feed-card__expand { margin: 0 0 8px; font-size: 0.75rem; color: var(--mist); }
 .feed-card__expand-label { margin: 0 0 4px; }
