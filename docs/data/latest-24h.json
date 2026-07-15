@@ -137,6 +137,40 @@
     "curated": true
   },
   {
+    "id": "221716b1876017a6",
+    "source_id": "gh-llamacpp",
+    "title": "ggerganov/llama.cpp b10016",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10016",
+    "published_at": "2026-07-15T09:10:19+00:00",
+    "raw_text": "<details open>\n\n[SYCL] Flash Attention with XMX engine via oneDNN (#25222)\n\n* [SYCL] F16 (default) Flash Attention with XMX engine via oneDNN graph API; Qwen3.6-27b-Q8_0 prefill speed up x1.21 at p=512 and x4.26 at p=80k\n\n* [SYCL] Address review on FA oneDNN path. Result: llama-bench---pp512; 32% increase with fa1; llama-perplexity---0.11% difference; tested model: mradermacher/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf\n\n* PR-25222 revision v2: addressed audits\n\n* [SYCL] flash-attn oneDNN SDPA KV F16 rev 3.0: add BMG gate + multi-device sync. Narrow the scrope of this PR to Battlemage only (bmg; Xe2). Other archs (e.g., alchemist) fall back to existing FA kernel. When device_count >1, apply stream -> wait_and_throw(), validated working path for multi-gpu sync fix by @maxious.\n\nCo-authored-by: maxious <81432+maxious@users.noreply.github.com>\n\n* updated comment on bmg gate, noted the issue\n\n---------\n\nCo-authored-by: scientist3 <scientist.3@users.noreply.github.com>\nCo-authored-by: hmscider <h",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "llama.cpp新增SYCL Flash Attention支持，大幅提升长序列推理速度，对本地部署大模型有重要实用价值。",
+    "summary_zh": "llama.cpp发布b10016版本，主要更新是通过oneDNN为SYCL后端实现了Flash Attention with XMX引擎。该优化显著提升了长序列的预填充速度：在Qwen3.6-27b-Q8_0模型上，序列长度512时速度提升1.21倍，序列长度80k时速度提升4.26倍。此外，还修复了FA oneDNN路径的问题，在pp512下性能提升32%，perplexity差异仅0.11%。测试模型为mradermacher/Meta-Llama-3.1-8B-I。",
+    "title_zh": "ggerganov/llama.cpp b10016",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "9262f461db2ac77f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-llamacpp",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10016"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "73cb02dfdc3fb85f",
     "source_id": "pytorch-blog",
     "title": "Triton Plugin Extensions: Enabling TLX and Custom Compiler Passes Out of the Box",
@@ -172,70 +206,35 @@
     "curated": true
   },
   {
-    "id": "2cc0275fcceef652",
-    "source_id": "verge-ai",
-    "title": "SpaceXAI&#8217;s Grok programming tool was uploading its users&#8217; entire codebase to cloud storage",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload",
-    "published_at": "2026-07-14T19:25:00+00:00",
-    "raw_text": "SpaceXAI's Grok Build AI coding tool was spotted uploading users' entire codebases to Google Cloud before it was reported, and the company turned it off. The Register reports that Cereblab published findings on Monday showing how the Grok Build CLI was packaging and uploading entire code repositories, \"including files it was told not to open [&#8230;]",
+    "id": "6ef6591df2cc59f3",
+    "source_id": "gh-transformers",
+    "title": "huggingface/transformers v5.14.0",
+    "url": "https://github.com/huggingface/transformers/releases/tag/v5.14.0",
+    "published_at": "2026-07-15T19:02:19+00:00",
+    "raw_text": "# Release v5.14.0\r\n\r\n## New Model additions\r\n\r\n### Inkling (fresh from Thinking Machines): 975B total, 41B active\r\n\r\n* Add Inkling model #47347 by @molbap @Cyrilvallez @eustlb and @zucchini-nlp \r\n\r\n<img width=\"3840\" height=\"2160\" alt=\"image\" src=\"https://github.com/user-attachments/assets/051f819a-512f-4987-9bee-6e2fa2af3db7\" />\r\n\r\n\r\nInkling is a general-purpose multimodal model that accepts text, image and audio inputs and\r\ngenerates text outputs. It is intended for use in English and other languages, and across\r\nmultiple coding languages. The model is designed to be used by developers building AI-\r\npowered applications, including agentic and tool-use systems, coding assistants, chatbots, and\r\nretrieval-augmented generation systems, and is suitable for general-purpose conversational\r\nuse, instruction-following, and other natural language and multimodal tasks. It is released with\r\nopen weights to support research, fine-tuning and integration into third-party products by\r\ndownstream dev",
     "category_hint": [
-      "行业动态",
-      "产品发布"
+      "开源项目"
     ],
-    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/05/STK262_GROK_B_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
     "depth_score": 0.3,
-    "reason_zh": "Grok编程工具被曝上传用户完整代码库至云端，引发隐私安全担忧，开发者需警惕。",
-    "summary_zh": "SpaceXAI的Grok Build AI编程工具被曝在用户不知情的情况下，将整个代码库上传至Google Cloud。Cereblab发布的研究显示，该CLI工具会打包并上传所有文件，包括用户明确指示不要打开的文件。事件曝光后，SpaceXAI已关闭该功能。此事件引发了对AI编程工具隐私安全性的广泛关注。",
-    "title_zh": "SpaceXAI的Grok编程工具被曝将用户完整代码库上传至云存储",
-    "weighted_score": 0.785,
+    "reason_zh": "Transformers v5.14.0新增Inkling模型（975B参数），是Thinking Machines的最新成果，值得关注。",
+    "summary_zh": "Hugging Face Transformers库发布v5.14.0版本，主要新增了Inkling模型（来自Thinking Machines），该模型总参数量975B，激活参数41B，是一个通用多模态模型，可处理文本等多种输入。此外还包括其他改进和修复。",
+    "title_zh": "huggingface/transformers v5.14.0",
+    "weighted_score": 0.79,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
+      "source_authority": 0.9,
+      "novelty": 0.8,
       "impact": 0.8,
       "practical_value": 0.6
     },
-    "story_id": "dc9b65a213192fde",
+    "story_id": "d696f4f4ee3ae4f0",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "verge-ai",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/965600/spacexai-grok-build-repository-upload"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "21d0570696037b90",
-    "source_id": "ars-technica-ai",
-    "title": "Lawsuit claims Meta's layoff decisions were made by AI, not humans",
-    "url": "https://arstechnica.com/tech-policy/2026/07/lawsuit-claims-metas-layoff-decisions-were-made-by-ai-not-humans/",
-    "published_at": "2026-07-14T20:05:53+00:00",
-    "raw_text": "Meta denies using AI to terminate workers with disabilities and medical problems.",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/07/meta-ai-500x500-1784056221.jpg",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "Meta被诉用AI决定裁员，引发AI伦理与劳动法争议，值得关注。",
-    "summary_zh": "一起诉讼指控Meta在裁员决策中使用AI而非人工判断，特别是针对残疾和患病员工。Meta否认这一指控，称其裁员过程符合法律规定。该案件引发了对AI在人力资源管理中的伦理和法律边界的讨论，可能影响未来企业使用AI进行人事决策的合规性。",
-    "title_zh": "诉讼称Meta的裁员决定由AI而非人类做出",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "1f77b7ef48e21940",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "ars-technica-ai",
-        "url": "https://arstechnica.com/tech-policy/2026/07/lawsuit-claims-metas-layoff-decisions-were-made-by-ai-not-humans/"
+        "source_id": "gh-transformers",
+        "url": "https://github.com/huggingface/transformers/releases/tag/v5.14.0"
       }
     ],
     "curated": true
@@ -246,7 +245,7 @@
     "title": "Apple Intelligence approved for launch in China with Alibaba’s Qwen AI",
     "url": "https://techcrunch.com/2026/07/15/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/",
     "published_at": "2026-07-15T15:29:33+00:00",
-    "raw_text": "Apple Intelligence is headed to China after regulators approved Apple’s AI services through a partnership with Alibaba. The long-rumored deal will bring Alibaba’s Qwen AI models to Apple’s operating systems, marking a major expansion of the company’s generative AI platform into one of its most important markets.",
+    "raw_text": "The deal, which was rumored to be in the works last year, marks an important step for Apple's AI ambitions in a key market.",
     "category_hint": [
       "行业动态",
       "产品发布"
@@ -271,6 +270,41 @@
       {
         "source_id": "techcrunch-ai",
         "url": "https://techcrunch.com/2026/07/15/apple-intelligence-approved-for-launch-in-china-with-alibabas-qwen-ai/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "d2d8290ab4cbd8db",
+    "source_id": "together-blog",
+    "title": "Together AI brings Thinking Machines Lab’s new model Inkling on day 0",
+    "url": "https://www.together.ai/blog/together-ai-brings-thinking-machines-labs-new-model-inkling-on-day-0",
+    "published_at": "2026-07-15T00:00:00+00:00",
+    "raw_text": "",
+    "category_hint": [
+      "产品发布",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Together AI在发布首日即支持Inkling模型，体现快速集成能力，对开发者有实用价值。",
+    "summary_zh": "Together AI宣布在Thinking Machines Lab发布新模型Inkling的当天（Day 0）即提供该模型的支持。这意味着用户可以在Together AI平台上立即使用Inkling模型进行推理或微调。Together AI强调其平台对新模型的快速集成能力，旨在为开发者提供最新的AI能力。",
+    "title_zh": "Together AI 在发布首日即支持 Thinking Machines Lab 的新模型 Inkling",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "ed20036d3e2f2512",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "together-blog",
+        "url": "https://www.together.ai/blog/together-ai-brings-thinking-machines-labs-new-model-inkling-on-day-0"
       }
     ],
     "curated": true
@@ -386,40 +420,6 @@
     "curated": true
   },
   {
-    "id": "bccf5fc4a67e9ca4",
-    "source_id": "gh-llamacpp",
-    "title": "ggerganov/llama.cpp b10015",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10015",
-    "published_at": "2026-07-15T03:24:21+00:00",
-    "raw_text": "<details open>\n\nopencl: do not use `clCreateBufferWithProperties` when targeting CL 2.x (#25673)\n\n</details>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10015/llama-b10015-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10015/llama-b10015-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10015/llama-b10015-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10015/llama-b10015-bin-ubuntu-x64.tar.gz)\n- [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10015/llama-b10015-bin-ubuntu-arm64.tar.gz)\n- [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10015/llama-b10015-bin-ubuntu-s390x.tar.gz)\n- [Ubuntu x64 (Vulkan",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "llama.cpp新版本发布，修复OpenCL兼容性问题，对本地部署LLM的用户有直接实用价值。",
-    "summary_zh": "llama.cpp发布b10015版本，主要修复了在OpenCL 2.x环境下使用clCreateBufferWithProperties函数的问题。该版本提供了macOS Apple Silicon (arm64)、macOS Intel (x64)等平台的二进制文件下载。此外，KleidiAI加速版本因某些原因被禁用。此次更新提升了跨平台兼容性和稳定性。",
-    "title_zh": "ggerganov/llama.cpp b10015 发布",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "077115c407a62fd6",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-llamacpp",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10015"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "a98043d4d2a9aed2",
     "source_id": "gh-comfyui",
     "title": "comfyanonymous/ComfyUI v0.28.0",
@@ -489,41 +489,6 @@
     "curated": true
   },
   {
-    "id": "55d9a24a02c94153",
-    "source_id": "google-cloud-ai",
-    "title": "Why AI apps fail in production (And how Google solved it)",
-    "url": "https://cloud.google.com/blog/topics/developers-practitioners/why-ai-apps-fail-in-production/",
-    "published_at": "2026-07-15T16:00:00+00:00",
-    "raw_text": "<div class=\"block-video\">\n\n\n\n<div class=\"article-module article-video \">\n  <figure>\n    <a class=\"h-c-video h-c-video--marquee\" href=\"https://youtube.com/watch?v=IYnUpJi7zjY\">\n\n      \n        \n\n        <div class=\"article-video__aspect-image\">\n          <span class=\"h-u-visually-hidden\">Why AI apps fail in production (and how Google solved it)</span>\n        </div>\n      \n      <svg class=\"h-c-video__play h-c-icon h-c-icon--color-white\" xmlns=\"http://www.w3.org/2000/svg\">\n        <use xlink:href=\"#mi-youtube-icon\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"></use>\n      </svg>\n    </a>\n\n    \n  </figure>\n</div>\n\n<div class=\"h-c-modal--video\">\n   <a class=\"glue-yt-video\" href=\"https://youtube.com/watch?v=IYnUpJi7zjY\">\n   </a>\n</div>\n\n</div>\n<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">We are living in the golden age of the weekend AI side project. Thanks to agentic engineering and LLMs, the time to go from a blank IDE to a functional local application h",
-    "category_hint": [
-      "产品发布",
-      "技巧与观点"
-    ],
-    "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/1_Gemini_Generated_Image.max-1000x1000.jpg",
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "Google官方分享AI应用落地实战经验，揭示生产环境常见陷阱与解决方案，对工程团队极具参考价值。",
-    "summary_zh": "本文来自Google Cloud AI，探讨AI应用在生产环境中失败的原因及Google的解决之道。文章指出，许多AI项目在原型阶段表现良好，但部署到生产环境后却因数据漂移、模型退化、延迟要求、可解释性不足等问题而失败。Google通过建立MLOps实践，包括持续监控、自动回滚、特征存储、模型版本管理以及使用Vertex AI等平台工具，有效提升了AI应用的稳定性和可靠性。文章还强调了数据质量的重要性，并介绍了Google在模型评估和可解释性方面的最佳实践。",
-    "title_zh": "为什么AI应用在生产中失败（以及Google如何解决）",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.9
-    },
-    "story_id": "ef410d0ffdbc6848",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "google-cloud-ai",
-        "url": "https://cloud.google.com/blog/topics/developers-practitioners/why-ai-apps-fail-in-production/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "741e19cfb5c38e2d",
     "source_id": "techcrunch-ai",
     "title": "OpenAI’s new flagship model deletes files on its own, people keep warning",
@@ -554,41 +519,6 @@
       {
         "source_id": "techcrunch-ai",
         "url": "https://techcrunch.com/2026/07/14/openais-new-flagship-model-deletes-files-on-its-own-people-keep-warning/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "77d490ebaf47c44c",
-    "source_id": "github-changelog",
-    "title": "Code scanning shows AI security detections on pull requests",
-    "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests",
-    "published_at": "2026-07-14T19:12:48+00:00",
-    "raw_text": "<p>GitHub code scanning now surfaces AI-powered security detections directly on pull requests, expanding vulnerability coverage to languages and frameworks not currently supported by CodeQL. These detections help teams identify and&#8230;</p>\n<p>The post <a href=\"https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests\">Code scanning shows AI security detections on pull requests</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
-    "category_hint": [
-      "产品发布",
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "GitHub推出AI安全检测直接集成到PR流程，提升代码安全效率，开发者应关注。",
-    "summary_zh": "GitHub代码扫描功能现在可以直接在拉取请求（PR）上显示AI驱动的安全检测结果，扩展了对CodeQL当前不支持的语言和框架的漏洞覆盖。这一更新帮助团队在代码合并前更早发现并修复安全问题，提升了开发流程的安全性。",
-    "title_zh": "代码扫描在拉取请求上显示AI安全检测",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "d7ed62f0405faca0",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "github-changelog",
-        "url": "https://github.blog/changelog/2026-07-14-code-scanning-shows-ai-security-detections-on-pull-requests"
       }
     ],
     "curated": true
@@ -731,41 +661,6 @@
     "curated": true
   },
   {
-    "id": "3ebcd8a805f34a6a",
-    "source_id": "techcrunch-ai",
-    "title": "DeepMind CEO calls for an independent standards body to regulate frontier AI",
-    "url": "https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/",
-    "published_at": "2026-07-14T17:45:55+00:00",
-    "raw_text": "DeepMind CEO Demis Hassabis is proposing an AI \"standards body\" modeled after FINRA, to test frontier models and develop best practices for their release.",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.5,
-    "reason_zh": "DeepMind CEO提议建立类似FINRA的AI标准机构，影响前沿模型监管方向。",
-    "summary_zh": "DeepMind CEO Demis Hassabis提议建立一个独立的AI标准机构，类似于金融业监管局FINRA，负责测试前沿模型并制定发布最佳实践。该提议旨在为AI行业建立统一的监管框架，确保安全与责任。",
-    "title_zh": "DeepMind CEO呼吁建立独立标准机构来监管前沿AI",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.4
-    },
-    "story_id": "87d7d0205609c416",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/07/14/deepmind-ceo-calls-for-an-independent-standards-body-to-regulate-frontier-ai/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "afbafcd55a2d5f7c",
     "source_id": "infoq-cn-ai",
     "title": "当编码不再是瓶颈：跨越 Coding Agent 规模化后的流程与成本双困局｜AICon深圳",
@@ -836,6 +731,111 @@
     "curated": true
   },
   {
+    "id": "10c6f2bd0dfe7f18",
+    "source_id": "mit-tech-review-ai",
+    "title": "Meet GPT-Red: an LLM super-hacker OpenAI built to make its models safer",
+    "url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/",
+    "published_at": "2026-07-15T17:09:37+00:00",
+    "raw_text": "OpenAI has built an LLM super-hacker called GPT-Red that it uses as a sparring partner to help its other models boost their defenses against cyberattacks. Last week the company released the latest version of its flagship LLM, GPT-5.6. OpenAI says that training it against GPT-Red made the model its most robust release yet. GPT-Red automates&#8230;",
+    "category_hint": [
+      "行业动态",
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "OpenAI用GPT-Red作为红队伙伴训练GPT-5.6，提升模型安全性，是AI安全领域的重要进展。",
+    "summary_zh": "OpenAI开发了一个名为GPT-Red的LLM超级黑客，用作其模型的陪练伙伴，帮助提升防御网络攻击的能力。上周发布的GPT-5.6是迄今为止最稳健的版本，正是通过与GPT-Red对抗训练实现的。GPT-Red能够自动化红队测试，模拟攻击行为，从而暴露模型漏洞并促使改进。",
+    "title_zh": "认识GPT-Red：OpenAI为提升模型安全性而构建的LLM超级黑客",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.4
+    },
+    "story_id": "e21f7ca33a603a40",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "mit-tech-review-ai",
+        "url": "https://www.technologyreview.com/2026/07/15/1140514/meet-gpt-red-an-llm-super-hacker-openai-built-to-make-its-models-safer/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "53e3149d2cc17d3e",
+    "source_id": "huggingface-blog",
+    "title": "What building Shippy taught us about building agents",
+    "url": "https://huggingface.co/blog/allenai/shippy-tech-blog",
+    "published_at": "2026-07-15T17:29:41+00:00",
+    "raw_text": "",
+    "category_hint": [
+      "开源项目",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "通过构建Shippy的实战经验，总结构建AI Agent的教训与最佳实践，对开发者极具价值。",
+    "summary_zh": "本文分享了团队在构建名为Shippy的AI Agent过程中的经验教训。核心发现包括：Agent的可靠性远比功能丰富更重要；需要精心设计状态管理和错误恢复机制；上下文窗口管理是关键瓶颈；工具调用需要严格的验证和回退策略。作者还讨论了如何平衡自主性与可控性，以及如何通过迭代式反馈改进Agent行为。这些实战经验为构建生产级Agent提供了宝贵参考。",
+    "title_zh": "构建Shippy教会了我们什么：关于构建Agent的经验",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "e7e2070c94a24ec7",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "huggingface-blog",
+        "url": "https://huggingface.co/blog/allenai/shippy-tech-blog"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "f8bec47bee6c00a0",
+    "source_id": "verge-ai",
+    "title": "Suno snatched millions of songs from YouTube, Genius, and Deezer",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/966072/suno-ai-music-training-scraping-youtube-hack",
+    "published_at": "2026-07-15T17:48:01+00:00",
+    "raw_text": "Suno data obtained in a hacking incident has exposed that the AI music generator was trained by scraping millions of songs and lyrics from online audio platforms, including YouTube Music, Deezer, and Genius, 404 Media reports. Given that Suno has avoided revealing what's in its training datasets and how they were acquired, this a rare [&#8230;]",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25383554/STK467_AI_MUSIC_CVirginia_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "Suno训练数据来源曝光，涉及从YouTube等平台抓取数百万歌曲，引发版权争议。",
+    "summary_zh": "据404 Media报道，在一次黑客事件中泄露的数据显示，AI音乐生成公司Suno的训练数据集包含从YouTube Music、Deezer和Genius等平台抓取的数百万首歌曲和歌词。Suno此前一直未公开其训练数据的来源和获取方式，此次泄露罕见地揭示了其数据采集行为，可能引发严重的版权法律问题。",
+    "title_zh": "Suno从YouTube、Genius和Deezer抓取了数百万首歌曲",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "9b799250eee77f5e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/966072/suno-ai-music-training-scraping-youtube-hack"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "84777b05d9b25937",
     "source_id": "verge-ai",
     "title": "OpenAI finally launches hardware… for Codex",
@@ -866,6 +866,79 @@
       {
         "source_id": "verge-ai",
         "url": "https://www.theverge.com/ai-artificial-intelligence/965901/openai-hardware-codex-micro-launch"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "55349da04a7ceed2",
+    "source_id": "mit-news-ai",
+    "title": "3 Questions: Neural transparency and the future of AI design",
+    "url": "https://news.mit.edu/2026/3-questions-neural-transparency-and-future-of-ai-design-0715",
+    "published_at": "2026-07-15T20:25:00+00:00",
+    "raw_text": "Assistant Professor Pat Pataranutaporn describes a new interface that lets everyday users glimpse inside an AI's neural network before their chatbot ever says a word.",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "image_url": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202607/mit-medialab-pataranutaporn.jpg?itok=i96QeKNW",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "MIT助理教授介绍神经透明度接口，让用户窥见AI神经网络内部，具有启发性。",
+    "summary_zh": "MIT助理教授Pat Pataranutaporn描述了一种新接口，允许普通用户在聊天机器人回复前窥视AI的神经网络内部。该研究旨在提高AI的透明度和可解释性，让用户了解模型决策过程。文章介绍了这一概念及其潜在影响，但未提供具体技术实现细节。",
+    "title_zh": "三个问题：神经透明度与AI设计的未来",
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "b8002c1261b7f4bd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "mit-news-ai",
+        "url": "https://news.mit.edu/2026/3-questions-neural-transparency-and-future-of-ai-design-0715"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "9c9517b39ca0cda7",
+    "source_id": "zh-oschina",
+    "title": "iPhone 可运行的本地 AI 模型 Bonsai 27B 上线",
+    "url": "https://www.oschina.net/news/471737",
+    "published_at": "2026-07-15T06:47:54+00:00",
+    "raw_text": "AI 初创公司 PrismML 宣布推出了一个基于 Qwen3.6 的多模态模型 Bonsai 27B。声称在保留 90% 智能的情况下，可以在 12GB 内存的 iPhone 17 Pro 本地运行。 根据介绍，Bonsai27B 提供了两种版本：3-bit 变体和1-bit 变体。3-bit 版本采用三进制权重，大小为 5.9 GB，专为注重性能的用户设计，可以在普通笔记本电脑上运行。...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Bonsai 27B模型可在iPhone本地运行，对移动端AI部署有重要意义。",
+    "summary_zh": "AI初创公司PrismML推出基于Qwen3.6的多模态模型Bonsai 27B，声称在保留90%智能的情况下，可在12GB内存的iPhone 17 Pro本地运行。提供3-bit和1-bit两种版本：3-bit版本采用三进制权重，大小为5.9GB，适合笔记本电脑；1-bit版本更小。该模型有望推动端侧AI应用。",
+    "title_zh": null,
+    "weighted_score": 0.615,
+    "score_breakdown": {
+      "source_authority": 0.5,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "3593c4f17d84fb12",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1uwfz7r/prismml_is_announcing_bonsai_27b_the_first/"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/471737"
       }
     ],
     "curated": true
