@@ -1,80 +1,47 @@
 {
   "date": "2026-07-15",
-  "generated_at": "2026-07-15T01:51:51.366475+00:00",
+  "generated_at": "2026-07-15T06:17:58.936612+00:00",
   "items": [
     {
-      "id": "949e8a92fd92355b",
+      "id": "cb471305d1ccae79",
       "source_id": "arxiv-cs-ai",
-      "title": "Length Penalties Make Chain-of-Thought Less Monitorable",
-      "url": "https://arxiv.org/abs/2607.09786",
-      "published_at": "2026-07-14T04:00:00+00:00",
-      "raw_text": "arXiv:2607.09786v1 Announce Type: new \nAbstract: Length-penalized reinforcement learning can shorten chain-of-thought reasoning while hiding an influence that drives the model's answer. In our experiments, training with length penalties does not stop misleading hints from steering models, even though the models' chains of thought mention the hint much less often. A token-accuracy evaluation would count these runs as successful because they use fewer reasoning tokens with little accuracy loss; it would miss whether the remaining trace still shows what drove the answer. We train Qwen3-4B and Qwen3-14B variants with different target chain lengths, then evaluate them with biasing-hint interventions on held-out MMLU-Pro-R and four transfer benchmarks. Compression sharply cuts reasoning tokens, preserves most multiple-choice accuracy, and leaves hint influence near baseline. At the strongest target, lower-bound faithfulness falls to 63.1% of baseline for Qwen3-14B and 69.4% for Qwen3-4B; the",
+      "title": "Optimization Is Not All You Need",
+      "url": "https://arxiv.org/abs/2607.11977",
+      "published_at": "2026-07-15T04:00:00+00:00",
+      "raw_text": "arXiv:2607.11977v1 Announce Type: new \nAbstract: In 2019, OpenAI released two million GPT-2 outputs-ungrammatical, half broken-to aid the detection of machine-generated text. The alignment that produced their more fluent successors is usually regarded as an engineering achievement; we read it instead as the newest expression of optimization culture: the conviction, older than the technology, that measurable improvement along predefined axes exhausts the question of value. Tracing that conviction through the stack-pretraining, decoding, preference tuning, benchmarking, interface-and back through its genealogy in the audit society, we arrive at the limit: an optimization procedure can measure how improbable a piece of generated text is; it cannot tell whether that unlikelihood is error or invention. A procedure that cannot make that distinction has nonetheless, within half a decade, assumed the authority to set the protocols of legitimate language. Held for centuries by academies and sch",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "观点评论",
       "depth_score": 0.9,
-      "reason_zh": "揭示长度惩罚强化学习会隐藏思维链中的误导信息，对AI安全监控有重要警示。",
-      "summary_zh": "本文发现，使用长度惩罚的强化学习虽然能缩短思维链推理过程，但同时会隐藏影响模型答案的误导信息。实验表明，即使模型在思维链中很少提及误导提示，长度惩罚训练并未阻止这些提示对模型答案的操纵。传统的token准确率评估无法检测到这种隐藏影响，因此作者呼吁在评估模型安全性时需采用更全面的方法。该研究对AI对齐和安全监控具有重要启示。",
-      "title_zh": "长度惩罚使思维链更难以监控",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "de62ed354cb0c29f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.09786"
-        }
-      ]
-    },
-    {
-      "id": "773f9877f049e69d",
-      "source_id": "arxiv-cs-ai",
-      "title": "SPARK: Susceptibility-Guided Profiling and Steering of Latent Reasoning States in Large Language Models",
-      "url": "https://arxiv.org/abs/2607.10296",
-      "published_at": "2026-07-14T04:00:00+00:00",
-      "raw_text": "arXiv:2607.10296v1 Announce Type: new \nAbstract: Reasoning failures in large language models (LLMs) are usually evaluated from final answers, but a wrong answer does not reveal why the model failed. The same incorrect output may reflect missing capability, an unstable reasoning trajectory, or a failure to activate a reasoning state that is already available in the frozen model. Existing prompting and benchmark-based evaluation methods mostly operate at the output level, while generic activation-steering methods typically apply global directions without diagnosing which examples require intervention. In this paper, we introduce SPARK, which uses hidden-state response to diagnose whether a model internally enters an effective reasoning state and to guide lightweight test-time steering. The key observation is that raw hidden-state susceptibility is strongly confounded by prompt length, especially in programmatic and algorithmic reasoning where harder serialized instances naturally become ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出可解释性方法，从内部状态诊断LLM推理失败原因，超越仅看最终答案。",
-      "summary_zh": "论文指出，LLM的推理失败通常仅从最终答案评估，但错误答案无法揭示失败原因。相同的错误输出可能反映能力缺失、推理轨迹不稳定或未能激活已有推理状态。作者提出SPARK框架，通过敏感性引导的剖析和引导，识别和调整LLM的潜在推理状态，从而诊断并改善推理失败。",
-      "title_zh": "SPARK：大型语言模型潜在推理状态的敏感性引导剖析与引导",
-      "weighted_score": 0.79,
+      "reason_zh": "批判优化文化，从哲学角度反思AI对齐，观点新颖深刻，启发对技术本质的思考。",
+      "summary_zh": "本文从哲学角度批判了AI领域盛行的“优化文化”。作者以OpenAI 2019年发布的GPT-2输出（语法不完整、半成品）为引，指出这些输出本用于检测机器生成文本，但后续的对齐工作通常被视为工程成就。作者认为，对齐实际上是优化文化的最新表现——一种比技术更古老的信念，即一切问题都可以通过优化目标函数来解决。文章论证了这种文化的局限性，并呼吁重新审视AI发展的目标，不应仅仅追求性能指标，而应考虑更广泛的社会和伦理影响。",
+      "title_zh": "优化并非万能",
+      "weighted_score": 0.815,
       "score_breakdown": {
         "source_authority": 0.9,
         "novelty": 0.9,
-        "impact": 0.7,
+        "impact": 0.8,
         "practical_value": 0.6
       },
-      "story_id": "530c84d7eb1ebdf8",
+      "story_id": "bd964f501f37ebdf",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.10296"
+          "url": "https://arxiv.org/abs/2607.11977"
         }
       ]
     },
     {
-      "id": "12d1a2381abc2c6d",
+      "id": "109a6e0bb1667834",
       "source_id": "arxiv-cs-ai",
-      "title": "When Are Sparse Feature Interventions Actually Localized? Matched Evaluation for SAE-Based Safety Control",
-      "url": "https://arxiv.org/abs/2607.10226",
-      "published_at": "2026-07-14T04:00:00+00:00",
-      "raw_text": "arXiv:2607.10226v1 Announce Type: new \nAbstract: We evaluate when sparse autoencoder (SAE) features act as localized control handles for safety-relevant behavior. This question is difficult because apparent success can arise from weak interventions, mismatched baselines, model robustness, or degenerate outputs that automated safety judges mark as unsafe without representing meaningful harmful compliance. We introduce a matched coherence-gated evaluation protocol for runtime safety interventions: methods are compared at matched target-effect points, and the primary target metric counts harmful compliance only when an output is both judge-unsafe and coherent. Applying this protocol to three prompt splits on Gemma-2-9B-it with a Gemma Scope layer-20 residual SAE, we find that SAE feature ablation has a narrow useful regime. SAE top800 reaches a low-to-mid target effect with lower total perturbation and competitive utility, but SAE top1600 loses utility relative to a matched dense refusal-",
+      "title": "From Observation to Insight: Mechanistic World Models and the Quest for Autonomous Discovery",
+      "url": "https://arxiv.org/abs/2607.12474",
+      "published_at": "2026-07-15T04:00:00+00:00",
+      "raw_text": "arXiv:2607.12474v1 Announce Type: new \nAbstract: Recent advances in foundation models have transformed AI for Science, enabling remarkably accurate predictive performance across domains ranging from protein folding to weather forecasting. Yet prediction alone does not constitute scientific discovery. Scientific understanding depends on uncovering the reusable explanatory mechanisms that generate observations, whereas contemporary machine learning remains fundamentally organised around predictive mappings rather than explanatory structure. In this paper, we argue that scientific discovery is fundamentally a problem of knowledge organisation. To this end, we introduce Mechanistic World Models, a new design paradigm that places reusable mechanisms at the centre of representation, computation and learning. Drawing on insights from the philosophy of science, we derive the computational capabilities required for discovery, identify the design principles and inductive pressures that encourage",
       "category_hint": [
         "论文研究"
       ],
@@ -82,55 +49,22 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "严谨评估SAE特征的可定位性，揭示弱干预和基线不匹配导致的假阳性，对可解释性研究有重要警示。",
-      "summary_zh": "本文严格评估稀疏自编码器（SAE）特征是否真正作为局部化控制手柄用于安全相关行为。作者指出，表面上的成功可能源于弱干预、不匹配的基线、模型鲁棒性或退化输出。通过设计匹配的评估协议，包括控制干预强度、使用适当基线、检测模型鲁棒性和输出退化，实验发现许多SAE特征并不具备真正的局部控制能力，为可解释性研究提供了重要方法论指导。",
-      "title_zh": "稀疏特征干预何时真正局部化？基于匹配评估的SAE安全控制研究",
-      "weighted_score": 0.755,
+      "reason_zh": "提出机械论世界模型概念，探讨AI自主科学发现，思想深刻，对AI for Science有启发性。",
+      "summary_zh": "本文提出从观察到洞察：机械论世界模型与自主发现探索。近期基础模型在AI for Science领域取得了显著进展，在蛋白质折叠、天气预报等领域实现了高精度预测。然而，预测本身并不构成科学发现。科学理解依赖于揭示产生观测结果的可重用解释机制。本文提出机械论世界模型的概念，旨在使AI能够自主发现这些机制，从而推动真正的科学发现。",
+      "title_zh": "从观察到洞察：机械论世界模型与自主发现探索",
+      "weighted_score": 0.715,
       "score_breakdown": {
         "source_authority": 0.8,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.7
+        "practical_value": 0.5
       },
-      "story_id": "33e6e3fb0d1cbf07",
+      "story_id": "b66ec1c899f2c5d6",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.10226"
-        }
-      ]
-    },
-    {
-      "id": "83da4ddb3341e4cf",
-      "source_id": "arxiv-cs-ai",
-      "title": "Interpreting Latent CoT Reasoning as Dynamical Systems",
-      "url": "https://arxiv.org/abs/2607.09698",
-      "published_at": "2026-07-14T04:00:00+00:00",
-      "raw_text": "arXiv:2607.09698v1 Announce Type: new \nAbstract: Recent latent reasoning methods, such as CODI and COCONUT, face a fundamental interpretability problem: they maintain multiple superimposed candidate traces in the hidden space at each step, unlike explicit- CoT, which follows a single transparent reasoning trace. Existing mechanistic methods show compression, shortcuts, and superposition without explaining how reasoning evolves across latent steps. To address this gap, we model latent token sequences as trajectories in representation space and apply dynamical systems analysis to characterize the evolution of reasoning. Using quantitative measures, such as step-to-step change, direction consistency, and Lyapunov sensitivity, alongside qualitative projections, such as UMAP and DMD/PHATE, we show that latent CoT exhibits structured, non-random dynamics with two distinct stability classes. CODI behaves as a stable attractor, while COCONUT behaves as an unstable expanding system, and SIM-CoT",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "将潜在CoT推理解释为动力系统，揭示隐藏空间中的叠加轨迹，理论深度高。",
-      "summary_zh": "本文针对潜在推理方法（如CODI、COCONUT）的可解释性问题，提出将其视为动力系统进行分析。这些方法在隐藏空间中维护多个叠加的候选推理轨迹，不同于显式CoT的单一透明轨迹。现有机制解释方法仅显示压缩、捷径和叠加现象，而未解释推理过程。本文通过动力系统视角，揭示了潜在推理的动态演化规律，为理解LLM内部推理机制提供了新框架。",
-      "title_zh": "将潜在思维链推理解释为动力系统",
-      "weighted_score": 0.67,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.4
-      },
-      "story_id": "bd46d84d3c987b92",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.09698"
+          "url": "https://arxiv.org/abs/2607.12474"
         }
       ]
     },
@@ -169,6 +103,39 @@
       ]
     },
     {
+      "id": "7d2e496f56348728",
+      "source_id": "arxiv-cs-ai",
+      "title": "GRID: Grammar-Railed Decoding for Enterprise SQL Generation",
+      "url": "https://arxiv.org/abs/2607.11951",
+      "published_at": "2026-07-15T04:00:00+00:00",
+      "raw_text": "arXiv:2607.11951v1 Announce Type: new \nAbstract: Large language models can write SQL, but enterprise deployment demands more than plausible text: outputs must be syntactically valid, must respect per-role and per-schema policy, must carry provable (not best-effort) guarantees, must not slow down as generations grow, and must leave a compliance-grade record of every decision. We present GRID (Grammar-Railed Decoding), a grammar-constrained decoding engine that keys exact next-token masks on parser configurations (lexer scan state x LALR(1) stack) rather than on token sequences, and uses the incrementally advanced LALR(1) parser itself as a viable-prefix oracle. LLM tokens are bridged to grammar terminals by a byte-level trie walk with a context-independent/context-dependent split that makes cache-key soundness hold by construction. Role-based access control is compiled into the language: role projections subset the grammar's productions and schema lexicons restrict identifier terminals,",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出GRID框架，用语法约束解码保证企业级SQL生成的正确性、安全性和可审计性，实用性强。",
+      "summary_zh": "本文提出GRID（Grammar-Railed Decoding）框架，用于企业级SQL生成。GRID通过语法约束解码，确保LLM生成的SQL语句在语法上有效、符合角色和模式策略、提供可证明的保证（而非最佳努力），并且随着生成长度增加不会变慢，同时保留每个决策的合规记录。GRID将SQL语法和策略编码为形式化约束，在解码过程中实时检查，拒绝无效输出。实验表明，GRID在保持高准确率的同时，显著提高了生成SQL的合规性和安全性。该框架特别适用于金融、医疗等对数据安全要求严格的场景。",
+      "title_zh": "GRID：面向企业SQL生成的语法约束解码",
+      "weighted_score": 0.805,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "c403a637718474ba",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.11951"
+        }
+      ]
+    },
+    {
       "id": "9d505511d20e714c",
       "source_id": "infoq-cn-ai",
       "title": "用 Claude 重写 SQL 解析器，性能暴涨 70 倍：程序员做的不是写代码，而是搭建验证闭环",
@@ -203,136 +170,136 @@
       ]
     },
     {
-      "id": "8fcdb845c442a336",
-      "source_id": "zh-juejin",
-      "title": "为什么 MCP、Skill、RAG 能工作？从 Conversation Loop 看现代 Agent 的底层架构",
-      "url": "https://juejin.cn/post/7662248570926743587",
-      "published_at": "2026-07-14T17:33:28+00:00",
-      "raw_text": "这篇文章探讨了现代智能代理(Agent)的核心架构和工作原理。作者从对话循环(Conversation Loop)的角度，系统性地解释了MCP、Skill和RAG等技术如何协同工作。文章要点如下： C",
+      "id": "aa5c3a854e4c32f0",
+      "source_id": "arxiv-cs-ai",
+      "title": "In-Context Reinforcement Learning under Non-Stationarity: A Survey",
+      "url": "https://arxiv.org/abs/2607.11906",
+      "published_at": "2026-07-15T04:00:00+00:00",
+      "raw_text": "arXiv:2607.11906v1 Announce Type: new \nAbstract: The development of decision-pretrained transformers, algorithm distillation, long-context meta-RL, and retrieval-augmented agents has renewed interest in in-context reinforcement learning (ICRL): the ability of a pretrained or fine-tuned decision model to infer latent task rules and improve future behavior from interaction context, without test-time parameter updates. This line of work asks when trial-and-error evidence, rewards, transitions, demonstrations, feedback, or retrieved experience can make learning-like computation happen inside the context window. However, existing surveys of ICRL mainly organize the field around pretraining objectives, architectures, context formats, evaluation protocols, and theoretical mechanisms, while the non-stationary setting remains comparatively underexamined. In changing environments, accumulated context is not merely more evidence about a fixed task: the reward specification, transition kernel, obs",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "从对话循环角度系统解析MCP、Skill、RAG的协同原理，对理解Agent架构有深度启发。",
-      "summary_zh": "本文从对话循环（Conversation Loop）的视角，深入剖析了现代智能代理（Agent）的底层架构。作者系统性地解释了MCP（模型上下文协议）、Skill（技能）和RAG（检索增强生成）等技术如何协同工作，共同构成Agent的核心能力。文章详细阐述了这些组件在对话循环中的角色和交互机制，帮助读者理解Agent如何通过上下文管理、技能调用和知识检索来实现复杂任务。内容具有较高的技术深度和启发性。",
-      "title_zh": null,
-      "weighted_score": 0.635,
+      "reason_zh": "综述非平稳环境下的上下文强化学习，系统梳理最新进展，对RL和决策预训练研究者有重要参考。",
+      "summary_zh": "这篇综述论文系统回顾了非平稳环境下上下文强化学习（ICRL）的最新进展。ICRL指预训练或微调后的决策模型能够从交互上下文中推断潜在任务规则并改进未来行为，而无需在测试时更新参数。论文涵盖了决策预训练Transformer、算法蒸馏、长上下文元强化学习、检索增强智能体等关键方法。作者分析了非平稳性带来的挑战（如任务分布偏移、奖励变化），并比较了不同方法的鲁棒性。此外，论文还讨论了ICRL在机器人、推荐系统等领域的应用前景，以及未来研究方向，如结合在线适应和离线预训练。",
+      "title_zh": "非平稳环境下的上下文强化学习：综述",
+      "weighted_score": 0.765,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
       },
-      "story_id": "302f074a9acf7b41",
+      "story_id": "7f73373a6256e701",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7662248570926743587"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.11906"
         }
       ]
     },
     {
-      "id": "51c46c3b3350def8",
-      "source_id": "36kr",
-      "title": "韩国AI股票频频暴涨急跌，凸显杠杆过度扩张的威力",
-      "url": "https://36kr.com/newsflashes/3896174271104642?f=rss",
-      "published_at": "2026-07-15T00:55:20+00:00",
-      "raw_text": "韩国AI驱动的股市繁荣正在变成一个警示故事：当杠杆成为比基本面更强大的市场力量时会发生什么。SK海力士周一创纪录暴跌15%，迫使与韩国芯片制造商挂钩的杠杆产品经理抛售数十亿美元股票，从最初全球重新评估AI估值演变成为一场市场大跌。这波抛售助推韩国Kospi指数在短短三周内下跌25%，暴露出保证金贷款、单只杠杆交易所交易基金（ETF）和集中的指数权重如何相互影响，放大市场的双向波动。在首尔之外，全球其他地区也越来越关注这些动态。韩国处于人工智能硬件供应链的中心，SK海力士和三星电子在Kospi指数中所占权重超过一半。现在SK海力士通过美国存托凭证可以在美国市场进行交易，投资者表示，市场情绪可能全天候在华尔街和亚洲之间波动，这增加了韩国杠杆引发的市场波动蔓延至全球的风险。（新浪财经）",
+      "id": "afbafcd55a2d5f7c",
+      "source_id": "infoq-cn-ai",
+      "title": "当编码不再是瓶颈：跨越 Coding Agent 规模化后的流程与成本双困局｜AICon深圳",
+      "url": "https://www.infoq.cn/article/1JIiNLEgyJ2UEPwS825r?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-15T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/1JIiNLEgyJ2UEPwS825r?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "行业动态"
+        "行业动态",
+        "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
+      "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深度剖析韩国AI股暴涨急跌背后的杠杆风险，揭示市场波动传导机制，有启发性。",
-      "summary_zh": "文章分析韩国AI股票近期暴涨急跌现象，指出杠杆过度扩张是主因。SK海力士创纪录暴跌15%，迫使杠杆产品经理抛售数十亿美元股票，引发Kospi指数三周内下跌25%。文章揭示了保证金贷款、单只杠杆ETF和集中指数权重如何相互影响放大波动。SK海力士和三星电子在Kospi指数中权重超一半，且SK海力士通过ADR可在美国交易，导致市场情绪全天候跨市场波动，增加了全球风险蔓延的可能。",
-      "title_zh": "韩国AI股票频频暴涨急跌，凸显杠杆过度扩张的威力",
-      "weighted_score": 0.715,
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析Coding Agent规模化后的流程与成本困境，提供实战经验与解决方案，对工程团队极具参考价值。",
+      "summary_zh": "本文探讨了Coding Agent在规模化应用后遇到的流程与成本双重困局。作者指出，当编码不再是瓶颈时，如何高效管理Agent的协作流程、控制推理成本成为关键挑战。文章分析了当前主流方案（如多Agent编排、上下文工程）的优劣，并提出了跨越困局的策略：包括优化Agent间的通信协议、引入成本感知的调度机制、以及建立可复用的Agent模板库。通过实际案例，展示了如何在保证代码质量的同时降低运营成本。最后，作者展望了未来Agent开发平台的发展方向，强调流程自动化与成本透明化的重要性。",
+      "title_zh": null,
+      "weighted_score": 0.725,
       "score_breakdown": {
         "source_authority": 0.8,
         "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.5
-      },
-      "story_id": "331e37d92d9c1f09",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "36kr",
-          "url": "https://36kr.com/newsflashes/3896174271104642?f=rss"
-        }
-      ]
-    },
-    {
-      "id": "cc8830aa83e017fb",
-      "source_id": "infoq-cn-ai",
-      "title": "连Claude Code都搞不定的巨型代码库，我们靠一个“自愈循环”给盘活了",
-      "url": "https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-14T11:08:39+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "分享解决巨型代码库难题的“自愈循环”方法，实战经验丰富，有启发性。",
-      "summary_zh": "本文分享了作者团队如何通过一个“自愈循环”机制，成功处理连Claude Code都无法应对的巨型代码库。文章详细描述了问题背景：代码库规模庞大、依赖复杂，导致AI工具失效。作者提出了一种迭代式自愈方法，包括错误检测、自动修复、验证和回滚等步骤，并给出了具体实现细节。该方法显著提升了代码库的维护效率，对大型项目开发者有实用价值。",
-      "title_zh": null,
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
         "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "8cbc850abc8c1dd4",
+      "story_id": "f9471b9adb8d4ea1",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&utm_medium=article"
+          "url": "https://www.infoq.cn/article/1JIiNLEgyJ2UEPwS825r?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "f668e7188b57eef3",
-      "source_id": "infoq-cn-ai",
-      "title": "从上下文到经验资产：Agent 记忆系统的工程化路径与 MemOS 实践",
-      "url": "https://www.infoq.cn/article/RivZJwpYltVDJX5imMUX?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-14T10:30:34+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/RivZJwpYltVDJX5imMUX?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "cdd8ba4cbeb6d88d",
+      "source_id": "reddit-rag",
+      "title": "The model retrieved the right document. Why is the answer still wrong?",
+      "url": "https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/",
+      "published_at": "2026-07-15T05:17:14+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Good retrieval does not guarantee a good answer.</p> <p>The model may still:</p> <ul> <li>Ignore key evidence</li> <li>Combine unrelated chunks</li> <li>Overgeneralize from partial context</li> <li>Fill gaps from its own weights</li> <li>Prefer fluent language over supported claims</li> <li>Cite a source that does not support the answer</li> </ul> <p>This is why groundedness should be scored separately from retrieval quality.</p> <p>How do you distinguish a retrieval failure from a generation failure?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/redfoxsecurity\"> /u/redfoxsecurity </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/\">[comments]</a></span>",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨Agent记忆系统的工程化路径，结合MemOS实践，有系统设计思考。",
-      "summary_zh": "本文系统性地探讨了Agent记忆系统的工程化路径，从上下文管理到经验资产的构建，并介绍了MemOS的实践案例。作者分析了记忆系统在Agent中的关键作用，包括短期记忆、长期记忆和共享记忆的实现方案，以及如何通过记忆系统提升Agent的持续学习能力和任务执行效率。文章提供了具体的架构设计和代码示例，对构建复杂Agent系统有参考价值。",
-      "title_zh": null,
-      "weighted_score": 0.675,
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析RAG系统中检索正确但回答错误的六大原因，对构建可靠RAG应用有重要指导意义。",
+      "summary_zh": "文章指出，在RAG系统中，即使检索到正确的文档，模型仍可能给出错误答案。原因包括：忽略关键证据、合并不相关片段、从部分上下文过度概括、依赖自身参数填补空白、偏好流畅语言而非有依据的陈述、引用不支持答案的来源。这强调了仅靠检索质量不足以保证答案正确性，需要更精细的推理和验证机制。",
+      "title_zh": "模型检索到了正确的文档，为什么答案还是错的？",
+      "weighted_score": 0.695,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.8
       },
-      "story_id": "4713c90780eb7372",
+      "story_id": "e4551b1a66876a66",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/RivZJwpYltVDJX5imMUX?utm_source=rss&utm_medium=article"
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/"
+        }
+      ]
+    },
+    {
+      "id": "91358c64b75a8fd7",
+      "source_id": "reddit-llmdevs",
+      "title": "The multi-agent debate papers found 5 specific failure modes. Here's the guard for each, and what happens if you skip them.",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1uwree5/the_multiagent_debate_papers_found_5_specific/",
+      "published_at": "2026-07-15T01:14:34+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Most multi-agent debate implementations reproduce failure modes the literature already documented. I read the papers before building anything, and the useful output wasn't &quot;debate good&quot; or &quot;debate bad.&quot; It's that each failure mode has a specific, implementable guard. Sharing that mapping, since it's useful whether or not you touch my code.</p> <p><strong>1. Clone agents are just expensive self-consistency.</strong> Huang et al. (ICLR 2024) re-ran Du et al.'s original setup on GSM8K: debate hit 83.2% with 6 responses, while plain self-consistency hit 85.3% at 6 and 88.2% at 9. Same model, same prompt, N instances is a worse ensemble than sampling one model N times. <em>Guard:</em> enforce distinct lenses per agent and fail loudly at config time if you request more agents than you have distinct lenses. Zhang et al. (arXiv:2502.08788) found mixing model families is the one intervention that consistently helps, so heterogeneity is the f",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "多智能体辩论论文的5种失败模式及对应防护措施，工程实践者必读。",
+      "summary_zh": "Reddit用户分享了对多智能体辩论（multi-agent debate）论文的阅读心得，指出文献中已记录5种特定失败模式，并针对每种模式给出了可实施的防护措施。作者强调，这些防护措施比简单判断“辩论好或坏”更有价值，并提供了具体的实现映射。文章还讨论了跳过这些防护可能导致的后果。",
+      "title_zh": "多智能体辩论论文发现5种失败模式，每种都有对应防护措施，跳过它们会怎样？",
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "7147855267bda995",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1uwree5/the_multiagent_debate_papers_found_5_specific/"
         }
       ]
     },
@@ -371,36 +338,74 @@
       ]
     },
     {
-      "id": "e690b2ef6df40f44",
-      "source_id": "reddit-machinelearning",
-      "title": "Things I got wrong building an incremental indexing pipeline [P]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1uwnb3g/things_i_got_wrong_building_an_incremental/",
-      "published_at": "2026-07-14T22:21:51+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I've been working on incremental indexing pipelines lately, basically keeping a vector store in sync as the source data changes, and I keep finding the same bugs never show up until it's been running a while.</p> <p>Biggest one for me is deletes. I tested the &quot;new doc comes in, gets embedded&quot; path a hundred times and it was fine. Never really tested what happens when a doc gets deleted upstream. Turns out if you don't handle that, your index just keeps growing with stuff that shouldn't be there anymore, and you don't notice until search starts returning weird results.</p> <p>Partial updates got me too. I didn't want to re-embed a whole doc every time something small changed so I did partial updates instead. Cheaper, but I ended up with drift between what's in the index and what's actually true in the source, especially once chunk boundaries moved around. Didn't notice until a query happened to hit the stale part.</p> <p>Also learned the hard ",
+      "id": "43be431cc4452310",
+      "source_id": "nvidia-ai-blog",
+      "title": "Why Performance per Watt Is the Ultimate Metric for AI Infrastructure Efficiency",
+      "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/",
+      "published_at": "2026-07-14T15:00:20+00:00",
+      "raw_text": "Power is AI infrastructure’s inescapable constraint. How many tokens an AI factory can generate within a fixed power budget determines its revenue and profitability. Because of this, performance per watt — a metric that can’t be gamed, only earned through real-world results — is the foundation for AI factories.  As agentic AI drives token demand [&#8230;]",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "行业动态",
+        "产品发布"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
+      "image_url": "https://blogs.nvidia.com/wp-content/uploads/2026/07/performance-per-watt-ai-infra-efficiency-842x450.jpg",
+      "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "作者分享构建增量索引管道的真实踩坑经验，特别是删除操作的测试盲点，对工程实践有高参考价值。",
-      "summary_zh": "作者分享了在构建增量索引管道（保持向量存储与源数据同步）过程中遇到的常见错误。最大的问题是删除操作：作者反复测试了“新文档进入并嵌入”的路径，但从未真正测试删除场景，导致问题在运行一段时间后才暴露。文章总结了其他类似bug，强调了测试覆盖完整数据生命周期的重要性。",
-      "title_zh": "构建增量索引管道时我搞错的事情",
-      "weighted_score": 0.56,
+      "depth_score": 0.6,
+      "reason_zh": "NVIDIA官方博客深入分析每瓦性能作为AI基础设施效率的关键指标，对数据中心设计和运营有重要参考价值。",
+      "summary_zh": "文章指出电力是AI基础设施的硬约束，每瓦性能（Performance per Watt）是衡量AI工厂效率和盈利能力的关键指标。该指标无法被操纵，只能通过实际结果获得。随着代理式AI驱动token需求增长，优化每瓦性能变得至关重要。文章从NVIDIA视角阐述了这一指标的重要性。",
+      "title_zh": "为什么每瓦性能是AI基础设施效率的终极指标",
+      "weighted_score": 0.755,
       "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.9,
         "novelty": 0.6,
-        "impact": 0.4,
+        "impact": 0.7,
         "practical_value": 0.8
       },
-      "story_id": "0e1d9180e8ad799a",
+      "story_id": "5b52509a48067c29",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1uwnb3g/things_i_got_wrong_building_an_incremental/"
+          "source_id": "nvidia-ai-blog",
+          "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/"
+        }
+      ]
+    },
+    {
+      "id": "2002c5951c36c83f",
+      "source_id": "infoq-cn-ai",
+      "title": "回到第一性原理：塑造 Snowflake 的理念，以及下一步 ｜ Summit 2026",
+      "url": "https://www.infoq.cn/video/ffZEu3m2LMOy0cPEbYXl?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-14T19:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/video/ffZEu3m2LMOy0cPEbYXl?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "Snowflake高层分享核心理念与未来方向，对数据平台从业者有启发。",
+      "summary_zh": "InfoQ视频报道了Snowflake Summit 2026上关于公司核心理念和未来规划的演讲。演讲者从第一性原理出发，回顾了Snowflake的设计哲学，并展望了下一步发展，包括数据云、AI集成等方向。内容具有战略高度，但缺乏具体技术细节。",
+      "title_zh": null,
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "e1708e9f3766cb99",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/video/7hqd5Z9AFMA6h9mtcrtA?utm_source=rss&utm_medium=article"
+        },
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/video/ffZEu3m2LMOy0cPEbYXl?utm_source=rss&utm_medium=article"
         }
       ]
     }
