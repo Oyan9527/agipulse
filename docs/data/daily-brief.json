@@ -1,6 +1,6 @@
 {
   "date": "2026-07-15",
-  "generated_at": "2026-07-15T06:17:58.936612+00:00",
+  "generated_at": "2026-07-15T10:01:01.769693+00:00",
   "items": [
     {
       "id": "cb471305d1ccae79",
@@ -237,69 +237,70 @@
       ]
     },
     {
-      "id": "cdd8ba4cbeb6d88d",
-      "source_id": "reddit-rag",
-      "title": "The model retrieved the right document. Why is the answer still wrong?",
-      "url": "https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/",
-      "published_at": "2026-07-15T05:17:14+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Good retrieval does not guarantee a good answer.</p> <p>The model may still:</p> <ul> <li>Ignore key evidence</li> <li>Combine unrelated chunks</li> <li>Overgeneralize from partial context</li> <li>Fill gaps from its own weights</li> <li>Prefer fluent language over supported claims</li> <li>Cite a source that does not support the answer</li> </ul> <p>This is why groundedness should be scored separately from retrieval quality.</p> <p>How do you distinguish a retrieval failure from a generation failure?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/redfoxsecurity\"> /u/redfoxsecurity </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/\">[comments]</a></span>",
+      "id": "e495ec4aceb1ddad",
+      "source_id": "infoq-cn-ai",
+      "title": "Datadog 借助 Claude 和 Cursor 完成测试驱动式生产环境迁移",
+      "url": "https://www.infoq.cn/article/T4BhLjLfHYBC8rNfQVxe?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-15T13:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/T4BhLjLfHYBC8rNfQVxe?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入剖析RAG系统中检索正确但回答错误的六大原因，对构建可靠RAG应用有重要指导意义。",
-      "summary_zh": "文章指出，在RAG系统中，即使检索到正确的文档，模型仍可能给出错误答案。原因包括：忽略关键证据、合并不相关片段、从部分上下文过度概括、依赖自身参数填补空白、偏好流畅语言而非有依据的陈述、引用不支持答案的来源。这强调了仅靠检索质量不足以保证答案正确性，需要更精细的推理和验证机制。",
-      "title_zh": "模型检索到了正确的文档，为什么答案还是错的？",
-      "weighted_score": 0.695,
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "Datadog实战案例，展示如何用Claude和Cursor实现测试驱动式生产环境迁移，方法论可复制。",
+      "summary_zh": "本文分享了Datadog团队如何借助Anthropic的Claude和Cursor编辑器，完成一次测试驱动式的生产环境迁移。团队首先利用Claude分析现有代码库，自动生成迁移所需的测试用例；然后通过Cursor的AI辅助功能，逐步重构代码并确保测试通过。整个过程强调测试先行，AI工具用于加速测试生成和代码修改。文章详细描述了迁移的步骤、遇到的挑战（如依赖关系复杂、测试覆盖率不足）以及解决方案。最终，迁移在保证系统稳定性的前提下，大幅缩短了工期。作者总结了AI辅助迁移的最佳实践，包括如何编写有效的提示词、如何验证AI生成的代码等。",
+      "title_zh": null,
+      "weighted_score": 0.725,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "e4551b1a66876a66",
+      "story_id": "c850ea7b5969ca69",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1uwwety/the_model_retrieved_the_right_document_why_is_the/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/T4BhLjLfHYBC8rNfQVxe?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "91358c64b75a8fd7",
-      "source_id": "reddit-llmdevs",
-      "title": "The multi-agent debate papers found 5 specific failure modes. Here's the guard for each, and what happens if you skip them.",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1uwree5/the_multiagent_debate_papers_found_5_specific/",
-      "published_at": "2026-07-15T01:14:34+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Most multi-agent debate implementations reproduce failure modes the literature already documented. I read the papers before building anything, and the useful output wasn't &quot;debate good&quot; or &quot;debate bad.&quot; It's that each failure mode has a specific, implementable guard. Sharing that mapping, since it's useful whether or not you touch my code.</p> <p><strong>1. Clone agents are just expensive self-consistency.</strong> Huang et al. (ICLR 2024) re-ran Du et al.'s original setup on GSM8K: debate hit 83.2% with 6 responses, while plain self-consistency hit 85.3% at 6 and 88.2% at 9. Same model, same prompt, N instances is a worse ensemble than sampling one model N times. <em>Guard:</em> enforce distinct lenses per agent and fail loudly at config time if you request more agents than you have distinct lenses. Zhang et al. (arXiv:2502.08788) found mixing model families is the one intervention that consistently helps, so heterogeneity is the f",
+      "id": "cc8830aa83e017fb",
+      "source_id": "infoq-cn-ai",
+      "title": "连Claude Code都搞不定的巨型代码库，我们靠一个“自愈循环”给盘活了",
+      "url": "https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-14T11:08:39+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "技巧与观点",
-        "开源项目"
+        "行业动态",
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "多智能体辩论论文的5种失败模式及对应防护措施，工程实践者必读。",
-      "summary_zh": "Reddit用户分享了对多智能体辩论（multi-agent debate）论文的阅读心得，指出文献中已记录5种特定失败模式，并针对每种模式给出了可实施的防护措施。作者强调，这些防护措施比简单判断“辩论好或坏”更有价值，并提供了具体的实现映射。文章还讨论了跳过这些防护可能导致的后果。",
-      "title_zh": "多智能体辩论论文发现5种失败模式，每种都有对应防护措施，跳过它们会怎样？",
-      "weighted_score": 0.68,
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "分享解决巨型代码库难题的“自愈循环”方法，实战经验丰富，有启发性。",
+      "summary_zh": "本文分享了作者团队如何通过一个“自愈循环”机制，成功处理连Claude Code都无法应对的巨型代码库。文章详细描述了问题背景：代码库规模庞大、依赖复杂，导致AI工具失效。作者提出了一种迭代式自愈方法，包括错误检测、自动修复、验证和回滚等步骤，并给出了具体实现细节。该方法显著提升了代码库的维护效率，对大型项目开发者有实用价值。",
+      "title_zh": null,
+      "weighted_score": 0.695,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
+        "source_authority": 0.7,
+        "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.9
+        "practical_value": 0.8
       },
-      "story_id": "7147855267bda995",
+      "story_id": "8cbc850abc8c1dd4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1uwree5/the_multiagent_debate_papers_found_5_specific/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/hSKvPpuMW3Y1GyyHtt3I?utm_source=rss&utm_medium=article"
         }
       ]
     },
@@ -338,6 +339,39 @@
       ]
     },
     {
+      "id": "a5213f999663c822",
+      "source_id": "zh-leiphone",
+      "title": "豆包视频通话背后，火山引擎重构 Agent 时代多模态传输底座",
+      "url": "https://www.leiphone.com/category/industrynews/fIqCGTasgYRN21d4.html",
+      "published_at": "2026-07-15T04:32:00+00:00",
+      "raw_text": "<p>对通用 Agent 来说，多模态交互正在成为一项能大幅提升用户体验的关键基础技术。</p><p>过去，用户和 AI 的交互更多是输入文字、上传图片，然后等待回答。现在，家长希望可以直接把镜头对准孩子正在做的题目，让 AI 一步步讲解；在穿搭建议、视障人群视频导航等场景里，用户也希望 AI 不再是一问一答，而是在整个任务过程中持续倾听、对话。</p><p>这种变化提高的不只是功能丰富度，还有用户与 AI 建立连接的频率和深度。</p><p>火山引擎智能视频技术负责人裴志伟在分享中提到，视频通话等多模态场景“极大地拓宽了技术方案的普适性，带来了更多的想象力”，同时也帮助豆包获得了更多流量，“几乎是在没有做太多投放的情况下，业务规模翻了10倍，从千万级DAU变成了亿级DAU”。</p><p>这种多模态体验不是模型能力单独决定的。用户打开摄像头和麦克风后，真正影响体验的还有传输质量——连接是否足够快，弱网下是否稳定，音画是否同步，用户打断能否被及时响应，以及模型能否在正确时间拿到正确的信息。</p><p>也因此，国内的豆包和海外的 ChatGPT，都在构建让 AI 与人自然沟通的更成熟技术底座。</p><p>OpenAI 在7月8日推出了新的 GPT-Live，将连续对话与更深入的搜索、推理和智能体任务解耦，打造了一个相对独立的、低延迟、可打断、可持续的多模态信息交互层。更早举办的2026火山引擎 FORCE 原动力大会上，火山引擎也介绍了背后支撑豆包进行实时多模态交互的多模态传输系统（MMT）。</p><p style=\"text-align: center;\"><img src=\"https://static.leiphone.com/uploads/new/images/20260715/6a570b38bd6e2.jpeg?imageView2/2/w/740\" /></p><p>最终，火山引擎和 OpenAI 要解决的，都不是单纯的音视频性能问题，而是如何为 Agent 时代搭建一套支撑大规模、多场景、低延迟、可打断、可同步的多模态传输系统。</p><p><strong>音视频传输技术不够用了</strong></p><p>火山引擎和 OpenAI 在介绍自己的多模态交互技术时，都提到了传统音视频传输技术与 Agent 时代的多模态交互需求存在落差。</p>",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260715/6a570b38bd6e2.jpeg?imageView2/2/w/740",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "深度解析豆包视频通话背后的多模态传输技术，揭示火山引擎如何重构Agent时代的基础设施，有技术洞察。",
+      "summary_zh": "文章探讨了火山引擎如何为豆包视频通话重构多模态传输底座。指出多模态交互（如视频通话）大幅提升用户体验，豆包DAU从千万级增至亿级。技术负责人裴志伟强调传输质量是关键，而非仅模型能力。文章分析了视频通话场景下的技术挑战和解决方案，展示了多模态Agent的潜力。",
+      "title_zh": null,
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "f25f471c61e6085e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/industrynews/fIqCGTasgYRN21d4.html"
+        }
+      ]
+    },
+    {
       "id": "43be431cc4452310",
       "source_id": "nvidia-ai-blog",
       "title": "Why Performance per Watt Is the Ultimate Metric for AI Infrastructure Efficiency",
@@ -368,44 +402,6 @@
         {
           "source_id": "nvidia-ai-blog",
           "url": "https://blogs.nvidia.com/blog/performance-per-watt-ai-infrastructure-efficiency/"
-        }
-      ]
-    },
-    {
-      "id": "2002c5951c36c83f",
-      "source_id": "infoq-cn-ai",
-      "title": "回到第一性原理：塑造 Snowflake 的理念，以及下一步 ｜ Summit 2026",
-      "url": "https://www.infoq.cn/video/ffZEu3m2LMOy0cPEbYXl?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-14T19:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/video/ffZEu3m2LMOy0cPEbYXl?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "Snowflake高层分享核心理念与未来方向，对数据平台从业者有启发。",
-      "summary_zh": "InfoQ视频报道了Snowflake Summit 2026上关于公司核心理念和未来规划的演讲。演讲者从第一性原理出发，回顾了Snowflake的设计哲学，并展望了下一步发展，包括数据云、AI集成等方向。内容具有战略高度，但缺乏具体技术细节。",
-      "title_zh": null,
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "e1708e9f3766cb99",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/video/7hqd5Z9AFMA6h9mtcrtA?utm_source=rss&utm_medium=article"
-        },
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/video/ffZEu3m2LMOy0cPEbYXl?utm_source=rss&utm_medium=article"
         }
       ]
     }
