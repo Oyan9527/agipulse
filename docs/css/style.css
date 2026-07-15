@@ -380,8 +380,6 @@ a { color: inherit; }
   flex-direction: column;
   gap: 14px;
   padding-top: 6px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--rule-dark);
 }
 
 /* 指标条：报纸"今日数据"栏，衬线大数字 + 竖线分隔 */
@@ -464,6 +462,12 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: 14px;
+  padding-bottom: 16px;
+  /* 分隔线原先画在 .dashboard 自身（border-box 最外沿，含左右 padding），
+     比它下面缩进了 padding-inline 的"话题追踪"标题宽出一圈，两者又紧贴
+     着零间距——线看起来比上下内容都宽，还贴得太近。改画在这里（宽度=
+     内容区，和标题左右对齐）+ .topics 补上 padding-top 拉开间距。 */
+  border-bottom: 1px solid var(--rule-dark);
 }
 @media (max-width: 900px) { .dash-panels { grid-template-columns: 1fr; } }
 
@@ -570,8 +574,13 @@ a { color: inherit; }
 
 .social-hot, .gh-trending {
   padding-top: 20px;
+}
+
+/* gh-trending 是 main 里最后一个 section，紧接着就是 footer——它自己的分隔线
+   已经画在 .gh-trending__list 上，但少了内容区到 footer 之间的收尾间距，两条线
+   会贴在一起。补上和其它 section 一致的收尾留白。 */
+.gh-trending {
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--rule-dark);
 }
 
 .section-title {
@@ -594,6 +603,10 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 14px;
+  padding-bottom: 20px;
+  /* 分隔线原先画在 .social-hot 自身（含左右 padding），比缩进了 padding
+     的标题/卡片内容宽出一圈。改画在这里，宽度天然对齐内容。 */
+  border-bottom: 1px solid var(--rule-dark);
 }
 
 .social-hot__card {
@@ -670,10 +683,13 @@ a { color: inherit; }
 .gh-trending__list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 32px;
+  /* 分隔线原先画在 .gh-trending 自身（含左右 padding），比缩进了 padding
+     的标题/列表内容宽出一圈。改画在这里，宽度天然对齐内容。 */
+  border-bottom: 1px solid var(--rule-dark);
 }
 @media (max-width: 800px) { .gh-trending__list { grid-template-columns: 1fr; } }
 
@@ -773,7 +789,7 @@ a { color: inherit; }
 .digest__body{margin:0;font-family:var(--font-body);font-size:0.95rem;line-height:1.75;color:color-mix(in srgb, var(--ink) 88%, var(--mist))}
 
 /* 话题追踪：每个热点话题一行——名称 + 迷你曲线(sparkline) + 当前热度 + 升降 */
-.topics{margin-bottom:28px}
+.topics{padding-top:20px;margin-bottom:28px}
 .topics__list{list-style:none;margin:12px 0 0;padding:0}
 .topics__row{display:grid;grid-template-columns:minmax(90px,1fr) 2fr auto auto;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule-dark)}
 .topics__term{font-weight:700;font-size:0.9rem;color:var(--ink)}
@@ -1345,11 +1361,16 @@ a { color: inherit; }
 /* ---------------- 页脚 ---------------- */
 
 .sitefooter {
-  padding-top: 18px;
   padding-bottom: 40px;
   color: var(--mist);
   font-size: 0.74rem;
   text-align: center;
+}
+
+/* 分隔线原先画在 .sitefooter 自身（含左右 padding），比缩进了 padding
+   的文字内容宽出一圈。改画在这个内层容器上，宽度天然对齐内容。 */
+.sitefooter__inner {
+  padding-top: 18px;
   border-top: 3px solid var(--rule-dark);
 }
 
