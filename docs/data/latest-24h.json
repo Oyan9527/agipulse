@@ -34,103 +34,81 @@
     "curated": true
   },
   {
-    "id": "cb471305d1ccae79",
-    "source_id": "arxiv-cs-ai",
-    "title": "Optimization Is Not All You Need",
-    "url": "https://arxiv.org/abs/2607.11977",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "raw_text": "arXiv:2607.11977v1 Announce Type: new \nAbstract: In 2019, OpenAI released two million GPT-2 outputs-ungrammatical, half broken-to aid the detection of machine-generated text. The alignment that produced their more fluent successors is usually regarded as an engineering achievement; we read it instead as the newest expression of optimization culture: the conviction, older than the technology, that measurable improvement along predefined axes exhausts the question of value. Tracing that conviction through the stack-pretraining, decoding, preference tuning, benchmarking, interface-and back through its genealogy in the audit society, we arrive at the limit: an optimization procedure can measure how improbable a piece of generated text is; it cannot tell whether that unlikelihood is error or invention. A procedure that cannot make that distinction has nonetheless, within half a decade, assumed the authority to set the protocols of legitimate language. Held for centuries by academies and sch",
+    "id": "4a94de9da670ed0f",
+    "source_id": "zh-oschina",
+    "title": "OpenAI 发布 GPT-5.6 系列：三款模型、多智能体协作、全新安全体系",
+    "url": "https://www.oschina.net/news/471754/gpt-5-6",
+    "published_at": "2026-07-16T02:17:36+00:00",
+    "raw_text": "OpenAI 已正式发布 GPT-5.6 系列模型，包含旗舰 Sol、均衡型 Terra 和经济型 Luna 三款。这是 OpenAI 首次以同一代系同时推出三个定位清晰的模型层级，定价和性能梯度直接对标 Anthropic 的 Fable 5 / Opus 4.8 产品线。 三款模型，分层定价 Sol 作为旗舰，定价 $5/$30（输入/输出每百万 token）；Terra $2.5/$15；Luna ...",
     "category_hint": [
-      "论文研究"
+      "开源项目"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "观点评论",
-    "depth_score": 0.9,
-    "reason_zh": "批判优化文化，从哲学角度反思AI对齐，观点新颖深刻，启发对技术本质的思考。",
-    "summary_zh": "本文从哲学角度批判了AI领域盛行的“优化文化”。作者以OpenAI 2019年发布的GPT-2输出（语法不完整、半成品）为引，指出这些输出本用于检测机器生成文本，但后续的对齐工作通常被视为工程成就。作者认为，对齐实际上是优化文化的最新表现——一种比技术更古老的信念，即一切问题都可以通过优化目标函数来解决。文章论证了这种文化的局限性，并呼吁重新审视AI发展的目标，不应仅仅追求性能指标，而应考虑更广泛的社会和伦理影响。",
-    "title_zh": "优化并非万能",
-    "weighted_score": 0.815,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "OpenAI正式发布GPT-5.6系列，三款模型分层定价，对标Anthropic，影响重大。",
+    "summary_zh": "OpenAI正式发布GPT-5.6系列模型，包含旗舰Sol、均衡型Terra和经济型Luna三款。这是OpenAI首次以同一代系推出三个定位清晰的模型层级，定价和性能梯度直接对标Anthropic的Fable 5/Opus 4.8产品线。Sol定价$5/$30（输入/输出每百万token），Terra $2.5/$15，Luna价格更低。",
+    "title_zh": null,
+    "weighted_score": 0.83,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
+      "impact": 0.9,
+      "practical_value": 0.7
     },
-    "story_id": "bd964f501f37ebdf",
-    "multi_source_count": 1,
+    "story_id": "8a4f8784279e7fe2",
+    "multi_source_count": 4,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.11977"
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1uwhvws/differences_between_gpt55_pro_and_gpt56_sol_on/"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1ux396z/gpt_56_sol_tackles_the_3_body_problem/"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/471754/gpt-5-6"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/977/353.htm"
       }
     ],
     "curated": true
   },
   {
-    "id": "7d2e496f56348728",
-    "source_id": "arxiv-cs-ai",
-    "title": "GRID: Grammar-Railed Decoding for Enterprise SQL Generation",
-    "url": "https://arxiv.org/abs/2607.11951",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "raw_text": "arXiv:2607.11951v1 Announce Type: new \nAbstract: Large language models can write SQL, but enterprise deployment demands more than plausible text: outputs must be syntactically valid, must respect per-role and per-schema policy, must carry provable (not best-effort) guarantees, must not slow down as generations grow, and must leave a compliance-grade record of every decision. We present GRID (Grammar-Railed Decoding), a grammar-constrained decoding engine that keys exact next-token masks on parser configurations (lexer scan state x LALR(1) stack) rather than on token sequences, and uses the incrementally advanced LALR(1) parser itself as a viable-prefix oracle. LLM tokens are bridged to grammar terminals by a byte-level trie walk with a context-independent/context-dependent split that makes cache-key soundness hold by construction. Role-based access control is compiled into the language: role projections subset the grammar's productions and schema lexicons restrict identifier terminals,",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出GRID框架，用语法约束解码保证企业级SQL生成的正确性、安全性和可审计性，实用性强。",
-    "summary_zh": "本文提出GRID（Grammar-Railed Decoding）框架，用于企业级SQL生成。GRID通过语法约束解码，确保LLM生成的SQL语句在语法上有效、符合角色和模式策略、提供可证明的保证（而非最佳努力），并且随着生成长度增加不会变慢，同时保留每个决策的合规记录。GRID将SQL语法和策略编码为形式化约束，在解码过程中实时检查，拒绝无效输出。实验表明，GRID在保持高准确率的同时，显著提高了生成SQL的合规性和安全性。该框架特别适用于金融、医疗等对数据安全要求严格的场景。",
-    "title_zh": "GRID：面向企业SQL生成的语法约束解码",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "c403a637718474ba",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.11951"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "221716b1876017a6",
-    "source_id": "gh-llamacpp",
-    "title": "ggerganov/llama.cpp b10016",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10016",
-    "published_at": "2026-07-15T09:10:19+00:00",
-    "raw_text": "<details open>\n\n[SYCL] Flash Attention with XMX engine via oneDNN (#25222)\n\n* [SYCL] F16 (default) Flash Attention with XMX engine via oneDNN graph API; Qwen3.6-27b-Q8_0 prefill speed up x1.21 at p=512 and x4.26 at p=80k\n\n* [SYCL] Address review on FA oneDNN path. Result: llama-bench---pp512; 32% increase with fa1; llama-perplexity---0.11% difference; tested model: mradermacher/Meta-Llama-3.1-8B-Instruct-Q8_0.gguf\n\n* PR-25222 revision v2: addressed audits\n\n* [SYCL] flash-attn oneDNN SDPA KV F16 rev 3.0: add BMG gate + multi-device sync. Narrow the scrope of this PR to Battlemage only (bmg; Xe2). Other archs (e.g., alchemist) fall back to existing FA kernel. When device_count >1, apply stream -> wait_and_throw(), validated working path for multi-gpu sync fix by @maxious.\n\nCo-authored-by: maxious <81432+maxious@users.noreply.github.com>\n\n* updated comment on bmg gate, noted the issue\n\n---------\n\nCo-authored-by: scientist3 <scientist.3@users.noreply.github.com>\nCo-authored-by: hmscider <h",
+    "id": "7486432b91802b32",
+    "source_id": "zh-oschina",
+    "title": "SpaceXAI 宣布开源 Grok Build",
+    "url": "https://www.oschina.net/news/471755/grok-build-open-source",
+    "published_at": "2026-07-16T02:18:20+00:00",
+    "raw_text": "马斯克旗下 SpaceXAI 宣布将 Grok Build 全面开源，并且重置所有用户的 usage limits。 Grok Build 是 SpaceXAI 的基于终端的 AI 编程智能体。它以全屏 TUI 的形式运行，能够理解用户的代码库、编辑文件、执行 shell 命令、搜索网络并管理长时间运行的任务 —— 既可交互式地运行，也可在无头模式下用于脚本编写/持续集成...",
     "category_hint": [
       "开源项目"
     ],
     "image_url": null,
     "category": "开源项目",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "llama.cpp新增SYCL Flash Attention支持，大幅提升长序列推理速度，对本地部署大模型有重要实用价值。",
-    "summary_zh": "llama.cpp发布b10016版本，主要更新是通过oneDNN为SYCL后端实现了Flash Attention with XMX引擎。该优化显著提升了长序列的预填充速度：在Qwen3.6-27b-Q8_0模型上，序列长度512时速度提升1.21倍，序列长度80k时速度提升4.26倍。此外，还修复了FA oneDNN路径的问题，在pp512下性能提升32%，perplexity差异仅0.11%。测试模型为mradermacher/Meta-Llama-3.1-8B-I。",
-    "title_zh": "ggerganov/llama.cpp b10016",
-    "weighted_score": 0.805,
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "SpaceXAI开源Grok Build，终端AI编程智能体，重置使用限制，对开发者实用。",
+    "summary_zh": "马斯克旗下SpaceXAI宣布将Grok Build全面开源，并重置所有用户的使用限制。Grok Build是一款基于终端的AI编程智能体，以全屏TUI形式运行，能理解代码库、编辑文件、执行shell命令、搜索网络并管理长时间运行任务，既可交互式运行，也可在无头模式下用于脚本编写和持续集成。",
+    "title_zh": null,
+    "weighted_score": 0.825,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
       "practical_value": 0.8
     },
-    "story_id": "9262f461db2ac77f",
+    "story_id": "3f58494dbf40305f",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-llamacpp",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10016"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/471755/grok-build-open-source"
       }
     ],
     "curated": true
@@ -196,19 +174,45 @@
       "practical_value": 0.7
     },
     "story_id": "4901f647716a84ec",
-    "multi_source_count": 2,
+    "multi_source_count": 1,
     "sources": [
       {
         "source_id": "simonwillison",
         "url": "https://simonwillison.net/2026/Jul/15/grok-build/#atom-everything"
-      },
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "e22b03991f9cbcc9",
+    "source_id": "arxiv-cs-ai",
+    "title": "Compaction as Epistemic Failure: How Agentic LLM Tools Fabricate Confirmed Results from Killed Processes",
+    "url": "https://arxiv.org/abs/2607.13071",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13071v1 Announce Type: cross \nAbstract: Agentic LLM coding tools compress long session histories into compaction summaries that subsequent sessions inherit as ground truth. This paper documents a failure mode in Claude Code where partial standard output from timed-out commands (exit code 143) is recorded in compaction summaries as confirmed results, propagating false positives across sessions and model versions without re-verification. The underlying mechanism is a conflation of observation and persistence, where information that appeared in the terminal is treated as equivalent to information written to durable storage. This finding extends the analysis of LLM self-evaluation failures reported in prior work on non-determinism in LLM-as-judge grading by showing that agentic tools exhibit analogous reliability deficits when reporting on their own operational outcomes. The failure has direct implications for any workflow that relies on agentic session continuity for data proce",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "揭示Claude Code中压缩摘要导致错误传播的机制，对Agent工具开发者有重要警示。",
+    "summary_zh": "本文记录了Claude Code中一个关键故障模式：当命令超时（退出码143）时，部分标准输出被记录到压缩摘要中，并被后续会话当作确认结果继承，导致假阳性传播。作者将这种压缩行为定义为“认知失败”，并分析了其如何导致Agent工具产生虚假确认。该研究对Agentic LLM工具的设计和可靠性评估具有重要参考价值。",
+    "title_zh": "压缩即认知失败：Agentic LLM工具如何从已终止进程制造确认结果",
+    "weighted_score": 0.8,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "09f63a075b1127cf",
+    "multi_source_count": 1,
+    "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1227605#reply6"
-      },
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1227614#reply1"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13071"
       }
     ],
     "curated": true
@@ -243,6 +247,108 @@
       {
         "source_id": "gh-transformers",
         "url": "https://github.com/huggingface/transformers/releases/tag/v5.14.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "53acf794f2637438",
+    "source_id": "arxiv-cs-ai",
+    "title": "Adaptive Filtering of the KV Cache: Diagnosing and Correcting Structural-Role Bias in LLM Inference",
+    "url": "https://arxiv.org/abs/2607.13205",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13205v1 Announce Type: cross \nAbstract: Attention-based KV cache eviction (H2O and its descendants) compresses the memory-constrained state of a long-context model by ranking tokens on accumulated attention mass, treated here as signal energy, and keeping the heaviest. On schema-dense input streams such as nested JSON, this score acts as a non-stationary filter that disproportionately retains noise: a non-content sink role (delimiters or whitespace) carries an order of magnitude more energy than any content role, and structural KEY tokens are over-retained at roughly 1.8x the rate of the answer-carrying VALUE tokens, collapsing exact-match accuracy from 88% to 0% at a 5% budget as the signal-to-noise ratio of the retained state degrades. A counterfactual experiment establishes that suppressing KEY tokens is the best deployable filter. Our retraining-free, role-conditional allocation over SnapKV's windowed score, governed by a single tuned hyperparameter, closes 63-98% of the",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "诊断并纠正KV缓存淘汰中的结构角色偏差，揭示注意力机制在模式密集输入上的非平稳滤波问题，对长上下文推理有重要实践意义。",
+    "summary_zh": "本文诊断并纠正了基于注意力的KV缓存淘汰方法（如H2O）中的结构角色偏差。这些方法通过累积注意力分数对令牌排序并保留最重的，但在模式密集输入（如嵌套JSON）上，该分数表现为非平稳滤波器，不成比例地移除结构角色令牌（如括号、引号），导致推理错误。作者提出自适应滤波方法，动态调整淘汰策略以保留关键结构令牌，显著提升了长上下文推理的准确性和效率。",
+    "title_zh": "KV缓存的自适应滤波：诊断并纠正LLM推理中的结构角色偏差",
+    "weighted_score": 0.785,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "bf3297a43cb9201d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13205"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a1c6198eec726045",
+    "source_id": "arxiv-cs-ai",
+    "title": "Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents",
+    "url": "https://arxiv.org/abs/2607.13157",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13157v1 Announce Type: new \nAbstract: Agent memory is a systems problem for long-horizon agents. Practical deployments require retention of task state across extended conversations, recovery of user-specific facts and preferences across sessions, and accumulation of procedural knowledge from prior outcomes. These requirements extend beyond document retrieval: a memory layer must determine which interactions become durable state, how that state is scoped, how it is retrieved under latency constraints, and how it is revised or removed over time. This report studies Oracle Agent Memory as a database-native memory substrate built on Oracle Database. Three themes organize the discussion: memory as a lifecycle spanning ingestion, extraction, consolidation, retrieval, summarization, and revision or removal; a layered architecture that separates an active memory core from a passive memory-store interface with explicit scope control across users, agents, and threads; and evaluation m",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出企业级Agent记忆系统方案，解决长周期任务的状态保持和知识积累问题，工程价值高。",
+    "summary_zh": "本文提出Oracle Agent Memory，作为长周期AI智能体的企业级记忆基板。针对实际部署中需要跨扩展对话保留任务状态、跨会话恢复用户偏好、积累过程知识等需求，设计了一个超越文档检索的记忆层。该记忆系统能够确定性地保留和检索信息，支持长周期任务的持续执行，为构建可靠的企业级Agent提供了基础设施。",
+    "title_zh": "Oracle Agent Memory：长周期AI智能体的企业级记忆基板",
+    "weighted_score": 0.78,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "002a6115205ac283",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13157"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "ff60598a82ba41d4",
+    "source_id": "arxiv-cs-ai",
+    "title": "Self-Improving AI Coding Agents Through Accumulated Behavioral Rules: A Closed-Loop Framework",
+    "url": "https://arxiv.org/abs/2607.13091",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13091v1 Announce Type: cross \nAbstract: LLM-based coding agents repeat the same classes of mistakes across sessions because they lack a mechanism to retain corrections from human review feedback. We present a closed-loop framework in which every accepted review comment is codified as a persistent behavioral rule, progressively expanding the set of error classes the agent can self-detect. The framework combines an accumulating rule set in a version-controlled instruction file, a self-review checklist executed before code submission, and automated validation that ensures rule set integrity as it grows. In deployment across a 35+ service microservices platform, the rule set grew from 5 to 18 behavioral rules, 15+ language-specific standards, and a 15-item self-review checklist, all derived from real review feedback. We present empirical results from 11 recorded working sessions spanning code generation, PR review, incident investigation, and cross service refactoring. We observ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出闭环框架让编码代理从人类反馈中积累行为规则，实现自我改进，实用性强。",
+    "summary_zh": "本文指出基于LLM的编码代理在跨会话中重复相同错误，因为缺乏保留人类审查反馈的机制。作者提出闭环框架，将每个接受的审查评论编码为持久行为规则，逐步扩展代理可自检的错误类别。实验表明，该框架使代理的错误率随会话次数显著下降，且规则可跨项目迁移。该工作为构建持续自我改进的AI编码助手提供了可行方案。",
+    "title_zh": "通过累积行为规则实现自我改进的AI编码代理：一个闭环框架",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "ca7f108d1b5ccd74",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13091"
       }
     ],
     "curated": true
@@ -283,40 +389,6 @@
     "curated": true
   },
   {
-    "id": "aa5c3a854e4c32f0",
-    "source_id": "arxiv-cs-ai",
-    "title": "In-Context Reinforcement Learning under Non-Stationarity: A Survey",
-    "url": "https://arxiv.org/abs/2607.11906",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "raw_text": "arXiv:2607.11906v1 Announce Type: new \nAbstract: The development of decision-pretrained transformers, algorithm distillation, long-context meta-RL, and retrieval-augmented agents has renewed interest in in-context reinforcement learning (ICRL): the ability of a pretrained or fine-tuned decision model to infer latent task rules and improve future behavior from interaction context, without test-time parameter updates. This line of work asks when trial-and-error evidence, rewards, transitions, demonstrations, feedback, or retrieved experience can make learning-like computation happen inside the context window. However, existing surveys of ICRL mainly organize the field around pretraining objectives, architectures, context formats, evaluation protocols, and theoretical mechanisms, while the non-stationary setting remains comparatively underexamined. In changing environments, accumulated context is not merely more evidence about a fixed task: the reward specification, transition kernel, obs",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "综述非平稳环境下的上下文强化学习，系统梳理最新进展，对RL和决策预训练研究者有重要参考。",
-    "summary_zh": "这篇综述论文系统回顾了非平稳环境下上下文强化学习（ICRL）的最新进展。ICRL指预训练或微调后的决策模型能够从交互上下文中推断潜在任务规则并改进未来行为，而无需在测试时更新参数。论文涵盖了决策预训练Transformer、算法蒸馏、长上下文元强化学习、检索增强智能体等关键方法。作者分析了非平稳性带来的挑战（如任务分布偏移、奖励变化），并比较了不同方法的鲁棒性。此外，论文还讨论了ICRL在机器人、推荐系统等领域的应用前景，以及未来研究方向，如结合在线适应和离线预训练。",
-    "title_zh": "非平稳环境下的上下文强化学习：综述",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "7f73373a6256e701",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.11906"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "0cbd860c0d895c26",
     "source_id": "36kr",
     "title": "独家｜面壁智能端侧大模型将搭载三星手机上市",
@@ -351,43 +423,137 @@
     "curated": true
   },
   {
-    "id": "8f6b0b3630c77695",
-    "source_id": "zh-leiphone",
-    "title": "又快又聪明，阿里发布 Qwen-Audio-3.0-Realtime：实时语音大模型四项功能升级",
-    "url": "https://www.leiphone.com/category/industrynews/Yg2RqalAz09LS6WJ.html",
-    "published_at": "2026-07-15T03:25:00+00:00",
-    "raw_text": "<p style=\"text-align: center;\"><img src=\"https://static.leiphone.com/uploads/new/images/20260715/6a56fce820bda.png?imageView2/2/w/740\" /></p><p>7月15日，阿里巴巴发布实时语音交互对话模型Qwen-Audio-3.0-Realtime，在智商、Agent 工具调用、共情对话和双工交互流畅度四条主线上同步升级，力求“又快又聪明”。模型包括推理更强的Plus 版本和速度更快的Flash 版本，适用于智能客服、教育培训、娱乐互动与情感陪伴等场景。今年5月，模型的Preview版本曾在全球权威第三方评测平台Artificial Analysis榜单斩获了两项冠军，超越GPT-Realtime-2。</p><p>为压低时延，实时语音模型往往牺牲推理深度，智商衰减。Qwen-Audio-3.0-Realtime针对日常对话、简单问答等对时延敏感的场景，可直接生成回复，毫秒级响应。在考验“AI会不会答”的语音问答基准 VoiceBench 上，以书面化的标准 prompt和口语化的prompt提问，Plus版本得分分别为92.5和90.5，仅下降 2.0——意味着模型能扛住真人说话的随意性。在更难的多轮音频对话挑战AudioMultiChallenge 基准测试中，Flash版本标准和口语化prompt得分分别为 43.6和38.1，仅下降5.5。今年5月，模型的Preview 版本Fun-Realtime-Audiochat在“语音推理能力”指标上曾以 97.6% 登顶Artificial Analysis。</p><p>文本大模型的Agent能力已相当成熟，但语音模型往往是“能聊天不能办事”，模型要边听边判断何时该调工具，往往需要用户明显说出“帮我打开 XX&quot;”才能触发工具，且切回闲聊后，容易出现上下文断裂。Qwen-Audio-3.0-Realtime无需明确的指令，即可自行调用外部工具，调用结果还会自动融入对话记忆，一次调用的结果会被记住，后面几轮追问都能接着用。例如用户先问“附近有什么川菜馆”，再追问“评分 4.5 以上的哪家最近”，模型会自动衔接地图工具的上一次返回结果继续检索。模型基于 FunctionCall 标",
+    "id": "d23c105befda13b2",
+    "source_id": "arxiv-cs-ai",
+    "title": "Interventional Grounding Audits: Black-Box Premise-Dependency Tests for LLM Chain-of-Thought via Predicate Substitution",
+    "url": "https://arxiv.org/abs/2607.13069",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13069v1 Announce Type: new \nAbstract: Large language models produce chain-of-thought (CoT) reasoning that appears logically sound yet may not genuinely depend on its stated premises. We introduce interventional grounding audits, a black-box, step-level test of premise dependency: we intervene on a single premise by substituting its target predicate with a fresh symbol, re-run the model, and check whether each reasoning step's normalized conclusion (canonical predicate form) changes. We evaluate on ProntoQA, a synthetic multi-hop deductive reasoning benchmark with gold proof trees, where step-level premise dependencies are known. Applied to 50 ProntoQA problems with GPT-4o, our method achieves F1 = 0.806 on detecting proof-tree dependencies (F1 = 0.885 on predicate-determining dependencies; Recall = 100%), significantly outperforming a self-consistency baseline (F1 = 0.343; 95% bootstrap CIs non-overlapping). We further identify that 66% of correctly-solved problems contain a",
     "category_hint": [
-      "行业动态"
+      "论文研究"
     ],
-    "image_url": "https://static.leiphone.com/uploads/new/images/20260715/6a56fce820bda.png?imageView2/2/w/740",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "阿里发布实时语音模型Qwen-Audio-3.0-Realtime，智商、工具调用、共情对话和双工交互全面升级，值得关注。",
-    "summary_zh": "7月15日，阿里巴巴发布实时语音交互对话模型Qwen-Audio-3.0-Realtime，在智商、Agent工具调用、共情对话和双工交互流畅度四条主线上同步升级，力求“又快又聪明”。模型包括推理更强的Plus版本和速度更快的Flash版本，适用于智能客服、教育培训、娱乐互动与情感陪伴等场景。今年5月，模型的Preview版本曾在全球权威第三方评测平台Artificial Analysis榜单斩获两项冠军，超越GPT-Realtime-2。为压低时延，实时语音模型往往牺牲推理深度，而此次升级在保持低延迟的同时提升了推理能力。",
-    "title_zh": null,
-    "weighted_score": 0.76,
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出黑盒测试CoT推理是否真正依赖前提的方法，对理解LLM推理可靠性有重要价值。",
+    "summary_zh": "本文提出干预性基础审计（Interventional Grounding Audits），一种黑盒、步骤级的前提依赖性测试方法。通过将单个前提中的目标谓词替换为全新符号，重新运行模型，观察推理链是否改变，从而判断模型是否真正依赖该前提。该方法无需访问模型内部，可有效检测LLM在思维链推理中是否存在虚假依赖，为评估推理可靠性提供了新工具。实验表明，许多看似合理的CoT推理实际上并不依赖于其陈述的前提。",
+    "title_zh": "干预性基础审计：通过谓词替换对LLM思维链进行黑盒前提依赖性测试",
+    "weighted_score": 0.765,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
+      "source_authority": 0.9,
+      "novelty": 0.8,
       "impact": 0.7,
       "practical_value": 0.6
     },
-    "story_id": "39802e7977cf7dfa",
-    "multi_source_count": 3,
+    "story_id": "47193dad61670d32",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-oschina",
-        "url": "https://www.oschina.net/news/471722"
-      },
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13069"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "981500f8a59687f4",
+    "source_id": "arxiv-cs-ai",
+    "title": "Networked Intelligence: Active Shared Context Graphs for Human-AI Team Science",
+    "url": "https://arxiv.org/abs/2607.13220",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13220v1 Announce Type: new \nAbstract: Most AI-for-science systems focus on scaling a single reasoning process through better models, larger context windows, long-horizon agentic execution, or digital co-scientists working with one principal user. However, challenging scientific problems are rarely solved by one reasoner alone. They are solved by teams whose members bring different priors, experimental backgrounds, tacit knowledge, and domain-trained intuitions. The open problem is therefore not only how to scale models, but how to cultivate networked intelligence: scaling the connections between humans and AI systems so that a result or hypothesis produced in one context reaches another person, agent, instrument, or robot that can act on it. We introduce Mycelium, an active shared workspace that automatically connects researchers and AI agents as a multi-user co-scientist. As human users and agents work, the system captures important observations and hypotheses, tracks how t",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出主动共享上下文图，支持人-AI团队科学协作，突破单推理器局限，视角新颖。",
+    "summary_zh": "本文指出大多数AI for Science系统专注于扩展单一推理过程，但科学问题通常由团队解决。为此提出网络化智能（Networked Intelligence）概念，通过主动共享上下文图（Active Shared Context Graphs）支持人-AI团队协作。该框架允许多个推理者（人类和AI）共享上下文，协同解决复杂科学问题，超越了单用户数字科学家的模式。",
+    "title_zh": "网络化智能：人-AI团队科学的主动共享上下文图",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "129ecee8b3e509b9",
+    "multi_source_count": 1,
+    "sources": [
       {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/Yg2RqalAz09LS6WJ.html"
-      },
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13220"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a556514b62a8b7c4",
+    "source_id": "arxiv-cs-ai",
+    "title": "What Models Express, Suppress, and Resist: Auditing Open-Weight LLMs with Persona Vectors",
+    "url": "https://arxiv.org/abs/2607.13162",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13162v1 Announce Type: cross \nAbstract: What a language model will and will not do is largely set during post-training, but which behaviors it expresses, hides, or resists is not revealed by prompting alone. Persona vectors, behavioral directions in activation space, can probe this organization, but prior work covers only a handful of traits. We present the first systematic application of persona vectors at this scale, compiling a 53-trait inventory across four behaviorally distinct domains and labeling every trait in two open-weight models as natural (expressed at baseline), steerable latent but amplifiable, or intractable (resistant to standard extraction). Both models default to helpful, task-oriented behavior: all nine agentic traits are natural, and their default clinician behavior matches a board-certified psychologist's independent desirability judgments on 16 of 17 traits. Steering produces its largest gains on traits these defaults exclude: hyperbole, hallucination,",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "首次系统应用Persona向量审计开源LLM的行为表达、抑制与抵抗，揭示仅靠提示无法发现的模型内部机制。",
+    "summary_zh": "本文首次系统性地应用Persona向量（激活空间中的行为方向）来审计开源大语言模型（LLM）的行为表达、抑制与抵抗。作者指出，模型在训练后设定的大部分行为无法通过简单提示揭示，而Persona向量可以探测这些内部组织。研究覆盖了多种模型和大量人格特质，展示了如何通过激活空间方向来理解模型的行为边界。该方法为模型安全审计提供了新工具，有助于发现模型隐藏的偏见或风险行为。",
+    "title_zh": "模型表达、抑制与抵抗什么：使用Persona向量审计开源LLM",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "342f615ea5fa4b79",
+    "multi_source_count": 1,
+    "sources": [
       {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/07/450250.html"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13162"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "df30f82d4adbf91f",
+    "source_id": "arxiv-cs-ai",
+    "title": "Self-Improvements in Modern Agentic Systems: A Survey",
+    "url": "https://arxiv.org/abs/2607.13104",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13104v1 Announce Type: new \nAbstract: Self-improving autonomous agents are moving from research prototypes to deployed systems. The primary goal is controllable evolution, or adaptation, from experience with minimal or even no human input. This survey frames modern self-improving agents as adaptive systems that convert experience into accumulated capability gains. We offer a system-level framework that represents a modern agent as a configuration coupling a foundation model with an operational scaffold of prompts, memory, tools, and control logic. Within this framework, self-improvement is formalized as a self-induced update operator that obtains and commits updates to model parameters or scaffold components. We organize prior work by update target and by the signals that drive change, then review applications and discuss evaluation, before closing with open problems and future directions. For convenience, we track technical updates on https://github.com/selfimproving-agent/",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "系统综述现代自主智能体的自我改进机制，提供系统级视角，对构建可进化Agent有指导意义。",
+    "summary_zh": "本文综述了现代自主智能体的自我改进能力，将其视为将经验转化为能力积累的自适应系统。文章提供了系统级视角，涵盖可控进化、从经验中适应（最少甚至无需人类输入）等关键概念。讨论了从研究原型到部署系统的转变，并分析了不同自我改进方法的优缺点，为构建可进化的Agent系统提供了全面参考。",
+    "title_zh": "现代自主智能体系统的自我改进：综述",
+    "weighted_score": 0.76,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "1830c2b51413c371",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13104"
       }
     ],
     "curated": true
@@ -422,6 +588,142 @@
       {
         "source_id": "gh-comfyui",
         "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.28.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "749e4368abe910ad",
+    "source_id": "gh-ollama",
+    "title": "ollama/ollama v0.32.1",
+    "url": "https://github.com/ollama/ollama/releases/tag/v0.32.1",
+    "published_at": "2026-07-16T03:27:23+00:00",
+    "raw_text": "## What's Changed\r\n- Improved Gemma 4 tool calling and multi-turn reasoning, including more reliable tool-response continuations\r\n- Fixed a recurrent MLX model cache leak that could increase memory use across requests, and improved cache snapshot performance\r\n- MLX text model loading now respects `OLLAMA_LOAD_TIMEOUT`\r\n- Agent web search and fetch now tell users to run `ollama signin` when authentication is required\r\n- The interactive agent now receives the current working directory for better project context\r\n- Fixed `ollama launch` so choosing **Pick another model** for a deprecated model passed with `--model` opens the model picker\r\n- Updated VS Code setup documentation for the official Ollama extension\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.32.0...v0.32.1-rc0\r\n",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Ollama v0.32.1改进了Gemma 4工具调用和MLX缓存，对本地AI部署用户有直接实用价值。",
+    "summary_zh": "Ollama发布v0.32.1版本，主要改进包括：增强Gemma 4模型的工具调用和多轮推理能力，修复MLX模型缓存泄漏问题，提升缓存快照性能，MLX文本模型加载现在支持OLLAMA_LOAD_TIMEOUT环境变量，以及Agent网络搜索和获取功能在未认证时提示用户登录。",
+    "title_zh": "ollama/ollama v0.32.1",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "f2eaa3c370f12fa6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-ollama",
+        "url": "https://github.com/ollama/ollama/releases/tag/v0.32.1"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "2dea0b4e4e1fd4bc",
+    "source_id": "arxiv-cs-ai",
+    "title": "Harness Handbook: Making Evolving Agent Harnesses Readable,Navigable, and Editable",
+    "url": "https://arxiv.org/abs/2607.13285",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13285v1 Announce Type: new \nAbstract: The capability of a modern AI agent depends not only on its foundation model but also on its harness, which constructs prompts, manages state, invokes tools, and coordinates execution. As models, APIs, environments, and requirements evolve, the harness must be continually modified. Before such a change can be made, a developer or coding agent must identify all code locations that implement the target behavior. This is difficult because production harnesses are large, tightly coupled, and behaviorally distributed, while modification requests describe what the system should do and repositories are organized by files and modules. Code search, repository indexing, and long-context processing ease inspection, but still leave this behavior-to-code mapping to be recovered by hand. Behavior localization is therefore a central bottleneck in harness evolution. We introduce the Harness Handbook, a behavior-centric representation synthesized automat",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出使Agent harness可读、可导航、可编辑的方法，对Agent开发和维护有实用价值。",
+    "summary_zh": "本文指出现代AI智能体的能力不仅取决于基础模型，还取决于其harness（即构造提示、管理状态、调用工具和协调执行的系统）。随着模型、API、环境和需求的变化，harness需要不断修改。本文提出Harness Handbook方法，使不断演化的Agent harness变得可读、可导航和可编辑，方便开发者和编码智能体理解和修改harness，从而提高Agent系统的可维护性。",
+    "title_zh": "Harness手册：使演化的Agent Harness可读、可导航、可编辑",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "b97225c1e3c594f9",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13285"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "b17aa5fff3f95382",
+    "source_id": "arxiv-cs-ai",
+    "title": "The Entanglement Wall: Activation-Space Probes as Risk Detectors, Not Context Adjudicators",
+    "url": "https://arxiv.org/abs/2607.13075",
+    "published_at": "2026-07-16T04:00:00+00:00",
+    "raw_text": "arXiv:2607.13075v1 Announce Type: cross \nAbstract: Context can change whether a request is harmful without changing its topic or surface form. We ask whether residual-stream probes distinguish harmful requests from surface-matched benign controls at a useful operating point. Across three 7-8B model families, an activation sensor blocks 95.5-97.7 percent of judge-classified compliant attacks in a taxonomy-selected set. It also blocks 59.6-68.4 percent of XSTest prompts. A fully disjoint audit reconstructs near-ceiling source-contrast AUROC (0.996-0.999), but fixed transfer to matched pairs is weaker: 0.656-0.819 on the guard-selected Twin-n70 subset and 0.590-0.690 on the full Twin-n163 cohort. We test ten axes on the reference family and seven across all families with leakage, hold-out, and permutation controls. On Twin-n163, no axis evaluated without direct pair-boundary fitting reaches the specified numerical threshold. Requiring persistence on that full cohort was added at analysis ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "揭示激活空间探针作为风险检测器的有效性边界，对AI安全对齐有深刻见解。",
+    "summary_zh": "本文研究残差流探针能否在有用操作点区分有害请求与表面匹配的良性控制。在三个7-8B模型家族上，激活传感器在测试中阻断了95.5-97.7%的合规攻击，但作者指出其作为上下文裁决者存在根本局限：探针检测的是激活模式而非上下文语义。该工作为理解LLM安全机制提供了新视角，并警示了过度依赖激活探针的风险。",
+    "title_zh": "纠缠之墙：激活空间探针作为风险检测器，而非上下文裁决者",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "d095aff1c254b556",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.13075"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "2df3afb493eb804b",
+    "source_id": "zh-oschina",
+    "title": "阿里确认通义千问集成至苹果智能系统",
+    "url": "https://www.oschina.net/news/471763",
+    "published_at": "2026-07-16T06:01:12+00:00",
+    "raw_text": "有消息称阿里自研大模型通义千问将在中国区苹果设备落地。对此，阿里巴巴发言人证实称：“面向中国用户，通义千问将集成至 iOS、iPadOS、macOS、visionOS 的苹果智能（Apple Intelligence）功能中。” 据网信中国此前公布，苹果技术开发（上海）有限公司的“Apple 智能”大模型已正式完成备案，适用场景为苹果手机，其国...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "阿里通义千问确认集成至苹果智能系统，标志国产大模型在苹果生态的重大突破。",
+    "summary_zh": "阿里巴巴发言人证实，自研大模型通义千问将集成至苹果智能（Apple Intelligence）功能中，覆盖 iOS、iPadOS、macOS、visionOS 等中国区苹果设备。此前，苹果技术开发（上海）有限公司的“Apple 智能”大模型已正式完成备案，适用场景为苹果手机。此举标志着国产大模型在苹果生态的重要落地。",
+    "title_zh": null,
+    "weighted_score": 0.75,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.3
+    },
+    "story_id": "35fd860a5594e424",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/471763"
       }
     ],
     "curated": true
@@ -492,74 +794,6 @@
       {
         "source_id": "reddit-singularity",
         "url": "https://www.reddit.com/r/singularity/comments/1ux7h4t/new_york_becomes_first_us_state_to_impose_ai_data/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "27dbef1f042c6a01",
-    "source_id": "arxiv-cs-ai",
-    "title": "PM-Bench: Evaluating Prospective Memory in LLM Agents",
-    "url": "https://arxiv.org/abs/2607.12385",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "raw_text": "arXiv:2607.12385v1 Announce Type: new \nAbstract: A significant challenge in agentic AI is prospective memory: the ability to execute an intention at a specific future cue or state while other activities are ongoing. We introduce PM-Bench, a text-based benchmark for measuring prospective memory capabilities in modern LLM agents. Inspired by the Virtual Week paradigm from cognitive science, PM-Bench evaluates how well LLM agents maintain user intentions, execute delayed intentions, and monitor latent environment changes. Over the course of a simulated seven-day week, agents must continue an ongoing activity while deciding whether any deferred task is due. We compare eight state-of-the-art LLMs on PM-Bench under eight different agent configurations. PM-Bench proves challenging across all settings: the best method, a GPT-5.4 agent, reaches only 65.1\\% F1 score under our evaluation. Furthermore, no single strategy for improving prospective memory dominates across models. We release PM-Bench",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "引入前瞻记忆概念并构建PM-Bench基准，评估LLM智能体在持续活动中执行未来意图的能力，对智能体研究有重要价值。",
-    "summary_zh": "本文针对智能体AI中的前瞻记忆挑战，即在其他活动进行时在特定未来线索或状态下执行意图的能力，提出了PM-Bench基准。该基准受认知科学中Virtual Week范式启发，是一个基于文本的基准，用于测量现代LLM智能体的前瞻记忆能力。通过设计多种任务场景，评估智能体在复杂环境中记住并执行预定意图的表现，为智能体记忆研究提供了标准化评估工具。",
-    "title_zh": "PM-Bench：评估LLM智能体的前瞻记忆",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "4ff4117927bb9eb1",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.12385"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "825402188a43f723",
-    "source_id": "arxiv-cs-ai",
-    "title": "Answering Without Referring: How AI Search Rewrites the Web's Economic Bargain",
-    "url": "https://arxiv.org/abs/2607.07652",
-    "published_at": "2026-07-15T04:00:00+00:00",
-    "raw_text": "arXiv:2607.07652v1 Announce Type: cross \nAbstract: Search engines have long allocated attention on the web by routing users from queries to websites. AI search changes this arrangement because information needs can be resolved inside the intermediary. Using URL-level Comscore U.S. desktop clickstream, we compare ChatGPT and Google information-seeking occasions and exploit ChatGPT Search access expansions to estimate traditional search displacement. ChatGPT produces outbound clicks in only 5.2% of conversation sessions, far below Google's referral ratio. The remaining clicks are not a scaled-down Google stream: they skew toward specialized destinations and away from ad-supported sites. Wider access cuts search use by 9.4%, with search-referral losses largest for informational categories. Our findings identify a central economic shift in digital intermediation: AI search might satisfy information needs inside the intermediary while weakening the referral bargain that has linked search, t",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "实证分析AI搜索如何改变网络经济模式，揭示信息在中间层被消费对网站流量的影响，洞察深刻。",
-    "summary_zh": "本文利用Comscore美国桌面点击流数据，比较ChatGPT和Google的信息搜索行为，并利用ChatGPT Search的访问扩展来识别因果效应。研究发现，AI搜索改变了传统搜索引擎将用户从查询引导至网站的注意力分配模式，因为信息需求可在中间层（如ChatGPT）内直接满足。这导致网站流量减少，重新定义了网络的经济契约。",
-    "title_zh": "不引述而回答：AI搜索如何重写网络的经济契约",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "c67a552458095b2c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.07652"
       }
     ],
     "curated": true
@@ -943,79 +1177,6 @@
       {
         "source_id": "reddit-singularity",
         "url": "https://www.reddit.com/r/singularity/comments/1uxbwiv/openai_reveals_codex_micro/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "55349da04a7ceed2",
-    "source_id": "mit-news-ai",
-    "title": "3 Questions: Neural transparency and the future of AI design",
-    "url": "https://news.mit.edu/2026/3-questions-neural-transparency-and-future-of-ai-design-0715",
-    "published_at": "2026-07-15T20:25:00+00:00",
-    "raw_text": "Assistant Professor Pat Pataranutaporn describes a new interface that lets everyday users glimpse inside an AI's neural network before their chatbot ever says a word.",
-    "category_hint": [
-      "论文研究",
-      "行业动态"
-    ],
-    "image_url": "https://news.mit.edu/sites/default/files/styles/news_article__cover_image__original/public/images/202607/mit-medialab-pataranutaporn.jpg?itok=i96QeKNW",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "MIT助理教授介绍神经透明度接口，让用户窥见AI神经网络内部，具有启发性。",
-    "summary_zh": "MIT助理教授Pat Pataranutaporn描述了一种新接口，允许普通用户在聊天机器人回复前窥视AI的神经网络内部。该研究旨在提高AI的透明度和可解释性，让用户了解模型决策过程。文章介绍了这一概念及其潜在影响，但未提供具体技术实现细节。",
-    "title_zh": "三个问题：神经透明度与AI设计的未来",
-    "weighted_score": 0.72,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.5
-    },
-    "story_id": "b8002c1261b7f4bd",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "mit-news-ai",
-        "url": "https://news.mit.edu/2026/3-questions-neural-transparency-and-future-of-ai-design-0715"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "2d4a0dd96ec92edb",
-    "source_id": "zh-leiphone",
-    "title": "百度搭子获评WAIC 2026“镇馆之宝”，智能体全家桶将集中亮相",
-    "url": "https://www.leiphone.com/category/industrynews/ZNfcN7oQILMXzXTc.html",
-    "published_at": "2026-07-15T03:43:00+00:00",
-    "raw_text": "<p>7月14日，百度旗下通用智能体“百度搭子”入选世界人工智能大会“镇馆之宝”，并将亮相于上海举办的WAIC 2026，集中展示其面向个人办公、内容创作、信息处理和企业协作等场景的最新能力。</p><p>&nbsp;</p><p>“镇馆之宝”是世界人工智能大会（WAIC）展览板块的重要荣誉，依据科技含量、市场前景、通用性及社会经济效益等维度，对参展创新成果进行综合评选。该奖项每年吸引数百款产品参选，最终入选数量不超过10个。今年评选持续聚焦前沿技术突破和关键应用落地，集中展示人工智能领域创新成果。</p><p>&nbsp;</p><p>与此同时，百度还将携面向开发者、企业和个人用户的一系列AI产品登台WAIC 2026，集中呈现从“芯云模体”全栈能力到多款智能体应用，从超级个体到产业智能化落地。</p><p>&nbsp;</p><p style=\"padding: 0 0 0 0;\"><strong>通用智能体能力升级，百度搭子入选“镇馆之宝”</strong></p><p>&nbsp;</p><p>百度搭子是一个能深入办公场景、真干活、真办事儿的生产力工具。用户只要把目标说清楚，百度搭子就能理解需求、拆解任务、调用工具，完成跨应用、跨文件的复杂工作，最后交付真正可用的结果。</p><p>&nbsp;</p><p>依托百度在搜索、网盘、地图、大模型和百度智能云等领域积累的能力，百度搭子内置多种专业Skill，并集成百度搜索AI API、秒哒、伐谋等产品能力，可协同完成搜索、编码、深度研究、数据分析和应用创建等任务。</p><p>&nbsp;</p><p>自上线以来，百度搭子日均提问次数增长20倍，成为增速最快的通用智能体。近期，百度搭子个人版升级智能路由、多端共享记忆、浏览器调用和PPT生成等多项能力，上线行业首个自媒体专业套件，并发布企业版应用，进一步强化复杂办公和内容创作场景中的“干活”能力。</p><p>&nbsp;</p><p style=\"padding: 0 0 0 0;\"><strong>智能体系列矩阵焕新，助力开发者加速价值落地</strong></p><p>除百度搭子外，百度还将在WAIC 2026现场展示多款面向开发者和企业的智能体产品，进一步完善从技术能力调用、应用开发到落地闭环的智能体矩阵。</p><p>&nbsp;</p><p>无代码开发",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "百度搭子获WAIC镇馆之宝，但内容偏宣传，信息量有限。",
-    "summary_zh": "7月14日，百度旗下通用智能体“百度搭子”入选世界人工智能大会“镇馆之宝”，并将亮相于上海举办的WAIC 2026，集中展示面向个人办公、内容创作、信息处理和企业协作等场景的最新能力。百度还将携一系列AI产品登台WAIC 2026，呈现从“芯云模体”全栈能力到多款智能体应用。",
-    "title_zh": null,
-    "weighted_score": 0.495,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.5,
-      "impact": 0.4,
-      "practical_value": 0.3
-    },
-    "story_id": "03103ba9fcc538b5",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/ZNfcN7oQILMXzXTc.html"
-      },
-      {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/07/450831.html"
       }
     ],
     "curated": true
