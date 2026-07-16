@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-15",
-  "generated_at": "2026-07-15T20:57:37.284751+00:00",
+  "date": "2026-07-16",
+  "generated_at": "2026-07-16T02:00:50.346271+00:00",
   "items": [
     {
       "id": "cb471305d1ccae79",
@@ -65,40 +65,6 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2607.12474"
-        }
-      ]
-    },
-    {
-      "id": "8ec1cf2be3ad5d8d",
-      "source_id": "latent-space",
-      "title": "5 Trends That Defined AI Engineering at World’s Fair 2026",
-      "url": "https://www.latent.space/p/aiewf26trends",
-      "published_at": "2026-07-14T23:21:21+00:00",
-      "raw_text": "At this year's AIE World&#8217;s Fair, AI engineering entered a new phase: building systems around agents, rather than just building with agents.",
-      "category_hint": [
-        "技巧与观点",
-        "行业动态"
-      ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!3Be9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd4e070d1-3be3-48a9-a86b-ceaf34f4577b_1672x941.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深度分析AI工程新趋势：从用智能体构建系统转向围绕智能体构建系统。",
-      "summary_zh": "文章总结了2026年AI工程世界博览会上定义的五大趋势，核心是AI工程进入新阶段：从“用智能体构建系统”转向“围绕智能体构建系统”。其他趋势包括评估优先、可观测性、多模态和安全性。",
-      "title_zh": "定义2026年AI工程世界博览会的五大趋势",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "788677f33a9600d4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "latent-space",
-          "url": "https://www.latent.space/p/aiewf26trends"
         }
       ]
     },
@@ -237,6 +203,73 @@
       ]
     },
     {
+      "id": "c3818e7714bea7ee",
+      "source_id": "reddit-langchain",
+      "title": "Your AI agent returned 200 OK. That tells you almost nothing.",
+      "url": "https://www.reddit.com/r/LangChain/comments/1ux3c7j/your_ai_agent_returned_200_ok_that_tells_you/",
+      "published_at": "2026-07-15T11:37:18+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Here's a failure mode almost nobody talks about in agent workflows:</p> <p>Tool call fires. API returns 200. Agent moves on. Logs look clean.</p> <p>But the action didn't happen. Downstream system is unchanged.</p> <p>Crashes are easy - stack trace tells you where to look. Silent failures are expensive. They compound. By the time anyone notices, the agent has made five more decisions on top of a broken foundation.</p> <p>The root cause: we instrument the request layer obsessively and ignore the state layer entirely. We know the request was sent. We don't verify the world changed.</p> <p>So I built a receipt layer. Every agent action generates a receipt: request payload, observed state change, expiration window. Verification runs against what the system actually reflects - not what the API returned. Mismatch triggers a dead letter event.</p> <p>It's called Witnessed. Two teams using it. <a href=\"http://witnessedai.com\">witnessedai.com</a></p> <p>Anyone ",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "揭示Agent工作流中常被忽视的静默失败问题，提供实用排查思路，对工程实践有直接指导价值。",
+      "summary_zh": "文章指出在Agent工作流中，API返回200 OK并不代表操作成功，静默失败（silent failure）比显式崩溃更危险，因为日志看似正常但下游系统未变更。作者分析了这种失败模式的成因：工具调用成功但实际动作未执行，且错误会累积放大。建议开发者不仅要关注HTTP状态码，还需验证操作的实际效果，例如通过幂等性检查或状态确认。文章提供了具体的排查方法和设计原则，帮助避免Agent在不知情的情况下持续执行无效操作。",
+      "title_zh": "你的AI Agent返回200 OK，但这几乎说明不了什么",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "d8c46ad99bc7e721",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-langchain",
+          "url": "https://www.reddit.com/r/LangChain/comments/1ux3c7j/your_ai_agent_returned_200_ok_that_tells_you/"
+        }
+      ]
+    },
+    {
+      "id": "617eae41e486f47a",
+      "source_id": "zh-v2ex",
+      "title": "[AI Agent 智能体] AI 最大的风险，不是写错代码",
+      "url": "https://www.v2ex.com/t/1227600#reply9",
+      "published_at": "2026-07-15T23:44:04+00:00",
+      "raw_text": "<h1>《软件工程经济学》④</h1>\n<h2>AI 最大的风险，不是写错代码</h2>\n<p>有一种 Bug ，我怀疑以后会越来越常见。它不是代码写错，甚至测试全部通过，问题从代码生成之前，就已经发生了。</p>\n<p>一个电商团队的退款规则是这样的：正常商品七天无理由，预售和定制商品不适用；退款要扣除已使用优惠券的折算部分；余额提现过的用户二次退款需要走审核。</p>\n<p>他们把这套规则交给 Agent 。代码生了，测试补了，构建全绿，验收用例跑通。</p>\n<p>上线之后，退款金额开始出错。</p>\n<p>不是所有情况。只有当用户同时持有两张不同类型的优惠券、只用了其中一张的时候。</p>\n<p>排查了半天，问题不在代码。是没有人想到过这种组合。Agent 用自己推断的最合理方式补全了这个从未被提及的情况。测试一样跑通。</p>\n<p>这不是孤例。另一个团队让 Agent 做权限模型改造，需求文档里写的是\"管理员拥有所有权限\"。</p>\n<p>而系统里其实有管理员和超级管理员两类角色——测试全部通过，上线一段时间后才发现，两类权限被悄悄合并成了一套。</p>\n<p>Agent 没有写错代码，它只是忠实执行了一份没有区分两者的描述。</p>\n<p>有没有发现，这两个 Bug 很像？</p>\n<p>代码没有逻辑错误。测试全部通过。构建全部成功。</p>\n<p><strong>问题不在实现，而在理解。</strong></p>\n<p>这种 Bug 和传统的代码 Bug 不一样。传统的 Bug ，你能在代码里找到出错的行。但这种 Bug ，你找到的每一行代码都是\"对的\"——它正确地实现了一个错误的理解。</p>\n<hr />\n<p>为什么这种事在过去不那么容易一路带到上线？</p>\n<p>过去，需求和代码之间，总有一个人。</p>\n<p>程序员不只是写代码的。他还有一个很少被正式承认的角色——<strong>需求的持续质疑者</strong>。</p>\n<p>产品经理说\"订单可以修改\"，程序员在实现过程中，脑子里的追问会自然冒出来：支付中的能改吗？已发货的呢？修改哪些字段？</p>\n<p>这些问题没人要求他问。是实现过程逼出来的。</p>\n<p>Agent 不一样。</p>\n<p>Agent 收到描述，直接走到执行。它不会在实现过程中停下来问\"这里是不是还有没说清楚",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "揭示AI Agent在复杂业务规则下的隐性风险，案例生动，对工程实践有深刻启发。",
+      "summary_zh": "文章指出AI Agent在编写代码时可能引入一种新型Bug：规则组合遗漏。以电商退款规则为例，Agent自动补全了未明确提及的优惠券组合情况，导致上线后退款金额出错。问题根源在于业务规则本身存在未覆盖的边界条件，而Agent的推断能力掩盖了这一缺陷。作者认为，随着Agent自主性增强，这类“需求级”Bug将更常见，提醒开发者不能仅依赖测试通过，而需在需求阶段就穷举所有可能组合。",
+      "title_zh": null,
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "385e34161d4e3e5a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1227600#reply9"
+        }
+      ]
+    },
+    {
       "id": "221716b1876017a6",
       "source_id": "gh-llamacpp",
       "title": "ggerganov/llama.cpp b10016",
@@ -304,40 +337,6 @@
       ]
     },
     {
-      "id": "e495ec4aceb1ddad",
-      "source_id": "infoq-cn-ai",
-      "title": "Datadog 借助 Claude 和 Cursor 完成测试驱动式生产环境迁移",
-      "url": "https://www.infoq.cn/article/T4BhLjLfHYBC8rNfQVxe?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-15T13:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/T4BhLjLfHYBC8rNfQVxe?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "Datadog实战案例，展示如何用Claude和Cursor实现测试驱动式生产环境迁移，方法论可复制。",
-      "summary_zh": "本文分享了Datadog团队如何借助Anthropic的Claude和Cursor编辑器，完成一次测试驱动式的生产环境迁移。团队首先利用Claude分析现有代码库，自动生成迁移所需的测试用例；然后通过Cursor的AI辅助功能，逐步重构代码并确保测试通过。整个过程强调测试先行，AI工具用于加速测试生成和代码修改。文章详细描述了迁移的步骤、遇到的挑战（如依赖关系复杂、测试覆盖率不足）以及解决方案。最终，迁移在保证系统稳定性的前提下，大幅缩短了工期。作者总结了AI辅助迁移的最佳实践，包括如何编写有效的提示词、如何验证AI生成的代码等。",
-      "title_zh": null,
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "c850ea7b5969ca69",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/T4BhLjLfHYBC8rNfQVxe?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
       "id": "a5213f999663c822",
       "source_id": "zh-leiphone",
       "title": "豆包视频通话背后，火山引擎重构 Agent 时代多模态传输底座",
@@ -371,36 +370,35 @@
       ]
     },
     {
-      "id": "5c8332d4091eee10",
-      "source_id": "huggingface-blog",
-      "title": "Model Routing Is Simple. Until It Isn’t.",
-      "url": "https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt",
-      "published_at": "2026-07-15T17:27:01+00:00",
-      "raw_text": "",
+      "id": "062262d448640e9c",
+      "source_id": "zh-tmtpost",
+      "title": "英伟达正在完成“五层蛋糕”闭环",
+      "url": "https://www.tmtpost.com/8066264.html",
+      "published_at": "2026-07-16T00:10:39+00:00",
+      "raw_text": "黄仁勋的下一步棋是从GPU巨头升级到AI工厂“总架构师”。",
       "category_hint": [
-        "开源项目",
-        "产品发布"
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
+      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/255y4jyhtgf3.png",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "深入探讨模型路由的复杂性，揭示看似简单实则充满挑战的工程实践，对系统设计有启发。",
-      "summary_zh": "本文探讨了模型路由（Model Routing）这一看似简单实则复杂的问题。作者指出，在实际系统中，路由决策需要考虑模型能力、成本、延迟、任务类型等多维因素，且不同场景下的最优策略差异巨大。文章分析了常见的路由策略及其局限性，并提出了动态路由、基于反馈的调整等进阶方法，为构建高效的多模型系统提供了实用指导。",
-      "title_zh": "模型路由看似简单，实则不然",
-      "weighted_score": 0.655,
+      "reason_zh": "深度剖析英伟达从GPU到AI工厂总架构师的战略升级，洞察行业趋势。",
+      "summary_zh": "文章分析英伟达正在构建从芯片到AI工厂的完整闭环，黄仁勋的下一步是从GPU巨头升级为AI工厂的“总架构师”。通过整合硬件、软件和系统，英伟达旨在提供端到端的AI解决方案，巩固其行业领导地位。",
+      "title_zh": null,
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.7,
         "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
+        "impact": 0.7,
+        "practical_value": 0.5
       },
-      "story_id": "f955861039af6bb1",
+      "story_id": "819703c74f76dd6d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "huggingface-blog",
-          "url": "https://huggingface.co/blog/ibm-research/model-routing-is-simple-until-it-isnt"
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8066264.html"
         }
       ]
     }
