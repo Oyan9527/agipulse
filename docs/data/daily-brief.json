@@ -1,6 +1,6 @@
 {
   "date": "2026-07-17",
-  "generated_at": "2026-07-17T06:17:41.780110+00:00",
+  "generated_at": "2026-07-17T09:56:53.386180+00:00",
   "items": [
     {
       "id": "1c165c3c29361c19",
@@ -201,6 +201,39 @@
       ]
     },
     {
+      "id": "465943f428af35ec",
+      "source_id": "zh-segmentfault",
+      "title": "当AI Agent开始“自己拿主意”，你怎么知道它没在犯错？",
+      "url": "https://segmentfault.com/q/1010000048038227",
+      "published_at": "2026-07-17T07:10:54+00:00",
+      "raw_text": "<p>当AI Agent开始“自己拿主意”，你怎么知道它没在犯错？</p><p>——一个运行时健康诊断框架的实战笔记</p><p>你有没有遇到过这种情况：</p><p>你写了一个多Agent协作系统，三个Agent各司其职，跑起来挺流畅。但跑着跑着，你发现结果越来越不对劲——合规报告漏了关键条款、代码里埋了不该有的依赖、客服回复开始答非所问。</p><p>你去翻日志。日志是完整的。每个Agent都“正常”完成了任务。</p><p>问题出在哪？你不知道。</p><p>这不是你代码写得不好。这是AI Agent进入生产环境后，所有人都要面对的一个新问题：</p><p>Agent能做事，但你不能实时知道它做得“对不对”、状态“好不好”。<br />一个真实的故事<br />几天前，我在阿里Qoder CN上部署了一个金融尽调的Agent群——三个Agent协作完成跨境并购的合规风险评估。</p><p>基线跑完之后，数据让我倒吸一口凉气：</p><p>合规质量评分：0.24（满分1.0）<br />法规覆盖率：60% ——8条应覆盖的法规，漏了将近一半<br />输出报告看似完整，但关键的风险点要么没提，要么引用错误<br />三个Agent都跑完了任务。没有报错。没有异常。日志里一切“正常”。</p><p>但结果是错的。</p><p>这不是个例。当你把AI Agent从“聊天助手”升级为“执行系统”——写代码、调工具、改文件、做决策——你实际上是在把一部分控制权交给一个黑盒。</p><p>传统监控告诉你“系统有没有宕机”。</p><p>但Agent的问题不是宕机，是跑偏——它还在运行，还在输出，还在消耗Token，但方向已经歪了。</p><p>更麻烦的是，Agent的决策链路长、工具调用多、上下文会累积漂移。一个Agent出错，会污染整个协作链路。等你在最终输出里发现问题时，已经浪费了几十轮对话的Token和算力。</p><p>你需要的不是“事后复盘”，而是“运行时感知”。</p><p>我们做了一件事：给Agent装一个“健康监测仪”<br />我们把这个东西叫做认知导航（Cognitive Navigation） 。</p><p>它不是另一个Agent。它是一个诊断侧车（Sidecar） ——不干扰Agent做事，但在Agent每一步执行前后， quietly 做三件事",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "提出AI Agent运行时健康诊断框架，解决生产环境中Agent行为不可控的痛点，实战性强。",
+      "summary_zh": "文章探讨AI Agent在生产环境中“自己拿主意”时可能犯错的问题，提出一个运行时健康诊断框架。作者通过金融尽调Agent群的实战案例，说明如何实时监控Agent状态、检测异常行为，并给出具体实现思路。",
+      "title_zh": null,
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "17a709e400bf152b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-segmentfault",
+          "url": "https://segmentfault.com/q/1010000048038227"
+        }
+      ]
+    },
+    {
       "id": "09e86f1db1bc975b",
       "source_id": "venturebeat-ai",
       "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
@@ -365,40 +398,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/video/4a2B42u4btbcGi6295ut?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "40601ca50a28efba",
-      "source_id": "reddit-langchain",
-      "title": "What are you using to stop AI agents from quietly doing the wrong thing in production?",
-      "url": "https://www.reddit.com/r/LangChain/comments/1uxux2z/what_are_you_using_to_stop_ai_agents_from_quietly/",
-      "published_at": "2026-07-16T06:36:11+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I'm not talking about crashes or API errors.</p> <p>I mean things like:</p> <ul> <li>false completion (&quot;done&quot; when it isn't)</li> <li>wrong tool selection</li> <li>low-progress loops</li> <li>hallucinated tool results</li> <li>agents drifting away from the original goal</li> </ul> <p>Traditional observability tells me <strong>what happened</strong>, but I'm more interested in preventing these behaviors before they cause problems.</p> <p>Curious what everyone is using today.</p> <ul> <li>LangSmith?</li> <li>Langfuse?</li> <li>Phoenix?</li> <li>Custom middleware?</li> <li>Just prompt engineering?</li> </ul> <p>What's worked well, and what still frustrates you?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Wise-Difficulty-1984\"> /u/Wise-Difficulty-1984 </a> <br /> <span><a href=\"https://www.reddit.com/r/LangChain/comments/1uxux2z/what_are_you_using_to_stop_ai_agents_from_quietly/\">[link]</a></span> &#32; ",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨AI智能体在生产中悄悄出错的问题，如虚假完成、错误工具选择等，并寻求解决方案。",
-      "summary_zh": "作者关注AI智能体在生产中不崩溃但悄悄出错的问题，包括虚假完成、错误工具选择、低进度循环、幻觉工具结果以及偏离原始目标等。传统可观测性只能告诉你发生了什么，但无法检测这些行为。作者寻求社区的建议，如何有效监控和防止这类问题。",
-      "title_zh": "你们用什么方法阻止AI智能体在生产中悄悄做错事？",
-      "weighted_score": 0.63,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "789f3fa021b4205d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-langchain",
-          "url": "https://www.reddit.com/r/LangChain/comments/1uxux2z/what_are_you_using_to_stop_ai_agents_from_quietly/"
         }
       ]
     }
