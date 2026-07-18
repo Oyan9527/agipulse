@@ -4,7 +4,7 @@
 
 两个版面：**头版**（`index.html`：头条大字号 + 精选/全部信息流 + 热点雷达 + 今日简报）与**数据版**（`trends.html`：24H 信息密度频谱√缩放、信号量/精选率/信源健康/多源确认指标、**日/周/月三维度**分类动量与趋势关键词、**社媒 AI 热点**（B站/微博/Hacker News/Reddit 上正热的 AI 话题，关键词过滤+英文标题自动翻译）、**GitHub 涨星榜**（近24h 新增 star 最多的仓库））。通用能力：英文标题自动附中文译文、精选分类配额（论文≤10、开源项目保底5）、命令面板搜索（Ctrl/Cmd+K）。界面为中文报纸头版风格：米白纸面、衬线大刊头、朱红强调色、细线分栏。
 
-信源构成（进 AI 主流程共 480）：231 个 RSS（官方博客/研究机构/高信号个人/科技媒体 + 中英文独立技术博客）+ 204 个重点 GitHub 仓库 releases + 19 个 arXiv 分类 + 20 个 Reddit 社区 + 5 组 Hacker News 主题查询 + 1 个知乎（broken 占位）。RSS 与 GitHub 两大类以「技巧与观点」「开源项目」为主，通用中英文源依赖 DeepSeek 粗筛过滤非 AI 内容。新增源均经调研 agent 用 WebFetch 逐条验证 feed 可访问后导入。此外另有 7 个独立展示源（`role: social_hot` / `gh_trending`）：B站 AI 搜索、微博热搜、知乎热榜、Hacker News 前台、Reddit AI（r/singularity）、X AI 机构动态、GitHub 涨星榜——不进 AI 打分主流程，仅供数据版对应面板展示。
+信源构成（进 AI 主流程共 614）：300 个 RSS（官方博客/研究机构/高信号个人/科技媒体 + 中英文独立技术博客 + 芯片/基建/垂直领域媒体与播客）+ 256 个重点 GitHub 仓库 releases + 32 个 arXiv 分类（含博弈论/数据库/编程语言/体系结构/最优化/计算神经科学等交叉学科）+ 20 个 Reddit 社区 + 5 组 Hacker News 主题查询 + 1 个知乎（broken 占位）。RSS 与 GitHub 两大类以「技巧与观点」「开源项目」为主，通用中英文源依赖 DeepSeek 粗筛过滤非 AI 内容。新增源均经调研 agent 用 WebFetch 逐条验证 feed 可访问后导入。此外另有 7 个独立展示源（`role: social_hot` / `gh_trending`）：B站 AI 搜索、微博热搜、知乎热榜、Hacker News 前台、Reddit AI（r/singularity）、X AI 机构动态、GitHub 涨星榜——不进 AI 打分主流程，仅供数据版对应面板展示。
 
 对标 [AI News Radar](https://learnprompt.github.io/ai-news-radar/)、[AIHOT](https://aihot.virxact.com/)、[AGI Hunt](https://agihunt.info/) 三个产品的信息覆盖范围与设计思路，细节见 `.claude/plans/` 下的建站方案文档。
 
