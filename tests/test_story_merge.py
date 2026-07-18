@@ -42,6 +42,29 @@ def test_ignores_generic_noun_number_pairs():
     assert _strong_entities("AMD 锐龙 AI 9 HX 470 游戏本") == set()   # AI 9 是型号噪声
 
 
+def test_extracts_brand_plus_letter_model_identifiers():
+    # 品牌名 + 独立型号(字母+数字，而非纯数字)——Kimi K3/DeepSeek R1/OpenAI o3 这类命名，
+    # _ENTITY_RE 要求品牌名后面直接接纯数字，抓不住中间那个型号字母。
+    # 真实踩过的坑：Kimi K3 发布当天 5 个不同信源报道，entities 全部是空集合，
+    # 一个都没识别成同一实体，本该合并的多源头条被拆成了 5 个独立故事。
+    assert _strong_entities("Kimi K3 正式发布") == {"kimik3"}
+    assert _strong_entities("DeepSeek R1 亮相：推理能力对标 o1") == {"deepseekr1"}
+    assert _strong_entities("OpenAI o3 发布") == {"openaio3"}
+
+
+def test_brand_model_does_not_duplicate_v_prefix_entity():
+    # "Name v2" 已经由 _ENTITY_RE 处理成 {"longcat2"}；新增的品牌+型号判据不该
+    # 把同一个 "v2" 又提取成 "longcatv2"，产生两个指向同一件事的冗余实体。
+    assert _strong_entities("LongCat v2 released today") == {"longcat2"}
+
+
+def test_brand_model_still_ignores_stopword_sections():
+    # 论文/文档里常见的"Section A1"/"Table B2"这类编号引用，不该被误判成产品型号——
+    # 复用同一份 _ENTITY_STOPWORDS。
+    assert _strong_entities("See Section A1 for details") == set()
+    assert _strong_entities("Table B2 summarizes the results") == set()
+
+
 # --- 合并：措辞不同但谈同一个模型的报道要并成一个故事 ---
 
 def test_merges_same_event_across_wildly_different_wording():
@@ -53,6 +76,26 @@ def test_merges_same_event_across_wildly_different_wording():
     _, stories = merge_stories(items, WEIGHTS)
     assert len(stories) == 1
     assert stories[0]["source_count"] == 3
+
+
+def test_merges_kimi_k3_launch_across_five_real_sources():
+    # 真实复现的漏合并案例：Kimi K3 发布当天 5 个不同信源分别报道，措辞差异很大
+    # （中文解读/纯中文公告/英文技术简报/英文评测），此前 entities 全部提取为空集合，
+    # 一个都没识别成同一实体，5 条本该合并的报道被拆成了 5 个独立故事、头条位置
+    # 被别的内容占据。这里用真实标题锁定修复后的行为。
+    items = [
+        _item("a", "Kimi K3 全面解读：2.8 万亿参数、48 小时造芯片、以及一个正在被开源模型追上的 AI 竞争格局",
+              hours_ago=20, source="zh-oschina"),
+        _item("b", "Kimi K3 正式发布", hours_ago=18, source="zh-oschina-2"),
+        _item("c", "月之暗面宣布首个 3 万亿参数开放权重模型 Kimi K3", hours_ago=16, source="zh-solidot"),
+        _item("d", "[AINews] Kimi K3 2.8T-A50B: the largest open model ever released; Opus 4.8-class at Sonnet 5 pricing",
+              hours_ago=10, source="latent-space"),
+        _item("e", "Kimi K3, and what we can still learn from the pelican benchmark",
+              hours_ago=2, source="simonwillison"),
+    ]
+    _, stories = merge_stories(items, WEIGHTS)
+    assert len(stories) == 1
+    assert stories[0]["source_count"] == 5
 
 
 def test_time_window_anchors_on_latest_member_not_seed():

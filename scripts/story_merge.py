@@ -20,6 +20,13 @@ _CJK_RE = re.compile(r"[一-鿿]")
 # 但几乎必然共享这个标识符——实测 GPT-5.6 发布当天有 15 条报道分散成 13 个"故事"。
 _ENTITY_RE = re.compile(r"([A-Za-z][A-Za-z]{2,})[\s\-]?v?[\s\-]?(\d+(?:\.\d+)?)")
 
+# 品牌名 + 独立型号（型号本身是"字母+数字"而非纯数字，如 Kimi K3、DeepSeek R1、
+# DeepSeek V3、OpenAI o3），_ENTITY_RE 抓不住——它要求品牌名后面直接接纯数字，
+# 中间那个型号字母（K/R/V/o…）打破了这个模式。实测 Kimi K3 发布当天5个不同信源
+# 分别报道，_strong_entities 全部返回空集合，一个都没识别成同一实体，本该合并成
+# 一条多源头条的报道被拆成了5个独立故事。
+_BRAND_MODEL_RE = re.compile(r"([A-Za-z][A-Za-z]{2,})\s+([A-Za-z]\d+(?:\.\d+)?)\b")
+
 # 实体匹配分支的兜底：同实体但不同事件的报道（如"Model 3 软件升级"与"Model 3 遭监管召回"）
 # 不该仅凭共享实体就合并。但不能靠余弦相似度兜底——跨语言/措辞差异极大的同一事件报道
 # （GPT-5.6 那次，词袋几乎不重叠）余弦反而比"同实体不同事件"的报道更低，没有一个固定
@@ -81,6 +88,15 @@ def _strong_entities(title):
         if lowered in _ENTITY_STOPWORDS:
             continue
         found.add(f"{lowered}{version}")
+    for brand, model in _BRAND_MODEL_RE.findall(title):
+        if not brand[0].isupper():
+            continue
+        if model[0].lower() == "v":
+            continue  # "Name v2" 这类 v 前缀版本号已经由 _ENTITY_RE 处理，避免重复实体
+        lowered_brand = brand.lower()
+        if lowered_brand in _ENTITY_STOPWORDS:
+            continue
+        found.add(f"{lowered_brand}{model.lower()}")
     return found
 
 
