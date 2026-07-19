@@ -1,106 +1,7 @@
 {
   "date": "2026-07-19",
-  "generated_at": "2026-07-19T02:04:34.324070+00:00",
+  "generated_at": "2026-07-19T06:34:53.521964+00:00",
   "items": [
-    {
-      "id": "1c165c3c29361c19",
-      "source_id": "arxiv-cs-ai",
-      "title": "AI Agents Do Not Fail Alone:The Context Fails First",
-      "url": "https://arxiv.org/abs/2607.14275",
-      "published_at": "2026-07-18T04:00:00+00:00",
-      "raw_text": "arXiv:2607.14275v1 Announce Type: new \nAbstract: Context engineering has become central to building reliable AI agents, yet it remains largely unmeasured. Agents do not fail in isolation: their behavior is shaped by the instructions, tools, memory, retrieved knowledge, guardrails, and untrusted inputs accumulated in their context. When this context is weak, agents drift, hallucinate, misuse tools, ignore constraints, become vulnerable to injection, and waste tokens. This paper validates context-engineering quality as an independent leading indicator of agent reliability. We implement the measurement in ProofAgent-Harness, an open-source infrastructure for AI agent evaluation that uses multi-juror, consensus-based scoring. The harness assesses context across seven criteria: role clarity, guardrail coverage, instruction consistency, tool schema quality, grounding sufficiency, injection hardening, and token efficiency. Crucially, the context score is isolated from behavioral metrics and r",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "提出“上下文先失败”观点，系统分析Agent失败根源，为构建可靠Agent提供可测量框架，极具实践价值。",
-      "summary_zh": "本文指出AI Agent的失败并非孤立发生，而是由上下文（指令、工具、记忆、检索知识、护栏、不可信输入）的薄弱导致。当上下文脆弱时，Agent会出现漂移、幻觉、工具误用等问题。作者提出上下文工程是构建可靠Agent的核心，但目前缺乏度量方法。论文系统分析了上下文各组件对Agent行为的影响，并提出了一个可测量的框架，为Agent可靠性工程提供了新方向。",
-      "title_zh": "AI Agent并非孤立失败：上下文先失败",
-      "weighted_score": 0.845,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.9
-      },
-      "story_id": "0046ec5f481aff64",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.14275"
-        }
-      ]
-    },
-    {
-      "id": "173acf4a7a4fc96f",
-      "source_id": "arxiv-cs-ai",
-      "title": "The Steering Budget: Examples beat Knobs",
-      "url": "https://arxiv.org/abs/2607.14246",
-      "published_at": "2026-07-18T04:00:00+00:00",
-      "raw_text": "arXiv:2607.14246v1 Announce Type: new \nAbstract: Generative models are steered with knobs -- prompts, guidance scales, property tags. Turn one as hard as you like and, past a point, it stops moving the property you care about. We find that ceiling is not a shortcoming of the model but a budget, set by the training data before the model is trained: a property's movable range splits in two -- the part a knob can reach, and a second, significant part that only examples -- concrete instances of what you want more of -- can reach. That second part is usually much larger, but not always, and the same budget says so in advance.\n  Reaching that second part takes a different move: instead of turning a knob, you show the model examples, composed from what it already learned rather than added to its training. A cheap audit of the training data measures the budget; we give a recipe for building the example set that reaches all of it.\n  This buys two things a knob can't. Reach: it moves a property ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "揭示生成模型控制中的“预算”机制，证明示例比旋钮更有效，对可控生成有根本性指导意义。",
-      "summary_zh": "本文发现生成模型中的控制旋钮（如提示、引导尺度）存在一个“预算”上限，该上限由训练数据在模型训练前设定。超过此上限后，旋钮不再影响目标属性。作者证明，通过提供示例而非调节旋钮，可以突破这一预算限制，实现更有效的控制。这一发现挑战了传统可控生成方法，为模型设计和训练数据选择提供了新视角。",
-      "title_zh": "控制预算：示例胜于旋钮",
-      "weighted_score": 0.825,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.8
-      },
-      "story_id": "4efb400f5f2c2251",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.14246"
-        }
-      ]
-    },
-    {
-      "id": "e0e2501c89aa0baf",
-      "source_id": "zh-juejin",
-      "title": "大模型输出格式约束原理",
-      "url": "https://juejin.cn/post/7663486605853491246",
-      "published_at": "2026-07-18T12:35:54+00:00",
-      "raw_text": "大模型输出格式约束从 Prompt 引导进化到解码层面的硬约束。本文深入讲解约束解码的核心原理：Token Masking、有限状态机、上下文无关文法，以及 Outlines、Guidance、XGrammar、vLLM 等主流框架的实现对比。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "深入讲解大模型输出格式约束的核心原理，对比主流框架，对开发者有极高实用价值。",
-      "summary_zh": "文章详细讲解了大模型输出格式约束从Prompt引导到解码层面硬约束的进化过程。核心原理包括Token Masking、有限状态机、上下文无关文法。对比了Outlines、Guidance、XGrammar、vLLM等主流框架的实现方式，分析了各自的优缺点和适用场景。帮助开发者理解如何精确控制模型输出格式，提升应用可靠性。",
-      "title_zh": "大模型输出格式约束原理",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "e137745748b18267",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7663486605853491246"
-        }
-      ]
-    },
     {
       "id": "ee37d2a7d48bb246",
       "source_id": "zh-tonybai",
@@ -135,12 +36,46 @@
       ]
     },
     {
-      "id": "cdf11337f8cae367",
-      "source_id": "arxiv-cs-ai",
-      "title": "Transcoders for Investigating Deception in Language Models",
-      "url": "https://arxiv.org/abs/2607.14791",
-      "published_at": "2026-07-18T04:00:00+00:00",
-      "raw_text": "arXiv:2607.14791v1 Announce Type: new \nAbstract: Transcoders have recently emerged as a promising approach for mechanistic interpretability (MI), enabling circuit-level analysis of model behaviour. In this paper, we investigate the use of transcoders to analyse deceptive behaviour in language models, a behaviour that poses a safety and security risk. Using a Qwen3-4B model with pre-trained transcoders, specifically per-layer transcoders (PLTs), we construct attribution graphs that capture feature activations and inter-feature dependencies, allowing circuit-level analysis of deception. Through feature steering and circuit analysis, we identified a dictionary of deception-related features and show that these features exert a stronger influence on deceptive outputs, as they produce predictable shifts between deceptive and non-deceptive responses. These findings suggest that deception emerges from internal model mechanisms and highlight the potential of transcoders for behavioural monitori",
+      "id": "28c7ee44d88bdbf2",
+      "source_id": "raschka",
+      "title": "Controlling Reasoning Effort in LLMs",
+      "url": "https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms",
+      "published_at": "2026-07-18T11:16:09+00:00",
+      "raw_text": "How LLMs Learn Low-, Medium-, and High-Effort Reasoning Modes",
+      "category_hint": [
+        "技巧与观点",
+        "论文研究"
+      ],
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/286a0beb-32b2-41fc-8bcf-6bae189b53f2_1488x840.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "Sebastian Raschka解读LLM推理控制新论文，揭示低中高推理模式的学习机制。",
+      "summary_zh": "该研究探讨LLM如何学习低、中、高三种推理努力模式，通过控制推理深度来平衡准确性与计算成本。论文揭示了模型在不同难度任务中自适应调整推理策略的机制，对提升LLM效率有重要意义。",
+      "title_zh": "控制LLM中的推理努力",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "32319c68714615d7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "raschka",
+          "url": "https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms"
+        }
+      ]
+    },
+    {
+      "id": "51255f406f491c0b",
+      "source_id": "reddit-rl",
+      "title": "Principled Analysis of Deep Reinforcement Learning Evaluation and Design Paradigms",
+      "url": "https://www.reddit.com/r/reinforcementlearning/comments/1uzxzi5/principled_analysis_of_deep_reinforcement/",
+      "published_at": "2026-07-18T14:53:36+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Published in AAAI 2026</p> <p>Link: <a href=\"https://ojs.aaai.org/index.php/AAAI/article/view/39427\">https://ojs.aaai.org/index.php/AAAI/article/view/39427</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ml_dnn\"> /u/ml_dnn </a> <br /> <span><a href=\"https://www.reddit.com/r/reinforcementlearning/comments/1uzxzi5/principled_analysis_of_deep_reinforcement/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/reinforcementlearning/comments/1uzxzi5/principled_analysis_of_deep_reinforcement/\">[comments]</a></span>",
       "category_hint": [
         "论文研究"
       ],
@@ -148,154 +83,56 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "利用转码器进行可解释性分析，揭示语言模型中的欺骗行为机制，对AI安全有重要意义。",
-      "summary_zh": "本文研究使用转码器（transcoders）分析语言模型中的欺骗行为。转码器是机械可解释性（MI）的新兴方法，能够实现电路级行为分析。作者在Qwen3-4B模型上应用预训练的转码器，探索模型在生成欺骗性输出时的内部表示和计算路径。实验揭示了与欺骗相关的特定神经元和电路模式，为检测和缓解模型欺骗行为提供了新思路。该工作展示了转码器在安全相关分析中的潜力，有助于构建更可信的AI系统。",
-      "title_zh": "使用转码器研究语言模型中的欺骗行为",
-      "weighted_score": 0.765,
+      "reason_zh": "AAAI 2026论文，系统分析深度强化学习评估与设计范式，具有理论深度。",
+      "summary_zh": "该论文发表于AAAI 2026，标题为“Principled Analysis of Deep Reinforcement Learning Evaluation and Design Paradigms”。论文对深度强化学习的评估和设计范式进行了原则性分析，可能涉及常见评估方法的缺陷、实验设计中的偏差以及更可靠的基准测试方法。作者ml_dnn在Reddit上分享了论文链接，旨在促进社区讨论。",
+      "title_zh": "深度强化学习评估与设计范式的原则性分析",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "d4898fada70c02ca",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.14791"
-        }
-      ]
-    },
-    {
-      "id": "59bc2f4d572bfeb9",
-      "source_id": "zh-phodal-com",
-      "title": "设计流动摩擦：AI 原生团队的核心能力",
-      "url": "http://www.phodal.com/blog/ai-native-team-flow/",
-      "published_at": "2026-07-18T02:16:00+00:00",
-      "raw_text": "过去几年，我们讨论 AI 对软件研发的影响，最常使用的仍是个人生产力：一个功能要多久，一名开发者能同时推进多少任务，Coding Agent 能生成多少代码。AI 确实显著降低了执行成本，过去数天才能形成的初步实现，现在几个小时后就可能进入 Pull Request。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入探讨AI原生团队如何通过设计“流动摩擦”提升协作效率，有实践指导意义。",
-      "summary_zh": "文章讨论了AI对软件研发的影响，指出当前关注点仍停留在个人生产力，而忽略了团队协作中的“流动摩擦”。作者提出，AI原生团队的核心能力在于设计和管理这些摩擦，以优化整体效率。文章分析了AI如何降低执行成本，但强调需要新的协作模式来充分利用AI潜力。内容有深度，适合技术管理者阅读。",
-      "title_zh": null,
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.8,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.8
+        "practical_value": 0.7
       },
-      "story_id": "8a64c2bf53d8ec0a",
+      "story_id": "f569091834642aea",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-phodal-com",
-          "url": "http://www.phodal.com/blog/ai-native-team-flow/"
+          "source_id": "reddit-rl",
+          "url": "https://www.reddit.com/r/reinforcementlearning/comments/1uzxzi5/principled_analysis_of_deep_reinforcement/"
         }
       ]
     },
     {
-      "id": "32ee406605270416",
-      "source_id": "zh-juejin",
-      "title": "Superpowers 实现原理深度解析：如何把工程纪律变成 Agent 的默认行为",
-      "url": "https://juejin.cn/post/7663404266338484243",
-      "published_at": "2026-07-18T12:08:04+00:00",
-      "raw_text": "Superpowers 是 25.2 万星开源 AI 编程框架，核心是 14 套标准化 Skill 协议，将 TDD、代码评审等软件工程纪律固化为 Agent 默认流程。",
+      "id": "d7943ae1f94ffa58",
+      "source_id": "the-next-platform",
+      "title": "From Pilots to AI Factories: How Enterprises Are Really Scaling Agentic AI and Agent Gateways",
+      "url": "https://intelligence.theregister.com/paper/view/20412",
+      "published_at": "2026-07-30T00:00:00+00:00",
+      "raw_text": "AI is shifting from simple chatbots to autonomous “coworkers,” and most enterprises are now constrained less by models than by the complexity",
       "category_hint": [
-        "技巧与观点"
+        "行业动态",
+        "产品发布"
       ],
       "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深度解析Superpowers如何将工程纪律固化为Agent默认行为，对AI编程实践有重要启发。",
-      "summary_zh": "Superpowers是一个25.2万星的开源AI编程框架，其核心是14套标准化Skill协议，将TDD、代码评审等软件工程纪律固化为Agent的默认流程。文章深入解析了其实现原理，包括如何通过协议约束Agent行为、如何集成工程最佳实践，以及如何提升代码质量和开发效率。该框架为AI辅助编程提供了系统化的方法论。",
-      "title_zh": "Superpowers实现原理深度解析：如何把工程纪律变成Agent的默认行为",
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "fbb3c44891752d56",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7663404266338484243"
-        }
-      ]
-    },
-    {
-      "id": "2a54df4f57eb424e",
-      "source_id": "zh-juejin",
-      "title": "Capital One 开源 VulnHunter：AI 自动扫描代码漏洞，开发者安全实战指南",
-      "url": "https://juejin.cn/post/7663438837188378658",
-      "published_at": "2026-07-18T13:23:28+00:00",
-      "raw_text": "一、引子：你的代码仓库里藏着多少漏洞？ 上周跟一个做金融科技的朋友聊天，他说他们团队每次上线前都要花三天做安全审计——人工翻代码、找漏洞、写报告。结果上个月还是被安全团队扫出一个「高危-未授权访问」。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "Capital One开源VulnHunter，AI自动扫描代码漏洞，提供安全实战指南，实用性强。",
-      "summary_zh": "文章介绍了Capital One开源的VulnHunter工具，它利用AI自动扫描代码漏洞，提升安全审计效率。作者通过金融科技团队的实际案例，说明传统人工审计耗时且易遗漏。VulnHunter能够自动检测未授权访问等常见漏洞，并生成报告。文章还提供了开发者安全实战指南，包括如何集成到CI/CD流程中。",
-      "title_zh": "Capital One开源VulnHunter：AI自动扫描代码漏洞，开发者安全实战指南",
-      "weighted_score": 0.665,
+      "reason_zh": "深入分析企业如何规模化部署Agentic AI和Agent Gateway，从试点到AI工厂。",
+      "summary_zh": "文章指出AI正从简单聊天机器人转向自主“同事”，企业瓶颈不再是模型本身，而是系统复杂性。探讨了Agent Gateway等架构如何实现安全、可控的AI代理规模化部署，并分享实际案例和最佳实践。",
+      "title_zh": "从试点到AI工厂：企业如何真正规模化Agentic AI和Agent Gateway",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.8,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.8
+        "practical_value": 0.7
       },
-      "story_id": "ce141930586f24af",
+      "story_id": "32fdc76bfdb75c56",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7663438837188378658"
-        }
-      ]
-    },
-    {
-      "id": "0dce189486aa02f0",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] 手搓了一个 agent 架构能减少 长 coding 任务的 llm 往返和 token 开销 80%左右。有 benchmark！",
-      "url": "https://www.v2ex.com/t/1228293#reply0",
-      "published_at": "2026-07-18T22:23:33+00:00",
-      "raw_text": "这个想法其实非常简单。假设 Codex 需要修改文件并运行测试，通常需要经历以下流程：<br />第 1 轮——应用补丁（修改 package 文件）<br />第 2 轮——应用补丁（修复 Bug ）<br />第 3 轮——应用补丁（修改测试脚本）<br />第 4 轮——执行构建<br />第 5 轮——运行测试和代码检查<br />第 6 轮——如果使用 Playwright ，Codex 还需要额外一轮读取截图等媒体文件<br />我们的思路是使用宏命令，将整个流程放入一个 RAG 中，从而在单轮内完成。例如：<br />步骤 1：检查运行环境<br />步骤 2：应用补丁（修改 package 文件）<br />步骤 2：应用补丁（修复 Bug ）<br />步骤 2：应用补丁（修改测试脚本）<br />步骤 3：执行构建<br />步骤 4：运行测试和代码检查<br />步骤 5：读取媒体文件<br />我使用 Codex 和 GPT-5.6-Sol High 对这种方式进行了测试。结果显示，它可以减少约 40%–80% 的大模型交互轮次，同时节省接近相同比例的 Token 。<br />具体实现和测试基准可以在项目的 Markdown 文档中找到。我使用 DeepSWE 任务和完整代码仓库重写任务进行了测试：<br />repo:<a href=\"https://github.com/Tura-AI/tura\" rel=\"nofollow noopener\" target=\"_blank\">https://github.com/Tura-AI/tura</a><br />benchmark 文档： <a href=\"https://turaai.net/docs#benchmark-current-test-set-record\" rel=\"nofollow noopener\" target=\"_blank\">https://turaai.net/docs#benchmark-current-test-set-record</a><br />| 配置 | 通过数量 | 通过率 | 实际观测 Token | 交互轮次 | 预估成本 |<br />|---|---:|---:|---:|---:|---:|<br />| Macro + 逆向推理 | 4",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "作者提出一种agent架构，通过宏命令和RAG减少LLM往返和token开销80%，有benchmark，实用性强。",
-      "summary_zh": "作者分享了一种减少长编码任务中LLM往返和token开销约80%的agent架构。核心思路是将传统多轮流程（如Codex修改文件、运行测试等）通过宏命令整合到一个RAG中，在单轮内完成。例如，将检查环境、应用补丁、构建、测试等步骤合并，从而大幅减少与LLM的交互次数和token消耗。文章提供了benchmark数据支持。",
-      "title_zh": null,
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "1fd0fdffe28ab653",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1228293#reply0"
+          "source_id": "the-next-platform",
+          "url": "https://intelligence.theregister.com/paper/view/20412"
         }
       ]
     },
@@ -334,6 +171,44 @@
       ]
     },
     {
+      "id": "23133b17d511e156",
+      "source_id": "reddit-machinelearning",
+      "title": "Interactive map of GPT-2's token embedding space - tap any token and explore [P]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/",
+      "published_at": "2026-07-18T22:42:20+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>32,070 alphabetic tokens from GPT-2-small's WTE, no forward pass and no context.</p> <p>Works on mobile. Pinch to zoom, tap a token to see its nearest connections, tap a neighbour to walk the graph. Search box to jump anywhere.</p> <p>Layout is t-SNE over a compressed representation of the embedding table; edges are a minimum spanning tree in that space, so every line is a real nearest-kin relationship,</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Limp-Contest-7309\"> /u/Limp-Contest-7309 </a> <br /> <span><a href=\"https://aethereos.net/static/token-atlas.html\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/\">[comments]</a></span>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "交互式可视化GPT-2 token嵌入空间，直观探索语义关系，对理解模型内部表示有启发。",
+      "summary_zh": "该项目提供了一个交互式地图，可视化GPT-2-small的32,070个字母token的嵌入空间（WTE），无需前向传播和上下文。用户可通过触摸缩放、点击token查看最近邻连接，并沿图行走。布局使用t-SNE压缩嵌入表，边为最小生成树，支持搜索跳转。",
+      "title_zh": null,
+      "weighted_score": 0.62,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "b30a6f6a490f75cc",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1v07xai/gpt2_smalls_embedding_geometry_around_trump/"
+        },
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/"
+        }
+      ]
+    },
+    {
       "id": "7d45b7438e146e5f",
       "source_id": "towards-data-science",
       "title": "Loop Engineering with Adaptive PDF Parsing: Start Cheap, Pay for a Heavier Parser Only When the Page Needs It",
@@ -368,6 +243,43 @@
       ]
     },
     {
+      "id": "61ec37f1d7764e5a",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 手搓了一个 agent 架构能减少 长 coding 任务的 llm 往返和 token 开销 80%左右。有 benchmark！",
+      "url": "https://www.v2ex.com/t/1228293#reply1",
+      "published_at": "2026-07-18T22:23:33+00:00",
+      "raw_text": "这个想法其实非常简单。假设 Codex 需要修改文件并运行测试，通常需要经历以下流程：<br />第 1 轮——应用补丁（修改 package 文件）<br />第 2 轮——应用补丁（修复 Bug ）<br />第 3 轮——应用补丁（修改测试脚本）<br />第 4 轮——执行构建<br />第 5 轮——运行测试和代码检查<br />第 6 轮——如果使用 Playwright ，Codex 还需要额外一轮读取截图等媒体文件<br />我们的思路是使用宏命令，将整个流程放入一个 RAG 中，从而在单轮内完成。例如：<br />步骤 1：检查运行环境<br />步骤 2：应用补丁（修改 package 文件）<br />步骤 2：应用补丁（修复 Bug ）<br />步骤 2：应用补丁（修改测试脚本）<br />步骤 3：执行构建<br />步骤 4：运行测试和代码检查<br />步骤 5：读取媒体文件<br />我使用 Codex 和 GPT-5.6-Sol High 对这种方式进行了测试。结果显示，它可以减少约 40%–80% 的大模型交互轮次，同时节省接近相同比例的 Token 。<br />具体实现和测试基准可以在项目的 Markdown 文档中找到。我使用 DeepSWE 任务和完整代码仓库重写任务进行了测试：<br />repo:<a href=\"https://github.com/Tura-AI/tura\" rel=\"nofollow noopener\" target=\"_blank\">https://github.com/Tura-AI/tura</a><br />benchmark 文档： <a href=\"https://turaai.net/docs#benchmark-current-test-set-record\" rel=\"nofollow noopener\" target=\"_blank\">https://turaai.net/docs#benchmark-current-test-set-record</a><br />| 配置 | 通过数量 | 通过率 | 实际观测 Token | 交互轮次 | 预估成本 |<br />|---|---:|---:|---:|---:|---:|<br />| Macro + 逆向推理 | 4",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "提出用宏命令+RAG减少LLM往返的实用方法，有benchmark验证，对工程实践有直接参考价值。",
+      "summary_zh": "作者分享了一种通过宏命令和RAG减少LLM在长编码任务中往返次数和token开销的方法。传统流程需要多轮交互（如应用补丁、构建、测试等），而作者将整个流程封装到RAG中，在单轮内完成所有步骤，声称可减少约80%的往返和token开销。文章提供了具体步骤和benchmark结果，展示了该方法在Codex等场景下的有效性。",
+      "title_zh": null,
+      "weighted_score": 0.57,
+      "score_breakdown": {
+        "source_authority": 0.3,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.9
+      },
+      "story_id": "9a75321ad052c0f6",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1228293#reply1"
+        },
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1228308#reply1"
+        }
+      ]
+    },
+    {
       "id": "d78b479621b06387",
       "source_id": "the-decoder",
       "title": "Open-weight models now match frontier cyber performance from just four months ago at a fraction of the cost",
@@ -392,20 +304,114 @@
         "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "98e382c6e928a0d8",
+      "story_id": "8aa2e56cf2137aec",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "the-decoder",
-          "url": "https://the-decoder.com/netflixs-300-ai-productions-show-how-fast-the-technology-is-spreading-through-entertainment/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/linus-torvalds-tells-ai-critics-in-the-linux-kernel-community-to-fork-off/"
-        },
-        {
-          "source_id": "the-decoder",
           "url": "https://the-decoder.com/open-weight-models-now-match-frontier-cyber-performance-from-just-four-months-ago-at-a-fraction-of-the-cost/"
+        }
+      ]
+    },
+    {
+      "id": "77fcc4a8e9625ade",
+      "source_id": "the-decoder",
+      "title": "China's new World Artificial Intelligence Cooperation Organization is President Xi's clearest play yet for a parallel AI order",
+      "url": "https://the-decoder.com/chinas-new-world-artificial-intelligence-cooperation-organization-is-president-xis-clearest-play-yet-for-a-parallel-ai-order/",
+      "published_at": "2026-07-18T10:46:04+00:00",
+      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/china_flag_visual-2.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        At the World AI Conference in Shanghai, Xi Jinping announced 5,000 AI training slots for Global South countries and the launch of the \"World Artificial Intelligence Cooperation Organization.\" Cooperation centers with ASEAN, the African Union, BRICS, and other alliances are planned to follow. China is systematically building a parallel AI governance structure outside Western influence.</p>\n<p>The article <a href=\"https://the-decoder.com/chinas-new-world-artificial-intelligence-cooperation-organization-is-president-xis-clearest-play-yet-for-a-parallel-ai-order/\">China&#039;s new World Artificial Intelligence Cooperation Organization is President Xi&#039;s clearest play yet for a parallel AI order</a> appeared first on <a href=\"https://the-decoder.com\">The Decod",
+      "category_hint": [
+        "模型发布",
+        "行业动态"
+      ],
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/china_flag_visual-2.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "中国宣布成立世界人工智能合作组织，提供5000个培训名额，展现构建平行AI秩序的战略意图。",
+      "summary_zh": "在上海世界人工智能大会上，习近平主席宣布为全球南方国家提供5000个AI培训名额，并启动“世界人工智能合作组织”（WAICO）。此举被视为中国构建平行AI秩序的最明确举措。WAICO旨在推动全球AI治理与合作，挑战现有西方主导的AI规则体系。文章分析认为，这是中国在AI领域扩大影响力的重要战略，可能重塑全球AI发展格局。",
+      "title_zh": "中国新成立的世界人工智能合作组织是习近平构建平行AI秩序的最明确举措",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.4
+      },
+      "story_id": "85932ce0d3ac20ec",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/chinas-new-world-artificial-intelligence-cooperation-organization-is-president-xis-clearest-play-yet-for-a-parallel-ai-order/"
+        }
+      ]
+    },
+    {
+      "id": "04260b40589a23f3",
+      "source_id": "chips-and-cheese",
+      "title": "Scrying the AMD GFX1250 LLVM Tea Leaves",
+      "url": "https://chipsandcheese.com/p/scrying-the-amd-gfx1250-llvm-tea",
+      "published_at": "2026-07-19T03:21:03+00:00",
+      "raw_text": "In just a few short days, AMD will be showing off their brand new MI400 series of Datacenter Accelerators at their Advancing AI event but before that event comes, we thought it would be fun to attempt to scry the tea leaves that are LLVM commits to see what we can ascertain about this next generation of AMD accelerator.",
+      "category_hint": [
+        "行业动态",
+        "论文研究"
+      ],
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/25da2e03-50f1-4e93-bd87-ea0c182427b4_704x690.jpeg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "通过LLVM提交记录提前窥探AMD MI400系列加速器细节，技术分析有深度。",
+      "summary_zh": "在AMD即将展示MI400系列数据中心加速器之前，作者通过分析LLVM提交记录，尝试推测下一代AMD加速器的技术细节。文章从编译器变更中挖掘硬件特性，展示了如何从开源代码中提前获取硬件信息的方法论。",
+      "title_zh": "从AMD GFX1250 LLVM提交记录中窥探端倪",
+      "weighted_score": 0.615,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.4
+      },
+      "story_id": "baa56d47479a9bd3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "chips-and-cheese",
+          "url": "https://chipsandcheese.com/p/scrying-the-amd-gfx1250-llvm-tea"
+        }
+      ]
+    },
+    {
+      "id": "e2c0bac21de6bf39",
+      "source_id": "towards-data-science",
+      "title": "Many Companies Use AI. Few Know How to Build an AI-Native Enterprise Data Platform.",
+      "url": "https://towardsdatascience.com/many-companies-use-ai-few-know-how-to-build-an-ai-native-enterprise-data-platform/",
+      "published_at": "2026-07-18T17:00:00+00:00",
+      "raw_text": "<p>A practical enterprise AI architecture with data agents, AI-powered QA, and AI governance.</p>\n<p>The post <a href=\"https://towardsdatascience.com/many-companies-use-ai-few-know-how-to-build-an-ai-native-enterprise-data-platform/\">Many Companies Use AI. Few Know How to Build an AI-Native Enterprise Data Platform.</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "文章提供构建AI原生企业数据平台的实用架构，涵盖数据智能体、AI治理等，有深度。",
+      "summary_zh": "文章来自Towards Data Science，标题为“许多公司使用AI，但很少有人知道如何构建AI原生企业数据平台”。内容介绍了一种实用的企业AI架构，包括数据智能体、AI驱动的质量保证和AI治理。文章旨在指导企业如何构建真正的AI原生数据平台，而不仅仅是使用AI工具。",
+      "title_zh": "许多公司使用AI，但很少有人知道如何构建AI原生企业数据平台",
+      "weighted_score": 0.57,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.5,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "440e29c10920f63a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "towards-data-science",
+          "url": "https://towardsdatascience.com/many-companies-use-ai-few-know-how-to-build-an-ai-native-enterprise-data-platform/"
         }
       ]
     }

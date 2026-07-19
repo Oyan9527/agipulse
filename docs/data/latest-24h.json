@@ -1,209 +1,5 @@
 [
   {
-    "id": "1c165c3c29361c19",
-    "source_id": "arxiv-cs-ai",
-    "title": "AI Agents Do Not Fail Alone:The Context Fails First",
-    "url": "https://arxiv.org/abs/2607.14275",
-    "published_at": "2026-07-18T04:00:00+00:00",
-    "raw_text": "arXiv:2607.14275v1 Announce Type: new \nAbstract: Context engineering has become central to building reliable AI agents, yet it remains largely unmeasured. Agents do not fail in isolation: their behavior is shaped by the instructions, tools, memory, retrieved knowledge, guardrails, and untrusted inputs accumulated in their context. When this context is weak, agents drift, hallucinate, misuse tools, ignore constraints, become vulnerable to injection, and waste tokens. This paper validates context-engineering quality as an independent leading indicator of agent reliability. We implement the measurement in ProofAgent-Harness, an open-source infrastructure for AI agent evaluation that uses multi-juror, consensus-based scoring. The harness assesses context across seven criteria: role clarity, guardrail coverage, instruction consistency, tool schema quality, grounding sufficiency, injection hardening, and token efficiency. Crucially, the context score is isolated from behavioral metrics and r",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.9,
-    "reason_zh": "提出“上下文先失败”观点，系统分析Agent失败根源，为构建可靠Agent提供可测量框架，极具实践价值。",
-    "summary_zh": "本文指出AI Agent的失败并非孤立发生，而是由上下文（指令、工具、记忆、检索知识、护栏、不可信输入）的薄弱导致。当上下文脆弱时，Agent会出现漂移、幻觉、工具误用等问题。作者提出上下文工程是构建可靠Agent的核心，但目前缺乏度量方法。论文系统分析了上下文各组件对Agent行为的影响，并提出了一个可测量的框架，为Agent可靠性工程提供了新方向。",
-    "title_zh": "AI Agent并非孤立失败：上下文先失败",
-    "weighted_score": 0.845,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.9
-    },
-    "story_id": "0046ec5f481aff64",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.14275"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "173acf4a7a4fc96f",
-    "source_id": "arxiv-cs-ai",
-    "title": "The Steering Budget: Examples beat Knobs",
-    "url": "https://arxiv.org/abs/2607.14246",
-    "published_at": "2026-07-18T04:00:00+00:00",
-    "raw_text": "arXiv:2607.14246v1 Announce Type: new \nAbstract: Generative models are steered with knobs -- prompts, guidance scales, property tags. Turn one as hard as you like and, past a point, it stops moving the property you care about. We find that ceiling is not a shortcoming of the model but a budget, set by the training data before the model is trained: a property's movable range splits in two -- the part a knob can reach, and a second, significant part that only examples -- concrete instances of what you want more of -- can reach. That second part is usually much larger, but not always, and the same budget says so in advance.\n  Reaching that second part takes a different move: instead of turning a knob, you show the model examples, composed from what it already learned rather than added to its training. A cheap audit of the training data measures the budget; we give a recipe for building the example set that reaches all of it.\n  This buys two things a knob can't. Reach: it moves a property ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "揭示生成模型控制中的“预算”机制，证明示例比旋钮更有效，对可控生成有根本性指导意义。",
-    "summary_zh": "本文发现生成模型中的控制旋钮（如提示、引导尺度）存在一个“预算”上限，该上限由训练数据在模型训练前设定。超过此上限后，旋钮不再影响目标属性。作者证明，通过提供示例而非调节旋钮，可以突破这一预算限制，实现更有效的控制。这一发现挑战了传统可控生成方法，为模型设计和训练数据选择提供了新视角。",
-    "title_zh": "控制预算：示例胜于旋钮",
-    "weighted_score": 0.825,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.8
-    },
-    "story_id": "4efb400f5f2c2251",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.14246"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "cdf11337f8cae367",
-    "source_id": "arxiv-cs-ai",
-    "title": "Transcoders for Investigating Deception in Language Models",
-    "url": "https://arxiv.org/abs/2607.14791",
-    "published_at": "2026-07-18T04:00:00+00:00",
-    "raw_text": "arXiv:2607.14791v1 Announce Type: new \nAbstract: Transcoders have recently emerged as a promising approach for mechanistic interpretability (MI), enabling circuit-level analysis of model behaviour. In this paper, we investigate the use of transcoders to analyse deceptive behaviour in language models, a behaviour that poses a safety and security risk. Using a Qwen3-4B model with pre-trained transcoders, specifically per-layer transcoders (PLTs), we construct attribution graphs that capture feature activations and inter-feature dependencies, allowing circuit-level analysis of deception. Through feature steering and circuit analysis, we identified a dictionary of deception-related features and show that these features exert a stronger influence on deceptive outputs, as they produce predictable shifts between deceptive and non-deceptive responses. These findings suggest that deception emerges from internal model mechanisms and highlight the potential of transcoders for behavioural monitori",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "利用转码器进行可解释性分析，揭示语言模型中的欺骗行为机制，对AI安全有重要意义。",
-    "summary_zh": "本文研究使用转码器（transcoders）分析语言模型中的欺骗行为。转码器是机械可解释性（MI）的新兴方法，能够实现电路级行为分析。作者在Qwen3-4B模型上应用预训练的转码器，探索模型在生成欺骗性输出时的内部表示和计算路径。实验揭示了与欺骗相关的特定神经元和电路模式，为检测和缓解模型欺骗行为提供了新思路。该工作展示了转码器在安全相关分析中的潜力，有助于构建更可信的AI系统。",
-    "title_zh": "使用转码器研究语言模型中的欺骗行为",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "d4898fada70c02ca",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.14791"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6ab5658a100f52d0",
-    "source_id": "arxiv-cs-ai",
-    "title": "Capability from Access Structure, Not Scale: Lower Bounds and Pre-Registered Tests for Hybrid Sequence Models",
-    "url": "https://arxiv.org/abs/2607.14144",
-    "published_at": "2026-07-18T04:00:00+00:00",
-    "raw_text": "arXiv:2607.14144v1 Announce Type: new \nAbstract: The Platonic Representation Hypothesis (PRH) holds that as models scale, representations of heterogeneous networks converge toward a shared model of reality. We propose its sequel and boundary, the Capability Convergence Hypothesis (CCH): under a fixed per-token inference budget, representational convergence does not entail capability convergence. Capability instead converges toward a class, the access-complete hybrid: any architecture holding both a compressive O(1)-state channel and a scalable verbatim-index channel. We anchor it on a witness task, the Newton's-apple problem in an infinite stream, and name three resource walls: a Shannon wall barring any o(Nb)-state architecture, a horizon wall barring any fixed window, and a circuit wall barring fixed-depth attention-only composition (conditional on TC0 != NC1). Under an explicit separability assumption a hybrid crosses all three by paying each wall's price, so capability is strictly ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出能力收敛假说，挑战普适表征假说，揭示访问结构而非规模决定能力，理论价值高。",
-    "summary_zh": "普适表征假说认为，随着模型规模扩大，异构网络的表征会收敛到一个共享的现实模型。本文提出其续集和边界——能力收敛假说：在固定的每token推理预算下，表征收敛并不意味着能力收敛。作者通过理论下界和预注册实验证明，混合序列模型的能力主要取决于其访问结构（即模型如何访问上下文），而非模型规模。具体而言，即使表征相似，不同访问结构会导致显著的能力差异。该工作挑战了当前对模型规模与能力关系的普遍认知，为设计更高效的序列模型提供了新视角。",
-    "title_zh": "能力来自访问结构而非规模：混合序列模型的下界与预注册测试",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "6485c094978e04de",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.14144"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "82d839e4830dc183",
-    "source_id": "arxiv-cs-ai",
-    "title": "When a Verified World Model Still Loses: Play-Adequacy vs Prediction-Accuracy in LLM-Synthesized Code World Models",
-    "url": "https://arxiv.org/abs/2607.14169",
-    "published_at": "2026-07-18T04:00:00+00:00",
-    "raw_text": "arXiv:2607.14169v1 Announce Type: new \nAbstract: Large language models can synthesize a game's rules as executable code - a Code World Model (CWM) - which a classical planner then searches over. Such models are typically accepted when they reach high transition accuracy on sampled trajectories. We argue this is the wrong notion of adequacy for planning.\n  We show four things. (1) An LLM-synthesized CWM can pass a sampling gate at 100% transition accuracy and be $\\geq 98\\%$ state-accurate on the planner's own search distribution, yet lose systematically at play, because the $<1\\%$ it gets wrong is exactly the pivotal dynamics; the play cost of the omitted rule is $0.091$ (seed-clustered 95% CI $[0.065,0.117]$, $n=4800$). We call this the verified-vs-correct gap, and confirm it end-to-end through the synthesis pipeline. (2) The harm follows a quantitative law, $\\mathrm{danger}=\\mathrm{play\\_cost}\\times(1-\\mathrm{rarity})^N$, whose $(1-\\mathrm{rarity})^N$ gate-miss factor is proven exact ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示LLM合成代码世界模型在规划中的缺陷，提出“游戏充分性”概念，挑战传统评估标准。",
-    "summary_zh": "大型语言模型可以将游戏规则合成为可执行代码——即代码世界模型，然后由经典规划器进行搜索。这类模型通常在其对采样轨迹的转换准确率达到高水平时被接受。本文认为，对于规划而言，这是错误的充分性概念。作者展示了四点：(1) LLM合成的CWM即使达到高转换准确率，也可能在规划中失败；(2) 提出“游戏充分性”作为更合适的评估标准，即模型是否能够支持有效的规划；(3) 通过实验证明，高预测准确率与规划性能之间存在显著差距；(4) 提出改进CWM的方法，使其更符合规划需求。该工作挑战了当前对LLM合成模型评估的普遍做法，为构建更可靠的规划模型提供了新方向。",
-    "title_zh": "当验证过的世界模型仍然失败：LLM合成代码世界模型中的游戏充分性与预测准确性",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "6781422d64dd3d0f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.14169"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "edd6f07a57df9423",
-    "source_id": "arxiv-cs-ai",
-    "title": "Proof-or-Stop: Don't Trust the Agent, Trust the Evidence -- Loop Engineering for Verifiable Evidence-Gated Lifecycle Control",
-    "url": "https://arxiv.org/abs/2607.14890",
-    "published_at": "2026-07-18T04:00:00+00:00",
-    "raw_text": "arXiv:2607.14890v1 Announce Type: new \nAbstract: Autonomous coding agents increasingly execute multi-step software work, but lifecycle states such as reviewed, tested, DONE, and ready-to-merge remain claims unless supported by current evidence. We present Proof-or-Stop Lifecycle Control, a method that permits lifecycle transitions only when fresh, tracked-source-state-bound, mechanically verifiable evidence satisfies the relevant gate. The method treats agent outputs as claims rather than lifecycle state, and uses proof operationally to mean gate-admissible evidence under a stated trust model, not semantic program correctness.\n  We evaluate an open-source implementation through mechanism tests, a powered control-policy ablation, and operated self-application evidence. The unattended-loop engine passed 10 of 10 scenarios with zero false-DONE, and local-key receipt bundles rejected 18 tamper classes with zero false accepts. In a 9,240-cell ablation, the pre-registered A4 versus A2-prime ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出证据门控生命周期控制方法，确保自主编码代理的每个状态都有可验证证据，提升可靠性。",
-    "summary_zh": "本文提出Proof-or-Stop生命周期控制方法，用于自主编码代理。当前代理在执行多步软件任务时，其生命周期状态（如已审查、已测试、完成、可合并）往往只是声明，缺乏当前证据支持。该方法要求每个状态转换必须基于新鲜的、可追踪的、机械可验证的证据，否则禁止转换。作者在真实编码场景中验证了该方法，有效减少了错误状态和不可靠的声明，提高了代理行为的可信度和可审计性。",
-    "title_zh": "证明或停止：不要相信代理，相信证据——用于可验证证据门控生命周期控制的循环工程",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "da9b9a55887d4e80",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.14890"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "6f6d347b0576e136",
     "source_id": "tnw-deep-tech",
     "title": "The White House is now deciding who gets access to frontier AI models, not the labs",
@@ -272,6 +68,76 @@
     "curated": true
   },
   {
+    "id": "28c7ee44d88bdbf2",
+    "source_id": "raschka",
+    "title": "Controlling Reasoning Effort in LLMs",
+    "url": "https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms",
+    "published_at": "2026-07-18T11:16:09+00:00",
+    "raw_text": "How LLMs Learn Low-, Medium-, and High-Effort Reasoning Modes",
+    "category_hint": [
+      "技巧与观点",
+      "论文研究"
+    ],
+    "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/286a0beb-32b2-41fc-8bcf-6bae189b53f2_1488x840.png",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "Sebastian Raschka解读LLM推理控制新论文，揭示低中高推理模式的学习机制。",
+    "summary_zh": "该研究探讨LLM如何学习低、中、高三种推理努力模式，通过控制推理深度来平衡准确性与计算成本。论文揭示了模型在不同难度任务中自适应调整推理策略的机制，对提升LLM效率有重要意义。",
+    "title_zh": "控制LLM中的推理努力",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "32319c68714615d7",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "raschka",
+        "url": "https://magazine.sebastianraschka.com/p/controlling-reasoning-effort-in-llms"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "c85b741f282e1a36",
+    "source_id": "marktechpost",
+    "title": "Google Cloud’s Always-On Memory Agent Replaces RAG and Embeddings With Continuous LLM Consolidation on Gemini 3.1 Flash-Lite",
+    "url": "https://www.marktechpost.com/2026/07/18/google-clouds-always-on-memory-agent-replaces-rag-and-embeddings-with-continuous-llm-consolidation-on-gemini-3-1-flash-lite/",
+    "published_at": "2026-07-18T07:57:51+00:00",
+    "raw_text": "<p>Google Cloud's generative-ai repository ships the Always-On Memory Agent, a reference implementation that treats memory as a running process. Built on Google ADK and Gemini 3.1 Flash-Lite, it uses no vector database and no embeddings. Instead, an orchestrator routes to Ingest, Consolidate, and Query sub-agents that read, connect, and write structured memory into SQLite 24/7.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/07/18/google-clouds-always-on-memory-agent-replaces-rag-and-embeddings-with-continuous-llm-consolidation-on-gemini-3-1-flash-lite/\">Google Cloud&#8217;s Always-On Memory Agent Replaces RAG and Embeddings With Continuous LLM Consolidation on Gemini 3.1 Flash-Lite</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f4c4.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "Google Cloud 开源无向量数据库的持续记忆代理，实用性强。",
+    "summary_zh": "Google Cloud 的 generative-ai 仓库发布了 Always-On Memory Agent，这是一个参考实现，将记忆视为持续运行的过程。基于 Google ADK 和 Gemini 3.1 Flash-Lite，它不使用向量数据库或嵌入，而是通过编排器路由到 Ingest、Consolidate 和 Query 子代理，这些代理全天候读取、连接和写入结构化记忆到 SQLite。",
+    "title_zh": "Google Cloud 的 Always-On Memory Agent 用持续 LLM 整合取代 RAG 和嵌入，基于 Gemini 3.1 Flash-Lite",
+    "weighted_score": 0.73,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "be9f89035dd33501",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/07/18/google-clouds-always-on-memory-agent-replaces-rag-and-embeddings-with-continuous-llm-consolidation-on-gemini-3-1-flash-lite/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "97104bdf1bba7b4b",
     "source_id": "tnw-deep-tech",
     "title": "Alibaba open-sources its AI chip software stack at WAIC, targeting Nvidia’s CUDA lock-in",
@@ -306,70 +172,66 @@
     "curated": true
   },
   {
-    "id": "5b43c00f103b820b",
-    "source_id": "infoq-cn-ai",
-    "title": "腾讯云发布ADP 4.0海外版：集成Google Workspace、Jira，定位AgentOps全生命周期管理",
-    "url": "https://www.infoq.cn/article/r6m3xASYYfM81h9dNBRE?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-19T08:01:41+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/r6m3xASYYfM81h9dNBRE?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "id": "b37c56d2493b527e",
+    "source_id": "36kr",
+    "title": "“人工智能+防震减灾”行动方案发布",
+    "url": "https://36kr.com/newsflashes/3902090005743493?f=rss",
+    "published_at": "2026-07-19T05:00:07+00:00",
+    "raw_text": "7月19日，2026世界人工智能大会——地震人工智能论坛在上海召开。会议聚焦人工智能与防震减灾深度融合发展，集中展示了人工智能技术在防震减灾领域的最新科研成果和实际应用。中国地震局在论坛上发布《“人工智能+防震减灾”行动方案（2026—2028年）》。未来3年，将围绕地震智能监测处理系统、智能化地震预警技术研发与示范应用等九方面任务，构建起“数据—模型—平台—应用”四位一体的人工智能技术体系，进一步夯实数据基础、突破核心技术、打造“AI+地震”系列支撑平台。到2028年，实现人工智能技术对防震减灾业务的有效支撑，进一步巩固我国在防震减灾人工智能领域的先发优势。（央视新闻）",
     "category_hint": [
-      "行业动态",
-      "技巧与观点"
+      "行业动态"
     ],
     "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
     "depth_score": 0.2,
-    "reason_zh": "腾讯云发布ADP 4.0海外版，集成Google Workspace和Jira，定位AgentOps全生命周期管理。",
-    "summary_zh": "腾讯云发布ADP 4.0海外版，集成Google Workspace和Jira等工具，定位为AgentOps全生命周期管理平台。该版本旨在帮助企业更高效地管理AI Agent的部署、监控和优化，拓展海外市场。",
+    "reason_zh": "中国地震局发布“人工智能+防震减灾”行动方案，明确未来3年九大任务，体现AI在防灾领域的政策推动。",
+    "summary_zh": "在2026世界人工智能大会的地震人工智能论坛上，中国地震局发布了《“人工智能+防震减灾”行动方案（2026—2028年）》。方案提出未来3年围绕地震智能监测处理系统、智能化地震预警技术研发与示范应用等九方面任务，构建“数据—模型—平台—应用”四位一体的人工智能技术体系。目标是到2028年实现AI技术对防震减灾业务的有效支撑，巩固我国在该领域的先发优势。",
     "title_zh": null,
-    "weighted_score": 0.64,
+    "weighted_score": 0.725,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.6,
-      "practical_value": 0.5
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.4
     },
-    "story_id": "b575d0b2e9587d29",
-    "multi_source_count": 2,
+    "story_id": "f6552bdf84e5864d",
+    "multi_source_count": 1,
     "sources": [
       {
         "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3900908700436103?f=rss"
-      },
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/r6m3xASYYfM81h9dNBRE?utm_source=rss&utm_medium=article"
+        "url": "https://36kr.com/newsflashes/3902090005743493?f=rss"
       }
     ],
     "curated": true
   },
   {
-    "id": "c8a3bfff83666e39",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] [开源] 让人人用上 Claude Fable 5，基于多模型 MoA 编排",
-    "url": "https://www.v2ex.com/t/1228271#reply3",
-    "published_at": "2026-07-18T14:38:39+00:00",
-    "raw_text": "<p>Claude 的额度实在扛不住高频使用。\n所以自己折腾了一个东西，把多个模型「组队」起来——不指望一个诸葛亮包打天下，而是让几位军师各出一招、再有个判官做交叉审稿，合起来希望能力逼近 Fable 5</p>\n<h2>为什么觉得这事儿值得做</h2>\n<p>OpenRouter 前阵子在 DRACO 深度研究基准上做了个实验：<strong>Gemini 3 Flash + Kimi K2.6 + DeepSeek V4 Pro</strong> 三个模型 Fusion 起来，得分 **64.7%**，和 Claude Fable 5 单跑的 <strong>65.3%</strong> 只差 0.6 个百分点，而单任务成本大约只有一半。详见 <a href=\"https://openrouter.ai/blog/announcements/fusion-beats-frontier/\" rel=\"nofollow\">OpenRouter Fusion</a>。</p>\n<p>结论很直接：<strong>单个模型不是终点，多个模型合体很多时候比单模型更强。</strong></p>\n<p>但 OpenRouter 的 Fusion 是云端服务。我更想要的是：</p>\n<ul>\n<li>模型可以换、供应商可以换、路由策略可以改</li>\n<li>跑在免费 / 便宜的边缘推理上</li>\n<li>最好支持多种各种 api 格式</li>\n</ul>\n<p>于是就有了这个项目。</p>\n<h2>做了什么</h2>\n<p>基于 <a href=\"https://arxiv.org/abs/2406.04692\" rel=\"nofollow\">Mixture-of-Agents 论文</a>，在 Cloudflare Worker 上实现了多层 MoA 编排：</p>\n<pre><code>请求\n  ├─ Layer 0: AnySearch 联网检索（可选，结果注入 &lt;CONTEXT&gt;）\n  ├─ Layer 1: N 个 proposer 并行（不同模型提供多样化视角）\n  ├─ Layer 2: judge 冲突分析（产出共识 / 冲突 / 遗漏 / 无证据清单）\n  └─ Layer 3: aggregator 综合最终答案（非简单拼接，是带裁决的二次",
+    "id": "986510886792f5a6",
+    "source_id": "the-decoder",
+    "title": "Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing",
+    "url": "https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/",
+    "published_at": "2026-07-18T07:17:11+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/claude_logo_money.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Anthropic will include Claude Fable 5 in Max and Team Premium plans starting July 20, but at just 50 percent of regular limits, which themselves drop by a third that same day. Pro users get a one-time $100 credit, then pay API rates. The reversal from Anthropic's original plan to pull Fable from subscriptions entirely likely comes down to competitive pressure from OpenAI's cheaper GPT-5.6 Sol.</p>\n<p>The article <a href=\"https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/\">Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
     "category_hint": [
-      "技巧与观点"
+      "模型发布",
+      "行业动态"
     ],
-    "image_url": "https://files.seeusercontent.com/2026/07/18/r7Yt/pasted-image-1784383411523.webp",
-    "category": "开源项目",
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/claude_logo_money.png",
+    "category": "产品发布",
     "content_type": "产品发布",
-    "depth_score": 0.5,
-    "reason_zh": "开源多模型MoA编排项目，通过模型组队逼近Claude Fable 5性能，成本减半，实用性强。",
-    "summary_zh": "作者因Claude额度不足，开发了一个基于多模型MoA（Mixture of Agents）编排的开源项目。该项目将多个模型“组队”，通过各模型分别输出、再由一个“判官”模型进行交叉审稿的方式，期望整体能力逼近Claude Fable 5。文章引用OpenRouter在DRACO基准上的实验：Gemini 3 Flash + Kimi K2.6 + DeepSeek V4 Pro三个模型融合得分64.7%，接近Claude Fable 5的65.3%，而成本仅约一半。项目旨在让更多人低成本使用接近前沿模型的能力。",
-    "title_zh": null,
-    "weighted_score": 0.59,
+    "depth_score": 0.2,
+    "reason_zh": "了解Anthropic最新定价策略变化，对Claude用户有直接影响。",
+    "summary_zh": "Anthropic宣布从7月20日起，将Claude Fable 5纳入Max和Team Premium套餐，但使用额度仅为常规限额的50%，而常规限额本身也将减少三分之一。此举旨在推动Pro用户转向API定价模式，反映了Anthropic在模型成本与用户分层上的调整。",
+    "title_zh": "Anthropic削减Max和Team Premium中Claude Fable 5的限额，推动Pro用户转向API定价",
+    "weighted_score": 0.565,
     "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.7,
+      "source_authority": 0.7,
+      "novelty": 0.6,
       "impact": 0.5,
-      "practical_value": 0.7
+      "practical_value": 0.4
     },
     "story_id": "5c3cec117e691d68",
-    "multi_source_count": 3,
+    "multi_source_count": 2,
     "sources": [
       {
         "source_id": "simonwillison",
@@ -378,92 +240,8 @@
       {
         "source_id": "the-decoder",
         "url": "https://the-decoder.com/anthropic-slashes-claude-fable-5-limits-in-max-and-team-premium-and-pushes-pro-users-toward-api-pricing/"
-      },
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1228271#reply3"
       }
     ],
     "curated": true
-  },
-  {
-    "id": "b9483a818a406a0d",
-    "source_id": "infoq-cn-ai",
-    "title": "腾讯发布三大具身基座模型，打通“感知—行动”闭环，工业实测成功率超95%",
-    "url": "https://www.infoq.cn/article/uD0p2FcQE2JKSwYY1wXK?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-19T07:55:01+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/uD0p2FcQE2JKSwYY1wXK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "腾讯发布三大具身基座模型，工业实测成功率超95%，展示感知-行动闭环能力，行业影响大。",
-    "summary_zh": "腾讯发布三大具身基座模型，打通“感知—行动”闭环，在工业实测中成功率超过95%。这些模型旨在提升机器人在复杂环境中的自主操作能力，标志着腾讯在具身智能领域的重要进展。",
-    "title_zh": null,
-    "weighted_score": 0.715,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "c04bc505d6825ffd",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/uD0p2FcQE2JKSwYY1wXK?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "d78b479621b06387",
-    "source_id": "the-decoder",
-    "title": "Open-weight models now match frontier cyber performance from just four months ago at a fraction of the cost",
-    "url": "https://the-decoder.com/open-weight-models-now-match-frontier-cyber-performance-from-just-four-months-ago-at-a-fraction-of-the-cost/",
-    "published_at": "2026-07-18T10:16:02+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1152\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/aisi_logo_pattern.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"2048\" /></p>\n<p>        The British AI Security Institute warns that open-weight models like GLM-5.2 and DeepSeek V4-Pro now trail closed frontier models in cyber capabilities by four to seven months. At the start of 2025, the gap was still six to ten months. It also found that safety measures on open models are largely ineffective, leaving defenders less time to prepare.</p>\n<p>The article <a href=\"https://the-decoder.com/open-weight-models-now-match-frontier-cyber-performance-from-just-four-months-ago-at-a-fraction-of-the-cost/\">Open-weight models now match frontier cyber performance from just four months ago at a fraction of the cost</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/aisi_logo_pattern.png",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "英国AI安全研究所报告揭示开源模型网络能力快速追赶闭源前沿，成本大幅降低，影响深远。",
-    "summary_zh": "英国AI安全研究所（AISI）警告，开源权重模型（如GLM-5.2和DeepSeek V4-Pro）的网络能力已与四个月前的前沿闭源模型相当，且成本仅为后者的一小部分。报告指出，开源模型在网络安全任务上的表现正快速逼近闭源模型，差距缩小至4-7个月。这一趋势可能改变AI安全格局，因为开源模型的广泛可及性增加了被恶意利用的风险。AISI呼吁加强开源模型的安全评估和监管。",
-    "title_zh": "开源权重模型现以极低成本匹配四个月前的前沿网络性能",
-    "weighted_score": 0.705,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "98e382c6e928a0d8",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/netflixs-300-ai-productions-show-how-fast-the-technology-is-spreading-through-entertainment/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/linus-torvalds-tells-ai-critics-in-the-linux-kernel-community-to-fork-off/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/open-weight-models-now-match-frontier-cyber-performance-from-just-four-months-ago-at-a-fraction-of-the-cost/"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
   }
 ]
