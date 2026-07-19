@@ -1,6 +1,6 @@
 {
   "date": "2026-07-19",
-  "generated_at": "2026-07-19T13:08:46.117209+00:00",
+  "generated_at": "2026-07-19T20:48:18.210201+00:00",
   "items": [
     {
       "id": "ee37d2a7d48bb246",
@@ -70,35 +70,36 @@
       ]
     },
     {
-      "id": "d1a6c2cbd06a1e38",
-      "source_id": "zh-tmtpost",
-      "title": "大模型进不了内网之后，企业 AI 的生意才真正开始",
-      "url": "https://www.tmtpost.com/8070771.html",
-      "published_at": "2026-07-19T08:15:40+00:00",
-      "raw_text": "模型已经便宜到论分卖，企业真正花上百万买的，是权限、验收和责任。",
+      "id": "008c3ef35635a529",
+      "source_id": "reddit-llmdevs",
+      "title": "Running a model 5x larger than phone RAM: measurements from a GPT 120B MoE and a Qwen 3.6 30B on Android",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1v0n38j/running_a_model_5x_larger_than_phone_ram/",
+      "published_at": "2026-07-19T10:32:24+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LLMDevs/comments/1v0n38j/running_a_model_5x_larger_than_phone_ram/\"> <img alt=\"Running a model 5x larger than phone RAM: measurements from a GPT 120B MoE and a Qwen 3.6 30B on Android\" src=\"https://external-preview.redd.it/bzhseGVnZXl5NWVoMcQ1DRE04XZeIau7gt66aDr3bxL_EOP3Iyt4F0ZuSeVr.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e06cfa9c9776c55bcd037d141a9c8d63e03f46bb\" title=\"Running a model 5x larger than phone RAM: measurements from a GPT 120B MoE and a Qwen 3.6 30B on Android\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>BigMoeOnEdge is an experiment in running MoE models that exceed device RAM, by streaming only the experts a token actually routes to directly from flash.</p> <p>As you know, sparse MoE touches a small fraction of its weights per token, so residency is the wrong unit. A router hook observes which experts each layer selected, a reader pulls those tensor slices off storage, and tensor pointers are rebound bef",
       "category_hint": [
-        "行业动态"
+        "技巧与观点",
+        "开源项目"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/675859f3.png",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
+      "image_url": "https://external-preview.redd.it/bzhseGVnZXl5NWVoMcQ1DRE04XZeIau7gt66aDr3bxL_EOP3Iyt4F0ZuSeVr.png?width=640&crop=smart&auto=webp&s=e06cfa9c9776c55bcd037d141a9c8d63e03f46bb",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "深度剖析企业AI落地真正痛点：权限、验收和责任，而非模型成本。",
-      "summary_zh": "文章指出，大模型价格已降至按分计费，但企业真正愿意花费百万购买的并非模型本身，而是权限管理、验收标准和责任界定。企业AI的生意从模型进入内网后才真正开始，核心挑战在于如何将AI能力安全、可控地集成到现有业务系统中，并建立有效的评估和问责机制。",
-      "title_zh": null,
-      "weighted_score": 0.72,
+      "reason_zh": "实测在手机上运行比RAM大5倍的模型，提供具体性能数据，对边缘部署有重要参考价值。",
+      "summary_zh": "文章报告了在Android手机上运行比RAM大5倍的模型的实测结果，包括GPT 120B MoE和Qwen 3.6 30B。通过模型量化、内存交换等技术，实现了在有限硬件上的推理。提供了详细的性能指标，如推理速度、内存占用等，展示了在移动设备上部署大模型的可行性。",
+      "title_zh": "运行比手机RAM大5倍的模型：GPT 120B MoE和Qwen 3.6 30B在Android上的实测",
+      "weighted_score": 0.745,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
+        "novelty": 0.8,
         "impact": 0.7,
         "practical_value": 0.8
       },
-      "story_id": "586ae95e135109f2",
+      "story_id": "a3310939445927d1",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8070771.html"
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1v0n38j/running_a_model_5x_larger_than_phone_ram/"
         }
       ]
     },
@@ -137,36 +138,35 @@
       ]
     },
     {
-      "id": "3b7164f27446b58e",
-      "source_id": "reddit-localllama",
-      "title": "Byte exact KV cache grafting on frozen Gemma 4",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v07tib/byte_exact_kv_cache_grafting_on_frozen_gemma_4/",
-      "published_at": "2026-07-18T21:24:35+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We published a method to store verified knowledge as KV state and restore it byte identical to fresh computation.</p> <p>On Gemma 4 12B, cached knowledge improved the same routing system from 76.7% to 90.0% on AIME 2025.</p> <p>I will pitch this at AGI Summit on July 19.</p> <p>Paper: <a href=\"https://arxiv.org/abs/2607.14431\">https://arxiv.org/abs/2607.14431</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/MindPsychological140\"> /u/MindPsychological140 </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1v07tib/byte_exact_kv_cache_grafting_on_frozen_gemma_4/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1v07tib/byte_exact_kv_cache_grafting_on_frozen_gemma_4/\">[comments]</a></span>",
+      "id": "fd0a7ef35a9debb9",
+      "source_id": "tnw-deep-tech",
+      "title": "AI advice made people three times less accurate but twice as confident, researchers found",
+      "url": "https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study",
+      "published_at": "2026-07-19T15:35:47+00:00",
+      "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/07/ai-advice-suppresses-critical-thinking-wrong-answers-study.avif\" width=\"868\" /><br /><p>Researchers from three French and Italian universities found that access to AI advice collapsed people’s willingness to say “I don’t know” from 44% to 3%. Accuracy dropped from 27% to 9%. Confidence, meanwhile, rose from 30% to 76%. “People became much worse, the accuracy was only one third, but they were twice as confident,” said [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
       "category_hint": [
-        "开源项目",
-        "技巧与观点"
+        "行业动态"
       ],
-      "image_url": null,
+      "image_url": "https://media.thenextweb.com/2026/07/ai-advice-suppresses-critical-thinking-wrong-answers-study.avif",
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "提出KV缓存嫁接方法，在冻结模型上实现知识存储与字节级还原，显著提升推理准确率，有实验支撑。",
-      "summary_zh": "作者发布了一种名为“Byte exact KV cache grafting”的方法，能够在冻结的Gemma 4模型上存储已验证的知识作为KV状态，并在后续计算中字节级精确还原。实验表明，在Gemma 4 12B模型上，该方法将同一路由系统在AIME 2025上的准确率从76.7%提升至90.0%。论文已上传至arXiv，作者计划在7月19日的AGI峰会上进行宣讲。",
-      "title_zh": "冻结Gemma 4上的字节精确KV缓存嫁接",
-      "weighted_score": 0.71,
+      "reason_zh": "研究揭示AI建议会显著降低人的准确性但提升自信，对AI辅助决策有重要警示意义。",
+      "summary_zh": "来自法国和意大利三所大学的研究人员发现，获取AI建议后，人们说“我不知道”的意愿从44%骤降至3%，准确率从27%降至9%，而自信度却从30%升至76%。这表明AI建议抑制了批判性思维，导致人们更少承认无知，更易接受错误答案。研究结果对AI辅助决策系统设计具有重要警示，提醒需防范过度依赖AI带来的认知退化。",
+      "title_zh": "研究发现AI建议使人的准确性降低三倍，但自信度翻倍",
+      "weighted_score": 0.705,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.9,
+        "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.5
+        "practical_value": 0.6
       },
-      "story_id": "831dcb3d66bf262c",
+      "story_id": "b45cd5fecebb8b55",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v07tib/byte_exact_kv_cache_grafting_on_frozen_gemma_4/"
+          "source_id": "tnw-deep-tech",
+          "url": "https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study"
         }
       ]
     },
@@ -205,112 +205,102 @@
       ]
     },
     {
-      "id": "23133b17d511e156",
-      "source_id": "reddit-machinelearning",
-      "title": "Interactive map of GPT-2's token embedding space - tap any token and explore [P]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/",
-      "published_at": "2026-07-18T22:42:20+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>32,070 alphabetic tokens from GPT-2-small's WTE, no forward pass and no context.</p> <p>Works on mobile. Pinch to zoom, tap a token to see its nearest connections, tap a neighbour to walk the graph. Search box to jump anywhere.</p> <p>Layout is t-SNE over a compressed representation of the embedding table; edges are a minimum spanning tree in that space, so every line is a real nearest-kin relationship,</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Limp-Contest-7309\"> /u/Limp-Contest-7309 </a> <br /> <span><a href=\"https://aethereos.net/static/token-atlas.html\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/\">[comments]</a></span>",
+      "id": "b2543dfecaea289e",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 为什么“节省 90% Token”不等于 Coding Agent 总成本降低 90%",
+      "url": "https://www.v2ex.com/t/1228396#reply6",
+      "published_at": "2026-07-19T13:12:46+00:00",
+      "raw_text": "最近把几个“Token 节省”插件放到完整仓库任务里做了一个小型配对实验，结论和常见宣传口径差异很大。<br /><br />任务不是单轮代码补全，而是把 Rust eza 仓库重写成行为兼容的 Python 实现，并通过 52 项 harness 检查。模型、推理档位和 Codex CLI 版本保持一致，每组目前只有 2 次运行：<br /><br />无插件：78.85% 通过率，平均 666 万 Token ，约 5.28 美元，62.5 轮<br />Ponytail：通过率 80.77%，Token -7.56%，成本 -8.87%，但耗时 +13.51%<br />RTK：通过率 76.92%，Token +13.20%，成本 +7.18%，轮次 +44%<br /><br />更值得注意的是组内波动：无插件两次运行的成本极差/均值是 43.25%，Ponytail 是 51.69%，RTK 是 30.78%。所以 n=2 不能证明插件有因果效果；所谓 8.87% 节省本身还小于自然运行波动。<br /><br />另一个 140 次 Codex 运行的数据里，缓存输入占总 Token 的 96.46%、总成本的 63.91%；模型输出只占 Token 的 0.38%。因此压缩某段输出 90%，并不能直接外推成完整任务成本降低 90%。RTK 可识别的 shell 返回内容只占全部任务 Token 的 0.1618%，即使完美压缩 90%，直接成本上限仍不到 1%。<br /><br />我觉得更合理的基准单位应该是“每个成功完成任务的总成本”，同时至少报告重复运行方差、轮次、耗时和最终验证结果，而不是只报局部压缩率。<br /><br />完整方法、逐次数据和限制：<br /><a href=\"https://turaai.net/blog#token-saving-plugins-are-mostly-stupid-idea\" rel=\"nofollow noopener\" target=\"_blank\">https://turaai.net/blog#token-saving-plugins-are-mostly-stupid-idea</a><br /><a href=\"https://github.com/Tura-AI/tura\" rel=\"",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "技巧与观点"
       ],
       "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "交互式可视化GPT-2 token嵌入空间，直观探索语义关系，对理解模型内部表示有启发。",
-      "summary_zh": "该项目提供了一个交互式地图，可视化GPT-2-small的32,070个字母token的嵌入空间（WTE），无需前向传播和上下文。用户可通过触摸缩放、点击token查看最近邻连接，并沿图行走。布局使用t-SNE压缩嵌入表，边为最小生成树，支持搜索跳转。",
-      "title_zh": null,
-      "weighted_score": 0.62,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "用实验数据戳破“Token节省=成本降低”的常见误区，揭示Coding Agent真实成本构成，对工程选型有直接参考价值。",
+      "summary_zh": "作者通过将Rust eza仓库重写为Python的完整任务实验，对比了无插件、Ponytail和RTK三种方案的实际表现。结果显示，Token节省与成本降低并不成正比：Ponytail虽节省7.56% Token，成本仅降8.87%，耗时却增加13.51%；RTK反而增加Token和成本。更关键的是组内波动极大（成本极差/均值达43%-51%），说明单次评测不可靠。文章指出，Coding Agent总成本受推理轮次、重试次数、上下文长度等多因素影响，单纯优化Token消耗可能适得其反。",
+      "title_zh": "[程序员] 为什么“节省 90% Token”不等于 Coding Agent 总成本降低 90%",
+      "weighted_score": 0.685,
       "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.6,
         "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.6
+        "impact": 0.5,
+        "practical_value": 0.9
       },
-      "story_id": "b30a6f6a490f75cc",
+      "story_id": "f0b850a4aff46941",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1v07xai/gpt2_smalls_embedding_geometry_around_trump/"
-        },
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/"
-        },
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1v0pv45/follow_up_gpt2s_vocabulary_as_a_hyperbolic_tree/"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1228396#reply6"
         }
       ]
     },
     {
-      "id": "7d45b7438e146e5f",
-      "source_id": "towards-data-science",
-      "title": "Loop Engineering with Adaptive PDF Parsing: Start Cheap, Pay for a Heavier Parser Only When the Page Needs It",
-      "url": "https://towardsdatascience.com/loop-engineering-with-adaptive-pdf-parsing-start-cheap-pay-for-a-heavier-parser-only-when-the-page-needs-it/",
-      "published_at": "2026-07-18T15:00:00+00:00",
-      "raw_text": "<p>Enterprise Document Intelligence [Vol.1 #10A] - The escalation cascade and the free, deterministic checks that flag a failed parse before you pay for a deeper one</p>\n<p>The post <a href=\"https://towardsdatascience.com/loop-engineering-with-adaptive-pdf-parsing-start-cheap-pay-for-a-heavier-parser-only-when-the-page-needs-it/\">Loop Engineering with Adaptive PDF Parsing: Start Cheap, Pay for a Heavier Parser Only When the Page Needs It</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "id": "3c16ac09071b6b9c",
+      "source_id": "zh-juejin",
+      "title": "多 Agent 协作：从委派到受限执行",
+      "url": "https://juejin.cn/post/7663860459421941800",
+      "published_at": "2026-07-19T10:00:36+00:00",
+      "raw_text": "你让 Agent 检查一个复杂项目的测试失败。 它要读实现代码，要看测试用例，还要对照文档判断行为是否变更。单个 Agent 当然也能顺着做，但上下文会越来越重，探索路径也会互相污染：刚读完日志，又被",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "提出自适应PDF解析的工程策略，从轻量级解析开始，仅在需要时升级，具有实用价值。",
-      "summary_zh": "文章介绍了“循环工程”中的自适应PDF解析方法：从廉价解析器开始，通过确定性检查判断解析是否失败，仅在需要时才调用更重的解析器。这种级联策略可以节省成本并提高效率，适用于企业文档智能场景。",
-      "title_zh": "循环工程与自适应PDF解析：从廉价开始，仅在页面需要时付费使用更重的解析器",
-      "weighted_score": 0.59,
+      "depth_score": 0.8,
+      "reason_zh": "深入探讨多Agent协作中的委派与受限执行模式，提供实用设计思路，对构建复杂Agent系统有启发。",
+      "summary_zh": "文章讨论了多Agent协作中的两种模式：委派和受限执行。委派模式中，主Agent将任务分配给子Agent，但可能导致上下文过重和探索路径污染。受限执行模式则通过限制子Agent的权限和范围来避免这些问题。作者分析了各自的优缺点，并给出了实际应用中的选择建议。",
+      "title_zh": null,
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.6,
-        "impact": 0.4,
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "a17c53a1574bdf23",
+      "story_id": "a0816393441792cd",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/loop-engineering-with-adaptive-pdf-parsing-start-cheap-pay-for-a-heavier-parser-only-when-the-page-needs-it/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7663860459421941800"
         }
       ]
     },
     {
-      "id": "67155919aa20877e",
-      "source_id": "reddit-singularity",
-      "title": "HuggingFace security incident report: \"the attacker was bound by no usage policy, while our own forensic work was blocked by the guardrails of the hosted models\"",
-      "url": "https://www.reddit.com/r/singularity/comments/1v0n4rn/huggingface_security_incident_report_the_attacker/",
-      "published_at": "2026-07-19T10:34:55+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/singularity/comments/1v0n4rn/huggingface_security_incident_report_the_attacker/\"> <img alt=\"HuggingFace security incident report: &quot;the attacker was bound by no usage policy, while our own forensic work was blocked by the guardrails of the hosted models&quot;\" src=\"https://external-preview.redd.it/tLa80cLashFk8b1qvSyhZgFagKqpQuDcINxc0lC5Ebw.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6fe429dfc13f9591a4f1976d5a7ce567c412231c\" title=\"HuggingFace security incident report: &quot;the attacker was bound by no usage policy, while our own forensic work was blocked by the guardrails of the hosted models&quot;\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/KickLassChewGum\"> /u/KickLassChewGum </a> <br /> <span><a href=\"https://huggingface.co/blog/security-incident-july-2026\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/singularity/comments/1v0n4rn/huggingface_security_incident_report_",
+      "id": "d7943ae1f94ffa58",
+      "source_id": "the-next-platform",
+      "title": "From Pilots to AI Factories: How Enterprises Are Really Scaling Agentic AI and Agent Gateways",
+      "url": "https://intelligence.theregister.com/paper/view/20412",
+      "published_at": "2026-07-30T00:00:00+00:00",
+      "raw_text": "AI is shifting from simple chatbots to autonomous “coworkers,” and most enterprises are now constrained less by models than by the complexity",
       "category_hint": [
         "行业动态",
-        "技巧与观点"
+        "产品发布"
       ],
-      "image_url": "https://external-preview.redd.it/tLa80cLashFk8b1qvSyhZgFagKqpQuDcINxc0lC5Ebw.png?width=640&crop=smart&auto=webp&s=6fe429dfc13f9591a4f1976d5a7ce567c412231c",
+      "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "HuggingFace 安全事件报告揭示了AI安全与模型护栏的悖论，值得安全从业者深思。",
-      "summary_zh": "HuggingFace 发布安全事件报告，指出攻击者不受使用政策约束，而他们自己的取证工作却被托管模型的护栏所阻碍。这一事件凸显了AI安全中的不对称性，以及模型护栏在安全调查中的潜在限制。",
-      "title_zh": "HuggingFace 安全事件报告：攻击者不受使用政策约束，而我们自己的取证工作却被托管模型的护栏所阻碍",
-      "weighted_score": 0.705,
+      "depth_score": 0.7,
+      "reason_zh": "深入分析企业从AI试点到AI工厂的规模化路径，聚焦Agent网关架构，有洞察。",
+      "summary_zh": "文章指出AI正从简单聊天机器人转向自主“同事”，企业瓶颈不再是模型而是复杂性。提出“AI工厂”概念，强调Agent网关在规模化中的关键作用，包括路由、安全、监控等。分析了企业如何通过分层架构和治理实现从试点到生产的跨越，提供了实际案例和策略。",
+      "title_zh": "从试点到AI工厂：企业如何真正规模化Agentic AI和Agent网关",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
+        "source_authority": 0.6,
+        "novelty": 0.7,
         "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "9b80a6d652af1c32",
+      "story_id": "32fdc76bfdb75c56",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-singularity",
-          "url": "https://www.reddit.com/r/singularity/comments/1v0n4rn/huggingface_security_incident_report_the_attacker/"
+          "source_id": "the-next-platform",
+          "url": "https://intelligence.theregister.com/paper/view/20412"
         }
       ]
     },
