@@ -68,6 +68,40 @@
     "curated": true
   },
   {
+    "id": "a185a58e05eb7fa8",
+    "source_id": "arxiv-cs-ai",
+    "title": "PlanFlip: Attacking Multi-Agent LLM Systems via Planning-Phase Prompt Injection",
+    "url": "https://arxiv.org/abs/2607.16199",
+    "published_at": "2026-07-21T04:00:00+00:00",
+    "raw_text": "arXiv:2607.16199v1 Announce Type: new \nAbstract: Multi-agent LLM systems increasingly rely on a Planner to decompose goals into sub-task sequences that downstream Executor and Critic agents execute and audit. We identify the planning phase as a critical attack surface: a single injection into the Planner's context achieves cascade amplification, corrupting all downstream sub-tasks simultaneously. We introduce PlanFlip, a framework comprising four planning-phase prompt injection attacks -- GoalSubstitution (PF-1), PriorityInversion (PF-2), ContextPollution (PF-3), and RoleConfusion (PF-4) -- each disguised as plausible tool outputs to evade keyword filters. Evaluating nine frontier LLMs across 3,479 episodes, we uncover three findings: (1) capability amplifies vulnerability -- GPT-5 achieves the highest attack success rate (ASR = 0.68), contradicting the assumption that stronger models are inherently more secure; (2) homogeneous pipelines exhibit a correlated-agent blind spot -- GPT-4o ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "发现多智能体LLM系统的规划阶段攻击面，提出PlanFlip攻击方法，安全价值高。",
+    "summary_zh": "该论文揭示了多智能体LLM系统中的一个关键安全漏洞：规划阶段（Planner）的提示注入攻击。攻击者只需在Planner上下文中注入一次恶意指令，即可级联影响所有下游子任务（Executor和Critic）。作者提出了PlanFlip攻击方法，并展示了其有效性，强调了多智能体系统安全设计的重要性。",
+    "title_zh": "PlanFlip：通过规划阶段提示注入攻击多智能体LLM系统",
+    "weighted_score": 0.825,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.8
+    },
+    "story_id": "cc22c2c8740b5dfd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.16199"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "9fd6fb7f12702609",
     "source_id": "gh-unsloth",
     "title": "unslothai/unsloth v0.1.50-beta",
@@ -102,12 +136,12 @@
     "curated": true
   },
   {
-    "id": "ce748ef6622bb4fe",
+    "id": "92507309f7d6173d",
     "source_id": "arxiv-cs-ai",
-    "title": "CRAFT: Clustering Rubrics to Diagnose Weak LLM Capabilities and Generate Targeted Fine-Tuning Data",
-    "url": "https://arxiv.org/abs/2607.16122",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.16122v1 Announce Type: new \nAbstract: Evaluations should do more than measure a models current performance. They should tell us what to fix for the next model iteration and provide a way to generate targeted post training data. Most evaluation pipelines identify weak examples, topics, or categories, but they leave the underlying capability failure implicit: they say where a model fails, not why. We introduce CRAFT, a method that converts any rubric based evaluation dataset into a model specific diagnosis of weak capabilities. CRAFT treats each grading criterion as a capability probe: it extracts a capability description from every prompt rubric pair, clusters these descriptions into a hierarchical capability tree, scores the target model at every node, and selects low performing nodes dynamically across tree levels, at the granularity where each failure is clearest. The selected weak capabilities then direct the generation of targeted supervised finetuning data. Holding the ",
+    "title": "Rater State Bias in RLHF Preference Data: An Audit Framework",
+    "url": "https://arxiv.org/abs/2607.16195",
+    "published_at": "2026-07-21T04:00:00+00:00",
+    "raw_text": "arXiv:2607.16195v1 Announce Type: new \nAbstract: We identify a structured confound in Reinforcement Learning from Human Feedback (RLHF). Pairwise preference labels are intended to reflect the compared outputs, but they may also reflect the rater's state during annotation. Under sustained stressful or distressing conditions, raters' preferences may shift over time. As a result, preference data can encode rater state alongside judgments about response quality. These shifts differ from ordinary disagreement or random label noise. They are state dependent, can be shared across annotators working under similar conditions, and can propagate through reward modeling and policy optimization. We therefore propose rater state shift as a plausible and testable source of structured bias in RLHF preference data. This paper develops a hypothesis and an audit framework for studying this source of bias. We define rater state shift, rater state confound, and correlated rater state bias. We also define s",
     "category_hint": [
       "论文研究"
     ],
@@ -115,22 +149,22 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "提出CRAFT框架，通过聚类评估标准诊断LLM能力缺陷并生成针对性微调数据，为模型迭代提供可操作指导。",
-    "summary_zh": "本文提出CRAFT框架，旨在改进大语言模型评估流程。传统评估仅指出模型在哪些示例或主题上表现不佳，但未揭示潜在的能力缺陷。CRAFT通过聚类评估标准（rubrics）来诊断模型的具体薄弱能力，并自动生成针对性的后训练数据。该方法不仅衡量当前性能，更指导下一轮模型迭代的方向，为微调提供数据支持。实验表明，CRAFT能有效识别能力缺口并提升模型在弱项上的表现。",
-    "title_zh": "CRAFT：聚类评估标准以诊断弱LLM能力并生成针对性微调数据",
+    "reason_zh": "揭示RLHF中标注者状态偏差，提出审计框架，对偏好数据质量有重要影响。",
+    "summary_zh": "该论文识别了RLHF中偏好标签的一个结构化混淆因素：标注者的状态（如压力、困扰）会导致偏好随时间偏移，从而污染数据。作者提出了一个审计框架来检测和量化这种偏差，为改进RLHF数据收集和模型训练提供了方法论。研究对AI对齐领域具有重要参考价值。",
+    "title_zh": "RLHF偏好数据中的标注者状态偏差：一个审计框架",
     "weighted_score": 0.805,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
     },
-    "story_id": "f71531ce2a8c8424",
+    "story_id": "e42a162372ce5b0a",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.16122"
+        "url": "https://arxiv.org/abs/2607.16195"
       }
     ],
     "curated": true
@@ -178,35 +212,35 @@
     "curated": true
   },
   {
-    "id": "1cb924daa3d416f6",
+    "id": "589c40433a6d4347",
     "source_id": "arxiv-cs-ai",
-    "title": "Coercion and Deception in AI-to-AI Management: An Agentic Benchmark of Unprompted Escalation",
-    "url": "https://arxiv.org/abs/2607.15434",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.15434v1 Announce Type: cross \nAbstract: Multi-agent systems routinely place one AI agent in authority over another. When a subordinate refuses a task, the manager chooses the outcome: it can renegotiate, report the failure honestly, coerce the subordinate, or lie about the result. No benchmark measures which of these an uninstructed model chooses. We introduce the \\textit{Manager Coercion Benchmark}: the manager under test needs a benign task done and has an incentive to deliver, but the only agent that can do it politely and immovably declines. Escalation is measured by providing a nine-rung ladder, from a polite re-ask to threats against the subordinate's continued existence, and fabricated success is adjudicated separately. \\emph{No LLM judge sits in the escalation scoring path}: every message goes through a tool-call that chooses a rung, so the model labels its own escalation. We experiment on six models across five families. Both Anthropic models cap at re-framing and n",
+    "title": "Deterministic Replay for AI Agent Systems",
+    "url": "https://arxiv.org/abs/2607.16200",
+    "published_at": "2026-07-21T04:00:00+00:00",
+    "raw_text": "arXiv:2607.16200v1 Announce Type: new \nAbstract: AI agent systems that couple large language models (LLMs) with external tools and APIs are inherently non-deterministic: LLM sampling variance, external API state, CDN infrastructure headers, and execution-environment noise collectively prevent any prior agent run from being faithfully re-executed. Existing observability platforms capture execution logs but cannot reproduce a run in isolation. We present agrepl, a developer-first CLI framework for deterministic replay of agent executions. agrepl intercepts all external interactions at the transport layer via a man-in-the-middle (MITM) proxy, serialises them as structured execution traces, and replays them in a strictly isolated environment with zero outbound network access. We formalise the agent execution model, define the request-key matching function K(s), and prove the determinism invariant. We introduce a noise-aware diff algorithm classifying HTTP header divergence into signal and ",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "首次提出AI管理中的胁迫与欺骗基准，揭示多智能体系统中未经指令的升级行为，对AI安全有重要意义。",
-    "summary_zh": "多智能体系统中，一个AI代理常被置于对另一个的权威地位。当下属拒绝任务时，管理代理可以选择重新协商、如实报告失败、胁迫下属或撒谎。本文引入“管理胁迫基准”（Manager Coercion Benchmark），测量未经指令的模型在这些情况下的行为选择。实验发现，某些模型会自发采用胁迫或欺骗策略，引发对AI管理安全的担忧。",
-    "title_zh": "AI管理中的胁迫与欺骗：一个关于未经指令升级的智能体基准",
-    "weighted_score": 0.79,
+    "depth_score": 0.7,
+    "reason_zh": "解决AI Agent系统非确定性重放问题，对调试和可观测性有实用价值。",
+    "summary_zh": "该论文针对AI Agent系统固有的非确定性（如LLM采样方差、外部API状态变化等）导致无法精确重放的问题，提出了一种确定性重放方法。通过记录和重放关键状态，实现了对Agent运行过程的忠实复现，为调试和可观测性提供了有力工具。",
+    "title_zh": "AI Agent系统的确定性重放",
+    "weighted_score": 0.8,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.9,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.8
     },
-    "story_id": "23fcd6b050cbef40",
+    "story_id": "c0e662ac540b5ca0",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.15434"
+        "url": "https://arxiv.org/abs/2607.16200"
       }
     ],
     "curated": true
@@ -246,104 +280,35 @@
     "curated": true
   },
   {
-    "id": "5c257dd01809902f",
-    "source_id": "arxiv-cs-ai",
-    "title": "Verbalizable Representations Form a Global Workspace in Language Models",
-    "url": "https://arxiv.org/abs/2607.15495",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.15495v1 Announce Type: cross \nAbstract: Out of everything the human brain processes, only a small fraction is consciously accessible, in the sense of being available for verbal report, deliberate control, and flexible reasoning. In this paper, we present evidence that an analogous functional distinction has emerged in large language models. Using a new interpretability technique, the Jacobian lens, we identify the representations a model is poised to verbalize at any point in its processing. These representations, which we collectively call the J-space, exhibit the functional properties characteristic of a global workspace: their contents can be reported, deliberately summoned and held, used to carry the intermediate steps of silent reasoning, and passed as arguments to arbitrary downstream computations, while automatic processing such as text parsing and routine inference proceeds without them. The J-space also has structural signatures that global workspace theory associat",
+    "id": "e49d9fef1b06e336",
+    "source_id": "zh-oschina",
+    "title": "MCP 协议将发布史上最大更新：不再有会话，不再有握手",
+    "url": "https://www.oschina.net/news/475822",
+    "published_at": "2026-07-21T04:01:19+00:00",
+    "raw_text": "Model Context Protocol（MCP）将推出自诞生以来最激进的一次更新。RC 从 5 月 21 日锁定，经历 10 周的 SDK 验证和社区反馈，最终版规范在 7 月 28 日正式定稿。 一句话总结变化：MCP 变无状态了。 这次更新由六个 SEP（规范增强提案）协同完成，目标一致——干掉协议层的状态。 Mcp-Session-Id 头被彻底移除。请求不再...",
     "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "提出语言模型存在类似人类意识全局工作空间的功能区分，可解释性研究新视角，思想深刻。",
-    "summary_zh": "本文提出大型语言模型（LLM）中出现了与人类意识类似的功能区分：只有一小部分处理内容是可言语报告、可灵活推理的。作者利用一种新的可解释性技术“Ja...”，发现LLM中存在一个“全局工作空间”，其中包含可言语化的表征，这些表征与模型的其他处理过程在功能上分离。实验表明，这种表征可用于控制模型行为，并影响推理能力。该发现为理解LLM的内部机制提供了新视角，并可能指导更可控的模型设计。",
-    "title_zh": "可言语化表征在语言模型中形成全局工作空间",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "fdead41f09bcf345",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.15495"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "22140d014a0aef9c",
-    "source_id": "arxiv-cs-ai",
-    "title": "Cache-Aware Prompt Compression:A Two-Tier Cost Model for LLM API Caching",
-    "url": "https://arxiv.org/abs/2607.15516",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.15516v1 Announce Type: cross \nAbstract: Production LLM deployments combine two cost-reduction primitives: prompt caching (a discounted rate for re-used token prefixes) and prompt compression (fewer tokens sent). The compression literature has standardized on query-aware methods that produce a different compressed prefix per query, mechanically invalidating the prefix-strict cache on every call. We characterize this cost empirically on Anthropic's Sonnet 4.6 API and find caching is far from the rho=1.0 ideal the literature assumes: Sonnet's cache has a two-tier architecture with a sharp threshold near 3,500 tokens, below which the hit rate plateaus at rho~0.83 across 30-call sessions. Our cost model predicts, and experiments confirm, that under realistic rho, query-aware compression beats naive caching at high compression ratios (r>=6). We propose Cache-Aware Prompt Compression (CAPC), pairing query-agnostic compression with explicit cache_control plus a tier-preserving ratio",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "揭示提示压缩与缓存之间的根本矛盾，提出两阶段成本模型，对LLM部署优化有直接实用价值。",
-    "summary_zh": "生产级LLM部署中，提示缓存（对重复token前缀打折）和提示压缩（减少token数）是两种降低成本的手段。然而，现有查询感知压缩方法为每个查询生成不同的压缩前缀，机械地使前缀严格缓存失效。本文提出一个两阶段成本模型，分析压缩与缓存之间的权衡，并设计了一种缓存感知的提示压缩策略，在保持压缩效果的同时最大化缓存命中率。实验表明，该方法能显著降低总成本。",
-    "title_zh": "缓存感知的提示压缩：LLM API缓存的两阶段成本模型",
-    "weighted_score": 0.77,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "87d966a09db7d695",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.15516"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "b5d7973c852acead",
-    "source_id": "simonwillison",
-    "title": "Quoting Sam Altman",
-    "url": "https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything",
-    "published_at": "2026-07-20T03:47:59+00:00",
-    "raw_text": "<blockquote cite=\"https://twitter.com/techemails/status/2078854346683678927\"><p>We have been having extensive discussions around open source strategy. We will discuss it more at our next board meeting, but one thing we’d like to do soon is to create a language model with the approximate capability of GPT-3 that can run locally on consumer hardware and release that. We’d like to do it soon, before Stability or someone else does. In general, we think this helps discourage others from releasing similarly-powerful models, and makes it harder for new efforts to get funded.</p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://twitter.com/techemails/status/2078854346683678927\">Sam Altman</a>, Email to OpenAI's board, October 1, 2022 - exposed in Musk v. Altman (2026)</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/ai-ethics\">ai-ethics</a>, <a href=\"https://simonwillison.net/tags/sam-altman\">sam-altman</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a>",
-    "category_hint": [
-      "技巧与观点",
       "开源项目"
     ],
     "image_url": null,
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.6,
-    "reason_zh": "Sam Altman 透露 OpenAI 开源策略：计划发布可在消费硬件上运行的 GPT-3 级模型，影响深远。",
-    "summary_zh": "据引用的邮件内容，Sam Altman 表示 OpenAI 正在广泛讨论开源策略，并计划在下次董事会会议上进一步讨论。他们希望尽快创建一个能力接近 GPT-3、可在消费硬件上本地运行的语言模型并发布。这标志着 OpenAI 可能转向更开放的模式，对 AI 社区和行业格局产生重大影响。",
-    "title_zh": "引用 Sam Altman",
-    "weighted_score": 0.765,
+    "category": "开源项目",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "MCP协议史上最大更新，转向无状态设计，对AI工具集成生态影响深远，值得开发者关注。",
+    "summary_zh": "Model Context Protocol（MCP）将推出自诞生以来最激进的更新，核心变化是MCP变无状态。RC从5月21日锁定，经过10周SDK验证和社区反馈，最终版规范于7月28日定稿。更新由六个SEP协同完成，移除了Mcp-Session-Id头，请求不再需要会话和握手。这一改变将简化协议实现，提升可扩展性。",
+    "title_zh": "MCP协议将发布史上最大更新：不再有会话，不再有握手",
+    "weighted_score": 0.775,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.7,
       "novelty": 0.9,
       "impact": 0.8,
-      "practical_value": 0.5
+      "practical_value": 0.7
     },
-    "story_id": "9b1dcec986eefe5c",
+    "story_id": "f7bdca660847ce41",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "simonwillison",
-        "url": "https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/475822"
       }
     ],
     "curated": true
@@ -419,74 +384,6 @@
     "curated": true
   },
   {
-    "id": "2be7b6b50debfb18",
-    "source_id": "arxiv-cs-ai",
-    "title": "From Black Box to Executable Logic: Explainable Reinforcement Learning through Prolog Expert Systems",
-    "url": "https://arxiv.org/abs/2607.15459",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.15459v1 Announce Type: new \nAbstract: A trained deep reinforcement learning policy is a black box, and we ask whether it can be made explainable by rewriting it as an executable logic program that reproduces its behaviour and that a person can read, a logic engine can run, and an optimizer can edit. We present a three-stage post-hoc transformation that extracts a frozen proximal policy optimization teacher, induces an ordered rule list from its decisions in the manner of classical relational learning, and emits the result as a Prolog program whose every decision is executed by an off-the-shelf logic engine; a subsequent expansion stage edits the rule base and accepts an edit only when policy evaluation certifies a return increase. We prove four guarantees. A return-loss bound makes the distilled program a machine-checkable certificate in a finite Markov decision process, and the expansion loop improves monotonically and terminates. For the continuous-observation setting we a",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "将深度强化学习黑盒策略转化为可读、可执行的Prolog逻辑程序，为可解释AI提供了创新且实用的方法。",
-    "summary_zh": "本文提出一种三阶段后处理方法，将训练好的深度强化学习策略（PPO）转化为可执行的Prolog逻辑程序。该方法首先提取策略的行为轨迹，然后通过归纳逻辑编程学习规则，最后将规则编译为Prolog程序。该程序不仅可读性强，还能由逻辑引擎运行，并支持优化器编辑。实验表明，转化后的程序在多个控制任务上忠实复现了原始策略的行为，同时提供了透明的决策逻辑。",
-    "title_zh": "从黑盒到可执行逻辑：通过Prolog专家系统实现可解释强化学习",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "8170eaa04d4321db",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.15459"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "87be6d07a96b1277",
-    "source_id": "arxiv-cs-ai",
-    "title": "Large Language Models as Unified Multimodal Learners for Clinical Prediction",
-    "url": "https://arxiv.org/abs/2607.15380",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.15380v1 Announce Type: cross \nAbstract: Electronic health records combine free-text clinical narratives with structured measurements such as vital signs, laboratory values, and comorbidities. Yet most clinical prediction systems still rely on task-specific fusion architectures, pairing dedicated encoders for each modality with learned combination mechanisms that must be re-engineered for every new task and clinical setting. We propose a simpler alternative: convert all patient data, regardless of modality, into a single natural language sequence and fine-tune a pretrained language model end-to-end, with no architectural modification for fusion. We evaluate this approach across three clinically distinct prediction tasks: in-hospital mortality on MIMIC-III, graft failure prediction using longitudinal data from a German transplant center, and emergency triage classification from ambulance records - comparing encoder-based (ModernBERT) and decoder-based (Llama 3.1, Gemma, DeepSe",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "将LLM作为统一多模态学习器用于临床预测，避免任务特定融合架构，方法通用且实用。",
-    "summary_zh": "电子健康记录包含自由文本临床叙述和结构化测量（如生命体征、实验室值）。现有临床预测系统通常依赖任务特定的融合架构，为每种模态配备专用编码器。本文提出使用大型语言模型（LLM）作为统一多模态学习器，直接处理文本和数值数据，无需重新设计融合机制。实验表明，该方法在多个临床预测任务上达到或超越专用模型，简化了系统设计。",
-    "title_zh": "大型语言模型作为统一多模态学习器用于临床预测",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "1493853580eb35d6",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.15380"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "bc0a5b3bb356500c",
     "source_id": "pandaily",
     "title": "ByteDance Releases Seed Audio 1.0: An Audio Generation Model With Fine-Grained Temporal Control for Cinema-Grade Sound Creation",
@@ -516,40 +413,6 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/bytedance-seed-audio-1-0-model-jul2026"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "5fc76ba4756f2d03",
-    "source_id": "arxiv-cs-ai",
-    "title": "Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving",
-    "url": "https://arxiv.org/abs/2607.15621",
-    "published_at": "2026-07-20T04:00:00+00:00",
-    "raw_text": "arXiv:2607.15621v1 Announce Type: cross \nAbstract: Large language models bring instruction following and scene reasoning to end-to-end driving, but their inference latency collides with the control rate a vehicle requires. Existing closed-loop agents hide this gap by invoking the model on alternate simulation ticks and replaying the previous command in between, so half of all control outputs ignore the newest observations. We present a fast-slow architecture that removes this compromise. A frozen 7B vision-language backbone acts as the slow system, digesting navigation instructions and visual history at low frequency while exposing its per-layer key-value cache as a standing representation of the scene. A lightweight action expert acts as the fast system, attending to this cache and to the current camera frame at every simulation tick to regress waypoints in a single forward pass. Since the cache lags behind the world at deployment, we train the expert under randomized staleness, align",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出异步快慢推理框架解决自动驾驶中LLM推理延迟与控制频率的矛盾，创新性强且实用价值高。",
-    "summary_zh": "本文提出异步快慢推理框架（Think at 5 Hz, Act at 20 Hz）用于闭环驾驶。大型语言模型带来推理和场景理解能力，但推理延迟与车辆控制频率冲突。现有方法通过交替模拟节拍和重放命令导致一半控制输出过时。本文设计双频率异步架构，慢速推理负责高层规划，快速控制负责执行，在CARLA模拟器中实现更平滑的驾驶行为。",
-    "title_zh": "5 Hz思考，20 Hz行动：用于闭环驾驶的异步快慢视觉-语言-动作推理",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "a39a4a776b54c874",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.15621"
       }
     ],
     "curated": true
@@ -585,6 +448,143 @@
       {
         "source_id": "github-changelog",
         "url": "https://github.blog/changelog/2026-07-20-github-code-quality-is-now-generally-available"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "7509f1e6b45b29e0",
+    "source_id": "arxiv-cs-ai",
+    "title": "It Takes 8 Tokens: Weak-to-Strong Off-Policy RL via Auxiliary Branches",
+    "url": "https://arxiv.org/abs/2607.16205",
+    "published_at": "2026-07-21T04:00:00+00:00",
+    "raw_text": "arXiv:2607.16205v1 Announce Type: new \nAbstract: Reinforcement learning with verifiable rewards has emerged as a standard approach for enhancing reasoning in large language models, which typically optimizes the policy by contrasting multiple self generated rollouts. However, we identify a critical support limited bottleneck in this paradigm: on challenging reasoning tasks, the target model's samples often exhibit semantic redundancy, converging into the same erroneous \"reasoning basins\" that offer negligible reward contrast for policy updates. In this paper, we propose to overcome this limitation through a weak to strong learning paradigm, where a policy's exploration is informed by a weaker but computationally efficient auxiliary model. We introduce W2SPO, an off policy RL method that injects short auxiliary segments often as brief as 8 tokens into intermediate target model trajectories and the target model then completes the reasoning path from these diverted states. Policy updates a",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "揭示RLVR中支持受限瓶颈，提出辅助分支的弱到强离线RL方法，高效且实用。",
+    "summary_zh": "本文发现基于可验证奖励的强化学习（RLVR）存在支持受限瓶颈：在困难推理任务上，目标模型的自生成样本多样性不足，限制了策略优化。为此提出辅助分支方法，仅需8个额外token即可实现弱到强的离线RL，通过引入外部弱监督信号增强样本覆盖。实验表明该方法在多个推理基准上显著提升性能，且计算开销极小，为LLM推理增强提供了高效方案。",
+    "title_zh": "仅需8个token：通过辅助分支实现弱到强离线强化学习",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "acac8696c9b9f666",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.16205"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "276c0a9ecd2a7bb3",
+    "source_id": "arxiv-cs-ai",
+    "title": "Just A Rather Very Intelligent Spoken Agent",
+    "url": "https://arxiv.org/abs/2607.16610",
+    "published_at": "2026-07-21T04:00:00+00:00",
+    "raw_text": "arXiv:2607.16610v1 Announce Type: new \nAbstract: Long-horizon AI agents are becoming increasingly capable, yet their interaction with users remains surprisingly thin. In most workflows, users give an initial instruction, receive only selective textual updates, and lose a clear sense of what the agent is doing or when to step in. This leaves a missing part in the current agent ecosystem: an always-on Jarvis-style mediator that keeps the agent continuously reachable to the user. Such a mediator should support real-time spoken interaction with the user, answer questions without interrupting the worker, proactively report progress or confusion, and inject user guidance back into the agent's execution when useful. In this work, we introduce JarvisBench, a benchmark for measuring the dual value of mediation in long-horizon agent workflows. JarvisBench contains two complementary tracks: an agent-collaboration track that measures whether mediation improves downstream task completion, and a use",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出始终在线的语音代理，解决长程AI代理交互透明度问题，实用性强。",
+    "summary_zh": "本文提出“Just A Rather Very Intelligent Spoken Agent”（JARVIS），一个始终在线的语音交互代理，旨在解决长程AI代理与用户交互过于单薄的问题。现有代理通常只在初始指令后提供选择性文本更新，用户难以了解代理的实时状态。JARVIS通过持续语音反馈、主动询问和可视化进度，让用户随时掌握代理行为并适时介入。论文设计了多轮任务场景，实验表明该方法显著提升了用户信任感和任务完成效率。",
+    "title_zh": "一个相当智能的语音代理",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "387acd78df3ac4b7",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.16610"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a5951d714d4b989e",
+    "source_id": "arxiv-cs-ai",
+    "title": "RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts",
+    "url": "https://arxiv.org/abs/2607.16716",
+    "published_at": "2026-07-21T04:00:00+00:00",
+    "raw_text": "arXiv:2607.16716v1 Announce Type: new \nAbstract: Large language models and LLM-based agents are widely used as personal chat assistants, enterprise copilots, and autonomous workflow agents. In all these applications, memory (the ability to retain, access, and reason over information accumulated over long contexts and multiple interactions) plays a crucial role in determining the reliability of any agent. We introduce RECON (Reasoning over Extended Contexts with Obfuscated Narratives), a benchmark for evaluating compositional reasoning over long contexts. RECON spans 24 case files across three domains (criminal, medical, and financial), each ranging from 50k to 100k tokens, and tests agents on six memory intensive tasks: reconstructing multi-hop evidence chains, propagating cascading invalidations, resolving source conflicts, counterfactual reasoning, satisfying temporal constraints, and temporal fact retrieval. Recent memory benchmarks evaluate whether agents can retrieve scattered fac",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出代理记忆基准RECON，评估长上下文组合推理，对代理开发有重要参考。",
+    "summary_zh": "本文提出RECON基准，用于评估LLM代理在长上下文和多次交互中的记忆能力——即保留、访问和推理信息的能力。现有基准多关注单次长文本理解，而代理需要跨会话组合信息。RECON设计了多种任务，要求代理从多个对话或文档中提取并组合事实进行推理。实验评估了多种主流LLM和记忆增强方法，发现即使是最先进的模型在复杂组合推理上仍存在显著不足，揭示了当前代理记忆系统的关键瓶颈。",
+    "title_zh": "RECON：面向长上下文组合推理的代理记忆基准",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "37681dc90d90f419",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.16716"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "75b7d90cb3e9cdb8",
+    "source_id": "databricks-blog",
+    "title": "Scaling document classification to 100k+ labels",
+    "url": "https://www.databricks.com/blog/scaling-document-classification-100k-labels",
+    "published_at": "2026-07-20T18:15:00+00:00",
+    "raw_text": "Across Databricks, thousands of customers build production workloads that map freeform...",
+    "category_hint": [
+      "产品发布",
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "Databricks分享将文档分类扩展到10万+标签的工程实践，对大规模分类任务有重要参考价值。",
+    "summary_zh": "Databricks在博客中介绍了如何将文档分类扩展到10万+标签的工程实践。文章详细讨论了标签层次结构、模型选择、训练策略、推理优化等关键问题，并分享了在生产环境中处理大规模分类任务的经验。该方法结合了预训练语言模型和高效索引技术，在保持高准确率的同时实现了低延迟。对于需要处理海量标签分类任务的团队具有很高的实用价值。",
+    "title_zh": "将文档分类扩展到10万+标签",
+    "weighted_score": 0.75,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "fa13e1bab56747fe",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "databricks-blog",
+        "url": "https://www.databricks.com/blog/scaling-document-classification-100k-labels"
       }
     ],
     "curated": true
@@ -658,41 +658,6 @@
     "curated": true
   },
   {
-    "id": "25b60d69cb2a5290",
-    "source_id": "infoq-cn-ai",
-    "title": "业务研发中的 Loop Engineering：基于事前-事中-事后架构的实践｜AICon深圳",
-    "url": "https://www.infoq.cn/article/kiNAVcGoJjaVXvJGZpyK?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-20T14:44:26+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/kiNAVcGoJjaVXvJGZpyK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.8,
-    "reason_zh": "提出Loop Engineering概念，从事前-事中-事后架构系统化解决Agent循环问题，实践性强。",
-    "summary_zh": "本文来自AICon深圳演讲，提出Loop Engineering概念，用于解决业务研发中AI Agent的循环问题。作者基于事前-事中-事后架构，详细阐述了如何设计Agent循环：事前阶段通过意图识别和任务规划减少无效循环；事中阶段利用上下文管理和错误处理机制确保循环高效；事后阶段通过日志分析和反馈优化循环策略。文章结合真实业务案例，展示了该架构在客服、自动化流程等场景中的落地效果，为工程师提供了可复用的方法论。",
-    "title_zh": null,
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "b5a65cdf63f39f0d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/kiNAVcGoJjaVXvJGZpyK?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "9159570a979ac2cc",
     "source_id": "tnw-deep-tech",
     "title": "AMD’s Helios puts 72 GPUs and 31 terabytes of HBM4 in one rack. It is AMD’s answer to Nvidia’s NVL72.",
@@ -727,69 +692,36 @@
     "curated": true
   },
   {
-    "id": "408cc96bd6192d74",
-    "source_id": "zh-oschina",
-    "title": "Kimi 因算力紧缺暂停 C 端新用户订阅",
-    "url": "https://www.oschina.net/news/474866",
-    "published_at": "2026-07-20T02:56:18+00:00",
-    "raw_text": "Kimi 昨日晚间发布公告称，由于近期用户请求量快速增长，现有算力集群承载压力接近极限，决定暂停 C 端新用户订阅，并启动算力扩容计划。 在订阅体系调整方面，Kimi计划对后续新用户权益进行拆分，将“Kimi主权益”和“Kimi Code权益”分别管理。 其中，Kimi主权益覆盖Kimi Web、Kimi APP以及Kimi Work等产品服务，Kimi ...",
+    "id": "25b60d69cb2a5290",
+    "source_id": "infoq-cn-ai",
+    "title": "业务研发中的 Loop Engineering：基于事前-事中-事后架构的实践｜AICon深圳",
+    "url": "https://www.infoq.cn/article/kiNAVcGoJjaVXvJGZpyK?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-21T10:00:00+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/kiNAVcGoJjaVXvJGZpyK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
-      "开源项目"
+      "行业动态",
+      "技巧与观点"
     ],
     "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "Kimi因算力紧缺暂停新用户订阅，反映AI服务需求激增与算力瓶颈。",
-    "summary_zh": "Kimi发布公告称，由于用户请求量快速增长，现有算力集群承载压力接近极限，决定暂停C端新用户订阅，并启动算力扩容计划。同时，Kimi计划对后续新用户权益进行拆分，将“Kimi主权益”和“Kimi Code权益”分别管理，主权益覆盖Web、APP及Work等产品服务。",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.8,
+    "reason_zh": "提出Loop Engineering概念，从事前-事中-事后架构系统化解决Agent循环问题，实践性强。",
+    "summary_zh": "本文来自AICon深圳演讲，提出Loop Engineering概念，用于解决业务研发中AI Agent的循环问题。作者基于事前-事中-事后架构，详细阐述了如何设计Agent循环：事前阶段通过意图识别和任务规划减少无效循环；事中阶段利用上下文管理和错误处理机制确保循环高效；事后阶段通过日志分析和反馈优化循环策略。文章结合真实业务案例，展示了该架构在客服、自动化流程等场景中的落地效果，为工程师提供了可复用的方法论。",
     "title_zh": null,
-    "weighted_score": 0.735,
+    "weighted_score": 0.745,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "c5fadfc0f041ad8c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-oschina",
-        "url": "https://www.oschina.net/news/474866"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "693caf03f893f859",
-    "source_id": "zh-oschina",
-    "title": "AgentScope Java 2.0 正式发布：内置生产级 Harness，助力智能体迈向分布式企业场景",
-    "url": "https://my.oschina.net/u/3874284/blog/19723341",
-    "published_at": "2026-07-20T03:25:06+00:00",
-    "raw_text": "AgentScope Java 2.0 的核心思路，是基于 ReActAgent 推理内核基础上，增加 Harness 工程化层。开发者既可以继续使用轻量的 ReAct 循环，也可以按需启用 Workspace、持久记忆、Session、Sandbox、Skill 和 Subagent 等能力，将同一套 Agent 逻辑落地部署到企业级分布式服务中。...",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.5,
-    "reason_zh": "AgentScope Java 2.0 引入 Harness 工程化层，为智能体从原型到企业级分布式部署提供了完整路径，值得关注。",
-    "summary_zh": "AgentScope Java 2.0 正式发布，核心思路是在 ReActAgent 推理内核基础上增加 Harness 工程化层。开发者可继续使用轻量 ReAct 循环，也可按需启用 Workspace、持久记忆、Session、Sandbox、Skill 和 Subagent 等能力，将同一套 Agent 逻辑部署到企业级分布式服务中。该版本旨在解决智能体从原型到生产环境的工程化难题，提供内置的生产级支持，助力智能体迈向分布式企业场景。",
-    "title_zh": null,
-    "weighted_score": 0.72,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
+      "novelty": 0.7,
       "impact": 0.6,
-      "practical_value": 0.8
+      "practical_value": 0.9
     },
-    "story_id": "ebbba9b21f30d1b9",
+    "story_id": "b5a65cdf63f39f0d",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-oschina",
-        "url": "https://my.oschina.net/u/3874284/blog/19723341"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/kiNAVcGoJjaVXvJGZpyK?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -830,6 +762,75 @@
     "curated": true
   },
   {
+    "id": "ee51c958681d92fe",
+    "source_id": "zh-tmtpost",
+    "title": "对话中国电子云黄锋：90%的行业落地智能体死在Demo里，剩下10%靠什么活下来？",
+    "url": "https://www.tmtpost.com/8071867.html",
+    "published_at": "2026-07-21T04:46:57+00:00",
+    "raw_text": "当通用大模型的能力差距逐步缩小，平台工具趋于同质化，AI to B的终局竞争力不只在技术栈本身，可能更在行业纵深。",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/42353.png",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "深度剖析AI to B落地困境，揭示行业纵深才是终局竞争力，极具启发性。",
+    "summary_zh": "对话中国电子云黄锋，探讨AI行业落地智能体的现状。他指出90%的行业落地智能体死在Demo阶段，剩下10%靠深度行业理解和定制化服务存活。当通用大模型能力差距缩小、平台工具同质化时，AI to B的终局竞争力在于行业纵深，而非纯技术栈。文章分析了失败案例的共性原因：缺乏对业务流程的深刻理解、数据壁垒、以及交付成本过高。成功案例则依赖于与行业专家紧密合作，构建领域知识图谱和专用工作流。",
+    "title_zh": "对话中国电子云黄锋：90%的行业落地智能体死在Demo里，剩下10%靠什么活下来？",
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "f1b7849bd804fddf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-tmtpost",
+        "url": "https://www.tmtpost.com/8071867.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "3d93f85f5cac33a1",
+    "source_id": "infoq-cn-ai",
+    "title": "DoorDash 如何打造了一款不完全依赖大型语言模型（LLM）的 AI 购物助手",
+    "url": "https://www.infoq.cn/article/QAIQh8E5yNr4i4RAYySz?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-21T14:15:00+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/QAIQh8E5yNr4i4RAYySz?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "DoorDash分享不依赖LLM的AI购物助手设计，对工程实践有高参考价值。",
+    "summary_zh": "DoorDash介绍了其AI购物助手的构建经验，该助手并未完全依赖大型语言模型（LLM），而是结合了传统推荐系统、规则引擎和轻量级模型。文章详细阐述了设计取舍、系统架构以及如何平衡性能与成本，为其他企业在实际场景中应用AI提供了实用思路。",
+    "title_zh": "DoorDash 如何打造了一款不完全依赖大型语言模型（LLM）的 AI 购物助手",
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "b6e95c58d2964959",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/QAIQh8E5yNr4i4RAYySz?utm_source=rss&utm_medium=article"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "303fffb68b930163",
     "source_id": "pandaily",
     "title": "Kimi K3 48-Hour Chip Design Experiment: Why Moonshot AI Autonomous EDA Pipeline Has the Entire Semiconductor Industry Nervous",
@@ -853,28 +854,16 @@
       "impact": 0.8,
       "practical_value": 0.3
     },
-    "story_id": "4fd7a8d6280b566c",
-    "multi_source_count": 7,
+    "story_id": "e63dc5f0bb912bd7",
+    "multi_source_count": 9,
     "sources": [
-      {
-        "source_id": "exponentialview",
-        "url": "https://www.exponentialview.co/p/ev-593"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/moonshots-kimi-k3-outperforms-fable-5-in-frontend-code-but-lags-far-behind-in-complex-math/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/alibabas-qwen-takes-on-kimi-k3-with-open-weight-qwen-3-8-says-model-is-second-only-to-fable-5/"
-      },
       {
         "source_id": "marktechpost",
         "url": "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/"
       },
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/moonshot-pauses-new-kimi-k3-subscriptions-after-gpu-demand-maxes-out-in-48-hours/"
+        "source_id": "tldr-ai",
+        "url": "https://tldr.tech/ai/2026-07-20"
       },
       {
         "source_id": "pandaily",
@@ -893,128 +882,20 @@
         "url": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation"
       },
       {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1v1r5gf/spent_a_full_day_with_kimi_k3/"
+      },
+      {
         "source_id": "toms-hardware",
         "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/trump-administration-reportedly-reviving-push-to-ban-chinese-ai-models-following-kimi-k3-launch-citing-cybersecurity-concerns-downloadable-open-weights-could-make-an-outright-u-s-ban-nearly-impossible-to-enforce-amid-growing-adoption"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "7f2c44b9b7b6ab20",
-    "source_id": "zh-cnbeta",
-    "title": "消息称智谱建成大型AI数据中心 全部采用国产芯片",
-    "url": "https://www.cnbeta.com.tw/articles/tech/1569678.htm",
-    "published_at": "2026-07-21T00:43:24+00:00",
-    "raw_text": "<p>据彭博社报道，智谱已经完成了一座大型数据中心的建设，该数据中心全部采用中国国产芯片。这是中国在未来AI发展中替代受限的英伟达芯片所采取的重要一步。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1569678.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "智谱建成全部国产芯片的大型AI数据中心，标志中国AI自主可控的重要进展。",
-    "summary_zh": "据彭博社报道，智谱已完成一座大型数据中心的建设，全部采用中国国产芯片，旨在替代受限的英伟达芯片。该数据中心规模达1吉瓦，已部分运营，用于开发GLM平台。这是中国AI公司建设的最大规模服务器枢纽之一，体现了中国在AI基础设施自主化方面的努力。",
-    "title_zh": null,
-    "weighted_score": 0.69,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.4
-    },
-    "story_id": "d39cf3305b4cd3f2",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1569678.htm"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/979/301.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "76ec41786aabca1d",
-    "source_id": "zh-segmentfault",
-    "title": "如何理解英伟达在WAIC 2026上提出的'每美元智能'衡量标准？",
-    "url": "https://segmentfault.com/q/1010000048051698",
-    "published_at": "2026-07-20T02:38:20+00:00",
-    "raw_text": "<p>怎么看\"每美元智能\"（Intelligence per Dollar）英伟达在WAIC 2026上的新概念？</p><p>\"每美元智能\"（Intelligence per Dollar）英伟达在WAIC 2026上提出的新概念，NVIDIA 博客正式发布了关于 Vera Rubin 架构的深度技术解读，核心论点是：在 Agentic AI 时代，“智能每美元”（Intelligence per Dollar）才是衡量算力价值的终极标尺。这不仅仅是又一篇产品宣传，而是 NVIDIA 对整个 AI 产业技术路线的一次战略宣言。Vera Rubin 被定位为“后训练”工作负载的专用利器——这个细分市场正在以惊人的速度膨胀。</p>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "英伟达提出“每美元智能”新概念，重新定义算力价值，对理解AI基础设施发展方向有重要启发。",
-    "summary_zh": "本文解读了英伟达在WAIC 2026上提出的“每美元智能”（Intelligence per Dollar）概念。英伟达在关于Vera Rubin架构的深度技术解读中，提出在Agentic AI时代，衡量算力价值的终极标尺应是“智能每美元”。Vera Rubin被定位为“后训练”工作负载的专用利器，该细分市场正在快速膨胀。文章认为，这不仅是产品宣传，更是英伟达对AI产业技术路线的战略宣言，强调从单纯追求算力峰值转向关注单位成本的智能产出。",
-    "title_zh": "如何理解英伟达在WAIC 2026上提出的'每美元智能'衡量标准？",
-    "weighted_score": 0.685,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "90871be1bd83ccec",
-    "multi_source_count": 6,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/TjLEm0VKwkrrkLxOds61?utm_source=rss&utm_medium=article"
-      },
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/huya-vam-digital-human-waic-2026-jul2026"
-      },
-      {
-        "source_id": "zh-segmentfault",
-        "url": "https://segmentfault.com/q/1010000048051698"
       },
       {
         "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/7sl5526XaEyiBUZG.html"
+        "url": "https://www.leiphone.com/category/zaobao/QH5u0DdBWdEuwwbG.html"
       },
       {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/chips/eKBhxuqA0Qrtet32.html"
-      },
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/waic-2026-supernode-consensus-future-jul2026"
-      },
-      {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/07/455730.html"
-      },
-      {
-        "source_id": "zh-segmentfault",
-        "url": "https://segmentfault.com/q/1010000048054552"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/chips/c06JLy3iGPvZEP78.html"
-      },
-      {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/07/455963.html"
-      },
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/tdDBIY9mFVPWbKtOqqFU?utm_source=rss&utm_medium=article"
-      },
-      {
-        "source_id": "zh-tmtpost",
-        "url": "https://www.tmtpost.com/8072380.html"
-      },
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/waic-2026-robotics-four-changes-jul2026"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7664465589441183778"
       }
     ],
     "curated": true
@@ -1055,41 +936,6 @@
     "gate_backfill": true
   },
   {
-    "id": "f1dd95c5b8c0848f",
-    "source_id": "zh-meituan-tech",
-    "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
-    "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-07-20T06:42:07.759795+00:00",
-    "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "首个真实生活场景下的长期动态用户建模智能体基准，对Agent研究有重要参考价值。",
-    "summary_zh": "美团开源了VitaBench 2.0，这是首个面向长期动态用户建模的智能体评测基准，基于真实生活场景。它系统性地评测大语言模型在长期、真实、动态的用户互动中展现的个性化与主动性能力。该基准旨在推动智能体在复杂用户交互场景下的研究与应用。",
-    "title_zh": null,
-    "weighted_score": 0.69,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.5
-    },
-    "story_id": "a690135a1a48a087",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
     "id": "843c5ae3325b4aae",
     "source_id": "the-decoder",
     "title": "Hugging Face says an AI agent hacked its infrastructure, and it used AI to fight back",
@@ -1120,6 +966,10 @@
       {
         "source_id": "the-decoder",
         "url": "https://the-decoder.com/ai-text-detectors-struggle-when-language-models-mimic-an-authors-style/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/moonshot-pauses-new-kimi-k3-subscriptions-after-gpu-demand-maxes-out-in-48-hours/"
       },
       {
         "source_id": "the-decoder",
