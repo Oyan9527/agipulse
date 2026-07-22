@@ -1,6 +1,6 @@
 {
   "date": "2026-07-22",
-  "generated_at": "2026-07-22T17:18:24.551938+00:00",
+  "generated_at": "2026-07-22T21:09:00.971225+00:00",
   "items": [
     {
       "id": "083b549aec47dd74",
@@ -272,36 +272,70 @@
       ]
     },
     {
-      "id": "2165f9b2002349f5",
-      "source_id": "reddit-localllama",
-      "title": "Tokenizer Expansion: Upgrading a Model's Tokenizer in Place - LFM2.5-8B-A1B",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v3c6hx/tokenizer_expansion_upgrading_a_models_tokenizer/",
-      "published_at": "2026-07-22T10:28:29+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1v3c6hx/tokenizer_expansion_upgrading_a_models_tokenizer/\"> <img alt=\"Tokenizer Expansion: Upgrading a Model's Tokenizer in Place - LFM2.5-8B-A1B\" src=\"https://external-preview.redd.it/GcOv6jnnZ2zNZeBSUpYqQXplNctrvzvbOXORF2Ns9gY.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=163d92292192a46a8a1e9666f60aac8448a2394a\" title=\"Tokenizer Expansion: Upgrading a Model's Tokenizer in Place - LFM2.5-8B-A1B\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><blockquote> <p>Today, we're sharing the recipe behind the new tokenizer in <strong>LFM2.5-8B-A1B</strong>. It upgrades a pre-trained model's tokenizer <em>in place</em>, without retraining from scratch. We doubled the vocabulary from 65K to 128K to fix the languages our original tokenizer split too finely.</p> </blockquote> <p>Blog: <a href=\"https://www.liquid.ai/blog/tokenizer-expansion\">liquid.ai/blog/tokenizer-expansion</a><br /> Technical report: <a href=\"http://arxi",
+      "id": "d60c6df760a0a08e",
+      "source_id": "reddit-llmdevs",
+      "title": "For a high-volume generation pipeline, cheap model drafts plus a frontier final pass beat one strong model on cost. Numbers and where it breaks.",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1v3n773/for_a_highvolume_generation_pipeline_cheap_model/",
+      "published_at": "2026-07-22T17:38:44+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Sharing a routing setup because the &quot;which model should own which workload&quot; framing that goes around here applies cleanly to generation pipelines and I do not see it written up much for this specific case.</p> <p>The workload: a pipeline that generates a lot of medium-length documents from structured input. Running everything on a single frontier model was clean but the cost scaled badly with volume, and most of the work did not need that much model.</p> <p>What I moved to is a two-tier route:</p> <p>- A cheap, fast model does the bulk drafting: expanding the structured outline into prose per section. This is the high-token, low-judgment part, and a smaller model is fine at it when the structure is already decided upstream.</p> <p>- A frontier model does a single final pass on the assembled draft: tightening the top line, catching contradictions across sections, and a faithfulness check against the source. This is the low-token, high-judgment",
       "category_hint": [
-        "开源项目",
-        "技巧与观点"
+        "技巧与观点",
+        "开源项目"
       ],
-      "image_url": "https://external-preview.redd.it/GcOv6jnnZ2zNZeBSUpYqQXplNctrvzvbOXORF2Ns9gY.png?width=640&crop=smart&auto=webp&s=163d92292192a46a8a1e9666f60aac8448a2394a",
-      "category": "开源项目",
-      "content_type": "教程方法",
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "提出原地升级分词器的实用方法，对模型适配新语言或领域有直接帮助，技术细节丰富。",
-      "summary_zh": "本文介绍了一种名为“Tokenizer Expansion”的技术，允许在不重新训练整个模型的情况下原地升级模型的分词器。作者以LFM2.5-8B-A1B模型为例，详细说明了如何扩展词汇表、调整嵌入层并微调少量步骤，使模型能够处理新语言或领域。该方法降低了适配成本，并保持了原有性能。",
-      "title_zh": "分词器扩展：原地升级模型分词器——LFM2.5-8B-A1B",
-      "weighted_score": 0.64,
+      "reason_zh": "分享高吞吐生成管线的路由策略：廉价模型草稿+前沿模型终审，成本更低，附失效边界分析。",
+      "summary_zh": "一位开发者分享了在高吞吐量文档生成管线中的路由设置经验。核心思路是：对于大量中等长度文档的生成任务，使用廉价模型生成初稿，再由前沿模型进行最终审核，相比全程使用单一前沿模型可显著降低成本。文章详细分析了这种策略的适用场景、成本节省数据以及失效边界条件，为LLM应用开发者提供了实用的工程实践参考。",
+      "title_zh": "高吞吐生成管线：廉价模型草稿+前沿模型终审的成本优势与失效边界",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.4,
         "novelty": 0.8,
         "impact": 0.6,
-        "practical_value": 0.7
+        "practical_value": 0.9
       },
-      "story_id": "cabc9001252eb661",
+      "story_id": "2a73b5d610bdc218",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v3c6hx/tokenizer_expansion_upgrading_a_models_tokenizer/"
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1v3n773/for_a_highvolume_generation_pipeline_cheap_model/"
+        }
+      ]
+    },
+    {
+      "id": "051020c4d1b3d8a5",
+      "source_id": "reddit-llmdevs",
+      "title": "Agent memory that keeps third-party claims typed separately from user facts, with evidence-grounded abstention (open source)",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memory_that_keeps_thirdparty_claims_typed/",
+      "published_at": "2026-07-22T16:27:30+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>(1) three recurring failure modes from the research (poisoning /</p> <p>confident-when-wrong / staleness); (2) how it works: typed graph + dated</p> <p>episodes as store of record; third-party content → `third_party_claim` edges</p> <p>(different type, not a filter); `derived_from` caps trust for mixed</p> <p>provenance (your event quoting their text); evidence-grounded abstention</p> <p>gate; functional supersession-with-history; (3) code snippet: remember →</p> <p>recall partition → answer; (4) `Store`/`Complete` seams, MCP server, JSONL</p> <p>export/import — no lock-in; (5) selfcheck + repo + docs links.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Deep-Thinker-01\"> /u/Deep-Thinker-01 </a> <br /> <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memory_that_keeps_thirdparty_claims_typed/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memo",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "提出智能体记忆的新型架构，区分第三方声明与用户事实，基于证据的弃权机制，有深度。",
+      "summary_zh": "该项目提出一种智能体记忆系统，解决三个常见失败模式：数据投毒、自信错误、过时信息。核心设计包括：类型化图+带日期的事件作为记录存储；第三方内容标记为`third_party_claim`边（不同类型，非过滤）；`derived_from`边限制混合来源的信任度（如你的事件引用他们的文本）；证据不足时主动弃权。开源实现，适合构建可靠智能体。",
+      "title_zh": "智能体记忆：将第三方声明与用户事实分开存储，基于证据的弃权机制（开源）",
+      "weighted_score": 0.555,
+      "score_breakdown": {
+        "source_authority": 0.3,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "4e4b6d3d5491cf08",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memory_that_keeps_thirdparty_claims_typed/"
         }
       ]
     },
@@ -369,39 +403,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/OJ0K1cGSLUNW0i07JGfL?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "a0a31e8d2c6d8a76",
-      "source_id": "edsurge",
-      "title": "We Must Stop Using AI to ‘Level-Down’ Our Students",
-      "url": "https://edsurge.com/news/we-must-stop-using-ai-to-level-down-our-students",
-      "published_at": "2026-07-22T00:00:00+00:00",
-      "raw_text": "How AI deprived my students of the reading struggle they needed to succeed — and five better ways to use it.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.ctfassets.net/eflsecw4kznd/16aIo6GBfCWCeiY8yfmPX7/c6c772d92ac777de5f0667898575548f/shutterstock_2567526331.jpg?auto=compress%2Cformat&w=400&h=200&fit=crop",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "反思AI在教育中的滥用，提出5种更好的使用方式，对教育工作者有深刻启发。",
-      "summary_zh": "文章批评了当前教育中滥用AI的现象，指出AI剥夺了学生通过阅读挣扎获得成功的机会。作者提出了五种更好的AI使用方式，旨在帮助学生而非替代他们的学习过程。文章强调AI应作为辅助工具，而非替代学生的思考与努力。",
-      "title_zh": "我们必须停止用AI来‘降低’学生的水平",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "db661e7345e6258f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "edsurge",
-          "url": "https://edsurge.com/news/we-must-stop-using-ai-to-level-down-our-students"
         }
       ]
     }
