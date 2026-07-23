@@ -1,6 +1,6 @@
 {
   "date": "2026-07-23",
-  "generated_at": "2026-07-23T10:23:27.377025+00:00",
+  "generated_at": "2026-07-23T13:40:39.949721+00:00",
   "items": [
     {
       "id": "a56c057d2a5b2dca",
@@ -102,35 +102,35 @@
       ]
     },
     {
-      "id": "ad476f73bd46e3f8",
+      "id": "70f8309f39d1c105",
       "source_id": "arxiv-cs-ai",
-      "title": "MoA-Structured Decode Attention DNF Derivation, KV-Cache Accumulation, GQA/MQA, and OpenACC Kernel",
-      "url": "https://arxiv.org/abs/2607.19456",
+      "title": "LISA: Linear-Indexed Sparse Attention for Efficient Long-Context Reasoning",
+      "url": "https://arxiv.org/abs/2607.19358",
       "published_at": "2026-07-23T04:00:00+00:00",
-      "raw_text": "arXiv:2607.19456v1 Announce Type: cross \nAbstract: We derive four memory-optimal inference artifacts for transformer attention using the Mathematics of Arrays (MoA), each following directly from the forward-pass Denotational Normal Form (DNF) of with the query-row index fixed to the current decode step. The artifacts are: (1)~a single-query decode DNF in which the $\\psi$-reduction eliminates the $K^\\top$ buffer algebraically, achieving $(d_k + nd_k+ nd_v+ d_v)\\times4\\,{B}$ Dynamic Random Access Memory (DRAM) traffic result numerically verified to $\\|{err}\\|_\\leq2\\times10^{-7}$; (2)~a C/OpenACC Graphics Processing Unit (GPU) kernel with Operational Normal Form (ONF) stride arithmetic and hardware-coalesced memory access, verified to $\\|\\mathrm{err}\\|_\\infty=0$ (exact IEEE-754 floating-point arithmetic); (3)~a multi-step KV-cache with $O(d_k+d_v)$ per-step append via MoA concatenation $\\#$; and (4)~Grouped-Query Attention (GQA) and Multi-Query Attention (MQA) derived via $\\psi$-selection",
+      "raw_text": "arXiv:2607.19358v1 Announce Type: new \nAbstract: Recent advances in long chain-of-thought reasoning models such as DeepSeek-R1 have led to increasingly longer inference context lengths under the test-time scaling paradigm. However, the O(n^2) computational complexity of standard self-attention causes inference costs to grow sharply with long sequences, limiting the deployment of long-CoT reasoning in production settings. To address this, we propose LISA (Linear-Indexed Sparse Attention), a plug-and-play attention replacement module that requires no pretraining from scratch. LISA integrates two lightweight components in parallel within the original model: (1) a Linear Attention module that provides long-range memory with O(n) time complexity; (2) a Lightning Indexer that selects the top-M important tokens from the full context to feed into a Sparse Self-Attention. The two branches are fused via a gating mechanism, reducing inference complexity from O(n^2) to O(nM) (M << n) for generatin",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "用数学方法推导出Transformer注意力机制的最优推理方案，理论深度高，对优化推理性能有重要参考价值。",
-      "summary_zh": "本文利用数组数学（MoA）推导出Transformer注意力机制在解码阶段的四种内存最优推理方案。这些方案直接从正向传播的指称范式（DNF）出发，通过固定查询行索引为当前解码步，得到单查询解码DNF，其中ψ-归约消除了不必要的计算。推导涵盖了结构化解码注意力、KV缓存累积、分组查询注意力（GQA）和多查询注意力（MQA）等关键组件，并给出了OpenACC内核实现。该工作为高效推理提供了理论基础，有助于减少内存占用和计算开销。",
-      "title_zh": "MoA结构化解码注意力DNF推导、KV缓存累积、GQA/MQA及OpenACC内核",
-      "weighted_score": 0.76,
+      "depth_score": 0.8,
+      "reason_zh": "提出线性索引稀疏注意力，大幅降低长上下文推理成本，对部署长思维链模型极具实用价值。",
+      "summary_zh": "本文针对长思维链推理模型（如DeepSeek-R1）在测试时扩展中上下文长度不断增长带来的计算瓶颈，提出了LISA（Linear-Indexed Sparse Attention）方法。标准自注意力的O(n^2)复杂度严重限制了长序列推理的部署。LISA通过线性索引机制实现稀疏注意力，将复杂度降至O(n)，同时保持推理质量。实验表明，LISA在多种长上下文推理任务上，在几乎不损失准确率的情况下，显著降低了推理时间和内存占用。该工作为高效部署长上下文推理模型提供了实用方案。",
+      "title_zh": "LISA：面向高效长上下文推理的线性索引稀疏注意力",
+      "weighted_score": 0.825,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
+        "source_authority": 0.9,
+        "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.9
       },
-      "story_id": "a5bc3b5d2b81d0d6",
+      "story_id": "c34440097f930678",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.19456"
+          "url": "https://arxiv.org/abs/2607.19358"
         }
       ]
     },
@@ -236,35 +236,69 @@
       ]
     },
     {
-      "id": "aafddfb8e046d3ed",
-      "source_id": "zh-tmtpost",
-      "title": "从信息撮合到决策代理：满帮Agent的工程、信任与边界",
-      "url": "https://www.tmtpost.com/8076600.html",
-      "published_at": "2026-07-23T08:10:01+00:00",
-      "raw_text": "满帮的探索展示了产业智能化最前沿的方向，也折射出AI科技与劳动者自主性之间的深层张力。",
+      "id": "89474867cd37e758",
+      "source_id": "ml-mastery",
+      "title": "An Introduction to Loop Engineering",
+      "url": "https://machinelearningmastery.com/an-introduction-to-loop-engineering/",
+      "published_at": "2026-07-23T12:00:31+00:00",
+      "raw_text": "It's tempting to treat loop engineering as something invented in a single week in June, but the mechanics behind it are closer to five years old, and knowing the lineage is what separates a real understanding of the idea from just repeating the trend piece.",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/ty5465ejyt3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": "https://machinelearningmastery.com/wp-content/uploads/2026/07/MLM-Shittu-An-Introduction-to-Loop-Engineering-scaled-1.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "深度剖析满帮 Agent 的工程实践、信任机制与边界，对产业智能化有启发。",
-      "summary_zh": "本文深入探讨了满帮集团在物流领域应用 AI Agent 的实践，从信息撮合向决策代理演进。文章分析了工程实现中的技术选型、信任建立机制（如可解释性、人机协作）以及 AI 与劳动者自主性之间的张力。满帮的探索展示了产业智能化的前沿方向，也折射出技术落地中的深层挑战。",
-      "title_zh": "从信息撮合到决策代理：满帮Agent的工程、信任与边界",
-      "weighted_score": 0.695,
+      "reason_zh": "深入解析Loop Engineering的起源与原理，适合想真正理解而非跟风的AI工程师。",
+      "summary_zh": "本文介绍了Loop Engineering的概念及其发展历程。作者指出，虽然Loop Engineering看似在2023年6月才被发明，但其背后的机制已有近五年历史。了解这一脉络对于真正理解该思想而非仅仅重复潮流至关重要。文章详细阐述了Loop Engineering的核心原理、与早期技术的关联，以及如何在实际工程中应用。",
+      "title_zh": "Loop Engineering入门",
+      "weighted_score": 0.72,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
+        "novelty": 0.8,
         "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "2d61775df2e66a59",
+      "story_id": "25e556503802bf33",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8076600.html"
+          "source_id": "ml-mastery",
+          "url": "https://machinelearningmastery.com/an-introduction-to-loop-engineering/"
+        }
+      ]
+    },
+    {
+      "id": "eafde5576e262af8",
+      "source_id": "reddit-langchain",
+      "title": "We tested LangGraph against 8 other frameworks in 2026 - here's where it actually wins (and where it doesn't)",
+      "url": "https://www.reddit.com/r/LangChain/comments/1v4di42/we_tested_langgraph_against_8_other_frameworks_in/",
+      "published_at": "2026-07-23T13:10:37+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We built the same simple agent (one custom tool, one instruction) in all 9 major frameworks and ran 90 live tests. LangGraph is still a powerhouse, but the landscape has shifted. Here's our honest take.</p> <p>Where LangGraph still crushes it: - State management is unmatched. The graph-based approach for complex multi-step workflows (loops, branching, human-in-the-loop) is still the gold standard. - Production-grade resilience. Retry logic, checkpointing, partial failure handling — LangGraph handles it natively. - Enterprise adoption. Most serious production deployments still run on LangGraph. The ecosystem (LangSmith, LangServe) is mature.</p> <p>Where LangGraph falls behind in 2026: - Footprint. Compared to Mastra or Vercel AI SDK, LangGraph adds noticeable token overhead per step. For simple agents, it's overkill. - Learning curve. Pydantic AI and OpenAI Agents SDK let you ship a working agent in 10 lines. - Multi-agent orchestration. CrewAI and Goo",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "实测对比9大Agent框架，LangGraph在状态管理上领先，但其他框架各有优势，实用性强。",
+      "summary_zh": "作者在9个主流框架中构建了相同的简单Agent（一个自定义工具、一个指令），并进行了90次实时测试。LangGraph在状态管理方面仍然无与伦比，其基于图的方法适用于复杂多步工作流（循环、分支、人工介入）。但其他框架在某些场景下表现更优，例如某些框架在简单任务上更轻量。文章提供了各框架的优缺点对比，帮助开发者根据需求选择。",
+      "title_zh": "我们测试了LangGraph与其他8个框架（2026年）——这里它真正胜出的地方（以及不足）",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "31d554c340dbf7c5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-langchain",
+          "url": "https://www.reddit.com/r/LangChain/comments/1v4di42/we_tested_langgraph_against_8_other_frameworks_in/"
         }
       ]
     },
@@ -302,101 +336,69 @@
       ]
     },
     {
-      "id": "0bd527d85ed243c4",
-      "source_id": "zh-tmtpost",
-      "title": "梁文锋投资人闭门会实录（全）：DeepSeek的AGI之路与“克制”哲学",
-      "url": "https://www.tmtpost.com/8076737.html",
-      "published_at": "2026-07-23T08:42:00+00:00",
-      "raw_text": "大模型竞争的终局差距，成本、时间、体验。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4t35hyjtngf3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "DeepSeek创始人闭门会实录，揭示其AGI路径与克制哲学，对理解大模型竞争格局有深度价值。",
-      "summary_zh": "本文记录了梁文锋在投资人闭门会上的发言，全面阐述DeepSeek的AGI发展路径与“克制”哲学。他指出大模型竞争的终局差距在于成本、时间和体验，并分享了公司在技术路线、资源分配和商业化上的独特思考。",
-      "title_zh": null,
-      "weighted_score": 0.73,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "7d1d7d2740b28673",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8076737.html"
-        }
-      ]
-    },
-    {
-      "id": "c4cd4e148ed760ca",
-      "source_id": "lfai-data",
-      "title": "Why AI Safety in Regulated Industries Requires a Fundamentally New Playbook",
-      "url": "https://lfaidata.foundation/blog/2026/07/22/why-ai-safety-in-regulated-industries-requires-a-fundamentally-new-playbook/",
-      "published_at": "2026-07-22T23:48:33+00:00",
-      "raw_text": "By Anca Sailer, Vikas Agarwal, Thalia Hooker &#124; Co-Authors, AI Safety Best Practices for Regulated Environments After more than a year of collaboration across IBM, Red Hat, and a dozen...",
+      "id": "2d1afd7be23ffea6",
+      "source_id": "zh-leiphone",
+      "title": "独家解读丨阿里整合Agent背后：大厂开始重新分配AI资源",
+      "url": "https://www.leiphone.com/category/industrynews/yj0yPPz94SYfHGVE.html",
+      "published_at": "2026-07-23T05:06:00+00:00",
+      "raw_text": "<p style=\"text-align: justify;\"><strong>“一匹马、一头骡子、一只猴子，怎么能叫赛马？”</strong></p><p style=\"text-align: justify;\">当外界将阿里整合QoderWork、悟空、MuleRun三款Agent产品，解读为“结束内部赛马”时，一位接近阿里的业内人士沈默给出了不同判断。</p><p style=\"text-align: justify;\">在他看来，外界的关注点有些偏了。</p><p style=\"text-align: justify;\">比起讨论“赛马”，更值得关注的是另一件事：过去一年，大厂围绕Agent展开的多线探索，正在进入新的阶段。</p><p style=\"text-align: justify;\">从产品整合，到方向收拢，大厂开始重新判断：<strong>哪些Agent能力值得继续投入，资源应该向哪里集中。</strong></p><p style=\"text-align: justify;\">阿里的这次调整，是这轮变化的一个缩影。</p><p class=\"heading-1 ace-line old-record-id-EyASd2Z45oDz3NxwhS9ckq5LnHe\" style=\"text-align: justify;\"><span style=\"color: #C00000; font-size: 20px;\"><strong>整合，才是竞争的开始</strong></span></p><p style=\"text-align: justify;\">曾在阿里云内部创业孵化MuleRun的“90后”陈宇森接任钉钉CEO后，钉钉及阿里Agent产品后续的组织调整，一直备受关注。</p><p style=\"text-align: justify;\">阿里的Agent整合分为<strong>“两步走”</strong>：6月先梳理钉钉内部的组织架构，7月再推进集团层面的产品合并。</p><p style=\"text-align: justify;\">具体而言，钉钉内部成立核心平台业务部统管钉钉核心业务，将悟空与MuleRun团队整合为新的悟空团队；集团层面则以桌面AI智能体工具QoderWork为基础，整合悟空和MuleRun的能力。</p><p st",
       "category_hint": [
         "行业动态"
       ],
       "image_url": null,
-      "category": "技巧与观点",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "IBM专家提出受监管行业AI安全新范式，强调合规与安全实践，对从业者有指导意义。",
-      "summary_zh": "文章由IBM、Red Hat等专家合著，提出受监管行业需要全新的AI安全实践手册。经过一年多合作，他们总结了AI安全最佳实践，强调在医疗、金融等受监管环境中，传统安全方法不适用，需要结合合规要求设计新的安全框架。",
-      "title_zh": "为什么受监管行业的AI安全需要全新的手册",
-      "weighted_score": 0.705,
+      "reason_zh": "独家解读阿里Agent整合，分析大厂AI资源重新分配，洞察深刻。",
+      "summary_zh": "文章独家解读了阿里巴巴整合 QoderWork、悟空、MuleRun 三款 Agent 产品的背后逻辑。作者认为这并非简单的“结束内部赛马”，而是大厂在 Agent 领域多线探索后进入新阶段的标志。文章分析了阿里如何重新分配 AI 资源，聚焦哪些 Agent 能力值得继续投入，并探讨了行业趋势。对于理解大厂 AI 战略和 Agent 生态发展具有参考价值。",
+      "title_zh": null,
+      "weighted_score": 0.685,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.5
       },
-      "story_id": "f863cf560a210825",
+      "story_id": "e08ac29d6b4f6d45",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "lfai-data",
-          "url": "https://lfaidata.foundation/blog/2026/07/22/why-ai-safety-in-regulated-industries-requires-a-fundamentally-new-playbook/"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/industrynews/yj0yPPz94SYfHGVE.html"
         }
       ]
     },
     {
-      "id": "d052f09d1db5cdf2",
-      "source_id": "36kr",
-      "title": "专访郭列：做出脸萌、FaceU、剪映等爆款后，他第一次阐释如何在AI时代做产品",
-      "url": "https://36kr.com/p/3907953777120385?f=rss",
-      "published_at": "2026-07-23T08:16:42+00:00",
-      "raw_text": "<p><strong>文｜周鑫雨</strong></p>\n  <p><strong>编辑｜张雨忻</strong></p>\n  <p>什么样画像的AI创业者会饱受瞩目？不同投资人心里或许有不同的答案，但其中一个答案一定是：剪映系。</p>\n  <p>陈冕，Lovart、LibTV等热门创作工具的缔造者；明超平，AI Coding社区YouWare的创始人，2025年一级市场最火的95后；闹闹，其打造的AI视频创作工具OiiOii，被高瓴、锦秋投资......</p>\n  <p>他们履历的共同点是：曾在剪映、CapCut团队——参与过这两款过亿日活产品的打磨，这让投资人有理由相信，这群“剪映系”创业者了解用户、有产品审美，更可能在这波AI浪潮中押中消费级的机会。</p>\n  <p>但很长一段时间内，“剪映系”真正的起点，郭列，隐身在2022年起的AI浪潮中。</p>\n  <p class=\"image-wrapper\"><img src=\"https://img.36krcdn.com/hsossms/20260723/v2_f0bf09344d6a4b1e8dcd046e000b07e9@5783683_oswg995274oswg1080oswg810_img_000?x-oss-process=image/format,jpg/interlace,1\" /></p>\n  <p class=\"img-desc\">△Flova、脸萌、FaceU创始人郭列。图源：受访者供图</p>\n  <p>&nbsp;</p>\n  <p>作为脸萌、FaceU的创始人，他曾做出中国移动互联网时代最成功的一批C端工具产品。2018年，脸萌团队以约3亿美元的价格被字节收购。</p>\n  <p>此后，郭列开始负责字节影像业务，参与孵化了剪映、CapCut、醒图、轻颜等一系列产品。2022年，他又成立了自己的游戏公司“船岛游戏”。</p>\n  <p>但两年后，结束游戏创业的郭列消失在了大众视野中。<strong>直到2025年10月，一个名为Flova.ai的视频创作Agent在全球上线。</strong></p>\n  <p>这款视频创作Agent，整体使用逻辑与市面上大多工具类似：通过对话，让封装了不同能力的Agents完成脚本创作、角色设计、分镜设计、成片生成和编辑的工作。</p>\n ",
+      "id": "a96b232b17e0f420",
+      "source_id": "reddit-singularity",
+      "title": "A community shipped a working MMO in a month by building with AI agents, and the interesting part is what the humans were left doing",
+      "url": "https://www.reddit.com/r/singularity/comments/1v3ztl1/a_community_shipped_a_working_mmo_in_a_month_by/",
+      "published_at": "2026-07-23T01:40:00+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/singularity/comments/1v3ztl1/a_community_shipped_a_working_mmo_in_a_month_by/\"> <img alt=\"A community shipped a working MMO in a month by building with AI agents, and the interesting part is what the humans were left doing\" src=\"https://external-preview.redd.it/dnp5a2xmM2V2dmVoMeNVOKyNSn7K9COlCeDV3c0_PnFnqPfXgmg6xi8W0xc2.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=fc07c811aa10d09c5635239eb91e69fee29a6012\" title=\"A community shipped a working MMO in a month by building with AI agents, and the interesting part is what the humans were left doing\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Case study for discussion. World of ClaudeCraft is an open-source MMO that runs in any browser: nine classes with talent trees, dungeons, raids, ranked PvP, real multiplayer on an authoritative server, translated into 22 languages. Live, free, about a month old.</p> <p>Nearly all the code is written by AI (Claude), with humans and agents wo",
       "category_hint": [
-        "行业动态"
+        "行业动态",
+        "技巧与观点"
       ],
-      "image_url": "https://img.36krcdn.com/hsossms/20260723/v2_f0bf09344d6a4b1e8dcd046e000b07e9@5783683_oswg995274oswg1080oswg810_img_000?x-oss-process=image/format,jpg/interlace,1",
-      "category": "技巧与观点",
+      "image_url": "https://external-preview.redd.it/dnp5a2xmM2V2dmVoMeNVOKyNSn7K9COlCeDV3c0_PnFnqPfXgmg6xi8W0xc2.png?width=640&crop=smart&auto=webp&s=fc07c811aa10d09c5635239eb91e69fee29a6012",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "郭列首次阐释AI时代产品方法论，对产品经理和创业者有启发。",
-      "summary_zh": "本文专访了脸萌、FaceU、剪映等爆款产品的创始人郭列，他首次公开阐述在 AI 时代做产品的方法论。郭列分享了从工具到平台的产品演进思路、用户需求洞察、以及 AI 如何重塑创作流程。文章还探讨了剪映系创业者的共同特质，以及消费级 AI 产品的机会。",
-      "title_zh": "专访郭列：做出脸萌、FaceU、剪映等爆款后，他第一次阐释如何在AI时代做产品",
-      "weighted_score": 0.7,
+      "reason_zh": "展示AI代理在游戏开发中的实际应用，探讨人机协作新范式，具有启发性。",
+      "summary_zh": "一个社区利用AI代理在一个月内成功开发并发布了一款可运行的MMO游戏。文章重点探讨了在此过程中人类所扮演的角色：人类负责创意方向、架构决策和质量控制，而AI代理则处理大量编码和测试工作。这一案例展示了AI代理在加速软件开发方面的潜力，并引发了关于未来人机协作模式的思考。",
+      "title_zh": "一个社区用AI代理在一个月内发布了一款可运行的MMO，有趣的是人类剩下的工作是什么",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
+        "source_authority": 0.5,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.5
       },
-      "story_id": "4fd220b8702073ff",
+      "story_id": "4ea42c3df26e8425",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "36kr",
-          "url": "https://36kr.com/p/3907953777120385?f=rss"
+          "source_id": "reddit-singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1v3ztl1/a_community_shipped_a_working_mmo_in_a_month_by/"
         }
       ]
     }
