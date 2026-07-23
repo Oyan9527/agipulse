@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-22",
-  "generated_at": "2026-07-22T21:09:00.971225+00:00",
+  "date": "2026-07-23",
+  "generated_at": "2026-07-23T02:14:00.580815+00:00",
   "items": [
     {
       "id": "083b549aec47dd74",
@@ -170,40 +170,6 @@
       ]
     },
     {
-      "id": "55d9a24a02c94153",
-      "source_id": "google-cloud-ai",
-      "title": "Why AI apps fail in production (And how Google solved it)",
-      "url": "https://cloud.google.com/blog/topics/developers-practitioners/why-ai-apps-fail-in-production/",
-      "published_at": "2026-07-21T23:00:00+00:00",
-      "raw_text": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">We are living in the golden age of the weekend AI side project. Thanks to agentic engineering and LLMs, the time to go from a blank IDE to a functional local application has dropped from quarters to hours. You can build your wildest ideas over a cup of coffee.</span></p>\n<p><span style=\"vertical-align: baseline;\">But inside an enterprise ecosystem with rigid infrastructure and millions of users, vibe coding hits an invisible wall. Your local prototype falls apart against corporate networks, cascading errors, or getting blocked by leadership terrified of operational volatility.</span></p>\n<p><span style=\"vertical-align: baseline;\">The </span><a href=\"https://mlq.ai/media/quarterly_decks/v0.1_State_of_AI_in_Business_2025_Report.pdf\" rel=\"noopener\" target=\"_blank\"><span style=\"text-decoration: underline; vertical-align: baseline;\">data</span></a><span style=\"vertical-align: baseline;\"> is sobering: only 5% of",
-      "category_hint": [
-        "产品发布",
-        "技巧与观点"
-      ],
-      "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/maxresdefault_vlFJjFT.max-600x600.jpg",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Google Cloud深度剖析AI应用生产失败原因，提供工程化解决方案，对开发者极具实用价值。",
-      "summary_zh": "文章指出当前AI应用从原型到生产面临诸多挑战，如模型性能波动、延迟、成本控制等。Google Cloud分享了其内部最佳实践，包括使用Vertex AI进行模型评估与监控、采用MLOps自动化流水线、以及利用Agentic Engineering构建可靠的多步骤推理系统。文章强调，成功的AI应用需要从实验思维转向工程思维，注重可观测性、可复现性和渐进式部署。文中还提供了具体案例和工具链建议，帮助开发者避免常见陷阱。",
-      "title_zh": "为什么AI应用在生产中失败（以及Google如何解决）",
-      "weighted_score": 0.77,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "ef410d0ffdbc6848",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "google-cloud-ai",
-          "url": "https://cloud.google.com/blog/topics/developers-practitioners/why-ai-apps-fail-in-production/"
-        }
-      ]
-    },
-    {
       "id": "13cb433e2faddc3a",
       "source_id": "marktechpost",
       "title": "Unsloth vs Axolotl vs TRL vs LLaMA-Factory: A Fine-Tuning Framework Comparison on Speed, VRAM, and Multi-GPU",
@@ -272,70 +238,35 @@
       ]
     },
     {
-      "id": "d60c6df760a0a08e",
-      "source_id": "reddit-llmdevs",
-      "title": "For a high-volume generation pipeline, cheap model drafts plus a frontier final pass beat one strong model on cost. Numbers and where it breaks.",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1v3n773/for_a_highvolume_generation_pipeline_cheap_model/",
-      "published_at": "2026-07-22T17:38:44+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Sharing a routing setup because the &quot;which model should own which workload&quot; framing that goes around here applies cleanly to generation pipelines and I do not see it written up much for this specific case.</p> <p>The workload: a pipeline that generates a lot of medium-length documents from structured input. Running everything on a single frontier model was clean but the cost scaled badly with volume, and most of the work did not need that much model.</p> <p>What I moved to is a two-tier route:</p> <p>- A cheap, fast model does the bulk drafting: expanding the structured outline into prose per section. This is the high-token, low-judgment part, and a smaller model is fine at it when the structure is already decided upstream.</p> <p>- A frontier model does a single final pass on the assembled draft: tightening the top line, catching contradictions across sections, and a faithfulness check against the source. This is the low-token, high-judgment",
+      "id": "22554dd9bcfcefbc",
+      "source_id": "reddit-rl",
+      "title": "Gumbel MuZero search in mctx scaled superlinearly with simulations — hidden full-buffer copies in the backward pass (3x fix, PR open)",
+      "url": "https://www.reddit.com/r/reinforcementlearning/comments/1v3g6o2/gumbel_muzero_search_in_mctx_scaled_superlinearly/",
+      "published_at": "2026-07-22T13:28:10+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I'm training an AlphaZero-style agent (Gumbel MuZero via DeepMind's mctx, in JAX, single RTX 5070) and found that the MCTS search cost grows superlinearly with the simulation budget: at 16 / 32 / 64 simulations per move the training throughput was 143 / 47 / 9 episodes per second. Doubling the budget should roughly double the cost, not triple it — so something in the search was superlinear.</p> <p>Isolating the tree machinery (network replaced by constants, then the environment removed too) showed it is O(N<sup>2)</sup> all by itself: the pure per-simulation tree overhead measured 0.47 / 0.52 / 1.05 / 1.95 ms at 8 / 16 / 32 / 64 sims — the per-simulation cost doubles every time the number of simulations doubles.</p> <p>The compiled HLO showed why. mctx's backward pass carries the whole search tree through a lax.while_loop and, within one iteration, both gathers from and scatters into children_values / children_visits. XLA:GPU cannot prove the scatter c",
       "category_hint": [
-        "技巧与观点",
-        "开源项目"
+        "论文研究"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "分享高吞吐生成管线的路由策略：廉价模型草稿+前沿模型终审，成本更低，附失效边界分析。",
-      "summary_zh": "一位开发者分享了在高吞吐量文档生成管线中的路由设置经验。核心思路是：对于大量中等长度文档的生成任务，使用廉价模型生成初稿，再由前沿模型进行最终审核，相比全程使用单一前沿模型可显著降低成本。文章详细分析了这种策略的适用场景、成本节省数据以及失效边界条件，为LLM应用开发者提供了实用的工程实践参考。",
-      "title_zh": "高吞吐生成管线：廉价模型草稿+前沿模型终审的成本优势与失效边界",
-      "weighted_score": 0.65,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "2a73b5d610bdc218",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1v3n773/for_a_highvolume_generation_pipeline_cheap_model/"
-        }
-      ]
-    },
-    {
-      "id": "051020c4d1b3d8a5",
-      "source_id": "reddit-llmdevs",
-      "title": "Agent memory that keeps third-party claims typed separately from user facts, with evidence-grounded abstention (open source)",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memory_that_keeps_thirdparty_claims_typed/",
-      "published_at": "2026-07-22T16:27:30+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>(1) three recurring failure modes from the research (poisoning /</p> <p>confident-when-wrong / staleness); (2) how it works: typed graph + dated</p> <p>episodes as store of record; third-party content → `third_party_claim` edges</p> <p>(different type, not a filter); `derived_from` caps trust for mixed</p> <p>provenance (your event quoting their text); evidence-grounded abstention</p> <p>gate; functional supersession-with-history; (3) code snippet: remember →</p> <p>recall partition → answer; (4) `Store`/`Complete` seams, MCP server, JSONL</p> <p>export/import — no lock-in; (5) selfcheck + repo + docs links.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Deep-Thinker-01\"> /u/Deep-Thinker-01 </a> <br /> <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memory_that_keeps_thirdparty_claims_typed/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memo",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "提出智能体记忆的新型架构，区分第三方声明与用户事实，基于证据的弃权机制，有深度。",
-      "summary_zh": "该项目提出一种智能体记忆系统，解决三个常见失败模式：数据投毒、自信错误、过时信息。核心设计包括：类型化图+带日期的事件作为记录存储；第三方内容标记为`third_party_claim`边（不同类型，非过滤）；`derived_from`边限制混合来源的信任度（如你的事件引用他们的文本）；证据不足时主动弃权。开源实现，适合构建可靠智能体。",
-      "title_zh": "智能体记忆：将第三方声明与用户事实分开存储，基于证据的弃权机制（开源）",
-      "weighted_score": 0.555,
+      "reason_zh": "发现mctx中Gumbel MuZero搜索的隐藏性能问题并给出修复，对使用该库的开发者极具价值。",
+      "summary_zh": "作者在训练AlphaZero风格智能体（使用DeepMind的mctx库中的Gumbel MuZero，JAX实现，RTX 5070）时，发现MCTS搜索成本随模拟预算超线性增长：16/32/64次模拟时，训练吞吐量分别为143/47/9 episodes/s。经排查，问题源于反向传播中的隐藏全缓冲区拷贝，导致计算量倍增。作者提出了3倍加速的修复方案，并已提交PR。",
+      "title_zh": "mctx中Gumbel MuZero搜索随模拟次数超线性增长——反向传播中的隐藏全缓冲区拷贝（3倍修复，PR已提交）",
+      "weighted_score": 0.575,
       "score_breakdown": {
         "source_authority": 0.3,
         "novelty": 0.8,
         "impact": 0.5,
-        "practical_value": 0.7
+        "practical_value": 0.8
       },
-      "story_id": "4e4b6d3d5491cf08",
+      "story_id": "928fae820feeff92",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1v3l4at/agent_memory_that_keeps_thirdparty_claims_typed/"
+          "source_id": "reddit-rl",
+          "url": "https://www.reddit.com/r/reinforcementlearning/comments/1v3g6o2/gumbel_muzero_search_in_mctx_scaled_superlinearly/"
         }
       ]
     },
@@ -369,6 +300,72 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2607.18754"
+        }
+      ]
+    },
+    {
+      "id": "b0babb2426cc42ee",
+      "source_id": "zh-ithome",
+      "title": "梁文锋 4 小时投资人会议内容曝光：DeepSeek 不追求成为下一个字节或腾讯，克制、开源与低成本是实现 AGI 的核心策略",
+      "url": "https://www.ithome.com/0/980/367.htm",
+      "published_at": "2026-07-23T00:12:29+00:00",
+      "raw_text": "<p>IT之家 7 月 23 日消息，近日，有关 DeepSeek 创始人梁文锋此前一次长达 4 小时的投资人会议内容在业内流传。elsewhere 昨日放出了此次会议的整理实录。</p><p>在此次会议中，梁文锋围绕 DeepSeek 的发展方向、AGI（通用人工智能）路线、开源策略、商业化规划以及 AI 行业竞争等话题进行了交流。</p><p>从公开整理的内容来看，梁文锋多次强调“克制”这一理念。他表示，DeepSeek 当前并非以商业收益最大化为目标，而是希望通过减少非核心业务投入，提高实现 AGI 的可能性。</p><p>梁文锋认为，产品并不是 DeepSeek 当前的主线，而是通往 AGI 路上的阶段性成果。他表示，<strong>企业不需要投入过多资源做 C 端、B 端产品</strong>，“站在一个技术高位上做相对低一级别的技术，是降维打击”。</p><p>对于业务方向，梁文锋称，DeepSeek 不会重点投入 3D 生成、视频生成以及世界模型等方向。他认为，多模态能力对于产品和普通用户很重要，但只是 AI 系统中的一个组件，并非智能发展的核心路线。</p><p>梁文锋表示，当前 AI 最重要的发展方向之一是 Coding Agent。在中国市场环境下，更合理的选择是集中力量发展通用 Agent，而金融、医疗等垂直领域 Agent 的优先级相对较低。</p><p>在 AGI 路线方面，梁文锋认为，当前 AI 最大的缺失并非能力，而是持续学习能力。他表示，人类可以持续积累经验，但目前 AI 需要输入完整上下文才能完成任务，这限制了 AI 替代人类工作的能力。</p><p>他认为，下一代模型需要具备持续学习能力。DeepSeek 的长期目标是实现 AGI，如果将发展路线比作爬楼梯，去年解决的问题是 CoT（IT之家注：Chain-of-Thought，思维链），今年重点是 Agent，而 Agent 之后需要解决持续学习问题。</p><p>梁文锋表示，当 AI 具备持续学习能力后，可能进入一个渐进式突破阶段，即模型能够完成更多人类工作，并帮助自身研发更先进的人工智能系统，实现“AI 加速 AI 研究”。他认为，这之后才可能进一步发展到具身智能。</p><p>在商业模式方面，梁文锋表示，<strong>DeepSeek 只希望获得合理利润，而不是追求利润最",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "梁文锋罕见披露DeepSeek战略：克制、开源、低成本，不追求商业最大化，为AGI路线提供独特视角。",
+      "summary_zh": "IT之家报道，DeepSeek创始人梁文锋在一次4小时投资人会议中阐述了公司战略。他强调“克制”理念，认为DeepSeek当前不以商业收益最大化为目标，而是通过减少非核心业务投入提高实现AGI的可能性。梁文锋指出，产品并非主线，而是通往AGI的阶段性成果，企业无需过多投入C端或B端产品，站在技术高位做低一级别技术是降维打击。会议内容涉及AGI路线、开源策略、商业化规划及行业竞争等话题，展现了DeepSeek独特的发展思路。",
+      "title_zh": null,
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.9,
+        "practical_value": 0.6
+      },
+      "story_id": "c5c7742a02acb85a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/0/980/367.htm"
+        }
+      ]
+    },
+    {
+      "id": "c4cd4e148ed760ca",
+      "source_id": "lfai-data",
+      "title": "Why AI Safety in Regulated Industries Requires a Fundamentally New Playbook",
+      "url": "https://lfaidata.foundation/blog/2026/07/22/why-ai-safety-in-regulated-industries-requires-a-fundamentally-new-playbook/",
+      "published_at": "2026-07-22T23:48:33+00:00",
+      "raw_text": "By Anca Sailer, Vikas Agarwal, Thalia Hooker &#124; Co-Authors, AI Safety Best Practices for Regulated Environments After more than a year of collaboration across IBM, Red Hat, and a dozen...",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "IBM专家提出受监管行业AI安全新范式，强调合规与安全实践，对从业者有指导意义。",
+      "summary_zh": "文章由IBM、Red Hat等专家合著，提出受监管行业需要全新的AI安全实践手册。经过一年多合作，他们总结了AI安全最佳实践，强调在医疗、金融等受监管环境中，传统安全方法不适用，需要结合合规要求设计新的安全框架。",
+      "title_zh": "为什么受监管行业的AI安全需要全新的手册",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "f863cf560a210825",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "lfai-data",
+          "url": "https://lfaidata.foundation/blog/2026/07/22/why-ai-safety-in-regulated-industries-requires-a-fundamentally-new-playbook/"
         }
       ]
     },
