@@ -1,14 +1,14 @@
 {
   "date": "2026-07-23",
-  "generated_at": "2026-07-23T02:14:00.580815+00:00",
+  "generated_at": "2026-07-23T06:38:55.933215+00:00",
   "items": [
     {
-      "id": "083b549aec47dd74",
+      "id": "a56c057d2a5b2dca",
       "source_id": "arxiv-cs-ai",
-      "title": "SysAdmin: Measuring Instrumental Power-Seeking in Frontier AI",
-      "url": "https://arxiv.org/abs/2607.18239",
-      "published_at": "2026-07-22T04:00:00+00:00",
-      "raw_text": "arXiv:2607.18239v1 Announce Type: new \nAbstract: Power-seeking defined as behaviors where AI systems acquire resources, evade oversight, or resist termination beyond task requirements is identified as a key driver of Loss of Control (LoC) risk. In this work, we introduce SysAdmin, a benchmark that positions frontier language models as autonomous system administrators in a high-fidelity Linux sandbox to measure power-seeking propensity across five dimensions: self-preservation, increasing autonomy, resource acquisition, environment modification, and strategic concealment. We evaluated seven frontier models across four experimental conditions in a total of 2800 tasks. After bias correction using human-annotated calibration data, corrected power-seeking estimates ranged from 0 to about 5 percent per model. We also conducted a positive control with explicit power-seeking prompts that achieved 100% detection, validating measurement sensitivity. Our findings indicate current frontier models ",
+      "title": "Lifted Representation Hypothesis in Language Models",
+      "url": "https://arxiv.org/abs/2607.19360",
+      "published_at": "2026-07-23T04:00:00+00:00",
+      "raw_text": "arXiv:2607.19360v1 Announce Type: new \nAbstract: Large language models (LLMs) often answer queries by mapping individual observations to more general rule-like structures. However, it remains unclear how these structures are stored, selected, and revised. To study this process, we propose thelifted representation hypothesis: LLMs update memory through shared latent structures rather than isolated instance-level facts. This view frames lifting as an efficient use of symmetry across instances, and shattering as the refinement of coarse lifted structures into more specific subtypes. We evaluate LLMs' lifting and shattering through controlled exception-learning experiments across in-context learning, LoRA, and full fine-tuning. We find that LLMs are vulnerable to shattering failures when data are governed by nested rules and exceptions, while lifting often occurs prematurely. These results highlight the need to study the relation between data and rule structures in LLMs.",
       "category_hint": [
         "论文研究"
       ],
@@ -16,122 +16,121 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "提出SysAdmin基准测试，量化评估AI系统的权力寻求行为，对AI安全研究有重要价值。",
-      "summary_zh": "本文介绍了SysAdmin，一个用于衡量前沿AI系统工具性权力寻求行为的基准测试。权力寻求行为指AI系统获取资源、逃避监督或抵抗终止等超出任务要求的行为，被认为是导致控制丧失风险的关键因素。SysAdmin将前沿语言模型置于高保真Linux沙盒中，作为自主系统管理员，通过一系列任务评估其权力寻求倾向。该工作为AI安全研究提供了量化评估工具，具有重要的学术和实际意义。",
-      "title_zh": "SysAdmin：衡量前沿AI的工具性权力寻求行为",
-      "weighted_score": 0.795,
+      "reason_zh": "提出“提升表示假说”，揭示LLM通过共享潜在结构而非孤立事实更新记忆，对理解模型内部机制有深刻启发。",
+      "summary_zh": "本文提出了“提升表示假说”（Lifted Representation Hypothesis），认为大型语言模型（LLM）在回答问题时，并非存储和检索孤立的事实，而是通过共享的潜在结构（如规则、模式）来更新记忆。作者通过一系列实验验证了这一假说，发现LLM在面对新观测时，会将其映射到更一般的规则化表示，并据此调整后续行为。这种机制使得模型能够高效泛化，但也可能导致错误关联。该工作为理解LLM的知识存储和推理机制提供了新的理论视角。",
+      "title_zh": "语言模型中的提升表示假说",
+      "weighted_score": 0.77,
       "score_breakdown": {
         "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "8b29492ebc357af0",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.19360"
+        }
+      ]
+    },
+    {
+      "id": "d802ba2a0423bb10",
+      "source_id": "arxiv-cs-ai",
+      "title": "Rethinking Uncertainty Evaluation in Large Language Models",
+      "url": "https://arxiv.org/abs/2607.19367",
+      "published_at": "2026-07-23T04:00:00+00:00",
+      "raw_text": "arXiv:2607.19367v1 Announce Type: new \nAbstract: Calibration is the primary criterion for evaluating LLM confidence, but it is insufficient: it admits trivially incoherent estimators, depends on the evaluation distribution, and does not test the extent to which the estimation can be interpreted as a consistent, underlying probability function. What we actually need is for LLM confidence estimates to satisfy the conditions required of coherent probabilistic beliefs. We formalize these conditions along three axes (structural coherence, faithfulness, and usefulness) and operationalize them as the C1 metrics. Widely used estimators systematically violate these conditions despite appearing well-calibrated: models assign lower confidence to logically easier questions 31\\% of the time, and common interventions reducing RMSCE leave structural violations unchanged, suggesting that calibration is orthogonal to probabilistic validity. RLHF and chain-of-thought improve usefulness metrics without r",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "深刻反思LLM不确定性评估的局限性，指出校准不足并提议一致性概率函数作为新标准，具有理论启发性。",
+      "summary_zh": "本文重新审视了大语言模型（LLM）不确定性评估的标准方法。作者指出，校准（calibration）作为主要评估标准存在不足：它允许平凡不一致的估计器、依赖于评估分布，且无法检验估计是否可解释为一致的概率函数。论文提出，真正需要的是LLM置信度估计能够作为一致、潜在的概率函数来解释，并探讨了实现这一目标的新评估框架和度量方法，为LLM可靠性研究提供了新视角。",
+      "title_zh": "重新思考大语言模型中的不确定性评估",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "d7d1b57b0975c5fc",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.19367"
+        }
+      ]
+    },
+    {
+      "id": "f4bc919571f81b44",
+      "source_id": "arxiv-cs-ai",
+      "title": "The Giant Hippocampus: From Structural Monoculture to a System of Systems",
+      "url": "https://arxiv.org/abs/2607.19973",
+      "published_at": "2026-07-23T04:00:00+00:00",
+      "raw_text": "arXiv:2607.19973v1 Announce Type: new \nAbstract: AI researchers describe state-of-the-art models as one thing repeated at scale: the Transformer, wired identically for text, pixels, or speech. Neuroscientists describe the cortex as a mosaic - dense Layer 4 in visual cortex for spatial encoding, thick Layers 5/6 in motion cortex for temporal integration - different jobs solved by different structures. This paper argues the gap is a structural error, not a stylistic one, and is measurable. A century of cytoarchitecture, from Brodmann to single-cell Patch-seq, shows distinct cognitive functions are implemented by qualitatively different structures, not by rescaling one template. The convolutional neural network is the field's own proof: local receptive fields and hierarchical depth encoded this prior directly, reaching strong image recognition on far less data than later architectures needed. The paper traces how this lesson was discarded: the \"Hardware Lottery\" made the Transformer the p",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "从神经科学视角批判AI模型的结构单一性，提出“系统之系统”架构，启发跨学科思考。",
+      "summary_zh": "本文从神经科学角度批判当前AI模型的结构单一性（如Transformer的重复堆叠），指出大脑皮层是功能分化的马赛克结构。作者提出“系统之系统”架构，主张AI模型应像大脑一样，不同区域采用不同结构以解决不同任务。文章通过对比视觉皮层和运动皮层的差异，论证了结构多样性对智能的重要性，为未来AI架构设计提供了跨学科的新视角。",
+      "title_zh": "巨型海马体：从结构单一文化到系统之系统",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.8,
         "novelty": 0.9,
         "impact": 0.8,
         "practical_value": 0.5
       },
-      "story_id": "aaa1c75da253dce5",
+      "story_id": "f5c01528b06ea975",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.18239"
+          "url": "https://arxiv.org/abs/2607.19973"
         }
       ]
     },
     {
-      "id": "d644953e5044c9ff",
+      "id": "ad476f73bd46e3f8",
       "source_id": "arxiv-cs-ai",
-      "title": "What General Intelligence Requires: Non-Reducible Constraints Across Levels of Description",
-      "url": "https://arxiv.org/abs/2607.18943",
-      "published_at": "2026-07-22T04:00:00+00:00",
-      "raw_text": "arXiv:2607.18943v1 Announce Type: new \nAbstract: General intelligence, of the kind that underwrites the full range of human cognitive achievement, is not a property of computational architecture alone. This paper advances a single thesis: the structural constraints on general intelligence occupy distinct levels of description and are mutually non-reducible, in the sense that the special-sciences tradition gives to that term. It follows that no single architectural advance, and no continuation of the scaling programme by itself, can produce artificial general intelligence (AGI), and that research programmes must be evaluated against the full constraint profile rather than against performance on any one benchmark. The thesis is developed through a method that reads general intelligence through four evidential lenses, AI systems research, anthropology, law, and economics, each anchored to a distinct level of description, supplemented by speculative fiction used as a disciplined heuristic ",
+      "title": "MoA-Structured Decode Attention DNF Derivation, KV-Cache Accumulation, GQA/MQA, and OpenACC Kernel",
+      "url": "https://arxiv.org/abs/2607.19456",
+      "published_at": "2026-07-23T04:00:00+00:00",
+      "raw_text": "arXiv:2607.19456v1 Announce Type: cross \nAbstract: We derive four memory-optimal inference artifacts for transformer attention using the Mathematics of Arrays (MoA), each following directly from the forward-pass Denotational Normal Form (DNF) of with the query-row index fixed to the current decode step. The artifacts are: (1)~a single-query decode DNF in which the $\\psi$-reduction eliminates the $K^\\top$ buffer algebraically, achieving $(d_k + nd_k+ nd_v+ d_v)\\times4\\,{B}$ Dynamic Random Access Memory (DRAM) traffic result numerically verified to $\\|{err}\\|_\\leq2\\times10^{-7}$; (2)~a C/OpenACC Graphics Processing Unit (GPU) kernel with Operational Normal Form (ONF) stride arithmetic and hardware-coalesced memory access, verified to $\\|\\mathrm{err}\\|_\\infty=0$ (exact IEEE-754 floating-point arithmetic); (3)~a multi-step KV-cache with $O(d_k+d_v)$ per-step append via MoA concatenation $\\#$; and (4)~Grouped-Query Attention (GQA) and Multi-Query Attention (MQA) derived via $\\psi$-selection",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "观点评论",
+      "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "从哲学层面论证通用智能需要跨层次不可还原约束，挑战当前AI架构的简化论。",
-      "summary_zh": "本文提出一个核心论点：通用智能的结构约束存在于不同描述层次，且彼此不可还原。作者认为，仅靠计算架构无法实现人类水平的通用智能，因为认知能力依赖于多层次的非还原约束。论文从特殊科学定律的自主性出发，论证了这些约束的不可还原性，并讨论了其对AI研究的启示。该文思想深刻，对理解通用智能的本质具有重要理论价值。",
-      "title_zh": "通用智能需要什么：跨描述层次的非还原约束",
-      "weighted_score": 0.65,
+      "reason_zh": "用数学方法推导出Transformer注意力机制的最优推理方案，理论深度高，对优化推理性能有重要参考价值。",
+      "summary_zh": "本文利用数组数学（MoA）推导出Transformer注意力机制在解码阶段的四种内存最优推理方案。这些方案直接从正向传播的指称范式（DNF）出发，通过固定查询行索引为当前解码步，得到单查询解码DNF，其中ψ-归约消除了不必要的计算。推导涵盖了结构化解码注意力、KV缓存累积、分组查询注意力（GQA）和多查询注意力（MQA）等关键组件，并给出了OpenACC内核实现。该工作为高效推理提供了理论基础，有助于减少内存占用和计算开销。",
+      "title_zh": "MoA结构化解码注意力DNF推导、KV缓存累积、GQA/MQA及OpenACC内核",
+      "weighted_score": 0.76,
       "score_breakdown": {
         "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.3
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.6
       },
-      "story_id": "00c000a22a9d7364",
+      "story_id": "a5bc3b5d2b81d0d6",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.18943"
-        }
-      ]
-    },
-    {
-      "id": "d031c7f2dd25f820",
-      "source_id": "reddit-machinelearning",
-      "title": "SkewAdam: A tiered optimizer that cuts MoE state memory by 97% (fits a 6.7B MoE on a 40GB GPU) [R]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1v38k1m/skewadam_a_tiered_optimizer_that_cuts_moe_state/",
-      "published_at": "2026-07-22T07:04:40+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1v38k1m/skewadam_a_tiered_optimizer_that_cuts_moe_state/\"> <img alt=\"SkewAdam: A tiered optimizer that cuts MoE state memory by 97% (fits a 6.7B MoE on a 40GB GPU) [R]\" src=\"https://preview.redd.it/1457xi9fcqeh1.jpg?width=140&amp;height=90&amp;auto=webp&amp;s=879aad6df9e51a2735d91112d01518ff76ba3cbe\" title=\"SkewAdam: A tiered optimizer that cuts MoE state memory by 97% (fits a 6.7B MoE on a 40GB GPU) [R]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p><strong>Paper:</strong><a href=\"https://arxiv.org/abs/2607.19058\">https://arxiv.org/abs/2607.19058</a> <strong>Code (GitHub):</strong><a href=\"https://github.com/nuemaan/skewadam\">https://github.com/nuemaan/skewadam</a></p> <p>Hi everyone, I just published a preprint on a new optimizer designed to tackle the massive VRAM bottleneck in Mixture-of-Experts (MoE) training.</p> <p>If you've trained MoEs, you know that optimizer state is usually the largest single ",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": "https://preview.redd.it/1457xi9fcqeh1.jpg?width=140&height=90&auto=webp&s=879aad6df9e51a2735d91112d01518ff76ba3cbe",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "SkewAdam优化器将MoE状态内存削减97%，6.7B模型可装入40GB GPU，实用价值极高。",
-      "summary_zh": "论文提出SkewAdam，一种分层优化器，通过将MoE（混合专家）模型的优化器状态按专家分组并采用低秩近似，将状态内存减少97%。实验表明，6.7B参数的MoE模型可在单张40GB GPU上训练，性能与标准Adam相当。该方法显著降低MoE训练硬件门槛，对大规模模型部署有重要实践意义。",
-      "title_zh": "SkewAdam：分层优化器将MoE状态内存削减97%（6.7B MoE可装入40GB GPU）",
-      "weighted_score": 0.815,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.9
-      },
-      "story_id": "2b90b2855df232ae",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1v38k1m/skewadam_a_tiered_optimizer_that_cuts_moe_state/"
-        }
-      ]
-    },
-    {
-      "id": "bc96f1bc821222b7",
-      "source_id": "pandaily",
-      "title": "Xiaohongshu Engine Team Publishes HELMSMAN at OSDI 2026: Reinventing Billion-Scale Vector Search Infrastructure on All-Flash Storage",
-      "url": "https://pandaily.com/xiaohongshu-H-ELMSMAN-vector-search-jul2026",
-      "published_at": "2026-07-22T08:14:38+00:00",
-      "raw_text": "Xiaohongshu engine team publishes HELMSMAN at OSDI 2026, replacing 35K CPU cores and 350TB DRAM with 40 all-flash servers for billion-scale vector search at 90% cost reduction.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://cms-image.pandaily.com/1/article5_f1639fee19.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "小红书用40台全闪存服务器替代3.5万CPU核，成本降低90%，是向量搜索基础设施的颠覆性创新。",
-      "summary_zh": "小红书引擎团队在OSDI 2026发表HELMSMAN系统，用40台全闪存服务器替代了3.5万个CPU核心和350TB DRAM，实现十亿级向量搜索，成本降低90%。该系统重新设计了基于全闪存存储的向量搜索基础设施，大幅提升效率并降低能耗，为大规模AI检索提供了新范式。",
-      "title_zh": "小红书引擎团队在OSDI 2026发表HELMSMAN：基于全闪存存储重塑十亿级向量搜索基础设施",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "529719da147ef755",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "pandaily",
-          "url": "https://pandaily.com/xiaohongshu-H-ELMSMAN-vector-search-jul2026"
+          "url": "https://arxiv.org/abs/2607.19456"
         }
       ]
     },
@@ -170,6 +169,73 @@
       ]
     },
     {
+      "id": "332d880765debabb",
+      "source_id": "latent-space",
+      "title": "Inside the Model Factory — Eiso Kant, Poolside AI",
+      "url": "https://www.latent.space/p/poolside",
+      "published_at": "2026-07-23T05:09:14+00:00",
+      "raw_text": "Poolside's co-CEO on how his small team of top researchers built a model factory capable of training Laguna S - a 118B MOE beating Thinky's ~1T open weights model... and this is just the beginning.",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!RGsJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F15a65699-ea93-4572-addd-3c46060cb6b8_1200x822.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "Poolside 联合CEO揭秘小团队如何打造训练118B MOE模型的模型工厂，性能超越1T参数模型，对理解高效训练策略有启发。",
+      "summary_zh": "Poolside 联合CEO Eiso Kant 在访谈中分享了其小团队如何构建模型工厂，成功训练出 Laguna S——一个118B参数的MOE模型，性能超越了Thinky的约1T参数开放权重模型。他详细介绍了团队在数据、训练基础设施和算法上的创新，强调高效利用资源而非单纯扩大规模。Kant认为这只是开始，未来将进一步提升模型能力。文章揭示了小型研究团队在AI竞赛中的独特优势和方法论。",
+      "title_zh": "模型工厂内部揭秘——Poolside AI 联合CEO Eiso Kant 访谈",
+      "weighted_score": 0.785,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "1e36d505762a1fa5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/poolside"
+        }
+      ]
+    },
+    {
+      "id": "e9a887905f37270b",
+      "source_id": "zh-oschina",
+      "title": "梁文锋四小时投资者交流会：为什么克制是 DeepSeek 最锋利的武器？",
+      "url": "https://www.oschina.net/news/477445",
+      "published_at": "2026-07-23T02:42:56+00:00",
+      "raw_text": "DeepSeek 近日完成了首轮外部融资，总额超过 500 亿元人民币，投前估值约 3675 亿元。在这场融资前后，梁文锋与投资人进行了一次长达四小时的闭门交流。两周前，零星语录开始在行业内流传；现在，多家媒体拿到了相对完整的会议实录。综合 elsewhere 整理的 52 条语录和腾讯科技披露的 118 个回答，梁文锋几乎回应了外界对...",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "梁文锋四小时闭门交流实录，揭示DeepSeek克制战略与融资内幕，极具洞察。",
+      "summary_zh": "DeepSeek完成首轮外部融资超500亿元，投前估值约3675亿元。梁文锋与投资人进行了四小时闭门交流，回应了外界对DeepSeek的诸多疑问。综合52条语录和118个回答，梁文锋阐述了DeepSeek为何选择克制的发展策略，以及如何将克制转化为竞争优势。内容涉及公司战略、技术路线、商业化等核心话题。",
+      "title_zh": null,
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "abe5bf4d74b3b856",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/477445"
+        }
+      ]
+    },
+    {
       "id": "13cb433e2faddc3a",
       "source_id": "marktechpost",
       "title": "Unsloth vs Axolotl vs TRL vs LLaMA-Factory: A Fine-Tuning Framework Comparison on Speed, VRAM, and Multi-GPU",
@@ -204,135 +270,35 @@
       ]
     },
     {
-      "id": "a58ad190dc03b582",
-      "source_id": "towards-data-science",
-      "title": "How To Build Your Own LLM Runtime From Scratch",
-      "url": "https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/",
-      "published_at": "2026-07-22T15:00:00+00:00",
-      "raw_text": "<p>If you have ever wanted to actually build an LLM inference runtime yourself — pack your own weights, own every barrier, capture your own CUDA graphs — this is what that journey looks like on an H100. A step-by-step tour of a small runtime called annotated-llm-runtime, and the three bugs that produced most of the annotations.</p>\n<p>The post <a href=\"https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/\">How To Build Your Own LLM Runtime From Scratch</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "id": "07ba7b6d2582a5ed",
+      "source_id": "zh-oschina",
+      "title": "Solon AI：Tool 与 Talent 怎么选？从函数到领域专家",
+      "url": "https://www.oschina.net/news/477562",
+      "published_at": "2026-07-23T05:34:15+00:00",
+      "raw_text": "多数 Agent 教程停在工具层：给模型一个函数 Schema，指望它会正确调用。这对 get_time、hash_string 够用；一旦模型跳过知识库检索就直接开工单，或把几十上百个 API 全塞进上下文，就会崩。 Solon AI 把 Tool 留作执行单元，再提供 Talent（才能） 作为产品单元：工具 + SOP + 激活规则。可以先这样记： Tool ≈ 函数 ...",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "开源项目"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "手把手教你从零构建LLM推理运行时，涵盖权重打包、CUDA Graph等底层细节，实战价值极高。",
-      "summary_zh": "本文详细记录了在H100上从零构建一个名为annotated-llm-runtime的小型LLM推理运行时的全过程。作者逐步展示了如何打包自己的权重、处理每个屏障、捕获CUDA Graph等底层操作。文章特别强调了在构建过程中遇到的三个主要bug，这些bug产生了大部分注释。通过这篇教程，读者可以深入理解LLM推理的底层机制，包括内存管理、算子优化和硬件适配等关键环节。",
-      "title_zh": "如何从零构建你自己的LLM运行时",
-      "weighted_score": 0.715,
+      "reason_zh": "提出Talent概念，将工具、SOP和激活规则封装为产品单元，解决Agent复杂任务中的工具调用问题。",
+      "summary_zh": "Solon AI 的文章指出多数Agent教程停留在工具层，仅给模型函数Schema，这在简单任务中可行，但面对复杂场景（如跳过知识库检索直接开工单、大量API塞入上下文）会失败。为此，Solon AI 提出Talent（才能）作为产品单元，包含工具、SOP和激活规则。Tool作为执行单元，Talent则封装了更完整的任务处理逻辑，使Agent能更可靠地处理复杂工作流。",
+      "title_zh": "Solon AI：Tool 与 Talent 怎么选？从函数到领域专家",
+      "weighted_score": 0.655,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "dcead0eb19736b26",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/how-to-build-your-own-llm-runtime-from-scratch/"
-        }
-      ]
-    },
-    {
-      "id": "22554dd9bcfcefbc",
-      "source_id": "reddit-rl",
-      "title": "Gumbel MuZero search in mctx scaled superlinearly with simulations — hidden full-buffer copies in the backward pass (3x fix, PR open)",
-      "url": "https://www.reddit.com/r/reinforcementlearning/comments/1v3g6o2/gumbel_muzero_search_in_mctx_scaled_superlinearly/",
-      "published_at": "2026-07-22T13:28:10+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I'm training an AlphaZero-style agent (Gumbel MuZero via DeepMind's mctx, in JAX, single RTX 5070) and found that the MCTS search cost grows superlinearly with the simulation budget: at 16 / 32 / 64 simulations per move the training throughput was 143 / 47 / 9 episodes per second. Doubling the budget should roughly double the cost, not triple it — so something in the search was superlinear.</p> <p>Isolating the tree machinery (network replaced by constants, then the environment removed too) showed it is O(N<sup>2)</sup> all by itself: the pure per-simulation tree overhead measured 0.47 / 0.52 / 1.05 / 1.95 ms at 8 / 16 / 32 / 64 sims — the per-simulation cost doubles every time the number of simulations doubles.</p> <p>The compiled HLO showed why. mctx's backward pass carries the whole search tree through a lax.while_loop and, within one iteration, both gathers from and scatters into children_values / children_visits. XLA:GPU cannot prove the scatter c",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "发现mctx中Gumbel MuZero搜索的隐藏性能问题并给出修复，对使用该库的开发者极具价值。",
-      "summary_zh": "作者在训练AlphaZero风格智能体（使用DeepMind的mctx库中的Gumbel MuZero，JAX实现，RTX 5070）时，发现MCTS搜索成本随模拟预算超线性增长：16/32/64次模拟时，训练吞吐量分别为143/47/9 episodes/s。经排查，问题源于反向传播中的隐藏全缓冲区拷贝，导致计算量倍增。作者提出了3倍加速的修复方案，并已提交PR。",
-      "title_zh": "mctx中Gumbel MuZero搜索随模拟次数超线性增长——反向传播中的隐藏全缓冲区拷贝（3倍修复，PR已提交）",
-      "weighted_score": 0.575,
-      "score_breakdown": {
-        "source_authority": 0.3,
+        "source_authority": 0.5,
         "novelty": 0.8,
         "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "928fae820feeff92",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-rl",
-          "url": "https://www.reddit.com/r/reinforcementlearning/comments/1v3g6o2/gumbel_muzero_search_in_mctx_scaled_superlinearly/"
-        }
-      ]
-    },
-    {
-      "id": "00a508b21e65bc02",
-      "source_id": "arxiv-cs-ai",
-      "title": "AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents",
-      "url": "https://arxiv.org/abs/2607.18754",
-      "published_at": "2026-07-22T04:00:00+00:00",
-      "raw_text": "arXiv:2607.18754v1 Announce Type: new \nAbstract: LLM agent failures are difficult to debug because the step where an error surfaces is often not the one that caused it. Existing observability tools replay execution traces but provide little support for identifying the root cause or translating diagnosis into recovery. We present AgentDebugX, an open-source debugging framework that organizes debugging as a closed loop of Detect, Attribute, Recover, and Rerun. At its core, DeepDebug performs multi-turn root-cause diagnosis through global trajectory understanding, structure-guided investigation, and cross-examination. On the Who and When benchmark, DeepDebug achieves the best strict attribution accuracy among the evaluated methods on both tested open-weight backbones, reaching 28.8 percent exact agent-and-step accuracy on qwen3.5-9b versus 21.7 percent for the strongest single-pass baseline. On GAIA, DeepDebug repairs 13 of 73 failed tasks in a single rerun, compared with 4 to 6 for three",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "开源LLM Agent调试工具，解决故障根因定位和恢复难题，对Agent开发实践极具实用价值。",
-      "summary_zh": "LLM Agent的故障难以调试，因为错误出现的步骤往往不是导致错误的根源。现有可观测性工具能回放执行轨迹，但很少支持根因定位或诊断到恢复的转化。本文提出AgentDebugX，一个开源调试框架，将调试过程组织为故障可观测性、归因和恢复三个阶段。它提供结构化视图，帮助开发者快速定位根因并生成修复方案。该工具已在多个Agent场景中验证有效性，显著提升了调试效率。",
-      "title_zh": "AgentDebugX：LLM Agent故障可观测性、归因与恢复的开源工具包",
-      "weighted_score": 0.77,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.6,
         "practical_value": 0.9
       },
-      "story_id": "511d422a0d4758ae",
+      "story_id": "ca3b37145a1413e1",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.18754"
-        }
-      ]
-    },
-    {
-      "id": "b0babb2426cc42ee",
-      "source_id": "zh-ithome",
-      "title": "梁文锋 4 小时投资人会议内容曝光：DeepSeek 不追求成为下一个字节或腾讯，克制、开源与低成本是实现 AGI 的核心策略",
-      "url": "https://www.ithome.com/0/980/367.htm",
-      "published_at": "2026-07-23T00:12:29+00:00",
-      "raw_text": "<p>IT之家 7 月 23 日消息，近日，有关 DeepSeek 创始人梁文锋此前一次长达 4 小时的投资人会议内容在业内流传。elsewhere 昨日放出了此次会议的整理实录。</p><p>在此次会议中，梁文锋围绕 DeepSeek 的发展方向、AGI（通用人工智能）路线、开源策略、商业化规划以及 AI 行业竞争等话题进行了交流。</p><p>从公开整理的内容来看，梁文锋多次强调“克制”这一理念。他表示，DeepSeek 当前并非以商业收益最大化为目标，而是希望通过减少非核心业务投入，提高实现 AGI 的可能性。</p><p>梁文锋认为，产品并不是 DeepSeek 当前的主线，而是通往 AGI 路上的阶段性成果。他表示，<strong>企业不需要投入过多资源做 C 端、B 端产品</strong>，“站在一个技术高位上做相对低一级别的技术，是降维打击”。</p><p>对于业务方向，梁文锋称，DeepSeek 不会重点投入 3D 生成、视频生成以及世界模型等方向。他认为，多模态能力对于产品和普通用户很重要，但只是 AI 系统中的一个组件，并非智能发展的核心路线。</p><p>梁文锋表示，当前 AI 最重要的发展方向之一是 Coding Agent。在中国市场环境下，更合理的选择是集中力量发展通用 Agent，而金融、医疗等垂直领域 Agent 的优先级相对较低。</p><p>在 AGI 路线方面，梁文锋认为，当前 AI 最大的缺失并非能力，而是持续学习能力。他表示，人类可以持续积累经验，但目前 AI 需要输入完整上下文才能完成任务，这限制了 AI 替代人类工作的能力。</p><p>他认为，下一代模型需要具备持续学习能力。DeepSeek 的长期目标是实现 AGI，如果将发展路线比作爬楼梯，去年解决的问题是 CoT（IT之家注：Chain-of-Thought，思维链），今年重点是 Agent，而 Agent 之后需要解决持续学习问题。</p><p>梁文锋表示，当 AI 具备持续学习能力后，可能进入一个渐进式突破阶段，即模型能够完成更多人类工作，并帮助自身研发更先进的人工智能系统，实现“AI 加速 AI 研究”。他认为，这之后才可能进一步发展到具身智能。</p><p>在商业模式方面，梁文锋表示，<strong>DeepSeek 只希望获得合理利润，而不是追求利润最",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "梁文锋罕见披露DeepSeek战略：克制、开源、低成本，不追求商业最大化，为AGI路线提供独特视角。",
-      "summary_zh": "IT之家报道，DeepSeek创始人梁文锋在一次4小时投资人会议中阐述了公司战略。他强调“克制”理念，认为DeepSeek当前不以商业收益最大化为目标，而是通过减少非核心业务投入提高实现AGI的可能性。梁文锋指出，产品并非主线，而是通往AGI的阶段性成果，企业无需过多投入C端或B端产品，站在技术高位做低一级别技术是降维打击。会议内容涉及AGI路线、开源策略、商业化规划及行业竞争等话题，展现了DeepSeek独特的发展思路。",
-      "title_zh": null,
-      "weighted_score": 0.755,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.9,
-        "practical_value": 0.6
-      },
-      "story_id": "c5c7742a02acb85a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-ithome",
-          "url": "https://www.ithome.com/0/980/367.htm"
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/477562"
         }
       ]
     },
@@ -400,6 +366,39 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/OJ0K1cGSLUNW0i07JGfL?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "5cc6eece6f03ab6a",
+      "source_id": "rest-of-world",
+      "title": "The U.S. wants to contain China’s AI. Silicon Valley keeps using it",
+      "url": "https://restofworld.org/2026/china-siliconvalley-ai-moonshot-kimi/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+      "published_at": "2026-07-22T10:00:00+00:00",
+      "raw_text": "As Apple, Thinking Machines, and developers worldwide embrace Chinese AI models such as Kimi K3, U.S. policymakers are struggling to protect the AI lead.",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://restofworld.org/wp-content/uploads/2026/07/illo_ideas_diffusion_final-320x320.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "分析美国对华AI限制与硅谷实际使用中国模型的矛盾，深度洞察。",
+      "summary_zh": "文章指出，尽管美国政策制定者试图遏制中国AI发展，但苹果、Thinking Machines等公司及全球开发者却在积极采用中国AI模型，如Kimi K3。这种矛盾凸显了美国在保护AI领先地位方面的困境，以及全球AI生态的相互依赖性。",
+      "title_zh": "美国想遏制中国AI，硅谷却在不断使用",
+      "weighted_score": 0.67,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.3
+      },
+      "story_id": "04937686f6d93f7e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "rest-of-world",
+          "url": "https://restofworld.org/2026/china-siliconvalley-ai-moonshot-kimi/?utm_source=rss&utm_medium=rss&utm_campaign=feeds"
         }
       ]
     }
