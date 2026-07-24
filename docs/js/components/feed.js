@@ -1,6 +1,6 @@
 // 信息流：AGI Hunt 式卡片 —— 顶行(分类+徽章) / 衬线标题 / 英文副题 / 配图 / 摘要 / 底行(来源+时间)。
-import { categoryColor, categoryTextColor } from "../palette.js?v=20260715d";
-import { safeUrl, setSafeHref } from "../safe.js?v=20260715d";
+import { categoryColor, categoryTextColor } from "../palette.js?v=20260724d";
+import { safeUrl, setSafeHref } from "../safe.js?v=20260724d";
 
 const SOURCE_LABELS = {
   "openai-blog": "OpenAI Blog",
@@ -179,15 +179,18 @@ function buildCardNode(item, idx, template) {
   return node;
 }
 
-// 卡片高度粗估：用于瀑布流按列分配，不需要精确，只需相对准确
+// 卡片高度粗估：用于瀑布流按列分配，不需要精确，只需相对准确。
+// 这些常量与 style.css 的根字号(17px)绑定：文字相关的行高随 rem 等比变化，
+// 每行能塞下的字符数则反比变化（字大了同样宽度装的字更少、行数更多）。
+// 改根字号时这里必须同步，否则两栏高度估算失准、瀑布流会明显失衡。
 function estimateCardHeight(item) {
-  let h = 130; // 顶行 + 底行 + 内边距等固定开销
+  let h = 136; // 顶行 + 底行(随字号) + 内边距 22/18/20px(固定) 等开销
   const titleLen = (item.title || "").length;
-  h += Math.max(1, Math.ceil(titleLen / 42)) * 34; // 标题行数
-  if (item.title_zh && item.title_zh.trim() !== item.title.trim()) h += 26; // 副题行
+  h += Math.max(1, Math.ceil(titleLen / 40)) * 36; // 标题行数（1.06rem × 1.5 行高）
+  if (item.title_zh && item.title_zh.trim() !== item.title.trim()) h += 28; // 副题行
   const excerptLen = excerptFor(item).length;
-  h += Math.min(3, Math.max(1, Math.ceil(excerptLen / 55))) * 22; // 摘要最多3行截断
-  if (item.image_url) h += 210; // 配图区块（92%宽×16:10 + 相框留白）
+  h += Math.min(3, Math.max(1, Math.ceil(excerptLen / 52))) * 23; // 摘要最多3行截断
+  if (item.image_url) h += 210; // 配图区块（92%宽×16:10 的几何尺寸，与字号无关，不随之放大）
   return h;
 }
 

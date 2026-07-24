@@ -1,9 +1,9 @@
 // 数据版页面脚本：24H 频谱 + 统计指标 + 日/周/月趋势看板 + 社媒热点 + GitHub 涨星榜。
-import { renderSpectrum } from "./components/spectrum.js?v=20260715d";
-import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js?v=20260715d";
-import { initPalette } from "./components/palette.js?v=20260715d";
-import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js?v=20260715d";
-import { renderTopics } from "./components/topics.js?v=20260715d";
+import { renderSpectrum } from "./components/spectrum.js?v=20260724d";
+import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js?v=20260724d";
+import { initPalette } from "./components/palette.js?v=20260724d";
+import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js?v=20260724d";
+import { renderTopics } from "./components/topics.js?v=20260724d";
 
 const state = {
   all: [],

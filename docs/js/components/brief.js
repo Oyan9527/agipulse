@@ -1,6 +1,6 @@
 // 今日简报 + 热点雷达：两个都是真正的排序榜单，编号是有意义的（不是装饰性 01/02/03）。
-import { setSafeHref } from "../safe.js?v=20260715d";
-import { relativeTime } from "./feed.js?v=20260715d";
+import { setSafeHref } from "../safe.js?v=20260724d";
+import { relativeTime } from "./feed.js?v=20260724d";
 
 // 侧栏窄，放不下双语两行：与社媒热点一致——译文为主，英文原题放 title 悬浮提示；
 // 译文比原生中文标题醒目一档(is-translated)，帮助分辨"这是翻译过的"。

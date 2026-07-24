@@ -28,7 +28,11 @@
 
 [hidden] { display: none !important; }
 
-html { color-scheme: light; }
+/* 根字号 17px（浏览器默认 16px）：全站 78 处字号全部是 rem 相对单位，
+   在这里统一上浮一档即等比放大约 6%，正文更易读，又不破坏既有的字号层级关系。
+   注意：改这里会让所有文字实际行高变大，feed.js 的 estimateCardHeight()
+   瀑布流高度估算（写死的 px 常量）必须同步上调，否则两栏会失衡。 */
+html { color-scheme: light; font-size: 17px; }
 
 body {
   margin: 0;
@@ -766,7 +770,10 @@ a { color: inherit; }
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 316px;
+  /* 侧栏宽度用 rem 而非固定 px：根字号调大后侧栏内的标题/元信息都会变宽，
+     写死 px 不跟着缩放，长标题更容易挤压换行。18.6rem ≈ 316px@17px，
+     与原先的固定值等价，但此后再调根字号会自动等比适配。 */
+  grid-template-columns: minmax(0, 1fr) 18.6rem;
   gap: 0;
   align-items: start;
 }
@@ -1228,7 +1235,9 @@ a { color: inherit; }
 
 /* ---------------- 侧栏（热点雷达 / 今日简报 / 信源健康） ---------------- */
 
-.brief-panel { padding: 18px 0 20px clamp(16px, 2vw, 24px); }
+/* min-width:0 —— 栅格项默认 min-width:auto，内容不肯收缩就会把列撑破；
+   侧栏里有长标题/长来源名，字号调大后尤其容易顶出去，这里显式允许收缩。 */
+.brief-panel { padding: 18px 0 20px clamp(16px, 2vw, 24px); min-width: 0; }
 
 .brief-panel__title {
   font-family: var(--font-serif);
@@ -1254,6 +1263,10 @@ a { color: inherit; }
   padding: 0;
   display: flex;
   flex-direction: column;
+  /* 行用 margin-inline:-6px 外扩做悬浮高亮(见 .hot-row)，天然比列表宽 12px，
+     会让列表 scrollWidth > clientWidth。用 clip 明确裁掉这点溢出——它不像
+     overflow:hidden 那样把元素变成滚动容器，悬浮背景的视觉效果保持不变。 */
+  overflow-x: clip;
 }
 
 .hot-row, .brief-row {
