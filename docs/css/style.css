@@ -823,7 +823,9 @@ a { color: inherit; }
   gap: 12px;
   align-items: stretch;
   max-width: 920px;
-  border-bottom: 1px solid var(--rule-dark);
+  /* 分隔线不画在这里：本区块限宽 920px(图文画框比例依赖它，不能放宽)，
+     画在自身上会比下方满宽 980px 的信息流分隔线短一截、两条线不齐。
+     改由紧随其后的 .feed-panel__toolbar 用 border-top 画，位置不变、宽度对齐。 */
   padding: 18px 8px;
   margin: 0 auto 4px;
   transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), background 0.18s var(--ease);
@@ -992,6 +994,9 @@ a { color: inherit; }
   gap: 12px;
   flex-wrap: wrap;
   padding: 10px 0;
+  /* border-top 接管原本画在 .lead 上的那条头条分隔线：本元素是满宽的，
+     线因此与下方 border-bottom 等长（.lead 限宽 920 画出来会短 60px）。 */
+  border-top: 1px solid var(--rule-dark);
   border-bottom: 1px solid var(--rule);
   margin-bottom: 2px;
 }
@@ -1301,7 +1306,9 @@ a { color: inherit; }
   -webkit-box-orient: vertical;
   overflow: hidden;
   overflow-wrap: anywhere;
-  font-size: 0.85rem;
+  /* 0.9rem(≈15.3px)：与下方摘要一起上调，保持侧栏内"标题>摘要"的层级差，
+     同时不再比主栏卡片标题小太多。 */
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
@@ -1313,7 +1320,8 @@ a { color: inherit; }
 .hot-row__meta, .brief-row__meta {
   margin: 4px 0 0;
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  /* 0.7rem(≈11.9px)：等宽字体在小字号下尤其难认，0.64rem 只有约 10.9px。 */
+  font-size: 0.7rem;
   color: var(--mist);
 }
 
@@ -1321,8 +1329,10 @@ a { color: inherit; }
 
 .brief-row__reason {
   margin: 0;
-  font-size: 0.74rem;
-  line-height: 1.5;
+  /* 0.82rem(≈13.9px) 与信息流卡片摘要 .feed-card__excerpt 同档：原先 0.74rem
+     在侧栏窄栏里显著偏小、读着费力，且比主栏摘要小了一整级。 */
+  font-size: 0.82rem;
+  line-height: 1.6;
   color: var(--mist);
 }
 
@@ -1365,6 +1375,12 @@ a { color: inherit; }
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  /* flex 子项默认 min-width:auto + flex-basis:auto，会按内容宽度撑开、不肯收缩，
+     上面的 ellipsis 因此不触发——608 个信源里像
+     gh-retrieval-based-voice-conversion-webui 这样的超长 id 会直接顶出容器。
+     flex:1 让它改为占据剩余空间并允许收缩，min-width:0 解除收缩下限。 */
+  flex: 1;
+  min-width: 0;
 }
 
 .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }

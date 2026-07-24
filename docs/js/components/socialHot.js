@@ -1,5 +1,5 @@
 // 社媒热点 + GitHub 涨星榜：独立于 AI 主流程，不做相关性过滤，纯展示各平台当前热搜。
-import { setSafeHref } from "../safe.js?v=20260724d";
+import { setSafeHref } from "../safe.js?v=20260724g";
 
 const PERIOD_LABELS = {
   past_24_hours: "近24小时新增 star 最多的仓库",
