@@ -1,68 +1,34 @@
 [
   {
-    "id": "f63658f37610cbc0",
-    "source_id": "pandaily",
-    "title": "Chinese Scientists Develop ContactSeek AI Framework Based on AlphaFold3 Contact Probability: A New Precision Paradigm for Gene Editing Tool Design Published in Nature",
-    "url": "https://pandaily.com/contactseek-alphafold3-ai-framework-jul2026",
-    "published_at": "2026-07-26T02:13:49+00:00",
-    "raw_text": "Peking University team led by Yi Chengqi and East China Normal University develop ContactSeek using AlphaFold3 contact probability to identify key amino acids for precision base editing tool engineering.",
+    "id": "c6e48b5e56ef1568",
+    "source_id": "zh-atbug",
+    "title": "Anthropic 删了 80% 提示词，但你不能照做",
+    "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/",
+    "published_at": "2026-07-26T22:26:27+00:00",
+    "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>Anthropic 砍掉了 Claude Code 系统提示词的 80% 以上，编码评测没有可测量的损失。</p>\n<p>但这句话真正证明的，是那 80% 本来就没在传递信息——它是给弱模型打的补丁，不是知识。</p>\n<p>一个团队能删掉多少提示词，度量的不是模型有多强，是他们之前写了多少废话。</p>\n<p>模型学到的是世界的公共部分。你的规则里装的是私有部分——“我们周五不发版”、“这个库禁用”、“这个仓库的类型全在一个文件里”。这些从没进过任何语料库，模型再强也补不上。</p>\n<p>该薄的是公共部分，该厚的是私有部分。而按 token 数砍，砍掉的往往正好是后者。</p>\n<h2 id=\"一一份被当成指引的实验报告\">一、一份被当成指引的实验报告</h2>\n<p>Anthropic 最近发了一篇文章——<a href=\"https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models\">The new rules of context engineering for Claude 5 generation models</a>，讲他们如何为新一代模型重做上下文工程。核心事实只有一句：他们把 Claude Code 的系统提示词删掉了 80% 以上，在自己的编码评测集上没有观察到可测量的损失。</p>\n<p>文章顺势列了六条“已经过时的最佳实践”：</p>\n<p>给模型定死规则，改成让模型自己判断；给工具用法示例，改成把语义设计进接口；把信息全部前置塞满，改成按需分批加载；重要的话说三遍，改成说一次并放进工具描述；记忆写进 CLAUDE.md，改成让模型自动存取；用简单的 markdown 写规格，改成给它测试套件、代码、评分标准这类更丰富的引用。</p>\n<p>这六条单独看都不难接受。真正值得停下来的地方，是他们删掉的<strong>具体是什么</strong>。</p>",
     "category_hint": [
-      "行业动态"
+      "技巧与观点"
     ],
-    "image_url": "https://cms-image.pandaily.com/1/article4_f797b9ae57.png",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "基于AlphaFold3接触概率的基因编辑工具设计新范式，发表于Nature，具有重要科学意义。",
-    "summary_zh": "北京大学伊成器团队与华东师范大学合作，开发了ContactSeek AI框架，利用AlphaFold3的接触概率（contact probability）来识别关键氨基酸，从而精确设计碱基编辑工具。该研究发表于Nature，提出了一种新的基因编辑工具设计范式，通过蛋白质结构预测指导功能位点选择，有望提高基因编辑的精准度和效率。ContactSeek为基因治疗和合成生物学提供了新的计算工具。",
-    "title_zh": "中国科学家基于AlphaFold3接触概率开发ContactSeek AI框架：基因编辑工具设计的新精度范式发表于Nature",
-    "weighted_score": 0.815,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "cf4bc5f586ea6100",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/contactseek-alphafold3-ai-framework-jul2026"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "70c97733c03dea1e",
-    "source_id": "pandaily",
-    "title": "149 Pages Mapping the Long-Horizon Agent Frontier: Multi-University Survey Proposes Harness Engineering and Model Optimization as Two Main Evolution Lines for Next-Generation AI Agents",
-    "url": "https://pandaily.com/long-horizon-agent-survey-149-pages-jul2026",
-    "published_at": "2026-07-26T02:13:35+00:00",
-    "raw_text": "Renmin University GAIR leads multi-institution 149-page survey on long-horizon agents, proposing H1-H3 task difficulty hierarchy and C1-C3 capability tiers, with task span doubling every 4-7 months.",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://cms-image.pandaily.com/1/article3_a5b645c134.png",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "149页长时域智能体综述，提出任务难度层级和能力等级，揭示任务跨度每4-7月翻倍，对AI Agent研究有重要参考价值。",
-    "summary_zh": "由中国人民大学GAIR实验室领衔，联合多所高校发布149页长时域智能体（Long-Horizon Agent）综述。该研究提出了H1-H3任务难度层级和C1-C3能力等级，并发现任务跨度每4-7个月翻倍。综述将下一代AI Agent的演进路线归纳为两条主线：Harness Engineering（驾驭工程）和Model Optimization（模型优化）。该工作为长时域智能体的发展提供了系统性的框架和量化指标，对研究人员和工程师具有重要参考价值。",
-    "title_zh": "149页长时域智能体前沿地图：多校联合综述提出驾驭工程与模型优化作为下一代AI Agent的两条主要演进路线",
-    "weighted_score": 0.805,
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.9,
+    "reason_zh": "对Anthropic删减提示词事件进行深度剖析，指出公共知识与私有规则的本质区别，对提示工程有颠覆性见解。",
+    "summary_zh": "本文针对Anthropic砍掉Claude Code系统提示词80%以上且编码评测无损失的事件进行深入分析。作者指出，被删除的80%提示词原本就是给弱模型打的补丁，而非有效知识。模型学到的是世界的公共部分，而私有规则（如“周五不发版”、“禁用某库”）从未进入语料库，模型再强也无法补上。因此，提示词应该薄化公共部分，厚化私有部分。按token数砍提示词往往会砍掉后者，导致效果下降。文章还讨论了提示工程的核心在于区分公共知识和私有规则，并给出了实践建议。",
+    "title_zh": "Anthropic 删了 80% 提示词，但你不能照做",
+    "weighted_score": 0.845,
     "score_breakdown": {
       "source_authority": 0.8,
       "novelty": 0.9,
       "impact": 0.8,
-      "practical_value": 0.7
+      "practical_value": 0.9
     },
-    "story_id": "eba9b24e855cc921",
+    "story_id": "7e277b5ba21a5ce4",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/long-horizon-agent-survey-149-pages-jul2026"
+        "source_id": "zh-atbug",
+        "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/"
       }
     ],
     "curated": true
@@ -102,35 +68,69 @@
     "curated": true
   },
   {
-    "id": "10b66123a491bc70",
-    "source_id": "zh-cnbeta",
-    "title": "IIHS权威认证:Waymo自动驾驶事故率比人类低68%",
-    "url": "https://www.cnbeta.com.tw/articles/tech/1570370.htm",
-    "published_at": "2026-07-26T03:29:33+00:00",
-    "raw_text": "<p>据electrek报道，美国公路安全保险协会（IIHS）最新研究显示，<strong>Waymo自动驾驶出租车的事故率比人类驾驶员低68%，且事故严重程度更低。</strong>这是首次由独立机构对大规模自动驾驶运营数据进行的系统性安全分析。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1570370.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
+    "id": "c6e5b15d2fa36665",
+    "source_id": "zh-tonybai",
+    "title": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
+    "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/",
+    "published_at": "2026-07-26T22:00:00+00:00",
+    "raw_text": "本文基于 HumanLayer 创始人 Dex Horthy 在 AI Engineer World's Fair 的演讲《Harness Engineering is not Enough: Why Software Factories Fail》整理而成。文章回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径，结合 Faros AI 的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因，并给出了 Dex 团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法。",
     "category_hint": [
-      "行业动态"
+      "技巧与观点"
     ],
     "image_url": null,
     "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.4,
-    "reason_zh": "IIHS权威研究证实Waymo事故率比人类低68%，为自动驾驶安全性提供有力证据，具有行业里程碑意义。",
-    "summary_zh": "美国公路安全保险协会（IIHS）最新研究显示，Waymo自动驾驶出租车的事故率比人类驾驶员低68%，且事故严重程度更低。这是首次由独立机构对大规模自动驾驶运营数据进行的系统性安全分析。",
-    "title_zh": null,
-    "weighted_score": 0.765,
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "深入剖析AI编程模型缺乏可维护性奖励信号的根本原因，提出“前置对齐四步法”，对工程实践有深刻启发。",
+    "summary_zh": "本文基于HumanLayer创始人Dex Horthy在AI Engineer World's Fair的演讲，回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径。结合Faros AI的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因。作者指出，模型被训练为生成正确代码，但缺乏对代码可读性、可扩展性和可维护性的优化。文章给出了Dex团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法，包括明确业务约束、定义质量指标、构建反馈循环和持续对齐。",
+    "title_zh": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
+    "weighted_score": 0.745,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
     },
-    "story_id": "7796e42f19b54f0c",
+    "story_id": "85372066292d072a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1570370.htm"
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "22c07582101696a7",
+    "source_id": "gh-vllm",
+    "title": "vllm-project/vllm v0.26.0",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0",
+    "published_at": "2026-07-27T01:06:58+00:00",
+    "raw_text": "# vLLM v0.26.0 Release Notes\r\n\r\n## Highlights\r\n\r\nThis release features 411 commits from 212 contributors (61 new)!\r\n\r\n* **New Inkling model family** with a full support stack: base modeling (#48799), piecewise CUDA graph support (#48822), Hopper FA4 relative attention (#48858), MTP=1 speculative decoding (#48869), LoRA (#48884), and standard ModelOpt NVFP4 quantization (#48990).\r\n* **DeepSeek-V4 performance push** across vendors: a specialized routing kernel (2.94% E2E TPOT, #48660), `fused_topk_bias` (1.5–2x kernel, #47463), and redundant repeat/copy removal (1.8% E2E TPOT, #48137), plus ROCm two-stage compressor for HCA prefill (#47718), sparse decode/prefill optimizations (#48519, #48788, #46275), and DSpark speculative decoding on AMD (#47419) and XPU (#47677).\r\n* **fp32 `lm_head` for generation models via `head_dtype`** (#48390), extended to the LoRA path (#48525) and given a ROCm `torch.mm` fast path (#48688), improving accuracy for generation heads.\r\n* **Flexible attention backe",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "vLLM v0.26.0发布，支持Inkling模型家族和DeepSeek-V4，新增多项优化。",
+    "summary_zh": "vLLM v0.26.0发布，包含411次提交，来自212位贡献者。亮点包括：全新Inkling模型家族完整支持栈（基础建模、CUDA图、Hopper FA4相对注意力、MTP=1推测解码、LoRA、NVFP4量化）；DeepSeek-V4部分支持等。",
+    "title_zh": "vllm-project/vllm v0.26.0",
+    "weighted_score": 0.74,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "012a619bb91d8aa8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-vllm",
+        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
       }
     ],
     "curated": true
@@ -171,113 +171,251 @@
     "curated": true
   },
   {
-    "id": "931bf69c943219c6",
-    "source_id": "zh-cnbeta",
-    "title": "AMD Helios AI算力机架开始出货 硬件实力全面对标NVIDIA",
-    "url": "https://www.cnbeta.com.tw/articles/tech/1570334.htm",
-    "published_at": "2026-07-26T00:15:17+00:00",
-    "raw_text": "<p>在由英伟达长期主导的AI基础设施领域，AMD正通过高密度的产品创新发起全面反击。在旧金山举办的“Advancing AI”大会上，AMD正式宣布其首款全栈式AI基础设施机架解决方案构建平台——Helios机架将于本季度末开始向客户交付。这一关键举措标志着AMD具备了提供数据中心级完整算力方案的能力，正式具备与英伟达展开同台竞技的实力。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1570334.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
+    "id": "20e7c40f70ae20dc",
+    "source_id": "zh-meituan-tech",
+    "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
+    "published_at": "2026-07-27T02:12:28.246369+00:00",
+    "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
     "category_hint": [
-      "行业动态"
+      "技巧与观点"
     ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "AMD Helios机架开始出货，标志其具备与NVIDIA全面竞争的数据中心级AI算力能力。",
-    "summary_zh": "在旧金山“Advancing AI”大会上，AMD宣布其首款全栈式AI基础设施机架解决方案Helios机架将于本季度末开始交付。这标志着AMD具备了提供数据中心级完整算力方案的能力，正式与NVIDIA展开同台竞技。Helios机架是AMD在AI基础设施领域的重要产品，旨在通过高密度创新挑战NVIDIA的主导地位。",
-    "title_zh": null,
-    "weighted_score": 0.72,
+    "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "美团LongCat团队构建MineExplorer评测基准，揭示多模态大模型在开放世界长程任务中的能力断层，对模型评估有重要启发。",
+    "summary_zh": "美团LongCat团队构建MineExplorer，首个在开放世界中实现分钟级长程任务的评测基准。该基准系统评测多模态大模型在需要长程规划、包含隐藏前置条件的任务中的真实能力，揭示了当前顶级模型在动态世界中的能力断层。",
+    "title_zh": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
+    "weighted_score": 0.73,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.4
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.6
     },
-    "story_id": "7a771a27fb1722bd",
+    "story_id": "703bdf6f589de6ef",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1570334.htm"
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
       }
     ],
     "curated": true
   },
   {
-    "id": "f8f08a1eac7183d1",
-    "source_id": "zh-ithome",
-    "title": "消息称 OpenAI、Anthropic 游说美国限制中国开源模型，黄仁勋马斯克公开反对",
-    "url": "https://www.ithome.com/0/981/797.htm",
-    "published_at": "2026-07-26T12:54:28+00:00",
-    "raw_text": "<p>北京时间 7 月 26 日，据《纽约时报》报道，多年来，硅谷科技界在 AI 软件开发方式上一直存在理念分歧。本周，这场争论达到了白热化。</p><p>一方是以 Anthropic 和 OpenAI 为首的头部 AI 企业，它们认为，某些 AI 模型过于危险，不应以开放方式开发，而必须由像它们这样的企业一样进行严格控制，以确保安全。另一方则是包括微软、英伟达等巨头在内的科技行业其他成员，它们主张所谓的开源 AI 模型必须保持开放，以便人们进一步开发技术、创立新的业务。</p><p>这两方阵营已经开始公开交锋。周五，英伟达 CEO 黄仁勋 (Jensen Huang) 首次在 X 上发文称：“世界既需要前沿闭源模型，也需要前沿开放模型。”九分钟后，微软 CEO 萨提亚 · 纳德拉 (Satya Nadella) 发文称，开源软件“对健康的 AI 生态系统至关重要”。两人均签署了一封支持开源的信函，Meta、Palantir 和 IBM 的高管也共同签署了该信函。</p><p>与此同时，据五位知情人士透露，OpenAI 和 Anthropic 一直在华盛顿游说监管机构，对中国的开源 AI 模型表达担忧。这场辩论已引起美国财政部长斯科特 · 贝森特 (Scott Bessent) 和特朗普总统科技顾问迈克尔 · 克拉齐奥斯 (Michael Kratsios) 的关注，两人就美国 AI 模型作为宝贵知识产权的价值问题发表了看法。</p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/92fd43a3-45d0-4e50-b358-776cd1bf661c.png?x-bce-process=image/format,f_auto\" /></p><figcaption>▲ 黄仁勋强调开放模型重要性</figcaption><p>这场不断升级的争论源于中国在开源 AI 模型领域的快速进步。开源模型可以被任何人自由使用，并在此基础上继续开发。近几周，中国两家 AI 创业公司智谱和月之暗面相继发布了可与 Anthropic 等美国 AI 实验室模型相媲美的新模型。Anthropic 和 OpenAI 则声称，中国企",
+    "id": "e03e2271acc6961e",
+    "source_id": "infoq-cn-ai",
+    "title": "Cursor 用一群Agent重造SQLite：仅凭 835 页手册，无源码、无测试、不联网",
+    "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-27T09:34:44+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/92fd43a3-45d0-4e50-b358-776cd1bf661c.png?x-bce-process=image/format,f_auto",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "报道 OpenAI、Anthropic 游说限制中国开源模型，黄仁勋、马斯克公开反对，影响 AI 开源格局。",
-    "summary_zh": "据《纽约时报》报道，OpenAI 和 Anthropic 正在游说美国政府限制中国开源 AI 模型，认为开放模型过于危险。英伟达 CEO 黄仁勋和微软 CEO 纳德拉公开反对，支持开源。黄仁勋首次在 X 上发文称世界需要前沿闭源和开放模型，纳德拉也强调开源对 AI 生态系统至关重要。这场争论反映了硅谷在 AI 开发方式上的深刻分歧。",
-    "title_zh": null,
-    "weighted_score": 0.7,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.9,
-      "practical_value": 0.3
-    },
-    "story_id": "8b72b60dfb1dd6ec",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1570368.htm"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/981/797.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "58cfb30afcee7ecf",
-    "source_id": "zh-cnbeta",
-    "title": "月之暗面Kimi K3庆功照流出 张予彤疑现身喊出“冲上月球”口号",
-    "url": "https://www.cnbeta.com.tw/articles/tech/1570362.htm",
-    "published_at": "2026-07-26T03:27:17+00:00",
-    "raw_text": "<p>据报道，在经历过去一段时间月之暗面Kimi K3发布引发的广泛关注后，月之暗面于本周五在北京的一个酒吧举行了庆功活动。据流出内容，月之暗面展示的一张庆功标语显示，月之暗面对于K3的定位是“扩容升级”，同时期望将下一代K4“狠狠干到极致”，并喊出了“冲上月球”口号。</p> <a href=\"https://www.cnbeta.com.tw/articles/tech/1570362.htm\" target=\"_blank\"><strong>阅读全文</strong></a>",
-    "category_hint": [
-      "行业动态"
+      "行业动态",
+      "技巧与观点"
     ],
     "image_url": null,
     "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "报道了月之暗面K3庆功活动及未来规划，反映公司内部动态，但信息碎片化，深度有限。",
-    "summary_zh": "据报道，月之暗面在Kimi K3发布后于北京酒吧举办庆功活动，标语显示K3定位为“扩容升级”，并期望将下一代K4“狠狠干到极致”，喊出“冲上月球”口号。联合创始人张予彤疑似现身。",
-    "title_zh": null,
-    "weighted_score": 0.415,
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "Cursor用Agent重造SQLite的实践案例，展示了AI编程的极限能力，对AI工程化有启发意义。",
+    "summary_zh": "Cursor团队使用多个Agent，仅凭835页手册，在无源码、无测试、不联网的条件下重造了SQLite。这一实验展示了AI编程的惊人潜力，也引发了关于AI自主开发软件的讨论。",
+    "title_zh": "Cursor用一群Agent重造SQLite：仅凭835页手册，无源码、无测试、不联网",
+    "weighted_score": 0.73,
     "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.6,
-      "impact": 0.3,
-      "practical_value": 0.2
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.6
     },
-    "story_id": "3728d22950039b17",
-    "multi_source_count": 2,
+    "story_id": "58c85e8ae8274cf7",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-cnbeta",
-        "url": "https://www.cnbeta.com.tw/articles/tech/1570362.htm"
-      },
-      {
-        "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3911981562270848?f=rss"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
+  },
+  {
+    "id": "974f35f6c57c4bb3",
+    "source_id": "nvidia-ai-blog",
+    "title": "NVIDIA Harnesses Vera CPU to Speed Up Design of Next-Generation CPUs and GPUs",
+    "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/",
+    "published_at": "2026-07-27T00:45:42+00:00",
+    "raw_text": "The complexity of modern chip design continues to grow as engineering teams work to develop increasingly sophisticated CPUs, GPUs and AI systems. To help meet that challenge, NVIDIA is collaborating with industry leaders Cadence and Synopsys to optimize critical electronic design automation (EDA) applications for the NVIDIA Vera CPU. NVIDIA is now deploying Vera across [&#8230;]",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://blogs.nvidia.com/wp-content/uploads/2026/07/cpu-corp-blog-vera-superchip-1280x680-4939150-842x450.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "英伟达用 Vera CPU 加速芯片设计，与 Cadence、Synopsys 合作，对 EDA 行业有重要影响。",
+    "summary_zh": "英伟达官方博客宣布，为应对日益复杂的芯片设计挑战，正与 Cadence 和 Synopsys 合作，优化关键 EDA 应用以适配 NVIDIA Vera CPU。英伟达已部署 Vera 用于其下一代 CPU 和 GPU 的 EDA 工作流程，展示了高性能 CPU 在加速芯片设计方面的潜力。",
+    "title_zh": "英伟达利用 Vera CPU 加速下一代 CPU 和 GPU 的设计",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.4
+    },
+    "story_id": "49aed25c9d530de8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "nvidia-ai-blog",
+        "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "7d148646a05ddd8d",
+    "source_id": "zh-ithome",
+    "title": "英伟达用 Vera 处理器加速下一代 CPU 和 GPU 设计，EDA 应用提速最高 1.5 倍",
+    "url": "https://www.ithome.com/0/981/830.htm",
+    "published_at": "2026-07-27T00:53:10+00:00",
+    "raw_text": "<p>IT之家 7 月 27 日消息，英伟达今日在官方博客发文，随着工程团队致力于开发越来越复杂的 CPU、GPU 和人工智能系统，现代芯片设计的复杂性也在不断增加。</p><p>为应对这一挑战，英伟达正与楷登电子和新思科技合作，<strong>优化 NVIDIA Vera CPU 的关键电子设计自动化（EDA）应用</strong>。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/d5fab648-bbec-4b38-80c5-695c31bc8eb7.jpg?x-bce-process=image/format,f_auto\" /></p><p>英伟达现正部署 Vera 应用于其下一代 CPU 和 GPU 开发的 EDA 工作流程，展示了高性能 CPU 架构如何帮助加速行业中一些最具挑战性的工程工作负载。</p><p>英伟达官方介绍，仿真、验证和实现技术在半导体开发中起着核心作用。在芯片进入制造阶段之前，工程师们就花费多年时间验证行为，识别关键情况，并通过数千次迭代完善设计。</p><p>虽然 GPU 和人工智能加速了芯片设计的许多方面，但若干关键的 EDA 工作负载仍然高度依赖 CPU 性能。逻辑仿真、形式验证以及部分数字实现通常依赖于快速的单个核心、高效的内存系统和强大的整体吞吐量。</p><p style=\"text-align: center;\"><img alt=\"英伟达波特兰数据中心的 Vera 集群\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/bba986ec-cddb-4b62-95b9-9a13216c9d67.png\" /></p><figcaption>▲ 英伟达波特兰数据中心的 Vera 集群</figcaption><p>IT之家从博客获悉，英伟达的初步测试涵盖了多个 EDA 应用。这些结果凸显了 Vera 加速现代芯片设计中两个最耗计算阶段的能力。</p><ul class=\" list-paddingleft-2\"><li><p>Cadence Jasper 是一个形式验证平台，利用智能证明技术和机器学习在设计周期早期发现并修复错误，提升验证",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/d5fab648-bbec-4b38-80c5-695c31bc8eb7.jpg?x-bce-process=image/format,f_auto",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "英伟达 Vera 处理器加速 EDA 应用，与上一条内容重复，但来源不同，仍具参考价值。",
+    "summary_zh": "IT之家报道，英伟达与 Cadence、Synopsys 合作，优化 Vera CPU 的 EDA 应用，以加速下一代 CPU 和 GPU 的设计。英伟达已部署 Vera 用于其 EDA 工作流程，展示了高性能 CPU 在芯片设计中的优势，EDA 应用提速最高可达 1.5 倍。",
+    "title_zh": "英伟达用 Vera 处理器加速下一代 CPU 和 GPU 设计，EDA 应用提速最高 1.5 倍",
+    "weighted_score": 0.595,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.3
+    },
+    "story_id": "40a8e7ec95bc8ab4",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/981/830.htm"
+      },
+      {
+        "source_id": "36kr",
+        "url": "https://36kr.com/newsflashes/3913222112089225?f=rss"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "22fba2c3a1c2317d",
+    "source_id": "gh-llamacpp",
+    "title": "ggerganov/llama.cpp b10141",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10141",
+    "published_at": "2026-07-26T23:03:40+00:00",
+    "raw_text": "<details open>\n\nmtmd: fix android build (#26150)\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10141/llama-b10141-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10141/llama-b10141-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10141/llama-b10141-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10141/llama-b10141-bin-ubuntu-x64.tar.gz)\n- [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10141/llama-b10141-bin-ubuntu-arm64.tar.gz)\n- [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10141/llama-b10141-bin-ubuntu-s390x.tar.gz)\n- [Ubuntu x64 (Vulkan)](https://g",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "llama.cpp新版本发布，修复Android构建问题，对使用该库的开发者有直接实用价值。",
+    "summary_zh": "ggerganov/llama.cpp发布了b10141版本，主要修复了Android构建问题（#26150）。该版本提供了macOS Apple Silicon (arm64)和macOS Intel (x64)的二进制下载，但KleidiAI启用的arm64版本被禁用。llama.cpp是一个流行的开源LLM推理库，该更新对Android用户尤为重要。",
+    "title_zh": "ggerganov/llama.cpp b10141",
+    "weighted_score": 0.71,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "43ea398a19152874",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-llamacpp",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10141"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "2f9f6f2c0647934a",
+    "source_id": "gh-ollama",
+    "title": "ollama/ollama v0.32.5-rc0",
+    "url": "https://github.com/ollama/ollama/releases/tag/v0.32.5-rc0",
+    "published_at": "2026-07-27T01:25:40+00:00",
+    "raw_text": "## What's Changed\r\n* mlx update by @dhiltgen in https://github.com/ollama/ollama/pull/17397\r\n\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.32.4...v0.32.5-rc0",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "Ollama发布新候选版本，MLX更新，对本地部署大模型的用户有实用价值。",
+    "summary_zh": "Ollama发布v0.32.5-rc0候选版本，主要更新包括MLX库的升级。该版本为预发布版，旨在测试新功能并修复问题。完整变更日志可从GitHub获取。",
+    "title_zh": null,
+    "weighted_score": 0.695,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "328419269eab1dce",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-ollama",
+        "url": "https://github.com/ollama/ollama/releases/tag/v0.32.5-rc0"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "505c6d1d08f63a46",
+    "source_id": "infoq-cn-ai",
+    "title": "亚马逊云科技发布 Loom，一个用于在企业级规模上管理 AI 代理的开源参考平台",
+    "url": "https://www.infoq.cn/article/JDgONrm19ROF1qHzfOQO?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-27T09:24:39+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/JDgONrm19ROF1qHzfOQO?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "亚马逊云科技发布Loom开源参考平台，用于企业级AI代理管理，对构建AI代理系统的开发者有实用价值。",
+    "summary_zh": "亚马逊云科技发布Loom，一个用于在企业级规模上管理AI代理的开源参考平台。该平台旨在帮助企业高效部署、监控和管理AI代理，提供可扩展的架构和最佳实践。",
+    "title_zh": "亚马逊云科技发布Loom，一个用于在企业级规模上管理AI代理的开源参考平台",
+    "weighted_score": 0.665,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "bc08d8ac9aa3e1fa",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/JDgONrm19ROF1qHzfOQO?utm_source=rss&utm_medium=article"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
   }
 ]

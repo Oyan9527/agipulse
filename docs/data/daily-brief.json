@@ -1,70 +1,137 @@
 {
-  "date": "2026-07-26",
-  "generated_at": "2026-07-26T20:57:31.010812+00:00",
+  "date": "2026-07-27",
+  "generated_at": "2026-07-27T02:17:05.075007+00:00",
   "items": [
     {
-      "id": "f63658f37610cbc0",
-      "source_id": "pandaily",
-      "title": "Chinese Scientists Develop ContactSeek AI Framework Based on AlphaFold3 Contact Probability: A New Precision Paradigm for Gene Editing Tool Design Published in Nature",
-      "url": "https://pandaily.com/contactseek-alphafold3-ai-framework-jul2026",
-      "published_at": "2026-07-26T02:13:49+00:00",
-      "raw_text": "Peking University team led by Yi Chengqi and East China Normal University develop ContactSeek using AlphaFold3 contact probability to identify key amino acids for precision base editing tool engineering.",
+      "id": "c6e48b5e56ef1568",
+      "source_id": "zh-atbug",
+      "title": "Anthropic 删了 80% 提示词，但你不能照做",
+      "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/",
+      "published_at": "2026-07-26T22:26:27+00:00",
+      "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>Anthropic 砍掉了 Claude Code 系统提示词的 80% 以上，编码评测没有可测量的损失。</p>\n<p>但这句话真正证明的，是那 80% 本来就没在传递信息——它是给弱模型打的补丁，不是知识。</p>\n<p>一个团队能删掉多少提示词，度量的不是模型有多强，是他们之前写了多少废话。</p>\n<p>模型学到的是世界的公共部分。你的规则里装的是私有部分——“我们周五不发版”、“这个库禁用”、“这个仓库的类型全在一个文件里”。这些从没进过任何语料库，模型再强也补不上。</p>\n<p>该薄的是公共部分，该厚的是私有部分。而按 token 数砍，砍掉的往往正好是后者。</p>\n<h2 id=\"一一份被当成指引的实验报告\">一、一份被当成指引的实验报告</h2>\n<p>Anthropic 最近发了一篇文章——<a href=\"https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models\">The new rules of context engineering for Claude 5 generation models</a>，讲他们如何为新一代模型重做上下文工程。核心事实只有一句：他们把 Claude Code 的系统提示词删掉了 80% 以上，在自己的编码评测集上没有观察到可测量的损失。</p>\n<p>文章顺势列了六条“已经过时的最佳实践”：</p>\n<p>给模型定死规则，改成让模型自己判断；给工具用法示例，改成把语义设计进接口；把信息全部前置塞满，改成按需分批加载；重要的话说三遍，改成说一次并放进工具描述；记忆写进 CLAUDE.md，改成让模型自动存取；用简单的 markdown 写规格，改成给它测试套件、代码、评分标准这类更丰富的引用。</p>\n<p>这六条单独看都不难接受。真正值得停下来的地方，是他们删掉的<strong>具体是什么</strong>。</p>",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://cms-image.pandaily.com/1/article4_f797b9ae57.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "基于AlphaFold3接触概率的基因编辑工具设计新范式，发表于Nature，具有重要科学意义。",
-      "summary_zh": "北京大学伊成器团队与华东师范大学合作，开发了ContactSeek AI框架，利用AlphaFold3的接触概率（contact probability）来识别关键氨基酸，从而精确设计碱基编辑工具。该研究发表于Nature，提出了一种新的基因编辑工具设计范式，通过蛋白质结构预测指导功能位点选择，有望提高基因编辑的精准度和效率。ContactSeek为基因治疗和合成生物学提供了新的计算工具。",
-      "title_zh": "中国科学家基于AlphaFold3接触概率开发ContactSeek AI框架：基因编辑工具设计的新精度范式发表于Nature",
-      "weighted_score": 0.815,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "cf4bc5f586ea6100",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "pandaily",
-          "url": "https://pandaily.com/contactseek-alphafold3-ai-framework-jul2026"
-        }
-      ]
-    },
-    {
-      "id": "70c97733c03dea1e",
-      "source_id": "pandaily",
-      "title": "149 Pages Mapping the Long-Horizon Agent Frontier: Multi-University Survey Proposes Harness Engineering and Model Optimization as Two Main Evolution Lines for Next-Generation AI Agents",
-      "url": "https://pandaily.com/long-horizon-agent-survey-149-pages-jul2026",
-      "published_at": "2026-07-26T02:13:35+00:00",
-      "raw_text": "Renmin University GAIR leads multi-institution 149-page survey on long-horizon agents, proposing H1-H3 task difficulty hierarchy and C1-C3 capability tiers, with task span doubling every 4-7 months.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://cms-image.pandaily.com/1/article3_a5b645c134.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "149页长时域智能体综述，提出任务难度层级和能力等级，揭示任务跨度每4-7月翻倍，对AI Agent研究有重要参考价值。",
-      "summary_zh": "由中国人民大学GAIR实验室领衔，联合多所高校发布149页长时域智能体（Long-Horizon Agent）综述。该研究提出了H1-H3任务难度层级和C1-C3能力等级，并发现任务跨度每4-7个月翻倍。综述将下一代AI Agent的演进路线归纳为两条主线：Harness Engineering（驾驭工程）和Model Optimization（模型优化）。该工作为长时域智能体的发展提供了系统性的框架和量化指标，对研究人员和工程师具有重要参考价值。",
-      "title_zh": "149页长时域智能体前沿地图：多校联合综述提出驾驭工程与模型优化作为下一代AI Agent的两条主要演进路线",
-      "weighted_score": 0.805,
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "对Anthropic删减提示词事件进行深度剖析，指出公共知识与私有规则的本质区别，对提示工程有颠覆性见解。",
+      "summary_zh": "本文针对Anthropic砍掉Claude Code系统提示词80%以上且编码评测无损失的事件进行深入分析。作者指出，被删除的80%提示词原本就是给弱模型打的补丁，而非有效知识。模型学到的是世界的公共部分，而私有规则（如“周五不发版”、“禁用某库”）从未进入语料库，模型再强也无法补上。因此，提示词应该薄化公共部分，厚化私有部分。按token数砍提示词往往会砍掉后者，导致效果下降。文章还讨论了提示工程的核心在于区分公共知识和私有规则，并给出了实践建议。",
+      "title_zh": "Anthropic 删了 80% 提示词，但你不能照做",
+      "weighted_score": 0.845,
       "score_breakdown": {
         "source_authority": 0.8,
         "novelty": 0.9,
         "impact": 0.8,
-        "practical_value": 0.7
+        "practical_value": 0.9
       },
-      "story_id": "eba9b24e855cc921",
+      "story_id": "7e277b5ba21a5ce4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "pandaily",
-          "url": "https://pandaily.com/long-horizon-agent-survey-149-pages-jul2026"
+          "source_id": "zh-atbug",
+          "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/"
+        }
+      ]
+    },
+    {
+      "id": "c0eaa9744e30daa4",
+      "source_id": "reddit-llmdevs",
+      "title": "The silent killer in local LLM agent loops: Why your context window isn’t the real bottleneck (and what is)",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1v797w8/the_silent_killer_in_local_llm_agent_loops_why/",
+      "published_at": "2026-07-26T16:50:38+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Everyone is obsessing over KV cache sizes and hardware speeds to squeeze out more tokens. But after pushing multi-step agent graphs to production, we found the real bottleneck isn’t raw inference—it’s <strong>silent structural drift</strong>.<br /> Over 10+ turns, unconstrained models start &quot;smuggling intent&quot; into loose description fields just to satisfy rigid schemas. By the time it hits your database, you’re debugging phantom state corruption, not model capability. We had to ditch engine-level JSON modes for strict three-gate boundaries just to stop loops from tearing themselves apart.<br /> <strong>For those running heavy local agent loops in production:</strong> Where do your pipelines actually break first? Is it raw latency, or are your agents quietly hallucinating their way out of valid schemas over long horizons?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/demirtasfurkan_\"> /u/demirtasfurkan_ ",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.85,
+      "reason_zh": "揭示LLM agent循环中真正的瓶颈不是上下文窗口，而是“结构漂移”，有工程实践支撑，极具启发性。",
+      "summary_zh": "文章指出，在多步agent图中，真正的瓶颈不是KV缓存大小或硬件速度，而是“无声的结构漂移”。经过10轮以上交互，未受约束的模型会开始将意图“走私”到松散的描述字段中，导致上下文结构逐渐偏离原始设计。作者分享了在生产环境中发现这一问题的经验，并提出了应对策略。",
+      "title_zh": "本地LLM agent循环中的无声杀手：为什么上下文窗口不是真正的瓶颈（以及什么是）",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.9
+      },
+      "story_id": "4a94b24e1affdf92",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1v797w8/the_silent_killer_in_local_llm_agent_loops_why/"
+        }
+      ]
+    },
+    {
+      "id": "c6e5b15d2fa36665",
+      "source_id": "zh-tonybai",
+      "title": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
+      "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/",
+      "published_at": "2026-07-26T22:00:00+00:00",
+      "raw_text": "本文基于 HumanLayer 创始人 Dex Horthy 在 AI Engineer World's Fair 的演讲《Harness Engineering is not Enough: Why Software Factories Fail》整理而成。文章回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径，结合 Faros AI 的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因，并给出了 Dex 团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析AI编程模型缺乏可维护性奖励信号的根本原因，提出“前置对齐四步法”，对工程实践有深刻启发。",
+      "summary_zh": "本文基于HumanLayer创始人Dex Horthy在AI Engineer World's Fair的演讲，回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径。结合Faros AI的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因。作者指出，模型被训练为生成正确代码，但缺乏对代码可读性、可扩展性和可维护性的优化。文章给出了Dex团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法，包括明确业务约束、定义质量指标、构建反馈循环和持续对齐。",
+      "title_zh": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
+      "weighted_score": 0.745,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "85372066292d072a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/"
+        }
+      ]
+    },
+    {
+      "id": "20e7c40f70ae20dc",
+      "source_id": "zh-meituan-tech",
+      "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
+      "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
+      "published_at": "2026-07-27T02:12:28.246369+00:00",
+      "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "美团LongCat团队构建MineExplorer评测基准，揭示多模态大模型在开放世界长程任务中的能力断层，对模型评估有重要启发。",
+      "summary_zh": "美团LongCat团队构建MineExplorer，首个在开放世界中实现分钟级长程任务的评测基准。该基准系统评测多模态大模型在需要长程规划、包含隐藏前置条件的任务中的真实能力，揭示了当前顶级模型在动态世界中的能力断层。",
+      "title_zh": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "703bdf6f589de6ef",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
         }
       ]
     },
@@ -103,72 +170,6 @@
       ]
     },
     {
-      "id": "a24cba44685bc32b",
-      "source_id": "zh-tonybai",
-      "title": "不用 Python，也能训练大模型：两年之后再看 Go 语言机器学习框架 GoMLX",
-      "url": "https://tonybai.com/2026/07/26/gomlx-one-year-later/",
-      "published_at": "2026-07-25T22:00:00+00:00",
-      "raw_text": "本文是对 Go 语言机器学习框架 GoMLX 的一次两年后回访式全面梳理。区别于两年前的入门级介绍，这次聚焦于它经过 v0.28 重组后的整体架构：核心计算引擎已独立为 compute 仓库，形成“上层 API＋可插拔后端”的清晰分层；文章逐层拆解 Backend、Graph、Tensor、Store 四大抽象，用真实代码演示如何用纯 Go 训练一个神经网络，并盘点了 go-huggingface、onnx-gomlx 等生态工具，以及梯度检查点、KAN、分布式训练等最新能力，帮助 Go 开发者判断这套框架两年之后是否值得认真投入。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深度剖析GoMLX框架两年后的架构演进，对Go开发者评估ML框架价值极具参考。",
-      "summary_zh": "本文是对Go语言机器学习框架GoMLX的两年后回访，全面梳理了其v0.28重组后的架构。核心计算引擎独立为compute仓库，形成上层API加可插拔后端的清晰分层。文章逐层拆解Backend、Graph、Tensor、Store四大抽象，并用真实代码演示纯Go训练神经网络。还盘点了go-huggingface、onnx-gomlx等生态工具，以及梯度检查点、KAN、分布式训练等新能力，帮助Go开发者判断该框架是否值得投入。",
-      "title_zh": null,
-      "weighted_score": 0.68,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "b787720e33a3ed20",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/07/26/gomlx-one-year-later/"
-        }
-      ]
-    },
-    {
-      "id": "64a50e6190a96fdf",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] 当 MCP Server 变了，用户原来的设置还算数吗？",
-      "url": "https://www.v2ex.com/t/1229964#reply1",
-      "published_at": "2026-07-26T14:42:20+00:00",
-      "raw_text": "<blockquote>\n<p>关于能力漂移（ Capability Drift ）、持久管理意图（ Durable Management Intent ）与原子能力面（ Atomic Capability Surface ）的实践思考</p>\n</blockquote>\n<p>本文证据截止于 2026-07-24 ； MCP 官方议题、拉取请求与规范状态最后核验于 2026-07-26 。文中的 MCP <code>2026-07-28</code> 仍按候选发布版表述，正式发布后需要按最终规范再次核验。</p>\n<h2>1. 从“连接几个 Server”到一个长期状态问题</h2>\n<p>我们最初把 <a href=\"https://github.com/loocor/mcpmate\" rel=\"nofollow\">MCPMate</a> 看成一个相对直接的桌面网关（ Desktop Gateway ）：连接多个 MCP Server ，处理名称冲突（ Name Collision ），再把 Tools 、Prompts 、Resources 和 Resource Templates 暴露给不同的宿主应用（ Host App ）。为了提供更细粒度的管理能力，MCPMate 允许用户通过 Profile 和 Direct Exposure 选择具体要暴露的能力（ Capability ），避免向宿主应用加载并不需要的能力。</p>\n<p>真正开始保存 Profile 、Direct Exposure 和用户选择后，问题却变了。</p>\n<p>Server 会升级。原有 Tool 可能改名、被合并、从默认列表移出，或者在名称不变时修改输入模式（ Input Schema ）、输出模式（ Output Schema ）、描述（ Description ）和注解（ Annotations ）；新的 Prompt 或 Resource 可能出现，已有能力也可能暂时消失。此时，几个月前保存的那条设置到底还是什么意思？</p>\n<p>我们把这类变化统称为<strong>能力漂移</strong>。它至少包括：</p>\n<ul>\n<li><strong>发现漂移（ Discovery Drift ）</strong>：能力新增、消失或重新出现；</li>\n<li><strong",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入探讨MCP Server变更导致用户设置失效的“能力漂移”问题，提出“持久管理意图”和“原子能力面”等原创概念，对构建稳定Agent系统有重要参考价值。",
-      "summary_zh": "本文围绕MCP（Model Context Protocol）生态中一个被忽视的长期状态问题展开：当MCP Server更新后，用户原有的配置和设置是否仍然有效？作者基于开发MCPMate桌面网关的实践经验，提出了“能力漂移”（Capability Drift）概念，指Server能力变化导致客户端行为不一致。为解决此问题，引入“持久管理意图”（Durable Management Intent）和“原子能力面”（Atomic Capability Surface）两个设计原则，主张将用户意图与具体Server能力解耦，并通过原子化能力接口实现稳定交互。文章还梳理了MCP官方议题和规范进展，指出当前协议缺乏对能力版本化的支持，呼吁社区关注这一影响Agent长期可用性的关键问题。",
-      "title_zh": null,
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "c22ae610f65efec8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1229964#reply1"
-        }
-      ]
-    },
-    {
       "id": "7f402affedbba5dc",
       "source_id": "berenblog",
       "title": "How can LLM RL Work Despite Information-Theoretic Inefficiency",
@@ -198,6 +199,40 @@
         {
           "source_id": "berenblog",
           "url": "https://www.beren.io/2026-07-26-How-Can-LLM-RL-Work-Despite-Information-Theoretic-Inefficiency/"
+        }
+      ]
+    },
+    {
+      "id": "02d809be630b4705",
+      "source_id": "reddit-llmdevs",
+      "title": "My open-source SDLC harness beat Claude Code on cost on every task it localized well, up to 75 percent cheaper (and I show where it loses)",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1v74n1k/my_opensource_sdlc_harness_beat_claude_code_on/",
+      "published_at": "2026-07-26T13:58:18+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>A cold Claude Code run spent 6.83 dollars and 207 turns hunting one bug in an 82,000 line repo. My pipeline localized and fixed the same bug for about 1.70 dollars. That gap is the whole idea, and this post is about how it gets there without falling apart on the usual objections.</p> <p>I built AutoDev Studio. You point it at a Git repo, describe a change in plain English, and a chain of agents runs the actual software lifecycle from request to reviewed pull request. It is not another search-your-code wrapper. The full pipeline is:</p> <ul> <li>A PM agent runs a clarify loop and drafts concrete tickets from your request</li> <li>A human approves, optionally pushed to Jira, and nothing touches code before that</li> <li>A Dev agent implements the change on an isolated branch</li> <li>QA runs the repo's real tests</li> <li>A reviewer from a different model family checks the diff, so the author never reviews its own code</li> <li>A bounded revise loop kick",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "作者开源SDLC工具链，对比Claude Code展示成本优势，并坦诚分析失败场景，极具实践参考价值。",
+      "summary_zh": "作者介绍了其开源项目AutoDev Studio，通过将SDLC流程自动化，在定位和修复bug方面比Claude Code成本低75%。文章详细对比了两种方法：Claude Code花费6.83美元和207轮交互定位一个bug，而AutoDev Studio仅需约1.70美元。作者还分析了该方法的适用场景和局限性，展示了在哪些任务上表现不佳。该项目旨在通过结构化管道降低AI辅助开发的成本。",
+      "title_zh": "我的开源SDLC工具链在本地化任务上比Claude Code便宜75%，并分析了失败场景",
+      "weighted_score": 0.63,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "3bff6813f7c5772a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1v74n1k/my_opensource_sdlc_harness_beat_claude_code_on/"
         }
       ]
     },
@@ -236,6 +271,40 @@
       ]
     },
     {
+      "id": "e03e2271acc6961e",
+      "source_id": "infoq-cn-ai",
+      "title": "Cursor 用一群Agent重造SQLite：仅凭 835 页手册，无源码、无测试、不联网",
+      "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-27T09:34:44+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Cursor用Agent重造SQLite的实践案例，展示了AI编程的极限能力，对AI工程化有启发意义。",
+      "summary_zh": "Cursor团队使用多个Agent，仅凭835页手册，在无源码、无测试、不联网的条件下重造了SQLite。这一实验展示了AI编程的惊人潜力，也引发了关于AI自主开发软件的讨论。",
+      "title_zh": "Cursor用一群Agent重造SQLite：仅凭835页手册，无源码、无测试、不联网",
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "58c85e8ae8274cf7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
       "id": "57b8348944982126",
       "source_id": "pandaily",
       "title": "30,000 Hours of Tactile Data Fills Embodied Intelligence Gap: XinZhi Embodied and Fudan University Release Three Technical Reports on Haptic Sensing",
@@ -269,135 +338,69 @@
       ]
     },
     {
-      "id": "89dbcc475eb198cb",
-      "source_id": "the-decoder",
-      "title": "The AI coding tutor paradox grows as educators scramble to rethink how they test real skills",
-      "url": "https://the-decoder.com/the-ai-coding-tutor-paradox-grows-as-educators-scramble-to-rethink-how-they-test-real-skills/",
-      "published_at": "2026-07-26T06:59:56+00:00",
-      "raw_text": "<p><img alt=\"Hands examine a neural AI circuit before lines of code using magnifying glasses and tools, symbolizing research and debugging.\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/ACM-Studie.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        An ACM survey of 763 computer science educators from 49 countries shows that 68 percent have already changed their exams because of AI, shifting toward oral exams, proctored tests, and project-based work. Teaching is moving from writing code to understanding it. But nearly half of respondents say they lack proven examples for integrating AI into their courses.</p>\n<p>The article <a href=\"https://the-decoder.com/the-ai-coding-tutor-paradox-grows-as-educators-scramble-to-rethink-how-they-test-real-skills/\">The AI coding tutor paradox grows as educators scramble to rethink how they test real skills</a> appeared first on <a href=\"https://the-decode",
+      "id": "09e62eb15568147b",
+      "source_id": "zh-meituan-tech",
+      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+      "published_at": "2026-07-27T02:12:28.246334+00:00",
+      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
       "category_hint": [
-        "模型发布",
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/ACM-Studie.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.7,
-      "reason_zh": "ACM调查揭示AI编程辅导对教育评估的冲击， educators需重新思考测试方式，具有深刻教育意义。",
-      "summary_zh": "ACM对763名计算机科学教育者的调查显示，AI编程辅导工具（如GitHub Copilot）正在改变教学评估方式。教育者担心学生过度依赖AI，导致真实编程能力难以衡量。调查发现，许多教师正在重新设计作业和考试，以测试学生在AI辅助下的问题解决能力，而非单纯代码编写。文章探讨了AI编程辅导带来的教育悖论，并提出了可能的应对策略。",
-      "title_zh": "AI编程辅导悖论加剧：教育者争相重新思考如何测试真实技能",
-      "weighted_score": 0.61,
+      "reason_zh": "美团开源LoHoSearch评测基准，用知识图谱校准AI能力认知，解决基准饱和问题，对搜索智能体研究有重要参考价值。",
+      "summary_zh": "美团开源LoHoSearch，一个下一代搜索智能体评测基准。该基准利用知识图谱校准AI能力认知，解决现有基准如BrowseComp迅速饱和、区分度下降的问题。LoHoSearch通过结构化知识图谱设计多层次任务，更全面评估搜索智能体的真实能力。",
+      "title_zh": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "eb00a4db4521a3f4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+        }
+      ]
+    },
+    {
+      "id": "d338db9ea6ff921d",
+      "source_id": "infoq-cn-ai",
+      "title": "Snowflake CoCo 中的 Loop Engineering ｜ 技术实践",
+      "url": "https://www.infoq.cn/article/APthBQXkUJjM3BkaXZCy?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-27T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/APthBQXkUJjM3BkaXZCy?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "Snowflake分享CoCo中的Loop Engineering实践，对构建AI Agent循环的工程师有直接指导价值。",
+      "summary_zh": "文章介绍了Snowflake在CoCo项目中应用的Loop Engineering技术实践，包括如何设计高效的Agent循环、处理上下文管理、优化推理性能等，为构建企业级AI代理系统提供了实用经验。",
+      "title_zh": "Snowflake CoCo中的Loop Engineering｜技术实践",
+      "weighted_score": 0.625,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "0994f40db6c3d065",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/the-ai-coding-tutor-paradox-grows-as-educators-scramble-to-rethink-how-they-test-real-skills/"
-        }
-      ]
-    },
-    {
-      "id": "2c4d4c1b37226dc7",
-      "source_id": "zh-tmtpost",
-      "title": "Kimi夜店庆功背后：AI狂飙的逻辑，和我们正在失去的“慢”",
-      "url": "https://www.tmtpost.com/8079711.html",
-      "published_at": "2026-07-26T07:34:53+00:00",
-      "raw_text": "会用AI的人与不会用AI的人，能拿到算力资源的公司与拿不到的公司，掌握数据的大平台与没有数据的普通人——差距不是在缩小，而是在以另一种方式拉大。所谓的“技术平权”，目前看来更像是一个美好的开场白。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/07/26/2b59d237a6aebbec5a70f80ba8f709da_1785032999.jpeg",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "深度剖析AI技术平权的幻象，揭示算力与数据差距的扩大，发人深省。",
-      "summary_zh": "文章以Kimi夜店庆功为引，探讨AI狂飙背后的逻辑。指出会用AI与不会用AI的人、能拿到算力资源的公司与拿不到的公司、掌握数据的大平台与没有数据的普通人之间的差距不是在缩小，而是在以另一种方式拉大。所谓的“技术平权”目前看来更像是一个美好的开场白，实际加剧了不平等。",
-      "title_zh": null,
-      "weighted_score": 0.605,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "65f11a0fa5463294",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8079711.html"
-        }
-      ]
-    },
-    {
-      "id": "b72a6aec6a4315ce",
-      "source_id": "zh-leiphone",
-      "title": "数学大佬在前面拓荒，AI研究员在后面捡宝，菲尔兹奖还能拿来破AI「黑盒」？",
-      "url": "https://www.leiphone.com/category/yanxishe/e05vwo1DgZf3HnFZ.html",
-      "published_at": "2026-07-26T08:54:00+00:00",
-      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260726/6a65cae5a33d9.png?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">数学界与AI界狠狠联动了</span></span></span></span></section><span></span><span></span><span></span><span>",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://static.leiphone.com/uploads/new/images/20260726/6a65cae5a33d9.png?imageMogr2/quality/90",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "探讨菲尔兹奖得主数学成果如何用于破解AI黑盒，揭示数学与AI交叉的前沿洞察。",
-      "summary_zh": "文章探讨了数学领域的前沿成果，特别是菲尔兹奖得主的工作，如何被AI研究者用来破解深度学习模型的“黑盒”问题。通过引入数学理论，如几何、拓扑和概率论，研究者能够更好地理解神经网络内部机制，提升模型可解释性。文章指出，数学大佬的拓荒为AI提供了理论工具，而AI研究员则将这些工具应用于实际，推动AI从经验驱动转向理论驱动。这种跨学科合作有望解决AI的可解释性和可靠性难题。",
-      "title_zh": "数学大佬在前面拓荒，AI研究员在后面捡宝，菲尔兹奖还能拿来破AI「黑盒」？",
-      "weighted_score": 0.605,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "4017671fcb141c53",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/yanxishe/e05vwo1DgZf3HnFZ.html"
-        }
-      ]
-    },
-    {
-      "id": "6f296a79ff927a45",
-      "source_id": "zh-tmtpost",
-      "title": "AI博主不能说的秘密：\"十分钟\"炫技背后，是你买不起的Token账单",
-      "url": "https://www.tmtpost.com/8079664.html",
-      "published_at": "2026-07-26T07:34:59+00:00",
-      "raw_text": "真正的问题从来不在于\"你不会用AI\"。在于没有人告诉你：用AI，到底要花多少钱。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/255y4jyhtgf3.png",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "揭露AI炫技背后的真实成本，提醒用户关注Token账单，实用性强。",
-      "summary_zh": "文章指出AI博主展示的“十分钟”炫技背后，是高昂的Token账单。真正的问题不在于不会用AI，而在于没有人告诉你用AI到底要花多少钱。文章揭示了AI使用成本被忽视的现实，提醒用户理性看待AI工具的经济负担。",
-      "title_zh": null,
-      "weighted_score": 0.62,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
         "impact": 0.5,
         "practical_value": 0.7
       },
-      "story_id": "9a6ca091d460aab9",
+      "story_id": "ef871d4b96d14d43",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8079664.html"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/APthBQXkUJjM3BkaXZCy?utm_source=rss&utm_medium=article"
         }
       ]
     }
