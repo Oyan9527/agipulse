@@ -330,14 +330,19 @@ def run(output_dir, skip_llm=False, mock_llm=False, window_hours=48):
     # 其余来源收在卡片的 ×N 徽章里。趋势/归档仍用全量 merged_items 做统计。
     representative = collapse_stories(merged_items)
 
-    curated = apply_gate(representative, weights_cfg)
+    # 先按 24h 展示窗口过滤，再做质量门控 + 全局保底——顺序不能反。
+    # 曾经的 bug：先 apply_gate 把精选保底补到 min_curated_items(12) 条，再对结果
+    # 过 24h 窗口，补进来的次优内容里凡是发布超 24h 的又被窗口砍掉，最终精选常年
+    # 只有 7-8 条、达不到保底数（用户多次反馈"精选怎么又只出 7 条"）。把窗口过滤
+    # 提到门控之前，保底就是在"窗口内的候选"上补齐，补几条最终就展示几条。
+    representative_24h = filter_output_window(representative, hours=24)
+    curated = apply_gate(representative_24h, weights_cfg)
+    latest_24h = curated
 
     # latest-24h-all.json：全部条目（含未打分的），做前端"全部动态"视图。
     # 这里也折叠：同一事件重复出现同样会淹没信息流；未打分条目没有 story_id，原样保留。
     all_output_items = representative + [dict(it, weighted_score=None, category=it.get("category_hint", [None])[0]) for it in unscored]
     all_24h = filter_output_window(all_output_items, hours=24)
-
-    latest_24h = filter_output_window(curated, hours=24)
     # 传全部已打分条目(而非精选流)：深度推荐自成一套筛选，见 daily_brief.py 顶部说明
     daily_brief = build_daily_brief(representative, weights_cfg)
     status = build_source_status(fetch_results, normalized_by_source, kept_ids)
