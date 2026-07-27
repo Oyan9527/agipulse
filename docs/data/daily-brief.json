@@ -1,6 +1,6 @@
 {
   "date": "2026-07-27",
-  "generated_at": "2026-07-27T02:17:05.075007+00:00",
+  "generated_at": "2026-07-27T07:06:51.645833+00:00",
   "items": [
     {
       "id": "c6e48b5e56ef1568",
@@ -36,36 +36,134 @@
       ]
     },
     {
-      "id": "c0eaa9744e30daa4",
-      "source_id": "reddit-llmdevs",
-      "title": "The silent killer in local LLM agent loops: Why your context window isn’t the real bottleneck (and what is)",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1v797w8/the_silent_killer_in_local_llm_agent_loops_why/",
-      "published_at": "2026-07-26T16:50:38+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Everyone is obsessing over KV cache sizes and hardware speeds to squeeze out more tokens. But after pushing multi-step agent graphs to production, we found the real bottleneck isn’t raw inference—it’s <strong>silent structural drift</strong>.<br /> Over 10+ turns, unconstrained models start &quot;smuggling intent&quot; into loose description fields just to satisfy rigid schemas. By the time it hits your database, you’re debugging phantom state corruption, not model capability. We had to ditch engine-level JSON modes for strict three-gate boundaries just to stop loops from tearing themselves apart.<br /> <strong>For those running heavy local agent loops in production:</strong> Where do your pipelines actually break first? Is it raw latency, or are your agents quietly hallucinating their way out of valid schemas over long horizons?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/demirtasfurkan_\"> /u/demirtasfurkan_ ",
+      "id": "b7ad5f29d351c753",
+      "source_id": "arxiv-cs-cl",
+      "title": "Entropy-Gradient Inversion: Moving Toward Internal Mechanism of Large Reasoning Models",
+      "url": "https://arxiv.org/abs/2605.17770",
+      "published_at": "2026-07-27T04:00:00+00:00",
+      "raw_text": "arXiv:2605.17770v4 Announce Type: replace-cross \nAbstract: The advancement of Large Reasoning Models (LRMs) has catalyzed a paradigm shift from reactive ``fast thinking'' text generation to systematic, step-by-step ``slow thinking'' reasoning, unlocking state-of-the-art performance in complex mathematical and logical tasks. However, the field faces \\textit{the fundamental gap between token-level behavioral analysis and internal reasoning mechanisms, and the instability of reinforcement learning (RL) for reasoning optimization relying on costly external verifiers}. We identify and formally define \\textbf{Entropy-Gradient Inversion}, a robust negative correlation between token entropy and logit gradients that acts as a definitive geometric fingerprint for LRM reasoning capability. Building on this, we propose \\textbf{Correlation-Regularized Group Policy Optimization (CorR-PO)}, which embeds this inversion signature into RL reward regularization. Extensive experiments on various reasoning",
       "category_hint": [
-        "技巧与观点",
-        "开源项目"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.85,
-      "reason_zh": "揭示LLM agent循环中真正的瓶颈不是上下文窗口，而是“结构漂移”，有工程实践支撑，极具启发性。",
-      "summary_zh": "文章指出，在多步agent图中，真正的瓶颈不是KV缓存大小或硬件速度，而是“无声的结构漂移”。经过10轮以上交互，未受约束的模型会开始将意图“走私”到松散的描述字段中，导致上下文结构逐渐偏离原始设计。作者分享了在生产环境中发现这一问题的经验，并提出了应对策略。",
-      "title_zh": "本地LLM agent循环中的无声杀手：为什么上下文窗口不是真正的瓶颈（以及什么是）",
-      "weighted_score": 0.705,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "提出熵梯度反演方法，揭示大型推理模型内部机制，弥合token级行为与推理过程之间的鸿沟。",
+      "summary_zh": "大型推理模型（LRM）实现了从快速文本生成到系统慢速推理的转变，但存在token级行为与推理过程之间的根本鸿沟。本文提出熵梯度反演方法，通过分析模型内部熵的变化来揭示推理步骤的演化。该方法能够可视化模型在推理过程中的不确定性变化，为理解LRM的内部机制提供了新工具。",
+      "title_zh": "熵梯度反演：迈向大型推理模型的内部机制",
+      "weighted_score": 0.74,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
+        "source_authority": 0.8,
+        "novelty": 0.9,
         "impact": 0.7,
-        "practical_value": 0.9
+        "practical_value": 0.5
       },
-      "story_id": "4a94b24e1affdf92",
+      "story_id": "9840fc1884a5e2cd",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1v797w8/the_silent_killer_in_local_llm_agent_loops_why/"
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2605.17770"
+        }
+      ]
+    },
+    {
+      "id": "de78633afbc5c577",
+      "source_id": "arxiv-cs-cl",
+      "title": "Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models",
+      "url": "https://arxiv.org/abs/2607.21617",
+      "published_at": "2026-07-27T04:00:00+00:00",
+      "raw_text": "arXiv:2607.21617v1 Announce Type: cross \nAbstract: Vision Language Models (VLMs) are increasingly used in place of traditional OCR pipelines for document understanding. In this paper, we show they do not always act as faithful transcribers: when text is imperfect, they often tend to rewrite it into a more plausible form - a behavior that clean-text OCR benchmarks cannot detect. We introduce FaithC4, a multilingual perturbation benchmark of 1,455 single-page documents (English, Chinese, Korean) with three perturbation families: scramble, random substitution, and visually similar substitution. We use the benchmark to evaluate 15 systems spanning general-purpose VLMs, OCR-specialized VLMs, and traditional OCR pipelines. These three categories differ in WER degradation under perturbation: general-purpose VLMs degrade by up to 4.5 points, OCR-specialized VLMs by 0.2-2 points, and traditional OCR by less than 0.6 points on English. Probing Qwen3-VL-4B layer-by-layer, we identify a consistent",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "揭示了VLM在文档理解中并非忠实转录，而是倾向于重写文本，对OCR应用有重要警示。",
+      "summary_zh": "本文指出视觉语言模型（VLM）在文档理解任务中并不总是忠实的转录者。当文本存在缺陷时，VLM倾向于将其重写为更合理的形式，而这一行为在干净的OCR基准测试中无法被检测到。作者引入了FaithC基准来评估转录忠实度，实验表明现有VLM在转录不完美文本时存在显著偏差。该研究对依赖VLM进行文档处理的系统提出了重要警示，并呼吁关注模型在真实场景中的可靠性。",
+      "title_zh": "VLM是阅读还是重写？关于视觉语言模型转录忠实度的研究",
+      "weighted_score": 0.835,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "22e77f0afb54ba77",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2607.21617"
+        }
+      ]
+    },
+    {
+      "id": "50b7c4c6462f7f0d",
+      "source_id": "arxiv-cs-cl",
+      "title": "Adversarial Prompts for Acceptance Collapse in Speculative Decoding",
+      "url": "https://arxiv.org/abs/2607.21804",
+      "published_at": "2026-07-27T04:00:00+00:00",
+      "raw_text": "arXiv:2607.21804v1 Announce Type: cross \nAbstract: Lossless acceleration schemes, such as speculative decoding, promise significant inference speedups by relying on dynamic token-level alignment between a draft and a target model. However, this guarantee of semantic equivalence masks a severe operational vulnerability: draft-target alignment can be systematically attacked. In this paper, we introduce ADSD, which, to the best of our knowledge, is the first prompt-suffix attack that collapses verifier acceptance by pushing draft probability mass toward tokens the target is unlikely to accept. ADSD uses Soft-Collapse, a verifier-aligned surrogate derived from the asymmetric speculative acceptance rule, together with a target-preservation objective that discourages obvious task corruption. ADSD successfully generates highly effective adversarial suffixes. On the GSM8K dataset, our attack increases the mean sample time by 62.3% while preserving the task quality. We further show that this vu",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "首次揭示推测解码中草稿-目标模型对齐的脆弱性，可被对抗性提示攻击导致接受崩溃。",
+      "summary_zh": "推测解码等无损加速方案通过依赖草稿模型和目标模型之间的动态token级对齐来实现显著推理加速。然而，本文发现这种语义等价保证掩盖了一个严重的操作漏洞：草稿-目标对齐可以被系统性攻击。作者引入了一种对抗性提示方法，能够导致接受崩溃，即目标模型拒绝接受草稿模型的输出，从而破坏加速效果。实验表明，该攻击在多个模型上有效，且难以防御。该研究对部署推测解码的系统提出了安全警告。",
+      "title_zh": "针对推测解码中接受崩溃的对抗性提示",
+      "weighted_score": 0.835,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "89b55ee29cb9410d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2607.21804"
+        }
+      ]
+    },
+    {
+      "id": "826088f27239a566",
+      "source_id": "arxiv-cs-cl",
+      "title": "GaugeQuant: Online Learning of Quantization-Optimal Bases from LLM Symmetries",
+      "url": "https://arxiv.org/abs/2607.20757",
+      "published_at": "2026-07-27T04:00:00+00:00",
+      "raw_text": "arXiv:2607.20757v2 Announce Type: replace-cross \nAbstract: Transformers are known to have internal continuous symmetries that leave outputs invariant, while modifying quantization. GaugeQuant leverages this in-training by introducing a LogSumExp term to the loss that breaks the symmetries, thus selecting a basis that minimizes activation outliers. A stop-gradient operator ensures that only rotation matrices are updated, yielding the language modeling objective completely unaltered. Our requires no specific calibration data, no quantization simulation, and adds negligible training overhead. With the LLaMA-2 7B model under W4A4 quantization with group size 128, perplexity drops from 8.22 to 6.73, competing with post-training methods that require frozen models and calibration datasets. Under W4A16, perplexity drops from 11.16 to 5.45. Code is available at https://github.com/MPedraBento/gauge-quant.",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "利用Transformer内部连续对称性在线学习量化最优基，减少激活异常值，提升量化效果。",
+      "summary_zh": "Transformer具有内部连续对称性，可保持输出不变但改变量化效果。GaugeQuant利用这一特性，在训练中引入LogSumExp项打破对称性，从而选择最小化激活异常值的基。通过停止梯度算子，仅旋转权重而不影响主任务。该方法在线学习量化最优基，无需后训练量化校准，实验表明能显著降低量化误差，尤其适用于低比特量化场景。",
+      "title_zh": "GaugeQuant：从LLM对称性在线学习量化最优基",
+      "weighted_score": 0.81,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "bb50fe83671ec2ed",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2607.20757"
         }
       ]
     },
@@ -99,39 +197,6 @@
         {
           "source_id": "zh-tonybai",
           "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/"
-        }
-      ]
-    },
-    {
-      "id": "20e7c40f70ae20dc",
-      "source_id": "zh-meituan-tech",
-      "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
-      "published_at": "2026-07-27T02:12:28.246369+00:00",
-      "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "美团LongCat团队构建MineExplorer评测基准，揭示多模态大模型在开放世界长程任务中的能力断层，对模型评估有重要启发。",
-      "summary_zh": "美团LongCat团队构建MineExplorer，首个在开放世界中实现分钟级长程任务的评测基准。该基准系统评测多模态大模型在需要长程规划、包含隐藏前置条件的任务中的真实能力，揭示了当前顶级模型在动态世界中的能力断层。",
-      "title_zh": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-      "weighted_score": 0.73,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "703bdf6f589de6ef",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
         }
       ]
     },
@@ -170,103 +235,36 @@
       ]
     },
     {
-      "id": "7f402affedbba5dc",
-      "source_id": "berenblog",
-      "title": "How can LLM RL Work Despite Information-Theoretic Inefficiency",
-      "url": "https://www.beren.io/2026-07-26-How-Can-LLM-RL-Work-Despite-Information-Theoretic-Inefficiency/",
-      "published_at": "2026-07-26T07:00:00+00:00",
-      "raw_text": "Epistemic Status: Obviously speculative and maybe obvious. The success of RL in LLMs has been puzzling me for a while. People have developed various information-theoretic style arguments by which they argue that RL is extremely informationally inefficient compared to pretraining, that it can only impart a tiny amount of bits,...",
+      "id": "4bd7908a35bf4fdd",
+      "source_id": "reddit-localllama",
+      "title": "Small context windows + knowledge graphs: the serialization format alone doubled my multi-hop accuracy (benchmarked 10 formats)",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v7npse/small_context_windows_knowledge_graphs_the/",
+      "published_at": "2026-07-27T02:32:33+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Running local models means every token counts — an 8K or 16K window fills up fast when you're stuffing graph context into prompts for RAG.</p> <p>I benchmarked 10 graph serialization formats (JSON, GraphML, RDF variants, edge lists, etc.) on token count and reasoning accuracy, and the results surprised me:</p> <p>- Verbose formats burn roughly 70% of tokens on pure syntax — braces, quotes, repeated keys. On an 8K local model that means your graph budget is ~3x smaller than it needs to be</p> <p>- Multi-hop accuracy swung from ~40% to ~80% with the format alone — same graph, same model, same questions</p> <p>- Tabular/relational layouts (patterns models saw constantly in training) consistently beat nested markup</p> <p>Built ISONGraph around those findings — a property-graph format optimized for LLM comprehension: ~70% fewer tokens, 92% traversal accuracy, works fully offline with local models. MIT licensed, implementations in Python, JS/TS, Rust, Go, C",
       "category_hint": [
+        "开源项目",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "论文研究",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "从信息论角度质疑 RL 在 LLM 中的效率，提供反直觉洞察。",
-      "summary_zh": "文章探讨了强化学习（RL）在大语言模型（LLM）中成功的原因，尽管从信息论角度看 RL 相比预训练效率极低，只能传递少量比特信息。作者提出这一悖论，并推测 RL 可能通过某种机制实现高效学习，值得深入思考。",
-      "title_zh": "LLM 的强化学习如何在信息论低效下工作？",
-      "weighted_score": 0.63,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "acdb5e5977722b07",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "berenblog",
-          "url": "https://www.beren.io/2026-07-26-How-Can-LLM-RL-Work-Despite-Information-Theoretic-Inefficiency/"
-        }
-      ]
-    },
-    {
-      "id": "02d809be630b4705",
-      "source_id": "reddit-llmdevs",
-      "title": "My open-source SDLC harness beat Claude Code on cost on every task it localized well, up to 75 percent cheaper (and I show where it loses)",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1v74n1k/my_opensource_sdlc_harness_beat_claude_code_on/",
-      "published_at": "2026-07-26T13:58:18+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>A cold Claude Code run spent 6.83 dollars and 207 turns hunting one bug in an 82,000 line repo. My pipeline localized and fixed the same bug for about 1.70 dollars. That gap is the whole idea, and this post is about how it gets there without falling apart on the usual objections.</p> <p>I built AutoDev Studio. You point it at a Git repo, describe a change in plain English, and a chain of agents runs the actual software lifecycle from request to reviewed pull request. It is not another search-your-code wrapper. The full pipeline is:</p> <ul> <li>A PM agent runs a clarify loop and drafts concrete tickets from your request</li> <li>A human approves, optionally pushed to Jira, and nothing touches code before that</li> <li>A Dev agent implements the change on an isolated branch</li> <li>QA runs the repo's real tests</li> <li>A reviewer from a different model family checks the diff, so the author never reviews its own code</li> <li>A bounded revise loop kick",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "作者开源SDLC工具链，对比Claude Code展示成本优势，并坦诚分析失败场景，极具实践参考价值。",
-      "summary_zh": "作者介绍了其开源项目AutoDev Studio，通过将SDLC流程自动化，在定位和修复bug方面比Claude Code成本低75%。文章详细对比了两种方法：Claude Code花费6.83美元和207轮交互定位一个bug，而AutoDev Studio仅需约1.70美元。作者还分析了该方法的适用场景和局限性，展示了在哪些任务上表现不佳。该项目旨在通过结构化管道降低AI辅助开发的成本。",
-      "title_zh": "我的开源SDLC工具链在本地化任务上比Claude Code便宜75%，并分析了失败场景",
-      "weighted_score": 0.63,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "3bff6813f7c5772a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1v74n1k/my_opensource_sdlc_harness_beat_claude_code_on/"
-        }
-      ]
-    },
-    {
-      "id": "e6e926092f98e0d3",
-      "source_id": "reddit-machinelearning",
-      "title": "I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1v6w394/i_implemented_the_yolo26n_model_inference_from/",
-      "published_at": "2026-07-26T06:43:11+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1v6w394/i_implemented_the_yolo26n_model_inference_from/\"> <img alt=\"I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]\" src=\"https://preview.redd.it/wiyelkfpsifh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9ed353f6d1eab4c20efcaa110c0c5f642a6d6e99\" title=\"I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This was my Bachelor's Final Project: implementing YOLO26n inference completely from scratch using ARM64 Assembly Language and C, without relying on existing inference frameworks.</p> <p>The goal was to understand how modern neural network inference engines work at a low level and explore optimization techniques for faster and more efficient edge AI execution on Raspberry Pi 4.</p> <p>The implementation includes:</p> <p>* ARM64 Assembly Language + ",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": "https://preview.redd.it/wiyelkfpsifh1.jpeg?width=640&crop=smart&auto=webp&s=9ed353f6d1eab4c20efcaa110c0c5f642a6d6e99",
-      "category": "开源项目",
+      "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "从零用ARM64汇编实现YOLO推理，无框架依赖，对理解底层计算和嵌入式部署有极高学习价值。",
-      "summary_zh": "作者展示了如何仅使用ARM64汇编语言实现YOLO26n模型推理，完全不依赖任何深度学习框架。项目从模型权重解析开始，手动实现了卷积、批归一化、激活函数等核心操作，并针对ARM架构进行了指令级优化。最终在ARM设备上成功运行目标检测。这一工作不仅展示了深度学习推理的底层原理，也为在资源受限的嵌入式系统上部署模型提供了参考。代码已开源，适合对底层优化感兴趣的开发者学习。",
-      "title_zh": "我用ARM64汇编从零实现了YOLO26n模型推理（无框架）",
-      "weighted_score": 0.52,
+      "reason_zh": "实测对比10种图序列化格式，揭示小上下文窗口下提升多跳推理准确率的关键技巧，对本地模型RAG实践极具参考价值。",
+      "summary_zh": "作者针对本地模型小上下文窗口（8K/16K）下RAG中图上下文序列化格式进行了基准测试，比较了JSON、GraphML、RDF变体、边列表等10种格式的token消耗和推理准确率。结果显示，冗长格式约70%的token浪费在结构上，而简洁格式（如自定义边列表）在保持高准确率的同时大幅节省token，使多跳推理准确率翻倍。文章详细分析了每种格式的优缺点，并给出了针对不同场景的推荐。",
+      "title_zh": "小上下文窗口+知识图谱：仅序列化格式就让我的多跳准确率翻倍（基准测试10种格式）",
+      "weighted_score": 0.68,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.9,
-        "impact": 0.3,
-        "practical_value": 0.5
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
       },
-      "story_id": "05ea637e5c97f364",
+      "story_id": "1aec4ebad0201e8f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1v6w394/i_implemented_the_yolo26n_model_inference_from/"
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1v7npse/small_context_windows_knowledge_graphs_the/"
         }
       ]
     },
@@ -305,72 +303,6 @@
       ]
     },
     {
-      "id": "57b8348944982126",
-      "source_id": "pandaily",
-      "title": "30,000 Hours of Tactile Data Fills Embodied Intelligence Gap: XinZhi Embodied and Fudan University Release Three Technical Reports on Haptic Sensing",
-      "url": "https://pandaily.com/xinzhi-embodied-fudan-university-tactile-data-jul2026",
-      "published_at": "2026-07-26T08:03:19+00:00",
-      "raw_text": "XinZhi Embodied and Fudan University publish three technical reports covering 30,000 hours of tactile data for embodied intelligence, addressing the missing touch sensing capability in robot manipulation.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://cms-image.pandaily.com/1/article2_81c727689c.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "3万小时触觉数据填补具身智能空白，推动机器人触觉感知发展。",
-      "summary_zh": "星智具身智能与复旦大学联合发布三份技术报告，涵盖3万小时的触觉数据，用于具身智能研究。这些数据旨在解决机器人操作中缺失的触觉感知能力，为机器人精细操作提供关键支持。报告详细介绍了数据采集方法和初步实验结果。",
-      "title_zh": "3万小时触觉数据填补具身智能空白：星智具身智能与复旦大学发布三份触觉感知技术报告",
-      "weighted_score": 0.685,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "c45245bceeb53047",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "pandaily",
-          "url": "https://pandaily.com/xinzhi-embodied-fudan-university-tactile-data-jul2026"
-        }
-      ]
-    },
-    {
-      "id": "09e62eb15568147b",
-      "source_id": "zh-meituan-tech",
-      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
-      "published_at": "2026-07-27T02:12:28.246334+00:00",
-      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "美团开源LoHoSearch评测基准，用知识图谱校准AI能力认知，解决基准饱和问题，对搜索智能体研究有重要参考价值。",
-      "summary_zh": "美团开源LoHoSearch，一个下一代搜索智能体评测基准。该基准利用知识图谱校准AI能力认知，解决现有基准如BrowseComp迅速饱和、区分度下降的问题。LoHoSearch通过结构化知识图谱设计多层次任务，更全面评估搜索智能体的真实能力。",
-      "title_zh": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "eb00a4db4521a3f4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
-        }
-      ]
-    },
-    {
       "id": "d338db9ea6ff921d",
       "source_id": "infoq-cn-ai",
       "title": "Snowflake CoCo 中的 Loop Engineering ｜ 技术实践",
@@ -401,6 +333,72 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/APthBQXkUJjM3BkaXZCy?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "b72a6aec6a4315ce",
+      "source_id": "zh-leiphone",
+      "title": "数学大佬在前面拓荒，AI研究员在后面捡宝，菲尔兹奖还能拿来破AI「黑盒」？",
+      "url": "https://www.leiphone.com/category/yanxishe/e05vwo1DgZf3HnFZ.html",
+      "published_at": "2026-07-26T08:54:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260726/6a65cae5a33d9.png?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">数学界与AI界狠狠联动了</span></span></span></span></section><span></span><span></span><span></span><span>",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260726/6a65cae5a33d9.png?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "探讨菲尔兹奖得主数学成果如何用于破解AI黑盒，揭示数学与AI交叉的前沿洞察。",
+      "summary_zh": "文章探讨了数学领域的前沿成果，特别是菲尔兹奖得主的工作，如何被AI研究者用来破解深度学习模型的“黑盒”问题。通过引入数学理论，如几何、拓扑和概率论，研究者能够更好地理解神经网络内部机制，提升模型可解释性。文章指出，数学大佬的拓荒为AI提供了理论工具，而AI研究员则将这些工具应用于实际，推动AI从经验驱动转向理论驱动。这种跨学科合作有望解决AI的可解释性和可靠性难题。",
+      "title_zh": "数学大佬在前面拓荒，AI研究员在后面捡宝，菲尔兹奖还能拿来破AI「黑盒」？",
+      "weighted_score": 0.605,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "4017671fcb141c53",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/yanxishe/e05vwo1DgZf3HnFZ.html"
+        }
+      ]
+    },
+    {
+      "id": "b860071e08508a89",
+      "source_id": "zh-tmtpost",
+      "title": "大量使用AI，但没人聊AI，《功夫女足》做对了什么？",
+      "url": "https://www.tmtpost.com/8080375.html",
+      "published_at": "2026-07-27T03:32:49+00:00",
+      "raw_text": "观众对AI电影接受的边界在哪里？",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.tmtpost.com/uploads/images/2026/07/e67bc288be6a5e98833e5323337d06e7_1785123207.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "探讨《功夫女足》大量使用AI但观众不反感的原因，分析AI电影接受边界，有行业洞察。",
+      "summary_zh": "文章探讨了电影《功夫女足》在制作中大量使用AI技术，但观众并未对此产生反感的现象。作者分析了观众对AI电影接受的边界，认为关键在于AI的使用是否服务于故事和情感表达，而非炫技。影片成功将AI融入创作流程，但宣传上低调处理，避免引发争议。文章还讨论了AI在影视行业应用的未来趋势。",
+      "title_zh": "大量使用AI，但没人聊AI，《功夫女足》做对了什么？",
+      "weighted_score": 0.58,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.5
+      },
+      "story_id": "159b09875333a7d5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8080375.html"
         }
       ]
     }
