@@ -1,5 +1,39 @@
 [
   {
+    "id": "e4367079ef267663",
+    "source_id": "gh-mcp-python",
+    "title": "modelcontextprotocol/python-sdk v2.0.0rc1",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0rc1",
+    "published_at": "2026-07-27T13:29:47+00:00",
+    "raw_text": "First v2 release candidate. Pre-releases are opt-in only; `pip install mcp` still resolves to the stable 1.x line.\r\n\r\n```bash\r\npip install mcp==2.0.0rc1\r\n# or\r\nuv add \"mcp==2.0.0rc1\"\r\n```\r\n\r\nThe [documentation](https://py.sdk.modelcontextprotocol.io/v2/) has the full tutorial and API reference, and the [migration guide](https://py.sdk.modelcontextprotocol.io/v2/migration/) covers coming from v1. Stable v2 is planned for 2026-07-28 alongside the spec release - keep pinning an exact version until then.\r\n\r\n## Highlights\r\n\r\n### API cleanup ahead of stable (breaking for beta users)\r\n\r\nThe last pre-release pass over the public surface; every item has a migration guide entry.\r\n\r\n- `Client(cache=False)` is now `Client(cache=None)`: `CacheConfig()` is the default and `None` switches the response cache off (#3164).\r\n- `Context.client_id` is removed - read `_meta` via `ctx.request_context.meta`, or the authenticated client via `get_access_token().client_id` (#3167).\r\n- `RFC7523OAuthClientProvider",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "MCP Python SDK v2候选版发布，重大更新，对MCP生态开发者至关重要。",
+    "summary_zh": "modelcontextprotocol/python-sdk发布了v2.0.0rc1候选版本。这是一个预发布版本，需通过pip install mcp==2.0.0rc1或uv add \"mcp==2.0.0rc1\"手动安装，默认仍解析到稳定版1.x。v2版本提供了完整的教程和API参考文档，并附有从v1迁移的指南。该版本是MCP协议Python实现的重大更新，对使用MCP构建AI工具和应用的开发者具有重要影响。",
+    "title_zh": "modelcontextprotocol/python-sdk v2.0.0rc1",
+    "weighted_score": 0.855,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.8
+    },
+    "story_id": "35befb7a226499c9",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-mcp-python",
+        "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0rc1"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "c6e48b5e56ef1568",
     "source_id": "zh-atbug",
     "title": "Anthropic 删了 80% 提示词，但你不能照做",
@@ -165,40 +199,6 @@
       {
         "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2607.02770"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "826088f27239a566",
-    "source_id": "arxiv-cs-cl",
-    "title": "GaugeQuant: Online Learning of Quantization-Optimal Bases from LLM Symmetries",
-    "url": "https://arxiv.org/abs/2607.20757",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.20757v2 Announce Type: replace-cross \nAbstract: Transformers are known to have internal continuous symmetries that leave outputs invariant, while modifying quantization. GaugeQuant leverages this in-training by introducing a LogSumExp term to the loss that breaks the symmetries, thus selecting a basis that minimizes activation outliers. A stop-gradient operator ensures that only rotation matrices are updated, yielding the language modeling objective completely unaltered. Our requires no specific calibration data, no quantization simulation, and adds negligible training overhead. With the LLaMA-2 7B model under W4A4 quantization with group size 128, perplexity drops from 8.22 to 6.73, competing with post-training methods that require frozen models and calibration datasets. Under W4A16, perplexity drops from 11.16 to 5.45. Code is available at https://github.com/MPedraBento/gauge-quant.",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "利用Transformer内部连续对称性在线学习量化最优基，减少激活异常值，提升量化效果。",
-    "summary_zh": "Transformer具有内部连续对称性，可保持输出不变但改变量化效果。GaugeQuant利用这一特性，在训练中引入LogSumExp项打破对称性，从而选择最小化激活异常值的基。通过停止梯度算子，仅旋转权重而不影响主任务。该方法在线学习量化最优基，无需后训练量化校准，实验表明能显著降低量化误差，尤其适用于低比特量化场景。",
-    "title_zh": "GaugeQuant：从LLM对称性在线学习量化最优基",
-    "weighted_score": 0.81,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "bb50fe83671ec2ed",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.20757"
       }
     ],
     "curated": true
@@ -443,40 +443,6 @@
     "curated": true
   },
   {
-    "id": "6e8b15e59c7e5209",
-    "source_id": "tnw-deep-tech",
-    "title": "A million words costs $50 from Anthropic and 87 cents from DeepSeek. Corporate America noticed.",
-    "url": "https://thenextweb.com/news/thrift-maxxing-chinese-models-openai-anthropic-ipo-valuations",
-    "published_at": "2026-07-27T10:11:20+00:00",
-    "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/05/Chatbots.avif\" width=\"868\" /><br /><p>Roughly 750,000 words of AI output costs $50 if you buy it from Anthropic’s Fable. The same volume from DeepSeek’s V4-Pro costs about 87 cents, Fortune reported. Z.AI’s GLM-5.2 charges $4.40. Moonshot’s Kimi K3, pricey by Chinese standards, charges $15. Corporate America has noticed. Companies spent a year competing to burn tokens. Now they shop [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/thrift-maxxing-chinese-models-openai-anthropic-ipo-valuations?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://media.thenextweb.com/2026/05/Chatbots.avif",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "直观对比中美AI模型价格差异，揭示DeepSeek等中国模型的成本优势，对企业选型有参考价值。",
-    "summary_zh": "据Fortune报道，Anthropic的Fable模型输出约75万词的费用为50美元，而DeepSeek的V4-Pro仅需约87美分，价格相差近60倍。其他中国模型如Z.AI的GLM-5.2收费4.40美元，Moonshot的Kimi K3收费15美元（按中国标准算较高）。美国企业已注意到这一巨大价差，可能影响其AI服务采购决策。",
-    "title_zh": "Anthropic百万词收费50美元，DeepSeek仅87美分，美国企业已注意到",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "06d2402ea710ca1c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "tnw-deep-tech",
-        "url": "https://thenextweb.com/news/thrift-maxxing-chinese-models-openai-anthropic-ipo-valuations"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "c6e5b15d2fa36665",
     "source_id": "zh-tonybai",
     "title": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
@@ -575,6 +541,41 @@
       {
         "source_id": "gh-vllm",
         "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "0b3d0a29733e3ae4",
+    "source_id": "mit-tech-review-ai",
+    "title": "Building the enterprise environment for agentic AI",
+    "url": "https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/",
+    "published_at": "2026-07-27T11:32:58+00:00",
+    "raw_text": "For the enterprise, the promise of agentic AI is much more than just a better chatbot. It is software agents that execute business tasks end-to-end across people, business workflows, data, and systems. The platform best-suited to run agents is built with proper CPU capacity, resilient data access, policy-aware tool use, observability, memory management, and the&#8230;",
+    "category_hint": [
+      "行业动态",
+      "论文研究"
+    ],
+    "image_url": "https://wp.technologyreview.com/wp-content/uploads/2026/07/Intel-image-contributed-article.png",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "MIT Tech Review深度分析企业级Agentic AI所需的基础设施，有实践指导意义。",
+    "summary_zh": "文章探讨了企业如何为Agentic AI构建合适的环境。Agentic AI不仅仅是更好的聊天机器人，而是能够端到端执行跨人员、工作流、数据和系统的业务任务的软件代理。文章指出，最适合运行代理的平台需要具备适当的CPU容量、弹性数据访问、策略感知工具使用、可观测性、内存管理等能力。",
+    "title_zh": "为企业级Agentic AI构建环境",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "aea17b290e31bee6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "mit-tech-review-ai",
+        "url": "https://www.technologyreview.com/2026/07/27/1140668/building-the-enterprise-environment-for-agentic-ai/"
       }
     ],
     "curated": true
@@ -684,72 +685,37 @@
     "curated": true
   },
   {
-    "id": "aa037ef5388b6c6a",
-    "source_id": "marktechpost",
-    "title": "Black Forest Labs Releases FLUX 3: A Multimodal Flow Model for Image, Video, Audio and Robot Action Prediction",
-    "url": "https://www.marktechpost.com/2026/07/26/black-forest-labs-releases-flux-3-a-multimodal-flow-model-for-image-video-audio-and-robot-action-prediction/",
-    "published_at": "2026-07-26T17:50:23+00:00",
-    "raw_text": "<p>Black Forest Labs (BFL) has released FLUX 3, a multimodal foundation model that learns from images, videos and audio inside a single architecture. It is also the first FLUX model to ship video, audio and action prediction from one set of weights. The Black Forest Labs (BFL) research team argues that no single modality gives [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/07/26/black-forest-labs-releases-flux-3-a-multimodal-flow-model-for-image-video-audio-and-robot-action-prediction/\">Black Forest Labs Releases FLUX 3: A Multimodal Flow Model for Image, Video, Audio and Robot Action Prediction</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "研究论文",
-    "depth_score": 0.6,
-    "reason_zh": "Black Forest Labs发布FLUX 3多模态基础模型，统一处理图像、视频、音频和机器人动作预测，架构创新。",
-    "summary_zh": "Black Forest Labs发布了FLUX 3，这是一个多模态基础模型，在单一架构中学习图像、视频和音频。它也是首个从同一组权重中输出视频、音频和动作预测的FLUX模型。研究团队认为，没有单一模态能够提供足够的信息来理解世界，因此FLUX 3通过联合训练实现了跨模态的协同学习。该模型在多个基准测试中表现出色，展示了多模态融合的潜力。",
-    "title_zh": "Black Forest Labs发布FLUX 3：用于图像、视频、音频和机器人动作预测的多模态流模型",
-    "weighted_score": 0.605,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.4
-    },
-    "story_id": "3fd4ab903998047b",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/07/26/black-forest-labs-releases-flux-3-a-multimodal-flow-model-for-image-video-audio-and-robot-action-prediction/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7ca3z/flux_3_looks_insane_this_was_1_prompt/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "69fd6b9a1910a0b6",
-    "source_id": "ifanr",
-    "title": "Opus 5 砍掉超 80% 系统提示词，我们用 AI 的方式也该变了 ｜附指南",
-    "url": "https://www.ifanr.com/1673165?utm_source=rss&utm_medium=rss&utm_campaign=",
-    "published_at": "2026-07-27T10:05:15+00:00",
-    "raw_text": "不想被 AI 淘汰就要学着当 AI 的老板<p>#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。</p>",
+    "id": "ca8422b9184ed677",
+    "source_id": "analytics-vidhya",
+    "title": "Claude Opus 5: Near-Frontier Intelligence, On a Dial",
+    "url": "https://www.analyticsvidhya.com/blog/2026/07/claude-opus-5-hands-on-review/",
+    "published_at": "2026-07-27T12:14:23+00:00",
+    "raw_text": "<p>Anthropic has released Claude Opus 5. The fourth model in two months, if you are keeping count. Most people are not. This one matters more than the count suggests. Opus is the workhorse tier, the model that does the actual paid work, and it just got a step change rather than a bump. Anthropic&#8217;s own [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2026/07/claude-opus-5-hands-on-review/\">Claude Opus 5: Near-Frontier Intelligence, On a Dial</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
     "category_hint": [
       "产品发布",
       "行业动态"
     ],
-    "image_url": "https://s3.ifanr.com/wp-content/uploads/2026/07/cover5-2.png",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.6,
-    "reason_zh": "提供实用指南，教用户如何高效使用AI，减少提示词依赖，有启发性。",
-    "summary_zh": "文章指出Opus 5砍掉了超过80%的系统提示词，并认为用户使用AI的方式也需要改变。文章提供了指南，教用户如何成为AI的“老板”，而不是被AI淘汰。内容强调从繁琐提示词中解放出来，更高效地与AI协作。",
-    "title_zh": "Opus 5 砍掉超 80% 系统提示词，我们用 AI 的方式也该变了 ｜附指南",
-    "weighted_score": 0.595,
+    "image_url": "https://cdn.analyticsvidhya.com/wp-content/uploads/2026/07/Claude-Opus-5.webp",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "Anthropic发布Claude Opus 5，性能有阶跃提升，是工作负载主力模型的重要更新。",
+    "summary_zh": "Anthropic发布了Claude Opus 5，这是两个月内的第四个模型。Opus是工作负载主力模型，此次更新是阶跃变化而非小幅提升。文章还提到该模型具有“Near-Frontier Intelligence, On a Dial”的特点，但具体细节需查看原文。",
+    "title_zh": "Claude Opus 5：接近前沿的智能，可调节",
+    "weighted_score": 0.655,
     "score_breakdown": {
       "source_authority": 0.6,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.7
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.5
     },
-    "story_id": "e027693305d8fee7",
-    "multi_source_count": 2,
+    "story_id": "c726a44fd51560ab",
+    "multi_source_count": 4,
     "sources": [
+      {
+        "source_id": "tldr-ai",
+        "url": "https://tldr.tech/ai/2026-07-27"
+      },
       {
         "source_id": "rundown-ai",
         "url": "https://www.therundown.ai/p/anthropic-opus-5-surprise"
@@ -757,174 +723,10 @@
       {
         "source_id": "ifanr",
         "url": "https://www.ifanr.com/1673165?utm_source=rss&utm_medium=rss&utm_campaign="
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "974b88ffd15f2764",
-    "source_id": "reddit-comfyui",
-    "title": "ComfyUI Prompt Manager node",
-    "url": "https://www.reddit.com/r/comfyui/comments/1v7vu77/comfyui_prompt_manager_node/",
-    "published_at": "2026-07-27T09:52:58+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/comfyui/comments/1v7vu77/comfyui_prompt_manager_node/\"> <img alt=\"ComfyUI Prompt Manager node\" src=\"https://preview.redd.it/ciarlzwhuqfh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d818dc5806fb2cfda74ae0cfc7bb6d52ccfd04f3\" title=\"ComfyUI Prompt Manager node\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hi, I wasn't satisfied with any of the available options, so I asked Claude to create exactly the prompt manager I wanted.<br /> It’s a node that lets you craft your prompts and quickly make changes on the fly.<br /> You also have the option to randomize settings, as well as save and share your presets.<br /> I hope you find this node as useful as I do.</p> <p><a href=\"https://github.com/Fictiverse/ComfyUI_Prompt_Manager/tree/main\">https://github.com/Fictiverse/ComfyUI_Prompt_Manager/tree/main</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/3deal\"> /u/3deal </a> <br /> <span><a hre",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://preview.redd.it/ciarlzwhuqfh1.jpeg?width=640&crop=smart&auto=webp&s=d818dc5806fb2cfda74ae0cfc7bb6d52ccfd04f3",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "针对ComfyUI的Prompt管理节点，解决用户痛点，实用性强。",
-    "summary_zh": "作者在Reddit的ComfyUI社区发布了一个新的Prompt Manager节点，旨在改进ComfyUI中的提示词管理功能。作者表示对现有方案不满意，因此开发了这个节点，提供了更便捷的提示词组织和管理方式。帖子包含截图展示节点界面，但具体功能细节未详细说明。",
-    "title_zh": "ComfyUI Prompt Manager 节点",
-    "weighted_score": 0.515,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.6,
-      "impact": 0.3,
-      "practical_value": 0.7
-    },
-    "story_id": "2dcadfe8f6000739",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1v7vu77/comfyui_prompt_manager_node/"
       },
       {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7vuyl/comfyui_prompt_manager_node/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a88f2d735592fff7",
-    "source_id": "reddit-comfyui",
-    "title": "120 Krea2 pose prompts",
-    "url": "https://www.reddit.com/r/comfyui/comments/1v79la4/120_krea2_pose_prompts/",
-    "published_at": "2026-07-26T17:03:53+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>If you're just starting out, sometimes you don't know exactly how to describe the pose you have in your head. Here's a bunch of short keyword-based prompts you can quickly start with. Mix, match, and experiment. Note that depending on whether your canvas is portrait or landscape, you can get additional pose variations as well. </p> <p>The base prompt is:</p> <p><em>full-length photo taken in a plain white studio of a young woman. she has shoulder-length blonde hair that is layered and feathered in a 1980's style. she is wearing a pale yellow high-cut exercise leotard and is barefoot. she is posed ________</em></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Afraid_Ambassador_43\"> /u/Afraid_Ambassador_43 </a> <br /> <span><a href=\"https://www.reddit.com/gallery/1v79la4\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/comfyui/comments/1v79la4/120_krea2_pose_prompts/\">[comments]</a></span>",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.3,
-    "reason_zh": "提供120个Krea2姿势提示词，适合初学者快速上手姿势描述，实用性强。",
-    "summary_zh": "该帖子在Reddit的ComfyUI社区发布，作者分享了一套120个基于关键词的简短姿势提示词，用于Krea2图像生成。基础提示词格式为“<e>”，用户可以根据画布方向（竖屏或横屏）获得额外的姿势变体。帖子鼓励用户混合搭配并实验，以描述脑海中的姿势。内容实用，适合刚入门的用户快速生成不同姿势。",
-    "title_zh": "120个Krea2姿势提示词",
-    "weighted_score": 0.375,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.5,
-      "impact": 0.2,
-      "practical_value": 0.7
-    },
-    "story_id": "804b06c7e09f91f2",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1v79la4/120_krea2_pose_prompts/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7a05s/krea2_lora_experiment/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7kmif/how_does_midjourney_get_such_variety_in_their/"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1v7sdez/it_turns_out_that_krea_2_identity_edit_lora_can/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "3873eb8640c9d137",
-    "source_id": "reddit-comfyui",
-    "title": "Ideogram 4.0 - High quality workflow using mixed models (normal and turbo)",
-    "url": "https://www.reddit.com/r/comfyui/comments/1v7tgco/ideogram_40_high_quality_workflow_using_mixed/",
-    "published_at": "2026-07-27T07:32:59+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/comfyui/comments/1v7tgco/ideogram_40_high_quality_workflow_using_mixed/\"> <img alt=\"Ideogram 4.0 - High quality workflow using mixed models (normal and turbo)\" src=\"https://preview.redd.it/xzpr47kx5qfh1.jpg?width=140&amp;height=78&amp;auto=webp&amp;s=a24dde52c370fa05091c2fac22040e3f487bf2df\" title=\"Ideogram 4.0 - High quality workflow using mixed models (normal and turbo)\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p><a href=\"https://civitai.com/models/2811352/ideogram-40-fast-mixed-high-quality-turbo-workflow\">Download from civitai</a><br /> <a href=\"https://www.dropbox.com/scl/fi/nf8p7ieve3lm7otzdv6k4/SimpleIdeo.zip?rlkey=ugii599hyvvxivawhquzoigsv&amp;st=6nnz51zu&amp;dl=0\">Download from Dropbox</a> </p> <p>The goal was to maintain remarkably high quality while getting speeds similar to Krea2.<br /> Measured on 4090:<br /> Krea2 at 12 steps: inference 15.21 seconds (total: 17.89 seconds).<br /> This workflow: inference: 15.44 s",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://preview.redd.it/xzpr47kx5qfh1.jpg?width=140&height=78&auto=webp&s=a24dde52c370fa05091c2fac22040e3f487bf2df",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.2,
-    "reason_zh": "分享Ideogram 4.0高质量混合模型工作流，包含普通和Turbo模式，对ComfyUI用户有实用价值。",
-    "summary_zh": "Reddit用户分享了一个使用Ideogram 4.0的高质量工作流，该工作流混合了普通模型和Turbo模型。帖子可能包含工作流的具体配置和参数，旨在帮助其他用户生成更高质量的图像。对于使用ComfyUI和Ideogram模型的AI绘画爱好者，这是一个实用的教程资源。",
-    "title_zh": "Ideogram 4.0 - 使用混合模型（普通和Turbo）的高质量工作流",
-    "weighted_score": 0.375,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.5,
-      "impact": 0.2,
-      "practical_value": 0.7
-    },
-    "story_id": "6458f5812cae3b50",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1v7tgco/ideogram_40_high_quality_workflow_using_mixed/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7thlu/ideogram_40_fast_high_quality_mixed_turbo_workflow/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "4ad6a313ad2eb708",
-    "source_id": "reddit-stablediffusion",
-    "title": "LTX 2.3 IC-LoRA: pose control + first frame conditioning",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1v74c4e/ltx_23_iclora_pose_control_first_frame/",
-    "published_at": "2026-07-26T13:45:47+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1v74c4e/ltx_23_iclora_pose_control_first_frame/\"> <img alt=\"LTX 2.3 IC-LoRA: pose control + first frame conditioning\" src=\"https://external-preview.redd.it/bHBzaWxmY3F2a2ZoMdO8CgxqRfZyQHTWZt2Yq5Wvq0Fo6lKU4XqD-65RDzfT.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=41f130e4903905bb5c718da83470ac4c2a5f1d80\" title=\"LTX 2.3 IC-LoRA: pose control + first frame conditioning\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Green screen footage → fully regenerated shot in ComfyUI</p> <p>LTX 2.3 + IC-LoRA (pose control), conditioned on a single first frame. Pose extracted from the source video drives the motion; character, environment and lighting come entirely from the generation.</p> <p>The green screen video is used only as a motion source — no keying or compositing in the pipeline.</p> <p>Setup:<br /> 1- Pose sequence extracted from the source footage<br /> 2- LTX 2.3 + IC-LoRA, pose sequence as the control sig",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/bHBzaWxmY3F2a2ZoMdO8CgxqRfZyQHTWZt2Yq5Wvq0Fo6lKU4XqD-65RDzfT.png?width=640&crop=smart&auto=webp&s=41f130e4903905bb5c718da83470ac4c2a5f1d80",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "LTX 2.3 IC-LoRA实现姿态控制和首帧条件，对视频生成领域有创新意义。",
-    "summary_zh": "Reddit用户发布了LTX 2.3 IC-LoRA，该模型支持姿态控制（pose control）和首帧条件（first frame conditioning）。这为视频生成提供了更精细的控制能力，用户可以通过指定姿态和初始帧来引导生成过程。",
-    "title_zh": "LTX 2.3 IC-LoRA：姿态控制 + 首帧条件",
-    "weighted_score": 0.335,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.4,
-      "impact": 0.3,
-      "practical_value": 0.5
-    },
-    "story_id": "d4d35d6ac761c904",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v74c4e/ltx_23_iclora_pose_control_first_frame/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7baxw/ltx_23_closeup_shots_are_absolutely_insane/"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1v7bcci/ltx_23_closeup_shots_are_absolutely_insane/"
+        "source_id": "analytics-vidhya",
+        "url": "https://www.analyticsvidhya.com/blog/2026/07/claude-opus-5-hands-on-review/"
       }
     ],
     "curated": true
@@ -1064,6 +866,42 @@
       {
         "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2607.20062"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "9c31954d0e87885d",
+    "source_id": "the-decoder",
+    "title": "Cursor's agent swarm suggests cheaper models can handle most coding when frontier models plan the work",
+    "url": "https://the-decoder.com/cursors-agent-swarm-suggests-cheaper-models-can-handle-most-coding-when-frontier-models-plan-the-work/",
+    "published_at": "2026-07-26T15:09:11+00:00",
+    "raw_text": "<p><img alt=\"Isometric illustration of an AI coding swarm: a central hub coordinates parallel agent data streams.\" class=\"attachment-full size-full wp-post-image\" height=\"1047\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/ai-coding-swarms-generated-image-nano-banana-pro.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        Cursor asked its upgraded agent swarm and its predecessor to rebuild SQLite in Rust using only the documentation, with no source code or internet access. Every configuration of the new system, which separates planners from workers, eventually scored 100 percent on the test suite. The old swarm choked on merge conflicts of its own making.</p>\n<p>The article <a href=\"https://the-decoder.com/cursors-agent-swarm-suggests-cheaper-models-can-handle-most-coding-when-frontier-models-plan-the-work/\">Cursor&#039;s agent swarm suggests cheaper models can handle most coding when frontier models plan the work</a> appeared first on <a href=\"http",
+    "category_hint": [
+      "模型发布",
+      "行业动态"
+    ],
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/ai-coding-swarms-generated-image-nano-banana-pro.jpg",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "Cursor推出Agent Swarm新功能，验证了“前沿模型规划+廉价模型执行”的高效编码模式，对AI编程工具的发展方向有重要启示。",
+    "summary_zh": "Cursor发布了其升级版Agent Swarm功能，该功能允许多个AI代理协同工作，完成复杂编码任务。核心创新在于任务分配策略：由能力更强的前沿模型（如GPT-4o或Claude）负责整体架构规划和任务分解，而将具体的编码实现交给更便宜、更快的模型（如GPT-4o mini或Claude Haiku）执行。这种分工模式大幅降低了成本，同时保持了输出质量。Cursor团队表示，在内部测试中，该方案在保持相似完成率的情况下，成本降低了约70%。Agent Swarm还支持动态扩展代理数量，根据任务复杂度自动调整。该功能目前已向Pro和Business用户开放。",
+    "title_zh": "Cursor的Agent Swarm表明：前沿模型规划任务时，廉价模型可处理大部分编码工作",
+    "weighted_score": 0.7,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "088f3f6d9a5abc9b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/cursors-agent-swarm-suggests-cheaper-models-can-handle-most-coding-when-frontier-models-plan-the-work/"
       }
     ],
     "curated": true,

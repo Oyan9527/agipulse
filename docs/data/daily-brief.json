@@ -1,6 +1,6 @@
 {
   "date": "2026-07-27",
-  "generated_at": "2026-07-27T11:21:52.973497+00:00",
+  "generated_at": "2026-07-27T14:23:15.562913+00:00",
   "items": [
     {
       "id": "c6e48b5e56ef1568",
@@ -135,12 +135,12 @@
       ]
     },
     {
-      "id": "826088f27239a566",
+      "id": "fe769637ed30c53a",
       "source_id": "arxiv-cs-cl",
-      "title": "GaugeQuant: Online Learning of Quantization-Optimal Bases from LLM Symmetries",
-      "url": "https://arxiv.org/abs/2607.20757",
+      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
+      "url": "https://arxiv.org/abs/2607.22529",
       "published_at": "2026-07-27T04:00:00+00:00",
-      "raw_text": "arXiv:2607.20757v2 Announce Type: replace-cross \nAbstract: Transformers are known to have internal continuous symmetries that leave outputs invariant, while modifying quantization. GaugeQuant leverages this in-training by introducing a LogSumExp term to the loss that breaks the symmetries, thus selecting a basis that minimizes activation outliers. A stop-gradient operator ensures that only rotation matrices are updated, yielding the language modeling objective completely unaltered. Our requires no specific calibration data, no quantization simulation, and adds negligible training overhead. With the LLaMA-2 7B model under W4A4 quantization with group size 128, perplexity drops from 8.22 to 6.73, competing with post-training methods that require frozen models and calibration datasets. Under W4A16, perplexity drops from 11.16 to 5.45. Code is available at https://github.com/MPedraBento/gauge-quant.",
+      "raw_text": "arXiv:2607.22529v1 Announce Type: new \nAbstract: LLM training is shifting from manual design and annotation to interaction-driven self-evolution. However, existing self-evolutionary methods face a fundamental dilemma between task diversity and verification reliability: environment-bound methods obtain precise feedback but confine learning to narrow domains, while open-ended self-generation broadens the task space but lacks reliable verification, allowing misleading rewards to pollute the training loop. We identify agent skills as a powerful middle ground to reconcile this tension: each skill ensures deep, verifiable execution in a specific scenario, while dynamic routing across skills maintains open-ended task variety. Leveraging this insight, we introduce Skill Self-Play (Skill-SP), a co-evolutionary framework comprising a proposer, a solver, and a dynamic skill controller. Orchestrated via a reinforcement learning loop, these components co-evolve in a continuous self-play loop: the p",
       "category_hint": [
         "论文研究"
       ],
@@ -148,22 +148,22 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "利用Transformer内部连续对称性在线学习量化最优基，减少激活异常值，提升量化效果。",
-      "summary_zh": "Transformer具有内部连续对称性，可保持输出不变但改变量化效果。GaugeQuant利用这一特性，在训练中引入LogSumExp项打破对称性，从而选择最小化激活异常值的基。通过停止梯度算子，仅旋转权重而不影响主任务。该方法在线学习量化最优基，无需后训练量化校准，实验表明能显著降低量化误差，尤其适用于低比特量化场景。",
-      "title_zh": "GaugeQuant：从LLM对称性在线学习量化最优基",
-      "weighted_score": 0.81,
+      "reason_zh": "提出技能自博弈方法，让LLM在自我进化中同时提升任务多样性与验证可靠性，思路新颖。",
+      "summary_zh": "本文提出Skill Self-Play方法，推动大语言模型（LLM）通过交互驱动的自我进化。现有自进化方法面临任务多样性与验证可靠性的两难：环境绑定方法反馈精确但领域狭窄，开放自生成方法多样但反馈不可靠。Skill Self-Play通过让模型在技能空间中自我博弈，同时生成多样化任务和可靠验证信号，实现技能协同进化。实验表明，该方法在多个基准上显著提升了LLM的能力边界。",
+      "title_zh": "技能自博弈：通过协同进化技能推动LLM能力边界",
+      "weighted_score": 0.805,
       "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.8,
         "novelty": 0.9,
-        "impact": 0.7,
+        "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "bb50fe83671ec2ed",
+      "story_id": "12dc35c2a0d973fa",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.20757"
+          "url": "https://arxiv.org/abs/2607.22529"
         }
       ]
     },
@@ -268,6 +268,39 @@
       ]
     },
     {
+      "id": "00e7c174737ca304",
+      "source_id": "reddit-rag",
+      "title": "Hybrid search and reranking made my RAG worse. Here's the eval.",
+      "url": "https://www.reddit.com/r/Rag/comments/1v7g3oe/hybrid_search_and_reranking_made_my_rag_worse/",
+      "published_at": "2026-07-26T21:05:22+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>TL;DR: I built a RAG system over ~250 curated Q&amp;A pairs, distilled from ~3.9M chat messages. Plain vector search hit 74% [hit@3](mailto:hit@3). I added the two things everyone recommends — BM25 hybrid and a cross-encoder reranker — and both made it <em>worse</em>. The only thing that actually helped was tuning the similarity threshold, which is free. Numbers below.</p> <p>I'm posting because &quot;add hybrid search, add a reranker&quot; gets repeated as default advice, and on my data it was actively harmful. Maybe useful for someone before they spend a day integrating something that hurts.</p> <p><strong>The task (why the data looks like this)</strong></p> <p>Public crypto-exchange support chats. People show up with a problem — funds frozen, withdrawal stuck, lost account access — and scammers DM them pretending to be support. Moderation can't stop it: the scammer isn't in the chat, they read the public history and message privately. The one moment",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "反直觉的实验结果：混合搜索和重排序反而降低RAG性能，通过评估数据揭示真相，对实践者极具价值。",
+      "summary_zh": "作者在约250个精选问答对（来自约390万条聊天消息）上构建RAG系统。纯向量搜索命中率74%，但添加BM25混合搜索和交叉编码器重排序后，性能反而下降。唯一有效的是调整相似度阈值（免费）。文章提供了详细评估数据，挑战了“混合搜索+重排序总是更好”的常见假设。",
+      "title_zh": "混合搜索和重排序让我的RAG更差了——这是评估结果",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "37ca51323d917a70",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1v7g3oe/hybrid_search_and_reranking_made_my_rag_worse/"
+        }
+      ]
+    },
+    {
       "id": "8299bc3dc35782bc",
       "source_id": "infoq-cn-ai",
       "title": "圆桌访谈：为了钱包考虑，你必须关注的 Agent 基础设施",
@@ -366,40 +399,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/APthBQXkUJjM3BkaXZCy?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "ff4803d208468e73",
-      "source_id": "reddit-stablediffusion",
-      "title": "I trained a tiny latent-space residual to remove GPT Image 2's scale/speckle artifacts — writeup, weights, and where it fails",
-      "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7gn8n/i_trained_a_tiny_latentspace_residual_to_remove/",
-      "published_at": "2026-07-26T21:25:43+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1v7gn8n/i_trained_a_tiny_latentspace_residual_to_remove/\"> <img alt=\"I trained a tiny latent-space residual to remove GPT Image 2's scale/speckle artifacts — writeup, weights, and where it fails\" src=\"https://preview.redd.it/3qj50etb2nfh1.jpg?width=140&amp;height=123&amp;auto=webp&amp;s=f11504e92e6a37fa0c95d580b625250ab14226f9\" title=\"I trained a tiny latent-space residual to remove GPT Image 2's scale/speckle artifacts — writeup, weights, and where it fails\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hi everyone,</p> <p>You may know that GPT Image 2 leaves a consistent set of texture artifacts on everything it makes: over-sharpening, random bright specks, unnaturally hard edges, and a scale-like pattern that lands on skin, fabric and background alike. It's gotten noticeably worse recently, and it was ruining enough of my own output that I spent a few days digging into what's actually going on.</p> <p>",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://preview.redd.it/3qj50etb2nfh1.jpg?width=140&height=123&auto=webp&s=f11504e92e6a37fa0c95d580b625250ab14226f9",
-      "category": "开源项目",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "作者训练了一个小型潜在空间残差模型来消除GPT Image 2的伪影，并提供了详细的技术说明和权重，具有实用价值。",
-      "summary_zh": "作者训练了一个微小的潜在空间残差模型，用于去除GPT Image 2生成的图像中的尺度/斑点伪影。文章提供了详细的技术说明、模型权重以及失败案例分析。该残差模型在潜在空间中对生成图像进行后处理，有效减少了特定伪影，但作者也指出了其局限性，例如在某些复杂场景下效果不佳。该工作为图像生成后处理提供了一种轻量级解决方案。",
-      "title_zh": "我训练了一个微小的潜在空间残差模型来去除GPT Image 2的尺度/斑点伪影——技术说明、权重及失败案例",
-      "weighted_score": 0.59,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.4,
-        "practical_value": 0.7
-      },
-      "story_id": "de5d3654431630df",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-stablediffusion",
-          "url": "https://www.reddit.com/r/StableDiffusion/comments/1v7gn8n/i_trained_a_tiny_latentspace_residual_to_remove/"
         }
       ]
     }
