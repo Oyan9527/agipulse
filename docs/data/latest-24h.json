@@ -103,22 +103,22 @@
     "curated": true
   },
   {
-    "id": "de78633afbc5c577",
-    "source_id": "arxiv-cs-cl",
-    "title": "Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models",
-    "url": "https://arxiv.org/abs/2607.21617",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.21617v1 Announce Type: cross \nAbstract: Vision Language Models (VLMs) are increasingly used in place of traditional OCR pipelines for document understanding. In this paper, we show they do not always act as faithful transcribers: when text is imperfect, they often tend to rewrite it into a more plausible form - a behavior that clean-text OCR benchmarks cannot detect. We introduce FaithC4, a multilingual perturbation benchmark of 1,455 single-page documents (English, Chinese, Korean) with three perturbation families: scramble, random substitution, and visually similar substitution. We use the benchmark to evaluate 15 systems spanning general-purpose VLMs, OCR-specialized VLMs, and traditional OCR pipelines. These three categories differ in WER degradation under perturbation: general-purpose VLMs degrade by up to 4.5 points, OCR-specialized VLMs by 0.2-2 points, and traditional OCR by less than 0.6 points on English. Probing Qwen3-VL-4B layer-by-layer, we identify a consistent",
+    "id": "0d73bddb8ee346be",
+    "source_id": "arxiv-cs-ai",
+    "title": "AIR-BENCH Live: An Evolving Safety Benchmark for Foundation Models",
+    "url": "https://arxiv.org/abs/2607.22671",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22671v1 Announce Type: new \nAbstract: Foundation-model safety benchmarks capture the AI risks of their time of publication: as models improve and governments pass new AI-safety legislation, their risk taxonomies become incomprehensive and their attack prompts become ineffective. We present AIR-BENCH Live, a self-evolving successor to AIR-BENCH 2024. An automated update pipeline monitors government regulation and classifies new policies against the current four-tier risk taxonomy, either matching them to existing categories or proposing new granular categories. Then, a multi-agent, persona-driven prompt generation algorithm generates realistic, multilingual prompts with minimal human review, leaving room for improvement with modern jail breaking techniques. This algorithm is used to overhaul legacy prompts and generate prompts for new categories. In our current version, the pipeline has expanded the benchmark from 314 to 335 granular risks, with the 21 new categories drawing ",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示了VLM在文档理解中并非忠实转录，而是倾向于重写文本，对OCR应用有重要警示。",
-    "summary_zh": "本文指出视觉语言模型（VLM）在文档理解任务中并不总是忠实的转录者。当文本存在缺陷时，VLM倾向于将其重写为更合理的形式，而这一行为在干净的OCR基准测试中无法被检测到。作者引入了FaithC基准来评估转录忠实度，实验表明现有VLM在转录不完美文本时存在显著偏差。该研究对依赖VLM进行文档处理的系统提出了重要警示，并呼吁关注模型在真实场景中的可靠性。",
-    "title_zh": "VLM是阅读还是重写？关于视觉语言模型转录忠实度的研究",
+    "depth_score": 0.6,
+    "reason_zh": "自演进的AI安全基准，持续更新以应对新风险，对安全研究至关重要。",
+    "summary_zh": "本文提出AIR-BENCH Live，一个自演进的AI安全基准，作为AIR-BENCH 2024的升级版。该基准通过自动化更新管道监控模型改进和法规变化，动态更新风险分类和攻击提示，确保基准始终有效。实验表明其能持续评估最新模型的安全风险。",
+    "title_zh": "AIR-BENCH Live：面向基础模型的自演进安全基准",
     "weighted_score": 0.835,
     "score_breakdown": {
       "source_authority": 0.9,
@@ -126,101 +126,33 @@
       "impact": 0.8,
       "practical_value": 0.7
     },
-    "story_id": "22e77f0afb54ba77",
+    "story_id": "2a3e1ec4f0e3d22a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.21617"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22671"
       }
     ],
     "curated": true
   },
   {
-    "id": "50b7c4c6462f7f0d",
-    "source_id": "arxiv-cs-cl",
-    "title": "Adversarial Prompts for Acceptance Collapse in Speculative Decoding",
-    "url": "https://arxiv.org/abs/2607.21804",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.21804v1 Announce Type: cross \nAbstract: Lossless acceleration schemes, such as speculative decoding, promise significant inference speedups by relying on dynamic token-level alignment between a draft and a target model. However, this guarantee of semantic equivalence masks a severe operational vulnerability: draft-target alignment can be systematically attacked. In this paper, we introduce ADSD, which, to the best of our knowledge, is the first prompt-suffix attack that collapses verifier acceptance by pushing draft probability mass toward tokens the target is unlikely to accept. ADSD uses Soft-Collapse, a verifier-aligned surrogate derived from the asymmetric speculative acceptance rule, together with a target-preservation objective that discourages obvious task corruption. ADSD successfully generates highly effective adversarial suffixes. On the GSM8K dataset, our attack increases the mean sample time by 62.3% while preserving the task quality. We further show that this vu",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "首次揭示推测解码中草稿-目标模型对齐的脆弱性，可被对抗性提示攻击导致接受崩溃。",
-    "summary_zh": "推测解码等无损加速方案通过依赖草稿模型和目标模型之间的动态token级对齐来实现显著推理加速。然而，本文发现这种语义等价保证掩盖了一个严重的操作漏洞：草稿-目标对齐可以被系统性攻击。作者引入了一种对抗性提示方法，能够导致接受崩溃，即目标模型拒绝接受草稿模型的输出，从而破坏加速效果。实验表明，该攻击在多个模型上有效，且难以防御。该研究对部署推测解码的系统提出了安全警告。",
-    "title_zh": "针对推测解码中接受崩溃的对抗性提示",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "89b55ee29cb9410d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.21804"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "55faf6954aba48a7",
-    "source_id": "arxiv-cs-cl",
-    "title": "Gemma 4 Technical Report",
-    "url": "https://arxiv.org/abs/2607.02770",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.02770v2 Announce Type: replace \nAbstract: We introduce Gemma 4, a new generation of open-weight, natively multimodal language models in the Gemma model family. Designed to advance compute efficiency and reasoning, the Gemma 4 model suite features dense and Mixture-of-Experts architectures, ranging from 2.3B to 31B parameters. Alongside improved vision and audio encoders for all model sizes, we propose a unified, encoder-free architecture for our 12B model, which ingests raw audio and image patches. Furthermore, we integrate a thinking mode, enabling Gemma models to generate reasoning traces prior to responding. We improve inference speed, memory, and compute efficiency, as well as long-context abilities through critical design choices. Gemma 4 establishes a leap in performance across STEM, multimodal, and long-context benchmarks, and rivals larger, frontier open models in human-rated tasks.",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Gemma 4技术报告，介绍新一代开源多模态模型，涵盖密集和MoE架构，参数范围2.3B-31B，对开源社区影响重大。",
-    "summary_zh": "Gemma 4是Google发布的新一代开源权重、原生多模态语言模型。该系列包括密集和混合专家（MoE）架构，参数规模从2.3B到31B不等。模型在视觉和音频编码器上进行了改进，旨在提升计算效率和推理能力。技术报告详细介绍了模型架构、训练方法和性能评估，展示了在多种任务上的先进水平。",
-    "title_zh": "Gemma 4 技术报告",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.9,
-      "practical_value": 0.7
-    },
-    "story_id": "681c8a944f9ac7bd",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.02770"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "82ae2b62b1a2ca76",
-    "source_id": "36kr",
-    "title": "月之暗面Kimi K3正式开源",
-    "url": "https://36kr.com/newsflashes/3914648643277958?f=rss",
-    "published_at": "2026-07-28T01:46:31+00:00",
-    "raw_text": "36氪获悉，7月27日晚，月之暗面发布Kimi K3的模型权重、技术报告，并开源支撑Kimi K3模型训练的关键Infra技术：MoonEP、FlashKDA和AgentEnv。据介绍，Kimi K3是一个拥有2.8万亿参数的混合专家（MoE）模型，具备原生视觉理解能力，并支持100万token的上下文窗口。月之暗面表示，现在每个人都可以下载并部署Kimi K3模型，无论是用于内部研发，还是嵌入到面向终端用户的产品中，均可自由使用。",
+    "id": "933351c197bfcac4",
+    "source_id": "pandaily",
+    "title": "Kimi K3 Officially Open-Sourced: Moonshot AI Releases 2.8 Trillion Parameter Model Weights, Technical Report, and Three Infrastructure Technologies",
+    "url": "https://pandaily.com/kimi-k3-official-open-source-jul2026",
+    "published_at": "2026-07-28T01:47:24+00:00",
+    "raw_text": "Moonshot AI open-sources Kimi K3 with 2.8T MoE parameters, 896 routed experts, 16 active per token, 1M context window, plus MoonEP, FlashKDA, and AgentEnv infrastructure tools.",
     "category_hint": [
       "行业动态"
     ],
-    "image_url": null,
+    "image_url": "https://cms-image.pandaily.com/1/article2_53be6ef437.png",
     "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "月之暗面开源2.8万亿参数MoE模型Kimi K3，附带关键Infra技术，对开源社区和AI研究有重大影响。",
-    "summary_zh": "7月27日晚，月之暗面发布Kimi K3模型权重和技术报告，并开源支撑其训练的关键Infra技术：MoonEP、FlashKDA和AgentEnv。Kimi K3是一个拥有2.8万亿参数的混合专家（MoE）模型，具备原生视觉理解能力，支持100万token上下文窗口。月之暗面表示，任何人都可以自由下载和部署Kimi K3模型，用于内部研发或嵌入产品。",
-    "title_zh": null,
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "Kimi K3开源2.8万亿参数模型，含技术报告和基础设施，极具研究价值。",
+    "summary_zh": "月之暗面开源Kimi K3，拥有2.8万亿MoE参数、896个路由专家、每个token激活16个专家、100万上下文窗口，并发布技术报告及MoonEP、FlashKDA、AgentEnv三项基础设施技术。",
+    "title_zh": "Kimi K3 正式开源：月之暗面发布2.8万亿参数模型权重、技术报告及三项基础设施技术",
     "weighted_score": 0.83,
     "score_breakdown": {
       "source_authority": 0.8,
@@ -228,46 +160,40 @@
       "impact": 0.9,
       "practical_value": 0.7
     },
-    "story_id": "779b4a0d3727c573",
-    "multi_source_count": 1,
+    "story_id": "36a827534d25ced7",
+    "multi_source_count": 7,
     "sources": [
       {
-        "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3914648643277958?f=rss"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "fe769637ed30c53a",
-    "source_id": "arxiv-cs-cl",
-    "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
-    "url": "https://arxiv.org/abs/2607.22529",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.22529v1 Announce Type: new \nAbstract: LLM training is shifting from manual design and annotation to interaction-driven self-evolution. However, existing self-evolutionary methods face a fundamental dilemma between task diversity and verification reliability: environment-bound methods obtain precise feedback but confine learning to narrow domains, while open-ended self-generation broadens the task space but lacks reliable verification, allowing misleading rewards to pollute the training loop. We identify agent skills as a powerful middle ground to reconcile this tension: each skill ensures deep, verifiable execution in a specific scenario, while dynamic routing across skills maintains open-ended task variety. Leveraging this insight, we introduce Skill Self-Play (Skill-SP), a co-evolutionary framework comprising a proposer, a solver, and a dynamic skill controller. Orchestrated via a reinforcement learning loop, these components co-evolve in a continuous self-play loop: the p",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出技能自博弈方法，让LLM在自我进化中同时提升任务多样性与验证可靠性，思路新颖。",
-    "summary_zh": "本文提出Skill Self-Play方法，推动大语言模型（LLM）通过交互驱动的自我进化。现有自进化方法面临任务多样性与验证可靠性的两难：环境绑定方法反馈精确但领域狭窄，开放自生成方法多样但反馈不可靠。Skill Self-Play通过让模型在技能空间中自我博弈，同时生成多样化任务和可靠验证信号，实现技能协同进化。实验表明，该方法在多个基准上显著提升了LLM的能力边界。",
-    "title_zh": "技能自博弈：通过协同进化技能推动LLM能力边界",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "12dc35c2a0d973fa",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway"
+      },
       {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.22529"
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/deepseek-to-kimi-ai-investment-logic-jul2026"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
+      },
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/"
+      },
+      {
+        "source_id": "zh-sspai",
+        "url": "https://sspai.com/post/112805"
+      },
+      {
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/kimi-k3-official-open-source-jul2026"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/481061"
+      },
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1230377#reply16"
       }
     ],
     "curated": true
@@ -307,35 +233,35 @@
     "curated": true
   },
   {
-    "id": "67d14e8db833b889",
-    "source_id": "zh-ithome",
-    "title": "英伟达 CUDA 的 20 年护城河一个周末崩了，Claude 独自跑通 AMD 新 GPU",
-    "url": "https://www.ithome.com/0/982/264.htm",
-    "published_at": "2026-07-27T15:58:14+00:00",
-    "raw_text": "<p>一句话，一个周末，Claude 直接把自家最前沿的模型跑在了一台全新的 AMD MI355X 机架上！</p><p><strong>人类工程师全程没动手改过一行代码</strong>。</p><p>谁能想到，英伟达花 20 年堆起的 CUDA 护城河，就这样被跨了过去。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/d38bdd28-3b5d-4745-be76-faf4514d60a3.png?x-bce-process=image/format,f_auto\" /></p><h2><strong>一个周末，Claude 把 AMD 新 GPU 调通了</strong></h2><p>故事是这样的。</p><p>前段时间，AMD 给 Anthropic 送来一台搭载 MI355X 的机架。团队看完，心里已经做好了打硬仗的准备。新平台配新软件栈，注定需要新一轮适配。</p><p>不过，Anthropic 手里正好有 Claude。团队干脆先让一名工程师试试：把 Claude 接上机器，丢给它一句，「去，把这台机器跑起来。」</p><p>等周末结束回到工位，屏幕上已经多出一条持续上涨的性能曲线 —— 结果不仅跑起来了，性能还在一轮轮不停地提升。</p><p>Anthropic 联合创始人兼首席计算官 Tom Brown 讲完，苏姿丰马上接过话：听说 Anthropic 只有一名工程师在处理 MI355X 时，她第一反应是让 AMD 团队赶紧去帮忙。结果团队回来告诉她，对方说不用，已经全部搞定了。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/0a8a3162-30af-44bb-b3d3-9fd204c8bcb8.png?x-bce-process=image/format,f_auto\" /></p><p>很快，这场周末实验便接上了真正的部署计划。</p><p>就在最近，Anthropic 宣布，将在 AMD Helios 系统中部署最高 2GW 的 Instinct GPU，<strong>首批",
+    "id": "44998c4b6dc1372f",
+    "source_id": "arxiv-cs-ai",
+    "title": "CuraWeb: Joint Optimization of Quality, Redundancy, and Diversity for Web-Scale Pretraining Data",
+    "url": "https://arxiv.org/abs/2607.22662",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22662v1 Announce Type: new \nAbstract: Open-web corpora curated via highly selective filters, such as FineWeb-Edu and DCLM, constitute the core of LLM pretraining data and have significantly advanced LLM performance. However, these pipelines typically rely on singular optimization objectives, which inevitably narrows distributional diversity and marginalizes long-tail knowledge, thereby restricting data coverage and underutilizing the vast potential of the open web. To address this limitation, we propose a novel curation paradigm that shifts from linear pruning to the joint optimization of quality, redundancy, and diversity. This framework synergizes dual-track cleaning (rule-based and model-driven) with hybrid deduplication (n-gram and semantic), while employing a multi-objective sampler to balance informational quality with distributional breadth. Applying this framework to Common Crawl, we construct CuraWeb, a 2T-token English corpus. Unlike existing resources, CuraWeb est",
     "category_hint": [
-      "行业动态"
+      "论文研究"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/d38bdd28-3b5d-4745-be76-faf4514d60a3.png?x-bce-process=image/format,f_auto",
-    "category": "行业动态",
-    "content_type": "深度分析",
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
     "depth_score": 0.7,
-    "reason_zh": "Claude自主在AMD GPU上运行，无需人类修改代码，挑战英伟达CUDA护城河。",
-    "summary_zh": "文章报道了Anthropic的Claude模型在一个周末内自主在全新的AMD MI355X GPU机架上运行成功，全程无需人类工程师修改一行代码。这一事件被认为可能打破了英伟达花费20年建立的CUDA生态护城河，展示了AI模型跨平台迁移的潜力，对GPU市场竞争格局具有重大意义。",
-    "title_zh": null,
+    "reason_zh": "联合优化质量、冗余与多样性，为预训练数据筛选提供新范式，实用价值高。",
+    "summary_zh": "本文提出CuraWeb框架，联合优化预训练数据的质量、冗余和多样性。现有方法如FineWeb-Edu和DCLM仅优化单一目标，导致分布多样性降低和长尾知识边缘化。CuraWeb通过多目标优化，在保持高质量的同时提升数据多样性，实验表明其能改善LLM在多种任务上的性能。",
+    "title_zh": "CuraWeb：面向网络规模预训练数据的质量、冗余与多样性联合优化",
     "weighted_score": 0.78,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.6
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
     },
-    "story_id": "16c8c767fa274f0f",
+    "story_id": "7099deadc886c883",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/264.htm"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22662"
       }
     ],
     "curated": true
@@ -376,12 +302,12 @@
     "curated": true
   },
   {
-    "id": "8f435e1651d95fee",
-    "source_id": "arxiv-cs-cl",
-    "title": "Learning What Matters: Supervising Sparse Attention Routing with Causal Evidence Sets",
-    "url": "https://arxiv.org/abs/2607.21692",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.21692v1 Announce Type: cross \nAbstract: Sparse attention reduces the cost of long contexts by allowing each query to read only selected parts of the input. These selectors are often trained by distilling the attention patterns of a dense teacher, assuming that attention reveals which context the teacher actually uses. We test that assumption on retrieval tasks where the evidence for each answer is known exactly. By masking parts of the context and measuring whether the answer changes, we find that attention and causal dependence often disagree, and distilled selectors inherit the mismatch. Teachers attend to outdated facts they have learned to ignore, and their attention can vary across training runs even when they rely on the same evidence. In a two-step reference task, attention at the answer skips the intermediate step because it was resolved earlier in the forward pass: a selector trained on attention achieves 41% accuracy, while the same selector trained on causal evide",
+    "id": "bd5fe01522ca943e",
+    "source_id": "arxiv-cs-ai",
+    "title": "The Scaffold Effect in Coding Agents: Harness Choice as a Hidden Variable in Coding-Agent Evaluation",
+    "url": "https://arxiv.org/abs/2607.22585",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22585v1 Announce Type: new \nAbstract: Public leaderboards for coding agents typically rank systems by model name and pass rate, while the surrounding harness (the scaffold that issues tools, manages context, and decides when to stop) is often under-specified. Model-to-model comparison is valid when the harness is fixed; when it varies, performance and efficiency conflate model and scaffold effects. We evaluate Qwen 3.6 Plus and MiniMax M2.5 across three open-source harnesses (Goose, OpenCode, OpenHands-SDK) on a stratified 50-task subset of Terminal-Bench Pro. Harness choice induces up to a 40x difference in tokens per solved task, while paired within-model pass-rate differences remain 0-8 percentage points (95% paired-task bootstrap CIs include zero except for the largest gap). Failure fingerprints replicate across models (REASON for Goose, VERIFY/MAX_TURNS for OpenHands-SDK, idle-loop/TIME for OpenCode), indicating harness-level biases that are largely model-independent. F",
     "category_hint": [
       "论文研究"
     ],
@@ -389,90 +315,22 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "挑战了稀疏注意力训练中依赖密集教师注意力模式的假设，提出基于因果证据集的监督方法。",
-    "summary_zh": "稀疏注意力通过让每个查询只读取输入的部分内容来降低长上下文成本。这些选择器通常通过蒸馏密集教师的注意力模式来训练，假设注意力能揭示教师实际使用的上下文。本文在检索任务上检验了这一假设，其中每个答案的证据集是已知的。作者发现，密集教师的注意力模式并不总是与证据集一致，因此蒸馏可能误导稀疏注意力。他们提出使用因果证据集来监督稀疏注意力路由，实验表明该方法优于传统蒸馏方法。",
-    "title_zh": "学习重要内容：用因果证据集监督稀疏注意力路由",
-    "weighted_score": 0.765,
+    "reason_zh": "揭示编码智能体评估中脚手架（harness）选择作为隐藏变量的影响，对正确解读排行榜和设计评估实验至关重要。",
+    "summary_zh": "本文提出编码智能体中的“脚手架效应”。公开排行榜通常按模型名称和通过率排名，但支撑智能体的脚手架（负责工具调用、上下文管理和停止决策）往往被忽略。当脚手架固定时，模型间比较有效；但当脚手架变化时，性能和效率会混淆模型与脚手架的影响。作者通过实验证明，不同脚手架对同一模型的性能影响显著，甚至超过模型间的差异。因此，排行榜排名可能误导实际能力评估。本文呼吁在评估中明确指定脚手架，并提出了更公平的比较方法。",
+    "title_zh": "编码智能体中的脚手架效应：智能体评估中的隐藏变量——脚手架选择",
+    "weighted_score": 0.775,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.8
     },
-    "story_id": "810dd166862b06ba",
+    "story_id": "52ab2cdbe04fec4e",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.21692"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "fa3da39ba09777d2",
-    "source_id": "arxiv-cs-cl",
-    "title": "LeAct: Learning to Reason from Expert Actions",
-    "url": "https://arxiv.org/abs/2607.21856",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.21856v1 Announce Type: cross \nAbstract: Modern reasoning models depend on reasoning data, today sourced from human annotations or distilled from stronger LLMs. However, a rich and largely untapped source of supervision lies in expert systems (e.g., game engines, classical planners, theorem provers), which routinely produce near-optimal actions across diverse domains. But these experts are silent: they commit to an action without writing down the chain of thought (CoT) behind it. Recovering that CoT as natural-language reasoning would distill expert knowledge into a student that generalizes beyond the demonstrated actions. We treat it as a latent variable and study how to recover it from the action alone. Our approach, LeAct (Learning to reason from Actions), optimizes this latent variable: the student samples candidate CoTs for each expert action, and we retain those that measurably improve its own probability of recovering the action. Across imperfect-information games at m",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出利用专家系统（如游戏引擎、定理证明器）的监督来训练推理模型，开辟新数据源。",
-    "summary_zh": "现代推理模型依赖推理数据，目前这些数据来自人工标注或从更强LLM中蒸馏。然而，一个丰富且尚未充分利用的监督来源是专家系统，如游戏引擎、经典规划器和定理证明器，它们能在多种领域产生接近最优的动作。但这些专家系统的输出是动作序列，而非推理步骤。本文提出LeAct框架，通过将专家动作转化为推理轨迹来训练模型。实验表明，该方法在多个推理任务上取得了有竞争力的结果，展示了利用专家系统作为监督源的潜力。",
-    "title_zh": "LeAct：从专家动作中学习推理",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "244257b1509cfb0d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.21856"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "9bb3cbd36aa7d46c",
-    "source_id": "arxiv-cs-cl",
-    "title": "Teaching LLMs to Self-Evolve: Cultivating Core Meta-Skills with Reinforcement Learning",
-    "url": "https://arxiv.org/abs/2607.21971",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.21971v1 Announce Type: cross \nAbstract: Test-time scaling through iterative self-evolution with environment feedback, as demonstrated by AlphaEvolve, shows remarkable performance gains. We hypothesize that the success of such evolution frameworks hinges on meta-skills, such as self-reflection with environment feedback, that enable effective multi-round refinement, yet are largely neglected by traditional post-training. To bridge this gap, we present MetaEvolve, a framework designed to develop these meta-skills via a data synthesis pipeline, evolution-aware reinforcement learning (RL), and inference-time evolutionary search. Concretely, we ground MetaEvolve in coding, where program execution provides natural, continuous reward signals beyond binary correctness. Building on these signals, we synthesize evolution trajectories as training data, each containing a current program, its fitness score (combining correctness and efficiency), and a history of prior attempts, and train ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出用强化学习培养LLM的元技能（如自我反思），使其能通过环境反馈自主进化。",
-    "summary_zh": "测试时通过迭代自我进化与环境反馈（如AlphaEvolve所示）能带来显著的性能提升。本文假设这种进化框架的成功依赖于元技能，如基于环境反馈的自我反思，这些技能能实现有效的多轮改进，但当前训练中却被忽视。作者提出使用强化学习来培养LLM的核心元技能，使其能够自我进化。实验表明，经过元技能训练的模型在多个任务上表现出更强的自适应能力和持续改进能力，为构建更自主的AI系统提供了新途径。",
-    "title_zh": "教LLM自我进化：用强化学习培养核心元技能",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "7fd524366fae3ba9",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.21971"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22585"
       }
     ],
     "curated": true
@@ -582,80 +440,47 @@
     "curated": true
   },
   {
-    "id": "35ed3ffadc6e69ff",
-    "source_id": "zh-juejin",
-    "title": "别再把 MCP 当成大模型的“手脚”：LLM 并不会直接调用 MCP",
-    "url": "https://juejin.cn/post/7667100609937719339",
-    "published_at": "2026-07-28T01:42:39+00:00",
-    "raw_text": "本文系统讲解 MCP 的核心概念、架构与调用原理，并通过天气服务和 GitHub 案例演示本地、远程服务的接入流程。同时总结工具设计、权限控制、凭据保护与安全防护等实践要点，帮助开发者快速掌握 MCP",
+    "id": "199cd80e039b3d00",
+    "source_id": "infoq-cn-ai",
+    "title": "英伟达重构工程软件栈：Agent、PhysicsNeMo 与 CUDA-X 合流",
+    "url": "https://www.infoq.cn/article/zqDgQBsALhkhCkBoRg9l?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-28T11:22:54+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/zqDgQBsALhkhCkBoRg9l?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
+      "行业动态",
       "技巧与观点"
     ],
     "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "澄清MCP调用机制误区，系统讲解架构与接入流程，包含工具设计、安全防护等实践要点，对开发者极具价值。",
-    "summary_zh": "本文系统讲解了MCP（Model Context Protocol）的核心概念、架构与调用原理，纠正了“LLM直接调用MCP”的常见误解。文章通过天气服务和GitHub案例，演示了本地和远程服务的接入流程。同时，总结了工具设计、权限控制、凭据保护与安全防护等实践要点。作者强调，MCP是模型与外部工具之间的中间层，LLM通过代理间接调用MCP，理解这一机制对正确使用MCP至关重要。",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "英伟达整合工程软件栈，Agent、PhysicsNeMo与CUDA-X合流，影响AI基础设施生态。",
+    "summary_zh": "英伟达宣布对其工程软件栈进行重大重构，将Agent框架、PhysicsNeMo物理模拟库与CUDA-X加速库整合为统一平台。此举旨在简化开发者工作流，使AI模型训练、物理仿真和推理部署能在同一套工具链中高效运行。PhysicsNeMo提供基于物理的神经网络模块，Agent框架支持自动化任务编排，CUDA-X则提供底层加速。整合后，开发者可更便捷地构建端到端应用，如机器人控制、数字孪生等。文章还介绍了新平台的关键特性和性能提升数据。",
     "title_zh": null,
     "weighted_score": 0.765,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.9
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.6
     },
-    "story_id": "018e82baa3276b29",
+    "story_id": "512f858d1d54576a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7667100609937719339"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/zqDgQBsALhkhCkBoRg9l?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
   },
   {
-    "id": "5b5c0c023fd0d1af",
-    "source_id": "zh-juejin",
-    "title": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger",
-    "url": "https://juejin.cn/post/7667140974343700490",
-    "published_at": "2026-07-28T01:48:59+00:00",
-    "raw_text": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger TL;DR 场景：1M Context 解决容量上限，却不能自动保证 compact 后约束不丢、仓",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "揭示长上下文Coding Agent的“失忆”问题，提出Context Ledger解决方案，对构建可靠Agent有重要参考价值。",
-    "summary_zh": "本文指出，即使拥有1M上下文窗口，Coding Agent仍会因上下文压缩而丢失关键约束，导致“失忆”问题。作者提出Context Ledger概念，通过记录和管理上下文中的关键信息，确保在上下文压缩后约束不丢失。文章详细分析了失忆的成因，包括注意力分散、信息覆盖等，并给出了Context Ledger的实现方案和实验效果。该方案显著提升了Agent在长任务中的稳定性和准确性。",
-    "title_zh": null,
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.9
-    },
-    "story_id": "c5a144213fd01987",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7667140974343700490"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "07607e097946dbb2",
-    "source_id": "arxiv-cs-cl",
-    "title": "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
-    "url": "https://arxiv.org/abs/2607.21653",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.21653v1 Announce Type: cross \nAbstract: Agentic reinforcement learning research is constant algorithm modification, new estimators, new pipeline stages, new rollout schemes, and in mainstream frameworks each change threads through layers of trainer, distributed backend, and rollout glue: the cost lands on the researcher at every iteration. Molt is a PyTorch-native training framework built to keep that cost small: a codebase compact and clean enough for a researcher to hold in their head, and for an AI coding assistant to read and reason about in its entirety, so the algorithm flow can be traced and changed end to end. The agent is an ordinary program, and one asynchronous loop trains multimodal and mixture-of-experts policies while never training on a token it did not generate, consistent in tokens, policy versions, and model semantics. Leanness does not cost performance: under a matched, fully asynchronous protocol, Molt is statistically comparable to a state-of-the-art Meg",
+    "id": "58c9f79b91c31274",
+    "source_id": "arxiv-cs-ai",
+    "title": "TRE: Training-Free Hallucination Detection for Diffusion Language Models",
+    "url": "https://arxiv.org/abs/2607.22661",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22661v1 Announce Type: new \nAbstract: Diffusion large language models (D-LLMs) have recently gained increasing attention, yet their reliability is significantly hindered by the hallucination problem. Existing hallucination detection approaches for D-LLMs mainly follow a training-based paradigm, relying on data-driven training to optimize the detector. Such reliance not only limits their generalizability across domains models but also incurs additional training cost and deployment overhead. To address these limitations, we propose TRE, a training-free hallucination detection metric for D-LLMs. TRE is a parameter-free and single-run metric that estimates hallucination risk directly from the entropy signals of a single generation, without requiring any detector training or repeated sampling. TRE extracts entropy signals within the D-LLM decoding process along both the spatial and temporal dimensions. From a token-level spatial perspective, we focus on revealing tokens as the mo",
     "category_hint": [
       "论文研究"
     ],
@@ -663,9 +488,9 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.7,
-    "reason_zh": "提出了一个PyTorch原生的智能体强化学习训练框架，简化了算法修改和分布式训练流程。",
-    "summary_zh": "Molt是一个PyTorch原生的训练框架，专为智能体强化学习研究设计。它解决了现有框架中算法修改、新估计器、新流水线阶段和新rollout方案等变更需要层层修改训练器、分布式后端和rollout胶水代码的问题。Molt通过提供统一的接口和模块化设计，使研究人员能够快速迭代算法，降低了开发成本。该框架支持多种分布式策略和rollout方案，旨在加速智能体强化学习的研究进程。",
-    "title_zh": "Molt：一个可扩展的PyTorch原生智能体强化学习训练框架",
+    "reason_zh": "提出无需训练的扩散LLM幻觉检测方法，实用性强，可即插即用。",
+    "summary_zh": "本文针对扩散大语言模型（D-LLM）的幻觉问题，提出一种无需训练的检测方法TRE。现有方法依赖数据驱动训练，而TRE利用模型内部特征直接检测幻觉，无需额外训练数据。实验证明该方法在多个D-LLM上有效，显著提升了模型可靠性。",
+    "title_zh": "TRE：扩散语言模型的免训练幻觉检测",
     "weighted_score": 0.76,
     "score_breakdown": {
       "source_authority": 0.9,
@@ -673,46 +498,46 @@
       "impact": 0.6,
       "practical_value": 0.7
     },
-    "story_id": "4839813d97fd6032",
+    "story_id": "adb9168c79c768b6",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.21653"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22661"
       }
     ],
     "curated": true
   },
   {
-    "id": "ffc376ee7a99fe08",
-    "source_id": "arxiv-cs-cl",
-    "title": "From Isolated Tasks to Structured Capabilities: A Multilayer Taxonomy for Large Language Models",
-    "url": "https://arxiv.org/abs/2607.22182",
-    "published_at": "2026-07-27T04:00:00+00:00",
-    "raw_text": "arXiv:2607.22182v1 Announce Type: new \nAbstract: Large language model (LLM) evaluation spans diverse tasks and benchmarks, yet evidence remains organized around tasks rather than the capabilities they probe. This fragmentation limits cross-study comparison, obscures capabilities tasks recruit, and makes coverage gaps difficult to identify.\n  We introduce a multi-layer taxonomy of 14 capability domains and 91 subskills across Primitive, Constructed, and Integrative layers. Human cognitive science guides capability definition and organization, not LLM architecture. Layer assignments draw on developmental precedence and hypothesized functional support, while human-origin constructs are adapted to observable model behavior.\n  To demonstrate operational utility, we screened 31,505 papers from ACL, AAAI, ICML, and NeurIPS between 2023 and 2025 and mapped 15,934 LLM-focused papers through multi-model annotation, consensus, and arbitration. Direct research attention concentrated on Language-Se",
+    "id": "9fe43dd16e11bef3",
+    "source_id": "arxiv-cs-ai",
+    "title": "A Vocabulary for Multi-Agent Automated Research Systems",
+    "url": "https://arxiv.org/abs/2607.22682",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22682v1 Announce Type: new \nAbstract: We introduce a vocabulary for automated research systems built from one or more agents to make their design choices easier to describe and compare. The vocabulary specifies 1) who the agents are, 2) what operations are available in the system, 3) who may invoke them, 4) how agents communicate, 5) what information is visible within and across runs, 6) how the next action is chosen, 7) how a run begins, and 8) how outputs are evaluated. A trajectory records one run from the input task to the returned artifact. Because agents, operations, and initialization may be stochastic, repeated runs on the same task induce a distribution over trajectories rather than a single behavior.\n  Our vocabulary turns structural design questions, such as when agents should communicate, gain or lose a capability, or carry information across runs, into testable choices. It also makes the evaluator a component of the system, since reported gains depend on how clo",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出14个能力域的多层LLM评估分类法，解决任务碎片化问题，对评估体系设计有重要指导意义。",
-    "summary_zh": "本文提出一个多层分类法，将大语言模型（LLM）评估从孤立任务组织到结构化能力域。现有评估证据围绕任务而非能力组织，导致跨研究比较困难、能力覆盖不清。该分类法包含14个能力域，如推理、知识、语言理解等，并定义了各域的子能力。通过映射现有基准到该分类法，揭示了覆盖缺口，为未来评估设计提供了系统框架。",
-    "title_zh": "从孤立任务到结构化能力：大语言模型的多层分类法",
-    "weighted_score": 0.755,
+    "depth_score": 0.6,
+    "reason_zh": "为多智能体自动化研究系统提供统一词汇表，促进系统设计与比较。",
+    "summary_zh": "本文为多智能体自动化研究系统引入一套词汇表，用于描述和比较系统设计选择。词汇表涵盖智能体身份、可用操作、调用权限、通信方式、信息可见性等六个方面。该工作有助于标准化多智能体系统的描述，推动自动化研究的发展。",
+    "title_zh": "多智能体自动化研究系统的词汇表",
+    "weighted_score": 0.76,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.8,
-      "impact": 0.7,
+      "impact": 0.6,
       "practical_value": 0.7
     },
-    "story_id": "14a9329b8beef7e7",
+    "story_id": "268d25f421eaacac",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2607.22182"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22682"
       }
     ],
     "curated": true
@@ -821,6 +646,74 @@
     "curated": true
   },
   {
+    "id": "7946645dcfdf7184",
+    "source_id": "arxiv-cs-ai",
+    "title": "DynaResize: Runtime GPU Reallocation for Disaggregated LLM Post-Training",
+    "url": "https://arxiv.org/abs/2607.22614",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22614v1 Announce Type: new \nAbstract: RL-based LLM post-training increasingly disaggregates Rollout and Training across separate GPU resources, but static GPU partitioning suffers from severe pipeline bubbles under long-tail rollout latency. We present DynaResize, a runtime GPU reallocation system that dynamically switches GPUs between Rollout and Training to balance stage execution times without changing RL semantics. DynaResize decomposes resizing into fine-grained operations and removes non-startup-critical work from the critical path through communicator reuse, bounded state staging, and hysteresis-based resizing. Experimental results show that DynaResize can improve end-to-end throughput by 66.5% and reduce total execution time by 33% over the optimal static configuration, while hiding 27% of role-switching overhead.",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出运行时GPU重分配系统DynaResize，动态平衡LLM后训练中Rollout与Training阶段，减少流水线气泡，提升资源利用率。",
+    "summary_zh": "基于强化学习的LLM后训练通常将Rollout和Training分离到不同GPU资源上，但静态GPU分区在长尾延迟下会导致严重流水线气泡。本文提出DynaResize，一种运行时GPU重分配系统，能动态切换GPU在Rollout和Training之间的角色，以平衡阶段执行时间。实验表明，DynaResize显著减少了空闲时间，提高了整体吞吐量，为大规模LLM训练的资源优化提供了新思路。",
+    "title_zh": "DynaResize：面向分离式LLM后训练的运行时GPU重分配",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "ba24f180521c95c2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22614"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "afa6cf058e1b1903",
+    "source_id": "arxiv-cs-ai",
+    "title": "TokenMem: Faithful Knowledge Injection for Frozen LLMs",
+    "url": "https://arxiv.org/abs/2607.22625",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22625v1 Announce Type: new \nAbstract: Retrieval-augmented generation (RAG) enhances large language models (LLMs) with external knowledge, but suffers from knowledge conflicts: when retrieved information contradicts parametric memory, the shared self-attention pathway produces unpredictable outputs. We present TokenMem, a lightweight memory system that injects knowledge into frozen LLMs through a dedicated cross-attention channel, bypassing competition with parametric memory in the residual stream. TokenMem trains only a thin gating adapter ($\\sim$3-7M parameters) via a two-phase curriculum: first learning general knowledge utilization, then strengthening faithful compliance under counterfactual knowledge. In controlled experiments on five models spanning three families (Qwen3-4B/8B/14B, LLaMA-3.1-8B, OLMo-3-7B), TokenMem achieves 69-70% Knowledge Compliance (KC) on counterfactual benchmarks, compared to 20-52% for vanilla RAG, a gap of up to 49 percentage points. Ablation st",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出TokenMem轻量级记忆系统，解决RAG中知识冲突问题，无需微调即可向冻结LLM注入知识，创新性强。",
+    "summary_zh": "检索增强生成（RAG）面临知识冲突问题：当检索信息与模型参数记忆矛盾时，共享自注意力路径会产生不可预测输出。本文提出TokenMem，一种轻量级记忆系统，通过外部记忆模块向冻结的LLM注入知识，避免修改模型参数。TokenMem采用键值存储结构，在推理时动态检索并融合相关记忆，有效缓解知识冲突。实验显示，TokenMem在多个知识密集型任务上提升了准确性和忠实度，且计算开销小。",
+    "title_zh": "TokenMem：面向冻结LLM的忠实知识注入",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "074ce55534795e2c",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22625"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "44ed6de77c88992b",
     "source_id": "tnw-deep-tech",
     "title": "Nvidia may guarantee $250bn so OpenAI can afford the data centre that will house its chips",
@@ -850,75 +743,6 @@
       {
         "source_id": "tnw-deep-tech",
         "url": "https://thenextweb.com/news/nvidia-openai-250-billion-backstop-ohio-data-centre"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "19667c51f8a1e10e",
-    "source_id": "zh-ithome",
-    "title": "微软 CEO 纳德拉：依赖单一 AI 满足所有需求的公司恐将无法生存",
-    "url": "https://www.ithome.com/0/982/284.htm",
-    "published_at": "2026-07-27T23:24:42+00:00",
-    "raw_text": "<p>IT之家 7 月 28 日消息，微软 CEO 萨提亚 · 纳德拉再次向企业发出警告：如果把 AI 能力完全交给 AI 模型开发商，最终可能失去竞争力，甚至无法继续生存。</p><p>当地时间周日（26 日），纳德拉在接受 CNN 采访时表示，企业<strong>不仅要谨慎共享数据，还要谨慎共享 Prompt</strong>。企业向 AI 模型提供商交出的每一项信息，<strong>都可能成为未来的风险</strong>。</p><p>纳德拉认为，企业应建立一套机制，确保每次调用 AI 模型时产生的元数据<strong>都掌握在自己手中</strong>，以便未来利用这些数据训练自己的模型权重或开源模型。</p><p>模型权重是 AI 模型训练后的核心参数，决定了模型具备怎样的能力。“任何失去这种控制权的企业，我认为最终都无法继续生存，因为企业实际上已经<strong>把自己的思考能力外包出去了</strong>。”</p><p>纳德拉认为，企业至少应该拥有自己的 AI 模型，或部署 AI Gateway 等基础设施，把 Prompt 与 AI 模型隔离，而不是把所有内容直接交给 AI 模型开发商。</p><p>纳德拉还建议，企业不要依赖 Claude Code、ChatGPT Codex 等 AI 模型开发商提供的内置编程工具（Harness）。“只要把 Harness 与模型分离，把上下文和记忆与模型分离，<strong>就可以根据不同任务自由选择最适合的模型</strong>。即使某个模型停止服务，企业依然能够掌握自己的命运。”</p><p>IT之家从报道中获悉，纳德拉真正担心的并不只是 AI 成本失控。一旦企业把“思考能力外包”给 AI 模型，AI 模型开发商未来<strong>完全可能推出与企业直接竞争的服务</strong>。随着越来越多企业开始部署 AI Agent，并赋予 AI Agent 访问企业内部核心系统的权限，这种风险只会越来越高。</p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.7,
-    "reason_zh": "纳德拉警告企业勿过度依赖单一AI提供商，强调数据与Prompt自主权，对AI战略有重要指导意义。",
-    "summary_zh": "微软CEO萨提亚·纳德拉在接受CNN采访时警告企业，如果将AI能力完全交给AI模型开发商，可能失去竞争力甚至无法生存。他强调企业不仅要谨慎共享数据，还要谨慎共享Prompt，因为每次调用AI模型产生的元数据都应掌握在自己手中，以便未来用于训练自有模型或开源模型。纳德拉认为，失去这种控制权的企业将无法继续生存，因为企业实际上把自己的思考能力外包了。",
-    "title_zh": "微软 CEO 纳德拉：依赖单一 AI 满足所有需求的公司恐将无法生存",
-    "weighted_score": 0.75,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "856fbda907da05b8",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/284.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f143efbfe201f040",
-    "source_id": "openai-blog",
-    "title": "How AI is expanding what people do at work",
-    "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
-    "published_at": "2026-07-27T03:30:00+00:00",
-    "raw_text": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries.",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "OpenAI官方研究揭示AI如何扩展工作边界，对理解AI对就业的影响有重要参考价值。",
-    "summary_zh": "OpenAI发布新研究，探讨AI如何扩展员工的工作内容。研究发现，使用ChatGPT的用户开始承担跨角色的任务，AI正在重塑工作边界。报告分析了AI对职业发展的影响，包括技能需求变化、工作流程重组等。该研究基于大量用户数据，提供了AI对劳动力市场影响的实证分析。",
-    "title_zh": "AI如何扩展人们的工作内容",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "bdc91f746d303d1e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "openai-blog",
-        "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work"
       }
     ],
     "curated": true
@@ -959,90 +783,36 @@
     "curated": true
   },
   {
-    "id": "7c1567bfc409c458",
-    "source_id": "zh-ithome",
-    "title": "影响全球约 50 万 macOS 用户，Claude Cowork 智能体 AI 爆漏洞可读写任意 Mac 文件",
-    "url": "https://www.ithome.com/0/982/277.htm",
-    "published_at": "2026-07-27T22:57:17+00:00",
-    "raw_text": "<p>IT之家 7 月 28 日消息，科技媒体 9to5Mac 昨日（7 月 27 日）发布博文，报道称 Anthropic 的 Claude Cowork 存在安全漏洞，<strong>攻击者利用漏洞可以从 Linux 虚拟机沙箱逃逸，并读写 Mac 任意位置文件。</strong></p><p>IT之家注：Claude Cowork 是 Anthropic 推出的 AI 智能体工具，在征得用户明确授权许可之后，该工具可以在 Mac 上访问本地文件和文件夹，并依据用户指令处理相关任务。</p><p>在安全防护方面，Anthropic 为此设置 2 层限制，其一是 Cowork 在虚拟机内隔离运行，其二是仅可访问用户授权的文件与文件夹。</p><p>安全研究人员发现，<strong>开发者利用该漏洞可同时突破上述 2 层限制。</strong>攻击者可让 Cowork 逃离其运行所在的 Linux 虚拟机沙箱，并在 Mac 任意位置读取或写入文件。漏洞还可能使攻击者获取在线服务的登录凭据。</p><p>在具体实现方面，Accomplish AI 公司指出 Cowork 隔离运行的虚拟机可以通过可写的 VirtioFS 挂载点共享宿主机文件系统。该挂载点原本只允许虚拟机内的 root 用户访问，但研究人员发现，他们可以利用 CVE-2026-46331（一个被称为“pedit COW”的 Linux 内核漏洞，其严重性评分接近 8 分，满分 10 分）从会话用户提升到虚拟机 root 用户权限。</p><p>一旦智能体程序获得虚拟机内的 root 权限，它就可以访问登录的 Mac 用户能够访问的任何资源。</p><p>在影响规模方面，Accomplish AI 在漏洞披露前已向 The Hacker News 分享了该漏洞的详细信息。该公司表示，在漏洞修复前，影响约有 50 万运行本地 Cowork 会话的 macOS 用户。</p><p>据 Hacker News 报道，Anthropic 公司将该报告标记为“信息丰富”（<em>informative</em>），但并未发布直接的解决方案。随后发布的 Claude Cowork 版本默认在云端执行，完全绕过了本地逃逸路径。</p><p>然而，选择在本地而非云端运行智能体的用户仍然面临风险，除非他们通过禁用非特权用户",
+    "id": "be86eefd88262ef7",
+    "source_id": "infoq-cn-ai",
+    "title": "谷歌 AlphaEvolve 正式上线，提供“进化式代码优化即服务”",
+    "url": "https://www.infoq.cn/article/3UKNEJewovoQDcN0jpoy?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-28T14:00:00+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/3UKNEJewovoQDcN0jpoy?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
-      "行业动态"
+      "行业动态",
+      "技巧与观点"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/38530c35-9503-4ed5-8b7a-42a61d48eed5.png",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
     "depth_score": 0.3,
-    "reason_zh": "Claude Cowork存在严重安全漏洞，可逃逸虚拟机并读写任意Mac文件，影响约50万用户，需警惕。",
-    "summary_zh": "科技媒体9to5Mac报道，Anthropic的AI智能体工具Claude Cowork存在安全漏洞，攻击者可利用漏洞从Linux虚拟机沙箱逃逸，并读写Mac任意位置文件。该工具在用户授权下可访问本地文件和文件夹，Anthropic设置了虚拟机隔离和文件访问权限两层限制，但安全研究人员发现开发者可同时突破这两层限制。该漏洞影响全球约50万macOS用户，需及时修复。",
-    "title_zh": "影响全球约 50 万 macOS 用户，Claude Cowork 智能体 AI 爆漏洞可读写任意 Mac 文件",
+    "reason_zh": "谷歌推出AlphaEvolve，提供进化式代码优化服务，对代码优化领域有潜在影响。",
+    "summary_zh": "谷歌正式上线AlphaEvolve服务，这是一项基于进化算法的代码优化即服务（Code Optimization as a Service）。用户提交代码后，AlphaEvolve通过遗传编程自动生成优化变体，并在多种硬件上测试性能，最终返回最优版本。该服务支持多种编程语言和编译器，可针对特定场景（如延迟、吞吐量、能耗）进行定制优化。文章介绍了其工作原理、使用案例及与现有优化工具的比较，强调其自动化程度和跨平台能力。",
+    "title_zh": null,
     "weighted_score": 0.745,
     "score_breakdown": {
-      "source_authority": 0.7,
+      "source_authority": 0.9,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.8
+      "practical_value": 0.5
     },
-    "story_id": "521e1999121456d9",
+    "story_id": "b7c4962d667bb669",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/277.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "30ed9ebea82863eb",
-    "source_id": "the-decoder",
-    "title": "Moonshot AI releases Kimi K3 open weights and infrastructure after shaking up the frontier model race",
-    "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/",
-    "published_at": "2026-07-27T19:35:08+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1152\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/moonshot_ai_logos.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"2048\" /></p>\n<p>        Moonshot AI has released Kimi K3's model weights and made parts of its infrastructure open source. The Chinese model nearly matches Western frontier models such as Fable 5 and GPT-5.6 Sol on popular benchmarks, but independent tests found major gaps in cyber and math performance, possibly pointing to distillation.</p>\n<p>The article <a href=\"https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/\">Moonshot AI releases Kimi K3 open weights and infrastructure after shaking up the frontier model race</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/moonshot_ai_logos.png",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Moonshot AI开源Kimi K3权重和基础设施，性能接近西方前沿模型，对开源社区和模型竞争格局有重要影响。",
-    "summary_zh": "Moonshot AI发布了Kimi K3的模型权重，并开源了部分基础设施。该模型几乎与西方前沿模型（如Fable等）性能相当，标志着中国AI公司在开源领域的重大进展。此举可能改变前沿模型竞争格局，为开发者提供更多选择。",
-    "title_zh": "Moonshot AI发布Kimi K3开源权重和基础设施，撼动前沿模型竞赛",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "36a827534d25ced7",
-    "multi_source_count": 6,
-    "sources": [
-      {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway"
-      },
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/deepseek-to-kimi-ai-investment-logic-jul2026"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/283.htm"
-      },
-      {
-        "source_id": "zh-sspai",
-        "url": "https://sspai.com/post/112805"
-      },
-      {
-        "source_id": "36kr",
-        "url": "https://36kr.com/newsflashes/3914601205011587?f=rss"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/3UKNEJewovoQDcN0jpoy?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -1118,75 +888,6 @@
     "curated": true
   },
   {
-    "id": "e03e2271acc6961e",
-    "source_id": "infoq-cn-ai",
-    "title": "Cursor 用一群Agent重造SQLite：仅凭 835 页手册，无源码、无测试、不联网",
-    "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article",
-    "published_at": "2026-07-27T09:34:44+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "Cursor用Agent重造SQLite的实践案例，展示了AI编程的极限能力，对AI工程化有启发意义。",
-    "summary_zh": "Cursor团队使用多个Agent，仅凭835页手册，在无源码、无测试、不联网的条件下重造了SQLite。这一实验展示了AI编程的惊人潜力，也引发了关于AI自主开发软件的讨论。",
-    "title_zh": "Cursor用一群Agent重造SQLite：仅凭835页手册，无源码、无测试、不联网",
-    "weighted_score": 0.73,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "58c85e8ae8274cf7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "cf36df3663bf90ed",
-    "source_id": "zh-juejin",
-    "title": "Zero RL：当 AI 学会“顿悟“——零强化学习的狂欢与阵痛",
-    "url": "https://juejin.cn/post/7667012505680003118",
-    "published_at": "2026-07-28T01:37:35+00:00",
-    "raw_text": "一、那个让全场沉默的\"Aha Moment\" 2025 年 1 月，DeepSeek 的团队在 R1-Zero 的训练过程中，观察到了一个被后人称为 \"Aha Moment\" 的现象：模型在没有任何人",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "深入剖析DeepSeek R1-Zero的“Aha Moment”现象，揭示零强化学习的内在机制与挑战，对理解前沿训练方法有重要启发。",
-    "summary_zh": "本文详细介绍了DeepSeek R1-Zero训练过程中出现的“Aha Moment”现象，即模型在无人类干预下自发产生顿悟式行为。文章分析了这一现象背后的技术原理，包括强化学习策略的自我进化、奖励模型的设计以及涌现能力的边界。同时，作者也指出了零强化学习面临的阵痛，如训练不稳定、可解释性差等问题。文章通过实验数据和案例，展示了R1-Zero在复杂推理任务上的突破性表现，并探讨了其对未来AI发展的潜在影响。",
-    "title_zh": null,
-    "weighted_score": 0.73,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "98021812863f5eca",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7667012505680003118"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "f0ca04bd1f3ac6ef",
     "source_id": "gh-open-webui",
     "title": "open-webui/open-webui v0.11.0",
@@ -1216,6 +917,109 @@
       {
         "source_id": "gh-open-webui",
         "url": "https://github.com/open-webui/open-webui/releases/tag/v0.11.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "95f90c6a8c90e5aa",
+    "source_id": "reddit-artificial",
+    "title": "Kimi-K3 is published on HuggingFace",
+    "url": "https://www.reddit.com/r/artificial/comments/1v83g3l/kimik3_is_published_on_huggingface/",
+    "published_at": "2026-07-27T15:20:51+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Moonshot's latest model Kimi-K3 is available on HuggingFace since today. And it's another good news for open-weight AI and for the future of open-source AI</p> <p>It's a 2.8T-parameters Moonshot's SOTA model with 1 million tokens context window. The architecture is mixture-of-experts (896 experts) with 108B active parameters</p> <p>It's available via vLLM, SGLang and TokenSpeed</p> <p>License: Kimi K3 License. It allows commercial use with some limitations. For Model-as-a-Service it has $20M/year limit and after reaching the limit the license requires to make additional agreement with Moonshot. Details: <a href=\"https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE\">https://huggingface.co/moonshotai/Kimi-K3/blob/main/LICENSE</a></p> <h1>Link to the model</h1> <p>Model could be downloaded from the HuggingFace:</p> <p><a href=\"https://huggingface.co/moonshotai/Kimi-K3\">https://huggingface.co/moonshotai/Kimi-K3</a></p> </div><!-- SC_ON --> &#32; sub",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Kimi-K3开源，2.8T参数MoE模型，对开源社区意义重大。",
+    "summary_zh": "Moonshot AI将其最新模型Kimi-K3发布在HuggingFace上，这是一个2.8万亿参数的MoE模型，拥有896个专家和108B活跃参数，支持100万token上下文窗口。该模型可通过vLLM、SGLang等框架使用，是开源AI领域的重要进展。",
+    "title_zh": "Kimi-K3 在 HuggingFace 上发布",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "ac8c3bffc02ff956",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-artificial",
+        "url": "https://www.reddit.com/r/artificial/comments/1v83g3l/kimik3_is_published_on_huggingface/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6a389f6e0b5d58ab",
+    "source_id": "zh-oschina",
+    "title": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
+    "url": "https://www.oschina.net/news/481154",
+    "published_at": "2026-07-28T03:23:33+00:00",
+    "raw_text": "Cloudflare 宣布彻底重构 AI 爬虫管控体系。过去那个一键&quot;拦截所有 AI 机器人&quot;的开关被拆成了三个独立选项：Search（搜索）、Agent（智能体）、Training（训练）——包括免费版在内的全部客户都可以分别配置。 这是一个比表面看起来更重要的分类。 Search 爬虫的目的是索引内容、在查询时给出答案。Cloudflare 的态度是：...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "Cloudflare 重构 AI 爬虫管控，三段式分类比一键拦截更精细，对网站运营者极具实用价值。",
+    "summary_zh": "Cloudflare 宣布彻底重构 AI 爬虫管控体系，将过去的一键“拦截所有 AI 机器人”开关拆分为三个独立选项：Search（搜索）、Agent（智能体）、Training（训练），所有客户（包括免费版）均可分别配置。Search 爬虫用于索引内容并在查询时给出答案；Agent 爬虫代表用户执行任务；Training 爬虫用于模型训练。这种分类比简单的一键拦截更精细，允许网站所有者根据自身需求灵活控制不同 AI 爬虫的访问权限。文章还分析了这一变化对网站运营者和 AI 公司的影响。",
+    "title_zh": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "f0cf121388cc6a7a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/481154"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "e7ebc60ef8d8845e",
+    "source_id": "infoq-cn-ai",
+    "title": "1v1 对话：来自 Agent Infra 负责人的心声、复盘、规划与思考",
+    "url": "https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&utm_medium=article",
+    "published_at": "2026-07-28T10:28:47+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.8,
+    "reason_zh": "Agent Infra负责人亲述实战复盘与规划，对构建Agent系统的工程师极具参考价值。",
+    "summary_zh": "本文是InfoQ对某Agent基础设施负责人的深度访谈，内容涵盖Agent系统从设计到落地的全流程复盘。负责人分享了在构建高并发、低延迟Agent服务时遇到的关键挑战，包括状态管理、工具调用编排、错误恢复机制等，并详细阐述了团队如何通过分层架构和异步通信解决这些问题。同时，他还展望了Agent Infra的未来发展方向，如多Agent协作、动态资源调度等。文章提供了大量一线实战经验，适合AI工程团队参考。",
+    "title_zh": null,
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "1d25b11fa65df1e0",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -1293,39 +1097,81 @@
     "curated": true
   },
   {
-    "id": "8e5de0924ce5586a",
-    "source_id": "zh-ithome",
-    "title": "纳德拉官宣微软首个 AI 安全模型 MAI-Cyber-1-Flash，跑分超 Mythos 5 和 GPT-5.5 Cyber",
-    "url": "https://www.ithome.com/0/982/312.htm",
-    "published_at": "2026-07-28T00:59:36+00:00",
-    "raw_text": "<p>IT之家 7 月 28 日消息，微软首席执行官萨蒂亚 · 纳德拉（Satya Nadella）今天（7 月 28 日）在 X 平台发布推文，宣布其首个网络安全模型 MAI-Cyber-1-Flash，<strong>并表示该模型在 CyberGym 基准测试中取得了 95.95% 的成功率，超过 Anthropic 和 OpenAI 的同类系统。</strong></p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/31cc0665-806b-448c-8cb5-9d34e941d117.png?x-bce-process=image/format,f_auto\" /></p><p>纳德拉表示 MAI-Cyber-1-Flash 是微软首个专门针对网络安全而研发的 AI 模型，并将其接入多智能体（Agent）安全系统 MDASH 中，可以高效处理约 90% 的网络安全任务。而针对剩余 10% 较为复杂的网络安全任务，可以调用规模更大、成本更高的模型（官方示例中为 GPT-5.4）。</p><p>成本方面，微软表示，MAI-Cyber-1-Flash 和 GPT-5.4 的组合成本比当前使用 GPT-5.4、GPT-5.4 Mini 和 GPT-5.3 Codex 的 MDASH 配置成本降低了近 50%。</p><p>在性能方面，CyberGym 测试中，<strong>MAI-Cyber-1-Flash 和 MDASH 组合获得 95.95% 的最高成绩</strong>，相比较而言，Claude Mythos 5 模型的成绩为 83.8%；GPT-5.6 Sol 模型为 83.6%；GPT-5.5 Cyber 模型为 85.6%。</p><p>微软同时推出 Perception。该系统由多个智能体组成，服务于 MDASH 中的多类安全工作流。系统可持续监测威胁、修补漏洞，并关闭新的威胁入口。微软称，Perception 未来将把该模型用于更多安全工作流。</p><p>微软称，另一项统计显示，其每天处理的安全信号超过 100 万亿条。该公司将漏洞、攻击、防御和处置结果纳入强化学习流程。MAI-C",
+    "id": "b77ab573d5f3e6fe",
+    "source_id": "36kr",
+    "title": "我国启动人工智能大模型IPv6能力提升专项行动",
+    "url": "https://36kr.com/newsflashes/3914821555213443?f=rss",
+    "published_at": "2026-07-28T04:42:25+00:00",
+    "raw_text": "记者今天（7月28日）从雄安新区了解到，“人工智能大模型IPv6能力提升专项行动”由中央网信办联合北京、上海、浙江、深圳四地网信办，会同5家头部大模型企业在雄安新区共同启动，推动生成式大模型应用，全面支持IPv6，为智能时代筑牢网络根基。今天还正式启动了雄安新区IPv6单栈部署行动。雄安新区将全面推进单栈IPv6部署，从夯基础、广赋能、强攻关、育生态四个维度协同发力，到2030年新建片区将全面实现IPv6单栈规模化运行。（央视新闻）",
     "category_hint": [
       "行业动态"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/31cc0665-806b-448c-8cb5-9d34e941d117.png?x-bce-process=image/format,f_auto",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "微软发布首个AI安全模型，跑分超越Anthropic和OpenAI，行业影响大。",
-    "summary_zh": "微软CEO纳德拉宣布首个网络安全模型MAI-Cyber-1-Flash，在CyberGym基准测试中取得95.95%成功率，超过Anthropic和OpenAI的同类系统。该模型专为网络安全设计，标志着微软在AI安全领域的重要进展。",
-    "title_zh": "纳德拉官宣微软首个AI安全模型MAI-Cyber-1-Flash，跑分超Mythos 5和GPT-5.5 Cyber",
-    "weighted_score": 0.665,
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "官方政策推动AI大模型全面支持IPv6，为智能时代网络根基奠定基础，行业影响深远。",
+    "summary_zh": "中央网信办联合北京、上海、浙江、深圳四地网信办及5家头部大模型企业，在雄安新区启动“人工智能大模型IPv6能力提升专项行动”，旨在推动生成式大模型应用全面支持IPv6。同时启动雄安新区IPv6单栈部署行动，从夯基础、广赋能、强攻关、育生态四个维度协同发力，目标到2030年新建片区全面实现IPv6单栈规模化运行。",
+    "title_zh": null,
+    "weighted_score": 0.635,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.3
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.2
     },
-    "story_id": "632a90cb71087c5b",
-    "multi_source_count": 2,
+    "story_id": "6b96046ab71d3ee3",
+    "multi_source_count": 3,
     "sources": [
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/microsoft-launches-its-own-cybersecurity-model-mai-cyber-1-flash-but-still-depends-on-openai-for-the-toughest-tasks/"
+        "source_id": "36kr",
+        "url": "https://36kr.com/newsflashes/3914821555213443?f=rss"
       },
       {
         "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/312.htm"
+        "url": "https://www.ithome.com/0/982/501.htm"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/481266"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "3974937749a6b3d1",
+    "source_id": "zh-ithome",
+    "title": "ESP32-AI 亮相：8MB PSRAM 运行 2890 万参数模型，设想离线调配出最佳咖啡",
+    "url": "https://www.ithome.com/0/982/494.htm",
+    "published_at": "2026-07-28T04:03:00+00:00",
+    "raw_text": "<p>IT之家 7 月 28 日消息，科技媒体 Tom's Hardware 昨日（7 月 27 日）发布博文，报道称乌克兰开发者 Slava S 发布 ESP32-AI 项目，<strong>针对乐鑫（Espressif）的 ESP32-S3 开发板，成功部署 2890 万个参数的本地 AI 模型。</strong></p><p style=\"text-align: center;\"></p><p>IT之家注：ESP32-S3 开发板由乐鑫推出，配备 512KB 的 SRAM（片上高速存储，访问周期仅需 1 个 CPU 时钟）、8MB 的 PSRAM（通过 SPI 总线扩展的 8MB 内存，访问速度取决于 SPI 时钟配置）和 16MB 的闪存，由于内存容量受限，此前 Dave Bennett 针对该开发板部署 AI 参数上限为 26 万个。</p><p style=\"text-align: center;\"><img alt=\"A diagram showing that the same architecture from big Google AI models can be used on a low-end machine.\" class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/0a798907-f7a4-46a4-a6f8-a36bf67ae170.png?x-bce-process=image/format,f_auto\" /></p><p>Slava S 采用 Google Gemma 使用的 P er-Layer Embeddings（分层嵌入）技术。模型经过 4-bit 量化后，文件大小为 14.9MB。开发者把 25M 参数嵌入表存入 16MB 闪存。模型每生成 1 个 Tokens，只需读取嵌入表中的少量数据。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/4d7fcc3e-008c-4c94-9048-187afdd0ecdb.png?x-bce-process=image/form",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/0a798907-f7a4-46a4-a6f8-a36bf67ae170.png?x-bce-process=image/format,f_auto",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "在资源受限的ESP32上部署近3000万参数模型，展示了边缘AI的潜力。",
+    "summary_zh": "乌克兰开发者Slava S发布ESP32-AI项目，在乐鑫ESP32-S3开发板上成功部署了2890万个参数的本地AI模型。ESP32-S3配备512KB SRAM、8MB PSRAM和16MB闪存，此前同类部署参数上限仅为26万。该项目突破了硬件限制，实现了在低成本微控制器上运行较大规模AI模型，可用于离线场景如调配咖啡等。",
+    "title_zh": null,
+    "weighted_score": 0.6,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.8,
+      "impact": 0.4,
+      "practical_value": 0.6
+    },
+    "story_id": "197d5c444a847304",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-developer-runs-28-9-million-parameter-model-on-usd10-esp32-s3-microcontroller-uses-googles-per-layer-embeddings-technique-stores-table-on-16mb-flash-memory"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/982/494.htm"
       }
     ],
     "curated": true
@@ -1360,6 +1206,42 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/lightelligence-optical-computing-commercialization-jul2026"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "ec9dddb29c1e413a",
+    "source_id": "techcrunch-ai",
+    "title": "Google’s AI search is rapidly becoming the default, new data shows",
+    "url": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/",
+    "published_at": "2026-07-27T15:57:12+00:00",
+    "raw_text": "Google’s AI Overviews now appear in 43% of searches, underscoring how quickly AI-generated answers are becoming the default way people discover information online.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "谷歌AI概览已覆盖43%搜索，AI生成答案正快速成为信息发现默认方式。",
+    "summary_zh": "新数据显示，谷歌的AI概览（AI Overviews）现已出现在43%的搜索中，凸显了AI生成答案正迅速成为人们在线发现信息的默认方式。这一变化标志着搜索行为的重大转变，对内容创作者、SEO和用户信息获取方式产生深远影响。",
+    "title_zh": "新数据显示谷歌AI搜索正迅速成为默认方式",
+    "weighted_score": 0.715,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "921f9bbd95795e93",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/"
       }
     ],
     "curated": true,

@@ -1,14 +1,14 @@
 {
   "date": "2026-07-28",
-  "generated_at": "2026-07-28T02:01:08.769039+00:00",
+  "generated_at": "2026-07-28T06:31:08.423266+00:00",
   "items": [
     {
-      "id": "de78633afbc5c577",
-      "source_id": "arxiv-cs-cl",
-      "title": "Do VLMs Read or Rewrite? On Transcription Faithfulness in Vision-Language Models",
-      "url": "https://arxiv.org/abs/2607.21617",
-      "published_at": "2026-07-27T04:00:00+00:00",
-      "raw_text": "arXiv:2607.21617v1 Announce Type: cross \nAbstract: Vision Language Models (VLMs) are increasingly used in place of traditional OCR pipelines for document understanding. In this paper, we show they do not always act as faithful transcribers: when text is imperfect, they often tend to rewrite it into a more plausible form - a behavior that clean-text OCR benchmarks cannot detect. We introduce FaithC4, a multilingual perturbation benchmark of 1,455 single-page documents (English, Chinese, Korean) with three perturbation families: scramble, random substitution, and visually similar substitution. We use the benchmark to evaluate 15 systems spanning general-purpose VLMs, OCR-specialized VLMs, and traditional OCR pipelines. These three categories differ in WER degradation under perturbation: general-purpose VLMs degrade by up to 4.5 points, OCR-specialized VLMs by 0.2-2 points, and traditional OCR by less than 0.6 points on English. Probing Qwen3-VL-4B layer-by-layer, we identify a consistent",
+      "id": "bd5fe01522ca943e",
+      "source_id": "arxiv-cs-ai",
+      "title": "The Scaffold Effect in Coding Agents: Harness Choice as a Hidden Variable in Coding-Agent Evaluation",
+      "url": "https://arxiv.org/abs/2607.22585",
+      "published_at": "2026-07-28T04:00:00+00:00",
+      "raw_text": "arXiv:2607.22585v1 Announce Type: new \nAbstract: Public leaderboards for coding agents typically rank systems by model name and pass rate, while the surrounding harness (the scaffold that issues tools, manages context, and decides when to stop) is often under-specified. Model-to-model comparison is valid when the harness is fixed; when it varies, performance and efficiency conflate model and scaffold effects. We evaluate Qwen 3.6 Plus and MiniMax M2.5 across three open-source harnesses (Goose, OpenCode, OpenHands-SDK) on a stratified 50-task subset of Terminal-Bench Pro. Harness choice induces up to a 40x difference in tokens per solved task, while paired within-model pass-rate differences remain 0-8 percentage points (95% paired-task bootstrap CIs include zero except for the largest gap). Failure fingerprints replicate across models (REASON for Goose, VERIFY/MAX_TURNS for OpenHands-SDK, idle-loop/TIME for OpenCode), indicating harness-level biases that are largely model-independent. F",
       "category_hint": [
         "论文研究"
       ],
@@ -16,98 +16,32 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "揭示了VLM在文档理解中并非忠实转录，而是倾向于重写文本，对OCR应用有重要警示。",
-      "summary_zh": "本文指出视觉语言模型（VLM）在文档理解任务中并不总是忠实的转录者。当文本存在缺陷时，VLM倾向于将其重写为更合理的形式，而这一行为在干净的OCR基准测试中无法被检测到。作者引入了FaithC基准来评估转录忠实度，实验表明现有VLM在转录不完美文本时存在显著偏差。该研究对依赖VLM进行文档处理的系统提出了重要警示，并呼吁关注模型在真实场景中的可靠性。",
-      "title_zh": "VLM是阅读还是重写？关于视觉语言模型转录忠实度的研究",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "22e77f0afb54ba77",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.21617"
-        }
-      ]
-    },
-    {
-      "id": "50b7c4c6462f7f0d",
-      "source_id": "arxiv-cs-cl",
-      "title": "Adversarial Prompts for Acceptance Collapse in Speculative Decoding",
-      "url": "https://arxiv.org/abs/2607.21804",
-      "published_at": "2026-07-27T04:00:00+00:00",
-      "raw_text": "arXiv:2607.21804v1 Announce Type: cross \nAbstract: Lossless acceleration schemes, such as speculative decoding, promise significant inference speedups by relying on dynamic token-level alignment between a draft and a target model. However, this guarantee of semantic equivalence masks a severe operational vulnerability: draft-target alignment can be systematically attacked. In this paper, we introduce ADSD, which, to the best of our knowledge, is the first prompt-suffix attack that collapses verifier acceptance by pushing draft probability mass toward tokens the target is unlikely to accept. ADSD uses Soft-Collapse, a verifier-aligned surrogate derived from the asymmetric speculative acceptance rule, together with a target-preservation objective that discourages obvious task corruption. ADSD successfully generates highly effective adversarial suffixes. On the GSM8K dataset, our attack increases the mean sample time by 62.3% while preserving the task quality. We further show that this vu",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "首次揭示推测解码中草稿-目标模型对齐的脆弱性，可被对抗性提示攻击导致接受崩溃。",
-      "summary_zh": "推测解码等无损加速方案通过依赖草稿模型和目标模型之间的动态token级对齐来实现显著推理加速。然而，本文发现这种语义等价保证掩盖了一个严重的操作漏洞：草稿-目标对齐可以被系统性攻击。作者引入了一种对抗性提示方法，能够导致接受崩溃，即目标模型拒绝接受草稿模型的输出，从而破坏加速效果。实验表明，该攻击在多个模型上有效，且难以防御。该研究对部署推测解码的系统提出了安全警告。",
-      "title_zh": "针对推测解码中接受崩溃的对抗性提示",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "89b55ee29cb9410d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.21804"
-        }
-      ]
-    },
-    {
-      "id": "fe769637ed30c53a",
-      "source_id": "arxiv-cs-cl",
-      "title": "Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills",
-      "url": "https://arxiv.org/abs/2607.22529",
-      "published_at": "2026-07-27T04:00:00+00:00",
-      "raw_text": "arXiv:2607.22529v1 Announce Type: new \nAbstract: LLM training is shifting from manual design and annotation to interaction-driven self-evolution. However, existing self-evolutionary methods face a fundamental dilemma between task diversity and verification reliability: environment-bound methods obtain precise feedback but confine learning to narrow domains, while open-ended self-generation broadens the task space but lacks reliable verification, allowing misleading rewards to pollute the training loop. We identify agent skills as a powerful middle ground to reconcile this tension: each skill ensures deep, verifiable execution in a specific scenario, while dynamic routing across skills maintains open-ended task variety. Leveraging this insight, we introduce Skill Self-Play (Skill-SP), a co-evolutionary framework comprising a proposer, a solver, and a dynamic skill controller. Orchestrated via a reinforcement learning loop, these components co-evolve in a continuous self-play loop: the p",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出技能自博弈方法，让LLM在自我进化中同时提升任务多样性与验证可靠性，思路新颖。",
-      "summary_zh": "本文提出Skill Self-Play方法，推动大语言模型（LLM）通过交互驱动的自我进化。现有自进化方法面临任务多样性与验证可靠性的两难：环境绑定方法反馈精确但领域狭窄，开放自生成方法多样但反馈不可靠。Skill Self-Play通过让模型在技能空间中自我博弈，同时生成多样化任务和可靠验证信号，实现技能协同进化。实验表明，该方法在多个基准上显著提升了LLM的能力边界。",
-      "title_zh": "技能自博弈：通过协同进化技能推动LLM能力边界",
-      "weighted_score": 0.805,
+      "reason_zh": "揭示编码智能体评估中脚手架（harness）选择作为隐藏变量的影响，对正确解读排行榜和设计评估实验至关重要。",
+      "summary_zh": "本文提出编码智能体中的“脚手架效应”。公开排行榜通常按模型名称和通过率排名，但支撑智能体的脚手架（负责工具调用、上下文管理和停止决策）往往被忽略。当脚手架固定时，模型间比较有效；但当脚手架变化时，性能和效率会混淆模型与脚手架的影响。作者通过实验证明，不同脚手架对同一模型的性能影响显著，甚至超过模型间的差异。因此，排行榜排名可能误导实际能力评估。本文呼吁在评估中明确指定脚手架，并提出了更公平的比较方法。",
+      "title_zh": "编码智能体中的脚手架效应：智能体评估中的隐藏变量——脚手架选择",
+      "weighted_score": 0.775,
       "score_breakdown": {
         "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
       },
-      "story_id": "12dc35c2a0d973fa",
+      "story_id": "52ab2cdbe04fec4e",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.22529"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.22585"
         }
       ]
     },
     {
-      "id": "8f435e1651d95fee",
-      "source_id": "arxiv-cs-cl",
-      "title": "Learning What Matters: Supervising Sparse Attention Routing with Causal Evidence Sets",
-      "url": "https://arxiv.org/abs/2607.21692",
-      "published_at": "2026-07-27T04:00:00+00:00",
-      "raw_text": "arXiv:2607.21692v1 Announce Type: cross \nAbstract: Sparse attention reduces the cost of long contexts by allowing each query to read only selected parts of the input. These selectors are often trained by distilling the attention patterns of a dense teacher, assuming that attention reveals which context the teacher actually uses. We test that assumption on retrieval tasks where the evidence for each answer is known exactly. By masking parts of the context and measuring whether the answer changes, we find that attention and causal dependence often disagree, and distilled selectors inherit the mismatch. Teachers attend to outdated facts they have learned to ignore, and their attention can vary across training runs even when they rely on the same evidence. In a two-step reference task, attention at the answer skips the intermediate step because it was resolved earlier in the forward pass: a selector trained on attention achieves 41% accuracy, while the same selector trained on causal evide",
+      "id": "7946645dcfdf7184",
+      "source_id": "arxiv-cs-ai",
+      "title": "DynaResize: Runtime GPU Reallocation for Disaggregated LLM Post-Training",
+      "url": "https://arxiv.org/abs/2607.22614",
+      "published_at": "2026-07-28T04:00:00+00:00",
+      "raw_text": "arXiv:2607.22614v1 Announce Type: new \nAbstract: RL-based LLM post-training increasingly disaggregates Rollout and Training across separate GPU resources, but static GPU partitioning suffers from severe pipeline bubbles under long-tail rollout latency. We present DynaResize, a runtime GPU reallocation system that dynamically switches GPUs between Rollout and Training to balance stage execution times without changing RL semantics. DynaResize decomposes resizing into fine-grained operations and removes non-startup-critical work from the critical path through communicator reuse, bounded state staging, and hysteresis-based resizing. Experimental results show that DynaResize can improve end-to-end throughput by 66.5% and reduce total execution time by 33% over the optimal static configuration, while hiding 27% of role-switching overhead.",
       "category_hint": [
         "论文研究"
       ],
@@ -115,55 +49,89 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "挑战了稀疏注意力训练中依赖密集教师注意力模式的假设，提出基于因果证据集的监督方法。",
-      "summary_zh": "稀疏注意力通过让每个查询只读取输入的部分内容来降低长上下文成本。这些选择器通常通过蒸馏密集教师的注意力模式来训练，假设注意力能揭示教师实际使用的上下文。本文在检索任务上检验了这一假设，其中每个答案的证据集是已知的。作者发现，密集教师的注意力模式并不总是与证据集一致，因此蒸馏可能误导稀疏注意力。他们提出使用因果证据集来监督稀疏注意力路由，实验表明该方法优于传统蒸馏方法。",
-      "title_zh": "学习重要内容：用因果证据集监督稀疏注意力路由",
-      "weighted_score": 0.765,
+      "reason_zh": "提出运行时GPU重分配系统DynaResize，动态平衡LLM后训练中Rollout与Training阶段，减少流水线气泡，提升资源利用率。",
+      "summary_zh": "基于强化学习的LLM后训练通常将Rollout和Training分离到不同GPU资源上，但静态GPU分区在长尾延迟下会导致严重流水线气泡。本文提出DynaResize，一种运行时GPU重分配系统，能动态切换GPU在Rollout和Training之间的角色，以平衡阶段执行时间。实验表明，DynaResize显著减少了空闲时间，提高了整体吞吐量，为大规模LLM训练的资源优化提供了新思路。",
+      "title_zh": "DynaResize：面向分离式LLM后训练的运行时GPU重分配",
+      "weighted_score": 0.755,
       "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.8,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.7
       },
-      "story_id": "810dd166862b06ba",
+      "story_id": "ba24f180521c95c2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2607.21692"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.22614"
         }
       ]
     },
     {
-      "id": "5b5c0c023fd0d1af",
-      "source_id": "zh-juejin",
-      "title": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger",
-      "url": "https://juejin.cn/post/7667140974343700490",
-      "published_at": "2026-07-28T01:48:59+00:00",
-      "raw_text": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger TL;DR 场景：1M Context 解决容量上限，却不能自动保证 compact 后约束不丢、仓",
+      "id": "afa6cf058e1b1903",
+      "source_id": "arxiv-cs-ai",
+      "title": "TokenMem: Faithful Knowledge Injection for Frozen LLMs",
+      "url": "https://arxiv.org/abs/2607.22625",
+      "published_at": "2026-07-28T04:00:00+00:00",
+      "raw_text": "arXiv:2607.22625v1 Announce Type: new \nAbstract: Retrieval-augmented generation (RAG) enhances large language models (LLMs) with external knowledge, but suffers from knowledge conflicts: when retrieved information contradicts parametric memory, the shared self-attention pathway produces unpredictable outputs. We present TokenMem, a lightweight memory system that injects knowledge into frozen LLMs through a dedicated cross-attention channel, bypassing competition with parametric memory in the residual stream. TokenMem trains only a thin gating adapter ($\\sim$3-7M parameters) via a two-phase curriculum: first learning general knowledge utilization, then strengthening faithful compliance under counterfactual knowledge. In controlled experiments on five models spanning three families (Qwen3-4B/8B/14B, LLaMA-3.1-8B, OLMo-3-7B), TokenMem achieves 69-70% Knowledge Compliance (KC) on counterfactual benchmarks, compared to 20-52% for vanilla RAG, a gap of up to 49 percentage points. Ablation st",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "揭示长上下文Coding Agent的“失忆”问题，提出Context Ledger解决方案，对构建可靠Agent有重要参考价值。",
-      "summary_zh": "本文指出，即使拥有1M上下文窗口，Coding Agent仍会因上下文压缩而丢失关键约束，导致“失忆”问题。作者提出Context Ledger概念，通过记录和管理上下文中的关键信息，确保在上下文压缩后约束不丢失。文章详细分析了失忆的成因，包括注意力分散、信息覆盖等，并给出了Context Ledger的实现方案和实验效果。该方案显著提升了Agent在长任务中的稳定性和准确性。",
-      "title_zh": null,
-      "weighted_score": 0.765,
+      "reason_zh": "提出TokenMem轻量级记忆系统，解决RAG中知识冲突问题，无需微调即可向冻结LLM注入知识，创新性强。",
+      "summary_zh": "检索增强生成（RAG）面临知识冲突问题：当检索信息与模型参数记忆矛盾时，共享自注意力路径会产生不可预测输出。本文提出TokenMem，一种轻量级记忆系统，通过外部记忆模块向冻结的LLM注入知识，避免修改模型参数。TokenMem采用键值存储结构，在推理时动态检索并融合相关记忆，有效缓解知识冲突。实验显示，TokenMem在多个知识密集型任务上提升了准确性和忠实度，且计算开销小。",
+      "title_zh": "TokenMem：面向冻结LLM的忠实知识注入",
+      "weighted_score": 0.755,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.8,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.9
+        "practical_value": 0.7
       },
-      "story_id": "c5a144213fd01987",
+      "story_id": "074ce55534795e2c",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7667140974343700490"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.22625"
+        }
+      ]
+    },
+    {
+      "id": "10090deb4c331808",
+      "source_id": "qbitai",
+      "title": "全球首个Agentic扩散模型来了：边行动边纠错，128K上下文追平自回归",
+      "url": "https://www.qbitai.com/2026/07/461650.html",
+      "published_at": "2026-07-28T04:18:15+00:00",
+      "raw_text": "扩散模型首次打通长程Agent任务",
+      "category_hint": [
+        "行业动态",
+        "模型发布"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "全球首个Agentic扩散模型，能边行动边纠错，128K上下文追平自回归，创新性强。",
+      "summary_zh": "研究团队提出全球首个Agentic扩散模型，该模型能够边行动边纠错，在长程Agent任务中表现出色。模型支持128K上下文，性能追平自回归模型。扩散模型此前主要用于图像生成，此次首次打通长程Agent任务，为AI Agent的发展提供了新思路。论文展示了模型在复杂任务中的规划与纠错能力，具有重要研究价值。",
+      "title_zh": null,
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "cd94a1ca06b8126b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/07/461650.html"
         }
       ]
     },
@@ -202,68 +170,36 @@
       ]
     },
     {
-      "id": "cf36df3663bf90ed",
-      "source_id": "zh-juejin",
-      "title": "Zero RL：当 AI 学会“顿悟“——零强化学习的狂欢与阵痛",
-      "url": "https://juejin.cn/post/7667012505680003118",
-      "published_at": "2026-07-28T01:37:35+00:00",
-      "raw_text": "一、那个让全场沉默的\"Aha Moment\" 2025 年 1 月，DeepSeek 的团队在 R1-Zero 的训练过程中，观察到了一个被后人称为 \"Aha Moment\" 的现象：模型在没有任何人",
+      "id": "e7ebc60ef8d8845e",
+      "source_id": "infoq-cn-ai",
+      "title": "1v1 对话：来自 Agent Infra 负责人的心声、复盘、规划与思考",
+      "url": "https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-28T10:28:47+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入剖析DeepSeek R1-Zero的“Aha Moment”现象，揭示零强化学习的内在机制与挑战，对理解前沿训练方法有重要启发。",
-      "summary_zh": "本文详细介绍了DeepSeek R1-Zero训练过程中出现的“Aha Moment”现象，即模型在无人类干预下自发产生顿悟式行为。文章分析了这一现象背后的技术原理，包括强化学习策略的自我进化、奖励模型的设计以及涌现能力的边界。同时，作者也指出了零强化学习面临的阵痛，如训练不稳定、可解释性差等问题。文章通过实验数据和案例，展示了R1-Zero在复杂推理任务上的突破性表现，并探讨了其对未来AI发展的潜在影响。",
-      "title_zh": null,
-      "weighted_score": 0.73,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "98021812863f5eca",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7667012505680003118"
-        }
-      ]
-    },
-    {
-      "id": "e1945166e6e82b7d",
-      "source_id": "zh-juejin",
-      "title": "AI Native 工程实践：如何为 Claude 5 设计更有效的上下文",
-      "url": "https://juejin.cn/post/7667135915525636123",
-      "published_at": "2026-07-28T01:41:51+00:00",
-      "raw_text": "如何为 Claude 5 设计更有效的上下文 减少重复规则，改进工具接口，并让信息在需要时出现 摘要 与 Claude 交互时，用户输入的提示词只是模型所接收信息的一部分。系统提示、Skills、CL",
-      "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "教程方法",
+      "content_type": "观点评论",
       "depth_score": 0.8,
-      "reason_zh": "深入讲解为Claude 5设计上下文的工程技巧，包括减少冗余规则、改进工具接口等，对提升AI应用效果有直接帮助。",
-      "summary_zh": "本文探讨了如何为Claude 5设计更有效的上下文，以提升模型交互质量。作者指出，用户输入的提示词只是模型接收信息的一部分，系统提示、Skills、CL等组件同样关键。文章提出了减少重复规则、改进工具接口、让信息在需要时出现等策略，并给出了具体实现方法。通过实际案例，展示了优化上下文后模型在复杂任务上的表现提升。文章还讨论了上下文长度管理、动态注入等高级技巧。",
+      "reason_zh": "Agent Infra负责人亲述实战复盘与规划，对构建Agent系统的工程师极具参考价值。",
+      "summary_zh": "本文是InfoQ对某Agent基础设施负责人的深度访谈，内容涵盖Agent系统从设计到落地的全流程复盘。负责人分享了在构建高并发、低延迟Agent服务时遇到的关键挑战，包括状态管理、工具调用编排、错误恢复机制等，并详细阐述了团队如何通过分层架构和异步通信解决这些问题。同时，他还展望了Agent Infra的未来发展方向，如多Agent协作、动态资源调度等。文章提供了大量一线实战经验，适合AI工程团队参考。",
       "title_zh": null,
-      "weighted_score": 0.715,
+      "weighted_score": 0.725,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.9
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.8
       },
-      "story_id": "43dd0df8916d02d1",
+      "story_id": "1d25b11fa65df1e0",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7667135915525636123"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&utm_medium=article"
         }
       ]
     },
@@ -301,68 +237,63 @@
       ]
     },
     {
-      "id": "a7753f27f644d50d",
-      "source_id": "zh-juejin",
-      "title": "Agent 安全 #06：Agent 灰度发布与回滚 —— 上线新 Prompt 炸了生产，你敢回滚吗？",
-      "url": "https://juejin.cn/post/7667096082065244166",
-      "published_at": "2026-07-28T01:15:56+00:00",
-      "raw_text": "微服务的灰度发布切容器镜像，Agent 的灰度发布切的是一个组合体——Prompt、模型、工具配置、系统指令、安全策略。本文给出生产验证的灰度发布框架。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "提出Agent灰度发布与回滚的实战框架，解决Prompt上线风险，对AI工程化有高实用价值。",
-      "summary_zh": "本文探讨Agent系统的灰度发布与回滚策略。与微服务不同，Agent的灰度发布涉及Prompt、模型、工具配置、系统指令和安全策略的组合切换。作者给出了生产验证的灰度发布框架，帮助开发者安全上线新Prompt，并在出现问题时快速回滚，避免生产事故。",
-      "title_zh": null,
-      "weighted_score": 0.68,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "4af75f36a37981a3",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7667096082065244166"
-        }
-      ]
-    },
-    {
-      "id": "67d14e8db833b889",
-      "source_id": "zh-ithome",
-      "title": "英伟达 CUDA 的 20 年护城河一个周末崩了，Claude 独自跑通 AMD 新 GPU",
-      "url": "https://www.ithome.com/0/982/264.htm",
-      "published_at": "2026-07-27T15:58:14+00:00",
-      "raw_text": "<p>一句话，一个周末，Claude 直接把自家最前沿的模型跑在了一台全新的 AMD MI355X 机架上！</p><p><strong>人类工程师全程没动手改过一行代码</strong>。</p><p>谁能想到，英伟达花 20 年堆起的 CUDA 护城河，就这样被跨了过去。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/d38bdd28-3b5d-4745-be76-faf4514d60a3.png?x-bce-process=image/format,f_auto\" /></p><h2><strong>一个周末，Claude 把 AMD 新 GPU 调通了</strong></h2><p>故事是这样的。</p><p>前段时间，AMD 给 Anthropic 送来一台搭载 MI355X 的机架。团队看完，心里已经做好了打硬仗的准备。新平台配新软件栈，注定需要新一轮适配。</p><p>不过，Anthropic 手里正好有 Claude。团队干脆先让一名工程师试试：把 Claude 接上机器，丢给它一句，「去，把这台机器跑起来。」</p><p>等周末结束回到工位，屏幕上已经多出一条持续上涨的性能曲线 —— 结果不仅跑起来了，性能还在一轮轮不停地提升。</p><p>Anthropic 联合创始人兼首席计算官 Tom Brown 讲完，苏姿丰马上接过话：听说 Anthropic 只有一名工程师在处理 MI355X 时，她第一反应是让 AMD 团队赶紧去帮忙。结果团队回来告诉她，对方说不用，已经全部搞定了。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/0a8a3162-30af-44bb-b3d3-9fd204c8bcb8.png?x-bce-process=image/format,f_auto\" /></p><p>很快，这场周末实验便接上了真正的部署计划。</p><p>就在最近，Anthropic 宣布，将在 AMD Helios 系统中部署最高 2GW 的 Instinct GPU，<strong>首批",
+      "id": "933351c197bfcac4",
+      "source_id": "pandaily",
+      "title": "Kimi K3 Officially Open-Sourced: Moonshot AI Releases 2.8 Trillion Parameter Model Weights, Technical Report, and Three Infrastructure Technologies",
+      "url": "https://pandaily.com/kimi-k3-official-open-source-jul2026",
+      "published_at": "2026-07-28T01:47:24+00:00",
+      "raw_text": "Moonshot AI open-sources Kimi K3 with 2.8T MoE parameters, 896 routed experts, 16 active per token, 1M context window, plus MoonEP, FlashKDA, and AgentEnv infrastructure tools.",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/d38bdd28-3b5d-4745-be76-faf4514d60a3.png?x-bce-process=image/format,f_auto",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": "https://cms-image.pandaily.com/1/article2_53be6ef437.png",
+      "category": "模型发布",
+      "content_type": "研究论文",
       "depth_score": 0.7,
-      "reason_zh": "Claude自主在AMD GPU上运行，无需人类修改代码，挑战英伟达CUDA护城河。",
-      "summary_zh": "文章报道了Anthropic的Claude模型在一个周末内自主在全新的AMD MI355X GPU机架上运行成功，全程无需人类工程师修改一行代码。这一事件被认为可能打破了英伟达花费20年建立的CUDA生态护城河，展示了AI模型跨平台迁移的潜力，对GPU市场竞争格局具有重大意义。",
-      "title_zh": null,
-      "weighted_score": 0.78,
+      "reason_zh": "Kimi K3开源2.8万亿参数模型，含技术报告和基础设施，极具研究价值。",
+      "summary_zh": "月之暗面开源Kimi K3，拥有2.8万亿MoE参数、896个路由专家、每个token激活16个专家、100万上下文窗口，并发布技术报告及MoonEP、FlashKDA、AgentEnv三项基础设施技术。",
+      "title_zh": "Kimi K3 正式开源：月之暗面发布2.8万亿参数模型权重、技术报告及三项基础设施技术",
+      "weighted_score": 0.83,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.8,
         "novelty": 0.9,
         "impact": 0.9,
-        "practical_value": 0.6
+        "practical_value": 0.7
       },
-      "story_id": "16c8c767fa274f0f",
-      "multi_source_count": 1,
+      "story_id": "36a827534d25ced7",
+      "multi_source_count": 7,
       "sources": [
         {
-          "source_id": "zh-ithome",
-          "url": "https://www.ithome.com/0/982/264.htm"
+          "source_id": "vercel-blog",
+          "url": "https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway"
+        },
+        {
+          "source_id": "pandaily",
+          "url": "https://pandaily.com/deepseek-to-kimi-ai-investment-logic-jul2026"
+        },
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
+        },
+        {
+          "source_id": "marktechpost",
+          "url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/"
+        },
+        {
+          "source_id": "zh-sspai",
+          "url": "https://sspai.com/post/112805"
+        },
+        {
+          "source_id": "pandaily",
+          "url": "https://pandaily.com/kimi-k3-official-open-source-jul2026"
+        },
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/481061"
+        },
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1230377#reply16"
         }
       ]
     },
@@ -397,6 +328,106 @@
         {
           "source_id": "aws-ml-blog",
           "url": "https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/"
+        }
+      ]
+    },
+    {
+      "id": "6a389f6e0b5d58ab",
+      "source_id": "zh-oschina",
+      "title": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
+      "url": "https://www.oschina.net/news/481154",
+      "published_at": "2026-07-28T03:23:33+00:00",
+      "raw_text": "Cloudflare 宣布彻底重构 AI 爬虫管控体系。过去那个一键&quot;拦截所有 AI 机器人&quot;的开关被拆成了三个独立选项：Search（搜索）、Agent（智能体）、Training（训练）——包括免费版在内的全部客户都可以分别配置。 这是一个比表面看起来更重要的分类。 Search 爬虫的目的是索引内容、在查询时给出答案。Cloudflare 的态度是：...",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Cloudflare 重构 AI 爬虫管控，三段式分类比一键拦截更精细，对网站运营者极具实用价值。",
+      "summary_zh": "Cloudflare 宣布彻底重构 AI 爬虫管控体系，将过去的一键“拦截所有 AI 机器人”开关拆分为三个独立选项：Search（搜索）、Agent（智能体）、Training（训练），所有客户（包括免费版）均可分别配置。Search 爬虫用于索引内容并在查询时给出答案；Agent 爬虫代表用户执行任务；Training 爬虫用于模型训练。这种分类比简单的一键拦截更精细，允许网站所有者根据自身需求灵活控制不同 AI 爬虫的访问权限。文章还分析了这一变化对网站运营者和 AI 公司的影响。",
+      "title_zh": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "f0cf121388cc6a7a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/481154"
+        }
+      ]
+    },
+    {
+      "id": "b9acfe9e4585e610",
+      "source_id": "zh-leiphone",
+      "title": "Agentic AI双王论道、Physical AI亮剑不莱梅——IJCAI-ECAI 2026三大最热议题抢先看",
+      "url": "https://www.leiphone.com/category/private/XMmcHtwXRaVWrQFg.html",
+      "published_at": "2026-07-28T03:35:00+00:00",
+      "raw_text": "<p style=\"text-align: left; margin-top: 0pt; margin-bottom: 5pt;\"><span style=\"color: #2C3E50; font-family: Arial; font-size: 11pt; text-align: left;\">IJCAI-ECAI 2026将于8月15日至21日在德国不莱梅举办，990篇录用论文创近年新高。本期提炼出三大最热议题：Agentic AI领域两大最高荣誉获奖演讲同题共振，Physical AI依托不莱梅机器人研究重镇优势全面铺开，大模型推理与知识增强前沿综述集中亮相。这些议题不仅代表当前AI研究的最前沿方向，更预示未来产业落地的关键趋势——读懂它们，就读懂了AI的下一程。</span></p><p>&nbsp;</p><p style=\"text-align: left; margin-top: 10pt; margin-bottom: 5pt;\"><span style=\"font-family: 'Arial'; font-size: 11pt; color: #34495E;\">当AI Agent从概念走向落地，学术界最权威的声音正在汇聚。IJCAI-ECAI 2026的两大最高荣誉——Research Excellence Award与John McCarthy Award——双双聚焦Agentic AI，从历史脉络到社会形态，勾勒出智能体研究的完整图景。</span></p><p style=\"margin-top: 8pt; margin-bottom: 8pt;\"><span style=\"font-family: 'Arial'; font-size: 14pt; color: #1F3A5F; font-weight: bold;\">热门议题一：Agentic AI双王论道——两大S级获奖演讲同题共振</span></p><p style=\"margin-top: 6pt; margin-bottom: 3pt;\"><span style=\"font-family: 'Arial'; font-size: 11pt; color: #7F8C8D; font-weight: bold;\">论文一：</span><span style=\"font-",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "前瞻IJCAI-ECAI 2026三大热点议题，揭示Agentic AI、Physical AI等前沿方向，对研究者有启发。",
+      "summary_zh": "文章前瞻了IJCAI-ECAI 2026会议的三大热门议题：Agentic AI领域两位最高荣誉获奖者将同台演讲，Physical AI借助不莱梅机器人研究优势全面展开，以及大模型推理与知识增强的前沿综述。会议将于2026年8月15日至21日在德国不莱梅举办，录用论文990篇创近年新高。这些议题代表了当前AI研究的最前沿，并预示了产业落地的关键趋势。",
+      "title_zh": "Agentic AI双王论道、Physical AI亮剑不莱梅——IJCAI-ECAI 2026三大最热议题抢先看",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "d10224c03980c733",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/private/XMmcHtwXRaVWrQFg.html"
+        }
+      ]
+    },
+    {
+      "id": "8299bc3dc35782bc",
+      "source_id": "infoq-cn-ai",
+      "title": "圆桌访谈：为了钱包考虑，你必须关注的 Agent 基础设施",
+      "url": "https://www.infoq.cn/video/ZTqtrHdYa75f8FhvVOIR?utm_source=rss&utm_medium=article",
+      "published_at": "2026-07-27T16:27:19+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/video/ZTqtrHdYa75f8FhvVOIR?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "圆桌访谈深入探讨Agent基础设施，对开发者有实际指导意义。",
+      "summary_zh": "InfoQ圆桌访谈聚焦Agent基础设施，讨论如何为钱包考虑选择合适的基础设施。内容涉及成本优化、架构设计等，旨在帮助开发者在构建Agent应用时做出明智决策。",
+      "title_zh": "圆桌访谈：为了钱包考虑，你必须关注的 Agent 基础设施",
+      "weighted_score": 0.65,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "fe93a6866f192d79",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/video/ZTqtrHdYa75f8FhvVOIR?utm_source=rss&utm_medium=article"
         }
       ]
     }
