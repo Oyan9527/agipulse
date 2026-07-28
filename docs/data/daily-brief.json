@@ -1,40 +1,7 @@
 {
-  "date": "2026-07-27",
-  "generated_at": "2026-07-27T21:13:50.935774+00:00",
+  "date": "2026-07-28",
+  "generated_at": "2026-07-28T02:01:08.769039+00:00",
   "items": [
-    {
-      "id": "c6e48b5e56ef1568",
-      "source_id": "zh-atbug",
-      "title": "Anthropic 删了 80% 提示词，但你不能照做",
-      "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/",
-      "published_at": "2026-07-26T22:26:27+00:00",
-      "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>Anthropic 砍掉了 Claude Code 系统提示词的 80% 以上，编码评测没有可测量的损失。</p>\n<p>但这句话真正证明的，是那 80% 本来就没在传递信息——它是给弱模型打的补丁，不是知识。</p>\n<p>一个团队能删掉多少提示词，度量的不是模型有多强，是他们之前写了多少废话。</p>\n<p>模型学到的是世界的公共部分。你的规则里装的是私有部分——“我们周五不发版”、“这个库禁用”、“这个仓库的类型全在一个文件里”。这些从没进过任何语料库，模型再强也补不上。</p>\n<p>该薄的是公共部分，该厚的是私有部分。而按 token 数砍，砍掉的往往正好是后者。</p>\n<h2 id=\"一一份被当成指引的实验报告\">一、一份被当成指引的实验报告</h2>\n<p>Anthropic 最近发了一篇文章——<a href=\"https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models\">The new rules of context engineering for Claude 5 generation models</a>，讲他们如何为新一代模型重做上下文工程。核心事实只有一句：他们把 Claude Code 的系统提示词删掉了 80% 以上，在自己的编码评测集上没有观察到可测量的损失。</p>\n<p>文章顺势列了六条“已经过时的最佳实践”：</p>\n<p>给模型定死规则，改成让模型自己判断；给工具用法示例，改成把语义设计进接口；把信息全部前置塞满，改成按需分批加载；重要的话说三遍，改成说一次并放进工具描述；记忆写进 CLAUDE.md，改成让模型自动存取；用简单的 markdown 写规格，改成给它测试套件、代码、评分标准这类更丰富的引用。</p>\n<p>这六条单独看都不难接受。真正值得停下来的地方，是他们删掉的<strong>具体是什么</strong>。</p>",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "对Anthropic删减提示词事件进行深度剖析，指出公共知识与私有规则的本质区别，对提示工程有颠覆性见解。",
-      "summary_zh": "本文针对Anthropic砍掉Claude Code系统提示词80%以上且编码评测无损失的事件进行深入分析。作者指出，被删除的80%提示词原本就是给弱模型打的补丁，而非有效知识。模型学到的是世界的公共部分，而私有规则（如“周五不发版”、“禁用某库”）从未进入语料库，模型再强也无法补上。因此，提示词应该薄化公共部分，厚化私有部分。按token数砍提示词往往会砍掉后者，导致效果下降。文章还讨论了提示工程的核心在于区分公共知识和私有规则，并给出了实践建议。",
-      "title_zh": "Anthropic 删了 80% 提示词，但你不能照做",
-      "weighted_score": 0.845,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.9
-      },
-      "story_id": "7e277b5ba21a5ce4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-atbug",
-          "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/"
-        }
-      ]
-    },
     {
       "id": "de78633afbc5c577",
       "source_id": "arxiv-cs-cl",
@@ -168,35 +135,35 @@
       ]
     },
     {
-      "id": "c6e5b15d2fa36665",
-      "source_id": "zh-tonybai",
-      "title": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
-      "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/",
-      "published_at": "2026-07-26T22:00:00+00:00",
-      "raw_text": "本文基于 HumanLayer 创始人 Dex Horthy 在 AI Engineer World's Fair 的演讲《Harness Engineering is not Enough: Why Software Factories Fail》整理而成。文章回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径，结合 Faros AI 的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因，并给出了 Dex 团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法。",
+      "id": "5b5c0c023fd0d1af",
+      "source_id": "zh-juejin",
+      "title": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger",
+      "url": "https://juejin.cn/post/7667140974343700490",
+      "published_at": "2026-07-28T01:48:59+00:00",
+      "raw_text": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger TL;DR 场景：1M Context 解决容量上限，却不能自动保证 compact 后约束不丢、仓",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
+      "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深入剖析AI编程模型缺乏可维护性奖励信号的根本原因，提出“前置对齐四步法”，对工程实践有深刻启发。",
-      "summary_zh": "本文基于HumanLayer创始人Dex Horthy在AI Engineer World's Fair的演讲，回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径。结合Faros AI的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因。作者指出，模型被训练为生成正确代码，但缺乏对代码可读性、可扩展性和可维护性的优化。文章给出了Dex团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法，包括明确业务约束、定义质量指标、构建反馈循环和持续对齐。",
-      "title_zh": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
-      "weighted_score": 0.745,
+      "reason_zh": "揭示长上下文Coding Agent的“失忆”问题，提出Context Ledger解决方案，对构建可靠Agent有重要参考价值。",
+      "summary_zh": "本文指出，即使拥有1M上下文窗口，Coding Agent仍会因上下文压缩而丢失关键约束，导致“失忆”问题。作者提出Context Ledger概念，通过记录和管理上下文中的关键信息，确保在上下文压缩后约束不丢失。文章详细分析了失忆的成因，包括注意力分散、信息覆盖等，并给出了Context Ledger的实现方案和实验效果。该方案显著提升了Agent在长任务中的稳定性和准确性。",
+      "title_zh": null,
+      "weighted_score": 0.765,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.8
+        "practical_value": 0.9
       },
-      "story_id": "85372066292d072a",
+      "story_id": "c5a144213fd01987",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7667140974343700490"
         }
       ]
     },
@@ -235,6 +202,72 @@
       ]
     },
     {
+      "id": "cf36df3663bf90ed",
+      "source_id": "zh-juejin",
+      "title": "Zero RL：当 AI 学会“顿悟“——零强化学习的狂欢与阵痛",
+      "url": "https://juejin.cn/post/7667012505680003118",
+      "published_at": "2026-07-28T01:37:35+00:00",
+      "raw_text": "一、那个让全场沉默的\"Aha Moment\" 2025 年 1 月，DeepSeek 的团队在 R1-Zero 的训练过程中，观察到了一个被后人称为 \"Aha Moment\" 的现象：模型在没有任何人",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析DeepSeek R1-Zero的“Aha Moment”现象，揭示零强化学习的内在机制与挑战，对理解前沿训练方法有重要启发。",
+      "summary_zh": "本文详细介绍了DeepSeek R1-Zero训练过程中出现的“Aha Moment”现象，即模型在无人类干预下自发产生顿悟式行为。文章分析了这一现象背后的技术原理，包括强化学习策略的自我进化、奖励模型的设计以及涌现能力的边界。同时，作者也指出了零强化学习面临的阵痛，如训练不稳定、可解释性差等问题。文章通过实验数据和案例，展示了R1-Zero在复杂推理任务上的突破性表现，并探讨了其对未来AI发展的潜在影响。",
+      "title_zh": null,
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "98021812863f5eca",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7667012505680003118"
+        }
+      ]
+    },
+    {
+      "id": "e1945166e6e82b7d",
+      "source_id": "zh-juejin",
+      "title": "AI Native 工程实践：如何为 Claude 5 设计更有效的上下文",
+      "url": "https://juejin.cn/post/7667135915525636123",
+      "published_at": "2026-07-28T01:41:51+00:00",
+      "raw_text": "如何为 Claude 5 设计更有效的上下文 减少重复规则，改进工具接口，并让信息在需要时出现 摘要 与 Claude 交互时，用户输入的提示词只是模型所接收信息的一部分。系统提示、Skills、CL",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "深入讲解为Claude 5设计上下文的工程技巧，包括减少冗余规则、改进工具接口等，对提升AI应用效果有直接帮助。",
+      "summary_zh": "本文探讨了如何为Claude 5设计更有效的上下文，以提升模型交互质量。作者指出，用户输入的提示词只是模型接收信息的一部分，系统提示、Skills、CL等组件同样关键。文章提出了减少重复规则、改进工具接口、让信息在需要时出现等策略，并给出了具体实现方法。通过实际案例，展示了优化上下文后模型在复杂任务上的表现提升。文章还讨论了上下文长度管理、动态注入等高级技巧。",
+      "title_zh": null,
+      "weighted_score": 0.715,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "43dd0df8916d02d1",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7667135915525636123"
+        }
+      ]
+    },
+    {
       "id": "93c6a1de95e4aade",
       "source_id": "pandaily",
       "title": "Chinese Academy of Sciences ZhiJing Zing Social Intelligence Model Tackles AI Most Embarrassing Weakness: AI System That Understands Social Context, Emotions, and Unspoken Signals",
@@ -264,6 +297,39 @@
         {
           "source_id": "pandaily",
           "url": "https://pandaily.com/cas-zhijing-social-intelligence-model-jul2026"
+        }
+      ]
+    },
+    {
+      "id": "a7753f27f644d50d",
+      "source_id": "zh-juejin",
+      "title": "Agent 安全 #06：Agent 灰度发布与回滚 —— 上线新 Prompt 炸了生产，你敢回滚吗？",
+      "url": "https://juejin.cn/post/7667096082065244166",
+      "published_at": "2026-07-28T01:15:56+00:00",
+      "raw_text": "微服务的灰度发布切容器镜像，Agent 的灰度发布切的是一个组合体——Prompt、模型、工具配置、系统指令、安全策略。本文给出生产验证的灰度发布框架。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "提出Agent灰度发布与回滚的实战框架，解决Prompt上线风险，对AI工程化有高实用价值。",
+      "summary_zh": "本文探讨Agent系统的灰度发布与回滚策略。与微服务不同，Agent的灰度发布涉及Prompt、模型、工具配置、系统指令和安全策略的组合切换。作者给出了生产验证的灰度发布框架，帮助开发者安全上线新Prompt，并在出现问题时快速回滚，避免生产事故。",
+      "title_zh": null,
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "4af75f36a37981a3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7667096082065244166"
         }
       ]
     },
@@ -331,73 +397,6 @@
         {
           "source_id": "aws-ml-blog",
           "url": "https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/"
-        }
-      ]
-    },
-    {
-      "id": "e03e2271acc6961e",
-      "source_id": "infoq-cn-ai",
-      "title": "Cursor 用一群Agent重造SQLite：仅凭 835 页手册，无源码、无测试、不联网",
-      "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article",
-      "published_at": "2026-07-27T09:34:44+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Cursor用Agent重造SQLite的实践案例，展示了AI编程的极限能力，对AI工程化有启发意义。",
-      "summary_zh": "Cursor团队使用多个Agent，仅凭835页手册，在无源码、无测试、不联网的条件下重造了SQLite。这一实验展示了AI编程的惊人潜力，也引发了关于AI自主开发软件的讨论。",
-      "title_zh": "Cursor用一群Agent重造SQLite：仅凭835页手册，无源码、无测试、不联网",
-      "weighted_score": 0.73,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "58c85e8ae8274cf7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/5qw8Qe37kGVDq9Yy57XC?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "66cf9e92f6843d82",
-      "source_id": "reddit-promptengineering",
-      "title": "Our prompt changes go through PR review and I finally admitted nobody actually reads them",
-      "url": "https://www.reddit.com/r/PromptEngineering/comments/1v86qbv/our_prompt_changes_go_through_pr_review_and_i/",
-      "published_at": "2026-07-27T17:17:29+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We review code like hawks. Someone changes a loop condition and there are four comments on it. Somebody rewrites half the system prompt and it gets an approve in ninety seconds.</p> <p>I know why now. A code diff shows you the two lines that changed. A prompt diff shows you a wall of prose with a few words different somewhere in the middle, and your eye just slides off it. So you skim, you see it is &quot;still the prompt,&quot; and you approve.</p> <p>Last month one of those ninety-second approvals removed a sentence that told the model not to speculate about pricing. Nobody noticed in review. It shipped. Two weeks later support started getting questions about numbers we never quoted.</p> <p>When I went back to find it, the PR was right there. The reviewer was one of our most careful engineers. He had not been lazy. He had been handed a format where the important change was invisible, and he did the reasonable thing with it.</p> <p>So we stopped prete",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "揭示AI工程中prompt评审被忽视的痛点，引发对开发流程的反思，对团队协作有实际启发。",
-      "summary_zh": "作者指出在代码审查中，代码变更会被严格审查，但系统提示词（system prompt）的修改却往往被快速通过，无人仔细阅读。原因是代码diff能清晰显示改动行，而prompt diff呈现的是一大段文字，细微变化难以察觉。作者认为这反映了团队对prompt工程重视不足，建议改进prompt的版本管理和审查流程，确保提示词质量与代码同等重要。",
-      "title_zh": "我们的提示词变更经过PR审查，但我终于承认没人真正读过它们",
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "fbdb63286a4177c8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-promptengineering",
-          "url": "https://www.reddit.com/r/PromptEngineering/comments/1v86qbv/our_prompt_changes_go_through_pr_review_and_i/"
         }
       ]
     }

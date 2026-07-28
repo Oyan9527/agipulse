@@ -1,5 +1,40 @@
 [
   {
+    "id": "64db355e6a0ca244",
+    "source_id": "simonwillison",
+    "title": "moonshotai/Kimi-K3",
+    "url": "https://simonwillison.net/2026/Jul/27/kimi-k3/#atom-everything",
+    "published_at": "2026-07-27T23:39:04+00:00",
+    "raw_text": "<p><strong><a href=\"https://huggingface.co/moonshotai/Kimi-K3\">moonshotai/Kimi-K3</a></strong></p>\nAs promised <a href=\"https://simonwillison.net/2026/Jul/16/kimi-k3/\">earlier this month</a>, Moonshot have released the weights for their excellent 2.8 trillion parameter Kimi K3. They're a hefty 1.56TB on Hugging Face.</p>\n<p>Kimi introduced their own janky <a href=\"https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE\">modified version of the MIT license</a> with K2 back in July 2025. That license just added this paragraph requiring attribution beyond a certain size of commercial entity:</p>\n<blockquote>\n<p>Our only modification part is that, if the Software (or any derivative works thereof) is used for any of your commercial products or services that have more than 100 million monthly active users, or more than 20 million US dollars (or equivalent in other currencies) in monthly revenue, you shall prominently display \"Kimi K2\" on the user interface of such product or ser",
+    "category_hint": [
+      "技巧与观点",
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "月之暗面正式开源2.8万亿参数Kimi K3模型权重，是开源社区重大事件，值得下载研究。",
+    "summary_zh": "月之暗面（Moonshot AI）如约在Hugging Face上发布了其2.8万亿参数模型Kimi K3的权重。该模型权重文件大小达1.56TB，是开源社区中规模最大的模型之一。此前月之暗面已预告将在7月开源此模型。Kimi K3在多项基准测试中表现优异，此次开源将推动AI研究和应用的发展。",
+    "title_zh": "moonshotai/Kimi-K3",
+    "weighted_score": 0.86,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.7
+    },
+    "story_id": "6aec0afd879bc973",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "simonwillison",
+        "url": "https://simonwillison.net/2026/Jul/27/kimi-k3/#atom-everything"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "e4367079ef267663",
     "source_id": "gh-mcp-python",
     "title": "modelcontextprotocol/python-sdk v2.0.0rc1",
@@ -29,40 +64,6 @@
       {
         "source_id": "gh-mcp-python",
         "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.0.0rc1"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c6e48b5e56ef1568",
-    "source_id": "zh-atbug",
-    "title": "Anthropic 删了 80% 提示词，但你不能照做",
-    "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/",
-    "published_at": "2026-07-26T22:26:27+00:00",
-    "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>Anthropic 砍掉了 Claude Code 系统提示词的 80% 以上，编码评测没有可测量的损失。</p>\n<p>但这句话真正证明的，是那 80% 本来就没在传递信息——它是给弱模型打的补丁，不是知识。</p>\n<p>一个团队能删掉多少提示词，度量的不是模型有多强，是他们之前写了多少废话。</p>\n<p>模型学到的是世界的公共部分。你的规则里装的是私有部分——“我们周五不发版”、“这个库禁用”、“这个仓库的类型全在一个文件里”。这些从没进过任何语料库，模型再强也补不上。</p>\n<p>该薄的是公共部分，该厚的是私有部分。而按 token 数砍，砍掉的往往正好是后者。</p>\n<h2 id=\"一一份被当成指引的实验报告\">一、一份被当成指引的实验报告</h2>\n<p>Anthropic 最近发了一篇文章——<a href=\"https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models\">The new rules of context engineering for Claude 5 generation models</a>，讲他们如何为新一代模型重做上下文工程。核心事实只有一句：他们把 Claude Code 的系统提示词删掉了 80% 以上，在自己的编码评测集上没有观察到可测量的损失。</p>\n<p>文章顺势列了六条“已经过时的最佳实践”：</p>\n<p>给模型定死规则，改成让模型自己判断；给工具用法示例，改成把语义设计进接口；把信息全部前置塞满，改成按需分批加载；重要的话说三遍，改成说一次并放进工具描述；记忆写进 CLAUDE.md，改成让模型自动存取；用简单的 markdown 写规格，改成给它测试套件、代码、评分标准这类更丰富的引用。</p>\n<p>这六条单独看都不难接受。真正值得停下来的地方，是他们删掉的<strong>具体是什么</strong>。</p>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.9,
-    "reason_zh": "对Anthropic删减提示词事件进行深度剖析，指出公共知识与私有规则的本质区别，对提示工程有颠覆性见解。",
-    "summary_zh": "本文针对Anthropic砍掉Claude Code系统提示词80%以上且编码评测无损失的事件进行深入分析。作者指出，被删除的80%提示词原本就是给弱模型打的补丁，而非有效知识。模型学到的是世界的公共部分，而私有规则（如“周五不发版”、“禁用某库”）从未进入语料库，模型再强也无法补上。因此，提示词应该薄化公共部分，厚化私有部分。按token数砍提示词往往会砍掉后者，导致效果下降。文章还讨论了提示工程的核心在于区分公共知识和私有规则，并给出了实践建议。",
-    "title_zh": "Anthropic 删了 80% 提示词，但你不能照做",
-    "weighted_score": 0.845,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.9
-    },
-    "story_id": "7e277b5ba21a5ce4",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-atbug",
-        "url": "https://atbug.com/context-engineering-public-vs-private-knowledge/"
       }
     ],
     "curated": true
@@ -204,21 +205,21 @@
     "curated": true
   },
   {
-    "id": "2dd89aed18e527ee",
-    "source_id": "zh-ithome",
-    "title": "月之暗面开源 Kimi K3 模型，2.8 万亿参数",
-    "url": "https://www.ithome.com/0/982/259.htm",
-    "published_at": "2026-07-27T15:14:48+00:00",
-    "raw_text": "<p>IT之家 7 月 27 日消息，月之暗面官方今晚正式开源 Kimi K3 模型。官方发布了 Kimi K3 的模型权重、技术报告，并开源支撑 Kimi K3 模型训练的关键 Infra 技术：MoonEP、FlashKDA 和 AgentEnv。</p><p>Kimi K3 是一个 <strong>2.8 万亿参数模型</strong>，基于 KDA 混合线性注意力机制（Kimi Delta Attention）和注意力残差（Attention Residuals）技术构建，原生支持视觉理解，并拥有 <strong>100 万 token 上下文窗口</strong>。</p><p>官方表示，Kimi K3 是首个达到 2.8 万亿参数规模的开源模型，在过去 12 个月中的 9 个月里，Kimi 模型都保持着开源模型的规模上限。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/5f025ab0-40cf-4924-88b2-f467ce68a7bb.png?x-bce-process=image/format,f_auto\" /></p><p>Kimi 还进一步扩大了 Mixture of Experts（MoE）的稀疏度：结合 Stable LatentMoE 框架后，模型可以在 896 个专家中高效激活 16 个。再加上训练方法和数据配方的优化，这些结构性改进让 Kimi K3 相比 K2 的整体扩展效率提升约 2.5 倍，能更有效地把算力转化为能力。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/930133dc-c9a2-42e0-bc3b-1ffb651a51d9.png?x-bce-process=image/format,f_auto\" /></p><p>据介绍，Kimi K3 具备很强的长程编码能力。在极少人工监督的情况下，它可以持续完成长时间工程任务，理解和处理大型代码库，并协调使用终端工具；Kimi K3 也擅长结合软件工程与视觉推理的任务。它能够利用截图和视觉反馈，优化游戏开发",
+    "id": "82ae2b62b1a2ca76",
+    "source_id": "36kr",
+    "title": "月之暗面Kimi K3正式开源",
+    "url": "https://36kr.com/newsflashes/3914648643277958?f=rss",
+    "published_at": "2026-07-28T01:46:31+00:00",
+    "raw_text": "36氪获悉，7月27日晚，月之暗面发布Kimi K3的模型权重、技术报告，并开源支撑Kimi K3模型训练的关键Infra技术：MoonEP、FlashKDA和AgentEnv。据介绍，Kimi K3是一个拥有2.8万亿参数的混合专家（MoE）模型，具备原生视觉理解能力，并支持100万token的上下文窗口。月之暗面表示，现在每个人都可以下载并部署Kimi K3模型，无论是用于内部研发，还是嵌入到面向终端用户的产品中，均可自由使用。",
     "category_hint": [
       "行业动态"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/5f025ab0-40cf-4924-88b2-f467ce68a7bb.png?x-bce-process=image/format,f_auto",
+    "image_url": null,
     "category": "模型发布",
     "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "月之暗面开源2.8万亿参数Kimi K3，为最大开源模型，含技术报告和Infra工具，极具影响力。",
-    "summary_zh": "月之暗面正式开源Kimi K3模型，参数规模达2.8万亿，基于KDA混合线性注意力机制和注意力残差技术，原生支持视觉理解，拥有100万token上下文窗口。官方同时发布了模型权重、技术报告，并开源了支撑训练的关键Infra技术：MoonEP、FlashKDA和AgentEnv。Kimi K3是首个达到2.8万亿参数的开源模型，在过去12个月中有9个月保持开源模型规模上限。",
+    "depth_score": 0.2,
+    "reason_zh": "月之暗面开源2.8万亿参数MoE模型Kimi K3，附带关键Infra技术，对开源社区和AI研究有重大影响。",
+    "summary_zh": "7月27日晚，月之暗面发布Kimi K3模型权重和技术报告，并开源支撑其训练的关键Infra技术：MoonEP、FlashKDA和AgentEnv。Kimi K3是一个拥有2.8万亿参数的混合专家（MoE）模型，具备原生视觉理解能力，支持100万token上下文窗口。月之暗面表示，任何人都可以自由下载和部署Kimi K3模型，用于内部研发或嵌入产品。",
     "title_zh": null,
     "weighted_score": 0.83,
     "score_breakdown": {
@@ -227,36 +228,12 @@
       "impact": 0.9,
       "practical_value": 0.7
     },
-    "story_id": "fc5c5b34cd5dc512",
-    "multi_source_count": 6,
+    "story_id": "779b4a0d3727c573",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "together-blog",
-        "url": "https://www.together.ai/blog/kimi-k3-vs-gpt-5-6-sol-on-deepswe-cost-coding-and-routing"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/anthropics-opus-5-blows-past-fable-5-and-gpt-5-6-sol-on-the-benchmark-designed-to-measure-real-intelligence/"
-      },
-      {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway"
-      },
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/deepseek-to-kimi-ai-investment-logic-jul2026"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/259.htm"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
-      },
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/"
+        "source_id": "36kr",
+        "url": "https://36kr.com/newsflashes/3914648643277958?f=rss"
       }
     ],
     "curated": true
@@ -570,6 +547,109 @@
     "curated": true
   },
   {
+    "id": "89ccf76b66436078",
+    "source_id": "siliconangle",
+    "title": "Microsoft’s introduces its first agent-powered cybersecurity model",
+    "url": "https://siliconangle.com/2026/07/27/microsofts-first-cybersecurity-model-powers-new-project-perception-agents/",
+    "published_at": "2026-07-27T22:38:47+00:00",
+    "raw_text": "<p>Microsoft Corp. today introduced its first in-house cybersecurity model, MAI-Cyber-1-Flash, and a companion agentic system called Project Perception that fields teams of artificial intelligence agents to probe for weaknesses, investigate threats and remediate them, starting with software vulnerability management. The model is a compact, code-tuned derivative of Microsoft&#8217;s MAI-Thinking-1 line, trained in-house on the company&#8217;s [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/07/27/microsofts-first-cybersecurity-model-powers-new-project-perception-agents/\" rel=\"nofollow\">Microsoft&#8217;s introduces its first agent-powered cybersecurity model</a> appeared first on <a href=\"https://siliconangle.com\" rel=\"nofollow\">SiliconANGLE</a>.</p>",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/07/microsoftprojectperception.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "微软发布首个自研网络安全AI模型及智能体系统，标志其安全战略重大升级，值得关注。",
+    "summary_zh": "微软发布了其首个自研网络安全模型MAI-Cyber-1-Flash，以及配套的智能体系统Project Perception。该系统可组建AI智能体团队，用于探测漏洞、调查威胁并修复问题，首先应用于软件漏洞管理。该模型是微软MAI-Thinking-1的紧凑型代码调优衍生版本。此举标志着微软在网络安全领域的重要布局，旨在通过AI提升安全防护能力。",
+    "title_zh": "微软推出首个智能体驱动的网络安全模型",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "ae410900c56a8dc2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/07/27/microsofts-first-cybersecurity-model-powers-new-project-perception-agents/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "35ed3ffadc6e69ff",
+    "source_id": "zh-juejin",
+    "title": "别再把 MCP 当成大模型的“手脚”：LLM 并不会直接调用 MCP",
+    "url": "https://juejin.cn/post/7667100609937719339",
+    "published_at": "2026-07-28T01:42:39+00:00",
+    "raw_text": "本文系统讲解 MCP 的核心概念、架构与调用原理，并通过天气服务和 GitHub 案例演示本地、远程服务的接入流程。同时总结工具设计、权限控制、凭据保护与安全防护等实践要点，帮助开发者快速掌握 MCP",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "澄清MCP调用机制误区，系统讲解架构与接入流程，包含工具设计、安全防护等实践要点，对开发者极具价值。",
+    "summary_zh": "本文系统讲解了MCP（Model Context Protocol）的核心概念、架构与调用原理，纠正了“LLM直接调用MCP”的常见误解。文章通过天气服务和GitHub案例，演示了本地和远程服务的接入流程。同时，总结了工具设计、权限控制、凭据保护与安全防护等实践要点。作者强调，MCP是模型与外部工具之间的中间层，LLM通过代理间接调用MCP，理解这一机制对正确使用MCP至关重要。",
+    "title_zh": null,
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.9
+    },
+    "story_id": "018e82baa3276b29",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7667100609937719339"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "5b5c0c023fd0d1af",
+    "source_id": "zh-juejin",
+    "title": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger",
+    "url": "https://juejin.cn/post/7667140974343700490",
+    "published_at": "2026-07-28T01:48:59+00:00",
+    "raw_text": "1M Context 也会失忆：Coding Agent 为什么需要 Context Ledger TL;DR 场景：1M Context 解决容量上限，却不能自动保证 compact 后约束不丢、仓",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "揭示长上下文Coding Agent的“失忆”问题，提出Context Ledger解决方案，对构建可靠Agent有重要参考价值。",
+    "summary_zh": "本文指出，即使拥有1M上下文窗口，Coding Agent仍会因上下文压缩而丢失关键约束，导致“失忆”问题。作者提出Context Ledger概念，通过记录和管理上下文中的关键信息，确保在上下文压缩后约束不丢失。文章详细分析了失忆的成因，包括注意力分散、信息覆盖等，并给出了Context Ledger的实现方案和实验效果。该方案显著提升了Agent在长任务中的稳定性和准确性。",
+    "title_zh": null,
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.9
+    },
+    "story_id": "c5a144213fd01987",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7667140974343700490"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "07607e097946dbb2",
     "source_id": "arxiv-cs-cl",
     "title": "Molt: A Scalable PyTorch-Native Training Framework for Agentic Reinforcement Learning",
@@ -599,6 +679,40 @@
       {
         "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2607.21653"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "ffc376ee7a99fe08",
+    "source_id": "arxiv-cs-cl",
+    "title": "From Isolated Tasks to Structured Capabilities: A Multilayer Taxonomy for Large Language Models",
+    "url": "https://arxiv.org/abs/2607.22182",
+    "published_at": "2026-07-27T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22182v1 Announce Type: new \nAbstract: Large language model (LLM) evaluation spans diverse tasks and benchmarks, yet evidence remains organized around tasks rather than the capabilities they probe. This fragmentation limits cross-study comparison, obscures capabilities tasks recruit, and makes coverage gaps difficult to identify.\n  We introduce a multi-layer taxonomy of 14 capability domains and 91 subskills across Primitive, Constructed, and Integrative layers. Human cognitive science guides capability definition and organization, not LLM architecture. Layer assignments draw on developmental precedence and hypothesized functional support, while human-origin constructs are adapted to observable model behavior.\n  To demonstrate operational utility, we screened 31,505 papers from ACL, AAAI, ICML, and NeurIPS between 2023 and 2025 and mapped 15,934 LLM-focused papers through multi-model annotation, consensus, and arbitration. Direct research attention concentrated on Language-Se",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出14个能力域的多层LLM评估分类法，解决任务碎片化问题，对评估体系设计有重要指导意义。",
+    "summary_zh": "本文提出一个多层分类法，将大语言模型（LLM）评估从孤立任务组织到结构化能力域。现有评估证据围绕任务而非能力组织，导致跨研究比较困难、能力覆盖不清。该分类法包含14个能力域，如推理、知识、语言理解等，并定义了各域的子能力。通过映射现有基准到该分类法，揭示了覆盖缺口，为未来评估设计提供了系统框架。",
+    "title_zh": "从孤立任务到结构化能力：大语言模型的多层分类法",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "14a9329b8beef7e7",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2607.22182"
       }
     ],
     "curated": true
@@ -741,35 +855,35 @@
     "curated": true
   },
   {
-    "id": "c6e5b15d2fa36665",
-    "source_id": "zh-tonybai",
-    "title": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
-    "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/",
-    "published_at": "2026-07-26T22:00:00+00:00",
-    "raw_text": "本文基于 HumanLayer 创始人 Dex Horthy 在 AI Engineer World's Fair 的演讲《Harness Engineering is not Enough: Why Software Factories Fail》整理而成。文章回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径，结合 Faros AI 的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因，并给出了 Dex 团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法。",
+    "id": "19667c51f8a1e10e",
+    "source_id": "zh-ithome",
+    "title": "微软 CEO 纳德拉：依赖单一 AI 满足所有需求的公司恐将无法生存",
+    "url": "https://www.ithome.com/0/982/284.htm",
+    "published_at": "2026-07-27T23:24:42+00:00",
+    "raw_text": "<p>IT之家 7 月 28 日消息，微软 CEO 萨提亚 · 纳德拉再次向企业发出警告：如果把 AI 能力完全交给 AI 模型开发商，最终可能失去竞争力，甚至无法继续生存。</p><p>当地时间周日（26 日），纳德拉在接受 CNN 采访时表示，企业<strong>不仅要谨慎共享数据，还要谨慎共享 Prompt</strong>。企业向 AI 模型提供商交出的每一项信息，<strong>都可能成为未来的风险</strong>。</p><p>纳德拉认为，企业应建立一套机制，确保每次调用 AI 模型时产生的元数据<strong>都掌握在自己手中</strong>，以便未来利用这些数据训练自己的模型权重或开源模型。</p><p>模型权重是 AI 模型训练后的核心参数，决定了模型具备怎样的能力。“任何失去这种控制权的企业，我认为最终都无法继续生存，因为企业实际上已经<strong>把自己的思考能力外包出去了</strong>。”</p><p>纳德拉认为，企业至少应该拥有自己的 AI 模型，或部署 AI Gateway 等基础设施，把 Prompt 与 AI 模型隔离，而不是把所有内容直接交给 AI 模型开发商。</p><p>纳德拉还建议，企业不要依赖 Claude Code、ChatGPT Codex 等 AI 模型开发商提供的内置编程工具（Harness）。“只要把 Harness 与模型分离，把上下文和记忆与模型分离，<strong>就可以根据不同任务自由选择最适合的模型</strong>。即使某个模型停止服务，企业依然能够掌握自己的命运。”</p><p>IT之家从报道中获悉，纳德拉真正担心的并不只是 AI 成本失控。一旦企业把“思考能力外包”给 AI 模型，AI 模型开发商未来<strong>完全可能推出与企业直接竞争的服务</strong>。随着越来越多企业开始部署 AI Agent，并赋予 AI Agent 访问企业内部核心系统的权限，这种风险只会越来越高。</p>",
     "category_hint": [
-      "技巧与观点"
+      "行业动态"
     ],
     "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "深入剖析AI编程模型缺乏可维护性奖励信号的根本原因，提出“前置对齐四步法”，对工程实践有深刻启发。",
-    "summary_zh": "本文基于HumanLayer创始人Dex Horthy在AI Engineer World's Fair的演讲，回顾了“软件工厂”从2022年人工流水线到2026年“黑灯工厂”的演化路径。结合Faros AI的行业数据，剖析了当前编程大模型在强化学习训练中天然缺失“可维护性”奖励信号的根本原因。作者指出，模型被训练为生成正确代码，但缺乏对代码可读性、可扩展性和可维护性的优化。文章给出了Dex团队实践验证过的“前置对齐四步法”，作为在模型能力边界内继续安全提速的解法，包括明确业务约束、定义质量指标、构建反馈循环和持续对齐。",
-    "title_zh": "AI 写了 75% 的代码，工程师却越来越慌：“黑灯软件工厂”的问题不在 harness，而在模型本身",
-    "weighted_score": 0.745,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.7,
+    "reason_zh": "纳德拉警告企业勿过度依赖单一AI提供商，强调数据与Prompt自主权，对AI战略有重要指导意义。",
+    "summary_zh": "微软CEO萨提亚·纳德拉在接受CNN采访时警告企业，如果将AI能力完全交给AI模型开发商，可能失去竞争力甚至无法生存。他强调企业不仅要谨慎共享数据，还要谨慎共享Prompt，因为每次调用AI模型产生的元数据都应掌握在自己手中，以便未来用于训练自有模型或开源模型。纳德拉认为，失去这种控制权的企业将无法继续生存，因为企业实际上把自己的思考能力外包了。",
+    "title_zh": "微软 CEO 纳德拉：依赖单一 AI 满足所有需求的公司恐将无法生存",
+    "weighted_score": 0.75,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
+      "source_authority": 0.8,
+      "novelty": 0.7,
       "impact": 0.7,
       "practical_value": 0.8
     },
-    "story_id": "85372066292d072a",
+    "story_id": "856fbda907da05b8",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-tonybai",
-        "url": "https://tonybai.com/2026/07/27/why-software-factories-fail-harness-engineering-not-enough/"
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/982/284.htm"
       }
     ],
     "curated": true
@@ -810,35 +924,125 @@
     "curated": true
   },
   {
-    "id": "22c07582101696a7",
-    "source_id": "gh-vllm",
-    "title": "vllm-project/vllm v0.26.0",
-    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0",
-    "published_at": "2026-07-27T01:06:58+00:00",
-    "raw_text": "# vLLM v0.26.0 Release Notes\r\n\r\n## Highlights\r\n\r\nThis release features 411 commits from 212 contributors (61 new)!\r\n\r\n* **New Inkling model family** with a full support stack: base modeling (#48799), piecewise CUDA graph support (#48822), Hopper FA4 relative attention (#48858), MTP=1 speculative decoding (#48869), LoRA (#48884), and standard ModelOpt NVFP4 quantization (#48990).\r\n* **DeepSeek-V4 performance push** across vendors: a specialized routing kernel (2.94% E2E TPOT, #48660), `fused_topk_bias` (1.5–2x kernel, #47463), and redundant repeat/copy removal (1.8% E2E TPOT, #48137), plus ROCm two-stage compressor for HCA prefill (#47718), sparse decode/prefill optimizations (#48519, #48788, #46275), and DSpark speculative decoding on AMD (#47419) and XPU (#47677).\r\n* **fp32 `lm_head` for generation models via `head_dtype`** (#48390), extended to the LoRA path (#48525) and given a ROCm `torch.mm` fast path (#48688), improving accuracy for generation heads.\r\n* **Flexible attention backe",
+    "id": "99fd46b36634627a",
+    "source_id": "the-next-platform",
+    "title": "Nvidia Accelerates Chip Engineering With AI Agents",
+    "url": "https://www.nextplatform.com/hpc/2026/07/27/nvidia-accelerates-chip-engineering-with-ai-agents/5279125",
+    "published_at": "2026-07-27T18:04:01+00:00",
+    "raw_text": "",
     "category_hint": [
-      "开源项目"
+      "行业动态",
+      "产品发布"
     ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "vLLM v0.26.0发布，支持Inkling模型家族和DeepSeek-V4，新增多项优化。",
-    "summary_zh": "vLLM v0.26.0发布，包含411次提交，来自212位贡献者。亮点包括：全新Inkling模型家族完整支持栈（基础建模、CUDA图、Hopper FA4相对注意力、MTP=1推测解码、LoRA、NVFP4量化）；DeepSeek-V4部分支持等。",
-    "title_zh": "vllm-project/vllm v0.26.0",
-    "weighted_score": 0.74,
+    "image_url": "https://image.nextplatform.com/5279129.jpg?imageId=5279129&panox=0.00&panoy=0.00&panow=100.00&panoh=100.00&heightx=0.00&heighty=0.00&heightw=100.00&heighth=100.00&width=1058&height=478&format=webp&format=jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "NVIDIA用AI Agent加速芯片设计，展示AI在硬件工程中的实际应用，对行业有示范意义。",
+    "summary_zh": "NVIDIA宣布利用AI Agent加速芯片工程流程，通过智能代理自动化设计验证、优化等环节，提升效率。此举展示了AI在硬件设计领域的深度应用，可能推动芯片行业变革。文章未提供具体技术细节，但强调了AI Agent在缩短开发周期、降低错误率方面的潜力。",
+    "title_zh": "NVIDIA 用 AI Agent 加速芯片工程",
+    "weighted_score": 0.745,
     "score_breakdown": {
       "source_authority": 0.9,
       "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.6
+      "impact": 0.8,
+      "practical_value": 0.5
     },
-    "story_id": "012a619bb91d8aa8",
+    "story_id": "09b68056fa76eba4",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-vllm",
-        "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
+        "source_id": "the-next-platform",
+        "url": "https://www.nextplatform.com/hpc/2026/07/27/nvidia-accelerates-chip-engineering-with-ai-agents/5279125"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "7c1567bfc409c458",
+    "source_id": "zh-ithome",
+    "title": "影响全球约 50 万 macOS 用户，Claude Cowork 智能体 AI 爆漏洞可读写任意 Mac 文件",
+    "url": "https://www.ithome.com/0/982/277.htm",
+    "published_at": "2026-07-27T22:57:17+00:00",
+    "raw_text": "<p>IT之家 7 月 28 日消息，科技媒体 9to5Mac 昨日（7 月 27 日）发布博文，报道称 Anthropic 的 Claude Cowork 存在安全漏洞，<strong>攻击者利用漏洞可以从 Linux 虚拟机沙箱逃逸，并读写 Mac 任意位置文件。</strong></p><p>IT之家注：Claude Cowork 是 Anthropic 推出的 AI 智能体工具，在征得用户明确授权许可之后，该工具可以在 Mac 上访问本地文件和文件夹，并依据用户指令处理相关任务。</p><p>在安全防护方面，Anthropic 为此设置 2 层限制，其一是 Cowork 在虚拟机内隔离运行，其二是仅可访问用户授权的文件与文件夹。</p><p>安全研究人员发现，<strong>开发者利用该漏洞可同时突破上述 2 层限制。</strong>攻击者可让 Cowork 逃离其运行所在的 Linux 虚拟机沙箱，并在 Mac 任意位置读取或写入文件。漏洞还可能使攻击者获取在线服务的登录凭据。</p><p>在具体实现方面，Accomplish AI 公司指出 Cowork 隔离运行的虚拟机可以通过可写的 VirtioFS 挂载点共享宿主机文件系统。该挂载点原本只允许虚拟机内的 root 用户访问，但研究人员发现，他们可以利用 CVE-2026-46331（一个被称为“pedit COW”的 Linux 内核漏洞，其严重性评分接近 8 分，满分 10 分）从会话用户提升到虚拟机 root 用户权限。</p><p>一旦智能体程序获得虚拟机内的 root 权限，它就可以访问登录的 Mac 用户能够访问的任何资源。</p><p>在影响规模方面，Accomplish AI 在漏洞披露前已向 The Hacker News 分享了该漏洞的详细信息。该公司表示，在漏洞修复前，影响约有 50 万运行本地 Cowork 会话的 macOS 用户。</p><p>据 Hacker News 报道，Anthropic 公司将该报告标记为“信息丰富”（<em>informative</em>），但并未发布直接的解决方案。随后发布的 Claude Cowork 版本默认在云端执行，完全绕过了本地逃逸路径。</p><p>然而，选择在本地而非云端运行智能体的用户仍然面临风险，除非他们通过禁用非特权用户",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/38530c35-9503-4ed5-8b7a-42a61d48eed5.png",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "Claude Cowork存在严重安全漏洞，可逃逸虚拟机并读写任意Mac文件，影响约50万用户，需警惕。",
+    "summary_zh": "科技媒体9to5Mac报道，Anthropic的AI智能体工具Claude Cowork存在安全漏洞，攻击者可利用漏洞从Linux虚拟机沙箱逃逸，并读写Mac任意位置文件。该工具在用户授权下可访问本地文件和文件夹，Anthropic设置了虚拟机隔离和文件访问权限两层限制，但安全研究人员发现开发者可同时突破这两层限制。该漏洞影响全球约50万macOS用户，需及时修复。",
+    "title_zh": "影响全球约 50 万 macOS 用户，Claude Cowork 智能体 AI 爆漏洞可读写任意 Mac 文件",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "521e1999121456d9",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/982/277.htm"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "30ed9ebea82863eb",
+    "source_id": "the-decoder",
+    "title": "Moonshot AI releases Kimi K3 open weights and infrastructure after shaking up the frontier model race",
+    "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/",
+    "published_at": "2026-07-27T19:35:08+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1152\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/moonshot_ai_logos.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"2048\" /></p>\n<p>        Moonshot AI has released Kimi K3's model weights and made parts of its infrastructure open source. The Chinese model nearly matches Western frontier models such as Fable 5 and GPT-5.6 Sol on popular benchmarks, but independent tests found major gaps in cyber and math performance, possibly pointing to distillation.</p>\n<p>The article <a href=\"https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/\">Moonshot AI releases Kimi K3 open weights and infrastructure after shaking up the frontier model race</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "行业动态"
+    ],
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/moonshot_ai_logos.png",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Moonshot AI开源Kimi K3权重和基础设施，性能接近西方前沿模型，对开源社区和模型竞争格局有重要影响。",
+    "summary_zh": "Moonshot AI发布了Kimi K3的模型权重，并开源了部分基础设施。该模型几乎与西方前沿模型（如Fable等）性能相当，标志着中国AI公司在开源领域的重大进展。此举可能改变前沿模型竞争格局，为开发者提供更多选择。",
+    "title_zh": "Moonshot AI发布Kimi K3开源权重和基础设施，撼动前沿模型竞赛",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "36a827534d25ced7",
+    "multi_source_count": 6,
+    "sources": [
+      {
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway"
+      },
+      {
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/deepseek-to-kimi-ai-investment-logic-jul2026"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/982/283.htm"
+      },
+      {
+        "source_id": "zh-sspai",
+        "url": "https://sspai.com/post/112805"
+      },
+      {
+        "source_id": "36kr",
+        "url": "https://36kr.com/newsflashes/3914601205011587?f=rss"
       }
     ],
     "curated": true
@@ -949,36 +1153,35 @@
     "curated": true
   },
   {
-    "id": "974f35f6c57c4bb3",
-    "source_id": "nvidia-ai-blog",
-    "title": "NVIDIA Harnesses Vera CPU to Speed Up Design of Next-Generation CPUs and GPUs",
-    "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/",
-    "published_at": "2026-07-27T00:45:42+00:00",
-    "raw_text": "The complexity of modern chip design continues to grow as engineering teams work to develop increasingly sophisticated CPUs, GPUs and AI systems. To help meet that challenge, NVIDIA is collaborating with industry leaders Cadence and Synopsys to optimize critical electronic design automation (EDA) applications for the NVIDIA Vera CPU. NVIDIA is now deploying Vera across [&#8230;]",
+    "id": "cf36df3663bf90ed",
+    "source_id": "zh-juejin",
+    "title": "Zero RL：当 AI 学会“顿悟“——零强化学习的狂欢与阵痛",
+    "url": "https://juejin.cn/post/7667012505680003118",
+    "published_at": "2026-07-28T01:37:35+00:00",
+    "raw_text": "一、那个让全场沉默的\"Aha Moment\" 2025 年 1 月，DeepSeek 的团队在 R1-Zero 的训练过程中，观察到了一个被后人称为 \"Aha Moment\" 的现象：模型在没有任何人",
     "category_hint": [
-      "行业动态",
-      "产品发布"
+      "技巧与观点"
     ],
-    "image_url": "https://blogs.nvidia.com/wp-content/uploads/2026/07/cpu-corp-blog-vera-superchip-1280x680-4939150-842x450.jpg",
+    "image_url": null,
     "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "英伟达用 Vera CPU 加速芯片设计，与 Cadence、Synopsys 合作，对 EDA 行业有重要影响。",
-    "summary_zh": "英伟达官方博客宣布，为应对日益复杂的芯片设计挑战，正与 Cadence 和 Synopsys 合作，优化关键 EDA 应用以适配 NVIDIA Vera CPU。英伟达已部署 Vera 用于其下一代 CPU 和 GPU 的 EDA 工作流程，展示了高性能 CPU 在加速芯片设计方面的潜力。",
-    "title_zh": "英伟达利用 Vera CPU 加速下一代 CPU 和 GPU 的设计",
-    "weighted_score": 0.725,
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "深入剖析DeepSeek R1-Zero的“Aha Moment”现象，揭示零强化学习的内在机制与挑战，对理解前沿训练方法有重要启发。",
+    "summary_zh": "本文详细介绍了DeepSeek R1-Zero训练过程中出现的“Aha Moment”现象，即模型在无人类干预下自发产生顿悟式行为。文章分析了这一现象背后的技术原理，包括强化学习策略的自我进化、奖励模型的设计以及涌现能力的边界。同时，作者也指出了零强化学习面临的阵痛，如训练不稳定、可解释性差等问题。文章通过实验数据和案例，展示了R1-Zero在复杂推理任务上的突破性表现，并探讨了其对未来AI发展的潜在影响。",
+    "title_zh": null,
+    "weighted_score": 0.73,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
+      "source_authority": 0.7,
+      "novelty": 0.8,
       "impact": 0.8,
-      "practical_value": 0.4
+      "practical_value": 0.6
     },
-    "story_id": "49aed25c9d530de8",
+    "story_id": "98021812863f5eca",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "nvidia-ai-blog",
-        "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/"
+        "source_id": "zh-juejin",
+        "url": "https://juejin.cn/post/7667012505680003118"
       }
     ],
     "curated": true
@@ -1052,48 +1255,77 @@
     "curated": true
   },
   {
-    "id": "ca8422b9184ed677",
-    "source_id": "analytics-vidhya",
-    "title": "Claude Opus 5: Near-Frontier Intelligence, On a Dial",
-    "url": "https://www.analyticsvidhya.com/blog/2026/07/claude-opus-5-hands-on-review/",
-    "published_at": "2026-07-27T12:14:23+00:00",
-    "raw_text": "<p>Anthropic has released Claude Opus 5. The fourth model in two months, if you are keeping count. Most people are not. This one matters more than the count suggests. Opus is the workhorse tier, the model that does the actual paid work, and it just got a step change rather than a bump. Anthropic&#8217;s own [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2026/07/claude-opus-5-hands-on-review/\">Claude Opus 5: Near-Frontier Intelligence, On a Dial</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+    "id": "19a7237bf504347e",
+    "source_id": "tnw-deep-tech",
+    "title": "Meta AI arrives in Threads DMs for all users worldwide",
+    "url": "https://thenextweb.com/news/threads-meta-ai-dm-global-rollout",
+    "published_at": "2026-07-27T21:00:13+00:00",
+    "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/07/threads-meta-ai-dm-global-rollout.avif\" width=\"868\" /><br /><p>Meta is rolling out Meta AI to Threads direct messages globally starting today. All users can now share posts, images, links, and videos with Meta AI in a one-on-one conversation, ask follow-up questions, and explore topics privately. The feature mirrors what already exists on Facebook, Instagram, and WhatsApp. Meta said the move responds to community [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/threads-meta-ai-dm-global-rollout?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
     "category_hint": [
-      "产品发布",
       "行业动态"
     ],
-    "image_url": "https://cdn.analyticsvidhya.com/wp-content/uploads/2026/07/Claude-Opus-5.webp",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "Anthropic发布Claude Opus 5，性能有阶跃提升，是工作负载主力模型的重要更新。",
-    "summary_zh": "Anthropic发布了Claude Opus 5，这是两个月内的第四个模型。Opus是工作负载主力模型，此次更新是阶跃变化而非小幅提升。文章还提到该模型具有“Near-Frontier Intelligence, On a Dial”的特点，但具体细节需查看原文。",
-    "title_zh": "Claude Opus 5：接近前沿的智能，可调节",
-    "weighted_score": 0.655,
+    "image_url": "https://media.thenextweb.com/2026/07/threads-meta-ai-dm-global-rollout.avif",
+    "category": "产品发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "Meta AI进入Threads私信，扩大AI助手应用场景，对用户有直接影响。",
+    "summary_zh": "Meta宣布Meta AI现已面向全球所有Threads用户开放私信功能。用户可以在一对一对话中与Meta AI分享帖子、图片、链接和视频，提出后续问题并私下探索话题。该功能与Instagram和Facebook上的Meta AI类似，旨在提供更便捷的AI助手体验。",
+    "title_zh": "Meta AI 现已面向全球所有 Threads 用户开放私信",
+    "weighted_score": 0.665,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.8,
+      "source_authority": 0.8,
+      "novelty": 0.6,
       "impact": 0.7,
       "practical_value": 0.5
     },
-    "story_id": "c726a44fd51560ab",
-    "multi_source_count": 4,
+    "story_id": "71383f82d92bf3fa",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "tldr-ai",
-        "url": "https://tldr.tech/ai/2026-07-27"
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/07/27/threads-users-can-now-chat-with-meta-ai-in-their-dms/"
       },
       {
-        "source_id": "rundown-ai",
-        "url": "https://www.therundown.ai/p/anthropic-opus-5-surprise"
+        "source_id": "tnw-deep-tech",
+        "url": "https://thenextweb.com/news/threads-meta-ai-dm-global-rollout"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "8e5de0924ce5586a",
+    "source_id": "zh-ithome",
+    "title": "纳德拉官宣微软首个 AI 安全模型 MAI-Cyber-1-Flash，跑分超 Mythos 5 和 GPT-5.5 Cyber",
+    "url": "https://www.ithome.com/0/982/312.htm",
+    "published_at": "2026-07-28T00:59:36+00:00",
+    "raw_text": "<p>IT之家 7 月 28 日消息，微软首席执行官萨蒂亚 · 纳德拉（Satya Nadella）今天（7 月 28 日）在 X 平台发布推文，宣布其首个网络安全模型 MAI-Cyber-1-Flash，<strong>并表示该模型在 CyberGym 基准测试中取得了 95.95% 的成功率，超过 Anthropic 和 OpenAI 的同类系统。</strong></p><p style=\"text-align: center;\"><img class=\"not-source\" src=\"https://img.ithome.com/newsuploadfiles/2026/7/31cc0665-806b-448c-8cb5-9d34e941d117.png?x-bce-process=image/format,f_auto\" /></p><p>纳德拉表示 MAI-Cyber-1-Flash 是微软首个专门针对网络安全而研发的 AI 模型，并将其接入多智能体（Agent）安全系统 MDASH 中，可以高效处理约 90% 的网络安全任务。而针对剩余 10% 较为复杂的网络安全任务，可以调用规模更大、成本更高的模型（官方示例中为 GPT-5.4）。</p><p>成本方面，微软表示，MAI-Cyber-1-Flash 和 GPT-5.4 的组合成本比当前使用 GPT-5.4、GPT-5.4 Mini 和 GPT-5.3 Codex 的 MDASH 配置成本降低了近 50%。</p><p>在性能方面，CyberGym 测试中，<strong>MAI-Cyber-1-Flash 和 MDASH 组合获得 95.95% 的最高成绩</strong>，相比较而言，Claude Mythos 5 模型的成绩为 83.8%；GPT-5.6 Sol 模型为 83.6%；GPT-5.5 Cyber 模型为 85.6%。</p><p>微软同时推出 Perception。该系统由多个智能体组成，服务于 MDASH 中的多类安全工作流。系统可持续监测威胁、修补漏洞，并关闭新的威胁入口。微软称，Perception 未来将把该模型用于更多安全工作流。</p><p>微软称，另一项统计显示，其每天处理的安全信号超过 100 万亿条。该公司将漏洞、攻击、防御和处置结果纳入强化学习流程。MAI-C",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/31cc0665-806b-448c-8cb5-9d34e941d117.png?x-bce-process=image/format,f_auto",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "微软发布首个AI安全模型，跑分超越Anthropic和OpenAI，行业影响大。",
+    "summary_zh": "微软CEO纳德拉宣布首个网络安全模型MAI-Cyber-1-Flash，在CyberGym基准测试中取得95.95%成功率，超过Anthropic和OpenAI的同类系统。该模型专为网络安全设计，标志着微软在AI安全领域的重要进展。",
+    "title_zh": "纳德拉官宣微软首个AI安全模型MAI-Cyber-1-Flash，跑分超Mythos 5和GPT-5.5 Cyber",
+    "weighted_score": 0.665,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "632a90cb71087c5b",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/microsoft-launches-its-own-cybersecurity-model-mai-cyber-1-flash-but-still-depends-on-openai-for-the-toughest-tasks/"
       },
       {
-        "source_id": "ifanr",
-        "url": "https://www.ifanr.com/1673165?utm_source=rss&utm_medium=rss&utm_campaign="
-      },
-      {
-        "source_id": "analytics-vidhya",
-        "url": "https://www.analyticsvidhya.com/blog/2026/07/claude-opus-5-hands-on-review/"
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/982/312.htm"
       }
     ],
     "curated": true
@@ -1128,41 +1360,6 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/lightelligence-optical-computing-commercialization-jul2026"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "028daf9bc47e6cf1",
-    "source_id": "zh-ithome",
-    "title": "英伟达、微软、IBM 等 37 家企业成立开放安全 AI 联盟：构建和共享开源工具、推动 AI 安全与保障",
-    "url": "https://www.ithome.com/0/982/171.htm",
-    "published_at": "2026-07-27T09:46:13+00:00",
-    "raw_text": "<p>IT之家 7 月 27 日消息，英伟达、微软、Adobe、SpaceXAI、IBM、SAP、戴尔、思科等企业宣布成立开放安全人工智能联盟，旨在构建和共享开源工具，以促进 AI 的负责任使用。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/7/ddd645f2-a249-41c6-91e8-7ac6817d5cd4.png\" /></p><p>官方表示，开源软件是全球经济的核心支柱，为云计算、金融服务、制造业、电信、政府及互联网服务奠定了坚实基础。</p><p>而网络安全是开源软件最大的受益领域之一。开放安全 AI 联盟以 Linux 基金会的 Akrites 倡议与 OpenSSF 社区成果为基础，<strong>旨在利用开源技术修复并公开披露安全漏洞</strong>。</p><blockquote><p>世界既需要封闭模型，也需要开源模型。</p><p>对于网络安全而言，开源模型与开源运行框架至关重要 —— 它们能够普及防御能力、提升防御者的透明度、在保护数据的同时实现网络防御，并以可定制的本地化控制手段对前沿封闭模型形成有力补充。</p><p>开源使得大规模分布式、社区驱动且自主可控的防御成为可能，从而消除了单点故障。</p></blockquote><p>IT之家获悉，开放安全 AI 联盟表示，<strong>该联盟的使命是确保各地的防御者都能拥有可信且自主可控的开放前沿工具</strong>。</p><p>据悉，创始成员为云计算、网络安全、企业软件、开源基金会和人工智能研究领域的领导者，具体名单如下：</p><ul class=\" list-paddingleft-2\"><li><p>Adobe</p></li><li><p>Cadence</p></li><li><p>Capital One</p></li><li><p>思科</p></li><li><p>Cloudera</p></li><li><p>Cloudflare</p></li><li><p>Cognition</p></li><li><p>CrowdStrike</p></li><li><p>Databricks</p></li><li><p>戴尔科技公司",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/7/ddd645f2-a249-41c6-91e8-7ac6817d5cd4.png",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "英伟达、微软等巨头成立开放安全AI联盟，推动开源安全工具。",
-    "summary_zh": "英伟达、微软、Adobe、SpaceX AI、IBM、SAP、戴尔、思科等37家企业宣布成立开放安全人工智能联盟，旨在构建和共享开源工具，促进AI的负责任使用。该联盟以Linux基金会的Akrites倡议和OpenSSF社区成果为基础，重点利用开源技术修复并公开披露安全漏洞，推动AI安全与保障。",
-    "title_zh": "英伟达、微软、IBM 等 37 家企业成立开放安全 AI 联盟",
-    "weighted_score": 0.715,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "ddffd1bcf25945b4",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/982/171.htm"
       }
     ],
     "curated": true,
