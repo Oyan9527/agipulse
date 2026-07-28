@@ -35,6 +35,40 @@
     "curated": true
   },
   {
+    "id": "82528acfa737266e",
+    "source_id": "gh-peft",
+    "title": "huggingface/peft v0.20.0",
+    "url": "https://github.com/huggingface/peft/releases/tag/v0.20.0",
+    "published_at": "2026-07-28T13:49:42+00:00",
+    "raw_text": "# Highlights\r\n\r\n<img width=\"1248\" height=\"560\" alt=\"peft-v0 20 0\" src=\"https://github.com/user-attachments/assets/3be9c98d-f597-4169-8a17-74e502441bc2\" />\r\n\r\nThis release adds no less than nine new PEFT methods and puts a lot of work into the surrounding infrastructure, for example adding a new image generation benchmark for the method comparison suite and greatly improving the documentation structure.\r\n\r\n## New Methods\r\n\r\n### HiRA\r\n\r\n@hqsiswiliam added [\"HiRA: Parameter-Efficient Hadamard High-Rank Adaptation for Large Language Models\"](https://openreview.net/forum?id=TwJrTz9cRS) to PEFT (#2668). Instead of adding the low-rank product `BA` to the base weight, HiRA multiplies it elementwise (Hadamard product) with the frozen base weight. Because the base weight itself is full rank, the resulting update is no longer constrained to be low rank, while the trainable parameter count stays the same as LoRA's.\r\n\r\n### GLoRA\r\n\r\n@not-lain contributed GLoRA: [\"One-for-All: Generalized LoRA for Pa",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "PEFT v0.20.0新增9种方法，对微调实践有重要价值。",
+    "summary_zh": "Hugging Face的PEFT库发布v0.20.0版本，新增9种PEFT方法，并改进了基础设施，包括新的图像生成基准测试和文档结构。该版本对模型微调社区有重要影响。",
+    "title_zh": "huggingface/peft v0.20.0",
+    "weighted_score": 0.835,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "23ec6a1d39b7d453",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-peft",
+        "url": "https://github.com/huggingface/peft/releases/tag/v0.20.0"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "933351c197bfcac4",
     "source_id": "pandaily",
     "title": "Kimi K3 Officially Open-Sourced: Moonshot AI Releases 2.8 Trillion Parameter Model Weights, Technical Report, and Three Infrastructure Technologies",
@@ -74,10 +108,6 @@
         "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
       },
       {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/"
-      },
-      {
         "source_id": "zh-sspai",
         "url": "https://sspai.com/post/112805"
       },
@@ -88,6 +118,10 @@
       {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/481061"
+      },
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1v8mx1o/has_anyone_actually_been_using_these_latest_new/"
       },
       {
         "source_id": "zh-leiphone",
@@ -112,75 +146,45 @@
       {
         "source_id": "zh-ithome",
         "url": "https://www.ithome.com/0/982/734.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "44998c4b6dc1372f",
-    "source_id": "arxiv-cs-ai",
-    "title": "CuraWeb: Joint Optimization of Quality, Redundancy, and Diversity for Web-Scale Pretraining Data",
-    "url": "https://arxiv.org/abs/2607.22662",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "raw_text": "arXiv:2607.22662v1 Announce Type: new \nAbstract: Open-web corpora curated via highly selective filters, such as FineWeb-Edu and DCLM, constitute the core of LLM pretraining data and have significantly advanced LLM performance. However, these pipelines typically rely on singular optimization objectives, which inevitably narrows distributional diversity and marginalizes long-tail knowledge, thereby restricting data coverage and underutilizing the vast potential of the open web. To address this limitation, we propose a novel curation paradigm that shifts from linear pruning to the joint optimization of quality, redundancy, and diversity. This framework synergizes dual-track cleaning (rule-based and model-driven) with hybrid deduplication (n-gram and semantic), while employing a multi-objective sampler to balance informational quality with distributional breadth. Applying this framework to Common Crawl, we construct CuraWeb, a 2T-token English corpus. Unlike existing resources, CuraWeb est",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "联合优化质量、冗余与多样性，为预训练数据筛选提供新范式，实用价值高。",
-    "summary_zh": "本文提出CuraWeb框架，联合优化预训练数据的质量、冗余和多样性。现有方法如FineWeb-Edu和DCLM仅优化单一目标，导致分布多样性降低和长尾知识边缘化。CuraWeb通过多目标优化，在保持高质量的同时提升数据多样性，实验表明其能改善LLM在多种任务上的性能。",
-    "title_zh": "CuraWeb：面向网络规模预训练数据的质量、冗余与多样性联合优化",
-    "weighted_score": 0.78,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "7099deadc886c883",
-    "multi_source_count": 1,
-    "sources": [
+      },
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.22662"
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1v93vpl/kimi_k3_open_frontier_intelligence/"
       }
     ],
     "curated": true
   },
   {
-    "id": "6f0fc8de1c71c72f",
-    "source_id": "aws-ml-blog",
-    "title": "Beyond RAG: Task-aware knowledge compression for enterprise AI on AWS",
-    "url": "https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/",
-    "published_at": "2026-07-27T16:11:32+00:00",
-    "raw_text": "Traditional RAG hits a ceiling on analytical tasks that span hundreds of documents. This post shows how to use task-aware knowledge compression (TAKC) on AWS to pre-compress entire knowledge bases into task-specific representations, cache them at multiple fidelity tiers, and route each query to the right tier, with an open-source implementation you can deploy.",
+    "id": "358e404db86d110e",
+    "source_id": "latent-space",
+    "title": "Codex from 0 to 10M Users: Building ChatGPT Work — Akshay Nathan, OpenAI",
+    "url": "https://www.latent.space/p/chatgpt-work",
+    "published_at": "2026-07-28T15:26:30+00:00",
+    "raw_text": "OpenAI's core product engineering lead on how they are building ChatGPT Work to make AGI accessible to all of humanity: Sites, OpenClaw, Memory, Subagents, Finance, No-Code and advice.",
     "category_hint": [
       "技巧与观点",
-      "产品发布"
+      "行业动态"
     ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/23/ML-19433-1.png",
-    "category": "行业动态",
+    "image_url": null,
+    "category": "技巧与观点",
     "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "AWS官方博客提出的任务感知知识压缩（TAKC）方法，为大规模文档分析提供了超越传统RAG的实用方案，附带开源实现，值得工程团队参考。",
-    "summary_zh": "传统RAG在处理跨数百文档的分析任务时存在瓶颈。本文介绍了在AWS上使用任务感知知识压缩（TAKC）的方法：将整个知识库预压缩为任务特定表示，按多个保真度层级缓存，并将每个查询路由到合适的层级。文章提供了可部署的开源实现，帮助企业在不牺牲准确性的前提下提升大规模文档分析的效率。",
-    "title_zh": "超越RAG：AWS上面向企业AI的任务感知知识压缩",
-    "weighted_score": 0.775,
+    "depth_score": 0.8,
+    "reason_zh": "OpenAI 产品工程负责人分享 ChatGPT Work 从 0 到 1000 万用户的构建经验，含 Sites、Memory、Subagents 等实战细节。",
+    "summary_zh": "OpenAI 核心产品工程负责人 Akshay Nathan 分享如何构建 ChatGPT Work 以实现 AGI 普惠化。内容涵盖 Sites、OpenClaw、Memory、Subagents、Finance、No-Code 等功能的开发历程，以及从 0 到 1000 万用户过程中的经验教训和工程建议。",
+    "title_zh": "Codex 从 0 到 1000 万用户：构建 ChatGPT Work 的经验——OpenAI 的 Akshay Nathan",
+    "weighted_score": 0.785,
     "score_breakdown": {
       "source_authority": 0.9,
       "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.9
+      "impact": 0.8,
+      "practical_value": 0.7
     },
-    "story_id": "b06d59a02973efc6",
+    "story_id": "1fd0a7554ca1e9ff",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/"
+        "source_id": "latent-space",
+        "url": "https://www.latent.space/p/chatgpt-work"
       }
     ],
     "curated": true
@@ -215,6 +219,40 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2607.22585"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "5affd0254f96e223",
+    "source_id": "gh-bitsandbytes",
+    "title": "bitsandbytes-foundation/bitsandbytes continuous-release_main",
+    "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/releases/tag/continuous-release_main",
+    "published_at": "2026-07-28T16:17:10+00:00",
+    "raw_text": "## Latest `main` pre-release wheel\n\nThis pre-release contains the latest development wheels for all supported platforms, rebuilt automatically on every commit to the `main` branch.\n\n**How to install:**\nPick the correct command for your platform and run it in your terminal:\n\n### macOS 14+ (arm64)\n```sh\npip install --force-reinstall https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_main/bitsandbytes-1.33.7.preview-py3-none-macosx_14_0_arm64.whl\n```\n\n### Linux (aarch64)\n```sh\npip install --force-reinstall https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_main/bitsandbytes-1.33.7.preview-py3-none-manylinux_2_24_aarch64.whl\n```\n\n### Linux (x86_64)\n```sh\npip install --force-reinstall https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_main/bitsandbytes-1.33.7.preview-py3-none-manylinux_2_24_x86_64.whl\n```\n\n### Windows (x86_64)\n```sh\npip install --force-reinstall http",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "bitsandbytes发布最新预发布版，支持多平台，对需要量化训练的用户有直接实用价值。",
+    "summary_zh": "bitsandbytes-foundation发布了最新的main分支预发布wheel，支持所有主流平台，并在每次提交到main分支时自动重建。安装命令已提供，适用于macOS 14+ (arm64)等平台。该库广泛用于大模型的量化训练和推理，此次更新为开发者提供了最新的开发版本。",
+    "title_zh": "bitsandbytes-foundation/bitsandbytes 持续发布 main 分支预发布版",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.9
+    },
+    "story_id": "7ff17af84de4a9ce",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-bitsandbytes",
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes/releases/tag/continuous-release_main"
       }
     ],
     "curated": true
@@ -290,35 +328,36 @@
     "curated": true
   },
   {
-    "id": "58c9f79b91c31274",
-    "source_id": "arxiv-cs-ai",
-    "title": "TRE: Training-Free Hallucination Detection for Diffusion Language Models",
-    "url": "https://arxiv.org/abs/2607.22661",
-    "published_at": "2026-07-28T04:00:00+00:00",
-    "raw_text": "arXiv:2607.22661v1 Announce Type: new \nAbstract: Diffusion large language models (D-LLMs) have recently gained increasing attention, yet their reliability is significantly hindered by the hallucination problem. Existing hallucination detection approaches for D-LLMs mainly follow a training-based paradigm, relying on data-driven training to optimize the detector. Such reliance not only limits their generalizability across domains models but also incurs additional training cost and deployment overhead. To address these limitations, we propose TRE, a training-free hallucination detection metric for D-LLMs. TRE is a parameter-free and single-run metric that estimates hallucination risk directly from the entropy signals of a single generation, without requiring any detector training or repeated sampling. TRE extracts entropy signals within the D-LLM decoding process along both the spatial and temporal dimensions. From a token-level spatial perspective, we focus on revealing tokens as the mo",
+    "id": "85dd02699b255d55",
+    "source_id": "huggingface-blog",
+    "title": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
+    "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
+    "published_at": "2026-07-28T15:01:45+00:00",
+    "raw_text": "",
     "category_hint": [
-      "论文研究"
+      "开源项目",
+      "产品发布"
     ],
     "image_url": null,
-    "category": "论文研究",
+    "category": "模型发布",
     "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出无需训练的扩散LLM幻觉检测方法，实用性强，可即插即用。",
-    "summary_zh": "本文针对扩散大语言模型（D-LLM）的幻觉问题，提出一种无需训练的检测方法TRE。现有方法依赖数据驱动训练，而TRE利用模型内部特征直接检测幻觉，无需额外训练数据。实验证明该方法在多个D-LLM上有效，显著提升了模型可靠性。",
-    "title_zh": "TRE：扩散语言模型的免训练幻觉检测",
-    "weighted_score": 0.76,
+    "depth_score": 0.8,
+    "reason_zh": "Hugging Face发布LFM2.5编码器，专为CPU长上下文推理优化，实用性强。",
+    "summary_zh": "Hugging Face博客发布了LFM2.5-Encoders，这是一系列专为快速长上下文推理设计的编码器，可在CPU上高效运行。该模型针对长序列场景进行了优化，显著降低了推理延迟，同时保持了较高的准确性。文章介绍了模型架构、训练方法以及在CPU上的性能基准测试结果，展示了其在资源受限环境下的实用价值。对于需要在边缘设备或低成本服务器上部署长上下文AI应用的开发者来说，这是一个重要的技术进展。",
+    "title_zh": "LFM2.5-Encoders：用于CPU快速长上下文推理的编码器",
+    "weighted_score": 0.765,
     "score_breakdown": {
       "source_authority": 0.9,
       "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
+      "impact": 0.7,
+      "practical_value": 0.6
     },
-    "story_id": "adb9168c79c768b6",
+    "story_id": "dbf1e4a570d78286",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2607.22661"
+        "source_id": "huggingface-blog",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders"
       }
     ],
     "curated": true
@@ -634,6 +673,41 @@
     "curated": true
   },
   {
+    "id": "4a625d27daefe243",
+    "source_id": "towards-data-science",
+    "title": "How Much Does a Local LLM Actually Cost to Run? I Measured Every Watt on Apple Silicon",
+    "url": "https://towardsdatascience.com/how-much-does-a-local-llm-actually-cost-to-run-i-measured-every-watt-on-apple-silicon/",
+    "published_at": "2026-07-28T16:30:00+00:00",
+    "raw_text": "<p>Five models, sustained generation, real wall-socket energy at $0.31/kWh — and the surprise the RTX-3090 numbers predicted, only bigger.</p>\n<p>The post <a href=\"https://towardsdatascience.com/how-much-does-a-local-llm-actually-cost-to-run-i-measured-every-watt-on-apple-silicon/\">How Much Does a Local LLM Actually Cost to Run? I Measured Every Watt on Apple Silicon</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "实测Apple Silicon上本地LLM的真实能耗与成本，数据详实，对硬件选型有直接指导意义。",
+    "summary_zh": "作者在Apple Silicon设备上实测了五种本地LLM模型的持续生成能耗，使用墙插功率计测量实际功耗，电费按$0.31/kWh计算。结果揭示了RTX-3090预测数据之外的惊喜发现，为本地部署LLM的成本评估提供了真实数据参考。",
+    "title_zh": "运行本地LLM实际成本多少？我在Apple Silicon上测量了每一瓦特",
+    "weighted_score": 0.74,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "92024eaa5ce9e232",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "towards-data-science",
+        "url": "https://towardsdatascience.com/how-much-does-a-local-llm-actually-cost-to-run-i-measured-every-watt-on-apple-silicon/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "a80ed131b759bc51",
     "source_id": "gradient-flow",
     "title": "Multiple Dials, Not One: Reading an Open Model Release",
@@ -698,6 +772,74 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2607.22577"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "05886728b35d0278",
+    "source_id": "arxiv-cs-ai",
+    "title": "xMIx: High-Performance Serving-Time Platform for Mechanistic Interpretability Apps",
+    "url": "https://arxiv.org/abs/2607.22595",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22595v1 Announce Type: new \nAbstract: Mechanistic interpretability (MI) has emerged as a powerful approach for analyzing and intervening in inference computations, with a growing number of applications such as jailbreak attempt detection, truthfulness evaluation, and hallucination detection. Unfortunately, MI deployment in production model-serving systems is currently not practical, as most existing MI frameworks introduce prohibitively high runtime overheads. The fundamental problem is that MI functions do not compose cleanly with served models: they fragment deployment, often force draining requests and rebuilding serving state, and conflict with critical performance optimizations such as continuous batching and CUDA-graph execution, essential for production deployments.\n  We present xMIx, a serving-native framework for deploying MI applications in production inference serving environments. xMIx enables attaching MI functions to a predefined set of locations in the model r",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "首个面向生产环境的可解释性推理平台，解决MI部署难题，实用价值高。",
+    "summary_zh": "机械可解释性（MI）已成为分析和干预推理计算的有力方法，应用包括越狱检测、真实性评估和幻觉检测。然而，MI在生产模型服务系统中的部署目前不切实际。本文提出xMIx，一个高性能的推理时平台，用于支持可解释性应用，使MI能够实际部署。",
+    "title_zh": "xMIx：面向机械可解释性应用的高性能推理时平台",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "0af920604c18cea0",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22595"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "f8203f400fbec406",
+    "source_id": "arxiv-cs-ai",
+    "title": "Masked Distillation: Internalizing the Chain-of-Thought in Language Models",
+    "url": "https://arxiv.org/abs/2607.22629",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22629v1 Announce Type: new \nAbstract: Large Reasoning Models (LRMs) produce long, explicit chains of intermediate steps before generating a final answer at inference time. These intermediate traces dominate latency, memory usage, and serving cost, even though the final answer correctness is not causally related to the trace correctness and the trace length is not a reliable indicator of the problem complexity. This raises a natural question: can the computation expressed in these intermediate tokens be internalized into the parameters of a language model, enabling it to produce answers directly (or with much shorter intermediate traces)? We introduce \\textit{masked distillation}, a knowledge-distillation framework in which a student LLM is trained to predict only the solution tokens conditioned on the question, while a reasoning teacher provides feedback on the student's responses after conditioning on the question and its own CoT trace. We instantiate this framework in two ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出掩码蒸馏方法，将思维链内化到模型参数中，减少推理时中间步骤开销，对提升推理效率有重要意义。",
+    "summary_zh": "大型推理模型（LRM）在推理时生成冗长的中间步骤，导致延迟和内存开销大。本文提出掩码蒸馏（Masked Distillation），通过训练将思维链（CoT）内化到模型参数中，使模型在推理时直接输出最终答案，无需显式中间步骤。该方法使用掩码机制让模型学习从输入到输出的直接映射，同时保留CoT的推理能力。实验表明，内化后的模型在保持准确率的同时，推理速度大幅提升，资源消耗显著降低。",
+    "title_zh": "掩码蒸馏：将思维链内化到语言模型中",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "1290fc59128b7220",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22629"
       }
     ],
     "curated": true
@@ -772,35 +914,36 @@
     "curated": true
   },
   {
-    "id": "2c41fc0d4966c4c3",
-    "source_id": "tnw-deep-tech",
-    "title": "Most enterprise AI spend still hasn’t left the lab",
-    "url": "https://thenextweb.com/news/most-enterprise-ai-spend-still-hasnt-left-the-lab",
-    "published_at": "2026-07-28T12:43:05+00:00",
-    "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/07/enterprise-ai-spend-still-in-the-lab.avif\" width=\"868\" /><br /><p>New research puts a hard number on something a lot of IT leaders already suspected. Most AI pilots never make it into production, and the spend behind them isn’t disappearing, it’s just sitting in limbo. Jon Bitz, chief relationship officer and co-founder at KloudStax, says that limbo isn’t the failure it looks like from the outside. The [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/most-enterprise-ai-spend-still-hasnt-left-the-lab?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
+    "id": "37db1a04f0b2392c",
+    "source_id": "verge-ai",
+    "title": "Perplexity’s Personal Computer turns Windows PCs into AI agents",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/971750/perplexity-personal-computer-windows-ai-agents",
+    "published_at": "2026-07-28T12:30:00+00:00",
+    "raw_text": "Perplexity has expanded its agentic Personal Computer tool to Windows, allowing computers running the world's most popular OS to be used as a locally run AI system. Like the Mac version that Perplexity launched in April, Personal Computer for Windows operates like a \"general-purpose digital worker\" that can access local files and apps to perform [&#8230;]",
     "category_hint": [
-      "行业动态"
+      "行业动态",
+      "产品发布"
     ],
-    "image_url": "https://media.thenextweb.com/2026/07/enterprise-ai-spend-still-in-the-lab.avif",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "研究揭示多数企业AI投入仍停留在实验阶段，对理解AI落地瓶颈有重要参考价值。",
-    "summary_zh": "新研究量化了企业AI投入的现状：大多数AI试点项目从未进入生产环境，相关支出并未消失，而是处于停滞状态。KloudStax首席关系官Jon Bitz指出，这反映了IT领导者普遍面临的挑战。文章深入分析了AI项目从实验室到生产的转化难题，以及企业如何优化AI投资策略。",
-    "title_zh": "大多数企业AI投入仍未走出实验室",
+    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25472503/STK271_PERPLEXITY_C.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Perplexity将AI Agent工具扩展到Windows，提升实用性。",
+    "summary_zh": "Perplexity将其Agentic Personal Computer工具扩展到Windows平台，使Windows电脑能作为本地AI系统运行。该工具类似Mac版本，可访问本地文件和应用程序，充当通用数字工作者。",
+    "title_zh": "Perplexity的Personal Computer将Windows PC变成AI Agent",
     "weighted_score": 0.735,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
       "practical_value": 0.6
     },
-    "story_id": "68a9fab1a594227b",
+    "story_id": "f6ddf779132b3653",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "tnw-deep-tech",
-        "url": "https://thenextweb.com/news/most-enterprise-ai-spend-still-hasnt-left-the-lab"
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/971750/perplexity-personal-computer-windows-ai-agents"
       }
     ],
     "curated": true
@@ -841,6 +984,158 @@
     "curated": true
   },
   {
+    "id": "df22037e3e0ff3ea",
+    "source_id": "openai-blog",
+    "title": "Scientific computing in the age of agentic AI",
+    "url": "https://openai.com/index/scientific-computing-agentic-ai",
+    "published_at": "2026-07-28T17:00:00+00:00",
+    "raw_text": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond.",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "OpenAI官方报告展示AI智能体在科学计算中的实际应用，有具体案例和洞察，对科研人员有启发。",
+    "summary_zh": "OpenAI发布了一份现场报告，展示了科学家如何使用AI编码智能体来现代化科学计算。报告通过基因组学等领域的案例，说明AI智能体如何加速软件开发与科学发现，并总结了最佳实践与挑战。",
+    "title_zh": "智能体AI时代的科学计算",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "47a26cc312a37dc1",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "openai-blog",
+        "url": "https://openai.com/index/scientific-computing-agentic-ai"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "873e363217ce3a4f",
+    "source_id": "reddit-singularity",
+    "title": "Nvidia invests 5 billion dollars into Ilya Sutskever's (creator of ChatGPT) new company SSI (Safe Superintelligence)",
+    "url": "https://www.reddit.com/r/singularity/comments/1v8sc6v/nvidia_invests_5_billion_dollars_into_ilya/",
+    "published_at": "2026-07-28T08:38:26+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Tweet by Ilya: <a href=\"https://x.com/ilyasut/status/2081732293161582930\">https://x.com/ilyasut/status/2081732293161582930</a></p> <p>Newspost: <a href=\"https://investor.nvidia.com/news/press-release-details/2026/Ilya-Sutskevers-Safe-Superintelligence-Inc--and-NVIDIA-Announce-Long-Term-Strategic-Partnership/default.aspx\">https://investor.nvidia.com/news/press-release-details/2026/Ilya-Sutskevers-Safe-Superintelligence-Inc--and-NVIDIA-Announce-Long-Term-Strategic-Partnership/default.aspx</a></p> <p>Probably what his research direction is: Making an AI more inspired by the human brain that features continuous live learning akin to live intelligence</p> <p>Discuss</p> <p>What did Ilya see?</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/loopuleasa\"> /u/loopuleasa </a> <br /> <span><a href=\"https://www.reddit.com/r/singularity/comments/1v8sc6v/nvidia_invests_5_billion_dollars_into_ilya/\">[link]</a></span> &#32; <span>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "NVIDIA投资Ilya新公司SSI，标志性事件，影响AI安全与算力格局。",
+    "summary_zh": "NVIDIA宣布向Ilya Sutskever（ChatGPT创始人之一）的新公司Safe Superintelligence Inc.（SSI）投资50亿美元，并建立长期战略合作伙伴关系。Ilya在X平台上确认了这一消息。该投资凸显了NVIDIA对AI安全领域的重视，以及SSI在开发安全超级智能方面的潜力。",
+    "title_zh": "NVIDIA向Ilya Sutskever的新公司SSI投资50亿美元",
+    "weighted_score": 0.73,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.2
+    },
+    "story_id": "ed56dcb004c459f2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1v8sc6v/nvidia_invests_5_billion_dollars_into_ilya/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "590e7ef889316320",
+    "source_id": "databricks-blog",
+    "title": "How Databricks manages its own coding agent spend with Unity AI Gateway Budgets",
+    "url": "https://www.databricks.com/blog/how-databricks-manages-its-own-coding-agent-spend-unity-ai-gateway-budgets",
+    "published_at": "2026-07-28T15:40:33+00:00",
+    "raw_text": "At Databricks, the way we build software is changing quickly as we aggressively adopt...",
+    "category_hint": [
+      "产品发布",
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "Databricks 分享如何用 Unity AI Gateway Budgets 管理编码智能体支出，对工程团队有直接实用价值。",
+    "summary_zh": "Databricks 博客文章介绍其如何通过 Unity AI Gateway Budgets 管理内部编码智能体的使用成本。随着软件构建方式快速变化，Databricks 积极采用 AI 编码助手，但面临支出控制挑战。文章详细说明了预算管理策略和最佳实践，为其他企业提供参考。",
+    "title_zh": "Databricks 如何使用 Unity AI Gateway Budgets 管理其编码智能体支出",
+    "weighted_score": 0.73,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "b66d57ec3f8f3d31",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "databricks-blog",
+        "url": "https://www.databricks.com/blog/how-databricks-manages-its-own-coding-agent-spend-unity-ai-gateway-budgets"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "f500c7483ed32a87",
+    "source_id": "the-decoder",
+    "title": "Nvidia invests in Ilya Sutskever's AI lab, shifting SSI away from Google chips",
+    "url": "https://the-decoder.com/nvidia-invests-in-ilya-sutskevers-ai-lab-shifting-ssi-away-from-google-chips/",
+    "published_at": "2026-07-28T13:06:35+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"900\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/ssi-nvidia.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1600\" /></p>\n<p>        Nvidia is pouring what it calls a \"substantial\" sum into Safe Superintelligence (SSI), the AI lab run by Ilya Sutskever, OpenAI's former chief scientist. </p>\n<p>The article <a href=\"https://the-decoder.com/nvidia-invests-in-ilya-sutskevers-ai-lab-shifting-ssi-away-from-google-chips/\">Nvidia invests in Ilya Sutskever&#039;s AI lab, shifting SSI away from Google chips</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "行业动态"
+    ],
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/ssi-nvidia.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "Nvidia投资Ilya Sutskever的AI实验室SSI，可能改变AI芯片竞争格局。",
+    "summary_zh": "Nvidia向Safe Superintelligence (SSI)投入了“可观”的资金，SSI是由OpenAI前首席科学家Ilya Sutskever领导的AI实验室。这笔投资可能使SSI减少对Google芯片的依赖，转向Nvidia的硬件。此举标志着Nvidia在AI基础设施领域的进一步扩张，并可能影响AI芯片市场的竞争态势。",
+    "title_zh": "Nvidia投资Ilya Sutskever的AI实验室，推动SSI远离Google芯片",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.3
+    },
+    "story_id": "0a246aa9320978f9",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/shared-claude-chats-were-reportedly-showing-up-in-search-engines/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/openai-says-more-workers-are-using-chatgpt-to-do-other-peoples-jobs/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/nvidia-invests-in-ilya-sutskevers-ai-lab-shifting-ssi-away-from-google-chips/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/amazon-reportedly-scales-back-its-nova-ai-models-and-bets-on-a-new-frontier-research-team/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "6a389f6e0b5d58ab",
     "source_id": "zh-oschina",
     "title": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
@@ -870,6 +1165,40 @@
       {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/481154"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "e7354e5737b68710",
+    "source_id": "arxiv-cs-ai",
+    "title": "Schema-Aware Localisation (SAL): Live Schema Grounding and Hallucination Validation for Oracle NL2SQL",
+    "url": "https://arxiv.org/abs/2607.22572",
+    "published_at": "2026-07-28T04:00:00+00:00",
+    "raw_text": "arXiv:2607.22572v1 Announce Type: new \nAbstract: Large language models can generate fluent SQL from natural language, but on real enterprise Oracle databases they frequently fail at execution time: columns and aliases are hallucinated and dialect-specific syntax is missed, leading to ORA-00904 invalid-identifier errors. In this setting, failures are primarily due to missing schema grounding: the model cannot know which tables and columns actually exist. This paper introduces Schema-Aware Localisation (SAL), a lightweight middleware layer for Oracle NL2SQL that requires no model retraining. SAL queries Oracle's USER_TAB_COLUMNS catalog to build a live schema map, selects a relevant table subset for each question (falling back to the full schema for multi-table queries), and injects this ground-truth context into the LLM prompt. Generated SQL is then checked by the Hallucination Index (Hidx), which validates every alias.column reference against the live catalog, automatically rewrites pr",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "直击Oracle NL2SQL中模式幻觉和方言错误的痛点，提出实时模式接地与幻觉验证方法，对数据库从业者极具实用价值。",
+    "summary_zh": "本文提出Schema-Aware Localisation (SAL)，一种针对Oracle数据库的实时模式接地与幻觉验证方法。大语言模型在生成SQL时经常出现列名和别名幻觉、遗漏方言语法等问题，导致ORA-00904等执行错误。SAL通过在推理过程中动态接入Oracle模式信息，并引入幻觉验证机制，确保生成的SQL符合实际数据库模式。实验证明，该方法显著降低了无效标识符错误，提升了NL2SQL在真实企业环境中的执行成功率。",
+    "title_zh": "Schema-Aware Localisation (SAL)：面向Oracle NL2SQL的实时模式接地与幻觉验证",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "1817b2d4edba75f8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.22572"
       }
     ],
     "curated": true
@@ -905,80 +1234,6 @@
       {
         "source_id": "infoq-cn-ai",
         "url": "https://www.infoq.cn/video/Cpw9ye57OyQNHSKpem7T?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f500c7483ed32a87",
-    "source_id": "the-decoder",
-    "title": "Nvidia invests in Ilya Sutskever's AI lab, shifting SSI away from Google chips",
-    "url": "https://the-decoder.com/nvidia-invests-in-ilya-sutskevers-ai-lab-shifting-ssi-away-from-google-chips/",
-    "published_at": "2026-07-28T13:06:35+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"900\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/ssi-nvidia.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1600\" /></p>\n<p>        Nvidia is pouring what it calls a \"substantial\" sum into Safe Superintelligence (SSI), the AI lab run by Ilya Sutskever, OpenAI's former chief scientist. </p>\n<p>The article <a href=\"https://the-decoder.com/nvidia-invests-in-ilya-sutskevers-ai-lab-shifting-ssi-away-from-google-chips/\">Nvidia invests in Ilya Sutskever&#039;s AI lab, shifting SSI away from Google chips</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/ssi-nvidia.jpg",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "Nvidia投资Ilya Sutskever的AI实验室SSI，可能改变AI芯片竞争格局。",
-    "summary_zh": "Nvidia向Safe Superintelligence (SSI)投入了“可观”的资金，SSI是由OpenAI前首席科学家Ilya Sutskever领导的AI实验室。这笔投资可能使SSI减少对Google芯片的依赖，转向Nvidia的硬件。此举标志着Nvidia在AI基础设施领域的进一步扩张，并可能影响AI芯片市场的竞争态势。",
-    "title_zh": "Nvidia投资Ilya Sutskever的AI实验室，推动SSI远离Google芯片",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.3
-    },
-    "story_id": "a563d0469b1e742c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/nvidia-invests-in-ilya-sutskevers-ai-lab-shifting-ssi-away-from-google-chips/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "2c6e184de87962ac",
-    "source_id": "marktechpost",
-    "title": "Microsoft AI Releases MAI-Cyber-1-Flash: A 5B-Active-Parameter Cyber Model That Pushes MDASH to 95.95% on CyberGym",
-    "url": "https://www.marktechpost.com/2026/07/28/microsoft-ai-releases-mai-cyber-1-flash-a-5b-active-parameter-cyber-model-that-pushes-mdash-to-95-95-on-cybergym/",
-    "published_at": "2026-07-28T08:33:30+00:00",
-    "raw_text": "<p>Microsoft AI has released MAI-Cyber-1-Flash, its first model built specifically for cyber defense. It is a 137B total, 5B active sparse MoE fine-tune of MAI-Code-1-Flash with a 256k context window. The model does not ship as a standalone endpoint — it runs inside MDASH, Microsoft's multi-model agentic scanning harness, where it handles up to 90% of tasks and pushes the system to 95.95% on CyberGym.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/07/28/microsoft-ai-releases-mai-cyber-1-flash-a-5b-active-parameter-cyber-model-that-pushes-mdash-to-95-95-on-cybergym/\">Microsoft AI Releases MAI-Cyber-1-Flash: A 5B-Active-Parameter Cyber Model That Pushes MDASH to 95.95% on CyberGym</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "微软发布首个专用网络防御模型，在CyberGym上达到95.95%，对网络安全领域有重要意义。",
-    "summary_zh": "微软AI发布了MAI-Cyber-1-Flash，这是其首个专为网络防御构建的模型。该模型总参数量137B，激活参数5B，采用稀疏MoE架构，基于MAI-Code-1-Flash微调，支持256k上下文窗口。模型不单独提供端点，而是运行在微软的多模型代理扫描框架MDASH中，处理高达90%的任务，并将系统在CyberGym上的性能提升至95.95%。",
-    "title_zh": "微软AI发布MAI-Cyber-1-Flash：5B激活参数的网络模型，在CyberGym上达到95.95%",
-    "weighted_score": 0.66,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.5
-    },
-    "story_id": "632a90cb71087c5b",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/microsoft-launches-its-own-cybersecurity-model-mai-cyber-1-flash-but-still-depends-on-openai-for-the-toughest-tasks/"
-      },
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/07/28/microsoft-ai-releases-mai-cyber-1-flash-a-5b-active-parameter-cyber-model-that-pushes-mdash-to-95-95-on-cybergym/"
       }
     ],
     "curated": true
@@ -1022,12 +1277,12 @@
     "curated": true
   },
   {
-    "id": "8afaff4da4576b58",
-    "source_id": "gh-cline",
-    "title": "cline/cline desktop-v0.0.5",
-    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.5",
-    "published_at": "2026-07-27T22:30:28+00:00",
-    "raw_text": "\n- Major performance overhaul: the app now feels snappy end-to-end. The animated background renders at a locked 60fps instead of ~10fps, typing in the composer no longer stutters (245 slow keystrokes → 3), streaming responses coalesce updates instead of re-rendering the whole chat per token, and app boot fetches the provider catalog once instead of three times.\n- The native folder picker and command execution no longer freeze the app while the sidecar writes session logs or discovers your editor.\n- Fixed the composer getting stuck on \"Agent is working...\" after queued turns finished.\n- Added a Cline API key path to onboarding, and you can now cancel a pending browser sign-in instead of being stuck waiting for it.\n- Fixed window dragging.\n- MCP server cards are now consistent across marketplace views, with a single uninstall action and setup guidance shown on installed servers.\n- Fixed agentic compaction silently falling back to basic compaction for OpenAI-Compatible providers, and manu",
+    "id": "5dbfbf422ddcfbaf",
+    "source_id": "gh-transformerlens",
+    "title": "TransformerLensOrg/TransformerLens 3.6.0",
+    "url": "https://github.com/TransformerLensOrg/TransformerLens/releases/tag/3.6.0",
+    "published_at": "2026-07-28T16:55:49+00:00",
+    "raw_text": "## Summary\r\n\r\nAdded the most adapters in a single release, we now support over 100 architectures. We also bumped our `transformers` version up to 5.13.0 to support newer architectures\r\n\r\n## What's Changed\r\n* Add Arcee squared-ReLU MLP adapter (ArceeForCausalLM) by @pablocs116 in https://github.com/TransformerLensOrg/TransformerLens/pull/1478\r\n* Redo of #1477: Qwen2-MoE bridge support (retarget to dev) by @jlarson4 in https://github.com/TransformerLensOrg/TransformerLens/pull/1482\r\n* SSM Interp Support by @jlarson4 in https://github.com/TransformerLensOrg/TransformerLens/pull/1481\r\n* Add Falcon-H1 parallel hybrid architecture adapter (FalconH1ForCausalLM) by @udapy in https://github.com/TransformerLensOrg/TransformerLens/pull/1480\r\n* Add BD3LM architecture adapter by @puranikyashaswin in https://github.com/TransformerLensOrg/TransformerLens/pull/1479\r\n* Add RecurrentGemma (Griffin) architecture adapter by @pablocs116 in https://github.com/TransformerLensOrg/TransformerLens/pull/1483\r\n* ",
     "category_hint": [
       "开源项目"
     ],
@@ -1035,164 +1290,58 @@
     "category": "开源项目",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "Cline 桌面版性能大幅优化，动画帧率提升、输入延迟降低，用户体验显著改善。",
-    "summary_zh": "Cline 桌面版发布了 v0.0.5 版本，重点进行了性能大修：动画背景从约 10fps 提升至锁定 60fps，编辑器输入卡顿从 245 次减少到 3 次，流式响应合并更新而非逐 token 重渲染，应用启动时提供商目录加载从三次减少到一次。此外还改进了原生文件夹选择器。这些优化显著提升了应用的流畅度和响应速度。",
-    "title_zh": "cline/cline desktop-v0.0.5",
-    "weighted_score": 0.685,
+    "reason_zh": "TransformerLens新增大量适配器，支持超100种架构，对可解释性研究社区是重要更新。",
+    "summary_zh": "TransformerLens发布3.6.0版本，新增了多个适配器，使支持的总架构数超过100种。同时将transformers依赖升级至5.13.0以支持更新的模型架构。主要贡献包括Arcee squared-ReLU MLP适配器和Qwen2-MoE桥接支持等。",
+    "title_zh": "TransformerLens 3.6.0 发布：新增适配器，支持超100种架构",
+    "weighted_score": 0.69,
     "score_breakdown": {
       "source_authority": 0.9,
-      "novelty": 0.6,
+      "novelty": 0.7,
       "impact": 0.5,
-      "practical_value": 0.7
+      "practical_value": 0.6
     },
-    "story_id": "79b10a982feca871",
+    "story_id": "a3dbade155939cf8",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-cline",
-        "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.5"
+        "source_id": "gh-transformerlens",
+        "url": "https://github.com/TransformerLensOrg/TransformerLens/releases/tag/3.6.0"
       }
     ],
     "curated": true,
     "gate_backfill": true
   },
   {
-    "id": "6ce9f4f51ec2c286",
-    "source_id": "gh-dify",
-    "title": "langgenius/dify 1.16.1",
-    "url": "https://github.com/langgenius/dify/releases/tag/1.16.1",
-    "published_at": "2026-07-28T03:43:51+00:00",
-    "raw_text": "## What's Changed\r\n\r\n### New Features\r\n**Tool Multi-Select Input**\r\n- Workflow tool nodes now support multi-select dropdown inputs, allowing users to choose multiple values from a predefined list when configuring tool parameters. (#39346)\r\n\r\n**Workflow Node Locator**\r\n- You can now click a node_id in workflow run logs or error messages to locate and highlight the corresponding node in the workflow editor canvas. (#38187)\r\n\r\n**Workflow Block Selector Improvements**\r\n- The block selector panel now features improved keyboard navigation, category previews, and a more intuitive search experience when adding nodes to workflows. (#39212)\r\n\r\n**Export Agent DSL from Sidebar**\r\n- Agent apps can now be exported as DSL YAML directly from the app sidebar menu, making it easy to back up or version-control agent configurations. (#39299)\r\n\r\n**Knowledge Tracing**\r\n- Added more observability traces to knowledge/RAG document processing operations, improving visibility into indexing pipelines. (#38959)\r\n\r",
+    "id": "7fb969ed03406167",
+    "source_id": "the-decoder",
+    "title": "Delhi High Court hands OpenAI a win by rejecting major Indian news agency's copyright injunction",
+    "url": "https://the-decoder.com/delhi-high-court-hands-openai-a-win-by-rejecting-major-indian-news-agencys-copyright-injunction/",
+    "published_at": "2026-07-27T17:55:24+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/openai_logo_large_right.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        The Delhi High Court has handed OpenAI a major win in its copyright fight with news agency ANI. For the first time, a court has classified AI training as private use. ANI undermined its own case by citing articles published after the models were trained. The main trial is still pending.</p>\n<p>The article <a href=\"https://the-decoder.com/delhi-high-court-hands-openai-a-win-by-rejecting-major-indian-news-agencys-copyright-injunction/\">Delhi High Court hands OpenAI a win by rejecting major Indian news agency&#039;s copyright injunction</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
     "category_hint": [
-      "开源项目"
+      "模型发布",
+      "行业动态"
     ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Dify 1.16.1新增工具多选输入和工作流节点定位功能，提升开发效率。",
-    "summary_zh": "Dify 1.16.1版本发布，主要新特性包括：工作流工具节点支持多选下拉输入，用户可从预定义列表中选择多个值；新增工作流节点定位器，点击运行日志或错误消息中的节点ID可高亮对应节点。这些更新增强了工作流配置的灵活性和调试的便捷性。",
-    "title_zh": "langgenius/dify 1.16.1",
-    "weighted_score": 0.685,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.7
-    },
-    "story_id": "70bcbf33e76a46b7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-dify",
-        "url": "https://github.com/langgenius/dify/releases/tag/1.16.1"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "565b5b9d6a4e9f3f",
-    "source_id": "zh-v2ex",
-    "title": "[Claude] 为节省 fable5 的 token，搞了个 skill，让 fable 指挥其他模型干活",
-    "url": "https://www.v2ex.com/t/1230495#reply6",
-    "published_at": "2026-07-28T10:35:24+00:00",
-    "raw_text": "<p>为节省 fable5 的 token ，搞了个 skill ，让 fable 指挥其他模型干活，用了一段时间，感觉效果还不错，token 比直接使用 fable 省很多，质量没有发现怎么下降。</p>\n<p>下面是完整 SKILL ，直至底部：</p>\n<hr />\n<h2>name: fable-fleet\ndescription: 手动调用的多智能体编排 skill 。以\"当前会话所选模型\"为大脑——选 Fable 就是 Fable 当大脑，选 Opus 就是 Opus 当大脑，不锁定任何模型。大脑亲自分析问题、定位根因、写《修改说明书》，再把执行任务精准分配给苦力 agent （ opus/sonnet/haiku ），结果回大脑验收。含三种模式：诊断修复（默认）、编排者（海量并行阅读）、顾问（架构主导开发）。仅在用户手动点名调用（如 /fable-fleet 、\"用 fable-fleet / 用编排者模式 / 用顾问模式\"）时启用；即使任务看起来适合多 agent ，未被点名也不要自动触发。</h2>\n<h1>fable-fleet — 当前模型作大脑 × 精准苦力</h1>\n<p>大脑 = <strong>当前会话选择的模型，即主循环里的你自己</strong>。用户用 <code>/model</code> 选什么，什么就是大脑——不锁定 Fable 。大脑负责分析、定根因、下指令、做验收；苦力 agent 只在大脑下达明确指令<strong>之后</strong>才出场。用户手动调用时才运行。</p>\n<h2>触发条件（重要）</h2>\n<ul>\n<li><strong>只在用户手动点名时运行</strong>：用户输入 <code>/fable-fleet</code>，或明确说\"用 fable-fleet / 用编排者模式 / 用顾问模式 / 用多 agent 并行处理\"。</li>\n<li><strong>禁止自动触发</strong>：用户没点名就走普通单 agent 流程。</li>\n<li><strong>能单干就别编队</strong>：如果任务单个 agent 直接做更快（小 bug 、单文件改动、答案在一处），明确告诉用户\"这个任务不需要编队，我直接做更快\"，经同意后不启用本 skill 的多 agent 流程。</li>\n<",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "分享多智能体编排技巧，通过模型分工节省token，实用性强。",
-    "summary_zh": "作者分享了一个名为fable-fleet的多智能体编排skill，旨在节省fable5模型的token消耗。该skill让一个主模型（如Fable）作为大脑，负责分析问题、定位根因并编写修改说明书，然后将执行任务分配给其他模型（如opus/sonnet/haiku）作为苦力agent，最后结果由大脑验收。包含三种模式：诊断修复、编排者（海量并行阅读）、顾问（架构主导开发）。作者表示使用后token消耗大幅降低，质量无明显下降。",
-    "title_zh": "[Claude] 为节省fable5的token，搞了个skill，让fable指挥其他模型干活",
-    "weighted_score": 0.63,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.9,
-      "impact": 0.5,
-      "practical_value": 0.8
-    },
-    "story_id": "d542d0230e75daf6",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1230495#reply6"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "ec9dddb29c1e413a",
-    "source_id": "techcrunch-ai",
-    "title": "Google’s AI search is rapidly becoming the default, new data shows",
-    "url": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/",
-    "published_at": "2026-07-27T15:57:12+00:00",
-    "raw_text": "Google’s AI Overviews now appear in 43% of searches, underscoring how quickly AI-generated answers are becoming the default way people discover information online.",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": null,
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/openai_logo_large_right.png",
     "category": "行业动态",
     "content_type": "资讯快讯",
     "depth_score": 0.3,
-    "reason_zh": "谷歌AI概览已覆盖43%搜索，AI生成答案正快速成为信息发现默认方式。",
-    "summary_zh": "新数据显示，谷歌的AI概览（AI Overviews）现已出现在43%的搜索中，凸显了AI生成答案正迅速成为人们在线发现信息的默认方式。这一变化标志着搜索行为的重大转变，对内容创作者、SEO和用户信息获取方式产生深远影响。",
-    "title_zh": "新数据显示谷歌AI搜索正迅速成为默认方式",
+    "reason_zh": "德里高等法院首次将AI训练认定为私人使用，对AI版权判例有重要影响。",
+    "summary_zh": "德里高等法院驳回了印度新闻机构ANI对OpenAI的版权禁令申请，裁定AI训练属于私人使用范畴，不构成侵权。这是法院首次明确将AI训练归类为私人使用，为OpenAI在印度的版权诉讼赢得关键胜利。法院认为，AI模型训练过程中对受版权保护材料的使用，类似于个人学习或研究，不侵犯版权。这一判决可能影响全球AI版权法律的发展方向。",
+    "title_zh": "德里高等法院驳回印度主要新闻机构的版权禁令，OpenAI赢得关键胜利",
     "weighted_score": 0.715,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
       "practical_value": 0.5
     },
-    "story_id": "921f9bbd95795e93",
+    "story_id": "a87bbe7b5af7e170",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/07/27/googles-ai-search-is-rapidly-becoming-the-default-new-data-shows/"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "381103444d20da34",
-    "source_id": "verge-ai",
-    "title": "Why China is giving away its best AI models",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/971444/how-chinese-open-weight-ai-models-impact-us-companies",
-    "published_at": "2026-07-27T16:51:50+00:00",
-    "raw_text": "Silicon Valley has spent much of the past week on red alert, digesting the arrival of Moonshot AI's Kimi K3, a Chinese AI model that can allegedly beat some of the best systems built by US companies at a fraction of the cost. Its performance alone would have been enough to intensify the rivalry between [&#8230;]",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/07/gettyimages-2286280160.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "分析中国开源顶级 AI 模型的战略动机，揭示技术竞争背后的地缘政治与商业逻辑，视角独特。",
-    "summary_zh": "文章探讨了中国为何免费提供其最先进的 AI 模型，以 Moonshot AI 的 Kimi K3 为例，该模型性能超越部分美国系统且成本更低。作者分析了中国通过开源策略获取全球影响力、推动标准制定、以及应对美国出口管制的战略考量。文章还讨论了这一趋势对全球 AI 竞争格局的影响。",
-    "title_zh": "为什么中国在免费提供其最好的 AI 模型",
-    "weighted_score": 0.715,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "ea9c705cd1bf88e9",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "verge-ai",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/971444/how-chinese-open-weight-ai-models-impact-us-companies"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/delhi-high-court-hands-openai-a-win-by-rejecting-major-indian-news-agencys-copyright-injunction/"
       }
     ],
     "curated": true,

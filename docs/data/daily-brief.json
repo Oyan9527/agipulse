@@ -1,7 +1,41 @@
 {
   "date": "2026-07-28",
-  "generated_at": "2026-07-28T13:56:15.854937+00:00",
+  "generated_at": "2026-07-28T17:30:10.296230+00:00",
   "items": [
+    {
+      "id": "358e404db86d110e",
+      "source_id": "latent-space",
+      "title": "Codex from 0 to 10M Users: Building ChatGPT Work — Akshay Nathan, OpenAI",
+      "url": "https://www.latent.space/p/chatgpt-work",
+      "published_at": "2026-07-28T15:26:30+00:00",
+      "raw_text": "OpenAI's core product engineering lead on how they are building ChatGPT Work to make AGI accessible to all of humanity: Sites, OpenClaw, Memory, Subagents, Finance, No-Code and advice.",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "OpenAI 产品工程负责人分享 ChatGPT Work 从 0 到 1000 万用户的构建经验，含 Sites、Memory、Subagents 等实战细节。",
+      "summary_zh": "OpenAI 核心产品工程负责人 Akshay Nathan 分享如何构建 ChatGPT Work 以实现 AGI 普惠化。内容涵盖 Sites、OpenClaw、Memory、Subagents、Finance、No-Code 等功能的开发历程，以及从 0 到 1000 万用户过程中的经验教训和工程建议。",
+      "title_zh": "Codex 从 0 到 1000 万用户：构建 ChatGPT Work 的经验——OpenAI 的 Akshay Nathan",
+      "weighted_score": 0.785,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "1fd0a7554ca1e9ff",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/chatgpt-work"
+        }
+      ]
+    },
     {
       "id": "bd5fe01522ca943e",
       "source_id": "arxiv-cs-ai",
@@ -32,6 +66,40 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2607.22585"
+        }
+      ]
+    },
+    {
+      "id": "85dd02699b255d55",
+      "source_id": "huggingface-blog",
+      "title": "LFM2.5-Encoders for Fast Long-Context Inference on CPU",
+      "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders",
+      "published_at": "2026-07-28T15:01:45+00:00",
+      "raw_text": "",
+      "category_hint": [
+        "开源项目",
+        "产品发布"
+      ],
+      "image_url": null,
+      "category": "模型发布",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "Hugging Face发布LFM2.5编码器，专为CPU长上下文推理优化，实用性强。",
+      "summary_zh": "Hugging Face博客发布了LFM2.5-Encoders，这是一系列专为快速长上下文推理设计的编码器，可在CPU上高效运行。该模型针对长序列场景进行了优化，显著降低了推理延迟，同时保持了较高的准确性。文章介绍了模型架构、训练方法以及在CPU上的性能基准测试结果，展示了其在资源受限环境下的实用价值。对于需要在边缘设备或低成本服务器上部署长上下文AI应用的开发者来说，这是一个重要的技术进展。",
+      "title_zh": "LFM2.5-Encoders：用于CPU快速长上下文推理的编码器",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "dbf1e4a570d78286",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-encoders"
         }
       ]
     },
@@ -204,6 +272,73 @@
       ]
     },
     {
+      "id": "7f610f20e5b02c66",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 两周前我把 OpenAI 的 Agent SDK 移植成了 Go，两周后我让它\"叛变\"了",
+      "url": "https://www.v2ex.com/t/1230538#reply0",
+      "published_at": "2026-07-28T13:56:10+00:00",
+      "raw_text": "<p>两周前我在这里发过 v0.1.0 （ <a href=\"https://www.v2ex.com/t/1223216\" rel=\"nofollow\">https://www.v2ex.com/t/1223216</a> ），当时的介绍是\"OpenAI Agents SDK 的忠实 Go 移植\"。先还个愿：3 楼建议、我在 4 楼答应的\"把野路子裸 JSX 换成正经构建\"，干完了——现在是 Vite + React + TS ，产物照旧 embed 进单二进制，部署还是一个文件。</p>\n<p>然后说这两周发生的事。一句话版本：我停止了对 Python 上游的忠实，151 个提交之后，v0.2.0 不再是移植品。</p>\n<p><strong>\"忠实\"是怎么变成陷阱的</strong></p>\n<p>移植做到后面，越来越多地方是在用 Go 模仿 Python 的形状：Python 用生命周期钩子，我就造一套钩子接口； Python 的 run 靠异步任务，我就开后台协程加 channel 。能跑，但每一处都别扭——你得记得 cancel context ，得担心协程泄漏，得在文档里解释\"这里为什么长得不像 Go\"。</p>\n<p>压垮我的最后一根稻草是流式接口。Go 1.23 有了 range-over-func ，我试着把整个 run 循环塞进迭代器里：range 就是运行，break 就是停止，没有后台协程，没有需要记得 cancel 的东西。改完那天我意识到，这个形状 Python 永远给不了我——它是这门语言自己长出来的。</p>\n<p>于是做了个决定：不再对标上游。写了一份 <a href=\"http://spec.md\" rel=\"nofollow\">spec.md</a> 当\"宪法\"，现在 1600 行、61 节，每个行为决定连同理由记录在案，规则只有一条：改行为必须在同一个提交里改 spec 。上游还看，但只记录\"采纳/不采纳+为什么\"，没有跟随义务。</p>\n<p><strong>顺着这个思路重想了几件事</strong></p>\n<p>会话不再是消息列表，是一棵树。起因很具体：想做\"重新生成\"，发现列表模型下只能删历史。改成 append-only 的树之后，重试是弃一根分支而不是抹掉过去，\"看看另一个答案\"就成了自然能力，Web UI 里现",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://raw.githubusercontent.com/zzir/agents-go/refs/heads/main/cmd/agents-server/screenshot.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "作者从忠实移植到自主创新的过程，揭示了跨语言移植的陷阱与Go语言实践智慧，对AI工程化有启发。",
+      "summary_zh": "作者分享将OpenAI Agents SDK移植到Go的经历。最初是忠实移植，但逐渐发现用Go模仿Python形状的局限性，最终在151个提交后转向自主设计。文章详细讨论了移植过程中的技术决策，包括构建工具从野路子JSX切换到Vite+React+TS，以及如何利用Go的特性优化性能。作者反思了“忠实”移植如何成为陷阱，并提供了Go语言实现AI Agent的实践经验。",
+      "title_zh": null,
+      "weighted_score": 0.645,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "dc47336a561bcbb0",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1230538#reply0"
+        }
+      ]
+    },
+    {
+      "id": "ca6176a2b45ceb52",
+      "source_id": "reddit-machinelearning",
+      "title": "I built a deep learning library from scratch in C that lets you train language models [P]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1v90hlt/i_built_a_deep_learning_library_from_scratch_in_c/",
+      "published_at": "2026-07-28T14:42:07+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>my goal was to train a Language model (SLM) entirely from scratch so no ML libraries allowed . so i gathered what's needed to make it happen : </p> <p>from tensor manipulation (views, operations , allocations) </p> <p>the autograd ( a DAG that retains the previous operations and inputs in order that led into a certain output tensor , this let's us also apply backpropagation so i've got to implement also the partial derivative functions in order to calculate the gradients for each weights) </p> <p>the neural networks modules (organizes the weights / activations , losses , optimizers implemented SGD and Adamw) </p> <p>the decoder so the layer norm , MHA , FFN .<br /> also implemented a Fast matmul using AVX2 to speed things up. </p> <p>with it i managed to train a tiny LM with 2 millions params.it's a 4 layer Decoder used tiny_shakespear i got what i think is a good result .<br /> since i can't post images in this post i will just paste the output: </p> ",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "从零用C实现深度学习库并训练语言模型，深入底层原理，极具学习价值。",
+      "summary_zh": "作者从零开始用C语言构建了一个深度学习库，不依赖任何ML库，实现了张量操作、自动求导（DAG记录操作与输入）、以及训练小型语言模型（SLM）所需的所有组件。项目展示了底层实现细节，对于理解深度学习框架的内部机制非常有帮助。",
+      "title_zh": "我从零用C构建了一个深度学习库，可训练语言模型",
+      "weighted_score": 0.585,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "f0eab584fb40c55f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1v90hlt/i_built_a_deep_learning_library_from_scratch_in_c/"
+        }
+      ]
+    },
+    {
       "id": "933351c197bfcac4",
       "source_id": "pandaily",
       "title": "Kimi K3 Officially Open-Sourced: Moonshot AI Releases 2.8 Trillion Parameter Model Weights, Technical Report, and Three Infrastructure Technologies",
@@ -243,10 +378,6 @@
           "url": "https://the-decoder.com/moonshot-ai-releases-kimi-k3-open-weights-and-infrastructure-after-shaking-up-the-frontier-model-race/"
         },
         {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/07/27/kimi-ai-and-kvcache-ai-open-sources-agentenv/"
-        },
-        {
           "source_id": "zh-sspai",
           "url": "https://sspai.com/post/112805"
         },
@@ -257,6 +388,10 @@
         {
           "source_id": "zh-oschina",
           "url": "https://www.oschina.net/news/481061"
+        },
+        {
+          "source_id": "reddit-singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1v8mx1o/has_anyone_actually_been_using_these_latest_new/"
         },
         {
           "source_id": "zh-leiphone",
@@ -281,173 +416,44 @@
         {
           "source_id": "zh-ithome",
           "url": "https://www.ithome.com/0/982/734.htm"
-        }
-      ]
-    },
-    {
-      "id": "6f0fc8de1c71c72f",
-      "source_id": "aws-ml-blog",
-      "title": "Beyond RAG: Task-aware knowledge compression for enterprise AI on AWS",
-      "url": "https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/",
-      "published_at": "2026-07-27T16:11:32+00:00",
-      "raw_text": "Traditional RAG hits a ceiling on analytical tasks that span hundreds of documents. This post shows how to use task-aware knowledge compression (TAKC) on AWS to pre-compress entire knowledge bases into task-specific representations, cache them at multiple fidelity tiers, and route each query to the right tier, with an open-source implementation you can deploy.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/23/ML-19433-1.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "AWS官方博客提出的任务感知知识压缩（TAKC）方法，为大规模文档分析提供了超越传统RAG的实用方案，附带开源实现，值得工程团队参考。",
-      "summary_zh": "传统RAG在处理跨数百文档的分析任务时存在瓶颈。本文介绍了在AWS上使用任务感知知识压缩（TAKC）的方法：将整个知识库预压缩为任务特定表示，按多个保真度层级缓存，并将每个查询路由到合适的层级。文章提供了可部署的开源实现，帮助企业在不牺牲准确性的前提下提升大规模文档分析的效率。",
-      "title_zh": "超越RAG：AWS上面向企业AI的任务感知知识压缩",
-      "weighted_score": 0.775,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "b06d59a02973efc6",
-      "multi_source_count": 1,
-      "sources": [
+        },
         {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws/"
+          "source_id": "reddit-singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1v93vpl/kimi_k3_open_frontier_intelligence/"
         }
       ]
     },
     {
-      "id": "8fa518a70d1e8936",
-      "source_id": "gradient-flow",
-      "title": "The Big AI Labs Are Suddenly Competing with Your Own Data",
-      "url": "https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/",
-      "published_at": "2026-07-28T13:00:25+00:00",
-      "raw_text": "<p>Subscribe • Previous Issues Specialized AI Is Getting Easier to Build Last week I argued that open models will absorb most of the money and compute the world spends on AI. A week later, open weights are even more central to the conversation. Recent releases have made the gap between capable and affordable harder to ignore, and<a class=\"more-link\" href=\"https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/\">Continue reading <span class=\"screen-reader-text\">\"The Big AI Labs Are Suddenly Competing with Your Own Data\"</span></a></p>\n<p>The post <a href=\"https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/\">The Big AI Labs Are Suddenly Competing with Your Own Data</a> appeared first on <a href=\"https://gradientflow.com\">Gradient Flow</a>.</p>",
+      "id": "4a625d27daefe243",
+      "source_id": "towards-data-science",
+      "title": "How Much Does a Local LLM Actually Cost to Run? I Measured Every Watt on Apple Silicon",
+      "url": "https://towardsdatascience.com/how-much-does-a-local-llm-actually-cost-to-run-i-measured-every-watt-on-apple-silicon/",
+      "published_at": "2026-07-28T16:30:00+00:00",
+      "raw_text": "<p>Five models, sustained generation, real wall-socket energy at $0.31/kWh — and the surprise the RTX-3090 numbers predicted, only bigger.</p>\n<p>The post <a href=\"https://towardsdatascience.com/how-much-does-a-local-llm-actually-cost-to-run-i-measured-every-watt-on-apple-silicon/\">How Much Does a Local LLM Actually Cost to Run? I Measured Every Watt on Apple Silicon</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
       "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f64f.png",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "深度分析开放模型与专有模型的竞争，指出开放权重模型将主导AI支出，观点犀利。",
-      "summary_zh": "文章指出，开放权重模型正成为AI领域的核心，近期发布进一步拉大了能力与成本之间的差距。作者认为，开放模型将吸收全球大部分AI资金和算力，而大型AI实验室突然开始与用户自己的数据竞争。文章深入探讨了开放模型对行业格局的影响，以及企业如何应对这一趋势。",
-      "title_zh": "大型AI实验室突然开始与你的数据竞争",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "7fc9e40525810351",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "gradient-flow",
-          "url": "https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/"
-        }
-      ]
-    },
-    {
-      "id": "6a389f6e0b5d58ab",
-      "source_id": "zh-oschina",
-      "title": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
-      "url": "https://www.oschina.net/news/481154",
-      "published_at": "2026-07-28T03:23:33+00:00",
-      "raw_text": "Cloudflare 宣布彻底重构 AI 爬虫管控体系。过去那个一键&quot;拦截所有 AI 机器人&quot;的开关被拆成了三个独立选项：Search（搜索）、Agent（智能体）、Training（训练）——包括免费版在内的全部客户都可以分别配置。 这是一个比表面看起来更重要的分类。 Search 爬虫的目的是索引内容、在查询时给出答案。Cloudflare 的态度是：...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Cloudflare 重构 AI 爬虫管控，三段式分类比一键拦截更精细，对网站运营者极具实用价值。",
-      "summary_zh": "Cloudflare 宣布彻底重构 AI 爬虫管控体系，将过去的一键“拦截所有 AI 机器人”开关拆分为三个独立选项：Search（搜索）、Agent（智能体）、Training（训练），所有客户（包括免费版）均可分别配置。Search 爬虫用于索引内容并在查询时给出答案；Agent 爬虫代表用户执行任务；Training 爬虫用于模型训练。这种分类比简单的一键拦截更精细，允许网站所有者根据自身需求灵活控制不同 AI 爬虫的访问权限。文章还分析了这一变化对网站运营者和 AI 公司的影响。",
-      "title_zh": "Cloudflare 重构 AI 爬虫管控，从一键拦截到三段式分类",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "f0cf121388cc6a7a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/481154"
-        }
-      ]
-    },
-    {
-      "id": "b9acfe9e4585e610",
-      "source_id": "zh-leiphone",
-      "title": "Agentic AI双王论道、Physical AI亮剑不莱梅——IJCAI-ECAI 2026三大最热议题抢先看",
-      "url": "https://www.leiphone.com/category/private/XMmcHtwXRaVWrQFg.html",
-      "published_at": "2026-07-28T03:35:00+00:00",
-      "raw_text": "<p style=\"text-align: left; margin-top: 0pt; margin-bottom: 5pt;\"><span style=\"color: #2C3E50; font-family: Arial; font-size: 11pt; text-align: left;\">IJCAI-ECAI 2026将于8月15日至21日在德国不莱梅举办，990篇录用论文创近年新高。本期提炼出三大最热议题：Agentic AI领域两大最高荣誉获奖演讲同题共振，Physical AI依托不莱梅机器人研究重镇优势全面铺开，大模型推理与知识增强前沿综述集中亮相。这些议题不仅代表当前AI研究的最前沿方向，更预示未来产业落地的关键趋势——读懂它们，就读懂了AI的下一程。</span></p><p>&nbsp;</p><p style=\"text-align: left; margin-top: 10pt; margin-bottom: 5pt;\"><span style=\"font-family: 'Arial'; font-size: 11pt; color: #34495E;\">当AI Agent从概念走向落地，学术界最权威的声音正在汇聚。IJCAI-ECAI 2026的两大最高荣誉——Research Excellence Award与John McCarthy Award——双双聚焦Agentic AI，从历史脉络到社会形态，勾勒出智能体研究的完整图景。</span></p><p style=\"margin-top: 8pt; margin-bottom: 8pt;\"><span style=\"font-family: 'Arial'; font-size: 14pt; color: #1F3A5F; font-weight: bold;\">热门议题一：Agentic AI双王论道——两大S级获奖演讲同题共振</span></p><p style=\"margin-top: 6pt; margin-bottom: 3pt;\"><span style=\"font-family: 'Arial'; font-size: 11pt; color: #7F8C8D; font-weight: bold;\">论文一：</span><span style=\"font-",
-      "category_hint": [
+        "论文研究",
         "行业动态"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "前瞻IJCAI-ECAI 2026三大热点议题，揭示Agentic AI、Physical AI等前沿方向，对研究者有启发。",
-      "summary_zh": "文章前瞻了IJCAI-ECAI 2026会议的三大热门议题：Agentic AI领域两位最高荣誉获奖者将同台演讲，Physical AI借助不莱梅机器人研究优势全面展开，以及大模型推理与知识增强的前沿综述。会议将于2026年8月15日至21日在德国不莱梅举办，录用论文990篇创近年新高。这些议题代表了当前AI研究的最前沿，并预示了产业落地的关键趋势。",
-      "title_zh": "Agentic AI双王论道、Physical AI亮剑不莱梅——IJCAI-ECAI 2026三大最热议题抢先看",
-      "weighted_score": 0.705,
+      "reason_zh": "实测Apple Silicon上本地LLM的真实能耗与成本，数据详实，对硬件选型有直接指导意义。",
+      "summary_zh": "作者在Apple Silicon设备上实测了五种本地LLM模型的持续生成能耗，使用墙插功率计测量实际功耗，电费按$0.31/kWh计算。结果揭示了RTX-3090预测数据之外的惊喜发现，为本地部署LLM的成本评估提供了真实数据参考。",
+      "title_zh": "运行本地LLM实际成本多少？我在Apple Silicon上测量了每一瓦特",
+      "weighted_score": 0.74,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "impact": 0.6,
+        "practical_value": 0.9
       },
-      "story_id": "d10224c03980c733",
+      "story_id": "92024eaa5ce9e232",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/private/XMmcHtwXRaVWrQFg.html"
-        }
-      ]
-    },
-    {
-      "id": "d9e9d8fdbd16109d",
-      "source_id": "zh-leiphone",
-      "title": "当AI学会“仿真思维”，教师才能回归育人本质——从“工具效率”到“认知理解”，教育AI进入深水区",
-      "url": "https://www.leiphone.com/category/ai/Y7Md1KutNgNzfyFH.html",
-      "published_at": "2026-07-28T07:11:00+00:00",
-      "raw_text": "<p style=\"text-align: left; margin-top: 7.8pt; margin-bottom: 7.8pt;\"><span>2026年</span><span>，</span><span>教育部等五部门印发《“人工智能+教育”行动计划》，文件明确要求分层提升教师AI数字素养，全面构建人机协同的新型课堂模式。政策方向已然明朗，但落地层面的讨论仍在发酵。7月23日，复旦大学副校长周磊在接受人民网专访时表示：“智能化转型浪潮下，教学创新比任何时候都更关乎教育本质。”他同时指出，一线教师</span><span>首要的能力迭代，是从“AI工具使用者”转向“智能教学设计者”。</span></p><p style=\"text-align: left; margin-top: 7.8pt; margin-bottom: 7.8pt;\"><span style=\"font-family: '微软雅黑'; font-size: 12pt;\">这句话精准点出当众多学校共同面临的深层焦虑——</span><span style=\"font-family: '微软雅黑'; font-size: 12pt;\">教育AI应用并不稀缺，但多数浮于表面，难以真正服务因材施教，</span><span style=\"font-family: '微软雅黑'; font-size: 12pt;\">教师转型缺少完整支撑体系。</span></p><p style=\"margin-top: 7.8pt; margin-bottom: 7.8pt;\"><span style=\"font-family: '微软雅黑'; font-size: 12pt;\">当前AI赋能教育存在三大结构性难题：</span><span style=\"font-family: '微软雅黑'; font-size: 12pt; font-weight: bold;\">第一，师资结构性缺口难以消解。</span><span style=\"font-family: '微软雅黑'; font-size: 12pt;\">县域、乡村学校骨干教师稀缺，大班额下教师无力兼顾后进生补差与优等生拔高，大量时间消耗在学情统计、习题整理等标准化工作，无暇开展价值引领、情感浸润等AI不可替代的育人工作；</span><span ",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://static.leiphone.com/uploads/new/images/20260728//6a6855c9d7fda.jpg?imageMogr2/quality/90",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨教育AI从工具效率到认知理解的转变，提出教师应成为智能教学设计者，有启发性。",
-      "summary_zh": "文章指出，2026年教育部等五部门印发《“人工智能+教育”行动计划》，要求分层提升教师AI数字素养，构建人机协同课堂。复旦大学副校长周磊在接受专访时表示，教学创新比任何时候都更关乎教育本质，一线教师首要的能力迭代是从“AI工具使用者”转向“智能教学设计者”。文章进一步分析，当AI学会“仿真思维”，教师才能回归育人本质，教育AI正从追求工具效率进入认知理解的深水区。这要求教师不仅会用AI，更要理解AI的认知逻辑，从而设计出真正促进学生思维发展的教学活动。",
-      "title_zh": null,
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "cdcb1cb779309056",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/ai/Y7Md1KutNgNzfyFH.html"
+          "source_id": "towards-data-science",
+          "url": "https://towardsdatascience.com/how-much-does-a-local-llm-actually-cost-to-run-i-measured-every-watt-on-apple-silicon/"
         }
       ]
     }
