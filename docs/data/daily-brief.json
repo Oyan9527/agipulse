@@ -1,6 +1,6 @@
 {
   "date": "2026-07-29",
-  "generated_at": "2026-07-29T10:44:01.987777+00:00",
+  "generated_at": "2026-07-29T14:02:21.848336+00:00",
   "items": [
     {
       "id": "53b868bd01d6a809",
@@ -33,6 +33,39 @@
         {
           "source_id": "simonwillison",
           "url": "https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion/#atom-everything"
+        }
+      ]
+    },
+    {
+      "id": "743faa6286b19d8c",
+      "source_id": "zh-v2ex",
+      "title": "[技术栈] 深入 Cursor 架构：一个 AI 编辑器是如何被「流式」重塑的",
+      "url": "https://www.v2ex.com/t/1230837#reply0",
+      "published_at": "2026-07-29T13:45:58+00:00",
+      "raw_text": "<blockquote>\n<p><strong>导读</strong>：这不是「怎么用 Cursor 」的教程，而是一篇纯<strong>架构设计</strong>视角的复盘。</p>\n<p>我们不聊功能、不聊快捷键，只回答一个问题——<strong>如果让你从零设计一个 AI 编辑器，你会遇到哪些绕不开的架构约束？ Cursor 又是怎么回答它们的？</strong></p>\n</blockquote>\n<p>读完你会得到一套「 AI 应用到底难在哪」的结构化认知。全文脉络：</p>\n<blockquote>\n<p><strong>三个约束</strong>（流式 · 低延迟 · 上下文）→ <strong>两个核心机制</strong>（ Agent 状态机 · 多进程隔离）→ <strong>一个飞轮 + 一处代价</strong> → <strong>可迁移的架构启示</strong></p>\n</blockquote>\n<h2>一、先抛开 Cursor：AI 编辑器的三个硬约束</h2>\n<p>在看任何具体实现之前，先做一次第一性原理推导。一个「 AI 原生」的编辑器，天然被三个约束框死：</p>\n<p><img alt=\"图 1 · AI 编辑器绕不开的三大架构约束\" class=\"embedded_image\" rel=\"noreferrer\" src=\"https://cdn.jsdelivr.net/gh/codepass-cn/cursor-arch-figs@main/fig1.png\" /></p>\n<p><em>图 1 · AI 编辑器绕不开的三大架构约束</em></p>\n<p>这三条，<strong>几乎决定了后面所有的架构选择</strong>。你会看到 Cursor 的每一个设计，都能回溯到其中某一条。下面逐条展开。</p>\n<h2>二、约束一：流式为什么是一等公民</h2>\n<p>传统 Web 应用的心智是<strong>请求-响应</strong>：发一个请求，等一个完整结果。但 AI 交互不是这样——</p>\n<ul>\n<li>模型是<strong>逐 token 生成</strong>的，用户希望边生成边看到；</li>\n<li>Agent 模式下，一次「回答」中间可能穿插<strong>多次工具调用</strong>（读文",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://cdn.jsdelivr.net/gh/codepass-cn/cursor-arch-figs@main/fig1.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.85,
+      "reason_zh": "从架构设计视角深度复盘Cursor，揭示AI编辑器面临的流式、低延迟、上下文三大约束及解决方案，极具启发性。",
+      "summary_zh": "本文不是Cursor的使用教程，而是从纯架构设计视角的复盘。文章围绕三个核心约束（流式输出、低延迟、上下文管理）展开，深入剖析Cursor如何通过Agent状态机、多进程隔离等机制应对这些挑战。作者还讨论了AI应用中的飞轮效应与代价，并总结了可迁移的架构启示。对于想理解AI应用底层设计难点的读者，本文提供了结构化的认知框架，帮助读者理解为什么AI编辑器不仅仅是“加个AI”那么简单。",
+      "title_zh": null,
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.9
+      },
+      "story_id": "39e03e6a190f4cab",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1230837#reply0"
         }
       ]
     },
@@ -176,74 +209,69 @@
       ]
     },
     {
-      "id": "a7901d2df1280a47",
-      "source_id": "the-decoder",
-      "title": "Anthropic says its Mythos model found vulnerabilities in cryptographic algorithms that secure the internet",
-      "url": "https://the-decoder.com/anthropic-says-its-mythos-model-found-vulnerabilities-in-cryptographic-algorithms-that-secure-the-internet/",
-      "published_at": "2026-07-28T19:12:27+00:00",
-      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/07/anthropic_cybersecurity.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Anthropic's Claude Mythos Preview found weaknesses in key cryptographic algorithms, including a better attack on HAWK, a post-quantum signature scheme that human experts had reviewed for more than two years. The model found it in just 60 hours at an API cost of about $100,000. The findings don't affect systems in use today, but they show how AI could challenge core assumptions behind internet security, Anthropic says.</p>\n<p>The article <a href=\"https://the-decoder.com/anthropic-says-its-mythos-model-found-vulnerabilities-in-cryptographic-algorithms-that-secure-the-internet/\">Anthropic says its Mythos model found vulnerabilities in cryptographic algorithms that secure the internet</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p",
+      "id": "64257bb621d56296",
+      "source_id": "arxiv-cs-ai",
+      "title": "When Do Agent Loops Mistake Stagnation for Progress? Self-Evaluation Bias and Externally Grounded Verification in Long-Running Autonomous LLM Agent Loops",
+      "url": "https://arxiv.org/abs/2607.25152",
+      "published_at": "2026-07-29T04:00:00+00:00",
+      "raw_text": "arXiv:2607.25152v1 Announce Type: new \nAbstract: Long-running autonomous agents plan, act, and judge their own completion without human intervention. When an agent grades its own work, self-evaluation bias takes hold: plausible changes are accepted as progress while real-world outcomes stagnate or regress. We name this failure mode the progress mirage and show, with controlled measurement, that it is a question of what the evaluator is grounded in. We built a testbed that holds the agent and its tool surface fixed and manipulates only the information-channel type of the evaluator that gates the loop. A world-state oracle, unfakeable in principle, is enforced by container and network isolation and verified at every run. Across 54 cycles a frontier agent claimed improvement every time, yet 56 percent had a measured delta of zero or below. Self-report was thus uninformative, and the self-verdict gate degenerated into accept-all, eroding the best deployed state it had reached by 19 percent",
       "category_hint": [
-        "模型发布",
-        "行业动态"
+        "论文研究"
       ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/07/anthropic_cybersecurity.png",
+      "image_url": null,
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "Claude Mythos 发现加密算法漏洞，包括对后量子签名方案 HAWK 的更优攻击，具有重大安全意义。",
-      "summary_zh": "Anthropic 的 Claude Mythos Preview 模型发现了两种加密算法的数学弱点：一是显著削弱了 NIST 审查中的后量子数字签名方案 HAWK，将其有效密钥强度降低；二是对 AES 算法也发现了新的攻击方法。这些漏洞此前多年未被人类专家发现。",
-      "title_zh": "Anthropic 称其 Mythos 模型发现了保护互联网的加密算法中的漏洞",
-      "weighted_score": 0.76,
+      "reason_zh": "揭示长周期自主Agent的自我评估偏差问题，提出“进步幻象”概念，对Agent可靠性设计有重要警示。",
+      "summary_zh": "本文研究长周期自主Agent在自我评估时出现的偏差问题，称为“进步幻象”（progress mirage）。当Agent自行判断任务完成情况时，它可能将看似合理的变化误认为进步，而实际结果停滞或倒退。作者通过受控实验测量了这种偏差，并分析了其成因：Agent倾向于接受符合其内部模型的改变，而忽略外部反馈。文章提出使用外部验证机制来缓解这一问题，例如引入人类监督或环境反馈，为构建可靠的自主Agent提供了重要见解。",
+      "title_zh": "Agent循环何时将停滞误认为进步？长周期自主LLM Agent循环中的自我评估偏差与外部验证",
+      "weighted_score": 0.755,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.9,
-        "impact": 0.9,
-        "practical_value": 0.5
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.7
       },
-      "story_id": "a87bbe7b5af7e170",
+      "story_id": "65ab7f6f242e7a89",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/delhi-high-court-hands-openai-a-win-by-rejecting-major-indian-news-agencys-copyright-injunction/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/anthropic-says-its-mythos-model-found-vulnerabilities-in-cryptographic-algorithms-that-secure-the-internet/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.25152"
         }
       ]
     },
     {
-      "id": "8fa518a70d1e8936",
-      "source_id": "gradient-flow",
-      "title": "The Big AI Labs Are Suddenly Competing with Your Own Data",
-      "url": "https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/",
-      "published_at": "2026-07-28T13:00:25+00:00",
-      "raw_text": "<p>Subscribe • Previous Issues Specialized AI Is Getting Easier to Build Last week I argued that open models will absorb most of the money and compute the world spends on AI. A week later, open weights are even more central to the conversation. Recent releases have made the gap between capable and affordable harder to ignore, and<a class=\"more-link\" href=\"https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/\">Continue reading <span class=\"screen-reader-text\">\"The Big AI Labs Are Suddenly Competing with Your Own Data\"</span></a></p>\n<p>The post <a href=\"https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/\">The Big AI Labs Are Suddenly Competing with Your Own Data</a> appeared first on <a href=\"https://gradientflow.com\">Gradient Flow</a>.</p>",
+      "id": "70bc351f61e13569",
+      "source_id": "reddit-ollama",
+      "title": "I built a GBNF grammar compiler that makes 8B models reliably call tools - here's how it works (deep dive)",
+      "url": "https://www.reddit.com/r/ollama/comments/1v9soa5/i_built_a_gbnf_grammar_compiler_that_makes_8b/",
+      "published_at": "2026-07-29T10:50:07+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ollama/comments/1v9soa5/i_built_a_gbnf_grammar_compiler_that_makes_8b/\"> <img alt=\"I built a GBNF grammar compiler that makes 8B models reliably call tools - here's how it works (deep dive)\" src=\"https://external-preview.redd.it/KVV1NDPNDUPbHIv6xrjkO7l1UPsmw5N5KQOup4AZ66c.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2f78eb49db6b1c04265ce234562dcaea07283ad7\" title=\"I built a GBNF grammar compiler that makes 8B models reliably call tools - here's how it works (deep dive)\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/paulqq\"> /u/paulqq </a> <br /> <span><a href=\"/r/LocalLLaMA/comments/1v9qvn3/i_built_a_gbnf_grammar_compiler_that_makes_8b/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/ollama/comments/1v9soa5/i_built_a_gbnf_grammar_compiler_that_makes_8b/\">[comments]</a></span> </td></tr></table>",
       "category_hint": [
-        "行业动态",
-        "产品发布"
+        "开源项目",
+        "技巧与观点"
       ],
-      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f64f.png",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "深度分析开放模型与专有模型的竞争，指出开放权重模型将主导AI支出，观点犀利。",
-      "summary_zh": "文章指出，开放权重模型正成为AI领域的核心，近期发布进一步拉大了能力与成本之间的差距。作者认为，开放模型将吸收全球大部分AI资金和算力，而大型AI实验室突然开始与用户自己的数据竞争。文章深入探讨了开放模型对行业格局的影响，以及企业如何应对这一趋势。",
-      "title_zh": "大型AI实验室突然开始与你的数据竞争",
-      "weighted_score": 0.735,
+      "image_url": "https://external-preview.redd.it/KVV1NDPNDUPbHIv6xrjkO7l1UPsmw5N5KQOup4AZ66c.png?width=640&crop=smart&auto=webp&s=2f78eb49db6b1c04265ce234562dcaea07283ad7",
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入解析GBNF语法编译器如何让8B小模型可靠调用工具，技术细节丰富，对模型工具调用优化有直接指导意义。",
+      "summary_zh": "作者构建了一个GBNF（Grammar-Based Neural Format）语法编译器，使8B参数的小型语言模型能够可靠地调用外部工具。文章深入剖析了工作原理：通过定义严格的语法规则，约束模型输出格式，避免自由文本生成导致的工具调用失败。编译器将工具API描述转换为GBNF语法，在推理时强制模型遵循该语法生成结构化输出。实验表明，该方法显著提升了小模型工具调用的成功率和稳定性，接近大模型水平。文章还讨论了与提示工程、微调等方法的对比，并开源了编译器代码。",
+      "title_zh": "我构建了一个GBNF语法编译器，让8B模型可靠调用工具——深度解析",
+      "weighted_score": 0.66,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
       },
-      "story_id": "7fc9e40525810351",
+      "story_id": "5f291e4bb171568d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "gradient-flow",
-          "url": "https://gradientflow.com/the-big-ai-labs-are-suddenly-competing-with-your-own-data/"
+          "source_id": "reddit-ollama",
+          "url": "https://www.reddit.com/r/ollama/comments/1v9soa5/i_built_a_gbnf_grammar_compiler_that_makes_8b/"
         }
       ]
     },
@@ -349,68 +377,35 @@
       ]
     },
     {
-      "id": "01f1d8d2843df52b",
-      "source_id": "reddit-rag",
-      "title": "To those developing RAG/agent systems for clients — how do you solve the trust issue regarding data access?",
-      "url": "https://www.reddit.com/r/Rag/comments/1v91zmj/to_those_developing_ragagent_systems_for_clients/",
-      "published_at": "2026-07-28T15:36:24+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I am developing a document search and agent layer that operates on internal company files. I employ standard methods such as permission mirroring, mandatory source attribution, and hybrid retrieval. Above all, I set up an evaluation harness—easily the best decision I’ve made so far.</p> <p>There is one topic I rarely see discussed: the aspect where the client must explicitly grant access permissions.</p> <p>I’m realizing that every technical decision I make introduces a trust dimension I hadn't initially planned for. Using cloud-based embedding (vectorization) means their text is sent to a third party. Permission mirroring requires me to read their ACLs (Access Control Lists). Keeping sufficient logs for debugging means storing snippets of their documents. Contextual retrieval requires sending entire documents to a model.</p> <p>I’d like to ask those who deploy these systems for real clients:</p> <p>- Where do you draw the line regarding data leaving t",
+      "id": "20916ce270da59ae",
+      "source_id": "zh-v2ex",
+      "title": "[AI Agent 智能体] 我的 Agent 使用心路历程",
+      "url": "https://www.v2ex.com/t/1230827#reply0",
+      "published_at": "2026-07-29T12:45:44+00:00",
+      "raw_text": "<p>小龙虾火了之后我开始用 agent ，但没真正用过小龙虾和 Hermes 。第一个上手的是 <a href=\"https://github.com/nanocoai/nanoclaw/\" rel=\"nofollow\">NanoClaw</a>，它的特色是代码量少、主要逻辑读得懂，我用起来安心些。后来弃用了，它的多通道和容器化对我没必要，只增加复杂度。</p>\n<p>NanoClaw 跑在 claude-agent-sdk 上。然后我知道了 Claude Code 跟 Claude Desktop 也跑在同一套东西上。后来又知道 Codex 和 OpenCode 也各有自己的 agent SDK 。各家细节不同，但负责的东西是同一批：</p>\n<pre><code>Agent SDK\n    ├── Session 管理\n    ├── 模型调用\n    ├── Agent Loop\n    ├── 工具调用\n    ├── 文件和 Shell\n    ├── 权限审批\n    ├── 流式事件\n    └── 上下文管理\n</code></pre>\n<p>OpenClaw 和 Hermes 也是各自造了一个类似的东西。看明白这一层之后，我对「换一个 agent 客户端」这件事就没什么执念了，下面那层大同小异，区别在于外面那层怎么给你用。</p>\n<h2>一、从 TUI 开始</h2>\n<p>放弃 NanoClaw 之后我就直接用 Claude Code 和 OpenCode 。一开始很朴素：在某个项目目录下敲 <code>claude</code> 或 <code>opencode</code>，起个 TUI 就开始干活。</p>\n<p>然后我写了一些 skills ，给它调用我这台电脑的能力：用我的浏览器、用 ffmpeg 剪视频、把 markdown 转成 PDF 。到这一步它已经不只是个写代码的东西了。</p>\n<h2>二、把 agent 本身变成一个项目</h2>\n<p>接着为了方便管理，我把 <code><a href=\"http://AGENTS.md\" rel=\"nofollow\">AGENTS.md</a></code>、<code><a href=\"http://CLAUDE.md\" rel=\"nofollow\">CLAUDE.md</a><",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "观点评论",
+      "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "作者分享了为客户端构建RAG/Agent系统时解决数据访问信任问题的实战经验，包括权限镜像、强制来源归因和评估框架，对从业者极具参考价值。",
-      "summary_zh": "本文作者分享了为客户端开发RAG/Agent系统时解决数据访问信任问题的经验。作者采用标准方法如权限镜像、强制来源归因和混合检索，并强调设置评估框架是最佳决策。文章指出，客户必须信任系统不会泄露敏感数据，而开发者需要确保检索结果仅来自授权文档。作者还讨论了如何通过透明度和可审计性建立信任，以及在实际部署中遇到的挑战和解决方案。",
-      "title_zh": "给客户开发RAG/Agent系统时，如何解决数据访问的信任问题？",
-      "weighted_score": 0.685,
+      "reason_zh": "作者亲历多个Agent框架的实践总结，对开发者选型有极高参考价值。",
+      "summary_zh": "作者分享了使用AI Agent的心路历程：从NanoClaw入手，因其代码量少、逻辑清晰而安心使用，后因多通道和容器化不必要而弃用。随后了解到Claude Code、Claude Desktop、Codex、OpenCode等均基于类似的Agent SDK，核心组件包括Session管理、模型调用、Agent Loop等。文章对比了不同框架的细节差异，为开发者提供了实用的选型参考。",
+      "title_zh": null,
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.5,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.9
+        "practical_value": 0.8
       },
-      "story_id": "7523b769fc7e18bf",
+      "story_id": "d36d44dc1050a670",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1v91zmj/to_those_developing_ragagent_systems_for_clients/"
-        }
-      ]
-    },
-    {
-      "id": "04d180f8eb826762",
-      "source_id": "gh-llamacpp",
-      "title": "ggerganov/llama.cpp b10164",
-      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10164",
-      "published_at": "2026-07-28T14:28:22+00:00",
-      "raw_text": "<details open>\n\nggml-cuda: add chunked SSD matmul for Mamba-2 prefill acceleration (#22675)\n\n* ggml-cuda: add chunked SSD matmul for Mamba-2 prefill acceleration\n\n* cuda: added SSD CICD fixes for CUDA / HIP / MUSA / MSVC.\n\n* ggml-cuda: review comments fixed.\n\n* ggml-cuda: Fuse M matrix materialization into pre_matmul kernel and enabled test.\n\n* ggml-cuda: test updates and fixes\n\n* ggml-cuda: test updates to remove hardcoding of tensor initialise data limits.\n\n* ggml-cuda: ssd minor review comment fixed.\n\n* ggml-cuda: ssd minor CICD fixed.\n\n* CUDA SSD: Fixes correctness by promoting s0_stride_seq to int64_t, improves memory coalescing in ssm_ssd_prepare_dt_kernel, and boosts efficiency by merging B_weighted and C_scaled; also addresses prior review comments.\n\n* cuda: fix sdata read-write race in prepare_dt fallback scan loop\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10164/llama",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "llama.cpp新增Mamba-2 SSD矩阵乘法加速，对本地推理性能提升有重要意义。",
-      "summary_zh": "llama.cpp项目提交了b10164更新，主要是在ggml-cuda中增加了分块SSD矩阵乘法，用于加速Mamba-2的预填充阶段。该提交包含了CUDA、HIP、MUSA、MSVC的修复，以及将M矩阵物化融合到pre_matmul内核中，并启用了测试。这是一个技术性较强的性能优化更新，对关注本地AI推理的开发者有价值。",
-      "title_zh": "ggerganov/llama.cpp b10164",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "16fdae9e1475d131",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "gh-llamacpp",
-          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10164"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1230827#reply0"
         }
       ]
     }
