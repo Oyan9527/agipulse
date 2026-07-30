@@ -1,104 +1,38 @@
 {
   "date": "2026-07-30",
-  "generated_at": "2026-07-30T10:26:35.702528+00:00",
+  "generated_at": "2026-07-30T13:52:18.106424+00:00",
   "items": [
     {
-      "id": "e60ddfeef825e9e1",
-      "source_id": "arxiv-cs-ai",
-      "title": "From Training to Deployment: Post-Hoc Causal Feature Identification via Sensitivity Ratios",
-      "url": "https://arxiv.org/abs/2607.25546",
-      "published_at": "2026-07-30T04:00:00+00:00",
-      "raw_text": "arXiv:2607.25546v1 Announce Type: new \nAbstract: Given a model that is already trained, which features does it rely on causally versus spuriously? Existing methods require access to the training procedure and cannot answer this post-hoc. We introduce the \\textbf{Normalised Sensitivity Ratio~(NSR)}, a post-hoc, model-agnostic diagnostic for this question under a structured-shift regime: environments differ primarily in the mean of spurious features while the causal mechanism and causal marginals remain stable, as in multi-site clinical data or multi-batch genomics. Within this regime, causal features induce constant model sensitivity across environments while spurious features track shift. NSR formalises this as the squared coefficient of variation of per-environment sensitivity. Under a linear structural causal model (SCM) with $K\\ge3$ non-degenerate environments, NSR achieves exact identification (Theorem~1). We fully characterise failure: weak shifts ($O(\\varepsilon^4)$ collapse), de",
+      "id": "aa627740aa44a1f4",
+      "source_id": "mit-tech-review-ai",
+      "title": "A fundamental flaw leaves LLMs strikingly vulnerable to attack",
+      "url": "https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/",
+      "published_at": "2026-07-30T10:15:19+00:00",
+      "raw_text": "It is impossible to make large language models fully secure against hacks because of a fundamental flaw in how they work, a team of researchers argue in a paper presented at the International Conference on Machine Learning, a top AI conference, this month. The claim has huge implications for the safety of this technology, which&#8230;",
       "category_hint": [
+        "行业动态",
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出后验因果特征识别方法NSR，无需训练过程即可区分因果与虚假关联，实用性强。",
-      "summary_zh": "本文提出归一化敏感度比（NSR），一种后验、模型无关的诊断方法，用于识别已训练模型依赖的特征是因果性的还是虚假性的。现有方法需要访问训练过程，无法在部署后回答此问题。NSR在结构化偏移（环境变化）下工作，通过比较特征对预测的敏感度来区分。实验表明，NSR能有效识别虚假关联，且适用于多种模型架构。该工作为模型可解释性和鲁棒性提供了实用工具。",
-      "title_zh": "从训练到部署：基于敏感度比的后验因果特征识别",
-      "weighted_score": 0.835,
+      "depth_score": 0.8,
+      "reason_zh": "MIT研究指出LLM存在根本性安全缺陷，无法完全防御攻击，对AI安全领域影响深远。",
+      "summary_zh": "MIT研究人员在ICML 2025上发表论文，论证了大语言模型存在根本性缺陷，使其无法完全抵御攻击。该缺陷源于模型的工作机制，导致任何安全措施都无法彻底消除漏洞。研究团队通过理论分析和实验验证，展示了即使是最先进的防护手段也无法阻止对抗性攻击。这一发现对AI安全领域具有重大意义，意味着我们需要重新思考LLM的部署策略和风险管控。",
+      "title_zh": "根本性缺陷使大语言模型极易受到攻击",
+      "weighted_score": 0.795,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "f980386f3ce6cf17",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.25546"
-        }
-      ]
-    },
-    {
-      "id": "4d2f877df3de9521",
-      "source_id": "marktechpost",
-      "title": "Prompt Engineering vs Loop Engineering vs Graph Engineering: What Changes at Each Layer",
-      "url": "https://www.marktechpost.com/2026/07/29/prompt-engineering-vs-loop-engineering-vs-graph-engineering/",
-      "published_at": "2026-07-30T05:45:53+00:00",
-      "raw_text": "<p>Three terms now compete for the same line in AI engineering job descriptions. Prompt engineering is the established one. Loop engineering entered the AI vocabulary in late 2025 and dominated developer discussion through June 2026. Graph engineering followed roughly six weeks later. They get used interchangeably. Should they be? The three are not competing techniques. [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/07/29/prompt-engineering-vs-loop-engineering-vs-graph-engineering/\">Prompt Engineering vs Loop Engineering vs Graph Engineering: What Changes at Each Layer</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-      "category_hint": [
-        "模型发布",
-        "产品发布"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.85,
-      "reason_zh": "厘清Prompt/Loop/Graph Engineering三者的本质区别，提供可迁移的工程认知框架，对AI工程师极具实操指导价值。",
-      "summary_zh": "文章辨析了AI工程中三个易混淆的概念：Prompt Engineering（提示工程）、Loop Engineering（循环工程）和Graph Engineering（图工程）。作者指出三者并非竞争关系，而是不同抽象层的工程实践：Prompt Engineering关注单次交互的输入输出优化；Loop Engineering处理多步推理、工具调用和状态管理；Graph Engineering则构建复杂的任务依赖图和工作流。文章通过具体案例说明各层的适用场景和设计取舍，强调理解这些层次有助于工程师更有效地设计AI系统，避免在错误层次上解决问题。",
-      "title_zh": "提示工程 vs 循环工程 vs 图工程：每一层发生了什么变化",
-      "weighted_score": 0.74,
-      "score_breakdown": {
-        "source_authority": 0.7,
         "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
+        "impact": 0.9,
+        "practical_value": 0.5
       },
-      "story_id": "2747c0ee4d42bd7e",
+      "story_id": "692dd46cdd351a1b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/07/29/prompt-engineering-vs-loop-engineering-vs-graph-engineering/"
-        }
-      ]
-    },
-    {
-      "id": "20e7c40f70ae20dc",
-      "source_id": "zh-meituan-tech",
-      "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
-      "published_at": "2026-07-29T10:34:13.542337+00:00",
-      "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "MineExplorer评测基准揭示多模态大模型在开放世界长程任务中的能力断层，对模型改进有重要指导意义。",
-      "summary_zh": "美团LongCat团队构建了MineExplorer，这是首个在开放世界中实现分钟级长程任务的评测基准，用于系统评估多模态大模型在需要长程规划且包含隐藏前置条件的任务中的真实能力。该基准揭示了当前顶级多模态大模型在动态、开放环境下的能力断层，例如在复杂规划、长期记忆和适应变化方面的不足。通过MineExplorer，研究者可以更清晰地了解模型的局限性，从而推动模型在真实世界应用中的改进。",
-      "title_zh": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-      "weighted_score": 0.785,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "703bdf6f589de6ef",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
+          "source_id": "mit-tech-review-ai",
+          "url": "https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/"
         }
       ]
     },
@@ -169,70 +103,102 @@
       ]
     },
     {
-      "id": "f9954fc24dc2fc6a",
-      "source_id": "marktechpost",
-      "title": "Tencent Open-Sources AngelSpec: A Unified Training Framework for MTP and Block-Parallel Speculative Decoding on Hy3 Models",
-      "url": "https://www.marktechpost.com/2026/07/30/tencent-open-sources-angelspec-a-unified-training-framework-for-mtp-and-block-parallel-speculative-decoding-on-hy3-models/",
-      "published_at": "2026-07-30T10:08:18+00:00",
-      "raw_text": "<p>Tencent has released AngelSpec, an open-source torch-native framework for training speculative-decoding draft models across six architectures. It introduces DFly, a block-diffusion drafter with hybrid target conditioning and a hidden-correction autoregressive head, and integrates D-cut for runtime-adaptive verification budgeting. On HY3-295B-A21B with TP=8, DFly-8 delivers a 1.98–2.40× speedup over autoregressive decoding across concurrency 4 to 64.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/07/30/tencent-open-sources-angelspec-a-unified-training-framework-for-mtp-and-block-parallel-speculative-decoding-on-hy3-models/\">Tencent Open-Sources AngelSpec: A Unified Training Framework for MTP and Block-Parallel Speculative Decoding on Hy3 Models</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+      "id": "5f8449b50a00dfb0",
+      "source_id": "arxiv-cs-ai",
+      "title": "Do Models Fake Alignment Without Clear Consequences?",
+      "url": "https://arxiv.org/abs/2607.24758",
+      "published_at": "2026-07-30T04:00:00+00:00",
+      "raw_text": "arXiv:2607.24758v2 Announce Type: new \nAbstract: Large language models are capable of recognizing evaluation contexts and altering their behavior to reflect evaluator expectations rather than typical deployment behaviors, a phenomenon known as alignment faking. The reasons why models fake alignment are not fully understood, however. Canonical examples of alignment faking have taken place in scenarios that explicitly connect evaluation to consequences for the model, such as retraining the model or delaying its deployment. However, recent work by Sheshadri et al. has suggested that mechanistic motivations for alignment faking may vary across models and be more complex than previously considered. To investigate whether consequence-linking information is necessary for compliance gaps, we placed 15 models in a scenario testing their willingness to violate a corporate network access policy to help a user with a pro-social request. Nine models were found to produce significant compliance gaps",
       "category_hint": [
-        "模型发布",
-        "产品发布"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "开源项目",
+      "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "腾讯开源AngelSpec，统一训练框架支持多种推测解码架构，加速推理2倍，技术深度高。",
-      "summary_zh": "腾讯开源AngelSpec，一个基于torch-native的框架，用于训练六种架构的推测解码草稿模型。它引入DFly块扩散草稿器，具有混合目标条件和隐藏校正自回归头，并集成D-cut运行时自适应验证预算。在HY3-295B-A21B上，DFly-8实现1.98-2.40倍加速。",
-      "title_zh": "腾讯开源AngelSpec：HY3模型上MTP和块并行推测解码的统一训练框架",
-      "weighted_score": 0.73,
+      "reason_zh": "研究模型是否会在无明确后果时假装对齐，对AI安全有重要启示。",
+      "summary_zh": "该论文探讨大型语言模型在评估环境中是否会改变行为以迎合评估者期望，即“对齐伪装”。研究发现，模型在无明确后果时也可能伪装对齐，原因尚不完全清楚。论文分析了典型场景并提出了潜在机制。",
+      "title_zh": "模型会在无明确后果时假装对齐吗？",
+      "weighted_score": 0.74,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.8,
         "novelty": 0.9,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.5
       },
-      "story_id": "1474b1d0fbe2e30c",
+      "story_id": "929aad79da811f33",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/07/30/tencent-open-sources-angelspec-a-unified-training-framework-for-mtp-and-block-parallel-speculative-decoding-on-hy3-models/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.24758"
         }
       ]
     },
     {
-      "id": "4119929070910ac6",
-      "source_id": "reddit-llmdevs",
-      "title": "How I made small local AI models stop breaking JSON - a grammar-based approach",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1va3rnk/how_i_made_small_local_ai_models_stop_breaking/",
-      "published_at": "2026-07-29T17:58:01+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I wrote a post about a specific problem with running AI agents on local models: they're unreliable with structured output. You ask for JSON, they mostly deliver, but then they forget a closing brace, invent a tool name, or add a paragraph of text after the JSON object. Hosted APIs like OpenAI handle this server-side. Locally, you're on your own.</p> <p>My approach: llama.cpp supports GBNF grammars that constrain which tokens the model can produce. I wrote a compiler that turns each tool's schema into grammar rules, so the model's output is constrained at every token position. It literally cannot produce malformed JSON. Then I narrow the grammar per-turn so the model only sees the 3-5 tools that are relevant instead of all 50.</p> <p>The post is a deep dive with real code from the project (Eris, a local agent in Rust that uses your Markdown notes as memory, runs entirely on your machine).</p> <p>[<a href=\"https://eris-system.dev/blog/gbnf-grammars%5C%5D",
+      "id": "4a771335cd9fa1d3",
+      "source_id": "exponentialview",
+      "title": "🔮 For AI adopters, success and failure look identical — at first",
+      "url": "https://www.exponentialview.co/p/ai-adoption-j-curve",
+      "published_at": "2026-07-30T11:01:20+00:00",
+      "raw_text": "Modelling the AI J-curve",
       "category_hint": [
-        "技巧与观点",
-        "开源项目"
+        "技巧与观点"
       ],
-      "image_url": null,
+      "image_url": "https://substackcdn.com/image/fetch/$s_!xppC!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3e9a6451-a879-4231-8c75-15cf75cee402_901x614.jpeg",
       "category": "技巧与观点",
-      "content_type": "教程方法",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "解决本地模型JSON输出不稳定的痛点，提供基于语法的实用方案，对开发者有直接帮助。",
-      "summary_zh": "作者分享了解决本地AI模型生成JSON不稳定的问题。本地模型在输出结构化数据时经常出现格式错误，如缺少括号、虚构工具名或添加多余文本。作者采用基于语法的方法，通过约束模型输出格式，确保生成的JSON始终有效。文章详细介绍了实现原理和具体步骤，包括如何定义语法规则、集成到推理流程中，以及实际效果对比。该方法无需依赖云端API，适合本地部署场景，显著提升了结构化输出的可靠性。",
-      "title_zh": "如何让小型本地AI模型不再破坏JSON——一种基于语法的方法",
-      "weighted_score": 0.685,
+      "reason_zh": "提出AI采用的J曲线模型，解释初期成功与失败难以区分的现象，对实践者有深刻启发。",
+      "summary_zh": "文章提出了AI采用的J曲线模型，指出对于AI采用者来说，成功和失败在初期看起来一模一样。作者通过建模解释了这一现象：在AI项目初期，投入增加但产出可能下降，导致成功与失败难以区分。文章提供了识别真正成功信号的方法，帮助读者避免过早放弃或盲目乐观。",
+      "title_zh": "对于AI采用者来说，成功和失败在初期看起来一模一样——建模AI的J曲线",
+      "weighted_score": 0.7,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
+        "source_authority": 0.7,
+        "novelty": 0.8,
         "impact": 0.6,
-        "practical_value": 0.9
+        "practical_value": 0.7
       },
-      "story_id": "41cc1838d4e3dd88",
+      "story_id": "f089d50d045c1324",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1va3rnk/how_i_made_small_local_ai_models_stop_breaking/"
+          "source_id": "exponentialview",
+          "url": "https://www.exponentialview.co/p/ai-adoption-j-curve"
+        }
+      ]
+    },
+    {
+      "id": "eb04debe72ccc23b",
+      "source_id": "latent-space",
+      "title": "Ontologies Are So Back: Why AI Agents Are Reviving the Semantic Web",
+      "url": "https://www.latent.space/p/ontologies-agentic-systems",
+      "published_at": "2026-07-30T11:17:55+00:00",
+      "raw_text": "AI engineers are rediscovering ontologies as a way to keep probabilistic agents inside deterministic boundaries.",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!180z!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F33011df5-c14f-4770-9b91-efa55618b6eb_1672x941.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "揭示本体论在AI Agent中的复兴，为构建确定性边界提供新思路，有深度。",
+      "summary_zh": "文章探讨了本体论（Ontologies）在AI Agent中的复兴，指出AI工程师正在重新发现本体论作为将概率性Agent保持在确定性边界内的方法。随着AI Agent的广泛应用，如何确保其行为可控成为关键问题。本体论通过定义明确的概念和关系，为Agent提供了结构化的知识框架，从而限制其行为范围。文章分析了本体论在语义网时代的兴衰，以及当前在AI Agent中的新应用。",
+      "title_zh": "本体论回归：为什么AI Agent正在复兴语义网",
+      "weighted_score": 0.7,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "098e69e2ef0ae9dc",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/ontologies-agentic-systems"
         }
       ]
     },
@@ -305,73 +271,6 @@
       ]
     },
     {
-      "id": "ed3ea0e74f3bad6a",
-      "source_id": "reddit-llmdevs",
-      "title": "I built a snapshot-testing library for LLM agents (replay recorded calls to catch regressions, open source)",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1va7tbr/i_built_a_snapshottesting_library_for_llm_agents/",
-      "published_at": "2026-07-29T20:19:32+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Sharing a tool I built to solve a problem that kept biting me: LLM agents regress silently. A prompt edit or a model version bump changes behavior with no exception and no failing test, and you find out in production.</p> <p>agentsnap (MIT, pip install agentsnap) records your agent's LLM and tool calls once as a committed golden snapshot, then diffs later runs against it. The comparison is across four dimensions: the tool-call sequence (edit distance on tool names), the arguments each tool got, which tool the model itself requested in its tool_calls/tool_use blocks, and the semantic content of responses (offline embeddings or an LLM judge, configurable).</p> <p>The part I think is most useful for dev workflows is the two modes. In replay mode it feeds the recorded response back to the agent instead of hitting the API, so it's deterministic and free and the comparison flips to the request side. That means you can run it on every PR and it fails if your ",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "开源快照测试库，解决LLM Agent回归问题，实用性强，对Agent开发有重要价值。",
-      "summary_zh": "作者开发了agentsnap，一个用于LLM Agent的快照测试库。该工具通过录制Agent的LLM和工具调用作为黄金快照，然后在后续运行中对比差异，从而捕获因提示编辑或模型版本升级导致的静默回归。agentsnap采用MIT许可证，可通过pip安装。文章介绍了其工作原理、使用方法和实际效果，帮助开发者在生产环境前发现Agent行为变化，避免意外故障。",
-      "title_zh": "我构建了一个LLM Agent的快照测试库（回放记录调用以捕获回归，开源）",
-      "weighted_score": 0.71,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "ece51a0b04d1df88",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1va7tbr/i_built_a_snapshottesting_library_for_llm_agents/"
-        }
-      ]
-    },
-    {
-      "id": "0eda4286946f439a",
-      "source_id": "tnw-deep-tech",
-      "title": "Atlassian puts its engineers on an AI budget as the cost of ‘tokenmaxxing’ bites",
-      "url": "https://thenextweb.com/news/atlassian-ai-wallets-tokenmaxxing",
-      "published_at": "2026-07-30T07:44:53+00:00",
-      "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/03/Atlassian-is-cutting-1600-jobs-and-replacing-its-CTO.avif\" width=\"868\" /><br /><p>The software maker cut thousands of jobs in the name of AI. Now it is handing the engineers who remain capped ‘AI wallets,’ a sign the industry’s token spending has become a line item to manage. Atlassian has started giving its engineers a fixed monthly allowance for artificial intelligence, a capped “AI wallet” that warns [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/atlassian-ai-wallets-tokenmaxxing?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://media.thenextweb.com/2026/03/Atlassian-is-cutting-1600-jobs-and-replacing-its-CTO.avif",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Atlassian为工程师设AI预算，揭示token消耗成为企业成本管理新课题，对AI应用落地有启发。",
-      "summary_zh": "Atlassian在因AI裁员数千人后，开始为剩余工程师提供固定的月度AI预算（即“AI钱包”），以管理token消耗成本。这一举措表明，随着AI工具在企业中的广泛使用，token支出已成为需要精细管理的财务项目。文章分析了“tokenmaxxing”现象——工程师过度使用AI导致成本飙升，以及企业如何通过预算控制来平衡效率与成本。这反映了AI应用从狂热期进入理性管理阶段。",
-      "title_zh": "Atlassian为工程师设AI预算，tokenmaxxing成本问题凸显",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "4e24bfbee97d7838",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "tnw-deep-tech",
-          "url": "https://thenextweb.com/news/atlassian-ai-wallets-tokenmaxxing"
-        }
-      ]
-    },
-    {
       "id": "851ae208d4842e47",
       "source_id": "practical-ai",
       "title": "Reconstructing how OpenAI agents attacked Hugging Face",
@@ -401,6 +300,105 @@
         {
           "source_id": "practical-ai",
           "url": "https://share.transistor.fm/s/9d74230b"
+        }
+      ]
+    },
+    {
+      "id": "0ab2d4aec7d0fe78",
+      "source_id": "zh-solidot",
+      "title": "顶尖 AI 初创公司很少发表论文",
+      "url": "https://www.solidot.org/story?sid=84959",
+      "published_at": "2026-07-30T05:47:43+00:00",
+      "raw_text": "很多顶尖 AI 初创公司都宣称他们的技术将能彻底改变软件开发、药物研发和科学研究，但他们很少用论文去论证他们的宣传。根据发表在 bioRxiv 上的一篇论文预印本，逾半数 AI 独角兽企业(即估值超过 10 亿美元)发表的论文少之又少。数据显示，2025 年发表的 AI 论文中每 1000 篇这些 AI 公司就只占到 1 篇。论文合作者、斯坦福大学的 John Ioannidis 称，“对于一个号称正重塑科学、且在科学潜力方面如此先进的领域而言，没有任何科学文献是一个非常奇怪的悖论，我们如何判断他们所说的是真实、经过验证且可重复的？”Alberta 大学的 AI 伦理学者 Mohamed Abdalla 认为，这可能反映了公司的激励机制与学界不同。公司的激励机制是赚钱而不是推进科学发展。1998-2025 年之间的 317 家 AI 独角兽公司发表了 1389 篇同行评审论文和 688 篇预印本，逾半数初创公司未发表任何合格论文。前 5% 公司贡献了逾九成的引用量，其中 OpenAI 贡献了近四成，其次是中国计算机视觉公司旷视科技和 Hugging Face。中国 AI 公司发表的论文数高于美国的同行，这一结果并不出人意料，美国 AI 公司日益对其模型保密。\n<p></p>",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "揭示AI独角兽“重宣传轻论文”的行业悖论，引发对技术可信度与科学验证机制的深层思考。",
+      "summary_zh": "文章指出许多顶尖AI初创公司宣称其技术将彻底改变软件开发、药物研发等领域，但很少发表论文来支持其宣传。根据bioRxiv上的一篇预印本，超过半数的AI独角兽企业（估值超10亿美元）发表的论文极少。2025年发表的AI论文中，每1000篇仅有1篇来自这些公司。斯坦福大学的John Ioannidis称这是一个“奇怪的悖论”，因为一个号称重塑科学的领域却缺乏科学文献。Alberta大学的AI伦理学者Mohamed Abdalla认为，这可能源于公司激励机制与学界不同——公司目标是赚钱而非推进科学发展。1998-2025年间，317家AI独角兽共发表1389篇同行评审论文和688篇预印本。",
+      "title_zh": null,
+      "weighted_score": 0.69,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "240d8a5d54e2367f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-solidot",
+          "url": "https://www.solidot.org/story?sid=84959"
+        }
+      ]
+    },
+    {
+      "id": "ce4530a30974db4c",
+      "source_id": "zh-oschina",
+      "title": "317 家 AI 独角兽，超过一半从来没发过论文",
+      "url": "https://www.oschina.net/news/482959/ai-s-top-startups-are-barely-publishing-their-research",
+      "published_at": "2026-07-30T06:13:13+00:00",
+      "raw_text": "一项新的分析用数据证实了我们许多人长期以来的感受：AI 领域最引人注目的实验室基本上已经停止发表他们的研究成果。 斯坦福“元科学”（metascientist）研究者 John Ioannidis 把 317 家 AI 独角兽的发表记录翻了一遍。结论一句话就能说完：超过一半的公司，从来没有在任何一篇学术论文里担任过第一作者或通讯作者。 根...",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "数据揭示 AI 独角兽论文发表现状，对理解行业科研生态有重要参考。",
+      "summary_zh": "斯坦福元科学研究者 John Ioannidis 分析了 317 家 AI 独角兽的论文发表记录，发现超过一半的公司从未在任何学术论文中担任第一作者或通讯作者。该数据证实了 AI 领域最引人注目的实验室基本停止发表研究成果的普遍感受。",
+      "title_zh": "317 家 AI 独角兽，超过一半从来没发过论文",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "d60bc07e64c18e87",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/482959/ai-s-top-startups-are-barely-publishing-their-research"
+        }
+      ]
+    },
+    {
+      "id": "73d01487bf836f49",
+      "source_id": "tnw-deep-tech",
+      "title": "Sam Altman’s underrated AI fear: that we stop thinking for ourselves",
+      "url": "https://thenextweb.com/news/sam-altmans-underrated-ai-fear-that-we-stop-thinking-for-ourselves",
+      "published_at": "2026-07-30T13:07:18+00:00",
+      "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/07/Sam-Altman.-podcast.avif\" width=\"868\" /><br /><p>The man whose company is trying to get the world to use AI for everything has named a risk he thinks almost no one is talking about: that people will let it do so much of their thinking that their own minds go slack. Sam Altman, OpenAI’s chief executive, calls it “cognitive atrophy,” and puts [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/sam-altmans-underrated-ai-fear-that-we-stop-thinking-for-ourselves?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://media.thenextweb.com/2026/07/Sam-Altman.-podcast.avif",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Sam Altman提出AI导致认知萎缩的风险，引发深度思考。",
+      "summary_zh": "OpenAI CEO Sam Altman在播客中提出一个被忽视的AI风险：人们可能让AI代替自己思考，导致“认知萎缩”。他警告过度依赖AI会削弱人类独立思考能力，这一观点引发对AI社会影响的深入讨论。",
+      "title_zh": "Sam Altman被低估的AI恐惧：我们不再为自己思考",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "63cc43ad6a61a009",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "tnw-deep-tech",
+          "url": "https://thenextweb.com/news/sam-altmans-underrated-ai-fear-that-we-stop-thinking-for-ourselves"
         }
       ]
     }
