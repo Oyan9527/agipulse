@@ -1,6 +1,6 @@
 {
   "date": "2026-07-30",
-  "generated_at": "2026-07-30T13:52:18.106424+00:00",
+  "generated_at": "2026-07-30T17:28:16.887480+00:00",
   "items": [
     {
       "id": "aa627740aa44a1f4",
@@ -33,39 +33,6 @@
         {
           "source_id": "mit-tech-review-ai",
           "url": "https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/"
-        }
-      ]
-    },
-    {
-      "id": "246a387bdce29bf1",
-      "source_id": "arxiv-cs-ai",
-      "title": "Entangled by Design: Spurious Intra-Variable Signal Routing in Tabular In-Context Learners",
-      "url": "https://arxiv.org/abs/2607.25532",
-      "published_at": "2026-07-30T04:00:00+00:00",
-      "raw_text": "arXiv:2607.25532v1 Announce Type: new \nAbstract: Consider a model trained at a single hospital to predict patient recovery, where the measured feature $X$ bundles the patient's true health signal ($C$) with a systematic artefact from that hospital's equipment ($S$). Within that hospital, the artefact correlates with outcomes through unmeasured confounders such as patient demographics; an in-context learner rationally routes predictions through $S$, not $C$, and fails silently when deployed at a new hospital with different equipment. We formalise this as \\emph{spurious routing in composite representations}: when a feature $X = [C;\\,\\alpha S;\\,\\eta]$ encodes a causal signal $C$ and a spurious signal $S$ in distinct subspaces, the ICL cannot determine which drives predictions. We prove that under ridge ICL, a linear in-context learner, this routing is unavoidable regardless of context size; TabPFN, a state-of-the-art pretrained tabular ICL model, shows qualitatively consistent behaviour e",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示表格上下文学习器中的虚假关联机制，对理解模型鲁棒性有重要启发。",
-      "summary_zh": "本文研究表格上下文学习器（TabICL）中存在的虚假特征路由问题。以一个医院预测患者康复的模型为例，测量特征X混合了真实健康信号C和医院设备系统伪影S，后者通过未测量的混杂因素（如患者人口统计）与结果相关。模型在训练中可能利用这种虚假关联，导致泛化失败。论文通过理论分析和实验，揭示了TabICL如何被设计中的虚假信号所纠缠，并提出了诊断和缓解方法。该工作对提升表格数据模型的可靠性和可解释性具有重要意义。",
-      "title_zh": "设计纠缠：表格上下文学习器中的虚假特征路由",
-      "weighted_score": 0.765,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "6979fdda35b23fce",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.25532"
         }
       ]
     },
@@ -132,6 +99,39 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2607.24758"
+        }
+      ]
+    },
+    {
+      "id": "b56e23517e210894",
+      "source_id": "arxiv-cs-ai",
+      "title": "Towards an Agent Operating System - Lessons from Classical and Cloud OS",
+      "url": "https://arxiv.org/abs/2607.25076",
+      "published_at": "2026-07-30T04:00:00+00:00",
+      "raw_text": "arXiv:2607.25076v1 Announce Type: new \nAbstract: Every major wave of platform software follows the same arc: an initial period of experimentation with competing frameworks and ad-hoc implementations, followed by the articulation of a small set of stable abstractions with well-defined semantics, and finally consolidation around those abstractions into a platform that applications can portably target. POSIX did this for classical operating systems; Kubernetes did it for the cloud. Agentic AI systems - autonomous, LLM-driven agents that plan, use tools, maintain memory, and collaborate - are currently in the experimentation phase of the third such wave. dozens of frameworks and protocols have emerged, but no community consensus exists on what the core abstractions are or what guarantees they carry. Without that consensus, agentic applications cannot be written portably, platforms cannot compose reliably, and the field cannot advance beyond prototype deployments. We argue that the path for",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "从操作系统发展史类比Agent平台演进，提出稳定抽象层和可移植性目标，对Agent系统设计有深刻启发。",
+      "summary_zh": "本文从经典操作系统和云操作系统的演进历史中汲取经验，指出每一波平台软件都经历从实验性框架到稳定抽象、再到平台整合的弧线。作者认为当前AI Agent领域正处于第一阶段，缺乏统一的抽象和语义。文章提出Agent操作系统的概念，旨在定义一组稳定的抽象（如感知、规划、执行、记忆等），使得应用可以可移植地运行在不同Agent框架之上。通过类比操作系统中的进程、文件、虚拟内存等核心抽象，作者讨论了Agent OS应具备的关键组件和设计原则，为未来Agent平台的发展提供了路线图。",
+      "title_zh": "迈向Agent操作系统——来自经典和云操作系统的经验",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "6c27007a7e581300",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2607.25076"
         }
       ]
     },
@@ -203,6 +203,40 @@
       ]
     },
     {
+      "id": "bddd1bf4681bf55f",
+      "source_id": "mozilla-ai",
+      "title": "How Frontier Labs Are Building Subtle Developer Lock-In",
+      "url": "https://blog.mozilla.ai/how-frontier-labs-are-building-subtle-developer-lock-in/",
+      "published_at": "2026-07-30T15:22:24+00:00",
+      "raw_text": "Frontier AI models are becoming more capable, but also more tightly coupled to proprietary state, memory and execution environments. This article explores what that means for developers building open, portable AI systems.",
+      "category_hint": [
+        "产品发布",
+        "行业动态"
+      ],
+      "image_url": "https://storage.ghost.io/c/68/76/6876f0af-8955-4de4-a637-a5e7cc399136/content/images/2026/07/mozillaai-title-engineering-insight-blog--1-.jpg",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "揭示前沿AI模型如何通过专有状态和内存构建开发者锁定，对构建开放AI系统有重要启示。",
+      "summary_zh": "文章探讨了前沿AI模型如何通过专有状态、内存和执行环境，逐渐构建对开发者的锁定效应。分析了这种趋势对构建开放、可移植AI系统的影响，并提出了开发者应警惕的潜在风险。内容具有深度和启发性。",
+      "title_zh": "前沿实验室如何构建微妙的开发者锁定",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "1abba6c76fd441aa",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "mozilla-ai",
+          "url": "https://blog.mozilla.ai/how-frontier-labs-are-building-subtle-developer-lock-in/"
+        }
+      ]
+    },
+    {
       "id": "32f37cd6a72d52a4",
       "source_id": "qbitai",
       "title": "李飞飞的世界模型，终于开始训练机器人了",
@@ -233,6 +267,40 @@
         {
           "source_id": "qbitai",
           "url": "https://www.qbitai.com/2026/07/463217.html"
+        }
+      ]
+    },
+    {
+      "id": "06b8d0ad6f63e2ce",
+      "source_id": "deepmind-blog",
+      "title": "Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration",
+      "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/",
+      "published_at": "2026-07-30T15:00:59+00:00",
+      "raw_text": "Gemini Robotics ER 2 helps robots reason, collaborate, and solve real-world tasks. It represents a step change in video understanding, tool orchestration, and multi-robot collaboration for robotic applications.",
+      "category_hint": [
+        "模型发布",
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "模型发布",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "DeepMind发布Gemini Robotics ER 2，在视频理解、任务编排和多机器人协作方面实现阶跃变化，推动机器人AI发展。",
+      "summary_zh": "Gemini Robotics ER 2帮助机器人进行推理、协作和解决现实世界任务。它在视频理解、工具编排和多机器人协作方面实现了阶跃变化，适用于机器人应用。该模型代表了机器人AI能力的重要进展。",
+      "title_zh": "Gemini Robotics ER 2：以视频理解、任务编排和多机器人协作赋能机器人技术",
+      "weighted_score": 0.79,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "081f445e66bee2b7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "deepmind-blog",
+          "url": "https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/"
         }
       ]
     },
@@ -304,101 +372,36 @@
       ]
     },
     {
-      "id": "0ab2d4aec7d0fe78",
-      "source_id": "zh-solidot",
-      "title": "顶尖 AI 初创公司很少发表论文",
-      "url": "https://www.solidot.org/story?sid=84959",
-      "published_at": "2026-07-30T05:47:43+00:00",
-      "raw_text": "很多顶尖 AI 初创公司都宣称他们的技术将能彻底改变软件开发、药物研发和科学研究，但他们很少用论文去论证他们的宣传。根据发表在 bioRxiv 上的一篇论文预印本，逾半数 AI 独角兽企业(即估值超过 10 亿美元)发表的论文少之又少。数据显示，2025 年发表的 AI 论文中每 1000 篇这些 AI 公司就只占到 1 篇。论文合作者、斯坦福大学的 John Ioannidis 称，“对于一个号称正重塑科学、且在科学潜力方面如此先进的领域而言，没有任何科学文献是一个非常奇怪的悖论，我们如何判断他们所说的是真实、经过验证且可重复的？”Alberta 大学的 AI 伦理学者 Mohamed Abdalla 认为，这可能反映了公司的激励机制与学界不同。公司的激励机制是赚钱而不是推进科学发展。1998-2025 年之间的 317 家 AI 独角兽公司发表了 1389 篇同行评审论文和 688 篇预印本，逾半数初创公司未发表任何合格论文。前 5% 公司贡献了逾九成的引用量，其中 OpenAI 贡献了近四成，其次是中国计算机视觉公司旷视科技和 Hugging Face。中国 AI 公司发表的论文数高于美国的同行，这一结果并不出人意料，美国 AI 公司日益对其模型保密。\n<p></p>",
+      "id": "0764016772801f9d",
+      "source_id": "toms-hardware",
+      "title": "Exploring Apple Silicon’s local AI performance with the Mac Studio and M4 Max — M4 Max beats GB10 and Strix Halo in decode throughput, but memory bandwidth isn't everything",
+      "url": "https://www.tomshardware.com/desktops/exploring-apple-silicons-local-ai-performance-with-the-mac-studio-and-m4-max-m4-max-beats-gb10-and-strix-halo-in-decode-throughput-but-memory-bandwidth-isnt-everything",
+      "published_at": "2026-07-30T14:52:28+00:00",
+      "raw_text": "Apple Silicon has been a popular choice for local AI exploration thanks to its high memory bandwidth compared to other unified memory platforms. We tested the M4 Max version of Apple's Mac Studio to see whether its 546GB/s of bandwidth makes it the clear winner in local LLM inference.",
       "category_hint": [
-        "行业动态"
+        "行业动态",
+        "产品发布"
       ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "揭示AI独角兽“重宣传轻论文”的行业悖论，引发对技术可信度与科学验证机制的深层思考。",
-      "summary_zh": "文章指出许多顶尖AI初创公司宣称其技术将彻底改变软件开发、药物研发等领域，但很少发表论文来支持其宣传。根据bioRxiv上的一篇预印本，超过半数的AI独角兽企业（估值超10亿美元）发表的论文极少。2025年发表的AI论文中，每1000篇仅有1篇来自这些公司。斯坦福大学的John Ioannidis称这是一个“奇怪的悖论”，因为一个号称重塑科学的领域却缺乏科学文献。Alberta大学的AI伦理学者Mohamed Abdalla认为，这可能源于公司激励机制与学界不同——公司目标是赚钱而非推进科学发展。1998-2025年间，317家AI独角兽共发表1389篇同行评审论文和688篇预印本。",
-      "title_zh": null,
-      "weighted_score": 0.69,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "240d8a5d54e2367f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-solidot",
-          "url": "https://www.solidot.org/story?sid=84959"
-        }
-      ]
-    },
-    {
-      "id": "ce4530a30974db4c",
-      "source_id": "zh-oschina",
-      "title": "317 家 AI 独角兽，超过一半从来没发过论文",
-      "url": "https://www.oschina.net/news/482959/ai-s-top-startups-are-barely-publishing-their-research",
-      "published_at": "2026-07-30T06:13:13+00:00",
-      "raw_text": "一项新的分析用数据证实了我们许多人长期以来的感受：AI 领域最引人注目的实验室基本上已经停止发表他们的研究成果。 斯坦福“元科学”（metascientist）研究者 John Ioannidis 把 317 家 AI 独角兽的发表记录翻了一遍。结论一句话就能说完：超过一半的公司，从来没有在任何一篇学术论文里担任过第一作者或通讯作者。 根...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "行业动态",
+      "image_url": "https://cdn.mos.cms.futurecdn.net/7CNCn9fXJZV5ZAHnri4ZWE-1280-80.jpg",
+      "category": "模型发布",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "数据揭示 AI 独角兽论文发表现状，对理解行业科研生态有重要参考。",
-      "summary_zh": "斯坦福元科学研究者 John Ioannidis 分析了 317 家 AI 独角兽的论文发表记录，发现超过一半的公司从未在任何学术论文中担任第一作者或通讯作者。该数据证实了 AI 领域最引人注目的实验室基本停止发表研究成果的普遍感受。",
-      "title_zh": "317 家 AI 独角兽，超过一半从来没发过论文",
-      "weighted_score": 0.685,
+      "reason_zh": "实测M4 Max Mac Studio本地AI推理性能，对比GB10和Strix Halo，对硬件选型有直接参考价值。",
+      "summary_zh": "Apple Silicon因其高内存带宽成为本地AI探索的热门选择。文章测试了M4 Max版Mac Studio（546GB/s带宽），评估其在本地LLM推理中的表现。结果显示M4 Max在解码吞吐量上击败GB10和Strix Halo，但内存带宽并非唯一决定因素。文章提供了详细的性能对比和分析。",
+      "title_zh": "探索Apple Silicon本地AI性能：Mac Studio与M4 Max——M4 Max在解码吞吐量上击败GB10和Strix Halo，但内存带宽并非一切",
+      "weighted_score": 0.695,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "d60bc07e64c18e87",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/482959/ai-s-top-startups-are-barely-publishing-their-research"
-        }
-      ]
-    },
-    {
-      "id": "73d01487bf836f49",
-      "source_id": "tnw-deep-tech",
-      "title": "Sam Altman’s underrated AI fear: that we stop thinking for ourselves",
-      "url": "https://thenextweb.com/news/sam-altmans-underrated-ai-fear-that-we-stop-thinking-for-ourselves",
-      "published_at": "2026-07-30T13:07:18+00:00",
-      "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/07/Sam-Altman.-podcast.avif\" width=\"868\" /><br /><p>The man whose company is trying to get the world to use AI for everything has named a risk he thinks almost no one is talking about: that people will let it do so much of their thinking that their own minds go slack. Sam Altman, OpenAI’s chief executive, calls it “cognitive atrophy,” and puts [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/sam-altmans-underrated-ai-fear-that-we-stop-thinking-for-ourselves?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://media.thenextweb.com/2026/07/Sam-Altman.-podcast.avif",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Sam Altman提出AI导致认知萎缩的风险，引发深度思考。",
-      "summary_zh": "OpenAI CEO Sam Altman在播客中提出一个被忽视的AI风险：人们可能让AI代替自己思考，导致“认知萎缩”。他警告过度依赖AI会削弱人类独立思考能力，这一观点引发对AI社会影响的深入讨论。",
-      "title_zh": "Sam Altman被低估的AI恐惧：我们不再为自己思考",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.8,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.5
+        "practical_value": 0.8
       },
-      "story_id": "63cc43ad6a61a009",
+      "story_id": "888cf253012a8e22",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "tnw-deep-tech",
-          "url": "https://thenextweb.com/news/sam-altmans-underrated-ai-fear-that-we-stop-thinking-for-ourselves"
+          "source_id": "toms-hardware",
+          "url": "https://www.tomshardware.com/desktops/exploring-apple-silicons-local-ai-performance-with-the-mac-studio-and-m4-max-m4-max-beats-gb10-and-strix-halo-in-decode-throughput-but-memory-bandwidth-isnt-everything"
         }
       ]
     }
