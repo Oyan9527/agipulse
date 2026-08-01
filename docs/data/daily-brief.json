@@ -1,6 +1,6 @@
 {
   "date": "2026-08-01",
-  "generated_at": "2026-08-01T10:02:35.004751+00:00",
+  "generated_at": "2026-08-01T13:11:45.146969+00:00",
   "items": [
     {
       "id": "c947100a49c25f4b",
@@ -37,9 +37,42 @@
       ]
     },
     {
+      "id": "30ceadf8cbb6eb1d",
+      "source_id": "reddit-rag",
+      "title": "I ran BGE-M3 to embed a ~33k-chunk corpus, then replayed a year of real churn through pgvector/Qdrant/Chroma. RAG index grew 5x, 90% failed a check",
+      "url": "https://www.reddit.com/r/Rag/comments/1vbsc94/i_ran_bgem3_to_embed_a_33kchunk_corpus_then/",
+      "published_at": "2026-07-31T14:21:16+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>(Environment: fully local embedding pipeline BAAI/bge-m3 via <em>sentence-transformers</em>, pinned to an exact HF revision, fp32, CPU-only. ~33k chunks at the baseline (T0) embedded in a few hours on a MacBook M3 Max.)</p> <p>The actual experiment: I took the GitLab Handbook (real company wiki, years of real git history), picked a commit ~13 months back as a starting point, then replayed 4742 real commits of edits/deletes/renames forward to HEAD<br /> through an ingestion pipeline that reproduces the bugs real RAG pipelines actually make (update without delete, async deletes, full-reingest duplication, unhandled renames). Same embeddings went into pgvector, Qdrant and Chroma. The index went from 33286 chunks at T0 to 166947 live chunks at HEAD. Each operation was recorded in ledger (SQLite).</p> <p><strong>Result:</strong> The most common real bug was update-without-delete - re-embed and upsert on edit, but never delete the old chunks. It happened on ",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.9,
+      "reason_zh": "通过真实数据回放揭示RAG索引漂移问题，极具深度。",
+      "summary_zh": "作者使用BGE-M3对约33k块的语料库进行嵌入，并在pgvector/Qdrant/Chroma中回放了一年的真实变更。结果显示RAG索引增长了5倍，90%的检查失败。实验使用GitLab Handbook作为真实公司wiki，选取13个月前的提交作为起点，模拟了索引漂移。这揭示了RAG系统在动态数据下的维护挑战。",
+      "title_zh": "我用BGE-M3嵌入约33k块语料，然后回放了一年的真实变更：RAG索引增长5倍，90%检查失败",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.9
+      },
+      "story_id": "9c9e1b02382319bd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1vbsc94/i_ran_bgem3_to_embed_a_33kchunk_corpus_then/"
+        }
+      ]
+    },
+    {
       "id": "16eec787773e727f",
       "source_id": "zh-ithome",
-      "title": "均为 10 年以上未解难题：OpenAI 公布在数学与理论计算机科学领域的十项进展，Token 成本约 2000 美元",
+      "title": "均为 10 年以上未解难题：OpenAI 公布下一代模型 Astra 在数学等领域的十项进展，Token 成本约 2000 美元",
       "url": "https://www.ithome.com/0/984/557.htm",
       "published_at": "2026-08-01T08:23:25+00:00",
       "raw_text": "<p>IT之家 8 月 1 日消息，OpenAI 官方今日公布了在数学与理论计算机科学领域的十项进展，这些问题此前一直悬而未决，其核心研究在至少十年（多数情况下甚至更久）的时间里未曾取得任何实质性进展。</p><p>据悉，这些成果由 OpenAI 的下一代核心模型 Astra 的内部版本计算得出。若按 Sol API 的费率计算，寻找这些问题解决方案所需消耗的<strong>总词元 (tokens) 成本约为 2000 美元</strong><span class=\"exch-money-value\">（IT之家注：现汇率约合 13530 元人民币）</span>。</p><p style=\"text-align: start;\">OpenAI 认为，署名权应当如实反映研究成果的产生过程：如果一项完全由 AI 系统生成的证明被声称为人类独立撰写，这不仅抹杀了该系统的贡献，也扭曲了真正人类智力劳动的本质。</p><p style=\"text-align: start;\">据介绍，人类研究员协助撰写了论文手稿，并在 Lean 语言中对这些证明进行了形式化验证，对其正确性负责；<strong>然而这些数学论证本身均由 OpenAI 的系统生成</strong>。</p><p style=\"text-align: start;\">IT之家附十项进展简要介绍如下：</p><ul class=\"medium-size list-paddingleft-2\"><li><p style=\"text-align: start;\">高维球体堆积 (High-dimensional sphere packing)：给出了球体堆积密度新的上界，并将其界限收紧至 Cohn-Elkies 阈值 (Cohn-Elkies threshold)。</p></li><li><p style=\"text-align: start;\">二进制与球面码 (Binary and spherical codes)：在任意给定的最小距离下，对二进制码最大规模的界限实现了指数级的改进，并在高维球面码上取得了类似的结果。</p></li><li><p style=\"text-align: start;\">非柔性群 (Non-sofic groups)：提出了一种构造方法，证明了非柔性群的存在性，从而解答了群论中的一",
@@ -100,40 +133,6 @@
         {
           "source_id": "openai-blog",
           "url": "https://openai.com/index/ten-advances-in-mathematics"
-        }
-      ]
-    },
-    {
-      "id": "5f104a83b8e3a22c",
-      "source_id": "reddit-geminiai",
-      "title": "OpenAI | How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
-      "url": "https://www.reddit.com/r/GoogleGeminiAI/comments/1vbu3ee/openai_how_enabling_two_settings_tripled_our/",
-      "published_at": "2026-07-31T15:26:35+00:00",
-      "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/KeanuRave100\"> /u/KeanuRave100 </a> <br /> <span><a href=\"https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/GoogleGeminiAI/comments/1vbu3ee/openai_how_enabling_two_settings_tripled_our/\">[comments]</a></span>",
-      "category_hint": [
-        "产品发布",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "OpenAI官方分享通过两个设置将ARC-AGI-3分数提升三倍，揭示推理配置的关键影响，极具启发性。",
-      "summary_zh": "OpenAI发布文章，介绍通过启用两个设置，在ARC-AGI-3基准上的得分提高了三倍。文章详细分析了这些设置对模型推理能力的影响，为AI研究和应用提供了重要参考。该发现可能改变对模型配置的认知。",
-      "title_zh": "OpenAI | 如何通过启用两个设置使我们在ARC-AGI-3基准上的得分提高三倍",
-      "weighted_score": 0.765,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "478bf428dc775596",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-geminiai",
-          "url": "https://www.reddit.com/r/GoogleGeminiAI/comments/1vbu3ee/openai_how_enabling_two_settings_tripled_our/"
         }
       ]
     },
@@ -239,6 +238,40 @@
       ]
     },
     {
+      "id": "553c55e0ed0bf551",
+      "source_id": "reddit-ollama",
+      "title": "For MoE models the arithmetic splits in two: capacity follows total params, speed follows active",
+      "url": "https://www.reddit.com/r/ollama/comments/1vcbfrq/for_moe_models_the_arithmetic_splits_in_two/",
+      "published_at": "2026-08-01T02:57:33+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>A few people asked for this after the bandwidth thread, so here it is on its own instead of buried in a comment.</p> <p>The dense rule was simple: every token reads every weight, so tokens/sec ≈ bandwidth ÷ model size, times about 0.7 for real efficiency. For a mixture of experts that breaks, and it breaks in a more interesting way than &quot;it's faster.&quot;</p> <p><strong>The two numbers stop being the same number</strong></p> <p>In an MoE only the routed experts are read per token. So:</p> <ul> <li><strong>capacity</strong> is set by <em>total</em> parameters — you still have to hold the whole thing</li> <li><strong>speed</strong> is set by <em>active</em> parameters — you only stream a slice of it per token</li> </ul> <p>That's the part everyone repeats. It's right, and it's why a 120B-class MoE can feel quicker than a 30B dense model. But it's where the useful detail starts rather than ends.</p> <p><strong>It's not just the active experts</stron",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "深入解释MoE模型的计算特性，区分容量与速度，对硬件选型有指导意义。",
+      "summary_zh": "作者针对MoE模型，解释了算术上容量遵循总参数，速度遵循活跃参数。对于密集模型，每个token读取所有权重，因此tokens/秒约等于带宽除以模型大小，再乘以约0.7的效率。对于MoE，这个规则被打破，且比“更快”更有趣。作者可能详细说明了MoE如何根据活跃参数计算速度，以及如何影响推理性能。",
+      "title_zh": "对于MoE模型，算术分裂为二：容量遵循总参数，速度遵循活跃参数",
+      "weighted_score": 0.58,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "981a0f136bfd64fe",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-ollama",
+          "url": "https://www.reddit.com/r/ollama/comments/1vcbfrq/for_moe_models_the_arithmetic_splits_in_two/"
+        }
+      ]
+    },
+    {
       "id": "b4abdb1547ac33aa",
       "source_id": "simonwillison",
       "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
@@ -298,7 +331,7 @@
         "practical_value": 0.6
       },
       "story_id": "5ed0597bea80bbd3",
-      "multi_source_count": 2,
+      "multi_source_count": 3,
       "sources": [
         {
           "source_id": "analytics-vidhya",
@@ -307,6 +340,43 @@
         {
           "source_id": "alignment-forum",
           "url": "https://www.alignmentforum.org/posts/ZTdRtSWaw7JgqEtfa/agi-safety-and-alignment-at-google-deepmind-a-summary-of-1"
+        },
+        {
+          "source_id": "the-robot-report",
+          "url": "https://www.therobotreport.com/top-10-robotics-stories-july-2026/"
+        }
+      ]
+    },
+    {
+      "id": "09e62eb15568147b",
+      "source_id": "zh-meituan-tech",
+      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+      "published_at": "2026-07-31T17:24:01.334927+00:00",
+      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "美团开源LoHoSearch基准，用知识图谱校准AI能力认知，解决基准饱和问题。",
+      "summary_zh": "美团开源了LoHoSearch，一个下一代搜索智能体评测基准。过去一年，Search Agent能力显著提升，但现有基准如BrowseComp已迅速饱和，顶尖模型准确率从30%攀升至90%以上，区分度下降。LoHoSearch利用知识图谱校准AI能力认知，旨在提供更有效的评测方法，推动搜索智能体发展。",
+      "title_zh": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "eb00a4db4521a3f4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
         }
       ]
     },
@@ -341,73 +411,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/DHDOQWmDXa4obvC4l99E?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "539d59ca4d73d0b4",
-      "source_id": "zh-tmtpost",
-      "title": "“榨”出硅的极限：怎么让GPU不“闲着”？",
-      "url": "https://www.tmtpost.com/8088046.html",
-      "published_at": "2026-08-01T08:19:49+00:00",
-      "raw_text": "AI Infra的效率革命",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/wx/2026/08/20260801155408871459.jpg",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨AI Infra效率革命，提供GPU利用率提升的实用方法，对工程师有高参考价值。",
-      "summary_zh": "文章聚焦AI基础设施的效率革命，探讨如何最大化GPU利用率。通过优化调度、内存管理、模型并行等策略，可以显著提升计算效率，降低成本。文章结合实例分析了当前AI Infra的瓶颈与解决方案，为从业者提供了实用的优化思路。",
-      "title_zh": "“榨”出硅的极限：怎么让GPU不“闲着”？",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "6c7dd7ffdba28f6b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8088046.html"
-        }
-      ]
-    },
-    {
-      "id": "bbe5ba1433a32454",
-      "source_id": "kdnuggets",
-      "title": "Building Voice-Controlled AI Agents",
-      "url": "https://www.kdnuggets.com/building-voice-controlled-ai-agents",
-      "published_at": "2026-07-31T14:00:06+00:00",
-      "raw_text": "Building a voice-controlled AI agents isn't hard, this article breaks the pipeline into its real components: streaming speech recognition, turn detection, streaming generation, interruption handling, and tool calling under voice constraints and shows what each one is responsible for.",
-      "category_hint": [
-        "行业动态",
-        "论文研究"
-      ],
-      "image_url": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-Voice-Controlled-AI-Agents-scaled.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "系统拆解语音控制AI Agent的构建流程，涵盖流式识别、中断处理等关键组件。",
-      "summary_zh": "文章详细介绍了构建语音控制AI Agent的完整流程，包括流式语音识别、语音活动检测、流式生成、中断处理以及在语音约束下的工具调用。每个组件的作用和实现要点都被清晰阐述，为开发者提供了实用的技术指南。",
-      "title_zh": "构建语音控制的AI Agent",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.5,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "45be431a0986f29a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "kdnuggets",
-          "url": "https://www.kdnuggets.com/building-voice-controlled-ai-agents"
         }
       ]
     }
