@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "generated_at": "2026-08-02T02:08:18.149241+00:00",
+  "generated_at": "2026-08-02T06:38:08.122146+00:00",
   "items": [
     {
       "id": "09290b142f7f87df",
@@ -32,39 +32,6 @@
         {
           "source_id": "zh-tonybai",
           "url": "https://tonybai.com/2026/08/02/google-agent-scaling-science-multi-agent-myth/"
-        }
-      ]
-    },
-    {
-      "id": "3ea2b15c076dab74",
-      "source_id": "zh-tonybai",
-      "title": "YC亲自下场开源内部Harness：QM，一个“多人在线”的公司级Agent操作系统",
-      "url": "https://tonybai.com/2026/08/01/yc-open-source-qm-multiplayer-agent-harness/",
-      "published_at": "2026-08-01T04:00:00+00:00",
-      "raw_text": "Y Combinator于2026年7月底在GitHub上开源了内部Agent系统QM，一个专为初创公司设计的“多人在线Agent操作系统”。与市面上大多数面向个人的AI助理不同，QM为每位员工和每个项目分配独立的沙箱、记忆和权限，同时支持在Slack频道和Web端进行团队级协作。本文将从产品定位、技术架构、安全机制到部署方式，完整解读这个MIT协议开源项目，以及它背后折射出的“AI原生公司”组织形态变化。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "YC开源内部Agent系统QM，MIT协议，深度解析其架构与组织影响，对AI原生公司有启发。",
-      "summary_zh": "Y Combinator于2026年7月底在GitHub开源内部Agent系统QM，一个专为初创公司设计的“多人在线Agent操作系统”。QM为每位员工和项目分配独立沙箱、记忆和权限，支持Slack和Web端团队协作。文章从产品定位、技术架构、安全机制到部署方式完整解读，并探讨其反映的“AI原生公司”组织形态变化。",
-      "title_zh": "YC亲自下场开源内部Harness：QM，一个“多人在线”的公司级Agent操作系统",
-      "weighted_score": 0.745,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "7c1ae2e18e484ecd",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/08/01/yc-open-source-qm-multiplayer-agent-harness/"
         }
       ]
     },
@@ -103,6 +70,74 @@
       ]
     },
     {
+      "id": "207108cd24d0efca",
+      "source_id": "reddit-llmdevs",
+      "title": "I measured 4-bit KV cache perplexity across context length instead of at one point. It bottoms out at 2K and climbs 43% by 8K.",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vcvho7/i_measured_4bit_kv_cache_perplexity_across/",
+      "published_at": "2026-08-01T18:55:36+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I swept KV cache quantization across context length instead of measuring it at a<br /> single point. `q8_0` is free everywhere (+0.02–0.07%). `q4_0` is not just expensive — its<br /> absolute perplexity **bottoms out around 2K tokens and then gets worse**, +43% from 2K to 8K.<br /> f16 and q8_0 never do that; more context always helps them. So the compression you'd reach<br /> for *specifically to hold more context* is the one that stops rewarding context.</p> <p><strong>The setup</strong></p> <p>Everything is one model, and that matters — see the caveats.</p> <p>- <strong>Qwen3-0.6B, F16 weights, unquantized, identical in every run.</strong> Only `--cache-type-k` and<br /> `--cache-type-v` change. If you compare a q4_0 KV run against a Q4_K_M *weight* build you're<br /> measuring two quantizers at once.<br /> - llama.cpp <strong>b10050</strong>, Metal, M2 16 GiB, `--flash-attn on` throughout.<br /> - WikiText-2 raw test, <strong>262,144</strong> <stro",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "首次系统测量KV cache量化在不同上下文长度下的困惑度变化，发现q4_0在长上下文下性能恶化，对量化实践有重要指导意义。",
+      "summary_zh": "作者对KV cache量化在不同上下文长度下的困惑度进行了系统测量，发现q8_0量化在所有长度下几乎无损（困惑度仅增加0.02-0.07%），而q4_0量化在约2K token处困惑度最低，之后随上下文增长而恶化，到8K时增加43%。相比之下，f16和q8_0的困惑度随上下文增长持续下降。这一发现表明，KV cache量化对长上下文场景的影响被低估，压缩方法需要针对上下文长度进行优化。",
+      "title_zh": "我测量了4-bit KV cache在不同上下文长度下的困惑度：在2K处最低，到8K时上升43%",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "fb6c622770164cb0",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1vcvho7/i_measured_4bit_kv_cache_perplexity_across/"
+        }
+      ]
+    },
+    {
+      "id": "c0c8e5f742121596",
+      "source_id": "reddit-llmdevs",
+      "title": "Open-sourced my notes on building AI agents — turned into a full knowledge base (RAG, MCP, multi-agent, evaluation, etc.)",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vcl8hf/opensourced_my_notes_on_building_ai_agents_turned/",
+      "published_at": "2026-08-01T11:46:13+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Here's a body that pairs well with title #1 or #4 — genuine tone, front-loads value, ends with an easy ask:</p> <p>Been deep in building/reading about AI agents for a while and kept wishing there was one place that pulled together reasoning strategies, tool use, RAG, MCP, multi-agent patterns, safety, and deployment — without it being either a random blog post or a 40-tab research rabbit hole. So I built it.</p> <p><strong>AI-Agent-Skills</strong> is an open-source knowledge base structured like Awesome Lists + Papers with Code + an actual engineering handbook:</p> <ul> <li><strong>20 categories</strong> — core cognition (Chain of Thought, Tree/Graph of Thought, planning, memory) → tool use &amp; MCP → RAG (chunking, hybrid search, GraphRAG, CRAG, Self-RAG) → agent patterns (ReAct, Reflexion, Plan-and-Execute, CodeAct, Voyager) → multi-agent → safety/guardrails → observability, evaluation, and deployment</li> <li>Every page has an architecture diagram,",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "作者将构建AI代理的笔记整理成知识库，涵盖RAG、MCP、多代理等核心主题，是实践者的宝贵资源。",
+      "summary_zh": "作者分享了自己在构建AI代理过程中积累的笔记，并将其整理成一个全面的知识库。该知识库涵盖了推理策略、工具使用、RAG、MCP、多代理模式、安全性和部署等多个方面。作者强调这不是随意的博客文章，而是系统化的整理，旨在为开发者提供一个集中的参考。内容基于作者的深度实践和阅读，具有很高的实用价值，适合希望系统学习AI代理开发的读者。",
+      "title_zh": "开源我的AI代理构建笔记——已转化为完整知识库（RAG、MCP、多代理、评估等）",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "db30fbcdfeee9ff7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1vcl8hf/opensourced_my_notes_on_building_ai_agents_turned/"
+        }
+      ]
+    },
+    {
       "id": "8f2662ef3fc1d852",
       "source_id": "reddit-machinelearning",
       "title": "How Symmetric Are the Insides of a Go Network? [R]",
@@ -137,77 +172,10 @@
       ]
     },
     {
-      "id": "d92b395417130197",
-      "source_id": "reddit-singularity",
-      "title": "Leaked paper attributed to OpenAI claims the first construction of a nonsofic group",
-      "url": "https://www.reddit.com/r/singularity/comments/1vccy9k/leaked_paper_attributed_to_openai_claims_the/",
-      "published_at": "2026-08-01T04:10:45+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/singularity/comments/1vccy9k/leaked_paper_attributed_to_openai_claims_the/\"> <img alt=\"Leaked paper attributed to OpenAI claims the first construction of a nonsofic group\" src=\"https://preview.redd.it/87dopc9suogh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=da08dd59502aa38f3768cbd31543e0cafc5a0c62\" title=\"Leaked paper attributed to OpenAI claims the first construction of a nonsofic group\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This hasn’t been confirmed, but if it’s genuine and the proof holds up, it could be a bigger mathematical breakthrough than OpenAI’s unit distance result.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Outside-Iron-8242\"> /u/Outside-Iron-8242 </a> <br /> <span><a href=\"https://i.redd.it/87dopc9suogh1.png\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/singularity/comments/1vccy9k/leaked_paper_attributed_to_openai_claims_the/\">[comments]</",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": "https://preview.redd.it/87dopc9suogh1.png?width=640&crop=smart&auto=webp&s=da08dd59502aa38f3768cbd31543e0cafc5a0c62",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "泄露论文声称首次构造非sofic群，若属实将颠覆数学基础，极具冲击力。",
-      "summary_zh": "Reddit上流传一份据称来自OpenAI的论文，声称首次构造了非sofic群，这是数学和理论计算机科学领域的重大突破。该结果若被证实，将解决长期悬而未决的问题，对数学基础产生深远影响。但论文来源未经验证，需谨慎对待。",
-      "title_zh": "据称来自OpenAI的泄露论文声称首次构造非sofic群",
-      "weighted_score": 0.555,
-      "score_breakdown": {
-        "source_authority": 0.3,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.2
-      },
-      "story_id": "a8c9f3f8a95a89f1",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-singularity",
-          "url": "https://www.reddit.com/r/singularity/comments/1vccy9k/leaked_paper_attributed_to_openai_claims_the/"
-        }
-      ]
-    },
-    {
-      "id": "539d59ca4d73d0b4",
-      "source_id": "zh-tmtpost",
-      "title": "“榨”出硅的极限：怎么让GPU不“闲着”？",
-      "url": "https://www.tmtpost.com/8088046.html",
-      "published_at": "2026-08-01T08:19:49+00:00",
-      "raw_text": "AI Infra的效率革命",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/wx/2026/08/20260801155408871459.jpg",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨AI Infra效率革命，提供GPU利用率提升的实用方法，对工程师有高参考价值。",
-      "summary_zh": "文章聚焦AI基础设施的效率革命，探讨如何最大化GPU利用率。通过优化调度、内存管理、模型并行等策略，可以显著提升计算效率，降低成本。文章结合实例分析了当前AI Infra的瓶颈与解决方案，为从业者提供了实用的优化思路。",
-      "title_zh": "“榨”出硅的极限：怎么让GPU不“闲着”？",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "6c7dd7ffdba28f6b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8088046.html"
-        }
-      ]
-    },
-    {
-      "id": "c32d665fbb1c56e0",
+      "id": "92dd5120148463b3",
       "source_id": "zh-v2ex",
       "title": "[分享创造] 闭源 Coding Agent 有没有偷偷外联，能不能不靠每版反编译？",
-      "url": "https://www.v2ex.com/t/1231495#reply1",
+      "url": "https://www.v2ex.com/t/1231495#reply2",
       "published_at": "2026-08-01T21:28:15+00:00",
       "raw_text": "最近在想一个很现实的问题：团队把闭源 Coding Agent 接到本地 Qwen / GLM / DeepSeek ，或者允许它读内网私有仓库时，怎么验证这个看不到源码的二进制有没有探测不该碰的地址？<br /><br />每次更新都重新反编译当然可以，但很难变成日常检查。我这次拉了自己的 CanaryProbe 仓库重新跑了一遍：源码测试是 56 passed ；随后启动本地 DNS/TCP 传感器，用内置模拟器解析一个刚生成的诱饵域名，audit.jsonl 记录到一条 TRIPPED ，生成的 HMAC 报告再用 canaryprobe verify 验证通过。<br /><br />这个思路不是“监控所有流量”，而是种一个正常代码路径绝不会碰的值：诱饵主机名、连接地址或假凭证。如果闭源程序去解析、连接或携带它，事件本身就值得报警。它比每次只看二进制更适合做持续回归，也比普通出口白名单多回答一个问题：这个程序为什么会知道并探测一个它本不该碰的值？<br /><br />边界也必须说清楚：TRIPPED 是强阳性证据，但 CLEAN 不是“绝无外联”的证明。没有触发可能只是诱饵没覆盖到真实路径、DNS 没有经过传感器，或者程序换了别的目的地。因此我的做法会是四层组合：<br /><br />1. 出口 deny-by-default / allowlist 负责真正阻断；<br />2. 系统或网关日志记录实际连接；<br />3. 诱饵探针抓“本不该知道却去碰了”的行为；<br />4. 高风险版本再做针对性的二进制检查。<br /><br />仓库和复现步骤： <a href=\"https://github.com/SuperMarioYL/canaryprobe\" rel=\"nofollow noopener\" target=\"_blank\">https://github.com/SuperMarioYL/canaryprobe</a><br /><br />你们在内网或 air-gap 环境里跑闭源 Agent 时，现在主要靠哪一层？有没有把诱饵做成版本升级前后的固定回归用例？",
       "category_hint": [
@@ -217,22 +185,22 @@
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "提出用诱饵值检测闭源AI外联的实用方法，有具体实现和验证，对安全实践有启发。",
-      "summary_zh": "作者针对闭源Coding Agent可能偷偷外联的问题，提出了一种基于诱饵值的检测方法。该方法不监控所有流量，而是植入正常代码路径不会触碰的诱饵主机名、连接地址或假凭证，一旦闭源程序解析或连接这些诱饵，即触发报警。作者通过CanaryProbe仓库进行了验证，源码测试56项通过，模拟器解析诱饵域名后记录到TRIPPED事件，HMAC报告验证通过。该方法比每次反编译更适合持续回归检查，也比普通出口白名单更有效。",
-      "title_zh": "闭源Coding Agent外联检测：诱饵值方法",
-      "weighted_score": 0.685,
+      "reason_zh": "提出用CanaryProbe诱饵检测闭源Coding Agent外联行为，方法新颖实用，适合安全敏感团队。",
+      "summary_zh": "作者针对闭源Coding Agent可能偷偷外联的问题，提出了一种基于诱饵的检测方法。通过植入正常代码路径不会触碰的诱饵域名、连接地址或假凭证，并配合本地DNS/TCP传感器监控，一旦闭源程序解析或连接这些诱饵，就会触发报警。作者用CanaryProbe仓库验证了该方法，源码测试56项通过，模拟器成功记录TRIPPED事件，HMAC报告验证通过。该方法比反编译更适合持续回归检查。",
+      "title_zh": "闭源Coding Agent有没有偷偷外联？用CanaryProbe诱饵检测",
+      "weighted_score": 0.66,
       "score_breakdown": {
         "source_authority": 0.6,
-        "novelty": 0.8,
+        "novelty": 0.7,
         "impact": 0.5,
         "practical_value": 0.9
       },
-      "story_id": "bd6ac04ad68480d2",
+      "story_id": "63b59b216d7ac859",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1231495#reply1"
+          "url": "https://www.v2ex.com/t/1231495#reply2"
         }
       ]
     },
@@ -338,69 +306,104 @@
       ]
     },
     {
-      "id": "574f618947a53693",
-      "source_id": "zh-tmtpost",
-      "title": "自研大模型的马斯克，把豆包装进了特斯拉",
-      "url": "https://www.tmtpost.com/8087804.html",
-      "published_at": "2026-08-01T08:19:41+00:00",
-      "raw_text": "180万亿日均Token调用量的豆包，700万辆搭载的智能汽车，100%覆盖的主流车企。这些数字背后是中国AI从跟随到被需要的完整路径。",
+      "id": "1e059bd8e77f7701",
+      "source_id": "hn-anthropic",
+      "title": "Show HN: Wienerdog – memory and self-improving skills for Claude Code/Codex",
+      "url": "https://github.com/wienerdog-ai/wienerdog/",
+      "published_at": "2026-08-01T13:44:05+00:00",
+      "raw_text": "The idea of Wienerdog was born out of my experience setting up my own simple but effective system of memory, self-improving skills and hooks for Claude Code and Codex. As I was teaching my friends and colleagues how to set up their own I found myself automating more and more of my system setup and finally I decided to publish it on GitHub to help others get more out of their AI usage.<p>So what is Wienerdog? Simply put, it is just files — no daemon, no server, no telemetry: a collection of instructions and skills that you can install by pasting just one line (npx wienerdog@latest init) and it will give your Claude Code &#x2F; Codex:<p>- a proper base information CLAUDE.md &#x2F; AGENTS.md file created by doing a simple, friendly interview with you (existing files are respected — Wienerdog only writes inside its own clearly-marked block).\n- a persistent, markdown-based memory vault following the PARA convention, similar to the Obsidian vaults many folks use. Already have a vault? No pro",
       "category_hint": [
-        "行业动态"
+        "行业动态",
+        "产品发布"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/t5y4hyhgf3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "教程方法",
       "depth_score": 0.6,
-      "reason_zh": "通过豆包与特斯拉合作案例，剖析中国AI从跟随到被需要的路径，数据详实，洞察深刻。",
-      "summary_zh": "文章以豆包（字节跳动旗下AI）与特斯拉的合作为切入点，展示了中国AI技术的崛起。豆包日均Token调用量达180万亿，特斯拉700万辆智能汽车搭载其技术，覆盖主流车企100%。这些数字背后，是中国AI从跟随到被需要的完整路径，体现了技术实力和市场认可度的提升。",
-      "title_zh": "自研大模型的马斯克，把豆包装进了特斯拉",
-      "weighted_score": 0.705,
+      "reason_zh": "开源项目Wienerdog为Claude Code/Codex提供记忆与自我改进技能，实用性强，可提升AI使用效率。",
+      "summary_zh": "Wienerdog是一个开源项目，旨在为Claude Code和Codex提供记忆和自我改进技能。作者在分享自己的设置经验时，发现可以自动化更多系统设置，于是将其发布到GitHub。该项目帮助用户更好地利用AI，通过记忆和技能提升来优化交互。对于希望深度定制AI工具的用户来说，这是一个有价值的资源。",
+      "title_zh": "Show HN: Wienerdog – 为Claude Code/Codex提供记忆和自我改进技能",
+      "weighted_score": 0.655,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.9
       },
-      "story_id": "8682e6ece0b0fd92",
+      "story_id": "3ae25c5d08b59192",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8087804.html"
+          "source_id": "hn-anthropic",
+          "url": "https://github.com/wienerdog-ai/wienerdog/"
         }
       ]
     },
     {
-      "id": "d0627bf767c2f651",
-      "source_id": "qbitai",
-      "title": "李飞飞World Labs收购SceniX，物理AI训练正从“采数据”走向“造世界”",
-      "url": "https://www.qbitai.com/2026/08/464532.html",
-      "published_at": "2026-08-01T04:53:33+00:00",
-      "raw_text": "下一场竞争，是谁能造出更多“有用的世界”",
+      "id": "8317dcc8becbd058",
+      "source_id": "infoq-cn-ai",
+      "title": "92% 工程师都在用 AI 后，Uber 开始给 AI “限额”了",
+      "url": "https://www.infoq.cn/article/Iu2dhFs8JiFqoUGuXJ4m?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-01T14:05:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/Iu2dhFs8JiFqoUGuXJ4m?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
-        "模型发布"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "李飞飞团队收购SceniX，标志物理AI训练从数据采集转向世界构建，具有战略意义。",
-      "summary_zh": "李飞飞创立的World Labs收购了SceniX，这是一家专注于3D场景表示的公司。此举表明物理AI的训练正在从传统的“采数据”模式转向“造世界”模式，即通过合成高保真虚拟环境来训练AI模型。World Labs旨在构建大型世界模型，使AI能够理解和模拟物理世界。收购SceniX将增强其在3D场景生成和渲染方面的能力，为物理AI提供更丰富的训练数据。文章分析了这一趋势对AI行业的影响，认为下一场竞争将是谁能造出更多“有用的世界”。",
-      "title_zh": "李飞飞World Labs收购SceniX，物理AI训练正从“采数据”走向“造世界”",
-      "weighted_score": 0.69,
+      "reason_zh": "Uber在92%工程师使用AI后开始限制使用，探讨AI工具滥用的治理，对企业有借鉴意义。",
+      "summary_zh": "文章报道了Uber在92%的工程师使用AI工具后，开始对AI使用进行“限额”管理。这可能意味着Uber制定了更严格的AI使用政策，以防止过度依赖、数据泄露或代码质量问题。文章可能分析了Uber的决策背景、具体措施（如限制使用场景、加强审查）以及工程师的反馈。这一案例反映了企业在拥抱AI的同时，也需要平衡效率与风险，为其他公司提供了治理AI使用的参考。",
+      "title_zh": "92% 工程师都在用 AI 后，Uber 开始给 AI “限额”了",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.5
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
       },
-      "story_id": "37bf6452766e8792",
+      "story_id": "a7b284adfbc40de3",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "qbitai",
-          "url": "https://www.qbitai.com/2026/08/464532.html"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/Iu2dhFs8JiFqoUGuXJ4m?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "8bd685dade9ae934",
+      "source_id": "the-decoder",
+      "title": "AI coding agents can modernize research software but can't judge if the science is right",
+      "url": "https://the-decoder.com/ai-coding-agents-can-modernize-research-software-but-cant-judge-if-the-science-is-right/",
+      "published_at": "2026-08-01T14:26:28+00:00",
+      "raw_text": "<p><img alt=\"A black OpenAI logo superimposed on a schematic data plot against a light background, symbolizing AI research and scientific analysis.\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/openai-scientific-software-nano-banana-pro.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        A field report from OpenAI and academic partners shows coding agents can modernize neglected research software, with speedups of up to 60x. But the systems are \"eloquent, convincing, and confidently wrong in ways that are easy to miss,\" participants say. The effort shifts from writing code to the time-consuming work of verifying scientific correctness.</p>\n<p>The article <a href=\"https://the-decoder.com/ai-coding-agents-can-modernize-research-software-but-cant-judge-if-the-science-is-right/\">AI coding agents can modernize research software but can&#039;t judge if the science is right</a> appeared first on",
+      "category_hint": [
+        "模型发布",
+        "行业动态"
+      ],
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/openai-scientific-software-nano-banana-pro.jpg",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "探讨AI编码代理在科研软件现代化中的能力边界，对科研工具开发者有启发。",
+      "summary_zh": "文章指出AI编码代理能帮助现代化研究软件，但无法判断科学正确性。作者认为，虽然AI能重构代码、提升效率，但科学验证仍需人类专家。文章强调AI在科研中的辅助角色，提醒研究者不能完全依赖AI，需保持批判性思维。",
+      "title_zh": "AI编码代理可现代化研究软件，但无法判断科学正确性",
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "2ff910a01b071c3a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/ai-coding-agents-can-modernize-research-software-but-cant-judge-if-the-science-is-right/"
         }
       ]
     }
