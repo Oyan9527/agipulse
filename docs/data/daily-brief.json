@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "generated_at": "2026-08-02T06:38:08.122146+00:00",
+  "generated_at": "2026-08-02T09:58:36.211874+00:00",
   "items": [
     {
       "id": "09290b142f7f87df",
@@ -32,6 +32,39 @@
         {
           "source_id": "zh-tonybai",
           "url": "https://tonybai.com/2026/08/02/google-agent-scaling-science-multi-agent-myth/"
+        }
+      ]
+    },
+    {
+      "id": "8b7725cfdacad6f9",
+      "source_id": "zh-juejin",
+      "title": "多 Agent 系统通信的实现原理与最佳实践",
+      "url": "https://juejin.cn/post/7668907936213139471",
+      "published_at": "2026-08-02T08:48:01+00:00",
+      "raw_text": "2026 年 7 月 28 日，Anthropic 发布了 MCP 协议的第五次大版本修订。 这次更新的核心变化只有一句话 ：协议层不再维护会话状态。initialize 握手、Mcp-Session",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "MCP协议重大更新，深入解析无状态设计对多Agent系统的影响，实践指导性强。",
+      "summary_zh": "本文介绍了Anthropic于2026年7月28日发布的MCP协议第五次大版本修订，核心变化是协议层不再维护会话状态，移除了initialize握手和Mcp-Session等机制。文章详细分析了这一设计决策背后的原因，包括简化协议、提高可扩展性和适应无状态服务等，并探讨了在多Agent系统中如何利用无状态通信实现更灵活的消息传递和状态管理。同时，文章提供了最佳实践建议，如使用外部存储管理会话状态、设计幂等操作等，帮助开发者应对无状态协议带来的挑战。对于构建复杂多Agent系统的工程师而言，本文具有很高的参考价值。",
+      "title_zh": "多Agent系统通信的实现原理与最佳实践",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.9
+      },
+      "story_id": "9baafde933916b41",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7668907936213139471"
         }
       ]
     },
@@ -70,70 +103,35 @@
       ]
     },
     {
-      "id": "207108cd24d0efca",
-      "source_id": "reddit-llmdevs",
-      "title": "I measured 4-bit KV cache perplexity across context length instead of at one point. It bottoms out at 2K and climbs 43% by 8K.",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1vcvho7/i_measured_4bit_kv_cache_perplexity_across/",
-      "published_at": "2026-08-01T18:55:36+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I swept KV cache quantization across context length instead of measuring it at a<br /> single point. `q8_0` is free everywhere (+0.02–0.07%). `q4_0` is not just expensive — its<br /> absolute perplexity **bottoms out around 2K tokens and then gets worse**, +43% from 2K to 8K.<br /> f16 and q8_0 never do that; more context always helps them. So the compression you'd reach<br /> for *specifically to hold more context* is the one that stops rewarding context.</p> <p><strong>The setup</strong></p> <p>Everything is one model, and that matters — see the caveats.</p> <p>- <strong>Qwen3-0.6B, F16 weights, unquantized, identical in every run.</strong> Only `--cache-type-k` and<br /> `--cache-type-v` change. If you compare a q4_0 KV run against a Q4_K_M *weight* build you're<br /> measuring two quantizers at once.<br /> - llama.cpp <strong>b10050</strong>, Metal, M2 16 GiB, `--flash-attn on` throughout.<br /> - WikiText-2 raw test, <strong>262,144</strong> <stro",
+      "id": "9edbdb37980becac",
+      "source_id": "zh-juejin",
+      "title": "一套系统，让 AI 写代码的速度变成生产力",
+      "url": "https://juejin.cn/post/7669028793604046858",
+      "published_at": "2026-08-02T08:51:44+00:00",
+      "raw_text": "AI 生成代码的速度已经超过了人阅读代码的速度。 继续把“逐行看懂全部实现”当作主要质量控制手段，只会让人越来越跟不上 Agent。 但问题不只是代码生成太快。每次启动新会话，Agent 还需要重新理",
       "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "首次系统测量KV cache量化在不同上下文长度下的困惑度变化，发现q4_0在长上下文下性能恶化，对量化实践有重要指导意义。",
-      "summary_zh": "作者对KV cache量化在不同上下文长度下的困惑度进行了系统测量，发现q8_0量化在所有长度下几乎无损（困惑度仅增加0.02-0.07%），而q4_0量化在约2K token处困惑度最低，之后随上下文增长而恶化，到8K时增加43%。相比之下，f16和q8_0的困惑度随上下文增长持续下降。这一发现表明，KV cache量化对长上下文场景的影响被低估，压缩方法需要针对上下文长度进行优化。",
-      "title_zh": "我测量了4-bit KV cache在不同上下文长度下的困惑度：在2K处最低，到8K时上升43%",
-      "weighted_score": 0.71,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "fb6c622770164cb0",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1vcvho7/i_measured_4bit_kv_cache_perplexity_across/"
-        }
-      ]
-    },
-    {
-      "id": "c0c8e5f742121596",
-      "source_id": "reddit-llmdevs",
-      "title": "Open-sourced my notes on building AI agents — turned into a full knowledge base (RAG, MCP, multi-agent, evaluation, etc.)",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1vcl8hf/opensourced_my_notes_on_building_ai_agents_turned/",
-      "published_at": "2026-08-01T11:46:13+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Here's a body that pairs well with title #1 or #4 — genuine tone, front-loads value, ends with an easy ask:</p> <p>Been deep in building/reading about AI agents for a while and kept wishing there was one place that pulled together reasoning strategies, tool use, RAG, MCP, multi-agent patterns, safety, and deployment — without it being either a random blog post or a 40-tab research rabbit hole. So I built it.</p> <p><strong>AI-Agent-Skills</strong> is an open-source knowledge base structured like Awesome Lists + Papers with Code + an actual engineering handbook:</p> <ul> <li><strong>20 categories</strong> — core cognition (Chain of Thought, Tree/Graph of Thought, planning, memory) → tool use &amp; MCP → RAG (chunking, hybrid search, GraphRAG, CRAG, Self-RAG) → agent patterns (ReAct, Reflexion, Plan-and-Execute, CodeAct, Voyager) → multi-agent → safety/guardrails → observability, evaluation, and deployment</li> <li>Every page has an architecture diagram,",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "作者将构建AI代理的笔记整理成知识库，涵盖RAG、MCP、多代理等核心主题，是实践者的宝贵资源。",
-      "summary_zh": "作者分享了自己在构建AI代理过程中积累的笔记，并将其整理成一个全面的知识库。该知识库涵盖了推理策略、工具使用、RAG、MCP、多代理模式、安全性和部署等多个方面。作者强调这不是随意的博客文章，而是系统化的整理，旨在为开发者提供一个集中的参考。内容基于作者的深度实践和阅读，具有很高的实用价值，适合希望系统学习AI代理开发的读者。",
-      "title_zh": "开源我的AI代理构建笔记——已转化为完整知识库（RAG、MCP、多代理、评估等）",
-      "weighted_score": 0.685,
+      "reason_zh": "针对AI代码生成速度超过人阅读速度的问题，提出系统性质量控制方法，实用性强。",
+      "summary_zh": "文章指出AI生成代码的速度已超过人类阅读速度，传统的逐行审查方式难以跟上Agent的产出。作者提出了一套系统性的方法，将质量控制从代码审查转向更高层次的抽象，例如通过测试驱动开发、代码规范自动检查、以及利用AI进行代码评审等手段。文章强调需要重新设计开发流程，以适应AI辅助编程的新常态，并分享了实际项目中的经验。对于希望提升AI编程效率的团队和个人，本文提供了可操作的策略。",
+      "title_zh": "一套系统，让AI写代码的速度变成生产力",
+      "weighted_score": 0.74,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.7,
         "novelty": 0.7,
-        "impact": 0.6,
+        "impact": 0.7,
         "practical_value": 0.9
       },
-      "story_id": "db30fbcdfeee9ff7",
+      "story_id": "be6be54981dc43fa",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1vcl8hf/opensourced_my_notes_on_building_ai_agents_turned/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7669028793604046858"
         }
       ]
     },
@@ -172,6 +170,107 @@
       ]
     },
     {
+      "id": "2e3c760f5c1b69ce",
+      "source_id": "reddit-machinelearning",
+      "title": "[R] CausalVLBench: Benchmarking Visual Causal Reasoning in Large VLMs.",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vdd7ty/r_causalvlbench_benchmarking_visual_causal/",
+      "published_at": "2026-08-02T09:07:49+00:00",
+      "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/moschles\"> /u/moschles </a> <br /> <span><a href=\"https://arxiv.org/html/2506.11034v2\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1vdd7ty/r_causalvlbench_benchmarking_visual_causal/\">[comments]</a></span>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出CausalVLBench基准，评估大型视觉语言模型的因果推理能力，具有学术价值。",
+      "summary_zh": "这篇论文介绍了CausalVLBench，一个用于评估大型视觉语言模型（VLMs）视觉因果推理能力的基准测试。该基准旨在衡量模型在理解图像中因果关系方面的表现，包括因果判断、反事实推理等任务。论文详细描述了基准的设计、数据集构建和评估方法，并报告了多个主流VLMs在CausalVLBench上的性能结果。研究发现，现有模型在视觉因果推理方面仍有较大提升空间。这项工作为VLM的评估和发展提供了新的视角。",
+      "title_zh": "[R] CausalVLBench：大型视觉语言模型视觉因果推理基准测试",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "6e56f8cc4786381b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1vdd7ty/r_causalvlbench_benchmarking_visual_causal/"
+        }
+      ]
+    },
+    {
+      "id": "6e1147242b2130d5",
+      "source_id": "zh-juejin",
+      "title": "OpenWorker 代码解剖：一个 AI 同事\"敢让它干活\"的工程学",
+      "url": "https://juejin.cn/post/7668977124872716338",
+      "published_at": "2026-08-02T08:40:08+00:00",
+      "raw_text": "这套决策的核心可以浓缩成一个概念——**缰绳悖论**：给 agent 套的缰绳越多，你能放心交给它的活就越多。约束不削减能力，约束换信任，信任换授权。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析AI Agent工程中的约束与信任关系，提供可迁移的设计思路。",
+      "summary_zh": "文章通过OpenWorker代码解剖，提出'缰绳悖论'：给agent的约束越多，越能放心授权。作者认为约束不削减能力，而是换取信任，进而获得更多授权。文章详细分析工程实践，对AI系统设计有启发。",
+      "title_zh": "OpenWorker代码解剖：AI同事'敢让它干活'的工程学",
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "87c117d78bf3cd1f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7668977124872716338"
+        }
+      ]
+    },
+    {
+      "id": "7289ca32b059ee4f",
+      "source_id": "reddit-singularity",
+      "title": "Openai astra training model solved 10 major open problems in mathematics,quantum complexity and theoretical computer science.",
+      "url": "https://www.reddit.com/r/singularity/comments/1vdc0ae/openai_astra_training_model_solved_10_major_open/",
+      "published_at": "2026-08-02T07:56:38+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/singularity/comments/1vdc0ae/openai_astra_training_model_solved_10_major_open/\"> <img alt=\"Openai astra training model solved 10 major open problems in mathematics,quantum complexity and theoretical computer science.\" src=\"https://preview.redd.it/o5s0y3um3xgh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=fa8ebd0d1e0f2d0f6347b194de25fe6a232bb378\" title=\"Openai astra training model solved 10 major open problems in mathematics,quantum complexity and theoretical computer science.\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Rizwankhuharo\"> /u/Rizwankhuharo </a> <br /> <span><a href=\"https://i.redd.it/o5s0y3um3xgh1.jpeg\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/singularity/comments/1vdc0ae/openai_astra_training_model_solved_10_major_open/\">[comments]</a></span> </td></tr></table>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": "https://preview.redd.it/o5s0y3um3xgh1.jpeg?width=640&crop=smart&auto=webp&s=fa8ebd0d1e0f2d0f6347b194de25fe6a232bb378",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "传闻OpenAI模型解决多个数学难题，若属实将具重大意义，但需谨慎看待。",
+      "summary_zh": "Reddit帖子声称OpenAI的Astra训练模型解决了数学、量子复杂性和理论计算机科学中的10个重大开放问题。该消息尚未得到官方证实，但若属实将是对AI能力的重大突破。帖子引发广泛讨论，但需谨慎对待未经证实的声明。",
+      "title_zh": "OpenAI Astra训练模型解决10个重大数学难题？",
+      "weighted_score": 0.605,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.3
+      },
+      "story_id": "8067ad9854b74445",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-singularity",
+          "url": "https://www.reddit.com/r/singularity/comments/1vdc0ae/openai_astra_training_model_solved_10_major_open/"
+        }
+      ]
+    },
+    {
       "id": "92dd5120148463b3",
       "source_id": "zh-v2ex",
       "title": "[分享创造] 闭源 Coding Agent 有没有偷偷外联，能不能不靠每版反编译？",
@@ -205,40 +304,6 @@
       ]
     },
     {
-      "id": "590046fabe1b65c7",
-      "source_id": "infoq-cn-ai",
-      "title": "Quick BI 数据分析智能体的可靠工程实践｜AICon深圳",
-      "url": "https://www.infoq.cn/article/VJ3s26QZUG1C5ANF2O4Q?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-01T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/VJ3s26QZUG1C5ANF2O4Q?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Quick BI数据分析智能体的工程实践分享，涉及可靠性和架构设计，对开发者有高参考价值。",
-      "summary_zh": "本文是AICon深圳大会的分享，介绍了Quick BI数据分析智能体的可靠工程实践。文章可能详细阐述了智能体的整体架构、关键模块、以及如何保证系统可靠性，包括错误处理、降级策略、监控告警等。还讨论了在真实业务场景中遇到的挑战和解决方案，如数据一致性、性能优化、多轮对话管理等。这些实践经验对于构建生产级AI智能体具有重要参考价值。",
-      "title_zh": "Quick BI 数据分析智能体的可靠工程实践｜AICon深圳",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "3d5aacb5d40d7c38",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/VJ3s26QZUG1C5ANF2O4Q?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
       "id": "2470e9967dd38759",
       "source_id": "zh-tmtpost",
       "title": "如果这不是公关：为什么请伯南克可能是Anthropic的最优解？",
@@ -268,40 +333,6 @@
         {
           "source_id": "zh-tmtpost",
           "url": "https://www.tmtpost.com/8088340.html"
-        }
-      ]
-    },
-    {
-      "id": "c19374d34698ce67",
-      "source_id": "infoq-cn-ai",
-      "title": "基于 CyberData 的 Data Agent：构建企业数据智能中枢的工程范式｜AICon深圳",
-      "url": "https://www.infoq.cn/article/5KYVt93chdBrtDsvTEcK?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-02T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/5KYVt93chdBrtDsvTEcK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "介绍Data Agent构建范式，对企业数据智能建设有实践指导意义。",
-      "summary_zh": "文章基于CyberData介绍Data Agent的构建方法，提出构建企业数据智能中枢的工程范式。内容涵盖数据Agent的设计原则、架构实现和落地案例，为企业在数据智能领域的实践提供参考。",
-      "title_zh": "基于CyberData的Data Agent：构建企业数据智能中枢的工程范式｜AICon深圳",
-      "weighted_score": 0.595,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "26bc578795d6d2e7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/5KYVt93chdBrtDsvTEcK?utm_source=rss&utm_medium=article"
         }
       ]
     },
@@ -370,40 +401,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/Iu2dhFs8JiFqoUGuXJ4m?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "8bd685dade9ae934",
-      "source_id": "the-decoder",
-      "title": "AI coding agents can modernize research software but can't judge if the science is right",
-      "url": "https://the-decoder.com/ai-coding-agents-can-modernize-research-software-but-cant-judge-if-the-science-is-right/",
-      "published_at": "2026-08-01T14:26:28+00:00",
-      "raw_text": "<p><img alt=\"A black OpenAI logo superimposed on a schematic data plot against a light background, symbolizing AI research and scientific analysis.\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/openai-scientific-software-nano-banana-pro.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        A field report from OpenAI and academic partners shows coding agents can modernize neglected research software, with speedups of up to 60x. But the systems are \"eloquent, convincing, and confidently wrong in ways that are easy to miss,\" participants say. The effort shifts from writing code to the time-consuming work of verifying scientific correctness.</p>\n<p>The article <a href=\"https://the-decoder.com/ai-coding-agents-can-modernize-research-software-but-cant-judge-if-the-science-is-right/\">AI coding agents can modernize research software but can&#039;t judge if the science is right</a> appeared first on",
-      "category_hint": [
-        "模型发布",
-        "行业动态"
-      ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/openai-scientific-software-nano-banana-pro.jpg",
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "探讨AI编码代理在科研软件现代化中的能力边界，对科研工具开发者有启发。",
-      "summary_zh": "文章指出AI编码代理能帮助现代化研究软件，但无法判断科学正确性。作者认为，虽然AI能重构代码、提升效率，但科学验证仍需人类专家。文章强调AI在科研中的辅助角色，提醒研究者不能完全依赖AI，需保持批判性思维。",
-      "title_zh": "AI编码代理可现代化研究软件，但无法判断科学正确性",
-      "weighted_score": 0.61,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "2ff910a01b071c3a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/ai-coding-agents-can-modernize-research-software-but-cant-judge-if-the-science-is-right/"
         }
       ]
     }
