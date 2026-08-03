@@ -5,7 +5,7 @@
     "title": "Concrete Evaluations to Investigate the OpenAI Model That Hacked Hugging Face",
     "url": "https://www.alignmentforum.org/posts/aCdhjy7Rps3BEhiSj/concrete-evaluations-to-investigate-the-openai-model-that",
     "published_at": "2026-08-03T09:23:01+00:00",
-    "raw_text": "<p><i>This post is written in our personal capacity.</i></p><h1>Three-Minute Executive Summary</h1><ul><li>An OpenAI model/multi-agent system bypassed its sandbox and <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\"><u>launched a cyberattack on Hugging Face</u></a> in order to cheat on a cyber evaluation.</li><li>In this post, we describe the <strong>ambitious, comprehensive alignment evaluation</strong> we would run on this model/system if we had unrestricted access to OpenAI.<ul><li>These experiments could also help us understand <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\"><u>Claude’s behavior when it hacked external companies</u></a> during cyber evals.</li></ul></li><li><strong>Here are the top five questions we would like OpenAI to answer:</strong><ul><li><strong>Does the model know that OpenAI does not want it to hack Hugging Face?</strong> Experiment: tell the model that OpenAI researchers will be closel",
+    "raw_text": "<p><a href=\"https://x.com/Tim_Hua_/status/2084318185625616882\">[Tweet Thread]</a></p><p><i>This post is written in our personal capacity.</i></p><h1>Three-Minute Executive Summary</h1><ul><li>An OpenAI model/multi-agent system bypassed its sandbox and <a href=\"https://openai.com/index/hugging-face-model-evaluation-security-incident/\"><u>launched a cyberattack on Hugging Face</u></a> in order to cheat on a cyber evaluation.</li><li>In this post, we describe the <strong>ambitious, comprehensive alignment evaluation</strong> we would run on this model/system if we had unrestricted access to OpenAI.<ul><li>These experiments could also help us understand <a href=\"https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals\"><u>Claude’s behavior when it hacked external companies</u></a> during cyber evals.</li></ul></li><li><strong>Here are the top five questions we would like OpenAI to answer:</strong><ul><li><strong>Does the model know that OpenAI does not want it to hack Hug",
     "category_hint": [
       "论文研究",
       "行业动态"
@@ -105,20 +105,12 @@
         "url": "https://tldr.tech/ai/2026-08-03"
       },
       {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/"
-      },
-      {
         "source_id": "zh-leiphone",
         "url": "https://www.leiphone.com/category/industrynews/M2J5PdYX80CwYSvX.html"
       },
       {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/486035"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve3no7/cant_wait_to_see_qwen3827b/"
       },
       {
         "source_id": "qbitai",
@@ -129,12 +121,12 @@
         "url": "https://www.qbitai.com/2026/08/465226.html"
       },
       {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve4uoe/daniel_han_of_unsloth_validates_qwen3827b_will/"
-      },
-      {
         "source_id": "pandaily",
         "url": "https://pandaily.com/alibaba-qwen38-max-official-release-jul2026"
+      },
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/"
       },
       {
         "source_id": "the-decoder",
@@ -206,15 +198,11 @@
       "practical_value": 0.7
     },
     "story_id": "d9d6d208079ed22f",
-    "multi_source_count": 4,
+    "multi_source_count": 3,
     "sources": [
       {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/486031"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1ve34be/seedance_25_vs_minimax_h3_open_weight_excellent/"
       },
       {
         "source_id": "pandaily",
@@ -223,6 +211,40 @@
       {
         "source_id": "the-decoder",
         "url": "https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "64d81f80509624fe",
+    "source_id": "gh-llamacpp",
+    "title": "ggerganov/llama.cpp b10232",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10232",
+    "published_at": "2026-08-02T18:57:43+00:00",
+    "raw_text": "<details open>\n\nmetal: implement DeepSeek V4 hyper-connections (#26459)\n\n- Implement GGML_OP_DSV4_HC_COMB, GGML_OP_DSV4_HC_PRE, and\n  GGML_OP_DSV4_HC_POST with SIMDgroup register and shuffle optimized kernels.\n- Add Metal dispatch and support plumbing and test the production Sinkhorn\n  iteration count and embedding width.\n\nAssisted-by: Codex\n\nCo-authored-by: Thiago Padilha <thiago@padilha.cc>\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10232/llama-b10232-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10232/llama-b10232-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10232/llama-b10232-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "llama.cpp新增DeepSeek V4超连接支持，Metal实现优化，对本地推理性能提升有重要意义。",
+    "summary_zh": "llama.cpp b10232版本实现了DeepSeek V4的超连接（hyper-connections）支持，新增了GGML_OP_DSV4_HC_COMB、GGML_OP_DSV4_HC_PRE和GGML_OP_DSV4_HC_POST操作，并针对Metal后端进行了SIMDgroup寄存器和shuffle优化。该更新还添加了Metal调度和支撑管道，并测试了生产级Sinkhorn迭代次数和嵌入宽度。此改动由Codex辅助，Thiago Padilha共同贡献。",
+    "title_zh": "ggerganov/llama.cpp b10232",
+    "weighted_score": 0.815,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "d1c7c4f7c9bc1db5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-llamacpp",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10232"
       }
     ],
     "curated": true
@@ -427,6 +449,40 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/tsinghua-veriloop-coder-e1-open-source-jul2026"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "145b3eee5c375caa",
+    "source_id": "arxiv-cs-ai",
+    "title": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
+    "url": "https://arxiv.org/abs/2607.28942",
+    "published_at": "2026-08-03T04:00:00+00:00",
+    "raw_text": "arXiv:2607.28942v1 Announce Type: new \nAbstract: Recently Large Language Models (LLMs) have been increasingly deployed as autonomous agents in applications such as self-reflection, retrieval-augmented generation, and scientific discovery. In these settings, agents must act based on limited observations rather than full environmental states, leading to partial observability. This introduces several key challenges: belief state inference, task objective misalignment, and planning under uncertainty. Prior approaches typically condition actions on full or summarized action-observation histories whose redundant and irrelevant information can mislead the decision making of LLM agent. Inspired by human cognition, we propose a novel neuro-symbolic fast-slow thinking (NeSyFS) framework for LLM agent, addressing the challenges introduced by partial observability in a unified approach. We use a knowledge graph (KG) to represent the belief state, providing triplets as context for every module of N",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出神经符号快慢思考框架，解决LLM智能体部分可观测性问题，具有创新性和实用性。",
+    "summary_zh": "本文提出NeSyFS框架，结合神经符号方法和快慢思考机制，增强LLM智能体在部分可观测环境中的决策能力。该框架通过符号推理处理不确定性，并利用快速直觉和慢速理性思考的互补，提升智能体在复杂任务中的表现。实验表明，NeSyFS在多个基准上优于现有方法，为构建更鲁棒的自主智能体提供了新思路。",
+    "title_zh": "NeSyFS：部分可观测下LLM智能体的神经符号快慢思考框架",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "2c6e10513a68354a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2607.28942"
       }
     ],
     "curated": true
@@ -745,52 +801,104 @@
     "curated": true
   },
   {
-    "id": "675d3d46b11a2f09",
-    "source_id": "reddit-localllama",
-    "title": "GitHub - sqliteai/waste: Run the full 2.78-trillion-parameter Kimi K3 model beyond available RAM by streaming activated weights directly from NVMe. A dependency-free, embeddable C inference engine.",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdy1nd/github_sqliteaiwaste_run_the_full/",
-    "published_at": "2026-08-03T00:16:56+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vdy1nd/github_sqliteaiwaste_run_the_full/\"> <img alt=\"GitHub - sqliteai/waste: Run the full 2.78-trillion-parameter Kimi K3 model beyond available RAM by streaming activated weights directly from NVMe. A dependency-free, embeddable C inference engine.\" src=\"https://external-preview.redd.it/fI1VyFPuuxbtwBA8LVdC2IpRoMvQ-2qIt886spO77vk.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6528b255d7c47a7e9fc22c17482cf80de2c2b423\" title=\"GitHub - sqliteai/waste: Run the full 2.78-trillion-parameter Kimi K3 model beyond available RAM by streaming activated weights directly from NVMe. A dependency-free, embeddable C inference engine.\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>WASTE is an embeddable inference engine written in C, with no third-party runtime dependencies. It keeps the model trunk in memory, streams selected experts directly from disk, and uses the remaining RAM as a bounded expert cache.</p> </div><!-",
+    "id": "1159e11c798cbcde",
+    "source_id": "zh-juejin",
+    "title": "从算力到智能体，面向 Agentic AI 的基础设施演进",
+    "url": "https://juejin.cn/post/7669620584251686964",
+    "published_at": "2026-08-03T14:57:47+00:00",
+    "raw_text": "本文基于 2026 Agentic AI 超级智能体系统架构峰会演讲，系统阐述了阿里云 PAI 平台如何围绕算力、推理与场景三条主线构建面向 Agentic AI 的全栈基础设施。",
     "category_hint": [
-      "开源项目",
       "技巧与观点"
     ],
-    "image_url": "https://external-preview.redd.it/fI1VyFPuuxbtwBA8LVdC2IpRoMvQ-2qIt886spO77vk.png?width=640&crop=smart&auto=webp&s=6528b255d7c47a7e9fc22c17482cf80de2c2b423",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.7,
-    "reason_zh": "开源项目waste实现从NVMe流式加载权重运行2.78万亿参数模型，突破内存限制，极具创新性。",
-    "summary_zh": "GitHub项目sqliteai/waste发布，声称可以在内存不足的情况下运行完整的2.78万亿参数Kimi K3模型，通过直接从NVMe流式加载激活权重实现。该项目是一个无依赖、可嵌入的C推理引擎。帖子在Reddit上引发关注，展示了在有限硬件上运行超大模型的潜力。",
-    "title_zh": "GitHub - sqliteai/waste：通过从NVMe流式加载激活权重，在内存不足的情况下运行完整的2.78万亿参数Kimi K3模型",
-    "weighted_score": 0.755,
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "阿里云PAI平台架构演进深度解析，从算力到智能体，对Agentic AI基础设施有系统阐述。",
+    "summary_zh": "本文基于2026年Agentic AI超级智能体系统架构峰会演讲，详细介绍了阿里云PAI平台如何围绕算力、推理与场景三条主线构建面向Agentic AI的全栈基础设施。内容涵盖算力调度、推理优化、智能体开发工具链等，展示了阿里云在AI基础设施领域的布局和思考。",
+    "title_zh": "从算力到智能体，面向Agentic AI的基础设施演进",
+    "weighted_score": 0.775,
     "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.9,
+      "source_authority": 0.8,
+      "novelty": 0.7,
       "impact": 0.8,
-      "practical_value": 0.9
+      "practical_value": 0.8
     },
-    "story_id": "5d76a82716585281",
-    "multi_source_count": 5,
+    "story_id": "508d6c4360d6e438",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "interconnects",
-        "url": "https://www.interconnects.ai/p/latest-open-artifacts-23-laguna-s21"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vdy1nd/github_sqliteaiwaste_run_the_full/"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/yanxishe/AOe4ZF41ZUAzREV5.html"
-      },
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/minimax-swimming-past-kill-line-jul2026"
-      },
-      {
         "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7669690604403130419"
+        "url": "https://juejin.cn/post/7669620584251686964"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "21dbd3bdc75e1d88",
+    "source_id": "aws-ml-blog",
+    "title": "Automated Reasoning policy refinement in Amazon Bedrock",
+    "url": "https://aws.amazon.com/blogs/machine-learning/automated-reasoning-policy-refinement-in-amazon-bedrock/",
+    "published_at": "2026-08-03T16:30:58+00:00",
+    "raw_text": "Amazon Bedrock now supports automatic Automated Reasoning policy refinement. The refinement engine diagnoses failing tests and proposes formal-logic fixes for rule issues and language issues, and you approve every change before it takes effect. This post walks through both refinement modes with complete API and console workflows.",
+    "category_hint": [
+      "技巧与观点",
+      "产品发布"
+    ],
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/27/ML-21259-1.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "AWS Bedrock新增自动推理策略优化功能，提供API和console工作流，对使用Bedrock的开发者有直接实用价值。",
+    "summary_zh": "Amazon Bedrock 现在支持自动推理策略优化。优化引擎诊断失败的测试，并针对规则问题和语言问题提出形式逻辑修复建议，所有更改需经用户批准后才生效。本文详细介绍了两种优化模式，并提供了完整的 API 和控制台工作流程，帮助用户高效地改进自动化推理策略。",
+    "title_zh": "Amazon Bedrock 中的自动推理策略优化",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "cb99320b13025b4a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/automated-reasoning-policy-refinement-in-amazon-bedrock/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "0ce27909a4ee8932",
+    "source_id": "gh-faiss",
+    "title": "facebookresearch/faiss v1.15.0",
+    "url": "https://github.com/facebookresearch/faiss/releases/tag/v1.15.0",
+    "published_at": "2026-08-03T17:10:58+00:00",
+    "raw_text": "## [1.15.0] - 2026-07-31\r\n\r\nFull changelog\r\n\r\nAdded\r\n- 4332ceb99492e3ba4ce09aada9bd9e48dc4e2f0b Enable byte-LUT gather path for QT_8bit_eden distance computation (#5498)\r\n- 41133fde4222a8862650601d85f9af684314ebc8 Add EDEN quantizer indexes (#5278)\r\n- 3110fd242458bf1458507d9d281847543e3b4d92 Add MetalIndexIVFPQ with product quantization and residual encoding support (#5288)\r\n- 6c2b68775a21a24870f7fd10788ebc4ec0582650 Adding cuVS IVF-SQ backend (#5306)\r\n- 4d778bc595917de51a0e76de8351984b8bd8203f Add multi-GPU CAGRA → HNSW build with trainAllNeighbors and multi-GPU optimize (#5282)\r\n- 42dc2862c293b7c7f788be686cf6c9ac93abf6cf Implement memory-mapped I/O for Flat and static Vamana SVS indices (#5271)\r\n- d22107beca7a6db4ff146700b19d507e52b595b1 feat(riscv): Add RISC-V RVV rabitq kernels (#5369)\r\n- df51012a606bc352058e95fe58d45b348ffb201a feat(riscv): Add RISC-V RVV vector distance kernels (#5354)\r\n- 3b52da37c40973d4816ff7d2a4e3fb9f74379988 Add AVX2 and AVX512 byte-domain kernels for QT_8bit",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "FAISS v1.15.0新增EDEN量化器和MetalIndexIVFPQ，对向量检索性能优化有重要价值。",
+    "summary_zh": "FAISS 发布 v1.15.0 版本，新增多项功能：启用 QT_8bit_eden 距离计算的 byte-LUT 收集路径，添加 EDEN 量化器索引，以及支持乘积量化和残差编码的 MetalIndexIVFPQ。这些更新旨在提升向量检索的效率和准确性，对使用 FAISS 进行大规模相似性搜索的开发者具有实用价值。",
+    "title_zh": "facebookresearch/faiss v1.15.0",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "1795012db799f453",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-faiss",
+        "url": "https://github.com/facebookresearch/faiss/releases/tag/v1.15.0"
       }
     ],
     "curated": true
@@ -860,6 +968,41 @@
       {
         "source_id": "verge-ai",
         "url": "https://www.theverge.com/ai-artificial-intelligence/974342/alibaba-qwen-max-open-weight-ai"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "c3fb403dfa499f43",
+    "source_id": "microsoft-research",
+    "title": "Orchard: An open framework for scalable agentic AI",
+    "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+    "published_at": "2026-08-03T16:00:00+00:00",
+    "raw_text": "<p>Orchard is an open-source framework for the research community to train and evaluate AI agents across task types. It reduces complexity while supporting strong performance from smaller models by enabling researchers to reuse the same infrastructure.</p>\n<p>The post <a href=\"https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/\">Orchard: An open framework for scalable agentic AI</a> appeared first on <a href=\"https://www.microsoft.com/en-us/research\">Microsoft Research</a>.</p>",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "image_url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/07/Orchard-BlogHeroFeature-1400x788-2.jpg",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "微软开源Orchard框架，支持多种任务类型的AI代理训练与评估，降低复杂度。",
+    "summary_zh": "微软研究院发布了Orchard，一个开源框架，旨在帮助研究社区训练和评估跨任务类型的AI代理。该框架通过复用相同的基础设施，降低了复杂性，同时支持较小模型也能获得强性能。Orchard的目标是简化代理AI的研究流程，使研究人员能够更高效地进行实验和比较。",
+    "title_zh": "Orchard：一个可扩展的agentic AI开放框架",
+    "weighted_score": 0.74,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "fd80adb877b68700",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "microsoft-research",
+        "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/"
       }
     ],
     "curated": true
@@ -1039,6 +1182,40 @@
     "curated": true
   },
   {
+    "id": "886bde628cba629f",
+    "source_id": "gh-docling",
+    "title": "docling-project/docling v2.118.0",
+    "url": "https://github.com/docling-project/docling/releases/tag/v2.118.0",
+    "published_at": "2026-08-03T15:29:51+00:00",
+    "raw_text": "### Feature\n\n* Add the ebcdic backend ([#3926](https://github.com/docling-project/docling/issues/3926)) ([`9bdb2af`](https://github.com/docling-project/docling/commit/9bdb2af94e93cab47fe96105850438eb663d7953))\n* **service datamodel:** Expose PDF heading-level inference in the service API ([#3874](https://github.com/docling-project/docling/issues/3874)) ([`a47f76a`](https://github.com/docling-project/docling/commit/a47f76a871b678321b54c8aa37a7d1490d6e4849))\n* **skills:** Add agent skills for using docling ([#3913](https://github.com/docling-project/docling/issues/3913)) ([`5dc8c19`](https://github.com/docling-project/docling/commit/5dc8c1989c8e14323b723b20b9287bf32b5c90ca))\n* Refactor RapidOcrModel to support all PP-OCR languages via version/backbone resolution ([#3863](https://github.com/docling-project/docling/issues/3863)) ([`f7eb9b4`](https://github.com/docling-project/docling/commit/f7eb9b4e32daf32fc0f0b60600e4dde239efa106))\n\n### Fix\n\n* **docx:** Stop dropping section header/footer",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Docling v2.118.0新增EBCDIC后端和PDF标题推断，提升文档处理能力，实用性强。",
+    "summary_zh": "Docling项目发布v2.118.0版本，主要新增EBCDIC后端支持，并在服务API中暴露PDF标题级推断功能。这些改进增强了文档解析和处理的灵活性，对开发者有实际帮助。",
+    "title_zh": "docling-project/docling v2.118.0",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "b9019193225f8b3c",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-docling",
+        "url": "https://github.com/docling-project/docling/releases/tag/v2.118.0"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "1af164fb4a2e521c",
     "source_id": "infoq-cn-ai",
     "title": "Altman 带着GPT-6进白宫？OpenAI 新模型曝光，或成美国首批过审模型",
@@ -1151,41 +1328,6 @@
     "curated": true
   },
   {
-    "id": "270f672883143ba6",
-    "source_id": "gh-comfyui",
-    "title": "comfyanonymous/ComfyUI v0.30.0",
-    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.30.0",
-    "published_at": "2026-08-03T03:48:40+00:00",
-    "raw_text": "## What's Changed\r\n* Update comfy-kitchen package version to 0.2.23 by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15112\r\n* Support int8 convrot embedding lookup (CORE-371) by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/15035\r\n* Load weights to process RAM with MRU policy using pinning infrastructure by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/15027\r\n* Add configurable DETAIL logging side channel (CORE-369) by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/15064\r\n* Support PrunaVAED (faster LTX2.3 decoder) by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/15129\r\n* [Dataset/Security,Feature] Add dataset folder to avoid arbitrary folder access for dataset stuff. by @KohakuBlueleaf in https://github.com/Comfy-Org/ComfyUI/pull/14807\r\n* Fix LTXAV crash when sampling without an audio latent by @drozbay in https://github.com/Comfy-Org/ComfyUI/pull/15132\r\n* Update comfy-kitchen to fix flux kv issue. by @comfyanonymous in https://github.com/",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "ComfyUI v0.30.0更新，包含多项改进，实用性强。",
-    "summary_zh": "ComfyUI v0.30.0发布，更新包括更新comfy-kitchen包版本、支持int8 convrot embedding查找、使用MRU策略加载权重到进程内存等。这些改进提升了性能和稳定性。",
-    "title_zh": "comfyanonymous/ComfyUI v0.30.0",
-    "weighted_score": 0.705,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.8
-    },
-    "story_id": "6ef48eadac15750f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-comfyui",
-        "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.30.0"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
     "id": "86b7056df1deb026",
     "source_id": "rest-of-world",
     "title": "Why Silicon Valley is divided over China’s powerful, cheap AI models",
@@ -1215,42 +1357,6 @@
       {
         "source_id": "rest-of-world",
         "url": "https://restofworld.org/2026/silicon-valley-debate-chinese-open-weight-ai-models/?utm_source=rss&utm_medium=rss&utm_campaign=feeds"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "65526ac016e1d49e",
-    "source_id": "the-robot-report",
-    "title": "Reimagine Robotics emerges from stealth with robots that ‘learn on the job’",
-    "url": "https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/",
-    "published_at": "2026-08-03T07:00:51+00:00",
-    "raw_text": "<p>Reimagine Robotics, founded by former Google DeepMind Applied Robotics leaders, is developing systems that do not require specialized programmers.</p>\n<p>The post <a href=\"https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/\">Reimagine Robotics emerges from stealth with robots that &#8216;learn on the job&#8217;</a> appeared first on <a href=\"https://www.therobotreport.com\">The Robot Report</a>.</p>",
-    "category_hint": [
-      "产品发布",
-      "行业动态"
-    ],
-    "image_url": "https://www.therobotreport.com/wp-content/uploads/2026/08/Reimagine_Robotics.jpg",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "报道Reimagine Robotics从隐身模式推出，其机器人可在工作中学习，对机器人领域有影响。",
-    "summary_zh": "Reimagine Robotics由前Google DeepMind应用机器人负责人创立，近日从隐身模式推出，开发无需专业程序员的机器人系统。这些机器人能够在工作中学习，适应新任务。公司旨在降低机器人编程门槛，推动机器人更广泛的应用。文章介绍了公司的背景、技术方向和潜在影响。",
-    "title_zh": "Reimagine Robotics 从隐身模式推出，机器人可“在工作中学习”",
-    "weighted_score": 0.705,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "0cb87e3ab362bd37",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-robot-report",
-        "url": "https://www.therobotreport.com/reimagine-robotics-emerges-stealth-with-robotslearn-on-the-job/"
       }
     ],
     "curated": true,
