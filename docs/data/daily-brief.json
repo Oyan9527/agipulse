@@ -1,6 +1,6 @@
 {
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T17:49:41.543186+00:00",
+  "generated_at": "2026-08-04T21:13:41.011131+00:00",
   "items": [
     {
       "id": "0b32d7e9b648d943",
@@ -271,6 +271,40 @@
       ]
     },
     {
+      "id": "9ca725e460292feb",
+      "source_id": "latent-space",
+      "title": "Unpacking ChatGPT Work: the Agent for a Billion Users",
+      "url": "https://www.latent.space/p/unpacking-chatgpt-work",
+      "published_at": "2026-08-04T18:20:14+00:00",
+      "raw_text": "An external reconstruction of how Memory, Proactivity, Scheduling, Browser Use, Plugins, Skills and Tools work in the new ChatGPT Work.",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!Lavj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f4e59a2-820f-4225-abfd-6720ef85df8e_1315x1196.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "外部重构ChatGPT Work的Agent机制，深入剖析记忆、主动性等模块，对理解产品设计有启发。",
+      "summary_zh": "文章从外部视角重构了ChatGPT Work中记忆、主动性、调度、浏览器使用、插件、技能和工具等模块的工作原理。通过逆向分析，揭示了这些功能如何协同工作，使ChatGPT Work成为面向十亿用户的Agent。文章提供了技术细节和设计思路，对于理解大型语言模型产品化有重要参考价值。",
+      "title_zh": "解析ChatGPT Work：面向十亿用户的Agent",
+      "weighted_score": 0.745,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "cadb57bb22bf598a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/unpacking-chatgpt-work"
+        }
+      ]
+    },
+    {
       "id": "73385ebef1f6f6a3",
       "source_id": "zh-v2ex",
       "title": "[分享发现] 解决 Claude Code/Codex 跨 Session 失忆：我们开源了长时上下文引擎",
@@ -366,39 +400,6 @@
         {
           "source_id": "zh-oschina",
           "url": "https://my.oschina.net/u/6769809/blog/19729119"
-        }
-      ]
-    },
-    {
-      "id": "f9e994cbaebf678c",
-      "source_id": "zh-v2ex",
-      "title": "[分享创造] 用 Rust 写了个开源桌面 Agent，聊两个实际卡住过我们的性能问题",
-      "url": "https://www.v2ex.com/t/1232115#reply2",
-      "published_at": "2026-08-04T14:05:48+00:00",
-      "raw_text": "BitFun ，开源（ MIT ）桌面端 AI Agent ，Windows / macOS / Linux 都有安装包。Agent 运行时是 Rust ，外壳 Tauri v2 。需要自备模型 API 。<br /><br />不列功能了，讲两个我们真正花了时间的地方。<br /><br />一、Agent 反复搜同一个仓库<br /><br />Agent 干一个任务，会把同一个仓库搜几十上百次。ripgrep 本身够快，但它每次都是冷启动 —— 重新遍历目录树、重新过 gitignore 。在 Chromium 这种千万行级的树上，这部分开销会直接盖过模型推理的耗时。<br /><br />我们做了个跨轮次常驻的索引（ flashgrep ），进程活着索引就在，不用每次重建。实测在 Chromium 上搜索耗时最高降低 94.6%，平均快约 36 倍。绝大部分收益来自不再为每一次工具调用付冷遍历的成本。<br /><br />二、KV Cache 命中率<br /><br />Agent 的 token 成本大头不是新生成的内容，是每一轮重新发过去的上下文。要让 KV Cache 真正命中，prompt 前缀必须逐字节稳定 —— 一个时间戳、一次工具列表重排序，都会让缓存从那个位置断掉。<br /><br />把 prompt 拼装重构成前缀稳定的结构之后，一轮 SWE-Bench-Pro 跑下来平均命中率 98.67%。<br /><br />已知问题先说在前面<br /><br />macOS 第一次打开会提示「已损坏」。还没做 Apple 公证，Gatekeeper 拦的，需要跑一次 xattr -d com.apple.quarantine /Applications/<a href=\"http://BitFun.app\" rel=\"nofollow noopener\" target=\"_blank\">BitFun.app</a> 。这个在修。<br /><br />另外仓库里那组 SWE-Bench 对比数据是我们自己跑的，每个 case 只跑了一次，没排除波动，别当排名看。<br /><br />链接<br /><br />仓库 <a href=\"https://github.com/GCWing/BitFun\" rel=\"nofollow noo",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "分享开源桌面Agent开发中的性能优化经验，具有实践深度和可迁移性。",
-      "summary_zh": "该帖子来自V2EX，作者分享了用Rust开发开源桌面Agent（BitFun）时遇到的两个性能问题及解决方案。第一个问题是Agent反复搜索同一仓库，导致ripgrep冷启动开销大，他们开发了跨轮次常驻索引（flashgrep），在Chromium上搜索耗时最高降低94.6%，平均快约36倍。第二个问题未完整显示，但帖子详细描述了技术挑战和优化思路，对开发者有参考价值。",
-      "title_zh": "[分享创造] 用 Rust 写了个开源桌面 Agent，聊两个实际卡住过我们的性能问题",
-      "weighted_score": 0.685,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.9
-      },
-      "story_id": "40610ca2901ee476",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1232115#reply2"
         }
       ]
     }

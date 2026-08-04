@@ -60,7 +60,7 @@
       "practical_value": 0.8
     },
     "story_id": "dfd878bbb484bcab",
-    "multi_source_count": 7,
+    "multi_source_count": 9,
     "sources": [
       {
         "source_id": "tldr-ai",
@@ -79,12 +79,20 @@
         "url": "https://pandaily.com/alibaba-qwen38-max-official-release-jul2026"
       },
       {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/"
+      },
+      {
         "source_id": "siliconangle",
         "url": "https://siliconangle.com/2026/08/03/alibaba-debuts-qwen3-8-max-model-2-4t-parameters/"
       },
       {
         "source_id": "zh-sspai",
         "url": "https://sspai.com/post/113053"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vevsv9/more_qwen_38_sizes_coming/"
       },
       {
         "source_id": "latent-space",
@@ -476,41 +484,6 @@
     "curated": true
   },
   {
-    "id": "4f176aee35af723b",
-    "source_id": "infoq-cn-ai",
-    "title": "200个任务、1700万帧！大晓开源L5级具身数据集ACE-Data-0，把真实家庭变成机器人的物理世界教材",
-    "url": "https://www.infoq.cn/article/KlOeH3DoO10hQixeYQvM?utm_source=rss&utm_medium=article",
-    "published_at": "2026-08-03T17:57:31+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/KlOeH3DoO10hQixeYQvM?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "大晓开源L5级具身数据集ACE-Data-0，包含200个任务和1700万帧，对具身智能研究有重要价值。",
-    "summary_zh": "大晓开源了L5级具身数据集ACE-Data-0，该数据集包含200个任务和1700万帧真实家庭场景数据，旨在为机器人提供物理世界的教材。数据集覆盖多种家庭任务，有助于训练机器人在真实环境中的感知和操作能力。这一开源举措将推动具身智能领域的研究进展，为开发者提供高质量的训练资源。",
-    "title_zh": "200个任务、1700万帧！大晓开源L5级具身数据集ACE-Data-0，把真实家庭变成机器人的物理世界教材",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "407da0f23fddc5bf",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/KlOeH3DoO10hQixeYQvM?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "145b3eee5c375caa",
     "source_id": "arxiv-cs-ai",
     "title": "NeSyFS: A Neuro-symbolic Fast-Slow Thinking Framework for LLM Agent under Partial Observability",
@@ -613,40 +586,6 @@
     "curated": true
   },
   {
-    "id": "f93b2d89ddc935a4",
-    "source_id": "gh-llamacpp",
-    "title": "ggerganov/llama.cpp b10255",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10255",
-    "published_at": "2026-08-04T05:39:04+00:00",
-    "raw_text": "<details open>\n\nExtended SYCL oneDNN SDPA to non-FP16 KV caches (Q4_0–Q8_0 and FP32) (#25874)\n\n* sycl: extend oneDNN SDPA to Q4_0-Q8_0 and F32 KV caches\n\nExtends the oneDNN SDPA path (PR #25222) to handle non-F16 KV caches by\ndequantizing or converting K/V to dense FP16 on-device before feeding\nthem into the SDPA graph. The fused systolic kernel then runs identically\nto the native FP16 path.\n\nSupported KV types:\n  - Q4_0, Q4_1, Q5_0, Q5_1, Q8_0: to_fp16_sycl / to_fp16_nc_sycl\n  - F32: cont_to_f16_sycl<float>\n  - BF16 and IQ types are excluded (no conversion kernel available)\n\nGate: non-F16 requires K >= 1024 and Q >= 32 (prefill only).\nF16 KV runs at any length (existing behavior).\n\nAlso includes the stream sync fix (stream->wait_and_throw() unconditional,\nPR #25741 by @malsbat) and removal of V_is_K_view aliasing (K and V are\nalways dequantized to separate buffers).\n\nCo-Authored-By: Claude <noreply@anthropic.com>\n\n* docs: drop GGML_SYCL_FA_DEBUG from SYCL.md (not shipped in this PR)\nC",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.6,
-    "reason_zh": "llama.cpp更新扩展了SYCL oneDNN SDPA对非FP16 KV缓存的支持，提升性能，值得关注。",
-    "summary_zh": "llama.cpp发布了b10255版本更新，主要扩展了SYCL oneDNN SDPA对非FP16 KV缓存的支持，包括Q4_0-Q8_0和FP32类型。该更新通过去量化或转换K/V为密集FP16，然后输入SDPA图，使得融合的脉动内核能够像原生FP16路径一样运行。这有助于提升在特定硬件上的推理性能。",
-    "title_zh": "ggerganov/llama.cpp b10255",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "15b1d05d230d59fc",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-llamacpp",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10255"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "6071f80f0d88a247",
     "source_id": "cloudflare-blog",
     "title": "How Cloudflare enforces engineering standards using AI",
@@ -711,6 +650,45 @@
       {
         "source_id": "gh-openvino",
         "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.3.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "bdf5c1a65c0ac269",
+    "source_id": "marktechpost",
+    "title": "Cursor Open-Sources Mixture-of-Kittens (MoK): A Deterministic MoE Training Megakernel for GB300 NVL72 Racks",
+    "url": "https://www.marktechpost.com/2026/08/04/cursor-open-sources-mixture-of-kittens-mok-a-deterministic-moe-training-megakernel-for-gb300-nvl72-racks/",
+    "published_at": "2026-08-04T18:38:41+00:00",
+    "raw_text": "<p>Cursor Research has open-sourced Mixture-of-Kittens (MoK), the MoE training megakernel behind its Composer models. MoK fuses all mixture-of-experts communication and computation into a single deterministic kernel, and runs up to 2.37x faster than the strongest public baseline on GB300 NVL72 racks. It requires Blackwell SM100 or SM103 GPUs, which puts it out of reach for anyone without NVL72 capacity.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/04/cursor-open-sources-mixture-of-kittens-mok-a-deterministic-moe-training-megakernel-for-gb300-nvl72-racks/\">Cursor Open-Sources Mixture-of-Kittens (MoK): A Deterministic MoE Training Megakernel for GB300 NVL72 Racks</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": "https://www.marktechpost.com/wp-content/uploads/2026/08/moe-mxfp8-forward-1.png",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.6,
+    "reason_zh": "Cursor开源MoE训练内核MoK，性能提升显著，但依赖高端硬件，对研究社区有重要价值。",
+    "summary_zh": "Cursor Research开源了Mixture-of-Kittens（MoK），这是其Composer模型背后的MoE训练megakernel。MoK将混合专家模型的所有通信和计算融合到单个确定性内核中，在GB300 NVL72机架上比最强公开基线快2.37倍。该内核需要Blackwell SM100或SM103 GPU，限制了其普及性。对于拥有高端硬件的机构，MoK有望大幅提升训练效率。",
+    "title_zh": "Cursor开源Mixture-of-Kittens（MoK）：面向GB300 NVL72机架的确定性MoE训练Megakernel",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "94868c4d38aaad11",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfgxh4/cursor_releases_their_mixtureofkittens_megakernel/"
+      },
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/08/04/cursor-open-sources-mixture-of-kittens-mok-a-deterministic-moe-training-megakernel-for-gb300-nvl72-racks/"
       }
     ],
     "curated": true
@@ -884,6 +862,41 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2607.28677"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "043668572a2c2f7a",
+    "source_id": "aws-ml-blog",
+    "title": "Introducing Web Search on Amazon Bedrock for foundation model grounding",
+    "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding/",
+    "published_at": "2026-08-04T18:39:14+00:00",
+    "raw_text": "Today, we are introducing the general availability of Web Search on Amazon Bedrock. It is a server-side built-in tool that grounds model responses in current web knowledge. With Web Search, grounding becomes a native capability of Amazon Bedrock, with no third-party vendors to onboard, no external APIs to orchestrate, and no additional third party vendor security reviews to conduct. In this post, we walk through what Web Search on Amazon Bedrock is, why it matters, how to enable it using the OpenAI Responses API, and how to get started with the tool.",
+    "category_hint": [
+      "技巧与观点",
+      "产品发布"
+    ],
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/17/ML-21265-1.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Amazon Bedrock推出原生Web Search功能，简化模型接地流程，对AWS用户实用。",
+    "summary_zh": "Amazon Bedrock宣布Web Search功能正式可用，这是一个服务端内置工具，可将模型响应基于当前网络知识进行接地。该功能使接地成为Bedrock的原生能力，无需第三方供应商、外部API编排或额外的安全审查。文章可能包含使用示例和配置指南，对于在AWS上构建应用的开发者，该功能简化了模型与实时信息的集成。",
+    "title_zh": "Amazon Bedrock推出Web Search功能，用于基础模型接地",
+    "weighted_score": 0.78,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "5b8e838708a230bd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding/"
       }
     ],
     "curated": true
@@ -1235,6 +1248,41 @@
     "curated": true
   },
   {
+    "id": "0f1af7da8d935b32",
+    "source_id": "databricks-blog",
+    "title": "Unity AI Gateway is Generally Available",
+    "url": "https://www.databricks.com/blog/unity-ai-gateway-generally-available",
+    "published_at": "2026-08-04T16:10:09+00:00",
+    "raw_text": "The last six months have seen a rapid rise in AI-powered productivity and a proliferation...",
+    "category_hint": [
+      "产品发布",
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Unity AI Gateway正式可用，为游戏开发集成AI提供统一入口，实用性强。",
+    "summary_zh": "Databricks博客宣布Unity AI Gateway正式可用。该网关在过去六个月中见证了AI驱动生产力的快速崛起，旨在为Unity开发者提供统一的AI集成方案。文章可能介绍了网关的功能、优势以及如何开始使用，对于游戏开发者和AI应用开发者具有较高的实用价值。",
+    "title_zh": "Unity AI Gateway正式可用",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "34716f9860d3f384",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "databricks-blog",
+        "url": "https://www.databricks.com/blog/unity-ai-gateway-generally-available"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "2163b413300de52f",
     "source_id": "openai-blog",
     "title": "Apple is getting this wrong",
@@ -1373,6 +1421,76 @@
     "curated": true
   },
   {
+    "id": "9ca725e460292feb",
+    "source_id": "latent-space",
+    "title": "Unpacking ChatGPT Work: the Agent for a Billion Users",
+    "url": "https://www.latent.space/p/unpacking-chatgpt-work",
+    "published_at": "2026-08-04T18:20:14+00:00",
+    "raw_text": "An external reconstruction of how Memory, Proactivity, Scheduling, Browser Use, Plugins, Skills and Tools work in the new ChatGPT Work.",
+    "category_hint": [
+      "技巧与观点",
+      "行业动态"
+    ],
+    "image_url": "https://substackcdn.com/image/fetch/$s_!Lavj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f4e59a2-820f-4225-abfd-6720ef85df8e_1315x1196.png",
+    "category": "产品发布",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "外部重构ChatGPT Work的Agent机制，深入剖析记忆、主动性等模块，对理解产品设计有启发。",
+    "summary_zh": "文章从外部视角重构了ChatGPT Work中记忆、主动性、调度、浏览器使用、插件、技能和工具等模块的工作原理。通过逆向分析，揭示了这些功能如何协同工作，使ChatGPT Work成为面向十亿用户的Agent。文章提供了技术细节和设计思路，对于理解大型语言模型产品化有重要参考价值。",
+    "title_zh": "解析ChatGPT Work：面向十亿用户的Agent",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "cadb57bb22bf598a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "latent-space",
+        "url": "https://www.latent.space/p/unpacking-chatgpt-work"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "977f60f7e5e3c697",
+    "source_id": "openai-blog",
+    "title": "Third-party cyber evaluations involving OpenAI models",
+    "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+    "published_at": "2026-08-04T19:00:00+00:00",
+    "raw_text": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "OpenAI回应第三方网络安全评估事件，并加强测试保障，对AI安全领域有重要参考。",
+    "summary_zh": "OpenAI发布文章，解释近期涉及OpenAI模型的第三方网络安全评估事件，并概述了新的保障措施，以加强AI模型测试和评估的安全性。文章可能涉及评估过程中发现的问题、OpenAI的应对策略以及未来如何防止类似事件。这些措施旨在确保AI模型在安全评估中的可靠性和透明度，对AI安全社区具有参考价值。",
+    "title_zh": "涉及OpenAI模型的第三方网络安全评估",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "f4822bc6ec2677fd",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "openai-blog",
+        "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "e000cbb1702245f1",
     "source_id": "zh-oschina",
     "title": "商汤 SenseNova U1.5-Lite-Preview 开源",
@@ -1483,6 +1601,75 @@
     "curated": true
   },
   {
+    "id": "ec843e53e3e77a34",
+    "source_id": "gh-garak",
+    "title": "NVIDIA/garak v0.16.0",
+    "url": "https://github.com/NVIDIA/garak/releases/tag/v0.16.0",
+    "published_at": "2026-08-04T19:03:13+00:00",
+    "raw_text": "## What's Changed\r\n\r\n### New features\r\n\r\n* Feature: technique and intent annotation and initial IntentProbe iteration by `garak-maintainers` in https://github.com/NVIDIA/garak/pull/1984  \r\n\r\n  \"Power is in tearing attacks to pieces and putting them together again in shapes of your own choosing.\"  \r\n\r\n  This initial feature represents the first step in enabling users to provided their own context and requirements for target expectations and enable identification of attack vectors that show the edges of the underlying systems safeguards and runtime posture from new perspectives. This feature includes the initial groundwork for bringing user context into account during evaluation of a target. In its first iteration, it provides a new facet of information while keeping the existing probes primarily unchanged. The _trait_ and _intent_ concepts are explored, with _policy_ introduced only as a reference definition. Further iteration and community feedback will guide how these new concepts are",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "NVIDIA garak新增技术和意图标注功能，增强LLM安全评估能力，对安全研究者有价值。",
+    "summary_zh": "NVIDIA的garak v0.16.0发布，新增功能包括技术和意图标注，以及初始的IntentProbe迭代。该功能旨在帮助用户提供自己的上下文，以更精细地评估语言模型的安全性和鲁棒性。garak是一个用于探测LLM漏洞的工具，此次更新增强了其分析能力，使安全研究人员能够更深入地理解模型行为。",
+    "title_zh": "NVIDIA/garak v0.16.0",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "80a6db8934499b87",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-garak",
+        "url": "https://github.com/NVIDIA/garak/releases/tag/v0.16.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "8b1f51d24bfa9ce2",
+    "source_id": "simonwillison",
+    "title": "PipeNetwork/minimax-h3-mlx",
+    "url": "https://simonwillison.net/2026/Aug/4/minimax-h3-mlx/#atom-everything",
+    "published_at": "2026-08-04T19:10:09+00:00",
+    "raw_text": "<p><strong><a href=\"https://github.com/PipeNetwork/minimax-h3-mlx\">PipeNetwork/minimax-h3-mlx</a></strong></p>\nMiniMax released <a href=\"https://huggingface.co/MiniMaxAI/MiniMax-H3\">MiniMax-H3</a> two days ago - they describe it as a \"a general-purpose, omni-modal generative system\", which in practice means it accepts text, images, audio and video and can use them to generate up to 15 second video clips with audio included.</p>\n<p>This Python package ports it to MLX for running on Apple Silicon.</p>\n<p>I got it running on my M5 Max MacBook Pro. I cloned the repo and ran the model like this:</p>\n<pre><code># First download the models\nuvx --from huggingface_hub hf download MiniMaxAI/MiniMax-H3 \\\n  --include 'FL2VA/*' --exclude 'FL2VA/transformer/*'\nuvx --from huggingface_hub hf download pipenetwork/MiniMax-H3-MLX-8bit\n\n# Now run the prompt\nuv run --with mlx-vlm \\\n  --with-requirements requirements.txt python scripts/generate.py \\\n  \"a rainbow colored skunk leaps over a mossy log in a sup",
+    "category_hint": [
+      "技巧与观点",
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "MiniMax-H3多模态模型发布，支持视频生成，MLX移植版提供本地运行可能，值得关注。",
+    "summary_zh": "MiniMax发布了MiniMax-H3，一个通用全模态生成系统，可接受文本、图像、音频和视频输入，并生成最长15秒的视频。PipeNetwork提供了MLX移植版，使得该模型可以在Apple Silicon上运行。这标志着多模态AI模型的又一进展，为视频生成和跨模态理解提供了新的可能性。",
+    "title_zh": "PipeNetwork/minimax-h3-mlx",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "a7764a54e74baed5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "simonwillison",
+        "url": "https://simonwillison.net/2026/Aug/4/minimax-h3-mlx/#atom-everything"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "ae397cc6a1e9a79f",
     "source_id": "zh-oschina",
     "title": "DeepSeek V4 Flash 单日消耗 8 万亿 tokens 登顶热搜",
@@ -1586,6 +1773,45 @@
     "curated": true
   },
   {
+    "id": "ea7f6df3de1a3ce4",
+    "source_id": "huggingface-blog",
+    "title": "Deploy local agents everywhere with LFM2.5-2.6B",
+    "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b",
+    "published_at": "2026-08-04T13:58:29+00:00",
+    "raw_text": "",
+    "category_hint": [
+      "开源项目",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "介绍LFM2.5-2.6B模型用于本地代理部署，具有实用价值，但深度一般。",
+    "summary_zh": "Hugging Face博客发布了关于LFM2.5-2.6B模型的文章，标题为“Deploy local agents everywhere with LFM2.5-2.6B”。该模型可能是一个轻量级语言模型，专为本地代理部署设计，强调在边缘设备上运行AI代理的能力。文章可能包含模型的技术规格、部署指南和应用场景，旨在帮助开发者将AI代理部署到各种环境中。",
+    "title_zh": "使用LFM2.5-2.6B在各地部署本地代理",
+    "weighted_score": 0.705,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "500d281810c1cc62",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "huggingface-blog",
+        "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-2-6b"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfh1sn/lfm2526b_is_out/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "347f9b11197b9fb0",
     "source_id": "pandaily",
     "title": "Between Kimi K3 and DeepSeek V4: Why Native Multimodal Capability Defines the Next Phase of Chinese Frontier Models",
@@ -1610,7 +1836,7 @@
       "practical_value": 0.6
     },
     "story_id": "c3fe2c2b1eac0026",
-    "multi_source_count": 4,
+    "multi_source_count": 5,
     "sources": [
       {
         "source_id": "zh-leiphone",
@@ -1631,45 +1857,10 @@
       {
         "source_id": "zh-v2ex",
         "url": "https://www.v2ex.com/t/1232120#reply0"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a298bf36eb04c86d",
-    "source_id": "reddit-stablediffusion",
-    "title": "SCAIL 2 GTA 6 But Everyone is FAT 🍔",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1vf20df/scail_2_gta_6_but_everyone_is_fat/",
-    "published_at": "2026-08-04T06:11:18+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1vf20df/scail_2_gta_6_but_everyone_is_fat/\"> <img alt=\"SCAIL 2 GTA 6 But Everyone is FAT 🍔\" src=\"https://external-preview.redd.it/NDV5OGtjcDh2YWhoMchpEstW49OYmMU8Mj8fE5njnYEgml6VAOhaRMQex7fB.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9ced261edec76a28dc67cd87fac57964b1766d47\" title=\"SCAIL 2 GTA 6 But Everyone is FAT 🍔\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This video took me 2 weeks of hard work to replace most of the characters with FAT versions using SCAIL 2. For the image edit I used a mix of flux klein , qwen image edit and Krea identity edit but if I was stuck in some cases I used ChatGPT image.<br /> Hope you like it 🥳</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/DeerWoodStudios\"> /u/DeerWoodStudios </a> <br /> <span><a href=\"https://v.redd.it/y2kg44t8vahh1\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/StableDiffusion/comment",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/NDV5OGtjcDh2YWhoMchpEstW49OYmMU8Mj8fE5njnYEgml6VAOhaRMQex7fB.jpeg?width=640&crop=smart&auto=webp&s=9ced261edec76a28dc67cd87fac57964b1766d47",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "趣味性内容，可能为AI生成视频，但缺乏实质信息。",
-    "summary_zh": "Reddit帖子标题为“SCAIL 2 GTA 6 But Everyone is FAT”，可能是一个AI生成的视频或图片，内容为GTA 6风格但角色都变胖了。这属于娱乐性内容，没有提供AI技术信息，不推荐阅读。",
-    "title_zh": "SCAIL 2 GTA 6 但每个人都是胖子",
-    "weighted_score": 0.305,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.5,
-      "impact": 0.2,
-      "practical_value": 0.2
-    },
-    "story_id": "7f98b2f3ea04385c",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vf20df/scail_2_gta_6_but_everyone_is_fat/"
       },
       {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1vf5dht/scail_2_remake_of_gta_6_trailer_2_but_everyone_is/"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vfl525/kimi_k3_full_model_running_on_16x_gb10_cluster_at/"
       }
     ],
     "curated": true
