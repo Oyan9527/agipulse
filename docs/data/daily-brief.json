@@ -1,6 +1,6 @@
 {
   "date": "2026-08-05",
-  "generated_at": "2026-08-05T02:02:14.831819+00:00",
+  "generated_at": "2026-08-05T06:32:43.633054+00:00",
   "items": [
     {
       "id": "cc378daa84fa0358",
@@ -36,35 +36,101 @@
       ]
     },
     {
-      "id": "0b32d7e9b648d943",
+      "id": "a184bd6c1375aab0",
       "source_id": "arxiv-cs-ai",
-      "title": "Self-Play Meets Skill Evolution: Self-Evolving Search Agents that Pose, Solve, and Remember",
-      "url": "https://arxiv.org/abs/2607.29468",
-      "published_at": "2026-08-04T04:00:00+00:00",
-      "raw_text": "arXiv:2607.29468v1 Announce Type: new \nAbstract: Self-play agents can generate training problems without questions from target benchmarks, but their curricula lack persistent state: failures affect gradients yet do not explicitly shape future practice. External skill memories preserve procedural experience but are typically learned from fixed task distributions. We introduce \\textbf{SESA} (Self-Evolving Skill-Augmented Agent), which makes procedural memory an evolving state of tool-augmented search self-play. A challenger poses problems, while a separately parameterized solver alone retrieves skills. Informative failures are distilled into reusable skills and written back to memory. The updated memory changes solver behavior and success, which changes the challenger's reward and the distribution of future problems; the resulting frontier produces new failures that rewrite memory. This bidirectional loop makes task generation and skill memory co-evolve. Because retrieved skills shape on",
+      "title": "The Agent Operating System (AOS): A Reference Operating Architecture for Distributed Agentic Systems",
+      "url": "https://arxiv.org/abs/2608.03214",
+      "published_at": "2026-08-05T04:00:00+00:00",
+      "raw_text": "arXiv:2608.03214v1 Announce Type: new \nAbstract: Large language models have transformed artificial intelligence from isolated prediction services into components of long-running, distributed systems that reason, invoke tools, retrieve external state, delegate tasks, and act on behalf of users and organizations. The surrounding ecosystem has responded with agent frameworks, workflow engines, model-serving platforms, memory systems, communication protocols, and observability tools. These technologies improve execution, but they do not provide a stable, implementation-independent operating architecture for governing intent, selecting capabilities, preserving authority across delegation, controlling uncertainty, coordinating runtime behavior, and reconstructing why consequential actions occurred. This paper proposes the Agent Operating System (AOS), a vendor-neutral reference operating architecture for distributed agentic systems. AOS contains two internal planes: a Control & Governance Pl",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出SESA自进化搜索智能体，结合自博弈与技能演化，实现持续学习，对智能体训练有创新。",
-      "summary_zh": "自博弈智能体可以生成训练问题，但缺乏持久状态，失败不影响未来练习。外部技能记忆保留程序性经验，但通常从固定任务分布学习。本文提出SESA，结合自博弈与技能演化，让智能体提出问题、解决并记忆技能，实现持续进化。实验表明，SESA在多个搜索任务上优于现有方法。",
-      "title_zh": "自博弈遇见技能演化：自进化搜索智能体的提出、解决与记忆",
-      "weighted_score": 0.835,
+      "depth_score": 0.9,
+      "reason_zh": "提出智能体操作系统参考架构，为分布式智能体系统提供统一设计蓝图，具有深远影响。",
+      "summary_zh": "大型语言模型将人工智能从孤立预测服务转变为长期运行的分布式系统组件，这些系统能够推理、调用工具、检索外部状态、委派任务并代表用户和组织行动。本文提出智能体操作系统（AOS），一个参考操作架构，为分布式智能体系统提供统一的设计原则和组件，旨在促进生态系统的互操作性和可扩展性。",
+      "title_zh": "智能体操作系统（AOS）：分布式智能体系统的参考操作架构",
+      "weighted_score": 0.825,
       "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.9,
+        "practical_value": 0.8
       },
-      "story_id": "bd6e49458a9b98b0",
+      "story_id": "2f8b11ca54f398f1",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.29468"
+          "url": "https://arxiv.org/abs/2608.03214"
+        }
+      ]
+    },
+    {
+      "id": "5c637d42f3fab269",
+      "source_id": "arxiv-cs-ai",
+      "title": "Reachability Is Not Realization: Tracing the Sources of LLM Benchmark Gains",
+      "url": "https://arxiv.org/abs/2608.03219",
+      "published_at": "2026-08-05T04:00:00+00:00",
+      "raw_text": "arXiv:2608.03219v1 Announce Type: new \nAbstract: Benchmark gains are often treated as evidence of greater LLM capability. Yet the same gain can reflect different changes in model behavior. A model may reach new answers, or produce answers that were already within reach. Aggregate scores do not distinguish these changes question by question. We establish a question-level audit under fixed budgets, temperatures, and answer formats. A question is realized when the default deployment procedure produces the correct answer. A question is reachable when a specified probe finds that answer within a fixed budget. We first test whether inference-time layer routing can expand reachability. Under a matched budget, random routes match or exceed structured search in all 43 model and task settings. Answer-blind procedures retain almost none of this gain, which instead requires access to the correct answer. We then ask why reachable answers sometimes fail to appear. Across six cases spanning 0.5B to 3",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "质疑基准测试提升的解读，提出问题级审计方法，区分可达性与实现，对评估LLM能力有方法论贡献。",
+      "summary_zh": "基准测试的提升常被视为LLM能力增强的证据，但相同的提升可能反映不同的行为变化：模型可能达到新的答案，或产生原本就可达的答案。聚合分数无法逐题区分这些变化。本文在固定预算下建立问题级审计，追踪基准测试提升的来源，为更准确地评估LLM能力提供了新方法。",
+      "title_zh": "可达性不等于实现：追踪LLM基准测试提升的来源",
+      "weighted_score": 0.78,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "97168e945683864f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.03219"
+        }
+      ]
+    },
+    {
+      "id": "54cb9dfb1bc54619",
+      "source_id": "arxiv-cs-ai",
+      "title": "Interpreting Black-Box Large Language Models with Sentence-Level Energy Landscapes",
+      "url": "https://arxiv.org/abs/2608.02879",
+      "published_at": "2026-08-05T04:00:00+00:00",
+      "raw_text": "arXiv:2608.02879v1 Announce Type: new \nAbstract: The widespread adoption of proprietary Large Language Models (LLMs) accessed strictly through closed APIs has created a critical challenge for responsible deployment: a fundamental lack of interpretability. To address this, we propose a model-agnostic, post-hoc attribution interpreter operating at the sentence level. Our approach trains an Energy-Based Model (EBM) as a surrogate to capture the LLM's internal conceptual consistency between prompts and responses. This energy landscape guides the training of a lightweight interpreter network. Uniquely, our interpreter operates as a standalone tool; once trained, it quantifies the influence of prompt sentences on a user-specified target output without requiring further API queries to the LLM. By globally training a local interpreter across diverse inputs, our framework captures broader generation patterns and mitigates instance-specific biases. Experiments demonstrate that our EBM accurately",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "针对闭源LLM可解释性难题，提出基于能量景观的句子级归因方法，模型无关且事后可用，具有重要研究价值。",
+      "summary_zh": "本文针对闭源大型语言模型（LLM）缺乏可解释性的问题，提出一种模型无关的事后归因解释器，在句子级别工作。该方法训练一个基于能量的模型（Energy-Based Model）来构建句子级能量景观，通过分析能量变化来归因模型预测。由于不依赖模型内部结构，适用于仅通过API访问的专有模型。实验表明，该方法能有效识别影响预测的关键句子，为闭源LLM的责任部署提供了可解释性工具。",
+      "title_zh": "用句子级能量景观解释黑盒大型语言模型",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "25545fa2f626717d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.02879"
         }
       ]
     },
@@ -99,72 +165,6 @@
         {
           "source_id": "cloudflare-blog",
           "url": "https://blog.cloudflare.com/astro-issue-triage/"
-        }
-      ]
-    },
-    {
-      "id": "721f690d07759edc",
-      "source_id": "arxiv-cs-ai",
-      "title": "Fragility of Value under Imperfect Alignment",
-      "url": "https://arxiv.org/abs/2607.28881",
-      "published_at": "2026-08-04T04:00:00+00:00",
-      "raw_text": "arXiv:2607.28881v1 Announce Type: new \nAbstract: As more responsibility is placed upon AI systems, it becomes increasingly important to guarantee that these systems are aligned with humanity. A common fear in AI safety is that human value is fragile -- that is, optimizing too heavily for an imperfect proxy to human values will lead to a catastrophic outcome. In this paper, we present a model of the alignment problem where an agent undergoes idealized alignment training that guarantees its value function satisfies a proxy condition before optimizing the world. Our primary results identify conditions on the human value function and the accuracy of several proxy conditions under which an agent with an $\\eta$-catastrophic value function, one that is guaranteed to take the expectation of human value below $\\eta$ in the limit of optimizing power, would be deployed. Our results highlight the danger of overoptimization and motivate AI designs that limit optimization pressure, such as quantiliz",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "探讨AI对齐中价值脆弱性的理论模型，对AI安全有深远影响，值得深入阅读。",
-      "summary_zh": "本文提出一个模型，研究在AI对齐过程中，当优化目标不完美时，人类价值可能变得脆弱，导致灾难性后果。作者通过形式化分析，展示了价值脆弱性的条件，并讨论了如何通过设计更稳健的对齐方法来缓解这一风险。该研究为AI安全领域提供了新的理论视角，强调了在追求对齐时需谨慎处理代理目标与真实价值之间的偏差。",
-      "title_zh": "不完美对齐下价值的脆弱性",
-      "weighted_score": 0.815,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.9,
-        "practical_value": 0.6
-      },
-      "story_id": "87c14d4fbce7f7bf",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.28881"
-        }
-      ]
-    },
-    {
-      "id": "ba1bb9f606dd6e91",
-      "source_id": "arxiv-cs-ai",
-      "title": "Safety, or Just Capability? A Validity Audit of Agent-Safety Benchmarks",
-      "url": "https://arxiv.org/abs/2607.28685",
-      "published_at": "2026-08-04T04:00:00+00:00",
-      "raw_text": "arXiv:2607.28685v1 Announce Type: new \nAbstract: Agent-safety benchmarks measure different behaviors, and their scores get quoted interchangeably as an agent's safety. We treat four of them (R-Judge, InjecAgent, AgentHarm, AgentDojo) as measurements to be validated, running each under its official implementation and author-provided scorer on up to 22 models, with MMLU and GPQA measured by us under one protocol as a capability composite. The metric is the first problem. On any binary trace-judgment benchmark scored by $F_1$, an ``always positive'' policy attains $F_1 = 2\\pi/(1+\\pi)$; on R-Judge that is $0.690$, above five of the 21 models that actually discriminate. The three broad-coverage benchmarks then rank the same 18 models differently, and the trade-off behind that disagreement is a small-panel artifact: R-Judge specificity against AgentHarm safety correlates $-0.64$ at $n{=}7$ and $+0.02$ at $n{=}18$, and a quarter of random size-7 subsets reach $|\\rho| \\geq 0.5$ around that nea",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "对四个智能体安全基准进行效度审计，揭示其测量差异，对安全评估有重要参考。",
-      "summary_zh": "本文对四个智能体安全基准（R-Judge、InjecAgent、AgentHarm、AgentDojo）进行效度审计。这些基准测量不同行为，但分数常被互换引用为智能体的安全性。作者在官方实现和作者提供的评分器下，对多达22个模型运行每个基准，并测量MMLU和GPQA。结果显示这些基准测量不同维度，分数不可互换。文章强调需要更严谨的安全评估方法，避免误导性结论。",
-      "title_zh": "安全还是仅能力？智能体安全基准的效度审计",
-      "weighted_score": 0.81,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "ee7cc33daa470fd7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2607.28685"
         }
       ]
     },
@@ -336,68 +336,68 @@
       ]
     },
     {
-      "id": "f9e994cbaebf678c",
+      "id": "a1239faa5b74fd66",
       "source_id": "zh-v2ex",
-      "title": "[分享创造] 用 Rust 写了个开源桌面 Agent，聊两个实际卡住过我们的性能问题",
-      "url": "https://www.v2ex.com/t/1232115#reply2",
-      "published_at": "2026-08-04T14:05:48+00:00",
-      "raw_text": "BitFun ，开源（ MIT ）桌面端 AI Agent ，Windows / macOS / Linux 都有安装包。Agent 运行时是 Rust ，外壳 Tauri v2 。需要自备模型 API 。<br /><br />不列功能了，讲两个我们真正花了时间的地方。<br /><br />一、Agent 反复搜同一个仓库<br /><br />Agent 干一个任务，会把同一个仓库搜几十上百次。ripgrep 本身够快，但它每次都是冷启动 —— 重新遍历目录树、重新过 gitignore 。在 Chromium 这种千万行级的树上，这部分开销会直接盖过模型推理的耗时。<br /><br />我们做了个跨轮次常驻的索引（ flashgrep ），进程活着索引就在，不用每次重建。实测在 Chromium 上搜索耗时最高降低 94.6%，平均快约 36 倍。绝大部分收益来自不再为每一次工具调用付冷遍历的成本。<br /><br />二、KV Cache 命中率<br /><br />Agent 的 token 成本大头不是新生成的内容，是每一轮重新发过去的上下文。要让 KV Cache 真正命中，prompt 前缀必须逐字节稳定 —— 一个时间戳、一次工具列表重排序，都会让缓存从那个位置断掉。<br /><br />把 prompt 拼装重构成前缀稳定的结构之后，一轮 SWE-Bench-Pro 跑下来平均命中率 98.67%。<br /><br />已知问题先说在前面<br /><br />macOS 第一次打开会提示「已损坏」。还没做 Apple 公证，Gatekeeper 拦的，需要跑一次 xattr -d com.apple.quarantine /Applications/<a href=\"http://BitFun.app\" rel=\"nofollow noopener\" target=\"_blank\">BitFun.app</a> 。这个在修。<br /><br />另外仓库里那组 SWE-Bench 对比数据是我们自己跑的，每个 case 只跑了一次，没排除波动，别当排名看。<br /><br />链接<br /><br />仓库 <a href=\"https://github.com/GCWing/BitFun\" rel=\"nofollow noo",
+      "title": "[程序员] 烧了 6B+ token,分享下我实践出来最好的 AGENTS.md",
+      "url": "https://www.v2ex.com/t/1232201#reply26",
+      "published_at": "2026-08-05T03:20:50+00:00",
+      "raw_text": "<h1>烧掉 6B+ Token 后，我的最佳实践</h1>\n<p>三个月前，我开始用 Claude Code 开发一个自部署的家庭资产管理工具。</p>\n<p>截至目前，项目已经迭代了 560 多个 commit ，从 v0.1 一路发布到 v1.8.1：</p>\n<table>\n<thead>\n<tr>\n<th>指标</th>\n<th>当前数据</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Commit</td>\n<td>560+</td>\n</tr>\n<tr>\n<td>版本</td>\n<td>v0.1 → v1.8.1</td>\n</tr>\n<tr>\n<td>主代码量</td>\n<td>5 万+ 行</td>\n</tr>\n<tr>\n<td>Token 消耗</td>\n<td>6B+</td>\n</tr>\n</tbody></table><p>这期间，我反复迭代过很多版 <code><a href=\"http://AGENTS.md\" rel=\"nofollow\">AGENTS.md</a></code>，也踩过不少坑。</p>\n<p>例如：</p>\n<ul>\n<li>Opus 4.7 经常在对话中突然切换成英文；</li>\n<li>Opus 4.8 经常任务做到一半就停下来；</li>\n<li>一旦任务持续时间超过 4 小时，就容易出现类似早期 LLM 的“上下文焦虑”，很难稳定地把长任务做到底。</li>\n</ul>\n<p>经过多轮调优和实践，目前我的最佳方案是维护两份 <code><a href=\"http://AGENTS.md\" rel=\"nofollow\">AGENTS.md</a></code>：</p>\n<ol>\n<li>** 全局级 <a href=\"http://AGENTS.md\" rel=\"nofollow\">AGENTS.md</a> **：跨所有项目生效，约束 AI 的思考方式、实现原则和沟通风格；</li>\n<li>** 项目级 <a href=\"http://AGENTS.md\" rel=\"nofollow\">AGENTS.md</a> **：跟随仓库维护，记录项目事实、工程约束和验证方式，目前约 222 行。</li>\n</ol>\n<p>两者的边界很明确：</p>\n<blockquote>\n<p>全局",
       "category_hint": [
         "技巧与观点"
       ],
-      "image_url": null,
+      "image_url": "https://raw.githubusercontent.com/LuoDi-Nate/financial-management/master/docs/screenshots/feature_summary_total.jpg",
       "category": "技巧与观点",
-      "content_type": "深度分析",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "分享开源桌面Agent开发中的性能优化经验，具有实践深度和可迁移性。",
-      "summary_zh": "该帖子来自V2EX，作者分享了用Rust开发开源桌面Agent（BitFun）时遇到的两个性能问题及解决方案。第一个问题是Agent反复搜索同一仓库，导致ripgrep冷启动开销大，他们开发了跨轮次常驻索引（flashgrep），在Chromium上搜索耗时最高降低94.6%，平均快约36倍。第二个问题未完整显示，但帖子详细描述了技术挑战和优化思路，对开发者有参考价值。",
-      "title_zh": "[分享创造] 用 Rust 写了个开源桌面 Agent，聊两个实际卡住过我们的性能问题",
-      "weighted_score": 0.685,
+      "reason_zh": "作者烧6B+ token实践出最佳AGENTS.md，经验宝贵，有启发性。",
+      "summary_zh": "作者分享使用Claude Code开发自部署家庭资产管理工具的经验，项目迭代560+ commit，版本从v0.1到v1.8.1，主代码量5万+行，Token消耗6B+。经过反复实践，总结出最佳的AGENTS.md配置，为其他开发者提供参考。",
+      "title_zh": "烧了6B+ token，分享下我实践出来最好的AGENTS.md",
+      "weighted_score": 0.68,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.5,
         "novelty": 0.8,
-        "impact": 0.5,
+        "impact": 0.6,
         "practical_value": 0.9
       },
-      "story_id": "40610ca2901ee476",
+      "story_id": "2969ead44420bc60",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1232115#reply2"
+          "url": "https://www.v2ex.com/t/1232201#reply26"
         }
       ]
     },
     {
-      "id": "41c3eb54c7153594",
-      "source_id": "36kr",
-      "title": "Kimi K3与DeepSeek V4之间，隔着原生多模态的时间差",
-      "url": "https://36kr.com/p/3924826666301831?f=rss",
-      "published_at": "2026-08-04T06:32:05+00:00",
-      "raw_text": "<p>&nbsp;</p>\n  <p>文 | 李炤锋</p>\n  <p>编辑 | 张雨忻</p>\n  <p>“长链任务如果只通过代码层面的反馈，误差可能会不断累积，最终效果会非常差。”谈及原生多模态的意义，一位多模态研究员表示，“视觉是一种更准确的反馈，也更贴近用户意图。”</p>\n  <p><strong>过去一年，Coding与Agent能力不断改写大模型的排名，也成为AI最快兑现商业价值的场景之一。与此同时，随着Agent开始接管更多长链任务，越来越多的通用大模型开始匹配原生多模态能力。</strong></p>\n  <p>今年1月，OpenAI发布的一份企业使用报告显示，在研发岗位最常使用的三类ChatGPT工具中，图片上传排在搜索和数据分析之后，位列第三。</p>\n  <p>随着Agent开始生成网页、操作软件并检查运行结果，视觉的作用正在逐步进化：它不再只是用户交给模型的一张图片，也开始成为模型检查工作、发现错误和调整行动的反馈。</p>\n  <p>刚刚过去的7月，月之暗面发布Kimi K3。这款总参数2.8万亿、支持100万token上下文的MoE（混合专家模型），在Coding和长程Agent能力之外，出色的原生多模态能力是K3的另一个标签。</p>\n  <p>所谓原生多模态，是让图像、文字等数据从预训练或持续预训练阶段就共同塑造主模型，并在后训练中继续优化，最终参与Agent（智能体）的感知与决策。</p>\n  <p>K3发布后曾以1679分登顶Arena Frontend Code榜单。该榜单由用户盲选模型生成的可交互网页进行排名，评判的不只是代码能否运行，也包括页面的最终效果。</p>\n  <p><strong>浏览器开发平台Puter曾在测试网页中制造5处视觉偏差，K3对照目标页与运行页截图，全部找出且没有误报。得益于出色的原生多模态能力，K3能够看懂代码运行后的视觉问题，为下一轮修改提供依据。Kimi方面将这种在代码与截图之间反复迭代的方式称为“vision in the loop”：模型写完代码后查看页面，再根据视觉结果继续调整。</strong></p>\n  <p>这些都离不开模型的多模态能力。</p>\n  <p>除了月之暗面，阿里和字节也沿着原生多模态路线，将视觉作为通用模型的基础能力，在最新的Qwen3.8-Max和Doubao-S",
+      "id": "4c7449a5169d0dbb",
+      "source_id": "fastcompany-tech",
+      "title": "You trained the AI. Big Tech got paid",
+      "url": "https://www.fastcompany.com/91580541/you-trained-the-ai-big-tech-got-paid?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+      "published_at": "2026-08-04T11:30:00+00:00",
+      "raw_text": "<p class=\"wp-block-paragraph\">On January 24, 1956, the American Telephone and Telegraph Company was the largest private company in the world.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Its revenues amounted to almost 2% of the U.S. gross domestic product. It employed 746,000 people. It owned Bell Labs, the fabled research division that had already produced the transistor, the solar cell, information theory, and radio astronomy, while also laying the first transatlantic telephone cable. In the following decades, it would add UNIX, modern cellular telephony, the CCD image sensor, and the first active communications satellite to its long list of scientific milestones. This singular stretch of intellectual output paved the way for Bell scientists to eventually collect five Turing Awards and 10 Nobel Prizes. By many metrics, life as a regulated monopoly was very good for AT&amp;T.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Yet by the end of that day, AT&amp;T had signed away exclusive rights to every s",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": null,
-      "category": "模型发布",
+      "image_url": "https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2026/07/p-91580541-the-public-trained-ai-and-big-tech-got-paid-essay.jpg",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深度分析原生多模态对Agent长链任务的重要性，对比Kimi K3与DeepSeek V4，具有前瞻性洞察。",
-      "summary_zh": "文章探讨了原生多模态能力在AI Agent长链任务中的关键作用。指出视觉反馈比代码反馈更准确、更贴近用户意图，能减少误差累积。引用OpenAI报告显示图片上传是研发岗位常用工具之一。随着Agent生成网页、操作软件，视觉作用从用户输入进化为模型自我检查的手段。文章对比了Kimi K3和DeepSeek V4在多模态上的时间差，认为这是两者差距的关键。",
-      "title_zh": "Kimi K3与DeepSeek V4之间，隔着原生多模态的时间差",
-      "weighted_score": 0.68,
+      "reason_zh": "深度剖析AI行业价值分配问题，引用历史案例，具有启发性。",
+      "summary_zh": "该文章来自Fast Company，标题为“You trained the AI. Big Tech got paid”。文章以1956年AT&T公司为例，指出其收入占美国GDP近2%，拥有贝尔实验室等辉煌成就。文章可能探讨了类似现象在AI行业中的重演：即大量用户或开发者贡献数据或劳动，但利润却被大型科技公司攫取。文章可能分析了AI行业中的价值分配不公问题，并引用历史类比，引发对AI伦理和商业模式的思考。",
+      "title_zh": "你训练了AI，大科技公司却赚了钱",
+      "weighted_score": 0.635,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
+        "novelty": 0.6,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.5
       },
-      "story_id": "cacf31d2500616ea",
+      "story_id": "4c2c8cbc4bc202bb",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "36kr",
-          "url": "https://36kr.com/p/3924826666301831?f=rss"
+          "source_id": "fastcompany-tech",
+          "url": "https://www.fastcompany.com/91580541/you-trained-the-ai-big-tech-got-paid?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss"
         }
       ]
     }
