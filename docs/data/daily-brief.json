@@ -1,14 +1,14 @@
 {
   "date": "2026-08-06",
-  "generated_at": "2026-08-06T02:03:28.922235+00:00",
+  "generated_at": "2026-08-06T06:36:00.801922+00:00",
   "items": [
     {
-      "id": "a184bd6c1375aab0",
+      "id": "127e361bae835998",
       "source_id": "arxiv-cs-ai",
-      "title": "The Agent Operating System (AOS): A Reference Operating Architecture for Distributed Agentic Systems",
-      "url": "https://arxiv.org/abs/2608.03214",
-      "published_at": "2026-08-05T04:00:00+00:00",
-      "raw_text": "arXiv:2608.03214v1 Announce Type: new \nAbstract: Large language models have transformed artificial intelligence from isolated prediction services into components of long-running, distributed systems that reason, invoke tools, retrieve external state, delegate tasks, and act on behalf of users and organizations. The surrounding ecosystem has responded with agent frameworks, workflow engines, model-serving platforms, memory systems, communication protocols, and observability tools. These technologies improve execution, but they do not provide a stable, implementation-independent operating architecture for governing intent, selecting capabilities, preserving authority across delegation, controlling uncertainty, coordinating runtime behavior, and reconstructing why consequential actions occurred. This paper proposes the Agent Operating System (AOS), a vendor-neutral reference operating architecture for distributed agentic systems. AOS contains two internal planes: a Control & Governance Pl",
+      "title": "Wiring Beats Blending: What Transfers Between Transformer Sizes -- and What Doesn't",
+      "url": "https://arxiv.org/abs/2608.02829",
+      "published_at": "2026-08-06T04:00:00+00:00",
+      "raw_text": "arXiv:2608.02829v1 Announce Type: cross \nAbstract: Model families train every size from scratch. Can a pretrained large model be converted into a smaller sibling? We characterize the 1.4B->410M conversion in the Pythia family end-to-end: (i) representations align strongly across sizes (ridge R^2=0.84) while parameters align weakly; (ii) dense weight projection is functionally destructive -- provably not an assembly artifact -- because basis mixing breaks rotary, per-head, GELU, and LayerNorm structure; (iii) after the best-fit linear operator, weight residuals are statistically indistinguishable from noise under shuffle controls; (iv) conversion value therefore lives in initialization. In matched-budget continued pre-training we decompose conversion into two independent levers -- least-squares compensation (function: best zero-shot) and variance-preserving rescale (dynamics: best endpoints). Compensation is a token-efficient, low-budget win rather than a universal one: at 30M tokens it",
       "category_hint": [
         "论文研究"
       ],
@@ -16,156 +16,88 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "提出智能体操作系统参考架构，为分布式智能体系统提供统一设计蓝图，具有深远影响。",
-      "summary_zh": "大型语言模型将人工智能从孤立预测服务转变为长期运行的分布式系统组件，这些系统能够推理、调用工具、检索外部状态、委派任务并代表用户和组织行动。本文提出智能体操作系统（AOS），一个参考操作架构，为分布式智能体系统提供统一的设计原则和组件，旨在促进生态系统的互操作性和可扩展性。",
-      "title_zh": "智能体操作系统（AOS）：分布式智能体系统的参考操作架构",
-      "weighted_score": 0.825,
+      "reason_zh": "揭示Transformer不同规模间迁移的机制，证明权重投影破坏性，对模型压缩有重要启示。",
+      "summary_zh": "本文研究Transformer模型家族中不同规模之间的迁移可能性。以Pythia 1.4B到410M为例，发现表示层对齐强（R^2=0.84）但参数对齐弱；直接权重投影在功能上具有破坏性。作者提出替代方法，并分析哪些组件可迁移，为模型压缩和知识蒸馏提供新视角。",
+      "title_zh": "接线胜过混合：Transformer规模间什么可迁移——什么不可",
+      "weighted_score": 0.815,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.9,
-        "practical_value": 0.8
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.6
       },
-      "story_id": "2f8b11ca54f398f1",
+      "story_id": "32d3c24220b2069c",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.03214"
+          "url": "https://arxiv.org/abs/2608.02829"
         }
       ]
     },
     {
-      "id": "5c637d42f3fab269",
+      "id": "5e6dae5547c70c35",
       "source_id": "arxiv-cs-ai",
-      "title": "Reachability Is Not Realization: Tracing the Sources of LLM Benchmark Gains",
-      "url": "https://arxiv.org/abs/2608.03219",
-      "published_at": "2026-08-05T04:00:00+00:00",
-      "raw_text": "arXiv:2608.03219v1 Announce Type: new \nAbstract: Benchmark gains are often treated as evidence of greater LLM capability. Yet the same gain can reflect different changes in model behavior. A model may reach new answers, or produce answers that were already within reach. Aggregate scores do not distinguish these changes question by question. We establish a question-level audit under fixed budgets, temperatures, and answer formats. A question is realized when the default deployment procedure produces the correct answer. A question is reachable when a specified probe finds that answer within a fixed budget. We first test whether inference-time layer routing can expand reachability. Under a matched budget, random routes match or exceed structured search in all 43 model and task settings. Answer-blind procedures retain almost none of this gain, which instead requires access to the correct answer. We then ask why reachable answers sometimes fail to appear. Across six cases spanning 0.5B to 3",
+      "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
+      "url": "https://arxiv.org/abs/2608.04964",
+      "published_at": "2026-08-06T04:00:00+00:00",
+      "raw_text": "arXiv:2608.04964v1 Announce Type: new \nAbstract: Interactive video world models are essential for long-horizon planning and exploration, yet they suffer from compounding errors. Post-training methods such as reinforcement learning (RL) can improve these models, but they hit a verification bottleneck: for arbitrary action sequences, no ground-truth future state exists to measure long-term drift. Our key insight is that reversible action cycles make this verification possible: a sequence composed with its inverse must analytically return to the initial state, yielding annotation-free supervision on long-horizon correctness. Building on this, we introduce WorldCycle, a self-verifiable RL framework that constructs closed action cycles and their repeated executions from ordinary action sequences, and optimizes two complementary rewards: a spatial closure reward enforcing symmetry between mirrored forward and reverse segments, and a temporal consistency reward aligning states across repeated",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "质疑基准测试提升的解读，提出问题级审计方法，区分可达性与实现，对评估LLM能力有方法论贡献。",
-      "summary_zh": "基准测试的提升常被视为LLM能力增强的证据，但相同的提升可能反映不同的行为变化：模型可能达到新的答案，或产生原本就可达的答案。聚合分数无法逐题区分这些变化。本文在固定预算下建立问题级审计，追踪基准测试提升的来源，为更准确地评估LLM能力提供了新方法。",
-      "title_zh": "可达性不等于实现：追踪LLM基准测试提升的来源",
-      "weighted_score": 0.78,
+      "depth_score": 0.8,
+      "reason_zh": "提出自验证强化学习框架WorldCycle，解决长时程视频世界模型的验证瓶颈，创新性强。",
+      "summary_zh": "交互式视频世界模型对长时程规划和探索至关重要，但存在复合误差。强化学习等后训练方法可改进模型，但面临验证瓶颈：对于任意动作序列，没有真实未来状态来测量长期漂移。本文提出WorldCycle，一种自验证强化学习框架，通过循环一致性机制使模型自我验证预测，无需外部真实状态。实验表明，WorldCycle能有效减少复合误差，提升长时程预测的准确性，为视频世界模型训练提供新思路。",
+      "title_zh": "WorldCycle：长时程视频世界模型的自验证强化学习",
+      "weighted_score": 0.835,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "0475504ecbd16b3d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.04964"
+        }
+      ]
+    },
+    {
+      "id": "f8e054c53048d304",
+      "source_id": "arxiv-cs-ai",
+      "title": "Architectural Implications of Agentic AI Workflows",
+      "url": "https://arxiv.org/abs/2608.04458",
+      "published_at": "2026-08-06T04:00:00+00:00",
+      "raw_text": "arXiv:2608.04458v1 Announce Type: new \nAbstract: Agentic AI is emerging in datacenters, but its architectural implications remain unexplored. We organize agentic workflows in a taxonomy and present its first architectural characterization with a production study at Microsoft Azure and a controlled study of open-source frameworks. We show that agentic execution is fragmented and heterogeneous. Requests expand into a workflow of LLM inferences, tool invocations, and orchestration decisions that repeatedly cross the CPU-GPU boundary. Our taxonomy explains how this fragmentation turns into resource demand. As orchestration and tools run on the host, the CPU sits on the critical path. Execution structure sets the load over time, which stays low with sudden spikes. Model composition sets how evenly the workflow uses the GPUs. Diversity in tasks and tools widens this range even further. These characteristics expose architectural mismatches of conventional uniform servers. Fragmented execution",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "首次对Agentic AI工作负载进行架构特征化分析，基于微软生产环境研究，对数据中心设计有重要参考。",
+      "summary_zh": "本文首次对Agentic AI工作负载进行架构特征化分析，基于微软Azure的生产研究和开源框架的受控研究。作者将代理工作流分类，并揭示其碎片化和异构性。研究结果对数据中心架构设计有重要启示，包括资源调度、内存层次和网络需求等，为未来Agentic AI基础设施优化提供数据支撑。",
+      "title_zh": "Agentic AI工作流的架构影响",
+      "weighted_score": 0.81,
+      "score_breakdown": {
+        "source_authority": 0.9,
         "novelty": 0.8,
         "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "97168e945683864f",
+      "story_id": "3460fe9cd486218d",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.03219"
-        }
-      ]
-    },
-    {
-      "id": "54cb9dfb1bc54619",
-      "source_id": "arxiv-cs-ai",
-      "title": "Interpreting Black-Box Large Language Models with Sentence-Level Energy Landscapes",
-      "url": "https://arxiv.org/abs/2608.02879",
-      "published_at": "2026-08-05T04:00:00+00:00",
-      "raw_text": "arXiv:2608.02879v1 Announce Type: new \nAbstract: The widespread adoption of proprietary Large Language Models (LLMs) accessed strictly through closed APIs has created a critical challenge for responsible deployment: a fundamental lack of interpretability. To address this, we propose a model-agnostic, post-hoc attribution interpreter operating at the sentence level. Our approach trains an Energy-Based Model (EBM) as a surrogate to capture the LLM's internal conceptual consistency between prompts and responses. This energy landscape guides the training of a lightweight interpreter network. Uniquely, our interpreter operates as a standalone tool; once trained, it quantifies the influence of prompt sentences on a user-specified target output without requiring further API queries to the LLM. By globally training a local interpreter across diverse inputs, our framework captures broader generation patterns and mitigates instance-specific biases. Experiments demonstrate that our EBM accurately",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "针对闭源LLM可解释性难题，提出基于能量景观的句子级归因方法，模型无关且事后可用，具有重要研究价值。",
-      "summary_zh": "本文针对闭源大型语言模型（LLM）缺乏可解释性的问题，提出一种模型无关的事后归因解释器，在句子级别工作。该方法训练一个基于能量的模型（Energy-Based Model）来构建句子级能量景观，通过分析能量变化来归因模型预测。由于不依赖模型内部结构，适用于仅通过API访问的专有模型。实验表明，该方法能有效识别影响预测的关键句子，为闭源LLM的责任部署提供了可解释性工具。",
-      "title_zh": "用句子级能量景观解释黑盒大型语言模型",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "25545fa2f626717d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.02879"
-        }
-      ]
-    },
-    {
-      "id": "849c74f457b1e014",
-      "source_id": "reddit-computervision",
-      "title": "Why we built a custom NVDEC + CUDA Ring Buffer pipeline instead of DeepStream for multi-camera RTSP inference",
-      "url": "https://www.reddit.com/r/computervision/comments/1vgd1bq/why_we_built_a_custom_nvdec_cuda_ring_buffer/",
-      "published_at": "2026-08-05T16:55:54+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>If you’ve ever built multi-camera real-time vision systems at scale, you’ve likely wrestled with GStreamer element linking errors, pipeline memory leaks, or cloud egress costs hitting $2k+/month for simple RTSP analytics.</p> <p>When we benchmarked cloud vision APIs vs edge deployments, the bottleneck was rarely the YOLO or custom detector model itself—it was the ingestion and frame-movement pipeline.</p> <p>The Bottleneck: CPU-to-GPU Copying &amp; GStreamer Complexity</p> <p>Standard Python wrappers or heavy frameworks often bounce video frames through host memory (CPU) before pushing them back to GPU VRAM for inference. At 32+ HD RTSP streams, this creates massive PCIe bandwidth saturation and GIL lockup.</p> <p>On the flip side, while DeepStream is powerful, managing complex GStreamer element graphs in production often introduces unwanted debugging overhead and plugins bloat.</p> <p>Our Bare-Metal Approach (Custom Edge Architecture)</p> <p>To keep p",
-      "category_hint": [
-        "论文研究",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "深入剖析了自建NVDEC+CUDA环形缓冲管线替代DeepStream的动机与实现，对多摄像头实时推理系统设计有重要启示。",
-      "summary_zh": "作者详细解释了为何在多摄像头RTSP推理场景下，选择自建NVDEC+CUDA环形缓冲管线而非使用DeepStream。文章对比了两种方案的性能、成本和开发复杂度，指出DeepStream在灵活性和资源控制上的不足。作者分享了自建管线的架构设计、关键优化点以及遇到的挑战，如内存管理和延迟控制。通过实际数据展示了自建方案在吞吐量和成本上的优势，为类似场景提供了有价值的参考。",
-      "title_zh": "为何我们自建NVDEC+CUDA环形缓冲管线而非使用DeepStream进行多摄像头RTSP推理",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "3831fda220c0cc75",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-computervision",
-          "url": "https://www.reddit.com/r/computervision/comments/1vgd1bq/why_we_built_a_custom_nvdec_cuda_ring_buffer/"
-        }
-      ]
-    },
-    {
-      "id": "a7637aedb65de0c4",
-      "source_id": "reddit-machinelearning",
-      "title": "Monodratic: learned product-hash routing for sparse causal attention [R]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vg3jda/monodratic_learned_producthash_routing_for_sparse/",
-      "published_at": "2026-08-05T10:28:44+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi everyone,</p> <p>I'm an independent researcher sharing Monodratic, a sparse causal-attention architecture with learned product-hash routing.</p> <p>The idea is that after RoPE, source blocks are assigned to bounded causal posting lists, while each query probes product addresses, reranks the returned candidates, selects a fixed number of remote source blocks, adds guaranteed local blocks, and then runs exact causal softmax over just those tokens. I implemented it as a stateless [batch, sequence, width] -&gt; attention-delta mixer, so normalization, residual updates, feed-forward layers, and inference scheduling are left to the host model.</p> <p>What I found is that</p> <p>-learned routing with 2 selected remote blocks out of 5 eligible: 763/768 correct associative-recall answers across three seeds (99.35% mean, 98.05% minimum).</p> <p>-an equally wide untrained router: 425/768. Local-only attention: 151/768.</p> <p>-forcing the labelled target block",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出新颖的稀疏注意力架构，通过学习乘积哈希路由提高效率，对长上下文模型有潜在影响。",
-      "summary_zh": "独立研究者分享了Monodratic，一种稀疏因果注意力架构，采用学习乘积哈希路由。在RoPE之后，源块被分配到有界因果发布列表，每个查询探测乘积地址，对返回候选重新排序，并选择固定数量的远程源块。该方法旨在提高注意力机制的计算效率，同时保持模型性能。文章提供了技术细节和初步实验结果，展示了在长序列处理上的潜力。",
-      "title_zh": "Monodratic：用于稀疏因果注意力的学习乘积哈希路由",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.9,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "0894da076e2facfb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vg3jda/monodratic_learned_producthash_routing_for_sparse/"
+          "url": "https://arxiv.org/abs/2608.04458"
         }
       ]
     },
@@ -204,36 +136,68 @@
       ]
     },
     {
-      "id": "77ce8aa94f719cac",
-      "source_id": "ieee-spectrum-ai",
-      "title": "Should Researchers Write Papers for AI Instead of People?",
-      "url": "https://spectrum.ieee.org/ai-scientist-research-paper-format",
-      "published_at": "2026-08-05T12:00:03+00:00",
-      "raw_text": "<img src=\"https://spectrum.ieee.org/media-library/vintage-typewriter-typing-a-brain-made-of-letters-on-white-paper-on-pink-background.jpg?id=67572143&amp;width=1245&amp;height=700&amp;coordinates=0%2C469%2C0%2C469\" /><br /><br /><p>This May, 37 researchers from roughly two dozen top universities and tech companies published a paper on ArXiv, arguing that scientists should stop writing papers. Why? Because artificial intelligence needs a different format, and AI’s needs, they say, should be the priority.</p><p>“AI agents are becoming first-class participants in research workflows, not tools that assist humans but autonomous contributors that read, reproduce, and extend scientific work. That transition demands infrastructure built around agents from the start,” the authors write in the provocative article, titled<a href=\"https://arxiv.org/abs/2604.24658\" rel=\"noopener noreferrer\" target=\"_blank\"> “The Last Human-Written Paper</a>.” The paper proposes a replacement, called an “Agent-Nativ",
+      "id": "360f48a02368d487",
+      "source_id": "arxiv-cs-ai",
+      "title": "Diagnosing Tool-Selection Reasoning in LLM Agents with Canary Tools",
+      "url": "https://arxiv.org/abs/2608.04719",
+      "published_at": "2026-08-06T04:00:00+00:00",
+      "raw_text": "arXiv:2608.04719v1 Announce Type: new \nAbstract: Agent evaluations tell us that a model picked the wrong tool, but rarely why. We introduce canary tools: diagnostic probe tools planted in an agent's Model Context Protocol (MCP) tool set, each engineered to probe one specific tool-selection weakness. A six-type taxonomy (semantic decoys, parameter traps, capability mirages, prerequisite blindness, temporal decoys, and granularity traps) turns a single \"wrong tool\" outcome into a multi-dimensional profile of how a model reasons about tools. We evaluate eight models -- six hosted and two 8B open-weight -- spanning three capability tiers, on 120 tasks across three canary-density conditions and three seeds (8,640 runs), plus a 2,880-run subtlety ablation. Task success is graded by a provider-independent judge, corroborated by a second independent judge (Cohen's kappa = 0.75). We report three findings. First, susceptibility drops sharply as models get more capable: the per-task canary suscep",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "论文研究"
       ],
-      "image_url": "https://spectrum.ieee.org/media-library/vintage-typewriter-typing-a-brain-made-of-letters-on-white-paper-on-pink-background.jpg?id=67572143&width=980",
-      "category": "行业动态",
-      "content_type": "观点评论",
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "引发对科研论文未来形态的深刻思考，挑战传统学术交流方式，具有前瞻性。",
-      "summary_zh": "今年5月，来自约两打顶尖大学和科技公司的37位研究人员在ArXiv上发表论文，主张科学家应停止为人类撰写论文，转而面向AI。文章探讨了这一争议性观点背后的动机，包括提高研究效率、加速知识传播，以及适应AI驱动的科研范式。同时，文章也讨论了这一转变可能带来的挑战，如学术评价体系、知识可读性等问题，引发对科研交流未来的思考。",
-      "title_zh": "研究人员应该为AI写论文而不是为人吗？",
-      "weighted_score": 0.765,
+      "reason_zh": "引入金丝雀工具诊断LLM代理工具选择推理缺陷，提供可操作的改进方向。",
+      "summary_zh": "该论文针对LLM代理在工具选择上的推理缺陷，提出了金丝雀工具（canary tools）方法。这些诊断探针工具被植入代理的MCP工具集中，每种工具专门探测一种特定的弱点。作者定义了一个六类型分类法（语义诱饵、参数陷阱、能力幻象、先决条件盲区等），通过实验验证了该方法能有效识别代理工具选择中的具体推理问题，为改进代理设计提供了依据。",
+      "title_zh": "用金丝雀工具诊断LLM代理的工具选择推理",
+      "weighted_score": 0.8,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "c5db2c284097ccb9",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.04719"
+        }
+      ]
+    },
+    {
+      "id": "d277475eca14f1ae",
+      "source_id": "arxiv-cs-ai",
+      "title": "Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite",
+      "url": "https://arxiv.org/abs/2608.05095",
+      "published_at": "2026-08-06T04:00:00+00:00",
+      "raw_text": "arXiv:2608.05095v1 Announce Type: new \nAbstract: Agents for long term reasoning require a memory that can be efficiently and effectively updated over time, as new facts and external feedback continue to arrive. Recently, graph memory has been adopted to offer structural organization for multi-hop retrieval and reasoning. However, existing methods store all memories in a flat graph, and accumulated historical memories can introduce irrelevant contexts and increase the cost of evidence selection during retrieval. Moreover, they typically update memory units independently, requiring repeated unit-wise rewrite to cover related changes. To address these issues, we propose HiGram, an evolving hierarchical graph memory framework with path-level localization and rewriting. Specifically, we first propose a hierarchical graph memory, which organizes the memory into coarse-to-fine architecture composed of upper-level nodes and MemoryUnits, thereby reducing the amount of irrelevant information dur",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出层级图记忆结构，解决LLM智能体长期推理中的记忆更新与检索问题，具有实践价值。",
+      "summary_zh": "本文针对LLM智能体长期推理中的记忆管理问题，提出层级图记忆结构。现有方法将记忆存储在平面图中，导致更新效率低。作者引入路径级定位与重写机制，使记忆更新更精准高效。实验表明该方法在多跳检索与推理任务上优于基线，提升了智能体的长期推理能力。",
+      "title_zh": "用于LLM智能体的层级图记忆：路径级定位与重写",
+      "weighted_score": 0.785,
       "score_breakdown": {
         "source_authority": 0.9,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.7
       },
-      "story_id": "05427545c6e72418",
+      "story_id": "d2fb0c893d9c5de2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "ieee-spectrum-ai",
-          "url": "https://spectrum.ieee.org/ai-scientist-research-paper-format"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.05095"
         }
       ]
     },
@@ -272,43 +236,42 @@
       ]
     },
     {
-      "id": "5b1794197a78e7a6",
-      "source_id": "towards-data-science",
-      "title": "Building Document Structure with Loop Engineering: Recovering a PDF’s Outline from Body Typography for RAG",
-      "url": "https://towardsdatascience.com/building-document-structure-with-loop-engineering-recovering-a-pdfs-outline-from-body-typography-for-rag/",
-      "published_at": "2026-08-05T12:00:00+00:00",
-      "raw_text": "<p>Enterprise Document Intelligence [Vol.1 #5octies] - Rules propose, LLM validates: six deterministic signals on span-level typography surface heading candidates, one bounded loop keeps the real ones, and the same toc_df drops back into the RAG pipeline</p>\n<p>The post <a href=\"https://towardsdatascience.com/building-document-structure-with-loop-engineering-recovering-a-pdfs-outline-from-body-typography-for-rag/\">Building Document Structure with Loop Engineering: Recovering a PDF’s Outline from Body Typography for RAG</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "id": "88b84c4a765909d8",
+      "source_id": "zh-oschina",
+      "title": "美团开源 LoHoSearch，用知识图谱校准 AI 能力认知",
+      "url": "https://my.oschina.net/meituantech/blog/19726797",
+      "published_at": "2026-08-06T03:27:56+00:00",
+      "raw_text": "机器出题的前提，是让机器拥有全局视野。整个构建流程可以分为四个环节：建图 → 控制难度 → 质量把关 → 数据概览。",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "开源项目"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
+      "category": "开源项目",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "提出利用循环工程恢复PDF大纲的实用方法，结合规则与LLM验证，对RAG系统构建有直接帮助。",
-      "summary_zh": "文章介绍了如何通过循环工程从PDF正文排版中恢复文档大纲，以增强RAG系统。作者提出使用六个确定性信号在span级别识别标题候选，然后通过一个受限循环让LLM验证并保留真正的标题。该方法将恢复的目录结构直接用于RAG管道，提高了文档检索的准确性。文章详细解释了技术细节，并提供了实现思路，对处理企业文档智能具有实用价值。",
-      "title_zh": "利用循环工程构建文档结构：从正文排版恢复PDF大纲用于RAG",
-      "weighted_score": 0.74,
+      "reason_zh": "美团开源知识图谱校准AI能力，方法新颖，有实践价值。",
+      "summary_zh": "美团开源了LoHoSearch项目，旨在用知识图谱校准AI的能力认知。文章详细介绍了构建流程，包括建图、控制难度、质量把关和数据概览四个环节。核心思想是让机器拥有全局视野，通过知识图谱生成高质量测试题，从而更准确地评估AI模型的能力。该项目对于AI评测领域具有参考价值，开源代码可供开发者使用和改进。",
+      "title_zh": "美团开源 LoHoSearch，用知识图谱校准 AI 能力认知",
+      "weighted_score": 0.7,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.8,
         "impact": 0.6,
-        "practical_value": 0.9
+        "practical_value": 0.7
       },
-      "story_id": "20c507e159a89cbe",
+      "story_id": "21fa42b09b4038cf",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/building-document-structure-with-loop-engineering-recovering-a-pdfs-outline-from-body-typography-for-rag/"
+          "source_id": "zh-oschina",
+          "url": "https://my.oschina.net/meituantech/blog/19726797"
         }
       ]
     },
     {
       "id": "a7f9ba1d01388e25",
       "source_id": "infoq-cn-ai",
-      "title": "从 Coding 到 Running：AI Native SRE Agent 的工程实践｜AICon深圳",
+      "title": "从 Coding 到 Running：Al Native SRE Agent 的工程实践 （CloudQ ）｜AICon深圳",
       "url": "https://www.infoq.cn/article/iNit5qqLKJSdi2kMt8HB?utm_source=rss&utm_medium=article",
       "published_at": "2026-08-06T09:00:00+00:00",
       "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/iNit5qqLKJSdi2kMt8HB?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
@@ -340,23 +303,22 @@
       ]
     },
     {
-      "id": "33fe431b8e920d92",
-      "source_id": "reddit-computervision",
-      "title": "I took a local OCR model's accuracy from 60% to 99%",
-      "url": "https://www.reddit.com/r/computervision/comments/1vgecxj/i_took_a_local_ocr_models_accuracy_from_60_to_99/",
-      "published_at": "2026-08-05T17:42:33+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1vgecxj/i_took_a_local_ocr_models_accuracy_from_60_to_99/\"> <img alt=\"I took a local OCR model's accuracy from 60% to 99%\" src=\"https://preview.redd.it/rpknfkjdflhh1.png?width=140&amp;height=87&amp;auto=webp&amp;s=331018fb737a3e7e2fb8a74bb4332e8621b43d23\" title=\"I took a local OCR model's accuracy from 60% to 99%\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I built a local OCR pipeline a few days ago, and it turned into a surprisingly interesting experiment—taking accuracy from around 60% to 99%.</p> <p>I wrote a short blog about what worked, what failed, and the breakthrough that finally made the difference.</p> <p>Thought some of you might enjoy it.</p> <p>Link in the comments </p> <p><a href=\"https://preview.redd.it/rpknfkjdflhh1.png?width=1974&amp;format=png&amp;auto=webp&amp;s=8f12cf69e9b486271c0e96b8a73f5131975ce00e\">https://preview.redd.it/rpknfkjdflhh1.png?width=1974&amp;format=png&amp;auto=webp&",
+      "id": "73d216136a9d4310",
+      "source_id": "zh-juejin",
+      "title": "🔥 claude code auto compact源码解析",
+      "url": "https://juejin.cn/post/7670720234002333747",
+      "published_at": "2026-08-06T04:39:16+00:00",
+      "raw_text": "触发与位置 每次模型请求前， query.ts 的治理顺序是： 见 query.ts:L396-L468 。 autoCompact 以“有效上下文窗口 - 13K buffer”为阈值。有效窗口还预",
       "category_hint": [
-        "论文研究",
         "技巧与观点"
       ],
-      "image_url": "https://preview.redd.it/rpknfkjdflhh1.png?width=140&height=87&auto=webp&s=331018fb737a3e7e2fb8a74bb4332e8621b43d23",
+      "image_url": null,
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "作者分享了将本地OCR模型准确率从60%提升到99%的实战经验，极具参考价值。",
-      "summary_zh": "作者分享了将本地OCR模型准确率从60%提升到99%的实战经验。文章详细介绍了数据增强、模型微调、后处理优化等关键步骤，并强调了针对特定领域数据的重要性。作者通过具体案例展示了如何通过迭代改进和错误分析来逐步提升模型性能，最终达到接近完美的准确率。文中还提供了一些实用的工具和技巧，帮助读者在自己的项目中复现类似效果。",
-      "title_zh": "我将本地OCR模型准确率从60%提升到99%",
+      "reason_zh": "深入解析Claude Code自动压缩机制，对优化上下文管理有实用价值。",
+      "summary_zh": "本文深入解析了Claude Code的auto compact功能源码。文章指出，在每次模型请求前，query.ts会执行治理流程，autoCompact以有效上下文窗口减去13K buffer作为触发阈值。通过分析源码位置，揭示了自动压缩的触发条件和实现细节，帮助开发者理解如何有效管理上下文窗口，避免超出限制。对于使用Claude Code进行复杂任务处理的开发者，本文提供了宝贵的优化思路。",
+      "title_zh": "Claude Code自动压缩源码解析",
       "weighted_score": 0.685,
       "score_breakdown": {
         "source_authority": 0.6,
@@ -364,46 +326,78 @@
         "impact": 0.6,
         "practical_value": 0.9
       },
-      "story_id": "e2985610801f48a3",
+      "story_id": "fc66c20798b70f8f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-computervision",
-          "url": "https://www.reddit.com/r/computervision/comments/1vgecxj/i_took_a_local_ocr_models_accuracy_from_60_to_99/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7670720234002333747"
         }
       ]
     },
     {
-      "id": "02b8f3920d16f2e8",
-      "source_id": "infoq-cn-ai",
-      "title": "一种用于管理 AI 变革步伐的演进式架构模式",
-      "url": "https://www.infoq.cn/article/h5Huo1l8Buyv0t8DXz6L?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-05T12:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/h5Huo1l8Buyv0t8DXz6L?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "bd89f0f04f37db4c",
+      "source_id": "zh-juejin",
+      "title": "别再只怪 GPU 了：2026 年 AI 训练/推理的存储瓶颈，以及 7 个被忽视的真相",
+      "url": "https://juejin.cn/post/7670582248601501706",
+      "published_at": "2026-08-06T05:36:26+00:00",
+      "raw_text": "过去一年，我跟踪了不下二十个团队的 AI 训练 / 推理数据管线搭建，反复看到一个反直觉的场景： GPU 集群堆满了，利用率却只有 30%–40%。 大家的第一反应永远是「加卡」「换 H 卡」「上更贵",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
+      "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "InfoQ深度文章，探讨如何通过架构模式管理AI变革步伐，对技术决策者有实用参考价值。",
-      "summary_zh": "本文探讨了在AI快速变革的背景下，企业如何采用演进式架构模式来管理技术更新带来的风险与机遇。文章指出，传统的架构设计往往追求稳定，但在AI领域，技术迭代迅速，需要一种能够灵活适应变化的架构方法。演进式架构强调通过增量式变更、模块化设计和持续重构，使系统能够在不中断业务的前提下逐步引入新的AI能力。文章还讨论了如何平衡创新与稳定，以及如何通过架构治理和团队协作来支持这种演进过程。对于正在规划AI战略的技术领导者，本文提供了实用的架构设计思路和最佳实践。",
-      "title_zh": "一种用于管理AI变革步伐的演进式架构模式",
-      "weighted_score": 0.7,
+      "depth_score": 0.8,
+      "reason_zh": "揭示AI训练中存储瓶颈被忽视的真相，提供7个实用洞察，对优化数据管线有直接指导价值。",
+      "summary_zh": "文章指出AI训练/推理中GPU利用率低至30%-40%的常见问题，根源往往不在GPU算力，而在存储瓶颈。作者基于对二十多个团队的观察，提出7个被忽视的真相，包括数据加载延迟、存储带宽限制、缓存策略不当等。强调优化存储架构（如使用高性能并行文件系统、数据预取、压缩）比单纯增加GPU更有效。提供了具体案例和解决方案，帮助读者重新审视基础设施设计，提升整体训练效率。",
+      "title_zh": "别再只怪GPU了：2026年AI训练/推理的存储瓶颈与7个被忽视的真相",
+      "weighted_score": 0.685,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
+        "source_authority": 0.6,
+        "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.8
+        "practical_value": 0.9
       },
-      "story_id": "543b14f88c575362",
+      "story_id": "ab355f5854184d0d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/h5Huo1l8Buyv0t8DXz6L?utm_source=rss&utm_medium=article"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7670582248601501706"
+        }
+      ]
+    },
+    {
+      "id": "5b314070a4761fd7",
+      "source_id": "zh-oschina",
+      "title": "Simon Willison 重新拥抱 MCP：无状态协议如何改变游戏规则",
+      "url": "https://www.oschina.net/news/488038/stateless-mcp",
+      "published_at": "2026-08-05T07:10:24+00:00",
+      "raw_text": "Simon Willison 对 MCP 态度的变化，是 AI 开发者圈子里一个值得关注的信号。 2025 年底，他在年度回顾里写了一篇小标题叫「The Only Year of MCP」，大意是 MCP 火了不到一年，就被 Skills（同样是 Anthropic 推出的概念）取代了——一个能访问终端、能跑 curl 的 agent，比任何 MCP 工具都灵活。2026 年上半年的趋势也...",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "Simon Willison对MCP态度的转变，深入分析无状态协议的价值，对开发者有启发。",
+      "summary_zh": "文章讨论了Simon Willison对MCP（Model Context Protocol）态度的转变。2025年底他曾认为MCP将被Anthropic的Skills取代，但2026年他重新拥抱MCP，认为无状态协议改变了游戏规则。文章分析了MCP与Skills的差异，指出无状态协议在灵活性、可组合性方面的优势，以及为何MCP在AI代理生态中仍具重要地位。对于AI开发者理解协议选择有参考价值。",
+      "title_zh": "Simon Willison 重新拥抱 MCP：无状态协议如何改变游戏规则",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "9fb5b09069e19de3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/488038/stateless-mcp"
         }
       ]
     }
