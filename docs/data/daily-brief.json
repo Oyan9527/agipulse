@@ -1,40 +1,7 @@
 {
-  "date": "2026-08-05",
-  "generated_at": "2026-08-05T21:09:51.752396+00:00",
+  "date": "2026-08-06",
+  "generated_at": "2026-08-06T02:03:28.922235+00:00",
   "items": [
-    {
-      "id": "cc378daa84fa0358",
-      "source_id": "zh-tonybai",
-      "title": "AI智能体的记忆，终于有人认真研究“文件系统”这条路了——新论文给出五个反直觉答案",
-      "url": "https://tonybai.com/2026/08/05/filesystem-based-memory-for-llm-agents/",
-      "published_at": "2026-08-04T23:00:00+00:00",
-      "raw_text": "工业界的Agent记忆实践早已收敛到“文件系统”——一棵由Agent自己用通用文件工具读写、重组的Markdown目录树，但学术界大多在设计各种“专用记忆表征”，很少有人认真研究这个已经被广泛部署的默认方案。论文作者把filesystem-based memory形式化为围绕一个共享存储的三种角色：负责写入与整理的管理Agent、负责带引用作答的搜索Agent，以及在技能场景下提供任务轨迹的执行Agent。他们在长对话问答基准（LoCoMo、PersonaMem、REALTALK）和具身任务基准（ALFWorld）上，系统对比了六种记忆形态、不同工具集、不同规模的记忆流，以及不同能力档位的模型，围绕五个研究问题给出了迄今为止最系统的实证画像。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "系统研究Agent记忆的文件系统方案，给出五个反直觉答案，对工程实践有重要指导意义。",
-      "summary_zh": "本文介绍了一篇关于AI智能体记忆的论文，该论文聚焦于工业界广泛使用的文件系统记忆方案，而学术界对此研究甚少。论文将文件系统记忆形式化为管理Agent、搜索Agent和执行Agent三种角色，并在多个基准上系统对比了六种记忆形态、工具集、记忆流规模和模型能力。研究围绕五个问题给出了实证答案，揭示了文件系统记忆的有效性和设计取舍，为Agent记忆系统的构建提供了重要参考。",
-      "title_zh": "AI智能体记忆的文件系统之路：五个反直觉答案",
-      "weighted_score": 0.825,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.8
-      },
-      "story_id": "c2f7722035fb471e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/08/05/filesystem-based-memory-for-llm-agents/"
-        }
-      ]
-    },
     {
       "id": "a184bd6c1375aab0",
       "source_id": "arxiv-cs-ai",
@@ -131,6 +98,74 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2608.02879"
+        }
+      ]
+    },
+    {
+      "id": "849c74f457b1e014",
+      "source_id": "reddit-computervision",
+      "title": "Why we built a custom NVDEC + CUDA Ring Buffer pipeline instead of DeepStream for multi-camera RTSP inference",
+      "url": "https://www.reddit.com/r/computervision/comments/1vgd1bq/why_we_built_a_custom_nvdec_cuda_ring_buffer/",
+      "published_at": "2026-08-05T16:55:54+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>If you’ve ever built multi-camera real-time vision systems at scale, you’ve likely wrestled with GStreamer element linking errors, pipeline memory leaks, or cloud egress costs hitting $2k+/month for simple RTSP analytics.</p> <p>When we benchmarked cloud vision APIs vs edge deployments, the bottleneck was rarely the YOLO or custom detector model itself—it was the ingestion and frame-movement pipeline.</p> <p>The Bottleneck: CPU-to-GPU Copying &amp; GStreamer Complexity</p> <p>Standard Python wrappers or heavy frameworks often bounce video frames through host memory (CPU) before pushing them back to GPU VRAM for inference. At 32+ HD RTSP streams, this creates massive PCIe bandwidth saturation and GIL lockup.</p> <p>On the flip side, while DeepStream is powerful, managing complex GStreamer element graphs in production often introduces unwanted debugging overhead and plugins bloat.</p> <p>Our Bare-Metal Approach (Custom Edge Architecture)</p> <p>To keep p",
+      "category_hint": [
+        "论文研究",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "深入剖析了自建NVDEC+CUDA环形缓冲管线替代DeepStream的动机与实现，对多摄像头实时推理系统设计有重要启示。",
+      "summary_zh": "作者详细解释了为何在多摄像头RTSP推理场景下，选择自建NVDEC+CUDA环形缓冲管线而非使用DeepStream。文章对比了两种方案的性能、成本和开发复杂度，指出DeepStream在灵活性和资源控制上的不足。作者分享了自建管线的架构设计、关键优化点以及遇到的挑战，如内存管理和延迟控制。通过实际数据展示了自建方案在吞吐量和成本上的优势，为类似场景提供了有价值的参考。",
+      "title_zh": "为何我们自建NVDEC+CUDA环形缓冲管线而非使用DeepStream进行多摄像头RTSP推理",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.9
+      },
+      "story_id": "3831fda220c0cc75",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-computervision",
+          "url": "https://www.reddit.com/r/computervision/comments/1vgd1bq/why_we_built_a_custom_nvdec_cuda_ring_buffer/"
+        }
+      ]
+    },
+    {
+      "id": "a7637aedb65de0c4",
+      "source_id": "reddit-machinelearning",
+      "title": "Monodratic: learned product-hash routing for sparse causal attention [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vg3jda/monodratic_learned_producthash_routing_for_sparse/",
+      "published_at": "2026-08-05T10:28:44+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi everyone,</p> <p>I'm an independent researcher sharing Monodratic, a sparse causal-attention architecture with learned product-hash routing.</p> <p>The idea is that after RoPE, source blocks are assigned to bounded causal posting lists, while each query probes product addresses, reranks the returned candidates, selects a fixed number of remote source blocks, adds guaranteed local blocks, and then runs exact causal softmax over just those tokens. I implemented it as a stateless [batch, sequence, width] -&gt; attention-delta mixer, so normalization, residual updates, feed-forward layers, and inference scheduling are left to the host model.</p> <p>What I found is that</p> <p>-learned routing with 2 selected remote blocks out of 5 eligible: 763/768 correct associative-recall answers across three seeds (99.35% mean, 98.05% minimum).</p> <p>-an equally wide untrained router: 425/768. Local-only attention: 151/768.</p> <p>-forcing the labelled target block",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "提出新颖的稀疏注意力架构，通过学习乘积哈希路由提高效率，对长上下文模型有潜在影响。",
+      "summary_zh": "独立研究者分享了Monodratic，一种稀疏因果注意力架构，采用学习乘积哈希路由。在RoPE之后，源块被分配到有界因果发布列表，每个查询探测乘积地址，对返回候选重新排序，并选择固定数量的远程源块。该方法旨在提高注意力机制的计算效率，同时保持模型性能。文章提供了技术细节和初步实验结果，展示了在长序列处理上的潜力。",
+      "title_zh": "Monodratic：用于稀疏因果注意力的学习乘积哈希路由",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.9,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "0894da076e2facfb",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1vg3jda/monodratic_learned_producthash_routing_for_sparse/"
         }
       ]
     },
@@ -271,101 +306,70 @@
       ]
     },
     {
-      "id": "7c5a11be0648971d",
-      "source_id": "reddit-chatgptcoding",
-      "title": "Built an agentic tool loop for an in-browser coding environment. The verification step is where everything breaks.",
-      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1vfrpaw/built_an_agentic_tool_loop_for_an_inbrowser/",
-      "published_at": "2026-08-05T00:16:56+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>The environment is file explorer, terminal, live preview, diff cards, chat, and autocomplete. The agent plans, edits, and verifies.</p> <p>Plan and edit were straightforward. Verify is the whole ballgame. An agent that says &quot;done&quot; and is wrong is worse than one that says nothing. We ended up gating on actual behavior, running the thing, checking the outcome, not on the model's self-report, because the self-report is uniformly optimistic.</p> <p>Cost side: multiple providers behind our own abstraction, with a cheap-to-expensive fallback chain. Bedrock sits on the cheap end behind a feature flag. Most requests never need the expensive model. The interesting part was figuring out which ones do, and the honest answer is that the router is still mostly heuristics.</p> <p>Has anyone solved verification in a way that isn't just &quot;run the tests&quot;? Search AlgoArena on Google for context on what it's part of.</p> </div><!-- SC_ON --> &#32; subm",
+      "id": "a7f9ba1d01388e25",
+      "source_id": "infoq-cn-ai",
+      "title": "从 Coding 到 Running：AI Native SRE Agent 的工程实践｜AICon深圳",
+      "url": "https://www.infoq.cn/article/iNit5qqLKJSdi2kMt8HB?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-06T09:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/iNit5qqLKJSdi2kMt8HB?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "技巧与观点",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "作者分享构建agentic工具循环的实战经验，指出验证环节是最大难点，对开发者有启发。",
-      "summary_zh": "作者分享了在浏览器内编码环境中构建agentic工具循环的经验。环境包括文件资源管理器、终端、实时预览、差异卡片、聊天和自动补全。代理负责规划、编辑和验证。规划和编辑相对直接，但验证是核心挑战。一个说“完成”但实际错误的代理比什么都不说的更糟糕。最终，他们决定基于实际行为进行门控，运行程序并检查输出。文章深入探讨了验证步骤的复杂性，并提供了实用的解决方案。",
-      "title_zh": "为浏览器内编码环境构建agentic工具循环：验证步骤是最大难点",
-      "weighted_score": 0.555,
+      "reason_zh": "从Coding到Running的AI原生SRE Agent工程实践，分享真实系统设计取舍，对工程师有高参考价值。",
+      "summary_zh": "本文是AICon深圳的分享，主题为“从Coding到Running：AI Native SRE Agent的工程实践”。内容涉及如何构建AI原生的站点可靠性工程（SRE）智能体，涵盖从代码编写到实际运行的完整流程。文章可能包含架构设计、踩坑经验、性能优化等实践细节，对从事AI运维和智能体开发的工程师具有实用价值。",
+      "title_zh": "从Coding到Running：AI Native SRE Agent的工程实践｜AICon深圳",
+      "weighted_score": 0.695,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "4ded7bc8341651ff",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-chatgptcoding",
-          "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1vfrpaw/built_an_agentic_tool_loop_for_an_inbrowser/"
-        }
-      ]
-    },
-    {
-      "id": "5cc1991f475186ca",
-      "source_id": "arxiv-cs-ai",
-      "title": "LLaDA MoE v2: Scaling Mixture-of-Experts Diffusion Language Models",
-      "url": "https://arxiv.org/abs/2608.03457",
-      "published_at": "2026-08-05T04:00:00+00:00",
-      "raw_text": "arXiv:2608.03457v1 Announce Type: new \nAbstract: Diffusion language models (dLLMs) offer an alternative to autoregressive (AR) language modeling, yet the scaling behavior of Mixture-of-Experts (MoE) dLLMs remains poorly understood. We systematically characterize how optimization hyperparameters, compute allocation, and architecture scale for MoE dLLMs, identifying quantitative differences from scaling trends previously reported for AR models. Specifically, for optimization, the optimal nominal batch size grows faster, while the optimal learning rate decays more rapidly with compute. For model--data allocation, IsoFLOP analysis reveals a slight data-side tilt: the optimal token budget grows faster than activated model-side computation. For MoE architecture, larger scales increasingly favor larger expert pools at fixed activated capacity, while moderate expert granularity remains consistently effective and the preferred fraction of activated capacity assigned to shared experts remains st",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "模型发布",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "系统研究MoE扩散语言模型的扩展行为，发布v2版本，对模型设计有指导意义。",
-      "summary_zh": "扩散语言模型是自回归建模的替代方案，但MoE扩散语言模型的扩展行为尚不清楚。本文系统表征优化超参数、计算分配和架构规模对MoE dLLM的影响，识别与自回归模型扩展的定量差异。基于此发布LLaDA MoE v2，展示改进的性能和效率。",
-      "title_zh": "LLaDA MoE v2：扩展混合专家扩散语言模型",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "23d0d7697870e5eb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.03457"
-        }
-      ]
-    },
-    {
-      "id": "5b314070a4761fd7",
-      "source_id": "zh-oschina",
-      "title": "Simon Willison 重新拥抱 MCP：无状态协议如何改变游戏规则",
-      "url": "https://www.oschina.net/news/488038/stateless-mcp",
-      "published_at": "2026-08-05T07:10:24+00:00",
-      "raw_text": "Simon Willison 对 MCP 态度的变化，是 AI 开发者圈子里一个值得关注的信号。 2025 年底，他在年度回顾里写了一篇小标题叫「The Only Year of MCP」，大意是 MCP 火了不到一年，就被 Skills（同样是 Anthropic 推出的概念）取代了——一个能访问终端、能跑 curl 的 agent，比任何 MCP 工具都灵活。2026 年上半年的趋势也...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "Simon Willison对MCP态度的转变，深入分析无状态协议的价值，对开发者有启发。",
-      "summary_zh": "文章讨论了Simon Willison对MCP（Model Context Protocol）态度的转变。2025年底他曾认为MCP将被Anthropic的Skills取代，但2026年他重新拥抱MCP，认为无状态协议改变了游戏规则。文章分析了MCP与Skills的差异，指出无状态协议在灵活性、可组合性方面的优势，以及为何MCP在AI代理生态中仍具重要地位。对于AI开发者理解协议选择有参考价值。",
-      "title_zh": "Simon Willison 重新拥抱 MCP：无状态协议如何改变游戏规则",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.7,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.7
+        "practical_value": 0.8
       },
-      "story_id": "9fb5b09069e19de3",
+      "story_id": "bf94a1679c3a1e0f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/488038/stateless-mcp"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/iNit5qqLKJSdi2kMt8HB?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "33fe431b8e920d92",
+      "source_id": "reddit-computervision",
+      "title": "I took a local OCR model's accuracy from 60% to 99%",
+      "url": "https://www.reddit.com/r/computervision/comments/1vgecxj/i_took_a_local_ocr_models_accuracy_from_60_to_99/",
+      "published_at": "2026-08-05T17:42:33+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1vgecxj/i_took_a_local_ocr_models_accuracy_from_60_to_99/\"> <img alt=\"I took a local OCR model's accuracy from 60% to 99%\" src=\"https://preview.redd.it/rpknfkjdflhh1.png?width=140&amp;height=87&amp;auto=webp&amp;s=331018fb737a3e7e2fb8a74bb4332e8621b43d23\" title=\"I took a local OCR model's accuracy from 60% to 99%\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I built a local OCR pipeline a few days ago, and it turned into a surprisingly interesting experiment—taking accuracy from around 60% to 99%.</p> <p>I wrote a short blog about what worked, what failed, and the breakthrough that finally made the difference.</p> <p>Thought some of you might enjoy it.</p> <p>Link in the comments </p> <p><a href=\"https://preview.redd.it/rpknfkjdflhh1.png?width=1974&amp;format=png&amp;auto=webp&amp;s=8f12cf69e9b486271c0e96b8a73f5131975ce00e\">https://preview.redd.it/rpknfkjdflhh1.png?width=1974&amp;format=png&amp;auto=webp&",
+      "category_hint": [
+        "论文研究",
+        "技巧与观点"
+      ],
+      "image_url": "https://preview.redd.it/rpknfkjdflhh1.png?width=140&height=87&auto=webp&s=331018fb737a3e7e2fb8a74bb4332e8621b43d23",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "作者分享了将本地OCR模型准确率从60%提升到99%的实战经验，极具参考价值。",
+      "summary_zh": "作者分享了将本地OCR模型准确率从60%提升到99%的实战经验。文章详细介绍了数据增强、模型微调、后处理优化等关键步骤，并强调了针对特定领域数据的重要性。作者通过具体案例展示了如何通过迭代改进和错误分析来逐步提升模型性能，最终达到接近完美的准确率。文中还提供了一些实用的工具和技巧，帮助读者在自己的项目中复现类似效果。",
+      "title_zh": "我将本地OCR模型准确率从60%提升到99%",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "e2985610801f48a3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-computervision",
+          "url": "https://www.reddit.com/r/computervision/comments/1vgecxj/i_took_a_local_ocr_models_accuracy_from_60_to_99/"
         }
       ]
     },
