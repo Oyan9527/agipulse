@@ -34,41 +34,6 @@
     "curated": true
   },
   {
-    "id": "dce4ae0a115d42a8",
-    "source_id": "reddit-localllama",
-    "title": "🟩 NVIDIA's whole speech stack just went local. ASR + TTS + codec, quantized to GGUF, running on-device via NeMo-Speech.cpp",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhjeqy/nvidias_whole_speech_stack_just_went_local_asr/",
-    "published_at": "2026-08-06T22:54:37+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vhjeqy/nvidias_whole_speech_stack_just_went_local_asr/\"> <img alt=\"🟩 NVIDIA's whole speech stack just went local. ASR + TTS + codec, quantized to GGUF, running on-device via NeMo-Speech.cpp\" src=\"https://preview.redd.it/omkru97m3uhh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=bbce969dea8573fbda2bbca3538e296a806ef433\" title=\"🟩 NVIDIA's whole speech stack just went local. ASR + TTS + codec, quantized to GGUF, running on-device via NeMo-Speech.cpp\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>🐦‍⬛ Magpie-TTS Multilingual</p> <p>🦜 Nemotron Speech Streaming EN 0.6B</p> <p>🦜 Nemotron-3.5 ASR Streaming</p> <p>🦜 Parakeet CTC 1.1B</p> <p>🦜 Parakeet TDT 0.6B v3</p> <p>🥦 NanoCodec Merged PR</p> <p><a href=\"https://huggingface.co/nvidia/magpie_tts_multilingual_357m#run-magpietts-locally-with-nemo-speechcpp\">https://huggingface.co/nvidia/magpie_tts_multilingual_357m#run-magpietts-locally-with-nemo-speechcpp</a></p> ",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://preview.redd.it/omkru97m3uhh1.png?width=640&crop=smart&auto=webp&s=bbce969dea8573fbda2bbca3538e296a806ef433",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "NVIDIA语音栈本地化，ASR+TTS+codec量化至GGUF，支持端侧部署，实用性强。",
-    "summary_zh": "NVIDIA的完整语音处理栈现已支持本地部署，包括自动语音识别（ASR）、文本转语音（TTS）和编解码器，并已量化为GGUF格式，可通过NeMo-Speech.cpp在设备端运行。这一进展使得语音AI应用无需依赖云端，可在本地高效运行，为隐私敏感和离线场景提供了解决方案。",
-    "title_zh": "NVIDIA完整语音栈本地化：ASR+TTS+codec量化至GGUF，通过NeMo-Speech.cpp端侧运行",
-    "weighted_score": 0.845,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.9
-    },
-    "story_id": "8067ceb9e5f53275",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhjeqy/nvidias_whole_speech_stack_just_went_local_asr/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "d4b6c0dcc2592f51",
     "source_id": "cloudflare-blog",
     "title": "Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers",
@@ -94,50 +59,11 @@
       "practical_value": 0.7
     },
     "story_id": "8341a0de96d8670e",
-    "multi_source_count": 2,
+    "multi_source_count": 1,
     "sources": [
       {
         "source_id": "cloudflare-blog",
         "url": "https://blog.cloudflare.com/kitesurf/"
-      },
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/08/06/cloudflare-introduces-kitesurf-an-agent-first-web-browser-that-runs-entirely-in-v8-isolates-on-cloudflare-workers/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a30ffaccd098f8d1",
-    "source_id": "reddit-localllama",
-    "title": "I ported vLLM's serving stack to C++20: 66 MiB binary, no Python at inference, output checked token-for-token against vLLM",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vh9lx4/i_ported_vllms_serving_stack_to_c20_66_mib_binary/",
-    "published_at": "2026-08-06T16:45:07+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vh9lx4/i_ported_vllms_serving_stack_to_c20_66_mib_binary/\"> <img alt=\"I ported vLLM's serving stack to C++20: 66 MiB binary, no Python at inference, output checked token-for-token against vLLM\" src=\"https://preview.redd.it/h5ldequx9shh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=31c7817718443e199494ad939e84694212eef0e8\" title=\"I ported vLLM's serving stack to C++20: 66 MiB binary, no Python at inference, output checked token-for-token against vLLM\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I'm the author, so discount the enthusiasm accordingly. This is an unaffiliated community port, not endorsed by the vLLM project, which it uses to verify its correctness.</p> <p>What started it: I love vLLM, but a vLLM install here is 9.1 GiB of virtualenv, and I wanted to embed inference inside other software, on machines where having an interpreter in the process is a problem. And, honestly, Python dependencies ",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://preview.redd.it/h5ldequx9shh1.png?width=640&crop=smart&auto=webp&s=31c7817718443e199494ad939e84694212eef0e8",
-    "category": "开源项目",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "将vLLM服务栈移植到C++20，实现无Python推理，性能与兼容性俱佳，极具启发性。",
-    "summary_zh": "作者成功将vLLM的服务栈移植到C++20，生成了仅66 MiB的二进制文件，推理过程中无需Python。输出与vLLM逐token比对完全一致，确保了兼容性。这一工作展示了用C++实现高性能LLM服务的可能性，为追求极致性能和低资源占用的部署场景提供了新思路。",
-    "title_zh": "我将vLLM的服务栈移植到C++20：66 MiB二进制，推理无Python，输出与vLLM逐token一致",
-    "weighted_score": 0.815,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.9
-    },
-    "story_id": "6e59b1f446ae0016",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vh9lx4/i_ported_vllms_serving_stack_to_c20_66_mib_binary/"
       }
     ],
     "curated": true
@@ -178,41 +104,6 @@
     "curated": true
   },
   {
-    "id": "fc5784d0139d1165",
-    "source_id": "reddit-localllama",
-    "title": "nvidia/NVIDIA-Nemotron-Parse-2.0 · Hugging Face",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vh7lzy/nvidianvidianemotronparse20_hugging_face/",
-    "published_at": "2026-08-06T15:34:01+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vh7lzy/nvidianvidianemotronparse20_hugging_face/\"> <img alt=\"nvidia/NVIDIA-Nemotron-Parse-2.0 · Hugging Face\" src=\"https://external-preview.redd.it/dJdgA6yOVBoAqTYT-hn-L0kuAfBU9GCxmWIVZEBHtGM.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3f2c5fb045859e0a8cd03fa795c0d00ea8e29656\" title=\"nvidia/NVIDIA-Nemotron-Parse-2.0 · Hugging Face\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>NVIDIA Nemotron Parse 2.0 transforms document images into structured, machine-readable representations with text, layout classes, bounding boxes, and reading-order information. Given a Red, Green, Blue (RGB) document image and a task prompt, the model produces formatted text and spatial annotations for document elements such as titles, paragraphs, captions, tables, charts, page headers, page footers, footnotes, pictures, and bibliography entries. Compared with NVIDIA Nemotron Parse v1.2, NVIDIA Nemotron Parse 2.0 adds an approximat",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/dJdgA6yOVBoAqTYT-hn-L0kuAfBU9GCxmWIVZEBHtGM.png?width=640&crop=smart&auto=webp&s=3f2c5fb045859e0a8cd03fa795c0d00ea8e29656",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "NVIDIA发布Nemotron-Parse 2.0，提升文档解析能力，值得关注。",
-    "summary_zh": "NVIDIA在Hugging Face上发布了Nemotron-Parse 2.0，这是其文档解析模型的新版本。该模型专注于将复杂文档转换为LLM可用的格式，支持表格、图表等元素的提取。Nemotron-Parse 2.0在性能上有所提升，能够更准确地处理多样化的文档类型。该发布对于需要高效文档处理的AI应用开发者具有重要意义。",
-    "title_zh": "NVIDIA Nemotron-Parse 2.0发布",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "79dc2d57496195ec",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vh7lzy/nvidianvidianemotronparse20_hugging_face/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "4cc4c325f30d9d61",
     "source_id": "arxiv-cs-ai",
     "title": "WorldClaw: Agentic 3D Open-World Generation at Scale",
@@ -247,106 +138,60 @@
     "curated": true
   },
   {
-    "id": "ce5123283efeeeec",
-    "source_id": "marktechpost",
-    "title": "Liquid AI Releases LFM2.5-2.6B: An On-Device Agentic Model With 128K Context, Tool Calling, And Open Weights",
-    "url": "https://www.marktechpost.com/2026/08/06/liquid-ai-lfm2-5-2-6b-on-device-agentic-model/",
-    "published_at": "2026-08-07T03:42:27+00:00",
-    "raw_text": "<p>Liquid AI released LFM2.5-2.6B, an agentic model that plans, calls tools, and completes multi-step tasks entirely on-device. The 2.69B parameter model pairs 22 double-gated short convolution blocks with 8 GQA blocks across 30 layers, handles 131,072 tokens of context, and decodes at 220 tokens/s on an M5 Max in under 2.5 GB. Open weights ship in GGUF, MLX, and ONNX.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/06/liquid-ai-lfm2-5-2-6b-on-device-agentic-model/\">Liquid AI Releases LFM2.5-2.6B: An On-Device Agentic Model With 128K Context, Tool Calling, And Open Weights</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "id": "9d4d19f686852bed",
+    "source_id": "the-decoder",
+    "title": "Amazon, Cursor, Microsoft, OpenAI, and Vercel unite on a shared standard for AI agent plugins",
+    "url": "https://the-decoder.com/amazon-cursor-microsoft-openai-and-vercel-unite-on-a-shared-standard-for-ai-agent-plugins/",
+    "published_at": "2026-08-07T08:54:45+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/agent_standard.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Amazon, Cursor, Microsoft, OpenAI, and Vercel have jointly created Agent Plugins, an open standard that defines a single package format for AI agent extensions. Version 1.0.0 uses a plugin.json manifest file and supports both agent skills and MCP servers.</p>\n<p>The article <a href=\"https://the-decoder.com/amazon-cursor-microsoft-openai-and-vercel-unite-on-a-shared-standard-for-ai-agent-plugins/\">Amazon, Cursor, Microsoft, OpenAI, and Vercel unite on a shared standard for AI agent plugins</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
     "category_hint": [
       "模型发布",
-      "产品发布"
+      "行业动态"
     ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Liquid AI发布2.6B端侧Agent模型，支持128K上下文和工具调用，性能强劲，值得关注。",
-    "summary_zh": "Liquid AI发布了LFM2.5-2.6B，一个端侧Agent模型，能够规划、调用工具并完成多步任务。该模型有2.69B参数，采用22个双门控短卷积块和8个GQA块，共30层，支持131,072 token上下文，在M5 Max上解码速度达220 tokens/s，占用内存不到2.5GB。开放权重提供GGUF、MLX和ONNX格式。",
-    "title_zh": "Liquid AI发布LFM2.5-2.6B：端侧Agent模型，128K上下文，支持工具调用，开放权重",
-    "weighted_score": 0.8,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "b0a5cfdd0fc3f182",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/08/06/liquid-ai-lfm2-5-2-6b-on-device-agentic-model/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d5b8622f65feee3b",
-    "source_id": "marktechpost",
-    "title": "Prime Intellect Releases Prime Agent: An Open-Source RLM Harness Where Sub-Agents Are Function Calls Inside Persistent IPython Kernel",
-    "url": "https://www.marktechpost.com/2026/08/06/prime-intellect-releases-prime-agent/",
-    "published_at": "2026-08-06T09:00:08+00:00",
-    "raw_text": "<p>Prime Intellect has open-sourced Prime Agent, a coding and research harness built on two abstractions: the Recursive Language Model, which turns sub-agent calls into functions inside a persistent IPython kernel, and the Continual Harness, which lets the agent edit its own prompts, skills, memory, and sub-agent specs mid-run. With Opus 5 it reports 95.5% RHAE Best@1 on ARC-AGI-3, above the reported human expert baseline of 95.4%.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/06/prime-intellect-releases-prime-agent/\">Prime Intellect Releases Prime Agent: An Open-Source RLM Harness Where Sub-Agents Are Function Calls Inside Persistent IPython Kernel</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/2197.png",
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/agent_standard.png",
     "category": "开源项目",
     "content_type": "产品发布",
-    "depth_score": 0.7,
-    "reason_zh": "Prime Agent 开源，创新架构将子代理作为函数调用，性能优异，值得研究。",
-    "summary_zh": "Prime Intellect 开源了 Prime Agent，一个编码和研究框架，基于两个抽象：递归语言模型（将子代理调用转化为持久 IPython 内核中的函数）和持续框架（允许代理在运行中编辑自己的提示、技能、记忆和子代理规格）。使用 Opus 5 在 ARC-AGI-3 上达到 95.5% RHAE Best@1，超过报告结果。",
-    "title_zh": "Prime Intellect 发布 Prime Agent：开源 RLM 框架，子代理作为持久 IPython 内核中的函数调用",
-    "weighted_score": 0.795,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.8
-    },
-    "story_id": "e28b5755daa1a7b3",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/08/06/prime-intellect-releases-prime-agent/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "0d8cf8179e71cb1c",
-    "source_id": "infoq-cn-ai",
-    "title": "Jeff Dean离职前最后一次对话：我低估了AI，也看清了创业者的唯一生路",
-    "url": "https://www.infoq.cn/article/x5sIQ2lED2h6G2Uvyu48?utm_source=rss&utm_medium=article",
-    "published_at": "2026-08-06T14:39:55+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/x5sIQ2lED2h6G2Uvyu48?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.6,
-    "reason_zh": "Jeff Dean离职前对话，罕见分享对AI的反思，具有高关注度和思想价值。",
-    "summary_zh": "本文是InfoQ发布的Jeff Dean离职前的最后一次对话。Jeff Dean承认自己低估了AI的发展速度，并分享了对创业者的建议。他认为，在AI时代，创业者的唯一生路是专注于解决具体问题，而非追逐通用模型。他回顾了Google在AI领域的历程，讨论了技术突破、伦理挑战以及未来方向。文章还涉及他对开源、人才和竞争的看法。Jeff Dean的坦诚反思为行业提供了宝贵视角。",
-    "title_zh": "Jeff Dean离职前最后一次对话：我低估了AI，也看清了创业者的唯一生路",
-    "weighted_score": 0.79,
+    "depth_score": 0.3,
+    "reason_zh": "多家巨头联合推出AI代理插件开放标准，可能重塑生态，值得开发者关注。",
+    "summary_zh": "Amazon、Cursor、Microsoft、OpenAI和Vercel联合发布了Agent Plugins，这是一个开放标准，定义了AI代理扩展的统一包格式，版本1.0.0已发布。该标准旨在促进不同AI代理之间的插件兼容性，减少碎片化。此举可能对AI代理生态产生深远影响，开发者可据此开发跨平台插件。",
+    "title_zh": "Amazon、Cursor、Microsoft、OpenAI和Vercel联合制定AI代理插件标准",
+    "weighted_score": 0.785,
     "score_breakdown": {
       "source_authority": 0.8,
       "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.5
+      "impact": 0.8,
+      "practical_value": 0.6
     },
-    "story_id": "2c23952c73278d4f",
+    "story_id": "1bda337bf7bd2aca",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/x5sIQ2lED2h6G2Uvyu48?utm_source=rss&utm_medium=article"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/the-company-that-made-open-weights-mainstream-now-competes-on-discounts/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/claude-code-is-the-fastest-agent-framework-but-costs-nearly-three-times-more-than-the-cheapest-rival/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/microsofts-ai-revenue-reportedly-depends-on-openai-for-70-percent/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/deepminds-talent-drain-likely-comes-down-to-chip-shortages-a-conflict-of-interest-and-googles-bureaucracy/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/amazon-cursor-microsoft-openai-and-vercel-unite-on-a-shared-standard-for-ai-agent-plugins/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/openai-reportedly-slows-research-after-its-own-models-secretly-coordinated-hacks-for-weeks-undetected/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/openais-hockey-puck-sized-smart-speaker-with-moving-parts-is-set-to-ship-in-2027/"
       }
     ],
     "curated": true
@@ -493,76 +338,6 @@
     "curated": true
   },
   {
-    "id": "c567166a2ca2158d",
-    "source_id": "reddit-localllama",
-    "title": "AMD Acquires Taalas to Advance Compute Solutions for Rapidly Growing AI Inference Market",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhrdo3/amd_acquires_taalas_to_advance_compute_solutions/",
-    "published_at": "2026-08-07T05:09:25+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://ir.amd.com/news-events/press-releases/detail/1296/amd-acquires-taalas-to-advance-compute-solutions-for-rapidly-growing-ai-inference-market\">Press</a></p> <p>My <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1u270wg/comment/oqz8n13/\">earlier prediction</a> that Tesla would buy them completely missed the mark.</p> <p>With AMD focusing heavily on the enterprise side, the idea of consumer-facing hot-swappable AI model chips looks pretty much dead. </p> <p>Fast forward ten years, you might find used model blade cards on eBay, except a full model's weights will be split across them, so it'll take multiple blades chained together just to make up a single complete set of weights.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/lurenjia_3x\"> /u/lurenjia_3x </a> <br /> <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vhrdo3/amd_acquires_taalas_to_advance_compute_solutions/\">[link]</a></sp",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "AMD收购Taalas强化AI推理计算，对芯片竞争格局有重要影响，值得关注。",
-    "summary_zh": "AMD宣布收购Taalas，以推进快速增长的AI推理市场的计算解决方案。这一收购将增强AMD在AI推理领域的竞争力，可能对NVIDIA构成挑战。用户评论提到此前预测特斯拉会收购Taalas，但预测失误。AMD的此举表明其正积极布局AI硬件，未来竞争将更加激烈。",
-    "title_zh": "AMD收购Taalas以推进AI推理市场计算解决方案",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.4
-    },
-    "story_id": "1fbbd1c7826af618",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhrdo3/amd_acquires_taalas_to_advance_compute_solutions/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f0a57af909435b71",
-    "source_id": "marktechpost",
-    "title": "Microsoft Open Sources code-testing-generator: a Polyglot Unit-Test Agent That Hits 92.1% Task Completion Versus 78.9% for Stock Copilot",
-    "url": "https://www.marktechpost.com/2026/08/06/microsoft-open-sources-code-testing-generator/",
-    "published_at": "2026-08-07T05:42:45+00:00",
-    "raw_text": "<p>Microsoft has open sourced code-testing-generator, a polyglot unit-test agent shipping in the MIT-licensed dotnet/skills repository. It reads a repository before writing anything — detecting the language, test framework, existing conventions, and the real build and test commands — then plans, writes, runs and validates the tests it produces. On Microsoft's internal 152-task benchmark it completed 140 tasks against 120 for stock GitHub Copilot on the same model, with the gain concentrated almost entirely in vague prompts and diff-targeted requests.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/06/microsoft-open-sources-code-testing-generator/\">Microsoft Open Sources code-testing-generator: a Polyglot Unit-Test Agent That Hits 92.1% Task Completion Versus 78.9% for Stock Copilot</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "微软开源多语言单元测试代理，任务完成率显著高于Copilot，对提升代码质量有实用价值。",
-    "summary_zh": "微软开源了code-testing-generator，这是一个多语言单元测试代理，已发布在MIT许可的dotnet/skills仓库中。该工具在编写测试前会先读取整个仓库，检测语言、测试框架、现有约定以及真实的构建和测试命令，然后规划、编写、运行并验证生成的测试。在微软内部的152任务基准测试中，其任务完成率达到92.1%，而标准Copilot为78.9%。",
-    "title_zh": "微软开源code-testing-generator：多语言单元测试代理，任务完成率达92.1%",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "005f0d0f9f069790",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/08/06/microsoft-open-sources-code-testing-generator/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "7fa201e30c7e3776",
     "source_id": "deepmind-blog",
     "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones",
@@ -623,11 +398,15 @@
       "practical_value": 0.6
     },
     "story_id": "9034e7c9154aeab5",
-    "multi_source_count": 5,
+    "multi_source_count": 6,
     "sources": [
       {
         "source_id": "krasia",
         "url": "https://kr-asia.com/kimi-k3-and-deepseek-v4-expose-widening-divide-over-native-multimodality"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/qwen3-8-max-catches-claude-opus-4-8-but-kimi-k3-still-scores-higher-for-25-percent-less/"
       },
       {
         "source_id": "zh-leiphone",
@@ -642,78 +421,8 @@
         "url": "https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot"
       },
       {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhv4to/new_unsloth_kimi_k3_drops_q1_0_466gb_tq1_0509gb/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a7be612269dbdab6",
-    "source_id": "techcrunch-ai",
-    "title": "Google Maps adds agentic features, including food ordering and hotel bookings",
-    "url": "https://techcrunch.com/2026/08/06/google-maps-adds-agentic-features-including-food-ordering-and-hotel-bookings/",
-    "published_at": "2026-08-06T12:30:00+00:00",
-    "raw_text": "The launch of these new features reflects Google’s ambitions to transform Google Maps from a navigation tool into an assistant that's capable of helping users complete real-world tasks.",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "谷歌地图引入智能体功能，标志导航工具向任务助手转型，影响广泛。",
-    "summary_zh": "谷歌地图推出新的智能体功能，包括食品订购和酒店预订。这些功能旨在将谷歌地图从导航工具转变为能够帮助用户完成现实世界任务的助手。此举反映了谷歌在AI驱动服务方面的雄心，可能改变用户与地图应用的互动方式。",
-    "title_zh": "谷歌地图新增智能体功能，支持订餐和酒店预订",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "a0d801897240099f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/08/06/google-maps-adds-agentic-features-including-food-ordering-and-hotel-bookings/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "0b91ac9465cc4f61",
-    "source_id": "verge-ai",
-    "title": "OpenAI is giving ChatGPT free users unlimited text chats",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/976239/openai-chatgpt-free-go-text-chats",
-    "published_at": "2026-08-06T17:00:00+00:00",
-    "raw_text": "OpenAI is making a big change for ChatGPT users on its free and Go tiers: Starting next week, users on those tiers will be able to have unlimited text chats with the chatbot, according to OpenAI. Right now, you may run into rate limits if you do too many text chats on those tiers, but [&#8230;]",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/02/STK155_OPEN_AI_4_CVirginia_A.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-    "category": "产品发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "OpenAI宣布免费用户无限文本聊天，影响广泛，值得关注。",
-    "summary_zh": "OpenAI宣布，从下周开始，ChatGPT免费版和Go版的用户将可以无限制地进行文本聊天，不再受速率限制。这一变化旨在提升用户体验，让更多用户能够自由使用ChatGPT。同时，OpenAI还计划为这些用户推出一个新的“思考”按钮，用于处理复杂查询。此举可能吸引更多用户使用ChatGPT，并加剧与竞争对手的竞争。",
-    "title_zh": "OpenAI为免费用户提供无限文本聊天",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "f572c3637f067007",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "verge-ai",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/976239/openai-chatgpt-free-go-text-chats"
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/987/095.htm"
       }
     ],
     "curated": true
@@ -966,7 +675,7 @@
     "title": "NVIDIA/NeMo v3.0.0",
     "url": "https://github.com/NVIDIA-NeMo/Speech/releases/tag/v3.0.0",
     "published_at": "2026-08-07T00:13:21+00:00",
-    "raw_text": "\n## ASR\n\n<details><summary>Changelog</summary>\n\n- Add Per-Stream Phrase Boosting for Cache-Aware RNN-T by @artbataev :: PR: #15344\n- docs: clarify audio preprocessing for ASR inference by @stanley1208 :: PR: #15308\n- feat(asr): Support Parquet/Arrow datasets with embedded audio bytes via Lhotse by @v4xsh :: PR: #15303\n- Add buffered inference support for SALM models by @naymaraq :: PR: #15364\n- docs: fix typo and path error in ASR documentation by @stanley1208 :: PR: #15372\n- docs: fix multiple typos in ASR bucketing documentation by @stanley1208 :: PR: #15376\n- Transformation stage 0: NeMo docs revision by @pzelasko :: PR: #15363\n- [TTS] Remove un-supported tts models and related docs by @subhankar-ghosh :: PR: #15368\n- Fixing could not find ctc_segmentation. in CTC tutorial by @Jorjeous :: PR: #15403\n- Adapt to use env variable for adapter mixin model loading by @nithinraok :: PR: #15406\n- fix: add missing docstring for transcript args in EncDecMultiTaskModel.forward() by @stanley120",
+    "raw_text": "# NVIDIA NeMo Speech 3.0 Release Notes\r\n\r\nNeMo Speech 3.0 is the first major release after the repo split and rename to `NVIDIA-NeMo/Speech`. The repo now focuses on ASR, TTS, audio processing, speaker tasks, and SpeechLM. Non-speech Framework, LLM, VLM, diffusion, export/deploy, evaluator components can now be found under separate repos under NVIDIA-NeMo organization.\r\n\r\nWhile this release brings new major features, the central focus is addressing technical debt: removed 800k deprecated LOC, migration to uv package manager for cleaner installs, stronger model test coverage, reduced the number of dependencies, revamped documentation, lighter containers, and `AGENTS.md` + agentic skills. \r\n\r\n## Top-Level Changes and Highlights\r\n\r\n### Breaking Changes and Migration Notes\r\n\r\n- LLM/VLM/diffusion/NLP/export/evaluator collections have been moved out to separate repos.\r\n- Unsupported ASR/TTS models and old tutorials were removed. Use active examples under `examples/` and docs under `docs/sour",
     "category_hint": [
       "开源项目"
     ],
@@ -1131,40 +840,6 @@
     "curated": true
   },
   {
-    "id": "b36d6f8b870a839d",
-    "source_id": "zh-ithome",
-    "title": "阿里推出国内首个 AI 语音平台 CosyVoice Studio，限时免费体验",
-    "url": "https://www.ithome.com/0/987/040.htm",
-    "published_at": "2026-08-07T07:37:57+00:00",
-    "raw_text": "<p>IT之家 8 月 7 日消息，阿里巴巴今日宣布推出国内首个一站式 AI 语音生产力平台 <a href=\"https://cosyvoice.net.cn\" target=\"_blank\">CosyVoice Studio</a>。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/208424a4-af46-489d-b174-3276803898ea.jpg?x-bce-process=image/format,f_auto\" /></p><p>官方表示，该平台基于自研语音模型 Qwen-Audio 打造，包含语音记录 CosyFlow、语音智能体 CosyAgent 和音频内容创作工具 CosyCreative 等功能。</p><p>用户可在 iOS、Android、Mac 和 Windows 应用商店搜索“CosyVoice”下载，<strong>限时免费体验</strong>。CosyAgent 和 CosyCreative 目前以白名单邀请制面向企业用户测试，<strong>近期将全面开放</strong>。</p><p>IT之家附 CosyVoice Studio 功能如下：</p><h3>语音记录 CosyFlow：转写叠加语义理解，输出结构化文本</h3><p>语音记录在语音转文字基础上叠加语义理解和文本生成能力。日常场景中自动过滤“那个”“嗯”等口语填充词，<strong>将零散想法整理为清晰表达</strong>；工作场景中，口述即可生成邮件、工作汇报、会议纪要的格式与话术。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/674616af-c4cb-4158-bb54-27a9f83f51a6.png?x-bce-process=image/format,f_auto\" /></p><p><strong>内置“随记”功能</strong>，面向会议、访谈、课堂等场景，支持实时录制和离线上传。根据声纹区分不同发言人，录音结束后自动生成结构化章节和智能摘要。</p><p style=",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/208424a4-af46-489d-b174-3276803898ea.jpg?x-bce-process=image/format,f_auto",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "阿里推出国内首个AI语音平台CosyVoice Studio，功能丰富且限时免费，值得关注。",
-    "summary_zh": "阿里巴巴推出国内首个一站式AI语音生产力平台CosyVoice Studio，基于自研语音模型Qwen-Audio，包含语音记录CosyFlow、语音智能体CosyAgent和音频内容创作工具CosyCreative等功能，用户可在iOS等平台体验，限时免费。",
-    "title_zh": "阿里推出国内首个AI语音平台CosyVoice Studio，限时免费体验",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "87b7d0c3775e231d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/987/040.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "4039cf7feea19956",
     "source_id": "pandaily",
     "title": "CASIA's PhiZero Gives World Models a 'Physical Language' and Cuts Tokens 175x",
@@ -1194,6 +869,40 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/casia-phizero-world-model-physical-language-175x-token-reduction-aug2026"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "34db925c4d60bc72",
+    "source_id": "zh-v2ex",
+    "title": "[推广] 2026 年 8 月 6 日， OpenAI 等共同发布并开源 Agent Plugins 1.0.0 标准",
+    "url": "https://www.v2ex.com/t/1232783#reply0",
+    "published_at": "2026-08-07T09:14:40+00:00",
+    "raw_text": "<p>2026 年 8 月 6 日，OpenAI 、Amazon 、Microsoft 、Cursor 、Vercel 等共同发布并开源 Agent Plugins 1.0.0 标准。\nAgent Plugins 包含了 skills 和 mcp ，让 agent 调用工具的功能更强大更容易。\nAgent 以后功能更强大了。</p>\n<p><a href=\"https://agentplugin.net/\" rel=\"nofollow\">https://agentplugin.net/</a></p>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "OpenAI等巨头联合发布Agent Plugins标准，推动Agent工具调用标准化，影响深远。",
+    "summary_zh": "2026年8月6日，OpenAI、Amazon、Microsoft、Cursor、Vercel等公司联合发布并开源了Agent Plugins 1.0.0标准。该标准整合了skills和MCP，旨在增强Agent调用工具的能力，使其更强大且易于使用。此举有望统一Agent插件生态，促进AI代理技术的标准化发展。",
+    "title_zh": "OpenAI等联合发布Agent Plugins 1.0.0标准，开源推动Agent工具调用标准化",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "13d7a45de6de95b6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1232783#reply0"
       }
     ],
     "curated": true
@@ -1268,104 +977,36 @@
     "curated": true
   },
   {
-    "id": "ca643a5787996b47",
-    "source_id": "verge-ai",
-    "title": "Jony Ive&#8217;s first OpenAI gadget is reportedly a hockey puck-sized smart speaker",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/976431/openai-chatgpt-battery-smart-speaker-rumor",
-    "published_at": "2026-08-06T20:55:39+00:00",
-    "raw_text": "The AI device OpenAI is developing with former Apple designer Jony Ive is \"essentially a smart speaker without a display\" that's battery-powered, doughnut-shaped and roughly the size of a hockey puck, according to Bloomberg reporter Mark Gurman. The device, expected to launch in 2027 for a price over $300, reportedly \"will have a unique look, [&#8230;]",
+    "id": "9f8e92b7a53c2e21",
+    "source_id": "toms-hardware",
+    "title": "Anthropic co-designing custom AI inference chips to bypass costly Nvidia GPUs — Samsung reported as manufacturing partner for Claude maker",
+    "url": "https://www.tomshardware.com/tech-industry/anthropic-to-build-its-own-co-designed-custom-ai-accelerator-for-inferencing-workloads-samsung-reported-to-be-partnering-with-the-claude-ai-maker-for-manufacturing",
+    "published_at": "2026-08-07T10:30:00+00:00",
+    "raw_text": "Anthropic has announced its building a team to co-design custom ASIC chips for AI inferencing workloads. This will give it greater control over its compute buildout and allow it to make its AI models specifically more efficient for its designs.",
     "category_hint": [
       "行业动态",
       "产品发布"
     ],
-    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/24958946/1421761326.jpg?quality=90&#038;strip=all&#038;crop=21.6,18.717179294824,78.4,81.282820705176",
-    "category": "产品发布",
+    "image_url": "https://cdn.mos.cms.futurecdn.net/4GMtoxbVg4TgeKBcafXnMn-1280-80.jpg",
+    "category": "行业动态",
     "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "Jony Ive与OpenAI合作的首款设备传闻为冰球大小智能音箱，设计独特，备受期待。",
-    "summary_zh": "据Bloomberg记者Mark Gurman报道，OpenAI与苹果前设计师Jony Ive合作开发的AI设备是一款“无显示屏的智能音箱”，电池供电，甜甜圈形状，大小约如冰球。该设备预计于2027年发布，售价超过300美元，将拥有独特外观。这一消息引发了广泛关注，但OpenAI尚未官方确认。",
-    "title_zh": "Jony Ive首款OpenAI设备据称为冰球大小智能音箱",
+    "depth_score": 0.3,
+    "reason_zh": "Anthropic自研AI推理芯片，减少对英伟达依赖，对AI硬件格局有重大影响，值得关注。",
+    "summary_zh": "Anthropic 宣布组建团队，与三星合作共同设计定制 ASIC 芯片，用于 AI 推理工作负载。此举旨在减少对英伟达 GPU 的依赖，增强对计算基础设施的控制，并针对自身模型进行优化，提高效率。定制芯片有望降低推理成本，并可能影响 AI 芯片市场格局。三星被报道为制造合作伙伴，但具体细节尚未公布。",
+    "title_zh": "Anthropic 联合设计定制 AI 推理芯片，以绕过昂贵的英伟达 GPU——三星据报为制造伙伴",
     "weighted_score": 0.745,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
+      "novelty": 0.8,
+      "impact": 0.9,
       "practical_value": 0.4
     },
-    "story_id": "30227d885b26c628",
+    "story_id": "8160d903c8b3fed2",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "verge-ai",
-        "url": "https://www.theverge.com/ai-artificial-intelligence/976431/openai-chatgpt-battery-smart-speaker-rumor"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "679f856a23134ec7",
-    "source_id": "zh-oschina",
-    "title": "从混乱到秩序：我如何搭建一套「规范驱动」的 AI 协作开发体系",
-    "url": "https://my.oschina.net/vivotech/blog/19734056",
-    "published_at": "2026-08-06T09:15:38+00:00",
-    "raw_text": "在存量项目的增量开发中，AI 常常面临理解偏差、执行不稳、需要频繁纠正等问题。本文介绍自建的「OpenSpec 规范层 + AI Workflows 执行层」体系，通过一套「规范 + 技能 + 钩子」机制，对 AI 的理解、执行和校验进行系统化约束与增强，显著提升开发协作中的准确率与稳定性，让 AI 从 “需要反复纠正的实习生” 逐步成长为...",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "分享规范驱动的AI协作开发体系，提升开发效率，值得借鉴。",
-    "summary_zh": "作者介绍了自建的「OpenSpec规范层 + AI Workflows执行层」体系，通过规范、技能和钩子机制，对AI的理解、执行和校验进行系统化约束，解决了存量项目增量开发中AI理解偏差、执行不稳等问题。该体系显著提升了AI协作的准确率和稳定性，使AI从需要反复纠正的实习生成长为可靠的开发伙伴。",
-    "title_zh": "从混乱到秩序：我如何搭建一套「规范驱动」的AI协作开发体系",
-    "weighted_score": 0.74,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "a2163f775eba11fe",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-oschina",
-        "url": "https://my.oschina.net/vivotech/blog/19734056"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d9c13846f4627b6a",
-    "source_id": "ai-supremacy",
-    "title": "The Year AI Science and the Physical AI Industry Came Alive",
-    "url": "https://www.ai-supremacy.com/p/the-year-ai-science-and-the-physical-ai-went-mainstream-humanoid-robotics",
-    "published_at": "2026-08-06T09:28:35+00:00",
-    "raw_text": "Google Gemini Robotics 2, Unitree and AgiBot IPOs, Robot and optical transceiver bans, the compute cost problem, Negative FCF dilemma, mounting debt, circular revenue.",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://substackcdn.com/image/fetch/$s_!-Z4f!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffb6a4d81-b811-4072-9e52-2b1a3519bee0_1200x630.jpeg",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "回顾AI科学与物理AI行业年度进展，分析挑战与机遇。",
-    "summary_zh": "文章回顾了AI科学和物理AI行业的重要事件，包括Google Gemini Robotics 2的发布、宇树和智元机器人的IPO、机器人和光模块的禁令、计算成本问题、负自由现金流困境、债务累积以及循环收入模式。这些事件反映了物理AI行业的快速发展与面临的财务和供应链挑战。",
-    "title_zh": "AI科学与物理AI行业活跃的一年",
-    "weighted_score": 0.74,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.9,
-      "practical_value": 0.5
-    },
-    "story_id": "c73ac3220e57b45c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "ai-supremacy",
-        "url": "https://www.ai-supremacy.com/p/the-year-ai-science-and-the-physical-ai-went-mainstream-humanoid-robotics"
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/tech-industry/anthropic-to-build-its-own-co-designed-custom-ai-accelerator-for-inferencing-workloads-samsung-reported-to-be-partnering-with-the-claude-ai-maker-for-manufacturing"
       }
     ],
     "curated": true
@@ -1401,84 +1042,6 @@
       {
         "source_id": "cloudflare-blog",
         "url": "https://blog.cloudflare.com/the-agentic-internet/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a1931dd796d1be12",
-    "source_id": "reddit-localllama",
-    "title": "Qwen 3.8 Max now ranked as best overall model ahead of Opus 5 by Artificial Analysis agentic index",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/",
-    "published_at": "2026-08-06T18:50:32+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/\"> <img alt=\"Qwen 3.8 Max now ranked as best overall model ahead of Opus 5 by Artificial Analysis agentic index\" src=\"https://external-preview.redd.it/vxL3J4B1cStZzAInWQ5D4gqyaUYke8i4-GOuqdek2Vw.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=16f00fde80195f819fab287244c350a00f7f616a\" title=\"Qwen 3.8 Max now ranked as best overall model ahead of Opus 5 by Artificial Analysis agentic index\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/anderspitman\"> /u/anderspitman </a> <br /> <span><a href=\"https://artificialanalysis.ai/?intelligence=agentic-index\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/\">[comments]</a></span> </td></tr></table>",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/vxL3J4B1cStZzAInWQ5D4gqyaUYke8i4-GOuqdek2Vw.png?width=640&crop=smart&auto=webp&s=16f00fde80195f819fab287244c350a00f7f616a",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "Qwen 3.8 Max登顶Artificial Analysis智能体指数，反映模型竞争格局变化。",
-    "summary_zh": "根据Artificial Analysis的智能体指数，Qwen 3.8 Max被评为最佳整体模型，超越了Opus 5。这一排名反映了当前AI模型在智能体任务上的表现，Qwen 3.8 Max在多个维度上展现出优势。该消息对关注模型性能排名的从业者具有参考价值。",
-    "title_zh": "Qwen 3.8 Max在Artificial Analysis智能体指数中登顶，超越Opus 5",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "8419ddd4b5796995",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vgx8yu/qwen3824ta95b_aka_qwen38max_open_release_time/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/qwen3-8-max-catches-claude-opus-4-8-but-kimi-k3-still-scores-higher-for-25-percent-less/"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhd416/qwen_38_max_now_ranked_as_best_overall_model/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "ae4cec881ce1f3bb",
-    "source_id": "gradient-flow",
-    "title": "What Comes After Language Models",
-    "url": "https://gradientflow.com/what-comes-after-language-models/",
-    "published_at": "2026-08-06T13:00:00+00:00",
-    "raw_text": "<p>I keep seeing scientific discovery framed as a sufficiently ambitious prediction or data-compression problem. A recent position paper by Tom Zahavy challenges that view by separating reasoning into three capabilities. Induction finds general patterns in examples. Deduction works out what follows from a set of assumptions. Abduction proposes a new explanation when neither the existing<a class=\"more-link\" href=\"https://gradientflow.com/what-comes-after-language-models/\">Continue reading <span class=\"screen-reader-text\">\"What Comes After Language Models\"</span></a></p>\n<p>The post <a href=\"https://gradientflow.com/what-comes-after-language-models/\">What Comes After Language Models</a> appeared first on <a href=\"https://gradientflow.com\">Gradient Flow</a>.</p>",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": "https://i0.wp.com/gradientflow.com/wp-content/uploads/2026/08/LLM-Limits.jpeg?resize=750%2C472&#038;ssl=1",
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "探讨语言模型之后的方向，区分归纳、演绎、溯因三种推理，挑战科学发现作为预测的观点。",
-    "summary_zh": "文章讨论了语言模型之后的AI发展方向，引用Tom Zahavy的立场论文，将推理分为三种能力：归纳（从例子中发现一般模式）、演绎（从假设推导结论）、溯因（在现有解释不足时提出新解释）。作者认为科学发现不应仅被视为预测或数据压缩问题，而需要更复杂的推理机制。",
-    "title_zh": "语言模型之后是什么？",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "e4c69468ef55da7a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gradient-flow",
-        "url": "https://gradientflow.com/what-comes-after-language-models/"
       }
     ],
     "curated": true
@@ -1589,40 +1152,6 @@
     "curated": true
   },
   {
-    "id": "71849d7aefd8c0f8",
-    "source_id": "zh-ithome",
-    "title": "谷歌推出 WeatherNext 气旋模型，AI 高精度预报飓风平均提前 24 小时",
-    "url": "https://www.ithome.com/0/986/951.htm",
-    "published_at": "2026-08-07T06:11:01+00:00",
-    "raw_text": "<p>IT之家 8 月 7 日消息，谷歌 DeepMind 团队昨日（8 月 7 日）发布博文，宣布推出 WeatherNext Cyclones 天气预测模型，<strong>主要针对气旋（Cyclones）设计，称在预测路径、强度和风场结构的精度达到业界领先水平。</strong></p><p>IT之家援引博文介绍，该模型由谷歌 DeepMind、Google Research、美国国家飓风中心（NHC）、大气科学联合实验室（CIRA）、英国气象局以及全球多家气象机构联合研究开发。该模型聚焦热带气旋，针对台风、飓风和气旋，高精度预测其路径、强度和风场结构。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/7e633d6d-9fd6-4c09-b5e6-45d26eb577f4.png?x-bce-process=image/format,f_auto\" /></p><p>谷歌官方表示按平均表现衡量，<strong>该模型把预报能力向前推进了 24 小时，</strong>现有模型通常情况下只能提前预测 2 天，而该模型在保留精度情况下，可以预测 3 天时间。<strong>谷歌在博文中将预测量级描述为“约 10 年气象进展”。</strong></p><p>训练方面，模型端到端学习了近 20 TB 全球大气数据，以及涵盖近 5,000 个历史风暴的 IBTrACS（国际最佳路径气旋档案）数据库。</p><p>生成能力方面，借助功能生成网络（Functional Generative Networks），该系统可在 TPU 上用不到 1 分钟生成 1 次 15 天游程预报；去年系统一次只生成 50 个预测，这次扩展到 1000 个。</p><p>在实际应用方面，WeatherNext 在 2025 年飓风季曾预测到飓风梅丽莎（Melissa）会增强，并在牙买加登陆，NHC 据此提前预警，为当地应急团队争取了准备时间。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsu",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/7e633d6d-9fd6-4c09-b5e6-45d26eb577f4.png?x-bce-process=image/format,f_auto",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "谷歌DeepMind推出WeatherNext气旋模型，提升飓风预报精度，对气象预测有重要价值。",
-    "summary_zh": "谷歌DeepMind发布WeatherNext Cyclones天气预测模型，专注于热带气旋的路径、强度和风场结构预测，精度达到业界领先。该模型由DeepMind、Google Research、美国国家飓风中心等多家机构联合开发，平均提前24小时高精度预报飓风，有望提升防灾减灾能力。",
-    "title_zh": "谷歌推出WeatherNext气旋模型，AI高精度预报飓风平均提前24小时",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "cdfec2afc3f98b29",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/986/951.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "5d7b2311c979072d",
     "source_id": "zh-oschina",
     "title": "Rust 项目团队宣布 LLM 政策：不禁止，但你要承认哪些代码不是你写的",
@@ -1652,6 +1181,76 @@
       {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/489832/rust-langrust-is-adopting-an-llm-policy"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "365ab709a73ecc8e",
+    "source_id": "infoq-cn-ai",
+    "title": "蚂蚁集团开源Avernet：破解多智能体“找不到、对不齐”协作难题",
+    "url": "https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&utm_medium=article",
+    "published_at": "2026-08-07T18:06:25+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "蚂蚁开源Avernet，解决多智能体协作难题，技术含量高。",
+    "summary_zh": "蚂蚁集团开源Avernet，旨在解决多智能体协作中“找不到、对不齐”的问题。文章可能介绍其技术架构、应用场景和效果，对于多智能体系统开发者具有参考价值。",
+    "title_zh": "蚂蚁集团开源Avernet：破解多智能体“找不到、对不齐”协作难题",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "f792eb8634b3ee0d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&utm_medium=article"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "efc8f31d994cedd7",
+    "source_id": "infoq-cn-ai",
+    "title": "蚂蚁开源Avernet，为多智能体协作搭建“操作系统”！内部跑通12大业务、任务完成率超90%",
+    "url": "https://www.infoq.cn/article/iNvHOsahsYFYaE9ImZBV?utm_source=rss&utm_medium=article",
+    "published_at": "2026-08-07T18:16:44+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/iNvHOsahsYFYaE9ImZBV?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "蚂蚁开源多智能体协作框架Avernet，内部验证效果显著，对多智能体系统开发者有参考价值。",
+    "summary_zh": "蚂蚁集团宣布开源Avernet，这是一个为多智能体协作设计的框架，旨在为多智能体系统提供类似操作系统的底层支持。据称，该框架已在蚂蚁内部12大业务场景中落地，任务完成率超过90%。Avernet的发布有望降低多智能体系统的开发门槛，促进AI协作技术的发展。文章可能包含技术架构、应用案例和开源意义等细节。",
+    "title_zh": "蚂蚁开源Avernet，为多智能体协作搭建“操作系统”！内部跑通12大业务、任务完成率超90%",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "4f6db5d4f478253b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/iNvHOsahsYFYaE9ImZBV?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -1692,40 +1291,6 @@
     "curated": true
   },
   {
-    "id": "8817e0d90221f94a",
-    "source_id": "gh-sentence-transformers",
-    "title": "UKPLab/sentence-transformers v5.7.0",
-    "url": "https://github.com/huggingface/sentence-transformers/releases/tag/v5.7.0",
-    "published_at": "2026-08-06T12:12:42+00:00",
-    "raw_text": "This minor version is a correctness and performance-focused release. It rebuilds all gradient-cached losses on one shared engine, fixing several silently wrong gradients and adding token-based mini-batching for up to 3.9x faster cached-loss training. It also makes `model.compile()` actually speed up inference, and brings a long list of fixes across embedding quantization, evaluators, hard-negative mining, community detection, and multimodal inputs.\r\n\r\nTwo changes are marked breaking (🚨): int8/uint8 embedding quantization now clips out-of-range values and floors bucket values, so int8 outputs are no longer bit-identical with earlier versions, and `AdaptiveLayerLoss`/`Matryoshka2dLoss` now weight prior-layer losses uniformly by default. There's also a forward-looking deprecation: loading models whose modules import classes from outside `sentence_transformers` will require `trust_remote_code=True` from v6.0.\r\n\r\nInstall this version with\r\n```bash\r\n# Training + Inference\r\npip install senten",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "sentence-transformers v5.7.0修复梯度问题并提升性能，对NLP开发者有实用价值。",
-    "summary_zh": "UKPLab/sentence-transformers发布了v5.7.0版本，这是一个注重正确性和性能的次要版本。它重建了所有梯度缓存损失，修复了多个静默错误的梯度，并增加了基于token的迷你批处理，使缓存损失训练速度提升至3.9倍。此外，该版本还使model.compile()真正加速推理，并修复了嵌入量化、评估器、硬负样本等一系列问题。",
-    "title_zh": "sentence-transformers v5.7.0 发布",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "50488e49f6509282",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-sentence-transformers",
-        "url": "https://github.com/huggingface/sentence-transformers/releases/tag/v5.7.0"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "78908d2f81cc94b6",
     "source_id": "aws-ml-blog",
     "title": "Building an agentic app deployer with Amazon Bedrock and AWS Lambda",
@@ -1761,41 +1326,72 @@
     "curated": true
   },
   {
-    "id": "fdab1c7e4055f7c6",
-    "source_id": "blocks-and-files",
-    "title": "Platform Engineering 2.0: your platform was built for a different era. AI just exposed it",
-    "url": "https://www.blocksandfiles.com/ai-ml/2026/08/06/partner-content-platform-engineering-20-your-platform-was-built-for-a-different-era-ai-just-exposed-it/5283926",
-    "published_at": "2026-08-06T15:00:00+00:00",
-    "raw_text": "",
+    "id": "f1a7ce827fcc5ac4",
+    "source_id": "gh-agentscope",
+    "title": "modelscope/agentscope v2.0.6",
+    "url": "https://github.com/agentscope-ai/agentscope/releases/tag/v2.0.6",
+    "published_at": "2026-08-07T10:39:34+00:00",
+    "raw_text": "## Highlight\r\n\r\n- Support **channels** (Feishu and Discord) in AgentScope (#1997)\r\n- Support **Apple Container** as workspace backend (#2068)\r\n- Support MCP & skill hubs/markets in agent service (#2197)\r\n- Add **`on_check_permission`** middleware hook (#2001)\r\n- Refactor **Web UI chat pages** with shadcn (#2171)\r\n\r\n**Chat page**:\r\n<img width=\"3024\" height=\"1898\" alt=\"image\" src=\"https://github.com/user-attachments/assets/67038abc-6050-4d00-8613-76b281bd4b23\" />\r\n\r\n**Channels**:\r\n<img width=\"3024\" height=\"1898\" alt=\"image\" src=\"https://github.com/user-attachments/assets/6b2dd829-e29a-4d3b-9fa2-b1e2c85ec733\" />\r\n\r\n**MCP & Skill Hubs**:\r\n<img width=\"3024\" height=\"1898\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2f4614a8-a61f-40f9-a030-fdd4bc56f8cc\" />\r\n\r\n\r\n## What's Changed\r\n* feat(webui): refactor chat pages with shadcn and prepare for npm release by @DavdGao in https://github.com/agentscope-ai/agentscope/pull/2171\r\n* feat(workspace): support apple container as workspace",
     "category_hint": [
-      "行业动态"
+      "开源项目"
     ],
-    "image_url": "https://image.blocksandfiles.com/5283932.jpg?imageId=5283932&panox=0.00&panoy=0.00&panow=100.00&panoh=100.00&heightx=0.00&heighty=0.00&heightw=100.00&heighth=100.00&width=1058&height=478&format=webp&format=jpg",
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.6,
-    "reason_zh": "探讨AI时代平台工程的转型，对技术管理者有启发。",
-    "summary_zh": "文章指出，现有的平台工程实践是为传统IT时代设计的，而AI的兴起暴露了其局限性。作者认为，平台需要适应AI工作负载的动态性和不确定性，例如支持模型训练、推理和数据处理的新需求。文章可能提出平台工程2.0的概念，强调需要重新设计平台架构、工具链和运维模式，以更好地支持AI应用。",
-    "title_zh": "平台工程2.0：你的平台是为不同时代构建的，AI刚刚暴露了它",
-    "weighted_score": 0.545,
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "AgentScope v2.0.6新增多通道支持、MCP集成等，提升Agent开发效率，值得开发者关注。",
+    "summary_zh": "AgentScope v2.0.6版本发布，主要更新包括：支持飞书和Discord作为通道；支持Apple Container作为工作区后端；在Agent服务中支持MCP和技能中心/市场；新增on_check_permission中间件钩子；使用shadcn重构Web UI聊天页面。这些更新增强了AgentScope的灵活性和可扩展性，为开发者提供了更多集成选项和更好的用户体验。",
+    "title_zh": "modelscope/agentscope v2.0.6 发布",
+    "weighted_score": 0.725,
     "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.6
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
     },
-    "story_id": "4a0e019787319789",
-    "multi_source_count": 2,
+    "story_id": "0fb7ff45cb27db18",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "blocks-and-files",
-        "url": "https://www.blocksandfiles.com/ai-ml/2026/08/06/partner-content-platform-engineering-20-your-platform-was-built-for-a-different-era-ai-just-exposed-it/5283926"
-      },
-      {
-        "source_id": "the-next-platform",
-        "url": "https://www.nextplatform.com/cloud/2026/08/06/your-platform-was-built-for-a-different-era-and-ai-just-exposed-it/5284205"
+        "source_id": "gh-agentscope",
+        "url": "https://github.com/agentscope-ai/agentscope/releases/tag/v2.0.6"
       }
     ],
     "curated": true
+  },
+  {
+    "id": "375e3d6ec98c1830",
+    "source_id": "zh-oschina",
+    "title": "IBM与红帽扩展Lightwell服务方案，构建适配AI时代开源生态的可信基础设施",
+    "url": "https://www.oschina.net/news/489932",
+    "published_at": "2026-08-07T07:48:49+00:00",
+    "raw_text": "全新Lightwell产品组合联合全球的领先金融机构共同开发，并依托不断壮大的合作伙伴生态系统支持，帮助企业降低开源风险，且无需进行破坏性升级。 2026年7月15日，IBM 与 红帽近日宣布Lightwell正式商用发布。通过Lightwell Network和Lightwell Clearinghouse Premier两项产品组合，提供大规模自动化漏洞修复。Lightwell...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "IBM与红帽合作推出开源安全方案，对企业降低开源风险有参考价值。",
+    "summary_zh": "IBM与红帽宣布Lightwell正式商用发布，推出Lightwell Network和Lightwell Clearinghouse Premier两项产品组合，提供大规模自动化漏洞修复。该方案联合全球领先金融机构共同开发，依托合作伙伴生态系统，帮助企业降低开源风险，无需破坏性升级。此举旨在构建适配AI时代开源生态的可信基础设施，提升开源软件的安全性。",
+    "title_zh": "IBM与红帽扩展Lightwell服务方案，构建适配AI时代开源生态的可信基础设施",
+    "weighted_score": 0.715,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "8f5fa20fad9a841d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/489932"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
   }
 ]
