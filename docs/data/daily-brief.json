@@ -1,6 +1,6 @@
 {
   "date": "2026-08-08",
-  "generated_at": "2026-08-08T01:12:26.531107+00:00",
+  "generated_at": "2026-08-08T05:00:25.861112+00:00",
   "items": [
     {
       "id": "20e7c40f70ae20dc",
@@ -36,35 +36,101 @@
       ]
     },
     {
-      "id": "d936e7d5fcc360d2",
-      "source_id": "berenblog",
-      "title": "Maximum Entropy Morality, Metaplastic Constitutionalism, and the Dynamic Virtues",
-      "url": "https://www.beren.io/2026-08-07-Maximum-Entropy-Morality-Metaplastic-Constitutionalism-And-The-Dynamic-Virtues/",
-      "published_at": "2026-08-07T07:00:00+00:00",
-      "raw_text": "Author’s note: This is quite a long post. It is highly speculative, obviously, but I think it offers an interesting perspective on, and proposal for, outer alignment. The specific idea here is to move away from demanding a final lightcone-scale conception of ‘The Good’ as an outer alignment target, whether...",
+      "id": "cf38a3d27561ac5f",
+      "source_id": "arxiv-cs-cl",
+      "title": "Answer First, Reason Later: Commitment Order in Diffusion LLMs",
+      "url": "https://arxiv.org/abs/2608.05687",
+      "published_at": "2026-08-08T04:00:00+00:00",
+      "raw_text": "arXiv:2608.05687v1 Announce Type: new \nAbstract: Masked diffusion language models (dLLMs) can commit tokens in any order -- a freedom marketed as their core advantage over autoregressive decoding. We show that on reasoning tasks this freedom is instead the axis of failure. Logging every commitment during decoding of LLaDA-8B on GSM8K, we find that unconstrained (pure) decoding commits the final answer at 15-24% of the trajectory while half the reasoning region is still masked, and collapses to answer-only outputs on up to 90% of problems as the canvas grows. The cause is not the model's termination beliefs -- EOS \"pressure\" is nearly identical across decoders -- but reachability: whether the sampler may act on those beliefs at distant positions. A 2x2 prompt-decoder design shows that chain-of-thought helps only under ordered commitment (interaction +34.8 percentage points, 95% CI [26.8, 42.8]; without reasoning text the decoders are indistinguishable), an interaction we decompose into ",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "深度分析",
+      "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "提出外对齐的新视角，具有高度思辨性和启发性。",
-      "summary_zh": "作者提出了一种关于外对齐的新观点，主张放弃对最终光锥尺度“善”的追求，转而采用最大熵道德、元可塑宪政主义和动态美德。文章高度推测性，但提供了有趣的视角和提案。",
-      "title_zh": "最大熵道德、元可塑宪政主义和动态美德",
-      "weighted_score": 0.685,
+      "reason_zh": "揭示扩散LLM在推理任务上因自由提交顺序而失败，提出承诺顺序约束，具有反直觉洞察。",
+      "summary_zh": "本文研究了掩码扩散语言模型（dLLM）在推理任务上的解码行为。与自回归模型不同，dLLM可以任意顺序提交token，这被视为其优势。然而，作者通过记录LLaDA-8B在GSM8K上的解码过程发现，无约束的纯解码会过早提交最终答案，导致推理失败。为此，他们提出了一种承诺顺序约束方法，引导模型先推理后提交答案，显著提升了推理准确率。这一发现挑战了dLLM自由顺序的固有优势，为扩散模型在推理任务上的应用提供了重要指导。",
+      "title_zh": "先答后思：扩散LLM中的承诺顺序",
+      "weighted_score": 0.835,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.9,
         "novelty": 0.9,
-        "impact": 0.6,
-        "practical_value": 0.5
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "a2c982d5066fdd8b",
+      "story_id": "f2c1e7480222802f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "berenblog",
-          "url": "https://www.beren.io/2026-08-07-Maximum-Entropy-Morality-Metaplastic-Constitutionalism-And-The-Dynamic-Virtues/"
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2608.05687"
+        }
+      ]
+    },
+    {
+      "id": "7e5491acdcf062fe",
+      "source_id": "arxiv-cs-cl",
+      "title": "MACRO: Markov Chain Routing of Transformer Layers",
+      "url": "https://arxiv.org/abs/2608.05872",
+      "published_at": "2026-08-08T04:00:00+00:00",
+      "raw_text": "arXiv:2608.05872v1 Announce Type: new \nAbstract: Standard Large Language Models (LLMs) execute layers sequentially. Dynamic layer routing, i.e. search for a different execution path through layers involving layer repetitions, skips and other moves, can improve performance. Existing routing approaches often require updating model weights, running expensive search loops per test instance, or demand ground-truth labels during inference. In this work, we propose Markov Chain Routing of Transformer Layers (MACRO), a framework that learns task-specific routes over LLM architectures without modifying underlying parameters. MACRO models layer routing as a context-dependent Markov policy conditioned on layer indices, computation budget phases, directional displacements, and operator context, supporting skip, repeat, and residual hidden-state addition operations. The Markov route distribution is updated via feedback on training data and decoded using a top-k Viterbi algorithm to isolate high-pro",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "提出马尔可夫链路由Transformer层，无需权重更新即可动态选择执行路径，创新性强。",
+      "summary_zh": "标准大语言模型按顺序执行所有层。本文提出动态层路由，即通过层重复、跳过等操作搜索不同执行路径，以提升性能。现有方法需要更新模型权重或进行昂贵的搜索。作者提出MACRO，利用马尔可夫链对层间转移进行建模，实现无需权重更新的高效路由。实验显示MACRO在多个任务上提升性能，同时保持推理效率。",
+      "title_zh": "MACRO：Transformer层的马尔可夫链路由",
+      "weighted_score": 0.835,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "3fa7407f6842f707",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2608.05872"
+        }
+      ]
+    },
+    {
+      "id": "c68036ddffd06795",
+      "source_id": "arxiv-cs-cl",
+      "title": "Reasoning Errors Have a Region and a Direction in the Residual-Stream Trajectory of LLMs",
+      "url": "https://arxiv.org/abs/2608.05660",
+      "published_at": "2026-08-08T04:00:00+00:00",
+      "raw_text": "arXiv:2608.05660v1 Announce Type: cross \nAbstract: As language models are increasingly used for tasks that require verifiable reasoning, reliably distinguishing sound reasoning from flawed reasoning has become an important practical problem. Recent trajectory-based methods seek this signal in layerwise residual-stream displacements, which capture how representations change while attenuating some stable, token-specific information. However, displacement omits the state from which an update originates, whereas restoring the full state risks reintroducing shortcut-prone information. We identify this trade-off and propose a three-stream detector that combines motion with two restricted views of location. A coarse region reader based on vector quantization and a fine direction reader over normalized multi-layer states. This design restores enough state context to interpret the motion without returning to full-state probing. On reasoning benchmarks unseen during training, our method improves",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "揭示LLM推理错误在残差流轨迹中的区域和方向，提供可解释性新视角，对模型调试有重要价值。",
+      "summary_zh": "该论文研究大型语言模型在推理过程中的错误模式，发现推理错误在残差流轨迹中具有特定的区域和方向。通过分析层间残差流位移，作者识别出错误推理与正确推理在表示空间中的差异，并利用这些信号来区分可靠与有缺陷的推理。实验表明，该方法能有效检测推理错误，为理解LLM内部机制和提升推理可靠性提供了新工具。",
+      "title_zh": "推理错误在LLM残差流轨迹中具有区域和方向",
+      "weighted_score": 0.805,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "443ba64b3a4b7e6e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cl",
+          "url": "https://arxiv.org/abs/2608.05660"
         }
       ]
     },
@@ -103,204 +169,35 @@
       ]
     },
     {
-      "id": "4cc4c325f30d9d61",
-      "source_id": "arxiv-cs-ai",
-      "title": "WorldClaw: Agentic 3D Open-World Generation at Scale",
-      "url": "https://arxiv.org/abs/2608.05248",
-      "published_at": "2026-08-07T04:00:00+00:00",
-      "raw_text": "arXiv:2608.05248v1 Announce Type: new \nAbstract: Generating large-scale, freely explorable 3D worlds from open-ended text remains challenging because a system must jointly maintain global spatial coherence, rich local content, and explicit assets suitable for downstream editing and reuse. We present WorldClaw, a fully agentic, coarse-to-fine framework for open-world 3D scene generation. Planning agents translate a text prompt into a structured specification of regions, terrain, assets, materials, and spatial relations. WorldClaw then builds a globally coherent terrain foundation from semantic layouts, reusable assets, generative or procedural materials, and a region-aware height field. For detail-demanding regions, it generates terrain-conditioned compositions, reconstructs editable textured meshes, and recovers their placement on the terrain; render-based agents further refine terrain, objects, appearance, and contacts. Across diverse open-world prompts, WorldClaw produces large-scale",
+      "id": "48a6a7519d8fc5b7",
+      "source_id": "reddit-mlops",
+      "title": "DeepSeek V4 Flash 0731 on 8xH100 — hitting the scheduler/MoE wall?",
+      "url": "https://www.reddit.com/r/mlops/comments/1vib2c7/deepseek_v4_flash_0731_on_8xh100_hitting_the/",
+      "published_at": "2026-08-07T19:58:50+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi, </p> <p>Im running DeepSeek V4 Flash 0731 on 8xH100 80GB NVLink, vLLM, TP=8.</p> <p>Real workload, not synthetic:</p> <p>- prompts from ~1k to 250k tokens</p> <p>- ~100–200 concurrent requests at peak</p> <p>-DSpark acceptance &gt;65%</p> <p>-GPU utilization ~95%+</p> <p>-Tensor Core utilization below 30%</p> <p>Under heavy load I see roughly:</p> <p>-prefill ~35k tok/s</p> <p>-decode ~400 tok/sec</p> <p>-TTFT up to ~30sec</p> <p>Large uncached prefills are the obvious troublemaker. One of those enters the system and smaller requests start building queue pressure behind it. If I move the batching knobs one way I improve prefill but hurt decode/concurrency. Move them the other way and the opposite happens.</p> <p>So at this point I'm not convinced that throwing more batch at it is useful.</p> <p>My current suspicion is that I'm moving away from a simple GEMM saturation problem and into scheduler + MoE territory: expert routing, per-expert batch size",
       "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出智能体驱动的3D开放世界生成框架，实现大规模场景生成，技术先进。",
-      "summary_zh": "本文提出WorldClaw，一个完全智能体驱动的粗到细框架，用于从开放文本生成大规模3D开放世界。系统需同时维护全局空间连贯性、丰富局部内容和可编辑资产。WorldClaw通过规划阶段和生成阶段，利用智能体协同工作，实现可自由探索的3D场景。该框架在生成质量和资产可用性上表现出色。",
-      "title_zh": "WorldClaw：智能体驱动的规模化3D开放世界生成",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "2dd302db688df6a8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.05248"
-        }
-      ]
-    },
-    {
-      "id": "03c5e8813390f41f",
-      "source_id": "robohub",
-      "title": "AI agents create virtual playgrounds to help robots get crucial training data",
-      "url": "https://robohub.org/ai-agents-create-virtual-playgrounds-to-help-robots-get-crucial-training-data/",
-      "published_at": "2026-08-07T07:17:33+00:00",
-      "raw_text": "A new system developed at MIT uses three agents to piece together the objects, walls, and overall look of a 3D scene. Its realistic recreations of indoor spaces help robots practice skills and try out different ways of doing tasks before they’re powered on. Image: Tim Malieckal/MIT CSAIL using assets from the researchers. By Alex [&#8230;]",
-      "category_hint": [
-        "行业动态",
-        "论文研究"
-      ],
-      "image_url": "https://robohub.org/wp-content/uploads/2026/07/Screenshot-2026-07-30-at-16.11.36-1024x676.jpeg",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "MIT新系统用三个智能体生成虚拟场景，为机器人提供训练数据，方法新颖且具有可迁移性。",
-      "summary_zh": "MIT研究人员开发了一种新系统，利用三个AI智能体协作，将物体、墙壁和整体外观组合成3D场景。该系统能逼真地重建室内空间，帮助机器人在实际启动前练习技能和尝试不同任务方式，从而获取关键训练数据。",
-      "title_zh": "AI智能体创建虚拟游乐场，帮助机器人获取关键训练数据",
-      "weighted_score": 0.765,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "412342c13d8f76cb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "robohub",
-          "url": "https://robohub.org/ai-agents-create-virtual-playgrounds-to-help-robots-get-crucial-training-data/"
-        }
-      ]
-    },
-    {
-      "id": "74f914158124c9f0",
-      "source_id": "qbitai",
-      "title": "AI SSD：大模型推理的存储范式转移",
-      "url": "https://www.qbitai.com/2026/08/467840.html",
-      "published_at": "2026-08-07T02:56:46+00:00",
-      "raw_text": "算力、网络、内存与存储开始围绕每个Token协同",
-      "category_hint": [
-        "行业动态",
-        "模型发布"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "探讨 AI SSD 存储范式转移，深入分析大模型推理的存储需求。",
-      "summary_zh": "文章探讨了 AI SSD 在大模型推理中的存储范式转移，指出算力、网络、内存与存储开始围绕每个 Token 协同工作。这种转变可能对 AI 基础设施产生深远影响，文章分析了其背后的技术趋势和潜在应用。",
-      "title_zh": "AI SSD：大模型推理的存储范式转移",
-      "weighted_score": 0.705,
+      "reason_zh": "真实负载下DeepSeek V4 Flash性能剖析，揭示调度与MoE瓶颈，对部署者极具价值。",
+      "summary_zh": "作者在8xH100 NVLink上以TP=8运行DeepSeek V4 Flash 0731，处理真实工作负载（提示词1k-250k tokens，并发100-200）。观察到GPU利用率95%以上但Tensor Core利用率低于30%，预填充阶段出现瓶颈。文章深入分析了调度器和MoE架构在高并发下的限制，并探讨了可能的优化方向，为类似部署提供了宝贵经验。",
+      "title_zh": "DeepSeek V4 Flash 0731在8xH100上：遭遇调度/MoE瓶颈？",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "c6b18d5dec439927",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "qbitai",
-          "url": "https://www.qbitai.com/2026/08/467840.html"
-        }
-      ]
-    },
-    {
-      "id": "74fdf4dcbfcdbeef",
-      "source_id": "zh-juejin",
-      "title": "LLM 应用的依赖注入工程实践：解耦 Client、Prompt 和 Tool Registry，让 AI 系统真正可测试可替换",
-      "url": "https://juejin.cn/post/7671186598322602025",
-      "published_at": "2026-08-08T00:11:18+00:00",
-      "raw_text": "--- 传统 Web 应用的依赖注入（DI）已经是标配——Spring、NestJS、FastAPI 都内置 DI 容器。但 LLM 应用开发者往往从\"快速原型\"出发，把大模型 SDK 的调用直接写进业务逻辑，或者把 prompt 字符串硬编码在函数里。几个月后，这些决定会让你付出代价：",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "深入讲解LLM应用中的依赖注入实践，提供可测试可替换的架构方案，实用性强。",
-      "summary_zh": "文章探讨了LLM应用中的依赖注入工程实践，指出传统Web应用已广泛使用DI容器，但LLM开发者常将SDK调用直接写入业务逻辑或硬编码prompt，导致后期维护困难。文章提出解耦Client、Prompt和Tool Registry的方法，使AI系统真正可测试、可替换，并给出了具体实践建议。",
-      "title_zh": "LLM应用的依赖注入工程实践：解耦Client、Prompt和Tool Registry，让AI系统真正可测试可替换",
-      "weighted_score": 0.685,
-      "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.5,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "8aad101efea281f7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7671186598322602025"
-        }
-      ]
-    },
-    {
-      "id": "4292c53b69e5c84f",
-      "source_id": "towards-data-science",
-      "title": "Loop Engineering for Listing Questions: When the Answer Is Every Passage, Not the Top One",
-      "url": "https://towardsdatascience.com/loop-engineering-for-listing-questions-when-the-answer-is-every-passage-not-the-top-one/",
-      "published_at": "2026-08-07T15:00:00+00:00",
-      "raw_text": "<p>Enterprise Document Intelligence [Vol.1 #12] - The category of question most RAG pipelines silently fail on, and the pipeline shape that handles them</p>\n<p>The post <a href=\"https://towardsdatascience.com/loop-engineering-for-listing-questions-when-the-answer-is-every-passage-not-the-top-one/\">Loop Engineering for Listing Questions: When the Answer Is Every Passage, Not the Top One</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入分析RAG管道对列表问题的失败模式，提出循环工程解决方案，对构建企业文档智能系统有重要启发。",
-      "summary_zh": "本文探讨了RAG管道在处理列表问题（如“所有相关段落”）时的失败模式，并提出了一种循环工程（Loop Engineering）的管道形状来应对。文章指出，传统RAG只返回顶部结果，而列表问题需要所有相关段落，因此需要设计循环机制来迭代检索和生成。该分析对企业文档智能系统设计具有实践指导意义。",
-      "title_zh": "列表问题的循环工程：当答案是所有段落而非顶部一个时",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "95092e20b1772841",
+      "story_id": "4159d6225bb0fd5f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/loop-engineering-for-listing-questions-when-the-answer-is-every-passage-not-the-top-one/"
-        }
-      ]
-    },
-    {
-      "id": "3c241973d9ce2e6a",
-      "source_id": "towards-data-science",
-      "title": "My Fall-Detection Model Scored 94%, and It Was Lying to Me",
-      "url": "https://towardsdatascience.com/my-fall-detection-model-scored-94-and-it-was-lying-to-me/",
-      "published_at": "2026-08-07T12:00:00+00:00",
-      "raw_text": "<p>How a single evaluation choice inflated my results by 25 points, and what rebuilding honestly taught me about ML systems people might depend on</p>\n<p>The post <a href=\"https://towardsdatascience.com/my-fall-detection-model-scored-94-and-it-was-lying-to-me/\">My Fall-Detection Model Scored 94%, and It Was Lying to Me</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "作者通过亲身经历揭示评估方法选择对模型性能的误导，对ML实践者有重要警示意义。",
-      "summary_zh": "文章作者分享了自己在构建跌倒检测模型时，因评估方法选择不当导致模型得分虚高（94%）的经历，实际性能可能低25个百分点。作者反思了评估指标、数据划分等环节的陷阱，并强调在构建可能影响人们生活的ML系统时，诚实评估的重要性。文章提供了重建模型过程中的教训，对ML工程师具有实践指导意义。",
-      "title_zh": "我的跌倒检测模型得了94分，但它骗了我",
-      "weighted_score": 0.615,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "3e084bd117bee065",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/my-fall-detection-model-scored-94-and-it-was-lying-to-me/"
+          "source_id": "reddit-mlops",
+          "url": "https://www.reddit.com/r/mlops/comments/1vib2c7/deepseek_v4_flash_0731_on_8xh100_hitting_the/"
         }
       ]
     },
@@ -373,35 +270,136 @@
       ]
     },
     {
-      "id": "9e3c78f13ee6ae11",
-      "source_id": "zh-tmtpost",
-      "title": "谷歌的告别：大模型正在进入“车库时代”",
-      "url": "https://www.tmtpost.com/8095060.html",
-      "published_at": "2026-08-07T11:00:25+00:00",
-      "raw_text": "全栈太重，轻装才能跑得快。",
+      "id": "e03e0d850554eb2d",
+      "source_id": "reddit-mlops",
+      "title": "Is \"IAM for AI agents\" actually a distinct problem, or just RBAC with extra steps?",
+      "url": "https://www.reddit.com/r/mlops/comments/1vi0n7e/is_iam_for_ai_agents_actually_a_distinct_problem/",
+      "published_at": "2026-08-07T13:27:35+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I keep running into a failure pattern that doesn't fit neatly into either &quot;security&quot; or &quot;AI accuracy&quot; discussions, and I want to sanity-check my thinking against people who've actually hit this.</p> <p>The setup: an AI agent (RAG copilot, multi-tenant support bot, internal tool-calling agent) is authorized to access a resource , the permission check passes, nothing crashed, no error. But the specific data it returns or the action it takes is still wrong in a way that's dangerous:</p> <ul> <li>A support AI pulls a data - it retrieves the wrong linked account's balance, not because access was denied, but because the query resolved to the wrong entity within data the user was legitimately allowed to touch.</li> <li>An orchestrator spins up a subagent for a subtask, and the subagent inherits (or worse, expands) permissions no one explicitly granted it.</li> <li>An agent has technical access to run a destructive action (delete, write) th",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/rt435y4hrtg2.png",
+      "image_url": null,
       "category": "行业动态",
       "content_type": "观点评论",
       "depth_score": 0.7,
-      "reason_zh": "文章提出大模型进入“车库时代”，全栈模式过重，轻装快跑，观点有启发性，适合行业思考。",
-      "summary_zh": "文章认为，大模型行业正在进入“车库时代”，即轻量化、快速迭代的模式。作者指出，全栈模式（从芯片到应用）过于沉重，难以适应快速变化的市场。相反，轻装出发、专注于核心技术的公司可能跑得更快。文章以谷歌为例，暗示其全栈策略可能成为负担，而新兴创业公司则更灵活。这一观点挑战了当前大厂的全栈布局，引发对行业未来方向的思考。",
-      "title_zh": "谷歌的告别：大模型正在进入“车库时代”",
-      "weighted_score": 0.585,
+      "reason_zh": "探讨AI代理身份管理的本质，引发对安全架构的深入思考。",
+      "summary_zh": "讨论围绕AI代理的IAM（身份和访问管理）问题展开。作者指出，AI代理（如RAG助手、多租户支持机器人）在授权访问资源时，权限管理往往不匹配，导致安全漏洞。问题在于传统RBAC模型无法完全适应代理的动态决策和上下文感知。评论中有人提出需要新的IAM框架，也有人认为只是RBAC的复杂应用。讨论深入，涉及安全与AI的交叉领域。",
+      "title_zh": "“AI代理的IAM”真的是一个独立问题，还是RBAC的扩展？",
+      "weighted_score": 0.665,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.4
+        "practical_value": 0.8
       },
-      "story_id": "d0d0cb55d19b8ff6",
+      "story_id": "05746a703c3fe55f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8095060.html"
+          "source_id": "reddit-mlops",
+          "url": "https://www.reddit.com/r/mlops/comments/1vi0n7e/is_iam_for_ai_agents_actually_a_distinct_problem/"
+        }
+      ]
+    },
+    {
+      "id": "365ab709a73ecc8e",
+      "source_id": "infoq-cn-ai",
+      "title": "蚂蚁集团开源Avernet：破解多智能体“找不到、对不齐”协作难题",
+      "url": "https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-07T18:06:25+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "蚂蚁开源Avernet，解决多智能体协作难题，技术含量高。",
+      "summary_zh": "蚂蚁集团开源Avernet，旨在解决多智能体协作中“找不到、对不齐”的问题。文章可能介绍其技术架构、应用场景和效果，对于多智能体系统开发者具有参考价值。",
+      "title_zh": "蚂蚁集团开源Avernet：破解多智能体“找不到、对不齐”协作难题",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "f792eb8634b3ee0d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "478400fd36f67f37",
+      "source_id": "zh-meituan-tech",
+      "title": "美团海报生成 AIGC 技术创新与实践",
+      "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
+      "published_at": "2026-08-08T01:04:44.758332+00:00",
+      "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/861434cef3a148ae0093da6666e149361816826.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "美团海报生成AIGC技术闭环已开源，对工业界应用有借鉴意义。",
+      "summary_zh": "美团智能创作团队围绕海报生成AIGC构建了完整技术体系，打造了「生成-编辑-评判」技术闭环。该技术已在美团外卖、品牌IP等场景落地，并已全部开源。文章详细介绍了技术创新与实践经验，为相关领域提供了参考。",
+      "title_zh": "美团海报生成AIGC技术创新与实践",
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "6bdd2c9e8078b106",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html"
+        }
+      ]
+    },
+    {
+      "id": "993ae8632bfbe34e",
+      "source_id": "infoq-cn-ai",
+      "title": "AI 视频降本的三种做法，只有一种不牺牲画质",
+      "url": "https://www.infoq.cn/article/HqthsfSNK4bQYqOSh6Ni?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-07T10:29:29+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/HqthsfSNK4bQYqOSh6Ni?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.6,
+      "reason_zh": "AI视频降本三种做法，只有一种不牺牲画质，实用性强。",
+      "summary_zh": "文章探讨了AI视频降本的三种方法，并指出只有一种能在降低成本的同时不牺牲画质。具体方法可能包括优化模型架构、使用更高效的推理引擎、或采用混合精度训练等。对于需要控制成本的AI视频应用开发者具有实用价值。",
+      "title_zh": "AI视频降本的三种做法，只有一种不牺牲画质",
+      "weighted_score": 0.645,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "c5d0ccad13da9d8f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/HqthsfSNK4bQYqOSh6Ni?utm_source=rss&utm_medium=article"
         }
       ]
     }
