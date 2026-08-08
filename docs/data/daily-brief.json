@@ -1,6 +1,6 @@
 {
   "date": "2026-08-08",
-  "generated_at": "2026-08-08T05:00:25.861112+00:00",
+  "generated_at": "2026-08-08T08:37:37.703383+00:00",
   "items": [
     {
       "id": "20e7c40f70ae20dc",
@@ -169,35 +169,35 @@
       ]
     },
     {
-      "id": "48a6a7519d8fc5b7",
-      "source_id": "reddit-mlops",
-      "title": "DeepSeek V4 Flash 0731 on 8xH100 — hitting the scheduler/MoE wall?",
-      "url": "https://www.reddit.com/r/mlops/comments/1vib2c7/deepseek_v4_flash_0731_on_8xh100_hitting_the/",
-      "published_at": "2026-08-07T19:58:50+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi, </p> <p>Im running DeepSeek V4 Flash 0731 on 8xH100 80GB NVLink, vLLM, TP=8.</p> <p>Real workload, not synthetic:</p> <p>- prompts from ~1k to 250k tokens</p> <p>- ~100–200 concurrent requests at peak</p> <p>-DSpark acceptance &gt;65%</p> <p>-GPU utilization ~95%+</p> <p>-Tensor Core utilization below 30%</p> <p>Under heavy load I see roughly:</p> <p>-prefill ~35k tok/s</p> <p>-decode ~400 tok/sec</p> <p>-TTFT up to ~30sec</p> <p>Large uncached prefills are the obvious troublemaker. One of those enters the system and smaller requests start building queue pressure behind it. If I move the batching knobs one way I improve prefill but hurt decode/concurrency. Move them the other way and the opposite happens.</p> <p>So at this point I'm not convinced that throwing more batch at it is useful.</p> <p>My current suspicion is that I'm moving away from a simple GEMM saturation problem and into scheduler + MoE territory: expert routing, per-expert batch size",
+      "id": "9c85eb15be896fab",
+      "source_id": "shtetloptimized",
+      "title": "Enough with all the world-historic milestones",
+      "url": "https://scottaaronson.blog/?p=9979",
+      "published_at": "2026-08-07T22:41:55+00:00",
+      "raw_text": "Whatever you&#8217;ve been writing to me to ask if I&#8217;m aware of: yeah, I&#8217;m aware of it. In particular: Anyway, about the AI stuff. I don&#8217;t know whether this is literally our last year alive&#8212;I doubt it&#8212;but it&#8217;s pretty clearly the last year of math and theoretical computer science research in the style we&#8217;ve known [&#8230;]",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "行业动态",
-      "content_type": "深度分析",
+      "content_type": "观点评论",
       "depth_score": 0.8,
-      "reason_zh": "真实负载下DeepSeek V4 Flash性能剖析，揭示调度与MoE瓶颈，对部署者极具价值。",
-      "summary_zh": "作者在8xH100 NVLink上以TP=8运行DeepSeek V4 Flash 0731，处理真实工作负载（提示词1k-250k tokens，并发100-200）。观察到GPU利用率95%以上但Tensor Core利用率低于30%，预填充阶段出现瓶颈。文章深入分析了调度器和MoE架构在高并发下的限制，并探讨了可能的优化方向，为类似部署提供了宝贵经验。",
-      "title_zh": "DeepSeek V4 Flash 0731在8xH100上：遭遇调度/MoE瓶颈？",
-      "weighted_score": 0.635,
+      "reason_zh": "知名学者对AI影响的深刻反思，观点犀利，启发思考。",
+      "summary_zh": "作者回应读者关于AI里程碑的询问，表示已了解。他认为这可能是数学和理论计算机科学研究的最后一年，以传统方式进行。表达了对AI影响的担忧和不确定。",
+      "title_zh": "够了，别再提世界历史性的里程碑了",
+      "weighted_score": 0.665,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.5
       },
-      "story_id": "4159d6225bb0fd5f",
+      "story_id": "bc55e4c7b70f5d1d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-mlops",
-          "url": "https://www.reddit.com/r/mlops/comments/1vib2c7/deepseek_v4_flash_0731_on_8xh100_hitting_the/"
+          "source_id": "shtetloptimized",
+          "url": "https://scottaaronson.blog/?p=9979"
         }
       ]
     },
@@ -270,35 +270,69 @@
       ]
     },
     {
-      "id": "e03e0d850554eb2d",
-      "source_id": "reddit-mlops",
-      "title": "Is \"IAM for AI agents\" actually a distinct problem, or just RBAC with extra steps?",
-      "url": "https://www.reddit.com/r/mlops/comments/1vi0n7e/is_iam_for_ai_agents_actually_a_distinct_problem/",
-      "published_at": "2026-08-07T13:27:35+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I keep running into a failure pattern that doesn't fit neatly into either &quot;security&quot; or &quot;AI accuracy&quot; discussions, and I want to sanity-check my thinking against people who've actually hit this.</p> <p>The setup: an AI agent (RAG copilot, multi-tenant support bot, internal tool-calling agent) is authorized to access a resource , the permission check passes, nothing crashed, no error. But the specific data it returns or the action it takes is still wrong in a way that's dangerous:</p> <ul> <li>A support AI pulls a data - it retrieves the wrong linked account's balance, not because access was denied, but because the query resolved to the wrong entity within data the user was legitimately allowed to touch.</li> <li>An orchestrator spins up a subagent for a subtask, and the subagent inherits (or worse, expands) permissions no one explicitly granted it.</li> <li>An agent has technical access to run a destructive action (delete, write) th",
+      "id": "aac40c809e623f38",
+      "source_id": "reddit-promptengineering",
+      "title": "Gave Claude my entire debugging conversation to \"help it understand better.\" That backfired.",
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vi14jj/gave_claude_my_entire_debugging_conversation_to/",
+      "published_at": "2026-08-07T13:47:04+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Had an assumption I didn't know I was carrying until it got proven wrong: that if a model struggles with a problem, feeding it more of the conversation history should make things clearer, not worse. Ran into a case recently where the opposite happened, and it changed how I think about long AI-assisted sessions in general.</p> <p>Was debugging a flaky test tied to a race condition in a retry handler. Claude was genuinely useful early on, caught the race condition itself, walked through a few candidate fixes with me. Conversation kept going as the investigation got more complicated. Somewhere past the halfway point, it started looping. Suggested an approach we'd already ruled out two exchanges earlier. I explained again why it didn't work given how the connection pool initialized. It agreed, seemed to understand, then circled back to a version of the same idea a few messages later.</p> <p>Tried the obvious fix: switched to a model with more context room,",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "观点评论",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "探讨AI代理身份管理的本质，引发对安全架构的深入思考。",
-      "summary_zh": "讨论围绕AI代理的IAM（身份和访问管理）问题展开。作者指出，AI代理（如RAG助手、多租户支持机器人）在授权访问资源时，权限管理往往不匹配，导致安全漏洞。问题在于传统RBAC模型无法完全适应代理的动态决策和上下文感知。评论中有人提出需要新的IAM框架，也有人认为只是RBAC的复杂应用。讨论深入，涉及安全与AI的交叉领域。",
-      "title_zh": "“AI代理的IAM”真的是一个独立问题，还是RBAC的扩展？",
-      "weighted_score": 0.665,
+      "reason_zh": "分享真实调试经验，揭示上下文长度并非越多越好，具有反直觉洞察，对AI辅助编程有实用价值。",
+      "summary_zh": "作者在调试一个不稳定的测试时，假设给模型更多对话历史会帮助理解，但结果适得其反。这改变了他们对长时间AI辅助会话的看法。文章深入探讨了上下文长度与模型性能的关系，指出过多的历史信息可能引入噪声，导致模型困惑。作者反思了如何更有效地利用上下文，并提出了改进策略，对使用AI进行编程调试的开发者有借鉴意义。",
+      "title_zh": "把整个调试对话给Claude想让它“更好地理解”，结果适得其反",
+      "weighted_score": 0.48,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "source_authority": 0.3,
+        "novelty": 0.6,
+        "impact": 0.4,
+        "practical_value": 0.7
       },
-      "story_id": "05746a703c3fe55f",
+      "story_id": "c03d2ad0302bdb75",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-mlops",
-          "url": "https://www.reddit.com/r/mlops/comments/1vi0n7e/is_iam_for_ai_agents_actually_a_distinct_problem/"
+          "source_id": "reddit-promptengineering",
+          "url": "https://www.reddit.com/r/PromptEngineering/comments/1vi14jj/gave_claude_my_entire_debugging_conversation_to/"
+        }
+      ]
+    },
+    {
+      "id": "0aaa4cc9a36be3b5",
+      "source_id": "simonwillison",
+      "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+      "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything",
+      "published_at": "2026-08-07T23:55:58+00:00",
+      "raw_text": "<p>OpenAI gave a last-minute presentation at the Black Hat security on Wednesday about \"the Hugging Face Incident\" (<a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">previously</a> on this blog). <a href=\"https://www.youtube.com/watch?v=87DyyMV0kCY\">The video</a> was published yesterday. It's short and information dense and well worth watching, in particular because it provides full details of what happened and how things played out inside OpenAI. I've used the video to construct the timeline below.</p>\n\n<p> </p>\n\n<p>Here's the timeline. My favourite detail is at the end: OpenAI found out that they were responsible for the attack on Hugging Face when they reached out to ask to have their credentials revoked (after their internal investigation) and learned that they had been revoked already since they were used in that attack!</p>\n<ul>\n<li>\n<strong>May 7</strong>: OpenAI starts a new training run for an experimental, unreleased model. (<em>Do they mean an evaluation ru",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "Simon Willison对OpenAI误攻击Hugging Face事件的时间线梳理，信息密度高，值得关注。",
+      "summary_zh": "Simon Willison在博客中提供了OpenAI误攻击Hugging Face事件的时间线。OpenAI在Black Hat安全会议上做了关于“Hugging Face事件”的演讲，视频已发布，内容简短但信息密集。该事件涉及OpenAI对Hugging Face的意外攻击，时间线有助于理解事件经过和影响。",
+      "title_zh": "OpenAI误攻击Hugging Face事件时间线现已公布",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "8e29bb963ba47fe0",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "simonwillison",
+          "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything"
         }
       ]
     },
@@ -366,40 +400,6 @@
         {
           "source_id": "zh-meituan-tech",
           "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html"
-        }
-      ]
-    },
-    {
-      "id": "993ae8632bfbe34e",
-      "source_id": "infoq-cn-ai",
-      "title": "AI 视频降本的三种做法，只有一种不牺牲画质",
-      "url": "https://www.infoq.cn/article/HqthsfSNK4bQYqOSh6Ni?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-07T10:29:29+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/HqthsfSNK4bQYqOSh6Ni?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.6,
-      "reason_zh": "AI视频降本三种做法，只有一种不牺牲画质，实用性强。",
-      "summary_zh": "文章探讨了AI视频降本的三种方法，并指出只有一种能在降低成本的同时不牺牲画质。具体方法可能包括优化模型架构、使用更高效的推理引擎、或采用混合精度训练等。对于需要控制成本的AI视频应用开发者具有实用价值。",
-      "title_zh": "AI视频降本的三种做法，只有一种不牺牲画质",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "c5d0ccad13da9d8f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/HqthsfSNK4bQYqOSh6Ni?utm_source=rss&utm_medium=article"
         }
       ]
     }
