@@ -1,6 +1,6 @@
 {
   "date": "2026-08-08",
-  "generated_at": "2026-08-08T08:37:37.703383+00:00",
+  "generated_at": "2026-08-08T12:37:44.768134+00:00",
   "items": [
     {
       "id": "20e7c40f70ae20dc",
@@ -202,36 +202,35 @@
       ]
     },
     {
-      "id": "4fffe919132d1d30",
-      "source_id": "databricks-blog",
-      "title": "Managing AI Coding Costs at Scale",
-      "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
-      "published_at": "2026-08-07T11:50:39+00:00",
-      "raw_text": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably...",
+      "id": "b92703e9143a2a0a",
+      "source_id": "zh-juejin",
+      "title": "主流多智能体架构为什么大多失败——它们输在结构，不在模型",
+      "url": "https://juejin.cn/post/7671223845593350194",
+      "published_at": "2026-08-08T09:34:11+00:00",
+      "raw_text": "把几个大模型\"组个团队\"，让它们分工、讨论、互相检查，效果就远超单个模型。听起来很美。但现实里，绝大多数\"多智能体系统\"上线后，要么悄悄产出**更自信的错误**，要么陷入反复横跳的死循环。",
       "category_hint": [
-        "产品发布",
-        "行业动态"
+        "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
+      "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Databricks 官方分享 AI 编码成本管理实战，含 agentic coding 的量化收益与成本控制策略，对工程团队极具参考价值。",
-      "summary_zh": "Databricks 博客文章探讨了规模化 AI 编码工具的成本管理。文章指出，agentic coding 在 Databricks 内部带来了可衡量的价值，但成本控制成为关键挑战。作者分享了如何通过优化提示词、缓存、模型选择等策略来降低 token 消耗，同时保持代码质量。文章还讨论了成本与收益的权衡，以及如何建立成本监控体系。对于正在采用 AI 编码工具的企业，提供了实用的成本优化建议。",
-      "title_zh": "规模化 AI 编码成本管理",
-      "weighted_score": 0.755,
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析多智能体架构失败的结构性原因，提供反直觉洞察，对系统设计有启发。",
+      "summary_zh": "文章指出，主流多智能体架构大多失败，问题不在模型而在结构。作者认为，简单地将多个大模型组成团队，让它们分工、讨论、互相检查，往往导致更自信的错误或陷入死循环。文章分析了失败的结构性原因，如缺乏有效的协调机制、信息传递失真等，并提出了改进方向。",
+      "title_zh": "主流多智能体架构为什么大多失败——结构问题而非模型问题",
+      "weighted_score": 0.645,
       "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.8
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
       },
-      "story_id": "30cdf4c101c35d01",
+      "story_id": "625f4e42ada875d3",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "databricks-blog",
-          "url": "https://www.databricks.com/blog/managing-ai-coding-costs-scale"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7671223845593350194"
         }
       ]
     },
@@ -270,35 +269,68 @@
       ]
     },
     {
-      "id": "aac40c809e623f38",
-      "source_id": "reddit-promptengineering",
-      "title": "Gave Claude my entire debugging conversation to \"help it understand better.\" That backfired.",
-      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vi14jj/gave_claude_my_entire_debugging_conversation_to/",
-      "published_at": "2026-08-07T13:47:04+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Had an assumption I didn't know I was carrying until it got proven wrong: that if a model struggles with a problem, feeding it more of the conversation history should make things clearer, not worse. Ran into a case recently where the opposite happened, and it changed how I think about long AI-assisted sessions in general.</p> <p>Was debugging a flaky test tied to a race condition in a retry handler. Claude was genuinely useful early on, caught the race condition itself, walked through a few candidate fixes with me. Conversation kept going as the investigation got more complicated. Somewhere past the halfway point, it started looping. Suggested an approach we'd already ruled out two exchanges earlier. I explained again why it didn't work given how the connection pool initialized. It agreed, seemed to understand, then circled back to a version of the same idea a few messages later.</p> <p>Tried the obvious fix: switched to a model with more context room,",
+      "id": "b40dd77a9e735227",
+      "source_id": "zh-v2ex",
+      "title": "[分享创造] 分享一些在 AI 解析中经常遇到的问题，以及应对思路吧",
+      "url": "https://www.v2ex.com/t/1232932#reply1",
+      "published_at": "2026-08-08T10:25:11+00:00",
+      "raw_text": "之前我分享了一个自己做的小项目，已经在 Github 上拿下 2000 star 了，评论区有人说，觉得我做的东西跟 MinerU 好像啊，是不是在重复造轮子？<br /><br />我觉得还是不太一样的，今天来分享一下使用场景和区别。<br /><br />首先叠个甲啊，MinerU 确实是一个很优秀的文档解析工具，它能把 PDF 里的文字、标题、表格、图片等内容提取出来，并转换成 Markdown 。<br /><br />但问题在于：解析成 Markdown ，并不等于文档已经能被 Agent 理解。<br /><br />你拿到一份 Markdown 后，通常还要：<br /><br />把它切成 Chunk ，扔进向量库，然后让 Agent 或 RAG 系统去检索。<br /><br />听起来很顺，但真正做过的人都知道，坑就在这里。<br /><br />一份复杂 PDF 原本有章节、有层级、有表格、有图片、有跨页引用。解析成 Markdown 之后，这些结构信息会变弱；再经过切片，每个 Chunk 更像是被切下来的孤立文本片段。<br /><br />它可能不知道自己属于哪一章，前后文是什么，旁边那张表格在说明什么，相关图片和正文是什么关系。<br /><br />于是 Agent 检索时，拿到的只是几个“看起来相似”的片段。它不知道\"第 3 章第 2 节有一张对比表格，刚才检索到的那段文字其实是对这张表格的说明\"。它只能把几个相似度最高的碎片拼在一起，交给 LLM 凑答案。<br /><br />这就是为什么很多团队用 MinerU 搭 RAG 之后，效果并不是很满意。不是 MinerU 的问题，是文档被打平之后丢失的结构信息，没人帮它找回来。<br /><br />所以我就在想，能不能做一个更适配 AI Agent 使用的、一步到位的工具，来节省我们的时间呢？<br /><br />这就是 Knowhere 的由来： <a href=\"https://github.com/Ontos-AI/knowhere\" rel=\"nofollow noopener\" target=\"_blank\">https://github.com/Ontos-AI/knowhere</a><br /><br />它会帮你把解析出来的文本，继续变成 Agent 可以导航、",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://i.imgur.com/CzADhlZ.png",
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "分享AI解析实战经验，对比MinerU，提供应对思路，实用性强。",
+      "summary_zh": "作者分享了自己在AI解析项目中遇到的问题和应对思路，并对比了与MinerU的差异。作者认为，解析成Markdown并不等于文档能被Agent理解，还需要进行分块、向量化等后续处理。文章列举了复杂PDF解析中的常见坑，并给出了自己的解决方案，对于从事文档解析和RAG系统开发的读者具有参考价值。",
+      "title_zh": "分享一些在AI解析中经常遇到的问题及应对思路",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "28cf3de878005d06",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1232932#reply1"
+        }
+      ]
+    },
+    {
+      "id": "397dee620527fe23",
+      "source_id": "zh-juejin",
+      "title": "从数据清洗到 Docker 部署：我在本地训练了一个中医领域 Qwen3 模型",
+      "url": "https://juejin.cn/post/7671572326090293258",
+      "published_at": "2026-08-08T10:24:46+00:00",
+      "raw_text": "从数据清洗到 Docker 部署：我在本地训练了一个中医领域 Qwen3 模型 最近我想完整学习一次大模型的训练和部署流程。",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
+      "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "分享真实调试经验，揭示上下文长度并非越多越好，具有反直觉洞察，对AI辅助编程有实用价值。",
-      "summary_zh": "作者在调试一个不稳定的测试时，假设给模型更多对话历史会帮助理解，但结果适得其反。这改变了他们对长时间AI辅助会话的看法。文章深入探讨了上下文长度与模型性能的关系，指出过多的历史信息可能引入噪声，导致模型困惑。作者反思了如何更有效地利用上下文，并提出了改进策略，对使用AI进行编程调试的开发者有借鉴意义。",
-      "title_zh": "把整个调试对话给Claude想让它“更好地理解”，结果适得其反",
-      "weighted_score": 0.48,
+      "reason_zh": "完整记录本地训练领域模型流程，实操性强，适合入门者学习。",
+      "summary_zh": "作者分享了从数据清洗到Docker部署的完整流程，在本地训练了一个中医领域的Qwen3模型。文章涵盖了数据收集、清洗、标注、模型微调、评估以及容器化部署等环节，并分享了过程中遇到的挑战和解决方案。对于希望学习大模型训练和部署的开发者，本文提供了一个端到端的实践案例，具有较高的参考价值。",
+      "title_zh": "从数据清洗到Docker部署：我在本地训练了一个中医领域Qwen3模型",
+      "weighted_score": 0.585,
       "score_breakdown": {
-        "source_authority": 0.3,
+        "source_authority": 0.5,
         "novelty": 0.6,
-        "impact": 0.4,
-        "practical_value": 0.7
+        "impact": 0.5,
+        "practical_value": 0.8
       },
-      "story_id": "c03d2ad0302bdb75",
+      "story_id": "a8b7e0e2e0db3bb3",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-promptengineering",
-          "url": "https://www.reddit.com/r/PromptEngineering/comments/1vi14jj/gave_claude_my_entire_debugging_conversation_to/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7671572326090293258"
         }
       ]
     },
@@ -367,39 +399,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/B6WtPNGNH0d5LolB1ED2?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "478400fd36f67f37",
-      "source_id": "zh-meituan-tech",
-      "title": "美团海报生成 AIGC 技术创新与实践",
-      "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-      "published_at": "2026-08-08T01:04:44.758332+00:00",
-      "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/861434cef3a148ae0093da6666e149361816826.png",
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "美团海报生成AIGC技术闭环已开源，对工业界应用有借鉴意义。",
-      "summary_zh": "美团智能创作团队围绕海报生成AIGC构建了完整技术体系，打造了「生成-编辑-评判」技术闭环。该技术已在美团外卖、品牌IP等场景落地，并已全部开源。文章详细介绍了技术创新与实践经验，为相关领域提供了参考。",
-      "title_zh": "美团海报生成AIGC技术创新与实践",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "6bdd2c9e8078b106",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html"
         }
       ]
     }
