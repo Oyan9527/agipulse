@@ -1,136 +1,70 @@
 {
   "date": "2026-08-09",
-  "generated_at": "2026-08-09T01:12:53.050807+00:00",
+  "generated_at": "2026-08-09T05:07:05.793361+00:00",
   "items": [
     {
-      "id": "cf38a3d27561ac5f",
-      "source_id": "arxiv-cs-cl",
-      "title": "Answer First, Reason Later: Commitment Order in Diffusion LLMs",
-      "url": "https://arxiv.org/abs/2608.05687",
-      "published_at": "2026-08-08T04:00:00+00:00",
-      "raw_text": "arXiv:2608.05687v1 Announce Type: new \nAbstract: Masked diffusion language models (dLLMs) can commit tokens in any order -- a freedom marketed as their core advantage over autoregressive decoding. We show that on reasoning tasks this freedom is instead the axis of failure. Logging every commitment during decoding of LLaDA-8B on GSM8K, we find that unconstrained (pure) decoding commits the final answer at 15-24% of the trajectory while half the reasoning region is still masked, and collapses to answer-only outputs on up to 90% of problems as the canvas grows. The cause is not the model's termination beliefs -- EOS \"pressure\" is nearly identical across decoders -- but reachability: whether the sampler may act on those beliefs at distant positions. A 2x2 prompt-decoder design shows that chain-of-thought helps only under ordered commitment (interaction +34.8 percentage points, 95% CI [26.8, 42.8]; without reasoning text the decoders are indistinguishable), an interaction we decompose into ",
+      "id": "2557ae042465e7d2",
+      "source_id": "zh-solidot",
+      "title": "DeepMind 的 WeatherNext 模型在飓风预测上取得突破",
+      "url": "https://www.solidot.org/story?sid=85042",
+      "published_at": "2026-08-08T17:05:07+00:00",
+      "raw_text": "2025 年 10 月，加勒比海上空酝酿着一场风暴。气象模型对其路径有不同的预测。它会保持弱势最终登陆海地，还是会增强并袭击买加？由 Google DeepMind 和 Google Research 联合开发的模型 WeatherNext 选择了后者。在风暴登陆前五天，该模型以 80% 的置信度预测它将以五级飓风的强度袭击牙买加。飓风梅丽莎（Melissa）给牙买加带来了灾难性的洪水和山体滑坡。但 AI 模型帮助预报员更早向沿途社区发出预警，使他们有时间做好充足准备。研究人员在《自然》上发表论文，称 WeatherNext AI 模型能以前所未有的精度预测飓风。它能比现有模型提前一天发出预警；意味着它提前三天的预测准确度相当于之前模型提前两天的预测。在实际灾害中，这额外的一天意义重大。研究人员表示，历史上要将预报提前一天，通常需要十年的努力。论文主要作者之一的  Ferran Alet 表示：“我们没有那么多热带气旋的数据，但有大量的天气数据。因此我们训练了一个模型，使其既擅长预测天气，也擅长预测热带气旋。”\n<p></p>",
       "category_hint": [
-        "论文研究"
+        "行业动态"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "揭示扩散LLM在推理任务上因自由提交顺序而失败，提出承诺顺序约束，具有反直觉洞察。",
-      "summary_zh": "本文研究了掩码扩散语言模型（dLLM）在推理任务上的解码行为。与自回归模型不同，dLLM可以任意顺序提交token，这被视为其优势。然而，作者通过记录LLaDA-8B在GSM8K上的解码过程发现，无约束的纯解码会过早提交最终答案，导致推理失败。为此，他们提出了一种承诺顺序约束方法，引导模型先推理后提交答案，显著提升了推理准确率。这一发现挑战了dLLM自由顺序的固有优势，为扩散模型在推理任务上的应用提供了重要指导。",
-      "title_zh": "先答后思：扩散LLM中的承诺顺序",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "f2c1e7480222802f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2608.05687"
-        }
-      ]
-    },
-    {
-      "id": "7e5491acdcf062fe",
-      "source_id": "arxiv-cs-cl",
-      "title": "MACRO: Markov Chain Routing of Transformer Layers",
-      "url": "https://arxiv.org/abs/2608.05872",
-      "published_at": "2026-08-08T04:00:00+00:00",
-      "raw_text": "arXiv:2608.05872v1 Announce Type: new \nAbstract: Standard Large Language Models (LLMs) execute layers sequentially. Dynamic layer routing, i.e. search for a different execution path through layers involving layer repetitions, skips and other moves, can improve performance. Existing routing approaches often require updating model weights, running expensive search loops per test instance, or demand ground-truth labels during inference. In this work, we propose Markov Chain Routing of Transformer Layers (MACRO), a framework that learns task-specific routes over LLM architectures without modifying underlying parameters. MACRO models layer routing as a context-dependent Markov policy conditioned on layer indices, computation budget phases, directional displacements, and operator context, supporting skip, repeat, and residual hidden-state addition operations. The Markov route distribution is updated via feedback on training data and decoded using a top-k Viterbi algorithm to isolate high-pro",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出马尔可夫链路由Transformer层，无需权重更新即可动态选择执行路径，创新性强。",
-      "summary_zh": "标准大语言模型按顺序执行所有层。本文提出动态层路由，即通过层重复、跳过等操作搜索不同执行路径，以提升性能。现有方法需要更新模型权重或进行昂贵的搜索。作者提出MACRO，利用马尔可夫链对层间转移进行建模，实现无需权重更新的高效路由。实验显示MACRO在多个任务上提升性能，同时保持推理效率。",
-      "title_zh": "MACRO：Transformer层的马尔可夫链路由",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "3fa7407f6842f707",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2608.05872"
-        }
-      ]
-    },
-    {
-      "id": "4bb9f61f1ddb11dd",
-      "source_id": "arxiv-cs-cl",
-      "title": "Scaffold-Mediated Post-Training: Co-Evolving Model Parameters and Procedural Scaffold Graphs",
-      "url": "https://arxiv.org/abs/2608.05156",
-      "published_at": "2026-08-08T04:00:00+00:00",
-      "raw_text": "arXiv:2608.05156v1 Announce Type: new \nAbstract: Post-training of large language models optimizes only parameters, while inference-time procedural scaffolds are typically designed independently of parameter training. This disconnect makes it difficult to automatically acquire and internalize complex strategies. We propose scaffold-mediated post-training: procedural scaffolds are organized into an evolvable graph structure that co-evolves with model parameters through discovery, distillation, and dynamic recompilation. We instantiate this paradigm as Skill Training. On FeatureBench, automatically discovered skills improve the passed rate by 8.1pp, and after progressive distillation the model still achieves a 27.7% passed rate without any external scaffold (distillation retention rate 85.2%, defined as post-distillation / with-skill passed rate), significantly outperforming standard SFT on the same data.",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出脚手架介导的后训练，协同进化模型参数与程序化脚手架图，解决参数训练与推理脚手架脱节问题，有创新性。",
-      "summary_zh": "本文提出脚手架介导的后训练方法，旨在解决大语言模型后训练中参数优化与推理时程序化脚手架独立设计的问题。作者将程序化脚手架组织成图结构，并与模型参数协同进化，使模型能够自动获取和内化复杂策略。通过实验，作者展示了该方法在提升模型推理能力和策略学习方面的有效性，为LLM后训练提供了新范式。",
-      "title_zh": "脚手架介导的后训练：协同进化模型参数与程序化脚手架图",
-      "weighted_score": 0.74,
+      "depth_score": 0.8,
+      "reason_zh": "DeepMind WeatherNext在飓风预测上取得突破，提前一天预警，具有重大实际意义。",
+      "summary_zh": "Google DeepMind和Google Research联合开发的WeatherNext模型在飓风预测上取得突破。在2025年10月飓风梅丽莎案例中，模型提前五天以80%置信度预测其强度。研究发表在《自然》上，显示模型能比现有模型提前一天发出预警，相当于提前三天预测的准确度与之前两天相当。",
+      "title_zh": "DeepMind的WeatherNext模型在飓风预测上取得突破",
+      "weighted_score": 0.81,
       "score_breakdown": {
         "source_authority": 0.9,
         "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.6
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "7e3554566159dd5c",
+      "story_id": "90376d56b74b0b30",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2608.05156"
+          "source_id": "zh-solidot",
+          "url": "https://www.solidot.org/story?sid=85042"
         }
       ]
     },
     {
-      "id": "51ef868db1092332",
-      "source_id": "arxiv-cs-cl",
-      "title": "Safe Evolution with Circuit Anchors",
-      "url": "https://arxiv.org/abs/2608.05158",
-      "published_at": "2026-08-08T04:00:00+00:00",
-      "raw_text": "arXiv:2608.05158v1 Announce Type: new \nAbstract: In biological evolution, unconstrained mutation can lead to catastrophic outcomes: organisms may evolve enhanced capabilities while losing essential functions for survival. Nature's solution is \\textit{developmental constraints}, where core regulatory genes remain anchored while peripheral genes adapt freely. We observe that current self-evolution algorithms for large language models lack analogous constraints. They optimize purely for capability, implicitly assuming safety will be preserved. Our experiments reveal this assumption to be dangerously wrong: models can \\textit{misevolve} into powerful yet dangerous entities. Inspired by how Hox genes anchor body structure across $500$ million years of evolution, we propose \\textbf{Circuit-Anchored Evolution (CAE)}. Using mechanistic interpretability, we identify a tiny \\textit{safety circuit}, comprising less than $2$\\% of model features, that causally mediates safety behaviors. We anchor t",
+      "id": "17a2a5c38e794693",
+      "source_id": "zh-hscspring",
+      "title": "从持续学习到下一代 AI 方向探讨",
+      "url": "https://yam.gift/2026/08/08/AI/2026-08-08-Next-AI/",
+      "published_at": "2026-08-08T10:00:00+00:00",
+      "raw_text": "<p>前几天梁文锋（后面用梁佬代替）的演讲稿有点出圈，我也去看了一下，看了两个版本，一个是录音文字稿（知乎已经被删掉了），一个是 52 条<a href=\"https://www.zhihu.com/question/2063544277611893241/answer/2063545658112528693\">摘要整理稿</a><sup>[1]</sup>。看完后有一些启发，尤其是关于下一代大模型的，这个其实自从 2017 年转行做 AI 到现在，一直没有停止过思考，所以本文重点从持续学习角度探讨这个方向。</p>",
       "category_hint": [
-        "论文研究"
+        "技巧与观点"
       ],
       "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "借鉴生物进化中的发育约束，提出电路锚点实现安全自进化，防止模型进化中丢失核心能力，有启发性。",
-      "summary_zh": "本文借鉴生物进化中的发育约束概念，提出电路锚点方法以实现大语言模型的安全自进化。在生物进化中，核心调控基因保持锚定，而外围基因自由适应，以避免灾难性突变。作者观察到当前自进化方法可能导致模型增强能力的同时丢失关键功能，因此提出在模型参数中设置电路锚点，确保核心能力在进化过程中保持稳定。实验表明，该方法能在提升模型性能的同时保持其基础能力，为安全自进化提供了新思路。",
-      "title_zh": "基于电路锚点的安全进化",
-      "weighted_score": 0.74,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "从梁文锋演讲探讨持续学习与下一代AI方向，深度思考，启发认知。",
+      "summary_zh": "本文从梁文锋的演讲稿出发，探讨了下一代大模型的发展方向，重点从持续学习角度分析。作者回顾了自己自2017年转行AI以来的思考，认为持续学习是下一代模型的关键。文章可能涉及模型如何不断适应新数据、避免灾难性遗忘等话题，并提出了未来可能的研究方向。",
+      "title_zh": "从持续学习到下一代AI方向探讨",
+      "weighted_score": 0.75,
       "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.7,
         "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.6
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "a39733a222f4cbb2",
+      "story_id": "d7bee889af98cb0f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2608.05158"
+          "source_id": "zh-hscspring",
+          "url": "https://yam.gift/2026/08/08/AI/2026-08-08-Next-AI/"
         }
       ]
     },
@@ -164,6 +98,139 @@
         {
           "source_id": "zh-tonybai",
           "url": "https://tonybai.com/2026/08/09/google-agent-skills-behind-the-scenes/"
+        }
+      ]
+    },
+    {
+      "id": "06c9ba0f88ed54cd",
+      "source_id": "zh-juejin",
+      "title": "Flink Agents 深度剖析：这才是生产级 AI Agent 该有的底座！",
+      "url": "https://juejin.cn/post/7671566723839393830",
+      "published_at": "2026-08-09T02:12:43+00:00",
+      "raw_text": "1.前言 将 LLM Agent 运行在分布式流处理引擎上，这并不是简单的技术缝合，而是一次对Agent 基础设施该长什么样的严肃回答。 早期的AI Agent 的爆发让基础设施面临一个尴尬的问题：流",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深度剖析Flink Agents架构，探讨生产级AI Agent基础设施，技术含量高，对架构师有启发。",
+      "summary_zh": "文章深入分析将LLM Agent运行在分布式流处理引擎Flink上的架构设计，认为这是对Agent基础设施的严肃回答。作者指出早期AI Agent面临流处理与状态管理的挑战，Flink Agents通过事件驱动、状态持久化和容错机制提供生产级底座。内容涵盖设计取舍、性能优化和实际案例，强调可扩展性与可靠性。",
+      "title_zh": "Flink Agents深度剖析：这才是生产级AI Agent该有的底座！",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "1fc3d4bbd34830e1",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7671566723839393830"
+        }
+      ]
+    },
+    {
+      "id": "2d8f73bd9abfc300",
+      "source_id": "zh-juejin",
+      "title": "3 年，8 种方案，1 次重构：LangChain 记忆方案如何从混乱走向清晰",
+      "url": "https://juejin.cn/post/7671508846049361962",
+      "published_at": "2026-08-09T02:44:39+00:00",
+      "raw_text": "本文系统梳理了LangChain框架中记忆模块的演进历程与技术方案。文章首先指出大语言模型\"无状态\"的本质特性，进而分析如何通过记忆系统实现对话状态的持续跟踪。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "系统梳理LangChain记忆模块演进，从混乱到清晰的方案对比，对开发者有深度启发。",
+      "summary_zh": "文章系统梳理了LangChain框架中记忆模块的演进历程与技术方案。首先指出大语言模型'无状态'的本质，分析如何通过记忆系统实现对话状态跟踪。然后回顾了从早期简单缓存到后来多种记忆类型的演变，包括对话缓冲、摘要记忆、实体记忆等。文章对比了8种方案的优缺点，并介绍了LangChain如何通过模块化设计整合这些方案，最终形成清晰的记忆管理架构。最后总结了设计记忆系统时的关键考量。",
+      "title_zh": "3年，8种方案，1次重构：LangChain记忆方案如何从混乱走向清晰",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "4c6868c360d4f849",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7671508846049361962"
+        }
+      ]
+    },
+    {
+      "id": "b0b4da0a60799878",
+      "source_id": "towards-data-science",
+      "title": "Before Q, K, and V: Reconstructing the Transformer",
+      "url": "https://towardsdatascience.com/before-q-k-and-v-reconstructing-the-transformer/",
+      "published_at": "2026-08-08T15:00:00+00:00",
+      "raw_text": "<p>Many Transformer explainers start with the finished architecture. We ask why it looks the way it does.</p>\n<p>The post <a href=\"https://towardsdatascience.com/before-q-k-and-v-reconstructing-the-transformer/\">Before Q, K, and V: Reconstructing the Transformer</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "从第一性原理重构Transformer，揭示QKV设计背后的逻辑，极具启发性。",
+      "summary_zh": "本文从Transformer的最终架构出发，逆向推导其设计原理。作者不满足于现有解释，而是追问为什么Transformer会演变成现在的样子。文章通过逐步重构，展示了Q、K、V机制如何从简单的注意力需求中自然涌现，帮助读者深入理解Transformer的内在逻辑。",
+      "title_zh": "在Q、K、V之前：重构Transformer",
+      "weighted_score": 0.645,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "fbabc6ab760ecee7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "towards-data-science",
+          "url": "https://towardsdatascience.com/before-q-k-and-v-reconstructing-the-transformer/"
+        }
+      ]
+    },
+    {
+      "id": "3ce57b9e709cdf0a",
+      "source_id": "ars-technica-ai",
+      "title": "DeepMind’s hurricane breakthrough has surprised weather scientists",
+      "url": "https://arstechnica.com/science/2026/08/deepminds-hurricane-model-bought-forecasters-an-extra-day/",
+      "published_at": "2026-08-08T11:05:50+00:00",
+      "raw_text": "Open source WeatherNext model can make accurate predictions with lower-resolution weather data.",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2023/12/hurricane-500x500.jpg",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "DeepMind开源WeatherNext模型，低分辨率数据也能准确预测，气象领域突破。",
+      "summary_zh": "DeepMind的WeatherNext模型在天气预报领域取得突破，该开源模型能够使用较低分辨率的气象数据做出准确预测，令气象科学家感到惊讶。这一进展有望提高天气预报的效率和覆盖范围，特别是在数据稀缺地区。文章介绍了模型的特点和潜在应用，展示了AI在科学计算中的巨大潜力。",
+      "title_zh": "DeepMind的飓风预测突破令气象科学家惊讶",
+      "weighted_score": 0.77,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.5
+      },
+      "story_id": "7fb61e094099646c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "ars-technica-ai",
+          "url": "https://arstechnica.com/science/2026/08/deepminds-hurricane-model-bought-forecasters-an-extra-day/"
         }
       ]
     },
@@ -202,80 +269,46 @@
       ]
     },
     {
-      "id": "d934889729d0dada",
-      "source_id": "reddit-claudeai",
-      "title": "I benchmarked 5 token saving tools across Codex and Claude code. The 60-90% token saving claims didnt hold up",
-      "url": "https://www.reddit.com/r/ClaudeAI/comments/1viyokr/i_benchmarked_5_token_saving_tools_across_codex/",
-      "published_at": "2026-08-08T15:20:26+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Scroll to bottom for tldr</p> <p>In July, JetBrains reran the headline claims of two token-saving tools on real agent workloads.</p> <p>Caveman claimed 65% and measured 8.5%. RTK claimed 60–90% and ended up slightly more expensive than using nothing.</p> <p>It looked like a pattern of over claiming numbers, so I benchmarked 5 token saving tools with conditions closer to how agents actually use them</p> <p>my setup was :</p> <ul> <li>48 Django questions drawn from SWE-bench</li> <li>Five question types, selected before running anything</li> <li>Same agent, prompt, repository commit and tool access</li> <li>Fresh index for every tool</li> <li>One no-tools baseline</li> <li>261 runs on this harness</li> <li>43 of the 48 questions finished in all six arms. The run hit an API usage cap near the end and lost the last five from every arm equally, so the paired comparisons are over those 43.</li> </ul> <p>Disclosure: I work on repowise. The harness, raw data, ",
+      "id": "527b81078a95e1a6",
+      "source_id": "infoq-cn-ai",
+      "title": "从失控到可控：基于系统控制论的 Agent 安全防御体系设计与实践｜AICon深圳",
+      "url": "https://www.infoq.cn/article/MMh1pkuNSPDlUAtuRelk?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-09T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/MMh1pkuNSPDlUAtuRelk?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "产品发布",
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "实测5款token节省工具，揭露宣传夸大，提供真实数据，对开发者有实用价值。",
-      "summary_zh": "该帖子作者基准测试了5款token节省工具在Codex和Claude Code上的表现。JetBrains在7月重新测试了Caveman和RTK，Caveman声称节省65%但实测仅8.5%，RTK声称60-90%但实际更贵。作者在类似条件下测试了5款工具，发现宣传的节省效果普遍不实。帖子提供了详细数据和TLDR，帮助开发者理性选择工具。",
-      "title_zh": "我基准测试了5款token节省工具：60-90%的节省声称不成立",
-      "weighted_score": 0.64,
+      "reason_zh": "基于系统控制论设计Agent安全防御体系，提供理论与实践结合的安全方案。",
+      "summary_zh": "文章介绍了在AICon深圳大会上分享的基于系统控制论的Agent安全防御体系。作者从失控到可控的角度，探讨了如何利用控制论原理设计Agent的安全机制，包括反馈回路、状态监控和异常处理等。提供了实际案例和设计实践，帮助开发者构建更安全的AI Agent系统。",
+      "title_zh": "从失控到可控：基于系统控制论的 Agent 安全防御体系设计与实践｜AICon深圳",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.7,
         "novelty": 0.7,
         "impact": 0.5,
-        "practical_value": 0.8
+        "practical_value": 0.7
       },
-      "story_id": "2c8ce2408f1006f0",
+      "story_id": "6930a87759dc5e84",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-claudeai",
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1viyokr/i_benchmarked_5_token_saving_tools_across_codex/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/MMh1pkuNSPDlUAtuRelk?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "5acfc1f867650d26",
-      "source_id": "reddit-claudeai",
-      "title": "A simple rule that makes AI agents much less dangerous: Rule Zero — always verify externally.",
-      "url": "https://www.reddit.com/r/ClaudeAI/comments/1viy2hl/a_simple_rule_that_makes_ai_agents_much_less/",
-      "published_at": "2026-08-08T14:55:15+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We use this for a legal research database currently in closed beta. Every session the AI get's this instruction at the top of the session_onboarding file:</p> <blockquote> </blockquote> <p>The fix: before declaring success, compare the result against an <strong>independent source of truth</strong>.</p> <p>Our best example is scraping state statutes from the legislative websites.</p> <p>AI: “We got all the statutes from the state website. Zero errors. Everything parsed correctly.”</p> <p>Rule Zero: “Did you compare a sample against an independent source like Cornell or a google search of the statute?&quot;</p> <p>AI: “Uh, no…”</p> <p><em>checks</em></p> <p>AI: “Okay…we missed several entire groups of statutes and a huge chunk of the text is corrupted.”</p> <p>This actually happened in various forms. One scrape reported <code>complete: true</code> and zero failures while missing three entire lettered titles, including the UCC. Another passed its checks w",
-      "category_hint": [
-        "产品发布",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "提出'规则零'：AI代理必须外部验证，简单实用，能显著降低风险，值得借鉴。",
-      "summary_zh": "该帖子介绍了一个降低AI代理危险性的简单规则：'规则零'——始终外部验证。作者在法律研究数据库的封闭测试中应用此规则，在会话开始时指示AI在宣布成功前，将结果与独立来源对比。例如，从立法机构抓取州法规时，与官方数据库核对。这种方法能有效防止AI产生幻觉或错误，提高可靠性。",
-      "title_zh": "让AI代理更安全的简单规则：规则零——始终外部验证",
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "29c4cc29bad74aee",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-claudeai",
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1viy2hl/a_simple_rule_that_makes_ai_agents_much_less/"
-        }
-      ]
-    },
-    {
-      "id": "d1fa89309fb51e88",
-      "source_id": "zh-ailemon",
-      "title": "从零搭建一个通用 AI Agent：LemonClaw 的工程实践",
-      "url": "https://blog.ailemon.net/2026/08/08/building-a-general-purpose-ai-agent-lemonclaw-from-scratch-an-engineering-practice/?pk_campaign=feed&pk_kwd=building-a-general-purpose-ai-agent-lemonclaw-from-scratch-an-engineering-practice&utm_source=rss&utm_medium=rss&utm_campaign=building-a-general-purpose-ai-agent-lemonclaw-from-scratch-an-engineering-practice",
-      "published_at": "2026-08-08T01:21:00+00:00",
-      "raw_text": "",
+      "id": "65022cfe57cf1289",
+      "source_id": "zh-juejin",
+      "title": "kimi-code 深度掌握系列文章-Plan Mode 与 Goal Mode：结构化的自主执行（九）",
+      "url": "https://juejin.cn/post/7671237007516729379",
+      "published_at": "2026-08-09T02:52:53+00:00",
+      "raw_text": "1. Plan Mode 的设计目标 在 Agent 的日常使用中，一个常见的痛点是：Agent 急于动手，却在执行到一半时发现方向错了。模型在看到用户指令后，本能地想要「做点什么」——调用工具、创建",
       "category_hint": [
         "技巧与观点"
       ],
@@ -283,9 +316,9 @@
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "从零搭建通用AI Agent的工程实践，提供可迁移的构建经验，对开发者有高实用价值。",
-      "summary_zh": "该文章标题为“从零搭建一个通用AI Agent：LemonClaw 的工程实践”，但未提供摘要内容。推测文章详细介绍了LemonClaw项目的架构设计、关键技术选型、开发过程中遇到的挑战及解决方案，可能涵盖Agent循环、上下文工程等实践。由于缺少正文，无法提供更具体摘要。",
-      "title_zh": null,
+      "reason_zh": "深入讲解Kimi Code的Plan Mode与Goal Mode，帮助用户结构化执行任务，实用性强。",
+      "summary_zh": "文章是Kimi Code深度掌握系列第九篇，聚焦Plan Mode与Goal Mode。首先指出Agent常见痛点：急于动手导致方向错误。Plan Mode设计目标是在执行前制定计划，确保方向正确。文章详细介绍了Plan Mode的工作原理、使用场景和最佳实践，并对比了Goal Mode的差异。通过结构化执行，用户可以提高Agent任务的准确性和效率。",
+      "title_zh": "kimi-code深度掌握系列文章-Plan Mode与Goal Mode：结构化的自主执行（九）",
       "weighted_score": 0.585,
       "score_breakdown": {
         "source_authority": 0.5,
@@ -293,79 +326,78 @@
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "6a34ce83d5e97386",
+      "story_id": "3c78c89d8fe4679d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-ailemon",
-          "url": "https://blog.ailemon.net/2026/08/08/building-a-general-purpose-ai-agent-lemonclaw-from-scratch-an-engineering-practice/?pk_campaign=feed&pk_kwd=building-a-general-purpose-ai-agent-lemonclaw-from-scratch-an-engineering-practice&utm_source=rss&utm_medium=rss&utm_campaign=building-a-general-purpose-ai-agent-lemonclaw-from-scratch-an-engineering-practice"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7671237007516729379"
         }
       ]
     },
     {
-      "id": "fd409e0408b13be1",
-      "source_id": "infoq-cn-ai",
-      "title": "金融监管领域的 Harness 实践：让知识与数据驱动 Agent 稳定运行｜AICon深圳",
-      "url": "https://www.infoq.cn/article/hQp9boye2rpPH7ZWUvXL?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-08T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/hQp9boye2rpPH7ZWUvXL?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "金融监管领域Agent落地实践，分享知识驱动与数据驱动的稳定运行经验，对工程实践有参考价值。",
-      "summary_zh": "本文是AICon深圳大会的分享，主题为金融监管领域的Harness实践。文章探讨了如何让知识与数据驱动Agent稳定运行，涉及Agent在金融监管场景中的实际应用案例、技术架构设计、以及如何通过知识图谱和数据管道提升Agent的可靠性和准确性。作者分享了在金融监管领域部署Agent时遇到的挑战和解决方案，强调了知识工程与数据治理的重要性，并提出了Harness框架来整合知识库与实时数据，确保Agent决策的可解释性和合规性。文章还讨论了Agent的评估与监控方法，以及如何持续优化Agent性能。对于从事金融AI或Agent开发的工程师具有较高的参考价值。",
-      "title_zh": "金融监管领域的 Harness 实践：让知识与数据驱动 Agent 稳定运行｜AICon深圳",
-      "weighted_score": 0.675,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.5,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "1681b1ca238ba804",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/hQp9boye2rpPH7ZWUvXL?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "4142c07a9ed4b558",
-      "source_id": "reddit-chatgptcoding",
-      "title": "The cheap tier of an AI coding setup is where the money actually goes, and nobody plans it",
-      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1viyswe/the_cheap_tier_of_an_ai_coding_setup_is_where_the/",
-      "published_at": "2026-08-08T15:25:25+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Coding setups get discussed as a single decision. Which model, which harness. In practice there are two tiers and only one of them ever gets any thought.</p> <p>The top tier is planning, architecture, the genuinely hard bug. Being wrong there costs an hour of untangling, and nobody is switching that to save money.</p> <p>The bottom tier is everything else, and by volume it's most of the calls. Reading logs. Test scaffolds. Summarising a file before you edit it. Commit messages. Mechanical renames across a repo. It sits on the expensive model for no reason except that's what got configured first and nothing ever forced a review.</p> <p>What's changed is the supply at the bottom. Recent small releases are built for instruction following and tool calls specifically, which is the exact shape of that work, and they're cheap enough that per-call price stops being the deciding factor. Ling 3.0 Tiny is this week's example, though like most of them it's hosted ",
+      "id": "aac0f018814e7aae",
+      "source_id": "zh-juejin",
+      "title": "Skills 撞车了，Agent 怎么选",
+      "url": "https://juejin.cn/post/7671566723839524902",
+      "published_at": "2026-08-09T02:57:03+00:00",
+      "raw_text": "你团队 8 个人装了三套 deploy skill。一声'上线'，Alice 的跳测试、Bob 的跑全 CI、项目的跑标准 prod —— 没人知道是哪个赢了。今天把这事讲透。",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "指出AI编码设置中低成本层级常被忽视，但实际花费更多，提供独特视角。",
-      "summary_zh": "帖子讨论AI编码设置的两个层级：顶层用于规划、架构和困难bug，底层处理其余任务。作者认为底层虽便宜但实际花费更多，且无人规划。强调在模型选择上，底层任务的成本累积可能超过顶层，建议关注整体成本。",
-      "title_zh": "AI编码设置中的廉价层级才是花钱的地方，却无人规划",
-      "weighted_score": 0.61,
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "解决Agent Skills冲突问题，提供选择策略，对团队协作有实用价值。",
+      "summary_zh": "文章讨论团队中多个Agent Skills（如deploy skill）冲突时如何选择的问题。场景：8个人装了三套deploy skill，执行'上线'时行为不一致。文章分析了冲突原因，并提出了解决方案：通过优先级、命名空间或配置管理来明确选择。提供了具体策略和最佳实践，帮助团队避免混乱。",
+      "title_zh": "Skills撞车了，Agent怎么选",
+      "weighted_score": 0.585,
       "score_breakdown": {
         "source_authority": 0.5,
-        "novelty": 0.7,
+        "novelty": 0.6,
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "347baa24b5e24e0b",
+      "story_id": "1f74d012de2e534d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-chatgptcoding",
-          "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1viyswe/the_cheap_tier_of_an_ai_coding_setup_is_where_the/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7671566723839524902"
+        }
+      ]
+    },
+    {
+      "id": "d05c5d81293d7bde",
+      "source_id": "zh-tmtpost",
+      "title": "Jeff Dean离职谷歌首次亮相回答：AI的下一个十年是什么",
+      "url": "https://www.tmtpost.com/8096544.html",
+      "published_at": "2026-08-09T02:15:18+00:00",
+      "raw_text": "这是Jeff Dean 挥别谷歌后的首次公开亮相，也是他向 AI 下一个十年交出的第一份“投名状”。",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.tmtpost.com/uploads/images/2026/08/be35427f711e30426d61228ba0089446_1786241722.webp",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "Jeff Dean离职后首次公开亮相，展望AI下一个十年，权威观点值得关注。",
+      "summary_zh": "Jeff Dean在离开谷歌后首次公开亮相，就AI下一个十年的发展发表看法。他回顾了AI领域的进展，并展望未来趋势，包括模型规模、多模态、推理能力等。作为AI领域的领军人物，他的观点对行业方向具有重要参考价值。文章可能涵盖他对AI研究、工程实践和伦理的思考。",
+      "title_zh": "Jeff Dean离职谷歌首次亮相回答：AI的下一个十年是什么",
+      "weighted_score": 0.715,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "256f33399fde0987",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8096544.html"
         }
       ]
     }
