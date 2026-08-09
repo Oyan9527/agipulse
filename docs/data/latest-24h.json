@@ -1,107 +1,5 @@
 [
   {
-    "id": "5c7effdc9843c408",
-    "source_id": "zh-meituan-tech",
-    "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
-    "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
-    "published_at": "2026-08-08T01:04:44.758242+00:00",
-    "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p1.meituan.net/meituantechblog/ef19600fdb0e6868a3574c4a8c7ff746220482.png",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "业界首个国产算力集群训练的万亿参数模型，对AI自主可控意义重大。",
-    "summary_zh": "美团正式发布LongCat-2.0，这是业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型。总参数1.6T，平均激活约48B，动态范围33B~56B。模型从零开始预训练，原生支持1M超长上下文，架构设计围绕Agentic Coding任务，旨在提升代码理解、生成与执行的效率和稳定性。",
-    "title_zh": "美团LongCat-2.0正式发布：国产算力集群训练的万亿参数模型",
-    "weighted_score": 0.88,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.8
-    },
-    "story_id": "8bd25b5e378c5d18",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "20e7c40f70ae20dc",
-    "source_id": "zh-meituan-tech",
-    "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-    "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
-    "published_at": "2026-08-07T20:34:20.146574+00:00",
-    "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "MineExplorer揭示多模态大模型在动态世界中的能力断层，为长程任务评测提供新基准，具有重要研究价值。",
-    "summary_zh": "美团LongCat团队构建了MineExplorer，这是首个在开放世界中做到分钟级长程任务的评测基准。该系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力，揭示了顶级模型在动态环境中的能力断层，为多模态AI研究提供了重要参考。",
-    "title_zh": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "703bdf6f589de6ef",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f1ef7e4ebb501534",
-    "source_id": "gh-sglang",
-    "title": "sgl-project/sglang v0.5.17",
-    "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.17",
-    "published_at": "2026-08-08T00:19:16+00:00",
-    "raw_text": "# Highlights\r\n\r\n*582 PRs from 194 contributors.*\r\n\r\n**Kimi K3 day-0 support**: A 2.8T-parameter multimodal LatentMoE (896 experts, top-16, routed in a 3584-dim latent space) with a 1M-token context, 69 KDA linear-attention layers interleaved with 24 MLA layers, and a MoonViT3d vision tower, shipping as a native MXFP4 checkpoint. SGLang serves it from day 0 with DCP, DSpark speculative decoding, chunked-prefill PP with TP decode, KDA-aware prefix caching, HiCache L2 over DCP, LoRA on the quantized weights, and reasoning, tool-call and OpenAI-compatible serving, verified on NVIDIA GB300 and AMD MI35x ([#32541](https://github.com/sgl-project/sglang/pull/32541), [#32828](https://github.com/sgl-project/sglang/pull/32828), [#32890](https://github.com/sgl-project/sglang/pull/32890), [#33025](https://github.com/sgl-project/sglang/pull/33025), [#33112](https://github.com/sgl-project/sglang/pull/33112), [blog](https://www.lmsys.org/blog/2026-07-27-kimi-k3-day0-support), [cookbook](https://docs.s",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "SGLang发布新版本，支持Kimi K3模型，性能优化显著，对推理部署有重要价值。",
-    "summary_zh": "sgl-project/sglang发布v0.5.17版本，包含582个PR，来自194位贡献者。亮点包括对Kimi K3的day-0支持：一个2.8T参数的多模态LatentMoE模型，具有896个专家、top-16路由、3584维潜在空间、1M token上下文，以及69个KDA线性注意力层与24个MLA层交错，并配备MoonViT3d视觉塔，原生MXFP4检查点。SGLang从第一天起就通过DCP、DSpark推测解码等技术提供服务。",
-    "title_zh": "sgl-project/sglang v0.5.17 发布",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "89b73c7459e0cfe1",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-sglang",
-        "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.17"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "cf38a3d27561ac5f",
     "source_id": "arxiv-cs-cl",
     "title": "Answer First, Reason Later: Commitment Order in Diffusion LLMs",
@@ -165,75 +63,6 @@
       {
         "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2608.05872"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "9283440f8dee81d2",
-    "source_id": "zh-v2ex",
-    "title": "[分享发现] Apple AI 国行真的来了！",
-    "url": "https://www.v2ex.com/t/1232924#reply12",
-    "published_at": "2026-08-08T09:09:41+00:00",
-    "raw_text": "#苹果 官网显示，Apple 智能可配合 # #阿里 巴巴  #千问 模型工作。<br />来源： <a href=\"https://support.apple.com/zh-cn/guide/mac-help/mchl46b3ab20/mac\" rel=\"nofollow noopener\" target=\"_blank\">https://support.apple.com/zh-cn/guide/mac-help/mchl46b3ab20/mac</a>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "苹果AI国行版正式落地，与阿里千问合作，标志性事件，影响深远。",
-    "summary_zh": "苹果官网更新显示，Apple智能在中国大陆将支持与阿里巴巴的千问模型配合工作。这标志着苹果AI功能正式进入中国市场，选择与本土模型合作以符合监管要求。用户可在Mac等设备上体验由千问驱动的智能功能。此举对国内AI生态和苹果用户均有重大影响。",
-    "title_zh": "苹果AI国行版正式上线，与阿里千问合作",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.9,
-      "practical_value": 0.7
-    },
-    "story_id": "b8efcd7232eea0e5",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1232924#reply12"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "5655a593c8d3ecb0",
-    "source_id": "techcrunch-ai",
-    "title": "OpenAI says it slowed Astra model development over security concerns",
-    "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/",
-    "published_at": "2026-08-07T22:48:24+00:00",
-    "raw_text": "OpenAI said this model, which is still in development, reached its \"critical cybersecurity threshold,\" meaning it could independently identify and carry out cyberattacks against traditionally well-protected real-world systems.",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "OpenAI因安全担忧延缓Astra模型，反映前沿AI安全实践，值得关注。",
-    "summary_zh": "OpenAI表示，其正在开发的Astra模型已达到“关键网络安全阈值”，意味着该模型能独立识别并针对传统防护良好的真实世界系统发起网络攻击。出于安全考虑，OpenAI决定延缓该模型的发布。这一决定基于其内部《准备框架》的评估，凸显了AI安全在模型部署中的重要性，也引发了对AI自主能力的担忧。",
-    "title_zh": "OpenAI称因安全担忧延缓Astra模型开发",
-    "weighted_score": 0.815,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.9,
-      "practical_value": 0.6
-    },
-    "story_id": "50a11790617095a5",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/08/07/openai-says-it-slowed-astra-model-development-over-security-concerns/"
       }
     ],
     "curated": true
@@ -427,40 +256,6 @@
     "curated": true
   },
   {
-    "id": "df762a62a135d81e",
-    "source_id": "arxiv-cs-cl",
-    "title": "Cross-Architecture Steering Transfer in Language Models: A Systematic Empirical Study",
-    "url": "https://arxiv.org/abs/2608.05164",
-    "published_at": "2026-08-08T04:00:00+00:00",
-    "raw_text": "arXiv:2608.05164v1 Announce Type: new \nAbstract: Independently trained large language models may develop shared internal representations of semantic concepts despite architectural differences -- but whether this geometric similarity has functional consequences for cross-model behavioural control remains untested. We present the first systematic evaluation of cross-model steering transfer and show that shared LLM geometry is functionally exploitable, conditionally: concept directions from one model can steer a different independently trained model when sufficient representational capacity exists. We study five open-weight models spanning three parameter scales (0.8B--8B) and two architectural lineages, training one Sparse Autoencoder per model across 15 semantic domains and testing alignment across all 20 directed model pairs. We observe a suggestive discontinuity near 1.7B parameters: at >= 1.7B scale, 47--49% of cross-model feature pairs validate (Pearson r >= 0.60, Procrustes cosines",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "首次系统研究跨架构steering迁移，证明独立训练模型共享语义表征的功能性后果，对模型可解释性和控制有深远意义。",
-    "summary_zh": "本文首次系统评估跨模型steering迁移。独立训练的大型语言模型可能发展出共享的语义概念内部表征，尽管架构不同，但这种几何相似性是否对跨模型行为控制有功能性后果尚未测试。作者通过实验证明，跨模型steering迁移是可行的，表明共享表征具有功能意义。这一发现对理解模型内部机制和开发跨模型控制方法有重要价值。",
-    "title_zh": "语言模型中跨架构Steering迁移：系统性实证研究",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "392fb84eac2559c7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2608.05164"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "914c6c9a319396e8",
     "source_id": "arxiv-cs-cl",
     "title": "FormBharo: Designing and Evaluating a Voice Agent for Conversational Form Filling in Rural India",
@@ -495,71 +290,36 @@
     "curated": true
   },
   {
-    "id": "0aaa4cc9a36be3b5",
+    "id": "f43ad033701ae487",
     "source_id": "simonwillison",
-    "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
-    "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything",
-    "published_at": "2026-08-07T23:55:58+00:00",
-    "raw_text": "<p>OpenAI gave a last-minute presentation at the Black Hat security on Wednesday about \"the Hugging Face Incident\" (<a href=\"https://simonwillison.net/2026/Jul/22/openai-cyberattack/\">previously</a> on this blog). <a href=\"https://www.youtube.com/watch?v=87DyyMV0kCY\">The video</a> was published yesterday. It's short and information dense and well worth watching, in particular because it provides full details of what happened and how things played out inside OpenAI. I've used the video to construct the timeline below.</p>\n\n<p> </p>\n\n<p>Here's the timeline. My favourite detail is at the end: OpenAI found out that they were responsible for the attack on Hugging Face when they reached out to ask to have their credentials revoked (after their internal investigation) and learned that they had been revoked already since they were used in that attack!</p>\n<ul>\n<li>\n<strong>May 7</strong>: OpenAI starts a new training run for an experimental, unreleased model. (<em>Did they mean an evaluation r",
+    "title": "Auto mode is now the default in Claude Code for Pro, Max, and Team plans",
+    "url": "https://simonwillison.net/2026/Aug/8/auto-mode/#atom-everything",
+    "published_at": "2026-08-08T22:36:03+00:00",
+    "raw_text": "<p><strong><a href=\"https://claude.com/blog/auto-mode-default-in-claude-code\">Auto mode is now the default in Claude Code for Pro, Max, and Team plans</a></strong></p>\nAnthropic are <em>really</em> confident in Claude Code's <a href=\"https://code.claude.com/docs/en/auto-mode-config\">auto mode</a>, to the point that they are making it the default setting for new sessions in most Claude Code plans starting on August 14th.</p>\n<p>This was one of the topics discussed in <a href=\"https://simonwillison.net/2026/Jul/21/cat-and-thariq/\">our Fireside Chat</a> with Cat Wu and Thariq Shihipar at the  AI Engineer World’s Fair last month. I asked them how they run Claude Code safely within Anthropic (given the threat of prompt injection) and <a href=\"https://simonwillison.net/2026/Jul/21/cat-and-thariq/#what-s-the-advice-within-anthropic-for-safely-running-claude-code-\">they replied</a> that \"Broadly within Anthropic, almost every single person uses auto mode\". Cat Wu then said:</p>\n<blockquote>\n<p",
     "category_hint": [
       "技巧与观点",
       "开源项目"
     ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "Simon Willison对OpenAI误攻击Hugging Face事件的时间线梳理，信息密度高，值得关注。",
-    "summary_zh": "Simon Willison在博客中提供了OpenAI误攻击Hugging Face事件的时间线。OpenAI在Black Hat安全会议上做了关于“Hugging Face事件”的演讲，视频已发布，内容简短但信息密集。该事件涉及OpenAI对Hugging Face的意外攻击，时间线有助于理解事件经过和影响。",
-    "title_zh": "OpenAI误攻击Hugging Face事件时间线现已公布",
-    "weighted_score": 0.765,
+    "image_url": "https://static.simonwillison.net/static/2026/auto-mode-comparison.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "Anthropic将Auto模式设为Claude Code默认，体现产品方向，对开发者有直接影响。",
+    "summary_zh": "Anthropic宣布在Claude Code的Pro、Max和Team计划中，Auto模式现已成为默认设置。这表明Anthropic对Auto模式的能力充满信心。Auto模式可能允许Claude Code自动决定执行步骤，减少用户干预。对于使用Claude Code的开发者来说，这是一个重要的产品更新，可能影响工作流程。",
+    "title_zh": "Auto模式现已成为Claude Code中Pro、Max和Team计划的默认设置",
+    "weighted_score": 0.775,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.8
     },
-    "story_id": "8e29bb963ba47fe0",
+    "story_id": "e0958e94004708c7",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "simonwillison",
-        "url": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-everything"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "076c340781d90612",
-    "source_id": "siliconangle",
-    "title": "OpenAI reveals upcoming Astra model may possess ‘critical’ hacking capabilities",
-    "url": "https://siliconangle.com/2026/08/07/openai-reveals-upcoming-astra-model-may-possess-critical-hacking-capabilities/",
-    "published_at": "2026-08-08T00:58:53+00:00",
-    "raw_text": "<p>OpenAI Group PBC today disclosed that one of its unreleased large language models may pose a significant cybersecurity risk. The algorithm, which is known as Astra, was first detailed last week. OpenAI revealed in a Sunday blog post that the LLM had solved 10 long-running math problems. The company published the proofs and revealed that [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/07/openai-reveals-upcoming-astra-model-may-possess-critical-hacking-capabilities/\" rel=\"nofollow\">OpenAI reveals upcoming Astra model may possess &#8216;critical’ hacking capabilities</a> appeared first on <a href=\"https://siliconangle.com\" rel=\"nofollow\">SiliconANGLE</a>.</p>",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/08/OpenAI.png",
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "OpenAI未发布模型Astra可能具备关键黑客能力，引发安全担忧，值得关注。",
-    "summary_zh": "OpenAI Group PBC今日披露，其未发布的大语言模型Astra可能构成重大网络安全风险。该模型上周首次被详细描述。OpenAI在周日博客文章中透露，该模型解决了10个长期未解的数学问题，并公布了证明。文章还暗示Astra可能具备“关键”的黑客能力，引发对AI安全性的担忧。",
-    "title_zh": "OpenAI透露即将推出的Astra模型可能具备“关键”黑客能力",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.9,
-      "practical_value": 0.5
-    },
-    "story_id": "ea4e2a4c5ffe010e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "siliconangle",
-        "url": "https://siliconangle.com/2026/08/07/openai-reveals-upcoming-astra-model-may-possess-critical-hacking-capabilities/"
+        "url": "https://simonwillison.net/2026/Aug/8/auto-mode/#atom-everything"
       }
     ],
     "curated": true
@@ -594,40 +354,6 @@
       {
         "source_id": "zh-ithome",
         "url": "https://www.ithome.com/0/987/435.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f1dd95c5b8c0848f",
-    "source_id": "zh-meituan-tech",
-    "title": "LongCat 开源 VitaBench 2.0：长期动态智能体基准新标杆",
-    "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html",
-    "published_at": "2026-08-08T01:04:44.758289+00:00",
-    "raw_text": "VitaBench 2.0 是首个真实生活场景下面向长期动态用户建模的智能体评测基准，它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p0.meituan.net/meituantechblog/ecfdc52ee4ab7253a877d5df75217f21127484.webp",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.5,
-    "reason_zh": "首个真实生活场景的长期动态智能体基准，对Agent研究有重要参考价值。",
-    "summary_zh": "LongCat开源了VitaBench 2.0，这是首个真实生活场景下面向长期动态用户建模的智能体评测基准。它系统性地评测大语言模型在长期、真实、动态的用户互动中个性化与主动性的能力，为智能体研究提供了新的评估标准。",
-    "title_zh": "LongCat开源VitaBench 2.0：长期动态智能体基准新标杆",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "a690135a1a48a087",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/06/29/LongCat-VitaBench-2.0.html"
       }
     ],
     "curated": true
@@ -701,56 +427,22 @@
     "curated": true
   },
   {
-    "id": "28c1336a1b44acfa",
-    "source_id": "zh-ithome",
-    "title": "专为 AI 智能体打造的云端浏览器，Cloudflare 发布 Kitesurf",
-    "url": "https://www.ithome.com/0/987/374.htm",
-    "published_at": "2026-08-08T08:53:48+00:00",
-    "raw_text": "<p>IT之家 8 月 8 日消息，Cloudflare 前天宣布推出 Kitesurf，这是一款专为 AI 智能体打造的云端浏览器。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/22cd32c3-dfc5-465e-94ed-d4abb392bd30.jpg?x-bce-process=image/format,f_auto\" /></p><p>IT之家了解到，AI 使用浏览器的方式与人类有所不同，AI 并不关注标签页和 UI 等视觉元素，而是重点管理上下文窗口、性能表现和可扩展性，<strong>同时还要防范提示词注入等攻击风险</strong>。</p><p>Kitesurf 浏览器运行在 Cloudflare Workers 服务平台之上，它可以浏览网站、填写表单，开发者可以通过代码控制，并通过 Cloudflare 的平台与无头浏览器实例交互。</p><p>此外，<strong>Kitesurf 相比 Chromium 消耗的计算资源更少</strong>，可显著降低运行成本，让 AI 智能体更高效地上网。该浏览器目前处于测试阶段，正式版将在未来推出。</p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/22cd32c3-dfc5-465e-94ed-d4abb392bd30.jpg?x-bce-process=image/format,f_auto",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Cloudflare发布专为AI智能体设计的云端浏览器Kitesurf，解决上下文管理和安全风险，行业意义大。",
-    "summary_zh": "Cloudflare推出Kitesurf，一款专为AI智能体打造的云端浏览器。与传统浏览器不同，Kitesurf关注上下文窗口、性能和可扩展性，并防范提示词注入等攻击。该产品旨在为AI代理提供更安全高效的浏览环境。",
-    "title_zh": "专为 AI 智能体打造的云端浏览器，Cloudflare 发布 Kitesurf",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "67026b7a0ee5c0b6",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/987/374.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "478400fd36f67f37",
-    "source_id": "zh-meituan-tech",
-    "title": "美团海报生成 AIGC 技术创新与实践",
-    "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html",
-    "published_at": "2026-08-08T01:04:44.758332+00:00",
-    "raw_text": "美团智能创作团队围绕海报生成 AIGC 构建了完整技术体系，打造「生成-编辑-评判」技术闭环，目前在美团外卖、品牌 IP 等场景落地，已全部开源。",
+    "id": "63d817f5e4f41adf",
+    "source_id": "zh-tonybai",
+    "title": "1.5万星背后：Google首次揭秘Agent Skills是怎么“造”出来的",
+    "url": "https://tonybai.com/2026/08/09/google-agent-skills-behind-the-scenes/",
+    "published_at": "2026-08-08T23:00:00+00:00",
+    "raw_text": "Google Agent Skills开源仓库上线后迅速斩获1.5万星，吸引各产品团队争相贡献。但开放意味着质量风险——本文基于Google Cloud官方博客，还原了Google内部如何用标准化目录结构、CI/CD自动检查、持续评测矩阵和“Skill Owner”责任制，在规模化的同时守住Agent Skill的质量底线，并给国内团队做类似实践提供参考。",
     "category_hint": [
       "技巧与观点"
     ],
-    "image_url": "https://p0.meituan.net/meituantechblog/861434cef3a148ae0093da6666e149361816826.png",
-    "category": "产品发布",
+    "image_url": null,
+    "category": "行业动态",
     "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "美团海报生成AIGC技术闭环已开源，对工业界应用有借鉴意义。",
-    "summary_zh": "美团智能创作团队围绕海报生成AIGC构建了完整技术体系，打造了「生成-编辑-评判」技术闭环。该技术已在美团外卖、品牌IP等场景落地，并已全部开源。文章详细介绍了技术创新与实践经验，为相关领域提供了参考。",
-    "title_zh": "美团海报生成AIGC技术创新与实践",
+    "depth_score": 0.8,
+    "reason_zh": "Google首次公开Agent Skills质量控制方法，对工程实践有直接借鉴意义，值得深入阅读。",
+    "summary_zh": "Google Agent Skills开源仓库上线后迅速获得1.5万星，吸引各产品团队贡献。但开放带来质量风险。本文基于Google Cloud官方博客，还原了Google内部如何通过标准化目录结构、CI/CD自动检查、持续评测矩阵和“Skill Owner”责任制，在规模化的同时保证Agent Skill的质量。这些实践为国内团队提供了可参考的模板，有助于在开放协作中维持高质量标准。",
+    "title_zh": "1.5万星背后：Google首次揭秘Agent Skills是怎么“造”出来的",
     "weighted_score": 0.725,
     "score_breakdown": {
       "source_authority": 0.8,
@@ -758,12 +450,12 @@
       "impact": 0.6,
       "practical_value": 0.8
     },
-    "story_id": "6bdd2c9e8078b106",
+    "story_id": "75b1dbeb396028d3",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/06/18/AIGC-poster.html"
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/08/09/google-agent-skills-behind-the-scenes/"
       }
     ],
     "curated": true
@@ -793,211 +485,160 @@
       "impact": 0.7,
       "practical_value": 0.6
     },
-    "story_id": "91c11c7bac4b8006",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vif7a0/minimax_h3_seems_to_handle_almost_anything_you/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vilivy/minimax_h3_gets_faster_workflows_wan_animate_2/"
-      },
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/9C3eK9tJqDXbabbBy3aj?utm_source=rss&utm_medium=article"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vitkdp/minimax_h3_turbo_on_colab_g4_pro_6000_5s_480p/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vius6v/minimax_h3_excels_even_with_simple_prompts/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1viwvuq/better_avoid_saul_2_minimax_h3/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1viy74t/help_minimax_h3_5s_vid_1280x736_1800s_on_rtx_3060/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj1ezd/my_minimax_h3_work_in_progress_reimagine_script/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj26vj/minimax_h3_if_youre_on_a_blackwell_gpu_rtx/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj29p1/minimax_h3_does_morphing_well_4step_turbo_lora/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj2ldp/an_unexpected_find_minimax_h3_ltx_23_upscale_rtx/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj3l5b/minimax_h3_spectrum_v021_new_offline_replay/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj3wlk/i_treated_minimax_h3_like_a_dumb_cameraman_shot/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1vj3zi3/a_technique_for_creating_seamless_continuous/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a2454baaf5d4d945",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] Seedance 2.5 ：面向用户的 AI 导演级视频生成工具",
-    "url": "https://www.v2ex.com/t/1232957#reply0",
-    "published_at": "2026-08-08T14:30:57+00:00",
-    "raw_text": "做了一个面向 Seedance 2.5 AI 视频生成站：<br /><br /><a href=\"https://seedance25.jp\" rel=\"nofollow noopener\" target=\"_blank\">https://seedance25.jp</a><br /><br />目前主要想把体验做得更直接一点：打开后可以快速查看 Seedance 2.5 的视频示例，并进入生成流程。页面内容和入口先习惯做了整理，后续会继续补充更多用例、模板和提示词示例。<br /><br />如果你最近也在测试 AI 视频生成工具，欢迎帮忙看看：<br /><br />- 首屏是否能看明白这个站是做什么的<br />- 生成入口是否足够明显<br />- 示例视频和文案是否有吸引力<br />- 日文站对日本流量还有哪些 SEO / 转化细节可以补",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "介绍Seedance 2.5视频生成站，提供实用工具，适合AI视频创作者。",
-    "summary_zh": "作者在V2EX分享了一个面向Seedance 2.5的AI视频生成站（seedance25.jp），旨在提供更直接的体验，包括快速查看示例和生成流程。作者希望用户反馈首屏理解、生成入口、示例吸引力以及SEO优化建议。该站点面向日本流量，可能对AI视频生成工具感兴趣的用户有用。",
-    "title_zh": null,
-    "weighted_score": 0.465,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.6,
-      "impact": 0.3,
-      "practical_value": 0.6
-    },
-    "story_id": "1e1917d4f1db241f",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1viv85v/i_turned_minimax_into_seedance_25_with_a_30/"
-      },
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1232957#reply0"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "640cc83b033e807a",
-    "source_id": "zh-v2ex",
-    "title": "[技术栈] oss-skills： 18 个开源开发技能，让 Agent 像资深维护者一样做开源",
-    "url": "https://www.v2ex.com/t/1232916#reply1",
-    "published_at": "2026-08-08T08:22:58+00:00",
-    "raw_text": "<p>Hi V 友们 👋</p>\n<p>现在的 Agent 写代码基本够用了。但真把一个项目开源出去，写代码可能只占 20%，剩下 80% 是这些事：</p>\n<ul>\n<li>选哪个许可证？ Apache-2.0 和 MIT 到底差在哪</li>\n<li>这个改动算 minor 还是 major ？改个默认值算不算 breaking</li>\n<li>CI 为什么在 fork 的 PR 上永远是红的</li>\n<li>有人提了个 3000 行的 PR ，我不想合，怎么关掉才不至于把人得罪走</li>\n<li>发了个坏版本，是该删掉还是该 deprecate</li>\n</ul>\n<p>这些问题的答案 Agent 大多答不准，或者答得很「正确但没用」——比如你问它 semver 怎么办，它跟你说「请仔细遵守语义化版本规范」。</p>\n<p>所以我做了 <strong>oss-skills</strong>：18 个按需加载的 Agent 技能，把这部分判断力补上。</p>\n<p>GitHub: <a href=\"https://github.com/the-open-agent/oss-skills\" rel=\"nofollow\">https://github.com/the-open-agent/oss-skills</a></p>\n<hr />\n<h2>一、装完之后是什么效果</h2>\n<pre><code class=\"language-text\">你：   我想把这个内部工具开源。\n\nAgent：[加载 open-source-playbook → repo-bootstrap → license-and-legal]\n\n       先读了仓库。有三件事得排在其他所有事情前面：\n\n       1. commit 8f3a91c 里有一个 AWS key （ src/config.py ，在 4b2e 被删掉了）。\n          它仍然在历史记录里 —— 去轮换掉。重写历史属于清理，不属于补救。\n       2. 没有 LICENSE 。按现状，任何人在法律上都不可以使用这个项目。\n          Apache-2.0 合适：你们有企业贡献者，专利授权条款是有意义的。\n       3. README 只有一行。对 95% 的访客来说，那就是整",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "教程方法",
-    "depth_score": 0.6,
-    "reason_zh": "开源项目oss-skills提供18个开发技能，解决Agent在开源维护中的实际问题，实用性强。",
-    "summary_zh": "作者开发了oss-skills，包含18个开源开发技能，帮助AI Agent像资深维护者一样处理开源项目中的常见问题，如许可证选择、语义化版本判断、CI故障处理、PR关闭策略等。项目旨在弥补Agent在开源维护知识上的不足，提升其实际贡献能力。",
-    "title_zh": "[技术栈] oss-skills： 18 个开源开发技能，让 Agent 像资深维护者一样做开源",
-    "weighted_score": 0.68,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "f8219aa6ff427ec0",
+    "story_id": "b5e7888fc41700b8",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1232916#reply1"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/9C3eK9tJqDXbabbBy3aj?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true,
     "gate_backfill": true
   },
   {
-    "id": "1c5f50fd0a220568",
-    "source_id": "gh-agents",
-    "title": "livekit/agents livekit-agents@1.6.9",
-    "url": "https://github.com/livekit/agents/releases/tag/livekit-agents%401.6.9",
-    "published_at": "2026-08-07T23:16:07+00:00",
-    "raw_text": "## What's Changed\r\n* Add support for Deepgram's Flux TTS API (v2/speak) integration by @dg-edcharbeneau in https://github.com/livekit/agents/pull/6511\r\n* fix(cerebras): expose max_completion_tokens by @ryanl-cerebras in https://github.com/livekit/agents/pull/6685\r\n* Make every example a uv workspace member by @u9g in https://github.com/livekit/agents/pull/6649\r\n* feat(bland): add Bland TTS plugin by @rv-blandai in https://github.com/livekit/agents/pull/6554\r\n* voice: forward agent_false_interruption over the RemoteSession by @theomonnom in https://github.com/livekit/agents/pull/6691\r\n* plugins/phonic: expose more realtime config options by @arunwpm-work in https://github.com/livekit/agents/pull/6687\r\n* fix(tts): give each fallback recovery path its own task slot by @LHMQ878 in https://github.com/livekit/agents/pull/6683\r\n* tests: assert which session events the host forwards, not how many by @theomonnom in https://github.com/livekit/agents/pull/6693\r\n* fix(livekit-agents): forward the ",
+    "id": "b0296513e1d6d957",
+    "source_id": "gh-pydantic-ai",
+    "title": "pydantic/pydantic-ai v1.107.2",
+    "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v1.107.2",
+    "published_at": "2026-08-08T03:16:08+00:00",
+    "raw_text": "### 🛡️ Security\n\nFixes an availability vulnerability: unbounded memory use when downloading remote content via the local `web_fetch` tool or `FileUrl` media downloads, which could exhaust process memory and crash the worker. Patched versions enforce a default 50 MiB download cap. See [GHSA-v2xh-2vp8-57h8](https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-v2xh-2vp8-57h8). Patched in `1.107.2` (v1) and `2.24.0` (v2).\n\n## What's Changed\n### 🐛 Bug Fixes\n* Bound HTTP response body sizes for `web_fetch` and media URL downloads by @dsfaccini in https://github.com/pydantic/pydantic-ai/pull/7308\n\n\n**Full Changelog**: https://github.com/pydantic/pydantic-ai/compare/v1.107.1...v1.107.2\n",
     "category_hint": [
       "开源项目"
     ],
     "image_url": null,
     "category": "开源项目",
     "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "livekit-agents更新，新增TTS集成，对开发者有直接实用价值。",
-    "summary_zh": "livekit-agents 1.6.9版本发布，主要更新包括：添加对Deepgram Flux TTS API（v2/speak）集成的支持，修复cerebras中max_completion_tokens的暴露问题，将每个示例设为uv工作区成员，以及新增Bland TTS插件。这些改进增强了语音交互能力，并简化了项目结构，对使用LiveKit构建实时语音应用的开发者非常有用。",
-    "title_zh": "livekit/agents livekit-agents@1.6.9",
-    "weighted_score": 0.675,
+    "depth_score": 0.2,
+    "reason_zh": "pydantic-ai修复安全漏洞，限制远程下载大小，对使用该库的开发者重要。",
+    "summary_zh": "pydantic-ai v1.107.2版本修复了一个可用性漏洞：通过本地web_fetch工具或FileUrl媒体下载远程内容时，无界内存使用可能导致进程内存耗尽并崩溃。补丁版本强制默认50 MiB下载上限。该漏洞编号为GHSA-v2xh-2vp8-57h8。",
+    "title_zh": "pydantic/pydantic-ai v1.107.2",
+    "weighted_score": 0.655,
     "score_breakdown": {
       "source_authority": 0.8,
       "novelty": 0.6,
       "impact": 0.5,
-      "practical_value": 0.8
+      "practical_value": 0.7
     },
-    "story_id": "dc3ba1c8bf5ce9c8",
+    "story_id": "aa8732f6f8f3902c",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-agents",
-        "url": "https://github.com/livekit/agents/releases/tag/livekit-agents%401.6.9"
+        "source_id": "gh-pydantic-ai",
+        "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v1.107.2"
       }
     ],
     "curated": true,
     "gate_backfill": true
   },
   {
-    "id": "581154df9eac6148",
-    "source_id": "the-decoder",
-    "title": "Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals",
-    "url": "https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/",
-    "published_at": "2026-08-08T14:58:57+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/anthropic_logo_wall-2.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Starting August 14, Anthropic will make Auto Mode in Claude Code the default for Pro, Max, and Team plans. The company says it's safer. In tests, the classifier caught 89 percent of dangerous commands, while human reviewers caught only 13.6 percent. For the most widely used AI coding tool, this means developers are shifting further from writing code to monitoring AI output.</p>\n<p>The article <a href=\"https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/\">Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "id": "1b3da2ad4d522c30",
+    "source_id": "gh-phoenix",
+    "title": "Arize-ai/phoenix arize-phoenix-evals-v3.4.0",
+    "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-evals-v3.4.0",
+    "published_at": "2026-08-08T06:13:34+00:00",
+    "raw_text": "## [3.4.0](https://github.com/Arize-ai/phoenix/compare/arize-phoenix-evals-v3.3.0...arize-phoenix-evals-v3.4.0) (2026-08-08)\n\n\n### Features\n\n* **evals:** add hallucination evaluator ([#14708](https://github.com/Arize-ai/phoenix/issues/14708)) ([1aa1a84](https://github.com/Arize-ai/phoenix/commit/1aa1a8454b6524a9e7618f3c9970ae9466df67d2))",
     "category_hint": [
-      "模型发布",
-      "行业动态"
+      "开源项目"
     ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/anthropic_logo_wall-2.png",
-    "category": "产品发布",
+    "image_url": null,
+    "category": "开源项目",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "Anthropic将Claude Code默认设为Auto Mode，提升安全性，对开发者有直接影响，值得关注。",
-    "summary_zh": "Anthropic宣布自8月14日起，将Claude Code的Auto Mode设为Pro、Max和Team计划的默认模式。公司表示该模式更安全，其分类器在测试中能有效捕获不良审批。此举旨在保护开发者免受错误批准的影响，提高代码审查的可靠性。",
-    "title_zh": "Anthropic将Claude Code默认设为Auto Mode以保护开发者免受不良审批",
-    "weighted_score": 0.705,
+    "reason_zh": "Phoenix新增幻觉评估器，提升LLM评估能力，对开发者有实用价值。",
+    "summary_zh": "Arize Phoenix的evals模块发布v3.4.0版本，主要新增了幻觉评估器（hallucination evaluator），用于检测LLM生成内容中的幻觉。该功能有助于提高LLM应用的可靠性，适合使用Phoenix进行模型评估的开发者。",
+    "title_zh": "Arize-ai/phoenix arize-phoenix-evals-v3.4.0",
+    "weighted_score": 0.655,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
+      "novelty": 0.6,
+      "impact": 0.5,
       "practical_value": 0.7
     },
-    "story_id": "8fa2feef854ecd4b",
+    "story_id": "a17306f67e0524ac",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/xais-imagine-image-2-0-lands-just-behind-openais-gpt-image-2-in-arena-benchmarks/"
+        "source_id": "gh-phoenix",
+        "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-evals-v3.4.0"
       },
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/"
+        "source_id": "gh-phoenix",
+        "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-otel-v0.17.0"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "935549354d843bfa",
+    "source_id": "gh-lmcache",
+    "title": "LMCache/LMCache nightly",
+    "url": "https://github.com/LMCache/LMCache/releases/tag/nightly",
+    "published_at": "2026-08-08T08:26:40+00:00",
+    "raw_text": "Nightly CUDA 13.0 wheels built from `dev` on 2026-08-08.\n\n```\nuv pip install lmcache --pre \\\n  --extra-index-url https://download.pytorch.org/whl/cu130 \\\n  --find-links https://github.com/LMCache/LMCache/releases/expanded_assets/nightly \\\n  --index-strategy unsafe-best-match\n```",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.2,
+    "reason_zh": "LMCache夜间构建版发布，提供CUDA 13.0支持，对需要最新缓存技术的开发者有直接实用价值。",
+    "summary_zh": "LMCache项目发布了2026年7月17日的夜间构建版本，提供基于CUDA 13.0的wheel包。安装命令使用uv pip，指定了PyTorch CUDA 13.0索引和GitHub上的夜间构建链接。该版本从dev分支构建，适合需要最新功能的开发者测试使用。",
+    "title_zh": "LMCache/LMCache 夜间构建版",
+    "weighted_score": 0.62,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.8,
+      "impact": 0.4,
+      "practical_value": 0.7
+    },
+    "story_id": "577c22874df23d56",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-lmcache",
+        "url": "https://github.com/LMCache/LMCache/releases/tag/nightly"
+      },
+      {
+        "source_id": "gh-lmcache",
+        "url": "https://github.com/LMCache/LMCache/releases/tag/nightly-cu129"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "60414051e6639a1e",
+    "source_id": "gh-comfyui",
+    "title": "comfyanonymous/ComfyUI v0.31.0",
+    "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.31.0",
+    "published_at": "2026-08-08T03:10:59+00:00",
+    "raw_text": "## What's Changed\r\n* Bump comfyui-frontend-package to 1.47.12 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/15244\r\n* Don't pin too much memory on Linux systems with no swap partition. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15266\r\n* fix(minimax): cast raw parameters to input device in H3 VAEs by @rivadart in https://github.com/Comfy-Org/ComfyUI/pull/15268\r\n* Harden some nodes against potential issues related to combos. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/15277\r\n* [Partner Nodes] chore(Kling): remove retired legacy models and Virtual Try-On API by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/15249\r\n* restore SDPA non-cudnn small attention bypass by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/15296\r\n* [Partner Nodes] feat(TopazAI): add Bloom 2 and Wonder 3.5 models support by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/15294\r\n* [Partner Nodes] feat(BFL): add Flux 3 video model by @bigcat8",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "ComfyUI发布新版本，包含多项修复和优化，对使用该工具的用户有实用价值。",
+    "summary_zh": "ComfyUI v0.31.0版本发布，主要更新包括：将comfyui-frontend-package升级至1.47.12；修复Linux系统无交换分区时内存过度锁定问题；修复minimax H3 VAE中参数设备转换问题。这些改进提升了稳定性和兼容性。",
+    "title_zh": "comfyanonymous/ComfyUI v0.31.0",
+    "weighted_score": 0.61,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.5,
+      "impact": 0.5,
+      "practical_value": 0.6
+    },
+    "story_id": "aa3585bc2ca102e9",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-comfyui",
+        "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.31.0"
       }
     ],
     "curated": true,
@@ -1040,36 +681,143 @@
     "gate_backfill": true
   },
   {
-    "id": "f1f3f6f098abe8b2",
-    "source_id": "github-changelog",
-    "title": "Copilot code review effort levels are generally available",
-    "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
-    "published_at": "2026-08-07T20:49:26+00:00",
-    "raw_text": "<p>Lite and Balanced effort levels for GitHub Copilot code review are now generally available. They let you match the depth of a review to the complexity and risk of a&#8230;</p>\n<p>The post <a href=\"https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available\">Copilot code review effort levels are generally available</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
+    "id": "581154df9eac6148",
+    "source_id": "the-decoder",
+    "title": "Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals",
+    "url": "https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/",
+    "published_at": "2026-08-08T14:58:57+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/anthropic_logo_wall-2.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Starting August 14, Anthropic will make Auto Mode in Claude Code the default for Pro, Max, and Team plans. The company says it's safer. In tests, the classifier caught 89 percent of dangerous commands, while human reviewers caught only 13.6 percent. For the most widely used AI coding tool, this means developers are shifting further from writing code to monitoring AI output.</p>\n<p>The article <a href=\"https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/\">Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
     "category_hint": [
-      "产品发布",
-      "开源项目"
+      "模型发布",
+      "行业动态"
     ],
-    "image_url": "https://github.com/user-attachments/assets/ed8f73b6-aaf5-43eb-85c1-a71af1e6a59f",
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/anthropic_logo_wall-2.png",
     "category": "产品发布",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "GitHub Copilot代码审查的Lite和Balanced级别正式可用，提供灵活审查深度。",
-    "summary_zh": "GitHub Copilot代码审查的Lite和Balanced努力级别现已全面可用。这些级别允许用户根据代码的复杂性和风险匹配审查深度，提高审查效率。",
-    "title_zh": "Copilot代码审查努力级别全面可用",
-    "weighted_score": 0.685,
+    "reason_zh": "Anthropic将Claude Code默认设为Auto Mode，提升安全性，对开发者有直接影响，值得关注。",
+    "summary_zh": "Anthropic宣布自8月14日起，将Claude Code的Auto Mode设为Pro、Max和Team计划的默认模式。公司表示该模式更安全，其分类器在测试中能有效捕获不良审批。此举旨在保护开发者免受错误批准的影响，提高代码审查的可靠性。",
+    "title_zh": "Anthropic将Claude Code默认设为Auto Mode以保护开发者免受不良审批",
+    "weighted_score": 0.705,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.5,
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
       "practical_value": 0.7
     },
-    "story_id": "c8eb191eb3d9c356",
+    "story_id": "50568fda1732d2e7",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "github-changelog",
-        "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "f5f4233a6e75a516",
+    "source_id": "zh-ithome",
+    "title": "OpenAI 桌面端 ChatGPT 上线语音交互功能，可语音操控电脑执行多步骤任务",
+    "url": "https://www.ithome.com/0/987/452.htm",
+    "published_at": "2026-08-08T22:46:14+00:00",
+    "raw_text": "<p>IT之家 8 月 9 日消息，OpenAI 当地时间周四宣布，已更新 ChatGPT 桌面应用，新增对 ChatGPT Voice 的支持。用户现在可以直接通过语音与 ChatGPT 对话，控制 AI 智能体，并让其在电脑上执行各种任务。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/676de6e2-2367-400f-a86a-77c5bafbcd4c.jpg?x-bce-process=image/format,f_auto\" /></p><p>这项新功能基于 OpenAI 全新的语音模型系列 ChatGPT-Live。OpenAI 于本月早些时候推出了该系列模型。</p><p>OpenAI 表示，ChatGPT Voice 同时支持 ChatGPT Work 和 Codex，还可以调用计算机操作能力，帮助用户访问网站和应用。在 macOS 上，借助 Appshots，用户还可以允许 ChatGPT 访问屏幕上的内容，包括替代文本（alt-text）。</p><p>ChatGPT Voice 的手机版在上线之初主要侧重于提供更加流畅的语音对话体验，并改善了用户打断 AI 时的处理效果，但当时并不能直接在手机上执行操作。</p><p>此次桌面版更新则拥有更强的执行能力。用户可以通过语音向 ChatGPT 下达包含多个步骤的复杂指令，并在 ChatGPT 需要用户提供信息或进行确认时及时作出回应。</p><p>在一段演示视频中，OpenAI 展示了一名开发者通过一句指令让 ChatGPT 创建新的代码线程、提交 Pull Request，并找出一个 Bug 的根本原因。</p><p>OpenAI 还表示，用户可以通过 iOS 应用的远程访问功能，在 Codex 中使用 ChatGPT Voice。</p><p>IT之家注意到，Anthropic 也更新了 Claude 的语音模式。该功能可以调用 Anthropic 的 Opus、Sonnet 和 Haiku 模型，在 Gmail、Calendar、Slack、Notion 和 Canva 等应用中完成各种任务。</p>",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/676de6e2-2367-400f-a86a-77c5bafbcd4c.jpg?x-bce-process=image/format,f_auto",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "OpenAI桌面端新增语音交互，可语音操控电脑，提升易用性，值得关注。",
+    "summary_zh": "IT之家报道，OpenAI更新了ChatGPT桌面应用，新增对ChatGPT Voice的支持。用户现在可以通过语音与ChatGPT对话，控制AI智能体并执行多步骤任务。该功能基于OpenAI的ChatGPT-Live语音模型系列。语音交互的加入可能提升桌面端的使用体验，尤其对于多任务处理。",
+    "title_zh": "OpenAI桌面端ChatGPT上线语音交互功能，可语音操控电脑执行多步骤任务",
+    "weighted_score": 0.705,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "2216e3137f31fc7a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/987/452.htm"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "cb977a64c4621d67",
+    "source_id": "siliconangle",
+    "title": "Forecasting the AI bubble: When scarcity turns to surplus",
+    "url": "https://siliconangle.com/2026/08/08/forecasting-ai-bubble-scarcity-turns-surplus/",
+    "published_at": "2026-08-08T15:51:22+00:00",
+    "raw_text": "<p>Artificial intelligence can be technologically transformative and still produce a capital bubble. Those two ideas are not in conflict. The bubble bursting does not require AI to fail. It only requires deployable supply and capital commitments to grow faster than monetizable demand. When productive, revenue-producing AI capacity takes longer to materialize, pricing will normalize and [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/08/forecasting-ai-bubble-scarcity-turns-surplus/\" rel=\"nofollow\">Forecasting the AI bubble: When scarcity turns to surplus</a> appeared first on <a href=\"https://siliconangle.com\" rel=\"nofollow\">SiliconANGLE</a>.</p>",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/08/Bubble-AI.png",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "深入分析AI泡沫，指出技术变革与资本泡沫可并存，提供理性视角。",
+    "summary_zh": "文章探讨AI泡沫的可能性，认为AI技术可具变革性但仍可能产生资本泡沫。泡沫破裂不要求AI失败，只需供应和资本承诺增长快于可货币化需求。当生产性AI产能实现时间较长时，定价将正常化。",
+    "title_zh": "预测AI泡沫：当稀缺转为过剩",
+    "weighted_score": 0.685,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "37e00438fbc32112",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/08/08/forecasting-ai-bubble-scarcity-turns-surplus/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "fd409e0408b13be1",
+    "source_id": "infoq-cn-ai",
+    "title": "金融监管领域的 Harness 实践：让知识与数据驱动 Agent 稳定运行｜AICon深圳",
+    "url": "https://www.infoq.cn/article/hQp9boye2rpPH7ZWUvXL?utm_source=rss&utm_medium=article",
+    "published_at": "2026-08-08T10:00:00+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/hQp9boye2rpPH7ZWUvXL?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.6,
+    "reason_zh": "金融监管领域Agent落地实践，分享知识驱动与数据驱动的稳定运行经验，对工程实践有参考价值。",
+    "summary_zh": "本文是AICon深圳大会的分享，主题为金融监管领域的Harness实践。文章探讨了如何让知识与数据驱动Agent稳定运行，涉及Agent在金融监管场景中的实际应用案例、技术架构设计、以及如何通过知识图谱和数据管道提升Agent的可靠性和准确性。作者分享了在金融监管领域部署Agent时遇到的挑战和解决方案，强调了知识工程与数据治理的重要性，并提出了Harness框架来整合知识库与实时数据，确保Agent决策的可解释性和合规性。文章还讨论了Agent的评估与监控方法，以及如何持续优化Agent性能。对于从事金融AI或Agent开发的工程师具有较高的参考价值。",
+    "title_zh": "金融监管领域的 Harness 实践：让知识与数据驱动 Agent 稳定运行｜AICon深圳",
+    "weighted_score": 0.675,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.5,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "1681b1ca238ba804",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/hQp9boye2rpPH7ZWUvXL?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true,
