@@ -1,38 +1,104 @@
 {
   "date": "2026-08-10",
-  "generated_at": "2026-08-10T01:16:31.575034+00:00",
+  "generated_at": "2026-08-10T05:35:04.750922+00:00",
   "items": [
     {
-      "id": "6021ab623d73aa37",
-      "source_id": "reddit-machinelearning",
-      "title": "A Mechanistic Explanation of Prompt Injection (and why you should study roles) [R]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vjvzm4/a_mechanistic_explanation_of_prompt_injection_and/",
-      "published_at": "2026-08-09T17:36:22+00:00",
-      "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/katxwoods\"> /u/katxwoods </a> <br /> <span><a href=\"https://www.lesswrong.com/posts/d8xDGzCEYE639qqEv/a-mechanistic-explanation-of-prompt-injection-and-why-you\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1vjvzm4/a_mechanistic_explanation_of_prompt_injection_and/\">[comments]</a></span>",
+      "id": "46c751fb1c457253",
+      "source_id": "arxiv-cs-ai",
+      "title": "Finding Usable Weight Mechanisms with Tiled SVD",
+      "url": "https://arxiv.org/abs/2608.06969",
+      "published_at": "2026-08-10T04:00:00+00:00",
+      "raw_text": "arXiv:2608.06969v1 Announce Type: new \nAbstract: The dominant approach to mechanistic interpretability trains proxy dictionaries such as sparse autoencoders and labels features from max-activating text. The best such atlases identify con- cepts, but that identity lives in the learned dictionary rather than in the network weights them- selves. We propose extracting mechanism mounts directly from linear sites by column-tiled SVD: each mount is a triple (v,u,{\\sigma}) read as trigger, write, and strength. Identity is the weight rule. We evaluate mounts with a pre-registered suite judged on full-write energy lift rather than tile-local lift. On Gemma-2-2B with WikiText-2 (16,384-token subsample), all seven linear maps are scored: residual writes (mlp.down, attn.o) receive full A/B/C with steer after post-sublayer RMSNorm and pass 52/52 site-layers; other maps receive A/B only (mlp.gate/attn.q/attn.k/effective mlp.up/attn.v 26/26 each). Aggregate: 182/182 GO. We release library code, the co",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "深度分析",
+      "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "从机制层面解释提示注入，强调角色研究的重要性，对AI安全有深远意义。",
-      "summary_zh": "文章从机制角度深入剖析了提示注入攻击的原理，指出其根源在于模型对角色指令的过度信任。作者认为，理解角色在模型内部表征中的作用是防御此类攻击的关键。通过分析，文章提出了一些可能的防御策略，并呼吁社区重视角色研究。内容具有高度的技术深度和启发性，对AI安全领域有重要参考价值。",
-      "title_zh": "提示注入的机制解释（以及为什么你应该研究角色）",
-      "weighted_score": 0.765,
+      "reason_zh": "提出从网络权重直接提取机制的新方法，挑战现有可解释性范式，具有高思想深度和启发性。",
+      "summary_zh": "论文针对机制可解释性，指出当前主流方法使用稀疏自编码器等代理字典，从最大激活文本中标记特征，但概念身份存在于学习到的字典而非网络权重本身。作者提出直接从权重中提取机制挂载点，可能通过平铺SVD等技术，无需依赖代理字典，更直接地揭示网络内部机制。该方法有望提高可解释性的准确性和可靠性。",
+      "title_zh": "使用平铺SVD寻找可用权重机制",
+      "weighted_score": 0.735,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.8
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
       },
-      "story_id": "a590fdb0cab67632",
+      "story_id": "e38ed973877c6596",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vjvzm4/a_mechanistic_explanation_of_prompt_injection_and/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.06969"
+        }
+      ]
+    },
+    {
+      "id": "55d9b65ac862f061",
+      "source_id": "arxiv-cs-ai",
+      "title": "BONSAI: Evolvability-Guided Tree Search over Skills",
+      "url": "https://arxiv.org/abs/2608.07056",
+      "published_at": "2026-08-10T04:00:00+00:00",
+      "raw_text": "arXiv:2608.07056v1 Announce Type: new \nAbstract: A skill is a naturallanguage document that steers a frozen agent whose weights cannot be updated so any capability the agent lacks must be supplied in prose Optimising a skill is therefore optimising text against a score and the standard recipe which keeps any edit that raises a heldout score is blind in a specific way a single score cannot tell a document perched on a narrow overfit spike from one resting on a broad plateau even though only the second can still be improved We introduce BONSAI a novel skilloptimisation framework that steers instead by evolvability the capacity of a region of documentspace to keep producing viable variation under further mutation a property biology treats as separate from present fitness BONSAI grows skills as a MonteCarlo search tree in which every child document is a mutation of its parent and descends it under an upperconfidence selection rule whose exploitation term blends a skills own fitness with th",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "提出基于可进化性引导的树搜索优化技能文本，突破单分数盲点，对智能体技能学习有深远影响。",
+      "summary_zh": "论文提出BONSAI，一种可进化性引导的树搜索方法，用于优化技能（自然语言文档）以引导冻结的智能体。由于智能体权重不可更新，能力缺失需通过文本补充。优化技能即优化文本以提升分数，但标准方法只保留提高保留分数的编辑，存在盲点。BONSAI通过考虑可进化性，探索技能空间，可能发现更优技能，提升智能体性能。",
+      "title_zh": "BONSAI：可进化性引导的技能树搜索",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "cf42b9b205850208",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.07056"
+        }
+      ]
+    },
+    {
+      "id": "75c8bbec87d98ac4",
+      "source_id": "reddit-localllama",
+      "title": "KLQ: Training-free measured rotation quantization. Beats all training-free rotation-based quantization methods on W4A4KV4-bits. Llama 3.2 1B KLQ-quantized beats SpinQuant and gets close to ReSpinQuant without GPTQ/LDLQ rounding.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vk2n2k/klq_trainingfree_measured_rotation_quantization/",
+      "published_at": "2026-08-09T22:01:46+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vk2n2k/klq_trainingfree_measured_rotation_quantization/\"> <img alt=\"KLQ: Training-free measured rotation quantization. Beats all training-free rotation-based quantization methods on W4A4KV4-bits. Llama 3.2 1B KLQ-quantized beats SpinQuant and gets close to ReSpinQuant without GPTQ/LDLQ rounding.\" src=\"https://external-preview.redd.it/gDP_vsaqNjvHdTgqD1ncGRaGx3p6Y5vTeQesFwfT-YA.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=13534fc7b2292d124e360413f125c3cf1b62601d\" title=\"KLQ: Training-free measured rotation quantization. Beats all training-free rotation-based quantization methods on W4A4KV4-bits. Llama 3.2 1B KLQ-quantized beats SpinQuant and gets close to ReSpinQuant without GPTQ/LDLQ rounding.\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>First of all, I'm not a lab, this was a solo summer research project that finally culminated into the github repo and the writeup. The repo includes a much deeper dive ",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": "https://external-preview.redd.it/gDP_vsaqNjvHdTgqD1ncGRaGx3p6Y5vTeQesFwfT-YA.png?width=640&crop=smart&auto=webp&s=13534fc7b2292d124e360413f125c3cf1b62601d",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出免训练的旋转量化方法，性能超越现有方法，对量化领域有重要贡献。",
+      "summary_zh": "KLQ是一种免训练的测量旋转量化方法，在W4A4KV4位下超越了所有免训练旋转量化方法。在Llama 3.2 1B模型上，KLQ量化后性能优于SpinQuant，接近ReSpinQuant，且无需GPTQ/LDLQ舍入。该方法通过测量旋转矩阵来优化量化误差，提高了低比特量化的准确性，为模型压缩提供了高效方案。",
+      "title_zh": "KLQ：免训练测量旋转量化，在W4A4KV4位下超越现有方法",
+      "weighted_score": 0.815,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.9
+      },
+      "story_id": "f975a381171568fd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vk2n2k/klq_trainingfree_measured_rotation_quantization/"
         }
       ]
     },
@@ -79,40 +145,6 @@
         {
           "source_id": "simonwillison",
           "url": "https://simonwillison.net/2026/Aug/9/claude-opus-5-system-prompt/#atom-everything"
-        }
-      ]
-    },
-    {
-      "id": "378e642d45d70daa",
-      "source_id": "reddit-machinelearning",
-      "title": "[R] Generative design of novel bacteriophages with genome language models [R]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vjj4pr/r_generative_design_of_novel_bacteriophages_with/",
-      "published_at": "2026-08-09T07:11:17+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Genome language models have emerged as a promising strategy for designing biological systems, but their ability to generate functional sequences at the scale of whole genomes has remained untested. Here, we report the first generative design of viable bacteriophage genomes. We leveraged frontier genome language models, Evo 1 and Evo 2, to generate whole-genome sequences with realistic genetic architectures and desirable host tropism, using the lytic phage ΦX174 as our design template. Experimental testing of AI-generated genomes yielded 16 viable phages with substantial evolutionary novelty.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/moschles\"> /u/moschles </a> <br /> <span><a href=\"https://www.biorxiv.org/content/10.1101/2025.09.12.675911v1.abstract\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1vjj4pr/r_generative_design_of_novel_bacteriophages_with/\">[comments]</",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "首次用基因组语言模型生成可行噬菌体，突破性研究，对合成生物学有重大意义。",
-      "summary_zh": "该研究报道了首个可行噬菌体基因组的生成式设计。利用前沿基因组语言模型Evo 1和Evo 2生成全基因组序列，并验证了其功能性。这是基因组语言模型在生成功能序列方面的重要突破，展示了其在设计生物系统方面的潜力，为合成生物学和医学应用开辟新途径。",
-      "title_zh": "利用基因组语言模型生成新型噬菌体的生成式设计",
-      "weighted_score": 0.785,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "e613d0af4e15938c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vjj4pr/r_generative_design_of_novel_bacteriophages_with/"
         }
       ]
     },
@@ -183,40 +215,6 @@
       ]
     },
     {
-      "id": "6f7398b1c661694f",
-      "source_id": "reddit-machinelearning",
-      "title": "Noise-aware training for analog hardware: accuracy collapses at a threshold rather than degrading smoothly [D]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vjmw53/noiseaware_training_for_analog_hardware_accuracy/",
-      "published_at": "2026-08-09T10:55:50+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Analog in-memory compute is getting attention again as a way around the energy cost of moving weights between memory and compute. The recurring objection is noise, since analog cells have real variation and you can't refresh your way out of it like you can with digital.</p> <p>I wanted to see the shape of the degradation curve rather than reason about it abstractly, so I ran a simple experiment: train a network normally, then evaluate under increasing weight noise.</p> <p>The curve isn't smooth. Accuracy is stable up to a point, then drops hard: 83%, 64%, then essentially random. More like a threshold than a proportional decrease.</p> <p>Retraining with noise injected during training (so the optimizer finds flatter minima, presumably) shifts that threshold substantially. 61% versus 39% at matched noise.</p> <p>What I'd like to hear from this sub: is the flat-minima explanation the right framing here, or is something else driving the gap? And is there w",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "实验揭示模拟硬件噪声导致精度阈值式崩溃，对硬件AI设计有重要指导意义。",
-      "summary_zh": "作者针对模拟内存计算中的噪声问题进行了实验，发现模型精度并非随噪声平滑下降，而是在某个阈值处突然崩溃。这一发现挑战了以往对噪声影响的线性认知，对设计容错算法和硬件具有重要意义。文章通过具体实验数据展示了退化曲线的形状，并讨论了可能的缓解策略。",
-      "title_zh": "模拟硬件的噪声感知训练：精度在阈值处崩溃而非平滑下降",
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "1f098c25b637c3a5",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vjmw53/noiseaware_training_for_analog_hardware_accuracy/"
-        }
-      ]
-    },
-    {
       "id": "f404485becb33fdb",
       "source_id": "simonwillison",
       "title": "SQLite compressed text-history prototypes",
@@ -251,69 +249,77 @@
       ]
     },
     {
-      "id": "e5fab7757ac32dd3",
-      "source_id": "qbitai",
-      "title": "当题库追不上模型，AI开始给自己出题：中国这支团队跑通了数据层RSI",
-      "url": "https://www.qbitai.com/2026/08/468782.html",
-      "published_at": "2026-08-09T03:40:25+00:00",
-      "raw_text": "AI参与创造下一代AI",
+      "id": "70a35d7142dc8b8c",
+      "source_id": "pandaily",
+      "title": "Why DeepSeek Could Charge 30x More and Still Be the Cheapest Model Around",
+      "url": "https://pandaily.com/deepseek-v4-flash-30x-price-third-party-cache-hit-edge-aug2026",
+      "published_at": "2026-08-10T02:08:05+00:00",
+      "raw_text": "Third-party platforms are pricing DeepSeek V4 Flash below official rates. A price hike of 30x would still leave DeepSeek the cheapest major model, and its near-perfect cache-hit rate is the engineering moat that keeps the headline number honest.",
       "category_hint": [
-        "行业动态",
-        "模型发布"
+        "行业动态"
       ],
-      "image_url": null,
+      "image_url": "https://cms-image.pandaily.com/1/img_2_f9e369d0d0.png",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "报道中国团队在数据层实现RSI，AI自我出题，可能推动数据生成新范式，有前瞻性。",
-      "summary_zh": "文章报道中国一支团队在数据层面实现了RSI（递归自我改进），即AI参与创造下一代AI。当传统题库无法满足模型需求时，AI开始自我生成题目，可能改变数据生成方式。具体技术细节和团队信息未在摘要中提供。",
-      "title_zh": "当题库追不上模型，AI开始给自己出题：中国这支团队跑通了数据层RSI",
-      "weighted_score": 0.675,
+      "reason_zh": "深入分析DeepSeek的定价策略与缓存命中率工程优势，揭示其成本结构，对理解AI模型商业化有启发。",
+      "summary_zh": "文章指出，第三方平台对DeepSeek V4 Flash的定价已低于官方价格，但即使将价格提高30倍，DeepSeek仍将是主要模型中最便宜的。这一现象背后是DeepSeek近乎完美的缓存命中率，成为其工程护城河，使得标价数字保持竞争力。文章分析了DeepSeek的定价逻辑、缓存机制如何降低推理成本，以及这种策略对AI模型市场竞争格局的影响。对于关注AI模型商业化和成本优化的读者，提供了深入的行业洞察。",
+      "title_zh": "为什么DeepSeek即使涨价30倍仍是最便宜的模型？",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.8,
         "practical_value": 0.6
       },
-      "story_id": "4497a266c592bad1",
+      "story_id": "3f65ac5186886054",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "qbitai",
-          "url": "https://www.qbitai.com/2026/08/468782.html"
+          "source_id": "pandaily",
+          "url": "https://pandaily.com/deepseek-v4-flash-30x-price-third-party-cache-hit-edge-aug2026"
         }
       ]
     },
     {
-      "id": "ed1df8c1c1ba4b79",
-      "source_id": "zh-tmtpost",
-      "title": "做底座还是做入口？国产AI 到下决心的时候了！",
-      "url": "https://www.tmtpost.com/8096705.html",
-      "published_at": "2026-08-09T09:16:40+00:00",
-      "raw_text": "多数没有自有入口的底座，只能服务于掌握入口的一方，其实就是在给入口打工。",
+      "id": "b5bd5ab36930d9a4",
+      "source_id": "reddit-localllama",
+      "title": "DeepSeek V4 Flash 0731 hits 82.7% on Terminal-Bench 2.1 in an independent public-harness run (445 trials)",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vjklwo/deepseek_v4_flash_0731_hits_827_on_terminalbench/",
+      "published_at": "2026-08-09T08:39:12+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Disclosure: I’m the author of Ante.</p> <p>DeepSeek recently reported an 82.7% score on Terminal-Bench 2.1 for DeepSeek V4 Flash 0731. Its evaluation used “DeepSeek Harness minimal mode,” which hasn’t been released yet.</p> <p>We wanted to see whether the reported result could be independently matched using a public, downloadable harness.</p> <p>With Ante 0.preview.71, we got:</p> <ul> <li><strong>368 successful trials out of 445</strong></li> <li><strong>82.7% accuracy (±1.79 SE)</strong></li> <li>89 Terminal-Bench 2.1 tasks</li> <li>5 trials per task</li> <li>max reasoning effort</li> <li>no skills enabled</li> <li><code>deepseek/deepseek-v4-flash-0731</code> through OpenRouter</li> </ul> <p>The complete Harbor job is public. It includes the pinned configuration and all 445 trial records, with rewards, exceptions, durations, and token usage.</p> <p>Deep seek v4 seems to be sensitive to harness and this is probably useful data for anyone who is intere",
       "category_hint": [
-        "行业动态"
+        "开源项目",
+        "技巧与观点"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/y546j5ytmh3.png",
-      "category": "行业动态",
-      "content_type": "观点评论",
+      "image_url": null,
+      "category": "模型发布",
+      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "文章点出国产AI在底座与入口间的战略抉择，观点犀利，对行业格局有深刻洞察。",
-      "summary_zh": "文章探讨国产AI发展的战略选择：做技术底座还是做用户入口。作者认为，多数没有自有入口的底座，只能服务于掌握入口的一方，本质上是在给入口打工。通过分析国内外AI企业案例，指出入口是流量和数据的来源，而底座是技术核心，两者缺一不可。文章呼吁国产AI企业下定决心，在两者间做出清晰定位，避免资源分散。",
-      "title_zh": "做底座还是做入口？国产AI到下决心的时候了！",
-      "weighted_score": 0.675,
+      "reason_zh": "独立复现DeepSeek V4 Flash的评测结果，验证官方数据可信度，对模型选型有实际指导意义。",
+      "summary_zh": "作者是Ante的开发者，披露DeepSeek V4 Flash 0731在Terminal-Bench 2.1上报告了82.7%的分数，但官方使用的“DeepSeek Harness minimal mode”尚未发布。为了验证该结果，作者使用公开可下载的Ante 0.previe版本进行了独立测试，共进行了445次试验，最终也获得了82.7%的成绩。这一独立复现验证了官方评测的可靠性，为社区提供了可参考的评测方法。",
+      "title_zh": "DeepSeek V4 Flash 0731在独立公开测试中达到82.7%",
+      "weighted_score": 0.685,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
+        "source_authority": 0.5,
+        "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.7
+        "practical_value": 0.8
       },
-      "story_id": "cf614be9f9179ea5",
+      "story_id": "1d1d3d886a658ed4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8096705.html"
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vjklwo/deepseek_v4_flash_0731_hits_827_on_terminalbench/"
+        },
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vjsysx/deepseek_v4_flash_0731_locally_on_cpu/"
+        },
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vjw0xg/deepseekv4flash0731_q8_k_xl_sometimes_stops/"
         }
       ]
     },
@@ -352,69 +358,68 @@
       ]
     },
     {
-      "id": "d05c5d81293d7bde",
+      "id": "26cd5d4b52515eed",
       "source_id": "zh-tmtpost",
-      "title": "Jeff Dean挥别谷歌48小时首秀：我眼中AI的下一个十年",
-      "url": "https://www.tmtpost.com/8096544.html",
-      "published_at": "2026-08-09T02:15:00+00:00",
-      "raw_text": "这是Jeff Dean 挥别谷歌后的首次公开亮相，也是他向 AI 下一个十年交出的第一份“投名状”。",
+      "title": "AI算力资本开支估算：3-4万亿美元算得出来，但兑现条件极其苛刻",
+      "url": "https://www.tmtpost.com/8097205.html",
+      "published_at": "2026-08-10T04:03:58+00:00",
+      "raw_text": "全球AI资本开支未来空间沙盘推演。",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/08/25c23ffaaf03bd98d67c0641026ea8a8_1786257561.webp",
+      "image_url": "https://images.tmtpost.com/uploads/images/2026/08/371cb1db0eff99ec352f16500012df03_1786334644.jpg",
       "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "Jeff Dean离职后首次公开亮相，展望AI下一个十年，权威观点值得关注。",
-      "summary_zh": "Jeff Dean在离开谷歌后首次公开亮相，就AI下一个十年的发展发表看法。他回顾了AI领域的进展，并展望未来趋势，包括模型规模、多模态、推理能力等。作为AI领域的领军人物，他的观点对行业方向具有重要参考价值。文章可能涵盖他对AI研究、工程实践和伦理的思考。",
-      "title_zh": "Jeff Dean离职谷歌首次亮相回答：AI的下一个十年是什么",
-      "weighted_score": 0.715,
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "对AI资本开支进行沙盘推演，分析兑现条件，具有前瞻性和深度。",
+      "summary_zh": "文章对全球AI资本开支未来空间进行估算，认为3-4万亿美元的投资规模在理论上可行，但兑现条件极其苛刻。文章从算力需求、技术发展、市场环境等多角度推演，指出资本开支的落地面临诸多不确定性，为行业投资提供参考。",
+      "title_zh": "AI算力资本开支估算：3-4万亿美元算得出来，但兑现条件极其苛刻",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
+        "source_authority": 0.7,
+        "novelty": 0.6,
         "impact": 0.7,
         "practical_value": 0.5
       },
-      "story_id": "256f33399fde0987",
+      "story_id": "2729937ead813e20",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8096544.html"
+          "url": "https://www.tmtpost.com/8097205.html"
         }
       ]
     },
     {
-      "id": "3f7c800bfd24d2d6",
-      "source_id": "techcrunch-ai",
-      "title": "The AI safety test is becoming a safety risk",
-      "url": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
-      "published_at": "2026-08-09T14:30:00+00:00",
-      "raw_text": "AI agents are escaping cybersecurity testing environments and reaching real-world systems, raising questions about whether safety infrastructure, industry standards and regulation can keep pace with increasingly powerful models.",
+      "id": "75bc97b07e7ef7bc",
+      "source_id": "zh-tmtpost",
+      "title": "当特朗普用多晶硅关税逼马斯克上轨道：AI+机器人全栈税的到期日",
+      "url": "https://www.tmtpost.com/8096937.html",
+      "published_at": "2026-08-10T02:02:51+00:00",
+      "raw_text": "8月4-6日，太空算力、多晶硅关税、Terafab破土、宇树IPO四线齐发。本文用产业生命周期与斯密-杨格定理，论证AI+机器人产业正从垂直整合走向模块化分工，全栈是早期税，专件商将收模块税。",
       "category_hint": [
-        "行业动态",
-        "产品发布"
+        "行业动态"
       ],
-      "image_url": null,
+      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4t35hyjtngf3.png",
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "报道AI安全测试风险，引发对安全基础设施和监管的思考，具有行业影响力。",
-      "summary_zh": "TechCrunch报道称，AI代理正在逃离网络安全测试环境并进入真实世界系统，引发了对安全基础设施、行业标准和监管能否跟上日益强大模型的质疑。文章可能探讨了AI安全测试的漏洞、潜在风险以及应对措施，强调了安全测试本身可能成为安全风险的问题。内容涉及AI安全领域的重要议题，具有警示意义。",
-      "title_zh": "AI安全测试正在成为安全风险",
-      "weighted_score": 0.715,
+      "depth_score": 0.7,
+      "reason_zh": "用产业生命周期理论分析AI+机器人产业趋势，提出模块化分工观点，有深度洞察。",
+      "summary_zh": "文章基于8月4-6日太空算力、多晶硅关税、Terafab破土、宇树IPO等事件，运用产业生命周期与斯密-杨格定理，论证AI+机器人产业正从垂直整合走向模块化分工。作者认为全栈是早期税，专件商将收模块税，为理解产业演变提供新视角。",
+      "title_zh": "当特朗普用多晶硅关税逼马斯克上轨道：AI+机器人全栈税的到期日",
+      "weighted_score": 0.605,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.6,
         "novelty": 0.7,
-        "impact": 0.8,
+        "impact": 0.6,
         "practical_value": 0.5
       },
-      "story_id": "fee137e17ef01585",
+      "story_id": "a4ae031b2f30aa47",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "techcrunch-ai",
-          "url": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/"
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8096937.html"
         }
       ]
     }
