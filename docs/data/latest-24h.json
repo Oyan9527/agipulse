@@ -34,6 +34,41 @@
     "curated": true
   },
   {
+    "id": "0da6fb777e3347c6",
+    "source_id": "huggingface-blog",
+    "title": "Meta is back with Muse Glimmer: local, agentic, multimodal, and open source",
+    "url": "https://huggingface.co/blog/muse-glimmer",
+    "published_at": "2026-08-10T00:00:00+00:00",
+    "raw_text": "",
+    "category_hint": [
+      "开源项目",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Meta发布新模型Muse Glimmer，本地、智能体、多模态且开源，值得关注。",
+    "summary_zh": "Meta发布了Muse Glimmer，这是一个本地运行、智能体化、多模态且开源的模型。该模型可能支持在本地设备上运行，具备多模态处理能力，并允许开发者基于其构建智能体应用。具体技术细节和性能尚未公布，但开源特性将促进社区研究和应用。",
+    "title_zh": "Meta携Muse Glimmer回归：本地、智能体、多模态且开源",
+    "weighted_score": 0.86,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.7
+    },
+    "story_id": "b76b39b0c4303cdf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "huggingface-blog",
+        "url": "https://huggingface.co/blog/muse-glimmer"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "a0ff3b81ee0039ab",
     "source_id": "pandaily",
     "title": "China's First 100,000-Card Domestic AI Super-Cluster Goes Live, and the National Compute Grid Takes Shape",
@@ -92,20 +127,12 @@
       "impact": 0.8,
       "practical_value": 0.7
     },
-    "story_id": "7683359ff9bd6a46",
+    "story_id": "b107fb305215ba10",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "the-decoder",
-        "url": "https://the-decoder.com/claude-code-sessions-can-now-talk-to-each-other-and-share-context-across-terminals/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/ais-energy-appetite-drives-nvidia-and-amazon-to-pour-billions-into-massive-power-infrastructure/"
+        "url": "https://the-decoder.com/readers-rate-ai-generated-short-stories-higher-than-human-ones-until-they-learn-a-machine-wrote-them/"
       },
       {
         "source_id": "the-decoder",
@@ -114,6 +141,40 @@
       {
         "source_id": "the-decoder",
         "url": "https://the-decoder.com/hidden-text-in-a-pdf-is-enough-to-steal-sensitive-data-through-atlassians-ai-agent-rovo/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6ff718d981db5e87",
+    "source_id": "zh-dfine-tech",
+    "title": "PersonaLive: 把肖像扩散模型压到能直播",
+    "url": "https://dfine.tech/posts/4bd1127b/",
+    "published_at": "2026-08-10T11:20:00+00:00",
+    "raw_text": "<p>一张照片加一个摄像头，实时驱动照片里的人跟着你做表情、转头，输出能直接推流。这件事的难点不在效果，在帧率——扩散模型生成一帧要跑好几次 UNet，天生和实时是反的。<br />\nPersonaLive 是澳门大学、Dzine.ai 与大湾区大学 GVC Lab 的工作，CVPR2026 收录，代码和权重都放出来了。它给这个矛盾的答案很漂亮：<strong>不减少去噪步数，而是让不同新鲜度的帧共享同一次前向</strong>。<br />\n这篇把它的流式去噪机制、三条条件通路、在线服务链路和 TensorRT 融合拆开记一遍。</p>\n<!--more-->\n<center>\n<p><img alt=\"PersonaLive 在线服务总览\" src=\"/images/personalive-overview.svg\" /></p>\n</center>\n<h3 id=\"它解决什么\">它解决什么</h3>\n<p>肖像动画这条线上，质量和速度一直在打架。</p>\n<blockquote>\n<p>GAN 系（LivePortrait 那一路）快，单帧几毫秒，但表情迁移的自然度和身份保真有上限<br />\n扩散系（AnimateAnyone、X-NeMo 那一路）质量高，但一帧要跑 N 次 UNet，N 通常 20 以上<br />\n把 N 压到 4 是常规操作（蒸馏），但 4 次前向摊到每帧还是太贵<br />\n更麻烦的是长度：视频扩散一般按固定长度的片段生成，直播要的是无限长且不能有拼接痕迹</p>\n</blockquote>\n<p>PersonaLive 的定位是 <code>real-time</code> + <code>streamable</code> + <code>infinite-length</code> 三个词同时成立。核心手法下面单独说，先给它的规格：512×512、fp16、DDIM 4 步、ε 预测，<code>timestep_spacing</code> 用 <code>trailing</code>。</p>\n<h3 id=\"流式金字塔去噪\">流式金字塔去噪</h3>\n<p>这是整个项目最值得看的一处，也是「4 步却只跑 1 次前向」的来源。</p>\n<center>\n<p><img alt=\"流式金字塔去噪\" src=\"/images",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "PersonaLive实现实时肖像驱动，创新流式去噪机制，技术细节丰富，对相关领域有重要参考。",
+    "summary_zh": "PersonaLive是澳门大学、Dzine.ai与大湾区大学GVC Lab的工作，被CVPR2026收录，代码和权重已开源。它解决扩散模型实时生成的问题，不减少去噪步数，而是让不同新鲜度的帧共享同一次前向。文章详细拆解了其流式去噪机制、三条条件通路、在线服务链路和TensorRT融合。",
+    "title_zh": "PersonaLive：把肖像扩散模型压到能直播",
+    "weighted_score": 0.8,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "fa0c8f249ffcb731",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-dfine-tech",
+        "url": "https://dfine.tech/posts/4bd1127b/"
       }
     ],
     "curated": true
@@ -153,6 +214,40 @@
     "curated": true
   },
   {
+    "id": "f1415c175bd6a8d0",
+    "source_id": "zh-ithome",
+    "title": "Meta 开源 30B AI 模型 Muse Glimmer，4bit 量化可在单卡 24GB 显存 GPU 运行",
+    "url": "https://www.ithome.com/0/988/007.htm",
+    "published_at": "2026-08-10T10:52:38+00:00",
+    "raw_text": "<p>IT之家 8 月 10 日消息，Meta 今日发布 AI 模型 Muse Glimmer，并在 Apache 2.0 许可协议下开源该模型权重。Muse Glimmer 是一款拥有 <strong>300 亿参数（30B）</strong>的模型，专为全天候常驻运行的本地智能体（Agent）工作流深度优化。</p><p>官方表示，Muse Glimmer 应用了 4bit 量化技术，使其可在 24GB/32GB 显存的 Mac 或 PC 上本地运行。实测验证这种压缩对智能体任务性能的影响微乎其微，几乎没有任何衰减。</p><p>Meta 在 MacBook M4 Max、M5 Max 以及 RTX 5090 平台上进行了测试。结果表明，该模型的运行速度可以胜任流畅的对话以及实时智能体交互，且所有计算均 100% 在本地设备上完成。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/8e4e5ad3-4a68-4630-bc34-72ef8d43745b.png\" /></p><p>与 Gemma4-31B 和 Qwen3.6-27B 相比，Muse Glimmer 在多项主流大语言模型基准测试中，<strong>均展现出了同尺寸级别模型中的强劲性能</strong>。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/0977210f-f6c4-4f7e-beb3-c9c48d614505.png\" /></p><p>IT之家附开源链接：</p><p><a href=\"https://huggingface.co/meta-models/Muse-Glimmer-30B\"><span class=\"link-text-start-with-http\">https://huggingface.co/meta-models/Muse-Glimmer-30B</span></a></p>",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/8e4e5ad3-4a68-4630-bc34-72ef8d43745b.png",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Meta开源30B模型，4bit量化可本地运行，对本地AI应用有直接参考价值。",
+    "summary_zh": "Meta发布AI模型Muse Glimmer，拥有300亿参数，专为本地智能体工作流优化，并在Apache 2.0许可下开源。该模型应用4bit量化技术，可在24GB/32GB显存的Mac或PC上本地运行，实测性能衰减微乎其微。Meta在MacBook M4 Max、M5 Max及RTX 5090平台上测试，运行速度可胜任流畅对话和实时智能体交互，所有计算均在本地完成。",
+    "title_zh": "Meta开源30B AI模型Muse Glimmer，4bit量化可在单卡24GB显存GPU运行",
+    "weighted_score": 0.795,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.9
+    },
+    "story_id": "532caff4462db2ce",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/988/007.htm"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "994276463bb3e7ca",
     "source_id": "pandaily",
     "title": "Guizhen Chip's On-Chip MBQC Breakthrough Opens a Real Path to Million-Qubit Optical Quantum Computing",
@@ -182,6 +277,40 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/guizhen-chip-on-chip-mbqc-million-qubit-pathway-aug2026"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "050c57be49ca2e4b",
+    "source_id": "gh-ollama",
+    "title": "ollama/ollama v0.32.7",
+    "url": "https://github.com/ollama/ollama/releases/tag/v0.32.7",
+    "published_at": "2026-08-10T10:49:15+00:00",
+    "raw_text": "## Muse Glimmer\r\n\r\n> Note: Muse Glimmer is currently available via initial support via Ollama's MLX engine on Apple Silicon. Additional support and optimizations for Apple Silicon, NVIDIA, AMD, and other platforms will be available in the coming days.\r\n\r\n**Muse Glimmer**, Meta's newest open model and the first released by Meta Superintelligence Labs, is now available on Ollama. It's a 30B multimodal model purpose-built for agent workloads that run locally.\r\n\r\nWith Ollama, you can now use Muse Glimmer to power coding agent applications such as Claude Code, Codex, Pi and more, as well as long-running personal assistants such as OpenClaw and Hermes.\r\n\r\nOllama's MLX engine provides state-of-the-art performance on Apple Silicon for this model, with support for DFlash and image input as of Ollama 0.32.7.\r\n\r\nTo download and run Muse Glimmer locally:\r\n\r\n```bash\r\nollama run muse-glimmer:30b-mlx\r\n```\r\n\r\nTo run Muse Glimmer on Apple Silicon with Claude Code, [download Ollama](https://ollama.com/d",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "Ollama支持Meta Muse Glimmer，本地部署多模态模型更便捷。",
+    "summary_zh": "Ollama v0.32.7发布，新增对Meta Muse Glimmer的初步支持，目前仅限Apple Silicon的MLX引擎，后续将扩展至NVIDIA、AMD等平台。Muse Glimmer是Meta Superintelligence Labs发布的首个开源模型，30B多模态参数，适合本地部署。",
+    "title_zh": "ollama/ollama v0.32.7 发布，支持Meta Muse Glimmer",
+    "weighted_score": 0.785,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "9e9ef5a03a8f4f7d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-ollama",
+        "url": "https://github.com/ollama/ollama/releases/tag/v0.32.7"
       }
     ],
     "curated": true
@@ -327,6 +456,41 @@
     "curated": true
   },
   {
+    "id": "90d59cd2b4ce1933",
+    "source_id": "huggingface-blog",
+    "title": "Making Knowledge Distillation Cheap Enough to Run at Scale",
+    "url": "https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation",
+    "published_at": "2026-08-10T10:05:36+00:00",
+    "raw_text": "",
+    "category_hint": [
+      "开源项目",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "知识蒸馏成本降低，可大规模应用，对模型压缩有重要价值。",
+    "summary_zh": "文章讨论如何使知识蒸馏足够便宜以大规模运行。知识蒸馏是模型压缩技术，通过教师模型指导学生模型。文章可能提出新方法或优化，降低计算成本，使更多团队能应用。对AI模型部署和效率提升有实际意义。",
+    "title_zh": "让知识蒸馏便宜到可大规模运行",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "be1f3195a85d1964",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "huggingface-blog",
+        "url": "https://huggingface.co/blog/MultiverseComputingCAI/efficient-knowledge-distillation"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "944255352fede860",
     "source_id": "techcrunch-ai",
     "title": "Anthropic is turning Claude Code’s auto mode on by default",
@@ -357,6 +521,40 @@
       {
         "source_id": "techcrunch-ai",
         "url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6338eb5c36e2cdda",
+    "source_id": "arxiv-cs-ai",
+    "title": "CellWorld: From Gene-Level Reconstruction to Latent Cell Prediction in Spatial Transcriptomics Foundation Models",
+    "url": "https://arxiv.org/abs/2608.06659",
+    "published_at": "2026-08-10T04:00:00+00:00",
+    "raw_text": "arXiv:2608.06659v1 Announce Type: new \nAbstract: This paper shows that latent-space predictive pretraining can provide a scalable route to foundation models for spatial transcriptomics. Existing spatial transcriptomics foundation models primarily reconstruct masked gene identities or expression values, potentially encouraging the reproduction of assay-specific technical variation and limiting representation transferability. To avoid directly reconstructing such variation, we shift the prediction target from observed gene measurements to latent cell representations and introduce CellWorld, which predicts the latent representations of masked cells from visible spatial context and a limited partial-expression hint. We pretrain four CellWorld variants, spanning 5.74M to 94.56M trainable parameters, on a corpus of 46 million human cells. Our controlled scaling experiments show that performance improves with model capacity, particularly on spatial tasks, while spatial transfer depends more o",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出空间转录组基础模型的新预训练范式，从基因重建转向潜在空间预测，具有方法论创新和可迁移性。",
+    "summary_zh": "本文提出CellWorld，一种用于空间转录组学的基础模型，其核心创新在于采用潜在空间预测预训练方法，而非传统的基因身份或表达值重建。作者认为，传统重建方法可能鼓励模型复制检测特有的技术变异，从而限制表征的泛化性。通过潜在空间预测，模型能够学习更鲁棒的生物学信号。论文展示了该方法在基因水平重建和潜在细胞预测上的有效性，为空间转录组学基础模型提供了可扩展的新路径。",
+    "title_zh": "CellWorld：从基因水平重建到空间转录组基础模型中的潜在细胞预测",
+    "weighted_score": 0.765,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "8a9f30d63fa48510",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.06659"
       }
     ],
     "curated": true
@@ -430,35 +628,35 @@
     "curated": true
   },
   {
-    "id": "6338eb5c36e2cdda",
-    "source_id": "arxiv-cs-ai",
-    "title": "CellWorld: From Gene-Level Reconstruction to Latent Cell Prediction in Spatial Transcriptomics Foundation Models",
-    "url": "https://arxiv.org/abs/2608.06659",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "raw_text": "arXiv:2608.06659v1 Announce Type: new \nAbstract: This paper shows that latent-space predictive pretraining can provide a scalable route to foundation models for spatial transcriptomics. Existing spatial transcriptomics foundation models primarily reconstruct masked gene identities or expression values, potentially encouraging the reproduction of assay-specific technical variation and limiting representation transferability. To avoid directly reconstructing such variation, we shift the prediction target from observed gene measurements to latent cell representations and introduce CellWorld, which predicts the latent representations of masked cells from visible spatial context and a limited partial-expression hint. We pretrain four CellWorld variants, spanning 5.74M to 94.56M trainable parameters, on a corpus of 46 million human cells. Our controlled scaling experiments show that performance improves with model capacity, particularly on spatial tasks, while spatial transfer depends more o",
+    "id": "c35e6297db0ebef1",
+    "source_id": "gh-transformers",
+    "title": "huggingface/transformers v5.15.0",
+    "url": "https://github.com/huggingface/transformers/releases/tag/v5.15.0",
+    "published_at": "2026-08-10T10:28:13+00:00",
+    "raw_text": "# Release v5.15.0\r\n\r\n## New Model additions\r\n\r\n### Meta Muse Glimmer\r\n\r\nMuse Glimmer, released today, is Meta’s new multimodal model, especially designed for agentic use cases. Distilled from Muse to 30B parameters, and released under the Apache 2.0 license, it can be deployed to local setups for privacy-aware applications such as coding, document analysis, personal assistants, Claw- or Hermes-like setups.\r\n\r\nMuse Glimmer is a dense 30B parameter model consisting of:\r\n- 2B ViT-style encoder for vision (Perception Encoder)\r\n- 28B parameter text decoder\r\n\r\nWe're covering it in the following blogpost: http://hf.co/blog/muse-glimmer\r\n\r\n<img width=\"960\" height=\"1787\" alt=\"image\" src=\"https://github.com/user-attachments/assets/3d8e548e-f84f-4269-8bd0-a12722d7ab01\" />\r\n\r\n---\r\n\r\n### GraniteMoeSWA & GraniteSWA\r\n\r\n<img width=\"1013\" height=\"389\" alt=\"image\" src=\"https://github.com/user-attachments/assets/2c2b87f0-466a-413a-a4be-25ceae49c9a5\" />\r\n\r\n**Links:** [Documentation](https://huggingface.co",
     "category_hint": [
-      "论文研究"
+      "开源项目"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出空间转录组基础模型的新预训练范式，从基因重建转向潜在空间预测，具有方法论创新和可迁移性。",
-    "summary_zh": "本文提出CellWorld，一种用于空间转录组学的基础模型，其核心创新在于采用潜在空间预测预训练方法，而非传统的基因身份或表达值重建。作者认为，传统重建方法可能鼓励模型复制检测特有的技术变异，从而限制表征的泛化性。通过潜在空间预测，模型能够学习更鲁棒的生物学信号。论文展示了该方法在基因水平重建和潜在细胞预测上的有效性，为空间转录组学基础模型提供了可扩展的新路径。",
-    "title_zh": "CellWorld：从基因水平重建到空间转录组基础模型中的潜在细胞预测",
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "Transformers新增Meta Muse Glimmer模型支持，开源社区重要更新。",
+    "summary_zh": "Hugging Face Transformers v5.15.0发布，新增Meta Muse Glimmer模型支持。Muse Glimmer是Meta新发布的多模态模型，专为agentic用例设计，从Muse蒸馏至30B参数，采用Apache 2.0许可，可本地部署用于编码、文档分析等隐私敏感场景。",
+    "title_zh": "huggingface/transformers v5.15.0 发布，支持Meta Muse Glimmer",
     "weighted_score": 0.765,
     "score_breakdown": {
       "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
+      "novelty": 0.7,
+      "impact": 0.8,
       "practical_value": 0.6
     },
-    "story_id": "8a9f30d63fa48510",
+    "story_id": "aa98a570cd1db77c",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.06659"
+        "source_id": "gh-transformers",
+        "url": "https://github.com/huggingface/transformers/releases/tag/v5.15.0"
       }
     ],
     "curated": true
@@ -568,41 +766,6 @@
     "curated": true
   },
   {
-    "id": "6548506f492b5d1e",
-    "source_id": "marktechpost",
-    "title": "ByteDance Seed Introduces SeedRealtime: a Native Audio-Visual Full-Duplex LLM That Watches, Listens and Speaks in One Model",
-    "url": "https://www.marktechpost.com/2026/08/09/bytedance-seed-introduces-seedrealtime-a-native-audio-visual-full-duplex-llm-that-watches-listens-and-speaks-in-one-model/",
-    "published_at": "2026-08-10T05:48:17+00:00",
-    "raw_text": "<p>ByteDance&#8217;s Seed team has introduced SeedRealtime, a native audio-visual full-duplex LLM. The model fuses audio, video and text in a single unified architecture. It interacts in real time over continuous multimodal streams, rather than one turn at a time. Seed positions it as a step toward omni-modal interaction, and claims three breakthroughs: joint audio-visual understanding, [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/09/bytedance-seed-introduces-seedrealtime-a-native-audio-visual-full-duplex-llm-that-watches-listens-and-speaks-in-one-model/\">ByteDance Seed Introduces SeedRealtime: a Native Audio-Visual Full-Duplex LLM That Watches, Listens and Speaks in One Model</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "字节跳动发布原生音视频全双工LLM，实现多模态实时交互，技术突破显著，值得关注。",
-    "summary_zh": "字节跳动Seed团队推出了SeedRealtime，这是一个原生音视频全双工LLM，在统一架构中融合了音频、视频和文本。该模型能够通过连续的多模态流进行实时交互，而不是逐轮进行。Seed将其定位为迈向全模态交互的一步，并声称在联合音视频理解等方面取得了三项突破。这一发布标志着多模态AI模型的重要进展。",
-    "title_zh": "字节跳动Seed推出SeedRealtime：原生音视频全双工LLM，一个模型能看、能听、能说",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "d1963988007308bc",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/08/09/bytedance-seed-introduces-seedrealtime-a-native-audio-visual-full-duplex-llm-that-watches-listens-and-speaks-in-one-model/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "862cef2d5381c51b",
     "source_id": "zh-tonybai",
     "title": "3600人、95%覆盖率、24万次拦截：Cloudflare怎么用AI把“提效不降质”变成现实",
@@ -637,35 +800,69 @@
     "curated": true
   },
   {
-    "id": "9779db9a17b808bd",
-    "source_id": "arxiv-cs-ai",
-    "title": "EntropyMoE: Entropy-Aware Sparse Expert Routing for Tokenizer-Free LLMs",
-    "url": "https://arxiv.org/abs/2608.06398",
-    "published_at": "2026-08-10T04:00:00+00:00",
-    "raw_text": "arXiv:2608.06398v1 Announce Type: new \nAbstract: Recent byte-level large language models (LLMs) have made tokenizer-free modeling increasingly competitive by grouping bytes into dynamically sized patches. However, existing byte-patch architectures still apply the same dense feed-forward computation to every patch. This uniform computation cannot adapt model capacity to variations in patch semantics and granularity. We address this limitation with EntropyMoE, a Mixture-of-Experts (MoE) architecture designed for dynamic byte patches. EntropyMoE replaces the dense feed-forward modules in the global patch Transformer with Top-K expert layers. Each dynamic patch serves as the basic unit of expert routing, and its byte coverage determines its contribution to workload accounting. The router selects experts directly from patch entropy, using the same granularity signal that underlies dynamic patch construction to organize sparse computation. Patch entropy and length jointly define the feature ",
+    "id": "1cb848f51d5a708b",
+    "source_id": "zh-oschina",
+    "title": "Claude Code 将自动模式设为默认，称人类审批只抓到 13.6% 危险命令",
+    "url": "https://www.oschina.net/news/492362/auto-mode-default-in-claude-code",
+    "published_at": "2026-08-10T11:38:03+00:00",
+    "raw_text": "Anthropic 宣布，从 8 月 14 日起，Claude Code 在 Pro、Max、Team 计划上将默认启用自动模式（auto mode）。这个决定背后，是两组让人不安的数据。 第一组：人类审批到底有多不靠谱？Anthropic 在 1053 名付费用户中做了一项对照实验，人为审核只抓到了 13.6% 的危险命令，而自动模式抓到了 89%。自动模式拦截了 800 条...",
     "category_hint": [
-      "论文研究"
+      "开源项目"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出熵感知稀疏专家路由，用于无分词器LLM，提升计算效率，对高效模型设计有重要价值。",
-    "summary_zh": "论文提出EntropyMoE，一种熵感知的稀疏专家路由方法，用于无分词器的大语言模型（LLM）。现有字节级LLM通过动态分组字节为补丁，但所有补丁都使用相同的密集前馈计算，无法适应补丁语义变化。EntropyMoE根据补丁的熵值动态分配计算资源，实现稀疏路由，提高模型容量利用效率，为高效LLM设计提供新方向。",
-    "title_zh": "EntropyMoE：无分词器LLM的熵感知稀疏专家路由",
-    "weighted_score": 0.735,
+    "category": "产品发布",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "Anthropic用数据证明人类审批效率低下，默认自动模式，对AI安全实践有重要启示。",
+    "summary_zh": "Anthropic宣布从8月14日起，Claude Code在Pro、Max、Team计划上默认启用自动模式。这一决定基于两组数据：在1053名付费用户的对照实验中，人为审核只抓到了13.6%的危险命令，而自动模式抓到了89%，并拦截了800条危险命令。这表明人类审批在识别危险命令方面效率低下，而自动模式能更有效地保障安全。文章深入分析了这一变化背后的原因和影响。",
+    "title_zh": "Claude Code将自动模式设为默认，称人类审批只抓到13.6%危险命令",
+    "weighted_score": 0.75,
     "score_breakdown": {
       "source_authority": 0.8,
-      "novelty": 0.8,
+      "novelty": 0.7,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.8
     },
-    "story_id": "b4b89734b902e34d",
+    "story_id": "40076071e442d42a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.06398"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/492362/auto-mode-default-in-claude-code"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "deeb72293cb64598",
+    "source_id": "ars-technica-ai",
+    "title": "Peer review is overwhelmed—can it survive in the AI era?",
+    "url": "https://arstechnica.com/science/2026/08/peer-review-is-overwhelmed-can-it-survive-in-the-ai-era/",
+    "published_at": "2026-08-10T11:00:47+00:00",
+    "raw_text": "As research and AI-assisted papers surge, volunteer reviewers struggle to keep up.",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/peer-review-difficulties-500x500.jpg",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.6,
+    "reason_zh": "探讨AI时代同行评审的困境，引发对学术出版未来的思考，具有启发性。",
+    "summary_zh": "随着研究和AI辅助论文激增，志愿者审稿人难以跟上。文章探讨了同行评审系统在AI时代面临的挑战，包括审稿人负担过重、评审质量下降等问题，并思考了可能的解决方案，如利用AI辅助评审或改革评审流程。",
+    "title_zh": "同行评审不堪重负——它能在AI时代生存吗？",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "173f18fe0ea52ce4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "ars-technica-ai",
+        "url": "https://arstechnica.com/science/2026/08/peer-review-is-overwhelmed-can-it-survive-in-the-ai-era/"
       }
     ],
     "curated": true
@@ -705,74 +902,43 @@
     "curated": true
   },
   {
-    "id": "a31adcfb757d3a91",
-    "source_id": "gh-llamacpp",
-    "title": "ggerganov/llama.cpp b10336",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10336",
-    "published_at": "2026-08-10T08:18:17+00:00",
-    "raw_text": "<details open>\n\nggml-webgpu : refactor several wgsl files and simplify flash_attn wgsl. (#26134)\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b10336/llama-b10336-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b10336/llama-b10336-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b10336/llama-b10336-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10336/llama-b10336-bin-ubuntu-x64.tar.gz)\n- [Ubuntu arm64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10336/llama-b10336-bin-ubuntu-arm64.tar.gz)\n- [Ubuntu s390x (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b10336/llama-b10336-bin-ubuntu",
+    "id": "e185866e05e86d6a",
+    "source_id": "qbitai",
+    "title": "Meoo秒悟团队版全量上线， 接入Qwen-3.8-Max、即日起可直接订阅",
+    "url": "https://www.qbitai.com/2026/08/469493.html",
+    "published_at": "2026-08-10T03:24:23+00:00",
+    "raw_text": "从面向个人的AI创作工具，扩展为可供组织使用的生产力平台",
     "category_hint": [
-      "开源项目"
+      "行业动态",
+      "模型发布"
     ],
     "image_url": null,
-    "category": "开源项目",
+    "category": "产品发布",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "llama.cpp更新优化WebGPU支持，简化flash_attn实现，提升推理性能，值得关注。",
-    "summary_zh": "llama.cpp发布b10336版本，主要重构了多个WGSL文件，简化了flash_attn的WGSL实现，以优化WebGPU后端性能。该更新有助于提升在浏览器等环境中的推理效率，对开发者具有实用价值。",
-    "title_zh": "llama.cpp b10336发布：重构WebGPU支持，简化flash_attn实现",
-    "weighted_score": 0.685,
+    "reason_zh": "Meoo团队版上线并接入Qwen-3.8-Max，对团队协作AI工具有实用价值。",
+    "summary_zh": "Meoo秒悟团队版全量上线，接入Qwen-3.8-Max模型，即日起可直接订阅。该产品从面向个人的AI创作工具扩展为可供组织使用的生产力平台，旨在提升团队协作效率。新版本可能提供更多协作功能，适合企业用户。",
+    "title_zh": "Meoo秒悟团队版全量上线，接入Qwen-3.8-Max、即日起可直接订阅",
+    "weighted_score": 0.575,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.6,
       "novelty": 0.6,
       "impact": 0.5,
-      "practical_value": 0.7
+      "practical_value": 0.6
     },
-    "story_id": "1567a0e2f757eeec",
-    "multi_source_count": 1,
+    "story_id": "afa171a0e42064f0",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "gh-llamacpp",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10336"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "af84f88d3cc16faa",
-    "source_id": "gh-label-studio",
-    "title": "HumanSignal/label-studio nightly",
-    "url": "https://github.com/HumanSignal/label-studio/releases/tag/nightly",
-    "published_at": "2026-08-10T00:11:27+00:00",
-    "raw_text": "# Nightly Build\n\nThis is an automated nightly build that is recreated every night with the latest changes from the `develop` branch.\n\n## Installation\n\nYou can install this nightly build by downloading the wheel package (the file ending in `.whl`) from the `Assets` section below this description. \nAfter downloading, you can install it using the following commands from your terminal:\n\nFor Windows:\n```bash\npip install %USERPROFILE%\\Downloads\\label_studio-1.24.0.dev20260810-py3-none-any.whl\n```\n\nFor macOS/Linux:\n```bash\npip install ~/Downloads/label_studio-1.24.0.dev20260810-py3-none-any.whl\n```\n\n## Important Notes\n- This is a development build and may contain bugs or incomplete features\n- Use in production environments is not recommended\n- Please report any issues you encounter in our [GitHub Issues](https://github.com/HumanSignal/label-studio/issues)\n- This release is automatically recreated every night with the latest changes\n\n## Changes\nChanges since 1.23.0: https://github.com/HumanSig",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Label Studio nightly构建发布，提供最新功能，对数据标注开发者有实用价值。",
-    "summary_zh": "HumanSignal/label-studio发布了nightly构建，每晚从develop分支自动重建。用户可下载wheel包安装，适用于Windows等平台。该版本包含最新开发功能，适合开发者测试和体验新特性。",
-    "title_zh": "HumanSignal/label-studio nightly构建",
-    "weighted_score": 0.68,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.7
-    },
-    "story_id": "490bc77d755d195d",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/08/469493.html"
+      },
       {
-        "source_id": "gh-label-studio",
-        "url": "https://github.com/HumanSignal/label-studio/releases/tag/nightly"
+        "source_id": "zh-tmtpost",
+        "url": "https://www.tmtpost.com/8096868.html"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
     "id": "3f7c800bfd24d2d6",
@@ -811,36 +977,36 @@
     "gate_backfill": true
   },
   {
-    "id": "994d0118f26f7fef",
-    "source_id": "the-decoder",
-    "title": "Google Deepmind's WeatherNext predicts cyclone tracks and intensity at the same time",
-    "url": "https://the-decoder.com/google-deepminds-weathernext-predicts-cyclone-tracks-and-intensity-at-the-same-time/",
-    "published_at": "2026-08-09T12:29:06+00:00",
-    "raw_text": "<p><img alt=\"Cyclone-shaped cloud swirls with red and turquoise lines on a dark background.\" class=\"attachment-full size-full wp-post-image\" height=\"1047\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/cyclone-eye-google-deepmind-nano-banana-pro.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        Deepmind's new weather AI forecasts tropical cyclones about a day further ahead than leading operational models, matching a decade of progress in traditional weather forecasting. Code and model weights are open-source on GitHub.</p>\n<p>The article <a href=\"https://the-decoder.com/google-deepminds-weathernext-predicts-cyclone-tracks-and-intensity-at-the-same-time/\">Google Deepmind&#039;s WeatherNext predicts cyclone tracks and intensity at the same time</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "id": "b96f05f05991c0a2",
+    "source_id": "infoq-cn-ai",
+    "title": "微软正式发布 Agent Framework Harness 和 Hosted Agents",
+    "url": "https://www.infoq.cn/article/aDEJegvNSKwvue2JZ0yI?utm_source=rss&utm_medium=article",
+    "published_at": "2026-08-10T17:14:00+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/aDEJegvNSKwvue2JZ0yI?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
     "category_hint": [
-      "模型发布",
-      "行业动态"
+      "行业动态",
+      "技巧与观点"
     ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/cyclone-eye-google-deepmind-nano-banana-pro.jpg",
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "DeepMind新天气模型可同时预测气旋路径和强度，提前约一天，对气象预测有重要价值。",
-    "summary_zh": "Google DeepMind发布了新的天气AI模型WeatherNext，该模型能够同时预测热带气旋的路径和强度，预测时间提前约一天。这一能力对于防灾减灾具有重要意义。文章提到模型在预测气旋方面表现出色，但未提供具体技术细节。该模型有望提升天气预报的准确性和时效性，对气象领域和公众安全有积极影响。",
-    "title_zh": "Google DeepMind的WeatherNext同时预测气旋路径和强度",
-    "weighted_score": 0.705,
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "微软正式发布Agent Framework Harness和Hosted Agents，是重要的产品发布，对agent开发有直接影响。",
+    "summary_zh": "微软正式发布了Agent Framework Harness和Hosted Agents，这是其AI代理框架的重要更新。该框架旨在帮助开发者更轻松地构建、部署和管理AI代理。Hosted Agents提供了托管服务，简化了代理的运维。这一发布标志着微软在AI代理领域的进一步布局，对开发者和企业用户具有实际意义。",
+    "title_zh": "微软正式发布Agent Framework Harness和Hosted Agents",
+    "weighted_score": 0.71,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
+      "source_authority": 0.8,
+      "novelty": 0.7,
       "impact": 0.7,
       "practical_value": 0.6
     },
-    "story_id": "ec4a863467d6748d",
+    "story_id": "a4220b61ae82ab9c",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/google-deepminds-weathernext-predicts-cyclone-tracks-and-intensity-at-the-same-time/"
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/aDEJegvNSKwvue2JZ0yI?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true,
@@ -877,41 +1043,6 @@
       {
         "source_id": "simonwillison",
         "url": "https://simonwillison.net/2026/Aug/9/sqlite-text-history-prototype/#atom-everything"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "70a35d7142dc8b8c",
-    "source_id": "pandaily",
-    "title": "Why DeepSeek Could Charge 30x More and Still Be the Cheapest Model Around",
-    "url": "https://pandaily.com/deepseek-v4-flash-30x-price-third-party-cache-hit-edge-aug2026",
-    "published_at": "2026-08-10T02:08:05+00:00",
-    "raw_text": "Third-party platforms are pricing DeepSeek V4 Flash below official rates. A price hike of 30x would still leave DeepSeek the cheapest major model, and its near-perfect cache-hit rate is the engineering moat that keeps the headline number honest.",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://cms-image.pandaily.com/1/img_2_f9e369d0d0.png",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "深入分析DeepSeek的定价策略与缓存命中率工程优势，揭示其成本结构，对理解AI模型商业化有启发。",
-    "summary_zh": "文章指出，第三方平台对DeepSeek V4 Flash的定价已低于官方价格，但即使将价格提高30倍，DeepSeek仍将是主要模型中最便宜的。这一现象背后是DeepSeek近乎完美的缓存命中率，成为其工程护城河，使得标价数字保持竞争力。文章分析了DeepSeek的定价逻辑、缓存机制如何降低推理成本，以及这种策略对AI模型市场竞争格局的影响。对于关注AI模型商业化和成本优化的读者，提供了深入的行业洞察。",
-    "title_zh": "为什么DeepSeek即使涨价30倍仍是最便宜的模型？",
-    "weighted_score": 0.705,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "3f65ac5186886054",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/deepseek-v4-flash-30x-price-third-party-cache-hit-edge-aug2026"
       }
     ],
     "curated": true,

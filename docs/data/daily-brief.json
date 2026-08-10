@@ -1,6 +1,6 @@
 {
   "date": "2026-08-10",
-  "generated_at": "2026-08-10T09:19:36.677879+00:00",
+  "generated_at": "2026-08-10T13:01:00.519582+00:00",
   "items": [
     {
       "id": "46c751fb1c457253",
@@ -69,6 +69,39 @@
       ]
     },
     {
+      "id": "6ff718d981db5e87",
+      "source_id": "zh-dfine-tech",
+      "title": "PersonaLive: 把肖像扩散模型压到能直播",
+      "url": "https://dfine.tech/posts/4bd1127b/",
+      "published_at": "2026-08-10T11:20:00+00:00",
+      "raw_text": "<p>一张照片加一个摄像头，实时驱动照片里的人跟着你做表情、转头，输出能直接推流。这件事的难点不在效果，在帧率——扩散模型生成一帧要跑好几次 UNet，天生和实时是反的。<br />\nPersonaLive 是澳门大学、Dzine.ai 与大湾区大学 GVC Lab 的工作，CVPR2026 收录，代码和权重都放出来了。它给这个矛盾的答案很漂亮：<strong>不减少去噪步数，而是让不同新鲜度的帧共享同一次前向</strong>。<br />\n这篇把它的流式去噪机制、三条条件通路、在线服务链路和 TensorRT 融合拆开记一遍。</p>\n<!--more-->\n<center>\n<p><img alt=\"PersonaLive 在线服务总览\" src=\"/images/personalive-overview.svg\" /></p>\n</center>\n<h3 id=\"它解决什么\">它解决什么</h3>\n<p>肖像动画这条线上，质量和速度一直在打架。</p>\n<blockquote>\n<p>GAN 系（LivePortrait 那一路）快，单帧几毫秒，但表情迁移的自然度和身份保真有上限<br />\n扩散系（AnimateAnyone、X-NeMo 那一路）质量高，但一帧要跑 N 次 UNet，N 通常 20 以上<br />\n把 N 压到 4 是常规操作（蒸馏），但 4 次前向摊到每帧还是太贵<br />\n更麻烦的是长度：视频扩散一般按固定长度的片段生成，直播要的是无限长且不能有拼接痕迹</p>\n</blockquote>\n<p>PersonaLive 的定位是 <code>real-time</code> + <code>streamable</code> + <code>infinite-length</code> 三个词同时成立。核心手法下面单独说，先给它的规格：512×512、fp16、DDIM 4 步、ε 预测，<code>timestep_spacing</code> 用 <code>trailing</code>。</p>\n<h3 id=\"流式金字塔去噪\">流式金字塔去噪</h3>\n<p>这是整个项目最值得看的一处，也是「4 步却只跑 1 次前向」的来源。</p>\n<center>\n<p><img alt=\"流式金字塔去噪\" src=\"/images",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "PersonaLive实现实时肖像驱动，创新流式去噪机制，技术细节丰富，对相关领域有重要参考。",
+      "summary_zh": "PersonaLive是澳门大学、Dzine.ai与大湾区大学GVC Lab的工作，被CVPR2026收录，代码和权重已开源。它解决扩散模型实时生成的问题，不减少去噪步数，而是让不同新鲜度的帧共享同一次前向。文章详细拆解了其流式去噪机制、三条条件通路、在线服务链路和TensorRT融合。",
+      "title_zh": "PersonaLive：把肖像扩散模型压到能直播",
+      "weighted_score": 0.8,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "fa0c8f249ffcb731",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-dfine-tech",
+          "url": "https://dfine.tech/posts/4bd1127b/"
+        }
+      ]
+    },
+    {
       "id": "994276463bb3e7ca",
       "source_id": "pandaily",
       "title": "Guizhen Chip's On-Chip MBQC Breakthrough Opens a Real Path to Million-Qubit Optical Quantum Computing",
@@ -98,39 +131,6 @@
         {
           "source_id": "pandaily",
           "url": "https://pandaily.com/guizhen-chip-on-chip-mbqc-million-qubit-pathway-aug2026"
-        }
-      ]
-    },
-    {
-      "id": "246e16f0a6ae66ba",
-      "source_id": "arxiv-cs-ai",
-      "title": "The Optimizer Is the Agent: Reasoning-Driven Search across Prompts, Programs, and ML Workflows",
-      "url": "https://arxiv.org/abs/2608.06714",
-      "published_at": "2026-08-10T04:00:00+00:00",
-      "raw_text": "arXiv:2608.06714v1 Announce Type: new \nAbstract: Recent systems for optimizing prompts, programs, and ML workflows typically rely on explicit outer-loop controllers such as evolutionary search, bandits, or textual-gradient methods. We ask a fundamentally different question: how much of this search policy can be internalized by a single tool-using agent? We present ReASearch, a unified framework for reasoning-driven optimization in which the agent autonomously decides what to evaluate, how to diagnose failures, which edits to make, and when to verify or restart. Rather than serving only as a proposal generator guided by hand-designed heuristics, the agent actively analyzes outcomes, allocates budget, and refines its strategy over long horizons through persistent memory. With a shared agent loop and domain-specific tools, ReASearch instantiates the exact same scaffold to optimize prompts, programs, and ML workflows. Across 14 diverse tasks, it is competitive with and mostly better than s",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出ReASearch框架，将优化器视为智能体，统一提示、程序和ML工作流搜索，具有创新性。",
-      "summary_zh": "本文提出ReASearch，一个统一框架，将提示、程序和机器学习工作流的优化视为由工具使用智能体驱动的搜索过程。传统方法依赖外部循环控制器，如进化搜索或梯度方法。ReASearch将搜索策略内化于单个智能体，通过推理驱动搜索。实验表明，ReASearch在多个任务上达到或超过现有方法，同时简化了优化流程，为自动化机器学习提供了新视角。",
-      "title_zh": "优化器即智能体：跨提示、程序和ML工作流的推理驱动搜索",
-      "weighted_score": 0.78,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "ad0befe44e0563a6",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.06714"
         }
       ]
     },
@@ -168,6 +168,72 @@
       ]
     },
     {
+      "id": "ad6feb95d285965a",
+      "source_id": "ai-supremacy",
+      "title": "How AI's Demand for Compute could Disrupt America",
+      "url": "https://www.ai-supremacy.com/p/how-ai-demand-for-compute-could-disrupt-america-debt-crisis",
+      "published_at": "2026-08-10T09:31:05+00:00",
+      "raw_text": "The spectre of AI, labor participation churn, worker slice of GPD, an ageist AI, a debt binge, a cartel in waiting. An accelerating demand for compute that eats at the fabric of society.",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!Nynb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbac858ac-9970-425a-8cb9-48ced0ed5dd1_1280x720.jpeg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深度剖析AI算力需求对社会结构的冲击，视角独特，启发思考。",
+      "summary_zh": "文章探讨AI对算力的需求如何可能颠覆美国社会，涉及劳动力参与率变化、工人GDP份额、年龄歧视、债务激增和潜在垄断等问题。作者认为加速的算力需求正在侵蚀社会结构，引发对AI发展负面影响的担忧。内容具有前瞻性和批判性，适合关注AI社会影响的读者。",
+      "title_zh": "AI的算力需求如何可能颠覆美国",
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.5
+      },
+      "story_id": "a443f59e300c6ac2",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "ai-supremacy",
+          "url": "https://www.ai-supremacy.com/p/how-ai-demand-for-compute-could-disrupt-america-debt-crisis"
+        }
+      ]
+    },
+    {
+      "id": "b907fbc471855e63",
+      "source_id": "zh-dfine-tech",
+      "title": "LiteReality-Agent笔记: 从一次扫描到可交互的房间",
+      "url": "https://dfine.tech/posts/e2482d34/",
+      "published_at": "2026-08-10T06:20:00+00:00",
+      "raw_text": "<p>好久没写点正经的东西了，上一篇还是折腾容器的事。这两天读了一个叫LiteReality-Agent的项目，是用手机扫一遍房间，然后端到端生成一个可编辑、可渲染、门窗抽屉都能动的三维场景。<br />\n本来只想看看它怎么调模型的，结果被它的工程组织方式吸引了，索性做个笔记。主要记录它的流水线结构、agent的关进笼子的方式，以及几处让我后背发凉的坑。</p>\n<!--more-->\n<center>\n<p><img alt=\"RGBD扫描与重建结果\" src=\"/images/litereality-demo.jpg\" /></p>\n</center>\n<h3 id=\"先说问题在哪\">先说问题在哪</h3>\n<p>手机扫房间在2026年已经不难了，Apple的RoomPlan走一圈就能给出一串RGB帧、深度、ARKit相机位姿，以及一个<code>room.usdz</code>，里面有墙面、门窗洞口和一组粗糙的物体包围盒。<br />\n难的是这堆东西离「能用的三维场景」还差得远。</p>\n<blockquote>\n<p>RoomPlan给的是物体包围盒加类别标签，做图形要的是有真实几何和材质的网格；<br />\n给的是不可编辑的usdz，要的是能改、能重编译、能导出的场景源；<br />\n给的是静态几何，要的是门会转、抽屉会拉、洗碗机门会翻下来；<br />\n给的是「大概像个房间」，要的是「就是这间屋子」。</p>\n</blockquote>\n<p>最后一条最容易被忽略。多数生成式场景重建的验收标准是「看起来像个合理的房间」，而不是「和我扫的那间对得上」。这个项目整条设计都在咬后者。</p>\n<p>顺手数了一下规模: <code>src/</code>下183个python文件，28219行；<code>tests/</code>下41个<code>test_*.py</code>；100个提交；要求python <code>&gt;=3.10,&lt;3.13</code>；Apache-2.0；版本号还是<code>0.0.1</code>，Development Status写的Alpha。<br />\n一个两万八千行的alpha项目，架构文档能和代码逐条对得上，这事本身就不多见。</p>\n<h3 id=\"一条命令\">一条命令</h3>\n<p>支持的入口",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析LiteReality-Agent项目，分享工程实现细节与踩坑经验，极具参考价值。",
+      "summary_zh": "笔记详细分析了LiteReality-Agent项目，该项目通过手机扫描房间生成可交互的三维场景。作者记录了流水线结构、agent的约束方式以及遇到的坑。内容涵盖RGBD扫描、模型调用、场景编辑等，对三维重建和智能体开发有借鉴意义。",
+      "title_zh": "LiteReality-Agent笔记：从一次扫描到可交互的房间",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "a9ca2a4d614c6760",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-dfine-tech",
+          "url": "https://dfine.tech/posts/e2482d34/"
+        }
+      ]
+    },
+    {
       "id": "f70d0f349833b5b6",
       "source_id": "the-decoder",
       "title": "Hidden text in a PDF is enough to steal sensitive data through Atlassian's AI agent Rovo",
@@ -192,20 +258,12 @@
         "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "7683359ff9bd6a46",
+      "story_id": "b107fb305215ba10",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "the-decoder",
-          "url": "https://the-decoder.com/claude-code-sessions-can-now-talk-to-each-other-and-share-context-across-terminals/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/ais-energy-appetite-drives-nvidia-and-amazon-to-pour-billions-into-massive-power-infrastructure/"
+          "url": "https://the-decoder.com/readers-rate-ai-generated-short-stories-higher-than-human-ones-until-they-learn-a-machine-wrote-them/"
         },
         {
           "source_id": "the-decoder",
@@ -214,6 +272,39 @@
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/hidden-text-in-a-pdf-is-enough-to-steal-sensitive-data-through-atlassians-ai-agent-rovo/"
+        }
+      ]
+    },
+    {
+      "id": "1cb848f51d5a708b",
+      "source_id": "zh-oschina",
+      "title": "Claude Code 将自动模式设为默认，称人类审批只抓到 13.6% 危险命令",
+      "url": "https://www.oschina.net/news/492362/auto-mode-default-in-claude-code",
+      "published_at": "2026-08-10T11:38:03+00:00",
+      "raw_text": "Anthropic 宣布，从 8 月 14 日起，Claude Code 在 Pro、Max、Team 计划上将默认启用自动模式（auto mode）。这个决定背后，是两组让人不安的数据。 第一组：人类审批到底有多不靠谱？Anthropic 在 1053 名付费用户中做了一项对照实验，人为审核只抓到了 13.6% 的危险命令，而自动模式抓到了 89%。自动模式拦截了 800 条...",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Anthropic用数据证明人类审批效率低下，默认自动模式，对AI安全实践有重要启示。",
+      "summary_zh": "Anthropic宣布从8月14日起，Claude Code在Pro、Max、Team计划上默认启用自动模式。这一决定基于两组数据：在1053名付费用户的对照实验中，人为审核只抓到了13.6%的危险命令，而自动模式抓到了89%，并拦截了800条危险命令。这表明人类审批在识别危险命令方面效率低下，而自动模式能更有效地保障安全。文章深入分析了这一变化背后的原因和影响。",
+      "title_zh": "Claude Code将自动模式设为默认，称人类审批只抓到13.6%危险命令",
+      "weighted_score": 0.75,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "40076071e442d42a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/492362/auto-mode-default-in-claude-code"
         }
       ]
     },
@@ -285,135 +376,35 @@
       ]
     },
     {
-      "id": "6064b6036f129ffd",
-      "source_id": "zh-meituan-tech",
-      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
-      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
-      "published_at": "2026-08-10T09:12:15.152205+00:00",
-      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "美团图灵团队分享Agent评测实战经验，系统讲解评测体系构建，对从业者有较高参考价值。",
-      "summary_zh": "本文是美团图灵Agent评测团队的科普文章，由浅入深介绍Agent评测。前两章系统介绍评测是什么以及如何建立评测体系，第二章是团队深入各业务BP总结的实践经验，是两年实践打磨出的认知。内容涵盖评测方法论、指标体系、实践案例等，适合希望了解Agent评测的读者。",
-      "title_zh": "Agent评测漫谈——由浅入深讲解Agent评测",
-      "weighted_score": 0.675,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "9ba181dd6f145810",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
-        }
-      ]
-    },
-    {
-      "id": "527b81078a95e1a6",
-      "source_id": "infoq-cn-ai",
-      "title": "从失控到可控：基于系统控制论的 Agent 安全防御体系设计与实践｜AICon深圳",
-      "url": "https://www.infoq.cn/article/MMh1pkuNSPDlUAtuRelk?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-09T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/MMh1pkuNSPDlUAtuRelk?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "基于系统控制论设计Agent安全防御体系，提供理论与实践结合的安全方案。",
-      "summary_zh": "文章介绍了在AICon深圳大会上分享的基于系统控制论的Agent安全防御体系。作者从失控到可控的角度，探讨了如何利用控制论原理设计Agent的安全机制，包括反馈回路、状态监控和异常处理等。提供了实际案例和设计实践，帮助开发者构建更安全的AI Agent系统。",
-      "title_zh": "从失控到可控：基于系统控制论的 Agent 安全防御体系设计与实践｜AICon深圳",
-      "weighted_score": 0.65,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "6930a87759dc5e84",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/MMh1pkuNSPDlUAtuRelk?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "26cd5d4b52515eed",
-      "source_id": "zh-tmtpost",
-      "title": "AI算力资本开支估算：3-4万亿美元算得出来，但兑现条件极其苛刻",
-      "url": "https://www.tmtpost.com/8097205.html",
-      "published_at": "2026-08-10T04:03:58+00:00",
-      "raw_text": "全球AI资本开支未来空间沙盘推演。",
+      "id": "90ae1cc1854f3b56",
+      "source_id": "rest-of-world",
+      "title": "Beijing is forcing a mass breakup with AI lovers",
+      "url": "https://restofworld.org/2026/china-ai-boyfriend-ban-bytedance-doubao/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
+      "published_at": "2026-08-10T10:00:17+00:00",
+      "raw_text": "Beijing is pioneering regulations that could shape how governments around the world govern emotionally intelligent chatbots.",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/08/371cb1db0eff99ec352f16500012df03_1786334644.jpg",
+      "image_url": "https://restofworld.org/wp-content/uploads/2026/08/Chinese-AI-companions-Final-2-320x320.jpg",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "对AI资本开支进行沙盘推演，分析兑现条件，具有前瞻性和深度。",
-      "summary_zh": "文章对全球AI资本开支未来空间进行估算，认为3-4万亿美元的投资规模在理论上可行，但兑现条件极其苛刻。文章从算力需求、技术发展、市场环境等多角度推演，指出资本开支的落地面临诸多不确定性，为行业投资提供参考。",
-      "title_zh": "AI算力资本开支估算：3-4万亿美元算得出来，但兑现条件极其苛刻",
-      "weighted_score": 0.635,
+      "reason_zh": "北京监管AI情感聊天，可能影响全球治理，值得关注。",
+      "summary_zh": "北京正在率先制定法规，可能影响全球如何治理情感智能聊天机器人。文章探讨AI情感陪伴的监管问题，涉及用户依赖、隐私和伦理等。北京的做法可能成为其他国家参考，对AI情感应用行业产生深远影响。",
+      "title_zh": "北京强制用户与AI恋人分手",
+      "weighted_score": 0.685,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.6,
+        "novelty": 0.8,
         "impact": 0.7,
         "practical_value": 0.5
       },
-      "story_id": "2729937ead813e20",
+      "story_id": "84e929238c79c9b2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8097205.html"
-        }
-      ]
-    },
-    {
-      "id": "101ecd6dcbee2081",
-      "source_id": "zh-dfine-tech",
-      "title": "LiteReality-Agent笔记: 从一次扫描到可交互的房间",
-      "url": "http://dfine.tech/posts/e2482d34/",
-      "published_at": "2026-08-10T06:20:00+00:00",
-      "raw_text": "<p>好久没写点正经的东西了，上一篇还是折腾容器的事。这两天读了一个叫LiteReality-Agent的项目，是用手机扫一遍房间，然后端到端生成一个可编辑、可渲染、门窗抽屉都能动的三维场景。<br />本来只想看看它怎么调模型的，结果被它的工程组织方式吸引了，索性做个笔记。主要记录它的流水线结构、agent的关进笼子的方式，以及几处让我后背发凉的坑。<br />",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "作者深入剖析LiteReality-Agent的工程组织方式，记录流水线结构和踩坑，对Agent开发有启发。",
-      "summary_zh": "作者阅读了LiteReality-Agent项目，该项目通过手机扫描房间，端到端生成可编辑、可渲染、门窗抽屉都能动的三维场景。文章重点记录了项目的流水线结构、agent的约束方式，以及几处工程上的坑，对理解Agent系统设计和工程实现有参考价值。",
-      "title_zh": "LiteReality-Agent笔记：从一次扫描到可交互的房间",
-      "weighted_score": 0.565,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.4,
-        "practical_value": 0.7
-      },
-      "story_id": "080e05bb804a3a80",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-dfine-tech",
-          "url": "http://dfine.tech/posts/e2482d34/"
+          "source_id": "rest-of-world",
+          "url": "https://restofworld.org/2026/china-ai-boyfriend-ban-bytedance-doubao/?utm_source=rss&utm_medium=rss&utm_campaign=feeds"
         }
       ]
     }
