@@ -1,6 +1,6 @@
 {
   "date": "2026-08-11",
-  "generated_at": "2026-08-11T08:51:39.758615+00:00",
+  "generated_at": "2026-08-11T12:54:04.686567+00:00",
   "items": [
     {
       "id": "16dea689d803fb0a",
@@ -300,77 +300,11 @@
       ]
     },
     {
-      "id": "af0b0c42e476999f",
-      "source_id": "zh-dfine-tech",
-      "title": "QM，给全公司用的 agent 平台",
-      "url": "https://dfine.tech/posts/53c0ead3/",
-      "published_at": "2026-08-10T12:39:33+00:00",
-      "raw_text": "<p>市面上的 agent 几乎都按个人助理的样子设计，一个人用很顺，搬进公司就开始别扭：所有人共享一份记忆和一台沙箱，配置互相踩，权限一刀切。<br />\nQM 反过来，从第一天就按「多人」设计：每个人、每个频道各有一套隔离的工作空间，又能在同一个组织里协作。<br />\n上层目录里这份代码已经长到七万多行，值得完整写一写它的设计。</p>\n<!--more-->\n<h3 id=\"它是什么\">它是什么</h3>\n<p>QM 是一个面向创业公司的 multiplayer agent harness：员工在 Slack 和 Web 两个入口使用同一个 agent，身份与配置在两端完全一致。<br />\n关键抽象是 <strong>scope</strong>：每个人是一个 scope，每个频道、群组、项目也是一个 scope。memory、文件、keychain 视图、定时任务、Web 应用、durable sandbox，全部按 scope 隔离——你调教出来的 agent 是你的，频道里的 agent 是大家的，互不污染。</p>\n<p>另一个立场是不绑供应商：Pi、OpenCode、Codex、Claude Code 四种 harness 驱动同一个 core，部署方选自己的模型和 harness，随时可换。</p>\n<h3 id=\"架构\">架构</h3>\n<center>\n<p><img alt=\"QM 架构：入口插件、无头 core、按 scope 的沙箱与可插拔 harness\" src=\"/images/qm-architecture.svg\" /></p>\n</center>\n<p>core 是无头的：API、身份、策略、调度器加一个 agent loop，TypeScript 直接跑在 Node 上，HTTP 用 Fastify。Web UI、admin 面板、公开 portal 都是 core HTTP API 之上的可选插件；Slack 是 core 进程内启动并监督的插件（Bolt 实现）。<br />\n持久层是 Postgres：会话历史、memory、队列等全部耐久状态都在这。<br />\n每个 scope 有自己的沙箱——一台「durable computer」，装过的工具一直在，agent 的 <code>execute</code> ",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "QM从多人协作角度设计agent平台，打破个人助理范式，设计思路值得借鉴。",
-      "summary_zh": "QM是一个面向创业公司的multiplayer agent harness，支持Slack和Web双入口。其核心抽象是scope，每个人、频道、群组、项目都有独立的工作空间，实现记忆、文件、keychain视图、定时任务等隔离，同时支持组织内协作。代码已超七万行，作者详细阐述了其设计理念，强调从第一天就按多人设计，解决传统agent在公司场景下的配置冲突和权限问题。",
-      "title_zh": "QM：面向全公司的agent平台",
-      "weighted_score": 0.68,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "dae0fc9d92c877fe",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-dfine-tech",
-          "url": "https://dfine.tech/posts/53c0ead3/"
-        }
-      ]
-    },
-    {
-      "id": "ad6feb95d285965a",
-      "source_id": "ai-supremacy",
-      "title": "How AI's Demand for Compute could Disrupt America",
-      "url": "https://www.ai-supremacy.com/p/how-ai-demand-for-compute-could-disrupt-america-debt-crisis",
-      "published_at": "2026-08-10T09:31:05+00:00",
-      "raw_text": "The spectre of AI, labor participation churn, worker slice of GPD, an ageist AI, a debt binge, a cartel in waiting. An accelerating demand for compute that eats at the fabric of society.",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!Nynb!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbac858ac-9970-425a-8cb9-48ced0ed5dd1_1280x720.jpeg",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深度剖析AI算力需求对社会结构的冲击，视角独特，启发思考。",
-      "summary_zh": "文章探讨AI对算力的需求如何可能颠覆美国社会，涉及劳动力参与率变化、工人GDP份额、年龄歧视、债务激增和潜在垄断等问题。作者认为加速的算力需求正在侵蚀社会结构，引发对AI发展负面影响的担忧。内容具有前瞻性和批判性，适合关注AI社会影响的读者。",
-      "title_zh": "AI的算力需求如何可能颠覆美国",
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.5
-      },
-      "story_id": "a443f59e300c6ac2",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "ai-supremacy",
-          "url": "https://www.ai-supremacy.com/p/how-ai-demand-for-compute-could-disrupt-america-debt-crisis"
-        }
-      ]
-    },
-    {
       "id": "14d6a22e9dde32c4",
       "source_id": "infoq-cn-ai",
       "title": "让 Agent 读懂业务世界：Snowflake Cortex Agents 的本体驱动推理实践",
       "url": "https://www.infoq.cn/article/2NsA9FT1uhjmdRrwzOo3?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-11T14:18:18+00:00",
+      "published_at": "2026-08-11T17:19:44+00:00",
       "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/2NsA9FT1uhjmdRrwzOo3?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
@@ -396,6 +330,73 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/2NsA9FT1uhjmdRrwzOo3?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "bc5a28692c2f5201",
+      "source_id": "stratechery",
+      "title": "Nvidia’s Risky Business",
+      "url": "https://stratechery.com/2026/nvidias-risky-business/",
+      "published_at": "2026-08-11T10:00:00+00:00",
+      "raw_text": "Nvidia is finding new ways for its customers to raise money, and it's expanding the risk of the AI buildout significantly.",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Stratechery深度分析英伟达担保芯片价值的风险，揭示AI建设扩张的潜在隐患，值得一读。",
+      "summary_zh": "Stratechery文章《Nvidia's Risky Business》指出，英伟达正通过担保芯片价值等方式帮助客户融资，这显著扩大了AI建设热潮的风险。文章分析，这种担保可能使英伟达承担过多金融风险，一旦AI需求不及预期，可能引发连锁反应。文章深入探讨了AI基础设施投资的泡沫风险，以及英伟达在其中的角色。",
+      "title_zh": "英伟达的风险生意",
+      "weighted_score": 0.745,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.5
+      },
+      "story_id": "582a775eee6d8d9e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "stratechery",
+          "url": "https://stratechery.com/2026/nvidias-risky-business/"
+        }
+      ]
+    },
+    {
+      "id": "aa80fb10bf69885b",
+      "source_id": "reddit-llmdevs",
+      "title": "Governance frameworks assume an inventory of AI agents that most orgs don't actually have",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vkwv0d/governance_frameworks_assume_an_inventory_of_ai/",
+      "published_at": "2026-08-10T20:46:54+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Built a read-only scanner for AI agents, tools, and credentials running on an enterprise platform, after noticing that most governance conversations start from an inventory that doesn't exist yet.</p> <p>One scan on a live instance turned up seven agents that were never registered as agents anywhere, scripts and flows quietly calling a model without ever showing up on any list. A generative AI credential had no resolvable owner. Detection is rule based, not model judged, so results are reproducible, and everything's tagged confirmed versus needs review rather than a flat pass or fail.</p> <p>The gap I'd flag for this sub specifically, it doesn't yet detect MCP server or tool configurations as their own category, which feels like the next version of the same problem. An agent nobody registered and a tool integration nobody registered are the same governance failure at different layers.</p> <p>Writeup, including the bugs I hit building it: <a href=\"https",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "揭示企业AI治理盲区，提供实际扫描工具经验，对治理实践有启发。",
+      "summary_zh": "作者构建了一个只读扫描器，用于检测企业平台上运行的AI代理、工具和凭证，因为发现大多数治理讨论都基于不存在的清单。在一次实时扫描中，发现了七个从未注册的代理，以及悄悄调用模型的脚本和流程。这凸显了企业AI治理的严重缺口：组织往往假设自己拥有完整的AI资产清单，但实际上并不存在。文章呼吁治理框架应首先建立实际运行的AI资产清单，否则治理无从谈起。",
+      "title_zh": "治理框架假设组织拥有AI代理清单，但大多数组织并没有",
+      "weighted_score": 0.715,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "3062411e0eda31f3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1vkwv0d/governance_frameworks_assume_an_inventory_of_ai/"
         }
       ]
     }
