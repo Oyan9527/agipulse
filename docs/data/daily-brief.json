@@ -1,14 +1,14 @@
 {
   "date": "2026-08-11",
-  "generated_at": "2026-08-11T01:16:40.858479+00:00",
+  "generated_at": "2026-08-11T05:13:08.749689+00:00",
   "items": [
     {
-      "id": "46c751fb1c457253",
+      "id": "16dea689d803fb0a",
       "source_id": "arxiv-cs-ai",
-      "title": "Finding Usable Weight Mechanisms with Tiled SVD",
-      "url": "https://arxiv.org/abs/2608.06969",
-      "published_at": "2026-08-10T04:00:00+00:00",
-      "raw_text": "arXiv:2608.06969v1 Announce Type: new \nAbstract: The dominant approach to mechanistic interpretability trains proxy dictionaries such as sparse autoencoders and labels features from max-activating text. The best such atlases identify con- cepts, but that identity lives in the learned dictionary rather than in the network weights them- selves. We propose extracting mechanism mounts directly from linear sites by column-tiled SVD: each mount is a triple (v,u,{\\sigma}) read as trigger, write, and strength. Identity is the weight rule. We evaluate mounts with a pre-registered suite judged on full-write energy lift rather than tile-local lift. On Gemma-2-2B with WikiText-2 (16,384-token subsample), all seven linear maps are scored: residual writes (mlp.down, attn.o) receive full A/B/C with steer after post-sublayer RMSNorm and pass 52/52 site-layers; other maps receive A/B only (mlp.gate/attn.q/attn.k/effective mlp.up/attn.v 26/26 each). Aggregate: 182/182 GO. We release library code, the co",
+      "title": "When the Judge Should Not Decide: Evidence-Locked, Non-Compensatory Selection Bounds LLM-Judge Failure in Reasoning Pipelines",
+      "url": "https://arxiv.org/abs/2608.07813",
+      "published_at": "2026-08-11T04:00:00+00:00",
+      "raw_text": "arXiv:2608.07813v1 Announce Type: new \nAbstract: An LLM judge deployed inside a reasoning pipeline does not merely measure quality, it decides which answer ships. We show that the cost of that decision depends less on judge accuracy than on the decision rule the judge is embedded in. On frozen candidate pools from four GRPO policies, an unconstrained scalar DeepSeek-R1-7B judge buys almost nothing over answer-level majority vote (+1.0 pp on 500 GSM8K questions, +0.34 EM on 300 HotpotQA questions), and on a frozen-rule 30-question confirmation split it is 10 points worse than majority, a judge that destroys accuracy while scoring candidates confidently. We then subordinate the same judge to Evidence-Locked Derive-Gate-Repair (EL-DGR), a task-adaptive non-compensatory rule under which a judge preference may override evidence-supported consensus only with an extractive evidence certificate, and a repair only when neither alternative is certified and the repair is. With no change to the ju",
       "category_hint": [
         "论文研究"
       ],
@@ -16,121 +16,121 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "提出从网络权重直接提取机制的新方法，挑战现有可解释性范式，具有高思想深度和启发性。",
-      "summary_zh": "论文针对机制可解释性，指出当前主流方法使用稀疏自编码器等代理字典，从最大激活文本中标记特征，但概念身份存在于学习到的字典而非网络权重本身。作者提出直接从权重中提取机制挂载点，可能通过平铺SVD等技术，无需依赖代理字典，更直接地揭示网络内部机制。该方法有望提高可解释性的准确性和可靠性。",
-      "title_zh": "使用平铺SVD寻找可用权重机制",
-      "weighted_score": 0.735,
+      "reason_zh": "揭示LLM裁判在推理管线中的决策规则比准确性更重要，反直觉洞察深刻。",
+      "summary_zh": "本文研究LLM裁判在推理管线中的作用，指出其决策规则比准确性更关键。在四个GRPO策略的冻结候选池上，无约束的标量DeepSeek-R1-7B裁判几乎无增益，而采用证据锁定、非补偿性选择（如强制要求证据支持）的规则能显著提升最终答案质量。作者提出“当裁判不应决定”的场景，为设计可靠的推理管线提供了新视角。",
+      "title_zh": "当裁判不应决定：证据锁定、非补偿性选择限制推理管线中的LLM裁判失败",
+      "weighted_score": 0.855,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "e38ed973877c6596",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.06969"
-        }
-      ]
-    },
-    {
-      "id": "55d9b65ac862f061",
-      "source_id": "arxiv-cs-ai",
-      "title": "BONSAI: Evolvability-Guided Tree Search over Skills",
-      "url": "https://arxiv.org/abs/2608.07056",
-      "published_at": "2026-08-10T04:00:00+00:00",
-      "raw_text": "arXiv:2608.07056v1 Announce Type: new \nAbstract: A skill is a naturallanguage document that steers a frozen agent whose weights cannot be updated so any capability the agent lacks must be supplied in prose Optimising a skill is therefore optimising text against a score and the standard recipe which keeps any edit that raises a heldout score is blind in a specific way a single score cannot tell a document perched on a narrow overfit spike from one resting on a broad plateau even though only the second can still be improved We introduce BONSAI a novel skilloptimisation framework that steers instead by evolvability the capacity of a region of documentspace to keep producing viable variation under further mutation a property biology treats as separate from present fitness BONSAI grows skills as a MonteCarlo search tree in which every child document is a mutation of its parent and descends it under an upperconfidence selection rule whose exploitation term blends a skills own fitness with th",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.9,
-      "reason_zh": "提出基于可进化性引导的树搜索优化技能文本，突破单分数盲点，对智能体技能学习有深远影响。",
-      "summary_zh": "论文提出BONSAI，一种可进化性引导的树搜索方法，用于优化技能（自然语言文档）以引导冻结的智能体。由于智能体权重不可更新，能力缺失需通过文本补充。优化技能即优化文本以提升分数，但标准方法只保留提高保留分数的编辑，存在盲点。BONSAI通过考虑可进化性，探索技能空间，可能发现更优技能，提升智能体性能。",
-      "title_zh": "BONSAI：可进化性引导的技能树搜索",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "cf42b9b205850208",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.07056"
-        }
-      ]
-    },
-    {
-      "id": "6ff718d981db5e87",
-      "source_id": "zh-dfine-tech",
-      "title": "PersonaLive: 把肖像扩散模型压到能直播",
-      "url": "https://dfine.tech/posts/4bd1127b/",
-      "published_at": "2026-08-10T11:20:00+00:00",
-      "raw_text": "<p>一张照片加一个摄像头，实时驱动照片里的人跟着你做表情、转头，输出能直接推流。这件事的难点不在效果，在帧率——扩散模型生成一帧要跑好几次 UNet，天生和实时是反的。<br />\nPersonaLive 是澳门大学、Dzine.ai 与大湾区大学 GVC Lab 的工作，CVPR2026 收录，代码和权重都放出来了。它给这个矛盾的答案很漂亮：<strong>不减少去噪步数，而是让不同新鲜度的帧共享同一次前向</strong>。<br />\n这篇把它的流式去噪机制、三条条件通路、在线服务链路和 TensorRT 融合拆开记一遍。</p>\n<!--more-->\n<center>\n<p><img alt=\"PersonaLive 在线服务总览\" src=\"/images/personalive-overview.svg\" /></p>\n</center>\n<h3 id=\"它解决什么\">它解决什么</h3>\n<p>肖像动画这条线上，质量和速度一直在打架。</p>\n<blockquote>\n<p>GAN 系（LivePortrait 那一路）快，单帧几毫秒，但表情迁移的自然度和身份保真有上限<br />\n扩散系（AnimateAnyone、X-NeMo 那一路）质量高，但一帧要跑 N 次 UNet，N 通常 20 以上<br />\n把 N 压到 4 是常规操作（蒸馏），但 4 次前向摊到每帧还是太贵<br />\n更麻烦的是长度：视频扩散一般按固定长度的片段生成，直播要的是无限长且不能有拼接痕迹</p>\n</blockquote>\n<p>PersonaLive 的定位是 <code>real-time</code> + <code>streamable</code> + <code>infinite-length</code> 三个词同时成立。核心手法下面单独说，先给它的规格：512×512、fp16、DDIM 4 步、ε 预测，<code>timestep_spacing</code> 用 <code>trailing</code>。</p>\n<h3 id=\"流式金字塔去噪\">流式金字塔去噪</h3>\n<p>这是整个项目最值得看的一处，也是「4 步却只跑 1 次前向」的来源。</p>\n<center>\n<p><img alt=\"流式金字塔去噪\" src=\"/images",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "PersonaLive实现实时肖像驱动，创新流式去噪机制，技术细节丰富，对相关领域有重要参考。",
-      "summary_zh": "PersonaLive是澳门大学、Dzine.ai与大湾区大学GVC Lab的工作，被CVPR2026收录，代码和权重已开源。它解决扩散模型实时生成的问题，不减少去噪步数，而是让不同新鲜度的帧共享同一次前向。文章详细拆解了其流式去噪机制、三条条件通路、在线服务链路和TensorRT融合。",
-      "title_zh": "PersonaLive：把肖像扩散模型压到能直播",
-      "weighted_score": 0.8,
-      "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.9,
         "novelty": 0.9,
-        "impact": 0.7,
+        "impact": 0.8,
         "practical_value": 0.8
       },
-      "story_id": "fa0c8f249ffcb731",
+      "story_id": "fb64b53d2fc151d8",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-dfine-tech",
-          "url": "https://dfine.tech/posts/4bd1127b/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.07813"
         }
       ]
     },
     {
-      "id": "994276463bb3e7ca",
-      "source_id": "pandaily",
-      "title": "Guizhen Chip's On-Chip MBQC Breakthrough Opens a Real Path to Million-Qubit Optical Quantum Computing",
-      "url": "https://pandaily.com/guizhen-chip-on-chip-mbqc-million-qubit-pathway-aug2026",
-      "published_at": "2026-08-10T08:15:57+00:00",
-      "raw_text": "Hefei-based Guizhen Chip Technology, working with USTC's Ren Xifeng group, has demonstrated on-chip generation of a 4-photon 16-qubit GHZ state and a 4-qubit cluster state, with Grover search at 0.987 average identification probability. The result is a milestone for measurement-based optical quantum computing.",
+      "id": "45fcc53faf71d27f",
+      "source_id": "arxiv-cs-ai",
+      "title": "Who Built This Model? Tracing LLM Lineage via Spectral Fingerprints in Weight Space",
+      "url": "https://arxiv.org/abs/2608.07786",
+      "published_at": "2026-08-11T04:00:00+00:00",
+      "raw_text": "arXiv:2608.07786v1 Announce Type: new \nAbstract: Open-weight large language models (LLMs) are increasingly developed through complex, multi-stage pipelines, leading to intricate lineage relationships that reflect model origin, ownership, and evolution. Understanding these relationships is important for model provenance, governance, and supply-chain integrity. In this work, we investigate the notion of LLM \"biometrics\" (analogous to human biometrics) to ask whether LLMs exhibit intrinsic fingerprints in weight space alone, without access to input data, that reveal their origin and lineage. We formulate this as a lineage discrimination problem, distinguishing among independent-origin, same-series, and shared-base models. To characterize these relationships, we propose a unified geometric fingerprinting framework that analyzes weight matrices from two complementary perspectives: (i) spectral energy, captured by singular value distributions to encode global magnitude patterns, and (ii) sub",
       "category_hint": [
-        "行业动态"
+        "论文研究"
       ],
-      "image_url": "https://cms-image.pandaily.com/1/img_5_7c610d08da.png",
+      "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "片上MBQC突破为百万量子比特光学量子计算铺路，4光子16比特GHZ态生成是重要里程碑。",
-      "summary_zh": "合肥硅臻芯片与中科大任希锋团队合作，在芯片上实现了4光子16量子比特GHZ态和4量子比特簇态的生成，Grover搜索平均识别概率达0.987。这一成果是测量型光学量子计算的重要里程碑，为未来百万量子比特的量子计算提供了可行路径。",
-      "title_zh": "硅臻芯片片上MBQC突破，开启百万量子比特光学量子计算现实路径",
-      "weighted_score": 0.79,
+      "depth_score": 0.9,
+      "reason_zh": "通过权重谱指纹追踪LLM血统，为模型溯源和治理提供新方法，创新性强。",
+      "summary_zh": "本文研究开放权重LLM的谱系追踪问题。由于模型常经过多阶段复杂流水线开发，其来源和演化关系难以追溯。作者提出利用权重空间的谱指纹（spectral fingerprints）来识别模型的血统，通过分析权重矩阵的谱特征，可以判断模型是否衍生自某个基础模型，以及经过哪些微调或合并操作。该方法对模型溯源、知识产权保护和供应链安全具有重要意义。",
+      "title_zh": "谁构建了这个模型？通过权重空间谱指纹追踪LLM血统",
+      "weighted_score": 0.835,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.9,
         "novelty": 0.9,
-        "impact": 0.9,
-        "practical_value": 0.5
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "ab0f213e2155e367",
+      "story_id": "16374676cca9643a",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "pandaily",
-          "url": "https://pandaily.com/guizhen-chip-on-chip-mbqc-million-qubit-pathway-aug2026"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.07786"
+        }
+      ]
+    },
+    {
+      "id": "fe7ef8d554bd456e",
+      "source_id": "arxiv-cs-ai",
+      "title": "When Is Benchmark Contamination Detectable? Information Limits and Power-Calibrated Audits",
+      "url": "https://arxiv.org/abs/2608.07914",
+      "published_at": "2026-08-11T04:00:00+00:00",
+      "raw_text": "arXiv:2608.07914v1 Announce Type: new \nAbstract: Behavioral contamination detectors can return \"no evidence\" either because a benchmark is clean or because the audit has little power. We formalize this distinction for a benchmark in which an unknown fraction alpha of items was seen during training. With matched clean and seen controls, the behavioral channel is the sparse mixture Q_alpha = (1 - alpha) P_0 + alpha P_1, and an exact second-moment argument shows that detectability is governed by alpha * rho * sqrt(m), where rho^2 = chi^2(P_1 || P_0) measures behavioral separability. Any scalar detector reduces to its efficacy, ef = |E_1 f - E_0 f| / sqrt(Var_0(f)) <= rho, which can be estimated from controls before the audit is run. A separate sample-split certificate lower-bounds alpha distribution-free, without requiring an orientation assumption. Our empirical finding is two-sided. Frozen calibration efficacy predicts held-out power curves, with R^2 = 0.83-0.98 across six exact-permuta",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "首次从信息论角度分析基准污染检测的极限，为审计方法提供理论指导，极具启发性。",
+      "summary_zh": "本文研究基准污染检测的统计极限。作者形式化了行为检测器无法区分“干净”与“低功效”的情况，并推导出检测污染所需的最小样本量。通过匹配干净和污染样本，提出功效校准的审计方法，为评估基准污染提供了理论框架和实用工具。",
+      "title_zh": "何时可检测基准污染？信息极限与功效校准审计",
+      "weighted_score": 0.825,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.8
+      },
+      "story_id": "a40015c73d7f5a9c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.07914"
+        }
+      ]
+    },
+    {
+      "id": "49a1b0bf6021327e",
+      "source_id": "arxiv-cs-ai",
+      "title": "Thought-Level Beam Search for Reasoning",
+      "url": "https://arxiv.org/abs/2608.08020",
+      "published_at": "2026-08-11T04:00:00+00:00",
+      "raw_text": "arXiv:2608.08020v1 Announce Type: new \nAbstract: Test-time compute scaling is a primary driver of performance in large reasoning models (LRMs), but extreme inefficiency bounds current approaches, shifting the critical question from \\emph{how much} compute to spend, to \\emph{where} to allocate it. We formalize test-time reasoning as a constrained compute allocation problem over partial trajectories. Under a fixed hardware budget, existing paradigms fail to actively allocate the compute to the most promising partial progress: traditional parallel sampling treats traces independently and induces severe memory bottlenecks, while subtractive pruning starves hardware and fails to actively and sufficiently shift the output distribution. To overcome this dichotomy, we introduce Gambit, an inference algorithm that executes \\emph{thought-level beam search}. By periodically pruning unpromising trajectories and immediately branching from high-quality prefixes, Gambit dynamically concentrates compu",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "将测试时计算分配形式化为约束优化问题，提出思想级束搜索，提升推理效率，对推理模型有重要影响。",
+      "summary_zh": "本文研究大型推理模型的测试时计算扩展问题，指出当前方法效率低下。作者将推理形式化为部分轨迹上的约束计算分配问题，提出思想级束搜索方法，在给定计算预算下优化分配。实验显示在多个推理任务上以更少计算达到更高准确率，为推理模型效率提升提供新方向。",
+      "title_zh": "思想级束搜索用于推理",
+      "weighted_score": 0.825,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.8
+      },
+      "story_id": "4c05e6b0ada33101",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.08020"
         }
       ]
     },
@@ -367,6 +367,10 @@
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/hidden-text-in-a-pdf-is-enough-to-steal-sensitive-data-through-atlassians-ai-agent-rovo/"
+        },
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/meta-returns-to-open-models-with-zuckerbergs-plan-to-out-copy-china-and-sell-compute-by-auction/"
         }
       ]
     },
