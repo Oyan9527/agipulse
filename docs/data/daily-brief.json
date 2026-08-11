@@ -1,6 +1,6 @@
 {
   "date": "2026-08-11",
-  "generated_at": "2026-08-11T05:13:08.749689+00:00",
+  "generated_at": "2026-08-11T08:51:39.758615+00:00",
   "items": [
     {
       "id": "16dea689d803fb0a",
@@ -234,6 +234,72 @@
       ]
     },
     {
+      "id": "d9291a93b3ea48fd",
+      "source_id": "platformer",
+      "title": "Superintelligence is a dragon",
+      "url": "https://www.platformer.news/zuckerberg-ai-manifesto-dragons/",
+      "published_at": "2026-08-11T01:35:01+00:00",
+      "raw_text": "What Mark Zuckerberg misunderstands about powerful AI",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://storage.ghost.io/c/a0/4c/a04c7225-d919-4d78-9b7c-a3fdd071349b/content/images/2026/08/shutterstock_2490551853.jpg",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "对扎克伯格关于超级智能的观点提出批判性思考，引发对AI风险的讨论。",
+      "summary_zh": "文章标题为“超级智能是一条龙”，副标题为“马克·扎克伯格对强大AI的误解”。内容可能批评扎克伯格对AI风险的低估，认为超级智能可能带来不可控的威胁。文章可能探讨AI的潜在危险，以及科技领袖对AI安全的态度。",
+      "title_zh": "超级智能是一条龙",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.5
+      },
+      "story_id": "64fb928b78625b93",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "platformer",
+          "url": "https://www.platformer.news/zuckerberg-ai-manifesto-dragons/"
+        }
+      ]
+    },
+    {
+      "id": "2c63f6a7ae7ebe48",
+      "source_id": "reddit-rag",
+      "title": "Spent 3 weeks blaming our LLM for bad RAG results. It was the vector index.",
+      "url": "https://www.reddit.com/r/Rag/comments/1vkwr8g/spent_3_weeks_blaming_our_llm_for_bad_rag_results/",
+      "published_at": "2026-08-10T20:42:58+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We built a RAG pipeline for internal docs. Worked fine in the notebook. Put it in front of actual users and got confidently wrong garbage. So naturally we spent two weeks swapping LLMs and rewriting prompts, because obviously the model is the problem, right? </p> <p><strong>Wrong.</strong></p> <p>Someone on my team finally asked what the retriever was actually returning. None of us had checked. We just grabbed top 5 chunks and shoved them into context. Turns out our recall was around 60% and we were blaming the LLM for not extracting answers from chunks that were never retrieved.</p> <p><strong>Three things were wrong:</strong> </p> <p>We had IVF with nlist=1024 and nprobe=10. On 80k vectors that's searching about 1% of the dataset. Bumped nprobe to 40, recall went to ~90%. Same embeddings, same LLM. Two weeks of prompt engineering couldn't do what changing one number did. </p> <p>We'd switched to HNSW at some point because &quot;it's faster.&quot; Lef",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "真实RAG踩坑复盘，揭示检索器常被忽视，对构建RAG系统有直接借鉴价值。",
+      "summary_zh": "作者团队在构建内部文档RAG管道时，笔记本测试正常，但面对真实用户时输出错误百出。他们花了两周时间更换LLM和重写提示词，最终发现问题不在模型，而在向量索引。团队成员检查检索器实际返回的内容后，发现索引构建存在缺陷，导致检索结果不相关。文章强调，在调试RAG系统时，应首先检查检索组件，而不是盲目优化生成模型。这一经验教训对任何使用RAG的开发者都具有重要参考意义。",
+      "title_zh": "花了三周责怪LLM导致RAG结果不佳，结果问题出在向量索引上",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "fe7c2201cbf75fb6",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1vkwr8g/spent_3_weeks_blaming_our_llm_for_bad_rag_results/"
+        }
+      ]
+    },
+    {
       "id": "af0b0c42e476999f",
       "source_id": "zh-dfine-tech",
       "title": "QM，给全公司用的 agent 平台",
@@ -300,110 +366,36 @@
       ]
     },
     {
-      "id": "b907fbc471855e63",
-      "source_id": "zh-dfine-tech",
-      "title": "LiteReality-Agent笔记: 从一次扫描到可交互的房间",
-      "url": "https://dfine.tech/posts/e2482d34/",
-      "published_at": "2026-08-10T06:20:00+00:00",
-      "raw_text": "<p>好久没写点正经的东西了，上一篇还是折腾容器的事。这两天读了一个叫LiteReality-Agent的项目，是用手机扫一遍房间，然后端到端生成一个可编辑、可渲染、门窗抽屉都能动的三维场景。<br />\n本来只想看看它怎么调模型的，结果被它的工程组织方式吸引了，索性做个笔记。主要记录它的流水线结构、agent的关进笼子的方式，以及几处让我后背发凉的坑。</p>\n<!--more-->\n<center>\n<p><img alt=\"RGBD扫描与重建结果\" src=\"/images/litereality-demo.jpg\" /></p>\n</center>\n<h3 id=\"先说问题在哪\">先说问题在哪</h3>\n<p>手机扫房间在2026年已经不难了，Apple的RoomPlan走一圈就能给出一串RGB帧、深度、ARKit相机位姿，以及一个<code>room.usdz</code>，里面有墙面、门窗洞口和一组粗糙的物体包围盒。<br />\n难的是这堆东西离「能用的三维场景」还差得远。</p>\n<blockquote>\n<p>RoomPlan给的是物体包围盒加类别标签，做图形要的是有真实几何和材质的网格；<br />\n给的是不可编辑的usdz，要的是能改、能重编译、能导出的场景源；<br />\n给的是静态几何，要的是门会转、抽屉会拉、洗碗机门会翻下来；<br />\n给的是「大概像个房间」，要的是「就是这间屋子」。</p>\n</blockquote>\n<p>最后一条最容易被忽略。多数生成式场景重建的验收标准是「看起来像个合理的房间」，而不是「和我扫的那间对得上」。这个项目整条设计都在咬后者。</p>\n<p>顺手数了一下规模: <code>src/</code>下183个python文件，28219行；<code>tests/</code>下41个<code>test_*.py</code>；100个提交；要求python <code>&gt;=3.10,&lt;3.13</code>；Apache-2.0；版本号还是<code>0.0.1</code>，Development Status写的Alpha。<br />\n一个两万八千行的alpha项目，架构文档能和代码逐条对得上，这事本身就不多见。</p>\n<h3 id=\"一条命令\">一条命令</h3>\n<p>支持的入口",
+      "id": "14d6a22e9dde32c4",
+      "source_id": "infoq-cn-ai",
+      "title": "让 Agent 读懂业务世界：Snowflake Cortex Agents 的本体驱动推理实践",
+      "url": "https://www.infoq.cn/article/2NsA9FT1uhjmdRrwzOo3?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-11T14:18:18+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/2NsA9FT1uhjmdRrwzOo3?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "产品发布",
+      "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深入剖析LiteReality-Agent项目，分享工程实现细节与踩坑经验，极具参考价值。",
-      "summary_zh": "笔记详细分析了LiteReality-Agent项目，该项目通过手机扫描房间生成可交互的三维场景。作者记录了流水线结构、agent的约束方式以及遇到的坑。内容涵盖RGBD扫描、模型调用、场景编辑等，对三维重建和智能体开发有借鉴意义。",
-      "title_zh": "LiteReality-Agent笔记：从一次扫描到可交互的房间",
-      "weighted_score": 0.64,
+      "reason_zh": "深入解析Snowflake Cortex Agents本体驱动推理，提供企业级Agent理解业务语义的实践方法，对架构师有高价值。",
+      "summary_zh": "本文探讨了Snowflake Cortex Agents如何利用本体驱动推理，使Agent能够理解业务世界。文章详细介绍了本体建模在Agent中的应用，包括如何定义业务实体、关系和规则，以及如何通过推理引擎实现语义理解。通过实际案例，展示了该方法在提升Agent决策准确性和可解释性方面的优势，为企业级AI应用提供了新的思路。",
+      "title_zh": "让Agent读懂业务世界：Snowflake Cortex Agents的本体驱动推理实践",
+      "weighted_score": 0.645,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
+        "source_authority": 0.7,
+        "novelty": 0.6,
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "a9ca2a4d614c6760",
+      "story_id": "4d2301a4ea5afecc",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-dfine-tech",
-          "url": "https://dfine.tech/posts/e2482d34/"
-        }
-      ]
-    },
-    {
-      "id": "f70d0f349833b5b6",
-      "source_id": "the-decoder",
-      "title": "Hidden text in a PDF is enough to steal sensitive data through Atlassian's AI agent Rovo",
-      "url": "https://the-decoder.com/hidden-text-in-a-pdf-is-enough-to-steal-sensitive-data-through-atlassians-ai-agent-rovo/",
-      "published_at": "2026-08-10T08:46:36+00:00",
-      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/prompt_inejction_key.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Security firm PromptArmor shows how hidden instructions in a PDF can hijack Atlassian's AI agent Rovo, silently forwarding sensitive data from Jira and Confluence to an external server. The attack needs no user confirmation and leaves no trace.</p>\n<p>The article <a href=\"https://the-decoder.com/hidden-text-in-a-pdf-is-enough-to-steal-sensitive-data-through-atlassians-ai-agent-rovo/\">Hidden text in a PDF is enough to steal sensitive data through Atlassian&#039;s AI agent Rovo</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-      "category_hint": [
-        "模型发布",
-        "行业动态"
-      ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/prompt_inejction_key.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "揭示PDF隐藏文本可劫持Atlassian AI代理Rovo窃取数据，安全漏洞值得警惕。",
-      "summary_zh": "安全公司PromptArmor演示了如何通过PDF中的隐藏指令劫持Atlassian的AI代理Rovo，将Jira和Confluence中的敏感数据静默转发给攻击者。这凸显了AI代理面临的安全风险，提醒企业在部署AI时需加强防护。",
-      "title_zh": "PDF隐藏文本足以通过Atlassian AI代理Rovo窃取敏感数据",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "bf3c2bcb52e70b50",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/googles-diffusiongemma-proves-you-dont-need-to-train-from-scratch-to-build-a-text-diffusion-model/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/hidden-text-in-a-pdf-is-enough-to-steal-sensitive-data-through-atlassians-ai-agent-rovo/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/meta-returns-to-open-models-with-zuckerbergs-plan-to-out-copy-china-and-sell-compute-by-auction/"
-        }
-      ]
-    },
-    {
-      "id": "1cb848f51d5a708b",
-      "source_id": "zh-oschina",
-      "title": "Claude Code 将自动模式设为默认，称人类审批只抓到 13.6% 危险命令",
-      "url": "https://www.oschina.net/news/492362/auto-mode-default-in-claude-code",
-      "published_at": "2026-08-10T11:38:03+00:00",
-      "raw_text": "Anthropic 宣布，从 8 月 14 日起，Claude Code 在 Pro、Max、Team 计划上将默认启用自动模式（auto mode）。这个决定背后，是两组让人不安的数据。 第一组：人类审批到底有多不靠谱？Anthropic 在 1053 名付费用户中做了一项对照实验，人为审核只抓到了 13.6% 的危险命令，而自动模式抓到了 89%。自动模式拦截了 800 条...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Anthropic用数据证明人类审批效率低下，默认自动模式，对AI安全实践有重要启示。",
-      "summary_zh": "Anthropic宣布从8月14日起，Claude Code在Pro、Max、Team计划上默认启用自动模式。这一决定基于两组数据：在1053名付费用户的对照实验中，人为审核只抓到了13.6%的危险命令，而自动模式抓到了89%，并拦截了800条危险命令。这表明人类审批在识别危险命令方面效率低下，而自动模式能更有效地保障安全。文章深入分析了这一变化背后的原因和影响。",
-      "title_zh": "Claude Code将自动模式设为默认，称人类审批只抓到13.6%危险命令",
-      "weighted_score": 0.75,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "40076071e442d42a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/492362/auto-mode-default-in-claude-code"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/2NsA9FT1uhjmdRrwzOo3?utm_source=rss&utm_medium=article"
         }
       ]
     }
