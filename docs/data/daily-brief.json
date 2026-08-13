@@ -1,6 +1,6 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-13T09:13:36.808197+00:00",
+  "generated_at": "2026-08-13T13:05:55.107864+00:00",
   "items": [
     {
       "id": "b0365227e3df5700",
@@ -93,17 +93,9 @@
         "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "41883d5a9c89de8b",
+      "story_id": "b7ecc48059e7a5c3",
       "multi_source_count": 1,
       "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/openai-lets-employees-cash-out-another-7-billion-in-stock/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/microsofts-new-mai-code-1-1-flash-gets-crushed-by-deepseek-on-both-price-and-performance/"
-        },
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/openai-launches-chatgpt-desktop-app-for-linux/"
@@ -111,6 +103,10 @@
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/nvidias-nemotron-4-aims-for-one-trillion-parameters-a-scale-chinese-labs-already-surpassed/"
+        },
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/googles-gemini-is-losing-market-share-to-chatgpt-and-claude-according-to-new-market-data/"
         },
         {
           "source_id": "the-decoder",
@@ -122,7 +118,11 @@
         },
         {
           "source_id": "the-decoder",
-          "url": "https://the-decoder.com/spacexais-grok-4-6-matches-openais-best-model-and-undercuts-it-on-price/"
+          "url": "https://the-decoder.com/anthropic-brings-claude-cowork-to-its-chrome-extension-adding-skills-and-plugins-to-the-browser/"
+        },
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/fable-5s-slow-adoption-suggests-corporate-willingness-to-pay-for-frontier-ai-has-hit-a-ceiling/"
         }
       ]
     },
@@ -160,6 +160,39 @@
       ]
     },
     {
+      "id": "063164df1e86be29",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] DeepSeek Harness 来了，一切皆插件的 Agent 框架",
+      "url": "https://www.v2ex.com/t/1234203#reply5",
+      "published_at": "2026-08-13T12:38:41+00:00",
+      "raw_text": "<h1>DeepSeek Harness 技术拆解，一切皆插件的 Agent 框架</h1>\n<p>DeepSeek Harness 的开发者预览版上线了，代码已经开源，仓库在 <a href=\"http://github.com/deepseek-ai/deepseek-harness\" rel=\"nofollow\">github.com/deepseek-ai/deepseek-harness</a> 。圈内习惯叫它 dsh 。</p>\n<p>它是 DeepSeek 做的开源 Agent 框架，和 Claude Code 是一类东西，跑在本地，让模型替你真干活。上线前它内测了一阵，这篇按技术脉络把最要紧的设计讲清楚，想快速了解它，看这篇就够。</p>\n<h2>它是什么</h2>\n<p>dsh 是一个装在你机器上的编程智能体。装了 Node 开发环境，一行命令 <code>npx @deepseek-ai/dsh web</code> 就能把 Web UI 拉起来，浏览器打开（默认 127.0.0.1:3080 ）就能对话、审批、切换模式。</p>\n<p>模型在里面做的事比陪聊多得多，改文件、跑命令、查资料，最后把活干完。最值得看的是它的设计方式。</p>\n<h2>一切皆插件</h2>\n<p>这个框架的第一设计原则是 everything is a plugin ，一切皆插件。</p>\n<p>多数软件把核心逻辑写死，用户只能在预留的少数接口上做有限定制。dsh 反过来，模型接入、工具注册表、会话日志、审批策略，连驱动智能体运转的主循环本身，全部都是插件。</p>\n<p>想换搜索引擎、接自己公司的模型服务，改配置就行，不用动框架代码。给系统加功能就是挂一个新插件，卸载时注册的一切自动撤销，不留残余。</p>\n<p>技术上它站在 Cordis 之上，这是 Koishi 生态一直在用的插件与上下文内核，只负责插件的加载、卸载和依赖关系。dsh 的所有具体组件都是不同插件，靠服务与事件协作，在配置层自由组合。开发者不改 dsh 源码，就能独立选择、替换、扩展任意一项能力。</p>\n<h2>分层组装与能力接缝</h2>\n<p>运行中的 dsh 是一棵插件树，由多层配置按固定顺序叠加。组合包 bundle 是官方发布的成套插件配置，Profile 是你机器上的具名组装清单，P",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "DeepSeek Harness开源Agent框架，技术拆解详细，设计理念先进，对开发者有极高参考价值。",
+      "summary_zh": "DeepSeek Harness（dsh）是DeepSeek开源的Agent框架，类似Claude Code，运行在本地，让模型替用户执行任务。文章详细拆解了其技术设计，包括上下文调度、工具调用、任务状态管理等。dsh强调“一切皆插件”的架构，支持通过NPM生态扩展功能。开发者可通过npx命令快速启动。该框架旨在将模型能力落地到真实环境，完成从需求理解到代码交付的闭环。",
+      "title_zh": "DeepSeek Harness技术拆解：一切皆插件的Agent框架",
+      "weighted_score": 0.785,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.9
+      },
+      "story_id": "464c5b0db200ed4b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1234203#reply5"
+        }
+      ]
+    },
+    {
       "id": "6064b6036f129ffd",
       "source_id": "zh-meituan-tech",
       "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
@@ -193,36 +226,68 @@
       ]
     },
     {
-      "id": "4653714dbadc6e61",
-      "source_id": "infoq-cn-ai",
-      "title": "机器人大脑之争进入深水区：为什么物理世界需要从头设计模型",
-      "url": "https://www.infoq.cn/article/rcSr7bVQFB9Uskadg74T?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-12T10:19:22+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/rcSr7bVQFB9Uskadg74T?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "ffa1fd2dbdf9502b",
+      "source_id": "zh-juejin",
+      "title": "从零手搓一个 GPT：只用 Python 标准库，写一个会起名的字符级模型",
+      "url": "https://juejin.cn/post/7673332860762750976",
+      "published_at": "2026-08-13T10:57:47+00:00",
+      "raw_text": "用来理解大模型的基础的原理的(字符级别) gpt.py — 纯 Python 手写的字符级 GPT 不依赖任何第三方库，只用 Python 标准库，从标量级自动求导开始，手写一个字符级 GPT。",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "深入探讨机器人大脑模型设计，强调物理世界需要从头设计，观点深刻。",
-      "summary_zh": "文章探讨了机器人大脑之争进入深水区，为什么物理世界需要从头设计模型。作者认为现有AI模型多基于互联网数据，难以适应物理世界的复杂性，需要专门为机器人设计基础模型。文章分析了当前机器人模型的局限，并提出从头设计的必要性，为机器人AI发展提供了新视角。",
-      "title_zh": "机器人大脑之争进入深水区：为什么物理世界需要从头设计模型",
-      "weighted_score": 0.735,
+      "reason_zh": "纯Python手写字符级GPT，从零理解大模型原理，适合想深入底层的学习者。",
+      "summary_zh": "本文介绍如何仅用Python标准库从零实现一个字符级GPT模型，不依赖任何第三方库。作者从标量级自动求导开始，逐步构建模型，旨在帮助读者理解大模型的基本原理。文章详细展示了模型的结构、训练过程和生成效果，强调通过手写代码来掌握核心概念。对于希望深入理解Transformer和语言模型内部机制的开发者，这是一份极具价值的学习资源。",
+      "title_zh": "从零手搓一个GPT：只用Python标准库，写一个会起名的字符级模型",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.4,
+        "practical_value": 0.9
       },
-      "story_id": "96cbc56330bfcfdc",
+      "story_id": "b323b1e37296b802",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/rcSr7bVQFB9Uskadg74T?utm_source=rss&utm_medium=article"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7673332860762750976"
+        }
+      ]
+    },
+    {
+      "id": "0cd43926bae089cf",
+      "source_id": "zh-juejin",
+      "title": "Claude Code Memory 总体系核心代码逐行解析",
+      "url": "https://juejin.cn/post/7673347280923951155",
+      "published_at": "2026-08-13T09:54:07+00:00",
+      "raw_text": "目录 第 0 章：先建立一张地图 第 1 章：总开关和目录定位 —— Memory 存到哪里 第 2 章：先告诉模型怎么记 —— loadMemoryPrompt 第 3 章：启动时加载什么 —— g",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "逐行解析Claude Code Memory核心代码，揭示记忆机制实现细节，对开发者有极高参考价值。",
+      "summary_zh": "本文对Claude Code Memory总体系的核心代码进行了逐行解析，从整体地图到具体实现，包括总开关、目录定位、loadMemoryPrompt以及启动时加载逻辑等。作者详细拆解了记忆存储的位置、如何引导模型记录信息以及启动时的加载流程，为读者提供了深入理解Claude Code记忆机制的窗口。对于希望借鉴其设计或进行二次开发的工程师来说，这是一份不可多得的技术文档。",
+      "title_zh": "Claude Code Memory总体系核心代码逐行解析",
+      "weighted_score": 0.58,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "bdbcd2609a2a2c6e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7673347280923951155"
         }
       ]
     },
@@ -261,35 +326,70 @@
       ]
     },
     {
-      "id": "59f5a106e0af199f",
-      "source_id": "zh-tmtpost",
-      "title": "具身智能公司，没有学会怎么花钱｜钛媒体深度",
-      "url": "https://www.tmtpost.com/8101874.html",
-      "published_at": "2026-08-13T04:03:00+00:00",
-      "raw_text": "具身智能赛道疯狂融资后，已经显露出关于钱的反噬。",
+      "id": "196b6c2aa44b04f3",
+      "source_id": "infoq-cn-ai",
+      "title": "从亚百毫秒级启动到生产级部署，腾讯云为何重构 Agent 沙箱？",
+      "url": "https://www.infoq.cn/article/KwZX2bLcaHRjuLG95vHI?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-12T18:07:43+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/KwZX2bLcaHRjuLG95vHI?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "行业动态"
+        "行业动态",
+        "技巧与观点"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/08/e1d395cf97e93ea6bfae16aab8d4944c_1786611133.png",
+      "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "深度剖析具身智能公司融资后的资金使用问题，揭示行业隐忧，有洞察。",
-      "summary_zh": "本文来自钛媒体，深度分析了具身智能公司在疯狂融资后所面临的资金使用问题。文章指出，尽管该赛道获得了大量资本注入，但许多公司在花钱方面缺乏规划，导致资源浪费和效率低下。这种“反噬”现象可能影响行业的健康发展。文章通过案例和数据，探讨了具身智能公司如何更合理地配置资金，以及行业未来的挑战和机遇。",
-      "title_zh": "具身智能公司，没有学会怎么花钱｜钛媒体深度",
-      "weighted_score": 0.735,
+      "reason_zh": "腾讯云重构Agent沙箱，从亚百毫秒启动到生产级部署，分享实战经验，对工程师有参考价值。",
+      "summary_zh": "文章深入探讨了腾讯云为何重构Agent沙箱，从亚百毫秒级启动到生产级部署的演进过程。分析了沙箱在安全隔离、资源利用和启动速度方面的挑战，并介绍了重构后的架构设计和技术选型，为构建高性能Agent基础设施提供了实践参考。",
+      "title_zh": "从亚百毫秒级启动到生产级部署，腾讯云为何重构Agent沙箱？",
+      "weighted_score": 0.725,
       "score_breakdown": {
         "source_authority": 0.8,
         "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "impact": 0.6,
+        "practical_value": 0.8
       },
-      "story_id": "b0e22aa26b6e6e4b",
+      "story_id": "2d6f39624b6917bb",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8101874.html"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/KwZX2bLcaHRjuLG95vHI?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "3896616a940a71b3",
+      "source_id": "infoq-cn-ai",
+      "title": "从“开放模型”到“开放生态”，AI 开源进入下半场",
+      "url": "https://www.infoq.cn/article/oEMzispbWkEP8TtKdUtf?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-13T18:21:46+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/oEMzispbWkEP8TtKdUtf?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "InfoQ分析AI开源从开放模型到开放生态的转变，洞察行业趋势，对理解开源战略有启发。",
+      "summary_zh": "InfoQ文章指出AI开源进入下半场，从“开放模型”转向“开放生态”。文章可能分析了开源模型如何演变为完整的生态系统，包括工具链、社区、商业模式等，并探讨了这种转变对AI发展的影响。",
+      "title_zh": "从“开放模型”到“开放生态”，AI开源进入下半场",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "f0adce373be0b0ae",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/oEMzispbWkEP8TtKdUtf?utm_source=rss&utm_medium=article"
         }
       ]
     },
@@ -324,108 +424,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/YBCpst8secs3xWqZwWLe?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "f08960948e7ab748",
-      "source_id": "servethehome",
-      "title": "AMD Instinct MI455X Deep Dive: CDNA 5 Marks The Next Era of Instinct",
-      "url": "https://www.servethehome.com/amd-instinct-mi455x-deep-dive-cdna-5-marks-the-next-era-of-instinct/",
-      "published_at": "2026-08-12T17:00:19+00:00",
-      "raw_text": "<p>We are taking a deep dive look into AMD's Instinct MI455X accelerator and its CDNA 5 architecture, the backbone of AMD's next-gen AI server offerings and their massive Helios rackscale system</p>\n<p>The post <a href=\"https://www.servethehome.com/amd-instinct-mi455x-deep-dive-cdna-5-marks-the-next-era-of-instinct/\">AMD Instinct MI455X Deep Dive: CDNA 5 Marks The Next Era of Instinct</a> appeared first on <a href=\"https://www.servethehome.com\">ServeTheHome</a>.</p>",
-      "category_hint": [
-        "产品发布",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "深度解析AMD Instinct MI455X及CDNA 5架构，对AI硬件选型有重要参考价值。",
-      "summary_zh": "本文深入剖析了AMD Instinct MI455X加速器及其CDNA 5架构，这是AMD下一代AI服务器产品的基础。文章详细介绍了MI455X的规格、性能特点以及CDNA 5架构的设计理念，并探讨了其在Helios机架级系统中的应用。对于关注AI硬件发展的人士具有重要参考价值。",
-      "title_zh": "AMD Instinct MI455X深度解析：CDNA 5开启Instinct新时代",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "afddaeab2e99b336",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "servethehome",
-          "url": "https://www.servethehome.com/amd-instinct-mi455x-deep-dive-cdna-5-marks-the-next-era-of-instinct/"
-        }
-      ]
-    },
-    {
-      "id": "9e2cd338c9fdb7a6",
-      "source_id": "aws-ml-blog",
-      "title": "Pay with confidence: How Solv Labs built verifiable, auditable agent payments on Amazon Bedrock AgentCore payments",
-      "url": "https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments/",
-      "published_at": "2026-08-12T13:44:58+00:00",
-      "raw_text": "Solv Labs built a governed agent-payments workflow on Amazon Bedrock AgentCore payments, where every transaction is authorized, attested in an AWS Nitro Enclave, priced for risk, and anchored to a public blockchain before settlement. See how the pattern gives enterprises a verifiable, auditable trail for autonomous agent payments in regulated environments.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/06/ML-21446-1.png",
-      "category": "产品发布",
-      "content_type": "教程方法",
-      "depth_score": 0.6,
-      "reason_zh": "介绍可验证的代理支付方案，对金融等受监管行业有实用价值。",
-      "summary_zh": "AWS博客介绍了Solv Labs如何在Amazon Bedrock AgentCore payments上构建受治理的代理支付工作流，每笔交易在AWS Nitro Enclave中授权和证明，进行风险定价，并在结算前锚定到公共区块链。该模式为企业提供了在受监管环境中自主代理支付的可验证、可审计的追踪。",
-      "title_zh": "放心支付：Solv Labs在Amazon Bedrock AgentCore上构建可验证的代理支付",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "ac1221b2c2971a2e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments/"
-        }
-      ]
-    },
-    {
-      "id": "5a4d446366edc9c6",
-      "source_id": "aws-ml-blog",
-      "title": "How OneAdvanced deployed over 50 AI agents on UK-sovereign AWS",
-      "url": "https://aws.amazon.com/blogs/machine-learning/how-oneadvanced-deployed-over-50-ai-agents-on-uk-sovereign-aws/",
-      "published_at": "2026-08-12T13:46:28+00:00",
-      "raw_text": "Learn how OneAdvanced, a UK enterprise software provider, built a UK-sovereign AI platform by self-hosting Llama 4 Maverick and Llama Guard 4 on Amazon SageMaker AI, with a RAG pipeline on pgvector and over 50 agents built with Strands Agents SDK on Amazon ECS.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/03/ML-20317-1.png",
-      "category": "产品发布",
-      "content_type": "教程方法",
-      "depth_score": 0.6,
-      "reason_zh": "分享企业部署50+AI代理的实践，对UK主权AI有参考价值。",
-      "summary_zh": "AWS博客介绍了OneAdvanced如何在UK主权AWS上部署超过50个AI代理，通过自托管Llama 4 Maverick和Llama Guard 4在Amazon SageMaker AI上，使用pgvector的RAG管道和基于Strands Agents SDK的代理。文章提供了架构和部署细节，对类似企业有借鉴意义。",
-      "title_zh": "OneAdvanced如何在UK主权AWS上部署超过50个AI代理",
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "ca791b8eb2a5b065",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/how-oneadvanced-deployed-over-50-ai-agents-on-uk-sovereign-aws/"
         }
       ]
     }
