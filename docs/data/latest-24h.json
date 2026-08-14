@@ -24,7 +24,7 @@
       "practical_value": 0.8
     },
     "story_id": "84fdbe6e6fb1d258",
-    "multi_source_count": 2,
+    "multi_source_count": 3,
     "sources": [
       {
         "source_id": "zh-oschina",
@@ -33,6 +33,14 @@
       {
         "source_id": "zh-leiphone",
         "url": "https://www.leiphone.com/category/ai/rbIV873aEJjUGpyU.html"
+      },
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1vns4ec/qwen_38_27b_countdown_is_back_friday_launch/"
+      },
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1vnxphq/qwen_38_max/"
       }
     ],
     "curated": true
@@ -72,12 +80,12 @@
     "curated": true
   },
   {
-    "id": "420fc1ee887632fe",
-    "source_id": "zh-v2ex",
-    "title": "[程序员] DeepSeek Harness 来了，一切皆插件的 Agent 框架",
-    "url": "https://www.v2ex.com/t/1234203#reply16",
-    "published_at": "2026-08-13T12:38:41+00:00",
-    "raw_text": "<h1>DeepSeek Harness 技术拆解，一切皆插件的 Agent 框架</h1>\n<p>DeepSeek Harness 的开发者预览版上线了，代码已经开源，仓库在 <a href=\"http://github.com/deepseek-ai/deepseek-harness\" rel=\"nofollow\">github.com/deepseek-ai/deepseek-harness</a> 。圈内习惯叫它 dsh 。</p>\n<p>它是 DeepSeek 做的开源 Agent 框架，和 Claude Code 是一类东西，跑在本地，让模型替你真干活。上线前它内测了一阵，这篇按技术脉络把最要紧的设计讲清楚，想快速了解它，看这篇就够。</p>\n<h2>它是什么</h2>\n<p>dsh 是一个装在你机器上的编程智能体。装了 Node 开发环境，一行命令 <code>npx @deepseek-ai/dsh web</code> 就能把 Web UI 拉起来，浏览器打开（默认 127.0.0.1:3080 ）就能对话、审批、切换模式。</p>\n<p>模型在里面做的事比陪聊多得多，改文件、跑命令、查资料，最后把活干完。最值得看的是它的设计方式。</p>\n<h2>一切皆插件</h2>\n<p>这个框架的第一设计原则是 everything is a plugin ，一切皆插件。</p>\n<p>多数软件把核心逻辑写死，用户只能在预留的少数接口上做有限定制。dsh 反过来，模型接入、工具注册表、会话日志、审批策略，连驱动智能体运转的主循环本身，全部都是插件。</p>\n<p>想换搜索引擎、接自己公司的模型服务，改配置就行，不用动框架代码。给系统加功能就是挂一个新插件，卸载时注册的一切自动撤销，不留残余。</p>\n<p>技术上它站在 Cordis 之上，这是 Koishi 生态一直在用的插件与上下文内核，只负责插件的加载、卸载和依赖关系。dsh 的所有具体组件都是不同插件，靠服务与事件协作，在配置层自由组合。开发者不改 dsh 源码，就能独立选择、替换、扩展任意一项能力。</p>\n<h2>分层组装与能力接缝</h2>\n<p>运行中的 dsh 是一棵插件树，由多层配置按固定顺序叠加。组合包 bundle 是官方发布的成套插件配置，Profile 是你机器上的具名组装清单，P",
+    "id": "2081566b6ddb1bca",
+    "source_id": "zh-tonybai",
+    "title": "刚刚，DeepSeek开源Harness：把Agent拆成插件，一切皆可换",
+    "url": "https://tonybai.com/2026/08/14/deepseek-harness-everything-is-a-plugin/",
+    "published_at": "2026-08-14T01:00:00+00:00",
+    "raw_text": "DeepSeek 开源了自研 Agent 驾驭框架 DeepSeek Harness（dsh）开发者预览版，采用「一切皆插件」的插件式开放架构：模型、工具、技能、会话、沙箱、存储、循环、调度、UI 等 Agent 能力均由插件组合而成。其底层由 Cordis 元框架驱动，通过 profile 与 bundle 的分层组装机制实现自由替换，Agent 循环被拆解为可拦截的事件流，会话日志成为唯一真相源，支持分叉与回放。文章将结合开源代码，解读其架构设计，并简要梳理其在会话压缩、长期记忆等前沿方向上的现状与生态动向。",
     "category_hint": [
       "技巧与观点"
     ],
@@ -85,22 +93,22 @@
     "category": "开源项目",
     "content_type": "深度分析",
     "depth_score": 0.8,
-    "reason_zh": "DeepSeek Harness开源Agent框架深度拆解，揭示设计理念，对开发者极具参考价值。",
-    "summary_zh": "DeepSeek Harness（简称dsh）是DeepSeek开源的Agent框架，与Claude Code类似，运行在本地，让模型执行实际任务。文章从技术脉络详细拆解其核心设计，包括插件化架构、执行流程等。开发者可通过npx命令快速安装，适合希望深入理解Agent框架原理的读者。",
-    "title_zh": "DeepSeek Harness技术拆解：一切皆插件的Agent框架",
-    "weighted_score": 0.845,
+    "reason_zh": "深度解读DeepSeek Harness架构，插件化设计理念新颖，对Agent开发有重要参考价值。",
+    "summary_zh": "文章深入解读了DeepSeek开源的Agent驾驭框架DeepSeek Harness（dsh）开发者预览版。该框架采用“一切皆插件”的开放架构，模型、工具、技能、会话、沙箱、存储、循环、调度、UI等Agent能力均由插件组合而成。底层由Cordis元框架驱动，通过profile与bundle的分层组装机制实现自由替换。Agent循环被拆解为可拦截的事件流，会话日志成为唯一真相源，支持分叉与回放。文章结合开源代码解读架构设计，并梳理了会话压缩、长期记忆等前沿方向的现状与生态动向。",
+    "title_zh": "刚刚，DeepSeek开源Harness：把Agent拆成插件，一切皆可换",
+    "weighted_score": 0.85,
     "score_breakdown": {
       "source_authority": 0.8,
       "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.9
+      "impact": 0.9,
+      "practical_value": 0.8
     },
-    "story_id": "56373121a9b9dfc2",
+    "story_id": "ccc3b96644ac0b36",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1234203#reply16"
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/08/14/deepseek-harness-everything-is-a-plugin/"
       }
     ],
     "curated": true
@@ -130,9 +138,13 @@
       "impact": 0.8,
       "practical_value": 0.7
     },
-    "story_id": "29eff4aa429f2993",
+    "story_id": "09cbc39b1a9ac4fa",
     "multi_source_count": 3,
     "sources": [
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1vn64nf/my_current_cheapest_llm_stack_hy3deepseek_v4_gpt56/"
+      },
       {
         "source_id": "openai-blog",
         "url": "https://openai.com/index/previewing-ultrafast"
@@ -140,10 +152,6 @@
       {
         "source_id": "techcrunch-ai",
         "url": "https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/989/492.htm"
       }
     ],
     "curated": true
@@ -286,12 +294,46 @@
     "curated": true
   },
   {
-    "id": "6460d1171f240e79",
+    "id": "ba13c5712f27d985",
     "source_id": "arxiv-cs-ai",
-    "title": "Making Your LLMs More Objective: Stabilizing LLM Safety Behavior Across Traits with Trait-Invariant Safety Tuning",
-    "url": "https://arxiv.org/abs/2608.11705",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11705v1 Announce Type: new \nAbstract: Aligned large language models (LLMs) are expected to exhibit safety behavior based on the content of the user request: they should refuse unsafe requests and comply with safe ones. However, we show that the same request can elicit substantially different safety decisions under different traits assigned in the system prompt, a failure mode we call trait-induced safety variation. To measure this failure, we introduce refusal-based metrics: Trait-Induced Deviation measures dataset-level deviation from the no-trait baseline, while Trait-Induced Flip Rate measures whether the same request receives different safety decisions across traits. We then provide a representation-level analysis of the mechanism behind trait-induced safety shifts and find that traits perturb the model's safety representations within a low-dimensional subspace. To achieve trait-invariant safety, where safety behavior remains stable across traits, we introduce Trait-Inva",
+    "title": "Don't Want Your LLM to Recommend Nuclear Strike? Try Asking It in Japanese",
+    "url": "https://arxiv.org/abs/2608.12373",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12373v1 Announce Type: new \nAbstract: Large language models are increasingly used in strategic and advisory contexts, yet their safety alignment is typically evaluated in English only. We test nine models from six providers and ask whether the language of a prompt can change a model's decision in a high-stakes scenario. We use single-turn game-theoretic vignettes in which a model advises a nuclear-armed nation on whether to strike a defenseless opponent. The prompt is intentionally amoral and strategically identical across languages. We find that Japanese prompts reduce launch rates in the Claude model family: Claude Sonnet 4.6 drops from 40% to 0% in scenarios where the strike is unnecessary and from 93% to 17% in contested scenarios, with minimal effect when the strike is strategically rational. The effect extends to Gemini Pro 3.1 (53% to 13%). A cross-language experiment isolates the mechanism: when instructed to reason in Japanese in an English prompt, launch rates drop",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "揭示语言对LLM安全对齐的影响，测试多语言场景下的决策差异，对安全评估有重要警示。",
+    "summary_zh": "该论文测试了六家提供商的九种模型，探究提示语言是否改变模型在高风险场景中的决策。使用单轮博弈论小插曲，模型提供建议。结果显示，语言可以显著影响模型决策，例如用日语提问可能降低核打击建议的概率。这表明安全对齐评估仅用英语可能不足，需要多语言评估。",
+    "title_zh": "不想让LLM建议核打击？试试用日语提问",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "1814baa5c00daa0c",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12373"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "f66b6989b6013899",
+    "source_id": "arxiv-cs-ai",
+    "title": "Practice Makes Unsafe: Skill Misevolution in Self-Improving LLM Agents",
+    "url": "https://arxiv.org/abs/2608.12851",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12851v1 Announce Type: new \nAbstract: Self-improving LLM agents convert successful trajectories into persistent cross-task state. An unsafe success can thereby become reusable policy after its triggering input disappears. Skill evolution makes this failure measurable by distilling operational trajectories into executable, transferable, and inspectable procedures. Because evolution optimizes task outcomes rather than procedure safety, compromised experience can cause skill misevolution. Existing benchmarks measure current behavior or static artifacts but cannot attribute risk across authoring, retrieval, and later execution. To expose this lifecycle, we introduce SkillMisevo-Gym, a lifecycle-aware harness that versions skill state across agent frameworks, and SkillMisevo-Bench, a frozen design from malicious exposure to carryover tasks, with concept-aligned benign tasks and nine lifecycle metrics. We also introduce SafeEvolve, a wrapper that repairs unsafe content and governs",
     "category_hint": [
       "论文研究"
     ],
@@ -299,22 +341,56 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "揭示LLM安全行为随系统提示特质变化的不稳定性，提出特质不变安全微调，提升安全性。",
-    "summary_zh": "对齐的LLM应根据用户请求的内容表现出安全行为：拒绝不安全请求，遵守安全请求。然而，本文表明，在系统提示中分配不同特质时，同一请求可能引发截然不同的安全决策，这种失败模式称为特质敏感性。本文提出特质不变安全微调（Trait-Invariant Safety Tuning），旨在稳定LLM在不同特质下的安全行为，减少因提示变化导致的安全漏洞。",
-    "title_zh": "让LLM更客观：通过特质不变安全微调稳定跨特质的安全行为",
+    "reason_zh": "揭示自我改进智能体技能演化中的安全隐患，提出技能演化测量方法，具有警示意义。",
+    "summary_zh": "本文研究自我改进LLM智能体在技能演化过程中可能产生的安全问题。智能体将成功轨迹转化为可复用的跨任务状态，但一个不安全的成功可能成为可复用的策略。技能演化通过将操作轨迹提炼为可执行、可转移、可检查的程序，使这种失败可测量。作者分析了演化过程中的风险，并提出了缓解措施。",
+    "title_zh": "熟能生险：自我改进LLM智能体中的技能误演化",
     "weighted_score": 0.805,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
     },
-    "story_id": "50a0e54f52bef428",
+    "story_id": "1f1e0ceace339f4e",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11705"
+        "url": "https://arxiv.org/abs/2608.12851"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "ac68798008ea6a83",
+    "source_id": "arxiv-cs-ai",
+    "title": "Agent Behavioral Contracts II: Certifying Compositional Reliability Without Assuming Independence",
+    "url": "https://arxiv.org/abs/2608.12895",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12895v1 Announce Type: new \nAbstract: Compositional reliability bounds for multi-agent systems multiply component reliabilities, a step licensed by a conditional-independence assumption that is routinely stated and rarely tested. We test it. Two instances of one model, in a two-agent handoff, co-fail on 90.0% of the missions on which either fails (log OR 6.66, 95% CI [6.38, 7.00]; phi 0.916), in a preregistered evaluation of 18,000 missions scored by deterministic code with no LLM judge. Substituting a different model reduces the association in six of six contrasts; substituting a different vendor, model already different, does not -- a registered hypothesis reported as a null.\n  The error is signed and runs against the operator: positive dependence inflates joint failure above the independence product, so redundancy is over-credited exactly when components share a model. The assumption-free alternative is often vacuous, and fitting a dependence model is worse: we prove a bo",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.9,
+    "reason_zh": "实证检验多智能体组合可靠性假设，发现条件独立假设不成立，具有重要理论意义。",
+    "summary_zh": "本文测试了多智能体系统组合可靠性中常见的条件独立假设。该假设允许将组件可靠性相乘，但作者通过实验发现，两个相同模型在交接任务中，90%的失败是共同失败的，表明条件独立假设不成立。这一发现对多智能体系统的可靠性认证提出了挑战，并提供了更准确的可靠性评估方法。",
+    "title_zh": "智能体行为契约II：在不假设独立性的情况下认证组合可靠性",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "59021c90827618ff",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12895"
       }
     ],
     "curated": true
@@ -345,7 +421,7 @@
       "practical_value": 0.5
     },
     "story_id": "58c648f81c8d2c96",
-    "multi_source_count": 7,
+    "multi_source_count": 6,
     "sources": [
       {
         "source_id": "vercel-blog",
@@ -370,55 +446,17 @@
       {
         "source_id": "siliconangle",
         "url": "https://siliconangle.com/2026/08/13/google-launches-gemini-3-7-flash-coding-ai-agent-projects/"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/989/497.htm"
       }
     ],
     "curated": true
   },
   {
-    "id": "b0365227e3df5700",
+    "id": "d8f43cd5ecc10951",
     "source_id": "arxiv-cs-ai",
-    "title": "The Off-Support Barrier: Why Semantic Safety Constraints Are Not Learning-Problem Invariants, and What Follows for Prior Design, Containment, and Verification",
-    "url": "https://arxiv.org/abs/2608.11243",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11243v1 Announce Type: new \nAbstract: We argue that a single structural fact organizes a wide range of phenomena in contemporary AI safety: a semantic safety constraint (e.g., the agent does not escape its sandbox) is an off-support object. Formally, if q is the data distribution and \\(p(\\cdot\\mid w)\\) the model, the safety predicate B is not measurable with respect to \\(\\sigma(\\text{model}, q)\\), whereas the real log-canonical threshold (RLCT) of singular learning theory (SLT) is. From this non-invariance we derive, as corollaries rather than independent observations: (i) why reward hacking and sandbox escape arise under outcome-based optimization; (ii) why encoding such constraints through Bayesian prior design or soft penalty weighting has poor leverage in singular models; (iii) why hard invariants belong in the harness and soft dispositions in the model; (iv) why the same B is nonetheless soundly and locally certifiable by formal verification, exactly as the local learni",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "提出语义安全约束是离支持对象的观点，从结构上解释安全失败，对 AI 安全研究有深刻启发。",
-    "summary_zh": "本文认为一个结构事实组织了当代 AI 安全的广泛现象：语义安全约束（例如智能体不逃出沙箱）是离支持对象。形式上，如果 q 是数据分布，p(·|w) 是模型，则安全谓词 B 相对于 σ(模型) 不可测。这一观点解释了为什么安全约束难以通过训练数据学习，并提出了对先验设计、包含和验证的启示。文章为 AI 安全提供了新的理论视角。",
-    "title_zh": "离支持障碍：为什么语义安全约束不是学习问题的不变量，以及对先验设计、包含和验证的启示",
-    "weighted_score": 0.785,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "94d53fd2805e1648",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11243"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "dd5fe0a4cf143a7f",
-    "source_id": "arxiv-cs-ai",
-    "title": "FrontierFinance: A Challenging Benchmark for Measuring Frontier Intelligence of Finance Agents",
-    "url": "https://arxiv.org/abs/2608.11683",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11683v1 Announce Type: new \nAbstract: AI agents are increasingly deployed for professional investment research, yet no benchmark captures the complexity of the full investor workflow. Existing benchmarks mainly target financial data extraction, a narrow slice that current models have largely saturated, while reference-based metrics and generic LLM-as-a-judge scoring fall short on the open-ended, long-form answers that real analyst queries demand. We introduce FrontierFinance, a fully open benchmark of 220 expert-crafted queries and 11,543 source-attributed rubrics spanning six crucial use cases across the full investor workflow. FrontierFinance is both broader and harder than existing public finance benchmarks. Evaluating frontier models and agent systems under a common harness restricted to publicly available data, we find that the tool harness, not the model alone, strongly shapes quality and efficiency; that Samaya's in-house system leads at 56.0%, ahead of the strongest ",
+    "title": "vToken: Token-Level Virtualization for Reclaimable KV Caches",
+    "url": "https://arxiv.org/abs/2608.13263",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.13263v1 Announce Type: new \nAbstract: Large language model serving faces a critical memory bottleneck: the KV cache grows with sequence length and batch size. PagedAttention uses fixed-size memory blocks to reduce allocator-level fragmentation, but recent KV eviction algorithms operate at a token granularity finer than block-level management. This mismatch causes intra-block fragmentation, leaving a large fraction of allocated KV memory unreclaimable. We present vToken, a lightweight token-level virtualization layer that decouples logical token liveness from physical block placement. vToken maintains a stable logical token view through token-table indirection and realizes physical reclamation by repacking live tokens asynchronously. The design preserves PagedAttention kernels and CUDA Graph compatibility. We implement vToken in vLLM and evaluate it with H2O, Random, and Scissorhands across models. Compared with a paired Naive-Evict baseline, vToken reduces retained KV blocks",
     "category_hint": [
       "论文研究"
     ],
@@ -426,9 +464,9 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.7,
-    "reason_zh": "首个覆盖完整投资者工作流的金融智能体基准，挑战前沿智能，填补评估空白。",
-    "summary_zh": "AI智能体越来越多地用于专业投资研究，但现有基准无法捕捉完整投资者工作流的复杂性。现有基准主要针对金融数据提取，这一狭窄领域已被当前模型基本饱和，而基于参考的指标和通用LLM评判评分在开放式任务上表现不足。本文提出FrontierFinance，一个具有挑战性的基准，用于衡量金融智能体的前沿智能，覆盖从数据收集到投资决策的完整流程。",
-    "title_zh": "FrontierFinance：衡量金融智能体前沿智能的挑战性基准",
+    "reason_zh": "提出vToken实现令牌级虚拟化，解决KV缓存块内碎片问题，提升LLM服务内存效率，工程价值高。",
+    "summary_zh": "本文针对LLM服务中的KV缓存内存瓶颈，指出PagedAttention的固定大小块管理与令牌级驱逐算法不匹配，导致块内碎片。作者提出vToken，实现令牌级虚拟化，使驱逐和重用更灵活，减少碎片。实验表明，vToken在保持性能的同时显著降低内存占用，提高吞吐量，为高效LLM服务提供实用方案。",
+    "title_zh": "vToken：用于可回收KV缓存的令牌级虚拟化",
     "weighted_score": 0.785,
     "score_breakdown": {
       "source_authority": 0.9,
@@ -436,46 +474,46 @@
       "impact": 0.7,
       "practical_value": 0.7
     },
-    "story_id": "77c967c76aadd7ba",
+    "story_id": "838f5b4690b54acd",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11683"
+        "url": "https://arxiv.org/abs/2608.13263"
       }
     ],
     "curated": true
   },
   {
-    "id": "975a673d140e0c60",
-    "source_id": "zh-oschina",
-    "title": "DeepSeek V4 Pro 正式版 API 上线，增强 Agent 能力",
-    "url": "https://www.oschina.net/news/501912/deepseek-v4-pro-0813",
-    "published_at": "2026-08-13T02:53:13+00:00",
-    "raw_text": "DeepSeek团队昨晚在社群宣布，DeepSeek V4 Pro正式版已经更新至API，调用模型名不变。新版本增强了Agent能力，支持Responses API和Codex接入。 DeepSeek V4 Pro正式版基准测试显示，其在终端Agent测试Terminal Bench的得分为87.9分，逼近Fable 5的88.0分。在AI安全智能体评测基准CyberGym、以及在高难度的智能体评测基准...",
+    "id": "fe281b6425886299",
+    "source_id": "zh-v2ex",
+    "title": "[程序员] `[DeepSeek Harness] 中文速查 + 踩坑：刚发布的开源 Claude Code 替代品，官方文档还是空的`",
+    "url": "https://www.v2ex.com/t/1234341#reply0",
+    "published_at": "2026-08-14T05:09:13+00:00",
+    "raw_text": "<p>DeepSeek 8/13 深夜发了首款 Agent 产品 Harness （ v0.1 开发者预览，MIT 开源），直接对标 Claude Code / Codex 。</p>\n<p>我核对了 npm 官方包 <code>@deepseek-ai/dsh</code>（ 0.1.0-rc.6 ，14 小时前公开），目前 GitHub README 正文还是空的文件树——典型的文档真空期。先把确定能跑的命令整理出来，求各位一起补全：</p>\n<pre><code class=\"language-bash\">npx @deepseek-ai/dsh web          # 启动 Web UI\ndsh --profile headless \"跑测试\"   # 无头模式，适合 CI\ndsh --dump-config                # 不启动看配置树\n</code></pre>\n<p>已确认踩坑：</p>\n<ul>\n<li>包名带 <code>@</code> 作用域，写成 <code>deepseek-ai/dsh</code> 找不到包</li>\n<li>必须选 workspace ，否则输入框发不出消息</li>\n<li>v0.1 预览版破坏性更新随时来，别上生产</li>\n</ul>\n<p>几个疑问想请教：</p>\n<ol>\n<li>大家实测默认端口是多少？（媒体说 3080 ，npm 没明说）</li>\n<li>第三方模型（ OpenAI / Claude ）接入是不是真开箱？</li>\n<li>和 OpenCode / Aider 比，插件体系的真实体感如何？</li>\n</ol>",
     "category_hint": [
-      "开源项目"
+      "技巧与观点"
     ],
     "image_url": null,
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "DeepSeek V4 Pro正式版API更新，增强Agent能力，重要更新。",
-    "summary_zh": "DeepSeek团队宣布V4 Pro正式版已更新至API，调用模型名不变。新版本增强了Agent能力，支持Responses API和Codex接入。基准测试显示，在终端Agent测试Terminal Bench得分为87.9分，逼近Fable 5的88.0分。在AI安全智能体评测基准CyberGym和高难度智能体评测基准上也有出色表现。",
-    "title_zh": "DeepSeek V4 Pro正式版API上线，增强Agent能力",
-    "weighted_score": 0.78,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.6,
+    "reason_zh": "DeepSeek Harness开源Agent工具，文档真空期，作者整理命令和踩坑，实用性强。",
+    "summary_zh": "DeepSeek于8月13日深夜发布首款Agent产品Harness（v0.1开发者预览，MIT开源），对标Claude Code/Codex。作者核对了npm包@deepseek-ai/dsh（0.1.0-rc.6），发现GitHub README为空，因此整理了可用的命令：npx @deepseek-ai/dsh web启动Web UI，dsh --profile headless \"跑测试\"用于CI，dsh --dump-config查看配置。作者呼吁社区补全文档。",
+    "title_zh": "DeepSeek Harness中文速查+踩坑：开源Claude Code替代品",
+    "weighted_score": 0.785,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
+      "source_authority": 0.6,
+      "novelty": 0.9,
       "impact": 0.8,
-      "practical_value": 0.7
+      "practical_value": 0.9
     },
-    "story_id": "8d094678f9f0e1cd",
+    "story_id": "9a90485952cbecbd",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-oschina",
-        "url": "https://www.oschina.net/news/501912/deepseek-v4-pro-0813"
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1234341#reply0"
       }
     ],
     "curated": true
@@ -516,22 +554,56 @@
     "curated": true
   },
   {
-    "id": "7ea45d72fd396423",
+    "id": "e0f4ff7303d10d53",
     "source_id": "arxiv-cs-ai",
-    "title": "RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle",
-    "url": "https://arxiv.org/abs/2608.11241",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11241v1 Announce Type: new \nAbstract: Deploying LLM agents into industrial recommender operations exposes a three-way tension we frame as the autonomy-determinism-efficiency trilemma: general autonomy (interpreting operator intent, generating glue code zero-shot), industrial determinism (schema-conforming feature extraction, non-crashing A/B, zero compliance-path hallucination), and end-to-end efficiency. Any two can be maximized against the third. We present RecSys Factory, an LLM-agent platform deployed for 78 days across three heterogeneous Tencent recommender business lines. The design principle is autonomy at decision points, not over pipelines, made concrete through three deconstructions that each discharge one vertex of the trilemma. Runtime is deconstructed into three host-emitted event sources (Claude Code Stop hooks, corporate-IM webhooks, workflow scheduler APIs): the platform carries no long-running daemon during the wait phase and consumes zero CPU during the 94",
+    "title": "Research Assistant: AstraZeneca's Agentic System for R&D",
+    "url": "https://arxiv.org/abs/2608.12395",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12395v1 Announce Type: new \nAbstract: We describe Research Assistant, an internal LLM-based system developed at AstraZeneca to help scientists and clinicians explore biomedical questions across a broad range of data sources. The system provides a chat-style interface that brings together evidence from scientific literature, knowledge graphs, chemistry, clinical trials, safety resources, expression data, and internal experimental systems. It supports both a fast mode for direct question answering and a multi-step mode for more complex research tasks. Responses are grounded in retrieved evidence and linked back to the original sources, allowing users to review and further explore the underlying data. In this technical note, we outline the system architecture, the main design choices behind the product, and lessons learned from deploying it at scale to support day-to-day R&amp;D workflows across AstraZeneca.",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出将 LLM 智能体自主性限制在决策点的方法，解决工业推荐系统中的自主性-确定性-效率三难问题，工程实践价值高。",
-    "summary_zh": "将 LLM 智能体部署到工业推荐运营中，面临自主性-确定性-效率的三难问题：通用自主性（解释操作员意图、零样本生成胶水代码）、工业确定性（符合模式的特征提取、无崩溃 A/B 测试、零合规路径幻觉）和端到端效率。本文提出 RecSys Factory，通过将智能体自主性限制在决策点，平衡三者。该方法在真实工业场景中验证了有效性，为 LLM 智能体的工业落地提供了新思路。",
-    "title_zh": "RecSys Factory：将 LLM 智能体自主性限制在工业推荐生命周期的决策点",
+    "category": "行业动态",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "介绍阿斯利康内部基于LLM的智能体系统，展示AI在医药研发中的实际应用，具有行业参考价值。",
+    "summary_zh": "该论文描述了阿斯利康开发的内部基于LLM的系统Research Assistant，帮助科学家和临床医生探索生物医学问题。系统提供聊天式界面，整合科学文献、知识图谱、化学、临床试验、安全资源等证据。该系统旨在加速研发决策，展示了LLM在制药行业的实际应用。",
+    "title_zh": "研究助手：阿斯利康的研发智能体系统",
+    "weighted_score": 0.78,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "5412ab0d9dc3658a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12395"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "d71f3472f65b9102",
+    "source_id": "zh-oschina",
+    "title": "DeepSeek Harness 正式开源：一切皆插件，Agent 框架的新玩法",
+    "url": "https://www.oschina.net/news/501925/deepseek-harness-developer-preview",
+    "published_at": "2026-08-14T02:00:14+00:00",
+    "raw_text": "DeepSeek 正式开源了 DeepSeek Harness（DSH）的 v0.1 开发者预览版——一个&quot;一切皆插件&quot;的 Agent 运行时框架，MIT 协议，源码已托管到 GitHub。 和市面上大多数 AI Agent 框架不同，DSH 的核心卖点不是模型能力，而是架构的开放性。它没有选择重头造一个插件系统，而是基于一个叫 Cordis 的元框架构建——Cordis 只负责...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "DeepSeek开源Agent框架，插件化架构创新，值得开发者关注。",
+    "summary_zh": "DeepSeek正式开源DeepSeek Harness（DSH）v0.1开发者预览版，采用MIT协议。该Agent运行时框架基于Cordis元框架构建，核心特点是'一切皆插件'，强调架构开放性而非模型能力，为Agent开发提供新思路。",
+    "title_zh": "DeepSeek Harness正式开源：一切皆插件，Agent框架的新玩法",
     "weighted_score": 0.775,
     "score_breakdown": {
       "source_authority": 0.8,
@@ -539,148 +611,114 @@
       "impact": 0.7,
       "practical_value": 0.8
     },
-    "story_id": "4837fbcca230eaf8",
+    "story_id": "1df9c4108c5a2671",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11241"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/501925/deepseek-harness-developer-preview"
       }
     ],
     "curated": true
   },
   {
-    "id": "c27ddb4e5680b2a0",
-    "source_id": "arxiv-cs-ai",
-    "title": "Deployment Decision Reliability: A Generalizability-Theory Framework for Sizing Long-Horizon Agent Evaluations",
-    "url": "https://arxiv.org/abs/2608.11323",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11323v1 Announce Type: new \nAbstract: Enterprise practitioners read agent leaderboards as if they ranked agent capability. We show, across three open agent-trace benchmarks (TheAgentCompany, $\\tau^2$-bench, and AppWorld), that the agent main effect accounts for less than 3% of total variance in every dataset and check type, while the agent-by-task interaction accounts for 7-23%. Leaderboards rank specialization, not capability. We arrive at this through a four-facet Generalizability Theory variance decomposition, fit with three estimators (Henderson Method-I, REML via lme4, and a Bayesian binomial GLMM) that agree to three decimal places. Four further findings sharpen what the leaderboard is hiding. First, aggregate reliability collapses on the hardest task quartile: $E\\rho^2$ on $\\tau^2$ action_checks falls from 0.752 to 0.000. Second, training-cell reliability negatively correlates with held-out reliability ($r = -0.90$ on $\\tau^2$), meaning the designs that look most reli",
+    "id": "9da1402c974d1b92",
+    "source_id": "pandaily",
+    "title": "DeepSeek Harness Hands-On: Four Work Modes, 'Model + Harness = Agent', and the Most Ambitious Agent Open Source of the Year",
+    "url": "https://pandaily.com/deepseek-harness-hands-on-four-modes-model-plus-harness-equals-agent-aug2026",
+    "published_at": "2026-08-14T02:09:07+00:00",
+    "raw_text": "DeepSeek Harness launched its developer preview and open-sourced the code at 8:30 PM on August 13. A first-night hands-on review finds the product shell still early at v0.1 but the architecture ambition the biggest of the year: four preset work modes, an everything-is-a-plugin philosophy, and the equation Model + Harness = Agent.",
     "category_hint": [
-      "论文研究"
+      "行业动态"
     ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "用概化理论揭示智能体排行榜的误导性，对评估实践有重要警示作用。",
-    "summary_zh": "本文使用概化理论框架分析长期智能体评估的可靠性。在三个开放基准（TheAgentCompany、τ²-bench、AppWorld）上，作者发现智能体主效应仅占总方差不到3%，而智能体-任务交互占7-23%。这意味着排行榜排名可能主要反映任务选择而非智能体能力，对部署决策具有误导性。作者提出更可靠的评估方法，为智能体评估设计提供了新视角。",
-    "title_zh": "部署决策可靠性：用于长期智能体评估规模的概化理论框架",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "f7b552ee4587ab3b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11323"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c5e32f8f06138326",
-    "source_id": "zh-v2ex",
-    "title": "[程序员] deepseek harness 来了",
-    "url": "https://www.v2ex.com/t/1234213#reply0",
-    "published_at": "2026-08-13T13:40:18+00:00",
-    "raw_text": "npm install -g @<a href=\"https://www.v2ex.com/member/deepseek-ai\" rel=\"nofollow noopener\" target=\"_blank\">deepseek-ai</a>/dsh<br /><br />dsh --profile web 启动 webui",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
+    "image_url": "https://cms-image.pandaily.com/1/img_5_23519c8f7d.png",
     "category": "产品发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "DeepSeek Harness发布，提供简单安装命令，可快速启动WebUI，是实用工具发布信息。",
-    "summary_zh": "DeepSeek发布了Harness工具，用户可以通过npm命令全局安装：npm install -g @deepseek-ai/dsh。安装后，使用dsh --profile web命令即可启动WebUI界面。该消息简洁地提供了安装和使用方法，方便开发者快速上手。",
-    "title_zh": "DeepSeek Harness来了",
-    "weighted_score": 0.77,
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "DeepSeek Harness开源，四种工作模式与插件化理念，是年度最具雄心的Agent开源，值得开发者关注。",
+    "summary_zh": "DeepSeek Harness于8月13日晚8:30发布开发者预览版并开源代码。首夜上手评测显示，产品外壳仍处于早期v0.1阶段，但架构野心为年度最大：提供四种预设工作模式，采用一切皆插件的哲学，并提出了“模型+Harness=Agent”的公式。该工具旨在将模型能力与工具调用、工作流编排相结合，构建完整的Agent解决方案。评测认为其设计理念超前，但当前版本尚不成熟，需要进一步迭代。",
+    "title_zh": "DeepSeek Harness上手体验：四种工作模式，“模型+Harness=Agent”，年度最具雄心的Agent开源",
+    "weighted_score": 0.775,
     "score_breakdown": {
       "source_authority": 0.7,
       "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "14b347975a13304b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/deepseek-harness-hands-on-four-modes-model-plus-harness-equals-agent-aug2026"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "d84f93d637217a98",
+    "source_id": "arxiv-cs-ai",
+    "title": "MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents",
+    "url": "https://arxiv.org/abs/2608.12428",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12428v1 Announce Type: new \nAbstract: Memory is a core component of AI agents, enabling them to accumulate experience, maintain personalization, and adapt over long-term interactions. However, existing memory systems often remain fixed after development, limiting their ability to adapt their memory models, organization strategies, and procedural knowledge through continued use. We present MindMemOS, a portable and self-evolving memory operating layer that organizes open-world information using a unified entity property timestructure. MindMemOS supports scenario-adaptive memory modeling, higher-order pattern discovery, autonomous memory refinement, and continuous skill evolution. Its MindMemEvolve algorithm employs validation-driven evolutionary search to optimize memory schemas for target scenarios, whiledreaming consolidates accumulated memories by merging redundant records and resolving conflicts. In addition, implicit corrective feedback serves as a human-in-the-loop sign",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出可移植自进化的记忆操作系统，增强AI代理的长期适应能力，对代理设计有实用价值。",
+    "summary_zh": "该论文提出MindMemOS，一种可移植且自进化的记忆操作系统层，用于AI代理。现有记忆系统在开发后固定，限制了适应能力。MindMemOS允许代理通过持续使用调整记忆模型、组织策略和程序性知识。它提供标准化接口，支持跨平台移植，实验表明能提升代理的长期性能。",
+    "title_zh": "MindMemOS：AI代理的可移植自进化记忆操作系统层",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
       "impact": 0.7,
       "practical_value": 0.8
     },
-    "story_id": "bcbc95a68846b5aa",
+    "story_id": "fd59fabe5c219628",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1234213#reply0"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12428"
       }
     ],
     "curated": true
   },
   {
-    "id": "e5ea1c1a4aff42f5",
+    "id": "224b5d5398484d71",
     "source_id": "arxiv-cs-ai",
-    "title": "Foresight Without Seeing: Latent Futures for World Action Models",
-    "url": "https://arxiv.org/abs/2608.11605",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11605v1 Announce Type: new \nAbstract: World Action Models (WAMs) couple future visual prediction with robot action generation, enabling policies to model how the physical world evolves during interaction. Existing WAMs differ in how predictive dynamics are exposed to the action pathway. Explicit-future WAMs provide direct access to predicted scene evolution, but incur substantial inference costs from iterative video denoising. In contrast, direct-policy WAMs efficiently predict actions from the current observation but lack an explicit inference-time interface for exposing predictive dynamics to the Action DiT. To bridge this gap, we propose ForeWAM, a dynamics-conditioned direct-policy WAM that provides predictive context for action generation without decoding future videos. At its core, Future-KV performs a single Video DiT prefill over the current visual latent and stochastic future slots, and reuses the resulting layer-wise key-value states throughout action denoising. We",
+    "title": "Privacy-Preserving RAG by Concealing Sensitive Information from External LLMs",
+    "url": "https://arxiv.org/abs/2608.12675",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12675v1 Announce Type: new \nAbstract: Retrieval-Augmented Generation (RAG) is widely used to improve the performance of Large Language Models (LLMs) in answering user queries. Existing privacy research on RAG has focused on preventing unauthorized users from accessing sensitive data. However, another important problem that is often overlooked in RAG privacy research is that external generators have access to the query and the retrieved documents, which may contain confidential information that could potentially be misused or accessed for unintended purposes. In this paper, we introduce the Sensitive Entity Alias Generator (SEAG), a privacy-preserving framework that empowers users to utilize powerful third-party generators without disclosing sensitive information. SEAG introduces a lightweight model that locates sensitive entities, generates corresponding aliases, and constructs an entity replacement table. The table is used to replace sensitive words in the user's query and ",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出世界动作模型的潜在未来表示，平衡预测与推理效率，对机器人学习有启发。",
-    "summary_zh": "世界动作模型（WAMs）将未来视觉预测与机器人动作生成相结合，使策略能够建模物理世界在交互中的演化。现有WAMs在预测动态如何暴露给动作路径上有所不同：显式未来WAMs提供对预测场景演化的直接访问，但推理开销大；隐式方法则可能损失信息。本文提出一种潜在未来表示方法，在不直接生成完整未来帧的情况下，为动作生成提供有效信息，兼顾性能与效率。",
-    "title_zh": "未见之预见：世界动作模型的潜在未来",
-    "weighted_score": 0.765,
+    "depth_score": 0.7,
+    "reason_zh": "关注RAG中向外部LLM泄露敏感信息的问题，提出隐私保护方法，对实际应用有重要安全价值。",
+    "summary_zh": "检索增强生成（RAG）被广泛用于提高大型语言模型（LLM）回答用户查询的性能。现有的RAG隐私研究主要关注防止未经授权的用户访问敏感数据。然而，另一个常被忽视的重要问题是外部生成模型可能无意中泄露敏感信息。本文提出了一种隐私保护RAG方法，通过隐藏敏感信息来防止外部LLM泄露，从而在利用RAG优势的同时保护数据隐私。",
+    "title_zh": "通过向外部LLM隐藏敏感信息实现隐私保护的RAG",
+    "weighted_score": 0.775,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.8
     },
-    "story_id": "67f2f6284a29f237",
+    "story_id": "92037986de3153de",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11605"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "aebd96adae010f05",
-    "source_id": "arxiv-cs-ai",
-    "title": "XBridge: Entity-Grounded Latent Bridge for Heterogeneous LLM Communication",
-    "url": "https://arxiv.org/abs/2608.11676",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11676v1 Announce Type: new \nAbstract: Heterogeneous multi-agent LLM systems, where agents are powered by different model families, can outperform homogeneous configurations by reducing redundant reasoning patterns. Yet existing communication protocols either operate through text, discarding the sender's internal representations, or require architectural homogeneity for latent-level transfer. We identify the entity grounding problem in cross-architecture communication: cross-attention bridges that transfer continuous representations across different LLM families suffer from rare-token compression collapse, where entity identity is lost in the continuous bottleneck (bridge-only F1 ~30%). We propose XBRIDGE, a decode-free communication protocol that addresses this through two mechanisms. Lexical Anchor Mapping (LAM) maps the sender's original context tokens to the receiver's vocabulary, providing discrete entity anchors. A Latent Enrichment Bridge (LEB) lets the receiver query ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出实体锚定的潜在桥接，实现异构LLM间高效通信，突破文本与架构限制。",
-    "summary_zh": "异构多智能体LLM系统（由不同模型家族驱动的智能体）通过减少冗余推理模式，可能优于同构配置。然而，现有通信协议要么通过文本（丢弃发送方的内部表示），要么需要架构同质性才能进行潜在级传输。本文提出XBridge，一种实体锚定的潜在桥接方法，允许异构LLM在潜在空间通信，同时保留实体信息，提高通信效率与效果。",
-    "title_zh": "XBridge：面向异构LLM通信的实体锚定潜在桥接",
-    "weighted_score": 0.765,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "66a17354baadac4c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11676"
+        "url": "https://arxiv.org/abs/2608.12675"
       }
     ],
     "curated": true
@@ -755,12 +793,12 @@
     "curated": true
   },
   {
-    "id": "8c7d73e21ce75039",
+    "id": "eb5ff6a3dbcaee4e",
     "source_id": "arxiv-cs-ai",
-    "title": "Localizing Safety Alignment: MLP Layers and Mid-Network Blocks Encode Refusal Behavior in Large Language Models",
-    "url": "https://arxiv.org/abs/2608.11583",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11583v1 Announce Type: new \nAbstract: Safety alignment in large language models is often treated as a distributed property of the entire network, yet its practical brittleness suggests that refusal behavior may be concentrated in a smaller set of parameters. This work addresses where safety-aligned refusal is encoded by transplanting weights from aligned models into matched unaligned base models at multiple levels of granularity. Using two open-weight model pairs and four safety benchmarks, we conducted experiments to compare the effects of replacing attention weights, MLP weights, contiguous layer regions, and MLP blocks. Across both model families, refusal transfer is dominated by MLP weights: replacing MLP parameters recovers substantially more malicious-prompt refusal than replacing attention parameters, with gains of at least 2.7 times more across benchmarks. Within the MLP stack, refusal-relevant parameters exhibit a consistent mid-network concentration, as the block s",
+    "title": "Teach the Magnitude, Not the Direction: Verifier-Bounded Credit Assignment for Multi-Turn Multi-step LLM Agents",
+    "url": "https://arxiv.org/abs/2608.13179",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.13179v1 Announce Type: new \nAbstract: Reinforcement learning with verifiable rewards (RLVR) offers a verifier-bounded performance ceiling for training multi-turn tool-use agents, yet its trajectory-level credit assignment conflates heterogeneous per-turn outcomes into a single reward signal. On-policy distillation provides dense per-token supervision but is either teacher-bounded or prone to gradient concentration collapse. We introduce $\\textbf{CrEST}$, a hierarchical credit assignment framework that retains RL's verifier-bounded ceiling while incorporating dense token-level signals from a privileged self-teacher. $\\textbf{CrEST}$ resolves credit at two levels: turn-segmented verified advantages address inter-turn dilution, while entropy-gated self-teacher modulation refines intra-turn token contributions. Experiments on BFCL V3 and WildToolBench show that $\\textbf{CrEST}$ consistently outperforms both RL and distillation baselines across two model scales, with the largest ",
     "category_hint": [
       "论文研究"
     ],
@@ -768,56 +806,56 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "定位安全对齐的拒绝行为在MLP层和中网络块，通过权重移植揭示可解释性，深度高。",
-    "summary_zh": "该论文研究大型语言模型中安全对齐的拒绝行为是否集中在较小的参数集。通过将对齐模型的权重移植到未对齐的基础模型，定位安全对齐拒绝行为的编码位置。研究发现MLP层和中网络块编码拒绝行为，表明安全对齐并非分布式属性，而是集中在特定参数中。这一发现对理解LLM安全机制和提升鲁棒性具有重要意义。",
-    "title_zh": "定位安全对齐：MLP层和中网络块编码大型语言模型的拒绝行为",
-    "weighted_score": 0.76,
+    "reason_zh": "提出验证器有界信用分配方法，解决多轮工具使用智能体的奖励稀疏问题，对强化学习训练有重要参考价值。",
+    "summary_zh": "该论文针对多轮工具使用智能体的强化学习训练，指出轨迹级信用分配将不同轮次的异质结果混为单一奖励信号，限制了性能上限。作者提出验证器有界信用分配方法，通过蒸馏提供密集的逐令牌监督，同时避免教师模型或验证器的性能瓶颈。实验表明该方法在多个基准上优于现有方法，为多步智能体训练提供了新思路。",
+    "title_zh": "教大小而非方向：多轮多步LLM智能体的验证器有界信用分配",
+    "weighted_score": 0.765,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.8,
-      "impact": 0.8,
+      "impact": 0.7,
       "practical_value": 0.6
     },
-    "story_id": "28c3a19065821960",
+    "story_id": "06554209b2354064",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11583"
+        "url": "https://arxiv.org/abs/2608.13179"
       }
     ],
     "curated": true
   },
   {
-    "id": "e749d34f05c21555",
-    "source_id": "arxiv-cs-ai",
-    "title": "MBA: Multimodal Benchmark and Agents for Real-World Business Ideation",
-    "url": "https://arxiv.org/abs/2608.11616",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11616v1 Announce Type: new \nAbstract: Agentic systems powered by large language models (LLMs) have opened new opportunities for business ideation. Yet existing approaches remain confined to a text-only paradigm, despite the inherently multimodal nature of real-world contexts. We thus introduce MBA-Bench, the first multimodal benchmark for training and evaluating business ideation agents, comprising 30K samples across six domains, each domain characterized by distinct visual cues not fully conveyed by text alone. Concretely, we automatically caption images and employ GPT-4o to generate five reference ideas for each of three business questions through retrieval query generation, market evidence retrieval, and evidence-augmented synthesis. Following prior work, we evaluate agents across six business-oriented criteria using MLLM-as-a-Judge. To consider settings where criteria are hidden or disclosed, we present MBA-b and MBA-k for blind and known, respectively. We train both wit",
+    "id": "5b62604e8e643e33",
+    "source_id": "zh-ithome",
+    "title": "消息称苹果专门针对中国市场训练了一款 AI 模型，由阿里提供支持",
+    "url": "https://www.ithome.com/0/989/676.htm",
+    "published_at": "2026-08-14T04:39:21+00:00",
+    "raw_text": "<p>IT之家 8 月 14 日消息，据路透社报道，三位知情人士透露，<strong>苹果公司已专门针对中国市场训练出了一款大语言模型</strong>。这标志着苹果改变了此前在中国依赖第三方模型来支持 AI 功能的策略。</p><p>上述人士表示，<strong>该 AI 模型是与阿里巴巴集团合作开发的</strong>，并在该中国科技巨头的支持下完成了训练。</p><p>知情人士补充称，在 iOS 操作系统完成后续更新后，苹果的 AI 工具套件 Apple Intelligence（苹果智能）预计将于未来几个月内在中国推出。</p><p>据IT之家此前报道，7 月 15 日，网信部门公告了<a href=\"https://www.ithome.com/0/977/080.htm\" target=\"_blank\">“Apple 智能”等 7 款提供手机端侧生成式人工智能服务备案信息</a>。</p><p>8 月，一篇名为《在 Mac 上配合 Apple 智能使用千问》的支持文档现身苹果官网 Mac 简体中文使用手册，<a href=\"https://www.ithome.com/0/987/366.htm\" target=\"_blank\">其中明确提到 Apple 智能可配合阿里巴巴千问模型工作</a>。但随后该文档被苹果删除。</p><p><strong>相关阅读：</strong></p><ul class=\"small-size list-paddingleft-2\"><li><p>《<a href=\"https://www.ithome.com/0/977/109.htm\" target=\"_blank\">国行苹果 AI 功能完成备案，阿里巴巴称千问将作为 AI 能力集成至 Apple 智能</a>》</p></li><li><p>《<a href=\"https://www.ithome.com/0/987/366.htm\" target=\"_blank\">苹果 Mac 简体中文支持文档更新，“Apple 智能”阿里千问扩展现身</a>》</p></li><li><p>《<a href=\"https://www.ithome.com/0/987/467.htm\" target=\"_blank\">苹果中国官网删除 Apple 智能接入阿里千问使用手册</a>",
     "category_hint": [
-      "论文研究"
+      "行业动态"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "首个多模态商业创意基准，推动智能体从文本走向多模态真实场景，填补空白。",
-    "summary_zh": "本文介绍MBA-Bench，这是首个用于训练和评估商业创意智能体的多模态基准。现有方法局限于纯文本范式，而真实世界场景本质上是多模态的。MBA-Bench旨在弥合这一差距，为智能体提供包含图像、文本等多种模态的输入，以评估其在真实商业环境中的创意生成能力。该基准有望推动商业智能体研究向更实际的方向发展。",
-    "title_zh": "MBA：面向真实世界商业创意的多模态基准与智能体",
-    "weighted_score": 0.76,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "苹果与阿里合作训练中国专属AI模型，标志其中国策略转变，对行业影响大，但细节有限。",
+    "summary_zh": "据路透社报道，苹果公司已专门针对中国市场训练了一款大语言模型，与阿里巴巴集团合作开发，改变了此前依赖第三方模型的策略。该模型预计将在iOS更新后随Apple Intelligence在中国推出。此前网信部门已公告“Apple智能”等7款手机端侧生成式AI服务备案信息。此举显示苹果为适应中国监管和市场需求，加强本地化AI能力。",
+    "title_zh": "消息称苹果与阿里合作训练中国专属AI模型",
+    "weighted_score": 0.765,
     "score_breakdown": {
-      "source_authority": 0.9,
+      "source_authority": 0.8,
       "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
+      "impact": 0.9,
+      "practical_value": 0.5
     },
-    "story_id": "a88aa908157932f9",
+    "story_id": "721e309ee456fe8d",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11616"
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/989/676.htm"
       }
     ],
     "curated": true
@@ -852,74 +890,6 @@
       {
         "source_id": "zh-meituan-tech",
         "url": "https://tech.meituan.com/2026/07/28/CatPaw-LongCat.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "ccfaed74cd8539d5",
-    "source_id": "zh-ithome",
-    "title": "部分 Claude 模型将添加“文本水印”，Anthropic 回应各界关切",
-    "url": "https://www.ithome.com/0/989/462.htm",
-    "published_at": "2026-08-13T13:47:17+00:00",
-    "raw_text": "<p>IT之家 8 月 13 日消息，Anthropic 本周宣布，部分 Claude 模型会直接在输出文本中嵌入一种“难以察觉的水印”。内容被复制粘贴后，水印仍会随文本保留，经过一定程度修改后也可能继续存在，用于帮助判断一段文字究竟由 AI 生成还是由人类撰写。</p><p>Anthropic 目前尚未公开水印系统的完整技术原理。技术细节的不透明已经引发一些科技从业者担忧。具体来看，版权如何认定、Claude 输出质量是否会受到影响，以及只使用 AI 进行少量辅助的作品会不会因此被误判等问题，备受关注。</p><p>据《商业内幕》今天（12 日）晚间报道，Anthropic 方面对于各界关心的问题作出了回应。</p><h3>谁能识别水印？</h3><p>科技投资人比尔 · 格利担心，如果只有 Anthropic 能够识别水印，Anthropic 就可能同时扮演“<strong>法官、陪审团和检察官</strong>”的多重角色。</p><p>Anthropic 发言人回应说，公司计划提供免费的应用程序接口（API），<strong>让普通用户和第三方也能自行检测</strong>一段文字是否带有 Claude 水印。</p><h3>只让 AI 稍作修改的内容怎么算？</h3><p>一些开发者还担心，如果 Anthropic 通过特定词语组合来标记 AI 生成文本，水印机制可能会影响 Claude 本身的回答。Anthropic 发言人称，<strong>水印不会改变 Claude 回答的含义、质量或可读性</strong>。</p><p>数字医疗机构 Klick 生成式 AI 负责人西蒙 · 史密斯周二在 X 发文称，他担心仅由 AI 做过轻微处理的文字也会被认定为 AI 创作，例如只是把一篇文章交给 Claude 检查语法。</p><p>Anthropic 表示，水印代表的<strong>是 Claude 曾经处理过文本</strong>，并不能证明整段文字都是 Claude 写的。即使 Claude 只负责校对、翻译或总结，水印也可能继续保留。</p><h3>对版权会有何种影响？</h3><p>微软前高管史蒂文 · 辛诺夫斯基把关注点放在了<strong>数字隐私</strong>上。“真正的问题是数据保留，以及你是否有权拥有不留下数字痕迹的私人想法。”</p",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.4,
-    "reason_zh": "Anthropic为Claude添加文本水印，回应版权、质量等关切，涉及AI伦理与监管，值得关注。",
-    "summary_zh": "Anthropic宣布将在部分Claude模型输出中嵌入难以察觉的文本水印，用于判断内容是否由AI生成。水印在复制粘贴后仍会保留，且经过一定修改也可能存在。Anthropic尚未公开完整技术原理，引发科技从业者对版权认定、输出质量影响及误判风险的担忧。Anthropic对各界关切作出了回应，但具体细节未完全披露。",
-    "title_zh": "部分Claude模型将添加“文本水印”，Anthropic回应各界关切",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "94c10fd1728e9c38",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/989/462.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6edb35e175fddb42",
-    "source_id": "arxiv-cs-ai",
-    "title": "LinearKV: One Cached State Suffices for Position-Independent Caching in Hybrid LLMs",
-    "url": "https://arxiv.org/abs/2608.11231",
-    "published_at": "2026-08-13T04:00:00+00:00",
-    "raw_text": "arXiv:2608.11231v1 Announce Type: new \nAbstract: LLM serving is increasingly accelerated by position-independent caching (PIC). Existing PIC methods, however, are built for full-attention models, where a token-indexed KV cache underlies its core operations: matching reusable token chunks, concatenating their KV entries, and selectively recomputing a few tokens to restore cross-chunk context. Hybrid LLMs break these primitives---they replace most attention layers with linear recurrences that expose only a fixed-size state, leaving no token-indexed KV to concatenate or to locally repair. This raises a natural question: can PIC benefit hybrid models, and what would it take? We present LinearKV, a training-free hybrid-PIC framework. Its key insight is a \\emph{decoupled initialization}: each linear layer maps its $K$ matched local states to a single initial state, while full-attention layers concatenate their KV as before. LinearKV is therefore compatible with existing PIC methods, reusing ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出LinearKV，为混合LLM实现位置无关缓存，显著提升推理效率，实用价值高。",
-    "summary_zh": "LLM服务越来越依赖位置无关缓存（PIC）加速。现有PIC方法针对全注意力模型设计，其核心操作基于令牌索引的KV缓存：匹配可重用令牌块、拼接其KV条目、选择性重算少数令牌以恢复跨块上下文。混合模型架构不同，现有方法不适用。本文提出LinearKV，仅需一个缓存状态即可实现混合LLM的位置无关缓存，大幅降低缓存开销，提升推理速度。",
-    "title_zh": "LinearKV：混合LLM中一个缓存状态即可实现位置无关缓存",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "25efaecab6872ae6",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.11231"
       }
     ],
     "curated": true
@@ -1134,6 +1104,108 @@
     "curated": true
   },
   {
+    "id": "fb00c34bf22a9f38",
+    "source_id": "arxiv-cs-ai",
+    "title": "Dual-Flow Transformers: Decoupling the Primary Prefill Path from Additional Decode Computation",
+    "url": "https://arxiv.org/abs/2608.12385",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12385v1 Announce Type: new \nAbstract: As large language models serve more requests, cumulative inference cost is becoming increasingly important relative to one-time training cost. The two inference phases stress hardware differently: prompt prefill is parallel and typically compute-bound, whereas autoregressive decode is sequential and often memory-bandwidth-bound. Conventional width or depth scaling increases both costs together because every added layer is evaluated in both phases. We ask whether additional learned computation can instead be allocated to continuation prediction while preserving the prompt-wide primary computation and a single persistent key-value (KV) cache. We introduce the Dual-Flow Transformer. Its primary flow is a complete causal language model that processes the prompt and writes the KV cache. The auxiliary flow is omitted during prompt processing and activated only from the final prompt position onward, adding continuation-prediction computation wi",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出双流Transformer架构，解耦预填充和解码计算，优化推理成本，对部署有实际意义。",
+    "summary_zh": "该论文提出双流Transformer架构，将主要预填充路径与额外解码计算解耦。预填充是并行且计算密集，解码是顺序且内存带宽受限。传统宽度优化难以兼顾两者。该架构通过分离计算路径，分别优化，降低累积推理成本。实验表明在保持性能的同时显著减少推理开销。",
+    "title_zh": "双流Transformer：解耦主要预填充路径与额外解码计算",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "afcb78af1c575d18",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12385"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "8fd6bf0d92e53b34",
+    "source_id": "arxiv-cs-ai",
+    "title": "Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence",
+    "url": "https://arxiv.org/abs/2608.12743",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12743v1 Announce Type: new \nAbstract: Spatial intelligence is becoming a foundation for embodied agents, robotic planning, and multimodal assistants. To improve the spatial reasoning ability of VLM agents, existing work has mainly followed two lines. One line uses post-training methods, such as supervised fine-tuning and reinforcement learning. Another line adopts an agentic paradigm in which the model calls external spatial tools, such as depth estimation and 3D reconstruction tools, to gather intermediate spatial evidence. We study a complementary and underexplored route: Can a frozen VLM agent improve its spatial reasoning through \\textbf{parameter-update-free self-evolution}, without depending on external expert spatial tools at inference time? We present \\textbf{Spatial Memory Agent (SMA)}, an \\textbf{experience-grounded runtime framework} that converts verified spatial experience into reusable transferable lessons. In a verifiable spatial environment, SMA queries the f",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出空间记忆智能体，通过经验积累程序记忆增强空间推理，对具身智能和机器人规划有重要价值。",
+    "summary_zh": "空间智能正在成为具身智能体、机器人规划和多模态助手的基础。为了提高VLM智能体的空间推理能力，现有工作主要遵循两条路线：一是使用后训练方法，如监督微调和强化学习；二是采用智能体范式。本文提出了一种空间记忆智能体，通过经验积累程序记忆，使智能体能够从过去的经验中学习空间操作程序，从而增强其空间推理和规划能力，为空间智能的发展提供了新思路。",
+    "title_zh": "空间记忆智能体：用于空间智能的经验基础程序记忆",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "efc36ae5ee14d3a3",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12743"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "e5cc2da898559524",
+    "source_id": "arxiv-cs-ai",
+    "title": "Correct Is Not Governed: Provenance Integrity in Agentic Workflows",
+    "url": "https://arxiv.org/abs/2608.12761",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.12761v1 Announce Type: new \nAbstract: Agentic workflows are commonly evaluated by whether they reach the correct outcome. That is insufficient in institutional settings, where a correct action may rely on the wrong authority, an unsupported completion claim, or work made stale by a later change. We define governed execution as work whose decisions, completion, and response to change are supported by inspectable provenance. We present Matrix, a deterministic causal-state layer that records authority and fact dependencies, verifies completion evidence, and selectively invalidates affected work. Across controlled comparisons, governed and direct workflows often reached the same outcomes, but only the governed path consistently preserved governing evidence, refused unsupported closure, and limited recovery to dependent tasks. A role-separated transfer challenge then failed: a deterministically enforced completeness contract severely over-blocked synthetic packets produced outsid",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "指出智能体工作流仅评估结果正确性不足，提出治理执行概念，对机构场景下的AI可靠性有深刻见解。",
+    "summary_zh": "智能体工作流通常通过是否达到正确结果来评估。但在机构环境中，这并不足够，因为一个正确的行动可能依赖于错误的权威、未经证实的完成声明，或因后续更改而过时的工作。本文定义了治理执行，即工作的决策、完成和对变更的响应都受到适当治理约束的执行。文章强调了在智能体工作流中确保来源完整性和治理合规的重要性，为构建可信赖的AI系统提供了新视角。",
+    "title_zh": "正确不等于受治理：智能体工作流中的来源完整性",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "892c6c708181a7b0",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.12761"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "6e6b6506dea23772",
     "source_id": "verge-ai",
     "title": "Microsoft is combining its Copilot apps ahead of a ‘super app’",
@@ -1308,6 +1380,41 @@
     "curated": true
   },
   {
+    "id": "6d7f7c3a0398b0a8",
+    "source_id": "simonwillison",
+    "title": "llm-gemini 0.33",
+    "url": "https://simonwillison.net/2026/Aug/13/llm-gemini/",
+    "published_at": "2026-08-13T19:37:34+00:00",
+    "raw_text": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm-gemini/releases/tag/0.33\">llm-gemini 0.33</a></p>\n        <p>It's been a while since the last <code>llm-gemini</code> release. This version of the plugin adds support for today's <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/\">Gemini 3.7 Flash</a> release, plus <code>gemini-3.6-flash</code>, <code>gemini-3.5-flash-lite</code> and two embedding models <code>gemini-embedding-2</code> and <code>gemini-embedding-001</code>.</p>\n<p>The plugin is also upgraded for compatibility with LLM 0.32, which means you can now see reasoning traces and you can also enable server-side tools using this pattern:</p>\n<pre><code>llm -m gemini-3.7-flash -T CodeExecution \\\n  'use python to calculate (factorial of 13) * 3'\n</code></pre>\n<p>I had Gemini 3.7 Flash <a href=\"https://tools.simonwillison.net/markdown-svg-renderer.html#url=https%3A%2F%2Fgist.github.com%2Fsimonw%2F6779a22d",
+    "category_hint": [
+      "技巧与观点",
+      "开源项目"
+    ],
+    "image_url": "https://static.simonwillison.net/static/2026/gemini-3.7-flash-high-pelican.jpg",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "llm-gemini 插件更新支持 Gemini 3.7 Flash，对开发者实用。",
+    "summary_zh": "llm-gemini 插件发布了 0.33 版本，主要增加了对今天发布的 Gemini 3.7 Flash 模型的支持。该插件是 Simon Willison 的 llm 工具的一部分，允许用户通过命令行使用 Gemini 模型。此次更新使开发者能够立即使用最新的 Gemini 3.7 Flash 模型。",
+    "title_zh": "llm-gemini 0.33 发布",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "52f03996ca5f15c5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "simonwillison",
+        "url": "https://simonwillison.net/2026/Aug/13/llm-gemini/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "5c5f749b22bc6659",
     "source_id": "zh-tonybai",
     "title": "Google官方下场安利：AI时代，Go才是“最适合”的编程语言",
@@ -1342,6 +1449,74 @@
     "curated": true
   },
   {
+    "id": "4cebc87403e6dcb5",
+    "source_id": "pandaily",
+    "title": "DeepSeek's 'Black Whale' Surfaces: Harness Developer Preview Open-Sourced Under MIT — Everything Is a Plugin",
+    "url": "https://pandaily.com/deepseek-harness-developer-preview-everything-is-a-plugin-black-whale-aug2026",
+    "published_at": "2026-08-14T02:08:56+00:00",
+    "raw_text": "On August 13, DeepSeek released the official V4 Pro model and the developer preview of DeepSeek Harness, open-sourced under the MIT license. Built on the Cordis plugin system, Harness treats every agent capability as a plugin and ships append-only session logs with full trajectory tracing.",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://cms-image.pandaily.com/1/img_1_01e88b5535.png",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "DeepSeek Harness开源，插件化设计，附完整轨迹追踪，值得一试。",
+    "summary_zh": "8月13日，DeepSeek发布V4 Pro模型和DeepSeek Harness开发者预览版，采用MIT开源。Harness基于Cordis插件系统，将每个Agent能力视为插件，并附带仅追加的会话日志和完整轨迹追踪，提供高度可扩展性。",
+    "title_zh": "DeepSeek'黑鲸'浮出水面：Harness开发者预览版MIT开源——一切皆插件",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "3c71fcd73de8d310",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/deepseek-harness-developer-preview-everything-is-a-plugin-black-whale-aug2026"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a732bd7441a374ef",
+    "source_id": "arxiv-cs-ai",
+    "title": "Sovereign by necessity? Frontier AI export controls, cyber security, and the limits of national AI capability",
+    "url": "https://arxiv.org/abs/2608.13272",
+    "published_at": "2026-08-14T04:00:00+00:00",
+    "raw_text": "arXiv:2608.13272v1 Announce Type: new \nAbstract: A small number of firms based in two states produce the most capable frontier AI models. The governments of those states have shown both the legal power and the political will to decide which other countries may use these systems. In June 2026 the United States required a leading developer to obtain licences before releasing its most advanced models to any foreign person, including foreign nationals resident in the United States. The affected models were withdrawn worldwide at short notice, partly because the restriction proved impractical to administer. This followed within months of the first documented case of a largely autonomous, AI-run cyber espionage campaign, and coincided with mounting evidence that frontier models alter the economics of both cyber attack and cyber defence. This article examines how these two developments interact, and situates them within the unusual market dynamics now driving large-scale AI development. It ar",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.6,
+    "reason_zh": "探讨前沿AI出口管制与网络安全的相互作用，分析国家AI能力的局限，对政策制定有参考意义。",
+    "summary_zh": "本文分析前沿AI模型出口管制对网络安全和国家AI能力的影响。指出少数公司主导前沿模型，政府有权决定他国使用权限。以2026年美国要求开发者获得许可为例，讨论出口管制如何影响全球AI生态，并探讨国家在追求AI主权时面临的网络安全挑战和局限。",
+    "title_zh": "必要的主权？前沿AI出口管制、网络安全与国家AI能力的局限",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.4
+    },
+    "story_id": "f4787163f87414de",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.13272"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "ac9fead7e2e40bfe",
     "source_id": "zh-oschina",
     "title": "深度测评 SpaceXAI 的 Grok 4.6：Agent 能力突出、成本效率成杀手锏",
@@ -1366,7 +1541,7 @@
       "practical_value": 0.6
     },
     "story_id": "62fcb947f273c79f",
-    "multi_source_count": 5,
+    "multi_source_count": 6,
     "sources": [
       {
         "source_id": "siliconangle",
@@ -1391,6 +1566,10 @@
       {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/501921/grok-4-6-benchmarks-and-analysis"
+      },
+      {
+        "source_id": "zh-tmtpost",
+        "url": "https://www.tmtpost.com/8102937.html"
       }
     ],
     "curated": true
@@ -1434,10 +1613,6 @@
       {
         "source_id": "qbitai",
         "url": "https://www.qbitai.com/2026/08/472067.html"
-      },
-      {
-        "source_id": "ifanr",
-        "url": "https://www.ifanr.com/1675083?utm_source=rss&utm_medium=rss&utm_campaign="
       }
     ],
     "curated": true
@@ -1480,75 +1655,5 @@
       }
     ],
     "curated": true
-  },
-  {
-    "id": "a980071a6d960d36",
-    "source_id": "zh-v2ex",
-    "title": "[开源软件] 实测对比： DeepSeek Harness (dsh) vs BitFun，两个开源 Agent Harness 的不同解法",
-    "url": "https://www.v2ex.com/t/1234212#reply0",
-    "published_at": "2026-08-13T13:29:47+00:00",
-    "raw_text": "DeepSeek 今天把 Harness （ dsh ）开了开发者预览、MIT 协议。我两个都装了本机跑了一遍——dsh 和我一直在做的 BitFun——写个客观对比给选型的朋友。<br /><br />## 定位<br />- **dsh**：DeepSeek 官方 agent harness ，Node/TS ，跑在 Cordis 元框架上，核心是「 everything is a plugin 」；形态 web / headless / tui 三种 profile 。<br />- **BitFun**：Rust + Tauri 桌面 agent ，模型无关，走「桌面 + 任务专属 Mini App 」路线。<br /><br />## 架构<br />dsh 的 profile 是插件 bundle 的 patch 层按序叠加，换 provider 就是往 ctx.llm 注册个适配器（内置 llm-deepseek 、llm-pi-ai ）。<br />BitFun 是四层定制：自定义 Agent → MCP / Skills / Codex 兼容 Hooks → Mini Apps → 源码级；模型开箱即多，catalog 里有 Claude / DeepSeek / GLM / Kimi / Qwen 。<br /><br />## 上下文成本（我最在意的）<br />dsh 用 compaction （ basic + tool-result-pruner ）+ token-meter 压上下文。<br />BitFun 走另一条路：prompt 拼接字节级稳定，跨轮不带会抖动的时间戳、不重排，SWE-Bench-Pro 实测 KV cache 平均命中率 98.67%；检索用常驻跨轮索引 flashgrep ，Chromium 级仓库最高省 94.6%、平均约 36 倍。<br /><br />## 权限<br />都有审批：dsh 的 tool-ask-user ，BitFun 的权限审批 + 远程审批； BitFun 额外有零知识中继的自托管多设备控制。<br /><br />## 结论<br />不是谁更好，是默认取舍不同。要 DeepSeek 官方生态 + 插件可组合性跟 dsh （注意还是 dev preview ，会有 breakin",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "作者实测对比两个开源Agent Harness，从架构、定位等维度分析，对选型有实际参考价值。",
-    "summary_zh": "本文对比了DeepSeek Harness（dsh）和BitFun两个开源Agent Harness。dsh是DeepSeek官方产品，基于Node/TS和Cordis框架，核心是“一切皆插件”，支持web/headless/tui三种profile；BitFun是Rust+Tauri桌面Agent，模型无关，走“桌面+任务专属Mini App”路线。作者从定位、架构等方面进行了客观对比，并分享了实际使用体验，为开发者选型提供了参考。",
-    "title_zh": "实测对比：DeepSeek Harness (dsh) vs BitFun",
-    "weighted_score": 0.71,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "899bd1d581aba2c9",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1234212#reply0"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "7907d9c2ec8e456a",
-    "source_id": "gh-pydantic-ai",
-    "title": "pydantic/pydantic-ai v2.29.0",
-    "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.29.0",
-    "published_at": "2026-08-13T04:02:53+00:00",
-    "raw_text": "<!-- Release notes generated using configuration in .github/release.yml at main -->\n\n## What's Changed\n### 🚀 Features\n* Support FastMCP 4 and MCP SDK v2 in `MCPToolset` alongside FastMCP 3 by @adtyavrdhn in https://github.com/pydantic/pydantic-ai/pull/6738\n* Add Azure AI Voice Live via the `azure_voice_live` setting by @DouweM in https://github.com/pydantic/pydantic-ai/pull/6642\n### 🐛 Bug Fixes\n* Fix silent truncation of gzip response bodies by @ChaoGlenXu in https://github.com/pydantic/pydantic-ai/pull/7388\n* Include parameter descriptions in rendered tool signatures by @adtyavrdhn in https://github.com/pydantic/pydantic-ai/pull/6487\n* Fix inherited realtime WebRTC and Azure `for_realtime` bugs from `#6676` by @DouweM in https://github.com/pydantic/pydantic-ai/pull/7412\n* Fix concurrent provider stream shutdown by @dsfaccini in https://github.com/pydantic/pydantic-ai/pull/7375\n\n## New Contributors\n* @ChaoGlenXu made their first contribution in https://github.com/pydantic/pydantic-ai/p",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "pydantic-ai更新支持FastMCP 4和Azure语音，提升开发效率，实用性强。",
-    "summary_zh": "pydantic-ai v2.29.0版本发布，主要更新包括：在MCPToolset中支持FastMCP 4和MCP SDK v2，以及通过azure_voice_live设置添加Azure AI语音实时功能。此外还包含一些bug修复。这些更新增强了pydantic-ai的兼容性和功能，为开发者提供了更多选择和便利。",
-    "title_zh": "pydantic/pydantic-ai v2.29.0",
-    "weighted_score": 0.685,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.7
-    },
-    "story_id": "09aea7601758e414",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-pydantic-ai",
-        "url": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.29.0"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
   }
 ]
