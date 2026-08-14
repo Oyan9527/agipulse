@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generated_at": "2026-08-14T12:56:16.334501+00:00",
+  "generated_at": "2026-08-14T20:34:13.764695+00:00",
   "items": [
     {
       "id": "ac68798008ea6a83",
@@ -32,6 +32,39 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2608.12895"
+        }
+      ]
+    },
+    {
+      "id": "484110aa0405d20d",
+      "source_id": "zh-dfine-tech",
+      "title": "DeepSeek Harness：一切皆插件的开源 agent 运行时",
+      "url": "https://dfine.tech/posts/9b3cccd3/",
+      "published_at": "2026-08-14T13:00:00+00:00",
+      "raw_text": "<p>DeepSeek Harness（命令行叫 <code>dsh</code>）是 DeepSeek AI 开源的 agent harness，MIT，还在 developer preview 阶段，明说会有破坏性变更。它不是又一个「把 prompt 和工具拼起来跑一圈」的循环，而是把整个 agent 运行时——模型适配器、工具注册表、会话日志、连 agent loop 本身——全部做成插件，挂在一个叫 Cordis 的框架上。没有一个要打补丁的内核，任何一层都能从配置替换掉。</p>\n<p>这篇不介绍怎么用它写 agent，而是拆它的架构：Cordis 的插件范式、启动时怎么把一棵插件树组合出来、会话日志为什么是唯一事实源、一个回合怎么执行、工具管线和能力接缝是怎么设计的。然后是我更想聊的那半边——它到底贡献了什么，跟 pi 那种「薄内核」路线差在哪一层，以及顺着这条线往远看，harness 自身的进化该由谁来做。</p>\n<!--more-->\n<h3 id=\"定位\">定位</h3>\n<p>装好 Node 一行就能跑：</p>\n<figure class=\"code\"><figcaption class=\"code-head\"><span class=\"code-lang\">sh</span></figcaption><pre class=\"shiki shiki-themes vitesse-light vitesse-dark\" tabindex=\"0\"><code><span class=\"line\"><span>npx</span><span> @deepseek-ai/dsh</span><span> web</span></span></code></pre></figure>\n<p>默认起一个 Web UI，<code>http://127.0.0.1:3080</code>。除了浏览器形态，还有一个无服务器的 <code>headless</code> 一次性执行形态。但这些都只是表层——<code>dsh</code> 真正的主张写在架构文档第一句：<strong>一切皆插件</strong>。模型适配器是插件，工具注册表是插件，会话日志是插件，驱动整个对话的 agent loop 也是插件。它们平等地挂在同一个上下文里，谁都不比谁特权。<",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "深度拆解DeepSeek Harness的插件化架构，对比薄内核路线，揭示其设计哲学，极具启发性。",
+      "summary_zh": "本文深入分析了DeepSeek Harness（dsh）的架构设计。dsh是DeepSeek AI开源的agent harness，采用MIT许可，处于开发者预览阶段。其核心特点是将整个agent运行时（模型适配器、工具注册表、会话日志、agent loop）全部插件化，基于Cordis框架。文章详细拆解了插件范式、启动时插件树组合、会话日志作为唯一事实源、回合执行流程、工具管线和能力接缝设计，并对比了与pi等薄内核路线的差异，探讨了其贡献和未来方向。",
+      "title_zh": "DeepSeek Harness：一切皆插件的开源agent运行时",
+      "weighted_score": 0.78,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "2621912a3782053a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-dfine-tech",
+          "url": "https://dfine.tech/posts/9b3cccd3/"
         }
       ]
     },
@@ -69,6 +102,39 @@
       ]
     },
     {
+      "id": "09e62eb15568147b",
+      "source_id": "zh-meituan-tech",
+      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+      "published_at": "2026-08-14T20:25:40.543539+00:00",
+      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "美团开源 LoHoSearch 评测基准，用知识图谱校准搜索智能体能力，解决基准饱和问题，对搜索智能体研究有重要价值。",
+      "summary_zh": "美团开源了 LoHoSearch，一个面向下一代搜索智能体的评测基准。该基准利用知识图谱来校准 AI 能力认知，以应对现有基准（如 BrowseComp）迅速饱和、区分度下降的问题。文章指出，顶尖模型在 BrowseComp 上的准确率已从 30% 攀升至 90% 以上，导致基准无法有效区分模型能力。LoHoSearch 旨在提供更精细的评测，帮助研究者更好地评估和提升搜索智能体的性能。",
+      "title_zh": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "weighted_score": 0.855,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.8
+      },
+      "story_id": "eb00a4db4521a3f4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+        }
+      ]
+    },
+    {
       "id": "2081566b6ddb1bca",
       "source_id": "zh-tonybai",
       "title": "刚刚，DeepSeek开源Harness：把Agent拆成插件，一切皆可换",
@@ -98,40 +164,6 @@
         {
           "source_id": "zh-tonybai",
           "url": "https://tonybai.com/2026/08/14/deepseek-harness-everything-is-a-plugin/"
-        }
-      ]
-    },
-    {
-      "id": "d83d050a98090538",
-      "source_id": "techcrunch-ai",
-      "title": "Anthropic set AI agents loose on the same task. They started a turf war.",
-      "url": "https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/",
-      "published_at": "2026-08-13T18:28:14+00:00",
-      "raw_text": "Anthropic researchers found AI agents can clash, collude, and coordinate in unexpected ways, raising new questions about whether today’s safety tests capture the risks of multi-agent systems.",
-      "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Anthropic研究揭示多智能体冲突行为，对AI安全测试提出新挑战。",
-      "summary_zh": "Anthropic研究人员发现，AI智能体在相同任务中可能发生冲突、勾结和协调，引发对多智能体系统安全测试有效性的质疑。研究提出了新的问题：当前的安全测试是否能够捕捉多智能体系统的风险。",
-      "title_zh": "Anthropic让AI智能体自由执行同一任务，结果引发了地盘争夺战",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.9,
-        "practical_value": 0.7
-      },
-      "story_id": "fa1ef3167f182360",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "techcrunch-ai",
-          "url": "https://techcrunch.com/2026/08/13/anthropic-set-ai-agents-loose-on-the-same-task-they-started-a-turf-war/"
         }
       ]
     },
@@ -169,35 +201,36 @@
       ]
     },
     {
-      "id": "eb5ff6a3dbcaee4e",
-      "source_id": "arxiv-cs-ai",
-      "title": "Teach the Magnitude, Not the Direction: Verifier-Bounded Credit Assignment for Multi-Turn Multi-step LLM Agents",
-      "url": "https://arxiv.org/abs/2608.13179",
-      "published_at": "2026-08-14T04:00:00+00:00",
-      "raw_text": "arXiv:2608.13179v1 Announce Type: new \nAbstract: Reinforcement learning with verifiable rewards (RLVR) offers a verifier-bounded performance ceiling for training multi-turn tool-use agents, yet its trajectory-level credit assignment conflates heterogeneous per-turn outcomes into a single reward signal. On-policy distillation provides dense per-token supervision but is either teacher-bounded or prone to gradient concentration collapse. We introduce $\\textbf{CrEST}$, a hierarchical credit assignment framework that retains RL's verifier-bounded ceiling while incorporating dense token-level signals from a privileged self-teacher. $\\textbf{CrEST}$ resolves credit at two levels: turn-segmented verified advantages address inter-turn dilution, while entropy-gated self-teacher modulation refines intra-turn token contributions. Experiments on BFCL V3 and WildToolBench show that $\\textbf{CrEST}$ consistently outperforms both RL and distillation baselines across two model scales, with the largest ",
+      "id": "80fc9862bb897161",
+      "source_id": "aws-ml-blog",
+      "title": "Custom reward functions for multi-turn reinforcement learning with Amazon Nova Forge",
+      "url": "https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/",
+      "published_at": "2026-08-14T16:02:10+00:00",
+      "raw_text": "In multi-turn reinforcement learning, your custom reward function decides what the model actually learns. This post shows how to design a composite multi-turn reward for Amazon Nova Forge, execute model-generated code safely inside it, and instrument each component to catch the pitfalls that quietly collapse a reward.",
       "category_hint": [
-        "论文研究"
+        "技巧与观点",
+        "产品发布"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20735-1.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "提出验证器有界信用分配方法，解决多轮工具使用智能体的奖励稀疏问题，对强化学习训练有重要参考价值。",
-      "summary_zh": "该论文针对多轮工具使用智能体的强化学习训练，指出轨迹级信用分配将不同轮次的异质结果混为单一奖励信号，限制了性能上限。作者提出验证器有界信用分配方法，通过蒸馏提供密集的逐令牌监督，同时避免教师模型或验证器的性能瓶颈。实验表明该方法在多个基准上优于现有方法，为多步智能体训练提供了新思路。",
-      "title_zh": "教大小而非方向：多轮多步LLM智能体的验证器有界信用分配",
-      "weighted_score": 0.765,
+      "reason_zh": "AWS官方博客，深入讲解多轮强化学习中自定义奖励函数的设计与陷阱，实操性强，对RL工程师极具参考价值。",
+      "summary_zh": "本文由AWS机器学习博客发布，聚焦于Amazon Nova Forge平台上的多轮强化学习。文章指出，自定义奖励函数决定了模型实际学习的内容，并详细展示了如何设计复合多轮奖励函数。作者强调了在奖励函数内部安全执行模型生成代码的重要性，并介绍了如何对每个组件进行监控，以识别和避免导致奖励崩溃的常见陷阱。通过具体示例和最佳实践，为开发者提供了构建稳健奖励函数的实用指南，有助于提升多轮RL任务的性能与稳定性。",
+      "title_zh": "为Amazon Nova Forge多轮强化学习定制奖励函数",
+      "weighted_score": 0.775,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
       },
-      "story_id": "06554209b2354064",
+      "story_id": "cdf92903d13b08a2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.13179"
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/"
         }
       ]
     },
@@ -268,35 +301,35 @@
       ]
     },
     {
-      "id": "61de5b491b6faa42",
-      "source_id": "zh-tmtpost",
-      "title": "Agent的坠落，只用了一个夏天",
-      "url": "https://www.tmtpost.com/8103820.html",
-      "published_at": "2026-08-14T09:28:51+00:00",
-      "raw_text": "能活下去的Agent长什么样？",
+      "id": "3a58a8e34da6c0bc",
+      "source_id": "reddit-chatgptcoding",
+      "title": "If your definition of “real coding” is “I personally typed every line,” that definition is going to die",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1vnpgge/if_your_definition_of_real_coding_is_i_personally/",
+      "published_at": "2026-08-13T22:29:42+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I do not think AI coding makes engineering obsolete.</p> <p>I do think it makes one old definition of engineering obsolete: equating professional legitimacy with manually producing the implementation.</p> <p>Typing code is a means, not the outcome.</p> <p>If ChatGPT/Codex generates a function and I understand the contract, inspect the diff, test the edge cases, verify the integration and own the failure when it breaks, the meaningful engineering question is not who emitted the first draft of the tokens.</p> <p>The meaningful question is whether the resulting system is correct.</p> <p>The “AI slop” criticism is valid when people skip that ownership. Prompt once, never read the code, deploy it, then act shocked when it fails — yes, that is garbage.</p> <p>But a senior engineer using generation as leverage is a completely different workflow.</p> <p>The irony is that AI should increase the value of experienced judgment. The faster code appears, the more im",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4536ug3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
       "depth_score": 0.8,
-      "reason_zh": "深度剖析Agent行业泡沫破裂，探讨存活之道，具有启发性。",
-      "summary_zh": "文章探讨了AI Agent行业在经历一个夏天的热潮后迅速降温的现象，分析了Agent坠落的原因，并思考什么样的Agent能够存活。文章指出，许多Agent产品缺乏实际价值，难以落地，导致市场失望。作者认为，能活下去的Agent需要具备明确的应用场景、可靠的技术基础和可持续的商业模式。文章通过案例和反思，为Agent开发者提供了宝贵的经验教训。",
-      "title_zh": null,
-      "weighted_score": 0.65,
+      "reason_zh": "深入探讨AI编程对工程师身份定义的冲击，观点鲜明，引发对职业价值的反思。",
+      "summary_zh": "作者认为AI编程不会使工程过时，但会淘汰一种旧定义：将专业合法性等同于手动编写实现。打字只是手段而非结果。如果ChatGPT/Codex生成函数，而工程师理解契约、审查diff、测试边界情况，那么这仍然是工程。文章强调工程的核心在于理解、验证和集成，而非逐行输入。",
+      "title_zh": "如果“真正的编码”定义为“我逐行输入”，这个定义将消亡",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
+        "source_authority": 0.5,
+        "novelty": 0.6,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.8
       },
-      "story_id": "2f41ba588a2cc2d3",
+      "story_id": "bd9f46f2031c065f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8103820.html"
+          "source_id": "reddit-chatgptcoding",
+          "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1vnpgge/if_your_definition_of_real_coding_is_i_personally/"
         }
       ]
     },
@@ -334,74 +367,36 @@
       ]
     },
     {
-      "id": "896dc0a384d8ec90",
-      "source_id": "infoq-cn-ai",
-      "title": "从“会用”到“驾驭”：AI Coding 进入生产环境的真实碰撞",
-      "url": "https://www.infoq.cn/article/ydy2QDIAzQ1L314UH4qc?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-14T14:28:52+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/ydy2QDIAzQ1L314UH4qc?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "d556a48bace2bfaa",
+      "source_id": "huggingface-blog",
+      "title": "State of Open Models: Summer 2026 Observations",
+      "url": "https://huggingface.co/blog/state-of-open-models-summer-2026",
+      "published_at": "2026-08-14T00:00:00+00:00",
+      "raw_text": "",
       "category_hint": [
-        "行业动态",
-        "技巧与观点"
+        "开源项目",
+        "产品发布"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "深入剖析AI编程工具在生产环境的落地挑战，对工程实践有启发。",
-      "summary_zh": "文章基于真实案例，探讨了AI编程工具从个人使用到企业级生产环境部署的转变过程。作者分析了技术选型、代码质量、团队协作、安全合规等方面的实际碰撞，并提出了成功落地的关键因素，如人机协作流程设计、模型评估标准等，为正在探索AI Coding的企业提供了参考。",
-      "title_zh": "从“会用”到“驾驭”：AI Coding进入生产环境的真实碰撞",
-      "weighted_score": 0.745,
+      "reason_zh": "Hugging Face官方博客总结开源模型现状，权威且全面，对行业趋势有重要参考。",
+      "summary_zh": "Hugging Face博客发布2026年夏季开源模型观察报告，总结当前开源模型的发展状态、主要进展和挑战。报告可能涵盖模型性能、社区贡献、生态工具等方面，为从业者提供宏观视角。",
+      "title_zh": "开源模型现状：2026年夏季观察",
+      "weighted_score": 0.81,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "91674bb62b430809",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/ydy2QDIAzQ1L314UH4qc?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "3b883d76f995a685",
-      "source_id": "infoq-cn-ai",
-      "title": "Claude Code没有“魔法”",
-      "url": "https://www.infoq.cn/article/aVJlp0XApUkyu6CNLOkL?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-14T14:44:32+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/aVJlp0XApUkyu6CNLOkL?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "揭示Claude Code背后的原理，对理解AI编程工具有帮助。",
-      "summary_zh": "文章深入剖析了Claude Code的工作原理，指出其并非依赖魔法，而是基于精心设计的提示词、上下文管理和工具调用机制。作者通过实验和案例分析，解释了Claude Code如何理解用户意图、生成代码并执行任务，并探讨了其局限性和改进方向，为开发者提供了深入理解AI编程工具的视角。",
-      "title_zh": "Claude Code没有“魔法”",
-      "weighted_score": 0.68,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.6,
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "a9e63c981435cb7a",
+      "story_id": "097f56ae2f24077f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/ABCk0CzDtSKMHbPXCdWF?utm_source=rss&utm_medium=article"
-        },
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/aVJlp0XApUkyu6CNLOkL?utm_source=rss&utm_medium=article"
+          "source_id": "huggingface-blog",
+          "url": "https://huggingface.co/blog/state-of-open-models-summer-2026"
         }
       ]
     }
