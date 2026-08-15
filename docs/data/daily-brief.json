@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generated_at": "2026-08-15T12:34:15.221837+00:00",
+  "generated_at": "2026-08-15T20:21:42.575382+00:00",
   "items": [
     {
       "id": "ac68798008ea6a83",
@@ -32,39 +32,6 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2608.12895"
-        }
-      ]
-    },
-    {
-      "id": "484110aa0405d20d",
-      "source_id": "zh-dfine-tech",
-      "title": "DeepSeek Harness：一切皆插件的开源 agent 运行时",
-      "url": "https://dfine.tech/posts/9b3cccd3/",
-      "published_at": "2026-08-14T13:00:00+00:00",
-      "raw_text": "<p>DeepSeek Harness（命令行叫 <code>dsh</code>）是 DeepSeek AI 开源的 agent harness，MIT，还在 developer preview 阶段，明说会有破坏性变更。它不是又一个「把 prompt 和工具拼起来跑一圈」的循环，而是把整个 agent 运行时——模型适配器、工具注册表、会话日志、连 agent loop 本身——全部做成插件，挂在一个叫 Cordis 的框架上。没有一个要打补丁的内核，任何一层都能从配置替换掉。</p>\n<p>这篇不介绍怎么用它写 agent，而是拆它的架构：Cordis 的插件范式、启动时怎么把一棵插件树组合出来、会话日志为什么是唯一事实源、一个回合怎么执行、工具管线和能力接缝是怎么设计的。然后是我更想聊的那半边——它到底贡献了什么，跟 pi 那种「薄内核」路线差在哪一层，以及顺着这条线往远看，harness 自身的进化该由谁来做。</p>\n<!--more-->\n<h3 id=\"定位\">定位</h3>\n<p>装好 Node 一行就能跑：</p>\n<figure class=\"code\"><figcaption class=\"code-head\"><span class=\"code-lang\">sh</span></figcaption><pre class=\"shiki shiki-themes vitesse-light vitesse-dark\" tabindex=\"0\"><code><span class=\"line\"><span>npx</span><span> @deepseek-ai/dsh</span><span> web</span></span></code></pre></figure>\n<p>默认起一个 Web UI，<code>http://127.0.0.1:3080</code>。除了浏览器形态，还有一个无服务器的 <code>headless</code> 一次性执行形态。但这些都只是表层——<code>dsh</code> 真正的主张写在架构文档第一句：<strong>一切皆插件</strong>。模型适配器是插件，工具注册表是插件，会话日志是插件，驱动整个对话的 agent loop 也是插件。它们平等地挂在同一个上下文里，谁都不比谁特权。<",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "深度拆解DeepSeek Harness的插件化架构，对比薄内核路线，揭示其设计哲学，极具启发性。",
-      "summary_zh": "本文深入分析了DeepSeek Harness（dsh）的架构设计。dsh是DeepSeek AI开源的agent harness，采用MIT许可，处于开发者预览阶段。其核心特点是将整个agent运行时（模型适配器、工具注册表、会话日志、agent loop）全部插件化，基于Cordis框架。文章详细拆解了插件范式、启动时插件树组合、会话日志作为唯一事实源、回合执行流程、工具管线和能力接缝设计，并对比了与pi等薄内核路线的差异，探讨了其贡献和未来方向。",
-      "title_zh": "DeepSeek Harness：一切皆插件的开源agent运行时",
-      "weighted_score": 0.78,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "2621912a3782053a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-dfine-tech",
-          "url": "https://dfine.tech/posts/9b3cccd3/"
         }
       ]
     },
@@ -168,40 +135,6 @@
       ]
     },
     {
-      "id": "80fc9862bb897161",
-      "source_id": "aws-ml-blog",
-      "title": "Custom reward functions for multi-turn reinforcement learning with Amazon Nova Forge",
-      "url": "https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/",
-      "published_at": "2026-08-14T16:02:10+00:00",
-      "raw_text": "In multi-turn reinforcement learning, your custom reward function decides what the model actually learns. This post shows how to design a composite multi-turn reward for Amazon Nova Forge, execute model-generated code safely inside it, and instrument each component to catch the pitfalls that quietly collapse a reward.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20735-1.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "AWS官方博客，深入讲解多轮强化学习中自定义奖励函数的设计与陷阱，实操性强，对RL工程师极具参考价值。",
-      "summary_zh": "本文由AWS机器学习博客发布，聚焦于Amazon Nova Forge平台上的多轮强化学习。文章指出，自定义奖励函数决定了模型实际学习的内容，并详细展示了如何设计复合多轮奖励函数。作者强调了在奖励函数内部安全执行模型生成代码的重要性，并介绍了如何对每个组件进行监控，以识别和避免导致奖励崩溃的常见陷阱。通过具体示例和最佳实践，为开发者提供了构建稳健奖励函数的实用指南，有助于提升多轮RL任务的性能与稳定性。",
-      "title_zh": "为Amazon Nova Forge多轮强化学习定制奖励函数",
-      "weighted_score": 0.775,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "cdf92903d13b08a2",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/"
-        }
-      ]
-    },
-    {
       "id": "77478ebfdae20e21",
       "source_id": "simonwillison",
       "title": "Don't classify. Hallucinate!",
@@ -236,22 +169,22 @@
       ]
     },
     {
-      "id": "3529648d6e742eb8",
-      "source_id": "zh-juejin",
-      "title": "AI Agent 上下文污染踩坑实录：用 pytest + Redis 揪出 3 类记忆串号 bug，排查 6 小时",
-      "url": "https://juejin.cn/post/7673940698533642240",
-      "published_at": "2026-08-15T12:05:04+00:00",
-      "raw_text": "凌晨两点，用户群里发来一张截图：AI 客服回复工单时，把另一个用户的手机号和收货地址带了出来。我第一反应是模型幻觉，结果查 Redis 发现，两个不同 `user_id` 的会话共用了同一个 `ses",
+      "id": "6466df63384ef23d",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 多步骤 MCP 的 token 损耗，可能主要来自每一步的模型重入",
+      "url": "https://www.v2ex.com/t/1234701#reply0",
+      "published_at": "2026-08-15T19:24:10+00:00",
+      "raw_text": "<p>很多 MCP 演示只有一次工具调用；真实任务更像：创建项目 → 读取项目 ID → 导入素材 → 把 clip ID 交给下一步 → 导出 → 交付。</p>\n<p>普通 agent 每完成一步，都要把结果带回模型，再让模型把 ID 填进下一次调用。Tura 的 <code>command_run</code> Macro 想解决的是这段“交接”：一次描述依赖图，前一步成功产生的变量给后一步在运行时解析；没有依赖的命令可以一起执行。</p>\n<p>公开的电商广告工作流里，两边都通过同样 5 项检查、交付相同结果。Tura Direct 用 3 次模型请求，对照为 11 次；总 token 是 56,372 对 262,915 （少 78.6%）。有意思的是 MCP 调用不是更少，而是 11 对 9：省下的是把累计上下文反复送回模型的成本，不是少干活。</p>\n<p>依赖链更长时，Macro 内每保留一次交接，就少一次模型重入，所以这部分节省会累积；但不是所有任务都严格线性，缓存、重试和任务结构都会影响结果。</p>\n<p>完整 trace 、基准边界和变量继承规则：\n<a href=\"https://turaai.net/blog#what-we-learned-from-the-mcp-workflow-benchmark\" rel=\"nofollow\">https://turaai.net/blog#what-we-learned-from-the-mcp-workflow-benchmark</a></p>\n<p>源码：\n<a href=\"https://github.com/Tura-AI/tura\" rel=\"nofollow\">https://github.com/Tura-AI/tura</a></p>\n<p>说明：本文分享 Tura-AI 的工作，欢迎讨论这个思路在你们的 MCP 工作流里是否有效。之前看 deep swe 说 <a href=\"https://github.com/swe-agent/mini-swe-agent\" rel=\"nofollow\">https://github.com/swe-agent/mini-swe-agent</a> 比 codex 和 claude code 在 debug 中的 token 消耗和成功",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "教程方法",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "真实踩坑记录，揭示AI Agent上下文污染问题，提供可复现的排查方法，实用性强。",
-      "summary_zh": "本文作者分享了在开发AI Agent时遇到的上下文污染问题：AI客服回复工单时泄露了其他用户信息。通过使用pytest和Redis进行排查，最终定位到三类记忆串号bug：会话ID复用、缓存键冲突、以及异步写入导致的脏读。文章详细记录了排查过程，并给出了相应的解决方案和预防措施，对开发者具有很高的参考价值。",
-      "title_zh": "AI Agent 上下文污染踩坑实录：用 pytest + Redis 揪出 3 类记忆串号 bug，排查 6 小时",
+      "reason_zh": "深入剖析MCP多步骤调用的token损耗根源，提出依赖图优化方案，实测数据有力，对Agent开发者极具参考价值。",
+      "summary_zh": "文章指出多步骤MCP任务中token损耗主要源于每一步的模型重入，即每次工具调用后需将结果带回模型并重新解析。Tura的command_run Macro通过描述依赖图，让前一步的变量在运行时解析给后一步，无依赖命令可并行执行，从而减少模型请求次数。在公开电商广告工作流中，Tura Direct仅需3次模型请求，对比普通agent的11次，总token从262,915降至56,372，减少78.6%。值得注意的是，MCP调用次数反而更多（11对9），说明节省的是反复传递累计上下文的成本，而非减少工具调用。依赖链更长时，优化效果更显著。",
+      "title_zh": "多步骤MCP的token损耗主要来自模型重入",
       "weighted_score": 0.71,
       "score_breakdown": {
         "source_authority": 0.6,
@@ -259,147 +192,213 @@
         "impact": 0.6,
         "practical_value": 0.9
       },
-      "story_id": "4a3e603aae7c8d02",
+      "story_id": "3a60300f627d1e7b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7673940698533642240"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1234701#reply0"
         }
       ]
     },
     {
-      "id": "e198b33b7564684e",
-      "source_id": "reddit-rag",
-      "title": "Lesson learned building RAG on top of our own search product: retrieval quality was 90% of the problem",
-      "url": "https://www.reddit.com/r/Rag/comments/1voifrw/lesson_learned_building_rag_on_top_of_our_own/",
-      "published_at": "2026-08-14T20:22:59+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We run a search hosting service and recently shipped RAG across our client packages (LangChain / LlamaIndex / Haystack / MCP / Laravel Scout). The thing that actually moved answer quality wasn't the LLM — it was retrieval.</p> <p><strong>What failed first:</strong> our answer endpoint originally did its own lexical retrieval (edismax, strict minimum-match) — paraphrased questions returned &quot;no information&quot; while semantic search found the document instantly. Classic vocabulary mismatch.</p> <p><strong>What fixed it:</strong> two-step RAG where retrieval is a first-class citizen — hybrid (BM25 + kNN fused per document) picks the top N docs, and their content becomes the LLM context. Crucially, the same relevance tuning the search UI uses (field weights, minimum match, stopword-cleaned lexical query BUT the full phrase to the embedder) applies to RAG retrieval too. Tuning retrieval in one place improved both search results AND answers.</p> <p><st",
+      "id": "d7985d78b85ad426",
+      "source_id": "siliconangle",
+      "title": "Did Nvidia’s Jensen Huang just make the AI buildout too big to fail?",
+      "url": "https://siliconangle.com/2026/08/15/nvidias-jensen-huang-just-make-ai-buildout-big-fail/",
+      "published_at": "2026-08-15T04:46:35+00:00",
+      "raw_text": "<p>Nvidia Corp. is no longer just selling technology. It is helping create a financial asset class around artificial intelligence compute. In our last Breaking Analysis, we argued that AI can be technologically transformative and still produce a capital bubble. Our thesis was simply that the bubble pops if deployable supply grows faster than monetizable demand – [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/15/nvidias-jensen-huang-just-make-ai-buildout-big-fail/\" rel=\"nofollow\">Did Nvidia&#8217;s Jensen Huang just make the AI buildout too big to fail?</a> appeared first on <a href=\"https://siliconangle.com\" rel=\"nofollow\">SiliconANGLE</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/08/Jensen-and-his-mou-partners-1.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "分析英伟达将AI计算金融化，探讨泡沫风险，对理解AI资本动态有深度。",
+      "summary_zh": "文章讨论英伟达CEO黄仁勋是否让AI建设变得“大而不能倒”。指出英伟达不仅销售技术，还在帮助创造围绕AI计算的金融资产类别。作者延续此前观点，认为AI虽具技术变革性，但仍可能产生资本泡沫，泡沫破裂的条件是可部署供应增长快于可货币化需求。文章分析当前AI投资热潮的可持续性。",
+      "title_zh": "黄仁勋是否让AI建设变得“大而不能倒”？",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "4fb62a17e61412ab",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "siliconangle",
+          "url": "https://siliconangle.com/2026/08/15/nvidias-jensen-huang-just-make-ai-buildout-big-fail/"
+        }
+      ]
+    },
+    {
+      "id": "73924d397f2f95cc",
+      "source_id": "latent-space",
+      "title": "React for Agents: Astro Creator Brings Hooks to his Meta-Harness, Flue",
+      "url": "https://www.latent.space/p/flue-2",
+      "published_at": "2026-08-15T15:46:22+00:00",
+      "raw_text": "Flue 2 takes its inspiration from React. Creator Fred Schott, of Astro fame, tells Latent Space why he added hooks and why agents are defined by their harnesses.",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!Osie!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F131d402d-63bf-4895-b5e7-b8990972a14c_1280x720.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Flue 2借鉴React引入hooks，探讨agent harness设计，对构建agent系统有启发。",
+      "summary_zh": "Flue 2从React中汲取灵感，其创建者Fred Schott（Astro创始人）向Latent Space解释了为何引入hooks，并强调agent由harness定义。文章深入探讨了agent开发中的组件化思想，将前端开发模式应用于agent构建，为agent系统设计提供了新视角。",
+      "title_zh": "面向Agent的React：Astro创始人将Hooks引入其Meta-Harness Flue",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "80fa64da41e0ba44",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/flue-2"
+        }
+      ]
+    },
+    {
+      "id": "6064b6036f129ffd",
+      "source_id": "zh-meituan-tech",
+      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
+      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
+      "published_at": "2026-08-15T04:23:44.435135+00:00",
+      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
       "category_hint": [
         "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "美团图灵团队分享Agent评测体系构建经验，来自一线实践，对评测工作有重要参考价值。",
+      "summary_zh": "本文是美团技术团队发布的科普文章，由浅入深地介绍Agent评测。前两章系统介绍了评测的基本概念以及如何建立评测体系，其中第二章是美团图灵Agent评测团队深入各业务团队BP总结出的实践经验，是两年实践过程中逐步打磨出的认知。文章可能涵盖评测指标设计、评测数据集构建、评测流程自动化等内容，对于从事Agent开发或评测的工程师具有较高的参考价值。",
+      "title_zh": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.5,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "9ba181dd6f145810",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
+        }
+      ]
+    },
+    {
+      "id": "5d2401c28ccb88de",
+      "source_id": "qbitai",
+      "title": "对话郎咸朋：用机器人创业重做一次“百万智驾量产”",
+      "url": "https://www.qbitai.com/2026/08/473407.html",
+      "published_at": "2026-08-15T04:21:09+00:00",
+      "raw_text": "1.9万字全文实录",
+      "category_hint": [
+        "行业动态",
+        "模型发布"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "实战经验总结：检索质量是 RAG 答案质量的关键，而非 LLM。提供了具体失败案例和优化方向，对 RAG 开发者极具参考价值。",
-      "summary_zh": "作者团队运营搜索托管服务，并在客户端包中集成了 RAG。他们发现真正影响答案质量的是检索，而非 LLM。最初，答案端点使用自己的词法检索（edismax，严格最小匹配），导致效果不佳。经过调整，他们改进了检索策略，显著提升了答案质量。文章强调，RAG 系统的瓶颈往往在检索环节，包括查询理解、索引结构和相关性排序。作者建议开发者优先优化检索，而不是过度关注模型选择。",
-      "title_zh": "在自有搜索产品上构建 RAG 的教训：检索质量占了 90% 的问题",
-      "weighted_score": 0.685,
+      "depth_score": 0.7,
+      "reason_zh": "万字深度访谈，郎咸朋分享机器人创业经验，类比智驾量产，对创业者有启发。",
+      "summary_zh": "本文是量子位对郎咸朋的深度对话实录，全文1.9万字。郎咸朋曾参与百万智驾量产，现投身机器人创业。他分享了如何将智驾领域的量产经验迁移到机器人领域，包括技术路线、团队管理、市场落地等。他强调机器人创业需要重视工程化和量产能力，而非仅关注算法。访谈内容详实，为具身智能创业者提供了宝贵的一手经验。",
+      "title_zh": "对话郎咸朋：用机器人创业重做一次“百万智驾量产”",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "eb5af8c41bcaebba",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/08/473407.html"
+        }
+      ]
+    },
+    {
+      "id": "f39ccb7114a1879c",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] AI 开发，框架的作用大还是模型的作用大",
+      "url": "https://www.v2ex.com/t/1234699#reply4",
+      "published_at": "2026-08-15T18:17:41+00:00",
+      "raw_text": "<h3>自身</h3>\n<p>还比较原始，半古法半 AI\n1 先让 AI 写框架\n2 写需要的工具类\n3 挨个补全各个模块\n4 补测试用例\n这里面有不对的就让 AI 重新梭哈该步骤</p>\n<h3>现状</h3>\n<p>AI 开发框架更新的越来越复杂\n隔段时间，就能看到有人发新的 AI 开发工作流，动辄 2~3 个模型，越来越复杂的约束文件</p>\n<h3>疑惑</h3>\n<p>如果框架起到关键作用，那随着框架的更迭，可以适配的模型等级应该越来越低\n但实际看到的是对模型要求越来越高，低于最新模型 2-3 个版本的老模型，快要被开除 AI 籍了\n所以 AI 开发框架到底能占多少比重，是有底层支持的有效框架，还是一个不断打补丁的优化包</p>\n<h3>总结</h3>\n<p>当前这套古法 AI 工作流还算稳定，当然没有直接梭哈的效率高\n但是每次看到新东西出来还是比较焦虑的\n学了，怕过两天又换代\n不学，仿佛原始人上班</p>",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "深入探讨AI开发中框架与模型的作用，引发对工作流价值的思考。",
+      "summary_zh": "该帖子在V2EX上讨论AI开发中框架与模型的作用。作者分享了自己'半古法半AI'的开发流程，并观察到AI开发框架日益复杂，但对模型的要求却越来越高。作者疑惑框架是否真正起到关键作用，还是只是不断打补丁的优化包。帖子引发了关于AI开发工作流价值的讨论，对开发者有启发意义。",
+      "title_zh": null,
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "4c46e99873da38ac",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1234699#reply4"
+        }
+      ]
+    },
+    {
+      "id": "f12d2f7687804939",
+      "source_id": "exponentialview",
+      "title": "🔮 The market misread Google’s AI exodus",
+      "url": "https://www.exponentialview.co/p/google-deepmind-exodus-ai-cycle",
+      "published_at": "2026-08-15T04:31:21+00:00",
+      "raw_text": "We're earlier in the cycle than you may think",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!JwUN!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F23b429b9-5d55-4175-a220-ba8b436a5c6d_2700x1500.png",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "提出市场误读谷歌AI人才流失的观点，认为AI周期尚早，提供反直觉洞察。",
+      "summary_zh": "文章认为市场对谷歌AI人才流失的解读有误，指出AI发展周期比预期更早，人才流动是正常现象。作者分析谷歌在AI领域的长期布局和优势，认为其并未衰落，反而可能因人才流动而受益。文章强调，市场应更关注AI技术的实际进展而非短期人事变动。",
+      "title_zh": "市场误读了谷歌的AI人才流失",
+      "weighted_score": 0.605,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.9
+        "practical_value": 0.5
       },
-      "story_id": "59916bc4e5e5b82c",
+      "story_id": "fbae60e7a29dafe5",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1voifrw/lesson_learned_building_rag_on_top_of_our_own/"
-        }
-      ]
-    },
-    {
-      "id": "7bd992a3e298c47e",
-      "source_id": "reddit-llmdevs",
-      "title": "When a agent action check comes back \"not found\", how do you tell a real miss from a lost record before you retry?",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1vo6vo6/when_a_agent_action_check_comes_back_not_found/",
-      "published_at": "2026-08-14T13:10:25+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Been chewing on this since my last job and still don't have a clean answer. I was PM for AI at a US mortgage firm, and we had an internal tool that updated servicing records from natural language, forbearance, payment status, that kind of thing. <strong>The failure that stuck with me: agent reports &quot;done, 14 accounts updated&quot;, run is clean, nothing red, and some of those updates were just not in the system. The trace looked perfect. The record never moved.</strong></p> <p>Standard advice is read back. Don't trust the agent's claim, re-fetch the record, check the field changed. Handles the common case where the write silently no-ops. Fine.</p> <p><strong>But read back only looks forward.</strong> You take the id the agent says it touched and look it up. Which assumes you even have a reliable record of what it claimed. Often you don't. Traces drop all the time and quietly. Sampling tosses most of them on purpose. The batch processor drops spans",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "探讨Agent操作失败时如何区分真实缺失与记录丢失，来自真实业务场景，有深度。",
-      "summary_zh": "作者曾是美国抵押贷款公司的AI产品经理，负责一个从自然语言更新服务记录的内部工具。他遇到一个失败案例：Agent报告“完成，更新了14个账户”，运行干净，没有红色警报，但实际可能存在问题。核心问题是当Agent操作检查返回“未找到”时，如何区分是真实缺失还是记录丢失，再决定是否重试。作者对此没有清晰答案，引发对Agent可靠性和错误处理的讨论。",
-      "title_zh": "当Agent操作检查返回“未找到”时，如何区分真实缺失与记录丢失？",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.9
-      },
-      "story_id": "31eae048093cf412",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1vo6vo6/when_a_agent_action_check_comes_back_not_found/"
-        }
-      ]
-    },
-    {
-      "id": "896dc0a384d8ec90",
-      "source_id": "infoq-cn-ai",
-      "title": "从“会用”到“驾驭”：AI Coding 进入生产环境的真实碰撞",
-      "url": "https://www.infoq.cn/article/ydy2QDIAzQ1L314UH4qc?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-14T14:28:52+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/ydy2QDIAzQ1L314UH4qc?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入剖析AI编程工具在生产环境的落地挑战，对工程实践有启发。",
-      "summary_zh": "文章基于真实案例，探讨了AI编程工具从个人使用到企业级生产环境部署的转变过程。作者分析了技术选型、代码质量、团队协作、安全合规等方面的实际碰撞，并提出了成功落地的关键因素，如人机协作流程设计、模型评估标准等，为正在探索AI Coding的企业提供了参考。",
-      "title_zh": "从“会用”到“驾驭”：AI Coding进入生产环境的真实碰撞",
-      "weighted_score": 0.745,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "91674bb62b430809",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/ydy2QDIAzQ1L314UH4qc?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "3ceb93493759a27d",
-      "source_id": "the-decoder",
-      "title": "Study contradicts Anthropic and OpenAI claims that autonomous AI research is within reach",
-      "url": "https://the-decoder.com/study-contradicts-anthropic-and-openai-claims-that-autonomous-ai-research-is-within-reach/",
-      "published_at": "2026-08-14T16:06:32+00:00",
-      "raw_text": "<p><img alt=\"A collage of a computer screen showing red corrections and X marks next to a stack of scientific reports containing charts.\" class=\"attachment-full size-full wp-post-image\" height=\"1047\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/ai-assisted-science-rejected-papers-nano-banana-pro.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        AI agents using Claude Opus 4.8 and GPT-5.6 Sol were given six days, $3,000 in API credits, and GPU access to independently write AI research papers. The original authors of unpublished NeurIPS papers rated the results as \"Reject.\" According to the study, conducted with Princeton and the UK AI Security Institute, frontier models can handle the full research engineering process but fall short on research judgment, creative problem-solving, and the ability to abandon failed approaches.</p>\n<p>The article <a href=\"https://the-decoder.com/study-contradicts-anthropic-and-openai-claims-that-autonomous-ai-researc",
-      "category_hint": [
-        "模型发布",
-        "行业动态"
-      ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/ai-assisted-science-rejected-papers-nano-banana-pro.jpg",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "研究质疑Anthropic和OpenAI关于自主AI研究即将实现的声明，提供反方证据，引发对AI能力边界的思考。",
-      "summary_zh": "The Decoder报道了一项研究，该研究对Anthropic和OpenAI声称自主AI研究即将实现的说法提出了质疑。研究指出，AI代理在辅助科学研究时，生成的论文被拒稿率较高，表明其实际能力与宣称存在差距。文章通过具体数据和案例，分析了当前AI在科研领域的局限性，并讨论了这些发现对AI发展预期的影响。这一研究为评估AI的实际科研能力提供了重要参考。",
-      "title_zh": "研究反驳Anthropic和OpenAI关于自主AI研究即将实现的声明",
-      "weighted_score": 0.73,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "e58f44e2e48cd7bb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/study-contradicts-anthropic-and-openai-claims-that-autonomous-ai-research-is-within-reach/"
+          "source_id": "exponentialview",
+          "url": "https://www.exponentialview.co/p/google-deepmind-exodus-ai-cycle"
         }
       ]
     }
