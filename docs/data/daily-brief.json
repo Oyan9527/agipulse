@@ -1,6 +1,6 @@
 {
   "date": "2026-08-15",
-  "generated_at": "2026-08-15T08:24:03.079666+00:00",
+  "generated_at": "2026-08-15T12:34:15.221837+00:00",
   "items": [
     {
       "id": "ac68798008ea6a83",
@@ -236,35 +236,35 @@
       ]
     },
     {
-      "id": "64b3a8460139035f",
-      "source_id": "fastcompany-tech",
-      "title": "A Baconian approach to the mostly Aristotelian corporate AI. And what that means for your business",
-      "url": "https://www.fastcompany.com/91587826/enterprise-ai-baconian-approach-business?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
-      "published_at": "2026-08-14T08:30:00+00:00",
-      "raw_text": "<p class=\"wp-block-paragraph\">I have been writing for several months about what I see more and more as the central problem in <a href=\"https://www.fastcompany.com/91584370/enterprise-ai-doesnt-need-another-app-it-needs-its-language\">enterprise AI</a>. I’m seeing it not just from an academic perspective: Of course, I’m a university professor with more than 30 years of experience, but I’m also the director of innovation of an <a href=\"https://www.fastcompany.com/section/artificial-intelligence\" title=\"AI\">artificial intelligence</a> startup, and that’s teaching me a whole lot of new skills. Traveling from theory to code and back, day in and day out, is proving to be an amazingly enriching journey. </p>\n\n\n\n<p class=\"wp-block-paragraph\">First of all, we should know by now that <a href=\"https://www.fastcompany.com/91528182/ai-enterprise-failing-llms\">large language models are extraordinarily capable, but they were not designed to run companies</a>. They are great at generating answers. But ",
+      "id": "3529648d6e742eb8",
+      "source_id": "zh-juejin",
+      "title": "AI Agent 上下文污染踩坑实录：用 pytest + Redis 揪出 3 类记忆串号 bug，排查 6 小时",
+      "url": "https://juejin.cn/post/7673940698533642240",
+      "published_at": "2026-08-15T12:05:04+00:00",
+      "raw_text": "凌晨两点，用户群里发来一张截图：AI 客服回复工单时，把另一个用户的手机号和收货地址带了出来。我第一反应是模型幻觉，结果查 Redis 发现，两个不同 `user_id` 的会话共用了同一个 `ses",
       "category_hint": [
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2026/08/p-91587826-francis-bacon-thinking-AI.jpg",
+      "image_url": null,
       "category": "技巧与观点",
-      "content_type": "观点评论",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "用培根方法论审视企业AI，提供独特视角，对商业决策有启发。",
-      "summary_zh": "作者作为有30多年经验的大学教授，从培根方法论的角度审视企业AI，认为当前企业AI的核心问题在于缺乏实证和归纳。文章提出，企业AI不应只是添加另一个应用，而应关注其语言和本质。作者结合学术与实践，探讨了企业AI如何从亚里士多德式的演绎转向培根式的归纳，以更好地服务于业务。",
-      "title_zh": "培根式方法应对亚里士多德式的企业AI：这对你的业务意味着什么",
-      "weighted_score": 0.705,
+      "reason_zh": "真实踩坑记录，揭示AI Agent上下文污染问题，提供可复现的排查方法，实用性强。",
+      "summary_zh": "本文作者分享了在开发AI Agent时遇到的上下文污染问题：AI客服回复工单时泄露了其他用户信息。通过使用pytest和Redis进行排查，最终定位到三类记忆串号bug：会话ID复用、缓存键冲突、以及异步写入导致的脏读。文章详细记录了排查过程，并给出了相应的解决方案和预防措施，对开发者具有很高的参考价值。",
+      "title_zh": "AI Agent 上下文污染踩坑实录：用 pytest + Redis 揪出 3 类记忆串号 bug，排查 6 小时",
+      "weighted_score": 0.71,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
+        "source_authority": 0.6,
+        "novelty": 0.8,
         "impact": 0.6,
-        "practical_value": 0.7
+        "practical_value": 0.9
       },
-      "story_id": "87211327e68c895a",
+      "story_id": "4a3e603aae7c8d02",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "fastcompany-tech",
-          "url": "https://www.fastcompany.com/91587826/enterprise-ai-baconian-approach-business?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7673940698533642240"
         }
       ]
     },
@@ -298,6 +298,40 @@
         {
           "source_id": "reddit-rag",
           "url": "https://www.reddit.com/r/Rag/comments/1voifrw/lesson_learned_building_rag_on_top_of_our_own/"
+        }
+      ]
+    },
+    {
+      "id": "7bd992a3e298c47e",
+      "source_id": "reddit-llmdevs",
+      "title": "When a agent action check comes back \"not found\", how do you tell a real miss from a lost record before you retry?",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vo6vo6/when_a_agent_action_check_comes_back_not_found/",
+      "published_at": "2026-08-14T13:10:25+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Been chewing on this since my last job and still don't have a clean answer. I was PM for AI at a US mortgage firm, and we had an internal tool that updated servicing records from natural language, forbearance, payment status, that kind of thing. <strong>The failure that stuck with me: agent reports &quot;done, 14 accounts updated&quot;, run is clean, nothing red, and some of those updates were just not in the system. The trace looked perfect. The record never moved.</strong></p> <p>Standard advice is read back. Don't trust the agent's claim, re-fetch the record, check the field changed. Handles the common case where the write silently no-ops. Fine.</p> <p><strong>But read back only looks forward.</strong> You take the id the agent says it touched and look it up. Which assumes you even have a reliable record of what it claimed. Often you don't. Traces drop all the time and quietly. Sampling tosses most of them on purpose. The batch processor drops spans",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "探讨Agent操作失败时如何区分真实缺失与记录丢失，来自真实业务场景，有深度。",
+      "summary_zh": "作者曾是美国抵押贷款公司的AI产品经理，负责一个从自然语言更新服务记录的内部工具。他遇到一个失败案例：Agent报告“完成，更新了14个账户”，运行干净，没有红色警报，但实际可能存在问题。核心问题是当Agent操作检查返回“未找到”时，如何区分是真实缺失还是记录丢失，再决定是否重试。作者对此没有清晰答案，引发对Agent可靠性和错误处理的讨论。",
+      "title_zh": "当Agent操作检查返回“未找到”时，如何区分真实缺失与记录丢失？",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.9
+      },
+      "story_id": "31eae048093cf412",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1vo6vo6/when_a_agent_action_check_comes_back_not_found/"
         }
       ]
     },
@@ -366,40 +400,6 @@
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/study-contradicts-anthropic-and-openai-claims-that-autonomous-ai-research-is-within-reach/"
-        }
-      ]
-    },
-    {
-      "id": "d7985d78b85ad426",
-      "source_id": "siliconangle",
-      "title": "Did Nvidia’s Jensen Huang just make the AI buildout too big to fail?",
-      "url": "https://siliconangle.com/2026/08/15/nvidias-jensen-huang-just-make-ai-buildout-big-fail/",
-      "published_at": "2026-08-15T04:46:35+00:00",
-      "raw_text": "<p>Nvidia Corp. is no longer just selling technology. It is helping create a financial asset class around artificial intelligence compute. In our last Breaking Analysis, we argued that AI can be technologically transformative and still produce a capital bubble. Our thesis was simply that the bubble pops if deployable supply grows faster than monetizable demand – [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/15/nvidias-jensen-huang-just-make-ai-buildout-big-fail/\" rel=\"nofollow\">Did Nvidia&#8217;s Jensen Huang just make the AI buildout too big to fail?</a> appeared first on <a href=\"https://siliconangle.com\" rel=\"nofollow\">SiliconANGLE</a>.</p>",
-      "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/08/Jensen-and-his-mou-partners-1.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "分析英伟达将AI计算金融化，探讨泡沫风险，对理解AI资本动态有深度。",
-      "summary_zh": "文章讨论英伟达CEO黄仁勋是否让AI建设变得“大而不能倒”。指出英伟达不仅销售技术，还在帮助创造围绕AI计算的金融资产类别。作者延续此前观点，认为AI虽具技术变革性，但仍可能产生资本泡沫，泡沫破裂的条件是可部署供应增长快于可货币化需求。文章分析当前AI投资热潮的可持续性。",
-      "title_zh": "黄仁勋是否让AI建设变得“大而不能倒”？",
-      "weighted_score": 0.71,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "4fb62a17e61412ab",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "siliconangle",
-          "url": "https://siliconangle.com/2026/08/15/nvidias-jensen-huang-just-make-ai-buildout-big-fail/"
         }
       ]
     }
