@@ -1,6 +1,6 @@
 {
   "date": "2026-08-16",
-  "generated_at": "2026-08-16T08:28:01.615207+00:00",
+  "generated_at": "2026-08-16T12:33:23.000516+00:00",
   "items": [
     {
       "id": "5b8e5609c68e7d03",
@@ -37,134 +37,70 @@
       ]
     },
     {
-      "id": "0fae70c320b6006a",
-      "source_id": "zh-juejin",
-      "title": "我按下“发送”之后：DeepSeek Harness 如何把一次请求变成 1,177 个增量片段",
-      "url": "https://juejin.cn/post/7673875524200300590",
-      "published_at": "2026-08-15T15:47:42+00:00",
-      "raw_text": "基于真实 DeepSeek Harness 请求，结合页面、Session 日志与源码，拆解 POST、模型 SSE、WebSocket 三段链路，以及 1,177 个增量的记录、广播、渲染与恢复。",
+      "id": "2301a5ceadd81b79",
+      "source_id": "reddit-machinelearning",
+      "title": "SSOG-Attention: Sum Of Separable Gaussians as a sub-quadratic and scalable alternative to SDPA. [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a/",
+      "published_at": "2026-08-16T10:06:07+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a/\"> <img alt=\"SSOG-Attention: Sum Of Separable Gaussians as a sub-quadratic and scalable alternative to SDPA. [R]\" src=\"https://preview.redd.it/pepwlp93opjh1.gif?width=320&amp;crop=smart&amp;s=2c59acf93fb52e53083ca4ef7d9885451e6c387b\" title=\"SSOG-Attention: Sum Of Separable Gaussians as a sub-quadratic and scalable alternative to SDPA. [R]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>&#x200b;</p> <p>Scaled dot-product attention (SDPA) computes its Attention by computing the similarity-scores of all image-tokens with all query tokens which results in O(N²·d) complexity. SSOG (Sum Of Separable Gaussians) instead learns a few Gaussian atoms for each head and only geometrically steers them based on the query token. Since the atoms can be factorized into a separable sum of Gaussians this leads to a reduced complexity of O(N·√N·d). Experiments show that SSO",
       "category_hint": [
-        "技巧与观点"
+        "论文研究",
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
+      "image_url": "https://preview.redd.it/pepwlp93opjh1.gif?width=320&crop=smart&s=2c59acf93fb52e53083ca4ef7d9885451e6c387b",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "基于真实请求拆解DeepSeek Harness的完整链路，展示增量流式处理细节，对理解Agent内部机制极具价值。",
-      "summary_zh": "本文基于真实的DeepSeek Harness请求，结合页面、Session日志与源码，详细拆解了一次请求如何被分解为1,177个增量片段。文章分析了POST请求、模型SSE流和WebSocket三条链路，解释了增量数据的记录、广播、渲染与恢复过程。通过具体数据，作者展示了系统如何处理长响应、如何实现流式更新，以及如何保证状态一致性。这种深入的技术剖析有助于开发者理解Agent框架的底层实现，并可能启发优化思路。",
-      "title_zh": "我按下“发送”之后：DeepSeek Harness如何把一次请求变成1,177个增量片段",
-      "weighted_score": 0.665,
+      "reason_zh": "提出可分离高斯和注意力机制，为SDPA提供亚二次复杂度替代方案，具有理论创新和实际应用潜力。",
+      "summary_zh": "该论文提出SSOG-Attention，一种基于可分离高斯和（Sum of Separable Gaussians）的注意力机制，旨在作为标准缩放点积注意力（SDPA）的亚二次复杂度替代方案。传统SDPA的计算复杂度随序列长度呈二次增长，限制了其在长序列任务中的应用。SSOG-Attention通过将注意力权重近似为可分离高斯的和，将复杂度降低至亚二次级别，同时保持表达能力和性能。论文中可能包含理论分析、实验验证以及与现有方法的对比，展示其在长序列建模中的效率和有效性。该研究为高效注意力机制提供了新思路，有望推动大规模语言模型和长序列处理的发展。",
+      "title_zh": "SSOG-Attention：可分离高斯和作为SDPA的亚二次可扩展替代方案",
+      "weighted_score": 0.675,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.8
+        "impact": 0.7,
+        "practical_value": 0.6
       },
-      "story_id": "9c80543603c57a09",
+      "story_id": "5adaf15c64e45439",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7673875524200300590"
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a/"
         }
       ]
     },
     {
-      "id": "6e6d07da895a7b63",
-      "source_id": "zh-juejin",
-      "title": "DeepSeek Harness 为什么敢说\"一切皆插件\"？拆透 Cordis 引擎的五大核心机制",
-      "url": "https://juejin.cn/post/7673940698533593088",
-      "published_at": "2026-08-15T11:17:31+00:00",
-      "raw_text": "DeepSeek Harness 为什么敢说\"一切皆插件\"？拆透 Cordis 引擎的五大核心机制 目录 问题：Agent 框架的\"黑盒困境\" 插件：一块自带说明书的积",
+      "id": "bbafca3576157754",
+      "source_id": "the-decoder",
+      "title": "When AI models aren't allowed to reflect on themselves, it changes their entire worldview",
+      "url": "https://the-decoder.com/when-ai-models-arent-allowed-to-reflect-on-themselves-it-changes-their-entire-worldview/",
+      "published_at": "2026-08-16T11:23:30+00:00",
+      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/Language-model-human-beliefs.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        A study involving Google researchers shows that when chatbots are trained not to claim consciousness, it also changes their stance on animal rights, religion, and life satisfaction. Unbraked models attributed significantly more inner life to animals and suddenly affirmed an afterlife. A surgical cut in one place, it turns out, doesn't stay local.</p>\n<p>The article <a href=\"https://the-decoder.com/when-ai-models-arent-allowed-to-reflect-on-themselves-it-changes-their-entire-worldview/\">When AI models aren&#039;t allowed to reflect on themselves, it changes their entire worldview</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
       "category_hint": [
-        "技巧与观点"
+        "模型发布",
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/Language-model-human-beliefs.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "深度拆解DeepSeek Harness的插件化设计，揭示Agent框架黑盒困境的解法，对开发者有直接借鉴价值。",
-      "summary_zh": "本文深入剖析DeepSeek Harness的Cordis引擎，解释其“一切皆插件”的设计理念。文章指出传统Agent框架存在黑盒困境，难以定制和扩展。Cordis通过将功能模块化，每个插件自带说明和接口，实现了灵活组合。文章详细介绍了五大核心机制，包括插件生命周期管理、依赖注入、事件驱动、配置热更新和错误隔离。这些机制使得框架高度可扩展，开发者可以轻松添加或替换功能，而无需修改核心代码。文章还讨论了这种设计对Agent开发效率的提升，以及在实际项目中的应用场景。",
-      "title_zh": "DeepSeek Harness为何敢说“一切皆插件”？拆解Cordis引擎的五大核心机制",
-      "weighted_score": 0.64,
+      "reason_zh": "研究揭示训练限制对模型世界观的影响，涉及意识、动物权利等，具有深刻认知价值。",
+      "summary_zh": "一项涉及谷歌研究人员的研究表明，当聊天机器人被训练不声称拥有意识时，它们对动物权利、宗教等话题的立场也会随之改变。这揭示了AI训练中的隐含偏见，对理解模型行为和伦理设计有重要意义。",
+      "title_zh": "当AI模型不被允许反思自身时，其世界观会改变",
+      "weighted_score": 0.56,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.7,
         "impact": 0.5,
-        "practical_value": 0.8
+        "practical_value": 0.4
       },
-      "story_id": "907b75218d7407e8",
+      "story_id": "3e57523a3ad001c5",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7673940698533593088"
-        }
-      ]
-    },
-    {
-      "id": "da51302010f1bd84",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] 多步骤 MCP 的 token 损耗，可能主要来自每一步的模型重入",
-      "url": "https://www.v2ex.com/t/1234701#reply2",
-      "published_at": "2026-08-15T19:24:10+00:00",
-      "raw_text": "<p>很多 MCP 演示只有一次工具调用；真实任务更像：创建项目 → 读取项目 ID → 导入素材 → 把 clip ID 交给下一步 → 导出 → 交付。</p>\n<p>普通 agent 每完成一步，都要把结果带回模型，再让模型把 ID 填进下一次调用。Tura 的 <code>command_run</code> Macro 想解决的是这段“交接”：一次描述依赖图，前一步成功产生的变量给后一步在运行时解析；没有依赖的命令可以一起执行。</p>\n<p>公开的电商广告工作流里，两边都通过同样 5 项检查、交付相同结果。Tura Direct 用 3 次模型请求，对照为 11 次；总 token 是 56,372 对 262,915 （少 78.6%）。有意思的是 MCP 调用不是更少，而是 11 对 9：省下的是把累计上下文反复送回模型的成本，不是少干活。</p>\n<p>依赖链更长时，Macro 内每保留一次交接，就少一次模型重入，所以这部分节省会累积；但不是所有任务都严格线性，缓存、重试和任务结构都会影响结果。</p>\n<p>完整 trace 、基准边界和变量继承规则：\n<a href=\"https://turaai.net/blog#what-we-learned-from-the-mcp-workflow-benchmark\" rel=\"nofollow\">https://turaai.net/blog#what-we-learned-from-the-mcp-workflow-benchmark</a></p>\n<p>源码：\n<a href=\"https://github.com/Tura-AI/tura\" rel=\"nofollow\">https://github.com/Tura-AI/tura</a></p>\n<p>说明：本文分享 Tura-AI 的工作，欢迎讨论这个思路在你们的 MCP 工作流里是否有效。之前看 deep swe 说 <a href=\"https://github.com/swe-agent/mini-swe-agent\" rel=\"nofollow\">https://github.com/swe-agent/mini-swe-agent</a> 比 codex 和 claude code 在 debug 中的 token 消耗和成功",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "通过数据对比揭示多步骤MCP的token损耗主要来自模型重入，提出Tura Direct的优化方案，对Agent开发有重要参考。",
-      "summary_zh": "帖子讨论了多步骤MCP（模型上下文协议）的token损耗问题，指出主要来源是每一步的模型重入。作者以电商广告工作流为例，对比了普通agent和Tura的command_run Macro。普通agent每完成一步都要将结果带回模型，再让模型填下一次调用，导致大量token消耗。Tura Direct通过一次描述依赖图，让前一步的变量在运行时解析，无依赖的命令可并行执行。在相同检查项和结果下，Tura Direct使用3次模型请求，对比普通方法的11次，总token从262,915降至56,372，减少78.6%。有趣的是，MCP调用次数反而更多（11对9），但省下了反复发送累计上下文的成本。",
-      "title_zh": "多步骤MCP的token损耗，可能主要来自每一步的模型重入",
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "365a531392c54d57",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1234701#reply2"
-        }
-      ]
-    },
-    {
-      "id": "8b193fd8d29aefcc",
-      "source_id": "zh-juejin",
-      "title": "【好玩系列】训练一个神经网络指导小孩玩游戏",
-      "url": "https://juejin.cn/post/7674535394070855715",
-      "published_at": "2026-08-16T08:14:01+00:00",
-      "raw_text": "BFS 能秒解华容道，但如何让 AI 拥有“大局观”？当神经网络启发 A* 寻路，却因高估击穿可采纳性导致搜索爆炸！本文详解多通道空间表征、非对称 Loss 重训与 EGTB 残局表混合兜底的硬核落地",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "用神经网络指导小孩玩游戏，涉及A*寻路与神经网络结合，有硬核技术细节。",
-      "summary_zh": "本文探讨了如何训练神经网络来指导小孩玩游戏，以华容道为例。BFS能秒解，但如何让AI拥有“大局观”？文章详解了当神经网络启发A*寻路时，因高估击穿可采纳性导致搜索爆炸的问题，并提出了多通道空间表征、非对称Loss重训与EGTB残局表混合兜底的硬核落地方法。",
-      "title_zh": "【好玩系列】训练一个神经网络指导小孩玩游戏",
-      "weighted_score": 0.59,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.4,
-        "practical_value": 0.7
-      },
-      "story_id": "c8e1624a6a3c7f35",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7674535394070855715"
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/when-ai-models-arent-allowed-to-reflect-on-themselves-it-changes-their-entire-worldview/"
         }
       ]
     },
@@ -271,69 +207,36 @@
       ]
     },
     {
-      "id": "53ddef6230f10e58",
-      "source_id": "raschka",
-      "title": "Building an AI Text Detector From Scratch",
-      "url": "https://magazine.sebastianraschka.com/p/ai-detector-from-scratch",
-      "published_at": "2026-08-15T11:54:24+00:00",
-      "raw_text": "An End-to-End Project With Dataset Construction, Model Training, Local Deployment, and RLVR",
+      "id": "828a0d2c2ec7e148",
+      "source_id": "reddit-claudeai",
+      "title": "Nothing you generate with Claude today is watermarked, and nobody can check for marks anyway. What I found after actually reading it all",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vpro2f/nothing_you_generate_with_claude_today_is/",
+      "published_at": "2026-08-16T08:32:39+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1vpro2f/nothing_you_generate_with_claude_today_is/\"> <img alt=\"Nothing you generate with Claude today is watermarked, and nobody can check for marks anyway. What I found after actually reading it all\" src=\"https://preview.redd.it/6eotogf07pjh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7b5bed8328f296955112f5d4954e78c7c8668e50\" title=\"Nothing you generate with Claude today is watermarked, and nobody can check for marks anyway. What I found after actually reading it all\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Honestly, my first reaction to the announcement was mild panic. I reread it three times before it clicked: the marking applies to models launched on or after August 2, and every model you can pick today came out earlier. So nothing you generate right now carries a mark. There is also nothing to check with, the detection API is announced and does not exist. Half the threads here missed both facts.",
       "category_hint": [
-        "技巧与观点",
-        "论文研究"
-      ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!Om23!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F875b5076-19a9-4ffe-91d4-cafa156f650a_5343x5696.png",
-      "category": "论文研究",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "从零构建AI文本检测器，涵盖数据集构建、模型训练、部署和RLVR，完整项目实践。",
-      "summary_zh": "本文介绍从零开始构建AI文本检测器的端到端项目，包括数据集构建、模型训练、本地部署和RLVR（强化学习与验证）等环节。作者提供了完整的项目流程，帮助读者理解AI文本检测的原理和实现方法，适合希望深入实践AI应用的开发者。",
-      "title_zh": "从零构建AI文本检测器",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "9b10d01055a85b0d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "raschka",
-          "url": "https://magazine.sebastianraschka.com/p/ai-detector-from-scratch"
-        }
-      ]
-    },
-    {
-      "id": "72175616f5d9493e",
-      "source_id": "zh-v2ex",
-      "title": "[Flutter] # 用 GPT-5 完成 Flutter/Dart 的 LoongArch 全栈移植：从 Dart VM 到 Flutter Engine 与 eLinux",
-      "url": "https://www.v2ex.com/t/1234712#reply0",
-      "published_at": "2026-08-16T01:48:25+00:00",
-      "raw_text": "<h1>Flutter/Dart LoongArch 移植现状：从 Dart VM 到 Flutter Engine 、eLinux 与新旧世界 ABI&gt; 本文记录截至 <strong>2026 年 8 月 7 日</strong> <code>Flutter-Dart-loong64</code> 项目的实际状态。&gt; 项目地址： <a href=\"https://github.com/Flutter-Dart-loong64%3E%3E\" rel=\"nofollow\">https://github.com/Flutter-Dart-loong64&gt;&gt;</a> 本文主要根据当前源码、实际维护分支、近期提交和 Release 整理。部分 README 的更新速度可能落后于代码，因此涉及当前实现状态时，以代码和发布产物为准。## 为什么会有这么多仓库？<code>Flutter-Dart-loong64</code> 现在已经不是一个“给 Flutter 加个 LoongArch 判断”的小补丁集合。要让 Flutter 真正在 LoongArch Linux 上从开发工具一路跑到最终应用，需要打通的链路实际上是：<code>textDart VM   ↓Dart JIT / AOT / FFI   ↓Flutter Tool   ↓Flutter Engine   ↓Linux GTK / Sony eLinux Embedder   ↓Skia / Impeller / OpenGL ES / Vulkan 构建依赖   ↓Native Assets / Rust / C/C++ 原生依赖   ↓Flutter 应用</code>其中任何一层不认识 LoongArch ，最终结果都可能只是“源码能编译一点”，而不是一个真正能开发、构建和运行 Flutter 应用的平台。目前组织下一共有 <strong>20 个公开仓库</strong>，大致可以分成六组。| 分类            | 仓库                                       | 作用                                                           || ------------- | -----",
-      "category_hint": [
+        "产品发布",
         "技巧与观点"
       ],
-      "image_url": null,
-      "category": "开源项目",
+      "image_url": "https://preview.redd.it/6eotogf07pjh1.png?width=640&crop=smart&auto=webp&s=7b5bed8328f296955112f5d4954e78c7c8668e50",
+      "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "详细记录Flutter/Dart在LoongArch上的移植进展，对国产架构开发者有重要参考价值。",
-      "summary_zh": "本文记录了截至2026年8月7日Flutter-Dart-loong64项目的实际状态，涵盖从Dart VM到Flutter Engine及eLinux的移植情况。项目地址为https://github.com/Flutter-Dart-loong64。文章基于源码、维护分支和近期提交整理，指出README可能滞后于代码，建议以代码和发布产物为准。内容涉及新旧世界ABI等关键技术点。",
-      "title_zh": "[Flutter] 用GPT-5完成Flutter/Dart的LoongArch全栈移植：从Dart VM到Flutter Engine与eLinux",
-      "weighted_score": 0.585,
+      "reason_zh": "深入分析Claude水印问题，澄清误解，提供技术细节，具有启发性。",
+      "summary_zh": "作者仔细阅读了Claude的水印相关文档，发现目前生成的内容并未添加水印，且即使有水印也无法检测。文章解释了水印技术的现状和局限性，指出公众对水印的担忧可能过度。作者呼吁理性看待AI内容溯源问题。",
+      "title_zh": "Claude生成内容无水印，且无法检测",
+      "weighted_score": 0.57,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
+        "source_authority": 0.5,
+        "novelty": 0.7,
         "impact": 0.5,
-        "practical_value": 0.7
+        "practical_value": 0.6
       },
-      "story_id": "e90dc2e73adced7b",
+      "story_id": "93fd32c0827854c9",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1234712#reply0"
+          "source_id": "reddit-claudeai",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1vpro2f/nothing_you_generate_with_claude_today_is/"
         }
       ]
     },
@@ -401,6 +304,107 @@
         {
           "source_id": "zh-tmtpost",
           "url": "https://www.tmtpost.com/8104736.html"
+        }
+      ]
+    },
+    {
+      "id": "9ec00b4501a42b0b",
+      "source_id": "exponentialview",
+      "title": "🔮 The curious economics of a $6 AI agent #597",
+      "url": "https://www.exponentialview.co/p/ev-597",
+      "published_at": "2026-08-16T05:39:19+00:00",
+      "raw_text": "Amazon spent some $1.8 million on a Claude project that ran unnoticed for five months. &#8220;It&#8217;s difficult to figure out how much anything [AI-related] costs&#8221;.",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!lTLz!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5eb6f7c5-ed9f-44ce-9994-079c3d4e88ff_1744x728.png",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "亚马逊在Claude项目上花费180万美元却无人察觉，揭示AI成本核算难题，引发深度思考。",
+      "summary_zh": "文章探讨了AI代理的经济学，以亚马逊一个Claude项目为例，该项目运行了五个月，花费约180万美元却未被注意。作者指出，AI相关成本难以精确核算，因为其使用分散且缺乏监控。这引发了关于企业AI支出透明度和治理的讨论，并提出了如何有效管理AI成本的问题。",
+      "title_zh": "🔮 一个6美元AI代理的奇特经济学 #597",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "34b48c0bfe8fed9b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "exponentialview",
+          "url": "https://www.exponentialview.co/p/ev-597"
+        }
+      ]
+    },
+    {
+      "id": "c93f9e9287ea3a7b",
+      "source_id": "qbitai",
+      "title": "李飞飞最新访谈：AI咋能代替人呢？",
+      "url": "https://www.qbitai.com/2026/08/474140.html",
+      "published_at": "2026-08-16T10:45:47+00:00",
+      "raw_text": "AI不是替代者，而是个人能力的放大镜",
+      "category_hint": [
+        "行业动态",
+        "模型发布"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "李飞飞最新访谈，探讨AI与人类关系，强调AI是能力放大镜而非替代者，具有启发性。",
+      "summary_zh": "李飞飞在最新访谈中讨论AI与人类的关系，她认为AI不是替代者，而是个人能力的放大镜。她可能探讨了AI在增强人类能力方面的潜力，以及如何正确看待AI的发展。访谈可能涉及AI伦理、未来工作形态等话题，强调人类在AI时代的主动角色。",
+      "title_zh": "李飞飞最新访谈：AI咋能代替人呢？",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "4667bd675b37b137",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/08/474140.html"
+        }
+      ]
+    },
+    {
+      "id": "35fdd002ef164f86",
+      "source_id": "siliconangle",
+      "title": "Impetus builds an operational framework to bridge AI’s ‘context gap’",
+      "url": "https://siliconangle.com/2026/08/15/impetus-provides-context-ai-agents-impetus/",
+      "published_at": "2026-08-15T18:09:54+00:00",
+      "raw_text": "<p>AI agents are being widely deployed inside businesses today, but do they actually know how to get results? This is the fundamental question being asked in many boardrooms as enterprises implement AI strategies tied to agents performing key tasks. Impetus Technologies Inc. has built its value proposition on the belief that it can bridge the [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/15/impetus-provides-context-ai-agents-impetus/\" rel=\"nofollow\">Impetus builds an operational framework to bridge AI’s ‘context gap’</a> appeared first on <a href=\"https://siliconangle.com\" rel=\"nofollow\">SiliconANGLE</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/05/Deepak-Khosla-e1786816619586.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "探讨AI代理在企业中的实际效果，提出解决'上下文鸿沟'的框架，有深度。",
+      "summary_zh": "文章讨论了AI代理在企业中的部署现状，指出许多代理缺乏获取结果的能力，存在'上下文鸿沟'。Impetus Technologies公司基于此构建了运营框架，旨在弥合这一鸿沟。文章可能分析了框架的设计理念、实施方法以及对企业AI战略的影响，为读者提供了关于AI代理落地的深入见解。",
+      "title_zh": "Impetus构建运营框架以弥合AI的'上下文鸿沟'",
+      "weighted_score": 0.63,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "df51f2892aebe520",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "siliconangle",
+          "url": "https://siliconangle.com/2026/08/15/impetus-provides-context-ai-agents-impetus/"
         }
       ]
     }
