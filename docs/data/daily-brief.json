@@ -1,37 +1,136 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T00:55:22.452576+00:00",
+  "generated_at": "2026-08-17T04:46:56.811364+00:00",
   "items": [
     {
-      "id": "22794debb21e86d0",
-      "source_id": "zh-juejin",
-      "title": "Agent 上下文账本工程：别让工具结果把 128K 窗口塞成垃圾场",
-      "url": "https://juejin.cn/post/7674260258123268130",
-      "published_at": "2026-08-17T00:10:27+00:00",
-      "raw_text": "长任务 Agent 最容易翻车的不是模型不够聪明，而是上下文越来越脏：工具结果、历史消息、检索片段和临时决策混在一起，最后关键证据反而被挤出去。本文把 context engineering 落到一个可实现的上下文账本：每条上下文都有来源、价值、保质期和驱逐策略。",
+      "id": "c1b3c5b0b22c7fdf",
+      "source_id": "arxiv-cs-ai",
+      "title": "Your Probabilistic JEPA Is Secretly a Hidden Markov Model: A State-Space Interpretation of Joint-Embedding Predictive Learning",
+      "url": "https://arxiv.org/abs/2608.13621",
+      "published_at": "2026-08-17T04:00:00+00:00",
+      "raw_text": "arXiv:2608.13621v1 Announce Type: new \nAbstract: A hidden Markov model (HMM) combines three roles: inference of a hidden-state belief from observations, propagation through a Markov transition, and emission back to observation space. We show that full, time-indexed Predictive Information Bottleneck VJEPA (PIB-VJEPA) exposes the same computational structure: a stochastic context encoder plays the role of an amortized filtering distribution, a probabilistic predictor defines latent-state dynamics, and a decoder, inverse target encoder, or induced implicit conditional supplies the emission direction. We distinguish 4 progressively stronger levels of correspondence and give sufficient conditions for exact sequence-level HMM equivalence. To make the connection concrete, we introduce Markov-Chain JEPA (MCJEPA), which replaces the latent predictor by a learned transition matrix; in the finite time-homogeneous case, matrix powers guarantee exact multi-horizon Chapman--Kolmogorov consistency. C",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入探讨Agent上下文管理，提出可落地的账本工程方案，对开发者极具价值。",
-      "summary_zh": "文章指出长任务Agent常因上下文混乱而失败，工具结果、历史消息等混在一起，导致关键证据被挤出窗口。作者将context engineering落实到可实现的上下文账本，每条上下文都有来源、价值、保质期和驱逐策略。通过系统化管理上下文，可提升Agent在长任务中的稳定性和效果。文章提供了具体实现思路，对构建复杂Agent系统的开发者有重要参考意义。",
-      "title_zh": "Agent上下文账本工程：避免工具结果塞满128K窗口",
-      "weighted_score": 0.735,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "揭示JEPA与隐马尔可夫模型的深层联系，提供新理论视角，启发性强。",
+      "summary_zh": "本文证明概率JEPA（如PIB-VJEPA）在结构上等价于隐马尔可夫模型（HMM），其中随机上下文编码器扮演推理角色，转移和发射对应HMM的相应部分。这一发现统一了预测学习与状态空间模型，为理解JEPA提供新视角，可能推动理论发展。",
+      "title_zh": "你的概率JEPA其实是隐马尔可夫模型：联合嵌入预测学习的状态空间解释",
+      "weighted_score": 0.815,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.9
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.6
       },
-      "story_id": "02893cc8da094a47",
+      "story_id": "ff78bf8890199b97",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7674260258123268130"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.13621"
+        }
+      ]
+    },
+    {
+      "id": "447d90062d8e2518",
+      "source_id": "arxiv-cs-ai",
+      "title": "Explanation Multiplicity: Circuit-Level Interpretability Evidence Does Not Survive Defensible Analytic Variation",
+      "url": "https://arxiv.org/abs/2608.13754",
+      "published_at": "2026-08-17T04:00:00+00:00",
+      "raw_text": "arXiv:2608.13754v1 Announce Type: new \nAbstract: The EU AI Act requires providers of high-risk systems to file technical documentation describing how the system reaches its decisions. Mechanistic interpretability is the obvious source of such evidence, and circuit discovery is its most developed instrument. We ask whether that evidence survives the condition under which it would be relied upon: two competent analysts, the same system, the same tool, different defensible settings.\n  We pre-registered a crossed grid of seven analytic axes, every level taken from a published implementation, and mapped each discovered circuit through a deterministic claim map to a structured Annex IV statement. Across 15,840 pre-registered specifications on GPT-2 small and the indirect object identification task, of which 7,561 produced a claim, the derived statement flips across 73.2% of specification pairs (95% CI 0.725 to 0.738) and the modal claim commands 41.1% of the space. The evidence fails a filab",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "揭示电路级可解释性证据在分析变化下不稳健，对可解释性研究和AI监管有深远影响。",
+      "summary_zh": "本文探讨欧盟AI法案要求的高风险系统技术文档中，机制可解释性证据的可靠性。作者发现电路发现结果在合理的分析变化下不稳定，即解释多样性问题。通过实验证明，不同分析选择可能导致不同结论，质疑了电路级证据的稳健性。这对可解释性研究和AI监管实践提出挑战。",
+      "title_zh": "解释多样性：电路级可解释性证据在合理分析变化下不成立",
+      "weighted_score": 0.81,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "3b82340805929716",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.13754"
+        }
+      ]
+    },
+    {
+      "id": "04aa0cb0023747d0",
+      "source_id": "arxiv-cs-ai",
+      "title": "Tripwire: Triggering Aligned Refusal via Statistically Certified Safety Neurons",
+      "url": "https://arxiv.org/abs/2608.14392",
+      "published_at": "2026-08-17T04:00:00+00:00",
+      "raw_text": "arXiv:2608.14392v1 Announce Type: new \nAbstract: Neuron- and path-level interventions offer the finest-grained route to defending large language models (LLMs) against jailbreak attacks, yet existing methods fall short of this promise, i.e., they often compromise model utility significantly. Specifically, one line of work suppresses toxic neurons to erase harmful semantics, but since such semantics are distributed across the network, blocking every pathway forces a large intervention footprint. An alternative line of research focus on identify safety neurons using external classifiers. While promising, the existing approaches suffer from compromising neurons that are important for the model utility as well. Moreover, both approaches remain always on and thus perturb every benign request even when no attack is present. To address these limitations, we present \\ours{}, a training-free defense that first identifies safety-specific neurons through per-neuron hypothesis tests under false-dis",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "提出基于统计认证安全神经元的触发对齐拒绝机制，在保持模型效用下防御越狱，有深度。",
+      "summary_zh": "神经元和路径级干预为防御LLM越狱攻击提供了最细粒度的手段，但现有方法常以牺牲模型效用为代价。一类工作抑制有毒神经元以消除有害语义，但由于此类语义与正常功能纠缠，导致效用下降。本文提出Tripwire，一种通过统计认证的安全神经元触发对齐拒绝的方法，在不显著损害模型效用的情况下，有效触发模型的拒绝行为。实验证明，Tripwire在多种越狱攻击下保持高防御成功率，同时维持模型在正常任务上的性能。",
+      "title_zh": "Tripwire：通过统计认证的安全神经元触发对齐拒绝",
+      "weighted_score": 0.78,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "033b951a8b1876b6",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.14392"
+        }
+      ]
+    },
+    {
+      "id": "557308fbfd77f902",
+      "source_id": "arxiv-cs-ai",
+      "title": "Grounding Without Corrective Control: Truth-Tracking Profiles for Large Language Models",
+      "url": "https://arxiv.org/abs/2608.14252",
+      "published_at": "2026-08-17T04:00:00+00:00",
+      "raw_text": "arXiv:2608.14252v1 Announce Type: new \nAbstract: Recent work suggests that some large language model representations have content or reference. Grounding can secure either without supplying live routes for correction. This paper asks what follows from that gap. An output is answerable when discrepancies can affect what a target- and task-specific arrangement produces, accepts, or withdraws. The arrangement has corrective control only when live, sufficiently independent routes can detect and repair fresh discrepancies. A route profile records which routes constrain the arrangement and how they are related. Those profiles support analysis of truth-tracking: patterned support for representational success.\n  Language models are the pressure case; text-only arrangements provide a task-relative limiting case. Text-trained models inherit patterns of testimony, coherence, and prior correction. Where target-sensitive correction survives training, these can supply derivative answerability (inher",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "深入探讨LLM表征的内容指称与纠错机制之间的缺口，对理解模型可靠性和可解释性有重要理论价值。",
+      "summary_zh": "本文探讨大语言模型表征的内容或指称问题，指出接地（grounding）可以在没有提供实时纠错路径的情况下实现。作者提出“可回答性”概念，即当差异能影响目标特定安排产生、接受或撤回的内容时，输出是可回答的。该研究分析了这一缺口对模型可靠性和可解释性的影响。",
+      "title_zh": "无纠正控制的基础：大语言模型的真值追踪特征",
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.4
+      },
+      "story_id": "008a3bda1d495a58",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.14252"
         }
       ]
     },
@@ -65,40 +164,6 @@
         {
           "source_id": "zh-ithome",
           "url": "https://www.ithome.com/0/990/439.htm"
-        }
-      ]
-    },
-    {
-      "id": "5b8e5609c68e7d03",
-      "source_id": "alignment-forum",
-      "title": "Does DiffusionGemma do latent reasoning?",
-      "url": "https://www.alignmentforum.org/posts/QBuJ3suRZxrrxSTtv/does-diffusiongemma-do-latent-reasoning",
-      "published_at": "2026-08-16T04:22:18+00:00",
-      "raw_text": "<h2>TL;DR</h2>\n<p>Google DeepMind's recent model DiffusionGemma (DG) generates text via diffusion, meaning many diffusion steps happen before generating the final output. In particular, these diffusion steps carry <em>vectors</em> in addition to tokens. If we cannot interpret these tokens and vectors, the model has significant <a href=\"https://arxiv.org/abs/2603.09786\">opaque serial depth</a>, potentially harming monitorability. Recently, <a href=\"https://arxiv.org/abs/2606.20560\">Engels et al.</a> found that DG nevertheless maintains high monitorability, for instance by showing that projecting the distribution to its top-k items largely retains performance. We strengthen these results by showing that this performance degradation is largely a sampler artifact and good performance can be maintained with only the top item, supporting the case for high monitorability. Still, we also find some rare case studies where the distribution vector is load-bearing computationally, i.e. where top-1",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": "https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/QBuJ3suRZxrrxSTtv/pttbbisnxwnkwlmb8vyq",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "探讨DiffusionGemma的潜在推理能力，涉及可解释性，对理解扩散模型有重要价值。",
-      "summary_zh": "文章探讨Google DeepMind的DiffusionGemma模型是否进行潜在推理。该模型通过扩散生成文本，在最终输出前有多个扩散步骤，这些步骤携带向量和token。作者指出如果无法解释这些token和向量，模型将具有显著的“不透明序列深度”，并可能引用相关论文。内容涉及模型可解释性和推理机制。",
-      "title_zh": "DiffusionGemma是否进行潜在推理？",
-      "weighted_score": 0.715,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "d11141c7734a1b7a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "alignment-forum",
-          "url": "https://www.alignmentforum.org/posts/QBuJ3suRZxrrxSTtv/does-diffusiongemma-do-latent-reasoning"
         }
       ]
     },
@@ -169,104 +234,69 @@
       ]
     },
     {
-      "id": "2301a5ceadd81b79",
-      "source_id": "reddit-machinelearning",
-      "title": "SSOG-Attention: Sum Of Separable Gaussians as a sub-quadratic and scalable alternative to SDPA. [R]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a/",
-      "published_at": "2026-08-16T10:06:07+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a/\"> <img alt=\"SSOG-Attention: Sum Of Separable Gaussians as a sub-quadratic and scalable alternative to SDPA. [R]\" src=\"https://preview.redd.it/pepwlp93opjh1.gif?width=320&amp;crop=smart&amp;s=2c59acf93fb52e53083ca4ef7d9885451e6c387b\" title=\"SSOG-Attention: Sum Of Separable Gaussians as a sub-quadratic and scalable alternative to SDPA. [R]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>&#x200b;</p> <p>Scaled dot-product attention (SDPA) computes its Attention by computing the similarity-scores of all image-tokens with all query tokens which results in O(N²·d) complexity. SSOG (Sum Of Separable Gaussians) instead learns a few Gaussian atoms for each head and only geometrically steers them based on the query token. Since the atoms can be factorized into a separable sum of Gaussians this leads to a reduced complexity of O(N·√N·d). Experiments show that SSO",
+      "id": "ea63beb9e9f442b8",
+      "source_id": "infoq-cn-ai",
+      "title": "调用成功不等于判断正确：KDC 的行动治理主张",
+      "url": "https://www.infoq.cn/article/ViFwzzK2B2ifEIgXaSTC?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-17T12:05:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/ViFwzzK2B2ifEIgXaSTC?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": "https://preview.redd.it/pepwlp93opjh1.gif?width=320&crop=smart&s=2c59acf93fb52e53083ca4ef7d9885451e6c387b",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出可分离高斯和注意力机制，为SDPA提供亚二次复杂度替代方案，具有理论创新和实际应用潜力。",
-      "summary_zh": "该论文提出SSOG-Attention，一种基于可分离高斯和（Sum of Separable Gaussians）的注意力机制，旨在作为标准缩放点积注意力（SDPA）的亚二次复杂度替代方案。传统SDPA的计算复杂度随序列长度呈二次增长，限制了其在长序列任务中的应用。SSOG-Attention通过将注意力权重近似为可分离高斯的和，将复杂度降低至亚二次级别，同时保持表达能力和性能。论文中可能包含理论分析、实验验证以及与现有方法的对比，展示其在长序列建模中的效率和有效性。该研究为高效注意力机制提供了新思路，有望推动大规模语言模型和长序列处理的发展。",
-      "title_zh": "SSOG-Attention：可分离高斯和作为SDPA的亚二次可扩展替代方案",
-      "weighted_score": 0.675,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "5adaf15c64e45439",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vpt6ay/ssogattention_sum_of_separable_gaussians_as_a/"
-        }
-      ]
-    },
-    {
-      "id": "9a8cd175a7a354b2",
-      "source_id": "reddit-localllama",
-      "title": "Paper claims RL for reasoning only changes 1-3% of tokens, and they replicate the gains without RL at ~1000x less compute",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/",
-      "published_at": "2026-08-16T11:21:24+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/\"> <img alt=\"Paper claims RL for reasoning only changes 1-3% of tokens, and they replicate the gains without RL at ~1000x less compute\" src=\"https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=de730fbf7ecace6df0036b21470c16a2d4feacfb\" title=\"Paper claims RL for reasoning only changes 1-3% of tokens, and they replicate the gains without RL at ~1000x less compute\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/juanviera23\"> /u/juanviera23 </a> <br /> <span><a href=\"https://arxiv.org/abs/2605.06241\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/\">[comments]</a></span> </td></tr></table>",
-      "category_hint": [
-        "开源项目",
+        "行业动态",
         "技巧与观点"
       ],
-      "image_url": "https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&crop=smart&auto=webp&s=de730fbf7ecace6df0036b21470c16a2d4feacfb",
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
       "depth_score": 0.8,
-      "reason_zh": "论文声称推理RL仅改变1-3%的token，且无需RL即可用千分之一算力复现收益，若属实将颠覆推理训练范式，极具启发性。",
-      "summary_zh": "Reddit帖子讨论了一篇论文，该论文声称用于推理的强化学习（RL）只改变了1-3%的token，并且他们可以在不使用RL的情况下，以约1000倍更少的计算量复现这些收益。这暗示推理能力的提升可能主要来自数据选择或提示工程，而非RL本身。如果该结果得到验证，将大幅降低训练推理模型的计算成本，对AI行业有重大影响。",
-      "title_zh": "论文声称推理RL仅改变1-3%的token，且无需RL即可用千分之一算力复现收益",
-      "weighted_score": 0.615,
+      "reason_zh": "KDC提出行动治理主张，强调调用成功不等于判断正确，有深度洞察。",
+      "summary_zh": "文章提出KDC（Knowledge-Driven Computing）的行动治理主张，核心观点是“调用成功不等于判断正确”。在AI代理系统中，模型调用成功并不代表其决策正确，需要更严格的治理机制来确保行动符合预期。文章可能探讨治理框架、评估方法等，对AI安全与可靠性有启发。",
+      "title_zh": "调用成功不等于判断正确：KDC的行动治理主张",
+      "weighted_score": 0.675,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
       },
-      "story_id": "85154353e0d126c8",
+      "story_id": "8cc7250a8f66f391",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vpuhh1/paper_claims_rl_for_reasoning_only_changes_13_of/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/ViFwzzK2B2ifEIgXaSTC?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "586d1b53a109c4f4",
-      "source_id": "reddit-machinelearning",
-      "title": "[R] SineKAN: Kolmogorov-Arnold Networks Using Sinusoidal Activation Functions",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vqdode/r_sinekan_kolmogorovarnold_networks_using/",
-      "published_at": "2026-08-17T00:46:26+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1vqdode/r_sinekan_kolmogorovarnold_networks_using/\"> <img alt=\"[R] SineKAN: Kolmogorov-Arnold Networks Using Sinusoidal Activation Functions\" src=\"https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=de730fbf7ecace6df0036b21470c16a2d4feacfb\" title=\"[R] SineKAN: Kolmogorov-Arnold Networks Using Sinusoidal Activation Functions\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I couldn't sleep because I couldn't stop wondering if anyone had tried using sinusoids instead of B-splines as activation in a KAN, and fortunately/unfortunately that was already the case. I could not find it posted here, so I though I would share in the hope of some insightful discussion.</p> <p>Arxiv: <a href=\"https://arxiv.org/abs/2407.04149\">https://arxiv.org/abs/2407.04149</a></p> <p>Github repo: <a href=\"https://github.com/ereinha/SineKAN\">https://github.com/er",
+      "id": "9a7c50f62432d0cf",
+      "source_id": "zh-v2ex",
+      "title": "[分享发现] 如何最大化 Claude Code Session 的价值",
+      "url": "https://www.v2ex.com/t/1234919#reply0",
+      "published_at": "2026-08-17T03:07:19+00:00",
+      "raw_text": "<p>这两天，看了不少知乎上关于用好 Codex 和 Claude Code 的回答，收获不少指令笔记，也产出几篇文章。紧赶慢赶，Anthropic 也在 8 月 14 日发了一篇官方最佳实践：<a href=\"https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions\" rel=\"nofollow\">《 Maximizing the value of your Claude Code sessions 》</a>。</p>\n<p>我整理了下文章的思路，原文核心分为 3 个层次，分别是 token 的价格组成、session 内的 token 活动、和如何最大化单一 session 的价值。</p>\n<p>本文章不打算全篇复述，而是划一些我认为的重点：包括一些被忽视的细节以及客观规律。我自己拿到这篇文章，用这些重点去 review 了我近期的操作日志，也有一些发现和大家分享。</p>\n<h2>一、成本模型变化</h2>\n<p>编辑器时代是固定费用，修 1 个测试和修 50 个测试，工具成本一样。到了 Agent 时代，同一个任务的价格随用法浮动。</p>\n<p>我自己的理解是，如果一条工作流已经被你验证过了（比如有现成的 SOP 或者 skills ），那把它编码成固定流程或代码让 Agent 调用。被验证过的事情不需要反复探索，也能省下不少时间和 token 。</p>\n<h2>二、token 价格的决定方式</h2>\n<p>原文说，计费单位是 token ，但实际买的是 GPU 跑模型的推理时间。三个因素决定单价：模型选型、输入输出的差异、以及缓存命中率。</p>\n<p>模型大小就不展开了：前沿模型给复杂任务，小模型给简单杂活。</p>\n<h3>输入和输出的区别</h3>\n<p>原文用了 Prefill 和 Decode 这两个术语。为什么不叫 Encode ？因为大语言模型推理是纯 Decoder 架构。输入阶段叫 Prefill ，是因为它在一次性填充 KV Cache ，而不是在做编码转换。（训练时会用到 Encoder ）</p>\n<p>输出价格约为输入的 5 倍。Decode 阶段每个 token 都要独立跑一次前向传播，200 token 的输出就是 200 次运",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "技巧与观点"
       ],
-      "image_url": "https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&crop=smart&auto=webp&s=de730fbf7ecace6df0036b21470c16a2d4feacfb",
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "提出使用正弦激活函数的KAN变体，可能提升性能与可解释性，对神经网络研究有参考价值。",
-      "summary_zh": "该论文介绍SineKAN，一种使用正弦激活函数的Kolmogorov-Arnold网络（KAN）变体。KAN基于Kolmogorov-Arnold表示定理，用可学习激活函数替代固定激活，以提高表达能力和可解释性。SineKAN将激活函数替换为正弦函数，可能带来更好的逼近性能和训练稳定性。论文可能包含理论分析和实验验证，展示其在函数逼近和机器学习任务上的优势。该研究为KAN的改进提供了新思路。",
-      "title_zh": "[R] SineKAN：使用正弦激活函数的Kolmogorov-Arnold网络",
-      "weighted_score": 0.6,
+      "reason_zh": "官方最佳实践解读，提炼关键细节，对提升Claude Code使用效率有直接帮助。",
+      "summary_zh": "文章基于Anthropic官方最佳实践，从token价格组成、session内token活动、最大化单一session价值三个层次展开。作者重点划出被忽视的细节和客观规律，如上下文管理、指令优化等，旨在帮助用户更高效地利用Claude Code，减少token浪费，提升输出质量。",
+      "title_zh": "如何最大化Claude Code会话的价值",
+      "weighted_score": 0.665,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
+        "source_authority": 0.7,
+        "novelty": 0.6,
         "impact": 0.5,
-        "practical_value": 0.6
+        "practical_value": 0.9
       },
-      "story_id": "28c83602b88609ce",
+      "story_id": "f9dba44624783a7b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vqdode/r_sinekan_kolmogorovarnold_networks_using/"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1234919#reply0"
         }
       ]
     },
@@ -305,101 +335,70 @@
       ]
     },
     {
-      "id": "e0700a1fc3a82a18",
-      "source_id": "zh-juejin",
-      "title": "LangChain 们的丧钟？DeepSeek 把 Agent 开发变成了拼乐高",
-      "url": "https://juejin.cn/post/7674145872716513280",
-      "published_at": "2026-08-16T11:04:10+00:00",
-      "raw_text": "不是又一个 Agent 框架 2026 年 8 月 13 日，DeepSeek 做了一件它从未做过的事——开源的不是模型，而是模型周围的基础设施。Harness，这个把 DeepThink 驱动的模型",
+      "id": "e9b1975b10bd396d",
+      "source_id": "infoq-cn-ai",
+      "title": "Netflix详述其基于Triton与vLLM的内部LLM服务平台",
+      "url": "https://www.infoq.cn/article/J9Zi9LELcpxFRe23PHdY?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-17T09:56:24+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/J9Zi9LELcpxFRe23PHdY?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "分析DeepSeek开源Harness对Agent开发的影响，认为其将改变框架格局，观点有深度。",
-      "summary_zh": "本文评论了DeepSeek于2026年8月13日开源Harness的事件，认为这标志着Agent开发方式的转变。Harness不是又一个Agent框架，而是围绕模型的基础设施，将DeepThink驱动的模型与工具结合，使Agent开发变得像拼乐高一样简单。文章分析了这一举措对LangChain等现有框架的潜在冲击，并探讨了其对AI开发社区的影响。",
-      "title_zh": "LangChain 们的丧钟？DeepSeek 把 Agent 开发变成了拼乐高",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "1ea18d66b771c748",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7674145872716513280"
-        }
-      ]
-    },
-    {
-      "id": "fb4745e00fc46d88",
-      "source_id": "zh-tmtpost",
-      "title": "星链之后，马斯克为什么又盯上了太空算力？",
-      "url": "https://www.tmtpost.com/8105159.html",
-      "published_at": "2026-08-16T13:18:17+00:00",
-      "raw_text": "两万亿美元SpaceX，还需要一个比星链更大的市场。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/r24qtgreshtg3.png",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "分析马斯克布局太空算力的战略动机，结合SpaceX估值，提供商业洞察。",
-      "summary_zh": "文章探讨马斯克在星链之后瞄准太空算力市场的原因。SpaceX估值达两万亿美元，需要更大市场支撑。太空算力可能成为新增长点，但面临技术挑战和竞争。内容分析商业逻辑和未来趋势。",
-      "title_zh": "马斯克为何盯上太空算力？",
-      "weighted_score": 0.59,
+      "reason_zh": "Netflix分享基于Triton与vLLM的LLM服务平台细节，工程实践有借鉴价值。",
+      "summary_zh": "Netflix详细介绍了其内部LLM服务平台，该平台基于Triton和vLLM构建。文章可能涵盖架构设计、性能优化、部署经验等，展示了如何在大规模生产环境中高效运行LLM服务。对于关注AI基础设施和推理优化的工程师，具有较高的参考价值。",
+      "title_zh": "Netflix详述其基于Triton与vLLM的内部LLM服务平台",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
+        "source_authority": 0.8,
+        "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.4
+        "practical_value": 0.7
       },
-      "story_id": "5aa48545500cd35a",
+      "story_id": "1103ee0d7ea66a1e",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8105159.html"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/J9Zi9LELcpxFRe23PHdY?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "4e6b8863cff613c1",
-      "source_id": "zh-phodal-com",
-      "title": "从可编程到表现力：构建更好的 Agent 运行时重塑用户体验",
-      "url": "http://www.phodal.com/blog/from-programmability-to-expressiveness/",
-      "published_at": "2026-08-16T15:09:00+00:00",
-      "raw_text": "最近，我重新看了 remio 在 PPT DSL 上的尝试，也注意到 OpenAI 的 **Artifact Tool**（产物工具）正逐渐演进成一套完整的专业文档运行时。",
+      "id": "84eec84221eacef7",
+      "source_id": "infoq-cn-ai",
+      "title": "Vibe check：你的AI产品真的能落地吗",
+      "url": "https://www.infoq.cn/article/urRl1WXpPSQQd1A9hN5f?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-17T12:14:27+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/urRl1WXpPSQQd1A9hN5f?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
+      "content_type": "观点评论",
       "depth_score": 0.7,
-      "reason_zh": "探讨Agent运行时重塑用户体验，结合案例，有深度洞察。",
-      "summary_zh": "文章从可编程到表现力的角度，探讨如何构建更好的Agent运行时以重塑用户体验。作者回顾了remio在PPT DSL上的尝试，并注意到OpenAI的Artifact Tool正演进成完整的专业文档运行时。文章分析了Agent运行时在提升用户体验方面的潜力，强调表现力的重要性。",
-      "title_zh": "从可编程到表现力：构建更好的Agent运行时重塑用户体验",
-      "weighted_score": 0.57,
+      "reason_zh": "探讨AI产品落地可行性，提供评估框架，对产品经理有实用价值。",
+      "summary_zh": "文章围绕“Vibe check”概念，探讨如何评估AI产品是否真正能够落地。可能包括产品设计、技术可行性、用户需求匹配等方面的检查清单或方法论，帮助团队在开发前验证想法。对于AI产品经理和创业者，提供了实用的评估思路。",
+      "title_zh": "Vibe check：你的AI产品真的能落地吗",
+      "weighted_score": 0.645,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
+        "source_authority": 0.7,
+        "novelty": 0.6,
         "impact": 0.5,
-        "practical_value": 0.6
+        "practical_value": 0.8
       },
-      "story_id": "70e18b930886acbe",
+      "story_id": "cf674cb7018bef92",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-phodal-com",
-          "url": "http://www.phodal.com/blog/from-programmability-to-expressiveness/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/urRl1WXpPSQQd1A9hN5f?utm_source=rss&utm_medium=article"
         }
       ]
     }
