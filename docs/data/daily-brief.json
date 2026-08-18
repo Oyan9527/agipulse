@@ -1,6 +1,6 @@
 {
   "date": "2026-08-18",
-  "generated_at": "2026-08-18T12:39:05.465279+00:00",
+  "generated_at": "2026-08-18T20:25:16.920626+00:00",
   "items": [
     {
       "id": "f72c2af5e6c97f72",
@@ -301,78 +301,76 @@
       ]
     },
     {
-      "id": "b597a3d03ee72b44",
-      "source_id": "huggingface-blog",
-      "title": "Same Cluster, 33 Points More Utilization: What Changed Was the Order",
-      "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2",
-      "published_at": "2026-08-17T19:46:21+00:00",
-      "raw_text": "",
+      "id": "a575c3b0d9a478e0",
+      "source_id": "zh-juejin",
+      "title": "Code Agent 解剖（04）：系统提示词是怎么组装的，agent 的「人格」从哪来？",
+      "url": "https://juejin.cn/post/7675220067063562278",
+      "published_at": "2026-08-18T13:24:44+00:00",
+      "raw_text": "深入 MyCodeAgent 的提示词组装层：理解 agent 的行为约束不是「一段超长 prompt」，而是可缓存、可指纹、可热更新的分层装配",
       "category_hint": [
-        "开源项目",
-        "产品发布"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "Hugging Face 博客分享集群利用率提升技巧，通过调整顺序实现 33 点提升，实用性强。",
-      "summary_zh": "Hugging Face 博客发布了一篇关于集群利用率优化的文章，标题为“同一集群，利用率提升 33 点：改变的是顺序”。文章可能探讨了如何通过调整任务调度顺序或资源分配策略来显著提高 GPU 集群的利用率。对于从事大规模模型训练和部署的工程师，这是一篇具有高实用价值的教程，提供了可操作的优化方法。",
-      "title_zh": "同一集群，利用率提升 33 点：改变的是顺序",
-      "weighted_score": 0.705,
+      "reason_zh": "深入剖析 Code Agent 系统提示词的组装机制，揭示分层装配与缓存优化，对构建 Agent 的开发者极具实操价值。",
+      "summary_zh": "本文深入 MyCodeAgent 的提示词组装层，解释了 agent 的行为约束并非一段超长 prompt，而是可缓存、可指纹、可热更新的分层装配。文章详细介绍了系统提示词的组装过程，包括如何将不同模块（如角色定义、工具说明、约束条件）动态组合，并利用缓存和指纹技术提升效率。这种设计使得提示词可以灵活更新，同时保持性能。对于理解 agent 的“人格”来源和优化提示词工程有重要参考价值。",
+      "title_zh": "Code Agent 解剖（04）：系统提示词是怎么组装的，agent 的「人格」从哪来？",
+      "weighted_score": 0.72,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "ed643ad49b6c24b9",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "huggingface-blog",
-          "url": "https://huggingface.co/blog/Dharma-AI/gpu-management-pt2"
-        }
-      ]
-    },
-    {
-      "id": "b350c8e0a1104a1a",
-      "source_id": "reddit-openai",
-      "title": "The AI review that said \"looks good, solid implementation\" and approved a bug that took down production three days later",
-      "url": "https://www.reddit.com/r/OpenAI/comments/1vrc571/the_ai_review_that_said_looks_good_solid/",
-      "published_at": "2026-08-18T02:11:49+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>There's a specific kind of confidence in AI-generated review comments that has nothing to do with whether anything was actually verified. Sounds the same either way, calm, evenly distributed, certain. Took a real incident to notice that tone was the only signal I'd been going on.</p> <p>The review in question approved a change to retry logic sitting near a payment flow. Comments were reasonable-sounding: a naming suggestion, a docstring note, and one line saying the retry &quot;should probably check for duplicates.&quot; That last one read like every other minor suggestion around it. It wasn't minor. It was the actual risk, a retry that could double-charge a customer under duplicate delivery, and it shipped because nothing about how it was phrased made it stand out from the noise.</p> <p>Went back afterward and checked the review against five specific questions instead of just its tone. Had it established what was actually at risk in this particular ch",
-      "category_hint": [
-        "产品发布",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "通过真实事故揭示AI代码审查的盲点，对工程师有重要警示和实用价值。",
-      "summary_zh": "文章讲述了一个AI代码审查工具给出“看起来不错，实现扎实”的评论，却批准了一个三天后导致生产事故的bug。作者指出，AI生成的审查评论具有一种特定的自信，但这种自信与是否真正验证无关。声音听起来平静、均匀、确定，直到真实事故发生后，才意识到这种语气是唯一的信号。这一案例警示开发者不能依赖AI审查的表面语气，而应深入验证逻辑，尤其是涉及支付等关键路径。",
-      "title_zh": "AI审查说“看起来不错，实现扎实”，却批准了一个三天后导致生产事故的bug",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.7,
         "novelty": 0.8,
         "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "867832cfb33cfefc",
+      "story_id": "cba04e018dce7c72",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-openai",
-          "url": "https://www.reddit.com/r/OpenAI/comments/1vrc571/the_ai_review_that_said_looks_good_solid/"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7675220067063562278"
         }
       ]
     },
     {
-      "id": "6debe18e008d5a21",
+      "id": "e419025b986b640b",
+      "source_id": "zh-juejin",
+      "title": "DeepSeek Harness 源码实战第3章：Profile / Bundle / Patch——dsh 的装配系统",
+      "url": "https://juejin.cn/post/7675200722894274566",
+      "published_at": "2026-08-18T15:47:46+00:00",
+      "raw_text": "DeepSeek Harness 源码实战第3章：Profile / Bundle / Patch——dsh 的装配系统 改一行配置，整个产品的形态就变了。 上一章我们讲了 Cordis 插件引擎，知",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "深入解析DeepSeek Harness的装配系统，对理解AI框架源码有启发。",
+      "summary_zh": "本文是DeepSeek Harness源码实战系列的第3章，重点讲解Profile、Bundle和Patch三个核心概念，即dsh的装配系统。作者通过改一行配置即可改变整个产品形态的示例，展示了装配系统的灵活性和强大功能。文章延续了上一章对Cordis插件引擎的讨论，深入剖析了dsh如何通过模块化设计实现高度可配置的AI应用。",
+      "title_zh": "DeepSeek Harness源码实战第3章：Profile / Bundle / Patch——dsh的装配系统",
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "7bf893bc754dbb11",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7675200722894274566"
+        }
+      ]
+    },
+    {
+      "id": "89894e892e1e673d",
       "source_id": "zh-v2ex",
       "title": "[程序员] Agent Harness 会不会也迎来自己的「Debian 时刻」？",
-      "url": "https://www.v2ex.com/t/1235404#reply0",
+      "url": "https://www.v2ex.com/t/1235404#reply1",
       "published_at": "2026-08-18T12:09:38+00:00",
       "raw_text": "<p>最近一段时间，我一直在思考一个问题：</p>\n<p><strong>Agent Harness 会不会也需要自己的“发行版”？</strong></p>\n<p>Linux 内核提供了核心能力，但大多数人真正安装和使用的是 Debian 、Ubuntu 这样的发行版。发行版不仅打包内核，还负责默认组件、依赖关系、安装升级、兼容策略，以及一套相对稳定的使用体验。</p>\n<p>我觉得 Agent Harness 可能也会经历类似的阶段。</p>\n<p>DeepSeek Harness 提供了一个很有意思的基础：agent loop 、tools 、skills 、plugins 、MCP ，以及“everything is a plugin”的扩展模型。</p>\n<p>但从一个可扩展的 harness ，到一个可以长期使用、持续演化、随时升级和回滚的工作环境，中间还有一层没有被充分解决。</p>\n<p>所以我做了：</p>\n<p><strong>oh-my-dsh</strong></p>\n<p><a href=\"https://github.com/amplifthq/oh-my-dsh\" rel=\"nofollow\">https://github.com/amplifthq/oh-my-dsh</a></p>\n<p>它是一个面向 DeepSeek Harness 的社区发行版，目标不是 fork 上游，而是在上游之上提供一套可组合、可覆盖、可验证的发行层。</p>\n<p>一句话定位：</p>\n<blockquote>\n<p>如果 DeepSeek Harness 是内核，oh-my-dsh 惝试成为类似 Debian 的发行版层。</p>\n</blockquote>\n<h2>Overlay ，不是 Fork</h2>\n<p>oh-my-dsh 不复制或魔改 DeepSeek Harness 的核心代码，而是通过 overlay 方式组合：</p>\n<ul>\n<li>上游 Harness</li>\n<li>oh-my-dsh 提供的默认能力</li>\n<li>用户自己的配置、Skills 和 Plugins</li>\n</ul>\n<p>上层可以覆盖下层，但用户自己创建的内容始终拥有最高优先级。</p>\n<p>这么设计主要是为了避免两个问题：</p>\n<ol>\n<",
       "category_hint": [
@@ -382,22 +380,22 @@
       "category": "技巧与观点",
       "content_type": "观点评论",
       "depth_score": 0.7,
-      "reason_zh": "提出Agent Harness可能迎来'发行版'时刻，类比Linux生态，对Agent开发有启发意义。",
-      "summary_zh": "作者思考Agent Harness是否也会像Linux内核一样，需要自己的'发行版'。Linux内核提供核心能力，但用户实际使用的是Debian、Ubuntu等发行版，它们负责打包、依赖管理、升级等。DeepSeek Harness提供了agent loop、tools、skills等基础，但从可扩展的harness到长期可用的工作环境，中间还有一层未解决。作者认为Agent Harness可能经历类似阶段。",
-      "title_zh": "[程序员] Agent Harness会不会迎来自己的「Debian时刻」？",
-      "weighted_score": 0.54,
+      "reason_zh": "提出Agent Harness可能迎来'发行版'时刻的洞察，类比Linux生态，有启发性。",
+      "summary_zh": "作者思考Agent Harness是否需要类似Linux发行版的解决方案。以DeepSeek Harness为例，它提供了agent loop、tools、skills、plugins、MCP等基础，但作者认为从可扩展的harness到长期可用的工作环境之间还有差距，需要解决组件打包、依赖管理、升级回滚等问题，可能催生'发行版'形态。",
+      "title_zh": "Agent Harness 会不会迎来自己的「Debian 时刻」？",
+      "weighted_score": 0.515,
       "score_breakdown": {
         "source_authority": 0.4,
-        "novelty": 0.7,
+        "novelty": 0.6,
         "impact": 0.5,
         "practical_value": 0.6
       },
-      "story_id": "58844eb96ba0eda1",
+      "story_id": "34a2e195c1d677f1",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1235404#reply0"
+          "url": "https://www.v2ex.com/t/1235404#reply1"
         }
       ]
     }
