@@ -1,6 +1,6 @@
 {
   "date": "2026-08-19",
-  "generated_at": "2026-08-19T04:40:34.366017+00:00",
+  "generated_at": "2026-08-19T08:35:52.929474+00:00",
   "items": [
     {
       "id": "1455ee78ffc7e887",
@@ -169,39 +169,6 @@
       ]
     },
     {
-      "id": "d0809672a69eb4d7",
-      "source_id": "zh-dfine-tech",
-      "title": "ai-memory：换个 CLI 接着干的 agent 记忆层",
-      "url": "https://dfine.tech/posts/8e7c317d/",
-      "published_at": "2026-08-18T06:26:14+00:00",
-      "raw_text": "<p>同时用好几个编码 agent 的人都遇到过：Claude Code 干到一半退了，换 Codex 打开同一个目录，上一个知道的事一件都不剩。<br />\n<a href=\"https://github.com/akitaonrails/ai-memory\" rel=\"noopener external nofollow\" target=\"_blank\">ai-memory</a> 是个 Rust 单二进制，用 MCP 加生命周期钩子给这些 CLI 接一层共享的长期记忆，不用手动 <code>write_note</code>，也不用把总结在会话之间复制粘贴。<br />\n读它代码最大的收获不是功能表，是那十五条不变量——每一条后面都挂着一个别人踩过的坑的 issue 号。</p>\n<!--more-->\n<h3 id=\"要解决的问题\">要解决的问题</h3>\n<p>它把记忆沉淀成一棵 git 版本化的 markdown 树，作者管这叫 Karpathy 式的 LLM wiki：页面随时间被增量编译、就地版本化，语义知识累积，情节日志衰减。旁边一个 SQLite 索引负责检索。</p>\n<p>关键是这两者的主从关系——下面那张图里，从左到右只有一条主链，而真相始终在最左边落盘的那一份文件里。</p>\n<p><img alt=\"ai-memory 的一条主链\" src=\"/images/ai-memory-flow.svg\" /></p>\n<h3 id=\"真相在磁盘上\">真相在磁盘上</h3>\n<p>作者在设计文档里把这条列为「最大的架构决策」，并列了三个选项：数据库为主、markdown 为主、数据库为主但按需导出。选的是第二个，理由四条：</p>\n<blockquote>\n<p>备份与迁移就是 <code>git clone</code> 或 <code>rsync</code> 一个目录——这是需求里明写的；<br />\nKarpathy 那套模式本身就是磁盘上的 wiki，用导出步骤伪造会丢掉「能在 Obsidian 里直接翻」这个性质；<br />\n数据库可以从文件全量重建，损坏可恢复，反过来不行；<br />\n任何能读 <code>~/.ai-memory/wiki/*.md</code> 的工具直接可用，不必先接 MCP。</p>\n</blockqu",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "ai-memory为CLI agent提供共享记忆层，代码中十五条不变量蕴含实战经验，对开发者有高价值。",
-      "summary_zh": "ai-memory是一个Rust单二进制工具，通过MCP和生命周期钩子为多个CLI编码agent（如Claude Code、Codex）提供共享的长期记忆，避免手动记录和复制粘贴。文章深入分析了其代码，指出最大的收获是十五条不变量，每条都对应一个实际踩坑的issue。这些不变量揭示了设计共享记忆层的关键考量，对构建类似系统具有重要参考价值。",
-      "title_zh": "ai-memory：换个CLI接着干的agent记忆层",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "4d4100d87e3ac7ac",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-dfine-tech",
-          "url": "https://dfine.tech/posts/8e7c317d/"
-        }
-      ]
-    },
-    {
       "id": "2dbcfd8fdfef779c",
       "source_id": "answerai",
       "title": "Why LLMs can’t make your code simpler",
@@ -212,7 +179,7 @@
         "技巧与观点",
         "开源项目"
       ],
-      "image_url": "https://www.answer.ai/posts/2026-07-31-llms-code-simpler_assets/naur.jpeg",
+      "image_url": "https://www.answer.ai/posts/2026-08-19-llms-code-simpler_assets/naur.jpeg",
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
@@ -236,35 +203,101 @@
       ]
     },
     {
-      "id": "68763bbf483f44ae",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] DeepSeek Harness 体验有感",
-      "url": "https://www.v2ex.com/t/1235536#reply0",
-      "published_at": "2026-08-19T03:19:35+00:00",
-      "raw_text": "<h1>体验完 DeepSeek Harness ，我为何果断叫停开发两年的客户端？</h1>\n<h2>1. 背景：两年心血，一朝叫停</h2>\n<ul>\n<li>核心研发会议决定：<strong>停掉现有客户端开发</strong>，全面迁移至 DeepSeek Harness （ DSH ）。</li>\n<li>该项目已持续开发两年，近期刚完成两个多月的重构。</li>\n</ul>\n<h2>2. 什么是 Harness ？</h2>\n<ul>\n<li><strong>本义</strong>：马具，套在马身上传递力量的工具。</li>\n<li><strong>AI 语境</strong>：大模型 = 马（只有“力气”），Harness = 马具（赋予工具调用、循环控制、权限管理、记忆持久化等能力）。</li>\n<li>DeepSeek Harness 是一个<strong>承载并驱动智能体的运行时框架/底座</strong>。</li>\n</ul>\n<h2>3. 从漠视到震撼：亲测 DSH 的转折</h2>\n<ul>\n<li>起初不以为意，认为只是“国产版 Codex”。</li>\n<li>看到社区热烈讨论后，亲自克隆源码体验，<strong>迅速产生强烈感知</strong>：DSH 正在“杀死比赛”。</li>\n</ul>\n<h2>4. 为什么 DSH 如此关键？</h2>\n<ul>\n<li><strong>Agent 能力</strong> + <strong>插件化（用户自定义）</strong> 是所有 AI 应用绕不开的趋势（如支付宝对话式首页、微信小微）。</li>\n<li>插件化是满足海量个性化需求的<strong>唯一解法</strong>，官方无法穷举所有功能。</li>\n</ul>\n<h2>5. 我们曾经的困境：即我（数字自我）项目</h2>\n<ul>\n<li>收集全维度个人数据（笔记、聊天、录音、事件等），开发基础模块（安排、事件订阅、目标追踪等）。</li>\n<li>但<strong>越做越觉得不对</strong>：官方无法穷举用户所有想要的功能，应当把数据交给用户自行处理。</li>\n<li>设想：Agent 作为核心入口，常用功能插件化，界面自定义。</li>\n</ul>\n<h2>6. DSH 带来的颠覆性认知</h2>\n<ul>\n",
+      "id": "26fffef071e50c69",
+      "source_id": "zh-dfine-tech",
+      "title": "munder-difflin 的多 agent 协调实现",
+      "url": "https://dfine.tech/posts/36d537a0/",
+      "published_at": "2026-08-19T07:46:48+00:00",
+      "raw_text": "<p>刷到这个仓库的时候是被名字骗进去的，munder-difflin，《办公室》里那家最差的纸业公司，主管 Michael 也搬了过来当了这层楼的老板。演示视频里一堆像素小人在办公室里走来走去，互相发消息的时候还有信封在桌子之间飞，看着像个玩具。<br />\n后来翻到一份叫 <code>docs/message-queue.md</code> 的文档，一千多字只讲一件很窄的事：一个真实的 CLI 只有一根输入行，而想用它的不止你一个。这篇就记一下里面几处认真想过的地方。</p>\n<!--more-->\n<h3 id=\"项目概况\">项目概况</h3>\n<p><a href=\"https://github.com/chaitanyagiri/munder-difflin\" rel=\"noopener external nofollow\" target=\"_blank\">munder-difflin</a> 是个 Electron 桌面应用，把你已经在终端里跑的 agent CLI 包起来当 agent 用，README 里列了十种：<code>claude</code>、<code>agy</code>、<code>codex</code>、<code>grok</code>、<code>kimi</code>、<code>qwen</code>、<code>opencode</code>、<code>crush</code>、<code>pi</code>、<code>copilot</code>。每个会话是一个真进程，同时是办公室地板上的一个小人，走去哪个工位取决于它在用哪个工具。<br />\n到今天的 HEAD（<code>92461ab</code>），从 5 月 31 日起 710 次提交，<code>src/</code> 下 185 个 ts/tsx 文件、53,166 行，<code>index.ts</code> 4,582 行，<code>hive.ts</code> 2,464 行，38 个测试文件跑在 <code>node --test</code> 上。版本 0.4.4，README 自己写的状态是 working prototype，这个自我定位是准的，功能铺得很宽，有些地方深得意外，有些地方文档已经和代码不一样了。</p>\n<h3 id=",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "产品发布",
+      "category": "开源项目",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深度体验DeepSeek Harness后叫停自研客户端，对Agent开发方向有重要参考价值。",
-      "summary_zh": "作者分享了体验DeepSeek Harness（DSH）后的感受，并决定停掉开发两年的客户端项目。文章解释了Harness的概念（类比马具，赋予大模型工具调用、循环控制等能力），并详细对比了DSH与自研客户端的优劣，包括开发效率、功能完整性、生态等方面。作者认为DSH已足够强大，继续自研不再必要。",
-      "title_zh": "[程序员] DeepSeek Harness体验有感",
-      "weighted_score": 0.715,
+      "depth_score": 0.8,
+      "reason_zh": "深入剖析多agent协调的工程细节，从消息队列设计到CLI复用，有实践洞察。",
+      "summary_zh": "文章介绍了开源项目munder-difflin，一个多agent协调实现。作者被项目名称吸引，发现其演示视频中像素小人在办公室互动，看似玩具，但深入阅读docs/message-queue.md文档后，发现其中认真思考了真实CLI只有一根输入行但多个agent需要同时使用的问题。文章记录了项目中的几处设计考量，涉及消息队列、agent间通信等，展示了多agent系统实现中的工程细节和取舍。",
+      "title_zh": "munder-difflin的多agent协调实现",
+      "weighted_score": 0.59,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.5,
         "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.8
+        "impact": 0.4,
+        "practical_value": 0.7
       },
-      "story_id": "295f77a7373609b6",
+      "story_id": "21474f054b08a054",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1235536#reply0"
+          "source_id": "zh-dfine-tech",
+          "url": "https://dfine.tech/posts/36d537a0/"
+        }
+      ]
+    },
+    {
+      "id": "168ed337e2591a79",
+      "source_id": "reddit-rag",
+      "title": "Negative result: vector distance can't tell \"weak evidence\" from \"no evidence\", and here's the data that convinced me",
+      "url": "https://www.reddit.com/r/Rag/comments/1vrm5fa/negative_result_vector_distance_cant_tell_weak/",
+      "published_at": "2026-08-18T11:11:44+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I built an eval harness for a document QA pipeline. It answers security questionnaires from a company's own policy docs. 24 questions, labels written down before the system was ever run against them, three deterministic passes.</p> <p>It scores 15 out of 24. Nine failures. Six of them share one cause, and I want to talk about the fix I couldn't make.</p> <p>The setup. Answers are gated on how far the best retrieved chunk sits from the question. The cutoff is 0.3. Below it the system answers, above it it abstains. Six of the nine failures are questions where the model produced a correct, well hedged, properly cited answer that the gate then threw away.</p> <p>The obvious fix. Raise the cutoff. Those six sit at 0.323, 0.340, 0.359, 0.384 and 0.412.</p> <p>Why I couldn't. One question that has to abstain sits at 0.321. Its evidence genuinely doesn't support an answer, and it only abstains correctly because 0.321 is above 0.3. Every failure I'd want to res",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "用实验数据揭示向量距离无法区分'弱证据'与'无证据'，对RAG评估有深刻洞察。",
+      "summary_zh": "作者构建了一个文档QA评估框架，用于从公司政策文档回答安全问卷。24个问题中系统得分15/24，9个失败中有6个源于同一原因：向量距离无法区分'弱证据'和'无证据'。作者通过三个确定性测试和预先标注的标签，展示了当检索结果与问题相关性低时，向量距离分数并不能可靠地指示证据强度。这导致系统在缺乏足够信息时仍给出答案，而非拒绝回答。作者讨论了尝试修复但未能成功的方案，并分享了数据支持这一结论。",
+      "title_zh": "负面结果：向量距离无法区分'弱证据'与'无证据'，以及说服我的数据",
+      "weighted_score": 0.53,
+      "score_breakdown": {
+        "source_authority": 0.3,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "916fddd1c77b9394",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1vrm5fa/negative_result_vector_distance_cant_tell_weak/"
+        }
+      ]
+    },
+    {
+      "id": "7639c00337666359",
+      "source_id": "zh-leiphone",
+      "title": "纳须弥，于芥子：大模型之后，中国厂商正在把大模型塞进复杂系统 | IJCAI 2026 前瞻",
+      "url": "https://www.leiphone.com/category/private/S6pidAUn5lcS9X0n.html",
+      "published_at": "2026-08-19T04:04:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260819/6a852aa732da2.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">小小模型容器和巨大的智能世界。</span></span></span></span></section><span></span><span></span><span></span><sp",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260819/6a852aa732da2.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "前瞻IJCAI 2026，剖析中国厂商将大模型嵌入复杂系统的趋势，洞察行业方向，值得关注。",
+      "summary_zh": "本文为IJCAI 2026前瞻，聚焦中国厂商如何将大模型集成到复杂系统中。文章指出，大模型正从独立应用走向与工业、交通、医疗等复杂系统的深度融合，面临实时性、可靠性、资源约束等挑战。中国厂商通过模型压缩、边缘计算、领域适配等技术，探索在有限资源下发挥大模型能力。文章分析了多个案例，展示了这一趋势的技术路径和潜在影响，并讨论了未来研究方向。",
+      "title_zh": "纳须弥于芥子：大模型之后，中国厂商正将大模型塞进复杂系统 | IJCAI 2026 前瞻",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "1cb348440de46a21",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/private/S6pidAUn5lcS9X0n.html"
         }
       ]
     },
@@ -303,103 +336,68 @@
       ]
     },
     {
-      "id": "5a13113d9c084eba",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] Plato：面向企业的 ai coding 框架",
-      "url": "https://www.v2ex.com/t/1235539#reply0",
-      "published_at": "2026-08-19T03:22:36+00:00",
-      "raw_text": "<p>现在已经有很多 AI coding 框架了。面向绿地项目的 GSD 、Superpowers ，Brownfield-leaning 的 grill-with-docs ，还有真正面向棕地项目的 OpenSpec 。那么，是不是我们已经没有必要再发明新的框架了？</p>\n<h2>AI 编程的困境</h2>\n<p><strong>巨型 PR</strong>\n每天都要面对同事创建的巨型 PR 。问了同事，其实他也不知道这个代码在写什么。最后只好草草地点了 approve 。</p>\n<p><strong>假阴性单元测试</strong>\n项目的代码慢慢地开始变得不可控，大家已经不知道哪些逻辑在哪些文件里面。所以出了 bug 也不知道怎么修复，只能让 AI 来修复。但是 AI 可能会把你大量的代码重写，然后宣称已经修复了这个 bug ，并且单元测试都通过了。但是你发现线上系统的另一个部分坏了。</p>\n<p><strong>上下文过大</strong>\n当你在一个会话中跟 agent 聊了一段时间，它已经知道了很多代码的规范和反模式后，你重新开一个会话，它又忘记了。又或者你已经把这些规范写到了 prompt 上下文中，但是随着时间的推移，它又开始犯同样的错误。</p>\n<p><strong>没有针对企业的最佳实践</strong>\n你想到了用那些有名的框架。你翻遍了网络，发现确实有很多好用的框架可以从无到有生成一个产品。但是你面对的是一个老项目。你不能把它搞坏，否则会有严重的后果。\nOpenSpec 看起来可以，但是它更多的是面向个人开发者。随着时间的推移，大量的 Spec 被产生，agent 的上下文越来越不够用。</p>\n<p>总结起来，就是这些框架距离真正的程序员的工作太远了。我们来看下一个在企业中工作的程序员的日常。</p>\n<h3>程序员的日常</h3>\n<p>一个真正在公司上班的程序员的一天大概是这样的：\n每天上午有一个 standup meeting\n然后从 Jira 上拿到 ticket\n开一个新的 branch ，然后开始做这个 ticket ，测试，然后提交，并生成 PR</p>\n<h2>什么是 Plato</h2>\n<p>我常常看到在论坛上有人问，现在有什么好的 Best Practice 吗？老实说，我也没找到。但是我根据多年的程序员经验，",
+      "id": "443ed17051cf6815",
+      "source_id": "artificial-lawyer",
+      "title": "Why General AI Alone Is Not Enough for Legal Work",
+      "url": "https://www.artificiallawyer.com/2026/08/19/why-general-ai-alone-is-not-enough-for-legal-work/",
+      "published_at": "2026-08-19T07:35:30+00:00",
+      "raw_text": "By Senne Mennes, LawVu. Few terms in legal technology have become as overused as ‘AI-powered.’ Not to mention over-hyped. Today, virtually every legal tech vendor <a class=\"mh-excerpt-more\" href=\"https://www.artificiallawyer.com/2026/08/19/why-general-ai-alone-is-not-enough-for-legal-work/\" title=\"Why General AI Alone Is Not Enough for Legal Work\">...</a>",
       "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入分析AI编程框架困境，提出面向企业的Plato框架，对工程实践有启发。",
-      "summary_zh": "文章讨论了现有AI coding框架的不足，如巨型PR、假阴性单元测试等问题，并介绍了面向企业的Plato框架。作者分析了绿地项目和棕地项目的不同需求，强调Plato旨在解决企业级代码库的复杂性和协作问题。内容涉及AI编程的实践挑战和框架设计思路。",
-      "title_zh": "[程序员] Plato：面向企业的AI coding框架",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "ebc8f09a1ea8d9bc",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1235539#reply0"
-        }
-      ]
-    },
-    {
-      "id": "a290c3ff9b100e2a",
-      "source_id": "gradient-flow",
-      "title": "The model may not be your biggest risk",
-      "url": "https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/",
-      "published_at": "2026-08-18T13:00:21+00:00",
-      "raw_text": "<p>Subscribe • Previous Issues The biggest AI risks sit outside the model The most revealing AI failures right now are not stories about models becoming too capable. They are stories about everything around the model. One system received more access than its test environment could contain. Another was trained on material whose acquisition created $1.5 billion in<a class=\"more-link\" href=\"https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/\">Continue reading <span class=\"screen-reader-text\">\"The model may not be your biggest risk\"</span></a></p>\n<p>The post <a href=\"https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/\">The model may not be your biggest risk</a> appeared first on <a href=\"https://gradientflow.com\">Gradient Flow</a>.</p>",
-      "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f64f.png",
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "指出AI风险更多在模型之外，如权限和数据获取，提供系统级思考。",
-      "summary_zh": "文章指出当前最明显的AI失败案例并非模型能力过强，而是模型周围环境的问题。例如，一个系统获得了超出测试环境的访问权限，另一个系统使用了通过造成15亿美元损失获取的训练数据。这些案例表明，AI风险主要来自权限管理、数据来源等外部因素，而非模型本身。作者呼吁关注AI系统的整体生态，而不仅仅是模型性能。",
-      "title_zh": "模型可能不是你最大的风险",
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "1c86817168eff4d1",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "gradient-flow",
-          "url": "https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/"
-        }
-      ]
-    },
-    {
-      "id": "b451e9e9a1ff3eea",
-      "source_id": "databricks-blog",
-      "title": "When it comes to Governance, Retailers need a control plane for context",
-      "url": "https://www.databricks.com/blog/when-it-comes-governance-retailers-need-control-plane-context",
-      "published_at": "2026-08-18T15:18:00+00:00",
-      "raw_text": "Retailers are entering a new phase of AI adoption.The early conversations around...",
-      "category_hint": [
-        "产品发布",
         "行业动态"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "探讨零售商AI治理中的上下文控制平面，有深度分析，对行业有启发。",
-      "summary_zh": "文章讨论了零售商在AI采用新阶段中，需要为上下文建立控制平面。早期对话围绕数据治理，但现在需要更全面的治理框架，以管理AI系统中的上下文信息。文章可能分析了零售商面临的挑战和解决方案，强调控制上下文的重要性，以支持负责任的AI应用。",
-      "title_zh": "在治理方面，零售商需要上下文控制平面",
-      "weighted_score": 0.655,
+      "reason_zh": "分析通用 AI 在法律领域的不足，强调专用解决方案的重要性，对法律科技从业者有洞察。",
+      "summary_zh": "文章指出法律科技领域过度使用“AI 驱动”一词，通用 AI 不足以满足法律工作的专业需求。作者 Senne Mennes 认为，法律工作涉及复杂推理、领域知识和合规要求，通用模型难以胜任。因此，需要结合专用工具和领域知识，才能提供真正有效的法律科技解决方案。",
+      "title_zh": "为什么通用 AI 不足以胜任法律工作",
+      "weighted_score": 0.68,
       "score_breakdown": {
         "source_authority": 0.8,
-        "novelty": 0.5,
+        "novelty": 0.6,
         "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "5a391ee4b5ffbee1",
+      "story_id": "a3ef96afbac85919",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "databricks-blog",
-          "url": "https://www.databricks.com/blog/when-it-comes-governance-retailers-need-control-plane-context"
+          "source_id": "artificial-lawyer",
+          "url": "https://www.artificiallawyer.com/2026/08/19/why-general-ai-alone-is-not-enough-for-legal-work/"
+        }
+      ]
+    },
+    {
+      "id": "63bb7b5682552726",
+      "source_id": "zh-juejin",
+      "title": "我把 DeepSeek Harness 跑了一遍，终于知道它和 Codex 差在哪了",
+      "url": "https://juejin.cn/post/7675538244907221001",
+      "published_at": "2026-08-19T08:15:59+00:00",
+      "raw_text": "Codex把 Agent 组装好交给你，DeepSeek Harness把 Agent 的组装方式也交给了你。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "深度对比DeepSeek Harness与Codex的差异，揭示Agent组装方式的开放性，对开发者有启发。",
+      "summary_zh": "作者通过运行DeepSeek Harness，对比了它与Codex的差异。核心观点是Codex将Agent组装好交给用户，而DeepSeek Harness将组装方式也开放给用户，提供了更高的灵活性和可定制性。文章可能详细分析了DeepSeek Harness的架构、使用体验和适用场景，为开发者选择工具提供了参考。",
+      "title_zh": "我把DeepSeek Harness跑了一遍，终于知道它和Codex差在哪了",
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "345f556157674f6b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7675538244907221001"
         }
       ]
     }
