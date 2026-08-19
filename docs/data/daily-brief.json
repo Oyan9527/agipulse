@@ -1,6 +1,6 @@
 {
   "date": "2026-08-19",
-  "generated_at": "2026-08-19T12:39:54.511860+00:00",
+  "generated_at": "2026-08-19T20:28:50.764699+00:00",
   "items": [
     {
       "id": "1455ee78ffc7e887",
@@ -136,36 +136,35 @@
       ]
     },
     {
-      "id": "04e4bc75493c57af",
-      "source_id": "reddit-langchain",
-      "title": "Where should the execution boundary live in an AI agent?",
-      "url": "https://www.reddit.com/r/LangChain/comments/1vs03sm/where_should_the_execution_boundary_live_in_an_ai/",
-      "published_at": "2026-08-18T19:55:49+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I've been thinking about a problem that becomes uncomfortable once an LLM gets access to real tools:</p> <p><strong>The model can decide what it wants to do. But should it also decide what it is allowed to do?</strong></p> <p>Most agent architectures put something roughly like this together:</p> <pre><code>LLM → tool call → tool </code></pre> <p>That works until the tool can modify a database, access files, call an API, deploy something, or perform another irreversible action.</p> <p>I wanted the authorization decision to exist outside the model.</p> <p>So I built <strong>SOPVM</strong>, an open-source runtime that treats an SOP as an executable specification:</p> <pre><code>LLM ↓ semantic decision ↓ SOP → typed AST → executable IR ↓ capability policy ↓ sandboxed provider ↓ tool </code></pre> <p>The important part is that capabilities are checked both during compilation and again when execution happens. Providers are sandboxed independently, so the sys",
+      "id": "47cbd8a348d5326d",
+      "source_id": "reddit-rag",
+      "title": "We Analyzed 10,000 Failed Agent Search Queries: Why Your LLM is Terrible at Web Searching (and How to Fix It)",
+      "url": "https://www.reddit.com/r/Rag/comments/1vsmqsd/we_analyzed_10000_failed_agent_search_queries_why/",
+      "published_at": "2026-08-19T13:39:42+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey everyone,</p> <p>Following up on the previous discussion about search API latency, I wanted to share another massive bottleneck we hit while building autonomous web agents. Even with a lightning-fast retrieval API, our agents were frequently getting stuck in execution loops or extracting the wrong data entirely.</p> <p>We pulled the logs of 10,000 failed retrieval attempts. The culprit wasn't the LLM's logic or the search index itself. The core problem was that LLMs are surprisingly terrible at formulating search queries.</p> <p>Here are the three main ways agents fail at searching, and the architecture tweak we used to fix it.</p> <h1>1. The Conversational Search Trap</h1> <p>LLMs naturally default to conversational text. Instead of searching a dense keyword string like <code>OpenAI API pricing 2026</code>, a naive agent will search <code>How much does it cost to use the OpenAI API right now?</code>. Search engines (even machine-native ones) often",
       "category_hint": [
-        "开源项目",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深入探讨AI代理中执行边界的放置问题，涉及安全与自主性的权衡，对设计代理架构有启发。",
-      "summary_zh": "文章探讨了在AI代理系统中，执行边界应如何划分的问题。作者指出，当LLM获得真实工具访问权后，模型可以决定做什么，但不应决定被允许做什么。大多数代理架构采用LLM→工具调用的简单模式，但这种方式在复杂场景下可能失效。文章分析了不同边界放置方案的利弊，并提出了更安全的架构设计思路，强调在自主性与可控性之间取得平衡。",
-      "title_zh": "AI代理的执行边界应该放在哪里？",
-      "weighted_score": 0.635,
+      "reason_zh": "基于10000个失败查询的实证分析，揭示LLM网络搜索的常见问题与解决方案，实用性强。",
+      "summary_zh": "文章分析了10000个失败的agent搜索查询，指出即使检索API速度极快，自主web agent仍常陷入执行循环或提取错误数据。作者总结了常见失败模式，如查询表述不清、上下文处理不当、结果解析错误等，并提出了改进建议，包括优化查询构造、增强上下文管理、改进结果验证机制等。这些经验对构建可靠的web agent具有重要参考价值。",
+      "title_zh": "我们分析了10000个失败的Agent搜索查询：为什么你的LLM不擅长网络搜索（以及如何修复）",
+      "weighted_score": 0.735,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.9
       },
-      "story_id": "23749a40c7fee3da",
+      "story_id": "3063ef01532b41da",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-langchain",
-          "url": "https://www.reddit.com/r/LangChain/comments/1vs03sm/where_should_the_execution_boundary_live_in_an_ai/"
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1vsmqsd/we_analyzed_10000_failed_agent_search_queries_why/"
         }
       ]
     },
@@ -266,40 +265,14 @@
         {
           "source_id": "zh-leiphone",
           "url": "https://www.leiphone.com/category/private/S6pidAUn5lcS9X0n.html"
-        }
-      ]
-    },
-    {
-      "id": "23d2a6883d47ca02",
-      "source_id": "aws-ml-blog",
-      "title": "Implement vector-prompt document classification using Amazon Bedrock",
-      "url": "https://aws.amazon.com/blogs/machine-learning/implement-vector-prompt-document-classification-using-amazon-bedrock/",
-      "published_at": "2026-08-18T17:10:37+00:00",
-      "raw_text": "Learn how to build a multi-agent document classification solution on Amazon Bedrock using the Strands Agents SDK. Three specialized agents combine textual analysis with Claude Haiku 4.5 and visual similarity search with Amazon Titan Multimodal Embeddings to accurately classify insurance documents such as policies and affidavits.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/06/ML-18402-1-1.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "多智能体文档分类方案，结合文本和视觉模型，有具体实现，实用性强。",
-      "summary_zh": "本文介绍了如何使用 Amazon Bedrock 和 Strands Agents SDK 构建多智能体文档分类解决方案。三个专门智能体结合 Claude Haiku 4.5 的文本分析和 Amazon Titan Multimodal Embeddings 的视觉相似性搜索，准确分类保险文档（如保单和宣誓书）。文章提供了实现细节，展示了多智能体协作在文档处理中的应用。",
-      "title_zh": "使用 Amazon Bedrock 实现向量提示文档分类",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "e1e16bef7c24eb07",
-      "multi_source_count": 1,
-      "sources": [
+        },
         {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/implement-vector-prompt-document-classification-using-amazon-bedrock/"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/private/ad3iWKJ0l4yOlUCS.html"
+        },
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/private/e2kawO4eCgabOwBm.html"
         }
       ]
     },
@@ -337,70 +310,102 @@
       ]
     },
     {
-      "id": "a290c3ff9b100e2a",
-      "source_id": "gradient-flow",
-      "title": "The model may not be your biggest risk",
-      "url": "https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/",
-      "published_at": "2026-08-18T13:00:21+00:00",
-      "raw_text": "<p>Subscribe • Previous Issues The biggest AI risks sit outside the model The most revealing AI failures right now are not stories about models becoming too capable. They are stories about everything around the model. One system received more access than its test environment could contain. Another was trained on material whose acquisition created $1.5 billion in<a class=\"more-link\" href=\"https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/\">Continue reading <span class=\"screen-reader-text\">\"The model may not be your biggest risk\"</span></a></p>\n<p>The post <a href=\"https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/\">The model may not be your biggest risk</a> appeared first on <a href=\"https://gradientflow.com\">Gradient Flow</a>.</p>",
+      "id": "da3eee4ea9437ca6",
+      "source_id": "infoq-cn-ai",
+      "title": "让 Agent 真正驱动销售增长——FDE 模式下的业务流重构实战｜AICon深圳",
+      "url": "https://www.infoq.cn/article/vrlSsJUrdpfGqsj3CTZK?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-19T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/vrlSsJUrdpfGqsj3CTZK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
-        "产品发布"
+        "技巧与观点"
       ],
-      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f64f.png",
+      "image_url": null,
       "category": "行业动态",
-      "content_type": "观点评论",
+      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "指出AI风险更多在模型之外，如权限和数据获取，提供系统级思考。",
-      "summary_zh": "文章指出当前最明显的AI失败案例并非模型能力过强，而是模型周围环境的问题。例如，一个系统获得了超出测试环境的访问权限，另一个系统使用了通过造成15亿美元损失获取的训练数据。这些案例表明，AI风险主要来自权限管理、数据来源等外部因素，而非模型本身。作者呼吁关注AI系统的整体生态，而不仅仅是模型性能。",
-      "title_zh": "模型可能不是你最大的风险",
-      "weighted_score": 0.655,
+      "reason_zh": "实战案例解析FDE模式如何重构业务流驱动销售增长，有深度和启发性。",
+      "summary_zh": "文章介绍了在AICon深圳大会上分享的FDE（Field-Driven Engineering）模式，通过重构业务流让Agent真正驱动销售增长。内容涵盖实际案例、实施步骤和效果评估，为AI在销售领域的应用提供了可借鉴的实践经验。",
+      "title_zh": "让Agent真正驱动销售增长——FDE模式下的业务流重构实战",
+      "weighted_score": 0.65,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "impact": 0.6,
+        "practical_value": 0.7
       },
-      "story_id": "1c86817168eff4d1",
+      "story_id": "09fb38f5c2fbd818",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "gradient-flow",
-          "url": "https://gradientflow.com/i-think-we-are-looking-for-ai-risk-in-the-wrong-place/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/vrlSsJUrdpfGqsj3CTZK?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "d30dd74b72ed1771",
-      "source_id": "qbitai",
-      "title": "写2000字提示词，不如先生成3D白模！AI视频创作进入“预演时代”",
-      "url": "https://www.qbitai.com/2026/08/475476.html",
-      "published_at": "2026-08-19T07:22:19+00:00",
-      "raw_text": "AI终于能听严格执行运镜需求",
+      "id": "931d7f95b184d953",
+      "source_id": "reddit-promptengineering",
+      "title": "Why a Prompt Without Measurable Criteria Will Inevitably Break Your Model",
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vsoi15/why_a_prompt_without_measurable_criteria_will/",
+      "published_at": "2026-08-19T14:45:45+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><em>This post focuses on one layer: measurable criteria. Role, constraints, clarification, and terminology are intentionally simplified - they serve as markers that &quot;these layers exist.&quot; Other layers are omitted.</em></p> <p>The model has a role. It has constraints. It has clarification. It has terminology. But it doesn't know how many, how long, in what tone.</p> <p>Here's an example:</p> <blockquote> <p>&quot;You are a copywriter. Write several persuasive versions of landing page copy with a call to action. </p> <p>Don't go beyond copywriting. If asked to do something outside your role - refuse. </p> <p>Ask if anything is unclear. </p> <p>By 'versions' I mean different approaches to the offer.&quot;</p> </blockquote> <p>The role is there. The constraints are there. The clarification is there. The terminology is partially there. But the criteria are not defined.</p> <p>The model doesn't know:</p> <ul> <li>How many versions to write</li> <li>",
       "category_hint": [
-        "行业动态",
-        "模型发布"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "教程方法",
-      "depth_score": 0.6,
-      "reason_zh": "提出用 3D 白模预演 AI 视频创作的新方法，能有效控制运镜，对创作者有实用价值。",
-      "summary_zh": "文章介绍了一种 AI 视频创作的新方法：先生成 3D 白模进行预演，再生成最终视频。这种方法能精确控制运镜，解决传统提示词难以表达复杂镜头运动的问题。通过预演，创作者可以调整镜头角度、运动轨迹等，确保最终效果符合预期，提高了创作效率和可控性。",
-      "title_zh": "写2000字提示词，不如先生成3D白模！AI视频创作进入“预演时代”",
-      "weighted_score": 0.72,
+      "depth_score": 0.7,
+      "reason_zh": "深入剖析提示词中可量化标准的重要性，提供实用框架，有启发性。",
+      "summary_zh": "文章指出，提示词中缺乏可量化标准会导致模型输出不稳定。作者提出提示词应包含角色、约束、澄清、术语等层次，但重点强调可测量标准（如数量、长度、格式）的必要性。通过简化其他层次，聚焦于如何设定明确、可验证的指标，帮助模型生成符合预期的结果。对提示工程实践有指导意义。",
+      "title_zh": "为什么没有可量化标准的提示词必然破坏模型",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
+        "source_authority": 0.5,
+        "novelty": 0.7,
         "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "6ec1583877c30b27",
+      "story_id": "595398fc2f820628",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "qbitai",
-          "url": "https://www.qbitai.com/2026/08/475476.html"
+          "source_id": "reddit-promptengineering",
+          "url": "https://www.reddit.com/r/PromptEngineering/comments/1vsoi15/why_a_prompt_without_measurable_criteria_will/"
+        }
+      ]
+    },
+    {
+      "id": "6064b6036f129ffd",
+      "source_id": "zh-meituan-tech",
+      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
+      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
+      "published_at": "2026-08-19T20:20:14.406963+00:00",
+      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "美团团队分享Agent评测实践经验，系统介绍评测体系构建，对从业者有较高参考价值。",
+      "summary_zh": "这篇博客由美团图灵Agent评测团队撰写，是一篇关于Agent评测的科普文章。文章由浅入深地介绍了评测的基本概念和如何建立评测体系，其中第二章详细总结了团队深入各业务部门BP的实践经验，这些认知是在两年实践中逐步打磨出来的。内容涵盖评测方法论、实践案例和常见挑战，适合AI产品经理和工程师阅读。",
+      "title_zh": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
+      "weighted_score": 0.62,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.5,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "9ba181dd6f145810",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
         }
       ]
     }
