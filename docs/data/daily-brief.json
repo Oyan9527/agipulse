@@ -1,40 +1,7 @@
 {
-  "date": "2026-08-19",
-  "generated_at": "2026-08-19T20:28:50.764699+00:00",
+  "date": "2026-08-20",
+  "generated_at": "2026-08-20T00:58:07.945409+00:00",
   "items": [
-    {
-      "id": "1455ee78ffc7e887",
-      "source_id": "zh-tonybai",
-      "title": "Harness 不是一次性脚手架：自进化 Coding Agent 系统如何越跑越强",
-      "url": "https://tonybai.com/2026/08/19/self-evolving-coding-agent-harness-map/",
-      "published_at": "2026-08-18T21:00:00+00:00",
-      "raw_text": "我们在专栏里手搓的 Agent Harness 本质上都是写死的工程约定，而南京大学团队最新发布的综述《Self-Evolving Coding Agents》则指向了下一个前沿：如何让 Harness 在运行中自我进化？本文系统拆解了该综述提出的五维自进化分类法（框架、记忆、技能/工具、模型、工作流拓扑），厘清了任务内、任务后与阶段性进化的时机与证据链，并结合实战专栏中的 Context Compaction、错误自愈、Subagent 等模块进行深度串讲，为开发者绘制了一张从“手工静态 Harness”迈向“越跑越强的自生长智能体”的完整工程地图。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "深度解析南大综述《Self-Evolving Coding Agents》，提出五维自进化分类法，为构建自进化Agent提供工程地图，极具启发性。",
-      "summary_zh": "文章介绍了南京大学团队发布的综述《Self-Evolving Coding Agents》，该综述提出五维自进化分类法（框架、记忆、技能/工具、模型、工作流拓扑），并厘清了任务内、任务后与阶段性进化的时机与证据链。作者结合实战专栏中的Context Compaction、错误自愈、Subagent等模块进行深度串讲，为开发者绘制了从手工静态Harness迈向自生长智能体的工程地图。",
-      "title_zh": "Harness 不是一次性脚手架：自进化 Coding Agent 系统如何越跑越强",
-      "weighted_score": 0.845,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.9
-      },
-      "story_id": "d2ec0d04ba004b70",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/08/19/self-evolving-coding-agent-harness-map/"
-        }
-      ]
-    },
     {
       "id": "8b4fc3f77fa25140",
       "source_id": "arxiv-cs-ai",
@@ -65,6 +32,40 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2608.17687"
+        }
+      ]
+    },
+    {
+      "id": "ee02b48549e05ed2",
+      "source_id": "reddit-machinelearning",
+      "title": "Same GRPO recipe on three from-scratch LLMs (353M/316M/672M) gave three different outcomes, with no clean relationship to scale [P]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vszsit/same_grpo_recipe_on_three_fromscratch_llms/",
+      "published_at": "2026-08-19T21:30:26+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I trained three LLMs from scratch in raw PyTorch then post-trained each one with SFT and then GRPO. Same process every time: same synthetic arithmetic curriculum, same reward function, same hyperparameters, same KL coefficient.</p> <p>Pre-training went as expected, the val loss went down as the model got more modern techniques (V1 to V2) and bigger (V3 being the biggest). However, GRPO hurt both V2 and V3 and I'm not sure why.</p> <p><strong>Setup</strong></p> <table><thead> <tr> <th align=\"left\"></th> <th align=\"left\">V1</th> <th align=\"left\">V2</th> <th align=\"left\">V3</th> </tr> </thead><tbody> <tr> <td align=\"left\">Params</td> <td align=\"left\">353M</td> <td align=\"left\">316M</td> <td align=\"left\">672M</td> </tr> <tr> <td align=\"left\">d_model / layers</td> <td align=\"left\">1024 / 24</td> <td align=\"left\">1024 / 24</td> <td align=\"left\">1536 / 24</td> </tr> <tr> <td align=\"left\">Attention</td> <td align=\"left\">MHA</td> <td align=\"left\">Differential +",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "从零训练三个不同规模LLM，GRPO结果与规模无清晰关系，反直觉发现值得深入探讨。",
+      "summary_zh": "作者在原始PyTorch中从零训练了三个LLM（353M/316M/672M），并用相同的SFT和GRPO流程进行后训练，包括相同的合成算术课程、奖励函数、超参数和KL系数。预训练结果符合预期，验证损失随技术现代化和规模增大而下降。但GRPO后训练结果却出现三种不同结果，与模型规模无清晰关系。这一发现挑战了规模决定强化学习效果的假设，对理解LLM后训练机制有重要启示。",
+      "title_zh": "相同GRPO配方在三个从零训练的LLM上产生不同结果，与规模无清晰关系",
+      "weighted_score": 0.77,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "f55c1608ac494132",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1vszsit/same_grpo_recipe_on_three_fromscratch_llms/"
         }
       ]
     },
@@ -136,69 +137,69 @@
       ]
     },
     {
-      "id": "47cbd8a348d5326d",
-      "source_id": "reddit-rag",
-      "title": "We Analyzed 10,000 Failed Agent Search Queries: Why Your LLM is Terrible at Web Searching (and How to Fix It)",
-      "url": "https://www.reddit.com/r/Rag/comments/1vsmqsd/we_analyzed_10000_failed_agent_search_queries_why/",
-      "published_at": "2026-08-19T13:39:42+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey everyone,</p> <p>Following up on the previous discussion about search API latency, I wanted to share another massive bottleneck we hit while building autonomous web agents. Even with a lightning-fast retrieval API, our agents were frequently getting stuck in execution loops or extracting the wrong data entirely.</p> <p>We pulled the logs of 10,000 failed retrieval attempts. The culprit wasn't the LLM's logic or the search index itself. The core problem was that LLMs are surprisingly terrible at formulating search queries.</p> <p>Here are the three main ways agents fail at searching, and the architecture tweak we used to fix it.</p> <h1>1. The Conversational Search Trap</h1> <p>LLMs naturally default to conversational text. Instead of searching a dense keyword string like <code>OpenAI API pricing 2026</code>, a naive agent will search <code>How much does it cost to use the OpenAI API right now?</code>. Search engines (even machine-native ones) often",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "基于10000个失败查询的实证分析，揭示LLM网络搜索的常见问题与解决方案，实用性强。",
-      "summary_zh": "文章分析了10000个失败的agent搜索查询，指出即使检索API速度极快，自主web agent仍常陷入执行循环或提取错误数据。作者总结了常见失败模式，如查询表述不清、上下文处理不当、结果解析错误等，并提出了改进建议，包括优化查询构造、增强上下文管理、改进结果验证机制等。这些经验对构建可靠的web agent具有重要参考价值。",
-      "title_zh": "我们分析了10000个失败的Agent搜索查询：为什么你的LLM不擅长网络搜索（以及如何修复）",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "3063ef01532b41da",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1vsmqsd/we_analyzed_10000_failed_agent_search_queries_why/"
-        }
-      ]
-    },
-    {
-      "id": "2dbcfd8fdfef779c",
-      "source_id": "answerai",
-      "title": "Why LLMs can’t make your code simpler",
-      "url": "https://www.answer.ai/posts/2026-08-19-llms-code-simpler.html",
-      "published_at": "2026-08-19T00:00:00+00:00",
-      "raw_text": "<p><em>This post was originally published <a href=\"https://medium.com/@pol.avec/why-llms-cant-make-your-code-simpler-fc2cd36bc0c8\">on Medium</a>.</em></p>\n<blockquote class=\"blockquote\">\n<p>tl;dr Peter Naur’s “Programming as Theory building” states that the real programs, what he calls Theory, with capital T, are in the mind of the engineers. The code &amp; documentation are just downstream (and thus incomplete) artifacts. One of my main complaints about LLMs is how verbose the code is and how complexity creeps in everywhere. I always had some faith that we might improve that using metrics like LoC or the number of independent code paths to constrain them. However, after reading Naur I realized that the complexity we are trying to reduce is the Theory one, not the code, and there are no relevant measures for that because it’s very subjective.</p>\n</blockquote>\n<div class=\"quarto-figure quarto-figure-center\">\n<figure class=\"figure\">\n<p><img class=\"img-fluid figure-img\" src=\"https://www.",
+      "id": "e53691799f9e1e2a",
+      "source_id": "simonwillison",
+      "title": "Conceptual integrity and counting lines of code",
+      "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
+      "published_at": "2026-08-19T22:46:07+00:00",
+      "raw_text": "<p>Last week I recorded <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison\">an episode of the Talking Postgres podcast</a> with Claire Giordano on the subject of \"How AI is changing software development\". We had a really great conversation. Here are a couple of my highlights from a lightly edited transcript (prompt to Claude: \"very minor edits to remove disfluencies\").</p>\n<p>This is the latest version of an argument I've been trying to build about why sometimes it <em>does</em> make sense to talk about lines of code as an indicator of productivity with coding agents, at <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison#t=35m1s\">35:01</a>:</p>\n<blockquote>\n<p>A lot of people will tell you it makes no sense to measure productivity in lines of code. I’d actually disagree, because there’s a hard limit. In the before-times, a software engineer could produce a few hundred lines of ",
       "category_hint": [
         "技巧与观点",
         "开源项目"
       ],
-      "image_url": "https://www.answer.ai/posts/2026-08-19-llms-code-simpler_assets/naur.jpeg",
+      "image_url": null,
       "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "Simon Willison分享AI编程对软件开发的深刻见解，强调概念完整性，具有启发性。",
+      "summary_zh": "Simon Willison在Talking Postgres播客中讨论AI如何改变软件开发。他分享了几个亮点，包括概念完整性与代码行数的关系，以及AI辅助编程带来的新挑战和机遇。",
+      "title_zh": "概念完整性与代码行数",
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "873fdf822c7d0a2b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "simonwillison",
+          "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/"
+        }
+      ]
+    },
+    {
+      "id": "6d468d3e9b1ec692",
+      "source_id": "zh-juejin",
+      "title": "LiteLLM 全面解析开源AI网关如何统一管理百余种大模型",
+      "url": "https://juejin.cn/post/7675717671347241011",
+      "published_at": "2026-08-20T00:29:44+00:00",
+      "raw_text": "如果你曾经同时对接过OpenAI、Anthropic、Google Gemini和Amazon Bedrock这几家的API，大概会对一件事深有体会——每家厂商的接口格式、鉴权方式、错误码、流式响应结",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "引用Peter Naur理论，深入探讨LLM无法简化代码的根源，思想深刻。",
-      "summary_zh": "文章引用Peter Naur的“编程作为理论构建”观点，指出真正的程序（理论）存在于工程师的头脑中，代码和文档只是下游产物。LLM无法捕捉这种隐性知识，因此无法真正简化代码。文章深入分析了LLM的局限性。",
-      "title_zh": "为什么LLM无法让你的代码更简单",
-      "weighted_score": 0.595,
+      "reason_zh": "深度解析LiteLLM网关，解决多模型API统一管理痛点，实用性强，值得开发者阅读。",
+      "summary_zh": "文章全面解析了开源AI网关LiteLLM，它能够统一管理OpenAI、Anthropic、Google Gemini、Amazon Bedrock等百余种大模型的API。作者从实际对接多家API的痛点出发，介绍了LiteLLM如何统一接口格式、鉴权方式、错误码和流式响应结构，从而简化开发流程。文章还涵盖了LiteLLM的架构、核心功能、配置方法以及与其他工具的集成，为开发者提供了实用的技术参考。",
+      "title_zh": "LiteLLM 全面解析：开源AI网关如何统一管理百余种大模型",
+      "weighted_score": 0.635,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.6,
         "impact": 0.5,
-        "practical_value": 0.7
+        "practical_value": 0.9
       },
-      "story_id": "d8c150db61030ff3",
+      "story_id": "a3465bfebf74ac41",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "answerai",
-          "url": "https://www.answer.ai/posts/2026-08-19-llms-code-simpler.html"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7675717671347241011"
         }
       ]
     },
@@ -277,6 +278,74 @@
       ]
     },
     {
+      "id": "c68a51500d3d2ba4",
+      "source_id": "siliconangle",
+      "title": "The AI inference race moves beyond GPUs to reshape data center infrastructure",
+      "url": "https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/",
+      "published_at": "2026-08-19T20:59:28+00:00",
+      "raw_text": "<p>AI inference infrastructure is becoming a system-level challenge as organizations move generative and agentic applications into production. Graphics processing unit performance remains essential, but storage latency, network bandwidth, data movement and power consumption increasingly determine the cost and speed of producing tokens. The requirements also vary by workload. Interactive chat prioritizes latency, batch inference emphasizes [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/\">The AI inference race moves beyond GPUs to reshape data center infrastructure</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/08/IMG_9367-scaled.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "分析AI推理基础设施超越GPU，存储、网络、功耗成为关键，系统级挑战，有深度洞察。",
+      "summary_zh": "文章指出AI推理基础设施正成为系统级挑战，随着生成式和代理式应用投入生产，GPU性能虽重要，但存储延迟、网络带宽、数据移动和功耗日益决定生成token的成本和速度。不同工作负载需求各异，交互式聊天优先考虑延迟，而批量处理可能更注重吞吐量。文章分析了这些趋势对数据中心基础设施的影响。",
+      "title_zh": "AI推理竞赛超越GPU，重塑数据中心基础设施",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "61c1537944aca1cf",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "siliconangle",
+          "url": "https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/"
+        }
+      ]
+    },
+    {
+      "id": "287e3b90895c5b3d",
+      "source_id": "simonwillison",
+      "title": "Quoting Jeremy Morrell",
+      "url": "https://simonwillison.net/2026/Aug/19/jeremy-morrell/",
+      "published_at": "2026-08-19T22:56:31+00:00",
+      "raw_text": "<blockquote cite=\"https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms/\"><p>My hypothesis is that <strong>there is a new opportunity for Extensible Software on the web</strong>. LLMs radically lower the cost of authoring extensions, and modern sandbox primitives lower the deployment cost and provide good security boundaries. We can build our app as a solid, accountable core, and allow users to safely extend it in many directions by having LLMs fill in the missing pieces. <strong>We can give our users super powers.</strong></p></blockquote>\n<p class=\"cite\">&mdash; <a href=\"https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms/\">Jeremy Morrell</a>, Extensible Software in the age of LLMs</p>\n\n    <p>Tags: <a href=\"https://simonwillison.net/tags/sandboxing\">sandboxing</a>, <a href=\"https://simonwillison.net/tags/llms\">llms</a>, <a href=\"https://simonwillison.net/tags/ai\">ai</a>, <a href=\"https://simonwillison.net/tags/generative-ai\">generative-ai</a></p>",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "提出LLM时代可扩展软件的新机遇，结合沙箱原语，对开发者有启发。",
+      "summary_zh": "Jeremy Morrell提出假设：在LLM时代，Web上可扩展软件迎来新机遇。LLM大幅降低了扩展的编写成本，现代沙箱原语降低了部署成本并提供良好的安全边界。我们可以将应用构建为稳固、负责任的核心，并允许用户通过扩展进行定制。这一观点为软件架构设计提供了新思路。",
+      "title_zh": "引用Jeremy Morrell",
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "ccb31d4844a376e1",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "simonwillison",
+          "url": "https://simonwillison.net/2026/Aug/19/jeremy-morrell/"
+        }
+      ]
+    },
+    {
       "id": "443ed17051cf6815",
       "source_id": "artificial-lawyer",
       "title": "Why General AI Alone Is Not Enough for Legal Work",
@@ -310,46 +379,12 @@
       ]
     },
     {
-      "id": "da3eee4ea9437ca6",
-      "source_id": "infoq-cn-ai",
-      "title": "让 Agent 真正驱动销售增长——FDE 模式下的业务流重构实战｜AICon深圳",
-      "url": "https://www.infoq.cn/article/vrlSsJUrdpfGqsj3CTZK?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-19T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/vrlSsJUrdpfGqsj3CTZK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "实战案例解析FDE模式如何重构业务流驱动销售增长，有深度和启发性。",
-      "summary_zh": "文章介绍了在AICon深圳大会上分享的FDE（Field-Driven Engineering）模式，通过重构业务流让Agent真正驱动销售增长。内容涵盖实际案例、实施步骤和效果评估，为AI在销售领域的应用提供了可借鉴的实践经验。",
-      "title_zh": "让Agent真正驱动销售增长——FDE模式下的业务流重构实战",
-      "weighted_score": 0.65,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "09fb38f5c2fbd818",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/vrlSsJUrdpfGqsj3CTZK?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "931d7f95b184d953",
-      "source_id": "reddit-promptengineering",
-      "title": "Why a Prompt Without Measurable Criteria Will Inevitably Break Your Model",
-      "url": "https://www.reddit.com/r/PromptEngineering/comments/1vsoi15/why_a_prompt_without_measurable_criteria_will/",
-      "published_at": "2026-08-19T14:45:45+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><em>This post focuses on one layer: measurable criteria. Role, constraints, clarification, and terminology are intentionally simplified - they serve as markers that &quot;these layers exist.&quot; Other layers are omitted.</em></p> <p>The model has a role. It has constraints. It has clarification. It has terminology. But it doesn't know how many, how long, in what tone.</p> <p>Here's an example:</p> <blockquote> <p>&quot;You are a copywriter. Write several persuasive versions of landing page copy with a call to action. </p> <p>Don't go beyond copywriting. If asked to do something outside your role - refuse. </p> <p>Ask if anything is unclear. </p> <p>By 'versions' I mean different approaches to the offer.&quot;</p> </blockquote> <p>The role is there. The constraints are there. The clarification is there. The terminology is partially there. But the criteria are not defined.</p> <p>The model doesn't know:</p> <ul> <li>How many versions to write</li> <li>",
+      "id": "b9ee05acf675374d",
+      "source_id": "zh-juejin",
+      "title": "LLM Token Budget 工程实践：给每个请求设上限，让成本和质量都在掌控中",
+      "url": "https://juejin.cn/post/7675615031892475950",
+      "published_at": "2026-08-20T00:12:58+00:00",
+      "raw_text": "每个请求都该设 max_tokens，但你处理过 finish_reason=length 吗？Agent 需要全局 token 预算，而不只是单步限制。5 个生产陷阱 + 实测校准数据。",
       "category_hint": [
         "技巧与观点"
       ],
@@ -357,55 +392,22 @@
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "深入剖析提示词中可量化标准的重要性，提供实用框架，有启发性。",
-      "summary_zh": "文章指出，提示词中缺乏可量化标准会导致模型输出不稳定。作者提出提示词应包含角色、约束、澄清、术语等层次，但重点强调可测量标准（如数量、长度、格式）的必要性。通过简化其他层次，聚焦于如何设定明确、可验证的指标，帮助模型生成符合预期的结果。对提示工程实践有指导意义。",
-      "title_zh": "为什么没有可量化标准的提示词必然破坏模型",
-      "weighted_score": 0.635,
+      "reason_zh": "LLM Token预算工程实践，涵盖生产陷阱和校准数据，对控制成本和质量的开发者极具价值。",
+      "summary_zh": "文章强调每个请求都应设置max_tokens，并处理finish_reason=length的情况。Agent需要全局token预算而非单步限制。文章列出5个生产陷阱和实测校准数据，帮助开发者优化成本和质量。内容实用，基于真实经验。",
+      "title_zh": "LLM Token预算工程实践：给每个请求设上限，让成本和质量都在掌控中",
+      "weighted_score": 0.66,
       "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.6,
         "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "595398fc2f820628",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-promptengineering",
-          "url": "https://www.reddit.com/r/PromptEngineering/comments/1vsoi15/why_a_prompt_without_measurable_criteria_will/"
-        }
-      ]
-    },
-    {
-      "id": "6064b6036f129ffd",
-      "source_id": "zh-meituan-tech",
-      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
-      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
-      "published_at": "2026-08-19T20:20:14.406963+00:00",
-      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "美团团队分享Agent评测实践经验，系统介绍评测体系构建，对从业者有较高参考价值。",
-      "summary_zh": "这篇博客由美团图灵Agent评测团队撰写，是一篇关于Agent评测的科普文章。文章由浅入深地介绍了评测的基本概念和如何建立评测体系，其中第二章详细总结了团队深入各业务部门BP的实践经验，这些认知是在两年实践中逐步打磨出来的。内容涵盖评测方法论、实践案例和常见挑战，适合AI产品经理和工程师阅读。",
-      "title_zh": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
-      "weighted_score": 0.62,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.5,
         "impact": 0.5,
-        "practical_value": 0.8
+        "practical_value": 0.9
       },
-      "story_id": "9ba181dd6f145810",
+      "story_id": "be4a717eb408ae69",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7675615031892475950"
         }
       ]
     }
