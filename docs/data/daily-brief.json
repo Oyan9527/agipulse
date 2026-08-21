@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generated_at": "2026-08-21T08:39:08.162624+00:00",
+  "generated_at": "2026-08-21T12:44:39.753769+00:00",
   "items": [
     {
       "id": "11976d3fe1298af8",
@@ -203,74 +203,6 @@
       ]
     },
     {
-      "id": "137eaa11ba7618bf",
-      "source_id": "reddit-machinelearning",
-      "title": "Your agent doesn't crash when it goes off the rails. It just keeps billing you[p]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1vu96ci/your_agent_doesnt_crash_when_it_goes_off_the/",
-      "published_at": "2026-08-21T07:15:56+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>It doesn't throw. It doesn't return malformed JSON. It just quietly stops doing what you asked — losing the thread, repeating itself, answering a question nobody asked — and keeps burning tokens for every step after that.</p> <p>Constrained decoding guarantees the shape of the output. It has no opinion about whether the agent is still doing the work.</p> <p>So I built a detector for that and open-sourced it:</p> <p>from driftguard import AgentWatch</p> <p>watch = AgentWatch(task=&quot;the objective you gave the agent&quot;) for step in loop: out = agent.step() if watch.observe(out).drifting: halt()</p> <p>Two signals, both measured against the agent's own history:</p> <p>relevance — is the output still about the task it was given? self-drift — has the output distribution moved away from what this agent produced while it was working?</p> <p>Neither needs an external notion of &quot;correct.&quot; The only assumption is that your agent used to be self-co",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "揭示Agent失控时仍持续计费的问题，强调约束解码的局限，对构建可靠Agent有启发。",
-      "summary_zh": "文章指出，AI Agent在偏离任务时不会崩溃或报错，而是继续执行并消耗token，导致成本增加。作者认为，约束解码只能保证输出格式，无法确保Agent仍在执行正确任务。他建议开发者需要更全面的监控和验证机制，以确保Agent的行为符合预期，避免资源浪费。",
-      "title_zh": "你的Agent不会崩溃，它只会继续计费",
-      "weighted_score": 0.71,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "05066805c0f11bce",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1vu96ci/your_agent_doesnt_crash_when_it_goes_off_the/"
-        }
-      ]
-    },
-    {
-      "id": "8e58aa53543a2658",
-      "source_id": "the-decoder",
-      "title": "KI-Pioneer Sutton calls synthetic data a \"big mistake\" in the face of an infinitely complex world",
-      "url": "https://the-decoder.com/ki-pioneer-sutton-calls-synthetic-data-a-big-mistake-in-the-face-of-an-infinitely-complex-world/",
-      "published_at": "2026-08-20T12:14:07+00:00",
-      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/Rich-Sutton-Big-World-Hypothesis.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Turing Award winner Richard Sutton calls synthetic data a \"big mistake\" for scaling large language models. The world is infinitely complex, and any simulation of it is \"microscopic,\" with human expertise acting as a bottleneck that blocks real scaling. Sutton's alternative is agents that learn continually from their own experience instead of relying on frozen models.</p>\n<p>The article <a href=\"https://the-decoder.com/ki-pioneer-sutton-calls-synthetic-data-a-big-mistake-in-the-face-of-an-infinitely-complex-world/\">KI-Pioneer Sutton calls synthetic data a &quot;big mistake&quot; in the face of an infinitely complex world</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-      "category_hint": [
-        "模型发布",
-        "行业动态"
-      ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/Rich-Sutton-Big-World-Hypothesis.png",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "图灵奖得主Sutton批评合成数据，提出大世界假说，对AI发展路径有深刻启示。",
-      "summary_zh": "图灵奖得主Richard Sutton在The Decoder的报道中称，合成数据是扩展大语言模型的“大错误”。他认为世界是无限复杂的，任何模拟都无法完全捕捉其多样性。他提出“大世界假说”，强调真实数据的重要性，对当前AI训练方法提出质疑。",
-      "title_zh": "AI先驱Sutton称合成数据是“大错误”",
-      "weighted_score": 0.79,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "f6167866baa3fa49",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/ki-pioneer-sutton-calls-synthetic-data-a-big-mistake-in-the-face-of-an-infinitely-complex-world/"
-        }
-      ]
-    },
-    {
       "id": "265ed39cad1bb792",
       "source_id": "aws-ml-blog",
       "title": "Scaling agentic AI: Enterprise patterns without vendor lock-in",
@@ -329,50 +261,16 @@
         "impact": 0.8,
         "practical_value": 0.6
       },
-      "story_id": "1e98d047dd1d7275",
+      "story_id": "02e34e00a03543e7",
       "multi_source_count": 1,
       "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/china-now-has-its-own-ai-circular-financing-scheme/"
-        },
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/"
-        }
-      ]
-    },
-    {
-      "id": "fe6f30bfc47920dc",
-      "source_id": "infoq-cn-ai",
-      "title": "保存历史不等于形成记忆：KDC 的长期运行主张",
-      "url": "https://www.infoq.cn/article/EF97eR5oivR50UqIINsP?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-20T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/EF97eR5oivR50UqIINsP?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "提出KDC长期运行主张，区分保存历史与形成记忆，对AI系统设计有启发。",
-      "summary_zh": "文章讨论了知识驱动计算（KDC）的长期运行主张，强调保存历史不等于形成记忆。作者认为，仅仅存储数据不足以让系统具备记忆能力，需要主动构建知识结构、关联上下文，并支持动态更新。文章提出了KDC的核心理念，包括记忆的层次化、时间感知和推理能力，并探讨了在AI系统中实现长期记忆的挑战与可能路径。",
-      "title_zh": "保存历史不等于形成记忆：KDC的长期运行主张",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "dc63fb8aa300686a",
-      "multi_source_count": 1,
-      "sources": [
+        },
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/EF97eR5oivR50UqIINsP?utm_source=rss&utm_medium=article"
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/"
         }
       ]
     },
@@ -406,6 +304,106 @@
         {
           "source_id": "pandaily",
           "url": "https://pandaily.com/x-square-robot-host-29-second-skill-learning-video-aug2026"
+        }
+      ]
+    },
+    {
+      "id": "b9de1bc88d9f1d76",
+      "source_id": "aws-ml-blog",
+      "title": "Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/",
+      "published_at": "2026-08-20T16:11:18+00:00",
+      "raw_text": "Learn how AWS Professional Services uses a multi-agent framework built on Amazon Bedrock AgentCore to automate enterprise cloud migrations end to end. Purpose-built AI agents handle discovery, infrastructure as code generation, portfolio governance, and post-migration operations, reducing IaC development time from weeks to minutes.",
+      "category_hint": [
+        "技巧与观点",
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/12/ML-20875-1-1.png",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "AWS专业服务团队分享基于Bedrock AgentCore的多代理框架，自动化云迁移，大幅缩短开发时间，有实践价值。",
+      "summary_zh": "本文介绍了AWS专业服务团队如何利用基于Amazon Bedrock AgentCore的多代理框架，端到端自动化企业云迁移。专门构建的AI代理负责发现、基础设施即代码生成、组合治理和迁移后操作，将IaC开发时间从数周缩短至数分钟。文章可能详细阐述了架构设计、代理分工、实施步骤和实际效果，为大型企业云迁移提供了可借鉴的AI解决方案。",
+      "title_zh": "使用Amazon Bedrock AgentCore上的代理式AI扩展云迁移",
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "f1b4df1861042eaf",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/"
+        }
+      ]
+    },
+    {
+      "id": "431a718111848492",
+      "source_id": "platformer",
+      "title": "The website that created an AI clone of its editor in chief",
+      "url": "https://www.platformer.news/every-dan-shipper-interview-ai-writing/",
+      "published_at": "2026-08-21T00:00:50+00:00",
+      "raw_text": "Every CEO Dan Shipper on doubling headcount while automating everything, building an agent out of 30,000 copyedits, and the “dirty secret” of writing with AI",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://storage.ghost.io/c/a0/4c/a04c7225-d919-4d78-9b7c-a3fdd071349b/content/images/2024/05/floating_linebreak_600px-1.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Every CEO分享用AI自动化编辑流程，构建代理，有实践洞察。",
+      "summary_zh": "Every CEO Dan Shipper讨论了在自动化一切的同时将员工人数翻倍，从30,000次编辑中构建代理，以及用AI写作的“肮脏秘密”。文章深入探讨了AI在内容创作和编辑中的应用，提供了实际案例和反思，对内容创作者和AI从业者有启发。",
+      "title_zh": "创建了其主编AI克隆的网站",
+      "weighted_score": 0.63,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.6
+      },
+      "story_id": "bdce0eeb65c48021",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "platformer",
+          "url": "https://www.platformer.news/every-dan-shipper-interview-ai-writing/"
+        }
+      ]
+    },
+    {
+      "id": "55869af9ad6f3f6e",
+      "source_id": "zh-juejin",
+      "title": "从零开发一个 Coding Agent（十二）：实现版本化 JSONL 与真实 CLI 入口",
+      "url": "https://juejin.cn/post/7676091857219076134",
+      "published_at": "2026-08-20T13:13:43+00:00",
+      "raw_text": "本篇文章是《从零开发一个 Coding Agent》系列第十二篇。在前两篇中，我们已经完成了 CLI 参数解析和 print 模式： print 模式适合人直接阅读，但脚本和其他程序往往需要更多信息。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "系列教程，实现版本化JSONL与CLI入口，对开发Coding Agent有指导意义。",
+      "summary_zh": "本文是《从零开发一个Coding Agent》系列第十二篇，在前两篇完成CLI参数解析和print模式后，本篇文章实现版本化JSONL输出和真实CLI入口。print模式适合人阅读，但脚本和程序需要结构化信息，因此引入JSONL格式。文章详细介绍了实现过程，为开发者提供参考。",
+      "title_zh": "从零开发一个Coding Agent（十二）：实现版本化JSONL与真实CLI入口",
+      "weighted_score": 0.59,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.6,
+        "impact": 0.4,
+        "practical_value": 0.8
+      },
+      "story_id": "26a3d391e7b9e145",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7676091857219076134"
         }
       ]
     }

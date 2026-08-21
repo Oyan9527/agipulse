@@ -1,42 +1,8 @@
 [
   {
-    "id": "db1c7446e8eaa003",
-    "source_id": "zh-ithome",
-    "title": "OpenAI 全面开源 Codex Harness",
-    "url": "https://www.ithome.com/0/992/656.htm",
-    "published_at": "2026-08-21T07:18:30+00:00",
-    "raw_text": "<p style=\"text-align: left;\">就在昨天，OpenAI 又完成一次升级。这不是什么全新的模型发布，但它对开发者的影响力，甚至超过了模型本身的迭代。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/7a2a240b-49bd-4d33-b566-858ac366eb78.jpg?x-bce-process=image/format,f_auto\" /></p><p style=\"text-align: left;\">OpenAI 正式宣布：将大名鼎鼎的 Codex 底层核心框架（Harness），作为平台全面开源！</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/a2c07399-29bc-4a2f-a87c-09f954f15c06.png?x-bce-process=image/format,f_auto\" /></p><p>也就是说，OpenAI 把驱动自家顶级 AI 智能体的发动机，免费送给大家。</p><p>开发者再也不需要去把业务流程硬塞进一个通用聊天框了！</p><p>你可以你直接把最强大的 AI 智能体循环，无缝镶嵌进你自有的产品、工程工具、运营看板，甚至是最枯燥的财务报表软件中。</p><p>OpenAI 总裁 Greg Brockman 在 X 上激动转发说：<strong>「Codex 能驱动的远不止编程工具！」</strong></p><p>你可以在 Codex Harness 上，直接构建自己的产品。</p><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/59e4cb9f-39a1-41c3-a3d4-cd98c7a4927e.png?x-bce-process=image/format,f_auto\" /></p><p style=\"text-align: left;\">从此，你的地盘你做主，界面、数据、权限审批都是你的，AI 只负",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/7a2a240b-49bd-4d33-b566-858ac366eb78.jpg?x-bce-process=image/format,f_auto",
-    "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "OpenAI开源Codex Harness，对开发者影响巨大，是重要开源事件，值得关注。",
-    "summary_zh": "OpenAI宣布全面开源Codex底层核心框架（Harness），这一举措对开发者影响力巨大，甚至超过模型本身的迭代。Codex Harness是驱动Codex模型的关键基础设施，开源后开发者可以更深入地理解和定制AI编程助手。文章强调这不是新模型发布，但开源意义重大。",
-    "title_zh": "OpenAI全面开源Codex Harness",
-    "weighted_score": 0.88,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.8
-    },
-    "story_id": "70ef0af611c1d039",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/992/656.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "92e9f6264627f517",
     "source_id": "infoq-cn-ai",
-    "title": "Vercel v0 API 正式发布：支持 MCP、流式响应和自动部署",
+    "title": "Vercel Zero 引发争议：AI 时代真的需要一门新语言吗？",
     "url": "https://www.infoq.cn/article/v44qVA7JeYOckqlztLMP?utm_source=rss&utm_medium=article",
     "published_at": "2026-08-21T14:25:00+00:00",
     "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/v44qVA7JeYOckqlztLMP?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
@@ -64,6 +30,40 @@
       {
         "source_id": "infoq-cn-ai",
         "url": "https://www.infoq.cn/article/v44qVA7JeYOckqlztLMP?utm_source=rss&utm_medium=article"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "94cda9691780dcb5",
+    "source_id": "gh-llamacpp",
+    "title": "ggerganov/llama.cpp b10532",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10532",
+    "published_at": "2026-08-21T00:42:58+00:00",
+    "raw_text": "<details open>\n\nmetal : dequantize quantized KV to F16 before flash attention (#27390)\n\n* metal: dequantize q8_0 KV to f16 before flash attention\n\nAdd a preprocessing pass for GGML_OP_FLASH_ATTN_EXT on the Metal backend:\nwhen the KV cache is quantized (Q8_0 for now), dequantize K and V into a\ncontiguous F16 scratch buffer and run the existing F16 flash attention\nkernels on it, instead of the in-kernel dequantization path.\n\n- new kernel kernel_flash_attn_ext_dequant_to_f16<block_t, QK, deq_t4x4>:\n  one thread per quant block (K then V), stride-aware so permuted KV is\n  supported; instantiated for Q8_0 (extending to Q4_0/Q4_1/Q5_0/Q5_1 is\n  one instantiation + one gate case)\n- the gate is type-only: dequantize whenever the KV is quantized,\n  regardless of head sizes, GQA ratio or n_kv; the attention kernels\n  themselves are untouched\n- the F16 copies live in the op's own scratch allocation\n  (ggml_metal_op_flash_attn_ext_extra_dequant_f16); the KV pad kernel\n  reads the dequantized buffe",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "llama.cpp优化Metal后端量化KV缓存，提升推理性能，技术细节扎实。",
+    "summary_zh": "llama.cpp的b10532版本更新，在Metal后端为flash attention添加预处理步骤：当KV缓存量化（目前为Q8_0）时，将K和V反量化为连续的F16暂存缓冲区，然后运行现有的F16 flash attention内核，而非使用量化内核。这旨在提升推理性能，但可能增加内存占用。",
+    "title_zh": "ggerganov/llama.cpp b10532",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "c7597325de8710f3",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-llamacpp",
+        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10532"
       }
     ],
     "curated": true
@@ -132,41 +132,6 @@
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/tongyi-wan-animate-2-character-animation-open-source-aug2026"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "8e58aa53543a2658",
-    "source_id": "the-decoder",
-    "title": "KI-Pioneer Sutton calls synthetic data a \"big mistake\" in the face of an infinitely complex world",
-    "url": "https://the-decoder.com/ki-pioneer-sutton-calls-synthetic-data-a-big-mistake-in-the-face-of-an-infinitely-complex-world/",
-    "published_at": "2026-08-20T12:14:07+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/Rich-Sutton-Big-World-Hypothesis.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Turing Award winner Richard Sutton calls synthetic data a \"big mistake\" for scaling large language models. The world is infinitely complex, and any simulation of it is \"microscopic,\" with human expertise acting as a bottleneck that blocks real scaling. Sutton's alternative is agents that learn continually from their own experience instead of relying on frozen models.</p>\n<p>The article <a href=\"https://the-decoder.com/ki-pioneer-sutton-calls-synthetic-data-a-big-mistake-in-the-face-of-an-infinitely-complex-world/\">KI-Pioneer Sutton calls synthetic data a &quot;big mistake&quot; in the face of an infinitely complex world</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/Rich-Sutton-Big-World-Hypothesis.png",
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.7,
-    "reason_zh": "图灵奖得主Sutton批评合成数据，提出大世界假说，对AI发展路径有深刻启示。",
-    "summary_zh": "图灵奖得主Richard Sutton在The Decoder的报道中称，合成数据是扩展大语言模型的“大错误”。他认为世界是无限复杂的，任何模拟都无法完全捕捉其多样性。他提出“大世界假说”，强调真实数据的重要性，对当前AI训练方法提出质疑。",
-    "title_zh": "AI先驱Sutton称合成数据是“大错误”",
-    "weighted_score": 0.79,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "f6167866baa3fa49",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/ki-pioneer-sutton-calls-synthetic-data-a-big-mistake-in-the-face-of-an-infinitely-complex-world/"
       }
     ],
     "curated": true
@@ -299,15 +264,11 @@
       "practical_value": 0.8
     },
     "story_id": "84f48fd97b375310",
-    "multi_source_count": 2,
+    "multi_source_count": 1,
     "sources": [
       {
         "source_id": "huggingface-blog",
         "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark"
-      },
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/08/20/liquid-ai-releases-lfm2-5-dspark-draft-models-that-deliver-up-to-3-18x-faster-decoding/"
       }
     ],
     "curated": true
@@ -657,6 +618,40 @@
     "curated": true
   },
   {
+    "id": "6fb7d86f5cf1d0ec",
+    "source_id": "arxiv-cs-ai",
+    "title": "Rethinking the Evaluation and Optimization of LLM-Based Social Simulation",
+    "url": "https://arxiv.org/abs/2608.19689",
+    "published_at": "2026-08-21T04:00:00+00:00",
+    "raw_text": "arXiv:2608.19689v1 Announce Type: new \nAbstract: LLM-based social simulation is a promising complement to traditional methods such as surveys and behavioral experiments. A core question is how to evaluate the fidelity of LLM-simulated human behavior and optimize LLMs toward it. Prevailing practice evaluates by accuracy, checking whether the model selects the single response observed from a human, and trains the LLM to reproduce this hard label. However, human behavior is inherently subjective: the same person in the same situation may reasonably act differently, so an observed response is only one draw from an underlying response distribution, rendering accuracy-based evaluation unreliable and hard-label training misleading. To address these problems, we first introduce the subjectivity coefficient, an entropy-based quantity distinguishing objective tasks such as coding from subjective ones such as social simulation, and use it to systematically analyze how accuracy-based evaluation an",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "重新思考LLM社会模拟的评估与优化，挑战现有准确性指标，提出更全面的评估框架，具有方法论价值。",
+    "summary_zh": "本文重新审视基于LLM的社会模拟的评估与优化问题。现有实践通常通过准确性评估模型是否选择人类观察到的单一响应，但作者指出这种评估方式忽略了人类行为的多样性和分布特性。提出更全面的评估框架，考虑行为分布的匹配度，并据此优化LLM。实验表明新方法能更真实地模拟人类行为，为社会科学研究提供了更可靠的工具。",
+    "title_zh": "重新思考基于LLM的社会模拟的评估与优化",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "cffebf2a6c3b0760",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.19689"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "238d8a95e02e957f",
     "source_id": "pandaily",
     "title": "Xiaohongshu Quietly Open-Sources Its Own Large Model: Content Platforms Build Their Own Base",
@@ -714,13 +709,9 @@
       "impact": 0.8,
       "practical_value": 0.7
     },
-    "story_id": "ca77168fff2245b4",
-    "multi_source_count": 2,
+    "story_id": "2a38bdd6be94620f",
+    "multi_source_count": 1,
     "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1236180#reply11"
-      },
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/qwen3-8-27b-new-model-kill-line-local-opus-consumer-hardware-aug2026"
@@ -867,6 +858,40 @@
     "curated": true
   },
   {
+    "id": "13ff6e343985ea26",
+    "source_id": "zh-oschina",
+    "title": "开源连接器网关 OpenConnector：让 AI Agent 安全调用 1000+ SaaS 服务",
+    "url": "https://www.oschina.net/news/502067/oomol-lab-open-connector",
+    "published_at": "2026-08-21T11:02:29+00:00",
+    "raw_text": "Open-Connector 是一个面向 AI Agent 和应用开发者的开源连接器网关。项目旨在解决 AI Agent 接入外部 SaaS 服务时普遍存在的认证管理、权限控制、接口适配和运行审计等问题。 OpenConnector 可以将用户已经使用的应用账号连接到统一运行时，并向 Agent 暴露标准化的 Actions。项目目前提供覆盖 GitHub、Gmail、Notion、...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "开源连接器网关OpenConnector，解决AI Agent接入SaaS的认证与权限问题，实用性强。",
+    "summary_zh": "OpenConnector是一个开源连接器网关，面向AI Agent和应用开发者，旨在解决接入外部SaaS服务时的认证管理、权限控制、接口适配和运行审计等问题。它允许用户将已使用的应用账号连接到统一运行时，并向Agent暴露标准化的Actions。目前支持GitHub、Gmail、Notion等1000+服务，为AI Agent的安全集成提供了便捷方案。",
+    "title_zh": "开源连接器网关OpenConnector：让AI Agent安全调用1000+ SaaS服务",
+    "weighted_score": 0.74,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "2373cc75c14b41e6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/502067/oomol-lab-open-connector"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "67ff7218e7e341d7",
     "source_id": "the-decoder",
     "title": "Frontier Radar #4: China has caught up, so what's left of the Western AI lead?",
@@ -891,16 +916,16 @@
       "impact": 0.8,
       "practical_value": 0.6
     },
-    "story_id": "1e98d047dd1d7275",
+    "story_id": "02e34e00a03543e7",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "the-decoder",
-        "url": "https://the-decoder.com/china-now-has-its-own-ai-circular-financing-scheme/"
+        "url": "https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/"
       },
       {
         "source_id": "the-decoder",
-        "url": "https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/"
+        "url": "https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/"
       }
     ],
     "curated": true
@@ -965,11 +990,93 @@
       "practical_value": 0.7
     },
     "story_id": "388088bedf33d2bb",
-    "multi_source_count": 1,
+    "multi_source_count": 3,
     "sources": [
       {
         "source_id": "aws-ml-blog",
         "url": "https://aws.amazon.com/blogs/machine-learning/introducing-cross-region-inference-for-openai-gpt-5-6-models-on-amazon-bedrock/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/gpt-5-6-sol-drives-openais-revenue-surge-as-it-regains-ground-on-anthropic/"
+      },
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1236235#reply4"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "80a63a88daac260f",
+    "source_id": "ifanr",
+    "title": "突发| DeepSeek 多模态模型上新，鲸鱼终于开「天眼」了",
+    "url": "https://www.ifanr.com/1676067?utm_source=rss&utm_medium=rss&utm_campaign=",
+    "published_at": "2026-08-21T10:23:24+00:00",
+    "raw_text": "那个熟悉的 DeepSeek 终于又回来了。<p>#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。</p>",
+    "category_hint": [
+      "产品发布",
+      "行业动态"
+    ],
+    "image_url": "https://s3.ifanr.com/wp-content/uploads/2026/08/227-2.png",
+    "category": "模型发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "DeepSeek发布多模态模型，重大更新，但信息简略。",
+    "summary_zh": "突发消息，DeepSeek多模态模型上新，被称为“鲸鱼终于开天眼”。文章来自爱范儿，但内容简短，未提供具体模型名称、能力或细节，仅表示熟悉的DeepSeek回来了。",
+    "title_zh": "突发| DeepSeek多模态模型上新",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "62ed6515d6b19972",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "ifanr",
+        "url": "https://www.ifanr.com/1675781?utm_source=rss&utm_medium=rss&utm_campaign="
+      },
+      {
+        "source_id": "ifanr",
+        "url": "https://www.ifanr.com/1676067?utm_source=rss&utm_medium=rss&utm_campaign="
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "110360bbe0b74afb",
+    "source_id": "infoq-cn-ai",
+    "title": "本地运行、支持视觉与工具调用：Meta 开源智能体模型",
+    "url": "https://www.infoq.cn/article/aGfkSN1YlmLrUQMPea9L?utm_source=rss&utm_medium=article",
+    "published_at": "2026-08-21T17:00:00+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/aGfkSN1YlmLrUQMPea9L?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Meta开源支持视觉和工具调用的智能体模型，对开发者有实用价值，但信息简略。",
+    "summary_zh": "Meta开源了一款智能体模型，支持本地运行、视觉理解和工具调用。该模型旨在让开发者能够在本地部署，实现多模态交互和自动化任务。开源意味着社区可以自由使用和修改，促进创新。文章可能介绍了模型架构、性能特点以及应用场景，为AI开发提供新选择。",
+    "title_zh": "本地运行、支持视觉与工具调用：Meta开源智能体模型",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "c8c69c9135d4715d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/aGfkSN1YlmLrUQMPea9L?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -1010,6 +1117,40 @@
     "curated": true
   },
   {
+    "id": "f4e2f94b8bdddbc8",
+    "source_id": "vercel-blog",
+    "title": "Always-on tracing for production and preview traffic",
+    "url": "https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic",
+    "published_at": "2026-08-21T00:00:00+00:00",
+    "raw_text": "<p>With always-on tracing, you can now debug your real user requests without reproducing them.</p><p>Always-on tracing continuously collects traces from your production and preview traffic. Unlike <a href=\"https://vercel.com/docs/tracing/session-tracing\">session tracing</a>, which only captures requests from your own browser, it samples your live traffic. </p><p>You control what's collected with sampling rules. Each rule sets a trace rate for an environment (All, Production, or Preview), optionally scoped to a path prefix like <code>/checkout</code>. Nothing is collected until you add a rule, so you pay only for what you choose to trace. </p><div></div><p>Infrastructure and outbound fetch spans are captured automatically. To add framework and custom spans, instrument your app with <code>@vercel/otel</code>.</p><p>To view a trace, open the Logs or run <code>vercel traces get &lt;request-id&gt;</code>.</p><p>Always-on tracing is is now in beta and available to teams on all plans. Tracing",
+    "category_hint": [
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Vercel推出always-on tracing，提升生产环境调试效率，对开发者实用。",
+    "summary_zh": "Vercel宣布推出always-on tracing功能，可连续收集生产环境和预览环境的追踪数据，帮助开发者调试真实用户请求，无需复现。与仅捕获自己浏览器请求的session tracing不同，该功能对实时流量进行采样，并允许用户控制收集内容。这有助于快速定位生产问题。",
+    "title_zh": "为生产环境和预览流量提供常开追踪",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "7125ce703950271c",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "fdddf8372c8b1ac5",
     "source_id": "qbitai",
     "title": "Jeff Dean离职后首次公开访谈火力有点猛。。。",
@@ -1040,6 +1181,44 @@
       {
         "source_id": "qbitai",
         "url": "https://www.qbitai.com/2026/08/476468.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "be7274cb1abad967",
+    "source_id": "zh-ithome",
+    "title": "DeepSeek V4-Flash-Vision-Exp 上线：开启多模态 API 服务，Agent 能力接近 Opus-4.8",
+    "url": "https://www.ithome.com/0/992/755.htm",
+    "published_at": "2026-08-21T09:21:20+00:00",
+    "raw_text": "<p>IT之家 8 月 21 日消息，深度求索官方刚刚宣布全新的多模态视觉理解模型 <span class=\"link-text-start-with-http\">DeepSeek-V4-Flash-Vision-Exp</span> 上线 DeepSeek API 平台。</p><p>该模型支持在文本之外输入图片，可以让模型描述图片、识别截图中的文字、分析图表等。支持的图片格式包括 JPEG、PNG、GIF、WebP。</p><p>深度求索官方表示，V4-Flash-Vision-Exp 在各类 Agent 框架内展现出了较好的多模态适配能力，能够有效支持大家借助多样化的 Agent 工具解锁更多实用的工作场景。</p><p>IT之家提醒：这是一个实验性质的模型，用户可以通过设置 model='<span class=\"link-text-start-with-http\">deepseek-v4-flash-vision-exp</span>' 访问该模型。</p><h3>平衡文本与多模态能力</h3><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/d779f205-d79d-40d3-be05-bc72d8d61891.png?x-bce-process=image/format,f_auto\" /></p><p>据介绍，在纯文本能力（Agent、推理、世界知识等）方面，<span class=\"link-text-start-with-http\">DeepSeek-V4-Flash-Vision-Exp</span> 与 DeepSeek-V4-Flash 正式版持平；在需要视觉理解的 Agent Benchmark 上，<span class=\"link-text-start-with-http\">DeepSeek-V4-Flash-Vision-Exp</span> 相比 DeepSeek-V4-Flash 实现了大幅跃升，多模态 Agent 能力已接近 Opus-4.8。</p><h3>API 支持</h3><p>用户可以通过设置 model='<span class=\"link-text-start-with-http\">dee",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/d779f205-d79d-40d3-be05-bc72d8d61891.png?x-bce-process=image/format,f_auto",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "DeepSeek新模型上线，多模态能力增强，Agent适配性好，值得开发者关注。",
+    "summary_zh": "深度求索宣布推出多模态视觉理解模型DeepSeek-V4-Flash-Vision-Exp，已上线DeepSeek API平台。该模型支持文本和图片输入，可描述图片、识别截图文字、分析图表等，支持JPEG、PNG、GIF、WebP格式。官方表示，该模型在各类Agent框架内展现出较好的多模态适配能力，能有效支持用户借助多样化Agent工具解锁更多实用工作场景。这是一个实验性质的模型，用户可通过设置model='deepseek-v4-flash-vision-exp'进行调用。",
+    "title_zh": "DeepSeek V4-Flash-Vision-Exp上线：开启多模态API服务，Agent能力接近Opus-4.8",
+    "weighted_score": 0.705,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "4a860f9cc4f44016",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/992/755.htm"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/502065"
       }
     ],
     "curated": true
@@ -1085,97 +1264,6 @@
       }
     ],
     "curated": true
-  },
-  {
-    "id": "9373b9e5efc33ef2",
-    "source_id": "gh-agno",
-    "title": "agno-agi/agno v3.0.0a2",
-    "url": "https://github.com/agno-agi/agno/releases/tag/v3.0.0a2",
-    "published_at": "2026-08-20T10:42:03+00:00",
-    "raw_text": "## What's Changed\r\n* chore: remove deprecated `enable_user_memories`, `search_session_history`, `num_history_sessions` and `num_past_session_runs ` params by @sannya-singal in https://github.com/agno-agi/agno/pull/7834\r\n* feat: evals user-isolation by @harshsinha03 in https://github.com/agno-agi/agno/pull/8262\r\n* chore: remove v3.0.0 evals migration by @harshsinha03 in https://github.com/agno-agi/agno/pull/8448\r\n* refactor: drop flat HITL kwargs in favor of `human_review=HumanReview(...)` by @sannya-singal in https://github.com/agno-agi/agno/pull/8354\r\n* feat: consolidate AgentOS metadata routes by @ysolanky in https://github.com/agno-agi/agno/pull/7647\r\n* feat: add id to Toolkit by @ysolanky in https://github.com/agno-agi/agno/pull/8724\r\n* feat: denormalize sessions table in db by @kausmeows in https://github.com/agno-agi/agno/pull/8350\r\n* fix: derive runs table name from session_table to prevent silent run … by @kausmeows in https://github.com/agno-agi/agno/pull/9388\r\n* feat: reliabl",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "agno框架发布新版本，移除废弃参数并新增评估功能，对开发者有实用价值。",
-    "summary_zh": "agno-agi/agno发布了v3.0.0a2版本，主要变更包括移除废弃的参数（如enable_user_memories等），新增用户隔离评估功能，并清理了v3.0.0的评估迁移代码。这些改动旨在简化API并提升框架的稳定性和安全性，适合使用agno的开发者关注。",
-    "title_zh": "agno-agi/agno v3.0.0a2 发布",
-    "weighted_score": 0.705,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "226069a13d155534",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-agno",
-        "url": "https://github.com/agno-agi/agno/releases/tag/v3.0.0a2"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "76142bdfb977f4a9",
-    "source_id": "the-decoder",
-    "title": "GPT-5.6 Sol drives OpenAI's revenue surge as it regains ground on Anthropic",
-    "url": "https://the-decoder.com/gpt-5-6-sol-drives-openais-revenue-surge-as-it-regains-ground-on-anthropic/",
-    "published_at": "2026-08-21T08:26:05+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/05/openai_anthropic-1.jpeg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Since GPT-5.6 Sol launched in early July, OpenAI says revenue is up 35 percent this quarter, with enterprise revenue growing more than 50 percent. Ramp data shows OpenAI outpacing Anthropic in business API spending for the first time after Anthropic had overtaken OpenAI in quarterly revenue.</p>\n<p>The article <a href=\"https://the-decoder.com/gpt-5-6-sol-drives-openais-revenue-surge-as-it-regains-ground-on-anthropic/\">GPT-5.6 Sol drives OpenAI&#039;s revenue surge as it regains ground on Anthropic</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/05/openai_anthropic-1.jpeg",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "GPT-5.6 Sol推动OpenAI营收增长35%，企业收入增50%，显示模型商业化成效。",
-    "summary_zh": "自7月初GPT-5.6 Sol发布以来，OpenAI表示本季度营收增长35%，企业收入增长超过50%。Ramp数据显示OpenAI...（原文截断）。这表明GPT-5.6 Sol的发布显著推动了OpenAI的商业表现，帮助其在与Anthropic的竞争中重新占据优势。",
-    "title_zh": "GPT-5.6 Sol推动OpenAI营收激增，重获对Anthropic的优势",
-    "weighted_score": 0.715,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "5cc81d6ed1a57aad",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/anthropic-uses-an-unpublished-ai-model-called-model-2-internally/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/llms-could-write-like-humans-but-post-training-guardrails-make-their-text-detectable/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/adobe-firefly-adds-ai-audio-tools-and-googles-gemini-omni-flash/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/gpt-5-6-sol-drives-openais-revenue-surge-as-it-regains-ground-on-anthropic/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/nvidia-is-acquiring-poolsides-model-factory-and-109-employees-for-6-billion/"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
   },
   {
     "id": "ea93ac700c483a18",
