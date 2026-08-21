@@ -1,5 +1,39 @@
 [
   {
+    "id": "5c7effdc9843c408",
+    "source_id": "zh-meituan-tech",
+    "title": "美团 LongCat-2.0 正式发布：在国产算力集群上完成全流程训练与推理的万亿参数模型",
+    "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html",
+    "published_at": "2026-08-21T20:19:01.746298+00:00",
+    "raw_text": "作为业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型（总参数 1.6 T，平均激活约 48 B，动态范围 33B~56B），LongCat-2.0 从零开始预训练，原生支持 1M 超长上下文，其架构设计自始至终围绕一个核心目标：让模型在真实的 Agentic Coding 任务中，更高效、更稳定地完成代码理解、生成与执行。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p1.meituan.net/meituantechblog/ef19600fdb0e6868a3574c4a8c7ff746220482.png",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "美团发布万亿参数模型LongCat-2.0，在国产算力集群上完成训练，支持1M上下文，意义重大。",
+    "summary_zh": "美团正式发布LongCat-2.0，这是业界首个在五万卡国产算力集群上完成全流程训练与推理的万亿参数模型。模型总参数1.6T，平均激活约48B，动态范围33B~56B，从零开始预训练，原生支持1M超长上下文。其架构设计围绕Agentic Coding任务，旨在提升代码理解、生成与执行的效率和稳定性。",
+    "title_zh": "美团发布LongCat-2.0：国产算力集群上的万亿参数模型",
+    "weighted_score": 0.83,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.7
+    },
+    "story_id": "8bd25b5e378c5d18",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/06/30/LongCat2.0.html"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "92e9f6264627f517",
     "source_id": "infoq-cn-ai",
     "title": "Vercel Zero 引发争议：AI 时代真的需要一门新语言吗？",
@@ -35,35 +69,36 @@
     "curated": true
   },
   {
-    "id": "94cda9691780dcb5",
-    "source_id": "gh-llamacpp",
-    "title": "ggerganov/llama.cpp b10532",
-    "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10532",
-    "published_at": "2026-08-21T00:42:58+00:00",
-    "raw_text": "<details open>\n\nmetal : dequantize quantized KV to F16 before flash attention (#27390)\n\n* metal: dequantize q8_0 KV to f16 before flash attention\n\nAdd a preprocessing pass for GGML_OP_FLASH_ATTN_EXT on the Metal backend:\nwhen the KV cache is quantized (Q8_0 for now), dequantize K and V into a\ncontiguous F16 scratch buffer and run the existing F16 flash attention\nkernels on it, instead of the in-kernel dequantization path.\n\n- new kernel kernel_flash_attn_ext_dequant_to_f16<block_t, QK, deq_t4x4>:\n  one thread per quant block (K then V), stride-aware so permuted KV is\n  supported; instantiated for Q8_0 (extending to Q4_0/Q4_1/Q5_0/Q5_1 is\n  one instantiation + one gate case)\n- the gate is type-only: dequantize whenever the KV is quantized,\n  regardless of head sizes, GQA ratio or n_kv; the attention kernels\n  themselves are untouched\n- the F16 copies live in the op's own scratch allocation\n  (ggml_metal_op_flash_attn_ext_extra_dequant_f16); the KV pad kernel\n  reads the dequantized buffe",
+    "id": "98e10a633850d96c",
+    "source_id": "reddit-localllama",
+    "title": "NVIDIA AVO got 100% on ARC-AGI-3. It completed all 183 levels across all 25 public environments, figuring out what to do with no instructions, explicit rules, or stated goals.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuh7to/nvidia_avo_got_100_on_arcagi3_it_completed_all/",
+    "published_at": "2026-08-21T14:01:07+00:00",
+    "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/theologi\"> /u/theologi </a> <br /> <span><a href=\"https://xcancel.com/NVIDIAAI/status/2090786258981466231\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vuh7to/nvidia_avo_got_100_on_arcagi3_it_completed_all/\">[comments]</a></span>",
     "category_hint": [
-      "开源项目"
+      "开源项目",
+      "技巧与观点"
     ],
     "image_url": null,
-    "category": "开源项目",
-    "content_type": "研究论文",
-    "depth_score": 0.6,
-    "reason_zh": "llama.cpp优化Metal后端量化KV缓存，提升推理性能，技术细节扎实。",
-    "summary_zh": "llama.cpp的b10532版本更新，在Metal后端为flash attention添加预处理步骤：当KV缓存量化（目前为Q8_0）时，将K和V反量化为连续的F16暂存缓冲区，然后运行现有的F16 flash attention内核，而非使用量化内核。这旨在提升推理性能，但可能增加内存占用。",
-    "title_zh": "ggerganov/llama.cpp b10532",
-    "weighted_score": 0.805,
+    "category": "模型发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "NVIDIA AVO在ARC-AGI-3上满分通过，展示无指令环境下的自主推理能力，是AI领域重大突破。",
+    "summary_zh": "NVIDIA的AVO系统在ARC-AGI-3基准测试中取得100%的满分成绩，完成了所有25个公共环境中的183个关卡。该系统在没有指令、明确规则或既定目标的情况下，能够自主理解任务并完成操作，展现了强大的自主推理和适应能力。这一成果标志着AI在通用问题解决方面迈出了重要一步，可能对未来的自主智能体发展产生深远影响。",
+    "title_zh": "NVIDIA AVO在ARC-AGI-3上取得100%满分，完成全部183个关卡",
+    "weighted_score": 0.81,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.6
     },
-    "story_id": "c7597325de8710f3",
+    "story_id": "5388df41a6325bcb",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "gh-llamacpp",
-        "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b10532"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuh7to/nvidia_avo_got_100_on_arcagi3_it_completed_all/"
       }
     ],
     "curated": true
@@ -171,22 +206,22 @@
     "curated": true
   },
   {
-    "id": "1c040b7e7c15d831",
-    "source_id": "arxiv-cs-ai",
-    "title": "AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement",
-    "url": "https://arxiv.org/abs/2608.20318",
-    "published_at": "2026-08-21T04:00:00+00:00",
-    "raw_text": "arXiv:2608.20318v1 Announce Type: new \nAbstract: Recursive self-improvement (RSI) asks whether an AI system can improve the process that produces AI systems, so that the next system inherits the improvement. That process is the training algorithm: a better objective or update rule improves the compute\\mbox{-}capability exchange rate for every subsequent run, including the one that produces the next agent. Whether RSI is feasible therefore turns on whether an agent can design training algorithms. No benchmark isolates that ability: existing suites are won by collecting data or by tuning hyperparameters, and none tells a change to how a run is executed apart from a change to how the model learns. We present AI4AI\\mbox{-}Bench, 10 frozen research repositories spanning 10 training algorithm families. In each task, an agent has 4 hours on one B300 to rewrite the training algorithm; its code is then rerun from scratch for up to 12 hours and scored by a fixed evaluator hidden from the agent, ",
+    "id": "6c33747c15daf461",
+    "source_id": "reddit-huggingface",
+    "title": "DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform!",
+    "url": "https://www.reddit.com/r/huggingface/comments/1vuj43a/deepseekv4flashvisionexp_is_now_live_on_the/",
+    "published_at": "2026-08-21T15:13:02+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/huggingface/comments/1vuj43a/deepseekv4flashvisionexp_is_now_live_on_the/\"> <img alt=\"DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform!\" src=\"https://preview.redd.it/oradh2yk4pkh1.png?width=140&amp;height=114&amp;auto=webp&amp;s=00a8afdf278adc71fef16638c84575ab91a8c4e5\" title=\"DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform!\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Cjiscool09\"> /u/Cjiscool09 </a> <br /> <span><a href=\"/r/DeepSeek/comments/1vubald/deepseekv4flashvisionexp_is_now_live_on_the/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/huggingface/comments/1vuj43a/deepseekv4flashvisionexp_is_now_live_on_the/\">[comments]</a></span> </td></tr></table>",
     "category_hint": [
-      "论文研究"
+      "开源项目"
     ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出递归自我改进的基准测试，评估LLM代理在算法设计上的能力，对AI自我进化研究有开创性意义。",
-    "summary_zh": "本文提出AI4AI-Bench，一个用于评估LLM代理在算法设计上递归自我改进能力的基准。递归自我改进（RSI）要求AI系统改进产生AI系统的过程，即训练算法。基准测试代理能否设计更好的目标函数或更新规则，以提升后续训练的效率。实验显示当前模型在简单任务上有所改进，但复杂任务仍具挑战，为RSI研究提供了标准化评估工具。",
-    "title_zh": "AI4AI-Bench：递归自我改进中算法设计的LLM代理基准",
+    "image_url": "https://preview.redd.it/oradh2yk4pkh1.png?width=140&height=114&auto=webp&s=00a8afdf278adc71fef16638c84575ab91a8c4e5",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "DeepSeek-V4-Flash-Vision-Exp模型上线，多模态能力增强，开发者可立即使用。",
+    "summary_zh": "DeepSeek-V4-Flash-Vision-Exp模型已在DeepSeek API平台上线。该模型是DeepSeek V4系列的最新实验版本，具备视觉能力，支持图像输入。开发者可以通过API调用该模型，体验其多模态功能。这一发布标志着DeepSeek在多模态AI领域的持续进展。",
+    "title_zh": "DeepSeek-V4-Flash-Vision-Exp现已在DeepSeek API平台上线",
     "weighted_score": 0.785,
     "score_breakdown": {
       "source_authority": 0.8,
@@ -194,12 +229,16 @@
       "impact": 0.8,
       "practical_value": 0.6
     },
-    "story_id": "e2e9c5ecc37b783a",
-    "multi_source_count": 1,
+    "story_id": "80cd6ba58fa48114",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.20318"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vubb20/deepseekv4flashvisionexp/"
+      },
+      {
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1vuj43a/deepseekv4flashvisionexp_is_now_live_on_the/"
       }
     ],
     "curated": true
@@ -234,41 +273,6 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2608.20011"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c7cdb6722fd86cc4",
-    "source_id": "huggingface-blog",
-    "title": "Up to 3.2x Faster Inference with LFM2.5-DSpark",
-    "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark",
-    "published_at": "2026-08-20T16:52:57+00:00",
-    "raw_text": "",
-    "category_hint": [
-      "开源项目",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Hugging Face博客发布LFM2.5-DSpark，宣称推理速度提升3.2倍，对性能敏感的应用有吸引力。",
-    "summary_zh": "Hugging Face博客发布了一篇关于LFM2.5-DSpark的文章，标题为“Up to 3.2x Faster Inference with LFM2.5-DSpark”。文章内容尚未提供，但根据标题，该模型可能通过某种优化技术实现了高达3.2倍的推理速度提升。这对于需要高性能推理的AI应用来说是一个重要进展，可能对部署成本和响应时间产生积极影响。",
-    "title_zh": "LFM2.5-DSpark推理速度提升高达3.2倍",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "84f48fd97b375310",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "huggingface-blog",
-        "url": "https://huggingface.co/blog/LiquidAI/lfm25-dspark"
       }
     ],
     "curated": true
@@ -410,6 +414,40 @@
     "curated": true
   },
   {
+    "id": "09e62eb15568147b",
+    "source_id": "zh-meituan-tech",
+    "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+    "published_at": "2026-08-21T20:19:01.746186+00:00",
+    "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "美团开源LoHoSearch，用知识图谱校准AI能力认知，为搜索智能体评测提供新基准。",
+    "summary_zh": "美团开源了下一代搜索智能体评测基准LoHoSearch，旨在解决现有基准（如BrowseComp）迅速饱和、区分度下降的问题。LoHoSearch利用知识图谱来校准AI的能力认知，提供更全面、更细致的评测维度。该基准有望推动搜索智能体技术的进一步发展，帮助研究者更准确地评估模型性能。",
+    "title_zh": "下一代搜索智能体评测基准：美团开源LoHoSearch",
+    "weighted_score": 0.775,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "eb00a4db4521a3f4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "891074c82a973d65",
     "source_id": "arxiv-cs-ai",
     "title": "Active Inference as Context Acquisition for AI Agents",
@@ -444,41 +482,6 @@
     "curated": true
   },
   {
-    "id": "4c9c594ab9ed3689",
-    "source_id": "infoq-cn-ai",
-    "title": "AI Infra 正在诞生自己的石油期货？GPU 不够买之后，华尔街开始交易算力",
-    "url": "https://www.infoq.cn/article/qaWyth5P4tZE1CQhhaGq?utm_source=rss&utm_medium=article",
-    "published_at": "2026-08-20T18:00:00+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/qaWyth5P4tZE1CQhhaGq?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "揭示AI基础设施领域的新趋势，算力交易化对行业有深远影响，值得关注。",
-    "summary_zh": "文章指出，随着GPU供应紧张，华尔街开始将算力视为可交易的期货商品，类似于石油期货。这一现象反映了AI基础设施的金融化趋势，算力正成为一种新的资产类别。文章分析了算力交易化的背景、机制以及对AI行业的影响，包括价格波动、资源配置和投资策略的变化。对于关注AI基础设施和投资趋势的读者，本文提供了独特的视角。",
-    "title_zh": "AI Infra正在诞生自己的石油期货？GPU不够买之后，华尔街开始交易算力",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "8e1246754dbc477c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/qaWyth5P4tZE1CQhhaGq?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "11976d3fe1298af8",
     "source_id": "arxiv-cs-ai",
     "title": "The Third Restructuring of Software Form: From the Three-Tier Architecture to Storage, Models, and Agents",
@@ -508,76 +511,6 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2608.20201"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "265ed39cad1bb792",
-    "source_id": "aws-ml-blog",
-    "title": "Scaling agentic AI: Enterprise patterns without vendor lock-in",
-    "url": "https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/",
-    "published_at": "2026-08-20T16:24:12+00:00",
-    "raw_text": "Scaling agentic AI across an enterprise requires patterns that preserve flexibility while avoiding vendor lock-in. In this second post of our multi-agent series, we examine how ML teams operate many agentic AI systems across a multi-everything environment of frameworks, models, and providers, and the principles that let those systems scale together.",
-    "category_hint": [
-      "技巧与观点",
-      "产品发布"
-    ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/14/ML-20861-1.png",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "AWS官方博客，深入探讨多智能体系统规模化部署的模式与原则，避免供应商锁定，对架构设计有实际指导意义。",
-    "summary_zh": "本文是AWS多智能体系列的第二篇，聚焦于企业在多框架、多模型、多提供商环境中规模化运行agentic AI系统的模式。文章强调保持灵活性同时避免供应商锁定，提出了让这些系统协同扩展的关键原则。内容涵盖ML团队如何操作众多agentic AI系统，以及支撑其规模化运作的架构决策。对于正在构建企业级AI平台的技术决策者，提供了来自云服务商的实践视角和设计考量。",
-    "title_zh": "规模化Agentic AI：避免供应商锁定的企业模式",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "4c22e4a5ea035b4e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "324fbb4ffb4d050f",
-    "source_id": "aws-ml-blog",
-    "title": "Authoring Dogwood policies from natural language in Amazon Bedrock AgentCore",
-    "url": "https://aws.amazon.com/blogs/machine-learning/authoring-dogwood-policies-from-natural-language-in-amazon-bedrock-agentcore/",
-    "published_at": "2026-08-20T16:31:28+00:00",
-    "raw_text": "AI agents can take actions that do not match your organization's policies. Policy in Amazon Bedrock AgentCore lets teams enforce controls across agents, now including time-based constraints. This post shows how Policy Authoring turns natural-language policy documents into correct Dogwood policies, with worked examples and best practices.",
-    "category_hint": [
-      "技巧与观点",
-      "产品发布"
-    ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/17/ML-21689-1.png",
-    "category": "产品发布",
-    "content_type": "教程方法",
-    "depth_score": 0.5,
-    "reason_zh": "AWS官方教程，展示如何将自然语言策略文档转化为Dogwood策略，包含实例和最佳实践，对使用Bedrock AgentCore的团队有直接帮助。",
-    "summary_zh": "本文介绍了Amazon Bedrock AgentCore中的Policy功能，该功能允许团队跨代理强制执行控制，现在支持基于时间的约束。文章重点展示了Policy Authoring如何将自然语言策略文档转换为正确的Dogwood策略，并提供了工作示例和最佳实践。这对于需要确保AI代理行为符合组织政策的团队来说，是一个实用的操作指南，有助于降低合规风险。",
-    "title_zh": "在Amazon Bedrock AgentCore中用自然语言编写Dogwood策略",
-    "weighted_score": 0.755,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "68517dd234807a49",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/authoring-dogwood-policies-from-natural-language-in-amazon-bedrock-agentcore/"
       }
     ],
     "curated": true
@@ -652,6 +585,87 @@
     "curated": true
   },
   {
+    "id": "0a183f9ab251ec2b",
+    "source_id": "arxiv-cs-ai",
+    "title": "Beyond Memory Majority: Latent-Source Reasoning for Multi-Agent Memory Arbitration",
+    "url": "https://arxiv.org/abs/2608.19701",
+    "published_at": "2026-08-21T04:00:00+00:00",
+    "raw_text": "arXiv:2608.19701v1 Announce Type: new \nAbstract: Long-term multi-agent systems continuously accumulate the memories produced by different agents. Existing memory methods typically treat retrieved memories as independent evidence and combine them through voting or weighting. However, this independence assumption often fails in multi-agent settings: memories written by different agents may inherit the same upstream source or shared bias, causing correlated evidence to be repeatedly counted and creating a false majority. We term this failure mode \\textit{Memory Correlation Bias}. To address the issue, we propose the \\textbf{C}orrelation-\\textbf{A}ware \\textbf{M}emory \\textbf{A}rbitration (CAMA) framework that jointly decouples retrieved memories and recovers missing independent evidence. We model the retrieved memories as query-conditioned evidence groups and combine neural dependency inference with provenance-based symbolic priors to estimate the effective number of independent evidence ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "针对多智能体记忆仲裁中的独立假设缺陷，提出潜在来源推理方法，提升记忆利用效率，具有创新性。",
+    "summary_zh": "长期多智能体系统不断积累不同智能体产生的记忆。现有记忆方法通常将检索到的记忆视为独立证据，通过投票或加权组合。但作者指出这种独立性假设在多智能体场景下常不成立，因为不同智能体的记忆可能继承自同一来源。为此提出潜在来源推理方法，通过推断记忆的潜在来源来更合理地仲裁记忆，实验证明在多个多智能体任务上优于现有方法。",
+    "title_zh": "超越记忆多数：多智能体记忆仲裁的潜在来源推理",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "2a83e4b989b2924e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.19701"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "87b15f46d4d952c0",
+    "source_id": "the-decoder",
+    "title": "Deepseek releases experimental Flash vision model that rivals Opus 4.8 on agent benchmarks",
+    "url": "https://the-decoder.com/deepseek-releases-experimental-flash-vision-model-that-rivals-opus-4-8-on-agent-benchmarks/",
+    "published_at": "2026-08-21T19:08:27+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/deepseek_deepseek_logo.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Deepseek has released V4-Flash-Vision-Exp, an experimental multimodal model that adds image understanding to V4-Flash's text capabilities. On the company's own multimodal agent benchmarks, it approaches Opus 4.8 and sometimes beats it.</p>\n<p>The article <a href=\"https://the-decoder.com/deepseek-releases-experimental-flash-vision-model-that-rivals-opus-4-8-on-agent-benchmarks/\">Deepseek releases experimental Flash vision model that rivals Opus 4.8 on agent benchmarks</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "行业动态"
+    ],
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/deepseek_deepseek_logo.png",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "DeepSeek发布实验性视觉模型，在agent基准上对标Opus 4.8，值得关注。",
+    "summary_zh": "DeepSeek发布了V4-Flash-Vision-Exp，一个实验性的多模态模型，为V4-Flash的文本能力增加了图像理解。据称在agent基准测试中可与Opus 4.8媲美。该模型在DeepSeek自家的多模态评估中表现优异，但尚未全面开放。",
+    "title_zh": "DeepSeek发布实验性Flash视觉模型，在agent基准上对标Opus 4.8",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.6
+    },
+    "story_id": "d8c6cf1a17599045",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/nvidia-is-acquiring-poolsides-model-factory-and-109-employees-for-6-billion/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/meta-spends-hundreds-of-millions-on-microsofts-ai-services/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/deepseek-releases-experimental-flash-vision-model-that-rivals-opus-4-8-on-agent-benchmarks/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "238d8a95e02e957f",
     "source_id": "pandaily",
     "title": "Xiaohongshu Quietly Open-Sources Its Own Large Model: Content Platforms Build Their Own Base",
@@ -686,6 +700,76 @@
     "curated": true
   },
   {
+    "id": "87fedaf94c823282",
+    "source_id": "github-changelog",
+    "title": "The new GitHub Copilot experience in Slack",
+    "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+    "published_at": "2026-08-21T16:07:15+00:00",
+    "raw_text": "<p>The GitHub integration in Slack now brings the agentic capabilities of GitHub Copilot CLI and the GitHub Copilot app into Slack in public preview. You can work with @GitHub to&#8230;</p>\n<p>The post <a href=\"https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack\">The new GitHub Copilot experience in Slack</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
+    "category_hint": [
+      "产品发布",
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "GitHub Copilot集成到Slack，提升开发协作效率，值得开发者关注。",
+    "summary_zh": "GitHub在Slack中的集成现在公开预览，将GitHub Copilot CLI和GitHub Copilot应用的代理能力带入Slack。用户可以通过@GitHub与Copilot交互，在聊天界面中完成代码任务。这为开发团队提供了更便捷的AI辅助编程体验，无需切换工具即可在Slack中调用Copilot功能。该功能目前处于公开预览阶段，可能逐步向更多用户开放。",
+    "title_zh": "Slack中的新GitHub Copilot体验",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "7f4ba7fb89bde006",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "github-changelog",
+        "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6df4ce90783712b9",
+    "source_id": "techcrunch-ai",
+    "title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
+    "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/",
+    "published_at": "2026-08-21T19:43:39+00:00",
+    "raw_text": "Nvidia research shows that AI agents can perform well, and not go off the deep end, through fine-tuning, even if the AI model isn't that great at the task.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.7,
+    "reason_zh": "Nvidia研究表明，AI智能体的性能更多取决于训练框架而非模型本身，颠覆传统认知。",
+    "summary_zh": "Nvidia的研究表明，AI智能体的表现好坏，关键在于训练框架（即“缰绳”），而非模型本身。即使模型在特定任务上并不出色，通过精细的微调，智能体也能表现出色且不会失控。这一发现挑战了“模型越大越好”的传统观念，强调了工程和训练方法的重要性，为AI开发提供了新的思路。",
+    "title_zh": "Nvidia展示：训练框架而非AI模型才是真正的英雄",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "c3f3efff3d0a6526",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/08/21/nvidia-just-showed-that-the-harness-not-the-ai-model-is-now-the-real-hero/"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "c540d0f7aa246fdc",
     "source_id": "pandaily",
     "title": "Qwen3.8-27B Is the New Model Kill Line: Local 'Opus 4.6' on Consumer Hardware",
@@ -709,47 +793,44 @@
       "impact": 0.8,
       "practical_value": 0.7
     },
-    "story_id": "2a38bdd6be94620f",
-    "multi_source_count": 1,
+    "story_id": "65760a265bc88558",
+    "multi_source_count": 3,
     "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vtr3h0/ladies_and_gentlemen_i_present_to_you_qwen38_27b/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vu0u2v/qwen_38_27b_pi_agent_vs_opencode/"
+      },
+      {
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1vu1pf5/qwen3827bcoldfusiongainv11/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vu7yce/qwen3827b_at_262k_context_on_a_strix_halo_rtx/"
+      },
       {
         "source_id": "pandaily",
         "url": "https://pandaily.com/qwen3-8-27b-new-model-kill-line-local-opus-consumer-hardware-aug2026"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f49a35a9972de7fb",
-    "source_id": "infoq-cn-ai",
-    "title": "你的 Coding Agent 有多大价值，取决于它对你的数据了解多少 | 技术实践",
-    "url": "https://www.infoq.cn/article/CPidTC2YJ7AvlU7jUgiq?utm_source=rss&utm_medium=article",
-    "published_at": "2026-08-20T16:12:45+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/CPidTC2YJ7AvlU7jUgiq?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-    "category_hint": [
-      "行业动态",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "深入探讨Coding Agent与数据的关系，提供技术实践指导，对开发者有直接参考价值。",
-    "summary_zh": "本文探讨了Coding Agent的性能如何依赖于其对数据的理解程度。作者指出，Agent的价值不仅在于代码生成能力，更在于能否有效利用项目数据、上下文和历史信息。文章从技术实践角度出发，分析了数据质量、数据整合方式对Agent效果的影响，并提出了优化数据利用的策略。通过具体案例，展示了如何通过改进数据管道和上下文管理来提升Agent的准确性和实用性。对于希望在实际项目中部署Coding Agent的团队，本文提供了宝贵的经验和建议。",
-    "title_zh": "你的Coding Agent有多大价值，取决于它对你的数据了解多少 | 技术实践",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.9
-    },
-    "story_id": "9e93f6acf2af0a3d",
-    "multi_source_count": 1,
-    "sources": [
+      },
       {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/CPidTC2YJ7AvlU7jUgiq?utm_source=rss&utm_medium=article"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vub9od/fastest_nvfp4_quant_of_qwen38_27b_out_there/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vugryn/qwen_38_27b_is_strong_even_at_q3_xxs/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vulsom/qwen_38_vs_36_27b_low_reasoning_loops_way_less_now/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vuotqr/qwen3827b_q6_is_a_beast_at_agentic_coding/"
       }
     ],
     "curated": true
@@ -823,36 +904,70 @@
     "curated": true
   },
   {
-    "id": "8b7a6ac6a0849903",
-    "source_id": "techcrunch-ai",
-    "title": "A third of web pages published since ChatGPT’s launch show signs of AI authorship, study finds",
-    "url": "https://techcrunch.com/2026/08/20/a-third-of-webpages-published-since-chatgpts-launch-show-signs-of-ai-authorship-study-finds/",
-    "published_at": "2026-08-20T17:18:58+00:00",
-    "raw_text": "ChatGPT and other AI models are now authoring and editing much of the new web.",
+    "id": "b492f80c9719b0a7",
+    "source_id": "reddit-huggingface",
+    "title": "DeepSeek-V4-Pro distilled into Qwen3.5 9B/4B — a pretty interesting pair of compact reasoning models",
+    "url": "https://www.reddit.com/r/huggingface/comments/1vuhnk6/deepseekv4pro_distilled_into_qwen35_9b4b_a_pretty/",
+    "published_at": "2026-08-21T14:18:06+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>If you're looking for smaller <strong>Qwen3.5-based reasoning models</strong> that can still run locally, these two DeepSeek-V4-Pro distilled checkpoints are worth checking out:</p> <p><strong>DeepSeek-V4-Pro-Qwen3.5-9B</strong><br /> <strong>DeepSeek-V4-Pro-Qwen3.5-4B</strong></p> <p>Both use the Qwen3.5 9B/4B family as the student models and transfer reasoning patterns from <strong>DeepSeek-V4-Pro</strong>through a large STEM distillation set.</p> <p>The Qwen3.5 foundation is already quite interesting for small local models: it uses a hybrid <strong>Gated DeltaNet + Gated Attention</strong> architecture, supports multi-token prediction, and has a native <strong>262K context window</strong>, with the architecture designed to extend to roughly 1M tokens. The underlying Qwen3.5 architecture is also natively multimodal.</p> <p>What makes these distilled versions interesting is that the training is heavily focused on reasoning rather than simply adding mo",
     "category_hint": [
-      "行业动态",
-      "产品发布"
+      "开源项目"
     ],
     "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "研究显示自ChatGPT发布以来，三分之一的网页有AI创作痕迹，揭示AI对网络内容的深远影响，值得关注。",
-    "summary_zh": "一项研究发现，自ChatGPT发布以来，新发布的网页中有三分之一显示出AI创作的迹象。这表明ChatGPT和其他AI模型正在大量参与网络内容的创作和编辑。该研究揭示了AI对互联网内容生态的深刻影响，可能引发关于内容真实性、版权和质量的讨论。对于内容创作者和消费者来说，这是一个重要的趋势。",
-    "title_zh": "研究：自ChatGPT发布以来，三分之一的网页有AI创作痕迹",
-    "weighted_score": 0.74,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "DeepSeek-V4-Pro蒸馏到Qwen3.5 9B/4B，提供紧凑推理模型，适合本地部署，值得关注。",
+    "summary_zh": "DeepSeek-V4-Pro被蒸馏到Qwen3.5 9B和4B模型，形成两个紧凑的推理模型：DeepSeek-V4-Pro-Qwen3.5-9B和DeepSeek-V4-Pro-Qwen3.5-4B。这些模型以Qwen3.5为基座，转移了DeepSeek-V4-Pro的推理能力，适合在本地运行。对于需要小型高效推理模型的开发者来说，这是一个有趣的选择。",
+    "title_zh": "DeepSeek-V4-Pro蒸馏到Qwen3.5 9B/4B：一对有趣的紧凑推理模型",
+    "weighted_score": 0.745,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.7,
       "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.5
+      "impact": 0.7,
+      "practical_value": 0.8
     },
-    "story_id": "e2233ca077dcf58e",
+    "story_id": "6222d4a3f7db56ee",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "techcrunch-ai",
-        "url": "https://techcrunch.com/2026/08/20/a-third-of-webpages-published-since-chatgpts-launch-show-signs-of-ai-authorship-study-finds/"
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1vuhnk6/deepseekv4pro_distilled_into_qwen35_9b4b_a_pretty/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "bcc7b888d3a9a276",
+    "source_id": "aws-ml-blog",
+    "title": "Reduce RAG costs on Amazon Bedrock with query-aware compression",
+    "url": "https://aws.amazon.com/blogs/machine-learning/reduce-rag-costs-on-amazon-bedrock-with-query-aware-compression/",
+    "published_at": "2026-08-21T16:59:15+00:00",
+    "raw_text": "Input tokens are often a meaningful part of the cost of running Retrieval Augmented Generation (RAG) at scale. This post describes a query-aware context compression pattern on Amazon Bedrock: after retrieval, a smaller model filters retrieved chunks against the query before the primary model answers, reducing input tokens and cost while preserving answer quality.",
+    "category_hint": [
+      "技巧与观点",
+      "产品发布"
+    ],
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/19/ML-21148-1.png",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.5,
+    "reason_zh": "提出查询感知压缩模式，用小型模型过滤检索块，降低RAG成本且保持质量，实用性强。",
+    "summary_zh": "本文介绍了一种在Amazon Bedrock上实现查询感知上下文压缩的模式，以降低RAG成本。检索后，使用较小的模型根据查询过滤检索到的块，再让主模型回答，从而减少输入令牌和成本，同时保持答案质量。该方法适用于大规模RAG场景，能有效优化资源利用。",
+    "title_zh": "通过查询感知压缩降低Amazon Bedrock上的RAG成本",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "1febaa7dfbdc90f2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/reduce-rag-costs-on-amazon-bedrock-with-query-aware-compression/"
       }
     ],
     "curated": true
@@ -892,79 +1007,6 @@
     "curated": true
   },
   {
-    "id": "67ff7218e7e341d7",
-    "source_id": "the-decoder",
-    "title": "Frontier Radar #4: China has caught up, so what's left of the Western AI lead?",
-    "url": "https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/",
-    "published_at": "2026-08-20T14:08:14+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1412\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/AI-Frontier-4-China-scaled.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"2560\" /></p>\n<p>        Kimi K3 and GLM-5.3 are now within striking distance of the best US models. Western labs blame distillation, and there's real evidence for it. But guilty or not, the conclusion is the same: a model lead can't be defended. This issue looks at what can.</p>\n<p>The article <a href=\"https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/\">Frontier Radar #4: China has caught up, so what&#039;s left of the Western AI lead?</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/AI-Frontier-4-China-scaled.png",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "深入分析中美AI差距缩小及蒸馏争议，提供行业洞察，值得关注。",
-    "summary_zh": "本文探讨中国AI模型如Kimi K3和GLM-5.3已接近美国顶尖模型，西方实验室指责中国通过蒸馏技术抄袭，且有证据支持。文章分析这一趋势对西方AI领导地位的影响，以及蒸馏在AI发展中的角色。内容涉及技术竞争、伦理和战略层面，为理解全球AI格局提供视角。",
-    "title_zh": "前沿雷达#4：中国已迎头赶上，西方AI优势还剩什么？",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "02e34e00a03543e7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "3d1cdc2787ff9241",
-    "source_id": "gh-diffusers",
-    "title": "huggingface/diffusers v0.40.0",
-    "url": "https://github.com/huggingface/diffusers/releases/tag/v0.40.0",
-    "published_at": "2026-08-20T14:53:43+00:00",
-    "raw_text": "> [!TIP]\r\n> This release features several new pipelines, including LTX2.5, MiniMax H3, and Wan Animate 2. We're also graduating Modular Diffusers out of the experimental phase and announcing its stable support. Additionally, this release includes minimal support for tensor-parallel. There's a lot more that went down in this release. So, please consult the notes for details. \r\n\r\n## New Pipelines\r\n\r\n### MiniMax-H3\r\n\r\n[**MiniMax-H3**](https://huggingface.co/docs/diffusers/main/api/pipelines/minimax_h3) generates video and its soundtrack together. A single transformer denoises one packed sequence containing the text conditioning, the conditioning media, and the target video *and* audio latents — there is no separate vocoder and no post-hoc audio pass. Its conditioner is a `Qwen3VLForConditionalGeneration` whose unnormalized 50th-decoder-layer hidden state is read instead of the last one.\r\n\r\nMiniMax-H3 is integrated as [Modular Diffusers](https://huggingface.co/docs/diffusers/main/modular_d",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "Diffusers v0.40.0新增多个管线并支持张量并行，功能增强，值得关注。",
-    "summary_zh": "Hugging Face Diffusers发布v0.40.0，新增LTX2.5、MiniMax H3、Wan Animate 2等管线，并将Modular Diffusers转为稳定支持，同时提供张量并行最小支持。这些更新扩展了库的功能，对生成模型开发者有实用价值。",
-    "title_zh": "huggingface/diffusers v0.40.0",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "68bf5b15734cab6f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-diffusers",
-        "url": "https://github.com/huggingface/diffusers/releases/tag/v0.40.0"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "31bebc81f5a8a60b",
     "source_id": "aws-ml-blog",
     "title": "Introducing cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock",
@@ -997,12 +1039,12 @@
         "url": "https://aws.amazon.com/blogs/machine-learning/introducing-cross-region-inference-for-openai-gpt-5-6-models-on-amazon-bedrock/"
       },
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/gpt-5-6-sol-drives-openais-revenue-surge-as-it-regains-ground-on-anthropic/"
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/gpt-5-6-sol-pricing-drops-on-ai-gateway-and-50-discount-still-applies"
       },
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1236235#reply4"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/gpt-5-6-sol-drives-openais-revenue-surge-as-it-regains-ground-on-anthropic/"
       }
     ],
     "curated": true
@@ -1082,36 +1124,36 @@
     "curated": true
   },
   {
-    "id": "1fc33031d3fdae06",
-    "source_id": "infoq-cn-ai",
-    "title": "将Pod作为worker而非智能体：在Kubernetes上重新思考AI智能体的部署单元",
-    "url": "https://www.infoq.cn/article/u2O9k3QiZkeIbqJ7GsPw?utm_source=rss&utm_medium=article",
-    "published_at": "2026-08-20T12:50:54+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/u2O9k3QiZkeIbqJ7GsPw?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "id": "44c3aad42c55e322",
+    "source_id": "google-research-blog",
+    "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data",
+    "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+    "published_at": "2026-08-21T17:02:24+00:00",
+    "raw_text": "Generative AI",
     "category_hint": [
-      "行业动态",
-      "技巧与观点"
+      "论文研究",
+      "模型发布"
     ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "重新定义AI智能体部署单元，将Pod视为worker，提供Kubernetes上的新视角，对工程实践有启发。",
-    "summary_zh": "本文探讨在Kubernetes上部署AI智能体时，将Pod作为worker而非传统智能体的新思路。作者认为，这种转变能更好地利用Kubernetes的编排能力，提升智能体的可扩展性和可靠性。文章分析了当前智能体部署的痛点，如资源管理、生命周期管理等问题，并提出了将Pod作为worker的优势，包括更灵活的调度、更高效的资源利用以及更简单的故障恢复。通过实际案例，展示了如何将这一理念应用于生产环境，为AI工程化提供了新的实践方向。",
-    "title_zh": "将Pod作为worker而非智能体：在Kubernetes上重新思考AI智能体的部署单元",
-    "weighted_score": 0.725,
+    "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/Biomarker-Discovery-Framework-1.png",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.5,
+    "reason_zh": "谷歌研究推出AI工具，用于从可穿戴数据中筛选生物标志物，对健康监测有重要意义。",
+    "summary_zh": "谷歌研究博客发布了一款生成式AI工具，旨在从可穿戴传感器数据中优先排序候选生物标志物。该工具利用生成模型处理高维时序数据，帮助研究人员识别与健康相关的关键指标。文章介绍了工具的原理和潜在应用，展示了AI在医疗健康领域的创新。",
+    "title_zh": "一款用于从可穿戴传感器数据中优先排序候选生物标志物的AI工具",
+    "weighted_score": 0.735,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.7,
       "impact": 0.6,
-      "practical_value": 0.8
+      "practical_value": 0.7
     },
-    "story_id": "841327908275590d",
+    "story_id": "e6596272e5cbe9df",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/u2O9k3QiZkeIbqJ7GsPw?utm_source=rss&utm_medium=article"
+        "source_id": "google-research-blog",
+        "url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/"
       }
     ],
     "curated": true
@@ -1146,6 +1188,41 @@
       {
         "source_id": "vercel-blog",
         "url": "https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "93df5c3c84824e75",
+    "source_id": "aws-ml-blog",
+    "title": "Agentic Data Operations Platform (ADOP): Data engineering into hours",
+    "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/",
+    "published_at": "2026-08-21T17:06:17+00:00",
+    "raw_text": "The Agentic Data Operations Platform (ADOP) is a reference architecture on Amazon Bedrock that uses specialized AI agents to automate the full Bronze-to-Silver-to-Gold data pipeline lifecycle, compressing new-source onboarding from weeks to hours while keeping data governance and compliance controls inline.",
+    "category_hint": [
+      "技巧与观点",
+      "产品发布"
+    ],
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/18/ML-20916-1.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "ADOP参考架构用AI代理自动化数据管道全生命周期，将新数据源接入从周级压缩到小时级，效率显著。",
+    "summary_zh": "Agentic Data Operations Platform (ADOP) 是一个基于Amazon Bedrock的参考架构，利用专门的AI代理自动化Bronze-to-Silver-to-Gold数据管道的全生命周期。它能够将新数据源的接入时间从数周压缩到数小时，同时保持数据治理和合规控制。该平台展示了代理式AI在数据工程中的巨大潜力。",
+    "title_zh": "代理式数据操作平台（ADOP）：将数据工程缩短至数小时",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "2e336e52f43d525b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/"
       }
     ],
     "curated": true
@@ -1186,116 +1263,113 @@
     "curated": true
   },
   {
-    "id": "be7274cb1abad967",
-    "source_id": "zh-ithome",
-    "title": "DeepSeek V4-Flash-Vision-Exp 上线：开启多模态 API 服务，Agent 能力接近 Opus-4.8",
-    "url": "https://www.ithome.com/0/992/755.htm",
-    "published_at": "2026-08-21T09:21:20+00:00",
-    "raw_text": "<p>IT之家 8 月 21 日消息，深度求索官方刚刚宣布全新的多模态视觉理解模型 <span class=\"link-text-start-with-http\">DeepSeek-V4-Flash-Vision-Exp</span> 上线 DeepSeek API 平台。</p><p>该模型支持在文本之外输入图片，可以让模型描述图片、识别截图中的文字、分析图表等。支持的图片格式包括 JPEG、PNG、GIF、WebP。</p><p>深度求索官方表示，V4-Flash-Vision-Exp 在各类 Agent 框架内展现出了较好的多模态适配能力，能够有效支持大家借助多样化的 Agent 工具解锁更多实用的工作场景。</p><p>IT之家提醒：这是一个实验性质的模型，用户可以通过设置 model='<span class=\"link-text-start-with-http\">deepseek-v4-flash-vision-exp</span>' 访问该模型。</p><h3>平衡文本与多模态能力</h3><p style=\"text-align: center;\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/8/d779f205-d79d-40d3-be05-bc72d8d61891.png?x-bce-process=image/format,f_auto\" /></p><p>据介绍，在纯文本能力（Agent、推理、世界知识等）方面，<span class=\"link-text-start-with-http\">DeepSeek-V4-Flash-Vision-Exp</span> 与 DeepSeek-V4-Flash 正式版持平；在需要视觉理解的 Agent Benchmark 上，<span class=\"link-text-start-with-http\">DeepSeek-V4-Flash-Vision-Exp</span> 相比 DeepSeek-V4-Flash 实现了大幅跃升，多模态 Agent 能力已接近 Opus-4.8。</p><h3>API 支持</h3><p>用户可以通过设置 model='<span class=\"link-text-start-with-http\">dee",
+    "id": "4bb999f50e8b11ed",
+    "source_id": "siliconangle",
+    "title": "DeepSeek debuts multimodal language model competitive with Opus 4.8",
+    "url": "https://siliconangle.com/2026/08/21/deepseek-debuts-multimodal-language-model-competitive-with-opus-4-8/",
+    "published_at": "2026-08-21T20:18:15+00:00",
+    "raw_text": "<p>DeepSeek today debuted a new addition to its flagship V4 series of large language models. On launch, V4 Flash Vision Exp is only available via the Chinese startup’s paid developer platform. The company may release a free version later on given that it has open-sourced many of its earlier models. Those models include V4 Flash, [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/21/deepseek-debuts-multimodal-language-model-competitive-with-opus-4-8/\">DeepSeek debuts multimodal language model competitive with Opus 4.8</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
     "category_hint": [
-      "行业动态"
+      "行业动态",
+      "产品发布"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/d779f205-d79d-40d3-be05-bc72d8d61891.png?x-bce-process=image/format,f_auto",
+    "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/08/DeepSeek.png",
     "category": "模型发布",
     "content_type": "产品发布",
     "depth_score": 0.2,
-    "reason_zh": "DeepSeek新模型上线，多模态能力增强，Agent适配性好，值得开发者关注。",
-    "summary_zh": "深度求索宣布推出多模态视觉理解模型DeepSeek-V4-Flash-Vision-Exp，已上线DeepSeek API平台。该模型支持文本和图片输入，可描述图片、识别截图文字、分析图表等，支持JPEG、PNG、GIF、WebP格式。官方表示，该模型在各类Agent框架内展现出较好的多模态适配能力，能有效支持用户借助多样化Agent工具解锁更多实用工作场景。这是一个实验性质的模型，用户可通过设置model='deepseek-v4-flash-vision-exp'进行调用。",
-    "title_zh": "DeepSeek V4-Flash-Vision-Exp上线：开启多模态API服务，Agent能力接近Opus-4.8",
-    "weighted_score": 0.705,
+    "reason_zh": "DeepSeek发布多模态模型V4 Flash Vision Exp，对标Opus 4.8，但仅限付费平台。",
+    "summary_zh": "DeepSeek今天发布了其旗舰V4系列的新成员——多模态语言模型V4 Flash Vision Exp。该模型目前仅通过DeepSeek的付费开发者平台提供，但鉴于公司此前已开源多款早期模型，未来可能发布免费版本。V4 Flash Vision Exp在性能上对标Opus 4.8，展示了DeepSeek在多模态领域的持续进步。",
+    "title_zh": "DeepSeek推出多模态模型，对标Opus 4.8",
+    "weighted_score": 0.71,
     "score_breakdown": {
       "source_authority": 0.7,
       "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
+      "impact": 0.8,
+      "practical_value": 0.5
     },
-    "story_id": "4a860f9cc4f44016",
+    "story_id": "21b7d651f3c9a1e8",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/992/755.htm"
-      },
-      {
         "source_id": "zh-oschina",
         "url": "https://www.oschina.net/news/502065"
+      },
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/08/21/deepseek-debuts-multimodal-language-model-competitive-with-opus-4-8/"
       }
     ],
     "curated": true
   },
   {
-    "id": "b6c6d5327772e0df",
-    "source_id": "artificial-lawyer",
-    "title": "Ex-Eigen Team Raises $20m Seed For Twin1",
-    "url": "https://www.artificiallawyer.com/2026/08/20/ex-eigen-team-raises-20m-seed-for-twin1/",
-    "published_at": "2026-08-20T14:30:10+00:00",
-    "raw_text": "Twin1 has come out of stealth with a $20m Seed round co-led by Bessemer Venture Partners, among others, to develop digital twins for lawyers. It’s <a class=\"mh-excerpt-more\" href=\"https://www.artificiallawyer.com/2026/08/20/ex-eigen-team-raises-20m-seed-for-twin1/\" title=\"Ex-Eigen Team Raises $20m Seed For Twin1\">...</a>",
+    "id": "d22e3eefe6f2c122",
+    "source_id": "reddit-localllama",
+    "title": "Ultrafast Qwen3-TTS at 34 ms Time-to-First-Audio, Handling 10 Requests Per Second [OSS]",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vukf57/ultrafast_qwen3tts_at_34_ms_timetofirstaudio/",
+    "published_at": "2026-08-21T16:01:06+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1vukf57/ultrafast_qwen3tts_at_34_ms_timetofirstaudio/\"> <img alt=\"Ultrafast Qwen3-TTS at 34 ms Time-to-First-Audio, Handling 10 Requests Per Second [OSS]\" src=\"https://external-preview.redd.it/fjVVBJXcVYZYJcUO73uK67SDqq_-1jo6LOMNKGSUbIE.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=745e7a1041ab5e9ba5ea7f136e5e50e9feea0aab\" title=\"Ultrafast Qwen3-TTS at 34 ms Time-to-First-Audio, Handling 10 Requests Per Second [OSS]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hey locallama! We recently open sourced a Qwen3-TTS 1.7B implementation that achieves <strong>10 requests per second (RPS) and sub-50 ms p95 time-to-first-audio (TTFA)</strong> while maintaining real-time playback on 1 x H100. This extends to <strong>20 RPS at sub-100 ms p95 TTFA.</strong> </p> <p>By adjusting settings, you can get a 4090 to perform at ~50 ms p95 TTFA as well. We were frustrated with locally runnable models having slow response spee",
     "category_hint": [
-      "行业动态"
+      "开源项目",
+      "技巧与观点"
     ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "前Eigen团队获2000万美元融资开发法律数字孪生，行业动态值得关注。",
-    "summary_zh": "Twin1公司从隐身模式中脱颖而出，获得由Bessemer Venture Partners等领投的2000万美元种子轮融资，旨在为律师开发数字孪生技术。该消息来自Artificial Lawyer，反映法律科技领域的投资趋势，但具体技术细节未披露。",
-    "title_zh": "前Eigen团队为Twin1筹集2000万美元种子资金",
-    "weighted_score": 0.66,
+    "image_url": "https://external-preview.redd.it/fjVVBJXcVYZYJcUO73uK67SDqq_-1jo6LOMNKGSUbIE.png?width=640&crop=smart&auto=webp&s=745e7a1041ab5e9ba5ea7f136e5e50e9feea0aab",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "Qwen3-TTS实现34ms首音频延迟，性能卓越，开源项目值得关注。",
+    "summary_zh": "Reddit帖子展示了Qwen3-TTS的卓越性能：时间到首音频仅34毫秒，每秒可处理10个请求。该模型为开源，提供了极低的延迟和高吞吐量，适合实时语音合成应用。帖子可能包含性能测试细节和部署指南，对于需要高效TTS的开发者具有吸引力。",
+    "title_zh": "超快Qwen3-TTS：34毫秒首音频，每秒处理10个请求 [开源]",
+    "weighted_score": 0.7,
     "score_breakdown": {
       "source_authority": 0.7,
       "novelty": 0.8,
       "impact": 0.6,
-      "practical_value": 0.5
+      "practical_value": 0.7
     },
-    "story_id": "304bfa34e3a03c25",
+    "story_id": "375f07453a901888",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "artificial-lawyer",
-        "url": "https://www.artificiallawyer.com/2026/08/20/ex-eigen-team-raises-20m-seed-for-twin1/"
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1vtuie3/i_fine_tuned_qwen3_06b_for_better_spanish/"
       },
       {
-        "source_id": "artificial-lawyer",
-        "url": "https://www.artificiallawyer.com/2026/08/20/interview-with-twin1-ceo-lewis-liu/"
-      },
-      {
-        "source_id": "siliconangle",
-        "url": "https://siliconangle.com/2026/08/20/twin1-ai-raises-20m-to-put-an-ai-twin-behind-every-knowledge-worker/"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vukf57/ultrafast_qwen3tts_at_34_ms_timetofirstaudio/"
       }
     ],
     "curated": true
   },
   {
-    "id": "ea93ac700c483a18",
-    "source_id": "google-cloud-ai",
-    "title": "Expanding Google Antigravity for enterprise customers",
-    "url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers/",
-    "published_at": "2026-08-20T17:30:00+00:00",
-    "raw_text": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">Since announcing Google Antigravity in Gemini Enterprise Agent Platform at I/O in May, we’ve heard helpful feedback from our customers. Your developers want easy access to coding agents across surfaces. Your enterprise governance team wants security controls and license management. And your finance team wants pooled usage so that no prepaid token ever goes unused. Now, everybody finally gets what they want:</span></p>\n<ul>\n<li style=\"vertical-align: baseline;\">\n<p><span style=\"vertical-align: baseline;\">Antigravity is available now as part of </span><a href=\"https://docs.cloud.google.com/gemini/enterprise/docs/ai-developer-tools-overview\"><span style=\"text-decoration: underline; vertical-align: baseline;\">eligible</span></a><span style=\"vertical-align: baseline;\"> Gemini Enterprise app subscriptions, including out-of-the-box administrative and spend controls.</span></p>\n</li>\n<li style=\"vertical-align: bas",
+    "id": "d953339239744c80",
+    "source_id": "zh-oschina",
+    "title": "中美 AI 差距正在消失。不是预测，是正在发生的事。",
+    "url": "https://www.oschina.net/news/502059/2026-us-china-ai-race",
+    "published_at": "2026-08-21T07:12:49+00:00",
+    "raw_text": "Bloomberg Businessweek 8 月 20 日发了一篇数据量极大的专题报道，标题直白：US Lead in the AI Race With China Is Rapidly Narrowing。文章拉了十几张图表，从模型能力、成本、下载量、区域市场份额等维度做了对比。 几个关键数据： Moonshot 的 Kimi K3 在 Artificial Analysis 综合基准上追平了 Anthropic 的 Fabl...",
     "category_hint": [
-      "产品发布",
-      "技巧与观点"
+      "开源项目"
     ],
-    "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/antigravity_enterprise.max-600x600.jpg",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Google扩展Antigravity企业功能，满足开发者、治理和财务需求，对企业用户有实际意义。",
-    "summary_zh": "Google宣布扩展Antigravity（在Gemini Enterprise Agent Platform中）的企业功能。自5月在I/O上发布以来，Google收集了客户反馈。现在，开发者希望跨界面轻松访问编码代理；企业治理团队需要安全控制和许可证管理；财务团队需要池化使用。文章详细介绍了这些新功能如何满足不同团队的需求，旨在提升企业采用率。",
-    "title_zh": "为企业和客户扩展Google Antigravity",
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "彭博专题报道用数据论证中美AI差距缩小，Kimi K3追平Claude，对理解全球AI格局有重要价值。",
+    "summary_zh": "彭博商业周刊8月20日发布专题报道，指出美国在AI竞赛中的领先优势正在迅速缩小。文章通过十几张图表，从模型能力、成本、下载量、区域市场份额等维度对比中美AI发展。关键数据包括：Moonshot的Kimi K3在Artificial Analysis综合基准上追平了Anthropic的Claude模型。报道认为，中国AI的快速进步正在改变全球竞争格局。",
+    "title_zh": "中美AI差距正在消失：彭博数据揭示的竞争新格局",
     "weighted_score": 0.715,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.6
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.8,
+      "practical_value": 0.5
     },
-    "story_id": "73776038b47fd474",
+    "story_id": "ffcfb78c11e1d61a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "google-cloud-ai",
-        "url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers/"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/502059/2026-us-china-ai-race"
       }
     ],
     "curated": true,
