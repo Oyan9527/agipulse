@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-20",
-  "generated_at": "2026-08-20T20:30:52.246426+00:00",
+  "date": "2026-08-21",
+  "generated_at": "2026-08-21T01:03:31.547162+00:00",
   "items": [
     {
       "id": "c61c3622226ede00",
@@ -133,40 +133,6 @@
         {
           "source_id": "zh-meituan-tech",
           "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html"
-        }
-      ]
-    },
-    {
-      "id": "e53691799f9e1e2a",
-      "source_id": "simonwillison",
-      "title": "Conceptual integrity and counting lines of code",
-      "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
-      "published_at": "2026-08-19T22:46:07+00:00",
-      "raw_text": "<p>Last week I recorded <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison\">an episode of the Talking Postgres podcast</a> with Claire Giordano on the subject of \"How AI is changing software development\". We had a really great conversation. Here are a couple of my highlights from a lightly edited transcript (prompt to Claude: \"very minor edits to remove disfluencies\").</p>\n<p>This is the latest version of an argument I've been trying to build about why sometimes it <em>does</em> make sense to talk about lines of code as an indicator of productivity with coding agents, at <a href=\"https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison#t=35m1s\">35:01</a>:</p>\n<blockquote>\n<p>A lot of people will tell you it makes no sense to measure productivity in lines of code. I’d actually disagree, because there’s a hard limit. In the before-times, a software engineer could produce a few hundred lines of ",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "Simon Willison分享AI编程对软件开发的深刻见解，强调概念完整性，具有启发性。",
-      "summary_zh": "Simon Willison在Talking Postgres播客中讨论AI如何改变软件开发。他分享了几个亮点，包括概念完整性与代码行数的关系，以及AI辅助编程带来的新挑战和机遇。",
-      "title_zh": "概念完整性与代码行数",
-      "weighted_score": 0.755,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "873fdf822c7d0a2b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "simonwillison",
-          "url": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/"
         }
       ]
     },
@@ -306,6 +272,40 @@
       ]
     },
     {
+      "id": "9848fd1f414674c7",
+      "source_id": "reddit-llmdevs",
+      "title": "Lessons from building an agent tool that takes a real, semi-irreversible action (booking a reservation)",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1vtwyoa/lessons_from_building_an_agent_tool_that_takes_a/",
+      "published_at": "2026-08-20T21:41:27+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Most agent tools I see are read-only or easily reversible. Mine is not. I built SeatSwiper, a tool and MCP server that books hard restaurant reservations on your own Resy, SevenRooms, or OpenTable account the moment one opens or someone cancels. A booking is a real action with a cost, so the tradeoffs were different from a search tool.</p> <p>Things that mattered more than I expected:</p> <ul> <li>Idempotency and confirmation. An agent retrying a book call must not double-book you, so the action has to be safe to repeat and honest about what actually happened.</li> <li>Acting as the user, not as a broker. It books on your own account in your name, nothing resold or transferred. That is an ethics line, but also a reliability one: you inherit the platform's own rules instead of fighting them.</li> <li>Outcome pricing. First booking free, then $5 only on success, which fit the agent case better than per-call billing.</li> <li>Auth without storing secrets:",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "真实agent工具开发经验，涉及不可逆操作，对构建实用agent有重要参考价值。",
+      "summary_zh": "作者分享了构建SeatSwiper的经验，这是一个预订餐厅的agent工具，执行真实且半不可逆的操作。与常见的只读或可逆工具不同，预订涉及实际成本，因此设计权衡不同。文章讨论了在构建此类工具时需要考虑的关键因素，如错误处理、用户确认机制、以及如何平衡自动化与风险控制。这些经验对于开发涉及真实世界操作的AI代理具有重要借鉴意义。",
+      "title_zh": "构建一个执行真实半不可逆操作的agent工具的经验教训",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.9
+      },
+      "story_id": "2aa31901427402ff",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1vtwyoa/lessons_from_building_an_agent_tool_that_takes_a/"
+        }
+      ]
+    },
+    {
       "id": "265ed39cad1bb792",
       "source_id": "aws-ml-blog",
       "title": "Scaling agentic AI: Enterprise patterns without vendor lock-in",
@@ -336,40 +336,6 @@
         {
           "source_id": "aws-ml-blog",
           "url": "https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/"
-        }
-      ]
-    },
-    {
-      "id": "c68a51500d3d2ba4",
-      "source_id": "siliconangle",
-      "title": "The AI inference race moves beyond GPUs to reshape data center infrastructure",
-      "url": "https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/",
-      "published_at": "2026-08-19T20:59:28+00:00",
-      "raw_text": "<p>AI inference infrastructure is becoming a system-level challenge as organizations move generative and agentic applications into production. Graphics processing unit performance remains essential, but storage latency, network bandwidth, data movement and power consumption increasingly determine the cost and speed of producing tokens. The requirements also vary by workload. Interactive chat prioritizes latency, batch inference emphasizes [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/\">The AI inference race moves beyond GPUs to reshape data center infrastructure</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
-      "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/08/IMG_9367-scaled.jpg",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "分析AI推理基础设施超越GPU，存储、网络、功耗成为关键，系统级挑战，有深度洞察。",
-      "summary_zh": "文章指出AI推理基础设施正成为系统级挑战，随着生成式和代理式应用投入生产，GPU性能虽重要，但存储延迟、网络带宽、数据移动和功耗日益决定生成token的成本和速度。不同工作负载需求各异，交互式聊天优先考虑延迟，而批量处理可能更注重吞吐量。文章分析了这些趋势对数据中心基础设施的影响。",
-      "title_zh": "AI推理竞赛超越GPU，重塑数据中心基础设施",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "61c1537944aca1cf",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "siliconangle",
-          "url": "https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/"
         }
       ]
     },
@@ -408,6 +374,39 @@
         {
           "source_id": "the-decoder",
           "url": "https://the-decoder.com/frontier-radar-4-china-has-caught-up-so-whats-left-of-the-western-ai-lead/"
+        }
+      ]
+    },
+    {
+      "id": "29b5e913ea47048a",
+      "source_id": "arxiv-cs-ai",
+      "title": "Bridging Search and CRM: Productionizing AI Product Research Agents for Customer Re-Engagement",
+      "url": "https://arxiv.org/abs/2608.18543",
+      "published_at": "2026-08-20T04:00:00+00:00",
+      "raw_text": "arXiv:2608.18543v1 Announce Type: new \nAbstract: Modern e-commerce platforms often operate search, recommendation, personalization, and CRM systems independently, limiting opportunities for proactive customer re-engagement. This is particularly challenging for exploratory intents such as best smartphones or latest 5G phones, where users may leave the platform for external research before purchasing. We present a scalable, production-deployed framework that bridges search and CRM workflows through AI-powered Product Research Agents. The system identifies users with exploratory purchase intent and low engagement, conducts grounded multi-agent product research using behavioral signals, external knowledge, and enterprise catalog data, and delivers personalized recommendations through WhatsApp. We evaluate the framework in a 23-day production deployment involving approximately 15K WhatsApp notifications for mobile product discovery. The campaign achieved substantial CTR improvements over tr",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "探讨搜索与CRM系统集成，生产化AI产品研究代理以促进客户再参与，有实践指导意义。",
+      "summary_zh": "现代电商平台通常独立运营搜索、推荐、个性化和CRM系统，限制了主动客户再参与的机会。对于探索性意图（如最佳智能手机或最新5G手机），用户可能在购买前离开平台进行外部研究。本文探讨如何桥接搜索与CRM，生产化AI产品研究代理，以促进客户再参与，提升转化率。",
+      "title_zh": "桥接搜索与CRM：生产化AI产品研究代理以促进客户再参与",
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "3a29d9de29d4b37c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.18543"
         }
       ]
     }
