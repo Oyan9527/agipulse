@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T12:40:53.030055+00:00",
+  "generated_at": "2026-08-24T20:31:10.081156+00:00",
   "items": [
     {
       "id": "188a916ad747c81b",
@@ -234,6 +234,40 @@
       ]
     },
     {
+      "id": "d7e42bcbc9b7c9b3",
+      "source_id": "towards-data-science",
+      "title": "Speculative Decoding on CPUs: Nearly 4x Faster Token Generation with DFlash",
+      "url": "https://towardsdatascience.com/speculative-decoding-on-cpus-nearly-4x-faster-token-generation-with-dflash/",
+      "published_at": "2026-08-24T13:30:00+00:00",
+      "raw_text": "<p>Speculative decoding can turn underused CPU compute into faster token generation, without changing the model's output. In our vLLM tests, DFlash delivered 3.92x the autoregressive throughput with Qwen3.5-9B on Intel Xeon 6 at concurrency 1. We break down where the speedup comes from, explain the acceptance metrics, and show what determines whether speculation pays off.</p>\n<p>The post <a href=\"https://towardsdatascience.com/speculative-decoding-on-cpus-nearly-4x-faster-token-generation-with-dflash/\">Speculative Decoding on CPUs: Nearly 4x Faster Token Generation with DFlash</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入解析CPU上投机解码的加速原理与收益条件，对推理优化实践有直接指导价值。",
+      "summary_zh": "本文探讨了在CPU上利用投机解码（Speculative Decoding）加速大模型推理的方法，重点介绍了DFlash技术。作者在vLLM框架下，使用Intel Xeon 6处理器和Qwen3.5-9B模型进行测试，结果显示在并发数为1时，DFlash的吞吐量达到自回归解码的3.92倍。文章详细分析了加速的来源，包括草稿模型与目标模型的协同、接受率等关键指标，并解释了投机解码在何种情况下能带来收益，以及如何评估其效果。作者还讨论了CPU上未被充分利用的计算资源如何被转化为生成速度的提升，为在CPU环境下优化LLM推理提供了实用的技术参考。",
+      "title_zh": "CPU上的投机解码：DFlash实现近4倍令牌生成加速",
+      "weighted_score": 0.745,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "a6bb6181dfa6190a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "towards-data-science",
+          "url": "https://towardsdatascience.com/speculative-decoding-on-cpus-nearly-4x-faster-token-generation-with-dflash/"
+        }
+      ]
+    },
+    {
       "id": "98059cbd5f776fde",
       "source_id": "pandaily",
       "title": "Under Domestic Compute Constraints, iFLYTEK Turns to Engineering",
@@ -267,68 +301,36 @@
       ]
     },
     {
-      "id": "1563e3405213f300",
-      "source_id": "zh-juejin",
-      "title": "云原生 AI 基础设施演进：利用 Envoy Wasm 构建去中心化的 LLM 内容安全网关",
-      "url": "https://juejin.cn/post/7677432175923036200",
-      "published_at": "2026-08-24T10:38:28+00:00",
-      "raw_text": "之所以要把这件事放到网关，是因为风险来源是双向的：既可能来自用户输入，也可能出现在模型输出。如果每个应用各自维护审核 SDK、风险阈值和拒答逻辑，安全策略很快就会散落在多个代码仓库中；一旦模型切换或策",
+      "id": "0744436aa0d3b008",
+      "source_id": "databricks-blog",
+      "title": "How Databricks Uses AI to Accelerate Incident Investigation",
+      "url": "https://www.databricks.com/blog/how-databricks-uses-ai-accelerate-incident-investigation",
+      "published_at": "2026-08-24T17:00:00+00:00",
+      "raw_text": "In our previous blog post, we shared how Databricks uses AI to debug thousands of...",
       "category_hint": [
-        "技巧与观点"
+        "产品发布",
+        "行业动态"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入探讨用Envoy Wasm构建去中心化LLM安全网关，解决双向风险，架构思路有启发性。",
-      "summary_zh": "本文探讨在云原生AI基础设施中，利用Envoy Wasm构建去中心化的LLM内容安全网关。风险来源双向：用户输入和模型输出。若各应用自行维护审核SDK和策略，会导致安全策略分散。通过网关统一管理，可集中策略，便于模型切换和策略更新。文章分析了架构设计和优势。",
-      "title_zh": "云原生 AI 基础设施演进：利用 Envoy Wasm 构建去中心化的 LLM 内容安全网关",
-      "weighted_score": 0.695,
+      "depth_score": 0.7,
+      "reason_zh": "Databricks分享用AI加速事件调查的实践，对运维和AI应用有高参考价值。",
+      "summary_zh": "Databricks在博客中分享了如何利用AI加速事件调查的实践经验。他们使用AI技术来自动化调试数千个问题，显著提高了故障排查效率。文章详细介绍了其AI系统如何分析日志、识别模式并辅助工程师定位根因，从而缩短平均修复时间。这一方法展示了AI在运维领域的实际应用潜力，为其他企业提供了可借鉴的框架。",
+      "title_zh": "Databricks如何利用AI加速事件调查",
+      "weighted_score": 0.755,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.9,
         "novelty": 0.7,
         "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "9150b2485279aba0",
+      "story_id": "ee40283d8f05abf2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7677432175923036200"
-        }
-      ]
-    },
-    {
-      "id": "5537a6ae6a246292",
-      "source_id": "zh-paddysun-top",
-      "title": "[Agent 考古] 别再给机器人装“大脑”了！1986 年的“三无”架构证明：越不思考，活得越久。",
-      "url": "https://www.paddysun.top/archives/5013",
-      "published_at": "2026-08-23T19:00:00+00:00",
-      "raw_text": "1986年Brooks提出Subsumption架构，以行为分层和固定优先级仲裁彻底否定符号主义AI的中央世界模型。本文对比Shakey/STRIPS路线，详解抑制/禁止机制、优雅降级实验，并揭示其与LLM Agent的结构呼应，厘清反应式控制的本质边界。\n<p><a href=\"https://www.paddysun.top/archives/5013\">Source</a></p>",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深度剖析1986年Subsumption架构，揭示其与LLM Agent的结构呼应，提供反直觉洞察，值得一读。",
-      "summary_zh": "本文回顾1986年Brooks提出的Subsumption架构，该架构以行为分层和固定优先级仲裁彻底否定符号主义AI的中央世界模型。文章对比了Shakey/STRIPS路线，详解抑制/禁止机制和优雅降级实验，并揭示其与LLM Agent的结构呼应，厘清反应式控制的本质边界。作者认为，这种“三无”架构（无中央模型、无规划、无表征）证明了越不思考，系统越鲁棒，对当前AI Agent设计具有重要启示。",
-      "title_zh": "[Agent考古] 别再给机器人装“大脑”了！1986年的“三无”架构证明：越不思考，活得越久。",
-      "weighted_score": 0.6,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.6
-      },
-      "story_id": "6aadf6f5bf213a6b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-paddysun-top",
-          "url": "https://www.paddysun.top/archives/5013"
+          "source_id": "databricks-blog",
+          "url": "https://www.databricks.com/blog/how-databricks-uses-ai-accelerate-incident-investigation"
         }
       ]
     },
@@ -367,35 +369,35 @@
       ]
     },
     {
-      "id": "7881d1950777f0ac",
-      "source_id": "zh-juejin",
-      "title": "OpenAI把Codex底层从TS重写成Rust，我拆开看了下它的三层架构",
-      "url": "https://juejin.cn/post/7677428850285199370",
-      "published_at": "2026-08-24T11:57:07+00:00",
-      "raw_text": "OpenAI 8月19日把 Codex Agent Harness 完整开源，Rust核心取代Node.js，三层接口从CI脚本到产品级Agent全覆盖。我花了一下午拆开它的架构设计，聊聊这套\"AI编",
+      "id": "db95d6592c1da01a",
+      "source_id": "artificial-lawyer",
+      "title": "Legal AI Works, Why Is the Return So Hard to Find?",
+      "url": "https://www.artificiallawyer.com/2026/08/24/legal-ai-works-why-is-the-return-so-hard-to-find/",
+      "published_at": "2026-08-24T06:45:24+00:00",
+      "raw_text": "By Alejandro Castellano, CEO, Caddi. Two years ago the question in front of every management committee was whether the AI worked. That question is largely <a class=\"mh-excerpt-more\" href=\"https://www.artificiallawyer.com/2026/08/24/legal-ai-works-why-is-the-return-so-hard-to-find/\" title=\"Legal AI Works, Why Is the Return So Hard to Find?\">...</a>",
       "category_hint": [
-        "技巧与观点"
+        "行业动态"
       ],
       "image_url": null,
-      "category": "开源项目",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "深入分析OpenAI Codex开源架构，揭示Rust重写细节，对开发者有启发。",
-      "summary_zh": "OpenAI开源了Codex Agent Harness，将底层从TypeScript重写为Rust。文章拆解了其三层架构，从CI脚本到产品级Agent，探讨了设计取舍和工程实践，对理解AI编程工具的内部机制有参考价值。",
-      "title_zh": "OpenAI把Codex底层从TS重写成Rust，我拆开看了下它的三层架构",
-      "weighted_score": 0.67,
+      "reason_zh": "探讨法律AI落地后回报难寻的问题，分析行业痛点，具有实践指导意义。",
+      "summary_zh": "文章指出两年前法律AI是否有效的问题已基本解决，但如今回报难以找到。作者作为Caddi CEO，分析法律AI在提高效率的同时，为何难以转化为实际商业回报。可能原因包括成本高、集成难、用户接受度低等。文章呼吁行业重新思考AI价值衡量标准。",
+      "title_zh": "法律AI有效，为何回报难寻？",
+      "weighted_score": 0.65,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
+        "source_authority": 0.7,
+        "novelty": 0.6,
         "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "79aec9aafbd2f5c5",
+      "story_id": "c578801acb2aa554",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7677428850285199370"
+          "source_id": "artificial-lawyer",
+          "url": "https://www.artificiallawyer.com/2026/08/24/legal-ai-works-why-is-the-return-so-hard-to-find/"
         }
       ]
     }
