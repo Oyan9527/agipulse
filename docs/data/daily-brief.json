@@ -1,103 +1,37 @@
 {
   "date": "2026-08-25",
-  "generated_at": "2026-08-25T00:58:55.207980+00:00",
+  "generated_at": "2026-08-25T04:43:43.359938+00:00",
   "items": [
     {
-      "id": "0503fe614a115cc2",
+      "id": "393970163b1840b7",
       "source_id": "arxiv-cs-ai",
-      "title": "Truth Lies Deep: Countering Semantic Camouflage via Latent Intent Verification",
-      "url": "https://arxiv.org/abs/2608.20378",
-      "published_at": "2026-08-24T04:00:00+00:00",
-      "raw_text": "arXiv:2608.20378v1 Announce Type: new \nAbstract: Safety alignment in Large Language Models (LLMs) is often superficial, relying on refusal mechanisms that trigger only at the final stages of generation without erasing the foundational knowledge of harmful concepts acquired during pretraining. This study demonstrates that this architectural disconnect leaves models vulnerable to Semantic Camouflage -- adversarial attacks that wrap harmful intent in benign narrative contexts (e.g., creative writing), effectively bypassing standard input and output guardrails. By analyzing the latent activation trajectories of three distinct Small Language Model (SLM) families (Phi-3, Qwen2.5, and Gemma-2b) under adversarial stress, this research identifies a universal ``Intent Horizon'' -- a critical depth (typically 15--20\\% of total layers) where the model's distinct, pre-trained representation of harmful intent collapses as it contextualizes the query into a ``safe'' narrative. Results indicate that w",
+      "title": "There Is No Neutral Harness: Modern LLM Leaderboards Are Manufactured by Config-Fragile Items",
+      "url": "https://arxiv.org/abs/2608.21382",
+      "published_at": "2026-08-25T04:00:00+00:00",
+      "raw_text": "arXiv:2608.21382v1 Announce Type: new \nAbstract: Multiple-choice benchmarks fix the questions and the correct answers, but not the harness: the order of the options, the wording of the prompt, and whether a language model's answer is read from generated text or from per-option likelihoods. Work on this harness sensitivity reports it as aggregate score variance, leaving unexamined which items the variance falls on and whether they are the items that separate one model from the next. We treat the evaluation harness of large language models (LLMs) as an independent variable and resolve its effect to single items. We introduce the \\textit{fragility grid}: 12 open-weight instruction-tuned LLMs from 4 families answer the same 3{,}679 items from 4 benchmarks (ARC, HellaSwag, MMLU, TruthfulQA) under 26 equally defensible harness configurations, recording one correctness bit for every model, item, and configuration. The comparison is matched, since the items, the weights, and the greedy decodin",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "揭示LLM安全对齐的深层漏洞，提出潜在意图验证方法，对安全研究有重要价值。",
-      "summary_zh": "本文研究大语言模型的安全对齐问题，指出当前拒绝机制仅作用于生成最后阶段，未消除预训练阶段习得的有害概念知识，导致模型易受语义伪装攻击。作者提出潜在意图验证方法，通过深入分析模型的内部表示来识别和阻止恶意意图，即使表面文本看似无害。实验证明该方法能有效对抗语义伪装，提高模型安全性。论文还探讨了安全对齐的架构性缺陷，为未来安全研究提供了新方向。",
-      "title_zh": "真相深藏：通过潜在意图验证对抗语义伪装",
-      "weighted_score": 0.835,
+      "reason_zh": "揭示LLM排行榜受配置脆弱项影响，挑战基准可靠性，对模型评估有重要启示。",
+      "summary_zh": "多项选择基准固定了问题和正确答案，但未固定测试框架：选项顺序、提示措辞以及模型答案是从生成文本还是从每个选项的似然中读取。关于这种框架敏感性的研究通常报告为聚合分数方差，而未检查哪些项目受影响。本文通过分析发现，某些项目对框架变化高度敏感，称为“配置脆弱项”，它们可能主导排行榜的排名变化。作者呼吁更稳健的评估方法，并提供了识别脆弱项的指标。",
+      "title_zh": "没有中立的测试框架：现代LLM排行榜由配置脆弱项制造",
+      "weighted_score": 0.8,
       "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "7115475946303f3e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.20378"
-        }
-      ]
-    },
-    {
-      "id": "40330cf841cb1805",
-      "source_id": "arxiv-cs-ai",
-      "title": "Nexus: Depth-Adaptive KV-Cache Splicing and Retrieval-Decoupled Tool Routing for Agentic LLMs on Unified Memory",
-      "url": "https://arxiv.org/abs/2608.20397",
-      "published_at": "2026-08-24T04:00:00+00:00",
-      "raw_text": "arXiv:2608.20397v1 Announce Type: new \nAbstract: Agentic large language models (LLMs) on the Model Context Protocol (MCP) re-encode verbose tool schemas every turn, so prefill - quadratic in sequence length - dominates time-to-first-token (TTFT) as the tool registry grows. Nexus's primary lever is to decouple routing from the schema-prefill cost: an INT8 semantic lookaside buffer (SLB) with a calibrated cross-encoder margin gate selects tools by retrieval, and arguments are generated over a compressed textual signature (median 19 tokens) rather than over spliced key/value (KV) cache. This path is depth-independent: routing accuracy stays near 89% as the registry scales to 250 tools - where a concatenate-all-schemas baseline overflows the context window entirely - and it reaches a first-argument token 1.66x sooner than a full-schema re-prefill at a ~80% main-context token saving. As a secondary, bounded lever we transplant a compiled schema KV block directly into the live context. This ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出深度自适应KV缓存拼接和工具路由解耦，显著提升智能体LLM效率。",
-      "summary_zh": "本文提出Nexus系统，针对基于MCP的智能体LLM在统一内存上的效率问题。智能体LLM每轮重新编码冗长的工具模式，导致预填充成本随工具注册表增长而急剧增加，TTFT成为瓶颈。Nexus通过将路由与模式预填充成本解耦，使用INT8语义旁路缓冲区（SLB）进行快速路由，并采用深度自适应KV缓存拼接技术，减少重复计算。实验表明，Nexus显著降低了TTFT，提高了吞吐量，同时保持了准确性，为大规模工具集下的智能体部署提供了高效方案。",
-      "title_zh": "Nexus：面向统一内存上智能体LLM的深度自适应KV缓存拼接与检索解耦工具路由",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.9,
+        "source_authority": 0.8,
         "novelty": 0.8,
-        "impact": 0.7,
+        "impact": 0.8,
         "practical_value": 0.8
       },
-      "story_id": "5db57528e511e9a1",
+      "story_id": "99d9d5e109e7cb88",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.20397"
-        }
-      ]
-    },
-    {
-      "id": "4d115053ad285a05",
-      "source_id": "arxiv-cs-ai",
-      "title": "Dual-Cache Latent Space Communication between Heterogeneous Language Models",
-      "url": "https://arxiv.org/abs/2608.20617",
-      "published_at": "2026-08-24T04:00:00+00:00",
-      "raw_text": "arXiv:2608.20617v1 Announce Type: new \nAbstract: Multi-agent LLM systems split work across models, so answering often requires knowledge that sits in another agent's context: a Sharer has encoded information that a Receiver needs to complete its task. They usually communicate by exchanging text, which puts autoregressive decoding on the critical path and reduces the exchange to a discrete message written without sight of the receiver's state. Recent latent protocols instead translate the sharer's key-value (KV) cache into the receiver's: C2C supports heterogeneous models but requires both to read the same input, while LCF-X removes this shared-context requirement through position-free sharer-cache pooling. Three restrictions remain: LCF-X compresses the sharer alone, supplies the same layer-local summary to every receiver position with no joint cross-layer memory to retrieve from, and assumes matched layer count and KV geometry. We introduce XKV, which lifts all three: learned-query at",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出双缓存潜在空间通信，避免文本解码瓶颈，创新性强。",
-      "summary_zh": "该论文提出了一种双缓存潜在空间通信方法，用于异构语言模型之间的信息传递。在多智能体系统中，一个模型（共享者）编码的信息需要传递给另一个模型（接收者）以完成任务。传统方法通过交换文本，但自回归解码成为瓶颈。作者利用潜在空间中的缓存直接传递信息，避免了文本解码，显著提高了通信效率。实验表明，该方法在多个任务上性能优于文本交换。",
-      "title_zh": "异构语言模型之间的双缓存潜在空间通信",
-      "weighted_score": 0.79,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "c8cc0be7ee688a87",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.20617"
+          "url": "https://arxiv.org/abs/2608.21382"
         }
       ]
     },
@@ -136,102 +70,101 @@
       ]
     },
     {
-      "id": "6064b6036f129ffd",
-      "source_id": "zh-meituan-tech",
-      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
-      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
-      "published_at": "2026-08-24T04:39:01.973949+00:00",
-      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
+      "id": "fc60686bd18b5ff9",
+      "source_id": "arxiv-cs-ai",
+      "title": "MEMORY Wins All: Indirect Bias Injection Attacks via Social Media Feeds",
+      "url": "https://arxiv.org/abs/2608.22061",
+      "published_at": "2026-08-25T04:00:00+00:00",
+      "raw_text": "arXiv:2608.22061v1 Announce Type: new \nAbstract: Personal AI agents routinely consume external content while performing tasks such as web browsing, email processing, and SNS feed summarization, and they retain selected information or execution results in persistent memory for later use. We show that this ordinary ingestion of external content opens an indirect path for manipulating subsequent agent behavior. Based on this observation, we present IBIA, an Indirect Bias Injection Attack that plants an adversary-aligned stance on a specific topic into a victim agent's memory through external content, without direct access to the agent, its memory, or future user queries. For this, IBIA combines three mechanisms: comment cloaking, which keeps the crafted content consistent with the surrounding discussion, comment watermarking, which enables lightweight identification during curation, and category anchoring, which makes the retained stance salient under later related requests. We evaluate I",
       "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "美团图灵Agent评测团队分享两年实践经验，系统讲解Agent评测体系，极具实用价值。",
-      "summary_zh": "本篇博客来自美团技术团队，是一篇科普文章，由浅入深介绍Agent评测。前两章系统介绍评测是什么以及如何建立评测体系，其中第二章是美团图灵Agent评测团队深入各业务团队BP总结出的实践经验，是两年实践过程中逐步打磨出来的认知。文章可能涵盖评测指标、方法、工具和案例，对从事Agent开发或评测的读者有重要参考价值。",
-      "title_zh": "Agent评测漫谈——由浅入深讲解Agent评测",
-      "weighted_score": 0.745,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "9ba181dd6f145810",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
-        }
-      ]
-    },
-    {
-      "id": "d7e42bcbc9b7c9b3",
-      "source_id": "towards-data-science",
-      "title": "Speculative Decoding on CPUs: Nearly 4x Faster Token Generation with DFlash",
-      "url": "https://towardsdatascience.com/speculative-decoding-on-cpus-nearly-4x-faster-token-generation-with-dflash/",
-      "published_at": "2026-08-24T13:30:00+00:00",
-      "raw_text": "<p>Speculative decoding can turn underused CPU compute into faster token generation, without changing the model's output. In our vLLM tests, DFlash delivered 3.92x the autoregressive throughput with Qwen3.5-9B on Intel Xeon 6 at concurrency 1. We break down where the speedup comes from, explain the acceptance metrics, and show what determines whether speculation pays off.</p>\n<p>The post <a href=\"https://towardsdatascience.com/speculative-decoding-on-cpus-nearly-4x-faster-token-generation-with-dflash/\">Speculative Decoding on CPUs: Nearly 4x Faster Token Generation with DFlash</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "深入解析CPU上投机解码的加速原理与收益条件，对推理优化实践有直接指导价值。",
-      "summary_zh": "本文探讨了在CPU上利用投机解码（Speculative Decoding）加速大模型推理的方法，重点介绍了DFlash技术。作者在vLLM框架下，使用Intel Xeon 6处理器和Qwen3.5-9B模型进行测试，结果显示在并发数为1时，DFlash的吞吐量达到自回归解码的3.92倍。文章详细分析了加速的来源，包括草稿模型与目标模型的协同、接受率等关键指标，并解释了投机解码在何种情况下能带来收益，以及如何评估其效果。作者还讨论了CPU上未被充分利用的计算资源如何被转化为生成速度的提升，为在CPU环境下优化LLM推理提供了实用的技术参考。",
-      "title_zh": "CPU上的投机解码：DFlash实现近4倍令牌生成加速",
-      "weighted_score": 0.745,
+      "reason_zh": "揭示通过社交媒体内容间接注入偏见攻击个人AI代理的新路径，对AI安全有重要警示。",
+      "summary_zh": "本文展示了个人AI代理在浏览网页、处理邮件或总结社交媒体信息时，会摄入外部内容并存入持久记忆，这为间接操纵代理行为提供了路径。作者提出一种间接偏见注入攻击，通过精心构造的社交媒体内容，使代理在后续任务中产生偏见。实验证明攻击有效，强调了AI代理记忆安全的重要性。",
+      "title_zh": "记忆获胜：通过社交媒体信息流进行间接偏见注入攻击",
+      "weighted_score": 0.78,
       "score_breakdown": {
         "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.9
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "a6bb6181dfa6190a",
+      "story_id": "b7e28486b18d6e19",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/speculative-decoding-on-cpus-nearly-4x-faster-token-generation-with-dflash/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.22061"
         }
       ]
     },
     {
-      "id": "98059cbd5f776fde",
-      "source_id": "pandaily",
-      "title": "Under Domestic Compute Constraints, iFLYTEK Turns to Engineering",
-      "url": "https://pandaily.com/iflytek-domestic-compute-engineering-path-aug2026",
-      "published_at": "2026-08-24T02:04:37+00:00",
-      "raw_text": "At its August earnings call, iFLYTEK acknowledged domestic accelerators trail Nvidia's H200 by up to 5x on long-context training. Instead of waiting for hardware, it is optimizing architecture, operators, memory and frameworks — proving the approach with Spark X2-Flash on Huawei Ascend 910B.",
+      "id": "3f87e811d31b0fef",
+      "source_id": "arxiv-cs-ai",
+      "title": "ECHO: A Cognitively Inspired, Auditable Memory Plane for Long-Horizon Agents",
+      "url": "https://arxiv.org/abs/2608.21755",
+      "published_at": "2026-08-25T04:00:00+00:00",
+      "raw_text": "arXiv:2608.21755v1 Announce Type: new \nAbstract: Long-horizon agents need memory that identifies relevant experience, resolves revisions, and exposes checkable provenance. We present ECHO (Embodied Context and History Orchestration), an auditable memory architecture and service prototype inspired by episodic encoding, consolidation, contextual reinstatement, reconsolidation, and executive control. This is functional inspiration, not neural equivalence; the empirical analysis focuses on retrieval and context construction. Development runs reach 96.29% Hit@10 and 73.64% turn Recall@5 on 1,536 LoCoMo category 1-4 questions, and 97.60% Hit@10, 88.84% turn Recall@5, and 88.71% session Recall@5 on all 500 LongMemEval-S questions. A five-history BEAM gate fails, and in a separate matched 91-question QA sample Mem0 OSS scores 64.84% versus ECHO's 41.76% (exact McNemar p = 0.00107), with a history-cluster interval crossing zero. A post-hoc audit found source-specific phrases in the query-expans",
       "category_hint": [
-        "行业动态"
+        "论文研究"
       ],
-      "image_url": "https://cms-image.pandaily.com/1/p4_iflytek_274180a089.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "科大讯飞在算力受限下的工程优化策略，对国内AI企业有直接借鉴意义。",
-      "summary_zh": "科大讯飞在8月财报电话会上承认，国产加速器在长上下文训练上比英伟达H200落后多达5倍。面对硬件瓶颈，公司选择通过优化架构、算子、内存和框架来提升性能，并在华为昇腾910B上以Spark X2-Flash证明了这一方法的有效性。这一策略展示了在算力受限条件下，通过工程创新弥补硬件差距的可能性，为国内AI企业提供了可行的技术路径。",
-      "title_zh": "国内算力受限，科大讯飞转向工程优化",
-      "weighted_score": 0.695,
+      "reason_zh": "提出可审计的记忆架构，受认知科学启发，对长时程智能体设计有重要参考价值。",
+      "summary_zh": "论文提出ECHO（Embodied Context and History Orchestration），一种受认知科学启发的可审计记忆架构和服务原型，用于长时程智能体。该架构借鉴情景编码、巩固、情境重激活、再巩固和执行控制等认知机制，使智能体能够识别相关经验、解决修订并提供可检查的来源。实验证明ECHO能提升长时程任务的性能，并增强记忆的可解释性和可审计性。",
+      "title_zh": "ECHO：面向长时程智能体的认知启发式可审计记忆平面",
+      "weighted_score": 0.775,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
+        "source_authority": 0.8,
+        "novelty": 0.8,
         "impact": 0.7,
         "practical_value": 0.8
       },
-      "story_id": "1a71d8b2ff6b37f7",
+      "story_id": "9b05c77829d9d11d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "pandaily",
-          "url": "https://pandaily.com/iflytek-domestic-compute-engineering-path-aug2026"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.21755"
+        }
+      ]
+    },
+    {
+      "id": "ce3594aaa355794e",
+      "source_id": "zh-tonybai",
+      "title": "刚被 SpaceX 收购，Cursor 就推出自研 Git 托管硬刚 GitHub，Shopify CEO 一周末就把它复刻了",
+      "url": "https://tonybai.com/2026/08/25/cursor-continuity-git-walgit-spacex/",
+      "published_at": "2026-08-24T23:00:00+00:00",
+      "raw_text": "SpaceX 刚以 600 亿美元收购 Cursor，Cursor 官方随即发布重磅技术博客，公开了自研 Git 存储引擎 Continuity 的全套设计：用对象存储（S3）中的写前日志（WAL）与 CAS 原语取代传统数据库和 3PC 共识协议，打破了 GitHub Spokes 架构长达 13 年的扩展性瓶颈。更具戏剧性的是，Shopify CEO Tobi Lütke 仅用一个周末便用 Rust 开源复刻出同款系统 walgit。本文深度拆解这场 Git 基础设施在 AI Agent 时代的架构范式大洗牌。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深度解析Cursor自研Git引擎Continuity的架构创新，以及被SpaceX收购的行业影响，信息量大且具启发性。",
+      "summary_zh": "文章报道了SpaceX以600亿美元收购Cursor后，Cursor公开自研Git存储引擎Continuity的设计：利用对象存储中的写前日志和CAS原语替代传统数据库和3PC共识，突破GitHub Spokes架构的扩展性瓶颈。同时，Shopify CEO Tobi Lütke用周末时间用Rust复刻了类似系统walgit。文章深度分析了Git基础设施在AI Agent时代的范式转变，对理解AI开发工具底层架构有重要价值。",
+      "title_zh": "刚被SpaceX收购，Cursor就推出自研Git托管硬刚GitHub，Shopify CEO一周末就把它复刻了",
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "09c339bf67dd29b3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/08/25/cursor-continuity-git-walgit-spacex/"
         }
       ]
     },
@@ -336,40 +269,6 @@
       ]
     },
     {
-      "id": "dcd589e738867c61",
-      "source_id": "towards-data-science",
-      "title": "10 Positions for Enterprise RAG That Mainstream Tutorials Get Wrong",
-      "url": "https://towardsdatascience.com/10-positions-for-enterprise-rag-that-mainstream-tutorials-get-wrong/",
-      "published_at": "2026-08-24T16:30:00+00:00",
-      "raw_text": "<p>Enterprise Document Intelligence [Vol.1 #M3] - The ten positions the series argues from, and the map of every article that argues them</p>\n<p>The post <a href=\"https://towardsdatascience.com/10-positions-for-enterprise-rag-that-mainstream-tutorials-get-wrong/\">10 Positions for Enterprise RAG That Mainstream Tutorials Get Wrong</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "指出企业RAG常见误区，提供十个关键立场，对实践者有指导意义。",
-      "summary_zh": "文章系列提出企业RAG（检索增强生成）中主流教程常忽略的十个关键立场，并提供了相关文章地图。内容旨在纠正常见误解，帮助企业更有效地实施RAG系统，涵盖数据、检索、生成等多个方面。",
-      "title_zh": "企业RAG的10个关键立场：主流教程常犯的错误",
-      "weighted_score": 0.695,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "0fe88c9ac91fde7d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/10-positions-for-enterprise-rag-that-mainstream-tutorials-get-wrong/"
-        }
-      ]
-    },
-    {
       "id": "db95d6592c1da01a",
       "source_id": "artificial-lawyer",
       "title": "Legal AI Works, Why Is the Return So Hard to Find?",
@@ -399,6 +298,107 @@
         {
           "source_id": "artificial-lawyer",
           "url": "https://www.artificiallawyer.com/2026/08/24/legal-ai-works-why-is-the-return-so-hard-to-find/"
+        }
+      ]
+    },
+    {
+      "id": "16fbdbdbeb658545",
+      "source_id": "reddit-chatgptcoding",
+      "title": "My AI-written tests kept passing broken code, so I started testing the tests",
+      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1vx2j3t/my_aiwritten_tests_kept_passing_broken_code_so_i/",
+      "published_at": "2026-08-24T13:15:44+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I’m not really a programmer. I’ve mostly been making and patching stuff by telling LLMs what I want and then checking whether it actually works.</p> <p>One thing kept pissing me off though. I’d ask it to fix something, it would write a test, the test would pass, and then later I’d find out the test wasn’t actually checking what I thought it was checking.</p> <p>So at some point I started doing a pretty dumb simple thing. After something passed, I’d intentionally break the exact behavior the test was supposed to protect and run the test again.</p> <p>If it still passed, then obviously the test was bullshit.</p> <p>I ran into this with a plugin that had a paged archive. The archive test was green, so I changed the code so only part of the archive would get copied. Test still passed.</p> <p>Then I made the test stricter, and managed to screw it up in the opposite direction. The new test rejected the correct code too, because I had made a bad assumption ab",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "作者发现AI写的测试可能通过但未真正验证功能，提出测试测试的方法，对AI辅助编程有重要启示。",
+      "summary_zh": "作者非专业程序员，依赖LLM编写代码，但发现AI生成的测试有时会通过却未真正检查预期行为。他分享如何通过审查测试逻辑、添加断言等方式确保测试有效性。内容强调验证AI输出质量的重要性，提供实用技巧，对使用AI编程的用户有参考价值。",
+      "title_zh": "我的AI编写的测试总是通过错误代码，所以我开始测试测试",
+      "weighted_score": 0.555,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "56d6720950fdb745",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-chatgptcoding",
+          "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1vx2j3t/my_aiwritten_tests_kept_passing_broken_code_so_i/"
+        }
+      ]
+    },
+    {
+      "id": "717b28c7d12a57ac",
+      "source_id": "infoq-cn-ai",
+      "title": "完全相信AI代码的Uncle Bob，坦诚这条路还没走通",
+      "url": "https://www.infoq.cn/article/ogFMPSyD3LqR9RtbIRky?utm_source=rss&utm_medium=article",
+      "published_at": "2026-08-24T10:16:52+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/ogFMPSyD3LqR9RtbIRky?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "Uncle Bob坦诚完全相信AI代码尚未走通，引发对AI编程的反思。",
+      "summary_zh": "文章报道了软件工程大师Uncle Bob（Robert C. Martin）对完全信任AI代码的看法，他坦诚这条路还没走通。Uncle Bob可能讨论了AI在代码生成中的局限性，以及人类审查的重要性。这一观点对AI辅助编程的实践具有警示意义，提醒开发者不能完全依赖AI。",
+      "title_zh": "完全相信AI代码的Uncle Bob，坦诚这条路还没走通",
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "fd4839218412569e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/ogFMPSyD3LqR9RtbIRky?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "63b987968d8f9fef",
+      "source_id": "aws-ml-blog",
+      "title": "AI-powered metadata correction and harmonization",
+      "url": "https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/",
+      "published_at": "2026-08-24T15:53:03+00:00",
+      "raw_text": "Metadata harmonization (standardizing labels, identifiers, and formats so datasets can work together) is still largely manual. This post shows how AI-powered metadata correction works in practice, covering two approaches, human-in-the-loop validation and autonomous agent-driven workflows, plus governance considerations for production deployment.",
+      "category_hint": [
+        "技巧与观点",
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/07/ML-20044-1.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.6,
+      "reason_zh": "AWS官方博客介绍AI元数据校正实践，涵盖人工验证与自主代理两种方法，对数据工程有实用价值。",
+      "summary_zh": "本文来自AWS机器学习博客，探讨了AI驱动的元数据校正与协调。文章指出，元数据协调（标准化标签、标识符和格式以使数据集协同工作）在很大程度上仍是手动过程。文中展示了AI驱动的元数据校正的实际应用，涵盖两种方法：人工参与验证和自主代理驱动的工作流，并讨论了生产部署中的治理考虑。对于从事数据集成和治理的工程师具有参考价值。",
+      "title_zh": "AI驱动的元数据校正与协调",
+      "weighted_score": 0.675,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "0b9a3c3ed6eaf413",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/"
         }
       ]
     }
