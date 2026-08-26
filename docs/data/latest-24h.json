@@ -1,5 +1,39 @@
 [
   {
+    "id": "b1b7eec3f34c87fa",
+    "source_id": "arxiv-cs-ai",
+    "title": "Minima-KV: Retention-Preserving KV Cache Compression with Mixed-Format Paged Attention",
+    "url": "https://arxiv.org/abs/2608.23834",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23834v1 Announce Type: new \nAbstract: The key-value (KV) cache is a primary capacity and bandwidth bottleneck in long-context LLM serving. We present Minima-KV, a retention-preserving hierarchy for mixed-format paged attention. Recent and protected Anchor pages remain in FP8, while older non-anchor pages move to packed TQ3; every live-request page remains addressable. Format-specific kernels compute partial attention states and combine them through a globally normalized online-softmax merge, enabling direct heterogeneous decode without a cache-sized dense shadow. Across separate, configuration-bound Qwen3.6-27B profiles on a single 96-GB NVIDIA RTX PRO 6000 Blackwell GPU, deployment accounting reports 18.3 KiB of attention KV per live token, corresponding to 3.50x compression relative to BF16 and 1.75x relative to FP8. A materializing quality profile matches its dense control on 16K RULER needle-in-a-haystack tasks. On the same 503-question LongBench v2 set, measured deltas ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出混合格式分页注意力的KV缓存压缩方法，显著提升长上下文服务效率。",
+    "summary_zh": "Minima-KV提出了一种保留性的KV缓存压缩层次结构，采用混合格式分页注意力。在长上下文LLM服务中，KV缓存是主要的容量和带宽瓶颈。该方法将近期和受保护的Anchor页面保留在FP8格式，而较旧的非Anchor页面则转换为打包的TQ3格式，同时保持每个活动请求页面的可寻址性。这种格式特定的键管理策略在保持缓存保留性的同时，有效减少了内存占用和带宽需求。",
+    "title_zh": "Minima-KV：混合格式分页注意力的保留性KV缓存压缩",
+    "weighted_score": 0.875,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.9
+    },
+    "story_id": "ff01582fd2b795c7",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.23834"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "7a0837131079402c",
     "source_id": "gh-llamacpp",
     "title": "ggerganov/llama.cpp v0.3.0",
@@ -29,6 +63,142 @@
       {
         "source_id": "gh-llamacpp",
         "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.3.0"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "d2f6f3b0662b6385",
+    "source_id": "arxiv-cs-ai",
+    "title": "Serving Masked Diffusion LLMs: Characterization and Design Principles from Real Hardware",
+    "url": "https://arxiv.org/abs/2608.23807",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23807v1 Announce Type: new \nAbstract: Masked diffusion language models (dLLMs) can in principle generate text faster than autoregressive (AR) models, since they denoise many tokens at once. Recent systems have begun building serving infrastructure for dLLMs, but none first measure how these models behave under real, concurrent serving load. Serving systems built without this grounding risk carrying over assumptions from AR serving that may not hold for dLLMs. We characterize dLLM serving to close this gap, using LLaDA-8B-Instruct with a D2F (Discrete Diffusion Forcing) LoRA adapter on a single NVIDIA H200 GPU, evaluated on GSM8K and HumanEval. We report three findings. First, request difficulty, the number of denoising steps a request needs, is discrete rather than continuous: requests fall into 11 fixed step-count levels (178 + 29k), and no signal we test predicts the level before generation starts (best R2 = 0.150). Second, benchmarks with short generation budgets below 32",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "首次从真实硬件测量掩码扩散LLM的并发服务行为，为系统设计提供实证基础。",
+    "summary_zh": "该研究对掩码扩散语言模型（dLLMs）在真实并发服务负载下的行为进行了表征，并提出了设计原则。尽管dLLMs理论上可以比自回归模型更快地生成文本，但现有服务系统缺乏对其实时行为的测量。该研究通过硬件实验，揭示了dLLMs在并发服务中的性能特征，为构建高效的dLLM服务基础设施提供了关键见解和设计指导。",
+    "title_zh": "服务掩码扩散LLM：来自真实硬件的表征与设计原则",
+    "weighted_score": 0.855,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.8
+    },
+    "story_id": "344b284e82b07225",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.23807"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "0b2e5d6113d6e73d",
+    "source_id": "arxiv-cs-ai",
+    "title": "In-Context Inpainting for Time Series Forecasting",
+    "url": "https://arxiv.org/abs/2608.23855",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23855v1 Announce Type: new \nAbstract: We propose ICI-Time, a novel framework that reframes time series forecasting as a visual inpainting task, leveraging the generalisation power of large vision models (LVMs). Unlike methods that require specialised temporal architectures and extensive domain-specific training, ICI-Time transforms time series into structured visual representations (area charts) and applies visual in-context learning, reformulating forecasting as pattern completion within a grid-structured prompt that pre-trained vision transformers can solve without fine-tuning or architectural modification. Temporal dependencies are represented through spatial layout, with a consistent, invertible mapping between numerical and visual domains. Extensive experiments across epidemiology, meteorology, and power systems demonstrate that ICI-Time performs competitively against deep learning baselines and shows promising adaptability under limited-data settings, introducing a new",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "将时间序列预测重构为视觉修复任务，利用大视觉模型泛化能力，方法新颖。",
+    "summary_zh": "ICI-Time提出了一种新颖的框架，将时间序列预测重构为视觉修复任务，利用大型视觉模型（LVMs）的泛化能力。与需要专门时间架构和大量领域训练的方法不同，ICI-Time将时间序列转换为结构化视觉表示，并通过视觉修复进行预测。该方法避免了传统时间序列模型的复杂性，同时利用了视觉模型强大的模式识别能力，为时间序列预测提供了新的思路。",
+    "title_zh": "用于时间序列预测的上下文修复",
+    "weighted_score": 0.855,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.8
+    },
+    "story_id": "ea8ce5bdefc6c30f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.23855"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6bee297586f00258",
+    "source_id": "arxiv-cs-ai",
+    "title": "SA-Bench: Evaluating Semantic Alignment in LLM-Based Paper Reproduction",
+    "url": "https://arxiv.org/abs/2608.24252",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.24252v1 Announce Type: new \nAbstract: LLM agents can generate paper reproduction code, yet often produce scientifically unfaithful implementations. We define this failure mode as semantic drift, where generated code silently diverges from the paper's specifications. We introduce SemanticAlign-Bench(SA-Bench), a diagnostic benchmark covering 30 papers from ICLR, ICML and NeurIPS 2025. For each paper, we decompose its specifications into atomic and verifiable implementation claims, which we call Semantic Alignment Units (SAUs) and evaluate repositories along four diagnostic dimensions spanning numerical, methodological, protocol and ordering drift. In total, we construct 1,491 SAUs across five ML domains and evaluate 12 generator configurations (4 models $\\times$ 3 scaffolds). Even the strongest configuration (Claude+PaperCoder) achieves a mean SAU score of only 0.301 out of 1.0, with an overall mean of 0.221 across 360 evaluations. A failure taxonomy reveals that agents attem",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "首个针对LLM论文复现中语义漂移的基准，定义问题并提供诊断工具，对AI科研有重要价值。",
+    "summary_zh": "本文指出LLM智能体生成的论文复现代码常存在科学不忠实实现，定义为语义漂移。为此提出SA-Bench基准，覆盖ICLR、ICML和NeurIPS 2025的30篇论文，用于评估生成代码与论文规范的对齐程度。通过该基准，研究者可量化语义漂移并改进复现方法，提升AI辅助科研的可靠性。",
+    "title_zh": "SA-Bench：评估基于LLM的论文复现中的语义对齐",
+    "weighted_score": 0.855,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.8
+    },
+    "story_id": "da0da1f5f56db65c",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.24252"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "b5687dec1e8964ac",
+    "source_id": "arxiv-cs-ai",
+    "title": "AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace",
+    "url": "https://arxiv.org/abs/2608.23740",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23740v1 Announce Type: new \nAbstract: Concurrent multi-agent coding promises division of labor across modules, robustness through redundancy, and parallel exploration at the natural granularity of multi-file projects. Realtime collaborative editing protocols solve this coordination problem for human teams via Conflict-free Replicated Data Types (CRDTs), but the LLMs underneath generate one token at a time and existing multi-agent coding systems inherit this serial limit: they either sequence agents through phase handoffs or pool independent samples without coordination, and a single agent abandons up to half of hard tasks with a one-file stub-and-exit. AgentRoom is a realtime collaborative editing protocol for concurrent coding agents. Its runtime layer exposes file-level claim, status, and broadcast as MCP tools on a CRDT-merged shared filesystem. Five frontier coding-CLI models ran four backend coding tasks, with cross-language checks in Python DevBench and Rust+axum. For ",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "提出基于CRDT的并发多智能体编码框架，解决协作一致性问题，具有工程实践价值。",
+    "summary_zh": "AgentRoom提出了一种基于CRDT（无冲突复制数据类型）的共享工作区，用于支持并发多智能体编码。该框架允许多个LLM智能体在共享工作区中并行编辑代码，通过CRDT确保一致性，从而实现模块间的分工、冗余带来的鲁棒性以及多文件项目自然粒度上的并行探索。该研究解决了多智能体协作中的协调问题，为构建高效的AI协作开发环境提供了新思路。",
+    "title_zh": "AgentRoom：基于CRDT共享工作区的并发多智能体编码",
+    "weighted_score": 0.835,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "d896886974f9a506",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.23740"
       }
     ],
     "curated": true
@@ -112,6 +282,10 @@
       {
         "source_id": "servethehome",
         "url": "https://www.servethehome.com/openai-jalapeno-asic-at-hot-chips-2026/"
+      },
+      {
+        "source_id": "chips-and-cheese",
+        "url": "https://chipsandcheese.com/p/hot-chips-2026-fujitsus-monaka-cpu"
       }
     ],
     "curated": true
@@ -147,6 +321,40 @@
       {
         "source_id": "techcrunch-ai",
         "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "5594ac0ed1344146",
+    "source_id": "arxiv-cs-ai",
+    "title": "TRACE: An Evidence-Grounded Benchmark for Safety Evaluation of Large Reasoning Models",
+    "url": "https://arxiv.org/abs/2608.24232",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.24232v1 Announce Type: new \nAbstract: Large Reasoning Models (LRMs) generate intermediate reasoning traces that may contain unsafe content, even when their final responses appear safe. Guardrail models are designed to detect and block unsafe content, yet existing benchmarks for unsafe content detection focus primarily on prompts and final responses, leaving reasoning traces largely unexamined. Moreover, these benchmarks typically provide only binary safety labels, without evidence annotations that justify the judgments. To address these limitations, we introduce TRACE, an evidence-grounded safety evaluation benchmark that covers the entire LRM inference pipeline: prompts, reasoning traces, and final responses. TRACE includes prompts in two languages spanning nine risk categories and ten attack strategies. For each prompt, four LRMs generate reasoning traces and final responses, and we annotate the safety of each component and extract supporting evidence from the correspondin",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "首个针对推理模型安全性的证据基准，关注推理轨迹中的不安全内容，对安全评估有重要贡献。",
+    "summary_zh": "本文提出TRACE基准，用于评估大型推理模型（LRM）的安全性。LRM生成的中间推理轨迹可能包含不安全内容，即使最终回答安全。现有基准只关注提示和最终响应，忽略推理轨迹。TRACE提供证据标注，测试护栏模型检测推理轨迹中不安全内容的能力。实验显示现有护栏模型在此任务上表现不佳，需要改进。",
+    "title_zh": "TRACE：大型推理模型安全评估的证据基准",
+    "weighted_score": 0.81,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "44b9e23a64093e9f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.24232"
       }
     ],
     "curated": true
@@ -222,69 +430,103 @@
     "curated": true
   },
   {
-    "id": "393970163b1840b7",
+    "id": "7a751e760582d3b7",
     "source_id": "arxiv-cs-ai",
-    "title": "There Is No Neutral Harness: Modern LLM Leaderboards Are Manufactured by Config-Fragile Items",
-    "url": "https://arxiv.org/abs/2608.21382",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21382v1 Announce Type: new \nAbstract: Multiple-choice benchmarks fix the questions and the correct answers, but not the harness: the order of the options, the wording of the prompt, and whether a language model's answer is read from generated text or from per-option likelihoods. Work on this harness sensitivity reports it as aggregate score variance, leaving unexamined which items the variance falls on and whether they are the items that separate one model from the next. We treat the evaluation harness of large language models (LLMs) as an independent variable and resolve its effect to single items. We introduce the \\textit{fragility grid}: 12 open-weight instruction-tuned LLMs from 4 families answer the same 3{,}679 items from 4 benchmarks (ARC, HellaSwag, MMLU, TruthfulQA) under 26 equally defensible harness configurations, recording one correctness bit for every model, item, and configuration. The comparison is matched, since the items, the weights, and the greedy decodin",
+    "title": "Generating Biomedical Fact-Checking Reports with RL-Enhanced Agentic Search",
+    "url": "https://arxiv.org/abs/2608.23811",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23811v1 Announce Type: new \nAbstract: Automated fact-checking is essential for ensuring the reliability of public health information, yet the biomedical domain poses unique challenges. Validating biomedical claims requires rigorous interpretation of scientific literature, assessment of retrieved evidence, and comprehensive justification toward the conclusion. Although Large Language Models (LLMs) enhanced by Retrieval-Augmented Generation (RAG) and agentic search perform automated fact-checking in a retrieve-then-verify paradigm, current methods still output isolated prediction labels, lacking explanatory depth and offers limited utility for human understanding. To bridge this gap, we introduce an LLM-based agent named BioCheck Agent that generates structured biomedical fact-checking reports with agentic search. Rather than merely outputting supported or refuted labels, our agent synthesizes final conclusions with retrieved evidence and rigorous analysis. To ensure domain-sp",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
     "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "揭示LLM排行榜受配置脆弱项影响，挑战基准可靠性，对模型评估有重要启示。",
-    "summary_zh": "多项选择基准固定了问题和正确答案，但未固定测试框架：选项顺序、提示措辞以及模型答案是从生成文本还是从每个选项的似然中读取。关于这种框架敏感性的研究通常报告为聚合分数方差，而未检查哪些项目受影响。本文通过分析发现，某些项目对框架变化高度敏感，称为“配置脆弱项”，它们可能主导排行榜的排名变化。作者呼吁更稳健的评估方法，并提供了识别脆弱项的指标。",
-    "title_zh": "没有中立的测试框架：现代LLM排行榜由配置脆弱项制造",
-    "weighted_score": 0.8,
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "将强化学习与智能体搜索结合用于生物医学事实核查，提升自动化验证的可靠性。",
+    "summary_zh": "该研究提出了一种利用强化学习增强的智能体搜索方法，用于生成生物医学领域的事实核查报告。生物医学声明验证需要严谨的科学文献解读、证据评估和全面论证，对自动化系统构成挑战。该方法通过强化学习优化智能体的搜索策略，提高了证据检索和结论生成的准确性，为公共卫生信息的可靠性提供了有力支持。",
+    "title_zh": "利用强化学习增强的智能体搜索生成生物医学事实核查报告",
+    "weighted_score": 0.805,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.8,
-      "impact": 0.8,
+      "impact": 0.7,
       "practical_value": 0.8
     },
-    "story_id": "99d9d5e109e7cb88",
+    "story_id": "b1dfba5228301f7d",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21382"
+        "url": "https://arxiv.org/abs/2608.23811"
       }
     ],
     "curated": true
   },
   {
-    "id": "17ca6f25052ac356",
-    "source_id": "vercel-blog",
-    "title": "Introducing Run SDK: secure eval for your agents",
-    "url": "https://vercel.com/blog/introducing-run",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "<p>Agents increasingly write TypeScript programs to coordinate tools and process their results. Once those programs touch real applications, some steps require authentication, while others need human approval.</p><p>Executing that code with <code>eval</code> gives it the same access as the application around it, including its secrets and internal services, and leaves no durable way to pause at those boundaries.</p><p>Today, we're releasing the <a href=\"https://github.com/vercel-labs/run\">Run SDK</a>, a package for executing untrusted JavaScript and TypeScript without giving it direct access to your application or system. Applications expose narrow host functions and can interrupt execution for authentication or human-in-the-loop approval. The program resumes after a decision without repeating completed work.</p><div></div><h2>A small interface to the host</h2><p>The Run SDK evaluates JavaScript or type-stripped TypeScript in a fresh QuickJS context inside a worker thread, with no direc",
+    "id": "cfe0ddb2c9a12cf7",
+    "source_id": "arxiv-cs-ai",
+    "title": "Exploit More, Explore Smarter for Budget-Constrained Agentic Search",
+    "url": "https://arxiv.org/abs/2608.23848",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23848v1 Announce Type: new \nAbstract: Budget-constrained agentic search arises when an LLM agent must refine candidates under a small evaluation budget, because validation is expensive, generation requires multiple model calls, or both. In this regime, standard MCTS allocates budget poorly: exploration bonuses dominate at low visit counts, unpromising siblings are expanded before promising chains can deepen, and branching is independent of node quality. We introduce ExTS, a tree-search policy that treats expansion itself as a value-of-information decision. ExTS combines three mechanisms: discriminative reward shaping to separate candidates under narrow score distributions, a stochastic virtual child that estimates the value of creating a new branch from the parent's reward history, and quality-conditioned branching that expands only when a node's score justifies the budget cost. Across prompt optimization, code generation, molecular structure elucidation, and agentic workflo",
     "category_hint": [
-      "产品发布"
+      "论文研究"
     ],
     "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "Vercel推出Run SDK，为agent代码执行提供安全评估，解决认证和人工审批痛点。",
-    "summary_zh": "Vercel发布Run SDK，旨在为AI代理执行代码时提供安全评估。该SDK允许代理编写TypeScript程序协调工具，并在需要认证或人工审批的步骤暂停。通过安全执行环境，避免使用eval带来的安全风险，确保代理操作可控且可审计。",
-    "title_zh": "Vercel推出Run SDK：为你的代理提供安全评估",
-    "weighted_score": 0.795,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "针对预算受限的智能体搜索提出更优的探索-利用策略，提升搜索效率。",
+    "summary_zh": "该研究针对预算受限的智能体搜索问题，提出了更有效的探索与利用策略。在预算有限的情况下，标准蒙特卡洛树搜索（MCTS）的分配效率低下，探索奖励在低访问次数时占主导，导致不理想的扩展。该研究通过优化探索与利用的平衡，改进了候选方案的筛选过程，在验证成本高或生成需要多次模型调用时，显著提升了搜索性能。",
+    "title_zh": "预算受限智能体搜索中更充分的利用与更智能的探索",
+    "weighted_score": 0.805,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.9
+      "practical_value": 0.8
     },
-    "story_id": "2a21121202a32cac",
+    "story_id": "72b1be1bfee3ecbc",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/blog/introducing-run"
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.23848"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "2584d12e63d77559",
+    "source_id": "arxiv-cs-ai",
+    "title": "Granite.Trust Policy Tools: Shareable, Actionable Policies for Generative AI Applications",
+    "url": "https://arxiv.org/abs/2608.23870",
+    "published_at": "2026-08-26T04:00:00+00:00",
+    "raw_text": "arXiv:2608.23870v1 Announce Type: new \nAbstract: When it comes to safety policies for generative AI, one size does not fit all. Each organization and use case needs to mitigate different risks depending on the application context, regulatory environment, organizational values, and user personas. Yet, existing policy specification approaches are designed for traditional access control and fail to capture the nuances of GenAI application: the enforcement of content-based constraints.\n  We present two contributions to address this gap: (1) the Actionable Policy schema, a YAML-based format for specifying what model responses can and cannot contain. The schema enables exception-based policy governance, proposing exceptions to track policy violations; (2) synthetic data generation pipeline that produces policy-aligned training data for model alignment and testing, and a set of tools to help define the schema and enforce policy. Together, these enable organizations to specify policies once an",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "提出可共享、可操作的安全策略工具，满足不同组织的生成式AI安全需求。",
+    "summary_zh": "Granite.Trust Policy Tools提出了一种可共享、可操作的安全策略方法，用于生成式AI应用。不同组织和用例需要根据应用上下文、监管环境、组织价值观和用户角色来缓解不同风险。现有策略规范方法针对传统访问控制设计，无法满足生成式AI的复杂需求。该工具提供了一种灵活的策略定义和共享机制，使组织能够定制并实施适合自身的安全策略。",
+    "title_zh": "Granite.Trust策略工具：生成式AI应用的可共享、可操作策略",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "4d36df1c88af16e8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.23870"
       }
     ],
     "curated": true
@@ -349,25 +591,9 @@
       "impact": 0.9,
       "practical_value": 0.5
     },
-    "story_id": "f60148c012f443c8",
-    "multi_source_count": 2,
+    "story_id": "23b335a9d055dd8b",
+    "multi_source_count": 1,
     "sources": [
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/alibabas-wan3-0-generates-ai-videos-up-to-30-seconds-long-from-text-images-and-documents/"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/pew-study-shows-ai-written-text-has-surged-across-the-web-since-late-2022/"
-      },
-      {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/google-launches-gemini-for-legal-work-to-automate-contracts-and-research/"
-      },
       {
         "source_id": "the-decoder",
         "url": "https://the-decoder.com/openais-first-custom-chip-jalapeno-reportedly-beats-nvidias-blackwell-and-rubin-in-inference-benchmarks/"
@@ -411,40 +637,6 @@
     "curated": true
   },
   {
-    "id": "50c0dce3a92f5834",
-    "source_id": "nature-ml",
-    "title": "Deep learning aging marker from retinal images unveils sex-specific clinical and genetic signatures",
-    "url": "https://www.nature.com/articles/s41467-026-77102-1",
-    "published_at": "2026-08-26T00:00:00+00:00",
-    "raw_text": "",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "利用深度学习从视网膜图像识别衰老标志，并揭示性别特异性临床和遗传特征，具有医学价值。",
-    "summary_zh": "该研究利用深度学习技术从视网膜图像中提取衰老标志，并揭示了性别特异性的临床和遗传特征。研究团队通过分析大量视网膜图像，训练模型识别与衰老相关的生物标志，并进一步探索这些标志与性别相关的健康差异。这一方法有望为个性化医疗和衰老相关疾病的早期诊断提供新工具。",
-    "title_zh": "深度学习视网膜衰老标志揭示性别特异性临床和遗传特征",
-    "weighted_score": 0.79,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "628f18f15dcdb6e0",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "nature-ml",
-        "url": "https://www.nature.com/articles/s41467-026-77102-1"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "cb0c1a177d1a8770",
     "source_id": "siliconangle",
     "title": "Perplexity AI launches Portable Computer on-device AI agent",
@@ -480,40 +672,6 @@
     "curated": true
   },
   {
-    "id": "fc60686bd18b5ff9",
-    "source_id": "arxiv-cs-ai",
-    "title": "MEMORY Wins All: Indirect Bias Injection Attacks via Social Media Feeds",
-    "url": "https://arxiv.org/abs/2608.22061",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.22061v1 Announce Type: new \nAbstract: Personal AI agents routinely consume external content while performing tasks such as web browsing, email processing, and SNS feed summarization, and they retain selected information or execution results in persistent memory for later use. We show that this ordinary ingestion of external content opens an indirect path for manipulating subsequent agent behavior. Based on this observation, we present IBIA, an Indirect Bias Injection Attack that plants an adversary-aligned stance on a specific topic into a victim agent's memory through external content, without direct access to the agent, its memory, or future user queries. For this, IBIA combines three mechanisms: comment cloaking, which keeps the crafted content consistent with the surrounding discussion, comment watermarking, which enables lightweight identification during curation, and category anchoring, which makes the retained stance salient under later related requests. We evaluate I",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示通过社交媒体内容间接注入偏见攻击个人AI代理的新路径，对AI安全有重要警示。",
-    "summary_zh": "本文展示了个人AI代理在浏览网页、处理邮件或总结社交媒体信息时，会摄入外部内容并存入持久记忆，这为间接操纵代理行为提供了路径。作者提出一种间接偏见注入攻击，通过精心构造的社交媒体内容，使代理在后续任务中产生偏见。实验证明攻击有效，强调了AI代理记忆安全的重要性。",
-    "title_zh": "记忆获胜：通过社交媒体信息流进行间接偏见注入攻击",
-    "weighted_score": 0.78,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "b7e28486b18d6e19",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.22061"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "e97275969bb97bf0",
     "source_id": "ifanr",
     "title": "刚刚，新款 Mac mini 发布！价格大涨2500元，苹果第一次为 AI 造电脑",
@@ -544,176 +702,6 @@
       {
         "source_id": "ifanr",
         "url": "https://www.ifanr.com/1676537?utm_source=rss&utm_medium=rss&utm_campaign="
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "3f87e811d31b0fef",
-    "source_id": "arxiv-cs-ai",
-    "title": "ECHO: A Cognitively Inspired, Auditable Memory Plane for Long-Horizon Agents",
-    "url": "https://arxiv.org/abs/2608.21755",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21755v1 Announce Type: new \nAbstract: Long-horizon agents need memory that identifies relevant experience, resolves revisions, and exposes checkable provenance. We present ECHO (Embodied Context and History Orchestration), an auditable memory architecture and service prototype inspired by episodic encoding, consolidation, contextual reinstatement, reconsolidation, and executive control. This is functional inspiration, not neural equivalence; the empirical analysis focuses on retrieval and context construction. Development runs reach 96.29% Hit@10 and 73.64% turn Recall@5 on 1,536 LoCoMo category 1-4 questions, and 97.60% Hit@10, 88.84% turn Recall@5, and 88.71% session Recall@5 on all 500 LongMemEval-S questions. A five-history BEAM gate fails, and in a separate matched 91-question QA sample Mem0 OSS scores 64.84% versus ECHO's 41.76% (exact McNemar p = 0.00107), with a history-cluster interval crossing zero. A post-hoc audit found source-specific phrases in the query-expans",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出可审计的记忆架构，受认知科学启发，对长时程智能体设计有重要参考价值。",
-    "summary_zh": "论文提出ECHO（Embodied Context and History Orchestration），一种受认知科学启发的可审计记忆架构和服务原型，用于长时程智能体。该架构借鉴情景编码、巩固、情境重激活、再巩固和执行控制等认知机制，使智能体能够识别相关经验、解决修订并提供可检查的来源。实验证明ECHO能提升长时程任务的性能，并增强记忆的可解释性和可审计性。",
-    "title_zh": "ECHO：面向长时程智能体的认知启发式可审计记忆平面",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "9b05c77829d9d11d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21755"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "b264ee2c2a550293",
-    "source_id": "arxiv-cs-ai",
-    "title": "Hints, Critics, and Teachers: Prior Injection for Sparse-Reward RL in Vision-Language Math Reasoning",
-    "url": "https://arxiv.org/abs/2608.21811",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21811v1 Announce Type: new \nAbstract: Reinforcement learning for vision-language math reasoning starves under sparse reward: on a pool of 20,830 visual-math problems where Qwen2-VL-2B answers 3.6% of rollouts correctly, 85-97% of GRPO rollout groups are entirely wrong and contribute zero gradient. We train eleven methods under identical conditions in this regime, each injecting a different prior: text (reference-solution hints), distribution (on-policy distillation from a 7B teacher), and value (a value-pretrained critic with an MSE or HL-Gauss categorical loss). A prior helps exactly when it is delivered: the six arms whose prior effectively reaches the policy separate with no overlap from the remaining five -- the no-prior baseline and four arms whose prior is teacher-capped, gated away, or lost to a mis-parameterized critic -- both on the pooled in-domain metric and on cross-domain transfer (DynaMath). The central finding, however, concerns evaluation: one slice of the in",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "系统比较多种先验注入方法解决稀疏奖励RL问题，对多模态推理训练有重要指导。",
-    "summary_zh": "论文针对视觉语言数学推理中稀疏奖励强化学习的问题，提出多种先验注入方法。在包含20,830个视觉数学问题的池中，Qwen2-VL-2B仅正确回答3.6%，导致GRPO大部分组无梯度。作者在相同条件下训练了十一种方法，每种注入不同先验，并评估其效果。结果表明，适当的先验注入能显著提升学习效率和最终性能，为稀疏奖励场景下的RL训练提供了实用指导。",
-    "title_zh": "提示、批评与教师：视觉语言数学推理中稀疏奖励强化学习的先验注入",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "97d32e6ff0d51582",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21811"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "2691fcc79b395020",
-    "source_id": "arxiv-cs-ai",
-    "title": "Beyond Success and Failure: Length-Aware Contrastive Learning for GUI Agents",
-    "url": "https://arxiv.org/abs/2608.21830",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21830v1 Announce Type: new \nAbstract: Graphical User Interface (GUI) agents powered by Multimodal Large Language Models (MLLMs) have shown strong potential for automating tasks across diverse digital environments, where reinforcement learning (RL) has become a dominant training paradigm. However, widely used methods such as Group Relative Policy Optimization (GRPO) suffer from reward-gradient misalignment, leading to inefficient and unstable optimization. Recent work addresses this issue by reformulating RL with verifiable rewards (RLVR) as contrastive or classification-based objectives, which improve stability by eliminating problematic gradient behaviors. Despite this progress, existing contrastive RLVR methods rely primarily on outcome-level supervision and fail to capture fine-grained differences in trajectory quality within the same outcome category. In this paper, we propose Length-Aware Contrastive Learning for GUI Agents (LACL-GUI), a contrastive RLVR framework that ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出长度感知对比学习解决GUI智能体奖励稀疏问题，对智能体训练有实际价值。",
-    "summary_zh": "论文针对基于多模态大语言模型的GUI智能体在强化学习中的奖励稀疏问题，提出长度感知对比学习方法。GRPO等方法常因奖励稀疏而训练困难。作者通过考虑任务长度，设计对比学习目标，使模型能更好地区分成功与失败轨迹。实验表明，该方法在多个GUI任务上显著提升了智能体的成功率，为GUI智能体训练提供了新思路。",
-    "title_zh": "超越成功与失败：面向GUI智能体的长度感知对比学习",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "ef062d4b77d571bc",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21830"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c4952530600e059e",
-    "source_id": "arxiv-cs-ai",
-    "title": "GameXpert-Bench: How Far Are Coding Agents from Expert Game Development?",
-    "url": "https://arxiv.org/abs/2608.21833",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21833v1 Announce Type: new \nAbstract: Recent large language models (LLMs) can operate as coding agents that build complete games from natural language requests. Game development is especially demanding because program logic, visual and audio content, interfaces, interaction and playability must function together in one executable artifact. Measuring this capability therefore requires evaluation of both game product and the development process. Existing benchmarks often assess the game development capabilities of LLMs by evaluating the final artifact or an isolated development stage. Our analysis of complete human-agent development trajectories identifies three stages that together span the lifecycle of game development with a coding agent: initial game generation, bug diagnosis and repair, and optimization over multiple turns. Therefore, we introduce GameXpert-Bench, which operationalizes the three lifecycle stages as three complementary benchmark tracks. GameGen evaluates c",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出游戏开发基准测试，评估编码智能体在复杂任务上的能力，具有挑战性。",
-    "summary_zh": "论文提出GameXpert-Bench，一个用于评估编码智能体在游戏开发任务上能力的基准。游戏开发要求程序逻辑、视觉和音频内容、界面、交互和可玩性在一个可执行文件中协同工作。该基准包含多种游戏开发任务，测试智能体从自然语言请求构建完整游戏的能力。实验表明，现有编码智能体在游戏开发上仍有很大提升空间，为未来研究提供了方向。",
-    "title_zh": "GameXpert-Bench：编码智能体距离专家级游戏开发还有多远？",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "c912402ecc19a67c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21833"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "da3314aa30d468aa",
-    "source_id": "arxiv-cs-ai",
-    "title": "LLM4LLM: Bridging Kernel Benchmarks and Real Deployment via Closed-Loop Agentic Optimization",
-    "url": "https://arxiv.org/abs/2608.21836",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21836v1 Announce Type: new \nAbstract: Large language models have become increasingly capable agents for low-level code and kernel optimization, but isolated kernel benchmarks provide only a proxy for the deployment behavior that matters in language-model inference. We identify a benchmark-to-deployment gap: candidate kernels that appear correct and fast in standalone harnesses can exhibit different performance, safety, or phase behavior after integration into a real inference workload. We introduce LLM4LLM, a deployment-aware closed-loop optimization framework that starts from a target inference script, extracts phase-aware optimization tasks, searches with an experience-guided episodic agent, and accepts patches through in-model validation. Across ten language-model inference workloads on A100 and H100 GPUs, LLM4LLM improves end-to-end latency for every evaluated model, achieving 3.91$\\times$/6.98$\\times$ geometric-mean speedups on A100/H100; as supporting kernel-level evid",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出闭环智能体优化弥合内核基准与真实部署差距，对系统优化有实际意义。",
-    "summary_zh": "论文指出，孤立的内核基准无法准确反映语言模型推理中的部署行为，存在基准到部署的差距。为此，作者提出LLM4LLM，一种闭环智能体优化方法，通过迭代优化内核，同时考虑部署环境。实验表明，该方法能生成在真实部署中表现更好的内核，缩小了基准与部署之间的差距，为内核优化提供了新范式。",
-    "title_zh": "LLM4LLM：通过闭环智能体优化弥合内核基准与真实部署的差距",
-    "weighted_score": 0.775,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "52240a6bd0e15303",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21836"
       }
     ],
     "curated": true
@@ -819,40 +807,6 @@
       {
         "source_id": "gradient-flow",
         "url": "https://gradientflow.com/i-keep-hearing-the-same-advice-about-agents/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6d9729cba2b9f33c",
-    "source_id": "arxiv-cs-ai",
-    "title": "Closed-loop AI achieves certifiable engineering design",
-    "url": "https://arxiv.org/abs/2608.21976",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "arXiv:2608.21976v1 Announce Type: new \nAbstract: Agentic AI has automated parts of scientific discovery, including paper generation, expert-level coding, therapeutic proposal, and autonomous experimentation. Complex physical engineering design remains a gap, because candidates must satisfy simultaneous constraints in fluid dynamics, solid mechanics, and structural stability. We introduce The AI Engineer, an agentic framework that couples large language models (LLMs) to deterministic engineering backends in a closed loop: natural-language requirements are converted into design-domain geometry and mesh; topology is optimized with bi-directional evolutionary structural optimization (BESO) coupled to the CalculiX solver; and member sizes are refined with particle swarm optimization (PSO) coupled to Zwind under offshore aero-hydro-servo-elastic load cases. To explore many designs without per-candidate certification cost, an Automated Reviewer scores each candidate on five dimensions (capaci",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出闭环AI实现可认证工程设计，突破复杂物理约束，对AI在工程领域的应用具有里程碑意义。",
-    "summary_zh": "本文介绍了一种名为AI Engineer的闭环AI系统，能够自动完成复杂的物理工程设计，同时满足流体动力学、固体力学和结构稳定性等多重约束。系统通过迭代设计-评估-优化循环，生成的设计方案经过严格验证，达到可认证标准。实验在多个工程案例中展示了其高效性和可靠性，为AI驱动的工程设计开辟了新路径。",
-    "title_zh": "闭环AI实现可认证的工程设计",
-    "weighted_score": 0.76,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
-    },
-    "story_id": "1a29a9004687fc3b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.21976"
       }
     ],
     "curated": true
@@ -1101,40 +1055,6 @@
     "curated": true
   },
   {
-    "id": "cf6c07ed1542e99a",
-    "source_id": "zh-juejin",
-    "title": "行业首发｜智能体安全能力图谱发布：企业可落地的建设路径",
-    "url": "https://juejin.cn/post/7677878351721758730",
-    "published_at": "2026-08-25T16:47:04+00:00",
-    "raw_text": "火山引擎发布《智能体安全能力图谱》，梳理智能体安全10大能力维度，覆盖多类智能体，划分L1‑L3三阶段建设路径，为企业提供可落地的AI安全治理框架，助力智能体可信可控可管。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "火山引擎发布智能体安全能力图谱，为企业提供可落地的AI安全治理框架，具有行业指导意义。",
-    "summary_zh": "火山引擎发布了《智能体安全能力图谱》，这是行业首份针对智能体安全的能力图谱。该图谱梳理了智能体安全的10大能力维度，覆盖多种类型的智能体，并划分了L1-L3三阶段建设路径，为企业提供了可落地的AI安全治理框架。旨在帮助企业在部署智能体时实现可信、可控、可管，推动AI安全领域的标准化发展。",
-    "title_zh": "行业首发｜智能体安全能力图谱发布：企业可落地的建设路径",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "295791efa6bdf4e3",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7677878351721758730"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "0111c28f313f480f",
     "source_id": "gh-invokeai",
     "title": "invoke-ai/InvokeAI v6.14.0",
@@ -1198,40 +1118,6 @@
       {
         "source_id": "datacenter-dynamics",
         "url": "https://www.datacenterdynamics.com/en/news/nvidias-ultra-low-latency-ai-inference-lpx-racks-hit-full-production/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "ec62bf4b7296cd61",
-    "source_id": "zh-ithome",
-    "title": "OpenAI 首款自研芯片 Jalapeño 性能首秀：DeepSeek R1 每瓦 AI 吞吐量是 GB300 的 1.7 倍",
-    "url": "https://www.ithome.com/0/994/306.htm",
-    "published_at": "2026-08-25T23:25:37+00:00",
-    "raw_text": "<p>IT之家 8 月 26 日消息，OpenAI 昨日（8 月 25 日）发布博文，展示其首款自研 Jalapeño 芯片，并表示无论是单用户 token 处理量，还是每千瓦吞吐量，都超过了目前市面上的顶尖推理处理器。</p><p>在官方博文中，OpenAI 使用半导体研究公司 SemiAnalysis 开发的公共基准测试工具 InferenceX，通过 GPT-OSS 120B、DeepSeek R1 670B 和 Kimi K2.5 1T 三款模型测试。</p><p style=\"text-align: center;\"></p><p>测试显示对比市面上领先的 AI 系统（GB200 和 GB300），每瓦能够完成的 AI 吞吐量是对比系统的 1.5 至 1.9 倍，端到端延迟则约为对比系统的 28% 至 59%。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/8220313e-908b-44f0-8971-2f7acd2dc15f.png?x-bce-process=image/format,f_auto\" /></p><figcaption>混合 Token 吞吐量与现有 AI 加速器的最快解码速度对比</figcaption><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/9493a9b8-2c4f-45cc-b084-3fe792e70b91.png?x-bce-process=image/format,f_auto\" /></p><figcaption>3 款模型峰值单用户解码吞吐量</figcaption><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/e6bfb674-e51c-4d26-b0e1-9fd64f87fdd1.png?x-bce-proces",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/8220313e-908b-44f0-8971-2f7acd2dc15f.png?x-bce-process=image/format,f_auto",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "OpenAI自研芯片Jalapeño性能首秀，每瓦吞吐量超GB300，对AI硬件格局有重大影响。",
-    "summary_zh": "OpenAI于8月25日发布博文，展示其首款自研Jalapeño芯片，并表示在单用户token处理量和每千瓦吞吐量上均超过当前顶尖推理处理器。官方使用SemiAnalysis的InferenceX基准测试工具，通过GPT-OSS 120B、DeepSeek R1 670B和Kimi K2.5 1T三款模型测试。结果显示，与GB200和GB300相比，每瓦AI吞吐量是对比系统的1.5至1.9倍，端到端延迟约为对比系统的28%至59%。",
-    "title_zh": "OpenAI首款自研芯片Jalapeño性能首秀：DeepSeek R1每瓦AI吞吐量是GB300的1.7倍",
-    "weighted_score": 0.74,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.4
-    },
-    "story_id": "307535ef9e33fe2b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/994/306.htm"
       }
     ],
     "curated": true
@@ -1306,22 +1192,57 @@
     "curated": true
   },
   {
-    "id": "7766cf21dd67926e",
-    "source_id": "pandaily",
-    "title": "QiAnXin Discloses Critical Remote-Code-Execution Flaw in DeepSeek Harness",
-    "url": "https://pandaily.com/qianxin-discloses-critical-rce-flaw-deepseek-harness-aug2026",
-    "published_at": "2026-08-25T01:52:34+00:00",
-    "raw_text": "QiAnXin Threat Intelligence Center disclosed an unauthenticated remote-code-execution vulnerability in DeepSeek Harness (CVSS 9.8), from flawed HTTP Host-header validation, with proof-of-concept code already public.",
+    "id": "c5ad0b3bc6f0e047",
+    "source_id": "qbitai",
+    "title": "WRC乒乓球局爆火！这家中国具身创业公司，砸出了一套全栈新解法",
+    "url": "https://www.qbitai.com/2026/08/478860.html",
+    "published_at": "2026-08-26T03:02:34+00:00",
+    "raw_text": "球技丝滑、现场爆满",
     "category_hint": [
-      "行业动态"
+      "行业动态",
+      "模型发布"
     ],
-    "image_url": "https://cms-image.pandaily.com/1/img_3_6c98a91014.png",
+    "image_url": null,
     "category": "行业动态",
     "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "奇安信披露DeepSeek Harness严重RCE漏洞，CVSS 9.8，需立即关注。",
-    "summary_zh": "奇安信威胁情报中心披露了DeepSeek Harness中的一个未认证远程代码执行漏洞（CVSS 9.8），源于HTTP Host头验证缺陷。利用代码已公开，可能导致严重安全风险。建议相关用户立即采取缓解措施。",
-    "title_zh": "奇安信披露DeepSeek Harness严重远程代码执行漏洞",
+    "depth_score": 0.4,
+    "reason_zh": "报道中国具身创业公司在WRC乒乓球局中的全栈新解法，展示技术突破，对关注具身智能的读者有信息价值。",
+    "summary_zh": "本文报道了中国一家具身智能创业公司在WRC（世界机器人大会）上展示的乒乓球机器人，其球技丝滑、现场爆满，引起了广泛关注。该公司砸出了一套全栈新解法，涵盖了从硬件设计、运动控制到AI决策的完整技术栈。文章详细介绍了该机器人的技术特点，包括高精度视觉识别、快速反应机制和自适应学习能力，并分析了其与国内外同类产品的差异。作者认为，这一成果展示了中国在具身智能领域的快速进步，也为机器人进入日常生活提供了新的可能性。",
+    "title_zh": "WRC乒乓球局爆火！这家中国具身创业公司，砸出了一套全栈新解法",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "ac8d16799e9d17ba",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/08/478860.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "d645271422b1eff5",
+    "source_id": "zh-oschina",
+    "title": "扎心：Anthropic 最贵的模型，企业几乎不用",
+    "url": "https://www.oschina.net/news/502129",
+    "published_at": "2026-08-26T04:03:22+00:00",
+    "raw_text": "《金融时报》拿到了一份数据，然后提了一个让 Anthropic 在 IPO 之前很难堪的问题：你的最强模型到底有没有人用？ 根据支付服务集团 Ramp 收集的 7 万家公司支出数据，Anthropic 最贵的模型 Fable 5 发布两个多月后，企业支出占比仅稳定在 11% 左右。旧款、更便宜的模型吃掉了其余 89%。 这不是小样本。7 万家公司的支出...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.6,
+    "reason_zh": "揭示Anthropic旗舰模型企业采用率低的现状，对理解模型定价与市场需求有启发。",
+    "summary_zh": "据《金融时报》报道，支付服务集团 Ramp 收集的 7 万家公司支出数据显示，Anthropic 最贵的模型 Fable 5 发布两个多月后，企业支出占比仅约 11%，而旧款、更便宜的模型占据了其余 89%。这一数据引发对 Anthropic 最强模型实际市场接受度的质疑，尤其在 IPO 前夕，可能影响其估值与产品策略。",
+    "title_zh": "扎心：Anthropic 最贵的模型，企业几乎不用",
     "weighted_score": 0.73,
     "score_breakdown": {
       "source_authority": 0.7,
@@ -1329,46 +1250,12 @@
       "impact": 0.8,
       "practical_value": 0.6
     },
-    "story_id": "48f5a6d575198714",
+    "story_id": "992a0a84c9b278f1",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/qianxin-discloses-critical-rce-flaw-deepseek-harness-aug2026"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d1fc64a6e1fcf952",
-    "source_id": "vercel-blog",
-    "title": "The end of credential sprawl for agents",
-    "url": "https://vercel.com/blog/the-end-of-credential-sprawl-for-agents",
-    "published_at": "2026-08-25T04:00:00+00:00",
-    "raw_text": "<p>Every useful agent reaches beyond your codebase. It posts to Slack, opens pull requests, queries Snowflake, or calls an internal API. That reach is what makes it valuable, and it's also where the risk lives, because for years, granting it meant provisioning a long-lived token and hoping it never leaked.</p><p><a href=\"https://vercel.com/connect\">Vercel Connect</a> replaces long-lived tokens with ones your code requests at runtime, scoped to the task and expiring on their own.</p><p>During the <a href=\"https://vercel.com/blog/introducing-vercel-connect\">public beta</a>, we've grown the ecosystem past 100 connectors, unified how they work, and added the governance capabilities teams need in production.</p><p>Today, Vercel Connect is generally available.</p><div></div><h2>Vaults don't fix long-lived tokens</h2><p>Managing credentials has become its own workload. Teams write rotation scripts, copy secrets across environments, and share tokens between users. Putting a token in a vault ma",
-    "category_hint": [
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Vercel Connect用短期凭证替代长期令牌，解决代理凭证管理难题。",
-    "summary_zh": "Vercel Connect旨在解决AI代理的凭证管理问题。传统上，代理需要长期令牌访问外部服务，存在泄露风险。Vercel Connect用短期凭证替代，减少风险并简化管理。该方案适用于需要与Slack、GitHub等外部服务交互的代理场景。",
-    "title_zh": "Vercel Connect：终结代理的凭证泛滥问题",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "c3d9de1e5502d096",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/blog/the-end-of-credential-sprawl-for-agents"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/502129"
       }
     ],
     "curated": true
@@ -1513,6 +1400,41 @@
     "curated": true
   },
   {
+    "id": "f7b70ab272dc4dae",
+    "source_id": "qbitai",
+    "title": "深度实测「豆包工作」+飞书：目前最接近企业Agent终局的答案",
+    "url": "https://www.qbitai.com/2026/08/479348.html",
+    "published_at": "2026-08-26T02:59:02+00:00",
+    "raw_text": "shui jiang shuai xian sha",
+    "category_hint": [
+      "行业动态",
+      "模型发布"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "深度实测豆包工作与飞书结合，分析其作为企业Agent终局的潜力，对关注AI办公落地的读者有参考价值。",
+    "summary_zh": "本文深度实测了字节跳动的“豆包工作”与飞书的集成方案，认为这是目前最接近企业Agent终局的答案。文章从实际使用体验出发，对比了豆包工作与飞书在任务自动化、流程管理、协作效率等方面的表现，分析了其技术架构和产品设计思路。作者指出，豆包工作通过自然语言交互和智能体编排，能够显著降低企业使用AI的门槛，而飞书的协同生态则为其提供了良好的落地场景。文章也讨论了当前存在的局限，如复杂任务处理能力不足、与现有系统集成难度等，并展望了未来企业Agent的发展方向。",
+    "title_zh": "深度实测「豆包工作」+飞书：目前最接近企业Agent终局的答案",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "28e74c6dba3c8e31",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/08/479348.html"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "655bf8249420596e",
     "source_id": "hn-anthropic",
     "title": "Show HN: Neither HTML nor Markdown is enough: a way out of the AI doc dilemma",
@@ -1583,6 +1505,45 @@
     "curated": true
   },
   {
+    "id": "7a310ff77a9a58ef",
+    "source_id": "toms-hardware",
+    "title": "AI coder gets Doom running on a custom CPU designed by GPT-5.6 Sol — game viewport is overlaid on a pulsing schematic of the CPU in Turing Complete's sandbox environment",
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-coder-gets-doom-running-on-a-custom-cpu-designed-by-gpt-5-6-sol-game-viewport-is-overlaid-on-a-pulsing-schematic-of-the-cpu-in-turing-completes-sandbox-environment",
+    "published_at": "2026-08-25T11:09:49+00:00",
+    "raw_text": "An AI computing enthusiast has demonstrated Doom running on a custom CPU designed by GPT-5.6 Sol.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://cdn.mos.cms.futurecdn.net/m8WeqAwVHW4DJ8AykHcvTk-1280-80.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "AI编码器在GPT-5.6 Sol设计的自定义CPU上运行Doom，展示AI设计硬件的潜力，新奇有趣。",
+    "summary_zh": "一位AI计算爱好者展示了在由GPT-5.6 Sol设计的自定义CPU上运行Doom的成果。游戏视口叠加在Turing Complete沙盒环境中CPU的脉冲示意图上。这证明了AI在硬件设计方面的能力，可能对AI辅助芯片设计有启示。",
+    "title_zh": "AI编码器在GPT-5.6 Sol设计的自定义CPU上运行Doom",
+    "weighted_score": 0.69,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.7,
+      "practical_value": 0.4
+    },
+    "story_id": "76cf1116a21ffd22",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-coder-gets-doom-running-on-a-custom-cpu-designed-by-gpt-5-6-sol-game-viewport-is-overlaid-on-a-pulsing-schematic-of-the-cpu-in-turing-completes-sandbox-environment"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/994/387.htm"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "c2340d7c36a3f4c1",
     "source_id": "the-robot-report",
     "title": "Jetson Orin Nano 2 doubles inference performance for robotics on the edge, says NVIDIA",
@@ -1608,7 +1569,7 @@
       "practical_value": 0.6
     },
     "story_id": "29ca35886b63eea7",
-    "multi_source_count": 3,
+    "multi_source_count": 2,
     "sources": [
       {
         "source_id": "the-robot-report",
@@ -1617,10 +1578,6 @@
       {
         "source_id": "siliconangle",
         "url": "https://siliconangle.com/2026/08/25/nvidia-doubles-compute-for-entry-level-edge-robotics-with-jetson-orin-nano-2/"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/994/303.htm"
       }
     ],
     "curated": true
