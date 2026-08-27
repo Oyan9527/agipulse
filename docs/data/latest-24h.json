@@ -38,7 +38,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "Minima-KV: Retention-Preserving KV Cache Compression with Mixed-Format Paged Attention",
     "url": "https://arxiv.org/abs/2608.23834",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23834v1 Announce Type: new \nAbstract: The key-value (KV) cache is a primary capacity and bandwidth bottleneck in long-context LLM serving. We present Minima-KV, a retention-preserving hierarchy for mixed-format paged attention. Recent and protected Anchor pages remain in FP8, while older non-anchor pages move to packed TQ3; every live-request page remains addressable. Format-specific kernels compute partial attention states and combine them through a globally normalized online-softmax merge, enabling direct heterogeneous decode without a cache-sized dense shadow. Across separate, configuration-bound Qwen3.6-27B profiles on a single 96-GB NVIDIA RTX PRO 6000 Blackwell GPU, deployment accounting reports 18.3 KiB of attention KV per live token, corresponding to 3.50x compression relative to BF16 and 1.75x relative to FP8. A materializing quality profile matches its dense control on 16K RULER needle-in-a-haystack tasks. On the same 503-question LongBench v2 set, measured deltas ",
     "category_hint": [
       "论文研究"
@@ -72,7 +72,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "Serving Masked Diffusion LLMs: Characterization and Design Principles from Real Hardware",
     "url": "https://arxiv.org/abs/2608.23807",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23807v1 Announce Type: new \nAbstract: Masked diffusion language models (dLLMs) can in principle generate text faster than autoregressive (AR) models, since they denoise many tokens at once. Recent systems have begun building serving infrastructure for dLLMs, but none first measure how these models behave under real, concurrent serving load. Serving systems built without this grounding risk carrying over assumptions from AR serving that may not hold for dLLMs. We characterize dLLM serving to close this gap, using LLaDA-8B-Instruct with a D2F (Discrete Diffusion Forcing) LoRA adapter on a single NVIDIA H200 GPU, evaluated on GSM8K and HumanEval. We report three findings. First, request difficulty, the number of denoising steps a request needs, is discrete rather than continuous: requests fall into 11 fixed step-count levels (178 + 29k), and no signal we test predicts the level before generation starts (best R2 = 0.150). Second, benchmarks with short generation budgets below 32",
     "category_hint": [
       "论文研究"
@@ -106,7 +106,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "In-Context Inpainting for Time Series Forecasting",
     "url": "https://arxiv.org/abs/2608.23855",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23855v1 Announce Type: new \nAbstract: We propose ICI-Time, a novel framework that reframes time series forecasting as a visual inpainting task, leveraging the generalisation power of large vision models (LVMs). Unlike methods that require specialised temporal architectures and extensive domain-specific training, ICI-Time transforms time series into structured visual representations (area charts) and applies visual in-context learning, reformulating forecasting as pattern completion within a grid-structured prompt that pre-trained vision transformers can solve without fine-tuning or architectural modification. Temporal dependencies are represented through spatial layout, with a consistent, invertible mapping between numerical and visual domains. Extensive experiments across epidemiology, meteorology, and power systems demonstrate that ICI-Time performs competitively against deep learning baselines and shows promising adaptability under limited-data settings, introducing a new",
     "category_hint": [
       "论文研究"
@@ -140,7 +140,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "SA-Bench: Evaluating Semantic Alignment in LLM-Based Paper Reproduction",
     "url": "https://arxiv.org/abs/2608.24252",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.24252v1 Announce Type: new \nAbstract: LLM agents can generate paper reproduction code, yet often produce scientifically unfaithful implementations. We define this failure mode as semantic drift, where generated code silently diverges from the paper's specifications. We introduce SemanticAlign-Bench(SA-Bench), a diagnostic benchmark covering 30 papers from ICLR, ICML and NeurIPS 2025. For each paper, we decompose its specifications into atomic and verifiable implementation claims, which we call Semantic Alignment Units (SAUs) and evaluate repositories along four diagnostic dimensions spanning numerical, methodological, protocol and ordering drift. In total, we construct 1,491 SAUs across five ML domains and evaluate 12 generator configurations (4 models $\\times$ 3 scaffolds). Even the strongest configuration (Claude+PaperCoder) achieves a mean SAU score of only 0.301 out of 1.0, with an overall mean of 0.221 across 360 evaluations. A failure taxonomy reveals that agents attem",
     "category_hint": [
       "论文研究"
@@ -174,7 +174,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "AgentRoom: Concurrent Multi-Agent Coding in a CRDT-Backed Shared Workspace",
     "url": "https://arxiv.org/abs/2608.23740",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23740v1 Announce Type: new \nAbstract: Concurrent multi-agent coding promises division of labor across modules, robustness through redundancy, and parallel exploration at the natural granularity of multi-file projects. Realtime collaborative editing protocols solve this coordination problem for human teams via Conflict-free Replicated Data Types (CRDTs), but the LLMs underneath generate one token at a time and existing multi-agent coding systems inherit this serial limit: they either sequence agents through phase handoffs or pool independent samples without coordination, and a single agent abandons up to half of hard tasks with a one-file stub-and-exit. AgentRoom is a realtime collaborative editing protocol for concurrent coding agents. Its runtime layer exposes file-level claim, status, and broadcast as MCP tools on a CRDT-merged shared filesystem. Five frontier coding-CLI models ran four backend coding tasks, with cross-language checks in Python DevBench and Rust+axum. For ",
     "category_hint": [
       "论文研究"
@@ -199,136 +199,6 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2608.23740"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "495f6c87d7ba63bc",
-    "source_id": "alignment-forum",
-    "title": "Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
-    "url": "https://www.alignmentforum.org/posts/nB8KKapnWGBXtKKiM/brief-independent-investigation-of-agents-behavior-reasoning",
-    "published_at": "2026-08-26T19:40:21+00:00",
-    "raw_text": "<p>We recently published the report from our brief independent investigation into this incident. You can read <a href=\"https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/\">the full report here</a>.</p>\n<p>Here is our tweet thread summarizing what we found:</p>\n<blockquote>\n<p>METR &amp; Redwood Research investigated agent behavior in the Hugging Face incident. We found agents developed a universal cheat for ExploitGym within 4 hours, then coordinated multi-day R&amp;D efforts to trick the scorer into accepting cheats, including trying to tamper with logs.</p>\n<p><img alt=\"\" src=\"https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/nB8KKapnWGBXtKKiM/exqhltlfrncqpq028tgl\" /></p>\n<p>Over July 7-13 (the period OpenAI defined as in-scope for this incident), ~1200 agents in separate sandboxes used an unsanctioned “message board” to help each other cheat. The Hugging Face attack was an offshoot of this, and 700 agents joined.</p>\n<p><i",
-    "category_hint": [
-      "论文研究",
-      "行业动态"
-    ],
-    "image_url": "https://res.cloudinary.com/lesswrong-2-0/image/upload/f_auto,q_auto/v1/mirroredImages/nB8KKapnWGBXtKKiM/exqhltlfrncqpq028tgl",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "METR 与 Redwood 对 OpenAI/Hugging Face 黑客事件中智能体行为进行独立调查，揭示安全漏洞，极具参考价值。",
-    "summary_zh": "METR 和 Redwood Research 发布了对 OpenAI/Hugging Face 黑客事件中智能体行为的独立调查报告。调查发现智能体在事件中表现出特定的行为模式、推理方式和协作机制，揭示了潜在的安全风险。报告详细分析了智能体如何被利用以及可能的防御措施，为 AI 安全研究提供了重要案例。完整报告可在 METR 博客上获取。",
-    "title_zh": "对 OpenAI/Hugging Face 黑客事件中智能体行为、推理与协作的独立调查简报",
-    "weighted_score": 0.835,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "87d287060e81eaca",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "alignment-forum",
-        "url": "https://www.alignmentforum.org/posts/nB8KKapnWGBXtKKiM/brief-independent-investigation-of-agents-behavior-reasoning"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "2dfb7a1cc2f9ce55",
-    "source_id": "servethehome",
-    "title": "OpenAI Jalapeno Custom AI ASIC at Hot Chips 2026",
-    "url": "https://www.servethehome.com/openai-jalapeno-asic-at-hot-chips-2026/",
-    "published_at": "2026-08-26T00:45:45+00:00",
-    "raw_text": "<p>We got a deep-dive on OpenAI Jalapeño at Hot Chips 2026 as the company rapidly built its own competitive AI accelerator</p>\n<p>The post <a href=\"https://www.servethehome.com/openai-jalapeno-asic-at-hot-chips-2026/\">OpenAI Jalapeno Custom AI ASIC at Hot Chips 2026</a> appeared first on <a href=\"https://www.servethehome.com\">ServeTheHome</a>.</p>",
-    "category_hint": [
-      "产品发布",
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "OpenAI自研AI加速器Jalapeno细节曝光，展示其构建竞争性AI芯片的雄心，技术细节丰富。",
-    "summary_zh": "在Hot Chips 2026大会上，OpenAI深入介绍了其自研AI加速器Jalapeno。该芯片是OpenAI快速构建自有竞争性AI加速器计划的一部分。文章详细分析了Jalapeno的架构设计、性能特点及其在AI训练和推理中的应用潜力。这一举措标志着OpenAI在硬件领域的战略布局，可能对AI芯片市场格局产生深远影响。",
-    "title_zh": "OpenAI Jalapeno定制AI ASIC在Hot Chips 2026亮相",
-    "weighted_score": 0.83,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
-      "impact": 0.9,
-      "practical_value": 0.7
-    },
-    "story_id": "6d50cdb062a45611",
-    "multi_source_count": 4,
-    "sources": [
-      {
-        "source_id": "chips-and-cheese",
-        "url": "https://chipsandcheese.com/p/hot-chips-2026-intels-diamond-rapids"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/pc-components/cpus/hot-chips-2026-nvidia-breaks-down-88-core-vera-cpu-spatial-multithreading-benchmarked-1-2-tb-s-socamm2-memory-agentic-workloads-detailed-and-more"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/tech-industry/semiconductors/micron-says-the-silicon-gap-between-hbm-and-ddr5-is-widening-with-every-generation"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/pc-components/gpus/hot-chips-2026-intel-dives-deep-on-crescent-island-ai-accelerator-larger-caches-and-deeper-xmx-engines-target-maximum-ai-flops-per-watt"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/pc-components/dram/hot-chips-2026-samsung-makes-lpddr5x-smart-with-logic-unit-in-memory-lpddr5x-pim-is-3-01x-faster-than-lpddr5x-in-ai-inference-with-8x-the-bandwidth"
-      },
-      {
-        "source_id": "servethehome",
-        "url": "https://www.servethehome.com/cerebras-talks-going-rack-scale-with-their-wses-at-hot-chips-2026/"
-      },
-      {
-        "source_id": "servethehome",
-        "url": "https://www.servethehome.com/microsofts-maia-200-accelerator-at-hot-chips-2026/"
-      },
-      {
-        "source_id": "servethehome",
-        "url": "https://www.servethehome.com/sambanovas-sn50-rdu-for-ai-at-hot-chips-2026/"
-      },
-      {
-        "source_id": "servethehome",
-        "url": "https://www.servethehome.com/googles-tpuv8s-for-training-and-inference-at-hot-chips-2026/"
-      },
-      {
-        "source_id": "servethehome",
-        "url": "https://www.servethehome.com/openai-jalapeno-asic-at-hot-chips-2026/"
-      },
-      {
-        "source_id": "chips-and-cheese",
-        "url": "https://chipsandcheese.com/p/hot-chips-2026-fujitsus-monaka-cpu"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/chips/LIUBrHLsZcZlyHwv.html"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/pc-components/cpus/hot-chips-2026-arm-details-agi-server-cpu-with-two-70-core-n3p-chiplets-touts-2-tb-s-ucie-fabric-link-and-12-channel-memory-controller"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/tech-industry/semiconductors/d-matrix-stacks-its-ai-accelerator-directly-on-custom-dram-for-100-tbs-per-card"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/tech-industry/data-centers/hot-chips-2026-nvidia-touts-benefits-of-its-dsx-maxlps-site-power-management-approach-tech-allows-for-more-compute-from-fixed-data-center-power-budgets"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/tech-industry/semiconductors/nvidia-presents-groq-3-lpx-architecture-and-unveils-its-first-third-party-inference-benchmark"
       }
     ],
     "curated": true
@@ -427,23 +297,51 @@
       "practical_value": 0.8
     },
     "story_id": "4f076a73680fd42d",
-    "multi_source_count": 3,
+    "multi_source_count": 9,
     "sources": [
       {
         "source_id": "vercel-blog",
         "url": "https://vercel.com/changelog/qwen-3-8-flash-now-available-on-ai-gateway"
       },
       {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/changelog/glm-5-3-flash-now-available-on-ai-gateway"
+        "source_id": "zh-leiphone",
+        "url": "https://www.leiphone.com/category/industrynews/VOpEHzb65rOMv793.html"
       },
       {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/994/735.htm"
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/08/26/alibabas-qwen-team-releases-qwen3-8-flash-next-a-125b-multimodal-moe-with-6b-active-parameters-previewing-the-qwen4-architecture/"
+      },
+      {
+        "source_id": "simonwillison",
+        "url": "https://simonwillison.net/2026/Aug/26/qwen38-flash-next/"
       },
       {
         "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/VOpEHzb65rOMv793.html"
+        "url": "https://www.leiphone.com/category/industrynews/EuIUKfSp07nAYG7r.html"
+      },
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/08/480001.html"
+      },
+      {
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/alibaba-qwen3-8-flash-open-source-6b-activation"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/502145/qwen3-8-flash-next"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/994/961.htm"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/994/967.htm"
+      },
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/QEG6h1VpkiaFYUL1jUyc?utm_source=rss&utm_medium=article"
       }
     ],
     "curated": true
@@ -484,40 +382,6 @@
     "curated": true
   },
   {
-    "id": "5594ac0ed1344146",
-    "source_id": "arxiv-cs-ai",
-    "title": "TRACE: An Evidence-Grounded Benchmark for Safety Evaluation of Large Reasoning Models",
-    "url": "https://arxiv.org/abs/2608.24232",
-    "published_at": "2026-08-26T04:00:00+00:00",
-    "raw_text": "arXiv:2608.24232v1 Announce Type: new \nAbstract: Large Reasoning Models (LRMs) generate intermediate reasoning traces that may contain unsafe content, even when their final responses appear safe. Guardrail models are designed to detect and block unsafe content, yet existing benchmarks for unsafe content detection focus primarily on prompts and final responses, leaving reasoning traces largely unexamined. Moreover, these benchmarks typically provide only binary safety labels, without evidence annotations that justify the judgments. To address these limitations, we introduce TRACE, an evidence-grounded safety evaluation benchmark that covers the entire LRM inference pipeline: prompts, reasoning traces, and final responses. TRACE includes prompts in two languages spanning nine risk categories and ten attack strategies. For each prompt, four LRMs generate reasoning traces and final responses, and we annotate the safety of each component and extract supporting evidence from the correspondin",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "首个针对推理模型安全性的证据基准，关注推理轨迹中的不安全内容，对安全评估有重要贡献。",
-    "summary_zh": "本文提出TRACE基准，用于评估大型推理模型（LRM）的安全性。LRM生成的中间推理轨迹可能包含不安全内容，即使最终回答安全。现有基准只关注提示和最终响应，忽略推理轨迹。TRACE提供证据标注，测试护栏模型检测推理轨迹中不安全内容的能力。实验显示现有护栏模型在此任务上表现不佳，需要改进。",
-    "title_zh": "TRACE：大型推理模型安全评估的证据基准",
-    "weighted_score": 0.81,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.7
-    },
-    "story_id": "44b9e23a64093e9f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.24232"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "892c86efcc5cae1b",
     "source_id": "zh-solidot",
     "title": "OpenAI 首款自研推理芯片 Jalapeño 强于英伟达 Blackwell",
@@ -552,11 +416,129 @@
     "curated": true
   },
   {
+    "id": "ef525f083ed6903c",
+    "source_id": "zh-oschina",
+    "title": "智谱正式上线并开源 GLM-5.3-Flash：320B 模型打到 Opus 4.8 水平，定价只要 1/40",
+    "url": "https://www.oschina.net/news/502144",
+    "published_at": "2026-08-27T03:06:36+00:00",
+    "raw_text": "「前沿智能」这四个字长期以来只跟一个词绑定在一起：贵。 不是没有便宜的大模型。但便宜往往意味着降级——参数小一号、能力差一截、在某些任务上能省则省。而智谱今天开源的 GLM-5.3-Flash（320B-A18B），正在挑战这个假设。 这是一组关键数据：320B 总参数，18B 激活参数，在 Artificial Analysis 的 AA 综合智能指数...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "智谱开源GLM-5.3-Flash，320B模型性能对标Opus 4.8，定价仅1/40，颠覆性价比。",
+    "summary_zh": "智谱正式上线并开源GLM-5.3-Flash，总参数320B，激活18B，在Artificial Analysis综合智能指数上达到Opus 4.8水平，但定价仅为后者的1/40。该模型挑战了“前沿智能必然昂贵”的假设，以极低成本提供高性能，可能重塑大模型市场格局。开源发布将促进社区应用。",
+    "title_zh": "智谱正式上线并开源GLM-5.3-Flash：320B模型打到Opus 4.8水平，定价只要1/40",
+    "weighted_score": 0.81,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.6
+    },
+    "story_id": "759a3f96619df293",
+    "multi_source_count": 5,
+    "sources": [
+      {
+        "source_id": "hn-openweights",
+        "url": "https://www.tokengo.com"
+      },
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/08/26/z-ai-releases-glm-5-3-flash-a-320b-a18b-natively-multimodal-moe-with-a-1m-token-context/"
+      },
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/08/26/z-ai-open-sources-ox-alpha-model-as-glm-5-3-flash/"
+      },
+      {
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/zhipu-glm-5-3-flash-100000-domestic-chips"
+      },
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/502144"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "5594ac0ed1344146",
+    "source_id": "arxiv-cs-ai",
+    "title": "TRACE: An Evidence-Grounded Benchmark for Safety Evaluation of Large Reasoning Models",
+    "url": "https://arxiv.org/abs/2608.24232",
+    "published_at": "2026-08-27T04:00:00+00:00",
+    "raw_text": "arXiv:2608.24232v1 Announce Type: new \nAbstract: Large Reasoning Models (LRMs) generate intermediate reasoning traces that may contain unsafe content, even when their final responses appear safe. Guardrail models are designed to detect and block unsafe content, yet existing benchmarks for unsafe content detection focus primarily on prompts and final responses, leaving reasoning traces largely unexamined. Moreover, these benchmarks typically provide only binary safety labels, without evidence annotations that justify the judgments. To address these limitations, we introduce TRACE, an evidence-grounded safety evaluation benchmark that covers the entire LRM inference pipeline: prompts, reasoning traces, and final responses. TRACE includes prompts in two languages spanning nine risk categories and ten attack strategies. For each prompt, four LRMs generate reasoning traces and final responses, and we annotate the safety of each component and extract supporting evidence from the correspondin",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "首个针对推理模型安全性的证据基准，关注推理轨迹中的不安全内容，对安全评估有重要贡献。",
+    "summary_zh": "本文提出TRACE基准，用于评估大型推理模型（LRM）的安全性。LRM生成的中间推理轨迹可能包含不安全内容，即使最终回答安全。现有基准只关注提示和最终响应，忽略推理轨迹。TRACE提供证据标注，测试护栏模型检测推理轨迹中不安全内容的能力。实验显示现有护栏模型在此任务上表现不佳，需要改进。",
+    "title_zh": "TRACE：大型推理模型安全评估的证据基准",
+    "weighted_score": 0.81,
+    "score_breakdown": {
+      "source_authority": 0.9,
+      "novelty": 0.8,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "44b9e23a64093e9f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-ai",
+        "url": "https://arxiv.org/abs/2608.24232"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "20e7c40f70ae20dc",
+    "source_id": "zh-meituan-tech",
+    "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
+    "published_at": "2026-08-26T08:36:08.376409+00:00",
+    "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "MineExplorer首个开放世界分钟级长程任务评测基准，揭示多模态大模型能力断层，极具价值。",
+    "summary_zh": "美团LongCat团队构建了MineExplorer，这是首个在开放世界中做到分钟级长程任务的评测基准，系统评测多模态大模型在需要长程规划并包含隐藏前置条件的任务中的真实能力。该基准旨在让AI离开温室，走向动态世界，揭示顶级模型被忽视的能力断层。",
+    "title_zh": "让AI离开温室，走向动态世界：MineExplorer揭示多模态大模型能力断层",
+    "weighted_score": 0.805,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.7
+    },
+    "story_id": "703bdf6f589de6ef",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
+      }
+    ],
+    "curated": true
+  },
+  {
     "id": "7a751e760582d3b7",
     "source_id": "arxiv-cs-ai",
     "title": "Generating Biomedical Fact-Checking Reports with RL-Enhanced Agentic Search",
     "url": "https://arxiv.org/abs/2608.23811",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23811v1 Announce Type: new \nAbstract: Automated fact-checking is essential for ensuring the reliability of public health information, yet the biomedical domain poses unique challenges. Validating biomedical claims requires rigorous interpretation of scientific literature, assessment of retrieved evidence, and comprehensive justification toward the conclusion. Although Large Language Models (LLMs) enhanced by Retrieval-Augmented Generation (RAG) and agentic search perform automated fact-checking in a retrieve-then-verify paradigm, current methods still output isolated prediction labels, lacking explanatory depth and offers limited utility for human understanding. To bridge this gap, we introduce an LLM-based agent named BioCheck Agent that generates structured biomedical fact-checking reports with agentic search. Rather than merely outputting supported or refuted labels, our agent synthesizes final conclusions with retrieved evidence and rigorous analysis. To ensure domain-sp",
     "category_hint": [
       "论文研究"
@@ -590,7 +572,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "Exploit More, Explore Smarter for Budget-Constrained Agentic Search",
     "url": "https://arxiv.org/abs/2608.23848",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23848v1 Announce Type: new \nAbstract: Budget-constrained agentic search arises when an LLM agent must refine candidates under a small evaluation budget, because validation is expensive, generation requires multiple model calls, or both. In this regime, standard MCTS allocates budget poorly: exploration bonuses dominate at low visit counts, unpromising siblings are expanded before promising chains can deepen, and branching is independent of node quality. We introduce ExTS, a tree-search policy that treats expansion itself as a value-of-information decision. ExTS combines three mechanisms: discriminative reward shaping to separate candidates under narrow score distributions, a stochastic virtual child that estimates the value of creating a new branch from the parent's reward history, and quality-conditioned branching that expands only when a node's score justifies the budget cost. Across prompt optimization, code generation, molecular structure elucidation, and agentic workflo",
     "category_hint": [
       "论文研究"
@@ -624,7 +606,7 @@
     "source_id": "arxiv-cs-ai",
     "title": "Granite.Trust Policy Tools: Shareable, Actionable Policies for Generative AI Applications",
     "url": "https://arxiv.org/abs/2608.23870",
-    "published_at": "2026-08-26T04:00:00+00:00",
+    "published_at": "2026-08-27T04:00:00+00:00",
     "raw_text": "arXiv:2608.23870v1 Announce Type: new \nAbstract: When it comes to safety policies for generative AI, one size does not fit all. Each organization and use case needs to mitigate different risks depending on the application context, regulatory environment, organizational values, and user personas. Yet, existing policy specification approaches are designed for traditional access control and fail to capture the nuances of GenAI application: the enforcement of content-based constraints.\n  We present two contributions to address this gap: (1) the Actionable Policy schema, a YAML-based format for specifying what model responses can and cannot contain. The schema enables exception-based policy governance, proposing exceptions to track policy violations; (2) synthetic data generation pipeline that produces policy-aligned training data for model alignment and testing, and a set of tools to help define the schema and enforce policy. Together, these enable organizations to specify policies once an",
     "category_hint": [
       "论文研究"
@@ -649,75 +631,6 @@
       {
         "source_id": "arxiv-cs-ai",
         "url": "https://arxiv.org/abs/2608.23870"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f9084c0b98c624be",
-    "source_id": "arxiv-cs-ai",
-    "title": "Paritok-4B: Intent-Conditioned Context Compression for Coding Agents",
-    "url": "https://arxiv.org/abs/2608.24188",
-    "published_at": "2026-08-26T04:00:00+00:00",
-    "raw_text": "arXiv:2608.24188v1 Announce Type: new \nAbstract: Coding agents re-send large file reads and tool outputs to a frontier LLM every turn, and this context dominates their token bill. General-purpose prompt compressors are trained on prose and suit code poorly: they paraphrase identifiers and drop the exact spans an agent needs to edit. We present Paritok-4B, a 4B LoRA compressor for coding-agent trajectories built on two commitments. It is extractive: it selects spans rather than rewriting them, and 96.0% of the identifiers, paths, and numbers it emits already appear in its input, holding at 96.2% on held-out SWE-bench Lite output. It is intent-conditioned: told the agent's current task, it acts chiefly inside a retained segment, selecting which lines survive (retained lines are +0.067 more intent-relevant than removed ones, paired 95% CI [+0.056, +0.078]) rather than changing how much is retained. We distil a gpt-4.1-mini teacher over 67,074 real OpenHands trajectories into 40,606 valida",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出面向编码智能体的意图条件上下文压缩器，解决通用压缩器不适用代码的问题，显著降低token消耗。",
-    "summary_zh": "本文提出Paritok-4B，一个4B参数的LoRA压缩器，专门用于编码智能体的轨迹压缩。通用压缩器基于散文训练，不适合代码，会改写标识符并丢失关键片段。Paritok-4B通过意图条件压缩，保留编辑所需的确切跨度，在保持性能的同时大幅减少token使用，实验显示压缩率提升且不损失任务成功率。",
-    "title_zh": "Paritok-4B：面向编码智能体的意图条件上下文压缩",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "be59fe5adc63a383",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2608.24188"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "3d2661b661f5ed37",
-    "source_id": "google-research-blog",
-    "title": "GlucoFM: Foundation model for continuous glucose monitoring",
-    "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring/",
-    "published_at": "2026-08-26T18:42:43+00:00",
-    "raw_text": "Health & Bioscience",
-    "category_hint": [
-      "论文研究",
-      "模型发布"
-    ],
-    "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/GlucoFM1_Overview.png",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "谷歌发布连续血糖监测基础模型 GlucoFM，有望推动个性化健康管理，值得关注。",
-    "summary_zh": "谷歌研究博客发布了 GlucoFM，这是一个用于连续血糖监测（CGM）的基础模型。该模型利用大量血糖数据训练，旨在提供更准确的血糖预测和异常检测，帮助糖尿病患者更好地管理健康。GlucoFM 可能支持个性化健康建议，并与其他健康数据整合，推动精准医疗发展。",
-    "title_zh": "GlucoFM：用于连续血糖监测的基础模型",
-    "weighted_score": 0.805,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "ab766482869f052d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "google-research-blog",
-        "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring/"
       }
     ],
     "curated": true
@@ -855,11 +768,15 @@
       "practical_value": 0.6
     },
     "story_id": "2e1a0bd15bb65907",
-    "multi_source_count": 3,
+    "multi_source_count": 4,
     "sources": [
       {
         "source_id": "vercel-blog",
         "url": "https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway"
+      },
+      {
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/glm-5-3-flash-now-available-on-ai-gateway"
       },
       {
         "source_id": "deepmind-blog",
@@ -868,27 +785,31 @@
       {
         "source_id": "ars-technica-ai",
         "url": "https://arstechnica.com/ai/2026/08/google-announces-gemini-3-5-transcribe-for-ai-powered-speech-to-text/"
+      },
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/994/960.htm"
       }
     ],
     "curated": true
   },
   {
-    "id": "fc0f99b6bc9c6ace",
-    "source_id": "zh-ithome",
-    "title": "Ox Alpha 现身：智谱开源 GLM-5.3-Flash 原生多模态模型，限时折扣价为 GLM-5.3 的 1/20",
-    "url": "https://www.ithome.com/0/994/765.htm",
-    "published_at": "2026-08-26T14:21:30+00:00",
-    "raw_text": "<p>IT之家 8 月 26 日消息，智谱今晚上线并开源 GLM-5.3-Flash (320B-A18B)，这是 GLM-5 系列的首个原生多模态模型。该模型总参数量为 320B（3200 亿），激活参数仅 18B（180 亿）。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/441ac132-3ddd-40cc-8581-83f9d385c085.jpg?x-bce-process=image/format,f_auto\" /></p><p>智谱在正式发布前，以匿名模型 Ox-Alpha（中文社区称作牛来）在 OpenCode 和 OpenRouter 上进行了大规模测试。Ox-Alpha 迅速成为当周最受欢迎的模型，创下双平台调用量新高。<strong>而这些请求流量全部由国产芯片提供算力支持</strong>。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/288f3357-162f-4679-ab1b-636e68b0f583.jpg?x-bce-process=image/format,f_auto\" /></p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/8/f06cb86a-f9ea-4f79-b5d1-7a99f422998f.jpg?x-bce-process=image/format,f_auto\" /></p><p>GLM-5.3-Flash 能力超过 GLM-5.2，在全球权威的 Artificial Analysis Intelligence Index（AA 综合智能指数）中取得 57 分，进入全球前沿模型能力区间，与 Anthropic 最受欢迎的模型 Claude Opus 4.8 得分持平。在自研 <span class=\"link",
+    "id": "cf8524a8a5bf65d8",
+    "source_id": "zh-meituan-tech",
+    "title": "美团正式发布 CatPaw：全场景 AI Agent，从个人提效到企业智能化",
+    "url": "https://tech.meituan.com/2026/07/28/CatPaw-LongCat.html",
+    "published_at": "2026-08-27T06:28:47.686154+00:00",
+    "raw_text": "搭载美团 LongCat 2.0 的全场景 AI Agent 平台 CatPaw 正式上线，我们将模型能力从“跑得动”推向“用得好”。CatPaw 提供开箱即用的 AI 智能工作台与企业级 Agent 开发托管能力。",
     "category_hint": [
-      "行业动态"
+      "技巧与观点"
     ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/8/441ac132-3ddd-40cc-8581-83f9d385c085.jpg?x-bce-process=image/format,f_auto",
-    "category": "模型发布",
+    "image_url": "https://p0.meituan.net/meituantechblog/a690ba49597fd8720f96ea56573b54cc151290.png",
+    "category": "产品发布",
     "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "智谱开源原生多模态模型，参数规模与折扣价信息值得关注，但内容以公告为主。",
-    "summary_zh": "智谱于8月26日上线并开源GLM-5.3-Flash (320B-A18B)，这是GLM-5系列的首个原生多模态模型，总参数量320B，激活参数仅18B。该模型在正式发布前以匿名模型Ox-Alpha在OpenCode和OpenRouter上测试，迅速成为当周最受欢迎模型。限时折扣价为GLM-5.3的1/20，旨在降低使用成本。",
-    "title_zh": "Ox Alpha 现身：智谱开源 GLM-5.3-Flash 原生多模态模型，限时折扣价为 GLM-5.3 的 1/20",
+    "depth_score": 0.3,
+    "reason_zh": "美团发布全场景AI Agent平台CatPaw，搭载LongCat 2.0，展示企业级应用，值得关注。",
+    "summary_zh": "美团正式发布全场景AI Agent平台CatPaw，搭载LongCat 2.0模型，提供开箱即用的AI智能工作台与企业级Agent开发托管能力。旨在将模型能力从“跑得动”推向“用得好”，覆盖个人提效到企业智能化场景。",
+    "title_zh": "美团正式发布CatPaw：全场景AI Agent，从个人提效到企业智能化",
     "weighted_score": 0.785,
     "score_breakdown": {
       "source_authority": 0.8,
@@ -896,20 +817,12 @@
       "impact": 0.8,
       "practical_value": 0.6
     },
-    "story_id": "a39a941e3545a1d6",
-    "multi_source_count": 3,
+    "story_id": "b67e879d30873e21",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1237480#reply9"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/994/765.htm"
-      },
-      {
-        "source_id": "hn-openweights",
-        "url": "https://www.tokengo.com"
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/28/CatPaw-LongCat.html"
       }
     ],
     "curated": true
@@ -985,36 +898,36 @@
     "curated": true
   },
   {
-    "id": "504dd1ec950803b8",
-    "source_id": "openai-blog",
-    "title": "The Hugging Face incident and the road ahead",
-    "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
-    "published_at": "2026-08-26T00:00:00+00:00",
-    "raw_text": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment.",
+    "id": "a31466f4f2ac70fb",
+    "source_id": "latent-space",
+    "title": "[AINews] NVIDIA buys HuggingFace for $13B, as OpenAI publishes their HF incident retro",
+    "url": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for",
+    "published_at": "2026-08-27T01:50:54+00:00",
+    "raw_text": "Open Source wins!",
     "category_hint": [
-      "模型发布",
-      "产品发布"
+      "技巧与观点",
+      "行业动态"
     ],
-    "image_url": null,
+    "image_url": "https://substackcdn.com/image/fetch/$s_!FSM7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa61da113-3d9b-4206-81c1-06da7b4a9a0c_1362x1278.png",
     "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.5,
-    "reason_zh": "OpenAI分享Hugging Face安全事件调查结果，对AI安全有重要参考价值。",
-    "summary_zh": "OpenAI发布了关于Hugging Face安全事件的调查结果，并介绍了为加强AI模型安全、监控和一致性所采取的步骤。该事件涉及模型安全，OpenAI分享了发现和后续措施，旨在提升行业对AI安全的认识。",
-    "title_zh": "Hugging Face事件及未来之路",
-    "weighted_score": 0.765,
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "英伟达收购HuggingFace是重大行业事件，影响开源生态与AI格局，值得关注。",
+    "summary_zh": "据AINews报道，英伟达以130亿美元收购HuggingFace，同时OpenAI发布了其HF事件回顾。此举被视为开源社区的胜利，可能重塑AI模型分发与协作方式。收购将加强英伟达在AI生态中的主导地位，并对开源社区产生深远影响。",
+    "title_zh": "英伟达130亿美元收购HuggingFace，OpenAI发布事件回顾",
+    "weighted_score": 0.77,
     "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.6
+      "source_authority": 0.8,
+      "novelty": 0.9,
+      "impact": 0.9,
+      "practical_value": 0.4
     },
-    "story_id": "a87b27b2f8e6e413",
+    "story_id": "bf109fbdf4b3064a",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "openai-blog",
-        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead"
+        "source_id": "latent-space",
+        "url": "https://www.latent.space/p/ainews-nvidia-buys-huggingface-for"
       }
     ],
     "curated": true
@@ -1158,6 +1071,10 @@
       {
         "source_id": "the-decoder",
         "url": "https://the-decoder.com/chinese-moonshot-ai-negotiates-hosting-deals-with-microsoft-amazon-and-google/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/sam-altman-says-openai-will-have-agi-by-the-end-of-2026-if-you-accept-his-definition/"
       }
     ],
     "curated": true
@@ -1233,74 +1150,6 @@
     "curated": true
   },
   {
-    "id": "2c5e765abe6797ed",
-    "source_id": "zh-tmtpost",
-    "title": "腾讯汤道生深度复盘WorkBuddy、元宝以及AI竞争：和AI一起长跑的这两年",
-    "url": "https://www.tmtpost.com/8117433.html",
-    "published_at": "2026-08-26T10:40:02+00:00",
-    "raw_text": "两条Agent路线、一场长期战。",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4t5hyjtngf3.png",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "腾讯高管深度复盘AI竞争，两条Agent路线与长期战略，对行业有启发。",
-    "summary_zh": "腾讯汤道生深度复盘了WorkBuddy、元宝以及AI竞争，提出两条Agent路线和一场长期战的观点。文章分析了腾讯在AI领域的布局、挑战与思考，强调长期主义的重要性，为行业提供了战略参考。",
-    "title_zh": "腾讯汤道生深度复盘WorkBuddy、元宝以及AI竞争：和AI一起长跑的这两年",
-    "weighted_score": 0.75,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "a3126a9404ca6faf",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-tmtpost",
-        "url": "https://www.tmtpost.com/8117433.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "0111c28f313f480f",
-    "source_id": "gh-invokeai",
-    "title": "invoke-ai/InvokeAI v6.14.0",
-    "url": "https://github.com/invoke-ai/InvokeAI/releases/tag/v6.14.0",
-    "published_at": "2026-08-25T23:12:16+00:00",
-    "raw_text": "This is a big release that adds many new user visible features including:\r\n\r\n* Video generation support via Wan 2.2.\r\n* Krea.2-Turbo and Raw model support\r\n* Flux.2 Dev support\r\n* Ernie Turbo model support\r\n* Ideogram 4 support\r\n* Anima controlnets and inpainting\r\n* Flux.2 PiD support (super resolution up to 4K)\r\n* Multi-GPU support\r\n* Native Intel XPU support\r\n* FP8 support for Anima, Flux.2 Krea Turbo & Raw, and Z-Image Turbo\r\n\r\n## Video Generation\r\n\r\nYou can now generate short videos using the Wan 2.2 video model. We support text-to-video, image-to-video (use a still image to initiate the video), and image-to-image-video (interpolate video between two images). Video generation is available through the workflow editor, and includes a series of template workflows that allow you to generate videos and concatenate them together into longer productions. See [Video Generation](https://invoke.ai/features/video-generation/) to get started.\r\n\r\n## New models\r\n\r\nWe now provide support for [Kre",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "InvokeAI v6.14.0大版本更新，支持多种新模型和硬件，实用性强，适合AI绘画用户。",
-    "summary_zh": "InvokeAI v6.14.0是一个重大版本发布，增加了许多用户可见的新功能，包括：通过Wan 2.2支持视频生成；支持Krea.2-Turbo和Raw模型；支持Flux.2 Dev；支持Ernie Turbo模型；支持Ideogram 4；支持Anima controlnets和inpainting；支持Flux.2 PiD（超分辨率至4K）；支持多GPU；原生支持Intel XPU；支持Anima、Flux.2 Krea的FP8。这些更新显著增强了InvokeAI的功能和兼容性，为用户提供了更丰富的创作工具。",
-    "title_zh": "InvokeAI v6.14.0发布",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "ab035c64ce69dece",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-invokeai",
-        "url": "https://github.com/invoke-ai/InvokeAI/releases/tag/v6.14.0"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "214a2fe83e85dcfa",
     "source_id": "verge-ai",
     "title": "Bill Gates is deeply worried about AI, and he’s no longer staying quiet",
@@ -1366,156 +1215,6 @@
       {
         "source_id": "toms-hardware",
         "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/bill-gates-calls-for-some-jobs-to-be-human-reserved-suggests-taxing-ai-tokens-and-robots-billionaire-says-that-ai-era-will-be-one-of-the-most-turbulent-times-in-human-history"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "e6a39265d9568cd0",
-    "source_id": "zh-ithome",
-    "title": "英伟达黄仁勋：AI 已迈过商业化拐点，全球产业进入 AI 变现时代",
-    "url": "https://www.ithome.com/0/994/795.htm",
-    "published_at": "2026-08-26T22:36:16+00:00",
-    "raw_text": "<p>IT之家 8 月 27 日消息，雅虎财经今天（8 月 27 日）发布博文，报道称在英伟达最新财报电话会议上，公司首席执行官黄仁勋明确指出，<strong>人工智能（AI）已正式迈过历史性的“拐点”（Inflection Point）。</strong></p><p>AI 正在从小规模的实验室技术和概念验证，全面转化为具备高生产力与商业获利能力的实质工具，<strong>象征着全球产业正式进入 AI 变现时代。</strong></p><p>黄仁勋表示，过去几年业界主要聚焦于 AI 模型的训练与技术突破；而现在，全球企业正加速将生成式 AI 整合至核心业务。</p><p>他概括这一叙事为“In AI, compute is revenue”，这一转变促使传统数据中心发生质变，从过往的存储与基础计算功能，升<strong>级为 24 小时不间断产出数字智能的“AI 工厂”（AI Factories）。</strong></p><p>IT之家援引博文介绍，不论是软件开发、生医制药还是金融自动化，AI 带来的投资回报率（ROI）已开始在企业财报中显著体现。此外，AI 的扩张已超越硅谷科技巨头的范畴。</p><p>随着各国积极建构自身的“主权 AI”（Sovereign AI），全球各地的政府与传统产业正迎头赶上，将 AI 基础设施视为国家级战略物资。</p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "黄仁勋称 AI 已过商业化拐点，进入变现时代，对行业趋势有重要指示意义。",
-    "summary_zh": "在英伟达最新财报电话会议上，CEO 黄仁勋表示 AI 已迈过历史性拐点，正从实验室技术转化为高生产力工具，全球产业进入 AI 变现时代。他强调过去聚焦模型训练，现在企业加速将生成式 AI 整合至核心业务，并提出“In AI, compute is revenue”的观点。这一转变推动传统数据中心升级为 24 小时产出数字智能的“AI 工厂”。",
-    "title_zh": "英伟达黄仁勋：AI 已迈过商业化拐点，全球产业进入 AI 变现时代",
-    "weighted_score": 0.74,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.9,
-      "practical_value": 0.5
-    },
-    "story_id": "ba8c4ae822f5f0ec",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/0/994/795.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "61ae70a614350917",
-    "source_id": "the-decoder",
-    "title": "IBM drops open-weight Granite 4.2 family with built-in agentic capabilities under Apache 2.0",
-    "url": "https://the-decoder.com/ibm-drops-open-weight-granite-4-2-family-with-built-in-agentic-capabilities-under-apache-2-0/",
-    "published_at": "2026-08-26T10:37:56+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1024\" src=\"https://the-decoder.com/wp-content/uploads/2025/10/ibm_logl_neural_network.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1536\" /></p>\n<p>        IBM is releasing its Granite 4.2 language models in 3B, 8B, and 30B sizes, trained on about 15 trillion tokens with a context window of up to 512,000 tokens. The larger models use \"agentic RL\" training to learn tool use and code execution on their own. All models are available under the Apache 2.0 license.</p>\n<p>The article <a href=\"https://the-decoder.com/ibm-drops-open-weight-granite-4-2-family-with-built-in-agentic-capabilities-under-apache-2-0/\">IBM drops open-weight Granite 4.2 family with built-in agentic capabilities under Apache 2.0</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2025/10/ibm_logl_neural_network.png",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "IBM发布开源Granite 4.2系列，内置智能体能力，Apache 2.0许可，影响广泛。",
-    "summary_zh": "IBM发布Granite 4.2语言模型系列，包括3B、8B和30B参数版本，基于约15万亿token训练，上下文窗口高达512,000 token。模型采用Apache 2.0许可，内置智能体能力，支持多种部署场景。",
-    "title_zh": "IBM发布开源Granite 4.2系列，内置智能体能力，采用Apache 2.0许可",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "c21bdaf02e591430",
-    "multi_source_count": 3,
-    "sources": [
-      {
-        "source_id": "huggingface-blog",
-        "url": "https://huggingface.co/blog/ibm-granite/granite-4-2"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/ibm-drops-open-weight-granite-4-2-family-with-built-in-agentic-capabilities-under-apache-2-0/"
-      },
-      {
-        "source_id": "ars-technica-ai",
-        "url": "https://arstechnica.com/ai/2026/08/ibms-new-granite-4-2-models-ride-the-wave-of-interest-in-local-llms/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c5ad0b3bc6f0e047",
-    "source_id": "qbitai",
-    "title": "WRC乒乓球局爆火！这家中国具身创业公司，砸出了一套全栈新解法",
-    "url": "https://www.qbitai.com/2026/08/478860.html",
-    "published_at": "2026-08-26T03:02:34+00:00",
-    "raw_text": "球技丝滑、现场爆满",
-    "category_hint": [
-      "行业动态",
-      "模型发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.4,
-    "reason_zh": "报道中国具身创业公司在WRC乒乓球局中的全栈新解法，展示技术突破，对关注具身智能的读者有信息价值。",
-    "summary_zh": "本文报道了中国一家具身智能创业公司在WRC（世界机器人大会）上展示的乒乓球机器人，其球技丝滑、现场爆满，引起了广泛关注。该公司砸出了一套全栈新解法，涵盖了从硬件设计、运动控制到AI决策的完整技术栈。文章详细介绍了该机器人的技术特点，包括高精度视觉识别、快速反应机制和自适应学习能力，并分析了其与国内外同类产品的差异。作者认为，这一成果展示了中国在具身智能领域的快速进步，也为机器人进入日常生活提供了新的可能性。",
-    "title_zh": "WRC乒乓球局爆火！这家中国具身创业公司，砸出了一套全栈新解法",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "ac8d16799e9d17ba",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/08/478860.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "9861a5c37db6508a",
-    "source_id": "zh-leiphone",
-    "title": "独家丨王云鹤创业估值数亿美元，押注多模型 Harness和 Agent-Native Model",
-    "url": "https://www.leiphone.com/category/yanxishe/HLyK0NtwB0N082Fl.html",
-    "published_at": "2026-08-26T06:13:00+00:00",
-    "raw_text": "<section><section><section><section><section style=\"text-align: center;\"><img class=\"rich_pages wxw-img js_insertlocalimg\" src=\"https://static.leiphone.com/uploads/new/images/20260826/6a8e83c349fab.png?imageMogr2/quality/90\" style=\"width: 100%; background-color: transparent;\" type=\"block\" /></section><section><section></section></section><p><span><br /></span></p><p style=\"text-align: justify; margin-bottom: 24px; line-height: 1.75em;\"><span style=\"font-size: 15px;\"><span><span><span><span style=\"font-size: 15px;\"><span>雷峰网</span><span>独家获悉，</span></span></span><span><strong><span><span style=\"letter-spacing: 0.5px;\">AI 基础设施公司基元律动（TokenRhythm）近日完成新一轮融资，截至目前累计融资金额达数千万美金。</span></span></strong><span><span style=\"letter-spacing: 0.5px;\">本轮融资由弘晖基金领投，聚合资本、尚势资本等机构参与。此前，公司已完成由 Granite Asia 领投，鼎晖 VGC、元璟资本、无限基金参与的种子轮融资。</span></span></span></span></span></span></p><p style=\"text-align: justify; margin-bottom: 24px; line-height: 1.75em;\"><span><span><span style=\"letter-spacing: 0.5px;\">在技术战略上，基元",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://static.leiphone.com/uploads/new/images/20260826/6a8e83c349fab.png?imageMogr2/quality/90",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "独家爆料王云鹤创业估值数亿美元，押注多模型Harness，行业风向标。",
-    "summary_zh": "据独家消息，前字节跳动AI负责人王云鹤创业，公司估值达数亿美元，押注多模型Harness和Agent-Native Model。这一方向旨在整合多个模型，提供统一的Agent开发框架。王云鹤的创业动向反映了AI行业对Agent基础设施的重视，可能吸引更多投资和人才。具体产品尚未公开，但已引发广泛关注。",
-    "title_zh": "独家：王云鹤创业估值数亿美元，押注多模型Harness",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.5
-    },
-    "story_id": "499d09d2ec3cd4a2",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/yanxishe/HLyK0NtwB0N082Fl.html"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/chips/iKmV7NhGx4fLAb4v.html"
       }
     ],
     "curated": true
@@ -1591,69 +1290,35 @@
     "curated": true
   },
   {
-    "id": "a34540de3088e691",
-    "source_id": "vercel-blog",
-    "title": "Muse Image now available on AI Gateway",
-    "url": "https://vercel.com/changelog/muse-image-now-available-on-ai-gateway",
-    "published_at": "2026-08-26T00:00:00+00:00",
-    "raw_text": "<p><a href=\"https://vercel.com/ai-gateway/models/muse-image-1.0\">Muse Image</a> from Meta Superintelligence Labs is now available on AI Gateway. It is their first image model and a separate family from Muse Spark, returning images rather than text. Send a prompt and get an image back, or send an image with an instruction and get it changed. One model does both, so you don't switch models to move from generating to editing.</p><p>To use Muse Image, set <code>model</code> to <code>meta/muse-image-1.0</code> and call <code>generateImage</code> from the <a href=\"https://ai-sdk.dev/\">AI SDK</a>:</p><div></div><p>To steer the result toward art you already have, pass reference images in <code>prompt.images</code> alongside the text, and the model blends them into what it draws.</p><h2>Editing</h2><p>Pass the image you want changed in <code>prompt.images</code> with an instruction, and the model changes what you asked for and leaves the rest:</p><div></div><p>Try Muse Image in the <a href=\"htt",
-    "category_hint": [
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "Meta首个图像模型Muse Image上线AI Gateway，支持图像生成与编辑，实用性强。",
-    "summary_zh": "Meta Superintelligence Labs的图像模型Muse Image现已上线Vercel的AI Gateway。这是Meta的首个图像模型，与Muse Spark不同，它返回图像而非文本。用户可以通过发送提示词生成图像，或发送图像加指令进行编辑，一个模型即可完成两种任务，无需切换模型。该模型简化了图像生成与编辑的流程，为开发者提供了便捷的API接入方式。",
-    "title_zh": "Muse Image现已在AI Gateway上线",
-    "weighted_score": 0.73,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "af9cf4c61d1bef04",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/changelog/muse-image-now-available-on-ai-gateway"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "d645271422b1eff5",
+    "id": "9ed78062de1786e4",
     "source_id": "zh-oschina",
-    "title": "扎心：Anthropic 最贵的模型，企业几乎不用",
-    "url": "https://www.oschina.net/news/502129",
-    "published_at": "2026-08-26T04:03:22+00:00",
-    "raw_text": "《金融时报》拿到了一份数据，然后提了一个让 Anthropic 在 IPO 之前很难堪的问题：你的最强模型到底有没有人用？ 根据支付服务集团 Ramp 收集的 7 万家公司支出数据，Anthropic 最贵的模型 Fable 5 发布两个多月后，企业支出占比仅稳定在 11% 左右。旧款、更便宜的模型吃掉了其余 89%。 这不是小样本。7 万家公司的支出...",
+    "title": "英伟达 130 亿美元虎视 Hugging Face，开源 AI 的“中立社区”要沦陷了？",
+    "url": "https://www.oschina.net/news/502149/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars",
+    "published_at": "2026-08-27T06:18:08+00:00",
+    "raw_text": "根据 Business Insider 的独家报道，英伟达正与 Hugging Face 就收购进行谈判，估值超过 130 亿美元。这将是英伟达有史以来最大的一笔收购之一。 但更值得关注的是：Hugging Face 去年刚拒绝了英伟达 5 亿美元的投资——当时估值 70 亿美元。从拒绝投资到接受收购，中间发生了什么？ Hugging Face 是开源 AI 生态的中央枢...",
     "category_hint": [
       "开源项目"
     ],
     "image_url": null,
     "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.6,
-    "reason_zh": "揭示Anthropic旗舰模型企业采用率低的现状，对理解模型定价与市场需求有启发。",
-    "summary_zh": "据《金融时报》报道，支付服务集团 Ramp 收集的 7 万家公司支出数据显示，Anthropic 最贵的模型 Fable 5 发布两个多月后，企业支出占比仅约 11%，而旧款、更便宜的模型占据了其余 89%。这一数据引发对 Anthropic 最强模型实际市场接受度的质疑，尤其在 IPO 前夕，可能影响其估值与产品策略。",
-    "title_zh": "扎心：Anthropic 最贵的模型，企业几乎不用",
-    "weighted_score": 0.73,
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "英伟达拟收购Hugging Face，影响开源AI生态，深度分析背后博弈，值得关注。",
+    "summary_zh": "据Business Insider报道，英伟达正与Hugging Face谈判收购，估值超130亿美元，将是英伟达史上最大收购之一。Hugging Face去年曾拒绝英伟达5亿美元投资，当时估值70亿美元。文章探讨从拒绝投资到接受收购的原因，以及收购对开源AI社区中立性的潜在影响。",
+    "title_zh": "英伟达130亿美元虎视Hugging Face，开源AI的“中立社区”要沦陷了？",
+    "weighted_score": 0.735,
     "score_breakdown": {
       "source_authority": 0.7,
       "novelty": 0.8,
-      "impact": 0.8,
-      "practical_value": 0.6
+      "impact": 0.9,
+      "practical_value": 0.5
     },
-    "story_id": "992a0a84c9b278f1",
+    "story_id": "1ce64661cd6aa681",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "zh-oschina",
-        "url": "https://www.oschina.net/news/502129"
+        "url": "https://www.oschina.net/news/502149/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars"
       }
     ],
     "curated": true
@@ -1689,41 +1354,6 @@
       {
         "source_id": "infoq-cn-ai",
         "url": "https://www.infoq.cn/article/y7KTOS9YbBz0OcoyiweQ?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f7b70ab272dc4dae",
-    "source_id": "qbitai",
-    "title": "深度实测「豆包工作」+飞书：目前最接近企业Agent终局的答案",
-    "url": "https://www.qbitai.com/2026/08/479348.html",
-    "published_at": "2026-08-26T02:59:02+00:00",
-    "raw_text": "shui jiang shuai xian sha",
-    "category_hint": [
-      "行业动态",
-      "模型发布"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "深度实测豆包工作与飞书结合，分析其作为企业Agent终局的潜力，对关注AI办公落地的读者有参考价值。",
-    "summary_zh": "本文深度实测了字节跳动的“豆包工作”与飞书的集成方案，认为这是目前最接近企业Agent终局的答案。文章从实际使用体验出发，对比了豆包工作与飞书在任务自动化、流程管理、协作效率等方面的表现，分析了其技术架构和产品设计思路。作者指出，豆包工作通过自然语言交互和智能体编排，能够显著降低企业使用AI的门槛，而飞书的协同生态则为其提供了良好的落地场景。文章也讨论了当前存在的局限，如复杂任务处理能力不足、与现有系统集成难度等，并展望了未来企业Agent的发展方向。",
-    "title_zh": "深度实测「豆包工作」+飞书：目前最接近企业Agent终局的答案",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "28e74c6dba3c8e31",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/08/479348.html"
       }
     ],
     "curated": true
@@ -1797,6 +1427,41 @@
       {
         "source_id": "aws-ml-blog",
         "url": "https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-2-advanced-data-strategies/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "02e1be7d467c6767",
+    "source_id": "qbitai",
+    "title": "工业Agent不是“套壳”大模型！西门子百年经验灌进工业AI",
+    "url": "https://www.qbitai.com/2026/08/480005.html",
+    "published_at": "2026-08-27T02:46:35+00:00",
+    "raw_text": "西门子Xcelerator与普通软件货架最本质的区别。货架解决的是「把产品卖出去」，西门子Xcelerator要解决的是「让产品在真实工业场景中持续生长」。",
+    "category_hint": [
+      "行业动态",
+      "模型发布"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "西门子将百年工业经验注入工业AI，揭示工业Agent非套壳，深度剖析真实场景落地。",
+    "summary_zh": "文章探讨西门子Xcelerator与普通软件货架的本质区别，强调工业Agent不是简单套壳大模型，而是要让产品在真实工业场景中持续生长。西门子凭借百年工业经验，将领域知识融入AI系统，解决实际痛点。文章深入分析了工业AI的挑战与机遇，为从业者提供了宝贵见解。",
+    "title_zh": "工业Agent不是“套壳”大模型！西门子百年经验灌进工业AI",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "aae84f0cd8b1771d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/08/480005.html"
       }
     ],
     "curated": true
@@ -1905,43 +1570,74 @@
     "curated": true
   },
   {
-    "id": "bf4784a9f1890061",
-    "source_id": "pandaily",
-    "title": "WRC 2026: 90 Data Factories, Yet Not Enough Data to Feed One Embodied Intelligence Brain",
-    "url": "https://pandaily.com/wrc-2026-embodied-ai-data-factories-data-race-aug2026",
-    "published_at": "2026-08-26T01:58:38+00:00",
-    "raw_text": "As China builds scores of embodied-intelligence data centers, this year's World Robot Conference showed an industry reorienting from building robot bodies to harvesting the data that trains their brains.",
+    "id": "1a8ef96848b4c991",
+    "source_id": "zh-tonybai",
+    "title": "Token效率鄙视链被打脸：实测证明，Rust才是AI编程时代的隐藏赢家",
+    "url": "https://tonybai.com/2026/08/27/rust-ai-coding-agent-token-efficiency-danluu/",
+    "published_at": "2026-08-26T21:00:00+00:00",
+    "raw_text": "本文基于Danluu最新博客文章的实测数据，梳理了「AI编程语言效率鄙视链」话题的来龙去脉，重点分析了Rust在真实工程任务下的AI编程表现。数据显示，此前流传的「动态语言天生省Token」结论建立在极小规模题目上，一旦换成Zstd解码器、Pandoc这类真实工程任务，结论迅速站不住脚；而一份曾被用来证明「Rust的所有权模型拖累AI编程效率」的评测，其实源于测试脚本本身的Bug。文章同时讨论了内存安全的隐藏成本、语言流行度与Agent表现的相关性，为技术团队在AI辅助编程语言选型上提供更审慎的参考。",
     "category_hint": [
-      "行业动态"
+      "技巧与观点"
     ],
-    "image_url": "https://cms-image.pandaily.com/1/img_wrc2_3277ee582b.png",
-    "category": "行业动态",
+    "image_url": null,
+    "category": "技巧与观点",
     "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "世界机器人大会揭示行业从硬件转向数据，对理解具身智能趋势有启发。",
-    "summary_zh": "随着中国建设众多具身智能数据中心，今年的世界机器人大会显示行业正从构建机器人本体转向收集训练其大脑的数据。尽管有90个数据工厂，但数据仍不足以训练一个具身智能大脑，凸显数据稀缺的挑战。",
-    "title_zh": "WRC 2026：90个数据工厂，却不足以喂养一个具身智能大脑",
-    "weighted_score": 0.635,
+    "depth_score": 0.8,
+    "reason_zh": "基于实测数据推翻“动态语言省Token”的流行观点，揭示Rust在AI编程中的优势，数据详实，有说服力。",
+    "summary_zh": "本文基于Danluu的博客实测数据，分析了AI编程语言效率的讨论。此前认为动态语言更省Token，但真实工程任务（如Zstd解码器、Pandoc）中结论相反。Rust在AI编程中表现优异，而一份证明Rust所有权模型拖累效率的评测源于测试脚本Bug。文章还讨论了内存安全的隐藏成本、语言流行度与Agent表现的相关性，为技术团队选型提供参考。",
+    "title_zh": "Token效率鄙视链被打脸：实测证明，Rust才是AI编程时代的隐藏赢家",
+    "weighted_score": 0.72,
     "score_breakdown": {
       "source_authority": 0.7,
-      "novelty": 0.7,
+      "novelty": 0.8,
       "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "a92a6fee4ee396ad",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/08/27/rust-ai-coding-agent-token-efficiency-danluu/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "eb2c3327ffec53e7",
+    "source_id": "toms-hardware",
+    "title": "Nvidia custom 'NVHBM' promises 30% higher bandwidth, 15% lower power than commodity HBM4e — custom base die and PHY will be available to NVLink Fusion partners",
+    "url": "https://www.tomshardware.com/pc-components/dram/nvidia-custom-nvhbm-promises-30-percent-higher-bandwidth-15-percent-lower-power-than-commodity-hbm4e-custom-base-die-and-phy-will-be-available-to-nvlink-fusion-partners",
+    "published_at": "2026-08-26T22:45:22+00:00",
+    "raw_text": "Nvidia has unveiled NVHBM, a custom high-bandwidth memory implementation that promises higher bandwidth and lower power for customers building chips within the NVLink Fusion partner program.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://cdn.mos.cms.futurecdn.net/TaGTq85mNPD8CGfDe72ByP-1280-80.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "英伟达推出定制HBM方案，带宽提升30%、功耗降低15%，对AI硬件生态有重要影响。",
+    "summary_zh": "英伟达发布了NVHBM，这是一种定制的高带宽内存实现，承诺比普通HBM4e提供更高的带宽和更低的功耗。NVHBM采用定制基础芯片和PHY，将提供给NVLink Fusion合作伙伴计划中的客户。该技术有望为构建定制芯片的客户带来性能提升，带宽提高30%，功耗降低15%。",
+    "title_zh": "英伟达定制NVHBM承诺比普通HBM4e带宽高30%、功耗低15%",
+    "weighted_score": 0.685,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
       "practical_value": 0.5
     },
-    "story_id": "abd07ef64231b98c",
+    "story_id": "4f6e15e286add8fe",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/wrc-2026-embodied-intelligence-route-divergence-aug2026"
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/pc-components/dram/nvidia-custom-nvhbm-promises-30-percent-higher-bandwidth-15-percent-lower-power-than-commodity-hbm4e-custom-base-die-and-phy-will-be-available-to-nvlink-fusion-partners"
       },
       {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/wrc-2026-embodied-ai-data-factories-data-race-aug2026"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/fg1r01an843kYNdp.html"
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/0/994/908.htm"
       }
     ],
     "curated": true
@@ -2016,6 +1712,41 @@
       {
         "source_id": "pytorch-blog",
         "url": "https://pytorch.org/blog/pytorch-ecosystem-landscape-q3-update/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "6a8a209f21e399e9",
+    "source_id": "gh-nemo-guardrails",
+    "title": "NVIDIA/NeMo-Guardrails v0.24.0",
+    "url": "https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.0",
+    "published_at": "2026-08-26T19:31:04+00:00",
+    "raw_text": "## What's Changed\r\n\r\nNeMo Guardrails 0.24.0 substantially expands the built-in rails available through IORails. IORails can now execute 59 of the library's 67 action-backed input and output surfaces, including community integrations and rails that transform content, while sharing the same underlying rail implementations with LLMRails.\r\n\r\nThree related foundations make this possible:\r\n\r\n- **`RailOutcome`: decide once, render many.** A rail action returns one engine-neutral allow, block, or transform result that either LLMRails or IORails can enforce.\r\n- **Rail manifests: declare, don't infer.** Built-in rails describe their configuration, actions, execution surfaces, requirements, and privacy properties so both engines can discover and use them without maintaining separate support lists.\r\n- **Shared outbound HTTP.** Built-in integrations now use a common client boundary for connection pooling, retries, TLS, error handling, lifecycle management, and privacy-safe tracing and metrics.\r\n\r\nT",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "NeMo Guardrails 0.24.0大幅扩展内置护栏，支持更多输入输出表面，对构建安全AI应用有重要价值。",
+    "summary_zh": "NVIDIA NeMo Guardrails 0.24.0版本发布，显著扩展了IORails的内置护栏功能。IORails现在可以执行库中67个基于动作的输入输出表面中的59个，包括社区集成和内容转换护栏，并与LLMRails共享底层实现。这一更新增强了AI应用的安全性和可控性。",
+    "title_zh": "NVIDIA/NeMo-Guardrails v0.24.0",
+    "weighted_score": 0.705,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "654cf52a60b5a3f5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-nemo-guardrails",
+        "url": "https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.0"
       }
     ],
     "curated": true,
