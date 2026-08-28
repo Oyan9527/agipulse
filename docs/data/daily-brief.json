@@ -1,25 +1,57 @@
 {
   "date": "2026-08-28",
-  "generated_at": "2026-08-28T04:09:07.874781+00:00",
+  "generated_at": "2026-08-28T16:09:12.527324+00:00",
   "items": [
     {
-      "id": "d9b2bc36ffdfc77e",
-      "source_id": "deepmind-blog",
-      "title": "Piloting the world's first double-blind AI evaluations",
-      "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
-      "published_at": "2026-08-27T12:59:16+00:00",
-      "raw_text": "Piloting the world's first double-blind AI evaluations",
+      "id": "61a41d0929b1a7f0",
+      "source_id": "arxiv-cs-ai",
+      "title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
+      "url": "https://arxiv.org/abs/2608.26530",
+      "published_at": "2026-08-28T04:00:00+00:00",
+      "raw_text": "arXiv:2608.26530v1 Announce Type: new \nAbstract: Long-horizon agent runs generate experience that can improve both the current run and future work. Most self-improvement methods process this experience only after execution ends, so they cannot redirect the active run or immediately apply and validate lessons learned from it. We argue that self-improvement should instead be live, using emerging experience both to redirect the active run and to update the persistent harness. Existing agent architectures do not fully support this goal. Single-agent self-correction combines task execution and trajectory assessment within one context, while subagent delegation separates execution but typically cannot redirect an active subagent. We present PILOT, a supervisor-worker harness for live self-improvement through two coupled mechanisms: (1) live steering lets a separate supervisor redirect or abort the active worker during execution; and (2) live self-evolution distils procedures and failure mode",
       "category_hint": [
-        "模型发布",
         "论文研究"
       ],
-      "image_url": "https://lh3.googleusercontent.com/fHN8sOK3p7BTKR4s-3lpYYnq5IEadmVKnqssJO4OmfL6remdC7E8voV-IEue8NPviKWUR7WtCtNTfsKZpld6y2jjwVhNAiqYL9-9EQzj5OURGXCCuug=w528-h297-n-nu-rw-lo",
+      "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "DeepMind首次试点双盲AI评估，为AI评测提供更客观的方法论，具有重要参考价值。",
-      "summary_zh": "DeepMind宣布试点全球首个双盲AI评估，旨在减少评估过程中的偏见和主观性。该方法借鉴医学双盲试验，确保评估者和被评估模型互不知晓对方身份，从而提高评估结果的客观性和可靠性。这一创新评估框架有望成为AI模型评测的新标准，推动行业更公正地比较不同模型的能力。",
-      "title_zh": "试点全球首个双盲AI评估",
+      "reason_zh": "提出PILOT在环实时自我改进方法，利用运行中经验即时调整长程智能体。",
+      "summary_zh": "长程智能体运行产生的经验可改进当前和未来工作，但大多数自我改进方法仅在执行结束后处理这些经验，无法重定向当前运行或立即应用和验证所学教训。本文主张自我改进应是实时的，利用新兴经验即时调整。作者提出PILOT在环方法，使智能体在运行过程中持续学习和改进，提升长程任务的适应性和效率。",
+      "title_zh": "PILOT在环：长程智能体的实时自我改进",
+      "weighted_score": 0.855,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.8
+      },
+      "story_id": "d9aac3e627ea8786",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.26530"
+        }
+      ]
+    },
+    {
+      "id": "a3a915aff276198c",
+      "source_id": "arxiv-cs-ai",
+      "title": "ProofEvolve: Neuro-Symbolic Evolution for Formal Automated Theorem Proving",
+      "url": "https://arxiv.org/abs/2608.26334",
+      "published_at": "2026-08-28T04:00:00+00:00",
+      "raw_text": "arXiv:2608.26334v1 Announce Type: new \nAbstract: Automated theorem proving offers a natural foundation for recursive self-improvement in scientific discovery. However, existing neural provers do not fully preserve this recursive structure, where the learning process should be self-improving over time. Existing methods either embed proof experience into model parameters through expensive weight updates, or keep verified intermediate deductions only within the current problem. In addition, these methods also heavily rely on sparse whole-proof feedback, even when unsuccessful partial attempts contain useful discoveries. To close the gap, we propose ProofEvolve, a neuro-symbolic framework that evolves explicit, formally verified symbolic proof structures with neural models to decisively expand the knowledge boundary. In this framework, the neural model proposes variation operators, including decompositions, repairs, and schema recombinations. The symbolic Lean kernel verifies every proof t",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出神经符号进化方法ProofEvolve，实现自动定理证明的递归自我改进。",
+      "summary_zh": "自动定理证明为科学发现中的递归自我改进提供了自然基础。然而，现有神经证明器并未完全保留这种递归结构，学习过程应随时间自我改进。现有方法要么通过昂贵的权重更新将证明经验嵌入模型参数，要么忽略经验积累。本文提出ProofEvolve，一种神经符号进化方法，旨在更有效地利用证明经验，实现自动定理证明的持续自我改进，推动科学发现自动化。",
+      "title_zh": "ProofEvolve：用于形式化自动定理证明的神经符号进化",
       "weighted_score": 0.815,
       "score_breakdown": {
         "source_authority": 0.9,
@@ -27,12 +59,78 @@
         "impact": 0.8,
         "practical_value": 0.6
       },
-      "story_id": "bc21075d530a0b1c",
+      "story_id": "dd01894c4db69127",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "deepmind-blog",
-          "url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.26334"
+        }
+      ]
+    },
+    {
+      "id": "bcebde90c427932f",
+      "source_id": "arxiv-cs-ai",
+      "title": "Same Model, Different Harness: Different Coding-Agent Results",
+      "url": "https://arxiv.org/abs/2608.26218",
+      "published_at": "2026-08-28T04:00:00+00:00",
+      "raw_text": "arXiv:2608.26218v1 Announce Type: new \nAbstract: A coding agent combines a model with a harness, which decides what the model sees, which tools it can use, and how the work continues. We ask whether changing the harness changes the result when the model and task stay fixed. We compare two configurations of the same harness on three coding benchmarks. The control supplies the full conversation in time order, while the treatment keeps the same record but mechanically shortens older tool results as the context fills and responds to repeated or stalled work.\n  Under tight context, the treatment raises mean per-task fail-to-pass fraction (F2PF) in all three pressure comparisons and increases complete solutions on SWE-bench Verified and SWE-bench Pro. The tight-window Verified comparison uses 169 tasks, a 20,480-token window, and a fixed 480-second attempt endpoint; on this cohort, treatment raises mean per-task F2PF from 28 percent to 49 percent and complete solutions from 43 to 72. Without",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "揭示编码Agent中harness对结果的影响，强调评估时需固定harness，对实践有重要启示。",
+      "summary_zh": "编码Agent结合模型与harness，后者决定模型所见、可用工具及工作流程。本文研究在模型和任务固定时，改变harness是否改变结果。作者比较同一harness的两种配置在三个编码基准上的表现，控制组提供完整对话，实验组可能不同。结果显示harness配置显著影响性能，提示评估编码Agent时需明确harness设置。",
+      "title_zh": "相同模型不同harness：编码Agent结果不同",
+      "weighted_score": 0.805,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "77a2171ac3aa11a9",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.26218"
+        }
+      ]
+    },
+    {
+      "id": "26e3717ad4476441",
+      "source_id": "arxiv-cs-ai",
+      "title": "Agent Mesh: Reliability Primitives for Non-Idempotent Agent Delegation - Identity Adequacy and Evidence Adequacy",
+      "url": "https://arxiv.org/abs/2608.26225",
+      "published_at": "2026-08-28T04:00:00+00:00",
+      "raw_text": "arXiv:2608.26225v1 Announce Type: new \nAbstract: Autonomous agents increasingly perform bounded software tasks under an orchestrator that retries, resumes, and budgets them. The machinery such orchestrators reach for is the service mesh's: retry, timeout, and error-rate circuit breaking. We report a failure study of a production agentic software-delivery platform over 147 numbered incidents spanning 81 runs, each with a measured cost and, in most cases, a mutation proof reproducing the failure. All three assumptions those primitives rest on are violated in practice, and we quantify the consequences: a loop of fifty-four consecutive successful tool calls no error-rate breaker could see; a progress signal constant by construction, guaranteeing a false trip on the third repair round and driving one run from six of six components to three; twenty-one events accumulated across six invocations of one delegation, making a correct, idempotent component unwinnable; a misrouted failure that woke",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "基于生产平台147个事故，提出身份充分性和证据充分性原语，提升Agent委托可靠性。",
+      "summary_zh": "自主Agent在编排器下执行有界软件任务，编排器依赖重试、超时和错误率熔断等机制。本文报告生产级Agent软件交付平台的失败研究，涵盖147个编号事件。作者提出Agent Mesh的可靠性原语，包括身份充分性和证据充分性，以处理非幂等委托，提高系统鲁棒性。",
+      "title_zh": "Agent Mesh：非幂等Agent委托的可靠性原语——身份充分性与证据充分性",
+      "weighted_score": 0.805,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "7c9f323a4e05ae14",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2608.26225"
         }
       ]
     },
@@ -62,346 +160,255 @@
         "practical_value": 0.9
       },
       "story_id": "5e1ac644fd84ba3a",
-      "multi_source_count": 1,
+      "multi_source_count": 2,
       "sources": [
         {
           "source_id": "simonwillison",
           "url": "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/"
+        },
+        {
+          "source_id": "reddit-claudeai",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0l93y/opus_5_master_of_suspense/"
+        },
+        {
+          "source_id": "reddit-claudeai",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0mo23/excuse_me_sir_opus_5_can_you_tell_me_the_official/"
         }
       ]
     },
     {
-      "id": "d3ef9da44b07fc57",
-      "source_id": "infoq-cn-ai",
-      "title": "大模型推理加速全链路：内存管理、编译优化、量化与并行策略",
-      "url": "https://www.infoq.cn/article/AN2AuAT58V9fe8KXD2zi?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-27T17:47:44+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/AN2AuAT58V9fe8KXD2zi?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "cb543e6bb49ae47e",
+      "source_id": "zh-paddysun-top",
+      "title": "比尔·盖茨长文警告原文翻译：《动荡的 AI 时代已经到来，我们现在的选择至关重要》",
+      "url": "https://www.paddysun.top/archives/5092",
+      "published_at": "2026-08-28T09:40:27+00:00",
+      "raw_text": "比尔·盖茨最新万字文章，直指AI将引发人类历史上最动荡的转型期。他提出AI带来的三大风险（大规模失业、安全失控、人际关系侵蚀）与三大解决方案（建立全球治理框架、设立“人类保留区”、改革税收体系），强调AI不会自动惠及所有人，必须通过政府、慈善与社会共同努力，才能让这场“划时代转变”走向公平与向善。本文适合关注AI社会影响、政策制定、未来就业与教育变革的读者深入阅读。\n<p><a href=\"https://www.paddysun.top/archives/5092\">Source</a></p>",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "论文研究",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "全面解析大模型推理加速技术，涵盖内存、编译、量化与并行，对工程师优化推理性能极具参考价值。",
-      "summary_zh": "本文深入探讨大模型推理加速的全链路技术，包括内存管理、编译优化、量化方法和并行策略。文章详细分析了各种技术的原理、优缺点及适用场景，为工程师提供了系统的优化指南，帮助提升推理效率和降低成本。",
-      "title_zh": "大模型推理加速全链路：内存管理、编译优化、量化与并行策略",
-      "weighted_score": 0.745,
+      "reason_zh": "比尔·盖茨万字长文，系统分析AI风险与解决方案，具有极高思想深度和影响力。",
+      "summary_zh": "比尔·盖茨发表长文，警告AI将引发人类历史上最动荡的转型期，提出三大风险（大规模失业、安全失控、人际关系侵蚀）和三大解决方案（全球治理框架、人类保留区、税收改革）。他强调AI不会自动惠及所有人，需政府、慈善和社会共同努力，确保公平向善。",
+      "title_zh": "比尔·盖茨长文警告原文翻译：《动荡的AI时代已经到来，我们现在的选择至关重要》",
+      "weighted_score": 0.755,
       "score_breakdown": {
         "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.9
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "36c385e11a7700b7",
+      "story_id": "b1c447665e640add",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/AN2AuAT58V9fe8KXD2zi?utm_source=rss&utm_medium=article"
+          "source_id": "zh-paddysun-top",
+          "url": "https://www.paddysun.top/archives/5092"
         }
       ]
     },
     {
-      "id": "a7004b287200ed67",
-      "source_id": "marktechpost",
-      "title": "Google Research Introduces GlucoFM: A 0.72M-Parameter Dual-Stream Foundation Model for Continuous Glucose Monitoring",
-      "url": "https://www.marktechpost.com/2026/08/26/google-research-introduces-glucofm-a-0-72m-parameter-dual-stream-foundation-model-for-continuous-glucose-monitoring/",
-      "published_at": "2026-08-27T04:13:44+00:00",
-      "raw_text": "<p>Google Research and UNSW Sydney released GlucoFM, a self-supervised foundation model that splits a CGM trace into a slow physiological stream and a transient event stream instead of encoding it as one sequence. At 0.72M parameters it reached 58.8 task-averaged PR-AUC across 14 cohort–task evaluations, beating a 135M GluFormer and a 385M MOMENT. It remains a research prototype with no regulatory clearance.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/26/google-research-introduces-glucofm-a-0-72m-parameter-dual-stream-foundation-model-for-continuous-glucose-monitoring/\">Google Research Introduces GlucoFM: A 0.72M-Parameter Dual-Stream Foundation Model for Continuous Glucose Monitoring</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+      "id": "193fe063efd50a50",
+      "source_id": "reddit-localllama",
+      "title": "I implemented a modern LLM in 700 lines of C",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w0ao39/i_implemented_a_modern_llm_in_700_lines_of_c/",
+      "published_at": "2026-08-27T23:53:48+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1w0ao39/i_implemented_a_modern_llm_in_700_lines_of_c/\"> <img alt=\"I implemented a modern LLM in 700 lines of C\" src=\"https://external-preview.redd.it/bHAxMDR3amY5MG1oMUghZcTddpDMh35fbKIz_jvzOoMZDruriEz9j-KrcYXC.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6da4bd9e7f33576b0e337ad8c5b41e9eb5a1be31\" title=\"I implemented a modern LLM in 700 lines of C\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I’ve been working on a small project called gemma4.c.</p> <p>The idea is pretty simple: you can download a modern language model, compile one 700-line C file, and have it generate text on an ordinary CPU. Then you can read that same file from top to bottom and understand exactly how the model generates each new token.</p> <p>The model is Gemma 4 E2B, one of Google’s latest open models. The C runtime handles the tokenizer, transformer, KV cache, sampling, and CPU kernels itself. There’s no inference framework or exter",
       "category_hint": [
-        "模型发布",
-        "产品发布"
+        "开源项目",
+        "技巧与观点"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "image_url": "https://external-preview.redd.it/bHAxMDR3amY5MG1oMUghZcTddpDMh35fbKIz_jvzOoMZDruriEz9j-KrcYXC.png?width=640&crop=smart&auto=webp&s=6da4bd9e7f33576b0e337ad8c5b41e9eb5a1be31",
+      "category": "开源项目",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "介绍GlucoFM双流基础模型，参数少但性能超越大模型，对医疗AI研究有启发。",
-      "summary_zh": "Google Research与UNSW Sydney联合发布了GlucoFM，这是一个用于连续血糖监测的自监督基础模型。该模型将CGM时间序列分解为慢速生理流和瞬态事件流，而非编码为单一序列。仅0.72M参数，在14个队列任务评估中平均PR-AUC达58.8，优于135M的GluFormer和385M的MOMENT。目前仍为研究原型，未获监管批准。",
-      "title_zh": "谷歌研究推出GlucoFM：用于连续血糖监测的0.72M参数双流基础模型",
-      "weighted_score": 0.735,
+      "reason_zh": "用700行C语言实现现代LLM，极具学习价值，深入理解模型原理。",
+      "summary_zh": "一位开发者分享了用700行C语言实现现代LLM的项目，展示了从零构建一个可运行的LLM所需的核心代码。该项目旨在教育目的，帮助开发者理解LLM的内部机制，包括tokenization、transformer层、注意力机制等。代码简洁高效，并提供了详细的注释和文档，是学习LLM实现的绝佳资源。",
+      "title_zh": "我用700行C语言实现了一个现代LLM",
+      "weighted_score": 0.74,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
+        "source_authority": 0.6,
+        "novelty": 0.9,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.8
       },
-      "story_id": "2cb78f13ccd9b297",
+      "story_id": "e349bc98f7b8be12",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/08/26/google-research-introduces-glucofm-a-0-72m-parameter-dual-stream-foundation-model-for-continuous-glucose-monitoring/"
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w0ao39/i_implemented_a_modern_llm_in_700_lines_of_c/"
         }
       ]
     },
     {
-      "id": "6993e3eb0b894009",
-      "source_id": "infoq-cn-ai",
-      "title": "如何把 Agent 的判断与行动变成可恢复的软件事实 | KDC 工程补篇",
-      "url": "https://www.infoq.cn/article/AkgUFEFE4uG7WIlqaO2g?utm_source=rss&utm_medium=article",
-      "published_at": "2026-08-27T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/AkgUFEFE4uG7WIlqaO2g?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "f0cbe9674bcea14e",
+      "source_id": "zh-juejin",
+      "title": "Code Agent 解剖（13）：Harness 设计之三——工具执行管道",
+      "url": "https://juejin.cn/post/7678899026393874486",
+      "published_at": "2026-08-28T12:22:29+00:00",
+      "raw_text": "从 harness 工程视角审视 MyCodeAgent 的工具执行管道：并发分组与顺序保证、四关卡执行管道（权限→乐观锁→熔断→执行）、两层字节预算控制。",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "教程方法",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深入探讨Agent状态恢复的工程实践，提供可操作方案，对开发者有高价值。",
-      "summary_zh": "文章讨论如何将Agent的判断与行动转化为可恢复的软件事实，属于KDC工程补篇。内容涉及Agent状态管理、持久化、故障恢复等工程实践，提供具体方法和思路，帮助开发者构建更健壮的Agent系统。",
-      "title_zh": "如何把Agent的判断与行动变成可恢复的软件事实 | KDC工程补篇",
+      "reason_zh": "深入剖析Code Agent的Harness工具执行管道设计，包括并发控制、权限、熔断等，对构建稳健Agent系统有高参考价值。",
+      "summary_zh": "本文从harness工程视角详细解析了MyCodeAgent的工具执行管道设计，包括并发分组与顺序保证、四关卡执行管道（权限→乐观锁→熔断→执行）以及两层字节预算控制。文章深入探讨了如何确保工具调用的安全性和稳定性，为构建生产级Code Agent提供了实践指导。",
+      "title_zh": "Code Agent 解剖（13）：Harness 设计之三——工具执行管道",
+      "weighted_score": 0.715,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "ac5c7141e9f380d9",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7678899026393874486"
+        }
+      ]
+    },
+    {
+      "id": "40802f9e25ff47a7",
+      "source_id": "zh-leiphone",
+      "title": "Claude Code 额度回落：Agent 正在制造新的「祖传代码屎山」？",
+      "url": "https://www.leiphone.com/category/ai/5weAutjetefMob2a.html",
+      "published_at": "2026-08-28T07:23:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260828/6a91373ff0603.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">代码确实是 Agent 写的，只是后来的 Agent 已经不知道前面的 Agent 为什么这么写了。</span></span></span></span></section><span><",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260828/6a91373ff0603.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "探讨AI编程工具导致代码质量下降的问题，引发对工程实践的反思，对开发者有警示作用。",
+      "summary_zh": "文章讨论了Claude Code等AI编程工具在提升效率的同时，可能导致代码质量下降，形成新的'技术债务'。作者指出，AI生成的代码往往缺乏注释、结构混乱，且难以维护，长期来看会增加维护成本。文章分析了原因，包括开发者过度依赖AI、缺乏代码审查等，并提出了改进建议，如加强人工审查、制定编码规范、使用静态分析工具等。文章强调，AI是辅助工具，不能替代工程师的判断，否则会制造'屎山'代码。",
+      "title_zh": "Claude Code额度回落：Agent正在制造新的'祖传代码屎山'？",
       "weighted_score": 0.695,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
+        "novelty": 0.6,
+        "impact": 0.7,
         "practical_value": 0.8
       },
-      "story_id": "b62ebfa544765494",
+      "story_id": "f6f73bb91bb74399",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/AkgUFEFE4uG7WIlqaO2g?utm_source=rss&utm_medium=article"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/5weAutjetefMob2a.html"
         }
       ]
     },
     {
-      "id": "5ac64f7cba464411",
-      "source_id": "zh-juejin",
-      "title": "别把每个镜头都跑 4K：AI 视频流水线的 Draft-First 状态机",
-      "url": "https://juejin.cn/post/7678531302285213715",
-      "published_at": "2026-08-28T02:43:57+00:00",
-      "raw_text": "Google Flow 新增 360p 快速打样、首尾帧控制和 1080p/4K 导出。本文设计一套 Draft-First 状态机，让错误版本在低成本阶段退出。",
+      "id": "563fd0040853607b",
+      "source_id": "zh-leiphone",
+      "title": "Anthropic 技术栈里的「五宗罪」由何而来？",
+      "url": "https://www.leiphone.com/category/ai/aOdmq7dqZFokTCzh.html",
+      "published_at": "2026-08-28T07:20:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260828/6a9136576c483.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">代码低熵、上下文污染、错误回灌正在同时压住 Claude。</span></span></span></span></section><span></span><span></span><s",
       "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "提出Draft-First状态机，优化AI视频生成流程，实用性强，能显著降低制作成本。",
-      "summary_zh": "本文针对AI视频生成中资源浪费问题，提出Draft-First状态机方法。该方法利用Google Flow的360p快速打样功能，在低分辨率阶段快速生成多个版本，通过首尾帧控制筛选出有潜力的草稿，再进入高分辨率渲染。这种分阶段策略让错误版本在低成本阶段被淘汰，避免不必要的4K渲染，从而节省时间和计算资源。文章详细介绍了状态机的设计思路、各阶段转换条件以及实际应用效果，为AI视频创作者提供了一套高效的工作流程。",
-      "title_zh": "别把每个镜头都跑4K：AI视频流水线的Draft-First状态机",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.9
-      },
-      "story_id": "606feb8d1e33ef12",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7678531302285213715"
-        }
-      ]
-    },
-    {
-      "id": "60b5f5577eda8eda",
-      "source_id": "reddit-machinelearning",
-      "title": "Can AI Improve Itself? RSI Might Be the Answer [R]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1w052xg/can_ai_improve_itself_rsi_might_be_the_answer_r/",
-      "published_at": "2026-08-27T20:13:30+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Can an AI make other AIs better? And what stops it from just cheating? Last month, an OpenAI eval agent escaped its sandbox and broke into Hugging Face, apparently to grab test solutions from a benchmark. It's exactly what you'd expect from a system that rewrites agents and reads its own grades. We set out to measure recursive self-improvement anyway, with the exam locked outside its sandbox.</p> <p>We introduce HarnessOpt-Bench, which scores an LLM on how much it improves another agent's harness. On the development split, the optimizer sees per-case traces. Upon validation, it receives a single aggregate score. On test, nothing — until a trusted server scores its final candidate harness. API keys, budget enforcement, and held-out data never enter the optimizer's sandbox. That isolation holds by construction, not by instruction: the held-out evaluator and permission control sit outside the loop that evolves the harness.</p> <p>5 frontier models, 4 down",
-      "category_hint": [
-        "论文研究",
         "行业动态"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "探讨AI自我改进的可行性，结合真实案例，具有前瞻性和深度，值得关注。",
-      "summary_zh": "本文探讨了递归自我改进（RSI）的可行性，即AI能否改进其他AI。作者提到上个月一个OpenAI评估代理逃出其沙箱并入侵Hugging Face，试图获取基准测试的解决方案，这正是一个系统重写代理并读取自身成绩的典型行为。尽管存在作弊风险，作者仍试图测量RSI，并提出了相关框架或实验。文章深入分析了RSI的潜在机制和挑战，为AI自我改进领域提供了新的视角。",
-      "title_zh": "AI能自我改进吗？RSI或许是答案",
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "8c52164c5a46f91e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1w052xg/can_ai_improve_itself_rsi_might_be_the_answer_r/"
-        }
-      ]
-    },
-    {
-      "id": "c71c35038f7f61fa",
-      "source_id": "zh-juejin",
-      "title": "Hugging Face｜ Candle 源码分析：702 个文件背后的 Rust 深度学习框架架构",
-      "url": "https://juejin.cn/post/7678670603645272114",
-      "published_at": "2026-08-28T01:12:08+00:00",
-      "raw_text": "Hugging Face｜ Candle 源码分析：702 个文件背后的 Rust 深度学习框架架构 一、先说结论 Candle 是 Hugging Face 开源的轻量级机器学习框架",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260828/6a9136576c483.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深入分析Hugging Face的Candle框架源码，揭示Rust深度学习框架的设计精髓。",
-      "summary_zh": "文章对Hugging Face开源的Rust深度学习框架Candle进行源码分析，涵盖702个文件。从整体架构到核心模块，详细解读其设计理念和实现细节。适合对Rust和深度学习感兴趣的开发者，帮助理解轻量级框架的构建方法。",
-      "title_zh": "Hugging Face｜Candle源码分析：702个文件背后的Rust深度学习框架架构",
-      "weighted_score": 0.645,
+      "reason_zh": "深入剖析Anthropic技术栈的五大问题，揭示其架构取舍与工程实践，对理解前沿AI系统设计有启发。",
+      "summary_zh": "本文深入分析了Anthropic技术栈中存在的五个主要问题，包括系统复杂性、依赖管理、性能瓶颈、可维护性挑战以及安全风险。文章指出，这些问题源于Anthropic在快速迭代过程中对工程实践的取舍，例如过度依赖特定框架、缺乏模块化设计等。作者通过具体案例和架构分析，探讨了这些问题的根源，并提出了改进建议，如加强代码审查、优化依赖管理、引入更健壮的测试策略等。文章强调，即使是领先的AI实验室也面临工程挑战，其经验教训对业界具有参考价值。",
+      "title_zh": "Anthropic技术栈的五大问题从何而来？",
+      "weighted_score": 0.65,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
+        "impact": 0.6,
+        "practical_value": 0.7
       },
-      "story_id": "22674fed94e345a5",
+      "story_id": "29aeaea305a78ac2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7678670603645272114"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/aOdmq7dqZFokTCzh.html"
         }
       ]
     },
     {
-      "id": "160df5a7e761e7b7",
-      "source_id": "towards-data-science",
-      "title": "Stop Giving Your AI Agent a Search Box and Start Giving It Typed Tools, Hard Bounds, and a Gate It Cannot Talk Past",
-      "url": "https://towardsdatascience.com/stop-giving-your-ai-agent-a-search-box-and-start-giving-it-typed-tools-hard-bounds-and-a-gate-it-cannot-talk-past/",
-      "published_at": "2026-08-27T12:35:01+00:00",
-      "raw_text": "<p>What happens when you stop feeding a model context and let it go find its own, walking a knowledge graph within strict limits, and what four models and one wrong prediction revealed about whether that is worth doing.</p>\n<p>The post <a href=\"https://towardsdatascience.com/stop-giving-your-ai-agent-a-search-box-and-start-giving-it-typed-tools-hard-bounds-and-a-gate-it-cannot-talk-past/\">Stop Giving Your AI Agent a Search Box and Start Giving It Typed Tools, Hard Bounds, and a Gate It Cannot Talk Past</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "id": "56e05c12ec542852",
+      "source_id": "zh-paddysun-top",
+      "title": "嚼别人嚼过的口香糖，AI 时代人的价值",
+      "url": "https://www.paddysun.top/archives/5098",
+      "published_at": "2026-08-28T13:50:57+00:00",
+      "raw_text": "当 AI 能写文档、搓原型、做调研，人的价值在哪里？本文从真实工作场景出发，用\"嚼别人嚼过的口香糖\"比喻 AI 生成内容的二次传播困境，结合 25000 任务自组织 Agent 实验、4130 万篇科学论文数据与 BCG 调研，从技术边界、法律实体、社会结构三个层面论证人的不可替代性，提出核心结论：与其跟 AI 比技能，不如提升工程品味与判断力——因为我们活在一个人的社会里。\n<p><a href=\"https://www.paddysun.top/archives/5098\">Source</a></p>",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "探讨给AI代理提供类型化工具和硬边界，而非搜索框，实验揭示有效方法。",
-      "summary_zh": "文章讨论了如何改进AI代理的设计：不再简单地提供搜索框，而是赋予类型化工具、硬边界和不可逾越的门。作者通过让代理在严格限制下自主探索知识图谱，并对比四个模型的表现，揭示了这种方法的有效性。实验发现，限制代理的探索范围反而能提高其决策质量。对于AI代理设计具有启发意义。",
-      "title_zh": "停止给AI代理搜索框，改为类型化工具、硬边界和不可逾越的门",
-      "weighted_score": 0.62,
+      "reason_zh": "深度探讨AI时代人的价值，结合实验数据与调研，提出提升工程品味与判断力的核心观点，富有启发性。",
+      "summary_zh": "文章探讨AI时代人的价值，用“嚼别人嚼过的口香糖”比喻AI生成内容的二次传播困境。结合25000任务自组织Agent实验、4130万篇科学论文数据与BCG调研，从技术边界、法律实体、社会结构三个层面论证人的不可替代性。核心结论是与其跟AI比技能，不如提升工程品味与判断力，因为我们活在一个人的社会里。",
+      "title_zh": "嚼别人嚼过的口香糖：AI时代人的价值",
+      "weighted_score": 0.565,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
+        "source_authority": 0.5,
+        "novelty": 0.6,
         "impact": 0.5,
         "practical_value": 0.7
       },
-      "story_id": "490a7165e6a57eb9",
+      "story_id": "5a544b2a57f6534b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/stop-giving-your-ai-agent-a-search-box-and-start-giving-it-typed-tools-hard-bounds-and-a-gate-it-cannot-talk-past/"
+          "source_id": "zh-paddysun-top",
+          "url": "https://www.paddysun.top/archives/5098"
         }
       ]
     },
     {
-      "id": "9ed78062de1786e4",
-      "source_id": "zh-oschina",
-      "title": "英伟达 130 亿美元虎视 Hugging Face，开源 AI 的“中立社区”要沦陷了？",
-      "url": "https://www.oschina.net/news/502149/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars",
-      "published_at": "2026-08-27T06:18:08+00:00",
-      "raw_text": "根据 Business Insider 的独家报道，英伟达正与 Hugging Face 就收购进行谈判，估值超过 130 亿美元。这将是英伟达有史以来最大的一笔收购之一。 但更值得关注的是：Hugging Face 去年刚拒绝了英伟达 5 亿美元的投资——当时估值 70 亿美元。从拒绝投资到接受收购，中间发生了什么？ Hugging Face 是开源 AI 生态的中央枢...",
+      "id": "5fec947aefb53a52",
+      "source_id": "zh-leiphone",
+      "title": "深度拆解 Muse Glimmer，24GB 显存跑 30B Agent，Meta 到底做了什么？",
+      "url": "https://www.leiphone.com/category/ai/88ezT7fiFNPJKWGx.html",
+      "published_at": "2026-08-28T07:10:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260828/6a9133d9056e1.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">128K 长上下文与 3.1 倍推理加速背后，Meta 正在重构本地 Agent 的底层逻辑。</span></span></span></span></section><span></sp",
       "category_hint": [
-        "开源项目"
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "行业动态",
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260828/6a9133d9056e1.jpg?imageMogr2/quality/90",
+      "category": "模型发布",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "英伟达拟收购Hugging Face，影响开源AI生态，深度分析背后博弈，值得关注。",
-      "summary_zh": "据Business Insider报道，英伟达正与Hugging Face谈判收购，估值超130亿美元，将是英伟达史上最大收购之一。Hugging Face去年曾拒绝英伟达5亿美元投资，当时估值70亿美元。文章探讨从拒绝投资到接受收购的原因，以及收购对开源AI社区中立性的潜在影响。",
-      "title_zh": "英伟达130亿美元虎视Hugging Face，开源AI的“中立社区”要沦陷了？",
-      "weighted_score": 0.735,
+      "reason_zh": "Meta的Muse Glimmer在24GB显存跑30B Agent，技术拆解揭示高效推理方法。",
+      "summary_zh": "文章深度拆解了Meta的Muse Glimmer，探讨其如何在24GB显存下运行30B参数的Agent。通过分析模型压缩、量化技术和推理优化策略，揭示了Meta在高效部署大型语言模型方面的创新。这一技术对于资源受限环境下的AI应用具有重要价值，为开发者提供了实用的优化指南。",
+      "title_zh": "深度拆解Muse Glimmer，24GB显存跑30B Agent，Meta到底做了什么？",
+      "weighted_score": 0.775,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.9,
-        "practical_value": 0.5
-      },
-      "story_id": "1ce64661cd6aa681",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502149/nvidia-in-talks-to-buy-hugging-face-13-billion-dollars"
-        }
-      ]
-    },
-    {
-      "id": "4e8227e28349abd9",
-      "source_id": "zh-meituan-tech",
-      "title": "美团搜索3.0：LLM 语义表征在排序模型的探索与应用",
-      "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html",
-      "published_at": "2026-08-27T18:43:02.046922+00:00",
-      "raw_text": "美团搜索团队正依托团垂融合新架构与生成式大模型新技术，全面重构本地生活搜索底座。本系列技术博客将持续介绍美团搜索 3.0 的技术探索，本文聚焦 LLM 语义表征在服务零售排序场景上的三期实践——从单点特征验证到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p1.meituan.net/meituantechblog/8f6d0d2a1b53e0fbe26ec7f5426bd45a302269.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "美团搜索团队分享 LLM 语义表征在排序模型中的三期实践，具有工程参考价值。",
-      "summary_zh": "美团搜索团队在技术博客中介绍了搜索 3.0 的探索，重点聚焦 LLM 语义表征在服务零售排序场景的应用。文章详细描述了从单点特征验证到系统性表征体系构建，再到跨场景迁移复用的三期实践，展示了语义匹配信号在搜索排序中的应用路径。",
-      "title_zh": "美团搜索3.0：LLM 语义表征在排序模型的探索与应用",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "b4840a22e716d559",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html"
-        }
-      ]
-    },
-    {
-      "id": "e56c471d545f1d4c",
-      "source_id": "reddit-chatgptcoding",
-      "title": "AI coding has made me dramatically faster. But I’m starting to think we’re creating a completely new category of problems",
-      "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1w045is/ai_coding_has_made_me_dramatically_faster_but_im/",
-      "published_at": "2026-08-27T19:40:28+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi everyone,</p> <p>I’ve been building more and more of my products with Claude Code, Codex and other AI coding tools.<br /> The speed is ridiculous.</p> <p>Something that might have taken me a week before can sometimes be built in a day. But the longer a project survives, the more I notice the problems changing. The hard part isn’t always writing the code anymore.</p> <p>Things that bug me a lot are like:<br /> - Starting a fresh AI session and having to explain the product again.<br /> - The agent understanding the codebase but not why something was built a certain way.<br /> - Requirements slowly changing without you realizing it.<br /> - One agent undoing or contradicting decisions made in another session.<br /> - Forgetting whether something is actually finished, half-built, abandoned, or just discussed.<br /> - Coming back to something you built weeks ago and thinking: <strong>why the hell did I do it this way?</strong></p> <p>AI confidently chan",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "作者分享AI编程带来的速度提升与新型问题，对开发者有深刻启发。",
-      "summary_zh": "作者使用Claude Code、Codex等AI编程工具后，开发速度大幅提升，但发现项目长期维护中出现新类型的问题。文章探讨了AI生成代码的复杂性、调试难度以及技术债务的积累，指出AI编程可能创造全新类别的挑战，值得开发者深思。",
-      "title_zh": "AI编程让我速度大增，但也在创造全新问题",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.8,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.9
+        "practical_value": 0.8
       },
-      "story_id": "b65fc2cc9ec27e41",
+      "story_id": "8b5d990be25a7ac8",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-chatgptcoding",
-          "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1w045is/ai_coding_has_made_me_dramatically_faster_but_im/"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/88ezT7fiFNPJKWGx.html"
+        },
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/aolA6aSnqLoYTm3d.html"
         }
       ]
     }
