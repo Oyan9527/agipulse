@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-28",
-  "generated_at": "2026-08-28T16:09:12.527324+00:00",
+  "date": "2026-08-29",
+  "generated_at": "2026-08-29T00:28:42.987085+00:00",
   "items": [
     {
       "id": "61a41d0929b1a7f0",
@@ -135,48 +135,6 @@
       ]
     },
     {
-      "id": "6f6843c5a98ae6d6",
-      "source_id": "simonwillison",
-      "title": "Breaking Claude Code Opus 5 Auto Mode",
-      "url": "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/",
-      "published_at": "2026-08-27T22:50:25+00:00",
-      "raw_text": "<p><strong><a href=\"https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/\">Breaking Claude Code Opus 5 Auto Mode</a></strong></p>\nAnthropic are putting a great deal of faith in Claude Code's auto mode for protecting their coding agent users against prompt injection attacks. They recently <a href=\"https://simonwillison.net/2026/Aug/8/auto-mode/\">made that the default</a> and have made bold claims about its effectiveness.</p>\n<p>Johann Rehberger is one of the most credible prompt injection researchers active today. He found an attack against auto mode which he claims works 80% of the time, by tricking Claude Code into downloading and uncompressing a zip archive, then executing code that imports <code>base64</code> without noticing that this will import and execute a local <code>struct.py</code> file extracted from the archive.</p>\n<p>In a few cases auto mode directly prevented the agent from preventing harmful code from continuing to execute!</p>\n<blockquote",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入剖析Claude Code自动模式的安全漏洞，对使用AI编程助手的开发者有重要警示和实用价值。",
-      "summary_zh": "文章探讨了Anthropic在Claude Code中默认启用自动模式以防范提示注入攻击的做法，但作者通过实验发现该模式仍存在被突破的可能。文章详细分析了攻击手法，包括利用间接提示注入和上下文操纵，并指出自动模式在复杂场景下的局限性。作者呼吁开发者不要过度依赖自动模式，应结合其他安全措施，如最小权限原则和人工审核。文章还讨论了Anthropic的回应和改进方向，为AI编程工具的安全设计提供了参考。",
-      "title_zh": "破解Claude Code Opus 5自动模式",
-      "weighted_score": 0.795,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.9
-      },
-      "story_id": "5e1ac644fd84ba3a",
-      "multi_source_count": 2,
-      "sources": [
-        {
-          "source_id": "simonwillison",
-          "url": "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/"
-        },
-        {
-          "source_id": "reddit-claudeai",
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0l93y/opus_5_master_of_suspense/"
-        },
-        {
-          "source_id": "reddit-claudeai",
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0mo23/excuse_me_sir_opus_5_can_you_tell_me_the_official/"
-        }
-      ]
-    },
-    {
       "id": "cb543e6bb49ae47e",
       "source_id": "zh-paddysun-top",
       "title": "比尔·盖茨长文警告原文翻译：《动荡的 AI 时代已经到来，我们现在的选择至关重要》",
@@ -210,46 +168,12 @@
       ]
     },
     {
-      "id": "193fe063efd50a50",
-      "source_id": "reddit-localllama",
-      "title": "I implemented a modern LLM in 700 lines of C",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w0ao39/i_implemented_a_modern_llm_in_700_lines_of_c/",
-      "published_at": "2026-08-27T23:53:48+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1w0ao39/i_implemented_a_modern_llm_in_700_lines_of_c/\"> <img alt=\"I implemented a modern LLM in 700 lines of C\" src=\"https://external-preview.redd.it/bHAxMDR3amY5MG1oMUghZcTddpDMh35fbKIz_jvzOoMZDruriEz9j-KrcYXC.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6da4bd9e7f33576b0e337ad8c5b41e9eb5a1be31\" title=\"I implemented a modern LLM in 700 lines of C\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I’ve been working on a small project called gemma4.c.</p> <p>The idea is pretty simple: you can download a modern language model, compile one 700-line C file, and have it generate text on an ordinary CPU. Then you can read that same file from top to bottom and understand exactly how the model generates each new token.</p> <p>The model is Gemma 4 E2B, one of Google’s latest open models. The C runtime handles the tokenizer, transformer, KV cache, sampling, and CPU kernels itself. There’s no inference framework or exter",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://external-preview.redd.it/bHAxMDR3amY5MG1oMUghZcTddpDMh35fbKIz_jvzOoMZDruriEz9j-KrcYXC.png?width=640&crop=smart&auto=webp&s=6da4bd9e7f33576b0e337ad8c5b41e9eb5a1be31",
-      "category": "开源项目",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "用700行C语言实现现代LLM，极具学习价值，深入理解模型原理。",
-      "summary_zh": "一位开发者分享了用700行C语言实现现代LLM的项目，展示了从零构建一个可运行的LLM所需的核心代码。该项目旨在教育目的，帮助开发者理解LLM的内部机制，包括tokenization、transformer层、注意力机制等。代码简洁高效，并提供了详细的注释和文档，是学习LLM实现的绝佳资源。",
-      "title_zh": "我用700行C语言实现了一个现代LLM",
-      "weighted_score": 0.74,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.9,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "e349bc98f7b8be12",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w0ao39/i_implemented_a_modern_llm_in_700_lines_of_c/"
-        }
-      ]
-    },
-    {
-      "id": "f0cbe9674bcea14e",
-      "source_id": "zh-juejin",
-      "title": "Code Agent 解剖（13）：Harness 设计之三——工具执行管道",
-      "url": "https://juejin.cn/post/7678899026393874486",
-      "published_at": "2026-08-28T12:22:29+00:00",
-      "raw_text": "从 harness 工程视角审视 MyCodeAgent 的工具执行管道：并发分组与顺序保证、四关卡执行管道（权限→乐观锁→熔断→执行）、两层字节预算控制。",
+      "id": "41d2b80b881eeed5",
+      "source_id": "zh-v2ex",
+      "title": "[AI Agent 智能体] \"用进废退\"的 全 skill 进化系统",
+      "url": "https://www.v2ex.com/t/1237990#reply0",
+      "published_at": "2026-08-28T18:25:03+00:00",
+      "raw_text": "<p>最近 skill 自优化挺火:微软 SkillOpt 拿基准分数当信号,darwin-skill 拿手写 测试题+评委团打分。两个问题:一次只能优化一个你想到的 skill——我装了 230+ 个,瓶颈是我的注意力,不是优化器;而且离线评审永远看不见真实使用—— skill 真正翻车那次、用户怎么纠正的,它们不知道。</p>\n<p>所以我写了 lamarck,名字就是冲着 darwin 去的:装一次,全部已装 skill 进入 被动观察,哪个值得进化由证据浮现,不靠人工圈选:</p>\n<p>两个 hook 静默记录每次真实 skill 调用,带 skill 文件内容哈希——每笔编辑 都有前后版本窗口,效果指标是用户纠正率(行为数据),不是模型自评 (darwin 引用的论文自己说 LLM 自评准确率约 46%)。\n翻车的调用自动蒸馏成回归用例——测试题从现实里收割,零人工编写。\n进化有门:≥2 次独立同类 gap 才出提案,有界编辑,用户三选一,后面还有 replay 重放、成对盲评、版本分窗三道回滚防线。\n用进废退是字面意思:连续 10 次干净的 skill 降为抽查(收敛);90 天没人 引用的评分条目出修剪提案(废退)。离线优化器只会越改越长。\n它用同一套规则进化自己,CHANGELOG 就是可审计的自进化史。\n证据方面(自称\"自我进化\"的东西都该被怀疑,所以):机制自测 44/44,CI 三平台 (ubuntu/macos/windows);突变基准的协议先 commit 进仓库再跑评委—— 已知劣化变体拦截 4/5 、已知改善变体误拦 0/2,原始 verdict 逐字入库,漏网的 那个有公开分析。真实生产案例还在积累,没有的数字不吹。</p>\n<p>安装一条命令:npx lamarck-skill(自动接 hook 、备份 settings 、装完自跑 自测)。MIT,遥测不出本机。</p>\n<p><a href=\"https://github.com/newdee/lamarck-skill\" rel=\"nofollow\">https://github.com/newdee/lamarck-skill</a></p>\n<p>欢迎来砸 bench 协议——它就是为可复现设计的。</p>",
       "category_hint": [
         "技巧与观点"
       ],
@@ -257,22 +181,22 @@
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "深入剖析Code Agent的Harness工具执行管道设计，包括并发控制、权限、熔断等，对构建稳健Agent系统有高参考价值。",
-      "summary_zh": "本文从harness工程视角详细解析了MyCodeAgent的工具执行管道设计，包括并发分组与顺序保证、四关卡执行管道（权限→乐观锁→熔断→执行）以及两层字节预算控制。文章深入探讨了如何确保工具调用的安全性和稳定性，为构建生产级Code Agent提供了实践指导。",
-      "title_zh": "Code Agent 解剖（13）：Harness 设计之三——工具执行管道",
+      "reason_zh": "作者提出lamarck系统，基于真实使用数据自动进化skill，挑战现有优化范式。",
+      "summary_zh": "作者针对现有skill自优化方法的局限，提出lamarck系统。该系统通过被动观察所有已安装skill的真实调用，记录用户纠正率作为效果指标，自动蒸馏翻车案例为回归测试，无需人工编写测试题。作者批评了依赖模型自评的方法，引用论文指出其准确率仅约46%。lamarck旨在让进化由证据驱动，而非人工选择，为AI Agent的skill优化提供了新思路。",
+      "title_zh": "AI Agent智能体：基于“用进废退”的全skill进化系统",
       "weighted_score": 0.715,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
+        "source_authority": 0.6,
+        "novelty": 0.9,
         "impact": 0.6,
-        "practical_value": 0.9
+        "practical_value": 0.8
       },
-      "story_id": "ac5c7141e9f380d9",
+      "story_id": "fa0bd3938580ad46",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7678899026393874486"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1237990#reply0"
         }
       ]
     },
@@ -409,6 +333,73 @@
         {
           "source_id": "zh-leiphone",
           "url": "https://www.leiphone.com/category/ai/aolA6aSnqLoYTm3d.html"
+        }
+      ]
+    },
+    {
+      "id": "c30c27a0b01a9d43",
+      "source_id": "zh-leiphone",
+      "title": "103μs 降到 18μs 背后，Cursor 为何剑指英伟达，重写 GPU？",
+      "url": "https://www.leiphone.com/category/ai/3rOI5glxQEMnfWkL.html",
+      "published_at": "2026-08-28T07:05:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260828/6a9132fb7b25a.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">MoK：把 token 调度、跨 GPU 通信和专家计算塞进同一个 GPU 内核。</span></span></span></span></section><span></span><sp",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260828/6a9132fb7b25a.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "深度剖析Cursor重写GPU的动机，从103μs到18μs的优化细节，对系统设计有启发。",
+      "summary_zh": "文章深入分析了Cursor为何将推理延迟从103μs降至18μs，并剑指英伟达重写GPU。通过技术拆解，揭示了Cursor在底层硬件优化上的策略，包括自定义GPU架构和软件栈的深度定制。这一案例展示了在AI应用中，软硬件协同设计的重要性，为相关开发者提供了宝贵的经验。",
+      "title_zh": "103μs降到18μs背后，Cursor为何剑指英伟达，重写GPU？",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "ee08db60b8ee9ff7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/3rOI5glxQEMnfWkL.html"
+        }
+      ]
+    },
+    {
+      "id": "2788e5926b2e70b7",
+      "source_id": "kdnuggets",
+      "title": "Quantization and Pruning Methods to Make Your LLM Leaner",
+      "url": "https://www.kdnuggets.com/quantization-and-pruning-methods-to-make-your-llm-leaner",
+      "published_at": "2026-08-28T12:00:55+00:00",
+      "raw_text": "This article walks through what each technique actually does, why skipping them costs real money and real latency, and then gets hands-on with five specific methods people are running in production right now.",
+      "category_hint": [
+        "行业动态",
+        "论文研究"
+      ],
+      "image_url": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Quantization-and-Pruning-Methods-to-Make-Your-LLM-Leaner-scaled.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "深入讲解量化和剪枝方法，帮助减小LLM体积，降低成本和延迟，实用性强。",
+      "summary_zh": "文章详细介绍了量化和剪枝技术，解释每种技术的工作原理、为何跳过它们会导致成本和延迟增加，并提供了五种在生产环境中常用的具体方法。这些方法有助于减小LLM的模型大小，提高推理效率，适合希望优化模型部署的工程师。",
+      "title_zh": "量化和剪枝方法：让你的LLM更精简",
+      "weighted_score": 0.72,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "7e6d5a5f5cb09c7f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "kdnuggets",
+          "url": "https://www.kdnuggets.com/quantization-and-pruning-methods-to-make-your-llm-leaner"
         }
       ]
     }
