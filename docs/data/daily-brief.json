@@ -1,139 +1,7 @@
 {
   "date": "2026-08-30",
-  "generated_at": "2026-08-30T02:58:40.731376+00:00",
+  "generated_at": "2026-08-30T09:47:03.460120+00:00",
   "items": [
-    {
-      "id": "61a41d0929b1a7f0",
-      "source_id": "arxiv-cs-ai",
-      "title": "PILOT in the Loop: Live Self-Improvement for Long-Horizon Agents",
-      "url": "https://arxiv.org/abs/2608.26530",
-      "published_at": "2026-08-29T04:00:00+00:00",
-      "raw_text": "arXiv:2608.26530v1 Announce Type: new \nAbstract: Long-horizon agent runs generate experience that can improve both the current run and future work. Most self-improvement methods process this experience only after execution ends, so they cannot redirect the active run or immediately apply and validate lessons learned from it. We argue that self-improvement should instead be live, using emerging experience both to redirect the active run and to update the persistent harness. Existing agent architectures do not fully support this goal. Single-agent self-correction combines task execution and trajectory assessment within one context, while subagent delegation separates execution but typically cannot redirect an active subagent. We present PILOT, a supervisor-worker harness for live self-improvement through two coupled mechanisms: (1) live steering lets a separate supervisor redirect or abort the active worker during execution; and (2) live self-evolution distils procedures and failure mode",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出PILOT在环实时自我改进方法，利用运行中经验即时调整长程智能体。",
-      "summary_zh": "长程智能体运行产生的经验可改进当前和未来工作，但大多数自我改进方法仅在执行结束后处理这些经验，无法重定向当前运行或立即应用和验证所学教训。本文主张自我改进应是实时的，利用新兴经验即时调整。作者提出PILOT在环方法，使智能体在运行过程中持续学习和改进，提升长程任务的适应性和效率。",
-      "title_zh": "PILOT在环：长程智能体的实时自我改进",
-      "weighted_score": 0.855,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.8
-      },
-      "story_id": "d9aac3e627ea8786",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.26530"
-        }
-      ]
-    },
-    {
-      "id": "a3a915aff276198c",
-      "source_id": "arxiv-cs-ai",
-      "title": "ProofEvolve: Neuro-Symbolic Evolution for Formal Automated Theorem Proving",
-      "url": "https://arxiv.org/abs/2608.26334",
-      "published_at": "2026-08-29T04:00:00+00:00",
-      "raw_text": "arXiv:2608.26334v1 Announce Type: new \nAbstract: Automated theorem proving offers a natural foundation for recursive self-improvement in scientific discovery. However, existing neural provers do not fully preserve this recursive structure, where the learning process should be self-improving over time. Existing methods either embed proof experience into model parameters through expensive weight updates, or keep verified intermediate deductions only within the current problem. In addition, these methods also heavily rely on sparse whole-proof feedback, even when unsuccessful partial attempts contain useful discoveries. To close the gap, we propose ProofEvolve, a neuro-symbolic framework that evolves explicit, formally verified symbolic proof structures with neural models to decisively expand the knowledge boundary. In this framework, the neural model proposes variation operators, including decompositions, repairs, and schema recombinations. The symbolic Lean kernel verifies every proof t",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出神经符号进化方法ProofEvolve，实现自动定理证明的递归自我改进。",
-      "summary_zh": "自动定理证明为科学发现中的递归自我改进提供了自然基础。然而，现有神经证明器并未完全保留这种递归结构，学习过程应随时间自我改进。现有方法要么通过昂贵的权重更新将证明经验嵌入模型参数，要么忽略经验积累。本文提出ProofEvolve，一种神经符号进化方法，旨在更有效地利用证明经验，实现自动定理证明的持续自我改进，推动科学发现自动化。",
-      "title_zh": "ProofEvolve：用于形式化自动定理证明的神经符号进化",
-      "weighted_score": 0.815,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "dd01894c4db69127",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.26334"
-        }
-      ]
-    },
-    {
-      "id": "bcebde90c427932f",
-      "source_id": "arxiv-cs-ai",
-      "title": "Same Model, Different Harness: Different Coding-Agent Results",
-      "url": "https://arxiv.org/abs/2608.26218",
-      "published_at": "2026-08-29T04:00:00+00:00",
-      "raw_text": "arXiv:2608.26218v1 Announce Type: new \nAbstract: A coding agent combines a model with a harness, which decides what the model sees, which tools it can use, and how the work continues. We ask whether changing the harness changes the result when the model and task stay fixed. We compare two configurations of the same harness on three coding benchmarks. The control supplies the full conversation in time order, while the treatment keeps the same record but mechanically shortens older tool results as the context fills and responds to repeated or stalled work.\n  Under tight context, the treatment raises mean per-task fail-to-pass fraction (F2PF) in all three pressure comparisons and increases complete solutions on SWE-bench Verified and SWE-bench Pro. The tight-window Verified comparison uses 169 tasks, a 20,480-token window, and a fixed 480-second attempt endpoint; on this cohort, treatment raises mean per-task F2PF from 28 percent to 49 percent and complete solutions from 43 to 72. Without",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示编码Agent中harness对结果的影响，强调评估时需固定harness，对实践有重要启示。",
-      "summary_zh": "编码Agent结合模型与harness，后者决定模型所见、可用工具及工作流程。本文研究在模型和任务固定时，改变harness是否改变结果。作者比较同一harness的两种配置在三个编码基准上的表现，控制组提供完整对话，实验组可能不同。结果显示harness配置显著影响性能，提示评估编码Agent时需明确harness设置。",
-      "title_zh": "相同模型不同harness：编码Agent结果不同",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "77a2171ac3aa11a9",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.26218"
-        }
-      ]
-    },
-    {
-      "id": "26e3717ad4476441",
-      "source_id": "arxiv-cs-ai",
-      "title": "Agent Mesh: Reliability Primitives for Non-Idempotent Agent Delegation - Identity Adequacy and Evidence Adequacy",
-      "url": "https://arxiv.org/abs/2608.26225",
-      "published_at": "2026-08-29T04:00:00+00:00",
-      "raw_text": "arXiv:2608.26225v1 Announce Type: new \nAbstract: Autonomous agents increasingly perform bounded software tasks under an orchestrator that retries, resumes, and budgets them. The machinery such orchestrators reach for is the service mesh's: retry, timeout, and error-rate circuit breaking. We report a failure study of a production agentic software-delivery platform over 147 numbered incidents spanning 81 runs, each with a measured cost and, in most cases, a mutation proof reproducing the failure. All three assumptions those primitives rest on are violated in practice, and we quantify the consequences: a loop of fifty-four consecutive successful tool calls no error-rate breaker could see; a progress signal constant by construction, guaranteeing a false trip on the third repair round and driving one run from six of six components to three; twenty-one events accumulated across six invocations of one delegation, making a correct, idempotent component unwinnable; a misrouted failure that woke",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "基于生产平台147个事故，提出身份充分性和证据充分性原语，提升Agent委托可靠性。",
-      "summary_zh": "自主Agent在编排器下执行有界软件任务，编排器依赖重试、超时和错误率熔断等机制。本文报告生产级Agent软件交付平台的失败研究，涵盖147个编号事件。作者提出Agent Mesh的可靠性原语，包括身份充分性和证据充分性，以处理非幂等委托，提高系统鲁棒性。",
-      "title_zh": "Agent Mesh：非幂等Agent委托的可靠性原语——身份充分性与证据充分性",
-      "weighted_score": 0.805,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "7c9f323a4e05ae14",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2608.26225"
-        }
-      ]
-    },
     {
       "id": "4e8227e28349abd9",
       "source_id": "zh-meituan-tech",
@@ -168,6 +36,40 @@
       ]
     },
     {
+      "id": "fdae03f7d21879e3",
+      "source_id": "marktechpost",
+      "title": "Meet ‘Code-as-World’: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs",
+      "url": "https://www.marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations/",
+      "published_at": "2026-08-30T01:35:02+00:00",
+      "raw_text": "<p>Code-as-World recovers editable MuJoCo scene code from real video, then uses those verified worlds to train physical reasoning.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations/\">Meet &#8216;Code-as-World&#8217;: An Agentic Loop That Rewrites Real Videos Into Executable MuJoCo Physics Programs</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+      "category_hint": [
+        "模型发布",
+        "产品发布"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出Code-as-World方法，从视频生成可执行物理程序，创新性强，对具身智能有深远影响。",
+      "summary_zh": "Code-as-World是一种新的agentic loop，能从真实视频中恢复可编辑的MuJoCo场景代码，并利用这些验证过的世界来训练物理推理。该方法将视频转化为可执行的物理程序，有望提升模型对物理世界的理解和交互能力。文章来自MarkTechPost，介绍了这一研究进展。",
+      "title_zh": "认识“Code-as-World”：将真实视频重写为可执行MuJoCo物理程序的智能循环",
+      "weighted_score": 0.745,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "997c82426d7cd1b6",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "marktechpost",
+          "url": "https://www.marktechpost.com/2026/08/29/mirros-code-as-world-executable-world-representations/"
+        }
+      ]
+    },
+    {
       "id": "dab2710a3e78aae4",
       "source_id": "dwarkesh-podcast",
       "title": "The Rise and Fall of Agent Civilizations",
@@ -198,6 +100,40 @@
         {
           "source_id": "dwarkesh-podcast",
           "url": "https://www.dwarkesh.com/p/openai-huggingface"
+        }
+      ]
+    },
+    {
+      "id": "9952572ef9ef17ec",
+      "source_id": "reddit-machinelearning",
+      "title": "Implementing Kimi K3 from scratch in PyTorch [P]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w2aupi/implementing_kimi_k3_from_scratch_in_pytorch_p/",
+      "published_at": "2026-08-30T07:28:13+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1w2aupi/implementing_kimi_k3_from_scratch_in_pytorch_p/\"> <img alt=\"Implementing Kimi K3 from scratch in PyTorch [P]\" src=\"https://external-preview.redd.it/Jmw0M0eP1FGRkpvQaT0MNy6Ih9RSt6RvR8lxxembFCY.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=fca1365ff844bce9d5a2211f0ab037b974d4cc3f\" title=\"Implementing Kimi K3 from scratch in PyTorch [P]\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Winter_Mistake_3185\"> /u/Winter_Mistake_3185 </a> <br /> <span><a href=\"https://www.youtube.com/watch?v=U6sobPCsdaY\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/MachineLearning/comments/1w2aupi/implementing_kimi_k3_from_scratch_in_pytorch_p/\">[comments]</a></span> </td></tr></table>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": "https://external-preview.redd.it/Jmw0M0eP1FGRkpvQaT0MNy6Ih9RSt6RvR8lxxembFCY.jpeg?width=320&crop=smart&auto=webp&s=fca1365ff844bce9d5a2211f0ab037b974d4cc3f",
+      "category": "论文研究",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "从零实现Kimi K3模型，提供PyTorch代码，对理解模型架构有高教学价值。",
+      "summary_zh": "该帖子提供了从零开始用PyTorch实现Kimi K3模型的教程。Kimi K3是月之暗面公司的大语言模型，该实现可能涉及模型架构、训练细节等。对于希望深入理解LLM内部机制的研究者和开发者，这是一个宝贵的资源。帖子可能包含代码示例和解释，帮助读者掌握实现要点。",
+      "title_zh": "从零开始用PyTorch实现Kimi K3",
+      "weighted_score": 0.72,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "ae6e86ce7db84f04",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1w2aupi/implementing_kimi_k3_from_scratch_in_pytorch_p/"
         }
       ]
     },
@@ -303,102 +239,171 @@
       ]
     },
     {
-      "id": "954b5b6bd2c700d5",
-      "source_id": "towards-data-science",
-      "title": "RAG Is Not the Whole Toolkit: The NLP Techniques Real Problems Still Need",
-      "url": "https://towardsdatascience.com/rag-is-not-the-whole-toolkit-the-nlp-techniques-real-problems-still-need/",
-      "published_at": "2026-08-29T13:00:01+00:00",
-      "raw_text": "<p>Enterprise Document Intelligence [Vol.1 #B00] - Retrieval answers one kind of question. Classifying a request, matching free text to a reference list, reading a table, cleaning OCR noise: each has a cheaper method that works, and the engineering is knowing which one to reach for</p>\n<p>The post <a href=\"https://towardsdatascience.com/rag-is-not-the-whole-toolkit-the-nlp-techniques-real-problems-still-need/\">RAG Is Not the Whole Toolkit: The NLP Techniques Real Problems Still Need</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "id": "8931400adafb858d",
+      "source_id": "the-decoder",
+      "title": "Google's WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance",
+      "url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes/",
+      "published_at": "2026-08-29T12:51:24+00:00",
+      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/aigent_skills_generation.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Google Research has introduced WikiSkill, a framework that gives AI agents a persistent knowledge base. Instead of discarding what they learned after each run, agents document both failures and successes in a wiki-like structure and use that knowledge to get better over time. Larger models benefit more, but smaller models with WikiSkill can match the performance of larger ones without it.</p>\n<p>The article <a href=\"https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes/\">Google&#039;s WikiSkill gives AI agents a persistent memory of past mistakes to sharpen future performance</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+      "category_hint": [
+        "模型发布",
+        "行业动态"
+      ],
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/aigent_skills_generation.png",
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "介绍Google WikiSkill框架，赋予AI代理持久记忆，提升性能，对AI研究有重要价值。",
+      "summary_zh": "Google Research推出了WikiSkill框架，为AI代理提供持久知识库，使其能够记住过去的错误并改进未来表现。与每次运行后丢弃学习成果不同，WikiSkill让代理积累经验，从而在类似任务中表现更好。这一框架有望提升AI代理的适应性和效率，是AI记忆研究的重要进展。",
+      "title_zh": "Google的WikiSkill为AI代理提供持久记忆，以提升未来表现",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "980bf45a38530d8c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/google-gives-ai-agents-their-own-wiki-so-they-can-learn-from-mistakes-and-successes/"
+        }
+      ]
+    },
+    {
+      "id": "457a61381242241b",
+      "source_id": "reddit-localllama",
+      "title": "Nemotron-3.5-Lightning at 11.77 GiB, a 16 GB option for a model that didn't have one",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w21d86/nemotron35lightning_at_1177_gib_a_16_gb_option/",
+      "published_at": "2026-08-29T23:27:11+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><strong>TL;DR:</strong> <br /> Every public low-bit GGUF of this model is secretly ~4.70 bpw. Shim the rows to 256 and it becomes a real 3.07 bpw / 11.77 GiB file that runs 262K context on 16GB.<br /> Needs patched llama.cpp — not LM Studio or Ollama.</p> <p>In the AtomicChat HuggingFace repo it says <em>&quot;There is currently no good 16 GB option for this model, from anyone.&quot;</em> That was true, I wanted to figure out why, and it's a quantizer problem, not a model problem.</p> <p>k-quants and i-quants need the row width to divide by 256. Nemotron's don't, so about 99% of its parameters can't legally take one. llama-quantize swaps in a 32 block type instead and keeps the filename you asked for, which is why every low bit quant of this model comes out around 4.70 bpw regardless of its label.</p> <p>If you saw <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1w11ob5/i_audited_443_gguf_quants_across_25_repos_64_of/\">my census post</a> yesterda",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "揭示Nemotron-3.5-Lightning低比特量化的隐藏细节，提供16GB显存运行方案，技术含量高。",
+      "summary_zh": "帖子指出Nemotron-3.5-Lightning的公开低比特GGUF文件实际是约4.70 bpw，但通过将行对齐到256可得到真正的3.07 bpw/11.77 GiB文件，能在16GB显存上运行262K上下文。需要修补的llama.cpp，不支持LM Studio或Ollama。这为16GB显存用户提供了新选择，并揭示了量化中的技巧。",
+      "title_zh": "Nemotron-3.5-Lightning 11.77 GiB：16GB显存的新选项",
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.9
+      },
+      "story_id": "eb7363a62fa51afc",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w21d86/nemotron35lightning_at_1177_gib_a_16_gb_option/"
+        }
+      ]
+    },
+    {
+      "id": "387c297f7ec73fdb",
+      "source_id": "reddit-localllama",
+      "title": "FlashMLA sm_120 kernel build with 2-3x performance increase from SPDA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w27woy/flashmla_sm_120_kernel_build_with_23x_performance/",
+      "published_at": "2026-08-30T04:46:15+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey guys I have been working on a open source LLM development repo. Anyone can train any amount of parameter against any arch (GQA, MLA, Dense...) </p> <p>When I tried to implement MLA I read the technical research paper on deepseek implementation and found they used FlashMLA for fast training and inference. </p> <p>The only thing is that it was compiled for sm_100 and sm_90 only and I couldn't find anyone that had tried to build it for consumer grade blackwell sm_120.</p> <p><a href=\"https://github.com/IISuperluminaLII/FlashMLA_Windows_Linux_sm120\">https://github.com/IISuperluminaLII/FlashMLA_Windows_Linux_sm120</a> *I am not creative with names </p> <p>Inference</p> <p>FlashMLA vs PyTorch SDPA benchmarks</p> <h2>Inference / Serving</h2> <table><thead> <tr> <th>Workload</th> <th align=\"right\">FlashMLA</th> <th align=\"right\">SDPA</th> <th align=\"right\">Speedup</th> </tr> </thead><tbody> <tr> <td>Sparse FP8 decode — <code>b=128</code>, <code>s_q=2</code",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "开源LLM开发仓库中实现MLA，通过SPDA构建sm_120内核，性能提升2-3倍，对性能优化有参考价值。",
+      "summary_zh": "作者在开源LLM开发仓库中实现MLA，参考DeepSeek的FlashMLA，但针对sm_120架构重新构建内核，利用SPDA技术使性能提升2-3倍。该仓库支持任意参数规模训练，兼容GQA、MLA、Dense等架构。",
+      "title_zh": "FlashMLA sm_120内核构建，性能提升2-3倍",
+      "weighted_score": 0.67,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "8056c5c6ee3db2a2",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w27woy/flashmla_sm_120_kernel_build_with_23x_performance/"
+        }
+      ]
+    },
+    {
+      "id": "8587b2fdb4564790",
+      "source_id": "reddit-machinelearning",
+      "title": "You can beat SOTA Time Series Anomaly Detection methods with a 100 year old algorithm [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w1wt1s/you_can_beat_sota_time_series_anomaly_detection/",
+      "published_at": "2026-08-29T20:16:17+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1w1wt1s/you_can_beat_sota_time_series_anomaly_detection/\"> <img alt=\"You can beat SOTA Time Series Anomaly Detection methods with a 100 year old algorithm [R]\" src=\"https://preview.redd.it/y2ez5kvccdmh1.jpg?width=140&amp;height=77&amp;auto=webp&amp;s=f1eca7fbdb7fe15a973e7a88ffa00d31c695209b\" title=\"You can beat SOTA Time Series Anomaly Detection methods with a 100 year old algorithm [R]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p><a href=\"https://preview.redd.it/y2ez5kvccdmh1.jpg?width=2859&amp;format=pjpg&amp;auto=webp&amp;s=3f80362f7124fab5cfe5d2798746d68e637bce13\">You can beat SOTA Time Series Anomaly Detection methods with a 100 year old algorithm</a></p> <p>Time Series Anomaly Detection (TSAD) seems to be one of the hottest topics in NeurIPS, SIGKDD, VLDB etc.</p> <p>Many (perhaps most) papers evaluate on Paparrizos’ <em>TSB-AD-M benchmark…</em></p> <p>However, I tested these benchmark datasets an",
       "category_hint": [
         "论文研究",
         "行业动态"
       ],
+      "image_url": "https://preview.redd.it/y2ez5kvccdmh1.jpg?width=140&height=77&auto=webp&s=f1eca7fbdb7fe15a973e7a88ffa00d31c695209b",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "用百年老算法击败SOTA时间序列异常检测，反直觉且具有启发性。",
+      "summary_zh": "该研究声称使用一种有百年历史的算法在时间序列异常检测任务上超越了当前最先进的方法。这一结果挑战了领域内对复杂深度学习模型的偏好，提示简单经典算法可能仍有未被发掘的潜力。",
+      "title_zh": "用百年老算法击败SOTA时间序列异常检测方法",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "0c58b483b617fed0",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1w1wt1s/you_can_beat_sota_time_series_anomaly_detection/"
+        }
+      ]
+    },
+    {
+      "id": "1c1ef96963e58591",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 关于大模型的过度设计",
+      "url": "https://www.v2ex.com/t/1238140#reply9",
+      "published_at": "2026-08-30T04:33:25+00:00",
+      "raw_text": "<p>目前在高强度使用 GPT 5.6 和 Grok\n发现大模型在提出具体的解决方案时，有这样几个特点：</p>\n<ul>\n<li>非常倾向于过度设计</li>\n<li>为问题引入非必要的复杂度</li>\n<li>在实现过程中写一堆测试</li>\n</ul>\n<p>我写了一个 Skill ，让大模型围绕以下三个维度“反思”它提出的方案或者观点：</p>\n<ul>\n<li>有效性：是否能高质量解决问题</li>\n<li>复杂性：是否引入了非必要的复杂度</li>\n<li>后果：  是否引入了新的问题\n在 Skill 中也定义了大模型提出方案的基线，以及围绕解决方案的排查思路</li>\n</ul>\n<p>目前我在多个项目里实测了几天，感觉效果拔群，配合 Matt Pocock 的工作流会更好\n欢迎各位大佬们体验：\n<a href=\"https://github.com/nscTechArt/are-you-sure\" rel=\"nofollow\">https://github.com/nscTechArt/are-you-sure</a></p>",
+      "category_hint": [
+        "技巧与观点"
+      ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "打破RAG万能论，强调针对不同问题选择合适NLP技术，对工程实践有直接指导意义。",
-      "summary_zh": "文章指出RAG并非解决所有企业文档智能问题的万能工具。虽然检索能回答一类问题，但实际场景中还有请求分类、自由文本与参考列表匹配、表格读取、OCR噪声清理等不同需求，每种都有更经济有效的方法。关键在于工程师需要具备判断力，根据问题类型选择合适的技术组合，而非盲目套用RAG。文章强调工程实践中的技术选型智慧，避免过度依赖单一模型。",
-      "title_zh": "RAG并非万能工具：真实问题仍需多种NLP技术",
-      "weighted_score": 0.645,
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "针对大模型过度设计问题，作者提出反思Skill，从有效性、复杂性、后果三维度约束，实测效果拔群，有实践价值。",
+      "summary_zh": "作者发现大模型在提出解决方案时倾向于过度设计、引入非必要复杂度并写大量测试。为此编写了一个Skill，让模型从有效性、复杂性、后果三个维度反思方案，并定义基线。在多个项目中实测几天，效果显著，配合Matt Pocock的工作流更佳。",
+      "title_zh": "关于大模型的过度设计",
+      "weighted_score": 0.58,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
+        "source_authority": 0.4,
+        "novelty": 0.7,
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "4bedb44e4cfb1777",
+      "story_id": "a1b7004512000856",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/rag-is-not-the-whole-toolkit-the-nlp-techniques-real-problems-still-need/"
-        }
-      ]
-    },
-    {
-      "id": "df005823c3eec8be",
-      "source_id": "reddit-rag",
-      "title": "Learned the hard way but in the end I have a great tool and use it daily.",
-      "url": "https://www.reddit.com/r/Rag/comments/1w1swsb/learned_the_hard_way_but_in_the_end_i_have_a/",
-      "published_at": "2026-08-29T17:43:37+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>What I learned building a private hybrid RAG stack over messy technical docs. </p> <p>I've been at this for going on just over a year. My background is in technology, with the last 20 years focused on providing software solutions to US financial institutions. </p> <p>My work has never been confined to one lane — design, coding, Level 3 support, and mentoring have all been part of it from the start. I needed this tool and use it every day. It has been a force multiplier.</p> <p>I've built this self-hosted RAG Q&amp;A system for querying technical documentation — PDFs (and others), source code, config files, and spreadsheets. I have indexed 10K technical documents of various sizes and shapes. </p> <p>I wanted to write up the architecture, because most of the interesting problems weren't the parts anyone talks about. You may be interested.</p> <p>Runs on a single GPU box. Streamlit UI, FastAPI service, and a shared model process, so the embedder and reran",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "作者分享一年构建私有混合RAG栈的经验教训，对处理混乱技术文档有实践指导意义。",
-      "summary_zh": "作者分享了一年多来构建私有混合RAG栈处理混乱技术文档的经验。作者背景是技术领域，过去20年为美国金融机构提供软件解决方案，工作涉及设计、编码、三级支持和指导。帖子标题为“学得很辛苦，但最终我有了一个很棒的工具并每天使用”，内容可能涵盖架构选择、数据清洗、检索优化等实战心得，对类似场景的开发者有参考价值。",
-      "title_zh": "学得很辛苦，但最终我有了一个很棒的工具并每天使用",
-      "weighted_score": 0.505,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.5,
-        "impact": 0.4,
-        "practical_value": 0.8
-      },
-      "story_id": "be998956ae879830",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1w1swsb/learned_the_hard_way_but_in_the_end_i_have_a/"
-        }
-      ]
-    },
-    {
-      "id": "2f9067af86424e92",
-      "source_id": "zh-scottyeung-top",
-      "title": "关于 AI 的一些随想",
-      "url": "https://scottyeung.top/2026/thoughts-about-ai/",
-      "published_at": "2026-08-29T14:15:22+00:00",
-      "raw_text": "<p>有了 AI 之后，都有点感觉不会写东西了，或者说已经不太会打字写东西了。自己的事情，用语音输入乱喷一通，然后交给 AI 做润色和结构调整，就能拿到成文的内容。工作的时候，不方便语音输入，很多时候也只是简单打几个字词拼凑下，然后就让 AI 去组织生成一篇完整的文章，很多时候都是先让 AI 写好，然后自己微调而已。要不是重新工作的话，感觉打字表达这个能力还得继续退化。</p>\n<p>之前看到一个挺有意思的 meme 图还是段子，说的就是 AI agent 盛行之后，很多很简单的事情，人们都不会自己去干，而是选择丢给 AI 去做。比如自己去干可能只是一两分钟，丢给 AI 的话，AI 思考调用执行一通，时间其实差不多，甚至还可能更多，因为 AI 还可能会做错。但是人还是会不愿意做，比如当前有些时候，可能发现问题改几行代码，或者改个变量，几秒的事情，或者 push 一下分支，也是点一点的事情。但就这种操作，还是丢给了 AI，用尊贵的 gpt5.6-sol 去做一些简单的操作，耗时还更长。</p>\n<p>用进废退，长久下来，个人技能是否会彻底退化呢？之前有段时间其实在想，智能时代来临之后，对于我们这种技术人员、研发人员，核心竞争力到底是什么？技术壁垒已经被大部分消除掉了，那以后就比拼谁更会用 AI？其实之前还真的有这种想法，甚至还专门和 AI 讨论过，当前智能时代，到底要 train 些什么，培养些什么能力，然而讨论完就忘了，最后也不知道到底要培养些什么，要练习些什么。</p>\n<p>重新开始上班之后，心里对于工作的恐惧或者担忧其实已经少了很多，有了 AI 之后，好像什么事情都能干了，丢过来什么需求，什么任务，通通都能转派给 AI 帮忙实现出来。然而这样我感觉其实也不太妥当，因为有 AI，所以觉得事情多也无所谓，难也无所谓，都能用 AI 来搞，用最顶级的模型，烧最多的 token。几个需求、多个事情同时压过来，不过就是同时跑几个会话，拉几个 worktree，并行搞就完了。</p>\n<p>想得很美好，但实际仍然很痛苦。这种多任务并行下来，感觉上下文要切换不过来了。预期应该是在等待一个会话的结果时，去给另一个会话派发任务，这样队列轮转。但实际上往往是几个会话同时返回、要求给反馈，也不知道先回谁，然后返回的结果也要认真看，改了代码也得 review，还不如串行了。另外就是事情",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.6,
-      "reason_zh": "作者反思AI对个人写作和任务执行习惯的影响，引发对AI依赖的思考，具有启发性。",
-      "summary_zh": "作者分享了自己在AI影响下写作和任务执行习惯的变化。他发现自己越来越依赖AI进行润色和生成文章，甚至简单任务也倾向于交给AI，尽管自己动手可能更快。作者引用了一个段子，指出AI agent盛行后，人们连简单任务都不愿自己做。文章反思了这种依赖可能导致的技能退化，并探讨了AI时代人类主动性的价值。",
-      "title_zh": null,
-      "weighted_score": 0.465,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.5,
-        "impact": 0.4,
-        "practical_value": 0.6
-      },
-      "story_id": "891543f7d678077a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-scottyeung-top",
-          "url": "https://scottyeung.top/2026/thoughts-about-ai/"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1238140#reply9"
         }
       ]
     }
