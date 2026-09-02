@@ -1,6 +1,6 @@
 # 硅基脉动 · AGI Pulse
 
-> 每 4 小时侦测硅基世界的脉搏 —— 一个零后端、自动运行的 AI 行业信息聚合站。
+> 每天夜间自动更新 —— 一个零后端、自动运行的 AI 行业信息聚合站。
 >
 > 🌐 站点：<https://oyan9527.github.io/agipulse/> ｜ 📡 RSS：<https://oyan9527.github.io/agipulse/feed.xml> ｜ ℹ️ 关于：<https://oyan9527.github.io/agipulse/about.html>
 
@@ -58,7 +58,7 @@ AI 行业每天产生的信息量远超任何人的阅读能力：官方博客�
 整站没有服务器、没有数据库。运行链路极简：
 
 ```
-GitHub Actions（每 4 小时定时）
+GitHub Actions（每天夜间定时 · 蹭 DeepSeek 优惠时段）
    └─ 运行 Python 流水线
         └─ 生成静态 JSON 数据文件
              └─ 提交回仓库
@@ -98,7 +98,7 @@ GitHub Actions（每 4 小时定时）
 
 # AGI Pulse (English)
 
-> Sensing the pulse of the silicon world every 4 hours — a zero-backend, fully-automated AI news aggregator.
+> Auto-updated nightly — a zero-backend, fully-automated AI news aggregator.
 >
 > 🌐 Site: <https://oyan9527.github.io/agipulse/> ｜ 📡 RSS: <https://oyan9527.github.io/agipulse/feed.xml> ｜ ℹ️ About: <https://oyan9527.github.io/agipulse/about.html>
 
@@ -135,7 +135,7 @@ It runs entirely on its own, with no human intervention — and **collects no us
 **Zero backend.** No servers, no database. The entire pipeline is:
 
 ```
-GitHub Actions (every 4 hours)
+GitHub Actions (nightly, during DeepSeek off-peak)
    └─ Python pipeline → static JSON → committed to repo → served by GitHub Pages
 ```
 

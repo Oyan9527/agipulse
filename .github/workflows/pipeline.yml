@@ -2,8 +2,12 @@ name: Update AI signal data
 
 on:
   schedule:
-    - cron: "0 */4 * * *"   # 每 4 小时一次（0/4/8/12/16/20 点整），兼顾新鲜度与 DeepSeek 调用成本
-  workflow_dispatch: {}    # 支持手动触发（首次部署用于种子数据）
+    # ⚠️ GitHub Actions cron 用的是 UTC，不是北京时间！
+    # DeepSeek 优惠时段 = 北京时间 00:30–08:30 = UTC 16:30–次日 00:30（此时段 chat 约半价、
+    # reasoner 折扣更多；以 DeepSeek 官方公告为准）。两个时间点都排进这个窗口以省钱。
+    - cron: "0 17 * * *"   # 主运行：UTC 17:00 = 北京 01:00，每天仅此一次
+    - cron: "0 21 * * *"   # 兜底补跑：UTC 21:00 = 北京 05:00，仅当当天主运行没成功时才真跑（见 decide job）
+  workflow_dispatch: {}    # 支持手动触发（首次部署 / 想临时补一轮），手动触发一律直接跑
 
 concurrency:
   group: pipeline
@@ -11,9 +15,49 @@ concurrency:
 
 permissions:
   contents: write
+  actions: read    # decide job 要查本 workflow 当天的运行结果，判断主运行是否已成功
 
 jobs:
+  # 「失败才补跑」的闸门：GitHub cron 本身没有"上一次失败才触发"的能力，
+  # 只能让 21 点这轮照常被唤醒，然后在这里查当天主运行的结果自行决定要不要干活。
+  # 判据用的是 Actions 自身的运行记录（而非"今天有没有数据提交"）——因为流水线
+  # 成功但当轮没有新内容时是不产生提交的，用提交判断会把这种正常情况误当失败而白跑一轮。
+  # 三种情况都会补跑：主运行失败 / 被取消 / GitHub 高负载时压根没触发（scheduled run 会被丢弃）。
+  decide:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+    steps:
+      - name: Decide whether to run
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # 手动触发、或主运行(17点)这一轮：无条件跑
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "${{ github.event.schedule }}" = "0 17 * * *" ]; then
+            echo "主运行或手动触发 -> 执行"
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # 21 点这轮：查当天(UTC)是否已经有一次成功的定时运行
+          today=$(date -u +%F)
+          ok=$(gh run list --workflow pipeline.yml --event schedule --limit 20 \
+                 --json conclusion,createdAt \
+                 --jq "[.[] | select(.createdAt >= \"${today}T00:00:00Z\") | select(.conclusion == \"success\")] | length")
+          echo "当天已成功的定时运行次数: ${ok}"
+          if [ "${ok}" -gt 0 ]; then
+            echo "主运行当天已成功 -> 跳过补跑，省一次 DeepSeek 调用"
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "当天尚无成功运行 -> 执行补跑"
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   update-data:
+    needs: decide
+    if: needs.decide.outputs.should_run == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
