@@ -1,6 +1,6 @@
 {
   "date": "2026-09-03",
-  "generated_at": "2026-09-03T19:54:11.696851+00:00",
+  "generated_at": "2026-09-03T23:14:35.897968+00:00",
   "items": [
     {
       "id": "32cd670b45165278",
@@ -102,68 +102,35 @@
       ]
     },
     {
-      "id": "55a2f37cdc9b1eb1",
-      "source_id": "arxiv-cs-ai",
-      "title": "SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams",
-      "url": "https://arxiv.org/abs/2609.02217",
-      "published_at": "2026-09-03T04:00:00+00:00",
-      "raw_text": "arXiv:2609.02217v1 Announce Type: new \nAbstract: LLM agents increasingly self-improve by writing and reusing textual skills, kept either as one global document or as a flat pool of per-task entries, though most of the evidence comes from domains with structurally similar tasks. On long-horizon workloads where each task demands a different solution, the two forms fail in opposite ways: the document collapses into generic discipline, while the pool inflates and its entries stay bound to the instance that wrote them. We argue the missing unit of reuse is the solving procedure shared by a cluster of related tasks, and build SkillGLoW (Global-Local Weave) around it: the local skills a task writes from its own execution are aggregated into procedural families and compressed into de-instantiated global priors, while the instance detail they hold is regenerated per task rather than stored; a commit gate admits a prior only when real execution shows it does not degrade the deployed library. Acr",
+      "id": "4e8227e28349abd9",
+      "source_id": "zh-meituan-tech",
+      "title": "美团搜索3.0：LLM 语义表征在排序模型的探索与应用",
+      "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html",
+      "published_at": "2026-09-03T23:06:51.559589+00:00",
+      "raw_text": "美团搜索团队正依托团垂融合新架构与生成式大模型新技术，全面重构本地生活搜索底座。本系列技术博客将持续介绍美团搜索 3.0 的技术探索，本文聚焦 LLM 语义表征在服务零售排序场景上的三期实践——从单点特征验证到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。",
       "category_hint": [
-        "论文研究"
+        "技巧与观点"
       ],
-      "image_url": null,
+      "image_url": "https://p1.meituan.net/meituantechblog/8f6d0d2a1b53e0fbe26ec7f5426bd45a302269.png",
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "提出程序族技能整合方法，提升长时任务智能体的自我改进能力。",
-      "summary_zh": "本文提出SkillGLoW，用于长时任务流中自我改进的LLM代理。现有技能重用方法要么维护全局文档，要么维护扁平任务条目，在任务结构多样时效果不佳。SkillGLoW通过程序族技能整合，将相似任务的技能合并为可复用的程序，平衡灵活性与泛化性，在长时任务上显著提升性能。",
-      "title_zh": "SkillGLoW：长时任务流中自我改进代理的程序族技能整合",
-      "weighted_score": 0.805,
+      "reason_zh": "美团搜索团队分享LLM语义表征在排序中的三期实践，从特征到体系再到迁移，工程经验宝贵。",
+      "summary_zh": "美团搜索团队正依托团垂融合新架构与生成式大模型新技术，全面重构本地生活搜索底座。本系列技术博客将持续介绍美团搜索3.0的技术探索，本文聚焦LLM语义表征在服务零售排序场景上的三期实践——从单点特征验证到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。文章详细阐述了如何将LLM语义表征融入排序模型，提升搜索效果，并分享了实践中的经验与教训。",
+      "title_zh": "美团搜索3.0：LLM语义表征在排序模型的探索与应用",
+      "weighted_score": 0.825,
       "score_breakdown": {
         "source_authority": 0.9,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "8b46f8ff7c475748",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.02217"
-        }
-      ]
-    },
-    {
-      "id": "71a24e7d1971d31e",
-      "source_id": "zh-tonybai",
-      "title": "起底Uber AI软件工厂：智能体用量暴涨9.4倍，账单却纹丝不动",
-      "url": "https://tonybai.com/2026/09/03/uber-ai-software-factory-cost-optimization/",
-      "published_at": "2026-09-02T22:00:00+00:00",
-      "raw_text": "本文基于 Uber 工程博客最新披露的内部实践，系统梳理了 Uber 如何在 AI 编程智能体（Coding Agent）用量暴涨的同时，把总成本控制在几乎不变的水平。文章将从“软件工厂”的四层架构讲起，拆解 Uber 用来分析成本的六变量方程式，并逐一介绍其在模型选型、Token 消耗、请求效率、组织可见性四个维度上的具体优化杠杆——包括基准驱动的模型路由、Prompt Cache 的 TTL 策略、MCP 工具的 CLI 化改造、Code-Mode 批处理、AI Context Graph 上下文图谱，以及面向工程师的实时成本反馈机制。文末结合 Uber 的经验，给出对国内团队构建自己的 AI 软件工程体系的几点启示。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Uber工程博客披露AI编程智能体成本控制实践，四层架构和六变量方程式极具借鉴意义，深度剖析成本优化杠杆。",
-      "summary_zh": "本文基于Uber工程博客最新披露的内部实践，系统梳理了Uber如何在AI编程智能体（Coding Agent）用量暴涨的同时，把总成本控制在几乎不变的水平。文章从“软件工厂”的四层架构讲起，拆解Uber用来分析成本的六变量方程式，并逐一介绍其在模型选型、Token消耗、请求效率、组织可见性四个维度上的具体优化杠杆——包括基准驱动的模型路由、Prompt Cache的TTL策略、MCP工具的CLI化改造、Code-Mode批处理、AI Context Graph上下文图谱，以及面向工程师的实时成本反馈机制。文末结合Uber的经验，给出对国内团队构建自己的AI软件工程体系的几点启示。",
-      "title_zh": null,
-      "weighted_score": 0.77,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
         "practical_value": 0.9
       },
-      "story_id": "35a3f3e1700dfd2b",
+      "story_id": "b4840a22e716d559",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/09/03/uber-ai-software-factory-cost-optimization/"
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html"
         }
       ]
     },
@@ -235,22 +202,55 @@
       ]
     },
     {
-      "id": "35a76c01c7c5c0e7",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] 做了大半年 Agent 架构，越做越觉得是在「人研究人」",
-      "url": "https://www.v2ex.com/t/1239330#reply3",
-      "published_at": "2026-09-03T14:30:44+00:00",
-      "raw_text": "<p>做 Agent 平台大半年了，最大的感受是：架构本身不难，难的是你要研究的那套东西——人。</p>\n<p>我们想做的事情，说穿了就是把人的认知、决策、记忆、协作这些机制抽象出来，做成一套可运行、可控制、可工程化的系统。听着像句漂亮话，落到地上全是硬骨头：</p>\n<ol>\n<li>\n<p>记忆。上下文窗口永远是稀缺资源，我们目前的思路是承认「完整历史不可能常驻」，转而做一个持续提取的过程——把长期交互里的关键事实、偏好、踩过的坑不断蒸馏到有限的 context 界面里。难点不在存，在\"什么值得留\"和\"怎么让它在该出现的时候出现\"。</p>\n</li>\n<li>\n<p>可控性。Agent 越自主越难调试，现在业界的普遍做法是加各种护栏，但护栏多了又回到「精确编排」的老路。这个平衡点我们还没找到让自己完全满意的答案。</p>\n</li>\n<li>\n<p>协作建模。多 Agent 分工听起来美好，实际最难的是搞清楚\"人遇到模糊任务时是怎么拆解的\"——这才是任务分派的真正模板。我们翻了不少认知科学的书，边看边挠头。</p>\n</li>\n</ol>\n<p>最近 Claude / Cloudflare 那几波故障我们也碰上了，顺带澄清下：我们的任务没有出现「丢单」或结果错乱，当时是上游 API 异常触发自动重试与任务挂起，恢复后按 checkpoint 续跑。设计上没有把\"可用性\"赌在单点上。</p>\n<p>所以最后是标题那句话：人研究人，再把\"人\"工程化，某种意义上极其\"反人性\"——因为你永远在用不完美的心智模型去建模\"不完美\"本身。</p>\n<p>想听听各位在做 Agent / LLM 应用工程时，记忆和可控性这两个坑是怎么处理的。</p>",
+      "id": "bbc054e1f15aa330",
+      "source_id": "benedict-evans",
+      "title": "AI, tools and transformation",
+      "url": "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation",
+      "published_at": "2026-09-03T21:26:04+00:00",
+      "raw_text": "It’s very tempting to imagine that AI turns everyone into a tool-builder - \nnow everyone can just ask the model to make the software they need, and \napps as we know them are dead.  I think that misunderstands how most people \nthink and where software actually comes from, and more importantly, it \nisn’t a path to change how companies actually work.",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "Benedict Evans对AI工具化有深刻见解，挑战流行观点，启发思考。",
+      "summary_zh": "Benedict Evans撰文探讨AI、工具与转型。他认为，认为AI能让每个人都成为工具制造者的想法误解了大多数人的思维方式以及软件的真正来源。他质疑'应用已死'的说法，指出这并非改变公司运作方式的途径。文章强调理解用户需求和软件生产流程的重要性，对AI在商业中的应用提出冷静分析。",
+      "title_zh": "AI、工具与转型",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "0a9cc6709fc83421",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "benedict-evans",
+          "url": "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation"
+        }
+      ]
+    },
+    {
+      "id": "415595ed96ea8fc8",
+      "source_id": "zh-juejin",
+      "title": "32GB 显存，凭什么跑 56GB 大模型？从 Shared Memory 到 AI 异构内存架构",
+      "url": "https://juejin.cn/post/7681142626944942134",
+      "published_at": "2026-09-03T12:35:25+00:00",
+      "raw_text": "32GB 显存，凭什么跑 56GB 大模型？从 Shared Memory 到 AI 异构内存架构 作者：吴佳浩（Alben） 撰稿时间：2026.7.28 更新时间：2026.8.1 前几天，一位读",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "作者分享 Agent 架构实践中的深刻洞察，涉及记忆、可控性、协作建模等核心难题，极具启发性。",
-      "summary_zh": "作者在 Agent 平台工作大半年后，反思其本质是“人研究人”。文章深入探讨了 Agent 架构中的三大难点：记忆管理（如何蒸馏关键信息到有限上下文）、可控性（在自主与护栏间寻找平衡）、协作建模（多 Agent 分工的复杂性）。作者认为架构本身不难，难的是理解人类认知机制并工程化实现，这些思考对 Agent 开发者有重要参考价值。",
-      "title_zh": "[程序员] 做了大半年 Agent 架构，越做越觉得是在「人研究人」",
+      "reason_zh": "解释如何用32GB显存运行56GB大模型，涉及异构内存架构，技术细节丰富，对AI工程师有实用价值。",
+      "summary_zh": "本文由吴佳浩（Alben）撰写，探讨了如何利用32GB显存运行56GB的大模型。文章从Shared Memory讲到AI异构内存架构，详细解释了通过内存分层、数据卸载和计算优化等技术，使得在有限显存下运行更大模型成为可能。作者结合实例，分析了不同内存架构的优缺点，并提供了实践建议。对于面临显存瓶颈的AI开发者和研究人员，本文提供了深入的技术见解和解决方案。",
+      "title_zh": "32GB 显存，凭什么跑 56GB 大模型？从 Shared Memory 到 AI 异构内存架构",
       "weighted_score": 0.665,
       "score_breakdown": {
         "source_authority": 0.6,
@@ -258,78 +258,45 @@
         "impact": 0.6,
         "practical_value": 0.8
       },
-      "story_id": "eeaceeeb9cbd0fbf",
+      "story_id": "923edec4945cb0d3",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1239330#reply3"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7681142626944942134"
         }
       ]
     },
     {
-      "id": "e509ce28093a6217",
-      "source_id": "zh-atbug",
-      "title": "AI 编程将阻碍专业能力的形成",
-      "url": "https://atbug.com/ai-coding-will-prevent-expertise/",
-      "published_at": "2026-09-03T00:39:58+00:00",
-      "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>这篇文章与我在 6 月写的《<a href=\"https://mp.weixin.qq.com/s/NG8JowgLM84mma1_RcJ-5A\">从前慢：两种慢，两种命运</a>》指向同一个判断：<strong>AI 消除了工作流里的摩擦，却也悄悄跳过了成长路上的必经之路。</strong> 当时可能有不少读者看到标题就跳过了。Lars Faye 从编程教育研究和新手使用 AI 的行为出发，为这个判断补上了另一组证据：代码生成得越顺畅，越可能绕过形成判断力所必需的规划、失败和调试。</p>\n<p>重点不是反对 AI，也不是把所有摩擦都保留下来，而是分清两种摩擦：系统切换、格式转换和重复搬运应该交给 AI；形成专业能力所必需的思考、试错与受挫，则需要主动保留。第一种摩擦拖慢工作，第二种摩擦构成成长。</p>\n<p>以下是 Lars Faye 原文《<a href=\"https://larsfaye.com/articles/ai-coding-will-prevent-expertise\">AI Coding will Prevent Expertise</a>》的译文。</p>\n<blockquote>\n<p>“我们预见的未来是：智能会像电力或自来水一样成为一种公共资源。人们按量向我们购买智能，再把它用于任何想做的事情。”</p>\n<p>——OpenAI 的 Sam Altman</p>\n</blockquote>\n<p>在上一篇文章《<a href=\"https://larsfaye.com/articles/agentic-coding-is-a-trap\">智能体编程是一个陷阱</a>》中，我讨论了“熟练编排者悖论”：管理 AI 编程智能体所需的那些能力，恰恰也可能因持续使用这些智能体而逐渐退化。</p>\n<p>专业经验是其中最主要的区别。开发者的经验越丰富，就越不容易出现能力退化，因为经过多年实践，相关知识已经有机会沉淀下来。</p>\n<p>看看现在的情况就会发现，从这些模型中获益最多的，绝大多数都是在这个行业里积累了多年、甚至数十年经验的人——这些经验自然早于 AI 工具出现。任何行业老手都会告诉你同一件事：这些知识的根基，来自亲手做过那些工作。</p>\n<p>而在 LLM 兴起前后进入这个行业的开",
+      "id": "3d0ff57949e0c606",
+      "source_id": "zh-juejin",
+      "title": "深入解构Claude Code - 第 11 篇 · 工程上的讲究",
+      "url": "https://juejin.cn/post/7681206030928052234",
+      "published_at": "2026-09-03T13:22:00+00:00",
+      "raw_text": "11.1 一份代码怎么变出不同版本：内部新功能怎么藏起来 项目里有很多功能处于不同成熟度：有的稳定面向所有用户，有的还在试验、只给内部用，有的按市场区域分批开放。如果靠\"发不同版本的代码\"来管理，会变",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "观点评论",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "深入探讨 AI 编程对专业能力形成的影响，区分了两种摩擦，观点有启发性，适合开发者反思。",
-      "summary_zh": "文章指出 AI 编程虽然消除了工作流中的摩擦，但也可能跳过成长必经之路。作者引用 Lars Faye 的研究，认为代码生成越顺畅，越可能绕过形成判断力所需的规划、失败和调试。重点在于区分两种摩擦：系统切换等应交给 AI，而思考、试错等构成成长的摩擦需主动保留。",
-      "title_zh": "AI 编程将阻碍专业能力的形成",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "b2f143148fcaa07a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-atbug",
-          "url": "https://atbug.com/ai-coding-will-prevent-expertise/"
-        }
-      ]
-    },
-    {
-      "id": "8e2d2ccf34d006d1",
-      "source_id": "zh-paddysun-top",
-      "title": "[Agent 考古] Ciatto 2025 解读：LLM 住进 BDI 解释器，计划生成与 believes achieved 退化",
-      "url": "https://www.paddysun.top/archives/5172",
-      "published_at": "2026-09-03T12:41:10+00:00",
-      "raw_text": "系列名称：意图即承诺，智能体即社会——自主性的第一个可计算答案 篇号：11 / 共 11 篇 主题分类：历史记 [&#8230;]\n<p><a href=\"https://www.paddysun.top/archives/5172\">Source</a></p>",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入解读BDI架构与LLM结合，提供可迁移的智能体设计认知，适合研究者与工程师。",
-      "summary_zh": "本文是系列文章的第11篇，聚焦Ciatto 2025年的工作，探讨如何将大型语言模型（LLM）嵌入BDI（信念-愿望-意图）解释器。文章分析了LLM在计划生成中的应用，以及'believes achieved'机制在意图执行中的退化问题。作者通过历史视角，梳理了自主性计算模型的发展脉络，指出LLM与BDI结合时面临的挑战，如意图承诺的维持与信念更新的一致性。文章强调，尽管LLM增强了自然语言理解与生成能力，但在严格遵循BDI逻辑方面存在局限，可能导致计划执行偏离预期。作者提出，未来的智能体设计需在灵活性与可解释性之间取得平衡，并建议借鉴社会性智能体的概念来增强鲁棒性。",
-      "title_zh": "[Agent考古] Ciatto 2025解读：LLM住进BDI解释器，计划生成与believes achieved退化",
-      "weighted_score": 0.6,
+      "reason_zh": "深入解构Claude Code的工程实现细节，如功能隐藏策略，对理解大型代码库管理有启发。",
+      "summary_zh": "本文是'深入解构Claude Code'系列的第11篇，聚焦于工程上的讲究。作者以'一份代码怎么变出不同版本'为例，探讨了如何管理不同成熟度的功能：有些稳定面向所有用户，有些仍在试验仅限内部，有些按市场区域分批开放。文章详细介绍了通过配置和特性开关等方式，在不发布不同版本代码的情况下实现灵活的功能管理。这对于大型软件项目的工程实践具有参考价值。",
+      "title_zh": "深入解构Claude Code - 第 11 篇 · 工程上的讲究",
+      "weighted_score": 0.665,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.6
+        "impact": 0.6,
+        "practical_value": 0.8
       },
-      "story_id": "baff132dd9a3057a",
+      "story_id": "9f5df70a6c02fbea",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-paddysun-top",
-          "url": "https://www.paddysun.top/archives/5172"
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7681206030928052234"
         }
       ]
     },
@@ -364,6 +331,39 @@
         {
           "source_id": "analytics-vidhya",
           "url": "https://www.analyticsvidhya.com/blog/2026/09/opencode-ai-explained/"
+        }
+      ]
+    },
+    {
+      "id": "dcbb41dec1c37399",
+      "source_id": "zh-v2ex",
+      "title": "[分享创造] Minimax H3 Max 模型感觉是 AI 视频行业的新奇点",
+      "url": "https://www.v2ex.com/t/1239349#reply1",
+      "published_at": "2026-09-03T16:03:32+00:00",
+      "raw_text": "<p><em>生成快过播放，事情就不一样了</em></p>\n<p>一段五秒 768p 的片段，三秒以内返回——这是 fal 官方公布的 MiniMax H3 Max 数据。这个数字有意思的地方不在“快”，而在于一道简单的算术：渲染五秒的内容只花三秒，生成速度超过了播放速度。​</p>\n<p>一旦生成快过播放，视频就不再是你“渲染出来的文件”，而是一个“正在发生的现场”。这扇门后面有两种以前根本不存在的东西。</p>\n<p>我能想到的有这些应用场景</p>\n<h2>开放式互动游戏</h2>\n<p>游戏世界不必预先建好。玩家的每个动作都是一条提示词，模型在玩家想出下一步之前，就把世界的反应渲染了出来：你推开一扇门，门后的街道此刻才诞生；你走回头路，身后的房间已经换了一副面孔。没有预建资产库，没有写死的分支脚本——世界在你行动的过程中被实时生成。</p>\n<p>不过还有一些需要考虑的问题：角色一致性。一次请求、六个场景，光线从正午的维多利亚街道切到日落时的办公室，发型、外套、比例和脸全部不变。主角还是同一个主角，这个目前看起来还比较难，没有全能参考图片的这种模式。</p>\n<h2>AI 直播，不间断</h2>\n<p>一场不睡觉、不重播、不需要真人的直播。弹幕把故事推向任何方向，模型把下一拍渲染出来。对话是口型同步的——环境声、拟音、音乐与画面在同一次生成里一起出来。</p>\n<p>5 到 15 秒的单次生成，正好是叙事的最小节拍；每次拿上一个视频的最后一帧作为一下一个视频的开始帧串联起来，用 9:16 的画面比例来适配移动端，看起来很容易就能实现一个不间断的 AI 人物直播，就是 24 小时不间断的生成成本会有点高</p>\n<p>考虑做其中一个方向的产品，另外先提供一个体验入口给大家看看模型能力 <a href=\"https://h3max.pro\" rel=\"nofollow\">h3max.pro</a></p>",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "分析MiniMax H3 Max生成速度超越播放速度的潜力，提出开放式游戏等应用，有洞察。",
+      "summary_zh": "文章指出MiniMax H3 Max模型生成速度超过播放速度（5秒片段3秒生成），意味着视频可实时生成。作者探讨了开放式互动游戏等新应用场景，并提及角色一致性等挑战。",
+      "title_zh": "[分享创造] Minimax H3 Max模型感觉是AI视频行业的新奇点",
+      "weighted_score": 0.585,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "7d201c4f0a049dda",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1239349#reply1"
         }
       ]
     },
