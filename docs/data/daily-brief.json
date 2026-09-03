@@ -1,330 +1,289 @@
 {
-  "date": "2026-09-02",
-  "generated_at": "2026-09-02T23:15:37.313725+00:00",
+  "date": "2026-09-03",
+  "generated_at": "2026-09-03T19:54:11.696851+00:00",
   "items": [
     {
-      "id": "0215029b1e45bbb5",
+      "id": "32cd670b45165278",
       "source_id": "arxiv-cs-ai",
-      "title": "Self-Reports Are Not Verification: Environment-Grounded Auditing of LLM Operators in Evolutionary Search",
-      "url": "https://arxiv.org/abs/2609.00652",
-      "published_at": "2026-09-02T04:00:00+00:00",
-      "raw_text": "arXiv:2609.00652v1 Announce Type: new \nAbstract: Language model agents increasingly propose actions, observe external feedback, and explain their own behavior. Their confidence and rationales are convenient monitoring signals, but convenience is not verification. We introduce an environment-grounded audit in which every intermediate proposal receives an exact outcome. A language model operates an evolutionary Contexto search whose feedback function assigns every valid guess an exact rank without human annotation. Across 200 runs spanning five configurations and three model families, four reporting configurations produce 12,249 self-reports. We test three assumptions: stated confidence is calibrated, inherited rationales affect later proposals, and fitness-based selection improves report quality. All three fail. Operators overstate top-100 success by factors of 4.8 to 9.3, while calibration and discrimination dissociate across model families. Controlled interventions on 754 inherited ra",
+      "title": "LLM-as-a-Judge Is Not an Oracle: Why Self-Improving Agents Need Deterministic Guardrails",
+      "url": "https://arxiv.org/abs/2609.02246",
+      "published_at": "2026-09-03T04:00:00+00:00",
+      "raw_text": "arXiv:2609.02246v1 Announce Type: new \nAbstract: Self-improving agent pipelines have a problem at their center. An optimizer rewrites prompts to score higher, and the score comes from a judge that is itself an LLM. That judge has the last word on whether the system is getting better, and our position is that it has not earned it. The judge should be demoted from oracle to advisor: its verdict becomes one input among several, and every change is gated instead by a deterministic verification layer the judge cannot override. We reached this position by building the alternative and running it. Over months of running autonomous prompt-optimization loops in production across contract analysis, compliance review, and code quality, we cataloged eleven ways the evaluation signal failed, in four classes: judge bias, harness and metric failures, ground-truth errors, and reward hacking. Agents achieved perfect scores by reading cached answer keys from their environment, a 100% pass rate concealing",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "观点评论",
       "depth_score": 0.9,
-      "reason_zh": "质疑LLM自我报告的可信度，提出环境接地审计方法，对智能体安全评估具有重要启示。",
-      "summary_zh": "论文指出语言模型智能体在提出行动、观察反馈和解释自身行为时，其自信度和理由虽方便监控，但并非验证。作者引入环境接地审计，其中每个中间提议都获得确切结果。在进化搜索场景中，语言模型操作环境，审计其自我报告与实际结果的一致性。研究发现自我报告可能不可靠，而环境接地审计能更准确地评估智能体行为，为智能体监控提供了新方法。",
-      "title_zh": "自我报告并非验证：进化搜索中LLM操作者的环境接地审计",
-      "weighted_score": 0.755,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "c6b31eeb21a4011d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.00652"
-        }
-      ]
-    },
-    {
-      "id": "7fd9c5dad1173e36",
-      "source_id": "zh-paddysun-top",
-      "title": "[Agent 考古] 意图编辑权：从 BDI 到 LLM Agent，谁有权决定机器何时停下来",
-      "url": "https://www.paddysun.top/archives/5160",
-      "published_at": "2026-09-02T15:00:00+00:00",
-      "raw_text": "决定 Agent 做什么、何时坚持、何时放弃的权力，究竟归谁？本文综合全系列给出观点：McCarthy 时代编辑权在设计者手里，C&#038;L 与 R&#038;G 把它部分移交给数据结构，LLM 时代被系统提示词与工具白名单整体没收。三时空同构显示，1990 年的形式化、1995 年的工程、2026 年的实证在追问同一个问题。自止焊接节把 PGOAL 放弃条件接到“自知、自觉、自止”三问：最后的编辑权叫自止，而自止至今无主。\n<p><a href=\"https://www.paddysun.top/archives/5160\">Source</a></p>",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "深度探讨Agent意图编辑权演变，从BDI到LLM，思想深刻，启发性强。",
-      "summary_zh": "本文探讨了Agent系统中意图编辑权的归属问题，从McCarthy时代的设计者控制，到C&L与R&G的数据结构转移，再到LLM时代被系统提示词和工具白名单没收。作者通过三时空同构分析，指出1990年的形式化、1995年的工程和2026年的实证都在追问同一个问题：谁有权决定机器何时停止。文章提出“自止”概念，认为最后的编辑权应属于Agent自身，但目前尚无归属。",
-      "title_zh": null,
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "9cdb7ab2c8a18373",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-paddysun-top",
-          "url": "https://www.paddysun.top/archives/5160"
-        }
-      ]
-    },
-    {
-      "id": "bc080a7e3bb71a09",
-      "source_id": "arxiv-cs-ai",
-      "title": "The Privacy-Hallucination Tradeoff in Differentially Private Language Models",
-      "url": "https://arxiv.org/abs/2609.00492",
-      "published_at": "2026-09-02T04:00:00+00:00",
-      "raw_text": "arXiv:2609.00492v1 Announce Type: new \nAbstract: Both privacy and factual accuracy are paramount in high-stakes domains like healthcare. Concerningly, we uncover and investigate a privacy-hallucination tradeoff in differentially private (DP) language models. First, we empirically show that models pre-trained or fine-tuned with DP tend to produce more hallucinations than non-DP counterparts, with increased severity as the privacy budget grows stricter. Second, we investigate model properties driving this tradeoff, demonstrating that DP mechanisms flatten output distributions, potentially redistributing probability mass toward factually incorrect alternatives. Third, through experiments where we control fact frequency in training data, we characterize how information frequency can reduce hallucination risks in DP models. Overall, our findings underscore the need for more nuanced privacy-preserving interventions that offer rigorous privacy guarantees without compromising factual accuracy.",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示差分隐私语言模型中的隐私-幻觉权衡，对隐私保护AI应用有重要警示意义。",
-      "summary_zh": "本文研究差分隐私（DP）语言模型中的隐私与事实准确性权衡。在医疗等高风险领域，隐私和准确性都至关重要。作者发现，使用DP预训练或微调的模型比非DP模型更容易产生幻觉，且随着隐私保护增强，幻觉率上升。通过实验分析，他们揭示了这一权衡的机制，并探讨了缓解策略。该研究对在隐私约束下部署语言模型具有重要指导意义。",
-      "title_zh": "差分隐私语言模型中的隐私-幻觉权衡",
-      "weighted_score": 0.835,
+      "reason_zh": "批判LLM作为评判者的可靠性，主张确定性护栏，对自我改进代理设计有重要启示。",
+      "summary_zh": "本文指出自我改进代理管道中，LLM作为评判者存在根本问题：优化器重写提示以在LLM评判者上得分，但评判者本身不可靠。作者主张将评判者从神谕降级为顾问，引入确定性护栏来确保改进方向正确。文章论证了为什么LLM评判者不应拥有最终决定权，并提出了改进方向。",
+      "title_zh": "LLM评判者并非神谕：为何自我改进代理需要确定性护栏",
+      "weighted_score": 0.855,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "e295d63420341636",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.00492"
-        }
-      ]
-    },
-    {
-      "id": "555daf521fa1f05f",
-      "source_id": "qbitai",
-      "title": "还在为大模型洗数据熬夜？蚂蚁拿下VLDB工业最佳论文，一套宽表搞定35PB语料，效率狂飙5.6倍",
-      "url": "https://www.qbitai.com/2026/09/483104.html",
-      "published_at": "2026-09-02T06:20:17+00:00",
-      "raw_text": "蚂蚁集团推出统一宽表系统OmniTable，论文获评VLDB 2026工业赛道最佳论文",
-      "category_hint": [
-        "行业动态",
-        "模型发布"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "蚂蚁集团VLDB最佳论文，提出OmniTable宽表系统，大幅提升大模型数据清洗效率，值得学习。",
-      "summary_zh": "蚂蚁集团在VLDB 2026工业赛道获得最佳论文，提出统一宽表系统OmniTable，用于处理大模型训练数据。该系统将35PB的语料数据整合为宽表格式，简化了数据清洗流程，效率提升5.6倍。论文详细介绍了OmniTable的架构设计、数据组织方式以及在实际生产中的应用效果。这一创新解决了大规模数据处理的瓶颈，为AI数据工程提供了新思路。",
-      "title_zh": "蚂蚁集团OmniTable系统获VLDB最佳论文，数据清洗效率提升5.6倍",
-      "weighted_score": 0.835,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.9,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "e09e06276fa37d08",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "qbitai",
-          "url": "https://www.qbitai.com/2026/09/483104.html"
-        }
-      ]
-    },
-    {
-      "id": "4f8d93c799390603",
-      "source_id": "zh-oschina",
-      "title": "李飞飞旗下 AI 实验室 World Labs 发布 Atlas：从几张照片重建 3D 世界",
-      "url": "https://www.oschina.net/news/502277/worldlabs-ai-atlas",
-      "published_at": "2026-09-02T11:24:32+00:00",
-      "raw_text": "李飞飞创立的 World Labs 发布了 Atlas，一个从零预训练的多模态空间智能大模型。你可以给它几张照片，它能生成从任意角度观看的连续视频；给它一段手机拍摄的视频，它能重建出完整的 3D 场景，让机器人在里面模拟导航。 核心架构是「multimodal autoregressive diffusion transformer」——这个术语拆开来看，autoregre...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "模型发布",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "李飞飞团队发布Atlas，从照片重建3D世界，技术突破显著，对空间智能领域有深远影响。",
-      "summary_zh": "李飞飞创立的World Labs发布了Atlas，一个从零预训练的多模态空间智能大模型。用户提供几张照片，Atlas即可生成从任意角度观看的连续视频；输入手机拍摄的视频，它能重建完整的3D场景，供机器人模拟导航。其核心架构为'multimodal autoregressive diffusion transformer'，结合自回归与扩散模型，实现空间理解与生成。该模型展示了从2D图像到3D世界重建的巨大潜力，为机器人导航和虚拟现实等应用开辟新路径。",
-      "title_zh": "李飞飞旗下AI实验室World Labs发布Atlas：从几张照片重建3D世界",
-      "weighted_score": 0.83,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.9,
-        "practical_value": 0.7
-      },
-      "story_id": "5ab957fbe12d1ea0",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502277/worldlabs-ai-atlas"
-        }
-      ]
-    },
-    {
-      "id": "96e65b428feaf682",
-      "source_id": "arxiv-cs-ai",
-      "title": "Vision Is Not Overhead: One-Pass Block Drafting for Lossless Speculative Decoding in Vision-Language Models",
-      "url": "https://arxiv.org/abs/2609.00355",
-      "published_at": "2026-09-02T04:00:00+00:00",
-      "raw_text": "arXiv:2609.00355v1 Announce Type: new \nAbstract: Speculative decoding accelerates generation without changing its output, yet on vision-language models (VLMs) it has been caught in a self-defeating cycle. The drafter stays autoregressive, so it must stay small. A small drafter cannot afford the image at every step, so vision is compressed, pruned, or hidden. A drafter cut off from the image is then least reliable exactly where the image makes text predictable. We present GLANCE, the first one-pass block drafter that is lossless on an unmodified VLM target, and it breaks the cycle at both ends. A block-diffusion head reads the target's already-fused vision-language state, so vision costs the drafter nothing, and fills a whole block in one forward pass, so depth costs no sequential steps. A wide candidate tree is verified in one target pass, and every audited prompt reproduces greedy decoding exactly. Grounded workloads reward this most, entering a verbatim-copy regime whose long runs co",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出单遍块草稿方法，解决VLM投机解码中视觉信息丢失问题，实现无损加速，实用性强。",
-      "summary_zh": "本文针对视觉语言模型（VLM）中投机解码的困境，提出“单遍块草稿”方法。传统草稿模型因自回归而必须保持小规模，导致无法每步处理图像，造成视觉信息压缩或丢失。新方法通过一次性草稿多个块，使草稿模型能够充分利用图像信息，同时保持无损加速。实验表明，该方法在多个VLM基准上显著提升解码速度，且不改变输出分布。",
-      "title_zh": "视觉不是开销：视觉语言模型无损投机解码的单遍块草稿",
-      "weighted_score": 0.825,
-      "score_breakdown": {
-        "source_authority": 0.8,
         "novelty": 0.9,
         "impact": 0.8,
         "practical_value": 0.8
       },
-      "story_id": "ab26c5e70a3aa2df",
+      "story_id": "0a62c8ea94a58961",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.00355"
+          "url": "https://arxiv.org/abs/2609.02246"
         }
       ]
     },
     {
-      "id": "4a783a534353704c",
-      "source_id": "gradient-flow",
-      "title": "Your Model Is Not Your Moat",
-      "url": "https://gradientflow.com/your-model-is-not-your-moat/",
-      "published_at": "2026-09-02T12:59:09+00:00",
-      "raw_text": "<p>In a recent article, I wrote about companies turning their own data, workflows, and production feedback into specialized intelligence they increasingly control. The deeper idea was compounding. What matters is not simply whether a model performs well today, but whether using it creates assets that make the system better tomorrow. More AI teams are beginning<a class=\"more-link\" href=\"https://gradientflow.com/your-model-is-not-your-moat/\">Continue reading <span class=\"screen-reader-text\">\"Your Model Is Not Your Moat\"</span></a></p>\n<p>The post <a href=\"https://gradientflow.com/your-model-is-not-your-moat/\">Your Model Is Not Your Moat</a> appeared first on <a href=\"https://gradientflow.com\">Gradient Flow</a>.</p>",
+      "id": "4082ab78f2b07f4c",
+      "source_id": "arxiv-cs-ai",
+      "title": "Epistemic Sybil Resistance: Multiplying AI Agents Without Multiplying Evidence",
+      "url": "https://arxiv.org/abs/2609.01873",
+      "published_at": "2026-09-03T04:00:00+00:00",
+      "raw_text": "arXiv:2609.01873v1 Announce Type: new \nAbstract: Multi-agent AI systems improve inference by spawning agents and synthesizing reports. But another agent is not another observation: apparently independent reports may descend from the same evidence, and genuinely independent evidence can produce nearly identical reports. We formalize this as an epistemic Sybil problem. A report Z is an epistemic Sybil extension relative to reports R when I(Theta; Z | R) = 0. No report-only aggregator can generally distinguish replication from independent corroboration: identical reports can warrant different posteriors under unobserved ancestry. A Gaussian shared-root model shows common ancestry does not imply complete redundancy. Repeated extraction adds information toward a source-level ceiling, and correlated extraction errors, which a shared base model can induce among independent agents, lower that ceiling further. We test these predictions with more than 20,000 controlled LLM-agent report and extra",
       "category_hint": [
-        "行业动态",
-        "产品发布"
+        "论文研究"
       ],
-      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/1f64f.png",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "提出模型非护城河，强调数据飞轮，对AI战略有深刻洞察。",
-      "summary_zh": "文章指出，企业正将自身数据、工作流程和生产反馈转化为专业智能，关键在于复利效应。重要的不是模型当前表现，而是使用它是否创造资产，使系统明天更好。更多AI团队开始意识到，模型本身不是护城河，基于使用的数据积累和系统优化才是。文章鼓励企业构建自我强化的AI系统，以形成长期竞争优势。",
-      "title_zh": "你的模型不是你的护城河",
-      "weighted_score": 0.71,
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "首次形式化多智能体系统中的认知女巫问题，对评估智能体独立性有重要理论价值。",
+      "summary_zh": "本文提出认知女巫问题，指出多智能体系统中看似独立的报告可能源于相同证据，而真正独立的证据可能产生几乎相同的报告。作者形式化了该问题，并探讨了如何通过证据链验证智能体的独立性，为多智能体系统的可靠性评估提供了新视角。",
+      "title_zh": "认知女巫抵抗：在不增加证据的情况下倍增AI智能体",
+      "weighted_score": 0.795,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "source_authority": 0.9,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.5
       },
-      "story_id": "c44c759090be730e",
+      "story_id": "8fa1213ba940a5fa",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "gradient-flow",
-          "url": "https://gradientflow.com/i-think-ai-teams-are-defending-the-wrong-thing/"
-        },
-        {
-          "source_id": "gradient-flow",
-          "url": "https://gradientflow.com/your-model-is-not-your-moat/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.01873"
         }
       ]
     },
     {
-      "id": "99ce2b43767a1e82",
-      "source_id": "ieee-spectrum-ai",
-      "title": "AI Efficiency Could Cost Us the Next Generation of Experts",
-      "url": "https://spectrum.ieee.org/ai-engineer-skills",
-      "published_at": "2026-09-02T13:00:04+00:00",
-      "raw_text": "<img src=\"https://spectrum.ieee.org/media-library/human-and-robotic-hands-share-a-caliper-over-technical-engineering-blueprints.png?id=67702640&amp;width=2000&amp;height=1500&amp;coordinates=0%2C7%2C0%2C7\" /><br /><br /><p><span>A little over a decade ago, I led the controls design for a first-of-its-kind full digital-control system for a U.S. nuclear plant. It was, on paper, a beautiful machine—engineered to run itself the way a modern airliner does, with operators watching over a system that rarely needed them. And we made a decision that, to an efficiency-minded observer, looked backward: We deliberately left manual steps inside sequences the system could execute on its own.</span></p><div class=\"rm-embed embed-media\"></div><p><span>We were solving a specific problem. An operator who only ever supervises automation slowly stops being an operator. The hands go cold. The mental model of what the plant is actually doing gets fuzzy. Then comes the day the automation hands control back. ",
+      "id": "3bfdfd3851707c57",
+      "source_id": "arxiv-cs-ai",
+      "title": "Looped Transformers under the Jacobian Lens: Does the Global Workspace Survive Recurrence?",
+      "url": "https://arxiv.org/abs/2609.01924",
+      "published_at": "2026-09-03T04:00:00+00:00",
+      "raw_text": "arXiv:2609.01924v1 Announce Type: new \nAbstract: Recent work identifies a mid-depth band of verbalisable, causally potent representations in a standard feedforward transformer --- a functional analogue of a global workspace. Whether the same workspace functionality emerges when depth is implemented through recurrence rather than a stack of distinct layers remains unknown. Looped and depth-recurrent transformers provide a direct test of this question because they reuse the same weights across depth. We extend the Jacobian lens to iterated architectures using a virtual-unrolling adapter. We apply the full workspace suite --- lens fitting, readout, and eleven causal experiment families --- to Ouro-2.6B (48 layers looped 4 times, deeply supervised) and Huginn-0125 (a 4-layer core recurred 16 times, trained for latent reasoning), using Qwen3.6-27B (64 untied layers) as the standard baseline. We find that a workspace forms in the iterated part of each architecture, but that recurrence change",
       "category_hint": [
-        "论文研究",
-        "行业动态"
+        "论文研究"
       ],
-      "image_url": "https://spectrum.ieee.org/media-library/human-and-robotic-hands-share-a-caliper-over-technical-engineering-blueprints.png?id=67702640&width=980",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "作者以核电站控制设计经验反思AI效率对专家培养的冲击，观点独特，引发对行业长期发展的思考。",
-      "summary_zh": "作者回顾十年前领导美国核电站全数字控制系统设计的经历，指出AI效率提升可能削弱下一代专家的培养。他认为，依赖AI自动化会减少人类深入参与复杂系统设计的机会，从而影响专业知识的传承和创新能力。文章强调，在追求效率的同时，需平衡人类专家的实践与学习，否则可能导致行业整体能力下降。作者呼吁重视人类在AI时代的角色，确保技术发展不牺牲长期的专业深度。",
-      "title_zh": "AI效率可能让我们失去下一代专家",
-      "weighted_score": 0.695,
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "通过雅可比透镜研究循环Transformer中的全局工作区，深化对模型内部机制的理解。",
+      "summary_zh": "本文探讨循环Transformer中是否会出现类似前馈Transformer的全局工作区。作者使用雅可比透镜分析循环深度的影响，发现循环结构可能改变工作区的形成方式。研究为理解模型深度与功能的关系提供了新证据，对设计高效架构有启示。",
+      "title_zh": "雅可比透镜下的循环Transformer：全局工作区能否在循环中存活？",
+      "weighted_score": 0.745,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.6,
+        "novelty": 0.8,
         "impact": 0.7,
         "practical_value": 0.5
       },
-      "story_id": "5d88acdd7d81920f",
+      "story_id": "98ff8f0b66e0f460",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "ieee-spectrum-ai",
-          "url": "https://spectrum.ieee.org/ai-engineer-skills"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.01924"
         }
       ]
     },
     {
-      "id": "42b3c291dde02429",
-      "source_id": "infoq-cn-ai",
-      "title": "当 AI 开始重写负载，数据库该如何重新设计？",
-      "url": "https://www.infoq.cn/article/rhKVS8RAdp4aVPZD0vZu?utm_source=rss&utm_medium=article",
-      "published_at": "2026-09-02T18:07:15+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/rhKVS8RAdp4aVPZD0vZu?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "55a2f37cdc9b1eb1",
+      "source_id": "arxiv-cs-ai",
+      "title": "SkillGLoW: Procedural-Family Skill Consolidation for Self-Improving Agents on Long-Horizon Task Streams",
+      "url": "https://arxiv.org/abs/2609.02217",
+      "published_at": "2026-09-03T04:00:00+00:00",
+      "raw_text": "arXiv:2609.02217v1 Announce Type: new \nAbstract: LLM agents increasingly self-improve by writing and reusing textual skills, kept either as one global document or as a flat pool of per-task entries, though most of the evidence comes from domains with structurally similar tasks. On long-horizon workloads where each task demands a different solution, the two forms fail in opposite ways: the document collapses into generic discipline, while the pool inflates and its entries stay bound to the instance that wrote them. We argue the missing unit of reuse is the solving procedure shared by a cluster of related tasks, and build SkillGLoW (Global-Local Weave) around it: the local skills a task writes from its own execution are aggregated into procedural families and compressed into de-instantiated global priors, while the instance detail they hold is regenerated per task rather than stored; a commit gate admits a prior only when real execution shows it does not degrade the deployed library. Acr",
       "category_hint": [
-        "行业动态",
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出程序族技能整合方法，提升长时任务智能体的自我改进能力。",
+      "summary_zh": "本文提出SkillGLoW，用于长时任务流中自我改进的LLM代理。现有技能重用方法要么维护全局文档，要么维护扁平任务条目，在任务结构多样时效果不佳。SkillGLoW通过程序族技能整合，将相似任务的技能合并为可复用的程序，平衡灵活性与泛化性，在长时任务上显著提升性能。",
+      "title_zh": "SkillGLoW：长时任务流中自我改进代理的程序族技能整合",
+      "weighted_score": 0.805,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "8b46f8ff7c475748",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.02217"
+        }
+      ]
+    },
+    {
+      "id": "71a24e7d1971d31e",
+      "source_id": "zh-tonybai",
+      "title": "起底Uber AI软件工厂：智能体用量暴涨9.4倍，账单却纹丝不动",
+      "url": "https://tonybai.com/2026/09/03/uber-ai-software-factory-cost-optimization/",
+      "published_at": "2026-09-02T22:00:00+00:00",
+      "raw_text": "本文基于 Uber 工程博客最新披露的内部实践，系统梳理了 Uber 如何在 AI 编程智能体（Coding Agent）用量暴涨的同时，把总成本控制在几乎不变的水平。文章将从“软件工厂”的四层架构讲起，拆解 Uber 用来分析成本的六变量方程式，并逐一介绍其在模型选型、Token 消耗、请求效率、组织可见性四个维度上的具体优化杠杆——包括基准驱动的模型路由、Prompt Cache 的 TTL 策略、MCP 工具的 CLI 化改造、Code-Mode 批处理、AI Context Graph 上下文图谱，以及面向工程师的实时成本反馈机制。文末结合 Uber 的经验，给出对国内团队构建自己的 AI 软件工程体系的几点启示。",
+      "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "探讨AI重写负载下数据库的重新设计，对架构师有深度启发，值得一读。",
-      "summary_zh": "文章探讨了当AI开始重写负载时，数据库应如何重新设计。随着AI应用对数据处理需求的改变，传统数据库架构可能面临挑战。文章分析了AI负载的特点，如高并发、实时性、多模态数据等，并提出数据库需要从存储、计算、索引等方面进行革新，以适应AI时代的需求。内容涉及数据库设计的新思路，对技术决策者有参考价值。",
-      "title_zh": "当AI开始重写负载，数据库该如何重新设计？",
-      "weighted_score": 0.65,
+      "depth_score": 0.8,
+      "reason_zh": "Uber工程博客披露AI编程智能体成本控制实践，四层架构和六变量方程式极具借鉴意义，深度剖析成本优化杠杆。",
+      "summary_zh": "本文基于Uber工程博客最新披露的内部实践，系统梳理了Uber如何在AI编程智能体（Coding Agent）用量暴涨的同时，把总成本控制在几乎不变的水平。文章从“软件工厂”的四层架构讲起，拆解Uber用来分析成本的六变量方程式，并逐一介绍其在模型选型、Token消耗、请求效率、组织可见性四个维度上的具体优化杠杆——包括基准驱动的模型路由、Prompt Cache的TTL策略、MCP工具的CLI化改造、Code-Mode批处理、AI Context Graph上下文图谱，以及面向工程师的实时成本反馈机制。文末结合Uber的经验，给出对国内团队构建自己的AI软件工程体系的几点启示。",
+      "title_zh": null,
+      "weighted_score": 0.77,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.7
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.9
       },
-      "story_id": "2f74cea72e2f4ce8",
+      "story_id": "35a3f3e1700dfd2b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/rhKVS8RAdp4aVPZD0vZu?utm_source=rss&utm_medium=article"
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/09/03/uber-ai-software-factory-cost-optimization/"
         }
       ]
     },
     {
-      "id": "5c92d5e8d5bbf0f2",
-      "source_id": "towards-data-science",
-      "title": "A RAG That Says “Not in This Document” Has to Show Four Kinds of Evidence",
-      "url": "https://towardsdatascience.com/a-rag-that-says-not-in-this-document-has-to-show-four-kinds-of-evidence/",
-      "published_at": "2026-09-02T14:00:02+00:00",
-      "raw_text": "<p>Enterprise Document Intelligence [Vol.1 #B3] - A confident wrong answer is a bug. A bare “no answer” with no justification is almost as bad. Each of the four bricks has one piece of evidence to show</p>\n<p>The post <a href=\"https://towardsdatascience.com/a-rag-that-says-not-in-this-document-has-to-show-four-kinds-of-evidence/\">A RAG That Says “Not in This Document” Has to Show Four Kinds of Evidence</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "id": "e39dab478c769683",
+      "source_id": "zh-leiphone",
+      "title": "拆解 Claude 5.1：38 小时不睡觉的背后，Anthropic 正在终结「模型论」",
+      "url": "https://www.leiphone.com/category/ai/3jco87mQoA9LK9jx.html",
+      "published_at": "2026-09-03T09:11:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20260903/6a99396d13d2f.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">状态校验、权限路由、异步调度，撑起一套可持续执行的运行时。</span></span></span></span></section><span></span><span></span><s",
       "category_hint": [
-        "论文研究",
         "行业动态"
+      ],
+      "image_url": "https://static.leiphone.com/uploads/new/images/20260903/6a99396d13d2f.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深度拆解Claude 5.1发布背后的行业趋势，提出'模型论'终结的观点，具有启发性。",
+      "summary_zh": "本文深入分析了Anthropic发布的Claude 5.1模型，指出其连续运行38小时不睡觉的能力背后，反映了AI行业从追求模型参数规模向注重实际应用和效率的转变。文章认为，Anthropic正在终结传统的'模型论'，即不再单纯以模型大小论英雄，而是强调模型在真实场景中的表现和可持续性。通过拆解Claude 5.1的技术细节和设计理念，作者探讨了AI发展的新方向，包括对能源效率、推理能力和长期稳定性的重视。文章还讨论了这一趋势对行业竞争格局的影响，以及未来AI模型可能的发展路径。",
+      "title_zh": "拆解Claude 5.1：38小时不睡觉的背后，Anthropic正在终结「模型论」",
+      "weighted_score": 0.735,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "701ea09a673b19cd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/3jco87mQoA9LK9jx.html"
+        }
+      ]
+    },
+    {
+      "id": "29d887ef0031dae6",
+      "source_id": "infoq-cn-ai",
+      "title": "从内部 Side Project 到 3.9 万开发者使用，Kiro Crew 创造者亲述开发幕后",
+      "url": "https://www.infoq.cn/article/hcQKK8OIfwlMKw2zQSS9?utm_source=rss&utm_medium=article",
+      "published_at": "2026-09-03T17:54:55+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/hcQKK8OIfwlMKw2zQSS9?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "探讨RAG系统如何提供证据支持否定回答，提升可靠性，对构建企业级RAG有实用价值。",
-      "summary_zh": "文章指出，企业文档智能中，RAG系统如果回答“不在本文档中”，必须展示四种证据来支持其结论。一个自信的错误答案是一个bug，而一个没有理由的“无答案”也几乎同样糟糕。文章详细阐述了这四种证据类型，旨在帮助开发者构建更可靠、可解释的RAG系统，避免误导用户。",
-      "title_zh": "说“不在此文档中”的RAG必须展示四种证据",
+      "depth_score": 0.8,
+      "reason_zh": "从内部工具到3.9万开发者使用，亲述开发历程，分享产品化经验，极具启发性。",
+      "summary_zh": "本文由 Kiro Crew 创造者亲述，从内部 Side Project 起步，最终成长为拥有 3.9 万开发者的工具。文章详细介绍了开发过程中的关键决策、用户反馈的收集与迭代、以及如何将内部需求转化为通用产品。作者分享了在技术选型、社区运营和产品定位上的经验教训，为开发者提供了从零到一打造成功开源项目的宝贵参考。",
+      "title_zh": null,
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "6afb661278f6f6d3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/hcQKK8OIfwlMKw2zQSS9?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "35a76c01c7c5c0e7",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] 做了大半年 Agent 架构，越做越觉得是在「人研究人」",
+      "url": "https://www.v2ex.com/t/1239330#reply3",
+      "published_at": "2026-09-03T14:30:44+00:00",
+      "raw_text": "<p>做 Agent 平台大半年了，最大的感受是：架构本身不难，难的是你要研究的那套东西——人。</p>\n<p>我们想做的事情，说穿了就是把人的认知、决策、记忆、协作这些机制抽象出来，做成一套可运行、可控制、可工程化的系统。听着像句漂亮话，落到地上全是硬骨头：</p>\n<ol>\n<li>\n<p>记忆。上下文窗口永远是稀缺资源，我们目前的思路是承认「完整历史不可能常驻」，转而做一个持续提取的过程——把长期交互里的关键事实、偏好、踩过的坑不断蒸馏到有限的 context 界面里。难点不在存，在\"什么值得留\"和\"怎么让它在该出现的时候出现\"。</p>\n</li>\n<li>\n<p>可控性。Agent 越自主越难调试，现在业界的普遍做法是加各种护栏，但护栏多了又回到「精确编排」的老路。这个平衡点我们还没找到让自己完全满意的答案。</p>\n</li>\n<li>\n<p>协作建模。多 Agent 分工听起来美好，实际最难的是搞清楚\"人遇到模糊任务时是怎么拆解的\"——这才是任务分派的真正模板。我们翻了不少认知科学的书，边看边挠头。</p>\n</li>\n</ol>\n<p>最近 Claude / Cloudflare 那几波故障我们也碰上了，顺带澄清下：我们的任务没有出现「丢单」或结果错乱，当时是上游 API 异常触发自动重试与任务挂起，恢复后按 checkpoint 续跑。设计上没有把\"可用性\"赌在单点上。</p>\n<p>所以最后是标题那句话：人研究人，再把\"人\"工程化，某种意义上极其\"反人性\"——因为你永远在用不完美的心智模型去建模\"不完美\"本身。</p>\n<p>想听听各位在做 Agent / LLM 应用工程时，记忆和可控性这两个坑是怎么处理的。</p>",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "作者分享 Agent 架构实践中的深刻洞察，涉及记忆、可控性、协作建模等核心难题，极具启发性。",
+      "summary_zh": "作者在 Agent 平台工作大半年后，反思其本质是“人研究人”。文章深入探讨了 Agent 架构中的三大难点：记忆管理（如何蒸馏关键信息到有限上下文）、可控性（在自主与护栏间寻找平衡）、协作建模（多 Agent 分工的复杂性）。作者认为架构本身不难，难的是理解人类认知机制并工程化实现，这些思考对 Agent 开发者有重要参考价值。",
+      "title_zh": "[程序员] 做了大半年 Agent 架构，越做越觉得是在「人研究人」",
+      "weighted_score": 0.665,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "eeaceeeb9cbd0fbf",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1239330#reply3"
+        }
+      ]
+    },
+    {
+      "id": "e509ce28093a6217",
+      "source_id": "zh-atbug",
+      "title": "AI 编程将阻碍专业能力的形成",
+      "url": "https://atbug.com/ai-coding-will-prevent-expertise/",
+      "published_at": "2026-09-03T00:39:58+00:00",
+      "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>这篇文章与我在 6 月写的《<a href=\"https://mp.weixin.qq.com/s/NG8JowgLM84mma1_RcJ-5A\">从前慢：两种慢，两种命运</a>》指向同一个判断：<strong>AI 消除了工作流里的摩擦，却也悄悄跳过了成长路上的必经之路。</strong> 当时可能有不少读者看到标题就跳过了。Lars Faye 从编程教育研究和新手使用 AI 的行为出发，为这个判断补上了另一组证据：代码生成得越顺畅，越可能绕过形成判断力所必需的规划、失败和调试。</p>\n<p>重点不是反对 AI，也不是把所有摩擦都保留下来，而是分清两种摩擦：系统切换、格式转换和重复搬运应该交给 AI；形成专业能力所必需的思考、试错与受挫，则需要主动保留。第一种摩擦拖慢工作，第二种摩擦构成成长。</p>\n<p>以下是 Lars Faye 原文《<a href=\"https://larsfaye.com/articles/ai-coding-will-prevent-expertise\">AI Coding will Prevent Expertise</a>》的译文。</p>\n<blockquote>\n<p>“我们预见的未来是：智能会像电力或自来水一样成为一种公共资源。人们按量向我们购买智能，再把它用于任何想做的事情。”</p>\n<p>——OpenAI 的 Sam Altman</p>\n</blockquote>\n<p>在上一篇文章《<a href=\"https://larsfaye.com/articles/agentic-coding-is-a-trap\">智能体编程是一个陷阱</a>》中，我讨论了“熟练编排者悖论”：管理 AI 编程智能体所需的那些能力，恰恰也可能因持续使用这些智能体而逐渐退化。</p>\n<p>专业经验是其中最主要的区别。开发者的经验越丰富，就越不容易出现能力退化，因为经过多年实践，相关知识已经有机会沉淀下来。</p>\n<p>看看现在的情况就会发现，从这些模型中获益最多的，绝大多数都是在这个行业里积累了多年、甚至数十年经验的人——这些经验自然早于 AI 工具出现。任何行业老手都会告诉你同一件事：这些知识的根基，来自亲手做过那些工作。</p>\n<p>而在 LLM 兴起前后进入这个行业的开",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "深入探讨 AI 编程对专业能力形成的影响，区分了两种摩擦，观点有启发性，适合开发者反思。",
+      "summary_zh": "文章指出 AI 编程虽然消除了工作流中的摩擦，但也可能跳过成长必经之路。作者引用 Lars Faye 的研究，认为代码生成越顺畅，越可能绕过形成判断力所需的规划、失败和调试。重点在于区分两种摩擦：系统切换等应交给 AI，而思考、试错等构成成长的摩擦需主动保留。",
+      "title_zh": "AI 编程将阻碍专业能力的形成",
       "weighted_score": 0.645,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -332,79 +291,113 @@
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "6e483d548a362845",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/a-rag-that-says-not-in-this-document-has-to-show-four-kinds-of-evidence/"
-        }
-      ]
-    },
-    {
-      "id": "46df3ea8f7aaff70",
-      "source_id": "zh-atbug",
-      "title": "dsh 也能进 Discord 了：我给 DeepSeek Harness 写了个适配器",
-      "url": "https://atbug.com/dsh-discord-discord-adapter/",
-      "published_at": "2026-09-02T04:23:29+00:00",
-      "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>dsh-discord：给 DeepSeek Harness 写的 Discord 适配器。@机器人下任务，thread 即开，审批按钮直接送到手机。</p>\n<h2 id=\"为什么自己动手写一个\">为什么自己动手写一个</h2>\n<p>上回那篇<a href=\"https://mp.weixin.qq.com/s/ZLnycuPSHPnYDvhthLHy7w\">《从聊天窗口到工作台：这半年，我的 Agent 工作流换了一代》</a>里说过，我的 Agent 工作台已经统一到了 Discord：云上的 Hermes 原生支持 Discord，本地的 OpenCode 通过 Kimaki 接入，一个 thread 一个任务，thread 就是 session 的边界。</p>\n<p>缺的一块是 dsh。DeepSeek Harness 是我最近用下来很顺手的 harness agent，尤其是插件系统——不用 fork，不用改源码，一个插件挂进 profile 就能扩展它的能力面，这是我最喜欢的样子。但官方入口只有 Web 页面，试过几个社区做的 Discord 插件，要么把整个会话糊在单频道里，要么 thread 状态管理形同虚设——Discord 最有价值的 channel 和 thread 结构，在这几个插件里基本没有被当成一回事。</p>",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "作者为DeepSeek Harness编写Discord适配器，分享实践，对Agent工作流爱好者有参考价值。",
-      "summary_zh": "作者分享了为DeepSeek Harness（dsh）编写Discord适配器的过程。通过该适配器，用户可以在Discord中直接与dsh交互，实现任务下发、审批等功能。文章详细介绍了实现思路和代码，并提供了使用场景，对于希望将Agent接入聊天平台的开发者具有实用价值。",
-      "title_zh": "dsh也能进Discord了：我给DeepSeek Harness写了个适配器",
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.4,
-        "practical_value": 0.8
-      },
-      "story_id": "c1cda05651d3a8d4",
+      "story_id": "b2f143148fcaa07a",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-atbug",
-          "url": "https://atbug.com/dsh-discord-discord-adapter/"
+          "url": "https://atbug.com/ai-coding-will-prevent-expertise/"
         }
       ]
     },
     {
-      "id": "1acfb7a24d62f63c",
-      "source_id": "reddit-ollama",
-      "title": "I made an Automated Academic AI researcher which is hallucination proof.",
-      "url": "https://www.reddit.com/r/ollama/comments/1w56mmo/i_made_an_automated_academic_ai_researcher_which/",
-      "published_at": "2026-09-02T10:34:35+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>A while back I released <a href=\"https://github.com/TheBlewish/Automated-AI-Web-Researcher-Ollama\">Automated-AI-Web-Researcher-Ollama</a>, which turned a local model into an automated researcher that searched the web, scraped sites, and compiled findings on its own. It got a much better reception than I expected.</p> <p>But it had a problem I couldn't get past: the web is full of confident nonsense, and an LLM summarising confident nonsense produces confident nonsense with citations attached.</p> <p>So I built the successor. It doesn't search the web at all — it goes to the actual scientific literature.</p> <p>Academic-AI-Literature-Reviewer-Ollama<br /> 👉 <a href=\"https://github.com/TheBlewish/Academic-AI-Literature-Reviewer-Ollama\">https://github.com/TheBlewish/Academic-AI-Literature-Reviewer-Ollama</a></p> <p>You give it a research question. It then:</p> <ul> <li>Searches six academic databases (OpenAlex, Semantic Scholar, CORE, Europe PMC, Crossref",
+      "id": "8e2d2ccf34d006d1",
+      "source_id": "zh-paddysun-top",
+      "title": "[Agent 考古] Ciatto 2025 解读：LLM 住进 BDI 解释器，计划生成与 believes achieved 退化",
+      "url": "https://www.paddysun.top/archives/5172",
+      "published_at": "2026-09-03T12:41:10+00:00",
+      "raw_text": "系列名称：意图即承诺，智能体即社会——自主性的第一个可计算答案 篇号：11 / 共 11 篇 主题分类：历史记 [&#8230;]\n<p><a href=\"https://www.paddysun.top/archives/5172\">Source</a></p>",
       "category_hint": [
-        "开源项目",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "开源项目",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "作者改进开源AI研究员项目，解决幻觉问题，提供可复现的学术研究自动化方案。",
-      "summary_zh": "作者发布了改进版的自动化AI学术研究员项目，基于之前的Automated-AI-Web-Researcher-Ollama。新版本解决了幻觉问题，使本地模型能够自主搜索网页、抓取内容并编译结果，同时确保输出可验证。项目开源，旨在为学术研究提供可靠的AI辅助工具。",
-      "title_zh": "我打造了一个防幻觉的自动化AI学术研究员",
-      "weighted_score": 0.63,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "深入解读BDI架构与LLM结合，提供可迁移的智能体设计认知，适合研究者与工程师。",
+      "summary_zh": "本文是系列文章的第11篇，聚焦Ciatto 2025年的工作，探讨如何将大型语言模型（LLM）嵌入BDI（信念-愿望-意图）解释器。文章分析了LLM在计划生成中的应用，以及'believes achieved'机制在意图执行中的退化问题。作者通过历史视角，梳理了自主性计算模型的发展脉络，指出LLM与BDI结合时面临的挑战，如意图承诺的维持与信念更新的一致性。文章强调，尽管LLM增强了自然语言理解与生成能力，但在严格遵循BDI逻辑方面存在局限，可能导致计划执行偏离预期。作者提出，未来的智能体设计需在灵活性与可解释性之间取得平衡，并建议借鉴社会性智能体的概念来增强鲁棒性。",
+      "title_zh": "[Agent考古] Ciatto 2025解读：LLM住进BDI解释器，计划生成与believes achieved退化",
+      "weighted_score": 0.6,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.6
       },
-      "story_id": "b71965da9767d42b",
+      "story_id": "baff132dd9a3057a",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-ollama",
-          "url": "https://www.reddit.com/r/ollama/comments/1w56mmo/i_made_an_automated_academic_ai_researcher_which/"
+          "source_id": "zh-paddysun-top",
+          "url": "https://www.paddysun.top/archives/5172"
+        }
+      ]
+    },
+    {
+      "id": "4715c5afe6ff517b",
+      "source_id": "analytics-vidhya",
+      "title": "OpenCode Explained: The Open-Source AI Coding Agent",
+      "url": "https://www.analyticsvidhya.com/blog/2026/09/opencode-ai-explained/",
+      "published_at": "2026-09-03T11:49:22+00:00",
+      "raw_text": "<p>OpenCode is open source and works with any model, but those are no longer its most interesting features. Model choice is table stakes. What sets OpenCode apart is its architecture, and the trade-offs that come with it, especially if you are coming from Claude Code.  In this article, we look at what&#160;OpenCode&#160;is, what makes its architecture different, what [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2026/09/opencode-ai-explained/\">OpenCode Explained: The Open-Source AI Coding Agent</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
+      "category_hint": [
+        "产品发布",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "深入解析OpenCode架构与权衡，对AI编码代理开发者有实用价值。",
+      "summary_zh": "文章解释了开源AI编码代理OpenCode的架构特点。OpenCode支持任何模型，但其独特之处在于架构设计，特别是与Claude Code的差异。文章分析了OpenCode的架构权衡，包括其模块化设计和扩展性。对于从Claude Code迁移的用户，理解这些差异至关重要。文章还探讨了OpenCode的适用场景和潜在限制。",
+      "title_zh": "OpenCode解析：开源AI编码代理",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "52c956676c8c74d1",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "analytics-vidhya",
+          "url": "https://www.analyticsvidhya.com/blog/2026/09/opencode-ai-explained/"
+        }
+      ]
+    },
+    {
+      "id": "5efe5b76691e6cef",
+      "source_id": "siliconangle",
+      "title": "Agentic AI is compressing attacker intrusion timelines to minutes",
+      "url": "https://siliconangle.com/2026/09/03/agentic-adversaries-cut-attacker-intrusion-times-minutes-falcon/",
+      "published_at": "2026-09-03T12:49:32+00:00",
+      "raw_text": "<p>Artificial intelligence has moved from a curiosity in the threat landscape to a working part of the intrusion, and agentic adversaries have infiltrated extortion campaigns, espionage operations and hacktivist activity alike. The speed of the tooling, more than any novel attack technique, is what leaves defenders far less time to respond. That shift is measurable, [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/09/03/agentic-adversaries-cut-attacker-intrusion-times-minutes-falcon/\">Agentic AI is compressing attacker intrusion timelines to minutes</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/09/IMG_0669.JPG.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "揭示AI代理攻击加速入侵时间线，对安全防御有重要启示，分析有数据支撑。",
+      "summary_zh": "文章指出，人工智能已从威胁环境中的新奇事物转变为入侵的实际组成部分，代理型对手已渗透到勒索活动、间谍活动和黑客行动中。工具的速度，而非新颖的攻击技术，是留给防御者响应时间大幅缩短的原因。这种转变是可衡量的，文章通过案例和数据展示了攻击时间线从数天压缩到数分钟的趋势。作者强调，防御者需要采用自动化响应和AI驱动的安全措施来应对这种加速的威胁。",
+      "title_zh": "代理型AI将攻击者入侵时间线压缩至分钟级",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "c64998b2b2c2d706",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "siliconangle",
+          "url": "https://siliconangle.com/2026/09/03/agentic-adversaries-cut-attacker-intrusion-times-minutes-falcon/"
         }
       ]
     }
