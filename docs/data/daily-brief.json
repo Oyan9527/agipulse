@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T21:38:34.602310+00:00",
+  "generated_at": "2026-09-14T23:53:50.837718+00:00",
   "items": [
     {
       "id": "ddcd1022673cda42",
@@ -172,39 +172,6 @@
       ]
     },
     {
-      "id": "506852d46ee88c93",
-      "source_id": "zh-tonybai",
-      "title": "Go 核心团队放大招：cgo 不用 C编译器也能跑，AI/GPU 库调用将迎来大简化",
-      "url": "https://tonybai.com/2026/09/14/go-cgo-without-c-toolchain/",
-      "published_at": "2026-09-13T22:00:00+00:00",
-      "raw_text": "Go 官方近期曝出 Go 1.28 可能包含“cgo 无需 C 工具链”的新特性，随后核心开发者 Matloob 正式提交提案 golang/go#81450。该提案打算把 cgo 从“编译 C 代码的机制”升级为“描述并调用 C ABI 的机制”：包库作者在开发阶段用 C 工具链生成一份可读、可编辑、可 check in 的 Go 语法“binding 文件”；终端用户 `go build` 时只需要 Go 工具链本身理解目标平台的 C ABI，生成 Go ＋ 汇编胶水代码即可完成调用，全程不再需要 gcc／clang。这一改动与 Go 1.20、1.21 持续剥离 host C 工具链依赖的路线一脉相承，对跨平台交叉编译和调用预编译的 AI／GPU 原生库尤其有价值，但它无法覆盖包含 C 源码的传统 cgo 场景，binding 的长期维护和生态建设将是落地的最大挑战。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Go 语言核心团队提案，cgo 无需 C 工具链，对 AI/GPU 库调用和跨平台编译影响深远，技术细节扎实。",
-      "summary_zh": "Go 官方近期曝出 Go 1.28 可能包含“cgo 无需 C 工具链”的新特性，核心开发者 Matloob 正式提交提案 golang/go#81450。该提案打算把 cgo 从“编译 C 代码的机制”升级为“描述并调用 C ABI 的机制”：包库作者在开发阶段用 C 工具链生成一份可读、可编辑、可 check in 的 Go 语法“binding 文件”；终端用户 go build 时只需要 Go 工具链本身理解目标平台的 C ABI，生成 Go 加汇编胶水代码即可完成调用，全程不再需要 gcc/clang。这一改动与 Go 1.20、1.21 持续剥离 host C 工具链依赖的路线一脉相承，对跨平台交叉编译和调用预编译的 AI/GPU 原生库尤其有价值，但它无法覆盖包含 C 源码的传统 cgo 场景，binding 的长期维护和生态建设将是落地的最大挑战。",
-      "title_zh": "Go 核心团队放大招：cgo 不用 C 编译器也能跑，AI/GPU 库调用将迎来大简化",
-      "weighted_score": 0.745,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.8
-      },
-      "story_id": "d4ff3c76b61578ca",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/09/14/go-cgo-without-c-toolchain/"
-        }
-      ]
-    },
-    {
       "id": "0f1f17c815280cbf",
       "source_id": "latent-space",
       "title": "Humanity’s Last Invention — Richard Socher of Recursive",
@@ -339,6 +306,72 @@
       ]
     },
     {
+      "id": "09e62eb15568147b",
+      "source_id": "zh-meituan-tech",
+      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+      "published_at": "2026-09-14T23:46:21.261392+00:00",
+      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+      "category": "开源项目",
+      "content_type": "研究论文",
+      "depth_score": 0.75,
+      "reason_zh": "美团开源下一代搜索智能体评测基准 LoHoSearch，用知识图谱校准 AI 能力认知，应对基准饱和。",
+      "summary_zh": "美团开源下一代搜索智能体评测基准 LoHoSearch，旨在用知识图谱校准 AI 能力认知。文章指出，过去一年 Search Agent 能力显著演进，在 BrowseComp 等评测上顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上，基准迅速饱和导致其区分模型能力的价值递减。LoHoSearch 通过引入知识图谱构建更具挑战性的评测任务，试图重新拉开模型能力差距，为搜索智能体的评测提供新的标尺，对评测研究与 Agent 开发者均有参考意义。",
+      "title_zh": null,
+      "weighted_score": 0.74,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "eb00a4db4521a3f4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+        }
+      ]
+    },
+    {
+      "id": "461c9514a1c899a6",
+      "source_id": "zh-tonybai",
+      "title": "刚刚，Go 社区冒出一个“AI 工厂”：SuperPlane 开源，专治 AI Agent 乱来",
+      "url": "https://tonybai.com/2026/09/15/superplane-ai-factory-go-open-source/",
+      "published_at": "2026-09-14T22:00:00+00:00",
+      "raw_text": "AI 写代码速度飙升后，工程团队真正的瓶颈转向了审批滞后、风险失控与回滚困难。Go 社区最新开源的自动化控制平面 SuperPlane（GitHub 7k+ Star，Apache 2.0）交出了一份工业级答卷：它将复杂的工程流水线打包为包含画布（Canvas）、控制台（Console）、持久记忆（Memory）与 Git 文件（Files）的自包含 App，提供事件驱动与断点续跑的确定性执行能力，更自带分权严格的 Claude 智能体与预装 AI 工具链的专属 Runner。本文深度拆解 SuperPlane 的核心架构、安全护栏设计与实战落地场景。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "拆解SuperPlane架构与安全护栏，对治理AI Agent乱象的工程团队有直接参考价值。",
+      "summary_zh": "文章介绍Go社区新开源的自动化控制平面SuperPlane（GitHub 7k+ Star，Apache 2.0）。随着AI写代码速度飙升，工程团队的瓶颈转向审批滞后、风险失控与回滚困难。SuperPlane将复杂工程流水线打包为自包含App，包含画布（Canvas）、控制台（Console）、持久记忆（Memory）与Git文件（Files），提供事件驱动与断点续跑的确定性执行能力，并内置分权严格的Claude智能体与预装AI工具链的专属Runner。文章深度拆解其核心架构、安全护栏设计与实战落地场景。",
+      "title_zh": null,
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.55,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.85
+      },
+      "story_id": "a6deff52817ef633",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/09/15/superplane-ai-factory-go-open-source/"
+        }
+      ]
+    },
+    {
       "id": "6c6638a31a6db4e6",
       "source_id": "stratechery",
       "title": "Pacing the Frontier, AI’s Digital Limits, AI Commissars",
@@ -368,39 +401,6 @@
         {
           "source_id": "stratechery",
           "url": "https://stratechery.com/2026/pacing-the-frontier-ais-digital-limits-ai-commissars/"
-        }
-      ]
-    },
-    {
-      "id": "2f634d8261b9c369",
-      "source_id": "arxiv-cs-cl",
-      "title": "AMDKernelVault: Large-Scale Datasets and Agentic Training for AMD GPU Kernel Optimization",
-      "url": "https://arxiv.org/abs/2609.12471",
-      "published_at": "2026-09-14T04:00:00+00:00",
-      "raw_text": "arXiv:2609.12471v1 Announce Type: new \nAbstract: We introduce AMDKernelVault, an open HIP and Triton kernel corpus and training framework for recent AMD CDNA GPUs. Existing LLM-based kernel agents are largely CUDA/NVIDIA-centric and often depend on repeated frontier-LLM calls for generation, reflection, and optimization. To address this gap, we develop HIPKernelGen and TritonKernelGen, agent-driven pipelines that transform PyTorch references into HIP or Triton kernels, compile and validate candidates under ROCm, and latency-profile them on AMD hardware. The corpus contains 62,153 execution-verified HIP kernel samples, 2,377 production-grounded ROCm Libraries QA entries, and 39,893 Triton kernels. We further train Qwen3-8B with supervised fine-tuning and execution-aware reinforcement learning as a demonstration of the corpus's utility. Under fixed evaluation budgets, it achieves the highest correctness among the compared models on PyTorch-to-HIP (34.0% Pass@1), TritonBench-G (33.2% Corr",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "填补AMD GPU内核优化数据与智能体训练空白，开源HIP/Triton语料与框架，对非NVIDIA生态的kernel agent研究有实用价值。",
-      "summary_zh": "论文提出AMDKernelVault，一个面向近期AMD CDNA GPU的开放HIP与Triton内核语料库及训练框架。现有基于LLM的内核智能体大多以CUDA/NVIDIA为中心，且常依赖反复调用前沿LLM进行生成、反思与优化。为弥补这一空白，作者开发了HIPKernelGen与TritonKernelGen等智能体驱动工具，并构建大规模数据集用于训练。该工作为AMD GPU内核优化提供了数据与训练基础设施，推动kernel agent研究向多硬件生态扩展。",
-      "title_zh": "AMDKernelVault：面向AMD GPU内核优化的大规模数据集与智能体训练",
-      "weighted_score": 0.7,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "056414441a6f15a7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2609.12471"
         }
       ]
     }

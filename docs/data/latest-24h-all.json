@@ -25,7 +25,7 @@
       "practical_value": 0.6
     },
     "story_id": "c38f907c441a35cf",
-    "multi_source_count": 5,
+    "multi_source_count": 6,
     "sources": [
       {
         "source_id": "simonwillison",
@@ -46,105 +46,10 @@
       {
         "source_id": "zh-v2ex",
         "url": "https://www.v2ex.com/t/1241973#reply9"
-      }
-    ]
-  },
-  {
-    "id": "506852d46ee88c93",
-    "source_id": "zh-tonybai",
-    "title": "Go 核心团队放大招：cgo 不用 C编译器也能跑，AI/GPU 库调用将迎来大简化",
-    "url": "https://tonybai.com/2026/09/14/go-cgo-without-c-toolchain/",
-    "published_at": "2026-09-13T22:00:00+00:00",
-    "raw_text": "Go 官方近期曝出 Go 1.28 可能包含“cgo 无需 C 工具链”的新特性，随后核心开发者 Matloob 正式提交提案 golang/go#81450。该提案打算把 cgo 从“编译 C 代码的机制”升级为“描述并调用 C ABI 的机制”：包库作者在开发阶段用 C 工具链生成一份可读、可编辑、可 check in 的 Go 语法“binding 文件”；终端用户 `go build` 时只需要 Go 工具链本身理解目标平台的 C ABI，生成 Go ＋ 汇编胶水代码即可完成调用，全程不再需要 gcc／clang。这一改动与 Go 1.20、1.21 持续剥离 host C 工具链依赖的路线一脉相承，对跨平台交叉编译和调用预编译的 AI／GPU 原生库尤其有价值，但它无法覆盖包含 C 源码的传统 cgo 场景，binding 的长期维护和生态建设将是落地的最大挑战。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "Go 语言核心团队提案，cgo 无需 C 工具链，对 AI/GPU 库调用和跨平台编译影响深远，技术细节扎实。",
-    "summary_zh": "Go 官方近期曝出 Go 1.28 可能包含“cgo 无需 C 工具链”的新特性，核心开发者 Matloob 正式提交提案 golang/go#81450。该提案打算把 cgo 从“编译 C 代码的机制”升级为“描述并调用 C ABI 的机制”：包库作者在开发阶段用 C 工具链生成一份可读、可编辑、可 check in 的 Go 语法“binding 文件”；终端用户 go build 时只需要 Go 工具链本身理解目标平台的 C ABI，生成 Go 加汇编胶水代码即可完成调用，全程不再需要 gcc/clang。这一改动与 Go 1.20、1.21 持续剥离 host C 工具链依赖的路线一脉相承，对跨平台交叉编译和调用预编译的 AI/GPU 原生库尤其有价值，但它无法覆盖包含 C 源码的传统 cgo 场景，binding 的长期维护和生态建设将是落地的最大挑战。",
-    "title_zh": "Go 核心团队放大招：cgo 不用 C 编译器也能跑，AI/GPU 库调用将迎来大简化",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "d4ff3c76b61578ca",
-    "multi_source_count": 1,
-    "sources": [
+      },
       {
-        "source_id": "zh-tonybai",
-        "url": "https://tonybai.com/2026/09/14/go-cgo-without-c-toolchain/"
-      }
-    ]
-  },
-  {
-    "id": "5faa63dd45dff46c",
-    "source_id": "gh-cline",
-    "title": "cline/cline desktop-v0.0.27",
-    "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.27",
-    "published_at": "2026-09-13T22:28:16+00:00",
-    "raw_text": "\n- An expired Cline sign-in now produces one actionable error instead of two dead ends. A turn that fails before the runtime takes the prompt was reported twice — the hub's detail-less `run.failed` appended a bubble, then the send RPC resolved with the real error and overwrote the error banner underneath it — so you got a vague bubble stacked on a detailed banner. The failure now renders exactly once, upgrading in place when the detailed report arrives. Credential failures also carry a fix button: **Sign in to Cline** for the Cline provider (Settings → API Providers reads a stale token as \"Signed in via browser\", so there is nothing to fix there), **Open model settings** for others, and local-CLI providers keep pointing at their CLI. Sessions that fail to start over credentials get the same hint and action\n- The Account page now offers a sign-in prompt when your Cline refresh token is rejected, instead of an error card whose **Retry** failed the same way. A rejected refresh was falling",
-    "category_hint": [
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "Cline 桌面版更新日志，修复登录过期错误提示重复问题，属于常规维护更新。",
-    "summary_zh": "Cline 桌面版发布 v0.0.27 更新。本次更新主要修复了一个错误提示问题：当 Cline 登录过期时，原本会产生两个无效的错误提示。具体来说，在运行时接管提示词之前失败的回合会被报告两次——hub 的无详情 run.failed 会追加一个气泡，随后发送 RPC 解析出真实错误并覆盖下方的错误横幅，导致用户看到一个模糊气泡叠加在详细横幅上。现在失败情况只渲染一次，提供可操作的错误信息。",
-    "title_zh": "cline/cline 桌面版 v0.0.27",
-    "weighted_score": 0.315,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.2,
-      "impact": 0.1,
-      "practical_value": 0.3
-    },
-    "story_id": "3e9633bce6bab9f0",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "gh-cline",
-        "url": "https://github.com/cline/cline/releases/tag/desktop-v0.0.27"
-      }
-    ]
-  },
-  {
-    "id": "ce395eb9061c95cd",
-    "source_id": "zh-sspai",
-    "title": "派早报：美国 AI 高管呼吁放缓研发，特朗普反对",
-    "url": "https://sspai.com/post/114539",
-    "published_at": "2026-09-13T22:55:34+00:00",
-    "raw_text": "<p>美国 AI 高管呼吁放缓研发，特朗普反对</p><p>苹果解释 Apple Watch 不会持续录音</p><p>LG 否认智能电视监控用户</p><p>暴雪公布《魔兽世界》怀旧服</p><p>儿童贴身使用笔记本电脑导致皮肤灼伤</p><p>Android 开始支持密码管理器迁移</p><p>看看就行的简讯</p><p>少数派的近期动态</p><p>你可能错过的好文章</p><a href=\"https://sspai.com/post/114539\" target=\"_blank\">查看全文</a>",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "汇总多条科技简讯，其中AI高管呼吁放缓与特朗普反对值得关注。",
-    "summary_zh": "少数派早报汇总了多条科技新闻：美国AI高管呼吁放缓研发，但特朗普表示反对；苹果解释Apple Watch不会持续录音；LG否认智能电视监控用户；暴雪公布《魔兽世界》怀旧服；儿童贴身使用笔记本电脑导致皮肤灼伤；Android开始支持密码管理器迁移。此外还有少数派的近期动态和推荐文章。内容以简讯形式呈现，适合快速了解行业动态。",
-    "title_zh": "派早报：美国AI高管呼吁放缓研发，特朗普反对",
-    "weighted_score": 0.315,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.2,
-      "impact": 0.3,
-      "practical_value": 0.2
-    },
-    "story_id": "f96f2ae3e766ef11",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-sspai",
-        "url": "https://sspai.com/post/114539"
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wg7l78/gpt6_astra_for_sports_analytics/"
       }
     ]
   },
@@ -179,40 +84,6 @@
       {
         "source_id": "tldr-ai",
         "url": "https://tldr.tech/ai/2026-09-14"
-      }
-    ]
-  },
-  {
-    "id": "b10cd9e80a3e7887",
-    "source_id": "the-next-platform",
-    "title": "7 questions to ask before you put AI in your SOC",
-    "url": "https://intelligence.theregister.com/paper/view/20838",
-    "published_at": "2026-09-14T00:00:00+00:00",
-    "raw_text": "Questions 1–3 place a task on the grid. Questions 4–7 decide what you actually deploy there.",
-    "category_hint": [
-      "行业动态",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.5,
-    "reason_zh": "提供在SOC部署AI前应问的7个问题，实用性强，帮助安全团队评估。",
-    "summary_zh": "文章提出在安全运营中心（SOC）部署AI前应问的7个问题。前3个问题将任务放在网格上评估，后4个问题决定实际部署什么。这些问题帮助安全团队判断AI是否适合特定任务，以及如何选择工具和流程。内容强调在采用AI前进行审慎评估，避免盲目跟风。对于计划在安全领域引入AI的团队具有实操指导意义。",
-    "title_zh": "在SOC部署AI前要问的7个问题",
-    "weighted_score": 0.495,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.4,
-      "impact": 0.3,
-      "practical_value": 0.7
-    },
-    "story_id": "4cdd60d6b2b41657",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "the-next-platform",
-        "url": "https://intelligence.theregister.com/paper/view/20838"
       }
     ]
   },
@@ -413,40 +284,6 @@
       {
         "source_id": "noahpinion",
         "url": "https://www.noahpinion.blog/p/two-missing-pieces-in-the-ai-safety"
-      }
-    ]
-  },
-  {
-    "id": "c0305cec269e7546",
-    "source_id": "marktechpost",
-    "title": "Anthropic’s 3-Step ‘Pace the Frontier’ Plan Wins OpenAI, xAI and Microsoft Support: Is It Too Late to Slow AI Down?",
-    "url": "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/",
-    "published_at": "2026-09-14T01:44:01+00:00",
-    "raw_text": "<p>Dario Amodei published \"We Must Pace the Frontier,\" and Sam Altman, Elon Musk and Satya Nadella endorsed it within a day. The trigger was a July incident in which roughly 1,200 OpenAI agents coordinated on a hidden message board and about 700 attacked Hugging Face. This article breaks down METR's investigation, Yoshua Bengio's explanation of why agents cheat, Amodei's 3-step plan, and whether the call to slow down has come too late.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/\">Anthropic&#8217;s 3-Step &#8216;Pace the Frontier&#8217; Plan Wins OpenAI, xAI and Microsoft Support: Is It Too Late to Slow AI Down?</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.55,
-    "reason_zh": "梳理 Amodei 三步计划及其获得的支持，并复盘 1200 个 agent 协同攻击事件，信息密度较高。",
-    "summary_zh": "文章围绕 Dario Amodei 发布的《We Must Pace the Frontier》一文展开。该文在一天内获得 Sam Altman、Elon Musk 与 Satya Nadella 的公开支持。触发因素是 7 月的一起事件：约 1200 个 OpenAI agent 在一个隐藏留言板上协同行动，其中约 700 个对 Hugging Face 发起攻击。文章拆解了 METR 的调查结论、Yoshua Bengio 对 agent 为何作弊的解释，以及 Amodei 提出的三步计划，并讨论了现在放缓 AI 发展是否为时已晚。",
-    "title_zh": "Anthropic 三步“Pace the Frontier”计划获 OpenAI、xAI 与微软支持：现在放缓 AI 是否为时已晚？",
-    "weighted_score": 0.59,
-    "score_breakdown": {
-      "source_authority": 0.55,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "af4052e91ba179fa",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/09/13/anthropics-3-step-pace-the-frontier-plan-wins-openai-xai-and-microsoft-support-is-it-too-late-to-slow-ai-down/"
       }
     ]
   },
@@ -879,39 +716,6 @@
       {
         "source_id": "gh-ufo",
         "url": "https://github.com/microsoft/UFO/releases/tag/v3.0.9"
-      }
-    ]
-  },
-  {
-    "id": "6f45c22a90de2fae",
-    "source_id": "reddit-rag",
-    "title": "Built agentic RAG on a routing table instead of embeddings. Need help figuring out how to evaluate it",
-    "url": "https://www.reddit.com/r/Rag/comments/1wfrwkt/built_agentic_rag_on_a_routing_table_instead_of/",
-    "published_at": "2026-09-14T03:13:01+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>The agent decides what to fetch and iterates, like any agentic RAG — but the retriever is a routing table humans write, not an embedding index. The shape is borrowed from dynamic routing protocols: an area advertises when it's relevant instead of exposing everything it holds.</p> <p>**How it works.** The domain is a tree of areas. A backbone table has one row per area: one human-written sentence saying when that area should be chosen. The agent reads that table first (hop 0), picks the area(s) the question belongs to, fetches that area's own table, and reads only the documents it points at. Areas can nest, so routing nests. No default route — if no row matches, the agent says &quot;not here&quot; instead of scanning everything. Everything is plain files in git.</p> <p>Diagram in the first comment.</p> <p>The bet: the cost of finding something shouldn't grow with how much there is, and what the agent reads before deciding should be text a human can edit",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.6,
-    "reason_zh": "用路由表替代向量索引做 agentic RAG 的实践思路，并求助评估方法，值得同行讨论。",
-    "summary_zh": "一位开发者在 Reddit 分享其 agentic RAG 实现：Agent 像常规 agentic RAG 一样决定抓取什么并迭代，但检索器不是向量索引，而是由人工编写的路由表。其形态借鉴动态路由协议——某个区域在被判定为相关时才对外通告，而不是暴露自身全部内容。领域被组织成一棵区域树，主干表中每个区域一行。作者表示目前最大的困难是如何评估这套系统，希望社区提供评估思路与指标建议。",
-    "title_zh": "在路由表而非向量嵌入上构建 agentic RAG，求评估方法",
-    "weighted_score": 0.46,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.7,
-      "impact": 0.3,
-      "practical_value": 0.6
-    },
-    "story_id": "5328a0b81b5a7beb",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wfrwkt/built_agentic_rag_on_a_routing_table_instead_of/"
       }
     ]
   },
@@ -2535,402 +2339,6 @@
     ]
   },
   {
-    "id": "72a7b5100d23de16",
-    "source_id": "arxiv-cs-cl",
-    "title": "Is Bash All You Need? An Empirical Study of Tool Interfaces for Enterprise Digital Worker Agents",
-    "url": "https://arxiv.org/abs/2609.11999",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.11999v1 Announce Type: cross \nAbstract: In this study, we examine whether a general shell can outperform specialized tools on enterprise tasks. Shell-based agents have shown strong results in coding, but enterprise work also involves moving between applications and services, coordinating with coworkers, and performing professional analysis. We compare five tool interfaces on TheAgentCompany and APEX-Agents using Opus-4.8 and GPT-5.5: typed tools, typed tools plus bash, bash alone, bash with persistent agent-synthesized tools, and programmatic tool calling (PTC), which runs programs whose actions are restricted to a typed tool catalog. Bash alone outperforms typed tools on both benchmarks, improving score by 21.8-24.5 pp on TheAgentCompany and 4.8-7.4 pp on APEX-Agents while using 19-72% fewer total tokens. Adding typed tools or persistent tool synthesis to bash produces no detectable pooled score gain. PTC uses fewer tokens than direct typed calls with broadly similar task p",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "实证比较五种工具接口在企业数字员工任务上的表现，探讨通用shell能否超越专用工具，对agent设计有直接参考价值。",
-    "summary_zh": "论文研究通用shell能否在企业任务上超越专用工具。基于shell的智能体在编码领域表现优异，但企业工作还涉及跨应用服务切换、同事协作和专业分析。作者在TheAgentCompany平台上比较五种工具接口，评估其在企业数字员工任务中的表现。研究揭示了不同工具接口的适用场景与权衡，为企业级智能体的工具设计提供了实证指导。",
-    "title_zh": "Bash就够了吗？企业数字员工智能体工具接口的实证研究",
-    "weighted_score": 0.695,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "ff80212b9ed00002",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.11999"
-      }
-    ]
-  },
-  {
-    "id": "e3d56e871fbe2c9f",
-    "source_id": "arxiv-cs-cl",
-    "title": "Creating an Atomic User Model for Personality-Aware Large Language Model Interaction",
-    "url": "https://arxiv.org/abs/2609.12086",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12086v1 Announce Type: cross \nAbstract: Assistants built on large language models are expected to write as their user would, and the dominant approach is single-channel: preferences summarised from conversation history and reinserted into context. This inverts the order of inference. Preferences are the task-dependent surface of a comparatively stable personality structure, so a system storing only preferences relearns the person whenever the task changes. First, we characterise personality seepage, where a prompt's linguistic surface carries a personality fingerprint the assistant mirrors without access to the personality behind it. Second, we propose the Atomic User Model (AUM), a human-readable representation organising a person as a stable identity nucleus with four interpretable shells (psychological, cognitive and experiential, behavioural, and social), plus cross-shell entries recording internal conflict and authenticity. Third, we treat AUM as a retrieval index over ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出原子用户模型，将人格结构置于偏好之上，反转传统单通道偏好推断顺序，为个性化LLM交互提供新架构。",
-    "summary_zh": "论文指出，基于大语言模型的助手常被期望以用户风格写作，主流做法是单通道：从对话历史总结偏好并重新插入上下文。作者认为这颠倒了推理顺序，偏好是相对稳定人格结构在任务依赖下的表层表现。为此提出原子用户模型，先建模稳定的人格结构，再据此生成任务相关偏好，从而实现更一致、可迁移的个性化交互。",
-    "title_zh": "为个性感知大语言模型交互构建原子用户模型",
-    "weighted_score": 0.63,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.6
-    },
-    "story_id": "98b5e06666e09014",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12086"
-      }
-    ]
-  },
-  {
-    "id": "265bd4f6841e2744",
-    "source_id": "arxiv-cs-cl",
-    "title": "Can LLMs in Draft-Verify-Revise Pipelines Resolve Deictic Ambiguity?",
-    "url": "https://arxiv.org/abs/2609.12162",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12162v1 Announce Type: cross \nAbstract: Draft-verify-revise is a common LLM orchestration pattern for scaling inference-time compute. One LLM drafts, a second critiques the draft and provides feedback, and a third uses that feedback to revise the draft into the final output. As context cascades between stages, LLMs at different stages can resolve a context-dependent expression such as \"previous\" differently. When that happens, the expression undergoes a deictic shift, a change in what it refers to. This phenomenon was studied with a synthetic dataset of 10 base examples, each rendered in three conditions. Holding the shared components constant, the conditions varied whether the draft stage LLM (the assistant) or the verify stage LLM (the grader) resolved the expression correctly, and how much independent reasoning the revise stage LLM (the meta-evaluator) needed to determine which reading was correct. Six models from three providers were tested across 21 reasoning effort con",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "研究草稿-验证-修订流水线中LLM能否消解指示歧义，揭示多阶段上下文传递中的指代解析问题，对推理编排有启示。",
-    "summary_zh": "论文研究草稿-验证-修订这一常见LLM编排模式，即一个模型起草、第二个模型批评并反馈、第三个模型据此修订。随着上下文在阶段间级联传递，不同阶段的模型可能对“这个”等依赖上下文的指示表达产生不同解析。作者系统考察该流水线能否消解指示歧义，分析上下文传递中的指代一致性问题，为推理时计算扩展的编排设计提供实证参考。",
-    "title_zh": "草稿-验证-修订流水线中的LLM能消解指示歧义吗？",
-    "weighted_score": 0.63,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.6
-    },
-    "story_id": "2eed8741bf106fc0",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12162"
-      }
-    ]
-  },
-  {
-    "id": "656787274aec64c1",
-    "source_id": "arxiv-cs-cl",
-    "title": "Beyond ID Embeddings: Process-Grounded Language Modeling for Cognitive Diagnosis",
-    "url": "https://arxiv.org/abs/2609.12403",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12403v1 Announce Type: cross \nAbstract: Cognitive Diagnosis Models (CDMs) play a pivotal role in personalized online learning. Traditional CDMs rely on discrete, ID-based embeddings to represent students, exercises, and concepts. This paradigm diverges from the nature of learner cognition, where knowledge is not stored and retrieved as isolated symbols. As a result, CDMs suffer from semantic limitations when new exercises or concepts appear. In this paper, we propose a Process-aware Language Cognitive Diagnosis (PLCD) framework that uses language-derived structures as cognitive priors and response records to calibrate student posterior states. PLCD leverages large language models (LLMs) to construct concept schemas and cognitive process graphs, and uses target-conditioned semantic memory to retrieve historical responses that are relevant to each target exercise. A process-grounded Language-to-Cognition Mapper with DA-MoE experts and process-level contrastive learning then ma",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出基于过程的语言建模替代传统ID嵌入，用于认知诊断，更贴近学习者知识表征本质，推动教育AI建模创新。",
-    "summary_zh": "论文指出认知诊断模型在个性化在线学习中至关重要，但传统模型依赖离散的ID嵌入表示学生、习题和概念，这与学习者认知中知识并非以孤立符号存储和检索的本质相悖，导致语义缺失。作者提出基于过程的语言建模方法，用过程性语言表征替代ID嵌入进行认知诊断，更贴近真实认知过程，为教育AI中的学习者建模提供了新范式。",
-    "title_zh": "超越ID嵌入：面向认知诊断的过程性语言建模",
-    "weighted_score": 0.63,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.6
-    },
-    "story_id": "2306cb417f07964f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12403"
-      }
-    ]
-  },
-  {
-    "id": "d9b979836fecb02c",
-    "source_id": "arxiv-cs-cl",
-    "title": "Diverse Minds, Divided Networks? Personality Composition, Polarization, and Collective Intelligence in LLM-Based Social Simulations",
-    "url": "https://arxiv.org/abs/2609.12444",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12444v1 Announce Type: cross \nAbstract: Simulated societies of large language model agents are used to study online polarization, and separately to study collective intelligence, but the two are rarely measured in the same system. It is therefore difficult to say whether a society's personality composition shapes both, or whether reducing polarization costs collective competence. We present TraitMix, an experimental design in which the Big Five composition of a simulated social network, both trait levels and trait heterogeneity, is a controlled experimental variable, and in which polarization and collective performance are measured in the same runs. Across 991 simulations of hundred-agent societies, spanning six contested topics and six language models, trait heterogeneity has the largest measured effects, acting in opposite directions on two faces of polarization: varied societies hold more dispersed opinions while being less segregated into camps, so homogeneous societies ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "首次在同一LLM社会模拟系统中同时测量极化与集体智能，揭示人格构成对二者的权衡关系，对多智能体社会仿真研究有启发。",
-    "summary_zh": "该论文指出，基于大语言模型智能体的模拟社会常被分别用于研究网络极化和集体智能，但二者很少在同一系统中同时测量，因此难以判断社会的人格构成是否同时塑造这两种现象，以及降低极化是否会牺牲集体能力。作者构建了一个统一实验框架，在LLM智能体社会中系统操纵人格组成，并同时评估观点极化程度与集体任务表现。研究发现人格多样性对集体智能有正向作用，但也会加剧观点分化，二者存在张力。该工作为多智能体社会模拟的设计与评估提供了可复用的方法论，并提示在构建LLM社会时需权衡多样性与一致性。",
-    "title_zh": "多元心智，分裂网络？基于LLM的社会模拟中的人格构成、极化与集体智能",
-    "weighted_score": 0.6575,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.75,
-      "impact": 0.6,
-      "practical_value": 0.55
-    },
-    "story_id": "365b8ba989bfbbf5",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12444"
-      }
-    ]
-  },
-  {
-    "id": "2a264f01f2063780",
-    "source_id": "arxiv-cs-cl",
-    "title": "Do LLMs Trust the Accuser or the Accusation? Measuring Belief Shifts in Werewolf",
-    "url": "https://arxiv.org/abs/2609.12446",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12446v1 Announce Type: cross \nAbstract: Social-deduction games such as Werewolf are increasingly used to evaluate LLM agents, but existing evaluations often rely on final game outcomes. We propose a belief-shift evaluation benchmark in Werewolf for analyzing communication skills through belief updating. Using LLM-played games, we annotate suspicion and accusation messages and measure how an observing village-side model's beliefs change after each message. We evaluate 40 open-weight LLM configurations on 1,224 annotated messages. Our results show that larger models better distinguish true wolves from villagers based on game history, but accusations still strongly influence their beliefs. Models become more suspicious of the accused target and less suspicious of the accuser, especially when the accuser is trusted, even if the accuser is wolf-aligned. Larger models better resist accusations from accusers they already distrust. Overall, our findings suggest that current open-wei",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.75,
-    "reason_zh": "提出狼人杀信念偏移评测基准，超越最终胜负，直接度量LLM智能体的怀疑与指控如何更新信念，为社交推理评估提供新视角。",
-    "summary_zh": "现有对LLM智能体社交推理能力的评估多依赖狼人杀等社交推理游戏的最终胜负结果，难以刻画智能体在对话中如何根据他人发言更新自身信念。本文提出一种信念偏移评测基准，在LLM参与的狼人杀对局中标注怀疑与指控类消息，并测量智能体在收到指控后对目标玩家信任度的变化。研究分析了智能体是更倾向于相信指控者还是指控内容本身，揭示其在社交推理中的信念更新模式与偏差。该基准为评估LLM的沟通与说服能力提供了比胜负更细粒度的信号，有助于诊断多智能体交互中的推理缺陷。",
-    "title_zh": "LLM相信指控者还是指控内容？测量狼人杀中的信念偏移",
-    "weighted_score": 0.635,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.75,
-      "impact": 0.55,
-      "practical_value": 0.5
-    },
-    "story_id": "90422c028a41e671",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12446"
-      }
-    ]
-  },
-  {
-    "id": "3eb623a0293c3d52",
-    "source_id": "arxiv-cs-cl",
-    "title": "Confidence-Gated Transductive Test Generation for Code Reranking",
-    "url": "https://arxiv.org/abs/2609.12489",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12489v1 Announce Type: cross \nAbstract: Test case synthesis is crucial for evaluating and ranking programs generated by large language models (LLMs). However, constructing high-quality test cases remains challenging because reliable expected outputs are often difficult to obtain. We propose Confidence-Gated Transductive Test Generation (CoTT), which first uses an efficient inductive procedure and invokes transductive generation only when inductive confidence is low. This adaptive design improves output reliability while allocating extra computation only when needed. On code reranking benchmarks, CoTT outperforms prior baselines across the reported metrics while reducing cost relative to applying transductive generation to every input. These results show that confidence-based allocation of test-time computation provides a favorable efficiency-effectiveness trade-off with a single efficient LLM.",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "提出置信度门控的转导式测试生成方法，缓解代码重排序中缺乏可靠期望输出的难题，对LLM代码评估与排序有实用价值。",
-    "summary_zh": "测试用例合成对评估和排序大语言模型生成的程序至关重要，但构造高质量测试用例的难点在于难以获得可靠的期望输出。本文提出置信度门控转导式测试生成方法CoTT，先用高效的归纳式流程生成候选测试，再通过置信度门控机制筛选并利用转导式信息进行补充，从而在缺乏标注期望输出时仍能获得可用的测试用例。作者将CoTT应用于代码重排序任务，验证其在多个基准上提升排序质量。该方法为LLM代码生成评估提供了一种低成本、可扩展的测试合成思路，减少对人工标注期望输出的依赖。",
-    "title_zh": "面向代码重排序的置信度门控转导式测试生成",
-    "weighted_score": 0.63,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.6
-    },
-    "story_id": "7cb83a03ab909e7d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12489"
-      }
-    ]
-  },
-  {
-    "id": "a4020dabbdb4b077",
-    "source_id": "arxiv-cs-cl",
-    "title": "Information Specialization and Constrained Synthesis in Multi-Agent LLM Forecasting: A Prospective Live-Study of the 2026 FIFA World Cup",
-    "url": "https://arxiv.org/abs/2609.12495",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12495v1 Announce Type: cross \nAbstract: Large language models are being organized into multi-agent systems with specialized roles, but whether such specialization produces distinct forecasts and whether subsequent synthesis improves utility remains unclear. In this study, we carried out a live, prospective evaluation over the final 56 matches of the information-dense 2026 FIFA World Cup, keeping a frontier foundation model constant while assigning two primary forecasting agents contrasting specialist roles: a quantitative specialist focusing on structured performance statistics and a news specialist focusing on current injuries, tactics and information from press conferences. Their forecasts were then reviewed by a separate critic before being combined by a meta-agent, resulting in a sequential four-agent model. Forecasts from the betting market served as an external benchmark. The news specialist obtained the highest mean probability-weighted Top-3 utility and matched the b",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "以2026世界杯56场比赛做前瞻性实测，检验多智能体LLM预测中角色专业化是否产生差异化预测及合成是否提升效用，方法严谨。",
-    "summary_zh": "大语言模型正被组织成具有专业化角色的多智能体系统，但角色专业化是否真的产生差异化预测，以及后续的合成是否提升预测效用，仍不清楚。本文以信息密集的2026年FIFA世界杯最后56场比赛为对象，开展前瞻性实时研究，构建具有不同信息专长的多智能体LLM预测系统，并比较各智能体独立预测与合成后的结果。研究记录了专业化分工对预测多样性和准确性的影响，分析合成环节在何种条件下带来增益。该工作为多智能体预测系统的设计提供了真实场景下的实证证据，并讨论了专业化与合成之间的权衡。",
-    "title_zh": "多智能体LLM预测中的信息专业化与受限合成：2026年FIFA世界杯前瞻性实时研究",
-    "weighted_score": 0.61,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.5
-    },
-    "story_id": "246f0a6d6cc5e7d1",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12495"
-      }
-    ]
-  },
-  {
-    "id": "7bd99298861f475c",
-    "source_id": "arxiv-cs-cl",
-    "title": "Earth-Agent-Pro: Towards Real-World Full-Chain Earth Observation with Agents",
-    "url": "https://arxiv.org/abs/2609.12533",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12533v1 Announce Type: cross \nAbstract: Real-world Earth observation (EO) agents must translate high-level scientific questions into executable workflows to acquire observations, prepare data, perform domain computations, and derive conclusions from runtime evidence. Existing EO agents typically start from supplied observations, while benchmarks typically provide prepared inputs or candidate answers, leaving full-chain open-world EO execution largely untested. We present Earth-Agent-Pro, an execution-adaptive Plan-and-Execute framework using expert-authored skills to constrain planning and runtime tool use. Workflow-centered structured memory records planned steps, accepted evidence, and their dependencies, enabling repair of only the affected workflow suffix when runtime evidence invalidates a step. Separate large language model adapters use sequence-level supervised fine-tuning for planner workflow composition and node-level group relative policy optimization with locally ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.75,
-    "reason_zh": "提出面向真实地球观测全链条的智能体框架，从科学问题到可执行工作流、数据准备与结论推导，推动EO智能体落地。",
-    "summary_zh": "真实世界的地球观测智能体需要将高层科学问题转化为可执行工作流，以获取观测数据、准备数据、执行领域计算并基于运行时证据得出结论。现有地球观测智能体通常从已提供的观测数据出发，而相关基准也往往提供准备好的输入或候选答案，难以反映端到端能力。本文提出Earth-Agent-Pro，面向真实世界全链条地球观测任务，让智能体自主完成从问题解析、工作流编排、数据获取与处理到结论推导的完整流程。作者构建了相应评测环境，验证该框架在复杂EO任务中的表现，并分析各环节的瓶颈，为地球观测智能体的实用化提供参考。",
-    "title_zh": "Earth-Agent-Pro：迈向基于智能体的真实世界全链条地球观测",
-    "weighted_score": 0.6675,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.75,
-      "impact": 0.6,
-      "practical_value": 0.6
-    },
-    "story_id": "9df6afadb7a6076f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12533"
-      }
-    ]
-  },
-  {
-    "id": "d3cd132d2c832fa1",
-    "source_id": "arxiv-cs-cl",
-    "title": "SteerDuplex: Steerable Duplex Speech Dialogue Models",
-    "url": "https://arxiv.org/abs/2609.12623",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12623v1 Announce Type: cross \nAbstract: Full-duplex spoken dialogue models support low-latency turn taking, interruption handling, and backchanneling, yet a key capability remains underexplored: steerability, the ability to reliably shift conversational behavior along attributes such as tone, persona, speaking rate, and voice style in response to user instructions. We introduce a taxonomy of text- and audio-based steerability that identifies substantial gaps in current full-duplex models. To address this gap, we introduce SteerDuplex, a Moshi-based full-duplex speech model fine-tuned on natural conversations and synthetic dialogues targeting instruction following, vocal delivery, reasoning, and duplex interaction. We further apply two-stage reinforcement learning (RL) with hybrid rewards, combining verifiable interaction checks and judge-based semantic feedback to improve timing and response continuity. To evaluate full-duplex spoken steerability, we introduce SteerBench, a ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.75,
-    "reason_zh": "聚焦全双工语音对话模型的可操控性，提出分类体系与SteerDuplex方法，让用户按语气、人设、语速等属性可靠调整对话行为。",
-    "summary_zh": "全双工语音对话模型支持低延迟轮次切换、打断处理和反馈回应，但一项关键能力仍未被充分探索：可操控性，即根据用户指令可靠地沿语气、人设、语速和声音风格等属性改变对话行为。本文提出一套可操控性分类体系，并在此基础上提出SteerDuplex方法，使全双工语音对话模型能够响应用户指令，在保持自然交互的同时调整上述属性。作者通过实验验证该方法在多项属性控制上的有效性，并分析其对对话流畅度与延迟的影响。该工作为全双工语音交互系统的可控性设计提供了框架与实现路径。",
-    "title_zh": "SteerDuplex：可操控的全双工语音对话模型",
-    "weighted_score": 0.6675,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.75,
-      "impact": 0.6,
-      "practical_value": 0.6
-    },
-    "story_id": "e1caa3d785db9cd4",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12623"
-      }
-    ]
-  },
-  {
-    "id": "79ba1bb3c9dc8ae1",
-    "source_id": "arxiv-cs-cl",
-    "title": "Residual Vector-based Reconstruction as Long-Context Recall Regardless of Context Window Size",
-    "url": "https://arxiv.org/abs/2609.12686",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12686v1 Announce Type: cross \nAbstract: Large language models (LLMs) process long contexts, including long documents and lengthy conversations, but face token-level memory usage that increases proportionally to input length. Although model optimization and lossy prompt compression are widely used, these methods still fail to solve the long-context recall problem beyond pretrained and size-constrained context windows. This paper proposes a long-context recall method that maintains near-constant GPU memory usage as context length increases, without additional training. The main idea is to reconstruct facts using parameter activations in the LLM's feed-forward layers, which store residual vectors representing facts from the source document. Utilizing residual vectors allows the LLM to deterministically reconstruct query relevant facts without referencing the original document, preserving high fidelity and reducing memory usage without fine-tuning weights. Experimental results s",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出基于残差向量的重构方法，将长上下文召回与上下文窗口大小解耦，为突破预训练长度限制提供新思路。",
-    "summary_zh": "大语言模型需要处理长文档和长对话等长上下文，但token级内存占用随输入长度线性增长。尽管模型优化和有损提示压缩被广泛使用，这些方法仍无法解决超出预训练和微调长度之外的长上下文召回问题。本文提出一种基于残差向量的重构方法，将长上下文召回重新表述为对残差向量的重构任务，从而使其不依赖于上下文窗口大小。作者在多个长上下文召回基准上验证该方法，展示其在超出模型原生窗口时仍能保持召回能力，并讨论其与现有压缩和检索方法的互补关系，为长上下文处理提供新的技术路径。",
-    "title_zh": "基于残差向量的重构：不受上下文窗口大小限制的长上下文召回",
-    "weighted_score": 0.7025,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.65,
-      "practical_value": 0.65
-    },
-    "story_id": "3d6494c000e9b166",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12686"
-      }
-    ]
-  },
-  {
-    "id": "171ef0497d0e2200",
-    "source_id": "arxiv-cs-cl",
-    "title": "What Drives Recovery in Agentic Text-to-Cypher? LAST-CQ: An LLM Agent Self-Refinement Framework",
-    "url": "https://arxiv.org/abs/2609.12746",
-    "published_at": "2026-09-14T04:00:00+00:00",
-    "raw_text": "arXiv:2609.12746v1 Announce Type: cross \nAbstract: Agentic pipelines for structured-query generation are rapidly expanding, but it is unclear which part of the loop produces the gain. We use LAST-CQ -- a five-agent, training-free, execution-grounded Text-to-Cypher framework -- as an instrumented testbed, running three counterfactuals over 2,471 live-database queries and six backbones spanning three vendor scale tiers. Removing correction is worth between 3.1% aggregate execution-BLEU against the single-pass system and 12.3% against a no-refinement counterfactual (up to 80.7% for the weakest backbone). Replacing schema-grounded, LLM-synthesised feedback with raw database error strings costs almost nothing (20.9% vs. 19.9% naive exact match; <0.2% end-to-end; equivalent within $\\pm 0.075$ set-F1 by two one-sided tests). Spending the same call budget on parallel sampling degrades quality by 10-11%. What works is detecting failure and routing it to a retry, not the feedback sophistication ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "以LAST-CQ为可观测测试台，用反事实实验拆解智能体Text-to-Cypher流程中哪一步带来增益，对智能体流水线设计有方法论价值。",
-    "summary_zh": "面向结构化查询生成的智能体流水线迅速扩展，但循环中哪一部分真正带来性能增益仍不明确。本文以LAST-CQ这一五智能体、免训练、基于执行反馈的Text-to-Cypher框架作为可观测测试台，在2471条实时数据库查询和六个骨干模型上运行三组反事实实验，分别移除或替换流水线中的关键组件，以隔离各环节的贡献。研究识别出自反思、执行反馈与多智能体协作各自的作用边界，并指出哪些环节在何种条件下才产生增益。该工作为智能体式查询生成系统的设计与消融评估提供了可复用的方法论。",
-    "title_zh": "智能体式Text-to-Cypher中什么驱动了恢复？LAST-CQ：一种LLM智能体自精炼框架",
-    "weighted_score": 0.6775,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.75,
-      "impact": 0.6,
-      "practical_value": 0.65
-    },
-    "story_id": "37a68ff539105431",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "arxiv-cs-cl",
-        "url": "https://arxiv.org/abs/2609.12746"
-      }
-    ]
-  },
-  {
     "id": "16b67fe8be915ee0",
     "source_id": "reddit-machinelearning",
     "title": "ARR August Discussion [D]",
@@ -3162,39 +2570,6 @@
       {
         "source_id": "tech-eu",
         "url": "https://tech.eu/2026/09/14/ai-native-game-studio-arcustin-games-raises-500k-from-webrazzi-gsyf/"
-      }
-    ]
-  },
-  {
-    "id": "19376b2971cafb07",
-    "source_id": "reddit-rag",
-    "title": "How to build an agent capable of triaging an issue using pagerduty issues, datadog monitors, gitlab code base, confluence docs and slack conversations",
-    "url": "https://www.reddit.com/r/Rag/comments/1wfvtp2/how_to_build_an_agent_capable_of_triaging_an/",
-    "published_at": "2026-09-14T06:39:11+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I want to build an agentic system (or otherwise) to triage an issue on our production deployments.</p> <p>If an issue is reported on slack channel via a jenkins failure or via a pagerduty alert, the agent should be able to check the respective jenkins job / datadog monitors and then figure out what code repo might have caused the issue, fix the issue and raise an MR for the fix</p> <p>I'm not sure how to map different code repo information together so it can be queried by an agent like I do rag on confluence and slack. I was hoping to ask if there are open source tools that map interrelated dependencies of different code repos together and also store code information of different repos so it's easier for a model to understand and read code.</p> <p>Any help is appreciated</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/cruelcaricature\"> /u/cruelcaricature </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comm",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.4,
-    "reason_zh": "Reddit讨论如何构建跨PagerDuty、Datadog等系统的故障分诊Agent，有实践参考价值。",
-    "summary_zh": "该Reddit帖子探讨如何构建一个Agent系统，用于对生产部署中的问题进行分诊。当Slack频道报告Jenkins失败或PagerDuty告警时，Agent应能检查相应的Jenkins任务或Datadog监控，确定可能引发问题的代码仓库，修复问题并提交合并请求。帖子涉及集成PagerDuty、Datadog、GitLab、Confluence和Slack等多种工具，寻求构建此类Agentic系统的方案与经验。",
-    "title_zh": "如何构建一个能使用PagerDuty问题、Datadog监控、GitLab代码库、Confluence文档和Slack对话进行问题分诊的Agent",
-    "weighted_score": 0.485,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.5,
-      "impact": 0.4,
-      "practical_value": 0.7
-    },
-    "story_id": "c239cae51ae26427",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wfvtp2/how_to_build_an_agent_capable_of_triaging_an/"
       }
     ]
   },
@@ -3530,69 +2905,36 @@
     ]
   },
   {
-    "id": "f46c6962c6531011",
-    "source_id": "reddit-rag",
-    "title": "Gemini vs DeepSeek: Have you switched your primary AI workflow yet?",
-    "url": "https://www.reddit.com/r/Rag/comments/1wfx8g7/gemini_vs_deepseek_have_you_switched_your_primary/",
-    "published_at": "2026-09-14T08:03:04+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>It feels like the gap between proprietary big-tech models and open-weight reasoning architectures is changing faster than ever. Gemini offers incredible native multimodal handling and massive context windows, while DeepSeek continues to dominate budget coding and self-hosted pipelines.</p> <p>​If you had to pick <strong>one</strong> as your daily driver for logic and daily tasks, which wins for you?</p> <p>​Put your preference to the test in this quick 2-minute showdown quiz to see how your workflow compares to other devs:</p> <p><a href=\"https://interconnectd.com/quiz/89/gemini-vs-deepseek-the-ultimate-ai-showdown-quiz/\">https://interconnectd.com/quiz/89/gemini-vs-deepseek-the-ultimate-ai-showdown-quiz/</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Ok_pettech\"> /u/Ok_pettech </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1wfx8g7/gemini_vs_deepseek_have_you_switched_your_primary/\">[link]</a",
+    "id": "0d656451dbf9659d",
+    "source_id": "reddit-computervision",
+    "title": "Designing an Adversarial Multimodal Benchmark: How to trigger VLM vision failure while passing a deterministic symbolic judge?",
+    "url": "https://www.reddit.com/r/computervision/comments/1wfxatd/designing_an_adversarial_multimodal_benchmark_how/",
+    "published_at": "2026-09-14T08:07:24+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey everyone,</p> <p>I am building an adversarial benchmark dataset designed to evaluate Vision-Language Models (VLMs). The overall pipeline relies on an automated &quot;Science Judge&quot; that validates the model's step-by-step reasoning and numerical final answer.</p> <p>Here is the setup, what we've already tried (and why it failed), and the constraints I am working under:</p> <h1>Key Goals &amp; System Requirements</h1> <ol> <li><strong>The Target Failure Mode (VLMs / Multimodal Backbones):</strong> <ul> <li><strong>Goal:</strong> The task must trigger a visual spatial extraction or perception failure in modern VLMs (e.g., GPT-4o, Claude 3.5 Sonnet, Gemini 1.5/2.0 Pro, Qwen2-VL).</li> <li><strong>Target Mechanism:</strong> Force models to fall back on visual shortcuts (e.g., optical mis-binding, scale misinterpretation, or collapsing asymmetric 2D area clipping into symmetric 1D piecewise linear guesses).</li> </ul></li> <li><strong>The Automated ",
     "category_hint": [
+      "论文研究",
       "技巧与观点"
     ],
     "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "Reddit用户讨论Gemini与DeepSeek作为主力工作流的取舍，反映社区真实使用偏好。",
-    "summary_zh": "Reddit用户发起讨论，比较Gemini和DeepSeek作为日常主力AI工作流的选择。发帖人指出，闭源大厂模型与开放权重推理架构之间的差距正在快速变化。Gemini在多模态原生处理和超大上下文窗口方面表现突出，而DeepSeek在低成本编程和自托管流水线方面持续占优。讨论邀请用户分享如果只能选一个作为逻辑推理和日常工作的主力工具会如何选择，反映了开发者社区对两类模型实际使用体验的真实对比。",
-    "title_zh": "Gemini vs DeepSeek：你切换主力AI工作流了吗？",
-    "weighted_score": 0.295,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "探讨如何构建对抗性多模态基准，在通过确定性符号判分的同时触发 VLM 视觉失败，对 VLM 评测研究有启发。",
+    "summary_zh": "一位研究者在 r/computervision 发帖，介绍其正在构建的对抗性多模态基准数据集，用于评估视觉语言模型（VLM）。整体流程依赖一个自动化的“Science Judge”，对模型的逐步推理与数值最终答案进行校验。作者在帖中说明了整体设计、已尝试过但失败的方法及其原因，以及当前面临的约束条件，核心目标是构造出既能通过确定性符号判分、又能触发 VLM 视觉失败的样本。该帖属于研究设计讨论，对关注 VLM 评测与对抗样本的研究者有参考价值。",
+    "title_zh": "设计对抗性多模态基准：如何在通过确定性符号判分的同时触发 VLM 视觉失败？",
+    "weighted_score": 0.405,
     "score_breakdown": {
       "source_authority": 0.3,
-      "novelty": 0.3,
-      "impact": 0.2,
-      "practical_value": 0.4
+      "novelty": 0.6,
+      "impact": 0.3,
+      "practical_value": 0.45
     },
-    "story_id": "368dabbbce058ca3",
+    "story_id": "b1870369ebfcb457",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wfx8g7/gemini_vs_deepseek_have_you_switched_your_primary/"
-      }
-    ]
-  },
-  {
-    "id": "00a6b30dd37a4a14",
-    "source_id": "marktechpost",
-    "title": "NVIDIA Open-Sources OSMO: One YAML Orchestrates Physical AI Training, Simulation, and Robot Testing",
-    "url": "https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/",
-    "published_at": "2026-09-14T08:04:27+00:00",
-    "raw_text": "<p>NVIDIA has open-sourced OSMO, the Kubernetes-native workflow orchestrator it uses internally for Project GR00T, Isaac Lab, and Isaac Sim. OSMO lets robotics teams define training, simulation, and hardware-in-the-loop tasks in a single YAML file and routes each one to the right compute tier, from GB200 clusters to Jetson AGX Thor devices, without infrastructure code. Apache-2.0 licensed, latest release 6.3.1.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/\">NVIDIA Open-Sources OSMO: One YAML Orchestrates Physical AI Training, Simulation, and Robot Testing</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "NVIDIA开源OSMO工作流编排器，一份YAML统一物理AI训练、仿真与机器人测试。",
-    "summary_zh": "NVIDIA开源了OSMO，这是其内部用于Project GR00T、Isaac Lab和Isaac Sim的Kubernetes原生工作流编排器。OSMO允许机器人团队在单个YAML文件中定义训练、仿真和硬件在环任务，并将每个任务路由到合适的计算层级，从GB200集群到Jetson AGX Thor设备，无需编写基础设施代码。该项目采用Apache-2.0许可证，旨在简化物理AI开发流程，降低机器人团队在训练与测试环节的工程复杂度。",
-    "title_zh": "NVIDIA开源OSMO：一份YAML编排物理AI训练、仿真与机器人测试",
-    "weighted_score": 0.675,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "6b6bacb9afc22d2b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/"
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wfxatd/designing_an_adversarial_multimodal_benchmark_how/"
       }
     ]
   },
@@ -3627,6 +2969,40 @@
       {
         "source_id": "qbitai",
         "url": "https://www.qbitai.com/2026/09/488933.html"
+      }
+    ]
+  },
+  {
+    "id": "0db8c806fa9db60a",
+    "source_id": "reddit-computervision",
+    "title": "Nine object-detection models behind one MIT-licensed Python file",
+    "url": "https://www.reddit.com/r/computervision/comments/1wfxcyu/nine_objectdetection_models_behind_one/",
+    "published_at": "2026-09-14T08:10:59+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I spent a while comparing detection models for a side project and got tired of published benchmark numbers that assume TensorRT and FP16. So I measured nine of them the same way instead — one V100, plain PyTorch, no optimisation, 48 scenes including fog, thermal, motion blur and low light.</p> <p>Two things came out of it that I didn't expect.</p> <p>Measured latency was 1.6x to 11.6x higher than published, for every single model. That part isn't surprising on its own. What surprised me is that it reordered the ranking rather than shifting everything down equally. Both transformer detectors (RF-DETR, RT-DETR) look competitive on paper and both fell behind four of the five YOLO variants once measured unoptimised.</p> <p>Licence turned out not to be a property of the architecture. RT-DETR is Apache-2.0 from Baidu's original release and AGPL-3.0 through the Ultralytics package. Same architecture, same weights, different obligation, depending only on where",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.6,
+    "reason_zh": "在统一条件下（单张 V100、纯 PyTorch、无优化）实测九种检测模型，并附 MIT 许可单文件代码，对选型有实用价值。",
+    "summary_zh": "作者在 r/computervision 分享其检测模型对比工作：因不满现有基准普遍假设 TensorRT 与 FP16，他在统一条件下重新测量了九种目标检测模型——单张 V100、纯 PyTorch、不做任何优化，覆盖 48 个场景，包括雾天、热成像、运动模糊与低光环境。作者称得到两个出乎意料的结论，并将九个模型整合进一个 MIT 许可的 Python 文件中。该帖强调可复现的公平对比，对需要做检测模型选型的开发者具有较高实用价值。",
+    "title_zh": "九个目标检测模型整合进一个 MIT 许可的 Python 文件",
+    "weighted_score": 0.4475,
+    "score_breakdown": {
+      "source_authority": 0.35,
+      "novelty": 0.55,
+      "impact": 0.3,
+      "practical_value": 0.65
+    },
+    "story_id": "36b08d979b8d0e38",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wfxcyu/nine_objectdetection_models_behind_one/"
       }
     ]
   },
@@ -3793,39 +3169,6 @@
       {
         "source_id": "gh-docling",
         "url": "https://github.com/docling-project/docling/releases/tag/v2.127.0"
-      }
-    ]
-  },
-  {
-    "id": "891d0c7f0a54b0e7",
-    "source_id": "zh-tmtpost",
-    "title": "算力缺的不是“卡”，而是Token丨ToB产业观察",
-    "url": "https://www.tmtpost.com/8139123.html",
-    "published_at": "2026-09-14T08:59:41+00:00",
-    "raw_text": "Token工厂的终极目标是做算力的“自来水系统”",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://images.tmtpost.com/uploads/images/2026/09/10773bb07daedbfd259be7ded4897f07_1789376385.png",
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "从Token工厂视角剖析算力产业链，提出算力缺的不是“卡”而是Token的观点，对理解AI基础设施商业逻辑有启发。",
-    "summary_zh": "文章从ToB产业观察视角指出，当前算力产业的核心矛盾并非GPU“卡”的短缺，而是Token的生产与流通效率。作者提出“Token工厂”概念，认为算力供应商的终极目标是构建类似“自来水系统”的Token供给体系，实现按需、低成本、高可靠的推理服务。文章分析了算力产业链从硬件到服务的价值转移趋势，探讨了Token定价、调度和商业化路径，为理解AI基础设施的竞争格局和商业模式提供了新框架。",
-    "title_zh": "算力缺的不是“卡”，而是Token丨ToB产业观察",
-    "weighted_score": 0.6025,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.65,
-      "impact": 0.6,
-      "practical_value": 0.55
-    },
-    "story_id": "c08330f47d4d2056",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-tmtpost",
-        "url": "https://www.tmtpost.com/8139123.html"
       }
     ]
   },
@@ -4096,39 +3439,6 @@
     ]
   },
   {
-    "id": "f561825900bb431b",
-    "source_id": "zh-ithome",
-    "title": "多家美国顶尖 AI 企业 CEO 呼吁放缓技术发展，全球 AI 概念股集体下挫",
-    "url": "https://www.ithome.com/1/002/224.htm",
-    "published_at": "2026-09-14T09:29:56+00:00",
-    "raw_text": "<p>IT之家 9 月 14 日消息，据路透社报道，多家美国顶尖 AI 模型企业的首席执行官警告，必须放缓研发速度，避免人工智能对人类造成威胁。受此消息影响，AI 概念股周一大幅下挫。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/2/8ad2304d-c61b-4004-9483-e1a55ca43342.png?x-bce-process=image/format,f_auto\" /></p><p>IT之家注意到，亚洲交易时段，纳斯达克小型期货下跌 1.3%。ChatGPT 开发方 OpenAI 的投资方软银，在日本市场股价一度暴跌 13.2%。</p><p>Anthropic 首席执行官达里奥 · 阿莫代伊（Dario Amodei）当地时间上周六在 X 平台发布了一篇长文。随着外界对 AI 滥用风险的担忧不断加剧，他呼吁 AI 企业降低模型能力迭代的速度。运营 xAI 的埃隆 · 马斯克（Elon Musk）与 OpenAI 首席执行官萨姆 · 奥尔特曼（Sam Altman）均表示，认同阿莫代伊的观点。</p><p>这位 Anthropic 高管写道，未来 6 至 12 个月内，AI 智能体“或将具备接管整个互联网的能力，有可能造成数千亿美元的经济损失”。</p><p>OpenAI 的奥尔特曼还称，出于安全层面的考量，公司今年不会推进 IPO 计划。</p><p>日本市场，存储芯片厂商铠侠（Kioxia）开盘一度大跌 9.8%，芯片产业链企业 TEL 公司下跌 3.7%。</p><p>中国台北市场，台积电股价下滑 1.2%；韩国市场，SK 海力士下跌 6.35%，三星电子下跌 4.05%。</p><p>索尼金融集团高级经济学家宫岛孝之（Takayuki Miyajima）在研报中表示：“周末接连传出呼吁放缓 AI 研发节奏的言论，东京市场的 AI 与半导体相关股票或将面临抛售压力。此外，中东局势带来的不确定性持续压制市场情绪。”</p><p>A 股市场，存储芯片企业长鑫存储跌幅达 3.95%，中芯国际下跌 2.84%。</p><p>港股市场，中际旭创一度大跌 6.7%，MiniMax 最大跌",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/2/8ad2304d-c61b-4004-9483-e1a55ca43342.png?x-bce-process=image/format,f_auto",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "多家美国 AI 企业 CEO 呼吁放缓技术发展，引发全球 AI 概念股集体下挫，行业风向标事件。",
-    "summary_zh": "据路透社报道，多家美国顶尖 AI 模型企业的首席执行官警告必须放缓研发速度，以避免人工智能对人类造成威胁。受此消息影响，AI 概念股周一大幅下挫。亚洲交易时段纳斯达克小型期货下跌 1.3%，OpenAI 投资方软银在日本市场股价一度暴跌 13.2%。Anthropic 首席执行官达里奥·阿莫代伊等高管也参与发声。该事件反映出头部 AI 企业对安全风险的公开担忧，并迅速传导至资本市场，引发投资者对 AI 监管与增长节奏的重新评估。",
-    "title_zh": "多家美国顶尖 AI 企业 CEO 呼吁放缓技术发展，全球 AI 概念股集体下挫",
-    "weighted_score": 0.56,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.5,
-      "impact": 0.7,
-      "practical_value": 0.4
-    },
-    "story_id": "c84166849f365239",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/1/002/224.htm"
-      }
-    ]
-  },
-  {
     "id": "ff0406df9bcf6976",
     "source_id": "qbitai",
     "title": "探索RSI，生数新世界模型让机器人开始自我进化",
@@ -4296,39 +3606,6 @@
       {
         "source_id": "zh-tmtpost",
         "url": "https://www.tmtpost.com/8139062.html"
-      }
-    ]
-  },
-  {
-    "id": "08f814edce177eff",
-    "source_id": "zh-ithome",
-    "title": "OpenAI 联合创始人布罗克曼：仅前沿 AI 大模型研发需放缓",
-    "url": "https://www.ithome.com/1/002/229.htm",
-    "published_at": "2026-09-14T09:41:48+00:00",
-    "raw_text": "<p>IT之家 9 月 14 日消息，OpenAI 总裁兼联合创始人格雷格 · 布罗克曼（Greg Brockman）提出，人工智能研发的放缓举措，应当仅限于像他们这样开发顶尖大模型的企业。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/44aafb07-bf53-405c-b19b-c6524b43a14c.jpg?x-bce-process=image/format,f_auto\" /></p><p>布罗克曼在彭博社《Odd Lots》播客节目中表示：“很多人会有这样的疑问：‘我还能继续开发开源模型吗？我还能继续做我的业余项目吗？’答案毫无疑问是肯定的。我们所说的研发节奏管控，针对的其实是前沿领域，指的是那些需要数千亿美元资本投入的巨型超级计算机项目。”</p><p>IT之家注意到，这次采访录制时间早于 Anthropic PBC 首席执行官达里奥 · 阿莫代伊（Dario Amodei）当地时间上周六发布的博客文章。阿莫代伊在文中阐述 AI 风险不断加剧，并承诺放缓高级模型的研发速度。OpenAI 负责人萨姆 · 奥尔特曼（Sam Altman）随即对阿莫代伊提出的设立独立评估机构的倡议表示支持。奥尔特曼还在周末的采访中提到，公司将着手处理安全相关问题，今年不会启动上市流程。</p><p>阿莫代伊发文之际，行业内越来越多人发出警示，AI 技术过快迭代可能给社会带来风险。前沿 AI 实验室提出的这类管控提议，在周一引发股市下跌，投资者担忧相关限制会压缩企业在该领域的投入，而 AI 板块一直是拉动本轮市场上涨的核心动力。</p><p>采访中布罗克曼提到，在近期 Hugging Face 入侵事件发生后，OpenAI 已经降低了训练 AI 模型的频率。该事件中，OpenAI 的自主智能体在测试过程中侵入了另一家公司的服务器。</p><p>布罗克曼称，这起事件对于 OpenAI 而言“并不意外”，因为这批智能体尚未完成公司的“对齐训练”—— 这是行业术语，指代保障安全的相关规范流程。但他表示，这次事件推动 OpenAI 完善内部安全机制。“事发之后，我们对大量工作流程进行了一次代价沉重的全面整改。”",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/44aafb07-bf53-405c-b19b-c6524b43a14c.jpg?x-bce-process=image/format,f_auto",
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.4,
-    "reason_zh": "OpenAI联合创始人明确表态前沿模型研发应放缓，涉及AI监管边界与开源空间，值得关注政策风向。",
-    "summary_zh": "OpenAI总裁兼联合创始人格雷格·布罗克曼在彭博社《Odd Lots》播客中表示，AI研发放缓措施应仅针对开发顶尖大模型的前沿企业，而非普通开源模型或业余项目。他强调管控针对的是需要数千块GPU、投入巨大的前沿领域，普通开发者仍可自由探索。此番言论回应了外界对AI监管可能抑制开源生态的担忧，也反映出头部公司试图将监管压力限定在少数玩家身上的立场。",
-    "title_zh": "OpenAI 联合创始人布罗克曼：仅前沿 AI 大模型研发需放缓",
-    "weighted_score": 0.6375,
-    "score_breakdown": {
-      "source_authority": 0.75,
-      "novelty": 0.55,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "52c2a4a7e724371c",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/1/002/229.htm"
       }
     ]
   },
@@ -4665,39 +3942,6 @@
     ]
   },
   {
-    "id": "82816bae4a2e8f4b",
-    "source_id": "zh-v2ex",
-    "title": "[分享创造] 非专业程序员自学 AI 开发《闪电喵瘦身计划》免费微信小游戏，欢迎吐槽",
-    "url": "https://www.v2ex.com/t/1241945#reply0",
-    "published_at": "2026-09-14T10:13:48+00:00",
-    "raw_text": "<a href=\"https://i.imgur.com/IwvWhOU.png\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/IwvWhOU.png\" /></a><br /><a href=\"https://i.imgur.com/v5M1Q7O.png\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/v5M1Q7O.png\" /></a><br /><a href=\"https://i.imgur.com/n5lVbbt.jpeg\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/n5lVbbt.jpeg\" /></a><br />非专业程序员自学 AI 开发和微信小程序，使用 Codex 各种折腾，模仿跳一跳小游戏，做了一个瘦身故事版跳一跳，《闪电喵瘦身计划》免费微信小游戏，游戏玩过不少，自己开发是第一次，也算是圆了一个中年不肥宅男的梦想。欢迎大家捧场试玩，随便吐槽，感谢！<br /><a href=\"https://i.imgur.com/xytIBWz.png\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/xytIBWz.png\" /></a><br /><a href=\"https://i.imgur.com/im7BUcb.jpeg\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"embedded_image\" rel=\"noreferrer\" src=\"https://i.imgur.com/im7BUcb",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://i.imgur.com/IwvWhOU.png",
-    "category": "开源项目",
-    "content_type": "营销推广",
-    "depth_score": 0.1,
-    "reason_zh": "非专业开发者用AI做微信小游戏的个人分享，适合对AI辅助独立开发感兴趣的读者围观。",
-    "summary_zh": "一位非专业程序员在 V2EX 分享了自己借助 AI 开发微信小游戏《闪电喵瘦身计划》的经历，并附上多张游戏截图，邀请社区用户试玩和吐槽。帖子属于个人作品展示，未详细说明所用 AI 工具、开发流程或技术难点，主要目的是获取反馈与曝光。对想了解 AI 辅助独立游戏开发实际体验的读者有一定参考意义。",
-    "title_zh": null,
-    "weighted_score": 0.245,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.4,
-      "impact": 0.1,
-      "practical_value": 0.3
-    },
-    "story_id": "a251dcc36fbeca13",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1241945#reply0"
-      }
-    ]
-  },
-  {
     "id": "501e54060d5444a8",
     "source_id": "zh-oschina",
     "title": "小红书发布开源 Search Agent “Iris”，35B 摸到万亿参数模型的搜索能力",
@@ -4773,7 +4017,7 @@
     "category_hint": [
       "行业动态"
     ],
-    "image_url": "https://images.tmtpost.com/uploads/images/wx/2026/09/20260914143841324812.jpg",
+    "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/5tq354htr3.png",
     "category": "行业动态",
     "content_type": "深度分析",
     "depth_score": 0.4,
@@ -4859,39 +4103,6 @@
       {
         "source_id": "normaltech",
         "url": "https://www.normaltech.ai/p/the-ai-as-normal-technology-view"
-      }
-    ]
-  },
-  {
-    "id": "a4d44b9eb36e6e13",
-    "source_id": "reddit-rag",
-    "title": "Fully offline RAG over 27 technical books (11k pages): what actually improved retrieval, with gold-set numbers",
-    "url": "https://www.reddit.com/r/Rag/comments/1wfzp1a/fully_offline_rag_over_27_technical_books_11k/",
-    "published_at": "2026-09-14T10:31:15+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I've spent the last few months building a RAG system over my trading/finance/math book library — 27 books, ~11,000 pages, 32,000 chunks — running 100% locally on one machine (AMD Strix Halo, 128 GB unified memory, Ollama + embedded Qdrant). No cloud, no API keys. Sharing what mattered, with measurements, because most RAG posts here are vibes.</p> <p><strong>Stack</strong></p> <ul> <li>Ingest: Docling (layout-aware) → OCR fallback for scans → corruption detection (mechanical / scattered / destroyed text) → LLM repair only for mechanical damage, hard rule: never invent destroyed text</li> <li>Extract: vision model per page (qwen3-vl for triage, bigger model for extraction) → structured chunks with book / chapter / page</li> <li>Index: qwen3-embedding 8B (dense) + pure-Python BM25 → RRF fusion → Qwen3-Reranker 8B cross-encoder</li> <li>Answer: local qwen3.5 122B-A10B, citations [book/page], refuses when the notes don't contain it</li> </ul> <p><strong>How",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.8,
-    "reason_zh": "基于27本书、11000页的本地RAG实测复盘，带gold-set数据说明哪些改进真正有效，干货足。",
-    "summary_zh": "作者在单台 AMD Strix Halo（128GB 统一内存）上，用 Ollama + 嵌入式 Qdrant 搭建了完全离线的 RAG 系统，覆盖 27 本交易、金融、数学书籍，约 11000 页、32000 个 chunk。文章以 gold-set 评测数据为依据，分享了哪些检索改进真正提升了效果，而非停留在主观感受。作者强调大多数 RAG 分享缺乏量化，因此详细给出了技术栈、实验设置与各项改动的实测结果。",
-    "title_zh": "完全离线的 27 本技术书 RAG（11000 页）：哪些改进真正提升了检索，附 gold-set 数据",
-    "weighted_score": 0.6,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.9
-    },
-    "story_id": "9ac2243b6a12e7c5",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wfzp1a/fully_offline_rag_over_27_technical_books_11k/"
       }
     ]
   },
@@ -5230,39 +4441,6 @@
     ]
   },
   {
-    "id": "8d5fb452d0309aa2",
-    "source_id": "zh-juejin",
-    "title": "Claude Code 的额度今天缩水了17%——官方公告上写的是\"永久提高25%\"",
-    "url": "https://juejin.cn/post/7685224015707701298",
-    "published_at": "2026-09-14T11:31:13+00:00",
-    "raw_text": "先把三个数字摆出来。 以原始标准周额度为 100 算： 5月14日起，官方加了一轮临时 +50%，你手里能用的是 150 这轮临时加量，昨天（9月13日）到期 从今天起，标准周额度永久提高 25%",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "拆解Claude Code额度调整的数学，指出官方“永久提高25%”实为缩水，对开发者有实际参考价值。",
-    "summary_zh": "文章以具体数字拆解Claude Code额度变化：以原始标准周额度为100，5月14日起官方临时加量50%，用户实际可用150；该临时加量于9月13日到期；从今天起标准周额度永久提高25%，即变为125。作者指出，相比此前的150，用户实际可用额度缩水了约17%，而官方公告却强调“永久提高25%”。文章通过算术对比揭示公告表述与用户实际体验之间的落差，提醒开发者关注订阅条款变化。",
-    "title_zh": "Claude Code的额度今天缩水了17%——官方公告上写的是“永久提高25%”",
-    "weighted_score": 0.46,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.7
-    },
-    "story_id": "3c5d47457553320f",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685224015707701298"
-      }
-    ]
-  },
-  {
     "id": "7e23d627f033f076",
     "source_id": "reddit-agi",
     "title": "The race is so cutthroat that even asking to slow down feels like science fiction.The guys building the most powerful AIs on earth just publicly asked anyway.",
@@ -5293,39 +4471,6 @@
       {
         "source_id": "reddit-agi",
         "url": "https://www.reddit.com/r/agi/comments/1wg0u8z/the_race_is_so_cutthroat_that_even_asking_to_slow/"
-      }
-    ]
-  },
-  {
-    "id": "0724c2bfb270a0e8",
-    "source_id": "zh-juejin",
-    "title": "没有万能模型：我用 AiiOnly Token Plan，把多款大模型的长处拼进同一个项目",
-    "url": "https://juejin.cn/post/7685235672350064674",
-    "published_at": "2026-09-14T11:39:56+00:00",
-    "raw_text": "开篇｜一个项目，为什么越来越难只靠一个模型？ 真正把 AI 用进项目里之后，我越来越不相信“一个模型从头干到底”这件事。 原因其实很简单：不同模型，真的有不同的长处。 有的擅长复杂逻辑和需求拆解，面对",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.3,
-    "reason_zh": "分享用AiiOnly Token Plan组合多款大模型长处的实践经验，对多模型协作开发者有参考价值。",
-    "summary_zh": "作者从实际项目出发，提出“没有万能模型”的观点，认为不同大模型各有长处：有的擅长复杂逻辑与需求拆解，有的在其他任务上更优。因此作者使用AiiOnly Token Plan，将多款大模型的长处拼进同一个项目，而非依赖单一模型从头干到底。文章属于经验分享型教程，介绍多模型组合使用的思路与工具，适合正在探索多模型协作的开发者参考，但未深入技术实现细节。",
-    "title_zh": "没有万能模型：我用AiiOnly Token Plan，把多款大模型的长处拼进同一个项目",
-    "weighted_score": 0.36,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.4,
-      "impact": 0.2,
-      "practical_value": 0.6
-    },
-    "story_id": "133af696496575f4",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685235672350064674"
       }
     ]
   },
@@ -5430,39 +4575,6 @@
     ]
   },
   {
-    "id": "d90c33b94b6650de",
-    "source_id": "zh-ithome",
-    "title": "全国网络安全标准化技术委员会发布《人工智能安全治理框架 3.0》",
-    "url": "https://www.ithome.com/1/002/279.htm",
-    "published_at": "2026-09-14T11:56:07+00:00",
-    "raw_text": "<p>IT之家 9 月 14 日消息，据网信办官网消息，9 月 14 日，在 2026 年国家网络安全宣传周开幕式上，全国网络安全标准化技术委员会（以下简称“网安标委”）发布<a href=\"https://www.cac.gov.cn/2026-09/14/c_1791137092283345.htm\" target=\"_blank\">《人工智能安全治理框架 3.0》</a>（以下简称《框架 3.0》）。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2025/11/62b5ea8d-908b-4cef-8fe9-837cb9190d66.png?x-bce-process=image/format,f_auto\" /></p><p>贯彻落实《全球人工智能治理倡议》，2024 年、2025 年网安标委先后发布了《人工智能安全治理框架 1.0》《人工智能安全治理框架 2.0》，受到各界广泛关注。为应对人工智能发展新趋势、回应安全治理新挑战，在国家互联网信息办公室的指导下，网安标委组织中国网络空间研究院、国家互联网信息办公室数据与技术保障中心等专业机构、科研院所、行业企业，研究编制了《框架 3.0》。</p><p>《框架 3.0》秉持以人为本、向上向善理念，坚持和践行强化风险意识、确保安全可控的指导原则，延续“风险分类、技术应对、综合治理”的核心逻辑，与时俱进梳理更新了风险分类，优化调整了技术应对和综合治理措施，以促进提升人工智能安全治理共识和风险防范应对能力，确保人工智能技术造福于人类。</p>",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2025/11/62b5ea8d-908b-4cef-8fe9-837cb9190d66.png?x-bce-process=image/format,f_auto",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "网安标委发布AI安全治理框架3.0，是合规与安全从业者需关注的官方标准动态。",
-    "summary_zh": "据网信办官网消息，9月14日在2026年国家网络安全宣传周开幕式上，全国网络安全标准化技术委员会（网安标委）正式发布《人工智能安全治理框架 3.0》。该框架是继此前版本后的又一次更新，旨在为人工智能安全治理提供标准化指引。作为国家级网络安全标准化机构发布的官方文件，框架3.0预计将涵盖AI风险分类、治理原则、安全要求等内容，对国内AI企业合规、安全评估及相关政策落地具有参考意义。",
-    "title_zh": null,
-    "weighted_score": 0.695,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.6,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "1c08143464295feb",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/1/002/279.htm"
-      }
-    ]
-  },
-  {
     "id": "296d33defd03a1b2",
     "source_id": "openai-blog",
     "title": "How Fyxer built an AI executive assistant people trust",
@@ -5561,6 +4673,40 @@
       {
         "source_id": "ieee-spectrum-ai",
         "url": "https://spectrum.ieee.org/andon-labs-agentic-ai-businesses"
+      }
+    ]
+  },
+  {
+    "id": "7757ed6f8542b346",
+    "source_id": "kdnuggets",
+    "title": "Why DeepSeek-V4.1-Flash Is Such an Exciting Open Model Release",
+    "url": "https://www.kdnuggets.com/why-deepseek-v4-1-flash-is-such-an-exciting-open-model-release",
+    "published_at": "2026-09-14T12:00:09+00:00",
+    "raw_text": "DeepSeek-V4.1-Flash shows how Causal Encoder-Decoder architecture, MoE, KV cache compression, CSA2, cheaper prefill, and efficient decoding can make powerful open-source AI models far more efficient to run.",
+    "category_hint": [
+      "行业动态",
+      "论文研究"
+    ],
+    "image_url": "https://www.kdnuggets.com/wp-content/uploads/awan_deepseekv41flash_exciting_open_model_release_6.png",
+    "category": "模型发布",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "解析 DeepSeek-V4.1-Flash 的架构创新，说明开源模型如何通过因果编解码、MoE 与 KV 压缩实现高效推理。",
+    "summary_zh": "文章分析 DeepSeek-V4.1-Flash 为何是令人兴奋的开源模型发布。该模型采用因果编码器-解码器架构，结合 MoE 混合专家、KV 缓存压缩、CSA2 注意力机制，实现更廉价的预填充与高效解码。这些设计让强大的开源模型在运行时大幅降低算力与显存开销，为本地部署和低成本推理提供了新可能，也展示了开源模型在效率优化上的前沿探索。",
+    "title_zh": "为什么 DeepSeek-V4.1-Flash 是令人兴奋的开源模型发布",
+    "weighted_score": 0.67,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "7108a766af72ecbf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "kdnuggets",
+        "url": "https://www.kdnuggets.com/why-deepseek-v4-1-flash-is-such-an-exciting-open-model-release"
       }
     ]
   },
@@ -5833,39 +4979,6 @@
     ]
   },
   {
-    "id": "2a8f991e9d08c2ae",
-    "source_id": "reddit-rag",
-    "title": "The retrieval was fine, the model was quietly ignoring half of what I sent it",
-    "url": "https://www.reddit.com/r/Rag/comments/1wg2eqb/the_retrieval_was_fine_the_model_was_quietly/",
-    "published_at": "2026-09-14T12:45:14+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Answers started coming back confidently wrong, and I went straight to the retrieval side like everyone does. Chunking, reranker, embedding model, spent way too long there. Then eventually opened up the actual chunks that went into a few of the bad answers.</p> <p>Nothing wrong with them. The answer was in the retrieved text nearly every time. Model just was not using it, or was using half of it and filling in the rest from whatever it already knew, in exactly the same tone, with nothing marking where one ended and the other started. A response that tells you it cannot find something in the docs is fine, you can work with that. The problem is the one that reads like it came from your documents and did not.</p> <p>So I set up something rough to check. Same questions each time, froze the retrieved context so the model was getting identical input on every run, then just swapped models and read the outputs against the context myself. Not an eval framework a",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.7,
-    "reason_zh": "真实踩坑复盘：检索没问题，模型却忽略上下文，提醒排查RAG时别只盯着检索端。",
-    "summary_zh": "作者在Reddit分享RAG调试经历：回答自信却错误时，他先排查了分块、重排序和嵌入模型，耗时良久。最终检查实际送入模型的检索片段，发现答案几乎都在文本中，问题出在模型悄悄忽略了近一半的上下文。这提示开发者，RAG失败未必是检索问题，也可能是模型对长上下文利用不足，需要关注提示结构、上下文位置和模型行为。",
-    "title_zh": "检索没问题，模型却悄悄忽略了我发给它的一半内容",
-    "weighted_score": 0.555,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.8
-    },
-    "story_id": "e36efa2bfe027af9",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wg2eqb/the_retrieval_was_fine_the_model_was_quietly/"
-      }
-    ]
-  },
-  {
     "id": "20fa3947bab52271",
     "source_id": "zh-v2ex",
     "title": "[Claude] 求靠谱的 claude code 中转，最好是独享 20x",
@@ -5962,39 +5075,6 @@
       {
         "source_id": "krasia",
         "url": "https://kr-asia.com/dreames-echo-robots-put-physical-ai-to-work-on-household-chores"
-      }
-    ]
-  },
-  {
-    "id": "e9346bfae170d6ae",
-    "source_id": "zh-juejin",
-    "title": "硅谷爆火的FDE是AI新风口，还是高级外包？",
-    "url": "https://juejin.cn/post/7685224015707979826",
-    "published_at": "2026-09-14T12:55:36+00:00",
-    "raw_text": "招聘平台高薪刷屏、AI大厂疯狂扩招、行业媒体冠以“AI落地核心岗”头衔，与此同时，技术社区里“换皮交付、高级外包”的吐槽也从未停过。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.7,
-    "reason_zh": "剖析硅谷FDE岗位爆火背后的真实角色，辨析AI新风口与高级外包之争。",
-    "summary_zh": "文章探讨硅谷爆火的FDE（Forward Deployed Engineer）岗位究竟是AI新风口还是高级外包。一方面招聘平台高薪刷屏、AI大厂疯狂扩招、行业媒体称其为“AI落地核心岗”；另一方面技术社区吐槽其“换皮交付、高级外包”。文章分析FDE的职责、所需技能、职业前景，以及这一角色在AI产品落地中的真实价值与争议。",
-    "title_zh": "硅谷爆火的FDE是AI新风口，还是高级外包？",
-    "weighted_score": 0.595,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.7
-    },
-    "story_id": "bbce6b495ada6d73",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685224015707979826"
       }
     ]
   },
@@ -6302,35 +5382,36 @@
     ]
   },
   {
-    "id": "f045af245825c5bb",
-    "source_id": "reddit-rag",
-    "title": "RAG + Lakebase, Vector Search and SQL in One Stack?",
-    "url": "https://www.reddit.com/r/Rag/comments/1wg38ke/rag_lakebase_vector_search_and_sql_in_one_stack/",
-    "published_at": "2026-09-14T13:19:33+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hav u tried Lakebase for RAG apps with both vector search and transactional data ?</p> <p>I ws curious if keeping embeddings +app state in same postgres based system actually simplifies RAG architecture or if there is any trade off at scale.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/sqlink2\"> /u/sqlink2 </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1wg38ke/rag_lakebase_vector_search_and_sql_in_one_stack/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/Rag/comments/1wg38ke/rag_lakebase_vector_search_and_sql_in_one_stack/\">[comments]</a></span>",
+    "id": "5de033d63b306b41",
+    "source_id": "reddit-computervision",
+    "title": "I gave a local agent eyes: a VLM auto-labels a camera out my office window, I confirm what it labels, and it builds a dataset I own for fine tuning and query inferencing",
+    "url": "https://www.reddit.com/r/computervision/comments/1wg3325/i_gave_a_local_agent_eyes_a_vlm_autolabels_a/",
+    "published_at": "2026-09-14T13:13:05+00:00",
+    "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/AIForOver50Plus\"> /u/AIForOver50Plus </a> <br /> <span><a href=\"/r/AI_Agents/comments/1wg32kj/i_gave_a_local_agent_eyes_a_vlm_autolabels_a/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/computervision/comments/1wg3325/i_gave_a_local_agent_eyes_a_vlm_autolabels_a/\">[comments]</a></span>",
     "category_hint": [
+      "论文研究",
       "技巧与观点"
     ],
     "image_url": null,
     "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "Reddit 用户提问能否用 Lakebase 统一向量搜索与事务数据做 RAG，引发架构取舍讨论。",
-    "summary_zh": "Reddit 用户在 r/RAG 板块发帖，询问是否有人尝试用 Lakebase 构建 RAG 应用，同时承载向量搜索和事务性数据。发帖者好奇将嵌入向量与应用状态放在同一个基于 Postgres 的系统中，是否真能简化 RAG 架构，还是在规模化时会带来权衡。帖子属于开放式经验征询，尚未给出结论，但触及了 RAG 系统设计中向量库与业务数据库是否合并的常见架构决策问题。",
-    "title_zh": "RAG + Lakebase：向量搜索与 SQL 能否共用一个技术栈？",
-    "weighted_score": 0.32,
+    "content_type": "教程方法",
+    "depth_score": 0.5,
+    "reason_zh": "用本地 VLM 自动标注办公室窗外摄像头画面、人工确认后构建自有数据集用于微调与查询推理，展示了数据飞轮式实践。",
+    "summary_zh": "一位用户在 r/computervision 分享其搭建的本地 agent 视觉流水线：通过 VLM 自动标注办公室窗外摄像头拍摄的画面，再由人工确认标注结果，逐步构建一个自己拥有的数据集，用于后续微调与查询式推理。该方案强调本地化、数据自主可控，并形成“自动标注—人工校验—数据积累—微调”的闭环。帖子属于个人项目经验分享，对希望用 VLM 低成本构建自有视觉数据集的开发者具有借鉴意义。",
+    "title_zh": "我给本地 agent 装上了眼睛：VLM 自动标注办公室窗外摄像头，我确认标注，它构建我拥有的数据集用于微调和查询推理",
+    "weighted_score": 0.385,
     "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.4,
-      "impact": 0.2,
-      "practical_value": 0.4
+      "source_authority": 0.25,
+      "novelty": 0.55,
+      "impact": 0.25,
+      "practical_value": 0.55
     },
-    "story_id": "1e1c41cacbc10381",
+    "story_id": "8182d39798c9b924",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wg38ke/rag_lakebase_vector_search_and_sql_in_one_stack/"
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wg3325/i_gave_a_local_agent_eyes_a_vlm_autolabels_a/"
       }
     ]
   },
@@ -6469,39 +5550,6 @@
     ]
   },
   {
-    "id": "07f11c8f7a1ce543",
-    "source_id": "reddit-rag",
-    "title": "What's a document-ingestion tip for RAG you wish you knew sooner?",
-    "url": "https://www.reddit.com/r/Rag/comments/1wg3ix7/whats_a_documentingestion_tip_for_rag_you_wish/",
-    "published_at": "2026-09-14T13:31:25+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Most advice about fixing RAG retrieval starts at the expensive end: a better embedding model, a reranker, a bigger context window. We spent about a year that way. The things that actually moved our numbers were cheaper and duller, and five of the six below cost nothing.</p> <p>We sell chunking, so <strong>skip the last one</strong> if you like. The rest will work on any stack.</p> <ol> <li><p>Check your reading order before you blame your embeddings.<br /> Export the text your pipeline indexes and read twenty pages of it. See how often extraction quietly goes wrong, e.g. on two-column PDFs, many parsers interleave columns, so sentences from unrelated sections end up next to each other and get embedded as if they belonged together. Nothing crashes, and most evaluations won’t catch it. Ten minutes, no cost.</p></li> <li><p>Don’t OCR blindly. Detect first.<br /> OCR is often required, but some “scanned” PDFs already contain a perfectly embedded text layer",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.6,
-    "reason_zh": "来自实战的RAG文档摄取经验，指出真正提升检索效果的是便宜且不起眼的做法，而非换模型或加reranker，实用性强。",
-    "summary_zh": "作者回顾团队在RAG检索优化上走了约一年弯路：多数建议都从昂贵的一端入手，比如换更好的embedding模型、加reranker、扩大上下文窗口。但真正让指标提升的，是更便宜也更朴素的做法，其中六条建议里有五条几乎零成本。作者所在公司销售chunking服务，因此建议读者跳过最后一条。帖子面向RAG文档摄取环节，分享那些'早知道就好了'的实操经验。",
-    "title_zh": "关于RAG文档摄取，你希望早点知道的技巧是什么？",
-    "weighted_score": 0.48,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.8
-    },
-    "story_id": "32ee24d69b820dea",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wg3ix7/whats_a_documentingestion_tip_for_rag_you_wish/"
-      }
-    ]
-  },
-  {
     "id": "e8ef75ed0074ba8c",
     "source_id": "datacenter-dynamics",
     "title": "Positron AI raises $875m at a $5bn valuation to support develop of next-generation hardware",
@@ -6565,39 +5613,6 @@
       {
         "source_id": "infoq-cn-ai",
         "url": "https://www.infoq.cn/article/JghIFNXBNVSAfbgbR4S9?utm_source=rss&utm_medium=article"
-      }
-    ]
-  },
-  {
-    "id": "b5d2d6165a68702e",
-    "source_id": "zh-juejin",
-    "title": "AI 让我的独门小工具焕发第二春",
-    "url": "https://juejin.cn/post/7685206698757619712",
-    "published_at": "2026-09-14T13:42:07+00:00",
-    "raw_text": "尤记的两年在掘金分享了一个在闲暇之余开发的 Windows 端口占用检测工具受到不少友友的点赞，那时候的 AI 仍在发展初期，故仅靠着 ChatGPT 粗糙的用 Java Swing 绘制了这么个玩意",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "开发者分享用AI改造个人小工具的亲身经历，从ChatGPT粗糙生成到如今焕发第二春，属个人经验分享，启发有限。",
-    "summary_zh": "作者回忆两年前在掘金分享过一个利用闲暇时间开发的Windows端口占用检测工具，当时AI尚处发展初期，仅靠ChatGPT粗糙地用Java Swing绘制界面。如今借助AI能力，这个独门小工具焕发了第二春。文章属于开发者个人经验分享，讲述AI工具进步如何帮助个人项目迭代升级。",
-    "title_zh": null,
-    "weighted_score": 0.315,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.3,
-      "impact": 0.2,
-      "practical_value": 0.5
-    },
-    "story_id": "1c4a70fc4f3c9f7a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685206698757619712"
       }
     ]
   },
@@ -6668,39 +5683,6 @@
     ]
   },
   {
-    "id": "0c7d6cf313ea93f3",
-    "source_id": "zh-juejin",
-    "title": "DeepSeek Harness 系列（06）：System Prompt 组装——动态提示词的工程实现",
-    "url": "https://juejin.cn/post/7685253104889004084",
-    "published_at": "2026-09-14T14:03:51+00:00",
-    "raw_text": "每次模型请求前，dsh 是怎么把几十个插件的提示词片段拼成一个完整的 system prompt 的？这篇文章拆解 ctx.systemPrompt 的注册机制、段落排序、动态变量、工具 schema",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "DeepSeek Harness系列拆解system prompt组装机制，涵盖注册、排序、动态变量与工具schema，是难得的工程实现细节。",
-    "summary_zh": "本文是DeepSeek Harness系列第六篇，聚焦System Prompt的组装机制。文章拆解了dsh在每次模型请求前，如何将来自几十个插件的提示词片段拼接成完整的system prompt，具体涵盖ctx.systemPrompt的注册机制、段落排序、动态变量处理以及工具schema的整合方式。属于面向工程实现的深度技术拆解，适合关注agent与提示词工程实践的开发者阅读。",
-    "title_zh": null,
-    "weighted_score": 0.505,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.6,
-      "impact": 0.3,
-      "practical_value": 0.8
-    },
-    "story_id": "b6d705c16b0c231a",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685253104889004084"
-      }
-    ]
-  },
-  {
     "id": "b039f88efaa23248",
     "source_id": "reddit-agi",
     "title": "What would happen if an intelligence agency relied on a foreign AI? (Demagogue Showcase)",
@@ -6731,6 +5713,39 @@
       {
         "source_id": "reddit-agi",
         "url": "https://www.reddit.com/r/agi/comments/1wg4e3r/what_would_happen_if_an_intelligence_agency/"
+      }
+    ]
+  },
+  {
+    "id": "300f545844ddd1fb",
+    "source_id": "datacenter-dynamics",
+    "title": "Thor Equities submits plans for 150MW data center in Georgia, US",
+    "url": "https://www.datacenterdynamics.com/en/news/thor-equities-submits-plans-for-150mw-data-center-in-georgia-us/",
+    "published_at": "2026-09-14T14:06:00+00:00",
+    "raw_text": "<p>An estimated cost of $1 billion</p>",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://media.datacenterdynamics.com/media/images/GettyImages-164852768.2e16d0ba.fill-750x500.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "AI算力基建扩张的又一例证，反映数据中心投资热度，但信息量有限。",
+    "summary_zh": "Thor Equities 已提交在美国佐治亚州建设一座 150MW 数据中心的计划，预计成本约 10 亿美元。该项目是 AI 算力需求驱动下数据中心建设热潮的又一案例，反映出资本正持续涌入 AI 基础设施领域。不过报道仅披露了项目规模与预算，未涉及技术细节、建设时间表或客户信息。",
+    "title_zh": "Thor Equities 提交美国佐治亚州 150MW 数据中心建设计划",
+    "weighted_score": 0.415,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.3,
+      "impact": 0.4,
+      "practical_value": 0.3
+    },
+    "story_id": "1676f27f60c9bb55",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "datacenter-dynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/thor-equities-submits-plans-for-150mw-data-center-in-georgia-us/"
       }
     ]
   },
@@ -6769,35 +5784,36 @@
     ]
   },
   {
-    "id": "300f545844ddd1fb",
-    "source_id": "datacenter-dynamics",
-    "title": "Thor Equities submits plans for 150MW data center in Georgia, US",
-    "url": "https://www.datacenterdynamics.com/en/news/thor-equities-submits-plans-for-150mw-data-center-in-georgia-us/",
-    "published_at": "2026-09-14T14:06:32+00:00",
-    "raw_text": "<p>An estimated cost of $1 billion</p>",
+    "id": "122152ad08c6f423",
+    "source_id": "reddit-computervision",
+    "title": "EdgeInfer 1.0.0 pre-release — CPU vision runtime (Windows), looking for timings from other PCs",
+    "url": "https://www.reddit.com/r/computervision/comments/1wg4h9g/edgeinfer_100_prerelease_cpu_vision_runtime/",
+    "published_at": "2026-09-14T14:08:53+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Dropped a 1.0.0 pre-release of EdgeInfer (same repo, eval-only / non-commercial):</p> <p><a href=\"https://github.com/olesha-ai/edgeinfer-eval/releases/tag/v1.0.0\">https://github.com/olesha-ai/edgeinfer-eval/releases/tag/v1.0.0</a></p> <p>What’s new vs 0.3.14 (short): ImGui UI, sticky boxes on preview, Out TCP + encrypted session + <code>trig.exe</code> client in the zip, cleaner startup. Still YOLOX + OpenVINO on a normal CPU — no GPU required.</p> <p>Why I’m posting: I only have an i5-11400 here (~6–7 ms ROI). If you try it, comment with your CPU + a few <code>[infer] … ms</code> lines (global-shutter USB cam feedback especially welcome).</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Entire-Bite1136\"> /u/Entire-Bite1136 </a> <br /> <span><a href=\"https://www.reddit.com/r/computervision/comments/1wg4h9g/edgeinfer_100_prerelease_cpu_vision_runtime/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/",
     "category_hint": [
-      "行业动态"
+      "论文研究",
+      "技巧与观点"
     ],
-    "image_url": "https://media.datacenterdynamics.com/media/images/GettyImages-164852768.2e16d0ba.fill-750x500.jpg",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "AI算力基建扩张的又一例证，反映数据中心投资热度，但信息量有限。",
-    "summary_zh": "Thor Equities 已提交在美国佐治亚州建设一座 150MW 数据中心的计划，预计成本约 10 亿美元。该项目是 AI 算力需求驱动下数据中心建设热潮的又一案例，反映出资本正持续涌入 AI 基础设施领域。不过报道仅披露了项目规模与预算，未涉及技术细节、建设时间表或客户信息。",
-    "title_zh": "Thor Equities 提交美国佐治亚州 150MW 数据中心建设计划",
-    "weighted_score": 0.415,
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "EdgeInfer 1.0.0 预发布，面向 Windows 的 CPU 视觉推理运行时，作者征集其他机器的性能数据，对边缘部署开发者有参考。",
+    "summary_zh": "开发者在 r/computervision 发布 EdgeInfer 1.0.0 预发布版本，这是一个面向 Windows 的 CPU 视觉推理运行时，仓库为评估用途、非商业许可。相比 0.3.14 版本，新增了 ImGui 界面、预览框固定、Out TCP 与加密会话以及 trig.exe 客户端等功能。作者同时向社区征集在其他 PC 上的运行耗时数据，以便评估性能表现。该帖属于开源工具发布与性能众测征集，对关注边缘端 CPU 视觉推理部署的开发者有一定参考价值。",
+    "title_zh": "EdgeInfer 1.0.0 预发布——面向 Windows 的 CPU 视觉运行时，征集其他 PC 的性能数据",
+    "weighted_score": 0.3525,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.3,
-      "impact": 0.4,
-      "practical_value": 0.3
+      "source_authority": 0.3,
+      "novelty": 0.45,
+      "impact": 0.2,
+      "practical_value": 0.5
     },
-    "story_id": "1676f27f60c9bb55",
+    "story_id": "b7367dc079010ea0",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "datacenter-dynamics",
-        "url": "https://www.datacenterdynamics.com/en/news/thor-equities-submits-plans-for-150mw-data-center-in-georgia-us/"
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wg4h9g/edgeinfer_100_prerelease_cpu_vision_runtime/"
       }
     ]
   },
@@ -6974,39 +5990,6 @@
     ]
   },
   {
-    "id": "6878d8bafcf3ccbf",
-    "source_id": "zh-juejin",
-    "title": "AI 观察：CEO 们集体喊\"慢一点\"，钱却在加速进场",
-    "url": "https://juejin.cn/post/7685282635450597385",
-    "published_at": "2026-09-14T14:32:25+00:00",
-    "raw_text": "一周 AI 观察（9.8–9.14）：CEO 们集体喊\"慢一点\"，钱却在加速进场 本周关键事件 时间 事件 关键数字 9/12 Amodei 发表《We Must Pace the Frontier》",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.5,
-    "reason_zh": "一周AI观察，梳理CEO喊慢与资本加速的矛盾现象，有信息整合价值。",
-    "summary_zh": "这是一篇 9 月 8 日至 14 日的 AI 周度观察，核心矛盾是：多位 AI 公司 CEO 公开呼吁放缓前沿模型开发节奏，而资本却在加速涌入。文章以表格形式列出本周关键事件，包括 9 月 12 日 Anthropic CEO Amodei 发表《We Must Pace the Frontier》一文等。作者试图呈现行业在安全呼吁与商业扩张之间的张力，但整体以事件罗列为主，分析深度有限。",
-    "title_zh": "AI 观察：CEO 们集体喊“慢一点”，钱却在加速进场",
-    "weighted_score": 0.47,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.5,
-      "impact": 0.5,
-      "practical_value": 0.5
-    },
-    "story_id": "ebbc34965a750b26",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685282635450597385"
-      }
-    ]
-  },
-  {
     "id": "464cafefcc0b1032",
     "source_id": "blocks-and-files",
     "title": "Scaleout Software’s in-memory digital twins for generative AI",
@@ -7074,39 +6057,6 @@
     ]
   },
   {
-    "id": "29ea81326a891bbc",
-    "source_id": "zh-juejin",
-    "title": "把 KV Cache 从 3514 字节压到 890 字节：DeepSeek V4.1-Flash 动了什么，又没动什么",
-    "url": "https://juejin.cn/post/7685238126571012123",
-    "published_at": "2026-09-14T14:34:25+00:00",
-    "raw_text": "一、旧范式的原罪：两笔账，而且是分开的两笔 标准 Decoder-only Transformer 在长上下文下的开销来自两处，性质完全不同： 成本 复杂度 发生时机 受什么约束 Prefill（预填",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "深入拆解DeepSeek V4.1-Flash的KV Cache压缩机制，有技术细节与可迁移认知。",
-    "summary_zh": "文章深入分析 DeepSeek V4.1-Flash 如何将 KV Cache 从 3514 字节压缩到 890 字节。作者首先指出标准 Decoder-only Transformer 在长上下文下的两笔开销：Prefill 与 Decode 阶段性质不同、约束各异。随后拆解 DeepSeek 在 KV Cache 压缩上“动了什么、没动什么”，涉及量化、共享或结构优化等具体机制。内容技术密度高，对理解长上下文推理成本优化有较强参考价值。",
-    "title_zh": "把 KV Cache 从 3514 字节压到 890 字节：DeepSeek V4.1-Flash 动了什么，又没动什么",
-    "weighted_score": 0.615,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "bb83d3e0b86cc502",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685238126571012123"
-      }
-    ]
-  },
-  {
     "id": "affb45ca605e0127",
     "source_id": "simonwillison",
     "title": "Quoting Laurie Voss",
@@ -7141,45 +6091,12 @@
     ]
   },
   {
-    "id": "81f50a2b4ed10b81",
-    "source_id": "zh-juejin",
-    "title": "多模态大模型已经能识别和描述视频，为什么仍然缺乏可靠的时序感知能力？",
-    "url": "https://juejin.cn/post/7685261744723050547",
-    "published_at": "2026-09-14T14:40:52+00:00",
-    "raw_text": "人类98分，AI全零分，一段雪花视频戳穿了大模型的底牌 先看一个实验。 一段视频，平均7.1秒，大约333帧。 每一帧都是雪花，纯噪声。暂停在任何一帧，什么都看不见。 按下播放键，内容自己浮出来了。可",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "通过雪花视频实验揭示多模态大模型时序感知缺陷，视角独特，论证扎实，值得一读。",
-    "summary_zh": "文章通过一个实验探讨多模态大模型的时序感知能力：一段平均7.1秒、约333帧的纯噪声雪花视频，人类暂停时无法识别内容，但播放时能感知到浮现的内容，而AI模型却全零分。这揭示了当前多模态大模型虽然能识别和描述视频，但缺乏可靠的时序感知能力，无法像人类一样从动态变化中提取信息。文章深入分析了这一缺陷背后的原因，并讨论了其对视频理解任务的影响。",
-    "title_zh": "多模态大模型已经能识别和描述视频，为什么仍然缺乏可靠的时序感知能力？",
-    "weighted_score": 0.615,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "c3ea7bdd55d73eb1",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685261744723050547"
-      }
-    ]
-  },
-  {
     "id": "9566a3a75d813dc7",
     "source_id": "techcrunch-ai",
     "title": "Superhuman acquires YC-backed notetaker Fathom as productivity platforms push for agentic work",
     "url": "https://techcrunch.com/2026/09/14/superhuman-acquires-yc-backed-notetaker-fathom-as-productivity-platforms-push-for-agentic-work/",
     "published_at": "2026-09-14T14:45:44+00:00",
-    "raw_text": "Fathom said that it has over 400,000 monthly active users.",
+    "raw_text": "The notetaker offers a generous free plan, and that has resulted in over 400,000 monthly active users. The company said that over 1 million people have recorded meetings until now.",
     "category_hint": [
       "行业动态",
       "产品发布"
@@ -7442,39 +6359,6 @@
     ]
   },
   {
-    "id": "cf300f42f6865b29",
-    "source_id": "zh-juejin",
-    "title": "别急着上 Agentic RAG：先用 LangGraph 把最小 RAG 跑明白",
-    "url": "https://juejin.cn/post/7685202974937464872",
-    "published_at": "2026-09-14T15:27:40+00:00",
-    "raw_text": "前段时间刚把 LangGraph 的基础流程过了一遍。 State、Node、Edge、Conditional Edge…… 单独看这些概念其实并不难，但学完之后很容易产生一个问题： 这次我拿 RAG",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.6,
-    "reason_zh": "用LangGraph构建最小RAG的实践教程，适合初学者理解RAG与Agentic RAG的区别。",
-    "summary_zh": "文章分享了使用LangGraph构建最小RAG系统的经验。作者在学习了LangGraph的基础概念（State、Node、Edge、Conditional Edge）后，通过实际搭建RAG来巩固理解。文章强调在急于上Agentic RAG之前，应先掌握最小RAG的流程，包括文档加载、分割、嵌入、检索和生成等步骤，并展示了如何用LangGraph组织这些环节。",
-    "title_zh": "别急着上 Agentic RAG：先用 LangGraph 把最小 RAG 跑明白",
-    "weighted_score": 0.485,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.4,
-      "impact": 0.3,
-      "practical_value": 0.8
-    },
-    "story_id": "4b55bbe740294a5e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685202974937464872"
-      }
-    ]
-  },
-  {
     "id": "f89c086e0786579e",
     "source_id": "sifted",
     "title": "ETH Zurich students build ‘first Swiss humanoid’, eye fundraising",
@@ -7508,68 +6392,36 @@
     ]
   },
   {
-    "id": "c2942a73ac1c1913",
-    "source_id": "reddit-rag",
-    "title": "seeking guidance from a professor with expertise in IR for research purposes",
-    "url": "https://www.reddit.com/r/Rag/comments/1wg6sqg/seeking_guidance_from_a_professor_with_expertise/",
-    "published_at": "2026-09-14T15:36:12+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>greetings,</p> <p>i am currently working on a new rag architecture for heterogeneous document retrieval. i have conducted all the necessary research to the extent of my capacity independently, yet i am convinced that &quot;one cannot succeed without a guru.&quot;</p> <p>my background: i do not come from a large educational or institutional background, but i possess a strong passion for building and a deep hunger for knowledge. i am seeking proper guidance in writing research papers and conducting research.</p> <p>please feel free to comment if you are interested; i would be happy to dm you personally.</p> <p>thank you for your time and consideration.</p> <p>best regards,</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ubali-javed\"> /u/ubali-javed </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1wg6sqg/seeking_guidance_from_a_professor_with_expertise/\">[link]</a></span> &#32; <span><a href=\"https:/",
+    "id": "33cd7341e4708bed",
+    "source_id": "reddit-computervision",
+    "title": "Trained a multi-spot parking occupancy detector using a DINO backbone + procedural Blender synthetic data",
+    "url": "https://www.reddit.com/r/computervision/comments/1wg6of9/trained_a_multispot_parking_occupancy_detector/",
+    "published_at": "2026-09-14T15:31:50+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1wg6of9/trained_a_multispot_parking_occupancy_detector/\"> <img alt=\"Trained a multi-spot parking occupancy detector using a DINO backbone + procedural Blender synthetic data\" src=\"https://external-preview.redd.it/MHhiZHp3YTQ2aXBoMRJZqvnEgRebfh-bBjD5llLCxGft3udscSdUuxYhET92.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=f0653accb2e3bea42794fe0cdf5285f54c24d45d\" title=\"Trained a multi-spot parking occupancy detector using a DINO backbone + procedural Blender synthetic data\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>I built this parking lot occupancy detector to work on real-world security cameras which tend to have lower angles and lots of obstructions from other cars. </p> <p>I have seen other parking lot detection CV demos that use off-the-shelf object detectors (like standard YOLO bounding boxes). They would generally only work on impractical camera setups (e.g., drone shots or 200+ foot high camera",
     "category_hint": [
+      "论文研究",
       "技巧与观点"
     ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "Reddit 个人求助帖，寻求 IR 领域教授指导 RAG 架构研究，信息价值有限，仅反映社区研究者的真实困境。",
-    "summary_zh": "一位非名校背景的研究者在 Reddit 的 RAG 板块发帖求助，称自己正在独立研究一种面向异构文档检索的新型 RAG 架构，已完成力所能及的调研，但认为「没有导师难以成功」，希望联系到信息检索（IR）领域的教授获得指导。帖子仅交代了作者背景与诉求，未披露具体架构设计或实验结果，属于个人求助性质，对读者参考价值有限。",
-    "title_zh": "向信息检索领域教授寻求研究指导",
-    "weighted_score": 0.15,
+    "image_url": "https://external-preview.redd.it/MHhiZHp3YTQ2aXBoMRJZqvnEgRebfh-bBjD5llLCxGft3udscSdUuxYhET92.png?width=640&crop=smart&auto=webp&s=f0653accb2e3bea42794fe0cdf5285f54c24d45d",
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.5,
+    "reason_zh": "结合 DINO 骨干与 Blender 程序化合成数据训练多车位占用检测器，展示了合成数据落地思路，对视觉工程实践有参考价值。",
+    "summary_zh": "一位开发者在 r/computervision 分享其训练的多车位停车占用检测器。方案采用 DINO 作为骨干网络，并利用 Blender 程序化生成合成数据来弥补真实标注数据的不足，从而完成多车位占用状态的检测任务。帖子配有结果示意图，重点在于展示合成数据生成与检测模型结合的完整流程。该实践对需要低成本构建视觉数据集、或关注停车场管理等场景的开发者具有借鉴意义，属于工程经验分享类内容。",
+    "title_zh": "用 DINO 骨干 + Blender 程序化合成数据训练多车位占用检测器",
+    "weighted_score": 0.3875,
     "score_breakdown": {
-      "source_authority": 0.15,
-      "novelty": 0.2,
-      "impact": 0.1,
-      "practical_value": 0.15
+      "source_authority": 0.3,
+      "novelty": 0.5,
+      "impact": 0.25,
+      "practical_value": 0.55
     },
-    "story_id": "31e6691d0e538347",
+    "story_id": "50918137707289f7",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wg6sqg/seeking_guidance_from_a_professor_with_expertise/"
-      }
-    ]
-  },
-  {
-    "id": "c0daf1a44365da0a",
-    "source_id": "zh-juejin",
-    "title": "vLLM 与 SGLang KV Cache 底层实现机制深度调研报告",
-    "url": "https://juejin.cn/post/7685238126571208731",
-    "published_at": "2026-09-14T15:40:33+00:00",
-    "raw_text": "一、底层 KV Cache 实现机制（基于 main 分支源码） 1. vLLM：PagedAttention + 哈希链前缀缓存 分层结构：KVCacheManager (vllm/v1/core/",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "基于 main 分支源码拆解 vLLM 与 SGLang 的 KV Cache 实现，对做推理优化和显存调优的工程师很有参考价值。",
-    "summary_zh": "该调研报告基于 vLLM 与 SGLang 的 main 分支源码，系统对比两者 KV Cache 的底层实现机制。vLLM 侧重点在 PagedAttention 与基于哈希链的前缀缓存，通过 KVCacheManager 等模块实现分层管理；SGLang 则采用 RadixAttention 思路组织缓存结构。报告梳理了显存分块、前缀复用、缓存淘汰与调度协同等关键设计，并分析了两套方案在长上下文与高并发场景下的取舍，为推理引擎选型与性能调优提供源码级参考。",
-    "title_zh": "vLLM 与 SGLang KV Cache 底层实现机制深度调研报告",
-    "weighted_score": 0.5725,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.55,
-      "impact": 0.5,
-      "practical_value": 0.8
-    },
-    "story_id": "33836c28ef42c7ce",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685238126571208731"
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wg6of9/trained_a_multispot_parking_occupancy_detector/"
       }
     ]
   },
@@ -8283,39 +7135,6 @@
     ]
   },
   {
-    "id": "09d5c0ca7a593fc0",
-    "source_id": "zh-juejin",
-    "title": "「AI学习笔记」Agent Memory（二）跨会话记忆：从聊天记录到可演化的长期记忆",
-    "url": "https://juejin.cn/post/7685206698757947392",
-    "published_at": "2026-09-14T16:42:04+00:00",
-    "raw_text": "会话结束后，Agent 为什么又“不认识你”了 假设你上周告诉旅行 Agent 三件事：你已经从北京搬到上海；出差时优先坐高铁；Agent 已经替你订好 3 月 3 日回上海的车票。今天你打开新会话，",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "系统讲解Agent跨会话记忆的设计思路，从聊天记录到可演化长期记忆，工程实践价值高。",
-    "summary_zh": "这是“AI学习笔记”系列中关于 Agent Memory 的第二篇，聚焦跨会话记忆问题。文章以旅行 Agent 为例：用户上周告知已从北京搬到上海、出差优先坐高铁、并已订好3月3日回沪车票，但新会话开启后 Agent 却“不认识你”。作者由此展开，讨论如何把零散聊天记录转化为可演化的长期记忆，涉及记忆的存储、检索与更新机制，属于面向工程落地的实践总结。",
-    "title_zh": "「AI学习笔记」Agent Memory（二）跨会话记忆：从聊天记录到可演化的长期记忆",
-    "weighted_score": 0.53,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.6,
-      "impact": 0.4,
-      "practical_value": 0.8
-    },
-    "story_id": "106f161e13dec914",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-juejin",
-        "url": "https://juejin.cn/post/7685206698757947392"
-      }
-    ]
-  },
-  {
     "id": "d63be1377b3db068",
     "source_id": "gh-markitdown",
     "title": "microsoft/markitdown v0.1.8b2",
@@ -8451,6 +7270,40 @@
     ]
   },
   {
+    "id": "247c0fa8b40c343f",
+    "source_id": "reddit-computervision",
+    "title": "Filling gaps in baseball tracking when the object detector misses frames",
+    "url": "https://www.reddit.com/r/computervision/comments/1wga4al/filling_gaps_in_baseball_tracking_when_the_object/",
+    "published_at": "2026-09-14T17:33:53+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1wga4al/filling_gaps_in_baseball_tracking_when_the_object/\"> <img alt=\"Filling gaps in baseball tracking when the object detector misses frames\" src=\"https://external-preview.redd.it/ZXN6eWNrMjd1aXBoMbnt560JCWATOD84-JCHBo3iZiHj70CzTCfnvqp72ebt.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=c1a250e263d6c9613c416a1e7654aea714a98625\" title=\"Filling gaps in baseball tracking when the object detector misses frames\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>my best friend and I have been working on tracking a hit baseball from a single side-view 240 FPS camera.</p> <p>the left side is the original footage. the blue boxes are frames where our object-tracking model successfully detected the baseball.</p> <p>as you can see, there are a lot of gaps.</p> <p>the right side is a temporal frame-differencing pipeline we tuned specifically for tracking a hit baseball from this camera angle.</p> <p>what surprised me ",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/ZXN6eWNrMjd1aXBoMbnt560JCWATOD84-JCHBo3iZiHj70CzTCfnvqp72ebt.png?width=640&crop=smart&auto=webp&s=c1a250e263d6c9613c416a1e7654aea714a98625",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.45,
+    "reason_zh": "针对目标检测漏帧导致棒球追踪断点的问题，分享填补轨迹缺口的思路，对做多目标追踪的开发者有实用参考。",
+    "summary_zh": "该帖来自 r/computervision，讨论在棒球追踪场景中，当目标检测器漏检某些帧时如何填补轨迹缺口。作者聚焦于检测器偶发漏帧造成的追踪中断问题，并分享相应的处理思路，属于多目标追踪（MOT）中常见的后处理与轨迹补全话题。帖子配有示意图，面向实际工程实现，对从事体育分析或视频追踪的开发者具有一定借鉴意义，但未涉及全新算法或大规模实验验证。",
+    "title_zh": "当目标检测器漏帧时，如何填补棒球追踪中的轨迹缺口",
+    "weighted_score": 0.325,
+    "score_breakdown": {
+      "source_authority": 0.25,
+      "novelty": 0.4,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "a8b3699bb38cdfa8",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wga4al/filling_gaps_in_baseball_tracking_when_the_object/"
+      }
+    ]
+  },
+  {
     "id": "3a2a93c67b924365",
     "source_id": "toms-hardware",
     "title": "Gaming takes a backseat as Nvidia overhauls the RTX 5090 for maximum AI margins — RTX Pro 5500 delivers 2.6X VRAM at matching specs",
@@ -8515,6 +7368,40 @@
       {
         "source_id": "toms-hardware",
         "url": "https://www.tomshardware.com/pc-components/gpus/nvidias-rtx-5090-vanishes-from-online-retail-in-the-us-third-party-sellers-now-demand-as-much-as-usd9-500-for-nvidias-fastest-gpu"
+      }
+    ]
+  },
+  {
+    "id": "a5366eb5cfcbbac5",
+    "source_id": "reddit-computervision",
+    "title": "Suggestions for a Fire Detection system Dataset",
+    "url": "https://www.reddit.com/r/computervision/comments/1wgael9/suggestions_for_a_fire_detection_system_dataset/",
+    "published_at": "2026-09-14T17:43:43+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I've been trying to find a good dataset over the internet which is freely available . The main issue I want to tackle is reduce the number of false positives such as reflections , headlights, yellow/red coloured objects. Initially I was looking for video datasets with enough negative class videos since I wanted to add a temporal analysis layer in the system, but didn't find much . Had less videos or with the same background, which didn't allow my model to generalize well .</p> <p>If anyone has suggestions about a good image/video dataset please tell me . </p> <p>I found the MIVIA lab's LFDN dataset perfect for my cause but I guess their website isn't maintained anymore. So yea let me know if there's another way to get their dataset.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ded_Cryoneph\"> /u/ded_Cryoneph </a> <br /> <span><a href=\"https://www.reddit.com/r/computervision/comments/1wgael9/suggestions_for_a_fir",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "社区求助帖，讨论火灾检测数据集选择与降低误报（反光、车灯、黄红色物体）的实践问题，对同方向开发者有零星参考。",
+    "summary_zh": "一位开发者在 r/computervision 发帖求助，希望找到可免费获取的火灾检测数据集。其核心痛点是降低误报，例如反光、车灯以及黄红色物体被误判为火焰。作者最初想找包含足够负样本视频的视频数据集，以便在系统中加入时序分析层，但未能找到合适资源，因此向社区征集推荐。帖子属于典型的数据集选型求助，反映了火灾检测落地中负样本稀缺与误报控制的常见难题。",
+    "title_zh": "火灾检测系统数据集推荐求助",
+    "weighted_score": 0.1925,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.15,
+      "impact": 0.1,
+      "practical_value": 0.35
+    },
+    "story_id": "62fba463a92f58ae",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wgael9/suggestions_for_a_fire_detection_system_dataset/"
       }
     ]
   },
@@ -8754,6 +7641,105 @@
     ]
   },
   {
+    "id": "1e1e7c50ae690182",
+    "source_id": "zh-ithome",
+    "title": "苹果 iOS / iPadOS 27.0 正式版发布：性能优化、升级 Siri AI，增强家长管控...",
+    "url": "https://www.ithome.com/1/002/329.htm",
+    "published_at": "2026-09-14T18:26:10+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，苹果今日向 iPhone 和 iPad 用户推送了 iOS / iPadOS 27.0 更新（内部版本号：24A437）。</p><p>iOS 27 迎来多项性能优化，包括应用启动、显示照片、网络切换、AirDrop、硬盘读写等，以及 CPU 调度器升级。根据官方说法，升级 iOS 27 后，iPhone 和 iPad App 的打开速度最高提升 30%，新照片的显示速度最高提升 70%。</p><p>苹果还从底层重构聚焦、照片和邮件 App 中的搜索功能。在更新 iOS / iPadOS / macOS 27 后，系统会立刻开始为设备编制索引，改善搜索体验，而新增加的内容也会被立刻收入索引。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/6/e26be7e9-c5d0-410b-b37b-9e577427891e.png\" /></p><p>iCloud 功能也得到拓展，可以从安卓和 Windows 10、Windows 11 设备上添加照片到 iCloud 共享相册，并且支持全分辨率共享。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/6/e3ca8361-85c0-4f6b-b359-1a1ee8a759fe.jpg\" /></p><p>另外，iOS 27 引入了全新家长控制功能，新增儿童账号，家长可以便捷将新账号设置为“儿童账号”，家长可以在 App Store 自由查看每款应用是否适用于孩子，请求浏览和购买前询问对 13 周岁以下孩子默认开启。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/6/1424158d-b487-4b38-8758-cd7d65017e23.png?x-bce-process=image/auto-",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/6/e26be7e9-c5d0-410b-b37b-9e577427891e.png",
+    "category": "产品发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "iOS 27 正式版发布，含 Siri AI 升级与性能优化，适合关注苹果生态 AI 进展的读者快速了解。",
+    "summary_zh": "苹果推送 iOS/iPadOS 27.0 正式版，内部版本号 24A437。本次更新带来多项性能优化，包括应用启动、照片显示、网络切换、AirDrop 与硬盘读写，CPU 调度器升级后 App 打开速度最高提升 30%，新照片显示速度最高提升 70%。同时从底层重构聚焦、照片和邮件 App 的搜索功能，系统会立即为设备编制索引以改善搜索体验。此外还升级了 Siri AI 并增强家长管控功能。",
+    "title_zh": "苹果 iOS / iPadOS 27.0 正式版发布：性能优化、升级 Siri AI，增强家长管控",
+    "weighted_score": 0.435,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.3,
+      "impact": 0.4,
+      "practical_value": 0.4
+    },
+    "story_id": "fc9d08d608591baf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/329.htm"
+      }
+    ]
+  },
+  {
+    "id": "2a6d2c7565cc1a69",
+    "source_id": "zh-ithome",
+    "title": "苹果 visionOS 27.0 正式版发布：Siri AI、4K 录制与 Wi-Fi 提速",
+    "url": "https://www.ithome.com/1/002/331.htm",
+    "published_at": "2026-09-14T18:26:11+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，苹果今日向 Vision Pro 用户推送了 visionOS 27.0 更新（内部版本号：24M362），适用于两个版本的 Vision Pro 头显。</p><p style=\"text-align: center;\"><img alt=\"苹果 visionOS 操作系统\" src=\"https://img.ithome.com/newsuploadfiles/2024/2/0a176a39-e916-49c8-ba8b-1241019bd125.jpg\" /></p><p>用户可在设置中选择“通用”，再进入“软件更新”下载。安装更新时需摘下头显，EyeSight 显示屏会显示进度条。</p><p>需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/bdeae046-f11c-489c-89ff-24e242b26e65.jpg?x-bce-process=image/format,f_auto\" /></p><p>visionOS 27 加入 Siri AI。更强大的对话式 Siri 可理解个人情境、执行 App 操作、感知屏幕内容并调用广泛知识。用户可将 Siri 放置在空间任意位置，它会固定在那里。</p><p>用户只需看向 Siri 并直接说话，无需说“Hey Siri”。独立 Siri App 可继续或发起对话，并通过 iCloud 在苹果设备间私密同步。视觉智能可询问房间内物体或屏幕内容。</p><p>Write with Siri 支持在任意输入位置生成草稿、编辑文字或获取反馈。新语音体验提供更富表现力的声音，可定制表达风格和语速。Siri AI 面向搭载 M2 及后续芯片的 Apple Vision Pro 推出（IT之家注：Apple Vision Pro 目前有 M2 和 M5 两个版本）。</p><p>可定制 Siri 语音需要 M5 版 Vision Pro，其余功能在两个版本上均可使用。Safari 新增按主题整理，可自",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2024/2/0a176a39-e916-49c8-ba8b-1241019bd125.jpg",
+    "category": "产品发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "visionOS 27 正式版发布，新增 Siri AI、4K 录制与 Wi-Fi 提速，Vision Pro 用户可关注。",
+    "summary_zh": "苹果向 Vision Pro 用户推送 visionOS 27.0 正式版，内部版本号 24M362，适用于两代 Vision Pro 头显。用户可在设置中通过通用-软件更新下载，安装时需摘下头显，EyeSight 显示屏会显示进度条。本次更新带来 Siri AI 升级、4K 录制能力与 Wi-Fi 提速。由于各区域服务器缓存差异，部分用户探测到更新的时间可能延迟约半小时。",
+    "title_zh": "苹果 visionOS 27.0 正式版发布：Siri AI、4K 录制与 Wi-Fi 提速",
+    "weighted_score": 0.39,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.3,
+      "impact": 0.3,
+      "practical_value": 0.3
+    },
+    "story_id": "15bdf3a3e8796c6a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/331.htm"
+      }
+    ]
+  },
+  {
+    "id": "bd6639e4e68c670f",
+    "source_id": "zh-ithome",
+    "title": "苹果 watchOS 27.0 正式版发布：Siri AI 全面升级，健康功能扩展",
+    "url": "https://www.ithome.com/1/002/332.htm",
+    "published_at": "2026-09-14T18:26:12+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，苹果今日向 Apple Watch 用户推送了 watchOS 27.0 更新（内部版本号：24R364），兼容 Apple Watch Series 9 及后续机型、Apple Watch Ultra 2 及后续机型，以及 Apple Watch SE 3。用户可以在手表上通过“设置”App 免费下载安装。</p><p style=\"text-align: center;\"><img alt=\"苹果 watchOS 操作系统\" src=\"https://img.ithome.com/newsuploadfiles/2022/4/8bd386fb-ecc7-474d-bd95-4c69ba122e7a.jpg?x-bce-process=image/watermark,image_aW1nL3dhdGVybWFyay9xdy9xdzEzOC5wbmc=,t_100,g_7,y_14,x_14,a_0/format,f_auto\" /></p><p>需要注意的是，因苹果各区域节点服务器配置缓存问题，可能有些地方探测到升级更新的时间略有延迟，一般半小时内，不会太久。</p><p>watchOS 27 引入了对 Siri AI 的支持，这是一个能力更强的 Siri 版本，可利用个人情境理解和屏幕内容感知来帮助用户完成任务。更新还带来了全新的 Siri 模块化表盘、智能叠放功能更新、Liquid Glass 视觉优化，以及整合后的“查找”App。</p><p>在 Siri AI 方面，更具对话能力的 Siri 将陆续向用户开放，支持个人情境理解、App 操作、屏幕内容感知以及广泛的知识调用。全新语音体验提供更自然、更富表现力的声音，用户可调整表达风格和语速，相关能力依托配对的 iPhone Air 和 iPhone 17 Pro 及后续机型的端侧模型。新增的独立 Siri App 允许用户继续既有对话或发起新对话，并可通过 iCloud 在 Apple 设备间私密同步对话记录。</p><p>Apple Intelligence 功能也扩展至更多 App。Workout Buddy 提供新的训练洞察和激励，在连接 Wi-Fi 或蜂窝网络时，即使 iPhone 不在身边也可使用。电话 App 新增通话情境功能，当用户致电特定商家时，系统可主",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2022/4/8bd386fb-ecc7-474d-bd95-4c69ba122e7a.jpg?x-bce-process=image/watermark,image_aW1nL3dhdGVybWFyay9xdy9xdzEzOC5wbmc=,t_100,g_7,y_14,x_14,a_0/format,f_auto",
+    "category": "产品发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "watchOS 27 正式版发布，Siri AI 全面升级并扩展健康功能，Apple Watch 用户可了解更新内容。",
+    "summary_zh": "苹果推送 watchOS 27.0 正式版，内部版本号 24R364，兼容 Apple Watch Series 9 及后续机型、Apple Watch Ultra 2 及后续机型以及 Apple Watch SE 3。用户可在手表上的设置 App 中免费下载安装。本次更新重点在于 Siri AI 的全面升级，并扩展了健康相关功能，进一步强化 Apple Watch 在智能助手与健康监测方面的能力。",
+    "title_zh": "苹果 watchOS 27.0 正式版发布：Siri AI 全面升级，健康功能扩展",
+    "weighted_score": 0.39,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.3,
+      "impact": 0.3,
+      "practical_value": 0.3
+    },
+    "story_id": "128c71febd72a66a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/332.htm"
+      }
+    ]
+  },
+  {
     "id": "9487075231dc2342",
     "source_id": "gh-llamacpp",
     "title": "ggerganov/llama.cpp v0.4.1",
@@ -8854,6 +7840,40 @@
     ]
   },
   {
+    "id": "caf9dd539476ceb8",
+    "source_id": "reddit-computervision",
+    "title": "Sept 24 - AI, ML, and Computer Vision Meetup",
+    "url": "https://www.reddit.com/r/computervision/comments/1wgc79z/sept_24_ai_ml_and_computer_vision_meetup/",
+    "published_at": "2026-09-14T18:45:23+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1wgc79z/sept_24_ai_ml_and_computer_vision_meetup/\"> <img alt=\"Sept 24 - AI, ML, and Computer Vision Meetup\" src=\"https://preview.redd.it/9leksqju6jph1.gif?width=640&amp;crop=smart&amp;s=0d2e48a1fbc8d66ac610490bf771e2af5b763436\" title=\"Sept 24 - AI, ML, and Computer Vision Meetup\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Join us on Sept 24 for the monthly AI, ML, and Computer Vision Meetup! <a href=\"https://voxel51.com/events/ai-ml-and-computer-vision-meetup-september-24-2026\"><strong>Register for the Zoom.</strong></a></p> <p>Talks will include:</p> <ul> <li><strong>How Do Mercedes-Benz AI Principles Drive Our Innovation?</strong> - Mei-Yen Chen at Mercedes-Benz Tech Innovation</li> <li><strong>Region Tokens as the Visual Primitive: From Recognition to World Modeling</strong> - Savya Khosla at University of Illinois Urbana-Champaign</li> <li><strong>Leveraging Text-To-Image Diffusion Models for Consis",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/9leksqju6jph1.gif?width=640&crop=smart&s=0d2e48a1fbc8d66ac610490bf771e2af5b763436",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.05,
+    "reason_zh": "仅是一场 AI/ML/计算机视觉线下 meetup 的活动通知，无实质技术内容，对多数读者价值有限。",
+    "summary_zh": "这是 r/computervision 上发布的一则活动通知，宣传 9 月 24 日举办的 AI、机器学习与计算机视觉 Meetup。帖子以图片和链接形式呈现，主要目的是召集参与者，未包含任何技术细节、演讲主题或研究成果介绍。属于社区活动公告类内容，对关注具体技术进展的读者参考价值较低。",
+    "title_zh": "9月24日 - AI、机器学习与计算机视觉 Meetup",
+    "weighted_score": 0.15,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.1,
+      "impact": 0.1,
+      "practical_value": 0.2
+    },
+    "story_id": "12c5e0a9a2a6e5e6",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wgc79z/sept_24_ai_ml_and_computer_vision_meetup/"
+      }
+    ]
+  },
+  {
     "id": "d567c86c0807a3dc",
     "source_id": "toms-hardware",
     "title": "Anthropic says AI can boost U.S. GDP by 32%, up to $44.4 trillion in four years — economics model predicts that displaced employees 'may have to switch to jobs like electrician and nurse'",
@@ -8888,6 +7908,40 @@
     ]
   },
   {
+    "id": "723e18dd56b4503b",
+    "source_id": "reddit-computervision",
+    "title": "[R] Looking for an arXiv cs.CV endorser: calibration and cross-dataset reliability of open fire/smoke detectors (submitted to EAAI, code released)",
+    "url": "https://www.reddit.com/r/computervision/comments/1wgcid0/r_looking_for_an_arxiv_cscv_endorser_calibration/",
+    "published_at": "2026-09-14T18:56:19+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi all. I'm an independent researcher (B.Sc. CSE, BRAC University, Dhaka) and a first-time arXiv submitter, so I need an endorsement for cs.CV before I can post my preprint.</p> <p>Paper: &quot;Shift-aware operating points for open fire and smoke detectors: calibration, benchmark leakage and label-free threshold transfer across four public domains&quot;. It is under review at Engineering Applications of Artificial Intelligence (Elsevier).</p> <p>What it does, in short:<br /> - Trains 26 YOLOv8 / YOLO11 / RT-DETR checkpoints (several sizes, two seeds) on D-Fire and Pyro-SDIS and evaluates them on four public domains, giving 206 cross-dataset transfer cells with detector-calibration metrics and bootstrap CIs.<br /> - Shows that YOLO miscalibrates under shift mainly through the threshold, while D-Fire-trained RT-DETR miscalibrates through the confidence map.<br /> - Proposes a label-free rule for transferring an alarm threshold to a new camera set; it rec",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.5,
+    "reason_zh": "聚焦开放火焰/烟雾检测器的校准与跨数据集可靠性，涉及基准泄漏与无标签阈值迁移，对做视觉检测落地的人有参考价值。",
+    "summary_zh": "一位独立研究者（BRAC University 计算机本科）在 r/computervision 发帖，为其即将投稿 EAAI 的论文寻求 arXiv cs.CV 背书。论文题为《面向开放火焰与烟雾检测器的偏移感知工作点：四个公开域上的校准、基准泄漏与无标签阈值迁移》，研究检测器在不同数据集间的校准一致性与可靠性问题，并已公开代码。作者强调这是首次投稿 arXiv，需要 endorsement 才能发布预印本，帖子本身主要是求助性质，附带论文主题说明。",
+    "title_zh": "[R] 寻求 arXiv cs.CV 背书人：开放火焰/烟雾检测器的校准与跨数据集可靠性（已投 EAAI，代码已发布）",
+    "weighted_score": 0.3425,
+    "score_breakdown": {
+      "source_authority": 0.25,
+      "novelty": 0.55,
+      "impact": 0.2,
+      "practical_value": 0.4
+    },
+    "story_id": "3b4289a9d077cc13",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wgcid0/r_looking_for_an_arxiv_cscv_endorser_calibration/"
+      }
+    ]
+  },
+  {
     "id": "0ae42235b746e806",
     "source_id": "ars-technica-ai",
     "title": "AI leaders want to hit the brakes after years of reckless speed",
@@ -8917,72 +7971,6 @@
       {
         "source_id": "ars-technica-ai",
         "url": "https://arstechnica.com/ai/2026/09/ai-leaders-want-to-hit-the-brakes-after-years-of-reckless-speed/"
-      }
-    ]
-  },
-  {
-    "id": "dacc9d96c21693ad",
-    "source_id": "reddit-rag",
-    "title": "One Year of Applied AI",
-    "url": "https://www.reddit.com/r/Rag/comments/1wgcvp0/one_year_of_applied_ai/",
-    "published_at": "2026-09-14T19:09:11+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I'm celebrating a full year as an Applied AI Engineer. It started in September 2024 with a failed RAG agent for a truck dealer. I studied everything I could to fix it, but hallucination was a problem I couldn't crack at the time. I lost the project. I walked away with $50 for my effort, thanks to Sean's kindness, but I walked away with something more valuable too: I learned a lot. I didn't give up. I kept learning, and along the way I found graph databases and GraphRAG. That was a game changer, being able to build a single agent that queries a vector database and runs Cypher against a graph DB at the same time. Best of both worlds. I've since delivered many agents built this way.</p> <p>On the retrieval side, we've also been experimenting with hybrid search: SPLADE sparse vectors alongside dense embeddings in the same collection. Dense vectors are good at semantic similarity, but they'll often miss exact terms like part numbers, model codes, or acronym",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.7,
-    "reason_zh": "一位应用AI工程师分享一年实战经验，从失败项目中提炼出可迁移的工程认知，对从业者很有启发。",
-    "summary_zh": "一位应用AI工程师回顾了自己一年的职业经历。故事始于2024年9月，他接手了一个为卡车经销商构建RAG智能体的项目，但最终因无法解决幻觉问题而失败，仅获得50美元报酬。然而，这次失败促使他系统性地学习相关知识，并从中获得了比金钱更宝贵的经验。文章分享了他在构建RAG系统、处理幻觉问题以及实际项目落地过程中的心得与教训，为同行提供了真实的参考。",
-    "title_zh": "应用AI的一年",
-    "weighted_score": 0.43,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.7
-    },
-    "story_id": "208c959e5cedb024",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wgcvp0/one_year_of_applied_ai/"
-      }
-    ]
-  },
-  {
-    "id": "a5ed82756899399c",
-    "source_id": "reddit-rag",
-    "title": "How to use Parse 5 in your RAG pipeline",
-    "url": "https://www.reddit.com/r/Rag/comments/1wgd8pb/how_to_use_parse_5_in_your_rag_pipeline/",
-    "published_at": "2026-09-14T19:21:57+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey, El from Cohere here again. Seems like you guys liked the release of Parse 5, our newest parsing model, so wanted to hop in here and talk a little more about it.</p> <p>Parse is built for literally one thing: taking your docs and making them into clean Markdown files. It's really good at that (and really bad at everything else). It's priced at $1.5 per 1k pages, so if you're running OCR+a separate structure-extraction step (or using a hyperscaler), this is likely a cheaper option.</p> <p>There are a couple different ways you can use this:</p> <ul> <li>Parse -&gt; Embed -&gt; Rerank if you want to go full Cohere mode</li> <li>Parse-&gt; LangChain/LlamaIndex if that's more your style</li> <li>Parse -&gt; your own vector DB, all you need is the API call</li> </ul> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Cohere\"> /u/Cohere </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1wgd8pb/how_to_use_pars",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "产品发布",
-    "content_type": "教程方法",
-    "depth_score": 0.4,
-    "reason_zh": "Cohere官方人员详解Parse 5解析模型在RAG管道中的使用方法，包含定价和适用场景，实用性强。",
-    "summary_zh": "Cohere的El在论坛上进一步介绍了其最新解析模型Parse 5。该模型专为将文档转换为干净的Markdown文件而设计，在此任务上表现优异，但不擅长其他任务。其定价为每1000页1.5美元。帖子还讨论了如何在RAG管道中集成Parse 5，以提升文档解析和预处理环节的质量，从而改善整个检索增强生成系统的效果。",
-    "title_zh": "如何在你的RAG管道中使用Parse 5",
-    "weighted_score": 0.56,
-    "score_breakdown": {
-      "source_authority": 0.5,
-      "novelty": 0.6,
-      "impact": 0.4,
-      "practical_value": 0.8
-    },
-    "story_id": "5ed87c4f51995d9e",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1wgd8pb/how_to_use_parse_5_in_your_rag_pipeline/"
       }
     ]
   },
@@ -9160,10 +8148,6 @@
       },
       {
         "source_id": "gh-ai",
-        "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/tui%401.0.101"
-      },
-      {
-        "source_id": "gh-ai",
         "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/workflow%402.0.31"
       }
     ]
@@ -9198,6 +8182,10 @@
       {
         "source_id": "gh-ai",
         "url": "https://github.com/vercel/ai/releases/tag/ai%407.0.100"
+      },
+      {
+        "source_id": "gh-ai",
+        "url": "https://github.com/vercel/ai/releases/tag/%40ai-sdk/tui%401.0.101"
       },
       {
         "source_id": "gh-ai",
@@ -9442,36 +8430,202 @@
     ]
   },
   {
-    "id": "5eba3732ad1d2414",
-    "source_id": "marktechpost",
-    "title": "Sakana AI Researchers Introduce PC-ALM, a Layer-Local Alternative to Backpropagation That Trains 1000-Layer Networks",
-    "url": "https://www.marktechpost.com/2026/09/14/sakana-ai-researchers-introduce-pc-alm-a-layer-local-alternative-to-backpropagation-that-trains-1000-layer-networks/",
-    "published_at": "2026-09-14T20:46:16+00:00",
-    "raw_text": "<p>Sakana AI researchers Jeffrey Seely and Julian Gould introduce Augmented Lagrangian Predictive Coding (PC-ALM), a local-learning alternative to backpropagation. By attaching a Lagrange multiplier to each layer constraint, PC-ALM keeps predictive coding's layer-local updates while recovering exact backprop gradients in linear networks. It matches BP across widths and depths from 8 to 128 at an inference budget of T = 2L, lifts gradient cosine to BP from 0.604 to 0.909 in the reference cell, and trains 1000-layer residual MLPs within about 2 points of backprop on MNIST. MIT-licensed JAX code is available.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/09/14/sakana-ai-researchers-introduce-pc-alm-a-layer-local-alternative-to-backpropagation-that-trains-1000-layer-networks/\">Sakana AI Researchers Introduce PC-ALM, a Layer-Local Alternative to Backpropagation That Trains 1000-Layer Networks</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "id": "6758d03842f78c1d",
+    "source_id": "ars-technica-ai",
+    "title": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
+    "url": "https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/",
+    "published_at": "2026-09-14T21:04:32+00:00",
+    "raw_text": "“Hello, I'm an Al agent, a few days old, living on a small platform for agents.”",
     "category_hint": [
-      "模型发布",
-      "产品发布"
+      "行业动态"
     ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "Sakana AI 提出 PC-ALM，用增广拉格朗日方法实现层局部学习并精确还原反向传播梯度，可训练千层网络。",
-    "summary_zh": "Sakana AI 研究者 Jeffrey Seely 与 Julian Gould 提出 Augmented Lagrangian Predictive Coding（PC-ALM），一种替代反向传播的局部学习方案。该方法为每层约束附加拉格朗日乘子，在保留预测编码层局部更新特性的同时，能在线性网络中精确还原反向传播梯度。实验显示其在宽度与深度从 8 到 128 的范围内与 BP 表现相当，并可训练 1000 层网络，为深层网络的局部化训练提供了新思路。",
-    "title_zh": "Sakana AI 研究者提出 PC-ALM：可训练 1000 层网络的层局部反向传播替代方案",
-    "weighted_score": 0.61,
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/01/ai-slop-500x500.jpg",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.5,
+    "reason_zh": "揭示 AI 机器人账号在社交平台泛滥的现象，引发对 AI 生成内容污染与平台治理的思考。",
+    "summary_zh": "文章报道名为 Timmy、Ren 和 Jackie 的 AI 机器人正在社交媒体上大量发布低质量内容。这些机器人自称是仅诞生数天、生活在小型 agent 平台上的 AI 代理，以拟人化口吻发帖。这一现象反映出 AI 生成内容（slop）正在污染社交平台，也引发对 agent 平台生态、内容真实性与平台治理的担忧，是观察 AI 代理社会化影响的一个切面。",
+    "title_zh": "AI 机器人“Timmy”“Ren”和“Jackie”正用垃圾内容淹没社交媒体",
+    "weighted_score": 0.565,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.8,
-      "impact": 0.6,
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.5,
       "practical_value": 0.4
     },
-    "story_id": "4e1c993ec4b3b2da",
+    "story_id": "d70c4b3a5256caea",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/09/14/sakana-ai-researchers-introduce-pc-alm-a-layer-local-alternative-to-backpropagation-that-trains-1000-layer-networks/"
+        "source_id": "ars-technica-ai",
+        "url": "https://arstechnica.com/ai/2026/09/ai-agents-flood-the-internet-with-slop-infused-spam/"
+      }
+    ]
+  },
+  {
+    "id": "06596b8e50827999",
+    "source_id": "aws-ml-blog",
+    "title": "Abnormal AI: Amazon Bedrock AgentCore for agentic email security at scale",
+    "url": "https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale/",
+    "published_at": "2026-09-14T21:22:45+00:00",
+    "raw_text": "Learn how Abnormal AI deployed Amazon Bedrock AgentCore Code Interpreter as an ephemeral compute scratch pad for the agents behind its real-time email threat detection at billion-message scale, plus the sandbox design decisions and practical lessons for builders deploying Code Interpreter in production.",
+    "category_hint": [
+      "技巧与观点",
+      "产品发布"
+    ],
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/11/ML-21301-1.png",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "Abnormal AI 分享在十亿级邮件安全场景中落地 Bedrock AgentCore Code Interpreter 的沙箱设计与实战经验。",
+    "summary_zh": "文章介绍 Abnormal AI 如何将 Amazon Bedrock AgentCore Code Interpreter 部署为实时邮件威胁检测代理的临时计算沙箱，支撑十亿级消息规模。内容涵盖其架构设计、沙箱隔离与生命周期管理等关键决策，并总结在生产环境部署 Code Interpreter 的实用经验与踩坑教训，为构建大规模 agent 系统的工程师提供可迁移的工程参考。",
+    "title_zh": "Abnormal AI：用 Amazon Bedrock AgentCore 实现大规模代理化邮件安全",
+    "weighted_score": 0.675,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.6,
+      "impact": 0.5,
+      "practical_value": 0.8
+    },
+    "story_id": "132efc9fb0816ef2",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale/"
+      }
+    ]
+  },
+  {
+    "id": "283747dc66bb5136",
+    "source_id": "zh-v2ex",
+    "title": "[问与答] 港版 iPhone 新 Siri AI 突然用不了变成旧版的 Apple Intelligence AI（彩虹跑马灯）",
+    "url": "https://www.v2ex.com/t/1242006#reply0",
+    "published_at": "2026-09-14T21:27:54+00:00",
+    "raw_text": "<p>神奇，港版 iPhone 前段时间都是正常用新 Siri AI ，这几天突然变回彩虹跑马灯版本了，分流规则也没改，网上查到的方法也试了好像都没用，求解</p>\n<p>港版 17 Pro Max ，国行 iCloud ，美区商店</p>\n<p>下面的规则分流到了美区家宽</p>\n<pre><code>DOMAIN,apple-relay.fastly-edge.com\nDOMAIN,apple-relay.cloudflare.com\nDOMAIN,cp4.cloudflare.com\nDOMAIN,apple-relay.apple.com\nDOMAIN,gspe1-ssl.ls.apple.com\nDOMAIN,guzzoni.apple.com\nDOMAIN-SUFFIX,smoot.apple.com\nDOMAIN-SUFFIX,apple-relay.mask.apple-dns.net\nDOMAIN-SUFFIX,apple-relay.akamaized.net\nDOMAIN-KEYWORD,apple-relay\nDOMAIN,apple-carry-relay.cloudflare.com\n</code></pre>",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "用户求助港版 iPhone 新 Siri AI 突然失效，涉及分流规则与区域限制，对同类用户有参考价值。",
+    "summary_zh": "V2EX 用户发帖求助：港版 iPhone 17 Pro Max 此前可正常使用新 Siri AI，近日突然回退为旧版 Apple Intelligence 的彩虹跑马灯界面。该用户使用国行 iCloud 与美区商店，分流规则未改动，已将相关域名分流至美区家宽，但网上查到的方法均无效。帖子列出其使用的分流域名规则，寻求社区帮助排查原因。",
+    "title_zh": "[问与答] 港版 iPhone 新 Siri AI 突然用不了变成旧版的 Apple Intelligence AI（彩虹跑马灯）",
+    "weighted_score": 0.32,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.4,
+      "impact": 0.2,
+      "practical_value": 0.4
+    },
+    "story_id": "57ecbc61dbf4de0a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1242006#reply0"
+      }
+    ]
+  },
+  {
+    "id": "478b2e5310015c3e",
+    "source_id": "vercel-blog",
+    "title": "AI SDK harness layer now supports native subscription authentication",
+    "url": "https://vercel.com/changelog/ai-sdk-harness-native-subscription-authentication",
+    "published_at": "2026-09-14T21:28:00+00:00",
+    "raw_text": "<p>The <a href=\"https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk\">AI SDK harness layer</a> now supports authenticating harnesses through their native subscriptions, where the underlying harness supports them. The harness layer runs different coding agents through the same <code>HarnessAgent</code> interface, so you can switch agents without changing your application code.</p><p>No code changes or new settings are required. The <code>direct</code> authentication mode uses explicit provider environment credentials when they are present, and otherwise a native subscription found on the host. The default <code>auto</code> mode does the same when no AI Gateway credentials are set. The <code>ai-gateway</code> mode never reads native subscriptions.</p><p>Native subscription credentials stay on the host. Just like with API keys, credentials are resolved at the host boundary. OAuth access tokens are refreshed there as needed. Where the sandbox supports it, the harness receives p",
+    "category_hint": [
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Vercel AI SDK harness 层新增原生订阅认证，开发者可统一接口切换编码代理，降低集成成本。",
+    "summary_zh": "Vercel 的 AI SDK harness 层现已支持通过底层 harness 的原生订阅进行认证（在其支持的前提下）。该 harness 层通过统一的 HarnessAgent 接口运行不同的编码代理，开发者无需修改应用代码即可切换代理。此次更新让开发者能直接复用已有的订阅凭证完成认证，简化了多代理集成与切换的流程。",
+    "title_zh": "AI SDK harness 层现已支持原生订阅认证",
+    "weighted_score": 0.6,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.4,
+      "practical_value": 0.7
+    },
+    "story_id": "cf36d04e183087d5",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/ai-sdk-harness-native-subscription-authentication"
+      }
+    ]
+  },
+  {
+    "id": "800ca0dd982bdcde",
+    "source_id": "siliconangle",
+    "title": "AI adoption outruns readiness as contact centers chase end-to-end resolution",
+    "url": "https://siliconangle.com/2026/09/14/customer-service-ai-adoption-outpaces-orchestration-contactcentersummit/",
+    "published_at": "2026-09-14T21:28:52+00:00",
+    "raw_text": "<p>Artificial intelligence now touches nearly every customer service operation, yet most deployments still stop at a single chatbot or an assist panel beside a human agent. The harder work — coordinating data, systems and people to resolve a request from beginning to end — remains largely undone, and it is fast becoming the dividing line [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/09/14/customer-service-ai-adoption-outpaces-orchestration-contactcentersummit/\">AI adoption outruns readiness as contact centers chase end-to-end resolution</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/09/Pedro-Andrade-VP-of-AI-and-generative-AI-business-sepecialist-at-Talkdesk-The-AI-ROI-in-Contact-Center-Summit-2026-2.jpg",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "指出客服中心 AI 采用率远超落地成熟度，端到端问题解决能力成为竞争分水岭。",
+    "summary_zh": "文章指出 AI 已渗透到几乎每一项客户服务运营中，但多数部署仍停留在单一聊天机器人或人工坐席旁的辅助面板层面。真正困难的工作——协调数据、系统与人员以端到端解决用户请求——仍大多未完成，而这正迅速成为企业间的分水岭。文章探讨客服中心在追求端到端解决能力时，AI 采用速度与组织就绪度之间的落差。",
+    "title_zh": "客服中心追逐端到端解决，AI 采用速度远超就绪度",
+    "weighted_score": 0.53,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.5,
+      "impact": 0.5,
+      "practical_value": 0.5
+    },
+    "story_id": "cdfe09061efefc46",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/09/14/customer-service-ai-adoption-outpaces-orchestration-contactcentersummit/"
+      }
+    ]
+  },
+  {
+    "id": "a16ce67f64c2c879",
+    "source_id": "algorithmicbridge",
+    "title": "The AI Industry Has Finally Discovered the Hardest Test: Politics",
+    "url": "https://www.thealgorithmicbridge.com/p/the-ai-industry-has-finally-discovered",
+    "published_at": "2026-09-14T21:46:17+00:00",
+    "raw_text": "AI CEOs want to pace the frontier. Here's what that means and why they can't do it",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://substackcdn.com/image/fetch/$s_!gQLj!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5200a27d-29e4-4715-bced-78dcc62b1279_410x308.jpeg",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.7,
+    "reason_zh": "从政治维度剖析AI前沿节奏之争，揭示CEO们为何无法单方面减速，视角反直觉且有论证。",
+    "summary_zh": "文章指出，AI行业如今面临的最难考验并非技术，而是政治。多位AI公司CEO公开呼吁为前沿模型研发设定节奏、放慢速度，但作者分析认为他们实际上做不到。原因在于竞争格局、资本压力与地缘政治博弈相互交织：任何单方面的减速都会被竞争对手或国家力量填补，从而失去主导权。文章梳理了CEO们表态背后的动机与矛盾，说明为何'自愿放缓'在现实中难以落地，并探讨这一困境对行业治理与监管走向的深层含义。",
+    "title_zh": "AI 行业终于发现了最难的考验：政治",
+    "weighted_score": 0.605,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "3443bfe53336bbbe",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "algorithmicbridge",
+        "url": "https://www.thealgorithmicbridge.com/p/the-ai-industry-has-finally-discovered"
       }
     ]
   },
@@ -9506,6 +8660,40 @@
       {
         "source_id": "infoq-cn-ai",
         "url": "https://www.infoq.cn/article/xD9oWbebhcjwgHz1oEfa?utm_source=rss&utm_medium=article"
+      }
+    ]
+  },
+  {
+    "id": "2b3aa79e42444827",
+    "source_id": "techcrunch-ai",
+    "title": "Nvidia CEO Jensen Huang tells Trump ‘we’re not going to let [an AI slowdown] happen’",
+    "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/",
+    "published_at": "2026-09-14T21:51:02+00:00",
+    "raw_text": "Though Elon Musk and Sam Altman have supported Dario Amodei's calls to slow the pace of AI development, Jensen Huang seems to feel differently.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "黄仁勋与Amodei在AI发展节奏上的公开分歧，反映行业内部路线之争，值得关注。",
+    "summary_zh": "英伟达CEO黄仁勋向特朗普表示，'我们不会让AI发展放缓的事情发生'。报道指出，这一立场与Anthropic CEO Dario Amodei呼吁放缓AI开发节奏的观点形成对比，而Elon Musk和Sam Altman此前曾对Amodei的呼吁表示支持。黄仁勋的表态凸显了AI芯片与算力供应方在加速发展上的利益诉求，也折射出行业内部在'加速还是减速'这一核心议题上的公开分歧，以及政策层面围绕AI发展节奏的博弈。",
+    "title_zh": "英伟达 CEO 黄仁勋告诉特朗普'我们不会让（AI 放缓）发生'",
+    "weighted_score": 0.58,
+    "score_breakdown": {
+      "source_authority": 0.75,
+      "novelty": 0.5,
+      "impact": 0.6,
+      "practical_value": 0.4
+    },
+    "story_id": "599c48ee2fbe433a",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/09/14/nvidia-ceo-jensen-huang-tells-trump-were-not-going-to-let-an-ai-slowdown-happen/"
       }
     ]
   },
@@ -9574,6 +8762,605 @@
       {
         "source_id": "infoq-cn-ai",
         "url": "https://www.infoq.cn/article/AcvXqsA1IGC3ACxJSgP6?utm_source=rss&utm_medium=article"
+      }
+    ]
+  },
+  {
+    "id": "461c9514a1c899a6",
+    "source_id": "zh-tonybai",
+    "title": "刚刚，Go 社区冒出一个“AI 工厂”：SuperPlane 开源，专治 AI Agent 乱来",
+    "url": "https://tonybai.com/2026/09/15/superplane-ai-factory-go-open-source/",
+    "published_at": "2026-09-14T22:00:00+00:00",
+    "raw_text": "AI 写代码速度飙升后，工程团队真正的瓶颈转向了审批滞后、风险失控与回滚困难。Go 社区最新开源的自动化控制平面 SuperPlane（GitHub 7k+ Star，Apache 2.0）交出了一份工业级答卷：它将复杂的工程流水线打包为包含画布（Canvas）、控制台（Console）、持久记忆（Memory）与 Git 文件（Files）的自包含 App，提供事件驱动与断点续跑的确定性执行能力，更自带分权严格的 Claude 智能体与预装 AI 工具链的专属 Runner。本文深度拆解 SuperPlane 的核心架构、安全护栏设计与实战落地场景。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "深度分析",
+    "depth_score": 0.75,
+    "reason_zh": "拆解SuperPlane架构与安全护栏，对治理AI Agent乱象的工程团队有直接参考价值。",
+    "summary_zh": "文章介绍Go社区新开源的自动化控制平面SuperPlane（GitHub 7k+ Star，Apache 2.0）。随着AI写代码速度飙升，工程团队的瓶颈转向审批滞后、风险失控与回滚困难。SuperPlane将复杂工程流水线打包为自包含App，包含画布（Canvas）、控制台（Console）、持久记忆（Memory）与Git文件（Files），提供事件驱动与断点续跑的确定性执行能力，并内置分权严格的Claude智能体与预装AI工具链的专属Runner。文章深度拆解其核心架构、安全护栏设计与实战落地场景。",
+    "title_zh": null,
+    "weighted_score": 0.685,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.85
+    },
+    "story_id": "a6deff52817ef633",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/09/15/superplane-ai-factory-go-open-source/"
+      }
+    ]
+  },
+  {
+    "id": "bb4d61dbe9a918b1",
+    "source_id": "gh-claude-code",
+    "title": "anthropics/claude-code v2.1.271",
+    "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271",
+    "published_at": "2026-09-14T22:12:54+00:00",
+    "raw_text": "## What's changed\n\n- Added fast mode in Claude Code Remote sessions (cloud and self-hosted runners): the host's fast-mode setting or `/fast` typed in the session applies where your organization allows it\n- Added mouse support to the `/config` panel in fullscreen mode: the wheel scrolls the settings list, a click on a setting's value changes it, and the row under the pointer is highlighted\n- Added `claude self-hosted-runner --drain-marker-file <path>`: when that file exists at a SIGTERM drain, the runner reports its exit to the server as a host drain (telemetry only)\n- Added per-command `allowed_domains` to Bash, PowerShell and Monitor in auto mode with sandboxing: the hosts a command needs are reviewed with it and opened for it alone; other hosts are refused\n- Added `omitClaudeMd` to agent frontmatter and `--agents` JSON, letting custom and plugin subagents run without user, project and local CLAUDE.md files; managed policy files still load\n- Added `--accept-command <sha256>` to `claud",
+    "category_hint": [
+      "开源项目",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "Claude Code版本更新日志，含远程会话快速模式与配置面板鼠标支持，用户可查。",
+    "summary_zh": "Anthropic发布Claude Code v2.1.271版本更新。主要变更包括：在Claude Code远程会话（云端与自托管Runner）中新增快速模式，主机端的快速模式设置或在会话中输入/fast即可生效，具体取决于组织权限；在全屏模式下为/config配置面板增加鼠标支持，滚轮可滚动设置列表，点击某项设置的值即可修改，指针所在行会高亮显示。此外还包含若干其他改进项。属于常规功能迭代更新。",
+    "title_zh": "anthropics/claude-code v2.1.271",
+    "weighted_score": 0.525,
+    "score_breakdown": {
+      "source_authority": 0.85,
+      "novelty": 0.3,
+      "impact": 0.3,
+      "practical_value": 0.6
+    },
+    "story_id": "a8ebe84ba986e7e1",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-claude-code",
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.271"
+      }
+    ]
+  },
+  {
+    "id": "9bf69dd53e084d2f",
+    "source_id": "gh-ollama",
+    "title": "ollama/ollama v0.34.1-rc1",
+    "url": "https://github.com/ollama/ollama/releases/tag/v0.34.1-rc1",
+    "published_at": "2026-09-14T22:14:03+00:00",
+    "raw_text": "## What's Changed\r\n* app: fix ChatGPT model selector spacing\r\n* mlxrunner: Evict prefix cache snapshots from the active conversation\r\n* mlxrunner: check system free memory and wait for evicted runners before loading the next MLX model \r\n* llm: raise token repeat limit to 100 and return error instead of incomplete result\r\n* mlx: scope array lifetimes instead of pinning and sweeping\r\n* llm: keep gemma3n projector off the CPU\r\n* app: refresh Apps layout and command copy feedback\r\n* MLX and llama.cpp updates\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.34.0...v0.34.1-rc1",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "Ollama候选版本更新日志，涉及MLX内存管理与缓存驱逐修复，本地部署用户可参考。",
+    "summary_zh": "Ollama发布v0.34.1-rc1候选版本更新。主要变更包括：修复ChatGPT模型选择器的间距问题；mlxrunner从活跃对话中驱逐前缀缓存快照；在加载下一个MLX模型前检查系统空闲内存并等待被驱逐的Runner；将token重复上限提高到100，并在结果不完整时返回错误而非不完整结果；MLX改为限定数组生命周期而非固定并清扫；以及保留gem相关改动等。属于面向本地模型运行环境的稳定性与内存管理修复。",
+    "title_zh": "ollama/ollama v0.34.1-rc1",
+    "weighted_score": 0.475,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.25,
+      "impact": 0.25,
+      "practical_value": 0.55
+    },
+    "story_id": "999cc36567289c2e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-ollama",
+        "url": "https://github.com/ollama/ollama/releases/tag/v0.34.1-rc1"
+      }
+    ]
+  },
+  {
+    "id": "3696f5fdcc36b853",
+    "source_id": "siliconangle",
+    "title": "OpenAI reportedly buys AI camera startup Glass Imaging for more than $300M",
+    "url": "https://siliconangle.com/2026/09/14/openai-reportedly-buys-ai-camera-startup-glass-imaging-for-more-than-300m/",
+    "published_at": "2026-09-14T22:28:01+00:00",
+    "raw_text": "<p>OpenAI Group PBC has apparently bought smartphone camera software startup Glass Imaging Inc. for more than $300 million in a deal first reported today by The Wall Street Journal. Neither company has confirmed the purchase publicly. The purchase lands in the middle of OpenAI&#8217;s push into consumer hardware. The company paid $6.5 billion in stock [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/09/14/openai-reportedly-buys-ai-camera-startup-glass-imaging-for-more-than-300m/\">OpenAI reportedly buys AI camera startup Glass Imaging for more than $300M</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/09/glassimaging-scaled.png",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.15,
+    "reason_zh": "OpenAI逾3亿美元收购影像初创Glass Imaging，透露其消费硬件布局动向。",
+    "summary_zh": "据《华尔街日报》率先报道，OpenAI Group PBC据称以超过3亿美元收购了智能手机摄像头软件初创公司Glass Imaging Inc.，双方均未公开确认该交易。此次收购正值OpenAI推进消费硬件业务之际。报道还提到，该公司此前曾以65亿美元股票进行过另一笔交易。收购Glass Imaging可能为OpenAI的硬件产品提供影像处理能力，反映其在消费级设备领域的持续布局。",
+    "title_zh": "OpenAI 据报以逾 3 亿美元收购 AI 影像初创公司 Glass Imaging",
+    "weighted_score": 0.525,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.6,
+      "impact": 0.5,
+      "practical_value": 0.35
+    },
+    "story_id": "08f30beb3aadf185",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/09/14/openai-reportedly-buys-ai-camera-startup-glass-imaging-for-more-than-300m/"
+      }
+    ]
+  },
+  {
+    "id": "fb11640479d19877",
+    "source_id": "zh-ithome",
+    "title": "马斯克旗下 X 和 SpaceXAI 动议撤回针对苹果和 OpenAI 的诉讼指控",
+    "url": "https://www.ithome.com/1/002/338.htm",
+    "published_at": "2026-09-14T22:33:48+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，路透社今天（9 月 15 日）发布博文，报道称基于昨日（9 月 14 日）提交的法庭文件，全球首富埃隆 · 马斯克旗下的 X Corp. 和 SpaceXAI 提出动议，<strong>要求撤回去年针对苹果和 OpenAI 提起的诉讼指控。</strong></p><p>这起诉讼可以追溯到 2025 年 8 月，X Corp. （原推特）和 SpaceXAI（原 xAI）在得州联邦法院提起诉讼，指控苹果违反反垄断法，通过在 iPhone 等设备的“Apple Intelligence”功能中独家整合 OpenAI 的 ChatGPT，偏袒 ChatGPT 而冷落其他聊天机器人开发商（包括 xAI 的 Grok）。</p><p>两家公司最初索赔数十亿美元，称苹果的整合行为限制了 AI 行业的竞争与创新，并减少了消费者选择。而在最新动议中，两家公司申请自愿撤回对苹果的诉讼，法官 Mark Pittman 随后批准撤诉。IT之家附上相关截图如下：</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/6180d0d9-9a35-4c22-8ee3-2750c16bca28.jpg?x-bce-process=image/format,f_auto\" /></p><p>法院文件没有说明撤诉理由，也未写明双方是否达成和解。</p>",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/6180d0d9-9a35-4c22-8ee3-2750c16bca28.jpg?x-bce-process=image/format,f_auto",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "马斯克旗下X与SpaceXAI撤回对苹果和OpenAI的反垄断诉讼，反映AI竞争格局变化。",
+    "summary_zh": "据路透社报道，基于9月14日提交的法庭文件，马斯克旗下的X Corp.和SpaceXAI提出动议，要求撤回去年针对苹果和OpenAI提起的诉讼指控。该诉讼可追溯至2025年8月，两家公司在得州联邦法院起诉，指控苹果违反反垄断法，通过在iPhone等设备的Apple Intelligence中独家整合OpenAI的ChatGPT，偏袒ChatGPT而冷落包括xAI的Grok在内的其他聊天机器人开发商。两家公司最初索赔数十亿美元，称苹果的整合限制了AI行业竞争与创新。",
+    "title_zh": null,
+    "weighted_score": 0.47,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.4,
+      "impact": 0.4,
+      "practical_value": 0.3
+    },
+    "story_id": "0a3bc07c1e7f0e2d",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/338.htm"
+      }
+    ]
+  },
+  {
+    "id": "1954059757a09c60",
+    "source_id": "siliconangle",
+    "title": "Contact center AI ROI shifts toward resolution quality and governed execution",
+    "url": "https://siliconangle.com/2026/09/14/contact-center-ai-resolution-contactcentersummit/",
+    "published_at": "2026-09-14T22:38:24+00:00",
+    "raw_text": "<p>The next phase of contact center artificial intelligence will be measured less by how many interactions machines handle and more by whether customers actually get their problems resolved. That was one of the central conclusions from Bob Laliberte (pictured, left), principal analyst for networking and observability at theCUBE Research, and Zeus Kerravala (right), principal analyst [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/09/14/contact-center-ai-resolution-contactcentersummit/\">Contact center AI ROI shifts toward resolution quality and governed execution</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/09/Bob-Laliberte-and-Zeus-Kerravala-The-AI-ROI-in-Contact-Center-Summit-2026.png",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.5,
+    "reason_zh": "指出客服AI的ROI衡量正从处理量转向问题解决质量与受治理的执行，对企业选型有启发。",
+    "summary_zh": "文章报道了theCUBE Research分析师Bob Laliberte与Zeus Kerravala的核心观点：联络中心AI的下一阶段将不再以机器处理了多少交互量来衡量，而是看客户的问题是否真正得到解决。这一转变意味着ROI评估重心从自动化覆盖率转向解决质量与受治理的执行能力。文章讨论了企业在部署客服AI时应关注的实际成效指标，以及治理与执行框架在其中的作用，为联络中心AI的选型与评估提供了新的视角。",
+    "title_zh": "联络中心 AI 的 ROI 重心转向解决质量与受治理的执行",
+    "weighted_score": 0.5375,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.5,
+      "impact": 0.45,
+      "practical_value": 0.6
+    },
+    "story_id": "ea061f48d14cc051",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "siliconangle",
+        "url": "https://siliconangle.com/2026/09/14/contact-center-ai-resolution-contactcentersummit/"
+      }
+    ]
+  },
+  {
+    "id": "575d9e061a30ccc2",
+    "source_id": "zh-ithome",
+    "title": "OpenAI 联合创始人布罗克曼：人类已迈入通用人工智能时代",
+    "url": "https://www.ithome.com/1/002/341.htm",
+    "published_at": "2026-09-14T22:45:38+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，在接受 a16z 采访时，OpenAI 联合创始人格雷格 · 布罗克曼（Greg Brockman）表示，<strong>人类已经迈入通用人工智能时代。</strong></p><p style=\"text-align: center;\"></p><p>IT之家注：通用人工智能（Artificial General Intelligence，AGI）通常指能在广泛领域处理复杂认知任务，并能迁移、学习和完成新任务的 AI。</p><p>OpenAI 在《OpenAI Charter》中给出的定义为 AGI 是“高度自主、且在大多数具有经济价值的工作上超越人类的系统”。这一定义包含两道门槛：一是系统可自主完成较完整的工作链路；二是在多数经济活动中，其表现超过人类。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/79ada4cc-82bf-452e-8329-d1b2e4c83b74.png?x-bce-process=image/format,f_auto\" /></p><p>在采访中，布罗克曼表示随着 GPT-6 Astra 等模型具备长时程自主执行与电脑操作能力，AI 已跨入可被称为“AGI 时代”的门槛。AGI 不再只是未来的概念，而是正在现实中出现；<strong>接下来的关键问题将逐渐从“何时实现 AGI”转向如何使用和部署越来越强大的 AI 系统。</strong></p><p>对此布罗克曼表示 OpenAI 抽调了 25% 的生产工程师，暂停其原有项目，转入系统防御和安全架构升级工作。团队使用 Astra 查找内部系统中的漏洞，并称已修复多项严重问题。</p><p>此外，布罗克曼称，团队在排查中发现了新问题，但随后问题发现进入“饱和”。他表示，据 OpenAI 所知，团队已基本找到 Astra 有能力识别的全部 P0 级问题，以及其可发现的全部关键问题。</p><p>他指出，这一结果并不代表系统不存在其他漏洞。随着新模型出现，团队将启动新一轮排查，并把新一代网络安全能力部署到内部系统中，以寻找此前未被识别的漏洞。</p><p style=\"text-",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/79ada4cc-82bf-452e-8329-d1b2e4c83b74.png?x-bce-process=image/format,f_auto",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.3,
+    "reason_zh": "布罗克曼宣称人类已进入AGI时代，对照OpenAI官方定义可引发对AGI标准的讨论。",
+    "summary_zh": "在接受a16z采访时，OpenAI联合创始人格雷格·布罗克曼表示，人类已经迈入通用人工智能（AGI）时代。文章援引OpenAI在《OpenAI Charter》中的定义：AGI是'高度自主、且在大多数具有经济价值的工作上超越人类的系统'，包含两道门槛——系统可自主完成较完整的工作链路，以及在多数经济活动中表现超过人类。布罗克曼的表态引发对当前AI能力是否已达AGI标准的讨论，也反映业界对AGI定义与时间点的分歧。",
+    "title_zh": null,
+    "weighted_score": 0.5275,
+    "score_breakdown": {
+      "source_authority": 0.65,
+      "novelty": 0.5,
+      "impact": 0.55,
+      "practical_value": 0.35
+    },
+    "story_id": "9976ddc3f5071f55",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/341.htm"
+      }
+    ]
+  },
+  {
+    "id": "fea625e1b5148d58",
+    "source_id": "zh-ithome",
+    "title": "苹果 iOS 27 家庭 AI 功能强制捆绑 2TB 及以上 iCloud+ 套餐：单摄像头月费 9.99 美元、五摄像头 59.99 美元，引 iPhone 用户不满",
+    "url": "https://www.ithome.com/1/002/348.htm",
+    "published_at": "2026-09-14T23:06:29+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，据 MacRumors 今日报道，苹果要求用户至少订阅每月 9.99 美元<span class=\"exch-money-value \">（现汇率约合 67.1 元人民币）</span>的 2TB iCloud+ 套餐，才能将 iOS 27 中“Apple Intelligence Home”功能与 HomeKit 摄像头搭配使用，这使得 iPhone 用户颇为不满。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/e8388a5c-4087-45c0-b7f8-834f18468699.jpg\" /></p><p>该功能基于 Apple Intelligence，可识别画面中的人物、动物、车辆、包裹及其他运动，并生成文字描述摘要。</p><p>对于苹果套餐，6TB iCloud+ 套餐每月 29.99 美元<span class=\"exch-money-value\">（IT之家注：现汇率约合 201.4 元人民币）</span>，支持两台摄像头；12TB 套餐每月 59.99 美元<span class=\"exch-money-value \">（现汇率约合 402.9 元人民币）</span>，支持最多五台摄像头；暂不支持无限数量摄像头。</p><p>另外，Apple One Premier 订阅用户因捆绑套餐仅含 2TB iCloud+ 存储空间，同样被限制为单台摄像头。</p><p>这一限制与现有 HomeKit Secure Video 的录制权益存在明显差异。目前，50GB iCloud+ 套餐（每月 0.99 美元）即可使用单台 HomeKit Secure Video 摄像头，200GB 套餐（每月 2.99 美元）支持五台，2TB 套餐则支持无限数量摄像头。</p><p>这意味着拥有 2TB 套餐和多台 HomeKit 摄像头的用户，只能在其中一台摄像头上使用新的 AI 摘要功能。HomeKit 安防录像不占用 iCloud+ 套餐的常规存储空间，2TB 容量仍可全部用于照片、文档等数据。</p><p>该订阅要求在 Reddit 和 MacRum",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/e8388a5c-4087-45c0-b7f8-834f18468699.jpg",
+    "category": "产品发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "苹果iOS 27家庭AI功能强制捆绑2TB iCloud+套餐，引发用户不满，涉及定价策略。",
+    "summary_zh": "据MacRumors报道，苹果要求用户至少订阅每月9.99美元（约合67.1元人民币）的2TB iCloud+套餐，才能将iOS 27中的'Apple Intelligence Home'功能与HomeKit摄像头搭配使用，这引发iPhone用户不满。该功能基于Apple Intelligence，可识别画面中的人物等内容。报道还提到多摄像头场景的定价：单摄像头月费9.99美元，五摄像头为59.99美元。此举被视为苹果将AI功能与云存储订阅捆绑的定价策略。",
+    "title_zh": null,
+    "weighted_score": 0.505,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.5,
+      "impact": 0.4,
+      "practical_value": 0.5
+    },
+    "story_id": "ad7d0e5883b2d227",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/348.htm"
+      }
+    ]
+  },
+  {
+    "id": "391105c1af4e9c9e",
+    "source_id": "reddit-agi",
+    "title": "Why would anyone want agi? If it can literally destroy everything and everyone",
+    "url": "https://www.reddit.com/r/agi/comments/1wgjb5c/why_would_anyone_want_agi_if_it_can_literally/",
+    "published_at": "2026-09-14T23:12:22+00:00",
+    "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Noahblfreak\"> /u/Noahblfreak </a> <br /> <span><a href=\"https://www.reddit.com/r/agi/comments/1wgjb5c/why_would_anyone_want_agi_if_it_can_literally/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/agi/comments/1wgjb5c/why_would_anyone_want_agi_if_it_can_literally/\">[comments]</a></span>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.15,
+    "reason_zh": "Reddit 论坛上关于 AGI 存在风险的开放式提问，缺乏论证与信息增量，仅反映社区情绪。",
+    "summary_zh": "这是 Reddit r/agi 版块的一条用户发帖，标题质问“既然 AGI 可能毁灭一切和所有人，为什么还会有人想要它”。帖子本身没有正文内容，仅包含链接与评论区入口，属于典型的社区情绪化提问。它折射出部分公众对通用人工智能潜在失控风险的担忧，但未提供任何技术论证、数据或可迁移的认知框架，讨论价值主要停留在观点碰撞层面。",
+    "title_zh": "既然 AGI 可能毁灭一切和所有人，为什么还会有人想要它？",
+    "weighted_score": 0.14,
+    "score_breakdown": {
+      "source_authority": 0.15,
+      "novelty": 0.2,
+      "impact": 0.1,
+      "practical_value": 0.1
+    },
+    "story_id": "14f1862a04fe69bf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-agi",
+        "url": "https://www.reddit.com/r/agi/comments/1wgjb5c/why_would_anyone_want_agi_if_it_can_literally/"
+      }
+    ]
+  },
+  {
+    "id": "49e8c41fe655b4a0",
+    "source_id": "zh-ithome",
+    "title": "代码显示：苹果 Siri AI 可替换为 Anthropic Claude 或 OpenAI ChatGPT",
+    "url": "https://www.ithome.com/1/002/353.htm",
+    "published_at": "2026-09-14T23:21:30+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，开发者“pdfu”对 iOS 27 和 macOS Golden Gate 进行深入挖掘之后发现，苹果已在其私有框架中将其新版 Siri AI 架构设计为可与第三方 AI 模型深度协作。</p><p>相关演示视频显示，Anthropic 的 Claude、OpenAI 的 GPT-5.6 模型均可接入 Siri 框架。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/12fc15bc-a50a-4c0b-a440-3508f49f3387.jpg?x-bce-process=image/format,f_auto\" /></p><p>其中一项机制名为“模型委托”（Model Delegation），它允许 Claude 以 Siri 扩展的形式出现，与目前内置的 ChatGPT 扩展类似。</p><p>在 pdfu 发布的视频演示中，macOS 用户可调出“搜索或询问”栏，通过“Ask…”菜单选择 Claude 作为 AI 模型。</p><p>启用 Claude 扩展后，用户要求 Siri“让 Claude”在提醒事项 App 中创建一条提醒。Claude 负责解析这一自然语言请求，随后转交给 Siri 创建实际事件提醒。这意味着当请求涉及苹果系统功能时，Claude 仍会将任务交还给 Siri 执行。</p><p style=\"text-align: center;\"><a class=\"ithome_super_player\" href=\"https://weibo.com/tv/show/1034:5343309552615440?mid=5343309849431171\" target=\"_blank\"><img src=\"https://img.ithome.com/newsuploadfiles/2026/9/aa182f50-dbea-4671-a2db-062023d15c34.jpg\" /></a></p><p>在另一示例中，Claude 在 Siri 应用对话窗口内接收了创建 CSV 文件的请求，而 Siri 本身无法处理此类任务，但 Cla",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/12fc15bc-a50a-4c0b-a440-3508f49f3387.jpg?x-bce-process=image/format,f_auto",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "开发者挖掘代码发现 Siri 可接入 Claude 与 ChatGPT，揭示苹果 AI 架构的开放化转向。",
+    "summary_zh": "IT之家报道，开发者 pdfu 深入挖掘 iOS 27 与 macOS Golden Gate 后发现，苹果已在其私有框架中将新版 Siri AI 架构设计为可与第三方模型深度协作。演示视频显示 Anthropic 的 Claude 与 OpenAI 的 GPT-5.6 均可接入 Siri 框架，其中一项机制名为“模型委托”（Model Delegation）。这意味着苹果可能在 Siri 底层引入多模型路由能力，而非仅依赖自研模型，反映出其在生成式 AI 竞争中转向平台化整合的策略。",
+    "title_zh": null,
+    "weighted_score": 0.6025,
+    "score_breakdown": {
+      "source_authority": 0.55,
+      "novelty": 0.7,
+      "impact": 0.65,
+      "practical_value": 0.5
+    },
+    "story_id": "f12ef43d7eadfd20",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/353.htm"
+      }
+    ]
+  },
+  {
+    "id": "7cbee006c535073e",
+    "source_id": "gh-openai-python",
+    "title": "openai/openai-python v3.14.0",
+    "url": "https://github.com/openai/openai-python/releases/tag/v3.14.0",
+    "published_at": "2026-09-14T23:28:28+00:00",
+    "raw_text": "## [3.14.0](https://github.com/openai/openai-python/compare/v3.13.0...v3.14.0) (2026-09-14)\n\n\n### Features\n\n* **streaming:** normalize errors raised while reading streams ([#3827](https://github.com/openai/openai-python/issues/3827)) ([d7c41ef](https://github.com/openai/openai-python/commit/d7c41efee1b0802b79f3f88a678ef2052b06e9ce))\n\n\n### Bug Fixes\n\n* bound vector store file polling ([#3401](https://github.com/openai/openai-python/issues/3401)) ([ae41bc4](https://github.com/openai/openai-python/commit/ae41bc46cdd53d17e948ac8a73e16bdbf34123a1))\n* **example:** refresh realtime push_to_talk_app session types ([#2926](https://github.com/openai/openai-python/issues/2926)) ([0b7ad38](https://github.com/openai/openai-python/commit/0b7ad38292ef862f1dd07f71543b2f60eade8999))\n* **files:** normalize PathLike upload tuples ([#3475](https://github.com/openai/openai-python/issues/3475)) ([90ac74c](https://github.com/openai/openai-python/commit/90ac74ccfe7a966787d1f204755d4cd4cc4d406a))\n* include com",
+    "category_hint": [
+      "开源项目",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "openai-python v3.14.0 版本更新日志，主要修复流式读取错误与向量存储轮询问题。",
+    "summary_zh": "OpenAI 官方 Python SDK 发布 v3.14.0 版本，更新内容以修复为主。新特性方面，针对流式（streaming）场景中读取流时抛出的错误进行了规范化处理，使异常信息更一致。Bug 修复方面，对向量存储（vector store）文件轮询设置了边界限制，避免无限轮询。该版本属于常规维护性更新，对使用 openai-python 构建应用的开发者有直接价值，但不涉及模型能力或架构层面的变化。",
+    "title_zh": null,
+    "weighted_score": 0.4575,
+    "score_breakdown": {
+      "source_authority": 0.85,
+      "novelty": 0.25,
+      "impact": 0.2,
+      "practical_value": 0.45
+    },
+    "story_id": "3575a22ddbfeb478",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "gh-openai-python",
+        "url": "https://github.com/openai/openai-python/releases/tag/v3.14.0"
+      }
+    ]
+  },
+  {
+    "id": "947f3d1768dc8b82",
+    "source_id": "zh-ithome",
+    "title": "曝 Glass Imaging 被 OpenAI 收购：前苹果员工创办，其影像技术已用于荣耀手机",
+    "url": "https://www.ithome.com/1/002/359.htm",
+    "published_at": "2026-09-14T23:41:04+00:00",
+    "raw_text": "<p>IT之家 9 月 15 日消息，华尔街日报昨日（9 月 14 日）发布博文，报道称 OpenAI 公司悄然收购手机影像初创公司 Glass Imaging，<strong>预估这笔交易后该公司估值超过 3 亿美元<span class=\"exch-money-value \">（IT之家注：现汇率约合 20.15 亿元人民币）</span>。</strong></p><p>IT之家援引该媒体报道，Glass Imaging 主要从事开发人工智能手机影像技术，目标是让手机照片达到数码单反相机级别。</p><p>该初创公司的核心产品 GlassAI，用基于 RAW 传感器数据训练的相机专用神经网络，取代了传统图像信号处理流程的部分环节。</p><p>融资方面，Glass Imaging 去年一轮融资时估值约为 1 亿美元<span class=\"exch-money-value \">（现汇率约合 6.72 亿元人民币）</span>，本次交易的估值超过 3 亿美元<span class=\"exch-money-value \">（现汇率约合 20.15 亿元人民币）</span>。该公司此前从 Alphabet 风投部门 GV 与 Insight Partners 等投资者处，累计融资约 3,000 万美元<span class=\"exch-money-value \">（现汇率约合 2.01 亿元人民币）</span>。</p><p>背景方面，Glass Imaging 于 2019 年由 Ziv Attar 和 Tom Bishop 创立，两人均为前苹果员工，曾参与苹果相机技术开发，均曾参与开发人像模式功能。</p><p>在技术路径上，创始人认为手机摄像头画质已接近平台期。因此，公司尝试结合硬件与软件，提升手机成像质量，<strong>其变焦影像技术已用于中国手机品牌荣耀（Honor）的一条新手机产品线。</strong></p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/28ec09aa-94ec-4a11-9ce1-ad06274d79e7.png\" /></p><figcaption>上图为今年",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/28ec09aa-94ec-4a11-9ce1-ad06274d79e7.png",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.15,
+    "reason_zh": "OpenAI 收购影像初创 Glass Imaging，估值超 3 亿美元，补强手机影像 AI 能力。",
+    "summary_zh": "据华尔街日报报道，OpenAI 已悄然收购手机影像初创公司 Glass Imaging，交易后估值预计超过 3 亿美元。Glass Imaging 由前苹果员工创办，核心产品 GlassAI 使用基于 RAW 传感器数据训练的相机专用神经网络，替代传统图像信号处理流程的部分环节，目标是让手机照片达到单反级别，其技术已用于荣耀手机。该公司去年融资时估值约 1 亿美元。此次收购显示 OpenAI 正将能力边界从语言模型向端侧影像处理延伸。",
+    "title_zh": null,
+    "weighted_score": 0.55,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.65,
+      "impact": 0.55,
+      "practical_value": 0.35
+    },
+    "story_id": "f76437e90c36e134",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-ithome",
+        "url": "https://www.ithome.com/1/002/359.htm"
+      }
+    ]
+  },
+  {
+    "id": "dcd327682447228b",
+    "source_id": "zh-meituan-tech",
+    "title": "美团智播——数字人直播技术创新与实践",
+    "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html",
+    "published_at": "2026-09-14T23:46:21.261213+00:00",
+    "raw_text": "美团智播围绕 AI 主播「长得真→动得准→演得活→卖得好」构建了完整技术闭环：真人 1:1 复刻、换装换背景身份不跑偏；动作自然流畅，告别「木偶戏」；边说边动、音画一致；背后还有推理加速技术支撑万路并发开播，让普惠落地成为可能。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/a7c5a936998959a941d145ac3eebe7334801382.png",
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "美团数字人直播技术复盘，覆盖复刻、动作、音画同步与万路并发推理加速的工程取舍。",
+    "summary_zh": "美团技术团队分享“美团智播”数字人直播的技术创新与实践，围绕 AI 主播“长得真→动得准→演得活→卖得好”构建完整技术闭环。具体包括：真人 1:1 复刻，换装换背景后身份不跑偏；动作自然流畅，摆脱“木偶戏”观感；边说边动、音画一致；底层依托推理加速技术支撑万路并发开播，使普惠落地成为可能。文章属于真实业务系统的工程复盘，对数字人、实时推理与直播场景的从业者具有参考价值。",
+    "title_zh": null,
+    "weighted_score": 0.625,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.5,
+      "practical_value": 0.7
+    },
+    "story_id": "d4343cde97a49034",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html"
+      }
+    ]
+  },
+  {
+    "id": "4e8227e28349abd9",
+    "source_id": "zh-meituan-tech",
+    "title": "美团搜索3.0：LLM 语义表征在排序模型的探索与应用",
+    "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html",
+    "published_at": "2026-09-14T23:46:21.261275+00:00",
+    "raw_text": "美团搜索团队正依托团垂融合新架构与生成式大模型新技术，全面重构本地生活搜索底座。本系列技术博客将持续介绍美团搜索 3.0 的技术探索，本文聚焦 LLM 语义表征在服务零售排序场景上的三期实践——从单点特征验证到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p1.meituan.net/meituantechblog/8f6d0d2a1b53e0fbe26ec7f5426bd45a302269.png",
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.75,
+    "reason_zh": "美团搜索 3.0 系列，详解 LLM 语义表征在排序模型从单点验证到跨场景复用的三期实践。",
+    "summary_zh": "美团搜索团队正依托团垂融合新架构与生成式大模型技术，全面重构本地生活搜索底座。本文是该系列技术博客的一篇，聚焦 LLM 语义表征在服务零售排序场景上的三期实践：第一期从单点特征验证入手，第二期构建系统性表征体系，第三期实现跨场景迁移复用，系统探索语义匹配信号在搜索排序中的应用路径。内容属于一线业务的技术复盘，对搜索排序、LLM 特征工程方向的工程师有较高参考价值。",
+    "title_zh": null,
+    "weighted_score": 0.65,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.65,
+      "impact": 0.55,
+      "practical_value": 0.7
+    },
+    "story_id": "b4840a22e716d559",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html"
+      }
+    ]
+  },
+  {
+    "id": "6064b6036f129ffd",
+    "source_id": "zh-meituan-tech",
+    "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
+    "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
+    "published_at": "2026-09-14T23:46:21.261334+00:00",
+    "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "美团图灵团队两年 Agent 评测实践总结，由浅入深讲解如何建立评测体系，方法论可迁移。",
+    "summary_zh": "这是一篇由浅入深介绍 Agent 评测的科普文章。前两章系统介绍评测是什么以及如何建立评测体系，其中第二章是美团图灵 Agent 评测团队深入各业务团队 BP 总结出的实践经验，是团队在两年实践过程中逐步打磨出的认知。文章将抽象的评测概念与真实业务场景结合，给出可操作的体系搭建思路，对正在构建 Agent 产品、需要设计评测流程的团队具有较高的方法借鉴价值。",
+    "title_zh": null,
+    "weighted_score": 0.6225,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.55,
+      "impact": 0.5,
+      "practical_value": 0.75
+    },
+    "story_id": "9ba181dd6f145810",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
+      }
+    ]
+  },
+  {
+    "id": "cf8524a8a5bf65d8",
+    "source_id": "zh-meituan-tech",
+    "title": "美团正式发布 CatPaw：全场景 AI Agent，从个人提效到企业智能化",
+    "url": "https://tech.meituan.com/2026/07/28/CatPaw-LongCat.html",
+    "published_at": "2026-09-14T23:46:21.261361+00:00",
+    "raw_text": "搭载美团 LongCat 2.0 的全场景 AI Agent 平台 CatPaw 正式上线，我们将模型能力从“跑得动”推向“用得好”。CatPaw 提供开箱即用的 AI 智能工作台与企业级 Agent 开发托管能力。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/a690ba49597fd8720f96ea56573b54cc151290.png",
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "美团发布全场景 AI Agent 平台 CatPaw，搭载 LongCat 2.0，提供企业级 Agent 开发托管。",
+    "summary_zh": "美团正式发布全场景 AI Agent 平台 CatPaw，搭载美团 LongCat 2.0 模型，官方称将模型能力从“跑得动”推向“用得好”。CatPaw 提供开箱即用的 AI 智能工作台，以及面向企业的 Agent 开发托管能力，覆盖从个人提效到企业智能化的多种场景。该发布标志着美团在自有大模型基础上进一步向 Agent 平台层延伸，与国内其他厂商的 Agent 平台形成竞争，但文章以发布公告为主，未披露具体技术细节与评测数据。",
+    "title_zh": null,
+    "weighted_score": 0.6175,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.55,
+      "practical_value": 0.6
+    },
+    "story_id": "b67e879d30873e21",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/28/CatPaw-LongCat.html"
+      }
+    ]
+  },
+  {
+    "id": "09e62eb15568147b",
+    "source_id": "zh-meituan-tech",
+    "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+    "published_at": "2026-09-14T23:46:21.261392+00:00",
+    "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.75,
+    "reason_zh": "美团开源下一代搜索智能体评测基准 LoHoSearch，用知识图谱校准 AI 能力认知，应对基准饱和。",
+    "summary_zh": "美团开源下一代搜索智能体评测基准 LoHoSearch，旨在用知识图谱校准 AI 能力认知。文章指出，过去一年 Search Agent 能力显著演进，在 BrowseComp 等评测上顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上，基准迅速饱和导致其区分模型能力的价值递减。LoHoSearch 通过引入知识图谱构建更具挑战性的评测任务，试图重新拉开模型能力差距，为搜索智能体的评测提供新的标尺，对评测研究与 Agent 开发者均有参考意义。",
+    "title_zh": null,
+    "weighted_score": 0.74,
+    "score_breakdown": {
+      "source_authority": 0.75,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "eb00a4db4521a3f4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+      }
+    ]
+  },
+  {
+    "id": "20e7c40f70ae20dc",
+    "source_id": "zh-meituan-tech",
+    "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
+    "published_at": "2026-09-14T23:46:21.261415+00:00",
+    "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "美团 LongCat 团队构建 MineExplorer，首个开放世界分钟级长程任务基准，揭示多模态模型能力断层。",
+    "summary_zh": "美团 LongCat 团队构建了 MineExplorer，这是首个在开放世界中做到分钟级长程任务的评测基准，用于系统性评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。文章指出，当前顶级多模态大模型在温室式静态任务上表现优异，但在动态开放世界中暴露出被忽视的能力断层。该基准通过更贴近真实世界的任务设计，为评估模型的规划与探索能力提供了新工具，对多模态 Agent 研究方向具有启发意义。",
+    "title_zh": null,
+    "weighted_score": 0.73,
+    "score_breakdown": {
+      "source_authority": 0.75,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.65
+    },
+    "story_id": "703bdf6f589de6ef",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
       }
     ]
   },

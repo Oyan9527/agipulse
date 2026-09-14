@@ -243,40 +243,6 @@
     "curated": true
   },
   {
-    "id": "506852d46ee88c93",
-    "source_id": "zh-tonybai",
-    "title": "Go 核心团队放大招：cgo 不用 C编译器也能跑，AI/GPU 库调用将迎来大简化",
-    "url": "https://tonybai.com/2026/09/14/go-cgo-without-c-toolchain/",
-    "published_at": "2026-09-13T22:00:00+00:00",
-    "raw_text": "Go 官方近期曝出 Go 1.28 可能包含“cgo 无需 C 工具链”的新特性，随后核心开发者 Matloob 正式提交提案 golang/go#81450。该提案打算把 cgo 从“编译 C 代码的机制”升级为“描述并调用 C ABI 的机制”：包库作者在开发阶段用 C 工具链生成一份可读、可编辑、可 check in 的 Go 语法“binding 文件”；终端用户 `go build` 时只需要 Go 工具链本身理解目标平台的 C ABI，生成 Go ＋ 汇编胶水代码即可完成调用，全程不再需要 gcc／clang。这一改动与 Go 1.20、1.21 持续剥离 host C 工具链依赖的路线一脉相承，对跨平台交叉编译和调用预编译的 AI／GPU 原生库尤其有价值，但它无法覆盖包含 C 源码的传统 cgo 场景，binding 的长期维护和生态建设将是落地的最大挑战。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "Go 语言核心团队提案，cgo 无需 C 工具链，对 AI/GPU 库调用和跨平台编译影响深远，技术细节扎实。",
-    "summary_zh": "Go 官方近期曝出 Go 1.28 可能包含“cgo 无需 C 工具链”的新特性，核心开发者 Matloob 正式提交提案 golang/go#81450。该提案打算把 cgo 从“编译 C 代码的机制”升级为“描述并调用 C ABI 的机制”：包库作者在开发阶段用 C 工具链生成一份可读、可编辑、可 check in 的 Go 语法“binding 文件”；终端用户 go build 时只需要 Go 工具链本身理解目标平台的 C ABI，生成 Go 加汇编胶水代码即可完成调用，全程不再需要 gcc/clang。这一改动与 Go 1.20、1.21 持续剥离 host C 工具链依赖的路线一脉相承，对跨平台交叉编译和调用预编译的 AI/GPU 原生库尤其有价值，但它无法覆盖包含 C 源码的传统 cgo 场景，binding 的长期维护和生态建设将是落地的最大挑战。",
-    "title_zh": "Go 核心团队放大招：cgo 不用 C 编译器也能跑，AI/GPU 库调用将迎来大简化",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.8
-    },
-    "story_id": "d4ff3c76b61578ca",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-tonybai",
-        "url": "https://tonybai.com/2026/09/14/go-cgo-without-c-toolchain/"
-      }
-    ],
-    "curated": true
-  },
-  {
     "id": "befa5752b167f16d",
     "source_id": "arxiv-cs-cl",
     "title": "Harness or Model? Isolating the Harness Effect in Agentic Coding with a Contamination-Controlled Private Suite",
@@ -306,6 +272,40 @@
       {
         "source_id": "arxiv-cs-cl",
         "url": "https://arxiv.org/abs/2609.11987"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "09e62eb15568147b",
+    "source_id": "zh-meituan-tech",
+    "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+    "published_at": "2026-09-14T23:46:21.261392+00:00",
+    "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.75,
+    "reason_zh": "美团开源下一代搜索智能体评测基准 LoHoSearch，用知识图谱校准 AI 能力认知，应对基准饱和。",
+    "summary_zh": "美团开源下一代搜索智能体评测基准 LoHoSearch，旨在用知识图谱校准 AI 能力认知。文章指出，过去一年 Search Agent 能力显著演进，在 BrowseComp 等评测上顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上，基准迅速饱和导致其区分模型能力的价值递减。LoHoSearch 通过引入知识图谱构建更具挑战性的评测任务，试图重新拉开模型能力差距，为搜索智能体的评测提供新的标尺，对评测研究与 Agent 开发者均有参考意义。",
+    "title_zh": null,
+    "weighted_score": 0.74,
+    "score_breakdown": {
+      "source_authority": 0.75,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "eb00a4db4521a3f4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
       }
     ],
     "curated": true
@@ -439,7 +439,7 @@
       "practical_value": 0.6
     },
     "story_id": "c38f907c441a35cf",
-    "multi_source_count": 5,
+    "multi_source_count": 6,
     "sources": [
       {
         "source_id": "simonwillison",
@@ -460,6 +460,10 @@
       {
         "source_id": "zh-v2ex",
         "url": "https://www.v2ex.com/t/1241973#reply9"
+      },
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1wg7l78/gpt6_astra_for_sports_analytics/"
       }
     ],
     "curated": true
@@ -530,42 +534,6 @@
       {
         "source_id": "toms-hardware",
         "url": "https://www.tomshardware.com/pc-components/gpu-drivers/solo-developer-wires-zluda-to-amds-hip-getting-multiple-cuda-libraries-running-on-a-radeon-rx-9060-xt-in-windows-cuda-exclusive-workloads-on-amd-hardware-in-windows-is-possible-without-virtualization-or-dual-booting"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "00a6b30dd37a4a14",
-    "source_id": "marktechpost",
-    "title": "NVIDIA Open-Sources OSMO: One YAML Orchestrates Physical AI Training, Simulation, and Robot Testing",
-    "url": "https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/",
-    "published_at": "2026-09-14T08:04:27+00:00",
-    "raw_text": "<p>NVIDIA has open-sourced OSMO, the Kubernetes-native workflow orchestrator it uses internally for Project GR00T, Isaac Lab, and Isaac Sim. OSMO lets robotics teams define training, simulation, and hardware-in-the-loop tasks in a single YAML file and routes each one to the right compute tier, from GB200 clusters to Jetson AGX Thor devices, without infrastructure code. Apache-2.0 licensed, latest release 6.3.1.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/\">NVIDIA Open-Sources OSMO: One YAML Orchestrates Physical AI Training, Simulation, and Robot Testing</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "NVIDIA开源OSMO工作流编排器，一份YAML统一物理AI训练、仿真与机器人测试。",
-    "summary_zh": "NVIDIA开源了OSMO，这是其内部用于Project GR00T、Isaac Lab和Isaac Sim的Kubernetes原生工作流编排器。OSMO允许机器人团队在单个YAML文件中定义训练、仿真和硬件在环任务，并将每个任务路由到合适的计算层级，从GB200集群到Jetson AGX Thor设备，无需编写基础设施代码。该项目采用Apache-2.0许可证，旨在简化物理AI开发流程，降低机器人团队在训练与测试环节的工程复杂度。",
-    "title_zh": "NVIDIA开源OSMO：一份YAML编排物理AI训练、仿真与机器人测试",
-    "weighted_score": 0.675,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "6b6bacb9afc22d2b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/"
       }
     ],
     "curated": true,
@@ -671,6 +639,42 @@
       {
         "source_id": "linux-foundation",
         "url": "https://www.linuxfoundation.org/blog/open-secure-ai-alliance-joins-the-linux-foundation-to-build-a-shared-open-defense-stack-for-the-ai-era"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "0f1f17c815280cbf",
+    "source_id": "latent-space",
+    "title": "Humanity’s Last Invention — Richard Socher of Recursive",
+    "url": "https://www.latent.space/p/recursive",
+    "published_at": "2026-09-14T16:04:16+00:00",
+    "raw_text": "Richard Socher is an NLP OG and CEO of You.com, who has now spun out an even more ambitious startup focused on RSI &#8212; already worth $5B!",
+    "category_hint": [
+      "技巧与观点",
+      "行业动态"
+    ],
+    "image_url": "https://substackcdn.com/image/fetch/$s_!6T4g!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc6110fb7-c06c-4d1e-bd0e-0709f6ca1011_1600x1600.webp",
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.8,
+    "reason_zh": "Richard Socher 谈递归自我改进（RSI）与人类最后发明，NLP 老将的新创业思考值得一听。",
+    "summary_zh": "本期 Latent Space 播客邀请 Richard Socher，他是 NLP 领域的资深人物、You.com CEO，如今又分拆出一家更雄心勃勃的初创公司 Recursive，专注于递归自我改进（RSI），估值已达 50 亿美元。Socher 在对话中探讨了 RSI 的潜力与风险，以及为何这可能成为“人类最后的发明”。他分享了从 NLP 到搜索再到 RSI 的创业历程，并对 AI 自我改进的路径和边界提出了独到见解。",
+    "title_zh": "人类最后的发明——Recursive 的 Richard Socher",
+    "weighted_score": 0.7,
+    "score_breakdown": {
+      "source_authority": 0.75,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.5
+    },
+    "story_id": "575c95143e794502",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "latent-space",
+        "url": "https://www.latent.space/p/recursive"
       }
     ],
     "curated": true,
