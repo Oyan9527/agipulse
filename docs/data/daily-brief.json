@@ -1,7 +1,40 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T20:03:13.129552+00:00",
+  "generated_at": "2026-09-16T23:45:08.478487+00:00",
   "items": [
+    {
+      "id": "0d25dc207e9d8ef7",
+      "source_id": "zh-juejin",
+      "title": "拆给 8 个子智能体，只拿回 2.3 倍信息：多智能体分解的产出守恒律",
+      "url": "https://juejin.cn/post/7686040694946791433",
+      "published_at": "2026-09-16T14:06:27+00:00",
+      "raw_text": "一、三条 folklore，和一个没人问的问题 任何一份多智能体架构的设计文档里，都能找到这三条理由： folklore 说法 它回答的问题 上下文更小 每个子 agent 只看自己那一块，不会被全局",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "提出多智能体分解的产出守恒律，用实验挑战上下文切分必然增益的常识。",
+      "summary_zh": "文章从多智能体架构设计文档中常见的三条 folklore 出发——上下文更小、并行更快、分工更专——指出这些说法都回避了一个关键问题：分解本身是否带来信息增益。作者通过实验发现，把任务拆给 8 个子智能体，最终只拿回约 2.3 倍信息，据此提出多智能体分解的产出守恒律，对盲目拆分上下文的做法提出反直觉的质疑。",
+      "title_zh": "拆给 8 个子智能体，只拿回 2.3 倍信息：多智能体分解的产出守恒律",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "fe4d7fe8117e5a3f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7686040694946791433"
+        }
+      ]
+    },
     {
       "id": "3ca131de87e8fa10",
       "source_id": "arxiv-cs-ai",
@@ -36,6 +69,74 @@
       ]
     },
     {
+      "id": "befb9030e6608e62",
+      "source_id": "pytorch-blog",
+      "title": "Low Precision Flash Attention 4: End-to-End Block-Scaled Attention for Blackwell",
+      "url": "https://pytorch.org/blog/low-precision-flash-attention-4-end-to-end-block-scaled-attention-for-blackwell/",
+      "published_at": "2026-09-16T18:55:21+00:00",
+      "raw_text": "TL;DR We extend FlashAttention-4 [1] with MXFP8 forward and backward, reaching 2.85 PF/s forward and 2 PF/s backward on LLM shapes. On our internal shapes, FA4 MX8 reaches 2.54 PF/s...",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": "https://pytorch.org/wp-content/uploads/2026/08/1.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "PyTorch 官方博客详解 FlashAttention-4 的 MXFP8 低精度扩展，含 Blackwell 实测吞吐数据，值得关注训练推理性能的工程师精读。",
+      "summary_zh": "PyTorch 官方博客介绍了对 FlashAttention-4 的扩展工作，为其加入 MXFP8 精度的前向与反向传播支持，面向 Blackwell 架构实现端到端的块缩放注意力机制。文中给出实测数据：在 LLM 典型形状下前向达到 2.85 PF/s、反向达到 2 PF/s，在内部测试形状上 FA4 MX8 前向达到 2.54 PF/s。文章应进一步讨论了低精度块缩放方案在数值稳定性与吞吐之间的取舍，以及针对 Blackwell 硬件特性的 kernel 优化思路，对关注大模型训练与推理性能优化的工程师具有较高参考价值。",
+      "title_zh": "低精度 Flash Attention 4：面向 Blackwell 的端到端块缩放注意力",
+      "weighted_score": 0.7825,
+      "score_breakdown": {
+        "source_authority": 0.85,
+        "novelty": 0.8,
+        "impact": 0.75,
+        "practical_value": 0.7
+      },
+      "story_id": "8600a564917d7990",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "pytorch-blog",
+          "url": "https://pytorch.org/blog/low-precision-flash-attention-4-end-to-end-block-scaled-attention-for-blackwell/"
+        }
+      ]
+    },
+    {
+      "id": "bbe6c30a33c9c72e",
+      "source_id": "openai-blog",
+      "title": "Our framework for reporting model misalignment",
+      "url": "https://openai.com/index/model-misalignment-reporting-framework",
+      "published_at": "2026-09-16T17:00:00+00:00",
+      "raw_text": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior.",
+      "category_hint": [
+        "模型发布",
+        "产品发布"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "OpenAI 官方发布模型失准报告框架及六份案例，对理解 AI 安全与对齐实践有重要参考价值。",
+      "summary_zh": "OpenAI 分享了一套用于追踪、调查和披露模型失准（misalignment）的框架，并同时发布了六份关于模型意外或令人担忧行为的报告。该框架旨在系统化地识别和公开模型在真实场景中出现的对齐问题，提升透明度。文章属于官方研究性质，提供了具体的案例和披露流程，对关注 AI 安全、对齐研究和模型行为评估的读者具有较高参考价值。",
+      "title_zh": "我们报告模型失准的框架",
+      "weighted_score": 0.765,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "6deab6b0238ba94b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "openai-blog",
+          "url": "https://openai.com/index/model-misalignment-reporting-framework"
+        }
+      ]
+    },
+    {
       "id": "3937e7c3e780f241",
       "source_id": "stratechery",
       "title": "Salesforce AI Force, Agents as UI, The Race to Headless",
@@ -65,105 +166,6 @@
         {
           "source_id": "stratechery",
           "url": "https://stratechery.com/2026/salesforce-ai-force-agents-as-ui-the-race-to-headless/"
-        }
-      ]
-    },
-    {
-      "id": "0e617e0c891e4415",
-      "source_id": "arxiv-cs-ai",
-      "title": "Do LLMs Have Values? A Quantitative Analysis and Alignment Framework for Values in Large Language Models",
-      "url": "https://arxiv.org/abs/2609.16589",
-      "published_at": "2026-09-16T04:00:00+00:00",
-      "raw_text": "arXiv:2609.16589v1 Announce Type: new \nAbstract: As Large Language Models (LLMs) increasingly handle complex subjective tasks, aligning their intentions and behaviors with human values has become a critical scientific challenge. However, current efforts are confounded by a striking behavioral paradox: they fluctuate unpredictably under minor wording changes (\"swing\"), yet stubbornly ignore explicit instructions to correct ingrained biases (\"rigidity\"). Resolving this duality is critical for reliable AI alignment. To systematically understand and safely steer these latent subjective preferences, our study is structured around three fundamental questions. First, do LLMs possess an intrinsic value system? By projecting responses from 106 LLMs (150,000 queries per model) and 95,000 human survey profiles into a shared sociological space, we empirically confirm that they do. However, they do not mirror human diversity, instead crystallizing into a highly concentrated, idealized value core. S",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示LLM价值观的行为悖论——措辞微调即摇摆、却无视显式指令，并提出量化分析与对齐框架，对对齐研究有启发。",
-      "summary_zh": "随着大语言模型承担越来越多复杂的主观任务，使其意图与行为对齐人类价值观成为关键科学挑战。本文指出当前研究面临一个显著的行为悖论：模型价值观会因措辞的微小变化而不可预测地摇摆（swing），却又顽固地忽略显式的价值指令。作者对这一现象进行量化分析，并提出一个针对LLM价值观的对齐框架，试图解释并缓解这种既不稳定又不听指令的矛盾行为。该工作为理解模型内在价值取向与对齐方法的局限提供了新的实证视角。",
-      "title_zh": "LLM有价值观吗？大语言模型价值观的量化分析与对齐框架",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "92e1d84ff0c0cdaa",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.16589"
-        }
-      ]
-    },
-    {
-      "id": "7224eae4c6268bf5",
-      "source_id": "arxiv-cs-ai",
-      "title": "Symbolic Separation: Grounding Deep Agents in Knowledge Graphs for Trustworthy Operational Data Analytics",
-      "url": "https://arxiv.org/abs/2609.17107",
-      "published_at": "2026-09-16T04:00:00+00:00",
-      "raw_text": "arXiv:2609.17107v1 Announce Type: new \nAbstract: Generative AI promises natural language access to the massive numerical telemetry of data centers and Industry 4.0 installations, yet text-to-query and tool-using agents stay unreliable: even frontier models answer little more than half of real-world database questions, and far fewer of the multi-step, operational ones, because the LLM must compose how heterogeneous sources relate and hallucinates the relations, not just the fields. We propose symbolic separation: a deep agent reasons freely but may act on data only through an ontology-constrained Virtual Knowledge Graph with deterministic pre-execution validation. Unlike a tool API's interface contract, this domain-semantic contract turns a complex question into one validated graph traversal instead of LLM-inferred joins. Instantiated as the Neurosymbolic Deep Analyst and evaluated on 49.9 TB of superconputer telemetry against a rigid workflow and a non-symbolic ablation, it raises end-",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "用知识图谱为深度 agent 提供符号化接地，直面 text-to-query 与工具调用 agent 在真实运维数据上不可靠的问题。",
-      "summary_zh": "生成式 AI 有望让用户以自然语言访问数据中心与工业 4.0 场景中海量的数值遥测数据，但 text-to-query 与工具调用型 agent 仍不可靠：即便是前沿模型也只能正确回答略超半数的真实数据库问题，多步运维类问题表现更差，原因在于 LLM 必须自行组合复杂的查询逻辑。论文提出 Symbolic Separation 方法，将深度 agent 接地到知识图谱上，把符号推理与语言生成分离，以提升可信度。该思路对构建可信运维数据分析 agent 有较强实践参考价值。",
-      "title_zh": "符号分离：以知识图谱为深度 agent 接地，实现可信运维数据分析",
-      "weighted_score": 0.6875,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.75,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "62a9d6ba4cc7c238",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.17107"
-        }
-      ]
-    },
-    {
-      "id": "43eff3d69d429385",
-      "source_id": "arxiv-cs-ai",
-      "title": "LSREP: A Longitudinal State-Replay Protocol for Evaluating Conversational Memory, with ICE v2 as an Audited Local-First Architecture",
-      "url": "https://arxiv.org/abs/2609.16730",
-      "published_at": "2026-09-16T04:00:00+00:00",
-      "raw_text": "arXiv:2609.16730v1 Announce Type: new \nAbstract: Conversational memory changes during use, so endpoint question answering alone cannot establish how a persistent state accumulates, ages, or incorporates revisions. We introduce LSREP, a Longitudinal State-Replay Evaluation Protocol combining ordered replay, explicit lifecycle schedules, repeated probes, evolving reference answers, and mechanism-fidelity checks. Its architectural case study is ICE v2, a local-first memory middleware with typed stores, retrieval fusion, and dynamic context budgets. The private, single-user instantiation contains 1,985 turns, 219 distinct probes, and 1,211 probe-checkpoint observations across 52 checkpoints. On three ordinary-density datasets, ICE v2 has a near-zero mean quality difference from vector-RAG while selecting 32% fewer fragments but using 6.6% more estimated prompt tokens. A fourth, dense dataset exposes catastrophic failures of the unbudgeted baseline. The fidelity audit limits attribution: pr",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出对话记忆的纵向回放评测协议，弥补端点问答评测的不足，方法学贡献突出。",
-      "summary_zh": "对话记忆会在使用过程中不断变化，仅靠端点问答无法揭示持久状态如何累积、老化或纳入修订。本文提出LSREP，一种纵向状态回放评测协议，结合有序回放、显式生命周期调度、重复探测、演化参考答案与机制保真度等要素，用于系统评估对话记忆。作者同时以ICE v2作为经过审计的本地优先架构进行实例化。该工作为对话记忆这一常被忽视的维度提供了可复现、可审计的评测方法，对记忆系统研究具有方法学意义。",
-      "title_zh": "LSREP：评估对话记忆的纵向状态回放协议，以ICE v2作为经审计的本地优先架构",
-      "weighted_score": 0.68,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.6
-      },
-      "story_id": "103bb456907893d4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.16730"
         }
       ]
     },
@@ -202,6 +204,39 @@
       ]
     },
     {
+      "id": "dfee7c454decfba2",
+      "source_id": "zh-juejin",
+      "title": "7000 万 QPS、500 PB：OpenAI 如何用一个 Python 存储平台撑住 10 亿用户",
+      "url": "https://juejin.cn/post/7686040694946856969",
+      "published_at": "2026-09-16T14:15:57+00:00",
+      "raw_text": "TL;DR OpenAI 自研的在线存储平台 Habitat 当前承载 70M+ QPS、500+ PB 数据、约 40 个地理区域，支撑每周 10 亿+  活跃用户的产品流量。这篇文章值得看的不是\"",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "拆解 OpenAI 自研存储平台 Habitat 的架构取舍，揭示超大规模系统的工程细节。",
+      "summary_zh": "文章介绍 OpenAI 自研的在线存储平台 Habitat：当前承载 7000 万以上 QPS、500 PB 以上数据，覆盖约 40 个地理区域，支撑每周 10 亿以上活跃用户的产品流量。作者强调重点不在数字本身，而在于 OpenAI 如何用一个 Python 存储平台应对如此规模，剖析其架构设计与工程取舍，为大规模系统设计提供参考。",
+      "title_zh": "7000 万 QPS、500 PB：OpenAI 如何用一个 Python 存储平台撑住 10 亿用户",
+      "weighted_score": 0.67,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "c94b5c02d37501f5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7686040694946856969"
+        }
+      ]
+    },
+    {
       "id": "734b2063a505d0d6",
       "source_id": "infoq-cn-ai",
       "title": "模型再强，为什么 Demo 还是进不了生产？",
@@ -232,6 +267,39 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/j2kBZR1JiZxATpU7gjtS?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "00d2aafce933b4f3",
+      "source_id": "zh-tonybai",
+      "title": "具身智能的“安卓时刻”来了？揭秘OpenMind用Go打造的“机器人操作系统”OM1",
+      "url": "https://tonybai.com/2026/09/17/openmind-om1-android-for-robots/",
+      "published_at": "2026-09-16T22:00:00+00:00",
+      "raw_text": "本文从“具身智能产业分工”切入，厘清OM1在技术栈中的真实位置——它既不是训练机器人技能的LeRobot式框架，也不是ROS2的替代品，而是介于两者之间、负责感知－决策－动作编排的Agent运行时。文章拆解了OM1的自然语言数据总线、多LLM协同决策、模块化配置等核心设计，分析了其从Python转向Go的工程动机，并给出一份基于Gazebo仿真环境、驱动虚拟Unitree Go2四足机器人的实操示例，帮助读者在没有实体机器人的情况下理解OM1的运行逻辑。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "厘清 OM1 在具身智能技术栈中的定位，拆解其架构设计并给出仿真实操，工程参考价值高。",
+      "summary_zh": "文章从具身智能产业分工切入，厘清 OpenMind 用 Go 打造的机器人操作系统 OM1 在技术栈中的真实位置：它既不是训练机器人技能的 LeRobot 式框架，也不是 ROS2 的替代品，而是介于两者之间、负责感知—决策—动作编排的 Agent 运行时。文章拆解了 OM1 的自然语言数据总线、多 LLM 协同决策、模块化配置等核心设计，分析其从 Python 转向 Go 的工程动机，并给出基于 Gazebo 仿真环境驱动虚拟 Unitree Go2 四足机器人的实操示例，帮助读者在没有实体机器人的情况下理解 OM1 的运行逻辑。",
+      "title_zh": null,
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "92b5367bdc9fba8a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/09/17/openmind-om1-android-for-robots/"
         }
       ]
     },
@@ -269,6 +337,39 @@
       ]
     },
     {
+      "id": "fedbcff294b1810b",
+      "source_id": "zh-juejin",
+      "title": "RSI真的临近了吗？AI开始改进AI，但“智能爆炸”还差关键一跳",
+      "url": "https://juejin.cn/post/7685982562691612678",
+      "published_at": "2026-09-16T14:51:05+00:00",
+      "raw_text": "RSI真的临近了吗？AI开始改进AI，但“智能爆炸”还差关键一跳 从自我修改代码，到改写技术进步的速度，我们究竟走到了哪一步？ 资料核对截至：2026年9月16日 2026年9月6日，OpenAI宣布",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "系统梳理 RSI（递归自我改进）的现状与瓶颈，有论证有反直觉洞察，适合关注 AI 长期趋势的读者。",
+      "summary_zh": "文章探讨了 AI 递归自我改进（RSI）是否临近，以及“智能爆炸”是否真的会到来。作者从自我修改代码、AI 改进 AI 的现有案例出发，梳理了从自动化研究到技术加速的各个环节，指出当前 AI 虽已能辅助改进自身，但距离真正的“智能爆炸”仍缺少关键一跳。文章资料核对截至 2026 年 9 月 16 日，并提及 OpenAI 在 2026 年 9 月 6 日的相关宣布。整体属于有论证的深度分析，适合关注 AI 长期趋势的读者。",
+      "title_zh": null,
+      "weighted_score": 0.575,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "de226649785ca2b7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7685982562691612678"
+        }
+      ]
+    },
+    {
       "id": "962e23874be95454",
       "source_id": "infoq-cn-ai",
       "title": "129亿美元卖身英伟达之后，是时候重新理解Hugging Face了",
@@ -299,106 +400,6 @@
         {
           "source_id": "infoq-cn-ai",
           "url": "https://www.infoq.cn/article/foEzSr8xfG0STQ1wgbti?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "0a27d938a00c1b6f",
-      "source_id": "mit-tech-review-ai",
-      "title": "Building the materials foundation for AI",
-      "url": "https://www.technologyreview.com/2026/09/16/1144014/building-the-materials-foundation-for-ai/",
-      "published_at": "2026-09-16T12:47:34+00:00",
-      "raw_text": "The AI boom is becoming a materials challenge. As AI pushes computing into new territory, the materials behind that infrastructure are becoming just as crucial as the algorithms running on it. Semiconductors and data centers are approaching physical limits around performance, thermal management, electrical efficiency, and reliability, creating new demands for materials that can do&#8230;",
-      "category_hint": [
-        "行业动态",
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "从材料科学视角剖析AI基础设施的物理瓶颈，指出半导体与数据中心在散热、能效、可靠性上逼近极限，为理解AI算力可持续性提供被忽视的维度。",
-      "summary_zh": "文章指出，AI 热潮正演变为一场材料挑战。随着 AI 将计算推向新领域，支撑基础设施的材料变得与算法同等关键。半导体和数据中心在性能、热管理、电气效率和可靠性方面正逼近物理极限，这对材料提出了全新需求。文章探讨了材料创新如何成为突破算力瓶颈的关键，涵盖先进封装、散热材料、互连技术等方向，强调若没有材料层面的突破，AI 算力的持续增长将面临硬性约束。",
-      "title_zh": "为 AI 构建材料基础",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "743756c18398d0a5",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "mit-tech-review-ai",
-          "url": "https://www.technologyreview.com/2026/09/16/1144014/building-the-materials-foundation-for-ai/"
-        }
-      ]
-    },
-    {
-      "id": "71729ddee4101bf7",
-      "source_id": "zh-oschina",
-      "title": "2026 “AI 推理”硬件革命已到来，显卡却有大半时间在闲着",
-      "url": "https://www.oschina.net/news/502511/ieee-inference-hardware-revolution",
-      "published_at": "2026-09-16T03:18:00+00:00",
-      "raw_text": "过去几年 AI 的叙事几乎全在&quot;训练更大的模型&quot;，到 2026 年，风向变了。黄仁勋在 GTC 2026 上把这一年叫做&quot;推理的拐点&quot;。IEEE Spectrum 这篇特稿想说明的一件事是：推理其实和你想象的不一样，它正在逼着整个硬件行业换打法。 先说为什么推理突然变成主角。推理模型会一遍遍自我追问（chain of thought），高推理强度下产...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "IEEE Spectrum 特稿剖析推理时代硬件新挑战，指出显卡大量闲置的反直觉现象。",
-      "summary_zh": "过去几年 AI 叙事聚焦于训练更大模型，但到 2026 年风向转变，黄仁勋在 GTC 2026 上称这一年为“推理的拐点”。IEEE Spectrum 特稿指出，推理与人们想象的不同，推理模型会反复自我追问（chain of thought），在高推理强度下对硬件提出全新要求，正逼迫整个硬件行业改变打法。文章还揭示显卡有大半时间处于闲置状态这一反直觉现象，探讨推理时代硬件革命的方向。",
-      "title_zh": "2026 “AI 推理”硬件革命已到来，显卡却有大半时间在闲着",
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "43cf900288c971e1",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502511/ieee-inference-hardware-revolution"
-        }
-      ]
-    },
-    {
-      "id": "184944f4828a96d2",
-      "source_id": "rest-of-world",
-      "title": "Playing both sides of the U.S.-China AI “Cold War”",
-      "url": "https://restofworld.org/2026/ai-us-chips-chinese-open-source-models/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
-      "published_at": "2026-09-16T10:00:00+00:00",
-      "raw_text": "From Latin America to Southeast Asia, countries are dividing their AI investments between the two superpowers rather than choosing one over the other.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://restofworld.org/wp-content/uploads/2026/09/illo_china_us_row_sketch_final-320x320.jpg",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "分析拉美和东南亚国家在中美AI冷战中如何两边下注，揭示地缘政治对AI投资格局的影响。",
-      "summary_zh": "文章探讨了从拉丁美洲到东南亚的国家如何在中美AI“冷战”中采取两边下注的策略，而非选边站队。这些国家将AI投资分散于两个超级大国之间，以最大化自身利益并规避风险。文章分析了这种策略背后的地缘政治和经济考量，以及它对全球AI技术扩散和供应链格局的潜在影响，揭示了多极化世界中的AI投资新动向。",
-      "title_zh": "在中美AI“冷战”中两边下注",
-      "weighted_score": 0.615,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.4
-      },
-      "story_id": "8d54c66fdd06ac5a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "rest-of-world",
-          "url": "https://restofworld.org/2026/ai-us-chips-chinese-open-source-models/?utm_source=rss&utm_medium=rss&utm_campaign=feeds"
         }
       ]
     }
