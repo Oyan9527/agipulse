@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-17",
-  "generated_at": "2026-09-17T23:36:51.403558+00:00",
+  "date": "2026-09-18",
+  "generated_at": "2026-09-18T19:41:51.360666+00:00",
   "items": [
     {
       "id": "2f269a03d10ac235",
@@ -37,169 +37,204 @@
       ]
     },
     {
-      "id": "e4f69501269751f1",
+      "id": "c1e8c41b9a82998d",
       "source_id": "arxiv-cs-ai",
-      "title": "A Four-Stage Decomposition of Word-Problem Solving and Mechanistic Fragility in LLM Math Reasoning",
-      "url": "https://arxiv.org/abs/2609.17804",
-      "published_at": "2026-09-17T04:00:00+00:00",
-      "raw_text": "arXiv:2609.17804v1 Announce Type: new \nAbstract: Large language models solve grade-school math word problems with high accuracy, yet a single irrelevant clause inserted into the problem can collapse it. We reconcile these observations with a mechanistic account. We show that the model's internal computation decomposes into a four-stage sequential pipeline, Schema Abstraction, Operation Planning, Operand Binding, and Computation, each stage producing a distinct intermediate representation in an identifiable band of layers. Using the same scaffold to diagnose distractor-induced failure, we localize the corruption to a single stage, Operation Planning, implemented by a set of attention heads whose causal role we validate bidirectionally. In short, we provide a mechanistic interpretation of math word problem reasoning in LLMs, and their failure when distracted.",
+      "title": "Position: It is Time to Virtualize Foundation Models with a Self-evolving Operating System Layer",
+      "url": "https://arxiv.org/abs/2609.19203",
+      "published_at": "2026-09-18T04:00:00+00:00",
+      "raw_text": "arXiv:2609.19203v1 Announce Type: new \nAbstract: AI applications have shifted from single, monolithic foundation models (FM) to compound agentic systems. Yet today's stacks remain fragmented: even as protocols (e.g., MCP, A2A) ease tool/agent connectivity, each framework embeds an implicit runtime for state, memory, budgets, and guardrails, making behavior non-portable and governance brittle. It mirrors computing before operating systems, when every program re-implemented basic services. This position paper argues that the field now needs a Foundation Model Operating System (FMOS) -- a system layer that virtualizes FM interactions analogous to how virtual machines abstract physical hardware, giving applications the illusion of dedicated, trustworthy FM instances with effectively unbounded capabilities. Internally, the FMOS orchestrates knowledge across memory tiers, model selection and resource allocation, and verification and policy enforcement. Like the human brain switching between ",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "观点评论",
       "depth_score": 0.9,
-      "reason_zh": "用机制可解释性方法拆解LLM解数学应用题的内部四阶段流水线，解释为何一个无关从句就能让模型崩溃，洞察可迁移。",
-      "summary_zh": "大语言模型解小学应用题准确率很高，但插入一个无关从句就可能使其崩溃。本文用机制性解释调和这一矛盾，证明模型内部计算可分解为四阶段顺序流水线：模式抽象、运算规划等。作者通过分析各阶段的功能与脆弱点，揭示模型在哪个环节对无关信息敏感、为何单句干扰会导致整体失败。该工作提供了对 LLM 数学推理内部机制的细粒度理解，属于可解释性研究，对理解推理鲁棒性有启发。",
-      "title_zh": "应用题求解的四阶段分解与 LLM 数学推理中的机制脆弱性",
-      "weighted_score": 0.705,
+      "reason_zh": "提出将基础模型虚拟化为自演化操作系统层的观点，对AI系统架构设计有前瞻性启发。",
+      "summary_zh": "该立场论文指出，AI应用已从单一基础模型转向复合智能体系统，但当前技术栈仍然碎片化。尽管MCP、A2A等协议简化了工具与智能体连接，每个框架仍内嵌隐式运行时来处理状态、记忆、预算和护栏，导致行为不可移植、治理脆弱。作者主张将基础模型虚拟化为一个自演化的操作系统层，统一管理资源与策略，从而实现可移植、可治理的智能体系统。",
+      "title_zh": "立场：是时候用自演化操作系统层虚拟化基础模型了",
+      "weighted_score": 0.76,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
+        "source_authority": 0.8,
+        "novelty": 0.9,
         "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "e438b46143cfd873",
+      "story_id": "824e585539bbb48d",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.17804"
+          "url": "https://arxiv.org/abs/2609.19203"
         }
       ]
     },
     {
-      "id": "5870fd02691b550b",
-      "source_id": "arxiv-cs-ai",
-      "title": "Decodability is Not Causality: Dissociating Probe Readouts from Behavioral Drivers via SAE Decomposition",
-      "url": "https://arxiv.org/abs/2609.18080",
-      "published_at": "2026-09-17T04:00:00+00:00",
-      "raw_text": "arXiv:2609.18080v1 Announce Type: new \nAbstract: Linear probes can decode safety-relevant concepts such as truthfulness from language-model activations, but probe accuracy may show only decodability, not that the features the probe weights causally drive model behavior. We demonstrate that this gap cannot be closed from the geometry of probe weights alone: the features geometrically aligned with probe direction need not be the ones the model uses, so causal relevance requires intervention. We introduce a feature-level diagnostic that decomposes a deployed True/False probe into sparse-autoencoder (SAE) features, ranks those features by both probe alignment and by gradient sensitivity of the model's behavior, and ablates the resulting shared, probe-only, and random feature sets under a coherence gate. On the truth probe of Buerger et al. (2024) (TTPD), applied in the instructed truth/deception setting of Long et al. (2025) for Gemma2-9B-Instruct, the two rankings overlap only weakly (abo",
+      "id": "d1f533bc446e0fb7",
+      "source_id": "alignment-forum",
+      "title": "[Paper] Stringological sequence prediction III",
+      "url": "https://www.alignmentforum.org/posts/virawHQekJsozwotz/paper-stringological-sequence-prediction-iii",
+      "published_at": "2026-09-18T16:52:53+00:00",
+      "raw_text": "<p><b><span style=\"white-space: pre-wrap;\">Abstract:</span></b><span style=\"white-space: pre-wrap;\"> </span><i><span style=\"white-space: pre-wrap;\">In previous papers (Kosoy 2026a,b), we began the study of sequence prediction algorithms adapted to stringological word complexity measures. In particular, we defined a complexity measure called Arithmetic Repetition Complexity (ARC) which admits a polynomial-time prediction algorithm with a mistake bound quasilinear in the complexity. Here, we show a weaker complexity measure related to ARC that admits an especially efficient prediction algorithm: an algorithm that runs in quasilinear time and polylog space for appropriate highly-structured sequences. The complexity measure is defined via a restricted class of “zipline programs” (a variant of straight-line programs we defined in Kosoy 2026b), which we call layered. We thus get a less expressive measure with a more efficient algorithm (compared to our results for ARC), demonstrating a possi",
       "category_hint": [
-        "论文研究"
+        "论文研究",
+        "行业动态"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "用SAE分解证明探针可解码不等于因果驱动，对可解释性与安全评估方法论有重要纠偏意义。",
-      "summary_zh": "论文指出，线性探针虽能从语言模型激活中解码出真实性等安全相关概念，但高探针准确率只说明可解码性，并不证明探针权重对应的特征在因果上驱动模型行为。作者论证这一鸿沟无法仅凭探针权重的几何结构弥合，并借助稀疏自编码器（SAE）分解来区分几何对齐特征与真正影响行为的特征。该工作对可解释性研究与安全评估的因果推断方法提出方法论警示。",
-      "title_zh": "可解码不等于因果：用SAE分解区分探针读数与行为驱动因素",
-      "weighted_score": 0.705,
+      "reason_zh": "序列预测与字符串复杂度理论的前沿论文，提出ARC复杂度度量，适合理论研究者深入阅读。",
+      "summary_zh": "这是关于字符串序列预测算法系列的第三篇论文。作者延续此前工作，研究适配字符串词复杂度度量的序列预测算法。文中定义了名为算术重复复杂度（ARC）的复杂度度量，并证明其具有多项式时间可计算性。该研究属于计算学习理论与算法信息论的交叉领域，探讨如何用复杂度度量刻画序列的可预测性，为序列预测提供新的理论框架。",
+      "title_zh": "[论文] 字符串序列预测 III",
+      "weighted_score": 0.575,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "novelty": 0.9,
+        "impact": 0.4,
+        "practical_value": 0.2
       },
-      "story_id": "63f6089457b62f53",
+      "story_id": "0a68ebf50fb7043c",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.18080"
+          "source_id": "alignment-forum",
+          "url": "https://www.alignmentforum.org/posts/virawHQekJsozwotz/paper-stringological-sequence-prediction-iii"
         }
       ]
     },
     {
-      "id": "de47a95bd563ac94",
-      "source_id": "zh-juejin",
-      "title": "不写出来的思考：把 Transformer 的层循环起来，是第三条 scaling 轴还是省错了地方？",
-      "url": "https://juejin.cn/post/7686341072617177126",
-      "published_at": "2026-09-17T14:15:03+00:00",
-      "raw_text": "一、两个默认出口，各自在机制上必然收费 先说清楚这条路到底想要什么。 现在的语言模型想做多步串行计算，默认只有两个出口： 第二条收费值得展开。模型内部\"想\"一个概念，是一长串连续的数，可以同时压着好几",
+      "id": "b7724f399e6ab684",
+      "source_id": "arxiv-cs-ai",
+      "title": "An Architecture for Long-Horizon Agents: Levels, Ticks and Cascaded Intelligence",
+      "url": "https://arxiv.org/abs/2609.19519",
+      "published_at": "2026-09-18T04:00:00+00:00",
+      "raw_text": "arXiv:2609.19519v1 Announce Type: new \nAbstract: Language-model agents are increasingly asked to carry out work spanning days or weeks, such as an operations remediation or a research programme. Such a task outlives any context window, any process and any interval at which a person can attend. In this paper, we argue that a long-horizon agent must run continually without forgetting before it can learn continually. This ability lies in the harness around the model rather than in the model itself. We derive seven bottlenecks from the long-horizon setting and answer them with a hierarchical architecture of three parts: (i) levels indexed by time scale, each keeping a bounded file summarising the level below; (ii) a clocked tick as the unit of autonomous action; and (iii) cascaded intelligence, where work is escalated to a more capable model only after failing review. We report on a ten-day campaign in which an agent built on this architecture reproduced a published reinforcement-learning ",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "深度分析",
-      "depth_score": 0.9,
-      "reason_zh": "深入探讨Transformer层循环作为第三条scaling轴的机制与代价，有独到技术洞察。",
-      "summary_zh": "文章探讨将Transformer的层循环起来作为第三条scaling轴的可能性。作者首先分析当前语言模型实现多步串行计算的两个默认出口及其机制代价，指出模型内部“思考”一个概念是一长串连续数值，可以同时承载多个维度。文章深入讨论层循环方案在机制上的必然收费点，分析其作为scaling新轴的价值与局限，提出需要权衡的核心问题：这究竟是真正的第三条扩展路径，还是在错误的地方节省了计算。属于有论证深度的技术分析文章。",
-      "title_zh": null,
-      "weighted_score": 0.6,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "ca9ebdef625691c2",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7686341072617177126"
-        }
-      ]
-    },
-    {
-      "id": "bb65895bed05fbe1",
-      "source_id": "dwarkesh-podcast",
-      "title": "Noam Brown – Agent swarms, alignment, & recursive self-improvement",
-      "url": "https://www.dwarkesh.com/p/noam-brown",
-      "published_at": "2026-09-17T15:38:13+00:00",
-      "raw_text": "&#8220;We never want to be in a situation again where we underestimate the AI.&#8221;",
-      "category_hint": [
-        "行业动态",
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
       "depth_score": 0.85,
-      "reason_zh": "Noam Brown 谈 Agent 集群、对齐与递归自我改进，含反直觉洞察，值得细读。",
-      "summary_zh": "OpenAI 研究员 Noam Brown 在 Dwarkesh 播客中讨论了 Agent 集群（agent swarms）、对齐问题以及递归自我改进等前沿议题。他强调“我们绝不想再次陷入低估 AI 的境地”，反思了业界对模型能力进展的系统性误判。对话涉及多智能体协作的潜力与风险、对齐研究在能力快速提升背景下的紧迫性，以及递归自我改进可能带来的拐点。内容兼具技术深度与战略视角，对理解 AI 发展路径有启发意义。",
-      "title_zh": "Noam Brown——Agent 集群、对齐与递归自我改进",
-      "weighted_score": 0.75,
+      "reason_zh": "提出长时程Agent的层级、时钟与级联智能架构，直面跨天任务的持续运行与记忆难题。",
+      "summary_zh": "语言模型Agent正被越来越多地要求执行跨越数天甚至数周的工作，如运维修复或研究项目。这类任务的生命周期远超任何上下文窗口、任何进程以及人类可介入的时间间隔。本文主张，长时程Agent必须先能够持续运行且不遗忘，才谈得上完成长期目标。作者提出一种包含层级（Levels）、时钟（Ticks）与级联智能（Cascaded Intelligence）的架构，为长时程Agent的持续运行、状态保持与分层决策提供设计框架。",
+      "title_zh": "长时程Agent的架构：层级、时钟与级联智能",
+      "weighted_score": 0.735,
       "score_breakdown": {
-        "source_authority": 0.85,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.75
       },
-      "story_id": "c7df4fcc77a90821",
+      "story_id": "409da30bf10159eb",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "dwarkesh-podcast",
-          "url": "https://www.dwarkesh.com/p/noam-brown"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.19519"
         }
       ]
     },
     {
-      "id": "6e4c7787bb9ef724",
-      "source_id": "github-ai-blog",
-      "title": "Migrating the GitHub Copilot runtime to Rust, using Copilot",
-      "url": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/",
-      "published_at": "2026-09-17T00:26:43+00:00",
-      "raw_text": "<p>A rewrite this size wasn't affordable before agents. Here's what porting the Copilot agent runtime to 800,000 lines of production Rust actually took.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/\">Migrating the GitHub Copilot runtime to Rust, using Copilot</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
+      "id": "f3dfbde711c72f9f",
+      "source_id": "google-cloud-ai",
+      "title": "Changing the game: How Google uses agentic AI to secure hundreds of millions of lines of code",
+      "url": "https://cloud.google.com/blog/topics/systems/using-ai-agents-to-secure-google-infrastructure/",
+      "published_at": "2026-09-18T16:00:00+00:00",
+      "raw_text": "<div class=\"block-paragraph_advanced\"><p><span style=\"vertical-align: baseline;\">AI is accelerating software development at an unprecedented pace. But as code generation scales, so do the challenges of securing the code, especially emerging AI-based vulnerability exploitations. To meet these challenges, the Google AI and Infrastructure team is transforming how we approach security. In this article, we discuss new AI-native agentic methods that we’ve developed that systematically embed high-precision, pervasive vulnerability scanning and patching directly into Google’s software development lifecycle. By continuously scanning every code change across hundreds of millions of lines of code that we deploy onto our infrastructure, we are preventing hundreds of vulnerabilities per month from ever reaching our code base or production, defending our global network, AI infrastructure and our users. </span></p>\n<p><span style=\"vertical-align: baseline;\"><strong style=\"vertical-align: baseline;\">S",
       "category_hint": [
-        "行业动态",
-        "产品发布"
+        "产品发布",
+        "技巧与观点"
       ],
-      "image_url": "https://github.blog/wp-content/uploads/2026/09/architecture-before-after.svg?resize=1024,512",
+      "image_url": "https://storage.googleapis.com/gweb-cloudblog-publish/images/image1_DMfXM9r.max-1000x1000.png",
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "GitHub 用 Copilot 将运行时迁移到 80 万行 Rust 的实战复盘，含 agent 辅助大规模重构的取舍与经验。",
-      "summary_zh": "GitHub 官方博客复盘将 GitHub Copilot 运行时迁移到 Rust 的工程实践，涉及约 80 万行生产级 Rust 代码。文章指出，如此规模的改写在此前难以负担，而 agent 的介入改变了成本结构。内容详细描述了使用 Copilot 辅助完成大规模代码移植的过程、遇到的挑战与设计取舍，为工程师提供了 agent 驱动大型重构的真实案例与可迁移经验。",
-      "title_zh": "用 Copilot 将 GitHub Copilot 运行时迁移到 Rust",
-      "weighted_score": 0.755,
+      "reason_zh": "Google 官方分享用 agentic AI 保护数亿行代码的实践，对 AI 安全与 agent 工程有深度参考价值。",
+      "summary_zh": "Google AI 与基础设施团队撰文介绍如何利用 agentic AI 来保护数百亿行代码的安全。文章指出，AI 正在以前所未有的速度加速软件开发，但随着代码生成规模扩大，代码安全挑战也随之增加，尤其是新兴的基于 AI 的漏洞利用方式。为应对这些挑战，Google 正在转变其安全策略，将 agentic AI 引入代码安全防护流程。文章分享了 Google 在这一方向上的具体做法和思考，涉及如何用 AI agent 大规模检测和修复安全漏洞，对关注 AI 安全与 agent 工程实践的读者具有较高参考价值。",
+      "title_zh": "改变游戏规则：Google 如何用 agentic AI 保护数亿行代码",
+      "weighted_score": 0.76,
       "score_breakdown": {
         "source_authority": 0.9,
         "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
+        "impact": 0.7,
+        "practical_value": 0.7
       },
-      "story_id": "e11174235f58e318",
+      "story_id": "b7a48400ee55caa2",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "github-ai-blog",
-          "url": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"
+          "source_id": "google-cloud-ai",
+          "url": "https://cloud.google.com/blog/topics/systems/using-ai-agents-to-secure-google-infrastructure/"
+        }
+      ]
+    },
+    {
+      "id": "2cdf69047cf3079c",
+      "source_id": "infoq-cn-ai",
+      "title": "Claude“主导”Anthropic 26%的AI研发、3万Agent同时运行：当AI开始“造AI”，头部AI公司的RSI路线正在分化",
+      "url": "https://www.infoq.cn/article/CEphwKjzAe7LzbOriLcq?utm_source=rss&utm_medium=article",
+      "published_at": "2026-09-18T17:00:25+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/CEphwKjzAe7LzbOriLcq?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "披露 Claude 主导 Anthropic 26% AI 研发、3 万 Agent 同时运行，剖析头部公司 RSI 路线分化，洞察深刻。",
+      "summary_zh": "InfoQ 报道，Claude 已主导 Anthropic 约 26% 的 AI 研发工作，同时有 3 万个 Agent 并行运行。文章指出，当 AI 开始造 AI，头部 AI 公司的 RSI（递归自我改进）路线正在分化。内容涉及 Anthropic 内部 AI 参与研发的比例、大规模 Agent 运行规模，以及不同公司在自我改进方向上的策略差异。该文为理解 AI 公司如何利用 AI 加速自身研发、以及 RSI 路线的行业分化提供了具体数据与深度分析。",
+      "title_zh": "Claude“主导”Anthropic 26%的AI研发、3万Agent同时运行：当AI开始“造AI”，头部AI公司的RSI路线正在分化",
+      "weighted_score": 0.76,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "203e207a090e9caf",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/CEphwKjzAe7LzbOriLcq?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "38cf8e2889b3348d",
+      "source_id": "qbitai",
+      "title": "刚刚，Claude Code大重构！内部3万Agent管理技术免费开放",
+      "url": "https://www.qbitai.com/2026/09/491711.html",
+      "published_at": "2026-09-18T00:34:34+00:00",
+      "raw_text": "Git白学了？？？",
+      "category_hint": [
+        "行业动态",
+        "模型发布"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "Claude Code内部3万Agent管理技术开源，揭示大规模Agent编排的工程实践，对开发者极具参考价值。",
+      "summary_zh": "文章报道Claude Code进行大规模重构，并将其内部用于管理3万个Agent的技术免费开放。内容涉及多Agent系统的编排、调度与协作机制，可能包括任务分解、上下文管理和状态同步等工程细节。该技术开源后，开发者可借鉴其架构设计，用于构建大规模AI Agent应用。文章标题以“Git白学了”的调侃方式强调其技术颠覆性，暗示传统版本控制思路在Agent管理场景下可能不再适用。",
+      "title_zh": null,
+      "weighted_score": 0.745,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "45a552f23aefef57",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/09/491711.html"
         }
       ]
     },
@@ -237,103 +272,103 @@
       ]
     },
     {
-      "id": "7f1353baba4e3202",
-      "source_id": "infoq-cn-ai",
-      "title": "如何从历史中学习？基于RhymeRL的强化学习系统优化实践｜QCon上海",
-      "url": "https://www.infoq.cn/article/CbZGXuTBMFJPZ7WNtH9h?utm_source=rss&utm_medium=article",
-      "published_at": "2026-09-17T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/CbZGXuTBMFJPZ7WNtH9h?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "e4addcf48f06208d",
+      "source_id": "simonwillison",
+      "title": "How To Write With An LLM",
+      "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/",
+      "published_at": "2026-09-17T23:37:27+00:00",
+      "raw_text": "<p><strong><a href=\"https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm/\">How To Write With An LLM</a></strong></p>\nThomas Ptacek on using LLMs as copyeditors, not as writing assistants:</p>\n<blockquote>\n<p><strong>Rule Number One: You may not use a single word an LLM suggests to you.</strong></p>\n<p>[...] I think that as a form of intellectual personal protective equipment you should adopt the rule that any specific turn of phrase an LLM suggests is off limits. Be strict about the rule!</p>\n</blockquote>\n<p>I won't let LLMs write content for my blog, but I use them for fact-checking, spelling and grammar and as an occasional thesaurus (see <a href=\"https://simonwillison.net/guides/agentic-engineering-patterns/prompts/#proofreader\">my proofreading prompt</a>).</p>\n<p>The rule to never use a turn of phrase suggested by an LLM feels good to me. The text has that weird smell to it, and it's also a good principle to help stay disciplined.</p>\n<p>Later in this piece Thomas shows",
       "category_hint": [
-        "行业动态",
-        "技巧与观点"
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "Thomas Ptacek 提出用 LLM 做文字编辑而非写作助手，规则鲜明、论证有力，对写作者有反直觉启发。",
+      "summary_zh": "Thomas Ptacek 在博客中提出使用 LLM 辅助写作的核心原则：把 LLM 当作文字编辑（copyeditor）而非写作助手。他的第一条规则是「你不得使用 LLM 建议的任何一个词」。Ptacek 认为，让 LLM 直接生成文字会侵蚀写作者的个人风格与思维过程，而将其限定在语法修正、结构建议等编辑层面，则能保留作者的主体性。Simon Willison 推荐了这篇文章，称其观点鲜明且具有实践指导意义。",
+      "title_zh": "如何用 LLM 写作",
+      "weighted_score": 0.67,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "f617c117eb88f294",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "simonwillison",
+          "url": "https://simonwillison.net/2026/Sep/17/how-to-write-with-an-llm/"
+        }
+      ]
+    },
+    {
+      "id": "71d5dff4c772eb86",
+      "source_id": "towards-data-science",
+      "title": "Multi-Agent Coding Isn’t Enough — Agents Need a Commitment Layer",
+      "url": "https://towardsdatascience.com/multi-agent-coding-isnt-enough-agents-need-a-commitment-layer/",
+      "published_at": "2026-09-18T11:00:01+00:00",
+      "raw_text": "<p>Multi-agent coding systems don't necessarily fail because agents can't communicate. They can fail because important commitments made in conversation have nowhere to live afterward.</p>\n<p>The post <a href=\"https://towardsdatascience.com/multi-agent-coding-isnt-enough-agents-need-a-commitment-layer/\">Multi-Agent Coding Isn’t Enough — Agents Need a Commitment Layer</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "QCon 演讲实录，复盘 RhymeRL 强化学习系统的真实优化取舍，对做 RL 训练的工程师有可迁移经验。",
-      "summary_zh": "本文是 QCon 上海站的一场技术分享，主题为基于 RhymeRL 的强化学习系统优化实践，核心问题是“如何从历史中学习”。演讲者围绕强化学习训练系统的工程实现展开，梳理了在真实业务场景中优化 RL 系统时遇到的性能瓶颈、资源调度与稳定性问题，并给出相应的设计取舍与踩坑经验。内容偏工程实践而非理论推导，适合正在搭建或调优强化学习训练链路的工程师参考，帮助理解 RL 系统从实验到生产落地过程中的关键决策点。",
-      "title_zh": "如何从历史中学习？基于 RhymeRL 的强化学习系统优化实践｜QCon 上海",
-      "weighted_score": 0.645,
+      "reason_zh": "提出多Agent编码需要“承诺层”的架构洞察，指出对话中的承诺无处落地是失败根因。",
+      "summary_zh": "文章指出多Agent编码系统的失败往往不是因为Agent之间无法沟通，而是因为对话中达成的重要“承诺”（commitments）在对话结束后无处存放。作者主张为多Agent系统引入一个“承诺层”（commitment layer），用于持久化、追踪和校验Agent间达成的约定，从而避免承诺丢失导致的执行偏差。这是对多Agent协作架构的深度反思，提出了新的设计视角。",
+      "title_zh": "多Agent编码还不够——Agent需要一个承诺层",
+      "weighted_score": 0.595,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.6,
         "novelty": 0.6,
         "impact": 0.5,
-        "practical_value": 0.8
+        "practical_value": 0.7
       },
-      "story_id": "0b2e56a2db3cc229",
+      "story_id": "64656e96eda07860",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/CbZGXuTBMFJPZ7WNtH9h?utm_source=rss&utm_medium=article"
+          "source_id": "towards-data-science",
+          "url": "https://towardsdatascience.com/multi-agent-coding-isnt-enough-agents-need-a-commitment-layer/"
         }
       ]
     },
     {
-      "id": "a44fb0efd9571435",
-      "source_id": "zh-ithome",
-      "title": "距离 AI 造 AI 还有多远？Anthropic Claude 已主导 26% 内部 AI 研发工作",
-      "url": "https://www.ithome.com/1/003/886.htm",
-      "published_at": "2026-09-17T23:10:09+00:00",
-      "raw_text": "<p>IT之家 9 月 18 日消息，Anthropic 今日发布了一套用于衡量前沿 AI 实验室研发进度的方法，并公布公司内部的阶段性数据。</p><p>该体系主要关注 3 项指标：AI 参与 AI 研发的程度、AI 智能体的监督情况，以及算力在 AI 研发与安全研究之间的分配。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/9/de397fa5-4dd8-4022-81bd-bd17ac22bcd0.png\" /></p><p>Anthropic 称，随着 AI 能力的提升，AI 正在越来越多地参与下一代 AI 系统的研发。公司希望通过公开这些指标，让公众、第三方机构和政府更直观地了解前沿 AI 研发的推进速度。</p><p>Anthropic CEO 达里奥 · 阿莫代伊曾呼吁协调放缓前沿 AI 发展，若出现协调，相关数字预计会变化。</p><p>在 AI 参与 AI 研发方面，Anthropic 提出了“Anthropic 研发自动化指数”，用于衡量 Claude 参与公司 AI 研发工作的程度。该指标采用 Epoch AI 提出的自动化等级体系，从 AL0 到 AL5，分别对应没有 AI 参与、AI 辅助、AI 协作、AI 主导以及完全自主运行。</p><p>类似于汽车的自动驾驶评判等级，AL5 指的是 AI 完全自主运行、无需人类介入，AL4 指 AI 可依据高层提示完成大部分任务、人类只负责监督。</p><p>截至 2026 年 8 月，Claude 未在任何被测量的 AI 研发工作中实现“完全自主运行”，但已经“主导”Anthropic 约 26% 的 AI 研发工作，同时处于“AI 协作”及更高等级的工作占比已经超过 90%。</p><p>Anthropic 披露，这一比例在 2026 年 2 月还不到 1%。该公司认为，这类指标有助于观察 AI 研发自动化程度是否持续提高，以及距离“递归自我改进”—— 即 AI 能够完全自主开发下一代 AI—— 还有多远。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"",
+      "id": "6dbdcb891cdfb66c",
+      "source_id": "zh-oschina",
+      "title": "Anthropic 提出三个度量指标，想量化“AI 发展到底有多快”",
+      "url": "https://www.oschina.net/news/502569/anthropic-measuring-pace-of-ai-development",
+      "published_at": "2026-09-18T03:45:58+00:00",
+      "raw_text": "&quot;我们芯片多、我们跑得快&quot;——这种话听多了就容易变成营销。Anthropic 这次换了个思路：与其互相吹，不如直接把自家实验室的内部数据拿出来，给&quot;AI 发展速度&quot;这件事定一套可以测量的指标。 它发了三份方法论性质的度量。第一份叫&quot;AI 主导研发（AI-led R&amp;D）&quot;，借用 Epoch AI 的自动化分级（AL0 到 AL5，AL3 是 AI 协作、...",
       "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://img.ithome.com/newsuploadfiles/2026/9/de397fa5-4dd8-4022-81bd-bd17ac22bcd0.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Anthropic 公开衡量 AI 研发 AI 的指标体系，并披露 Claude 已主导 26% 内部研发工作。",
-      "summary_zh": "Anthropic 发布了一套用于衡量前沿 AI 实验室研发进度的方法，并公布公司内部阶段性数据。该体系主要关注三项指标：AI 参与 AI 研发的程度、AI 智能体的监督情况，以及算力在 AI 研发与安全研究之间的分配。Anthropic 称，随着 AI 能力提升，AI 正越来越多地参与下一代 AI 系统的研发，其中 Claude 已主导公司内部 26% 的 AI 研发工作。公司希望通过公开这些指标，让公众、第三方机构和政府更直观地了解前沿 AI 研发的推进速度。",
-      "title_zh": "距离 AI 造 AI 还有多远？Anthropic Claude 已主导 26% 内部 AI 研发工作",
-      "weighted_score": 0.76,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "3dc96eec1c2a5022",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-ithome",
-          "url": "https://www.ithome.com/1/003/886.htm"
-        }
-      ]
-    },
-    {
-      "id": "b1e4ce84b32dba33",
-      "source_id": "infoq-cn-ai",
-      "title": "汪涛详解华为AI战略：算力为核心，昇腾960提前登场，PB级 KV Cache把基础设施推入新阶段",
-      "url": "https://www.infoq.cn/article/bmducufWEHZZRxEYjM4l?utm_source=rss&utm_medium=article",
-      "published_at": "2026-09-17T15:23:47+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/bmducufWEHZZRxEYjM4l?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
+        "开源项目"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "华为AI战略深度解读，揭示算力为核心、昇腾960提前发布及PB级KV Cache对基础设施的影响，值得关注。",
-      "summary_zh": "华为汪涛详解AI战略，强调算力为核心，昇腾960芯片提前登场，并推出PB级KV Cache技术，将AI基础设施推入新阶段。文章分析了华为在AI算力领域的布局，包括芯片、存储和网络等层面的协同优化，旨在提升大模型训练和推理效率。同时探讨了该战略对行业竞争格局的潜在影响，以及华为如何通过软硬件一体化构建生态壁垒。",
-      "title_zh": null,
-      "weighted_score": 0.75,
+      "reason_zh": "Anthropic提出量化AI发展速度的度量指标，并公开内部数据，为行业提供了可测量的方法论。",
+      "summary_zh": "Anthropic 发布三份方法论性质的度量报告，旨在量化 AI 发展速度。第一份报告提出“AI 主导研发（AI-led R&D）”指标，借用 Epoch AI 的自动化分级（AL0 到 AL5，AL3 为 AI 协作）。Anthropic 公开了自家实验室的内部数据，试图为 AI 发展速度建立可测量的标准，而非仅靠营销话术。",
+      "title_zh": "Anthropic 提出三个度量指标，想量化“AI 发展到底有多快”",
+      "weighted_score": 0.735,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.8,
         "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.7
+        "impact": 0.7,
+        "practical_value": 0.6
       },
-      "story_id": "9fe825ccfe42ef5a",
+      "story_id": "7d3974c400d1497c",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/bmducufWEHZZRxEYjM4l?utm_source=rss&utm_medium=article"
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/502569/anthropic-measuring-pace-of-ai-development"
         }
       ]
     },
@@ -367,39 +402,6 @@
         {
           "source_id": "zh-meituan-tech",
           "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
-        }
-      ]
-    },
-    {
-      "id": "dcd327682447228b",
-      "source_id": "zh-meituan-tech",
-      "title": "美团智播——数字人直播技术创新与实践",
-      "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html",
-      "published_at": "2026-09-17T23:28:51.927947+00:00",
-      "raw_text": "美团智播围绕 AI 主播「长得真→动得准→演得活→卖得好」构建了完整技术闭环：真人 1:1 复刻、换装换背景身份不跑偏；动作自然流畅，告别「木偶戏」；边说边动、音画一致；背后还有推理加速技术支撑万路并发开播，让普惠落地成为可能。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/a7c5a936998959a941d145ac3eebe7334801382.png",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "美团数字人直播技术闭环复盘，涵盖复刻、动作、音画同步与万路并发推理加速，工程实践价值高。",
-      "summary_zh": "美团智播围绕 AI 主播“长得真、动得准、演得活、卖得好”构建了完整技术闭环。文章介绍了真人 1:1 复刻技术，实现换装换背景时身份不跑偏；通过动作生成让主播动作自然流畅，摆脱“木偶戏”感；做到边说边动、音画一致；并在底层引入推理加速技术支撑万路并发开播，使数字人直播的普惠落地成为可能。内容偏工程实践复盘，对数字人直播落地有参考价值。",
-      "title_zh": null,
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "d4343cde97a49034",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html"
         }
       ]
     }
