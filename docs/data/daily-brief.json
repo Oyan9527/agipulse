@@ -1,70 +1,136 @@
 {
-  "date": "2026-09-20",
-  "generated_at": "2026-09-20T23:13:37.280209+00:00",
+  "date": "2026-09-21",
+  "generated_at": "2026-09-21T21:03:02.678671+00:00",
   "items": [
     {
-      "id": "527e50bb71da8f91",
-      "source_id": "zh-oschina",
-      "title": "智谱披露 GLM-5.3 初显 RSI：模型开始优化承载自己的推理系统",
-      "url": "https://www.oschina.net/news/502613/zai-glm-built-its-inference-infrastructure",
-      "published_at": "2026-09-20T07:55:15+00:00",
-      "raw_text": "智谱创始人、首席科学家唐杰和 GLM 团队发了一篇长文，题目已经把姿态放得很低：&quot;这还不是完整意义上的递归自我改进（RSI），但已经出现了早期形态。&quot; 可读完整篇，你会觉得这个&quot;早期形态&quot;离&quot;完整&quot;可能没他们说的那么远。 绕开概念，先看它干了什么。GLM-5.3-Flash 上线时，一套生产级推理服务要在超过 10 万张国产芯片组...",
+      "id": "692dbb478ba63b48",
+      "source_id": "arxiv-cs-ai",
+      "title": "World Modeling in Transformers",
+      "url": "https://arxiv.org/abs/2609.21748",
+      "published_at": "2026-09-21T04:00:00+00:00",
+      "raw_text": "arXiv:2609.21748v1 Announce Type: new \nAbstract: Behavioral failures can make a transformer appear to lack a world model even when it has learned faithful representations of its environment. We demonstrate this in TaxiGPT, a transformer trained on random walks through Manhattan whose failures have been interpreted as evidence of an incoherent internal map. Through mechanistic analysis and causal interventions, we show that the model represents intersections and streets, tracks its position, and uses a goal compass to navigate. We trace its failures to interference between superposed intersection features, which disrupts localization within the internal map. Affordance packing, which groups representations of intersections with the same legal moves, helps limit the consequences of these errors. Finally, we propose mechanistic indicators that we use to compare models and show that world-modeling capacities emerge at different stages of training. Our findings motivate a shift from asking ",
       "category_hint": [
-        "开源项目"
+        "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
-      "content_type": "深度分析",
+      "content_type": "研究论文",
       "depth_score": 0.9,
-      "reason_zh": "智谱披露 GLM-5.3 初显 RSI，模型开始优化承载自身的推理系统，是理解递归自我改进早期形态的重要一手材料。",
-      "summary_zh": "智谱创始人唐杰与 GLM 团队发布长文，称 GLM-5.3 已出现递归自我改进（RSI）的早期形态，但强调尚非完整意义上的 RSI。文章以 GLM-5.3-Flash 上线为例：一套生产级推理服务需在超过 10 万张国产芯片上运行，模型开始参与优化承载自身的推理系统。文章围绕这一现象展开，讨论模型自我改进能力的边界与含义。",
-      "title_zh": null,
-      "weighted_score": 0.81,
+      "reason_zh": "通过机制分析与因果干预揭示Transformer内部世界模型，具可解释性深度。",
+      "summary_zh": "该论文探讨Transformer是否习得世界模型的问题。作者以TaxiGPT为例，该模型在曼哈顿随机游走数据上训练，其行为失败曾被解读为内部地图不一致。通过机制分析和因果干预，论文表明行为失败并不一定意味着模型缺乏忠实的环境表征，可能只是行为输出与内部表征之间的脱节。研究揭示了Transformer内部世界模型的表征与行为之间的复杂关系，对理解模型可解释性和泛化能力具有启发意义。",
+      "title_zh": "Transformer中的世界建模",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
-        "impact": 0.9,
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "0f3e9e527df02284",
+      "story_id": "9c1029764d7c5d81",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502613/zai-glm-built-its-inference-infrastructure"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.21748"
         }
       ]
     },
     {
-      "id": "e091bdb2e9e433d2",
-      "source_id": "zh-atbug",
-      "title": "没有反馈基础设施，Agent 只是一个有权限的猜测者",
-      "url": "https://atbug.com/ai-agent-feedback-infrastructure/",
-      "published_at": "2026-09-20T02:16:48+00:00",
-      "raw_text": "<h2 id=\"tldr\">TL;DR</h2>\n<p>Harness 编排 Agent 的行动，反馈基础设施提供判断依据；企业缺失的能力不会因为接入 AI 自动出现。</p>\n<h2 id=\"没有金刚钻别让-agent-揽瓷器活\">没有金刚钻，别让 Agent 揽瓷器活</h2>\n<p>“没有金刚钻，别揽瓷器活。”</p>\n<p>这句话放到今天的 AI Agent 身上，再合适不过。</p>\n<p>很多企业把 AI 当成突然得到的那枚“金刚钻”。模型越来越强，再接上知识库、内部系统，配上一套 Harness，过去积压的问题似乎就可以直接交给它：写代码、查故障、处理工单，甚至独立完成一段业务流程。</p>\n<p>但当 Agent 真正开始行动，问题很快就会从“它能不能做”变成另外四个问题：</p>\n<ol>\n<li>它是否知道自己刚才做了什么？</li>\n<li>它如何判断结果是否符合目标？</li>\n<li>它看到的变化，究竟是不是由自己的行动引起？</li>\n<li>当证据不足时，它知道下一步应该做什么实验吗？</li>\n</ol>\n<p>如果这些问题没有答案，Agent 即使能够调用再多工具，也只是在执行自己的猜测。区别无非是，以前它只能在对话框里猜，现在它可以带着权限进入真实系统，把猜测变成代码、配置和业务操作。</p>\n<p>真正的“金刚钻”不是模型，而是企业过去积累的工程能力、数据治理、业务判断和问题排查方法。企业原本没有的能力，不会因为接入 AI 就突然出现。AI 反而会把那些过去由人勉强补上的缺口集中暴露出来。</p>\n<p>这里讨论的不是回答问题或生成内容的一次性应用，而是那些已经获得工具和执行权限、开始对真实结果负责的 Agent。对于它们，能够行动只是起点。</p>\n<h2 id=\"harness-让-agent-能干活却不能保证它干对了\">Harness 让 Agent 能干活，却不能保证它干对了</h2>\n<p>上回那篇《<a href=\"https://atbug.com/harness-engineering-sdlc/\">Harness Engineering 又来颠覆了——你们开发不写文档、没有研发流程？</a>》，我把 Harness Engineering 拆成了三条原则：可见性、状态持久化和质量门禁。</p>",
+      "id": "e82021fddbfb1d5b",
+      "source_id": "arxiv-cs-ai",
+      "title": "A Lie Detector Test for Language Models: Reading Knowledge a Model Won't Reveal",
+      "url": "https://arxiv.org/abs/2609.21996",
+      "published_at": "2026-09-21T04:00:00+00:00",
+      "raw_text": "arXiv:2609.21996v1 Announce Type: new \nAbstract: Large language models can hold knowledge they do not report. A model may sandbag on a capability evaluation, or answer against what it internally knows, and its outputs alone cannot tell whether it is hiding an answer or simply does not have one. We borrow the Concealed Information Test, a forensic method that identifies guilty knowledge by presenting a suspect with the true detail among plausible decoys and measuring a stronger response to the item they recognize. Our method, Probe of Internal Recognition (PIR), does the same inside a model. It presents a question with its candidate answers and reads, from the model's internal states, which candidate the model recognizes as correct. PIR is reference-free, needing no honest reference model and no labeled truth corpus. Across eight models from five families (Gemma, Qwen, Llama, Mistral, and Phi), PIR recovers the recognized answer at 0.70 to 0.87 balanced accuracy, well above the 0.28 to ",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
+      "category": "论文研究",
+      "content_type": "研究论文",
       "depth_score": 0.85,
-      "reason_zh": "揭示Agent落地核心瓶颈：反馈基础设施缺失，企业能力不会因接入AI自动出现，值得深思。",
-      "summary_zh": "文章指出，许多企业将AI Agent视为突然获得的“金刚钻”，期望其直接接管写代码、查故障、处理工单等任务。但Agent真正行动后，核心问题从“能不能做”转变为：它是否知道自己做了什么、如何判断结果是否符合目标、能否从失败中学习、以及如何确保行为可追溯。作者强调，Harness负责编排Agent的行动，而反馈基础设施才提供判断依据。企业若缺乏反馈闭环、可观测性与评估机制，Agent只是一个有权限的猜测者，接入AI并不会自动补齐这些缺失的能力。",
-      "title_zh": null,
-      "weighted_score": 0.7,
+      "reason_zh": "借鉴犯罪心理学的隐藏信息测试来探测模型是否隐瞒已知答案，为AI安全与诚实性评估提供新工具。",
+      "summary_zh": "论文关注语言模型可能持有但不愿报告的知识，例如在能力评估中故意放水或给出与内部认知相悖的答案，仅凭输出无法区分模型是隐藏答案还是根本不知道。作者借鉴法医心理学中的隐藏信息测试（Concealed Information Test），通过呈现特定刺激并观察模型内部反应来识别其是否掌握被隐瞒的信息。该方法为检测模型欺骗、评估诚实性以及理解模型内部知识与输出之间的差距提供了可操作的技术路径。",
+      "title_zh": "语言模型的测谎仪：读取模型不愿透露的知识",
+      "weighted_score": 0.73,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.85
+        "source_authority": 0.7,
+        "novelty": 0.85,
+        "impact": 0.75,
+        "practical_value": 0.6
       },
-      "story_id": "979e2af01306f93b",
+      "story_id": "efe678c7ff2f58bd",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-atbug",
-          "url": "https://atbug.com/ai-agent-feedback-infrastructure/"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.21996"
+        }
+      ]
+    },
+    {
+      "id": "4a0809b4d5256ba5",
+      "source_id": "arxiv-cs-ai",
+      "title": "Information-Gain Rewards over Diversity-Pruned Tests: GT-Anchored Verifier Co-Training for Reliable Code Generation",
+      "url": "https://arxiv.org/abs/2609.21208",
+      "published_at": "2026-09-21T04:00:00+00:00",
+      "raw_text": "arXiv:2609.21208v1 Announce Type: new \nAbstract: Self-play methods that co-train a single language model as both coder and test author promise to move code-generation RL beyond fixed test suites, but they suffer from two coupled pathologies: permissiveness collapse, where pass-rate rewards are maximised by trivial, non-discriminative tests, and concentration bias, where i.i.d. sampled tests cluster on modal inputs and inflate estimator variance. We introduce CoVer (Co-trained Coder and Verifier), a single-policy GRPO framework that addresses both failure modes. First, an information-gain (IG) reward scores each self-generated test by the mutual information between its pass/fail vector and a graded, ground-truth-anchored correctness signal y [0, 1] m, gated by the sign of their covariance so that only positively discriminative tests receive reward. Second, a three-stage diversity-aware selection step prunes a candidate pool to a behaviourally non-redundant suite (invalidity, input-strin",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.85,
+      "reason_zh": "针对自博弈代码生成中测试宽松与集中偏差两大问题提出信息增益奖励与验证器协同训练，方法扎实。",
+      "summary_zh": "该论文研究代码生成强化学习中的自博弈方法，即让同一语言模型同时充当编码者与测试作者。作者指出这类方法存在两个相互关联的缺陷：一是“宽松性崩塌”，即通过率奖励会被琐碎、无区分度的测试刷高；二是“集中偏差”，即独立同分布采样的测试会聚集在相似模式上。为此，论文提出基于多样性剪枝测试的信息增益奖励，以及以真实测试为锚的验证器协同训练方法，以提升代码生成的可靠性。",
+      "title_zh": "多样性剪枝测试上的信息增益奖励：面向可靠代码生成的GT锚定验证器协同训练",
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "7dc4b1982bed7f7a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.21208"
+        }
+      ]
+    },
+    {
+      "id": "7d948ffb39bb9fe2",
+      "source_id": "arxiv-cs-ai",
+      "title": "Detecting Hallucination in LLMs: Tracing the Topological Signatures of Impaired Context Sharing",
+      "url": "https://arxiv.org/abs/2609.21096",
+      "published_at": "2026-09-21T04:00:00+00:00",
+      "raw_text": "arXiv:2609.21096v1 Announce Type: new \nAbstract: In this work, we examine the topology of information flow patterns within attention graphs to effectively distinguish hallucinated from non-hallucinated responses. We analyze the Forman-Ricci curvature to identify structural patterns indicating information bottlenecks in attention graphs. We then introduce a method that captures both semi-local and global information-flow characteristics of attention heads associated with hallucinated responses. We evaluate our approach extensively across several LLMs and established benchmarks. Empirical results demonstrate that our proposed single-pass approach provides consistent improvements over existing attention-based and multi-response baselines across two hallucination-detection benchmarks, while achieving competitive performance across diverse LLM architectures. Further analysis reveals that impaired context sharing among tokens during causal generation is strongly associated with hallucination",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.85,
+      "reason_zh": "从注意力图拓扑结构切入检测幻觉，视角新颖，为可解释性与可靠性研究提供可迁移的分析框架。",
+      "summary_zh": "该论文研究注意力图内信息流动模式的拓扑结构，以区分大模型的幻觉与非幻觉回答。作者分析 Forman-Ricci 曲率，识别注意力图中指示信息瓶颈的结构模式，并提出一种同时捕捉半局部与全局拓扑特征的方法。研究将幻觉问题与上下文共享受损联系起来，试图从信息流动的几何性质给出可解释的检测信号，为理解幻觉产生的内部机制提供了新视角。",
+      "title_zh": "检测大模型幻觉：追踪上下文共享受损的拓扑特征",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "29634c84cb7894bf",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.21096"
         }
       ]
     },
@@ -102,301 +168,237 @@
       ]
     },
     {
-      "id": "20e7c40f70ae20dc",
-      "source_id": "zh-meituan-tech",
-      "title": "让AI离开温室，走向动态世界：MineExplorer揭示顶级多模态大模型被忽视的能力断层",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html",
-      "published_at": "2026-09-20T23:06:13.845512+00:00",
-      "raw_text": "美团 LongCat 团队构建了 MineExplorer —— 首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。",
+      "id": "9a319be2f7489d1b",
+      "source_id": "interconnects",
+      "title": "The current balance of power in open models",
+      "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
+      "published_at": "2026-09-21T11:56:56+00:00",
+      "raw_text": "The expanded form of a testimony I prepared for Congress.",
       "category_hint": [
-        "技巧与观点"
+        "技巧与观点",
+        "论文研究"
       ],
-      "image_url": "https://p1.meituan.net/meituantechblog/3415508a98cf053008ffb59af0ed592a421327.png",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "美团 LongCat 团队构建 MineExplorer 基准，揭示顶级多模态大模型在开放世界长程任务中的能力断层，具启发性。",
-      "summary_zh": "美团 LongCat 团队构建了 MineExplorer——首个在开放世界中做到分钟级长程任务的评测基准，系统性地评测多模态大模型在需要长程规划、并包含隐藏前置条件的任务中的真实能力。该基准旨在让 AI 离开温室，走向动态世界，揭示顶级多模态大模型被忽视的能力断层，为评估和改进多模态大模型的真实世界能力提供了新工具。",
-      "title_zh": null,
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "703bdf6f589de6ef",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-MineExplorer.html"
-        }
-      ]
-    },
-    {
-      "id": "1d87193a375259c6",
-      "source_id": "zh-tmtpost",
-      "title": "对话阿里云王朝阳：中国不缺电，AI卡在电与算力的协同",
-      "url": "https://www.tmtpost.com/8146043.html",
-      "published_at": "2026-09-20T03:10:03+00:00",
-      "raw_text": "围绕总量、柔性、成本、协同四本账拆解中国AI的能源约束，并提出\"能源在沉淀\"判断：单位算力的能源账单长期只会越来越重。文末给出三个可核查的跟踪信号。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/09/20/72e9273c7b320fe0a3961cb9ad4f3db0_1789869249.webp",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/da6bb5fd-56d4-49ec-a19b-dafc917414e1_3182x1790.png",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "从总量、柔性、成本、协同四本账拆解中国AI能源约束，提出可核查的跟踪信号，视角独特且有论证。",
-      "summary_zh": "文章对话阿里云王朝阳，围绕总量、柔性、成本、协同四个维度拆解中国AI发展面临的能源约束。核心判断是\"能源在沉淀\"，即单位算力的能源账单长期只会越来越重，中国虽不缺电，但AI的真正瓶颈在于电力与算力的协同调度。文章提出三个可核查的跟踪信号，供读者持续观察能源与算力协同的进展。",
-      "title_zh": null,
-      "weighted_score": 0.7,
+      "reason_zh": "Interconnects作者为国会作证准备的扩展版，系统分析开源模型权力格局，具深度与政策参考价值。",
+      "summary_zh": "本文是Interconnects作者为美国国会作证准备的扩展版证词，系统分析了当前开源模型的权力格局。文章探讨了开源与闭源模型之间的竞争态势、主要参与者的战略定位，以及开源模型对AI行业权力分布的影响。作为面向政策制定者的深度分析，内容涵盖技术趋势、地缘政治与产业竞争等多维度视角，为理解开源AI生态的现状与走向提供了有价值的框架。",
+      "title_zh": "开源模型的当前权力格局",
+      "weighted_score": 0.75,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.85,
         "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "60335016e1e83d90",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8146043.html"
-        }
-      ]
-    },
-    {
-      "id": "fb686d230539d884",
-      "source_id": "reddit-machinelearning",
-      "title": "Why decontamination reports can't fix benchmark contamination, and what an evaluator has to do instead [D]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1wlimaj/why_decontamination_reports_cant_fix_benchmark/",
-      "published_at": "2026-09-20T14:31:49+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>In February OpenAI stopped reporting SWE-bench Verified and recommended other labs stop too. Every frontier model they tested could reproduce the human-written reference fix, or verbatim details of the problem statement, for some tasks. Progress had slowed to six points in six months and it wasn't clear how much of the remaining score was capability at all. The lab that built the benchmark, and had every reason to keep it, is the one that retired it.</p> <p>The usual answer is a decontamination report: the lab searched its training data and found nothing. I wrote up why that can't work, for three reasons that don't go away with better search:</p> <p>- The lab checks itself. Nobody outside the lab has the corpus, so nobody can rerun the search.</p> <p>- The corpus can't be disclosed. It's a list of every copyrighted work in it, and publishing that is litigation exposure.</p> <p>- Matching misses most of it. Paraphrases, forum walkthroughs, solutions on ",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "观点评论",
-      "depth_score": 0.8,
-      "reason_zh": "深入剖析基准测试污染问题，指出去污染报告无法根治，提出评估者应转向动态评估方法。",
-      "summary_zh": "文章讨论基准测试污染问题，指出OpenAI在2025年2月停止报告SWE-bench Verified并建议其他实验室效仿，因为前沿模型能复现人类参考修复或问题陈述的逐字细节。作者认为去污染报告无法真正解决污染问题，因为模型可能通过其他方式记忆或泛化。文章提出评估者应转向动态生成测试用例、使用私有数据集或采用对抗性评估等方法，以确保基准测试能真实反映模型能力而非记忆。",
-      "title_zh": "为什么去污染报告无法解决基准测试污染，评估者应该怎么做 [D]",
-      "weighted_score": 0.59,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.7,
-        "impact": 0.7,
+        "impact": 0.8,
         "practical_value": 0.6
       },
-      "story_id": "f679f03105268b7b",
+      "story_id": "28b09f2d014ecec4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1wlimaj/why_decontamination_reports_cant_fix_benchmark/"
+          "source_id": "interconnects",
+          "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open"
         }
       ]
     },
     {
-      "id": "455f159930d0bdff",
+      "id": "6010bff9e314ca9b",
       "source_id": "zh-oschina",
-      "title": "华为多维探索 Agentic 计算：超节点 + 集群，从算子打到 Agent 开发范式",
-      "url": "https://www.oschina.net/news/502611/huawei-hc2026-agentic-thinkpro-pto-cann",
-      "published_at": "2026-09-20T07:08:40+00:00",
-      "raw_text": "Agentic 时代给算力带来的麻烦，比想象中具体。大量 Agent 跑长程复杂任务，输出等待时延高、通信带宽压力大、内存消耗激增，算力分布和互联方式都在变。华为计算首席战略官朱照生在全联接大会上给出应对思路：基于灵衢架构，面向&quot;超节点+集群&quot;提出 Agentic 计算新开发方式，拆成五个维度推进——从单服务器到超节点开发...",
+      "title": "微软工程师花 12 万美元让 AI 重写 Copilot 运行时：43 万行 TS 变成 80 万行 Rust，快 15.9 倍",
+      "url": "https://www.oschina.net/news/502646/ms-agentically-ports-copilot-runtime-to-rust-for-120k",
+      "published_at": "2026-09-21T08:47:57+00:00",
+      "raw_text": "微软干了一件事儿，听起来像套娃：用 AI 重写了撑起 AI 产品的运行时。GitHub Copilot 的运行时光是被全部搬到了 Rust——不是工程师手写的，是 AI agents 干的，整个过程就花了 12 万美元的 token 钱加一个工程师三周时间。 这个运行时比大多数用户想象得要命脉。它支撑着 GitHub Copilot CLI、Copilot App、SDK 和 Co...",
       "category_hint": [
         "开源项目"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "华为从算力架构层面拆解 Agentic 计算挑战，提出超节点+集群五维开发范式，对理解 Agent 时代基础设施演进有参考价值。",
-      "summary_zh": "华为计算首席战略官朱照生在华为全联接大会上指出，Agentic 时代大量 Agent 执行长程复杂任务，带来输出等待时延高、通信带宽压力大、内存消耗激增等问题，算力分布与互联方式正在发生变化。为此，华为基于灵衢架构，面向“超节点+集群”提出 Agentic 计算新开发方式，从单服务器到超节点开发等五个维度推进，试图为 Agent 规模化落地提供系统级算力支撑方案。",
-      "title_zh": null,
-      "weighted_score": 0.68,
+      "depth_score": 0.8,
+      "reason_zh": "AI重写Copilot运行时、43万行TS转80万行Rust并提速15.9倍，工程取舍与成本细节值得细读。",
+      "summary_zh": "微软用AI agents将GitHub Copilot的运行时从43万行TypeScript重写为80万行Rust，仅花费约12万美元token成本加一名工程师三周时间，性能提升15.9倍。该运行时支撑Copilot CLI、Copilot App、SDK等核心产品，是AI产品的命脉组件。文章复盘了这次大规模语言迁移的动机、AI生成代码的验证方式、成本结构与性能收益，为工程团队评估AI辅助重写遗留系统提供了真实案例与取舍参考。",
+      "title_zh": "微软工程师花12万美元让AI重写Copilot运行时：43万行TS变80万行Rust，快15.9倍",
+      "weighted_score": 0.7425,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "source_authority": 0.6,
+        "novelty": 0.85,
+        "impact": 0.8,
+        "practical_value": 0.75
       },
-      "story_id": "cfd08d40eff4ceaa",
+      "story_id": "8055c8a221fce859",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502611/huawei-hc2026-agentic-thinkpro-pto-cann"
+          "url": "https://www.oschina.net/news/502646/ms-agentically-ports-copilot-runtime-to-rust-for-120k"
         }
       ]
     },
     {
-      "id": "834c51bc12bacff7",
-      "source_id": "the-decoder",
-      "title": "Simulated students that make realistic mistakes help AI tutors learn faster",
-      "url": "https://the-decoder.com/simulated-students-that-make-realistic-mistakes-help-ai-tutors-learn-faster/",
-      "published_at": "2026-09-20T09:50:32+00:00",
-      "raw_text": "<p><img alt=\"Illustration: Four people are solving interactive tasks such as puzzles, mazes, and coding challenges as part of an AI-powered tutoring workflow.\" class=\"attachment-full size-full wp-post-image\" height=\"1047\" src=\"https://the-decoder.com/wp-content/uploads/2026/09/ai-tutors-microsoft-nano-banana-pro.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        Microsoft and the University of Illinois built StudentSim to replicate individual students from limited data and give AI tutors fast, low-cost feedback. In tests covering 60 students across chess, English, and math, it outperformed GPT-5.4. A chess tutor trained with StudentSim also earned the highest expert ratings among three versions tested.</p>\n<p>The article <a href=\"https://the-decoder.com/simulated-students-that-make-realistic-mistakes-help-ai-tutors-learn-faster/\">Simulated students that make realistic mistakes help AI tutors learn faster</a> appeared first on <a href=\"https://the-decoder.com",
+      "id": "b14f939c678eae77",
+      "source_id": "arxiv-cs-ai",
+      "title": "EnterpriseVal: Quantifying the Efficacy, Reliability and Value of Generative AI in the Enterprise",
+      "url": "https://arxiv.org/abs/2609.21841",
+      "published_at": "2026-09-21T04:00:00+00:00",
+      "raw_text": "arXiv:2609.21841v1 Announce Type: new \nAbstract: Frontier language models now produce professional deliverables that expert graders judge to match human work on a substantial share of economically valuable tasks, yet most enterprise GenAI initiatives fail to show a measurable business effect and a large fraction of agentic projects are expected to be cancelled. We argue that this is substantially a measurement problem: public benchmarks answer \"what can the model do?\", whereas a deployment decision requires \"is this workflow fit, reliable, safe and worth scaling - here, on our data, under our controls?\". We present EnterpriseVal, a use-case-level evaluation system that closes this gap. It comprises (i) a formal specification of the use case and of the frozen socio-technical configuration under test, model, prompts, retrieval, tools, guardrails and human oversight, with an autonomy level and consequence tier that jointly set the required evaluation intensity; (ii) a metric catalogue spa",
       "category_hint": [
-        "模型发布",
-        "行业动态"
+        "论文研究"
       ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/09/ai-tutors-microsoft-nano-banana-pro.jpg",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "微软用会犯真实错误的模拟学生训练AI导师，方法有启发性，值得教育AI研究者一读。",
-      "summary_zh": "微软研究团队提出用模拟学生来加速AI导师的训练，这些模拟学生会像真人一样犯下真实错误，而非总是给出正确答案。通过让AI导师面对带有典型错误的学生行为，训练过程能更贴近真实教学场景，从而提升导师的纠错与引导能力。该方法为教育类AI系统的训练提供了新思路，也说明模拟环境中的错误建模对提升教学效果具有实际价值。",
-      "title_zh": "会犯真实错误的模拟学生帮助AI导师更快学习",
-      "weighted_score": 0.63,
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "量化企业生成式AI价值与可靠性，分析落地失败原因，对企业决策者有参考价值。",
+      "summary_zh": "该论文关注企业生成式AI的价值量化问题。尽管前沿语言模型在大量经济价值任务上已达到专家评分接近人类水平，但多数企业GenAI项目未能展现可衡量的业务效果，且相当比例的智能体项目预计将被取消。作者认为这一差距主要源于评估方法未能捕捉企业实际价值、可靠性和集成成本。论文提出EnterpriseVal框架，旨在量化生成式AI在企业中的效能、可靠性和价值，为企业决策者和研究者提供评估思路。",
+      "title_zh": "EnterpriseVal：量化企业生成式AI的效能、可靠性与价值",
+      "weighted_score": 0.72,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.6
-      },
-      "story_id": "c64e33aab2f86c59",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/simulated-students-that-make-realistic-mistakes-help-ai-tutors-learn-faster/"
-        }
-      ]
-    },
-    {
-      "id": "dcd327682447228b",
-      "source_id": "zh-meituan-tech",
-      "title": "美团智播——数字人直播技术创新与实践",
-      "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html",
-      "published_at": "2026-09-20T23:06:13.845409+00:00",
-      "raw_text": "美团智播围绕 AI 主播「长得真→动得准→演得活→卖得好」构建了完整技术闭环：真人 1:1 复刻、换装换背景身份不跑偏；动作自然流畅，告别「木偶戏」；边说边动、音画一致；背后还有推理加速技术支撑万路并发开播，让普惠落地成为可能。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/a7c5a936998959a941d145ac3eebe7334801382.png",
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "美团数字人直播技术闭环的工程实践复盘，涵盖复刻、动作、音画同步与推理加速，对落地数字人直播有参考价值。",
-      "summary_zh": "美团智播围绕 AI 主播构建了完整技术闭环，目标是从“长得真”到“卖得好”。具体包括：真人 1:1 复刻，支持换装换背景且身份不跑偏；动作自然流畅，摆脱木偶戏感；实现边说边动、音画一致；背后还有推理加速技术支撑万路并发开播，让普惠落地成为可能。文章系统介绍了数字人直播在形象、动作、表演和商业化各环节的技术创新与实践经验。",
-      "title_zh": null,
-      "weighted_score": 0.625,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "d4343cde97a49034",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html"
-        }
-      ]
-    },
-    {
-      "id": "4e8227e28349abd9",
-      "source_id": "zh-meituan-tech",
-      "title": "美团搜索3.0：LLM 语义表征在排序模型的探索与应用",
-      "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html",
-      "published_at": "2026-09-20T23:06:13.845445+00:00",
-      "raw_text": "美团搜索团队正依托团垂融合新架构与生成式大模型新技术，全面重构本地生活搜索底座。本系列技术博客将持续介绍美团搜索 3.0 的技术探索，本文聚焦 LLM 语义表征在服务零售排序场景上的三期实践——从单点特征验证到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p1.meituan.net/meituantechblog/8f6d0d2a1b53e0fbe26ec7f5426bd45a302269.png",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "美团搜索 3.0 系列首篇，详述 LLM 语义表征在排序场景的三期实践，对搜索排序工程有直接借鉴意义。",
-      "summary_zh": "美团搜索团队正依托团垂融合新架构与生成式大模型技术，全面重构本地生活搜索底座。本文聚焦 LLM 语义表征在服务零售排序场景上的三期实践：从单点特征验证，到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。该系列技术博客将持续介绍美团搜索 3.0 的技术探索，本文为其中一篇。",
-      "title_zh": null,
-      "weighted_score": 0.625,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "b4840a22e716d559",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html"
-        }
-      ]
-    },
-    {
-      "id": "6064b6036f129ffd",
-      "source_id": "zh-meituan-tech",
-      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
-      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
-      "published_at": "2026-09-20T23:06:13.845470+00:00",
-      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "美团图灵 Agent 评测团队两年 BP 实践经验总结，系统讲解如何建立评测体系，对 Agent 开发者有实操指导价值。",
-      "summary_zh": "本篇博客是一篇由浅入深介绍 Agent 评测的科普文章。前两章系统介绍了评测是什么，以及如何建立评测体系。其中第二章是美团图灵 Agent 评测团队深入美团各业务团队 BP 总结出的实践经验，是团队在两年实践过程中逐步打磨出来的认知。文章旨在帮助读者理解 Agent 评测的基本概念与体系搭建方法，适合对 Agent 评测感兴趣的开发者阅读。",
-      "title_zh": null,
-      "weighted_score": 0.62,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.5,
-        "impact": 0.5,
+        "impact": 0.7,
         "practical_value": 0.8
       },
-      "story_id": "9ba181dd6f145810",
+      "story_id": "0e09971c923d9d50",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2609.21841"
         }
       ]
     },
     {
-      "id": "90ab2b39c4995e29",
-      "source_id": "zh-tmtpost",
-      "title": "对话徐直军：被低估的灵衢，重新理解AI算力",
-      "url": "https://www.tmtpost.com/8146244.html",
-      "published_at": "2026-09-20T08:37:34+00:00",
-      "raw_text": "灵衢的故事，就藏在这些连接里。",
+      "id": "d1396182f341eca8",
+      "source_id": "stratechery",
+      "title": "Frontier Overhangs",
+      "url": "https://stratechery.com/2026/frontier-overhangs/",
+      "published_at": "2026-09-21T10:00:00+00:00",
+      "raw_text": "Pacing the frontier may be sincere, but it would also be strategically useful for the frontier labs to have time to reduce overhangs caused by model advancement.",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2026/09/bd7a686e7f238343a8f70e7b280b4d2f_1789893458.jpg",
+      "image_url": "https://i0.wp.com/stratechery.com/wp-content/uploads/2026/09/overhang-1.png?resize=600%2C742&#038;ssl=1",
       "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "对话徐直军，深入解读被低估的灵衢与AI算力重新理解，有洞察。",
-      "summary_zh": "文章为对话华为徐直军的深度内容，主题围绕被低估的灵衢技术，重新理解AI算力。灵衢可能指华为的某种互联或算力架构，徐直军分享了其背后的设计理念与战略思考。文章通过对话形式，探讨了AI算力基础设施的关键挑战与华为的应对思路，为理解国产算力发展提供了高层视角。",
-      "title_zh": null,
-      "weighted_score": 0.61,
+      "content_type": "观点评论",
+      "depth_score": 0.8,
+      "reason_zh": "Stratechery对前沿实验室“放缓节奏”策略的深度剖析，提出“overhang”概念，洞察独到。",
+      "summary_zh": "本文来自 Stratechery，探讨了前沿 AI 实验室“控制节奏”策略背后的动机。作者提出“Frontier Overhangs”概念，指模型能力进步与外部世界适应能力之间形成的落差。文章认为，放缓前沿推进虽然表面上是出于安全考虑，但对实验室而言也具有战略价值：争取时间减少因模型快速迭代而产生的“overhang”，即让社会、监管和产品生态跟上模型能力。文章分析了这种策略的合理性与潜在影响，提供了理解 AI 竞争格局的新视角。",
+      "title_zh": "前沿悬垂",
+      "weighted_score": 0.665,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
+        "source_authority": 0.8,
+        "novelty": 0.7,
         "impact": 0.6,
         "practical_value": 0.5
       },
-      "story_id": "13a06bd6cab090ce",
+      "story_id": "2f50e2caa2efd2c0",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8146244.html"
+          "source_id": "stratechery",
+          "url": "https://stratechery.com/2026/frontier-overhangs/"
+        }
+      ]
+    },
+    {
+      "id": "dd63189f99f4fc33",
+      "source_id": "nvidia-ai-blog",
+      "title": "AI Security Is an Engineering Problem — How to Solve It at Every Layer of the Agent Stack",
+      "url": "https://blogs.nvidia.com/blog/ai-security-agent-stack/",
+      "published_at": "2026-09-21T14:51:34+00:00",
+      "raw_text": "AI security is an engineering problem. That means defined security requirements, enforceable controls, named owners and evidence that protections work.  As AI becomes more capable, the industry must accelerate security engineering, broaden access to defensive tools and share what works faster.  Technology Changes, Security Fundamentals Endure The internet and cloud computing changed how software operates, [&#8230;]",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://blogs.nvidia.com/wp-content/uploads/2026/09/security-thought-leadership-1920x1080-1-842x450.jpg",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "NVIDIA 官方博客系统阐述 Agent 栈各层的 AI 安全工程化思路，对构建生产级 Agent 的团队有直接指导意义。",
+      "summary_zh": "NVIDIA AI 博客发文指出，AI 安全本质上是一个工程问题，而非单纯的研究问题。文章主张为 AI 系统定义明确的安全需求、可执行的管控措施、明确的责任人，以及能证明防护有效的证据。随着 AI 能力不断增强，行业必须加速安全工程实践，扩大防御工具的获取渠道，并更快地共享有效方案。文章强调，尽管技术和攻击面在变化，但安全的基本原则始终不变，并逐层讨论了 Agent 技术栈中可落地的安全工程方法。",
+      "title_zh": "AI 安全是一个工程问题——如何在 Agent 栈的每一层解决它",
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.85,
+        "novelty": 0.6,
+        "impact": 0.7,
+        "practical_value": 0.75
+      },
+      "story_id": "eac96db06f90b821",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "nvidia-ai-blog",
+          "url": "https://blogs.nvidia.com/blog/ai-security-agent-stack/"
+        }
+      ]
+    },
+    {
+      "id": "1585f593980d6e36",
+      "source_id": "pytorch-blog",
+      "title": "TinyTorch: Don’t Just Import PyTorch. Build It.",
+      "url": "https://pytorch.org/blog/tinytorch-dont-just-import-pytorch-build-it/",
+      "published_at": "2026-09-21T20:41:14+00:00",
+      "raw_text": "A framework you write yourself, tensors through transformers TL;DR Every mature systems project eventually needs a teaching version. TinyTorch is a free, open-source curriculum where you build a working ML...",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": "https://pytorch.org/wp-content/uploads/2026/09/All-PyTorch-Blog-Social-Images-25.png",
+      "category": "开源项目",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "从零手写PyTorch式框架的教学课程，覆盖张量到Transformer，是理解深度学习底层的好材料。",
+      "summary_zh": "TinyTorch是一个免费开源课程，目标是让学习者亲手构建一个可运行的机器学习框架，而不是直接import PyTorch。课程从张量基础开始，逐步实现到Transformer的完整链路。作者认为每个成熟的系统项目最终都需要一个教学版本，TinyTorch正是PyTorch生态中的这一角色。通过自己写框架，学习者能真正理解自动微分、反向传播、层与优化器等核心机制，而非停留在调用API的层面。",
+      "title_zh": "TinyTorch：不要只import PyTorch，亲手构建它",
+      "weighted_score": 0.72,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.9
+      },
+      "story_id": "8eff023cb6b0ce5f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "pytorch-blog",
+          "url": "https://pytorch.org/blog/tinytorch-dont-just-import-pytorch-build-it/"
+        }
+      ]
+    },
+    {
+      "id": "0ee5aa3cf18be8da",
+      "source_id": "aws-ml-blog",
+      "title": "How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore",
+      "url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/",
+      "published_at": "2026-09-21T16:27:34+00:00",
+      "raw_text": "Learn how Benchling built a defense-in-depth security architecture to run untrusted, AI agent-generated scientific code across thousands of life sciences tenants using Amazon Bedrock AgentCore Code Interpreter in VPC mode, combined with Amazon Route 53 Resolver DNS Firewall and VPC endpoint policies to block data exfiltration, including through DNS.",
+      "category_hint": [
+        "技巧与观点",
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/08/31/Benchling-agentcore-ci-revised.drawio.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Benchling 详解多租户 AI agent 安全架构，含 DNS 防外泄等实战取舍，工程参考价值高。",
+      "summary_zh": "AWS 博客介绍 Benchling 如何为多租户场景下的 AI agent 构建纵深防御安全架构。其核心是在 VPC 模式下使用 Amazon Bedrock AgentCore Code Interpreter，安全运行由 AI agent 生成、且不可信的科研代码，服务数千个生命科学租户。方案结合 Amazon Route 53 Resolver DNS Firewall 与 VPC 端点策略，阻断包括通过 DNS 通道在内的数据外泄路径。文章属于真实系统的工程复盘，对需要在多租户环境隔离执行不可信代码的团队有较强借鉴意义。",
+      "title_zh": "Benchling 如何用 Amazon Bedrock AgentCore 保障多租户 AI agent 安全",
+      "weighted_score": 0.675,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "0e79270f4f5c1333",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/"
         }
       ]
     }
