@@ -1,13 +1,80 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T00:06:04.098346+00:00",
+  "generated_at": "2026-09-22T20:15:15.470335+00:00",
   "items": [
+    {
+      "id": "03eda785257d3094",
+      "source_id": "pytorch-blog",
+      "title": "How Shopify built a continual learning loop with PyTorch and vLLM",
+      "url": "https://pytorch.org/blog/how-shopify-built-a-continual-learning-loop-with-pytorch-and-vllm/",
+      "published_at": "2026-09-22T13:45:18+00:00",
+      "raw_text": "TL;DR: This case study explores how Shopify compresses production failures into model weights every day, beats frontier-model quality, and cuts serving costs 96% by building a continual learning loop with...",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": "https://pytorch.org/wp-content/uploads/2026/09/How-Shopify-built-a-continual-learning-loop-with-PyTorch-vLLM-1024x536.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "Shopify 用 PyTorch 与 vLLM 构建持续学习闭环，将生产失败压缩进权重，服务成本降 96%，工程细节极具参考价值。",
+      "summary_zh": "本文是 PyTorch 官方博客的案例研究，介绍 Shopify 如何构建持续学习闭环：每天将生产环境中的失败案例转化为训练数据，用 PyTorch 微调模型并借助 vLLM 高效部署，使模型质量超越前沿大模型，同时将服务成本降低 96%。文章详细描述了数据收集、训练触发、权重更新与推理服务的工程架构，以及如何避免灾难性遗忘和保证线上稳定性，对希望落地持续学习系统的团队有很强的实操参考意义。",
+      "title_zh": "Shopify 如何用 PyTorch 和 vLLM 构建持续学习闭环",
+      "weighted_score": 0.8625,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.85,
+        "impact": 0.8,
+        "practical_value": 0.9
+      },
+      "story_id": "c1dbf2b802c69a1b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "pytorch-blog",
+          "url": "https://pytorch.org/blog/how-shopify-built-a-continual-learning-loop-with-pytorch-and-vllm/"
+        }
+      ]
+    },
+    {
+      "id": "c4fa5e38d3dbeb21",
+      "source_id": "zh-juejin",
+      "title": "把上下文编译进权重：拆解剑桥「无限参数 LLM」，以及它尚未回答的四个问题",
+      "url": "https://juejin.cn/post/7688212417864974363",
+      "published_at": "2026-09-22T14:12:19+00:00",
+      "raw_text": "一、旧范式的原罪：上下文是「租」来的，不是「买」下的 先把问题定义精确。一个部署后的模型面对的处境是：最值钱的信息往往不在训练集里，而在它正在处理的这轮交互里——用户随口给的一个事实，或者对他某次错误",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "拆解剑桥“无限参数 LLM”思路：把上下文编译进权重，并指出四个未解问题，适合关注长上下文与记忆机制的读者。",
+      "summary_zh": "本文拆解剑桥提出的“无限参数 LLM”思路，核心是将上下文编译进模型权重，而非在推理时临时“租用”上下文。文章先定义问题：部署后的模型最值钱的信息往往不在训练集里，而在当前交互中。随后分析该范式如何通过把交互信息写入参数来突破上下文窗口限制，并指出四个尚未回答的问题，包括写入效率、灾难性遗忘、权重更新的一致性与可验证性等，属于有论证的技术剖析。",
+      "title_zh": null,
+      "weighted_score": 0.75,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.85,
+        "impact": 0.75,
+        "practical_value": 0.7
+      },
+      "story_id": "a71d54726a5c04ab",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-juejin",
+          "url": "https://juejin.cn/post/7688212417864974363"
+        }
+      ]
+    },
     {
       "id": "692dbb478ba63b48",
       "source_id": "arxiv-cs-ai",
       "title": "World Modeling in Transformers",
       "url": "https://arxiv.org/abs/2609.21748",
-      "published_at": "2026-09-21T04:00:00+00:00",
+      "published_at": "2026-09-22T04:00:00+00:00",
       "raw_text": "arXiv:2609.21748v1 Announce Type: new \nAbstract: Behavioral failures can make a transformer appear to lack a world model even when it has learned faithful representations of its environment. We demonstrate this in TaxiGPT, a transformer trained on random walks through Manhattan whose failures have been interpreted as evidence of an incoherent internal map. Through mechanistic analysis and causal interventions, we show that the model represents intersections and streets, tracks its position, and uses a goal compass to navigate. We trace its failures to interference between superposed intersection features, which disrupts localization within the internal map. Affordance packing, which groups representations of intersections with the same legal moves, helps limit the consequences of these errors. Finally, we propose mechanistic indicators that we use to compare models and show that world-modeling capacities emerge at different stages of training. Our findings motivate a shift from asking ",
       "category_hint": [
         "论文研究"
@@ -40,7 +107,7 @@
       "source_id": "arxiv-cs-ai",
       "title": "A Lie Detector Test for Language Models: Reading Knowledge a Model Won't Reveal",
       "url": "https://arxiv.org/abs/2609.21996",
-      "published_at": "2026-09-21T04:00:00+00:00",
+      "published_at": "2026-09-22T04:00:00+00:00",
       "raw_text": "arXiv:2609.21996v1 Announce Type: new \nAbstract: Large language models can hold knowledge they do not report. A model may sandbag on a capability evaluation, or answer against what it internally knows, and its outputs alone cannot tell whether it is hiding an answer or simply does not have one. We borrow the Concealed Information Test, a forensic method that identifies guilty knowledge by presenting a suspect with the true detail among plausible decoys and measuring a stronger response to the item they recognize. Our method, Probe of Internal Recognition (PIR), does the same inside a model. It presents a question with its candidate answers and reads, from the model's internal states, which candidate the model recognizes as correct. PIR is reference-free, needing no honest reference model and no labeled truth corpus. Across eight models from five families (Gemma, Qwen, Llama, Mistral, and Phi), PIR recovers the recognized answer at 0.70 to 0.87 balanced accuracy, well above the 0.28 to ",
       "category_hint": [
         "论文研究"
@@ -69,11 +136,45 @@
       ]
     },
     {
+      "id": "b7ce14e363bb2f98",
+      "source_id": "interconnects",
+      "title": "Debating RSI, the US-China Gap, and Jaggedness with JS Denain of Epoch AI",
+      "url": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and",
+      "published_at": "2026-09-22T13:37:45+00:00",
+      "raw_text": "Podcast #19",
+      "category_hint": [
+        "技巧与观点",
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.85,
+      "reason_zh": "Epoch AI 研究员深度探讨递归自我改进、中美差距与能力锯齿状分布，观点密集，适合关注 AI 长期趋势的读者。",
+      "summary_zh": "这是 Interconnects 播客第 19 期，主持人 Nathan Lambert 与 Epoch AI 的 JS Denain 围绕三个核心议题展开讨论：递归自我改进（RSI）是否可能以及如何衡量、中美 AI 能力差距的现状与演变、以及模型能力呈现出的“锯齿状”分布——即在某些任务上表现优异却在看似简单的任务上失败。对话涉及评估方法、算力与数据瓶颈、以及这些趋势对政策与行业的影响，属于面向深度读者的长对话分析。",
+      "title_zh": "与 Epoch AI 的 JS Denain 辩论 RSI、中美差距与能力锯齿状",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.85,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.65
+      },
+      "story_id": "7b65c833bafcf26f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "interconnects",
+          "url": "https://www.interconnects.ai/p/debating-rsi-the-us-china-gap-and"
+        }
+      ]
+    },
+    {
       "id": "4a0809b4d5256ba5",
       "source_id": "arxiv-cs-ai",
       "title": "Information-Gain Rewards over Diversity-Pruned Tests: GT-Anchored Verifier Co-Training for Reliable Code Generation",
       "url": "https://arxiv.org/abs/2609.21208",
-      "published_at": "2026-09-21T04:00:00+00:00",
+      "published_at": "2026-09-22T04:00:00+00:00",
       "raw_text": "arXiv:2609.21208v1 Announce Type: new \nAbstract: Self-play methods that co-train a single language model as both coder and test author promise to move code-generation RL beyond fixed test suites, but they suffer from two coupled pathologies: permissiveness collapse, where pass-rate rewards are maximised by trivial, non-discriminative tests, and concentration bias, where i.i.d. sampled tests cluster on modal inputs and inflate estimator variance. We introduce CoVer (Co-trained Coder and Verifier), a single-policy GRPO framework that addresses both failure modes. First, an information-gain (IG) reward scores each self-generated test by the mutual information between its pass/fail vector and a graded, ground-truth-anchored correctness signal y [0, 1] m, gated by the sign of their covariance so that only positively discriminative tests receive reward. Second, a three-stage diversity-aware selection step prunes a candidate pool to a behaviourally non-redundant suite (invalidity, input-strin",
       "category_hint": [
         "论文研究"
@@ -98,39 +199,6 @@
         {
           "source_id": "arxiv-cs-ai",
           "url": "https://arxiv.org/abs/2609.21208"
-        }
-      ]
-    },
-    {
-      "id": "7d948ffb39bb9fe2",
-      "source_id": "arxiv-cs-ai",
-      "title": "Detecting Hallucination in LLMs: Tracing the Topological Signatures of Impaired Context Sharing",
-      "url": "https://arxiv.org/abs/2609.21096",
-      "published_at": "2026-09-21T04:00:00+00:00",
-      "raw_text": "arXiv:2609.21096v1 Announce Type: new \nAbstract: In this work, we examine the topology of information flow patterns within attention graphs to effectively distinguish hallucinated from non-hallucinated responses. We analyze the Forman-Ricci curvature to identify structural patterns indicating information bottlenecks in attention graphs. We then introduce a method that captures both semi-local and global information-flow characteristics of attention heads associated with hallucinated responses. We evaluate our approach extensively across several LLMs and established benchmarks. Empirical results demonstrate that our proposed single-pass approach provides consistent improvements over existing attention-based and multi-response baselines across two hallucination-detection benchmarks, while achieving competitive performance across diverse LLM architectures. Further analysis reveals that impaired context sharing among tokens during causal generation is strongly associated with hallucination",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "从注意力图拓扑结构切入检测幻觉，视角新颖，为可解释性与可靠性研究提供可迁移的分析框架。",
-      "summary_zh": "该论文研究注意力图内信息流动模式的拓扑结构，以区分大模型的幻觉与非幻觉回答。作者分析 Forman-Ricci 曲率，识别注意力图中指示信息瓶颈的结构模式，并提出一种同时捕捉半局部与全局拓扑特征的方法。研究将幻觉问题与上下文共享受损联系起来，试图从信息流动的几何性质给出可解释的检测信号，为理解幻觉产生的内部机制提供了新视角。",
-      "title_zh": "检测大模型幻觉：追踪上下文共享受损的拓扑特征",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "29634c84cb7894bf",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2609.21096"
         }
       ]
     },
@@ -169,78 +237,11 @@
       ]
     },
     {
-      "id": "9a319be2f7489d1b",
-      "source_id": "interconnects",
-      "title": "The current balance of power in open models",
-      "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open",
-      "published_at": "2026-09-21T11:56:56+00:00",
-      "raw_text": "The expanded form of a testimony I prepared for Congress.",
-      "category_hint": [
-        "技巧与观点",
-        "论文研究"
-      ],
-      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/da6bb5fd-56d4-49ec-a19b-dafc917414e1_3182x1790.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Interconnects作者为国会作证准备的扩展版，系统分析开源模型权力格局，具深度与政策参考价值。",
-      "summary_zh": "本文是Interconnects作者为美国国会作证准备的扩展版证词，系统分析了当前开源模型的权力格局。文章探讨了开源与闭源模型之间的竞争态势、主要参与者的战略定位，以及开源模型对AI行业权力分布的影响。作为面向政策制定者的深度分析，内容涵盖技术趋势、地缘政治与产业竞争等多维度视角，为理解开源AI生态的现状与走向提供了有价值的框架。",
-      "title_zh": "开源模型的当前权力格局",
-      "weighted_score": 0.75,
-      "score_breakdown": {
-        "source_authority": 0.85,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "28b09f2d014ecec4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "interconnects",
-          "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open"
-        }
-      ]
-    },
-    {
-      "id": "6010bff9e314ca9b",
-      "source_id": "zh-oschina",
-      "title": "微软工程师花 12 万美元让 AI 重写 Copilot 运行时：43 万行 TS 变成 80 万行 Rust，快 15.9 倍",
-      "url": "https://www.oschina.net/news/502646/ms-agentically-ports-copilot-runtime-to-rust-for-120k",
-      "published_at": "2026-09-21T08:47:57+00:00",
-      "raw_text": "微软干了一件事儿，听起来像套娃：用 AI 重写了撑起 AI 产品的运行时。GitHub Copilot 的运行时光是被全部搬到了 Rust——不是工程师手写的，是 AI agents 干的，整个过程就花了 12 万美元的 token 钱加一个工程师三周时间。 这个运行时比大多数用户想象得要命脉。它支撑着 GitHub Copilot CLI、Copilot App、SDK 和 Co...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "AI重写Copilot运行时、43万行TS转80万行Rust并提速15.9倍，工程取舍与成本细节值得细读。",
-      "summary_zh": "微软用AI agents将GitHub Copilot的运行时从43万行TypeScript重写为80万行Rust，仅花费约12万美元token成本加一名工程师三周时间，性能提升15.9倍。该运行时支撑Copilot CLI、Copilot App、SDK等核心产品，是AI产品的命脉组件。文章复盘了这次大规模语言迁移的动机、AI生成代码的验证方式、成本结构与性能收益，为工程团队评估AI辅助重写遗留系统提供了真实案例与取舍参考。",
-      "title_zh": "微软工程师花12万美元让AI重写Copilot运行时：43万行TS变80万行Rust，快15.9倍",
-      "weighted_score": 0.7425,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.85,
-        "impact": 0.8,
-        "practical_value": 0.75
-      },
-      "story_id": "8055c8a221fce859",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502646/ms-agentically-ports-copilot-runtime-to-rust-for-120k"
-        }
-      ]
-    },
-    {
       "id": "b14f939c678eae77",
       "source_id": "arxiv-cs-ai",
       "title": "EnterpriseVal: Quantifying the Efficacy, Reliability and Value of Generative AI in the Enterprise",
       "url": "https://arxiv.org/abs/2609.21841",
-      "published_at": "2026-09-21T04:00:00+00:00",
+      "published_at": "2026-09-22T04:00:00+00:00",
       "raw_text": "arXiv:2609.21841v1 Announce Type: new \nAbstract: Frontier language models now produce professional deliverables that expert graders judge to match human work on a substantial share of economically valuable tasks, yet most enterprise GenAI initiatives fail to show a measurable business effect and a large fraction of agentic projects are expected to be cancelled. We argue that this is substantially a measurement problem: public benchmarks answer \"what can the model do?\", whereas a deployment decision requires \"is this workflow fit, reliable, safe and worth scaling - here, on our data, under our controls?\". We present EnterpriseVal, a use-case-level evaluation system that closes this gap. It comprises (i) a formal specification of the use case and of the frozen socio-technical configuration under test, model, prompts, retrieval, tools, guardrails and human oversight, with an autonomy level and consequence tier that jointly set the required evaluation intensity; (ii) a metric catalogue spa",
       "category_hint": [
         "论文研究"
@@ -269,136 +270,137 @@
       ]
     },
     {
-      "id": "5d6dae0dda9c1bc3",
-      "source_id": "latent-space",
-      "title": "Jev: System One models for Prod, not God — with Diogo Almeida, CEO, TypeSafe AI",
-      "url": "https://www.latent.space/p/jev",
-      "published_at": "2026-09-21T22:13:49+00:00",
-      "raw_text": "The definitive Jev podcast with its lead creator.",
+      "id": "8cebc1174fc21816",
+      "source_id": "infoq-cn-ai",
+      "title": "AI Coding 贡献率超 90%，需求交付却只快了 10%：菜鸟如何用 Agent 托管端到端交付？",
+      "url": "https://www.infoq.cn/article/XPo33yALUEeIsBhQ4zGI?utm_source=rss&utm_medium=article",
+      "published_at": "2026-09-22T14:17:25+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/XPo33yALUEeIsBhQ4zGI?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
-        "技巧与观点",
-        "行业动态"
+        "行业动态",
+        "技巧与观点"
       ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!MPbn!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5ad289d5-2a03-4b50-804b-ae4413cbe521_600x644.png",
+      "image_url": null,
       "category": "技巧与观点",
-      "content_type": "观点评论",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "Jev 主创深度访谈，阐述 System One 决策模型的设计理念与生产落地取舍，对理解新型模型范式有启发。",
-      "summary_zh": "这是 Latent Space 播客对 TypeSafe AI 创始人 Diogo Almeida 的专访，围绕其新发布的 Jev 模型展开。Jev 被定义为一种全新的“System One 模型”（又称决策模型），主打面向生产环境而非追求通用智能。访谈中 Almeida 解释了这类模型与传统 LLM 的差异：它不生成自由文本，而是针对特定决策任务做快速、确定性的输出，强调可靠性与可部署性。他还分享了 TypeSafe AI 在构建此类系统时的工程取舍、训练策略以及对未来模型形态的判断，认为生产级 AI 需要更窄、更专、更可控的模型，而非一味追求规模。",
-      "title_zh": "Jev：面向生产而非“上帝”的 System One 模型——对话 TypeSafe AI CEO Diogo Almeida",
-      "weighted_score": 0.7,
+      "reason_zh": "揭示AI Coding贡献率与交付效率的巨大落差，分享菜鸟用Agent托管端到端交付的真实工程实践与踩坑经验。",
+      "summary_zh": "文章聚焦菜鸟在AI Coding实践中的核心矛盾：AI代码贡献率已超90%，但需求交付效率仅提升约10%。作者深入剖析这一落差背后的原因，包括需求理解、上下文管理、代码审查、测试验证等环节的瓶颈，并分享菜鸟如何通过Agent托管实现端到端交付的探索。内容涵盖Agent loop设计、上下文工程、工具链集成等工程细节，复盘了真实系统中的设计取舍与踩坑经验，为希望将AI Coding从辅助工具升级为交付主力的团队提供可迁移的实践参考。",
+      "title_zh": null,
+      "weighted_score": 0.72,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.8
       },
-      "story_id": "aa73143a8c9c87e6",
+      "story_id": "14dab2a445fc07c4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "latent-space",
-          "url": "https://www.latent.space/p/jev"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/XPo33yALUEeIsBhQ4zGI?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "d1396182f341eca8",
-      "source_id": "stratechery",
-      "title": "Frontier Overhangs",
-      "url": "https://stratechery.com/2026/frontier-overhangs/",
-      "published_at": "2026-09-21T10:00:00+00:00",
-      "raw_text": "Pacing the frontier may be sincere, but it would also be strategically useful for the frontier labs to have time to reduce overhangs caused by model advancement.",
+      "id": "027ad7389e1b9f3c",
+      "source_id": "zh-oschina",
+      "title": "Jev 工程学：为 Coding Agent 而作",
+      "url": "https://www.oschina.net/news/502674",
+      "published_at": "2026-09-22T08:59:40+00:00",
+      "raw_text": "GitHub 上有人把 TypeSafe 创始人 Diogo Almeida 的那份《Jev 工程学》设计笔记做了完整中文翻译，连原结构带七张插图一起保留。翻译者自称与 TypeSafe 无隶属关系，是独立汇编。对国内开发者来说，这大概是第一次能无障碍读 Jev 那套&quot;为 coding agent 而作&quot;的完整蓝图。 整份笔记从一个问题开场：如果语言模型没有 KV c...",
       "category_hint": [
-        "行业动态"
+        "开源项目"
       ],
-      "image_url": "https://i0.wp.com/stratechery.com/wp-content/uploads/2026/09/overhang-1.png?resize=600%2C742&#038;ssl=1",
-      "category": "行业动态",
-      "content_type": "观点评论",
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "Stratechery对前沿实验室“放缓节奏”策略的深度剖析，提出“overhang”概念，洞察独到。",
-      "summary_zh": "本文来自 Stratechery，探讨了前沿 AI 实验室“控制节奏”策略背后的动机。作者提出“Frontier Overhangs”概念，指模型能力进步与外部世界适应能力之间形成的落差。文章认为，放缓前沿推进虽然表面上是出于安全考虑，但对实验室而言也具有战略价值：争取时间减少因模型快速迭代而产生的“overhang”，即让社会、监管和产品生态跟上模型能力。文章分析了这种策略的合理性与潜在影响，提供了理解 AI 竞争格局的新视角。",
-      "title_zh": "前沿悬垂",
-      "weighted_score": 0.665,
+      "reason_zh": "《Jev 工程学》中文翻译，为 coding agent 设计提供完整蓝图，对开发者有极高参考价值，内容深度高。",
+      "summary_zh": "GitHub 上有人将 TypeSafe 创始人 Diogo Almeida 的《Jev 工程学》设计笔记完整翻译成中文，保留了原结构和七张插图。翻译者声明与 TypeSafe 无隶属关系，是独立汇编。这份笔记从“如果语言模型没有 KV cache”这一问题开场，探讨了为 coding agent 而作的语言设计蓝图。对国内开发者而言，这是首次能无障碍阅读 Jev 那套完整设计理念的机会，内容涉及编程语言与 AI agent 的深度结合。",
+      "title_zh": "Jev 工程学：为 Coding Agent 而作",
+      "weighted_score": 0.635,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "7119638d359bc6bd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/502674"
+        }
+      ]
+    },
+    {
+      "id": "1585f593980d6e36",
+      "source_id": "pytorch-blog",
+      "title": "TinyTorch: Don’t Just Import PyTorch. Build It.",
+      "url": "https://pytorch.org/blog/tinytorch-dont-just-import-pytorch-build-it/",
+      "published_at": "2026-09-21T20:41:14+00:00",
+      "raw_text": "A framework you write yourself, tensors through transformers TL;DR Every mature systems project eventually needs a teaching version. TinyTorch is a free, open-source curriculum where you build a working ML...",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": "https://pytorch.org/wp-content/uploads/2026/09/All-PyTorch-Blog-Social-Images-25.png",
+      "category": "开源项目",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "从零手写PyTorch式框架的教学课程，覆盖张量到Transformer，是理解深度学习底层的好材料。",
+      "summary_zh": "TinyTorch是一个免费开源课程，目标是让学习者亲手构建一个可运行的机器学习框架，而不是直接import PyTorch。课程从张量基础开始，逐步实现到Transformer的完整链路。作者认为每个成熟的系统项目最终都需要一个教学版本，TinyTorch正是PyTorch生态中的这一角色。通过自己写框架，学习者能真正理解自动微分、反向传播、层与优化器等核心机制，而非停留在调用API的层面。",
+      "title_zh": "TinyTorch：不要只import PyTorch，亲手构建它",
+      "weighted_score": 0.72,
       "score_breakdown": {
         "source_authority": 0.8,
         "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "2f50e2caa2efd2c0",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "stratechery",
-          "url": "https://stratechery.com/2026/frontier-overhangs/"
-        }
-      ]
-    },
-    {
-      "id": "990ff8eec1705715",
-      "source_id": "reddit-claudeai",
-      "title": "Claude Code's cross-session messaging is a JSON file and a Unix socket",
-      "url": "https://www.reddit.com/r/ClaudeAI/comments/1wmnqyu/claude_codes_crosssession_messaging_is_a_json/",
-      "published_at": "2026-09-21T20:03:51+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Claude Code sessions can message each other. It shipped in 2.1.224 and is <a href=\"https://code.claude.com/docs/en/cross-session-messaging\">properly documented</a>, but it arrived as one changelog line with no announcement, so few people use it. I took it apart to put a Codex task on the other end.</p> <p><strong>Discovery is a directory.</strong> Each session writes <code>~/.claude/sessions/&lt;pid&gt;.json</code>:</p> <pre><code>{ &quot;pid&quot;: 58617, &quot;cwd&quot;: &quot;/Users/leon&quot;, &quot;name&quot;: &quot;leon-c0&quot;, &quot;messagingSocketPath&quot;: &quot;/tmp/cc-socks/58617.sock&quot;, &quot;procStart&quot;: &quot;Mon Sep 21 16:13:34 2026&quot;, &quot;peerProtocol&quot;: 1, &quot;status&quot;: &quot;busy&quot; } </code></pre> <p><code>ListAgents</code> reads that folder. No daemon, no service.</p> <p><strong>Transport is one Unix socket per session</strong>, mode 0600, newline-delimited JSON:</p> <pre><code>{&quot;msgV&quot;:1,&quot",
-      "category_hint": [
-        "产品发布",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深入拆解Claude Code跨会话消息机制，揭示JSON文件与Unix socket的实现细节。",
-      "summary_zh": "作者深入拆解Claude Code的跨会话消息功能，该功能在2.1.224版本中悄然发布，仅有变更日志一行，鲜有人使用。文章揭示其实现机制：发现机制基于目录，每个会话写入JSON文件，并通过Unix socket进行通信。作者还尝试将Codex任务接入该消息系统。这是一篇对Claude Code内部架构的逆向工程分析，展示了其设计取舍。",
-      "title_zh": "Claude Code的跨会话消息传递只是一个JSON文件和一个Unix socket",
-      "weighted_score": 0.605,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
         "impact": 0.5,
-        "practical_value": 0.8
+        "practical_value": 0.9
       },
-      "story_id": "341db88bec445bf3",
+      "story_id": "8eff023cb6b0ce5f",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-claudeai",
-          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wmnqyu/claude_codes_crosssession_messaging_is_a_json/"
+          "source_id": "pytorch-blog",
+          "url": "https://pytorch.org/blog/tinytorch-dont-just-import-pytorch-build-it/"
         }
       ]
     },
     {
-      "id": "82cc79ea7657fa2b",
-      "source_id": "zh-tonybai",
-      "title": "JEV 工程学：智能体系统的决策层",
-      "url": "https://tonybai.com/2026/09/22/jev-engineering-the-decision-layer-for-agentic-systems/",
-      "published_at": "2026-09-21T22:00:00+00:00",
-      "raw_text": "在智能体系统（Agentic Systems）构建中，让同一个大模型兼揽写作、推理、路由与决策，往往导致系统迟缓、昂贵且难以排障。本文系统拆解由 TypeSafe AI 提出的专用决策模型 Jev 及其工程方法论（Jev Engineering）：确立“大模型负责生成、Jev 负责决策、代码负责执行”的权责解耦哲学，通过 Choice、Score、Noul 三大类型化原语与置信度门控闭环，从根源上消除文本解析脆弱性。文章深入总结了 7 大工程法则、5 大常见反模式与 10 套高复用架构蓝图，为工业级 Agent 系统的低延迟、低成本与高可用落地提供了一整套严密的实战指南。",
+      "id": "97fbf71cf3faf79f",
+      "source_id": "pytorch-blog",
+      "title": "Hardware-Agnostic Models in vLLM",
+      "url": "https://pytorch.org/blog/hardware-agnostic-models-in-vllm/",
+      "published_at": "2026-09-22T15:45:46+00:00",
+      "raw_text": "TL;DR To achieve state-of-the-art performance at the frontier, vLLM is changing its internal implementation in ways that make it incompatible with fullgraph torch.compile. This may have consequences for users who...",
       "category_hint": [
+        "开源项目",
         "技巧与观点"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
+      "image_url": "https://pytorch.org/wp-content/uploads/2026/09/fig1-model-definitions-scaled.png",
+      "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "系统拆解 Jev 决策层工程方法论，含 7 大法则、5 大反模式与 10 套架构蓝图，实战性强。",
-      "summary_zh": "本文系统拆解了由 TypeSafe AI 提出的专用决策模型 Jev 及其工程方法论（Jev Engineering）。文章主张在智能体系统中确立“大模型负责生成、Jev 负责决策、代码负责执行”的权责解耦哲学，避免让同一大模型兼揽写作、推理、路由与决策。通过 Choice、Score、Noul 三大类型化原语与置信度门控闭环，从根源消除文本解析脆弱性。文章还总结了 7 大工程法则、5 大常见反模式与 10 套高复用架构蓝图，为工业级 Agent 系统的低延迟、低成本落地提供实战指南。",
-      "title_zh": null,
-      "weighted_score": 0.565,
+      "depth_score": 0.7,
+      "reason_zh": "vLLM 为追求前沿性能而放弃与 fullgraph torch.compile 的兼容，揭示推理引擎在性能与编译优化间的真实取舍。",
+      "summary_zh": "PyTorch 博客文章讨论 vLLM 的硬件无关模型策略。为在前沿性能上达到最优，vLLM 正在调整内部实现，这些改动使其与 fullgraph torch.compile 不再兼容，可能影响依赖该编译模式的用户。文章解释了这一取舍背后的原因，即硬件无关性与极致性能之间的张力，并说明对现有用户可能产生的后果。对关注推理引擎架构演进、编译优化与部署兼容性的工程师具有参考意义。",
+      "title_zh": "vLLM 中的硬件无关模型",
+      "weighted_score": 0.695,
       "score_breakdown": {
-        "source_authority": 0.5,
+        "source_authority": 0.85,
         "novelty": 0.6,
-        "impact": 0.5,
+        "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "626f8500c7c82013",
+      "story_id": "41056f16b23e78ec",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/09/22/jev-engineering-the-decision-layer-for-agentic-systems/"
+          "source_id": "pytorch-blog",
+          "url": "https://pytorch.org/blog/hardware-agnostic-models-in-vllm/"
         }
       ]
     }
