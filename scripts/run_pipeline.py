@@ -8,6 +8,7 @@ import argparse
 import json
 import os
 from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlparse
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -47,6 +48,68 @@ def load_config():
 FETCH_WORKERS = 10
 
 
+def _source_host(source):
+    """源归属的站点：rss 看域名，其它类型按 type 归堆（它们各自只打一个 API）。"""
+    stype = source.get("type") or "rss"
+    if stype == "rss":
+        return urlparse(str(source.get("url", ""))).netloc.lower() or "rss"
+    return stype
+
+
+def _interleave_by_host(sources):
+    """把同一站点的源在抓取顺序里摊开，别让线程池同时敲同一扇门。
+
+    sources.yaml 是按站点分段写的，同一个域名的源天然挨在一起；线程池按列表顺序
+    分派任务，于是 20 个 reddit 源会被十个 worker 在几秒内一起抓——这正是 Reddit
+    未认证限流最容易触发的模式（线上 17/20 拿 429 就是这么来的）。reddit_fetcher
+    自己有串行锁，但那只解决"请求密度"，没解决"十个 worker 全卡在这把锁上等着、
+    其它源跟着停摆"。
+
+    做法是按比例摊开：一个站点有 n 个源，它们就落在 1/2n、3/2n…(2n-1)/2n 处。
+    20 个源的站点因此彼此隔开约 总数/20 个别的源，远大于线程数，不会再同批。
+
+    只有一个源的站点单独摊平成一条均匀的"底料"：它们之间保持原有先后，但整体铺满
+    0~100%。这两件事都不能省——
+    - 若按 "(0+0.5)/1 = 中点" 算，几百个单源站点会全堆在 50% 处，两端只剩多源站点
+      的源连成一片；
+    - 若直接用它们在原列表里的位置比例，多源站点原本占据的那段索引就是个空洞
+      （20 个 reddit 连着写在一起，那 20 个位置上没有别的源），落在空洞比例上的
+      两个源照样会挨在一起。
+    这两种退化都被 test_same_host_sources_are_spread_beyond_the_worker_batch 抓到过。
+
+    也不能用"每轮从每堆取一个"的朴素轮转：600 多个源里绝大多数域名只有一两个，
+    第一轮就把几百个单源堆抽干了，之后只剩几个多源堆在小圈子里轮转——实测 reddit
+    相邻间距的中位数只有 3，比线程数还小，等于没打散。
+
+    去重不受影响：dedupe() 自己先按 published_at 排过序，不依赖抓取顺序。
+    """
+    total = len(sources)
+    if total == 0:
+        return []
+
+    buckets = {}
+    for idx, src in enumerate(sources):
+        buckets.setdefault(_source_host(src), []).append((idx, src))
+
+    singles = sorted(
+        (g[0] + (key,) for key, g in buckets.items() if len(g) == 1),
+        key=lambda t: t[0],
+    )
+
+    spread = []
+    for j, (orig_idx, src, key) in enumerate(singles):
+        spread.append(((j + 0.5) / len(singles), key, orig_idx, src))
+    for key, group in buckets.items():
+        n = len(group)
+        if n == 1:
+            continue
+        for i, (orig_idx, src) in enumerate(group):
+            spread.append(((i + 0.5) / n, key, orig_idx, src))
+    # 后两个排序键只为结果稳定可复现：同一比例位置上不定序的话每次跑出来都不一样
+    spread.sort(key=lambda t: (t[0], t[1], t[2]))
+    return [t[3] for t in spread]
+
+
 def fetch_and_normalize(sources_cfg):
     fetch_results = {}
     normalized_by_source = {}
@@ -58,6 +121,7 @@ def fetch_and_normalize(sources_cfg):
         and not str(s.get("url", "")).startswith("PLACEHOLDER")
         and s.get("role", "ai_pipeline") == "ai_pipeline"
     ]
+    active = _interleave_by_host(active)
 
     def worker(source):
         raw_items, error = fetch_source(source)

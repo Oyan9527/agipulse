@@ -41,17 +41,36 @@ jobs:
             exit 0
           fi
 
-          # 21 点这轮：查当天(UTC)是否已经有一次成功的定时运行
+          # 21 点这轮：查当天(UTC)主运行有没有真的把数据产出来。
+          #
+          # 判据不能用整个 run 的 conclusion。最后那步 Health check 是"信源体检"，
+          # 它红了代表某类信源挂了（比如 reddit 整类被 429），可数据本身早就抓完、
+          # 提交完了。用 run 的红绿判断，会把这种情况当成"主运行失败"天天补跑一轮
+          # ——线上实测连续 8 次定时运行都是这么红的，等于每天白烧一次 DeepSeek，
+          # 正好和这套「失败才补跑」省钱的初衷反着来。
+          #
+          # 所以只认 update-data 里这两步：Run pipeline(数据生成) 和
+          # Commit data if changed(数据落库)。两步都成功 = 当天的活已经干完了。
           today=$(date -u +%F)
-          ok=$(gh run list --workflow pipeline.yml --event schedule --limit 20 \
-                 --json conclusion,createdAt \
-                 --jq "[.[] | select(.createdAt >= \"${today}T00:00:00Z\") | select(.conclusion == \"success\")] | length")
-          echo "当天已成功的定时运行次数: ${ok}"
-          if [ "${ok}" -gt 0 ]; then
-            echo "主运行当天已成功 -> 跳过补跑，省一次 DeepSeek 调用"
+          ids=$(gh run list --workflow pipeline.yml --event schedule --limit 20 \
+                  --json databaseId,createdAt \
+                  --jq "[.[] | select(.createdAt >= \"${today}T00:00:00Z\")] | .[].databaseId")
+
+          done_ok=0
+          for id in ${ids}; do
+            n=$(gh api "repos/${GH_REPO}/actions/runs/${id}/jobs" \
+                  --jq '[.jobs[] | select(.name == "update-data") | .steps[]
+                         | select(.name == "Run pipeline" or .name == "Commit data if changed")
+                         | select(.conclusion == "success")] | length')
+            echo "run ${id}: 关键步骤成功数 ${n}/2"
+            if [ "${n}" -ge 2 ]; then done_ok=1; break; fi
+          done
+
+          if [ "${done_ok}" -eq 1 ]; then
+            echo "当天数据已成功产出 -> 跳过补跑，省一次 DeepSeek 调用"
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           else
-            echo "当天尚无成功运行 -> 执行补跑"
+            echo "当天还没有一轮把数据跑出来 -> 执行补跑"
             echo "should_run=true" >> "$GITHUB_OUTPUT"
           fi
 
