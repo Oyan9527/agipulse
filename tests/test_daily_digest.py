@@ -4,13 +4,23 @@ from datetime import datetime, timedelta, timezone
 from scripts.daily_digest import BEIJING_TZ, build_daily_digest, _todays_top
 
 NOW = datetime.now(timezone.utc)
+# _todays_top() 筛的是"北京时间的今天"，而这里的基准是 UTC 当下。北京 00:00-01:00
+# 这一小时里，NOW-1h 会掉回北京的昨天，本文件里所有 hours_ago=1 的条目全被过滤掉，
+# 四个用例无关代码改动地集体变红（踩过一次）。定时流水线跑在 UTC 17:00 = 北京 01:00，
+# 距这个窗口只差一小时，排队稍有延迟就会撞上——测试不能挂在"现在几点"上。
+_BJ_TODAY_START = NOW.astimezone(BEIJING_TZ).replace(hour=0, minute=0, second=0, microsecond=0)
 
 
 def _item(iid, title, hours_ago=1, score=0.5, msc=1, title_zh=None):
+    published = NOW - timedelta(hours=hours_ago)
+    # 24 小时内的条目语义上是"今天的新闻"，真跨回昨天就钳到今天刚开始那会儿。
+    # hours_ago=48 这类"旧闻"用例不受影响，它们本来就该落在今天之外。
+    if hours_ago < 24 and published.astimezone(BEIJING_TZ) < _BJ_TODAY_START:
+        published = (_BJ_TODAY_START + timedelta(minutes=30)).astimezone(timezone.utc)
     return {
         "id": iid, "title": title, "title_zh": title_zh,
         "weighted_score": score, "multi_source_count": msc,
-        "published_at": (NOW - timedelta(hours=hours_ago)).isoformat(),
+        "published_at": published.isoformat(),
     }
 
 

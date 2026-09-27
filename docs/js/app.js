@@ -1,8 +1,9 @@
-import { renderFeed, excerptFor, relativeTime } from "./components/feed.js?v=20260903a";
-import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260903a";
-import { initPalette } from "./components/palette.js?v=20260903a";
-import { categoryColor, categoryTextColor } from "./palette.js?v=20260903a";
-import { safeUrl, setSafeHref } from "./safe.js?v=20260903a";
+import { renderFeed, excerptFor, relativeTime } from "./components/feed.js?v=20260928b";
+import { renderBrief, renderHotStories, renderSourceHealth } from "./components/brief.js?v=20260928b";
+import { initPalette } from "./components/palette.js?v=20260928b";
+import { categoryColor, applyCategoryTextColor } from "./palette.js?v=20260928b";
+import { safeUrl, setSafeHref } from "./safe.js?v=20260928b";
+import { setupTheme } from "./theme.js?v=20260928b";
 
 const CATEGORIES = ["模型发布", "产品发布", "开源项目", "行业动态", "论文研究", "技巧与观点"];
 const LAST_SEEN_KEY = "agi-pulse-last-seen";
@@ -143,7 +144,7 @@ function setupCategoryFilters() {
     btn.append(dot, cat);
     // 激活态用各分类自己的颜色（下划线=数据色，文字=加深变体）
     btn.style.setProperty("--cat", categoryColor(cat));
-    btn.style.setProperty("--cat-text", categoryTextColor(cat));
+    applyCategoryTextColor(btn, cat);
     btn.addEventListener("click", () => {
       state.categoryFilter = state.categoryFilter === cat ? null : cat;
       state.visibleCount = PAGE_SIZE;
@@ -220,7 +221,7 @@ function renderLead() {
   catDot.className = "cat-dot";
   catDot.style.background = categoryColor(lead.category);
   leadCat.append(catDot, lead.category || "");
-  leadCat.style.color = categoryTextColor(lead.category);
+  applyCategoryTextColor(leadCat, lead.category);
 
   // 配图：有 image_url 用原图；加载失败或超时(5s)回落到脉冲占位图
   const leadImageUrl = safeUrl(lead.image_url);
@@ -244,6 +245,8 @@ function renderLead() {
 }
 
 async function bootstrap() {
+  // 主题先接：它只依赖 DOM，不等数据，暗色不该等 JSON 回来才生效
+  setupTheme(document.getElementById("theme-toggle"));
   setupTabs();
   setupCategoryFilters();
   setupFeedMore();

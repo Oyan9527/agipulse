@@ -1,9 +1,10 @@
 // 数据版页面脚本：24H 频谱 + 统计指标 + 日/周/月趋势看板 + 社媒热点 + GitHub 涨星榜。
-import { renderSpectrum } from "./components/spectrum.js?v=20260903a";
-import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js?v=20260903a";
-import { initPalette } from "./components/palette.js?v=20260903a";
-import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js?v=20260903a";
-import { renderTopics } from "./components/topics.js?v=20260903a";
+import { renderSpectrum } from "./components/spectrum.js?v=20260928b";
+import { renderStats, renderCategoryMomentum, renderKeywords } from "./components/dashboard.js?v=20260928b";
+import { initPalette } from "./components/palette.js?v=20260928b";
+import { renderSocialHot, renderGithubTrending } from "./components/socialHot.js?v=20260928b";
+import { renderTopics } from "./components/topics.js?v=20260928b";
+import { setupTheme } from "./theme.js?v=20260928b";
 
 const state = {
   all: [],
@@ -185,6 +186,7 @@ function formatUpdatedAt(iso) {
 }
 
 async function bootstrap() {
+  setupTheme(document.getElementById("theme-toggle"));
   setupTrendDimTabs();
   setupGhPeriodTabs();
 

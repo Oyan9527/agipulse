@@ -1,6 +1,6 @@
 // 信息流：AGI Hunt 式卡片 —— 顶行(分类+徽章) / 衬线标题 / 英文副题 / 配图 / 摘要 / 底行(来源+时间)。
-import { categoryColor, categoryTextColor } from "../palette.js?v=20260903a";
-import { safeUrl, setSafeHref } from "../safe.js?v=20260903a";
+import { categoryColor, applyCategoryTextColor } from "../palette.js?v=20260928b";
+import { safeUrl, setSafeHref } from "../safe.js?v=20260928b";
 
 const SOURCE_LABELS = {
   "openai-blog": "OpenAI Blog",
@@ -112,7 +112,7 @@ function buildCardNode(item, idx, template) {
   dot.className = "cat-dot";
   dot.style.background = categoryColor(cat);
   catEl.append(dot, cat);
-  catEl.style.color = categoryTextColor(cat);
+  applyCategoryTextColor(catEl, cat);
 
   const scoreEl = node.querySelector(".feed-card__score");
   scoreEl.textContent = item.weighted_score != null ? item.weighted_score.toFixed(2) : "";
@@ -186,10 +186,13 @@ function buildCardNode(item, idx, template) {
 function estimateCardHeight(item) {
   let h = 136; // 顶行 + 底行(随字号) + 内边距 22/18/20px(固定) 等开销
   const titleLen = (item.title || "").length;
-  h += Math.max(1, Math.ceil(titleLen / 40)) * 36; // 标题行数（1.06rem × 1.5 行高）
+  h += Math.max(1, Math.ceil(titleLen / 40)) * 27; // 标题行数（1.06rem × 1.5 行高 = 27px 实测）
   if (item.title_zh && item.title_zh.trim() !== item.title.trim()) h += 28; // 副题行
   const excerptLen = excerptFor(item).length;
-  h += Math.min(3, Math.max(1, Math.ceil(excerptLen / 52))) * 23; // 摘要最多3行截断
+  // 上限 5 必须跟 .feed-card__excerpt 的 -webkit-line-clamp 一致：之前这里写 3、CSS 是 5，
+  // 长摘要卡片被系统性低估两行。实测两栏高度差只有 1%（误差在几十张卡上相互抵消了），
+  // 所以之前看不出问题——但下次调字号或 clamp 时它就会发作。
+  h += Math.min(5, Math.max(1, Math.ceil(excerptLen / 52))) * 23; // 摘要最多5行截断
   if (item.image_url) h += 210; // 配图区块（92%宽×16:10 的几何尺寸，与字号无关，不随之放大）
   return h;
 }
@@ -201,7 +204,17 @@ export function renderFeed({ listEl, emptyEl, template, items }) {
 
   // 瀑布流双栏：贪心地把每条内容放进当前"预估高度更矮"的一栏，
   // 而不是强制左右逐行配对——左边没图的短卡可以连放两张，配右边一张带图的长卡。
-  const isNarrow = window.matchMedia("(max-width: 800px)").matches;
+  // 分几栏取决于信息流自己还剩多宽，不是视口多宽：900~1200 视口里侧栏要吃掉
+  // 316px，同一个视口宽度下主栏可能宽裕、也可能只剩一半。量元素本身最准。
+  // 这个数与 style.css 里 @container feedcol (max-width: 660px) 那条保持一致
+  // ——JS 决定分几栏，CSS 决定画不画栏间线，两边必须同一个阈值。
+  // 660 时每栏 (660-32)/2 = 314px，够放下 1.06rem 标题的十来个字。
+  const NARROW_COL_PX = 660;
+  const listWidth = listEl.clientWidth;
+  // clientWidth 为 0 = 还没布局或被隐藏，退回按视口判断，别把手机端算成两栏
+  const isNarrow = listWidth > 0
+    ? listWidth < NARROW_COL_PX
+    : window.matchMedia("(max-width: 660px)").matches;
   const colCount = isNarrow ? 1 : 2;
   const cols = Array.from({ length: colCount }, () => document.createElement("ol"));
   cols.forEach((col) => col.className = "feed-list__col");

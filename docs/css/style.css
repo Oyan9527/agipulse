@@ -14,25 +14,127 @@
   --accent: #0e7a5f;        /* 深松石绿（青瓷） */
   --accent-soft: #7fb8a6;
   --copper: #8f5d28;        /* PCB铜箔：唯一的暖色张力，极少量使用 */
+  --err: #b0413e;           /* 故障/下跌：全站唯一的赭红，5.06:1 */
+
+  /* 阴影与遮罩单独开 token：原先直接拿 --ink 调 color-mix，暗色模式下 ink 变成浅色，
+     阴影会变成"发光"、遮罩会变成白雾。这两个语义要的是"更暗"，不是"前景色"。 */
+  --shadow: #17211b;
+  --overlay: color-mix(in srgb, #17211b 40%, transparent);
 
   --font-serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", "Playfair Display", serif;
   --font-latin-serif: "Playfair Display", "Noto Serif SC", serif;
   --font-body: "PingFang SC", "HarmonyOS Sans", "Microsoft YaHei", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
 
+
+  /* 字阶：原先 78 处字号散着 26 个不同档位，小字区间挤了 0.6/0.62/0.64/0.66/0.68/
+     0.7/0.72/0.74/0.75/0.76/0.78/0.8 十二档，相邻只差 0.02rem(0.34px)——肉眼分不出
+     差别，却让"这里该用多大"每次都要重新拍脑袋，档位只会越加越多。收敛成九档，
+     每档之间至少差得出来。括号是 17px 根字号下的实际像素。 */
+  --fs-3xs: 0.66rem;   /* 11.2px 角标、图例、坐标轴 */
+  --fs-2xs: 0.72rem;   /* 12.2px 等宽元信息（来源·时间·分数） */
+  --fs-xs: 0.78rem;    /* 13.3px 次要控件、筛选标签 */
+  --fs-sm: 0.84rem;    /* 14.3px 摘要、说明文字 */
+  --fs-base: 0.92rem;  /* 15.6px 列表标题、副题 */
+  --fs-md: 0.98rem;    /* 16.7px 栏目头、导读正文 */
+  --fs-lg: 1.06rem;    /* 18.0px 卡片标题、区块标题 */
+  --fs-xl: 1.2rem;     /* 20.4px 头条译题 */
+  --fs-2xl: 1.7rem;    /* 28.9px 指标大数字 */
+
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --content-max: 1480px;
 }
+
+/* ---------------- 暗色主题 ----------------
+   关于页(about.css)早就有明暗双主题和切换按钮，主站却一直只有浅色——从关于页点回
+   首页，暗色就没了。这里把同一套机制补齐：色值直接对齐 about.css，两个页面同色。
+   机制也照搬：默认跟随系统 prefers-color-scheme，:root[data-theme] 用于按钮手动覆盖
+   （不落盘，刷新回到跟随系统，与关于页行为一致）。
+
+   注意这里只重定义 token，不在媒体查询里写组件样式——组件一律走变量，
+   否则暗色会漏掉后来新增的组件。 */
+:root {
+  --dark-bg: #0d1512;
+  --dark-panel: #131e1a;
+  --dark-ink: #e7ece8;
+  --dark-mist: #8fa096;
+  --dark-rule: #2b3a34;
+  --dark-rule-dark: #b9c4be;
+  --dark-accent: #4ecfa4;
+  --dark-accent-soft: #3f8a74;
+  --dark-copper: #d2934f;
+  --dark-err: #e8736f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--dark-bg);
+    --panel: var(--dark-panel);
+    --ink: var(--dark-ink);
+    --mist: var(--dark-mist);
+    --rule: var(--dark-rule);
+    /* 亮色里 rule-dark 就是墨色(前景)，暗色里它得反过来变成浅色，
+       否则刊头粗线、分栏线在深底上直接消失。 */
+    --rule-dark: var(--dark-rule-dark);
+    --accent: var(--dark-accent);
+    --accent-soft: var(--dark-accent-soft);
+    --copper: var(--dark-copper);
+    --err: var(--dark-err);
+    /* 阴影和遮罩保持"更暗"的语义：深底上再叠黑才是阴影，叠 ink(浅色)会变成发光 */
+    --shadow: #000;
+    --overlay: color-mix(in srgb, #000 62%, transparent);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: var(--dark-bg);
+  --panel: var(--dark-panel);
+  --ink: var(--dark-ink);
+  --mist: var(--dark-mist);
+  --rule: var(--dark-rule);
+  --rule-dark: var(--dark-rule-dark);
+  --accent: var(--dark-accent);
+  --accent-soft: var(--dark-accent-soft);
+  --copper: var(--dark-copper);
+  --err: var(--dark-err);
+  --shadow: #000;
+  --overlay: color-mix(in srgb, #000 62%, transparent);
+}
+
+/* color-scheme 跟着走，滚动条/原生控件才不会一个亮一个暗 */
+html { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* 暗色下原图往往过亮、在深底上像两个灯箱，压一档亮度让它回到版面里 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lead__img,
+  :root:not([data-theme="light"]) .feed-card__img { filter: saturate(0.9) brightness(0.86); }
+  /* 深色下强调色变亮，白字压不住了，改用深底色当字 */
+  :root:not([data-theme="light"]) .skip-link { color: var(--dark-bg); }
+}
+:root[data-theme="dark"] .lead__img,
+:root[data-theme="dark"] .feed-card__img { filter: saturate(0.9) brightness(0.86); }
+:root[data-theme="dark"] .skip-link { color: var(--dark-bg); }
+
+/* 分类色：亮色用加深变体当文字色，暗色要反过来用提亮变体（深色变体在深底上糊成一团）。
+   JS 把两个值都写进自定义属性，这里按主题选一个——不能让 JS 直接赋 style.color，
+   那是内联样式，主题切换时 CSS 盖不住。 */
+.has-cat-text { --cat-active: var(--cat-text); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .has-cat-text { --cat-active: var(--cat-text-dark); }
+}
+:root[data-theme="dark"] .has-cat-text { --cat-active: var(--cat-text-dark); }
 
 * { box-sizing: border-box; }
 
 [hidden] { display: none !important; }
 
-/* 根字号 17px（浏览器默认 16px）：全站 78 处字号全部是 rem 相对单位，
+/* 根字号 17px（浏览器默认 16px）：字号全部走上面那组 --fs-* 字阶（rem 相对单位），
    在这里统一上浮一档即等比放大约 6%，正文更易读，又不破坏既有的字号层级关系。
    注意：改这里会让所有文字实际行高变大，feed.js 的 estimateCardHeight()
    瀑布流高度估算（写死的 px 常量）必须同步上调，否则两栏会失衡。 */
-html { color-scheme: light; font-size: 17px; }
+html { font-size: 17px; }
 
 body {
   margin: 0;
@@ -78,7 +180,7 @@ a { color: inherit; }
 
 .kbd {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
   border: 1px solid var(--rule);
   border-radius: 3px;
@@ -96,7 +198,7 @@ a { color: inherit; }
   align-items: center;
   gap: 12px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: var(--fs-2xs);
   color: var(--mist);
   border-bottom: 1px solid var(--rule);
   padding-bottom: 8px;
@@ -109,7 +211,7 @@ a { color: inherit; }
   gap: 10px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 720px) {
   .masthead__dateline { grid-template-columns: 1fr 1fr; }
   .masthead__motto { grid-column: 1 / -1; order: 3; justify-self: center; margin-top: 4px; }
 }
@@ -122,11 +224,18 @@ a { color: inherit; }
   border: none;
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   cursor: pointer;
   padding: 4px 6px;
 }
 .btn-plain:hover { color: var(--accent); }
+
+/* 纯图标按钮（主题切换）：去掉文字按钮的左右内边距差，让 ◐ 视觉上居中对齐 */
+.btn-plain--icon {
+  font-size: var(--fs-lg);
+  line-height: 1;
+  padding: 4px;
+}
 
 .masthead__title {
   font-family: var(--font-serif);
@@ -204,7 +313,7 @@ a { color: inherit; }
   justify-self: center;
   text-align: center;
   font-family: var(--font-body);
-  font-size: 0.76rem;
+  font-size: var(--fs-xs);
   color: var(--mist);
   white-space: nowrap;
 }
@@ -251,7 +360,7 @@ a { color: inherit; }
   border-bottom: 1px solid var(--rule);
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-md);
 }
 
 .pages-nav__link {
@@ -281,14 +390,14 @@ a { color: inherit; }
 .spectrum__title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
   margin: 0;
 }
 
 .spectrum__note {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 0.62rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
   margin-left: 8px;
 }
@@ -299,7 +408,7 @@ a { color: inherit; }
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0.72rem;
+  font-size: var(--fs-2xs);
   color: var(--mist);
   flex-wrap: wrap;
 }
@@ -331,7 +440,7 @@ a { color: inherit; }
   color: var(--bg);
   padding: 5px 10px;
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   white-space: nowrap;
   pointer-events: none;
   z-index: 10;
@@ -365,14 +474,14 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   color: var(--mist);
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
 }
 
 .spectrum__axis {
   display: flex;
   justify-content: space-between;
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
   padding: 5px 0 10px;
 }
@@ -412,15 +521,15 @@ a { color: inherit; }
 .stat-tile__value {
   font-family: var(--font-latin-serif);  /* Playfair 衬线数字，比中文字体的数字字形优雅 */
   font-weight: 900;
-  font-size: 1.7rem;
+  font-size: var(--fs-2xl);
   color: var(--accent);
   line-height: 1.15;
   font-variant-numeric: lining-nums;
 }
 
-.stat-tile__label { font-size: 0.8rem; font-weight: 600; }
+.stat-tile__label { font-size: var(--fs-xs); font-weight: 600; }
 
-.stat-tile__hint { font-size: 0.7rem; color: var(--mist); }
+.stat-tile__hint { font-size: var(--fs-2xs); color: var(--mist); }
 
 .dashboard__head {
   display: flex;
@@ -432,13 +541,13 @@ a { color: inherit; }
 .dashboard__title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: var(--fs-lg);
   margin: 0;
 }
 
 .dashboard__note {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
 }
 
@@ -447,7 +556,7 @@ a { color: inherit; }
 
 .tab {
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   padding: 5px 12px;
   border: none;
@@ -460,7 +569,7 @@ a { color: inherit; }
 .tab:hover { color: var(--ink); }
 .tab.is-active { color: var(--accent); border-bottom-color: var(--accent); }
 
-.tabs--small .tab { padding: 3px 10px; font-size: 0.78rem; }
+.tabs--small .tab { padding: 3px 10px; font-size: var(--fs-xs); }
 
 .dash-panels {
   display: grid;
@@ -484,7 +593,7 @@ a { color: inherit; }
 .dash-panel__title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: var(--fs-md);
   margin: 0 0 12px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--rule);
@@ -492,7 +601,7 @@ a { color: inherit; }
 
 .dash-panel__sub {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: var(--fs-3xs);
   font-weight: 400;
   color: var(--mist);
   margin-left: 6px;
@@ -506,7 +615,7 @@ a { color: inherit; }
   grid-template-columns: 5.2em minmax(0, 1fr) 2.8em 3em;
   align-items: center;
   gap: 8px;
-  font-size: 0.76rem;
+  font-size: var(--fs-xs);
 }
 
 .momentum-row__label { white-space: nowrap; }
@@ -534,7 +643,7 @@ a { color: inherit; }
 
 .momentum-row__delta {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
   text-align: right;
 }
@@ -552,7 +661,7 @@ a { color: inherit; }
   border: 1px solid var(--rule);
   padding: 4px 11px;
   cursor: pointer;
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   color: var(--ink);
   transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
 }
@@ -560,19 +669,19 @@ a { color: inherit; }
 
 .trend-chip__count {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
 }
 
 .trend-chip__badge {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: var(--fs-3xs);
   color: var(--accent);
 }
 
 .trend-chip__badge--new { border: 1px solid var(--accent-soft); padding: 0 4px; }
 
-.trend-empty { color: var(--mist); font-size: 0.78rem; margin: 0; }
+.trend-empty { color: var(--mist); font-size: var(--fs-xs); margin: 0; }
 
 /* ---------------- 社媒热点 + GitHub 涨星榜（数据版） ---------------- */
 
@@ -590,13 +699,13 @@ a { color: inherit; }
 .section-title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: var(--fs-lg);
   margin: 0 0 14px;
 }
 
 .section-title__sub {
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: var(--fs-3xs);
   font-weight: 400;
   color: var(--mist);
   margin-left: 8px;
@@ -622,7 +731,7 @@ a { color: inherit; }
 .social-hot__platform {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   margin: 0 0 10px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--rule);
@@ -645,7 +754,7 @@ a { color: inherit; }
 
 .social-hot__rank {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: var(--fs-2xs);
   color: var(--mist);
   width: 18px;
   flex-shrink: 0;
@@ -653,7 +762,7 @@ a { color: inherit; }
 .social-hot__item:nth-child(-n+3) .social-hot__rank { color: var(--accent); font-weight: 600; }
 
 .social-hot__link {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   line-height: 1.45;
   color: var(--ink);
   text-decoration: none;
@@ -664,14 +773,14 @@ a { color: inherit; }
    不因为 HN/Reddit/X 的标题走了翻译就单独放大加粗，否则同一个网格里几个平台
    的卡片看起来像用了不同字体。 */
 
-/* 侧栏两个榜单同理（窄栏，同样是译文为主、原题走悬浮提示） */
-.brief-row__title.is-translated,
-.hot-row__title.is-translated {
-  font-size: 0.92rem;
-  font-weight: 700;
-}
+/* 侧栏两个榜单：不再给译文条目单独加粗。
+   原意是"译文比原生中文标题醒目一档，帮助分辨这是翻译过的"，但实测 22 条里 21 条
+   都是译文——区分度接近零，反倒让那唯一一条原生中文条目显得比邻居淡、像被降级。
+   而且加粗在列表里读作"更重要"，不是"翻译过的"，语义走错了通道；原先的 0.92rem
+   与基准 0.90rem 只差 0.34px，本就不可见。要标译文该用元信息行的标记，不是字重。
+   类名保留：brief.js 仍在打，留给将来需要时挂别的样式。 */
 
-.social-hot__empty { color: var(--mist); font-size: 0.82rem; margin: 0; }
+.social-hot__empty { color: var(--mist); font-size: var(--fs-sm); margin: 0; }
 
 /* GitHub 涨星榜：编号 + 仓库名 + 描述 + 星数徽章 */
 .gh-trending__head {
@@ -695,7 +804,7 @@ a { color: inherit; }
      的标题/列表内容宽出一圈。改画在这里，宽度天然对齐内容。 */
   border-bottom: 1px solid var(--rule-dark);
 }
-@media (max-width: 800px) { .gh-trending__list { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .gh-trending__list { grid-template-columns: 1fr; } }
 
 .gh-trending__row {
   display: flex;
@@ -708,7 +817,7 @@ a { color: inherit; }
 .gh-trending__rank {
   font-family: var(--font-latin-serif);
   font-weight: 900;
-  font-size: 1rem;
+  font-size: var(--fs-lg);
   color: var(--accent);
   flex-shrink: 0;
   width: 24px;
@@ -721,7 +830,7 @@ a { color: inherit; }
   display: block;
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.86rem;
+  font-size: var(--fs-sm);
   color: var(--ink);
   text-decoration: none;
   overflow-wrap: anywhere;
@@ -731,7 +840,7 @@ a { color: inherit; }
 
 .gh-trending__desc {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: var(--fs-xs);
   line-height: 1.5;
   color: var(--mist);
   display: -webkit-box;
@@ -751,7 +860,7 @@ a { color: inherit; }
 
 .gh-trending__stars {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   color: var(--copper);
   white-space: nowrap;
@@ -759,12 +868,12 @@ a { color: inherit; }
 
 .gh-trending__lang {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
   white-space: nowrap;
 }
 
-.gh-trending__empty { color: var(--mist); font-size: 0.82rem; margin: 8px 0 0; }
+.gh-trending__empty { color: var(--mist); font-size: var(--fs-sm); margin: 8px 0 0; }
 
 /* ---------------- 主栏 + 侧栏 ---------------- */
 
@@ -779,7 +888,13 @@ a { color: inherit; }
 }
 @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
 
+/* 主栏声明为查询容器：头条的图文两栏、信息流的双栏，宽度都该由"主栏还剩多宽"
+   决定，而不是视口宽度——900~1200 这一段视口里侧栏要吃掉 316px，同样的视口宽度
+   主栏可能宽裕也可能只剩一半。原先按视口下断点，就在这一段崩掉了（实测 1010px
+   视口时头条正文列只剩 168px，配图框反而有 376px，是正文的 2.2 倍）。 */
 .feed-panel {
+  container-type: inline-size;
+  container-name: feedcol;
   padding: 18px clamp(16px, 2.5vw, 32px) 20px 0;
   border-right: 1px solid var(--rule);  /* 报纸分栏竖线 */
   min-width: 0;
@@ -791,20 +906,23 @@ a { color: inherit; }
 /* 头条：文字 + 配图两栏（报纸头版结构） */
 /* 今日综述：AI 生成的当天全局导读，领起整个信息流 */
 .digest{border:1px solid var(--rule-dark);border-left:3px solid var(--accent);background:color-mix(in srgb, var(--accent) 4%, var(--panel));padding:14px 18px;margin:0 auto 18px;max-width:920px}
-.digest__title{margin:0 0 8px;font-family:var(--font-mono);font-size:0.82rem;font-weight:600;letter-spacing:0.14em;color:var(--accent);display:flex;align-items:center;gap:8px}
-.digest__badge{font-size:0.62rem;letter-spacing:0.1em;color:var(--mist);border:1px solid var(--rule-dark);border-radius:2px;padding:1px 5px}
-.digest__body{margin:0;font-family:var(--font-body);font-size:0.95rem;line-height:1.75;color:color-mix(in srgb, var(--ink) 88%, var(--mist))}
+.digest__title{margin:0 0 8px;font-family:var(--font-mono);font-size: var(--fs-sm);font-weight:600;letter-spacing:0.14em;color:var(--accent);display:flex;align-items:center;gap:8px}
+.digest__badge{font-size: var(--fs-3xs);letter-spacing:0.1em;color:var(--mist);border:1px solid var(--rule-dark);border-radius:2px;padding:1px 5px}
+.digest__body{margin:0;font-family:var(--font-body);font-size: var(--fs-md);line-height:1.75;color:color-mix(in srgb, var(--ink) 88%, var(--mist))}
 
 /* 话题追踪：每个热点话题一行——名称 + 迷你曲线(sparkline) + 当前热度 + 升降 */
 .topics{padding-top:20px;margin-bottom:28px}
 .topics__list{list-style:none;margin:12px 0 0;padding:0}
 .topics__row{display:grid;grid-template-columns:minmax(90px,1fr) 2fr auto auto;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule-dark)}
-.topics__term{font-weight:700;font-size:0.9rem;color:var(--ink)}
+.topics__term{font-weight:700;font-size: var(--fs-base);color:var(--ink)}
 .topics__spark{width:100%;height:28px;display:block}
-.topics__total{font-family:var(--font-mono);font-size:0.78rem;color:var(--mist);white-space:nowrap}
-.topics__trend{font-size:0.78rem;white-space:nowrap}
+.topics__total{font-family:var(--font-mono);font-size: var(--fs-xs);color:var(--mist);white-space:nowrap}
+.topics__trend{font-size: var(--fs-xs);white-space:nowrap}
 .topics__trend--up{color:var(--accent)}
-.topics__trend--down{color:#b0562a}
+/* 下跌用与 .status-dot.err 同一个赭红：原先这里是 #b0562a，和故障点的 #b0413e
+   是两个语义相近却不同的红，而且 #b0562a 对纸面只有 4.41:1、是全站唯一不达标的
+   正文色（需要 4.5）。合成一个 #b0413e(5.06:1) 既统一语义也过线。 */
+.topics__trend--down{color:var(--err)}
 .topics__trend--flat{color:var(--mist)}
 @media (max-width:560px){.topics__row{grid-template-columns:1fr auto;grid-auto-rows:auto}.topics__spark{grid-column:1 / -1}}
 
@@ -835,8 +953,8 @@ a { color: inherit; }
   background: color-mix(in srgb, var(--accent) 3%, var(--panel));
   transform: translateY(-2px);
   box-shadow:
-    0 8px 20px color-mix(in srgb, var(--ink) 9%, transparent),
-    0 1px 3px color-mix(in srgb, var(--ink) 6%, transparent);
+    0 8px 20px color-mix(in srgb, var(--shadow) 9%, transparent),
+    0 1px 3px color-mix(in srgb, var(--shadow) 6%, transparent);
 }
 /* 头条的单列(移动端)覆盖规则统一放在 .lead__* 各定义之后，见文件下方 “头条 · 移动端单列” */
 
@@ -844,7 +962,7 @@ a { color: inherit; }
   grid-column: 1;
   grid-row: 1;
   font-family: var(--font-mono);
-  font-size: 0.86rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   letter-spacing: 0.18em;
   color: var(--accent);
@@ -883,7 +1001,7 @@ a { color: inherit; }
 .lead__orig {
   margin: 2px 0 8px;
   font-family: var(--font-body);
-  font-size: 1.1rem;   /* 译题是中文读者的主要入口，比正文摘要(0.9rem)大一档 */
+  font-size: var(--fs-xl);   /* 译题是中文读者的主要入口，比卡片标题(--fs-lg)还高一档 */
   line-height: 1.55;
   color: var(--mist);
 }
@@ -900,7 +1018,7 @@ a { color: inherit; }
 
 .lead__reason {
   margin: 4px 0 8px;
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
   line-height: 1.7;
   /* 固定 5 行：内容由 summary_zh 提供(150-220字，见 llm_score.py)，靠真实文字填满而非
      min-height 撑空白。标题已限 3 行，摘要固定 5 行，文字列高度因此可预测，配图才好适配。 */
@@ -916,10 +1034,10 @@ a { color: inherit; }
   padding-left: 2em;  /* 与文字列同缩进 */
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-2xs);
   color: var(--mist);
 }
-.lead__meta .lead__cat { color: var(--accent); font-weight: 600; }
+.lead__meta .lead__cat { color: var(--cat-active, var(--accent)); font-weight: 600; }
 
 .lead__media {
   grid-column: 2;
@@ -965,14 +1083,20 @@ a { color: inherit; }
     var(--bg);
 }
 
-/* 中等宽度：固定 376px 的图片列会把文字列挤得过窄，收到 300px */
-@media (max-width: 1000px) {
+/* 主栏中等宽度：固定 376px 的图片列会把文字列挤得过窄，收到 300px。
+   容器宽 880 时文字列 = 880-300-12 ≈ 568，到 720 时仍有 408，够放下 2rem 标题。 */
+@container feedcol (max-width: 880px) {
   .lead { grid-template-columns: minmax(0, 1fr) 300px; }
 }
 
-/* 头条 · 移动端单列：必须放在上面各 .lead__* 定义之后，否则同特异性下被后者覆盖。
-   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）。 */
-@media (max-width: 720px) {
+/* 头条 · 单列：必须放在上面各 .lead__* 定义之后，否则同特异性下被后者覆盖。
+   单列时取消栅格定位，各块按文档流堆叠（引题→标题正文→配图→元信息）。
+
+   触发条件是主栏窄于 720，不是视口窄于 720：再往下缩，图文两栏要么把正文挤成
+   一行五六个字，要么把画框压成竖条（画框高度跟着文字列走，宽度一窄比例就从
+   1.29 的横构图变成竖的，cover 会从两侧裁掉一大半）。与其两头都坏，不如转单列，
+   让标题吃满整个主栏、配图按 16:9 横铺。 */
+@container feedcol (max-width: 720px) {
   .lead { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
   .lead__kicker,
   .lead__text,
@@ -984,6 +1108,20 @@ a { color: inherit; }
   .lead__img,
   .lead__placeholder { position: static; top: auto; left: auto; width: 100%; height: auto; aspect-ratio: 16 / 9; }
   /* 标题独占整行，可以多放一行 */
+  .lead__title a { -webkit-line-clamp: 4; }
+}
+
+/* 兜底：不支持容器查询的浏览器上面那块整段失效，头条会在手机上硬撑两栏。
+   这里按视口再写一份手机档——支持容器查询时两条规则结论一致，不冲突。 */
+@media (max-width: 720px) {
+  .lead { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
+  .lead__kicker,
+  .lead__text,
+  .lead__media,
+  .lead__meta { grid-column: auto; grid-row: auto; }
+  .lead__media { align-self: auto; }
+  .lead__img,
+  .lead__placeholder { position: static; top: auto; left: auto; width: 100%; height: auto; aspect-ratio: 16 / 9; }
   .lead__title a { -webkit-line-clamp: 4; }
 }
 
@@ -1006,7 +1144,7 @@ a { color: inherit; }
 /* 分类筛选：报纸栏目标签风（文字+间隔点） */
 .chip {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   padding: 4px 10px;
   border: none;
   background: transparent;
@@ -1016,7 +1154,7 @@ a { color: inherit; }
 }
 .chip:hover { color: var(--ink); }
 .chip.is-active {
-  color: var(--cat-text, var(--accent));
+  color: var(--cat-active, var(--accent));  /* 亮/暗各自的分类文字色，见 .has-cat-text */
   border-bottom-color: var(--cat, var(--accent));
   font-weight: 600;
 }
@@ -1051,7 +1189,12 @@ a { color: inherit; }
   margin: 0;
   padding: 0;
 }
-@media (max-width: 800px) {
+/* 单栏时不画栏间线。阈值 660 必须与 feed.js renderFeed() 里的 NARROW_COL_PX
+   保持一致——JS 决定分几栏、CSS 决定画不画线，两边用同一个数。 */
+@container feedcol (max-width: 660px) {
+  .feed-list::before { display: none; }
+}
+@media (max-width: 660px) {
   .feed-list::before { display: none; }
 }
 
@@ -1068,8 +1211,8 @@ a { color: inherit; }
   background: color-mix(in srgb, var(--accent) 3%, var(--panel));
   transform: translateY(-2px);
   box-shadow:
-    0 8px 20px color-mix(in srgb, var(--ink) 9%, transparent),
-    0 1px 3px color-mix(in srgb, var(--ink) 6%, transparent);
+    0 8px 20px color-mix(in srgb, var(--shadow) 9%, transparent),
+    0 1px 3px color-mix(in srgb, var(--shadow) 6%, transparent);
 }
 
 @keyframes row-in { from { opacity: 0; transform: translateY(6px); } }
@@ -1085,9 +1228,9 @@ a { color: inherit; }
 /* 分类标签：色点 + 分类专属深色文字（JS 按分类着色） */
 .feed-card__category {
   font-family: var(--font-body);
-  font-size: 0.74rem;
+  font-size: var(--fs-2xs);
   font-weight: 700;
-  color: var(--accent);  /* JS 覆盖为分类深色变体，此处为兜底 */
+  color: var(--cat-active, var(--accent));  /* 分类色由 applyCategoryTextColor 注入，accent 为兜底 */
   white-space: nowrap;
 }
 
@@ -1099,14 +1242,14 @@ a { color: inherit; }
 
 .feed-card__score {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-2xs);
   color: var(--mist);
 }
 .feed-card[data-curated="true"] .feed-card__score { color: var(--accent); }
 
 .feed-card__multi {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   color: var(--accent);
   border: 1px solid var(--accent-soft);
   background: transparent;
@@ -1118,7 +1261,7 @@ a { color: inherit; }
 .feed-card__out {
   text-decoration: none;
   color: var(--mist);
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   line-height: 1;
   display: inline-block;
   transition: transform 0.15s var(--ease), color 0.15s var(--ease);
@@ -1130,7 +1273,7 @@ a { color: inherit; }
   overflow-wrap: anywhere;
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 1.06rem;
+  font-size: var(--fs-lg);
   line-height: 1.5;
   color: var(--ink);
   text-decoration: none;
@@ -1139,11 +1282,13 @@ a { color: inherit; }
 .feed-card__title:hover { color: var(--accent); }
 
 /* 中文译题副题行：英文原题为主标题时，译文附于其下。
-   中文读者主要靠它扫读，字号贴近主标题(1.06rem)，只低半档 */
+   原先它与主标题只差半档（--fs-md 对 --fs-lg），双语卡片读起来像两个并列的标题、
+   分不出谁是主。降到 --fs-base 后差一整档，主从关系立住；它仍是中文读者的主要
+   扫读入口，所以不再往下压，也保持着与正文摘要(--fs-sm)的距离。 */
 .feed-card__deck {
   margin: 0 0 8px;
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: var(--fs-base);
   line-height: 1.55;
   color: var(--mist);
 }
@@ -1168,7 +1313,7 @@ a { color: inherit; }
 
 .feed-card__excerpt {
   margin: 0 0 10px;
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   line-height: 1.6;
   color: color-mix(in srgb, var(--ink) 78%, var(--mist));
   display: -webkit-box;
@@ -1186,7 +1331,7 @@ a { color: inherit; }
   justify-content: flex-start;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
 }
 
@@ -1211,7 +1356,7 @@ a { color: inherit; }
   color: var(--rule-dark);
 }
 
-.feed-card__expand { margin: 0 0 8px; font-size: 0.75rem; color: var(--mist); }
+.feed-card__expand { margin: 0 0 8px; font-size: var(--fs-2xs); color: var(--mist); }
 .feed-card__expand-label { margin: 0 0 4px; }
 .feed-card__source-list { margin: 0; padding-left: 16px; }
 .feed-card__source-list a { color: var(--accent); text-decoration: none; }
@@ -1219,7 +1364,7 @@ a { color: inherit; }
 
 .feed-empty, .brief-empty {
   color: var(--mist);
-  font-size: 0.84rem;
+  font-size: var(--fs-sm);
   padding: 22px 4px;
 }
 
@@ -1232,7 +1377,7 @@ a { color: inherit; }
   border: 1px solid var(--rule);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: var(--fs-xs);
   cursor: pointer;
   transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
 }
@@ -1244,20 +1389,28 @@ a { color: inherit; }
    侧栏里有长标题/长来源名，字号调大后尤其容易顶出去，这里显式允许收缩。 */
 .brief-panel { padding: 18px 0 20px clamp(16px, 2vw, 24px); min-width: 0; }
 
+/* 侧栏栏目头：这里管着「热点雷达 / 今日深度推荐」两块。
+   原先是 900 字重 + 3px double 粗双线 + --fs-lg，重量压过了它所统领的列表
+   （条目标题才 --fs-base/600），栏目头反倒比内容更抢眼；而且与条目编号同字号，
+   层级不是靠尺寸撑起来的、全靠用墨量硬压。
+   改为 700 + 1px 细线 + --fs-md，与下方 .source-health__title（700/--fs-xs/1px）
+   成一套三档栏目头。区分度不靠墨色，而靠衬线字族（条目是无衬线正文体）、
+   字距和那道细分割线——这些在轻量下依然成立。 */
 .brief-panel__title {
   font-family: var(--font-serif);
-  font-weight: 900;
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: var(--fs-md);
+  letter-spacing: 0.04em;
   margin: 0 0 2px;
   padding-bottom: 6px;
-  border-bottom: 3px double var(--rule-dark);
+  border-bottom: 1px solid var(--rule-dark);
 }
 
 .brief-panel__title--gap { margin-top: 28px; }
 
 .brief-panel__date {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   color: var(--mist);
   margin: 6px 0 14px;
 }
@@ -1289,7 +1442,7 @@ a { color: inherit; }
 .hot-row__rank, .brief-row__rank {
   font-family: var(--font-latin-serif);
   font-weight: 900;
-  font-size: 1.05rem;
+  font-size: var(--fs-lg);
   color: var(--mist);           /* 编号默认退后 */
   width: 26px;
   flex-shrink: 0;
@@ -1306,9 +1459,9 @@ a { color: inherit; }
   -webkit-box-orient: vertical;
   overflow: hidden;
   overflow-wrap: anywhere;
-  /* 0.9rem(≈15.3px)：与下方摘要一起上调，保持侧栏内"标题>摘要"的层级差，
+  /* --fs-base(15.6px)：与下方摘要一起上调，保持侧栏内"标题>摘要"的层级差，
      同时不再比主栏卡片标题小太多。 */
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
@@ -1320,8 +1473,8 @@ a { color: inherit; }
 .hot-row__meta, .brief-row__meta {
   margin: 4px 0 0;
   font-family: var(--font-mono);
-  /* 0.7rem(≈11.9px)：等宽字体在小字号下尤其难认，0.64rem 只有约 10.9px。 */
-  font-size: 0.7rem;
+  /* --fs-2xs(12.2px)：等宽字体在小字号下尤其难认，再往下就只剩十来个像素高了。 */
+  font-size: var(--fs-2xs);
   color: var(--mist);
 }
 
@@ -1329,9 +1482,9 @@ a { color: inherit; }
 
 .brief-row__reason {
   margin: 0;
-  /* 0.82rem(≈13.9px) 与信息流卡片摘要 .feed-card__excerpt 同档：原先 0.74rem
-     在侧栏窄栏里显著偏小、读着费力，且比主栏摘要小了一整级。 */
-  font-size: 0.82rem;
+  /* --fs-sm(14.3px) 与信息流卡片摘要 .feed-card__excerpt 同档：更小的档位
+     在侧栏窄栏里显著偏小、读着费力，且会比主栏摘要小一整级。 */
+  font-size: var(--fs-sm);
   line-height: 1.6;
   color: var(--mist);
 }
@@ -1341,7 +1494,7 @@ a { color: inherit; }
 .source-health__title {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: var(--fs-xs);
   margin: 0 0 10px;
   padding-bottom: 5px;
   border-bottom: 1px solid var(--rule-dark);
@@ -1364,14 +1517,14 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.72rem;
+  font-size: var(--fs-2xs);
   gap: 8px;
 }
 
 .source-health__name {
   color: var(--mist);
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: var(--fs-3xs);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1385,14 +1538,14 @@ a { color: inherit; }
 
 .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 .status-dot.ok { background: var(--accent); }
-.status-dot.err { background: #b0413e; }  /* 故障=赭红；换青瓷主题后不能再用accent(绿) */
+.status-dot.err { background: var(--err); }  /* 故障=赭红；换青瓷主题后不能再用accent(绿) */
 
 /* ---------------- 页脚 ---------------- */
 
 .sitefooter {
   padding-bottom: 40px;
   color: var(--mist);
-  font-size: 0.74rem;
+  font-size: var(--fs-2xs);
   text-align: center;
 }
 
@@ -1434,7 +1587,7 @@ a { color: inherit; }
 .palette-overlay {
   position: fixed;
   inset: 0;
-  background: color-mix(in srgb, var(--ink) 40%, transparent);
+  background: var(--overlay);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1446,7 +1599,7 @@ a { color: inherit; }
   width: min(560px, 92vw);
   background: var(--panel);
   border: 1px solid var(--rule-dark);
-  box-shadow: 6px 6px 0 color-mix(in srgb, var(--ink) 20%, transparent);
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--shadow) 20%, transparent);
   overflow: hidden;
 }
 
@@ -1466,7 +1619,7 @@ a { color: inherit; }
   border: none;
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--fs-md);
 }
 .palette__input:focus { outline: none; }
 
@@ -1486,10 +1639,10 @@ a { color: inherit; }
   gap: 2px;
 }
 .palette__result:hover, .palette__result.is-active { background: var(--bg); }
-.palette__result-title { font-size: 0.88rem; }
-.palette__result-meta { font-family: var(--font-mono); font-size: 0.66rem; color: var(--mist); }
+.palette__result-title { font-size: var(--fs-base); }
+.palette__result-meta { font-family: var(--font-mono); font-size: var(--fs-3xs); color: var(--mist); }
 
-.palette__empty { padding: 24px; text-align: center; color: var(--mist); font-size: 0.85rem; }
+.palette__empty { padding: 24px; text-align: center; color: var(--mist); font-size: var(--fs-sm); }
 
 /* ---------------- 动效与无障碍 ---------------- */
 
