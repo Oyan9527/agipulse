@@ -8,12 +8,9 @@
   --mono: ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
   --maxw:1080px;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --paper:#0d1512; --panel:#131e1a; --ink:#e7ece8; --mist:#8fa096;
-    --rule:#2b3a34; --rule-soft:#1e2a25; --accent:#4ecfa4; --accent-soft:#4ecfa422;
-  }
-}
+/* 默认恒为浅色，不跟随系统 prefers-color-scheme：浅色是这套纸面配色的本来面目，
+   深色是点 ◐ 才有的可选项。与主站 style.css 的行为一致——两页不一致的话，
+   从关于页点回首页会"掉主题"。 */
 :root[data-theme="dark"]{
   --paper:#0d1512; --panel:#131e1a; --ink:#e7ece8; --mist:#8fa096;
   --rule:#2b3a34; --rule-soft:#1e2a25; --accent:#4ecfa4; --accent-soft:#4ecfa422;

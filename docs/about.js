@@ -8,10 +8,9 @@
     return root.classList.contains("lang-en");
   }
 
+  // 默认浅色，不跟随系统（与主站 theme.js 一致）
   function isDark() {
-    var cur = root.getAttribute("data-theme");
-    return cur ? cur === "dark"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return root.getAttribute("data-theme") === "dark";
   }
 
   function syncLangAriaLabel() {
@@ -34,7 +33,7 @@
     syncThemeAriaLabel();
   });
 
-  // 主题默认跟随系统，点击在 明/暗 间切换
+  // 主题默认浅色，点击在 明/暗 间切换
   themeBtn.addEventListener("click", function () {
     var dark = isDark();
     root.setAttribute("data-theme", dark ? "light" : "dark");

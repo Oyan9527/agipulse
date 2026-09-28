@@ -48,10 +48,13 @@
 /* ---------------- 暗色主题 ----------------
    关于页(about.css)早就有明暗双主题和切换按钮，主站却一直只有浅色——从关于页点回
    首页，暗色就没了。这里把同一套机制补齐：色值直接对齐 about.css，两个页面同色。
-   机制也照搬：默认跟随系统 prefers-color-scheme，:root[data-theme] 用于按钮手动覆盖
-   （不落盘，刷新回到跟随系统，与关于页行为一致）。
 
-   注意这里只重定义 token，不在媒体查询里写组件样式——组件一律走变量，
+   ⚠️ 这是一份「报纸纸面」配色，浅色是它的本来面目，所以默认恒为浅色，不跟随系统
+   的 prefers-color-scheme——系统开着深色的人打开本站，看到的仍是纸面。想看深色版
+   要自己点刊头右上的 ◐（写 :root[data-theme="dark"]）。选择不落盘，刷新即回浅色。
+   （曾经做成跟随系统，后来按站主要求改掉：深色是可选项，不是默认相貌。）
+
+   注意这里只重定义 token，不在别处写组件样式——组件一律走变量，
    否则暗色会漏掉后来新增的组件。 */
 :root {
   --dark-bg: #0d1512;
@@ -66,64 +69,38 @@
   --dark-err: #e8736f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: var(--dark-bg);
-    --panel: var(--dark-panel);
-    --ink: var(--dark-ink);
-    --mist: var(--dark-mist);
-    --rule: var(--dark-rule);
-    /* 亮色里 rule-dark 就是墨色(前景)，暗色里它得反过来变成浅色，
-       否则刊头粗线、分栏线在深底上直接消失。 */
-    --rule-dark: var(--dark-rule-dark);
-    --accent: var(--dark-accent);
-    --accent-soft: var(--dark-accent-soft);
-    --copper: var(--dark-copper);
-    --err: var(--dark-err);
-    /* 阴影和遮罩保持"更暗"的语义：深底上再叠黑才是阴影，叠 ink(浅色)会变成发光 */
-    --shadow: #000;
-    --overlay: color-mix(in srgb, #000 62%, transparent);
-  }
-}
-
 :root[data-theme="dark"] {
   --bg: var(--dark-bg);
   --panel: var(--dark-panel);
   --ink: var(--dark-ink);
   --mist: var(--dark-mist);
   --rule: var(--dark-rule);
+  /* 亮色里 rule-dark 就是墨色(前景)，暗色里它得反过来变成浅色，
+     否则刊头粗线、分栏线在深底上直接消失。 */
   --rule-dark: var(--dark-rule-dark);
   --accent: var(--dark-accent);
   --accent-soft: var(--dark-accent-soft);
   --copper: var(--dark-copper);
   --err: var(--dark-err);
+  /* 阴影和遮罩保持"更暗"的语义：深底上再叠黑才是阴影，叠 ink(浅色)会变成发光 */
   --shadow: #000;
   --overlay: color-mix(in srgb, #000 62%, transparent);
 }
 
 /* color-scheme 跟着走，滚动条/原生控件才不会一个亮一个暗 */
-html { color-scheme: light dark; }
-:root[data-theme="light"] { color-scheme: light; }
+html { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
 
 /* 暗色下原图往往过亮、在深底上像两个灯箱，压一档亮度让它回到版面里 */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .lead__img,
-  :root:not([data-theme="light"]) .feed-card__img { filter: saturate(0.9) brightness(0.86); }
-  /* 深色下强调色变亮，白字压不住了，改用深底色当字 */
-  :root:not([data-theme="light"]) .skip-link { color: var(--dark-bg); }
-}
 :root[data-theme="dark"] .lead__img,
 :root[data-theme="dark"] .feed-card__img { filter: saturate(0.9) brightness(0.86); }
+/* 深色下强调色变亮，白字压不住了，改用深底色当字 */
 :root[data-theme="dark"] .skip-link { color: var(--dark-bg); }
 
 /* 分类色：亮色用加深变体当文字色，暗色要反过来用提亮变体（深色变体在深底上糊成一团）。
    JS 把两个值都写进自定义属性，这里按主题选一个——不能让 JS 直接赋 style.color，
    那是内联样式，主题切换时 CSS 盖不住。 */
 .has-cat-text { --cat-active: var(--cat-text); }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .has-cat-text { --cat-active: var(--cat-text-dark); }
-}
 :root[data-theme="dark"] .has-cat-text { --cat-active: var(--cat-text-dark); }
 
 * { box-sizing: border-box; }
