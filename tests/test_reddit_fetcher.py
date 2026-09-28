@@ -153,6 +153,39 @@ def test_non_429_errors_do_not_trigger_backoff(monkeypatch):
     assert reddit_fetcher._interval == reddit_fetcher.MIN_INTERVAL_SECONDS
 
 
+# sources.yaml 里 reddit 类型源的数量级；参数关系按这个规模校准
+TYPICAL_REDDIT_SOURCES = 20
+
+
+def test_budget_covers_a_full_pass_with_room_for_backoff():
+    """预算必须够按基线间隔走完一整轮，还要留出退避放大的余量。
+
+    线上踩过：起步 6 秒 + 预算 360 秒，看着是"基线 120 秒的三倍"，可只要吃上
+    几个 429、间隔翻到 24~45 秒，360 秒连一轮都走不完——20 个源里 7 个压根没
+    轮到就被预算切掉，预算自己成了瓶颈（那一轮的 last_error 写着"预算已用尽"
+    而不是 429，是这条守卫的由来）。
+
+    这里守的是三个常量之间的关系，不是某个具体数值：改 MIN_INTERVAL_SECONDS
+    而忘了同步 BUDGET_SECONDS 时必须红。
+    """
+    # 倍数取 4 不是 3：旧参数(6s/360s)恰好是 3.0 倍，卡在线上过关，可线上就是它
+    # 把 7 个源挡在门外的。门槛要设在能把那组参数判红的位置，守卫才有意义。
+    baseline = TYPICAL_REDDIT_SOURCES * reddit_fetcher.MIN_INTERVAL_SECONDS
+    assert reddit_fetcher.BUDGET_SECONDS >= baseline * 4, (
+        "预算 %.0fs 不够 %d 个源按 %.0fs 基线走完一轮(%.0fs)并留退避余量"
+        % (reddit_fetcher.BUDGET_SECONDS, TYPICAL_REDDIT_SOURCES,
+           reddit_fetcher.MIN_INTERVAL_SECONDS, baseline)
+    )
+
+
+def test_backoff_ceiling_stays_within_budget():
+    """就算一路退到上限，也得能在预算里走完一轮——否则后半截源永远抓不到。"""
+    worst = TYPICAL_REDDIT_SOURCES * reddit_fetcher.MAX_INTERVAL_SECONDS
+    assert reddit_fetcher.MAX_INTERVAL_SECONDS > reddit_fetcher.MIN_INTERVAL_SECONDS
+    # 全程顶着上限是极端情况（真到那一步说明对方铁了心限流），只要求别差一个数量级
+    assert worst <= reddit_fetcher.BUDGET_SECONDS * 2
+
+
 def test_budget_exhausted_skips_remaining_sources(monkeypatch):
     """预算用尽后直接跳过，别把整轮流水线拖在一个正在限流的域名上。"""
     clock = [1000.0]
