@@ -4,9 +4,14 @@
 分派，于是 20 个 reddit 源会被十个 worker 在几秒内一起抓——线上 17/20 拿 429
 就是这么来的。打散之后同域名两次请求之间隔着几十个别的源。
 
-这里守的是"同域名的源不会落在一个线程池批次里"这条性质，而不是某个具体顺序。
+另外守同站点多源的每日轮换：打散是确定性的，组内先后每轮都一样，对限流的站点
+等于系统性偏袒排在前面的几个（线上 20 个 reddit 源里有 last_success 的自始至终
+就是同样 7 个）。
+
+这里守的都是性质——不落在同一批次、每天换队首、间距不回退——而不是某个具体顺序。
 """
-from scripts.run_pipeline import FETCH_WORKERS, _interleave_by_host, _source_host
+from scripts.run_pipeline import (FETCH_WORKERS, _daily_rotation,
+                                  _interleave_by_host, _source_host)
 
 
 def _rss(host, n):
@@ -68,3 +73,44 @@ def test_non_rss_types_group_by_type():
 
 def test_empty_input():
     assert _interleave_by_host([]) == []
+
+
+def test_same_site_sources_rotate_day_to_day():
+    """同站点内部的先后每天要换人。
+
+    打散本身是确定性的，组内顺序每轮一样——对限流的站点来说等于系统性偏袒排在
+    前面的几个：线上 20 个 reddit 源里有 last_success 的自始至终就是同样 7 个，
+    后面 13 个从来没轮到过。轮换让每个源都有机会排到队首。
+    """
+    sources = _typed("reddit", 20)
+
+    def first_of(rot):
+        order = _interleave_by_host(sources, rotation=rot)
+        return [s["id"] for s in order if _source_host(s) == "reddit"][0]
+
+    leaders = {first_of(day) for day in range(20)}
+    assert len(leaders) == 20, "20 天里应该轮到 20 个不同的源排队首，实际只有 %d 个" % len(leaders)
+
+
+def test_rotation_is_stable_within_a_day():
+    sources = _typed("reddit", 8) + _rss("news.example.com", 4)
+    once = [s["id"] for s in _interleave_by_host(sources, rotation=100)]
+    twice = [s["id"] for s in _interleave_by_host(sources, rotation=100)]
+    assert once == twice
+
+
+def test_rotation_does_not_break_the_spacing():
+    """轮换只换组内先后，不能把好不容易拉开的间距又挤回去。"""
+    sources = _typed("reddit", 20) + [
+        {"id": "o%d" % i, "type": "rss", "url": "https://site%d.example.com/f.xml" % i}
+        for i in range(200)
+    ]
+    for day in range(7):
+        gap = _min_gap(_interleave_by_host(sources, rotation=day), "reddit")
+        assert gap > FETCH_WORKERS, "第 %d 天的最小间距 %s 掉到线程数以内了" % (day, gap)
+
+
+def test_daily_rotation_advances():
+    """哨兵：轮换值必须真的随天变化，写死成常数就失去意义了。"""
+    assert isinstance(_daily_rotation(), int)
+    assert _daily_rotation() > 700000   # 公元 2000 年以后的 toordinal 量级

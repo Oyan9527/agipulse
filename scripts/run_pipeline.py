@@ -56,7 +56,16 @@ def _source_host(source):
     return stype
 
 
-def _interleave_by_host(sources):
+def _daily_rotation():
+    """按 UTC 日期取一个每天 +1 的整数，给同站点多源的抓取顺序做轮换用。
+
+    用 UTC 而不是本地日期：流水线跑在 GitHub Actions 上(UTC)，本地开发跑在
+    别的时区，两边取到同一个数才好复现问题。
+    """
+    return datetime.now(timezone.utc).date().toordinal()
+
+
+def _interleave_by_host(sources, rotation=None):
     """把同一站点的源在抓取顺序里摊开，别让线程池同时敲同一扇门。
 
     sources.yaml 是按站点分段写的，同一个域名的源天然挨在一起；线程池按列表顺序
@@ -81,8 +90,16 @@ def _interleave_by_host(sources):
     第一轮就把几百个单源堆抽干了，之后只剩几个多源堆在小圈子里轮转——实测 reddit
     相邻间距的中位数只有 3，比线程数还小，等于没打散。
 
+    同站点的多个源还要每天轮换先后。打散本身是确定性的，同一站点内部谁先谁后
+    每轮都一样——对限流的站点来说，这等于系统性偏袒排在前面的那几个：线上
+    20 个 reddit 源里，有 last_success 记录的自始至终就是同样 7 个，后面 13 个
+    从来没轮到过成功。按 UTC 日期把组内顺序旋转一位，20 天内每个源都能轮到队首。
+    rotation 参数只为测试注入，正常调用不传。
+
     去重不受影响：dedupe() 自己先按 published_at 排过序，不依赖抓取顺序。
     """
+    if rotation is None:
+        rotation = _daily_rotation()
     total = len(sources)
     if total == 0:
         return []
@@ -103,9 +120,11 @@ def _interleave_by_host(sources):
         n = len(group)
         if n == 1:
             continue
+        shift = rotation % n
+        group = group[shift:] + group[:shift]
         for i, (orig_idx, src) in enumerate(group):
             spread.append(((i + 0.5) / n, key, orig_idx, src))
-    # 后两个排序键只为结果稳定可复现：同一比例位置上不定序的话每次跑出来都不一样
+    # 后两个排序键只为消除并列、保证同一天内可复现（跨天会因为轮换而变，这是有意的）
     spread.sort(key=lambda t: (t[0], t[1], t[2]))
     return [t[3] for t in spread]
 
