@@ -28,7 +28,9 @@ quality_gate:
 # 型号名塞进正文，但报道主体(充电桩、笔记本)与AI无关。标题是编辑对主题的直接概括。
 ai_relevance:
   strict_source_prefixes: [zh-]          # 中文通用科技站 + 个人技术博客
-  strict_sources: [36kr, ifanr, ruanyifeng]
+  # tnw-deep-tech 的分区 feed 404 后改用了全站 feed(见 sources.yaml 的 notes)，综合科技媒体
+  # 的全站流里非 AI 内容占多数，必须跟其它通用站一样按标题关键词过滤。
+  strict_sources: [36kr, ifanr, ruanyifeng, tnw-deep-tech]
 
 # 原始抓取配额：部分类别源特别多(如论文研究17个arXiv分类源)，抓取量会远超其他类别、
 # 淹没"全部动态"展示且拉高LLM调用量；在进入处理流程前按新鲜度截断。

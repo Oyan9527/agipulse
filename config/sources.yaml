@@ -218,7 +218,7 @@ sources:
   - {id: bair-berkeley, type: rss, url: "https://bair.berkeley.edu/blog/feed.xml", category_hint: [论文研究], authority_weight: 0.85, poll_minutes: 240, status: confirmed}
   - {id: mit-news-ai, type: rss, url: "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml", category_hint: [论文研究, 行业动态], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
   - {id: cmu-ml-blog, type: rss, url: "https://blog.ml.cmu.edu/feed/", category_hint: [论文研究], authority_weight: 0.8, poll_minutes: 240, status: confirmed}
-  - {id: eleuther, type: rss, url: "https://blog.eleuther.ai/index.xml", category_hint: [论文研究, 开源项目], authority_weight: 0.75, poll_minutes: 240, status: confirmed}
+  - {id: eleuther, type: rss, url: "https://blog.eleuther.ai/index.xml", category_hint: [论文研究, 开源项目], authority_weight: 0.75, poll_minutes: 240, status: broken, notes: "2026-09-29实测停抓：blog.eleuther.ai 全站 feed 路径(index/rss/feed.xml)均 404，www.eleuther.ai/index.xml 同样 404，博客已迁走或下线。找到新址可恢复。"}
   - {id: the-gradient, type: rss, url: "https://thegradient.pub/rss/", category_hint: [技巧与观点, 论文研究], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
 
   # ---------------- 高信号个人/Newsletter 第二批 ----------------
@@ -236,7 +236,7 @@ sources:
   # ---------------- 中文源 第二批 ----------------
   - {id: ruanyifeng, type: rss, url: "https://www.ruanyifeng.com/blog/atom.xml", category_hint: [技巧与观点], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
   - {id: ifanr, type: rss, url: "https://www.ifanr.com/feed", category_hint: [产品发布, 行业动态], authority_weight: 0.55, poll_minutes: 120, status: confirmed}
-  - {id: 36kr, type: rss, url: "https://36kr.com/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 120, status: confirmed}
+  - {id: 36kr, type: rss, url: "https://36kr.com/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 120, status: broken, notes: "2026-09-29实测停抓：/feed 及 10 个常见 feed 路径全部返回同一个 17KB 的 HTML(大小完全一致=CDN/SPA 对任意路径回同一页)，已拿不到 RSS。"}
   - {id: baoyu, type: rss, url: "https://baoyu.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.7, poll_minutes: 240, status: confirmed}
 
   # ---------------- GitHub 项目动态（releases） ----------------
@@ -607,7 +607,7 @@ sources:
   - {id: zh-frost-lee-github-io, type: rss, url: "https://frost-lee.github.io/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Frost's Blog"}
   - {id: zh-blog-chungzh-cn, type: rss, url: "https://blog.chungzh.cn/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "ChungZH 的小窝"}
   - {id: zh-ksmeow-moe, type: rss, url: "https://ksmeow.moe/feed/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "KSkun's Blog"}
-  - {id: zh-zeqiang-fun, type: rss, url: "https://zeqiang.fun/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "方泽强"}
+  - {id: zh-zeqiang-fun, type: rss, url: "https://zeqiang.fun/rss.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "方泽强。2026-09-29修正：index.xml 已 404，站点改用 rss.xml。"}
   - {id: zh-siwei-io, type: rss, url: "https://siwei.io/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "思为说"}
   - {id: zh-lowin-li, type: rss, url: "https://lowin.li/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "lowinli's blog"}
   - {id: zh-ednovas-xyz, type: rss, url: "https://ednovas.xyz/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "EdNovas的小站"}
@@ -624,7 +624,7 @@ sources:
   - {id: zh-tanxinyu-work, type: rss, url: "https://tanxinyu.work/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "谭新宇的博客"}
   - {id: zh-szp15-com, type: rss, url: "https://szp15.com/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "山楂片的博客"}
   - {id: zh-vlight-me, type: rss, url: "https://vlight.me/rss2.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Wang's Blog"}
-  - {id: zh-bbbbchan-com, type: rss, url: "https://www.bbbbchan.com/feed/atom/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "BB酱的博客"}
+  - {id: zh-bbbbchan-com, type: rss, url: "https://www.bbbbchan.com/feed/atom/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: broken, notes: "BB酱的博客。2026-09-29实测停抓：本机直连也是 500，服务端持续报错。"}
   - {id: zh-youngforever-tech, type: rss, url: "https://youngforever.tech/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "从百草园到三味书屋"}
   - {id: zh-studyinglover-com, type: rss, url: "https://studyinglover.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "plus studio"}
   - {id: zh-sekyoro-top, type: rss, url: "https://www.sekyoro.top/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Sekyoro的博客小屋"}
@@ -644,7 +644,7 @@ sources:
   - {id: zh-forcheetah-github-io, type: rss, url: "https://forcheetah.github.io/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "暮冬Z羡慕的博客"}
   - {id: zh-peter267-github-io, type: rss, url: "https://peter267.github.io/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Peter267"}
   - {id: zh-iconpik-com, type: rss, url: "https://www.iconpik.com/rss/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "王圆圆"}
-  - {id: zh-xieyi-org, type: rss, url: "https://xieyi.org/rss.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "謝懿Shine©的AI博客"}
+  - {id: zh-xieyi-org, type: rss, url: "https://xieyi.org/rss.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: broken, notes: "謝懿Shine©的AI博客。2026-09-29实测停抓：TLS 握手失败，站点长期失修。"}
   - {id: zh-paddysun-top, type: rss, url: "https://www.paddysun.top/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Under the Sun with Paddy"}
   - {id: zh-rokcso-com, type: rss, url: "https://rokcso.com/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Rokcso's Blog"}
   - {id: zh-blog-algieba12-cn, type: rss, url: "https://blog.algieba12.cn/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "阿尔的代码屋"}
@@ -664,7 +664,7 @@ sources:
   - {id: zh-blog-t9t-io, type: rss, url: "https://blog.t9t.io/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "透明创业实验"}
   - {id: zh-feeds-feedburner-com, type: rss, url: "http://feeds.feedburner.com/ruanyifeng", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "阮一峰的网络日志"}
   - {id: zh-coolshell-cn, type: rss, url: "http://coolshell.cn/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "酷 壳 – CoolShell"}
-  - {id: zh-xiabingbao-com, type: rss, url: "https://www.xiabingbao.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "蚊子前端博客"}
+  - {id: zh-xiabingbao-com, type: rss, url: "https://www.xiabingbao.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: broken, notes: "蚊子前端博客。2026-09-29实测停抓：TLS 握手失败，站点长期失修。"}
   - {id: zh-macshuo-com, type: rss, url: "http://macshuo.com/?feed=rss2", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "MacTalk-池建强的随想录"}
   - {id: zh-shrekshao-github-io, type: rss, url: "http://shrekshao.github.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "ShrekShao"}
   - {id: zh-blog-codingnow-com, type: rss, url: "http://blog.codingnow.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "云风的 BLOG"}
@@ -674,7 +674,7 @@ sources:
   - {id: zh-piglei-com, type: rss, url: "https://www.piglei.com/feeds/latest/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "Python 工匠"}
   - {id: zh-luolei-org, type: rss, url: "http://luolei.org/feed/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "罗磊的独立博客"}
   - {id: zh-daimajia-com, type: rss, url: "https://daimajia.com/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "代码家"}
-  - {id: zh-droidyue-com, type: rss, url: "https://droidyue.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed, notes: "技术小黑屋"}
+  - {id: zh-droidyue-com, type: rss, url: "https://droidyue.com/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: broken, notes: "技术小黑屋。2026-09-29实测停抓：本机直连也是 403，不是 Actions 出口 IP 的问题，站点对外一律拒绝。"}
 
   # ---------------- 社媒 AI 热点（role: social_hot，独立于AI主流程；在各平台内检索AI话题，
   #                    再经 ai_relevance 关键词过滤，仅保留AI相关条目，供数据版"社媒热点"面板展示） ----------------
@@ -833,7 +833,7 @@ sources:
   - {id: zh-gtdstudy, type: rss, url: "https://www.gtdstudy.com/index.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: zh-hsu-cy, type: rss, url: "https://hsu.cy/posts/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: zh-bojie-li, type: rss, url: "https://01.me/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
-  - {id: zh-justinyan, type: rss, url: "https://justinyan.me/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: zh-justinyan, type: rss, url: "https://justinyan.me/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: broken, notes: "2026-09-29实测停抓：TLS 握手失败(证书链问题)，站点长期失修。"}
   - {id: zh-lijinma, type: rss, url: "https://lijinma.com/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: zh-wusiyu, type: rss, url: "https://wusiyu.me/feed", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: zh-laffitto, type: rss, url: "https://laffitto.xyz/rss.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
@@ -851,9 +851,9 @@ sources:
   - {id: databricks-blog, type: rss, url: "https://www.databricks.com/feed", category_hint: [产品发布, 行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
   - {id: marktechpost, type: rss, url: "https://www.marktechpost.com/feed/", category_hint: [模型发布, 产品发布], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
   - {id: kdnuggets, type: rss, url: "https://www.kdnuggets.com/feed", category_hint: [行业动态, 论文研究], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
-  - {id: analytics-india-mag, type: rss, url: "https://analyticsindiamag.com/feed/", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
+  - {id: analytics-india-mag, type: rss, url: "https://analyticsindiamag.com/feed/", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: broken, notes: "2026-09-29实测停抓：/feed 及各候选路径全部返回同一个 66KB HTML，feed 已不可得。"}
   - {id: towards-data-science, type: rss, url: "https://towardsdatascience.com/feed", category_hint: [论文研究, 行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
-  - {id: tnw-deep-tech, type: rss, url: "https://thenextweb.com/deep-tech/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
+  - {id: tnw-deep-tech, type: rss, url: "https://thenextweb.com/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed, notes: "2026-09-29修正：deep-tech 分区 feed 已 404，改用全站 feed。TNW 是综合科技媒体，全站 feed 里非 AI 内容占多数，所以同时把本源加进 weights.yaml 的 ai_relevance.strict_sources，按标题关键词过滤后再入库。"}
   - {id: fastcompany-tech, type: rss, url: "https://www.fastcompany.com/technology/rss", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
   - {id: sifted, type: rss, url: "https://sifted.eu/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
   - {id: rest-of-world, type: rss, url: "https://restofworld.org/feed/latest/", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
@@ -868,7 +868,7 @@ sources:
   - {id: rundown-ai, type: rss, url: "https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml", category_hint: [行业动态, 模型发布], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
   - {id: last-week-in-ai, type: rss, url: "https://lastweekin.ai/feed", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
   - {id: benedict-evans, type: rss, url: "https://www.ben-evans.com/benedictevans?format=RSS", category_hint: [行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
-  - {id: intel-newsroom-ai, type: rss, url: "https://newsroom.intel.com/artificial-intelligence/feed", category_hint: [产品发布, 行业动态], authority_weight: 0.55, poll_minutes: 180, status: confirmed}
+  - {id: intel-newsroom-ai, type: rss, url: "https://newsroom.intel.com/artificial-intelligence/feed", category_hint: [产品发布, 行业动态], authority_weight: 0.55, poll_minutes: 180, status: broken, notes: "2026-09-29实测停抓：各候选路径全部返回同一个 563KB HTML，feed 已不可得。"}
 
   # ---- GitHub 活跃 AI 开源仓库（agent 确认 star 规模与近期更新，已剔除归档项目） ----
   - {id: gh-chatdev, type: github_releases, repo: OpenBMB/ChatDev, category_hint: [开源项目], authority_weight: 0.6, poll_minutes: 240, status: confirmed}
@@ -992,7 +992,7 @@ sources:
   - {id: zh-jarvis73, type: rss, url: "https://www.jarvis73.com/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: sander-dieleman, type: rss, url: "https://sander.ai/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: zh-tangshusen, type: rss, url: "https://tangshusen.me/atom.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
-  - {id: zh-fancyerii, type: rss, url: "https://fancyerii.github.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
+  - {id: zh-fancyerii, type: rss, url: "https://fancyerii.github.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: broken, notes: "2026-09-29实测停抓：fancyerii.github.io 的 feed.xml/atom.xml/index.xml 全部 404，GitHub Pages 站点已不再输出 feed。"}
   - {id: drew-breunig, type: rss, url: "https://www.dbreunig.com/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: zh-zhpmatrix, type: rss, url: "https://zhpmatrix.github.io/feed.xml", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
   - {id: ml-mastery, type: rss, url: "https://machinelearningmastery.com/feed/", category_hint: [技巧与观点], authority_weight: 0.45, poll_minutes: 240, status: confirmed}
