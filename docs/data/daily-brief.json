@@ -1,124 +1,90 @@
 {
   "date": "2026-10-03",
-  "generated_at": "2026-10-03T00:34:12.152299+00:00",
+  "generated_at": "2026-10-03T20:03:24.873794+00:00",
   "items": [
     {
-      "id": "6bb51f93e888f04f",
-      "source_id": "arxiv-q-bio-nc",
-      "title": "Increasing Width Allows Greedy Layer-wise Training to Rival End-to-End Backpropagation in Self-Supervised Learning",
-      "url": "https://arxiv.org/abs/2610.00753",
-      "published_at": "2026-10-02T04:00:00+00:00",
-      "raw_text": "arXiv:2610.00753v1 Announce Type: cross \nAbstract: End-to-end backpropagation has been the dominant mode of training in deep learning, allowing for the coordination of parameter updates across layers of a neural network. Prior studies have explored alternative -- and, in some cases, simpler -- training mechanisms, showing that they can sometimes achieve performance similar to backpropagation. However, the architectural conditions under which locally optimized networks, which avoid end-to-end backpropagation of error, can learn representations comparable to those learned through end-to-end training remain unclear. We aim to answer this question in the context of self-supervised learning, an important framework for large-scale pretraining in artificial intelligence. Here, we investigate how network width and depth affect the efficacy of greedy layer-wise and end-to-end self-supervised training in convolutional networks. We find that in wider networks, the benefits of end-to-end backpropa",
+      "id": "823962ec581f8762",
+      "source_id": "arxiv-cs-lg",
+      "title": "Attention Manifolds: Steering or Blocking Language Models by Editing Learned B-Spline Surfaces",
+      "url": "https://arxiv.org/abs/2610.00257",
+      "published_at": "2026-10-03T04:00:00+00:00",
+      "raw_text": "arXiv:2610.00257v1 Announce Type: new \nAbstract: In standard transformer attention, a source token sends the same value vector to every receiver. The query determines \\emph{how much} to attend but not \\emph{what} to extract. This work introduces \\textbf{attention manifolds}: learned 2D B-spline surfaces $S_d(q_d, k_d)$ that modulate each value dimension based on the query-key interaction. Each surface is a tensor-product cubic B-spline initialized to zero, preserving pretrained behavior. Applied to LLaMA 3.2-1B-Instruct and 3B-Instruct, attention manifolds reduce WikiText-2 validation perplexity by 2--2.5 points with 0.3\\% parameter overhead. Across 112 diverse prompts, surfaces change greedy-decoded output for 69\\% (1B) to 83\\% (3B) of cases, with the strongest effects on ambiguous and polysemous inputs (94--100\\% change rate). The surfaces improve output quality: correcting factual errors (\\emph{``the CAP theorem has three main components''} $\\to$ \\emph{``it is impossible to guarante",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "揭示网络宽度是贪心逐层训练媲美端到端反向传播的关键条件，对理解深度学习训练机制有启发。",
-      "summary_zh": "该论文研究贪心逐层训练能否在自监督学习中达到与端到端反向传播相当的性能。端到端反向传播长期是深度学习的主导训练方式，可协调各层参数更新；此前研究探索过更简单的替代训练机制，有时能取得相近效果，但条件尚不明确。作者发现，增大网络宽度可使贪心逐层训练在自监督学习任务上媲美端到端反向传播。论文通过实验系统分析了宽度对逐层训练效果的影响，为理解深度网络中逐层学习与全局协调的关系提供了新证据，也为降低训练内存与并行化提供了思路。",
-      "title_zh": "增加宽度使贪心逐层训练在自监督学习中媲美端到端反向传播",
-      "weighted_score": 0.705,
+      "depth_score": 0.9,
+      "reason_zh": "提出注意力流形，用可学习B样条曲面调制value向量，实现更细粒度注意力控制，有可解释性和操控潜力。",
+      "summary_zh": "该论文提出注意力流形（attention manifolds），一种改进Transformer注意力的新机制。标准注意力中，源token向所有接收者发送相同的value向量，query只决定关注程度而非提取内容。作者引入可学习的二维B样条曲面S_d(q_d, k_d)，根据query-key交互调制每个value维度。每个曲面由控制点参数化，可学习并编辑。该方法允许通过编辑B样条曲面来引导或阻断语言模型行为，为注意力机制提供了更细粒度的控制和可解释性。",
+      "title_zh": "注意力流形：通过编辑学习到的B样条曲面来引导或阻断语言模型",
+      "weighted_score": 0.775,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "f9ab52debdee25fd",
+      "story_id": "86330334fa26039b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-q-bio-nc",
-          "url": "https://arxiv.org/abs/2610.00753"
+          "source_id": "arxiv-cs-lg",
+          "url": "https://arxiv.org/abs/2610.00257"
         }
       ]
     },
     {
-      "id": "dd03b7dd42452fb8",
-      "source_id": "arxiv-q-bio-nc",
-      "title": "Poincar\\'e Meets Bellman: Revisable Memory, Operational Quotients, and Evidence-Supported Learning in Changing Environments",
-      "url": "https://arxiv.org/abs/2512.05990",
-      "published_at": "2026-10-02T04:00:00+00:00",
-      "raw_text": "arXiv:2512.05990v2 Announce Type: replace-cross \nAbstract: Memory consolidation determines both what a learner can do now and which changes remain implementable later. We develop a finite-model synthesis of operational state abstraction and optimal control under the stability-evidence-revision (SER) framework. ``Poincar\\'e meets Bellman'' names two complementary roles: qualitative dynamics identifies reusable action-response structure, and dynamic programming prices acquisition, retention, reuse, merging, and forgetting. Recurrence enters separately through the timing and value of future demands. We distinguish active quotient merging from historical information erasure, characterize exact repair by zero-error functional coding and causal migration, and derive a Bellman recursion over the joint law of hidden state and complete deployed memory. A first-return model yields an explicit retention rule. Conditional results show how factor sharing avoids enumerating combinations and how inde",
+      "id": "cb5d880f150ffdfa",
+      "source_id": "arxiv-cs-lg",
+      "title": "Representation Transitions Reveal Emerging Safety Risks in Multi-Turn LLM Agents",
+      "url": "https://arxiv.org/abs/2610.00400",
+      "published_at": "2026-10-03T04:00:00+00:00",
+      "raw_text": "arXiv:2610.00400v1 Announce Type: new \nAbstract: Multi-turn attacks on agentic systems can compose individually permissible actions into harmful outcomes, challenging defenses that assess actions or states in isolation. We show that such attacks leave a detectable signature in the agent's internal representations: harmful behavior emerges as an accumulated representation transition across context updates, whose triggering context can be identified from the same signal. We further find that naive aggregation is confounded by benign representation drift, as a contrastive safety direction need not assign zero to benign transitions. We address this by denoising the direction, anchoring benign traffic at zero and removing its leading variation directions, with no runtime cost.\n  These findings motivate DART, a runtime framework that detects and attributes representation shifts and intervenes with targeted reminders. Across six models and two multi-turn benchmarks, DART reduces attack succes",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "在SER框架下融合庞加莱动力学与贝尔曼最优控制，探讨可修订记忆与证据支持学习，理论性强。",
-      "summary_zh": "该论文在稳定性—证据—修订（SER）框架下，提出操作状态抽象与最优控制的有限模型综合方法，标题“庞加莱遇见贝尔曼”指代两类互补角色：定性动力学识别与最优控制。研究关注记忆巩固如何同时决定学习者当前能做什么以及后续哪些改变仍可实现。作者构建有限模型，将可修订记忆、操作商与变化环境中的证据支持学习统一起来，探讨在环境变化时记忆与策略的可修订性。论文偏重理论综合，为持续学习与自适应控制中的记忆机制提供了形式化视角。",
-      "title_zh": "庞加莱遇见贝尔曼：可修订记忆、操作商与变化环境中的证据支持学习",
-      "weighted_score": 0.61,
+      "depth_score": 0.9,
+      "reason_zh": "揭示多轮LLM智能体攻击在内部表征中留下可检测痕迹，为安全防御提供新视角。",
+      "summary_zh": "该研究关注多轮攻击对智能体系统的威胁：攻击者可将多个单独允许的动作组合成有害结果，而传统基于单步动作或状态评估的防御难以察觉。作者发现此类攻击会在智能体的内部表征中留下可检测的签名，即有害行为表现为跨上下文的累积表征转变。通过分析表征转变，可提前识别新兴安全风险，为多轮智能体安全防护提供新方法。",
+      "title_zh": "表征转变揭示多轮LLM智能体中的新兴安全风险",
+      "weighted_score": 0.775,
       "score_breakdown": {
-        "source_authority": 0.65,
-        "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.45
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.7
       },
-      "story_id": "21c16022d34b8fb8",
+      "story_id": "4d94287dd9f10ea3",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-q-bio-nc",
-          "url": "https://arxiv.org/abs/2512.05990"
+          "source_id": "arxiv-cs-lg",
+          "url": "https://arxiv.org/abs/2610.00400"
         }
       ]
     },
     {
-      "id": "b9b18411de990de0",
-      "source_id": "google-research-blog",
-      "title": "Toward provably private learning from federated data",
-      "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
-      "published_at": "2026-10-02T14:57:41+00:00",
-      "raw_text": "Mobile Systems",
+      "id": "c14646cfccc2d468",
+      "source_id": "arxiv-cs-lg",
+      "title": "When Do Attention-Head Ablations Support Causal Claims? Projection-Level Confounds, Floor Effects, and Matched Controls",
+      "url": "https://arxiv.org/abs/2610.00373",
+      "published_at": "2026-10-03T04:00:00+00:00",
+      "raw_text": "arXiv:2610.00373v1 Announce Type: new \nAbstract: Attention-head ablation, zeroing a head and measuring the resulting change in task performance, is a common method for inferring which components of a language model are causally responsible for a behavior. We show using GPT-2 small that this inference can be fragile unless the intervention semantics, evaluation metric, and controls are carefully validated. A natural post-projection implementation of \"zeroing a head\" is nearly uncorrelated with a corrected pre-projection ablation (Pearson r = 0.057) and selects a completely disjoint top-5 set of important heads. We also show that binary accuracy can hide effects at behavioral floors and near ceilings, whereas gold-token log-probability remains graded. Using a discovery/held-out split and 1,000 matched random-head and layer-matched-head control draws, the corrected per-head effect ranking is highly stable across splits (Spearman rho = 0.974), and the top-5 selected heads significantly exc",
       "category_hint": [
-        "论文研究",
-        "模型发布"
+        "论文研究"
       ],
-      "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/ProvablyPrivateLearning2-Data_Curves.png",
+      "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "Google Research关于联邦学习可证明隐私的研究，对隐私保护机器学习有重要参考价值。",
-      "summary_zh": "该博客文章介绍了Google Research在联邦学习领域关于可证明隐私的最新研究。联邦学习允许在分散的设备上训练模型而不共享原始数据，但如何提供严格的隐私保证仍是一个挑战。文章可能讨论了新的隐私机制、理论证明或系统设计，使得从联邦数据中学习的过程能够满足可证明的隐私标准。这对于关注隐私保护机器学习、联邦学习系统或差分隐私的研究人员和工程师具有重要参考价值。",
-      "title_zh": "迈向可证明隐私的联邦数据学习",
-      "weighted_score": 0.74,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "b0d41e383195732b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "google-research-blog",
-          "url": "https://research.google/blog/toward-provably-private-learning-from-federated-data/"
-        }
-      ]
-    },
-    {
-      "id": "09e62eb15568147b",
-      "source_id": "zh-meituan-tech",
-      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
-      "published_at": "2026-10-02T00:36:34.246709+00:00",
-      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "美团开源LoHoSearch搜索智能体评测基准，用知识图谱校准AI能力认知，应对现有基准饱和问题。",
-      "summary_zh": "美团开源了下一代搜索智能体评测基准LoHoSearch，旨在用知识图谱校准AI能力认知。文章指出，过去一年Search Agent能力显著演进，在BrowseComp等评测上顶尖模型准确率从30%区间迅速攀升至90%以上，然而当基准迅速饱和，其区分模型能力的价值也随之递减。LoHoSearch通过知识图谱构建更难的评测任务，为搜索智能体提供更具区分度的能力评估方案。",
-      "title_zh": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+      "depth_score": 0.9,
+      "reason_zh": "揭示注意力头消融实验中的投影级混淆和地板效应，对可解释性研究的因果推断提出重要方法学警示。",
+      "summary_zh": "论文使用GPT-2 small表明，注意力头消融（将头置零并测量任务性能变化）作为推断语言模型因果组件的方法可能很脆弱，除非仔细验证干预语义、评估指标和控制变量。作者识别出投影级混淆、地板效应等问题，并提出匹配控制方法，为可解释性研究提供方法学指导。",
+      "title_zh": "注意力头消融何时支持因果主张？投影级混淆、地板效应与匹配控制",
       "weighted_score": 0.725,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -126,12 +92,45 @@
         "impact": 0.7,
         "practical_value": 0.7
       },
-      "story_id": "eb00a4db4521a3f4",
+      "story_id": "4e3874aa7ca02554",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+          "source_id": "arxiv-cs-lg",
+          "url": "https://arxiv.org/abs/2610.00373"
+        }
+      ]
+    },
+    {
+      "id": "550c411a279bd4dc",
+      "source_id": "arxiv-cs-lg",
+      "title": "Beyond Diagonal State Space Models: Exact Non-Abelian Group Tracking, Solvability Barriers, and Geometric Physical Manifolds",
+      "url": "https://arxiv.org/abs/2610.00329",
+      "published_at": "2026-10-03T04:00:00+00:00",
+      "raw_text": "arXiv:2610.00329v1 Announce Type: new \nAbstract: Selective state space models (SSMs), such as Mamba, S4D, and LRU, are bounded by transition matrix commutativity (A_t A_t' = A_t' A_t) and solvable affine transformation groups (Aff_D of derived length <= 2). Consequently, stacked multi-layer diagonal networks face severe optimization degradation on non-solvable simple groups such as A_5 due to the exponential circuit emulation depth required to simulate non-abelian commutators. We propose Non-Commutative State Space Models (NC-SSM), their real-orthogonal counterpart SO(3)-SSM, and arbitrary-dimension Cayley-SSM, lifting state transitions to compact Lie groups SU(2), SO(3), and SO(N). Via closed-form Euler-Rodrigues maps and rational Cayley transforms, NC-SSM achieves exact norm-preserving isometry (||U_t|| = 1). We introduce pure Hopf-fibration Bloch projective readouts (S^3/{+-1} =~ S^2 =~ SO(3)) to eliminate sign ambiguity, true quaternion parallel prefix scans (9.06x speedup at T=204",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "揭示选择性状态空间模型受交换性限制，提出非阿贝尔群跟踪，为SSM架构设计提供新理论视角。",
+      "summary_zh": "论文指出选择性状态空间模型（如Mamba、S4D、LRU）受限于转移矩阵交换性和可解仿射变换群，导致堆叠多层对角网络在非可解单群（如A_5）上优化严重退化。作者提出超越对角结构的精确非阿贝尔群跟踪方法，分析可解性障碍，并探讨几何物理流形上的表示能力。",
+      "title_zh": "超越对角状态空间模型：精确非阿贝尔群跟踪、可解性障碍与几何物理流形",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.9,
+        "impact": 0.7,
+        "practical_value": 0.5
+      },
+      "story_id": "59d5ed580e95dcbd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-lg",
+          "url": "https://arxiv.org/abs/2610.00329"
         }
       ]
     },
@@ -169,236 +168,236 @@
       ]
     },
     {
-      "id": "38dfe15801b09769",
-      "source_id": "arxiv-cs-pl",
-      "title": "From Verification Failures to Reusable Guidance for Coding Agents",
-      "url": "https://arxiv.org/abs/2609.39022",
-      "published_at": "2026-10-02T04:00:00+00:00",
-      "raw_text": "arXiv:2609.39022v2 Announce Type: replace-cross \nAbstract: Coding agents need to establish that a program satisfies a specification and that the specification captures the requested behavior. We study how expert diagnosis of verification failures can become reusable guidance for this work. Our approach combines executable language definitions in the K framework with a kit of procedures for constructing specifications, repairing proofs, and auditing their adequacy. A human-guided development campaign on HumanEval, a benchmark of 164 Python programming tasks, achieves a 164/164 success rate with the semantics and the kit, measured by final AI audit Pass verdicts after two targeted repairs. To examine whether auditing detects problems that successful proofs leave unresolved, we construct 12 author-reviewed pairs of clean and defective packages. Every package passes its K proofs, and completed audits identify all defects and accept all clean packages. We then use KleverBench to test specif",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "把验证失败的专家诊断转化为编码智能体可复用指导，结合K框架形式化，对AI编程工具实践有启发。",
-      "summary_zh": "该论文研究如何将验证失败的专家诊断转化为编码智能体可复用的指导。编码智能体需要确认程序满足规范，同时确认规范准确刻画了所请求的行为。作者提出一种方法，将K框架中的可执行语言定义与一组构造过程相结合，把专家对验证失败原因的诊断为转化为可复用的指导信息，供智能体在后续任务中使用。论文展示了该流程如何帮助编码智能体更有效地定位与修复验证失败，为提升AI编程智能体的形式化验证能力提供了可操作的路径。",
-      "title_zh": "从验证失败到编码智能体的可复用指导",
-      "weighted_score": 0.7125,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.65,
-        "practical_value": 0.7
-      },
-      "story_id": "2a2c3cf82e7012b8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-pl",
-          "url": "https://arxiv.org/abs/2609.39022"
-        }
-      ]
-    },
-    {
-      "id": "684c7afd81ce5d33",
-      "source_id": "zh-juejin",
-      "title": "Context Mode 深度解析：重构 AI 编码代理的上下文管理范式",
-      "url": "https://juejin.cn/post/7691717198448115750",
-      "published_at": "2026-10-02T13:16:25+00:00",
-      "raw_text": "在 AI 编码代理（AI Coding Agents）日益普及的今天，上下文窗口（Context Window）的有限性成为了制约其处理复杂任务能力的核心瓶颈。传统的工具调用模式往往将大量原始数据直接",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "深度解析 Context Mode 如何重构 AI 编码代理的上下文管理，对 agent 开发者有启发。",
-      "summary_zh": "文章深入分析了 AI 编码代理中上下文窗口有限性这一核心瓶颈。传统工具调用模式将大量原始数据直接塞入上下文，导致效率低下。Context Mode 提出了一种新的上下文管理范式，通过结构化、分层和动态筛选的方式重构代理对信息的获取与利用。文章详细阐述了其设计理念、技术实现路径以及对编码代理性能的提升效果，为开发者优化 agent 的上下文工程提供了可迁移的认知和方法。",
-      "title_zh": null,
-      "weighted_score": 0.635,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "6812f3a9fdd32e93",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7691717198448115750"
-        }
-      ]
-    },
-    {
-      "id": "1c435808300fbe63",
-      "source_id": "mit-tech-review-ai",
-      "title": "Don’t be fooled—LLMs don’t reason",
-      "url": "https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/",
-      "published_at": "2026-10-02T08:00:00+00:00",
-      "raw_text": "On an afternoon in Seoul in March 2016, I watched a program I helped build put a stone on the fifth line of a Go board in what looked like a gift to its human opponent. Move 37 in game two of the five-game match looked so absurd that some commentators thought it was a&#8230;",
+      "id": "0611adabcaa3ec5f",
+      "source_id": "infoq-cn-ai",
+      "title": "企业级 Agent Infra 架构实践：从安全沙箱到网络管控与身份治理｜QCon上海",
+      "url": "https://www.infoq.cn/article/bLB8RQ6sd3ZGQts0D4tP?utm_source=rss&utm_medium=article",
+      "published_at": "2026-10-03T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/bLB8RQ6sd3ZGQts0D4tP?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
-        "论文研究"
+        "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "从 AlphaGo 第 37 手切入，论证 LLM 并不真正推理，观点鲜明且有论证，值得一读。",
-      "summary_zh": "MIT 科技评论文章以 2016 年首尔那场围棋赛为引子，回忆作者参与构建的程序在第 37 手落子时看似“送礼”却最终被证明是妙手的一幕，借此展开对“机器是否在推理”的讨论。文章主张不要被表象迷惑，大语言模型并不真正具备推理能力，其看似合理的输出更接近模式匹配与统计拟合，而非人类意义上的逻辑推演。作者通过这一经典案例对比，试图厘清 AI 能力边界与公众认知之间的落差。",
-      "title_zh": "别被迷惑——大语言模型并不推理",
-      "weighted_score": 0.615,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.5,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "26f10ae6a854e8da",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "mit-tech-review-ai",
-          "url": "https://www.technologyreview.com/2026/10/02/1145639/dont-be-fooled-llms-dont-reason/"
-        }
-      ]
-    },
-    {
-      "id": "e035d09f18107e71",
-      "source_id": "reddit-rag",
-      "title": "I built a document RAG chatbot with hybrid search + reranking + RAGAS evals. Here's what broke and what I learned",
-      "url": "https://www.reddit.com/r/Rag/comments/1wvmja5/i_built_a_document_rag_chatbot_with_hybrid_search/",
-      "published_at": "2026-10-02T06:25:58+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I've been building a document Q&amp;A chatbot to learn what a production-style RAG pipeline looks like beyond the basic &quot;embed chunks, call LLM&quot; tutorial. Sharing the architecture and the bugs that taught me the most.<br /> <strong>Stack</strong></p> <ul> <li>Retrieval: BM25 + vector search, merged with Reciprocal Rank Fusion (RRF)</li> <li>Reranking: cross-encoder on the fused results</li> <li>Generation: Groq (Llama)</li> <li>Vector store: ChromaDB</li> <li>Backend: FastAPI, Redis caching, Docker</li> <li>Evaluation: RAGAS harness</li> <li>Frontend: TanStack Start</li> </ul> <p><strong>What I learned</strong></p> <ol> <li><strong>Hybrid retrieval beat pure vector search for me.</strong> Vector search missed exact terms like names, IDs and specific figures, and BM25 caught them. RRF was a simple way to merge the two without having to tune score weights. </li> <li><strong>Follow-up questions need query rewriting.</strong> &quot;What about the",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "真实 RAG 工程踩坑复盘，涵盖混合检索、重排与评估，对构建生产级 RAG 有直接参考价值。",
-      "summary_zh": "作者分享构建文档问答 RAG 聊天机器人的经验，目标是超越“嵌入分块、调用 LLM”的基础教程，实践生产级流水线。技术栈包括 BM25 与向量检索并用 Reciprocal Rank Fusion 融合、重排序以及 RAGAS 评估。文中重点讲述架构设计以及开发过程中遇到的 bug 和教训，属于工程师复盘真实系统设计取舍的实践总结，对想深入 RAG 工程化的读者有较高参考价值。",
-      "title_zh": "我用混合检索+重排+RAGAS 评估搭建了文档 RAG 聊天机器人：哪些地方出了问题以及我的收获",
-      "weighted_score": 0.45,
-      "score_breakdown": {
-        "source_authority": 0.3,
-        "novelty": 0.5,
-        "impact": 0.3,
-        "practical_value": 0.8
-      },
-      "story_id": "6c917147c30f1e9e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1wvmja5/i_built_a_document_rag_chatbot_with_hybrid_search/"
-        }
-      ]
-    },
-    {
-      "id": "1ed106d1d195fb66",
-      "source_id": "pytorch-blog",
-      "title": "Building a High-Performance and Portable vLLM Linear Backend with Helion",
-      "url": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
-      "published_at": "2026-10-02T19:55:07+00:00",
-      "raw_text": "TL;DR We integrated Helion into vLLM’s linear backend to explore how an autotuned, high-level kernel DSL can improve LLM inference performance while reducing kernel implementation complexity. A single Helion general...",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://pytorch.org/wp-content/uploads/2026/10/1.png",
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "PyTorch 官方博客详解如何用 Helion 自动调优 DSL 替换 vLLM 线性层内核，兼顾性能与实现复杂度，工程价值高。",
-      "summary_zh": "PyTorch 官方博客介绍将 Helion 集成进 vLLM 线性后端的工作：Helion 是一种可自动调优的高层内核 DSL，作者用它替换手写内核，探索在降低内核实现复杂度的同时提升 LLM 推理性能。文中给出一个通用的 Helion 内核实现，并对比其在 vLLM 线性层上的性能表现与可移植性，说明高层 DSL 加自动调优能否在真实推理框架中达到甚至超过手工优化内核，为推理引擎的性能工程提供了可复用的思路。",
-      "title_zh": "用 Helion 为 vLLM 构建高性能且可移植的线性后端",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "b13a4295f4c012f0",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "pytorch-blog",
-          "url": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/"
-        }
-      ]
-    },
-    {
-      "id": "0c1753c31b762baf",
-      "source_id": "aws-ml-blog",
-      "title": "Sweep thousands of leases for compliance using Amazon Quick and the Adjudicated Query pattern",
-      "url": "https://aws.amazon.com/blogs/machine-learning/sweep-thousands-of-leases-for-compliance-using-amazon-quick-and-the-adjudicated-query-pattern/",
-      "published_at": "2026-10-02T15:48:26+00:00",
-      "raw_text": "The Adjudicated Query pattern pairs the Amazon Quick chat agent with a bounded MCP server over a deterministic rules engine to deliver provably complete, defensible compliance answers. This post walks through the reference architecture and a deployable AWS CDK sample, using lease compliance as the running example.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/09/30/ML-21832-1.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "AWS 提出 Adjudicated Query 模式，用确定性规则引擎保证合规答案可证明完整，架构思路有迁移价值。",
-      "summary_zh": "AWS 机器学习博客介绍了一种名为 Adjudicated Query 的模式，将 Amazon Quick 聊天 agent 与一个基于确定性规则引擎的有界 MCP 服务器配对，从而提供可证明完整、可辩护的合规答案。文章以租赁合同合规审查为示例场景，讲解了参考架构，并提供了可部署的 AWS CDK 示例代码。该模式的核心价值在于用确定性规则引擎约束 LLM 输出，适合需要高可靠性与可审计性的企业合规场景。",
-      "title_zh": "用 Amazon Quick 与 Adjudicated Query 模式批量扫描数千份租约的合规性",
+      "reason_zh": "QCon上海企业级Agent Infra架构实践，涵盖安全沙箱、网络管控与身份治理，工程参考价值高。",
+      "summary_zh": "InfoQ发布的QCon上海演讲内容，聚焦企业级Agent基础设施的架构实践。文章围绕三大核心议题展开：安全沙箱，用于隔离agent执行环境、限制其对宿主系统的访问；网络管控，规范agent的对外通信与数据流向；身份治理，解决agent在调用工具与访问资源时的认证与授权问题。内容面向在生产环境中落地agent的工程团队，强调在赋予agent自主能力的同时，通过基础设施层面的约束保障安全与合规。",
+      "title_zh": null,
       "weighted_score": 0.7,
       "score_breakdown": {
         "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "c3b63117b957d2d7",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/bLB8RQ6sd3ZGQts0D4tP?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "89c08c7a323b148f",
+      "source_id": "the-aiedge",
+      "title": "Build a Jev-Supervised AI Agent",
+      "url": "https://newsletter.theaiedge.io/p/build-a-jev-supervised-ai-agent-218605208",
+      "published_at": "2026-10-03T15:02:23+00:00",
+      "raw_text": "Typed decisions, guarded tools, and a measured comparison with LLM supervisors",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/73d933ba-a75a-4f7f-80be-67272008fb19_1536x1024.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "提供构建 Jev 监督 AI Agent 的实用方法，包含类型化决策和工具防护，适合开发者学习。",
+      "summary_zh": "本文介绍如何构建一个由 Jev 监督的 AI Agent，强调类型化决策、工具防护，并与 LLM 监督者进行对比。文章可能涉及使用 Jev 框架来设计 Agent 的决策流程，确保工具调用的安全性，并通过实验比较不同监督方式的效果。内容面向开发者，提供可复用的代码模式和设计思路，帮助提升 Agent 的可靠性和可控性。",
+      "title_zh": "构建 Jev 监督的 AI Agent",
+      "weighted_score": 0.64,
+      "score_breakdown": {
+        "source_authority": 0.6,
         "novelty": 0.7,
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "e37653dd8bda5ece",
+      "story_id": "b5438640d1db2802",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/sweep-thousands-of-leases-for-compliance-using-amazon-quick-and-the-adjudicated-query-pattern/"
+          "source_id": "the-aiedge",
+          "url": "https://newsletter.theaiedge.io/p/build-a-jev-supervised-ai-agent-218605208"
         }
       ]
     },
     {
-      "id": "60f7dc9f3cb5194f",
-      "source_id": "zh-tmtpost",
-      "title": "deepseek为什么要在此时拥抱华为？",
-      "url": "https://www.tmtpost.com/8158082.html",
-      "published_at": "2026-10-02T01:56:11+00:00",
-      "raw_text": "这不是一次适配，这是一次搬家。",
+      "id": "a965dabeba7da6ca",
+      "source_id": "reddit-claudeai",
+      "title": "30 days, 386 commits, non-dev: building a factory's production system with Claude Code. What am I missing?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1wwpp1n/30_days_386_commits_nondev_building_a_factorys/",
+      "published_at": "2026-10-03T15:14:45+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>**TL;DR:** I'm not a developer. On September 4th I started building a production management web app for the furniture plant where I work, with Claude Code. One month later it's the tool the office and the shop floor use every day. Sharing what worked, and looking for people who've gone down the same road.</p> <p> </p> <p>---</p> <p> </p> <p>**A bit about me**</p> <p> </p> <p>I work at a furniture manufacturer, on the operations / planning side (Director). My days are spent in the gap between the ERP, the accounting system, a pile of Excel workbooks, an old in-house tracker the floor depends on, and what's actually happening in the shop. I'm not a programmer, and I'm still a beginner with the terminal and Git. I manage the systems, with an IT guy + looking for a full stack developer at the moment. </p> <p> </p> <p>**What we built**</p> <p> </p> <p>It started as &quot;one page per department showing what to build this week&quot;. It grew into:</p> <p> </",
       "category_hint": [
-        "行业动态"
+        "产品发布",
+        "技巧与观点"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/2y354u6wj5yethgr3.png",
-      "category": "行业动态",
+      "image_url": null,
+      "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深度剖析DeepSeek与华为合作的战略考量，揭示国产AI芯片生态的深层博弈。",
-      "summary_zh": "文章分析DeepSeek在此时选择拥抱华为的战略原因，指出这并非简单的模型适配，而是一次底层算力生态的“搬家”。核心观点认为，DeepSeek此举旨在摆脱对英伟达CUDA生态的依赖，转向华为昇腾平台，以应对潜在的供应链风险。文章探讨了国产大模型与国产芯片协同发展的必要性，以及这一决策对AI行业格局、算力成本和技术自主可控的深远影响。",
-      "title_zh": "DeepSeek为什么要在此时拥抱华为？",
-      "weighted_score": 0.675,
+      "depth_score": 0.8,
+      "reason_zh": "非开发者用 Claude Code 构建工厂生产系统的真实复盘，包含经验与反思，极具参考价值。",
+      "summary_zh": "一位非开发者分享了自己使用 Claude Code 在 30 天内、386 次提交，为所在家具厂构建生产管理 Web 应用的经验。该应用已成为办公室和车间日常使用的工具。作者介绍了自己的背景、项目启动过程、遇到的挑战以及解决方案，并希望与有类似经历的人交流。文章提供了非技术人员利用 AI 编程工具解决实际问题的宝贵案例。",
+      "title_zh": "30 天，386 次提交，非开发者：用 Claude Code 构建工厂生产系统。我遗漏了什么？",
+      "weighted_score": 0.525,
       "score_breakdown": {
-        "source_authority": 0.6,
+        "source_authority": 0.3,
         "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "impact": 0.4,
+        "practical_value": 0.8
       },
-      "story_id": "b085a1568168c758",
+      "story_id": "688d986ac4883291",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8158082.html"
+          "source_id": "reddit-claudeai",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1wwpp1n/30_days_386_commits_nondev_building_a_factorys/"
+        }
+      ]
+    },
+    {
+      "id": "c588c966b91db0d1",
+      "source_id": "zh-meituan-tech",
+      "title": "《Agent 评测白皮书》系列01：Agent 评测全览",
+      "url": "https://tech.meituan.com/2026/09/10/Agent-Evaluation-White-Paper-01.html",
+      "published_at": "2026-10-02T21:11:18.271670+00:00",
+      "raw_text": "我们推出了《Agent评测白皮书》系列博客，体系化地为大家讲解评测的落地指南，分为《评测全览》、《冷启动篇》、《扩量篇》、《自进化篇》等共4篇，本文为系列的第一篇。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/714ba0bf48f2186bd418d3778da7e214293923.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "美团技术团队推出的 Agent 评测白皮书系列首篇，体系化讲解评测落地指南，实用性强。",
+      "summary_zh": "美团技术团队推出《Agent 评测白皮书》系列博客，旨在体系化地讲解评测的落地指南。该系列分为《评测全览》、《冷启动篇》、《扩量篇》、《自进化篇》共四篇，本文为系列的第一篇《Agent 评测全览》。文章可能涵盖 Agent 评测的基本概念、框架、关键指标及整体流程，为后续深入实践打下基础。",
+      "title_zh": "《Agent 评测白皮书》系列01：Agent 评测全览",
+      "weighted_score": 0.645,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.8
+      },
+      "story_id": "d1d0bba7d98e1c68",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/09/10/Agent-Evaluation-White-Paper-01.html"
+        }
+      ]
+    },
+    {
+      "id": "2f8e5a2183a0f9de",
+      "source_id": "reddit-huggingface",
+      "title": "brier: Jev-style typed decisions with calibrated probabilities, for open models you run yourself (tested on 6 families, incl. a 1B base model)",
+      "url": "https://www.reddit.com/r/huggingface/comments/1wwqkdr/brier_jevstyle_typed_decisions_with_calibrated/",
+      "published_at": "2026-10-03T15:52:11+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/huggingface/comments/1wwqkdr/brier_jevstyle_typed_decisions_with_calibrated/\"> <img alt=\"brier: Jev-style typed decisions with calibrated probabilities, for open models you run yourself (tested on 6 families, incl. a 1B base model)\" src=\"https://external-preview.redd.it/JnxwrqiGj_Xqv_c-Udzk-feUvszZrvTwD4-4BG5r--c.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=00a27477c5a0b3e68f816165521cfa8fd2d24efd\" title=\"brier: Jev-style typed decisions with calibrated probabilities, for open models you run yourself (tested on 6 families, incl. a 1B base model)\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Spirited_Conference9\"> /u/Spirited_Conference9 </a> <br /> <span><a href=\"https://github.com/mohdUwaish59/brier\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/huggingface/comments/1wwqkdr/brier_jevstyle_typed_decisions_with_calibrated/\">[comments]</a></span> </td></tr></table>",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": "https://external-preview.redd.it/JnxwrqiGj_Xqv_c-Udzk-feUvszZrvTwD4-4BG5r--c.png?width=640&crop=smart&auto=webp&s=00a27477c5a0b3e68f816165521cfa8fd2d24efd",
+      "category": "开源项目",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "面向自托管开源模型的校准概率决策工具，在 6 个模型家族上验证，对需要可靠不确定性的开发者有参考价值。",
+      "summary_zh": "Reddit 的 Hugging Face 板块介绍了一个名为 brier 的工具，主打 Jev 风格的带类型决策，并输出经过校准的概率，面向用户自行运行的开源模型。作者称已在 6 个模型家族上完成测试，其中包括一个 1B 基础模型，说明该方法在较小规模模型上同样可用。该工具试图解决 LLM 输出概率不可靠的问题，让模型在需要做决策时给出更可信的置信度，适合关注不确定性量化与本地模型落地的开发者参考。",
+      "title_zh": "brier：面向自托管开源模型的 Jev 风格带类型决策与校准概率（已在 6 个模型家族上测试，含一个 1B 基础模型）",
+      "weighted_score": 0.585,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "a563888189369e81",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-huggingface",
+          "url": "https://www.reddit.com/r/huggingface/comments/1wwqkdr/brier_jevstyle_typed_decisions_with_calibrated/"
+        }
+      ]
+    },
+    {
+      "id": "6455323dd4087bce",
+      "source_id": "siliconangle",
+      "title": "IBM and CoreWeave co-design controls for agent workloads",
+      "url": "https://siliconangle.com/2026/10/02/ibm-coreweave-co-design-controls-agent-workloads-fullyconnected/",
+      "published_at": "2026-10-02T20:12:25+00:00",
+      "raw_text": "<p>Agent workload isolation is becoming a practical infrastructure challenge as research teams move beyond training models to running code and testing agents. Systems built for intensive computation must now accommodate workloads that interact with tools, storage and other services. IBM Research’s infrastructure must support increasingly varied workloads as its model development practices evolve. Reinforcement learning [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/10/02/ibm-coreweave-co-design-controls-agent-workloads-fullyconnected/\">IBM and CoreWeave co-design controls for agent workloads</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/10/Brian-Belgodere-senior-technical-staff-member-at-International-Business-Machines-Corp.-%E2%80%93-Fully-Connected-2026-scaled.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "IBM与CoreWeave合作设计代理工作负载控制，揭示基础设施新挑战。",
+      "summary_zh": "随着研究团队从训练模型转向运行代码和测试代理，代理工作负载隔离成为实际基础设施挑战。IBM Research与CoreWeave合作，针对代理工作负载共同设计控制方案。传统为密集计算构建的系统需适应与工具、存储及其他服务交互的工作负载。IBM Research的基础设施必须支持其模型开发实践演变带来的日益多样化的工作负载。文章探讨了代理工作负载对隔离、安全性和资源管理的新要求，以及两家公司如何协同设计解决方案。",
+      "title_zh": "IBM与CoreWeave共同设计代理工作负载控制",
+      "weighted_score": 0.65,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "c4bb3fd11b84c2fa",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "siliconangle",
+          "url": "https://siliconangle.com/2026/10/02/ibm-coreweave-co-design-controls-agent-workloads-fullyconnected/"
+        }
+      ]
+    },
+    {
+      "id": "8b3f82ac642ec015",
+      "source_id": "tnw-deep-tech",
+      "title": "AI can’t fix a business system with broken processes",
+      "url": "https://thenextweb.com/news/ai-cant-fix-broken-processes-dessy-pavlova",
+      "published_at": "2026-10-02T22:15:17+00:00",
+      "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/10/ai-cant-fix-broken-processes-dessy-pavlova.avif\" width=\"868\" /><br /><p>I have come to believe that one of the biggest misconceptions about AI is also one of the most expensive: the idea that technology can repair a business that has never streamlined how its processes actually work. AI can accelerate an operation, automate repetitive work, and surface problems at remarkable speed. Give it a fragmented [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/ai-cant-fix-broken-processes-dessy-pavlova?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://media.thenextweb.com/2026/10/ai-cant-fix-broken-processes-dessy-pavlova.avif",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.6,
+      "reason_zh": "指出AI无法修复流程混乱的业务系统，强调流程优化先行，对企业AI落地有警示意义。",
+      "summary_zh": "文章指出，关于AI最大的误解之一是认为技术可以修复从未理顺流程的业务。AI能加速运营、自动化重复工作，但无法解决根本性的流程混乱问题。作者认为，企业若未先优化实际工作流程，直接引入AI只会放大低效。文章通过实际案例论证，强调流程梳理应先于AI部署，对盲目推进AI转型的企业具有警示作用。",
+      "title_zh": "AI无法修复流程混乱的业务系统",
+      "weighted_score": 0.625,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.5,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "a332c382cd54f18f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "tnw-deep-tech",
+          "url": "https://thenextweb.com/news/ai-cant-fix-broken-processes-dessy-pavlova"
         }
       ]
     }
