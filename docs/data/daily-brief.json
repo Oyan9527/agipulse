@@ -1,37 +1,37 @@
 {
-  "date": "2026-10-07",
-  "generated_at": "2026-10-07T22:12:36.642833+00:00",
+  "date": "2026-10-08",
+  "generated_at": "2026-10-08T01:07:41.991544+00:00",
   "items": [
     {
-      "id": "fd177ec6087cc201",
-      "source_id": "arxiv-cs-ar",
-      "title": "ElecSafety: Diagnosing Large Language Model Safety Judgments for Microcontroller Boards",
-      "url": "https://arxiv.org/abs/2610.06905",
-      "published_at": "2026-10-07T04:00:00+00:00",
-      "raw_text": "arXiv:2610.06905v1 Announce Type: new \nAbstract: Large language models (LLMs) progressively support embedded hardware development, but a plausible recommendation may pose safety risks when acting on the physical hardware. Because electrical safety can be different between every microcontroller board, a practical question is raised: can LLMs have the capability to make the right decision on whether a proposed user operation is safe for the board? Although benchmarks for embedded development exist, they primarily target code generation and hardware design tasks. This highlights the lack of tested board-specific judgment regarding electrical safety. To address this gap, we introduce the ElecSafety benchmark to evaluate whether an LLM can respond with the correct label and derive that label from the proper manufacturer constraints and rules. We extract these constraints from vendor datasheets and hardware manuals. Each scenario is defined by a decisive condition and a gold label (safe, haz",
+      "id": "b29695756e67757e",
+      "source_id": "zh-v2ex",
+      "title": "[程序员] Cordis 的坑与账-DeepSeek Harness 运行时拿它当底座",
+      "url": "https://www.v2ex.com/t/1246841#reply3",
+      "published_at": "2026-10-07T14:27:42+00:00",
+      "raw_text": "<blockquote>\n<p>坑是陷人的地方，账是未来要承担的后果。</p>\n<p>读不完的话（估计很少有人会读完的）：第 2 节讲它真正做了什么（其实只有一个栈），第 4 节讲它哪里长错了，第 8 节讲你该不该用。</p>\n</blockquote>\n<h2>0. 两个主角</h2>\n<h3>被评估的：Cordis</h3>\n<p>Koishi 聊天机器人框架的内核，后来 DeepSeek 的 DSH （ DeepSeek Harness ，Agent 运行时）拿它当底座。</p>\n<p>类型上是<strong>插件元框架</strong>：本身不含任何业务能力，只管插件怎么装进一个长期运行的进程、怎么互相依赖、怎么卸载。Koishi 社区插件 4000+，DSH 第三方索引收录 6000+。</p>\n<ul>\n<li>仓库：<a href=\"https://github.com/cordiverse/cordis\" rel=\"nofollow\">https://github.com/cordiverse/cordis</a></li>\n<li>官方文档：<a href=\"https://deepseek-harness.github.io/deepseek-harness/en/reference/cordis-primer\" rel=\"nofollow\">https://deepseek-harness.github.io/deepseek-harness/en/reference/cordis-primer</a></li>\n<li>上手教程：<a href=\"https://deepseek-harness.github.io/deepseek-harness/en/develop/cordis-tutorial\" rel=\"nofollow\">https://deepseek-harness.github.io/deepseek-harness/en/develop/cordis-tutorial</a></li>\n</ul>\n<h3>用来做参照的：tool-func 系列</h3>\n<p>isdk 的一组小库，从下往上是一条链：</p>\n<ul>\n<li><a href=\"https://github.com/isdk/tool-func.js\" r",
       "category_hint": [
-        "论文研究"
+        "技巧与观点"
       ],
       "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "诊断LLM对微控制器板的安全判断，填补嵌入式硬件安全评估空白，有实证价值。",
-      "summary_zh": "该论文介绍了ElecSafety，旨在诊断大型语言模型（LLM）对微控制器板的安全判断能力。由于不同微控制器板的电气安全要求各异，LLM在支持嵌入式硬件开发时，其看似合理的建议可能带来安全风险。研究提出了一个实际问题：LLM能否正确判断针对特定微控制器板的建议是否安全。论文可能构建了评估基准并测试了多个LLM的表现。",
-      "title_zh": "ElecSafety：诊断大型语言模型对微控制器板的安全判断",
-      "weighted_score": 0.73,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "对 Cordis 插件元框架的深度技术复盘，揭示 DeepSeek Agent 运行时底座的设计取舍与踩坑，极具工程参考价值。",
+      "summary_zh": "文章深入评估了 Cordis——Koishi 聊天机器人框架的内核，后被 DeepSeek 的 DSH（DeepSeek Harness，Agent 运行时）用作底座。Cordis 是一个插件元框架，本身不含业务能力，只负责插件的安装、依赖管理与卸载，支撑了 Koishi 社区 4000+ 插件和 DSH 第三方索引 6000+ 插件。作者从“坑与账”的角度出发，剖析了 Cordis 真正做了什么（核心只有一个栈）、设计上哪里长错了，以及开发者是否应该采用它。文章结构清晰，第 2 节讲实现，第 4 节讲缺陷，第 8 节给出使用建议，是一篇难得的工程实践复盘。",
+      "title_zh": "Cordis 的坑与账-DeepSeek Harness 运行时拿它当底座",
+      "weighted_score": 0.635,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
+        "source_authority": 0.5,
+        "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.7
+        "practical_value": 0.8
       },
-      "story_id": "a661779ca19e0adc",
+      "story_id": "c92a699abeadeda7",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ar",
-          "url": "https://arxiv.org/abs/2610.06905"
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1246841#reply3"
         }
       ]
     },
@@ -66,6 +66,39 @@
         {
           "source_id": "cloudflare-blog",
           "url": "https://blog.cloudflare.com/agentic-security-operations/"
+        }
+      ]
+    },
+    {
+      "id": "ee71dac8f7ab04ad",
+      "source_id": "zh-tonybai",
+      "title": "谁说云原生过时了？Kubernetes 等主流项目正在为 Agent 重做“地基”",
+      "url": "https://tonybai.com/2026/10/08/who-says-cloud-native-is-outdated-agent-foundation/",
+      "published_at": "2026-10-07T22:00:00+00:00",
+      "raw_text": "AI 声量喧嚣之下，唱衰云原生与 Kubernetes 的声音渐起。但盘点过去 21 个月的官方博客与版本演进，事实恰恰相反：K8s v1.33~v1.37 将调度对象从 Pod 升维至 Workload、将 DRA 确立为标准 GPU 抽象；Google 开源 AX 与 Agent Substrate 重新定义多 Agent 沙箱复用；Gateway API 全面接管 AI 请求体过滤与 MCP 路由；Cilium 与 OpenTelemetry 分别在网络策略与 Agent 观测证据链上打底。云原生并没有过时，它正在被 AI Agent 逼着重做一遍底层地基。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "系统梳理云原生技术栈为 AI Agent 重做底层地基的演进脉络，论证扎实，对理解 AI 基础设施趋势有启发。",
+      "summary_zh": "文章盘点过去 21 个月云原生官方博客与版本演进，反驳“云原生过时”论调。核心观点：Kubernetes v1.33~v1.37 将调度对象从 Pod 升维至 Workload，DRA 成为标准 GPU 抽象；Google 开源 AX 与 Agent Substrate 重新定义多 Agent 沙箱复用；Gateway API 接管 AI 请求体过滤与 MCP 路由；Cilium 与 OpenTelemetry 分别在网络策略与 Agent 观测证据链上打底。结论是云原生正被 AI Agent 逼着重做底层地基。",
+      "title_zh": "谁说云原生过时了？Kubernetes 等主流项目正在为 Agent 重做“地基”",
+      "weighted_score": 0.7,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "53a62d44d1c777f6",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/10/08/who-says-cloud-native-is-outdated-agent-foundation/"
         }
       ]
     },
@@ -132,39 +165,6 @@
         {
           "source_id": "shtetloptimized",
           "url": "https://scottaaronson.blog/?p=10169"
-        }
-      ]
-    },
-    {
-      "id": "04fae565bc79a99e",
-      "source_id": "arxiv-cs-ar",
-      "title": "An Empirical Fault Vulnerability Exploration of ReRAM-based Process-in-Memory CNN Accelerators",
-      "url": "https://arxiv.org/abs/2610.07029",
-      "published_at": "2026-10-07T04:00:00+00:00",
-      "raw_text": "arXiv:2610.07029v1 Announce Type: new \nAbstract: Resistive random-access memory (ReRAM)-based Processing-in-Memory (PIM) accelerator is a promising platform for processing massively memory intensive matrix-vector multiplications of neural networks in parallel domain, due to its capability of analog computation, ultra-high density, near-zero leakage current, and non-volatility. Despite many advantages, ReRAM-based accelerators are highly error-prone due to limitations of technology fabrication that lead to process variations and defects. These limitations degrade the accuracy of Deep Convolutional Neural Networks (Deep CNNs) running on PIM accelerators. While these CNNs accelerators are widely deployed in safety-critical systems, their vulnerability to fault is not well explored. In this paper, we have developed a fault injection framework to investigate the vulnerability of large-scale CNNs at both software- and hardware-level of inference phases. Faulty ReRAM devices are another relia",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "实证探索ReRAM存内计算CNN加速器的故障脆弱性，对硬件安全研究有参考意义。",
-      "summary_zh": "该论文对基于ReRAM的存内计算（PIM）CNN加速器进行了实证故障脆弱性探索。ReRAM PIM加速器因其模拟计算、超高密度、近零漏电流和非易失性等优势，是处理神经网络中大规模内存密集型矩阵向量乘法的有前景的平台。然而，论文可能研究了这些加速器在面对故障时的脆弱性，分析了故障对计算准确性和可靠性的影响。",
-      "title_zh": "基于ReRAM的存内计算CNN加速器的实证故障脆弱性探索",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.6
-      },
-      "story_id": "6a6bf05db5d58f92",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ar",
-          "url": "https://arxiv.org/abs/2610.07029"
         }
       ]
     },
@@ -236,6 +236,73 @@
       ]
     },
     {
+      "id": "884c9b1c5121df74",
+      "source_id": "reddit-llmdevs",
+      "title": "I stored model-native numerical memory outside a frozen LLM and retrieved the associated memory through its own attention — Qwen → Mistral replication, 127/128 Top-1",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1wzsqi5/i_stored_modelnative_numerical_memory_outside_a/",
+      "published_at": "2026-10-07T10:10:03+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LLMDevs/comments/1wzsqi5/i_stored_modelnative_numerical_memory_outside_a/\"> <img alt=\"I stored model-native numerical memory outside a frozen LLM and retrieved the associated memory through its own attention — Qwen → Mistral replication, 127/128 Top-1\" src=\"https://preview.redd.it/ypzlbyv5s0uh1.jpg?width=140&amp;height=78&amp;auto=webp&amp;s=d2dca171758ad11323de2e80552be7c4732a4f44\" title=\"I stored model-native numerical memory outside a frozen LLM and retrieved the associated memory through its own attention — Qwen → Mistral replication, 127/128 Top-1\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Two different 7B transformers. Two different internal coordinates. The same memory mechanism.</p> <p>I started AKBASCORE MAM on Qwen2.5-7B-Instruct. I have now independently localized and replicated the mechanism on Mistral-7B-Instruct-v0.3.</p> <p>Final Mistral result: 127/128 correct memories at Top-1 — 99.22%.</p> <p>Counterfactual ",
+      "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": "https://preview.redd.it/ypzlbyv5s0uh1.jpg?width=140&height=78&auto=webp&s=d2dca171758ad11323de2e80552be7c4732a4f44",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "展示在冻结 LLM 外部存储数值记忆并通过注意力检索的创新实验，可迁移性强。",
+      "summary_zh": "作者在冻结的 LLM 外部存储模型原生的数值记忆，并通过模型自身的注意力机制检索关联记忆。实验在 Qwen 和 Mistral 模型上进行了复现，取得 127/128 的 Top-1 检索准确率。该方法无需微调模型，而是利用注意力机制访问外部存储的数值表示，为 LLM 记忆扩展提供了新思路，具有可迁移的认知价值。",
+      "title_zh": "我在冻结 LLM 外部存储模型原生数值记忆，并通过其自身注意力检索关联记忆——Qwen → Mistral 复现，127/128 Top-1",
+      "weighted_score": 0.615,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.9,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "2174f5571f8c6438",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1wzsqi5/i_stored_modelnative_numerical_memory_outside_a/"
+        }
+      ]
+    },
+    {
+      "id": "0264f6111131204f",
+      "source_id": "arxiv-cs-si",
+      "title": "Do Higher-Order Models Win for Higher-Order Reasons? Rethinking Performance Gains in Hypergraph Learning",
+      "url": "https://arxiv.org/abs/2610.07981",
+      "published_at": "2026-10-07T04:00:00+00:00",
+      "raw_text": "arXiv:2610.07981v1 Announce Type: cross \nAbstract: Higher-order models (e.g., hypergraph neural networks) often outperform lower-order baselines on hypergraph learning benchmarks, and their advantages are commonly attributed to their ability to exploit higher-order information. However, better performance alone does not establish this explanation. We therefore ask: Do higher-order models win for higher-order reasons? To investigate this question, we introduce a controlled performance-attribution framework that perturbs higher-order information while preserving the lower-order, i.e., pairwise, information. Across 25 commonly used hypergraph learning benchmarks spanning three tasks, we frequently observe an intriguing pattern: higher-order models originally outperform lower-order baselines, yet retain most of their advantage after perturbation. This suggests that much of the observed advantage remains achievable without the higher-order information. We then investigate potential lower-or",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "质疑高阶模型性能优势的归因，通过实验检验高阶信息是否真正驱动增益。",
+      "summary_zh": "该论文对超图学习中高阶模型（如超图神经网络）优于低阶基线这一常见结论提出质疑。作者指出，性能更优本身并不能证明优势来源于对高阶信息的利用。研究围绕“高阶模型是否因高阶原因而胜出”这一问题展开系统实验，检验高阶模型性能增益的真实来源。结果表明，部分性能提升可能来自其他因素而非高阶信息建模能力本身。该工作提醒研究者在归因模型优势时需谨慎，对超图学习和高阶关系建模领域的实验方法论具有反思价值。",
+      "title_zh": "高阶模型因高阶原因胜出吗？重新审视超图学习中的性能增益",
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.5,
+        "practical_value": 0.5
+      },
+      "story_id": "4fcde89093970004",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-si",
+          "url": "https://arxiv.org/abs/2610.07981"
+        }
+      ]
+    },
+    {
       "id": "d6c94f10b735fb67",
       "source_id": "reddit-llmdevs",
       "title": "Replacing Vector DBs and LLM Extraction passes with SQLite and SIMD Hypervector Gating",
@@ -270,22 +337,22 @@
       ]
     },
     {
-      "id": "60348ef916b49f23",
-      "source_id": "zh-v2ex",
-      "title": "[程序员] Cordis 的坑与账-DeepSeek Harness 运行时拿它当底座",
-      "url": "https://www.v2ex.com/t/1246841#reply1",
-      "published_at": "2026-10-07T14:27:42+00:00",
-      "raw_text": "<blockquote>\n<p>坑是陷人的地方，账是未来要承担的后果。</p>\n<p>读不完的话（估计很少有人会读完的）：第 2 节讲它真正做了什么（其实只有一个栈），第 4 节讲它哪里长错了，第 8 节讲你该不该用。</p>\n</blockquote>\n<h2>0. 两个主角</h2>\n<h3>被评估的：Cordis</h3>\n<p>Koishi 聊天机器人框架的内核，后来 DeepSeek 的 DSH （ DeepSeek Harness ，Agent 运行时）拿它当底座。</p>\n<p>类型上是<strong>插件元框架</strong>：本身不含任何业务能力，只管插件怎么装进一个长期运行的进程、怎么互相依赖、怎么卸载。Koishi 社区插件 4000+，DSH 第三方索引收录 6000+。</p>\n<ul>\n<li>仓库：<a href=\"https://github.com/cordiverse/cordis\" rel=\"nofollow\">https://github.com/cordiverse/cordis</a></li>\n<li>官方文档：<a href=\"https://deepseek-harness.github.io/deepseek-harness/en/reference/cordis-primer\" rel=\"nofollow\">https://deepseek-harness.github.io/deepseek-harness/en/reference/cordis-primer</a></li>\n<li>上手教程：<a href=\"https://deepseek-harness.github.io/deepseek-harness/en/develop/cordis-tutorial\" rel=\"nofollow\">https://deepseek-harness.github.io/deepseek-harness/en/develop/cordis-tutorial</a></li>\n</ul>\n<h3>用来做参照的：tool-func 系列</h3>\n<p>isdk 的一组小库，从下往上是一条链：</p>\n<ul>\n<li><a href=\"https://github.com/isdk/tool-func.js\" r",
+      "id": "cf4454c6217df0c7",
+      "source_id": "reddit-promptengineering",
+      "title": "The Dialogical Workflow: Red-Teaming, Scaffolding, and Paper Notes",
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1wzyq0i/the_dialogical_workflow_redteaming_scaffolding/",
+      "published_at": "2026-10-07T14:58:10+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi. I've been using LLMs as dialogical feedback tools for learning for about three years now. I started in the closing weeks of GPT-3, then GPT-4 dominated my usage for a long stretch. Claude showed up, then Grok, Gemini, even DeepSeek. I'd effectively acquired an ensemble of &quot;very smart but stupid&quot; helpers, and there was a lot I had to learn before I could actually use them.</p> <p>Talking to LLMs takes nuance. You ask for a dashboard, and four turns later you're still trying to explain a concept a competent intern would have got in one. All the rephrasing, backing up, watching it confidently rebuild the wrong thing. It's infuriating. So instead of writing about mechanisms independently supported across prompt engineering, HCI and cognitive psychology, I thought I would share some of my experience working with AI. </p> <p>If you find yourself repeating instructions to a model in different ways over and over again, try this:</p> <p>Get a pen ",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
+      "category": "技巧与观点",
+      "content_type": "观点评论",
       "depth_score": 0.8,
-      "reason_zh": "对 Cordis 插件元框架的深度技术复盘，剖析其设计取舍与坑，对 agent 运行时选型有实用参考。",
-      "summary_zh": "V2EX 用户撰写长文，评估 Cordis 这一插件元框架的坑与账。Cordis 是 Koishi 聊天机器人框架的内核，后被 DeepSeek 的 DSH（DeepSeek Harness，Agent 运行时）用作底座。文章指出 Cordis 本身不含业务能力，只负责插件如何装入长期运行的进程、如何互相依赖与卸载，Koishi 社区插件超 4000 个，DSH 第三方索引收录超 6000 个。作者按章节分析它真正做了什么、哪里设计出错、以及读者是否该采用，属于有论证的工程复盘。",
-      "title_zh": null,
+      "reason_zh": "作者分享三年使用 LLM 作为对话式学习反馈工具的经验，提出红队测试、脚手架与论文笔记的实用工作流。",
+      "summary_zh": "作者回顾了自己约三年来将 LLM 用作对话式学习反馈工具的经历，从 GPT-3 末期开始，历经 GPT-4、Claude、Grok、Gemini 乃至 DeepSeek，逐渐积累了一组“非常聪明但也很笨”的助手。文章提出了“对话式工作流”（Dialogical Workflow），涵盖红队测试（Red-Teaming）、脚手架（Scaffolding）和论文笔记（Paper Notes）三个核心实践。作者强调，要让 LLM 真正辅助学习，需要精心设计交互方式，而非简单提问。内容基于长期真实使用经验，对希望用 LLM 提升学习效率的读者有较强参考价值。",
+      "title_zh": "对话式工作流：红队测试、脚手架与论文笔记",
       "weighted_score": 0.58,
       "score_breakdown": {
         "source_authority": 0.4,
@@ -293,12 +360,12 @@
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "124521f9b6a32595",
+      "story_id": "2ca2285ea6dd6c51",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-v2ex",
-          "url": "https://www.v2ex.com/t/1246841#reply1"
+          "source_id": "reddit-promptengineering",
+          "url": "https://www.reddit.com/r/PromptEngineering/comments/1wzyq0i/the_dialogical_workflow_redteaming_scaffolding/"
         }
       ]
     },
@@ -333,73 +400,6 @@
         {
           "source_id": "towards-data-science",
           "url": "https://towardsdatascience.com/the-consistency-quadrant-a-visual-guide-to-llm-reliability/"
-        }
-      ]
-    },
-    {
-      "id": "5f093dbe905fa9f7",
-      "source_id": "reddit-rag",
-      "title": "I tried three BM25 tricks borrowed from other agent-memory repos. Two of them made search worse.",
-      "url": "https://www.reddit.com/r/Rag/comments/1wzio85/i_tried_three_bm25_tricks_borrowed_from_other/",
-      "published_at": "2026-10-07T00:22:33+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I maintain birkin-mnemosyne (my project), a small local Markdown memory library for agents. Search is BM25 with bigrams, so Korean works too.</p> <p>I wanted to know if other agent-memory repos had BM25 tricks worth stealing, so I had my coding agents go through the Awesome-Agent-Memory list. About 300 repos, and they read the retrieval code of 11 of them. Three ideas looked like free wins: weight title and tags above the body, diversify results at query time so near-duplicate notes don't fill the top, and keep document-length totals incrementally instead of recomputing the average over every note on each write.</p> <p>What I cared about was not fooling myself. I froze a held-out set of 972 questions before touching anything. It's two independently written sets, one by GPT and one by Claude. I tuned weights only on separate practice questions, and a gain only counted if it held for both authors.</p> <p>Title and tags weighting gave a small gain for bot",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.75,
-      "reason_zh": "作者实测三种从其他 agent-memory 仓库借来的 BM25 技巧，两种反而让检索变差，是难得的负结果复盘。",
-      "summary_zh": "作者维护本地 Markdown 记忆库 birkin-mnemosyne，采用 bigram 的 BM25 检索以支持韩语。为寻找可借鉴的检索技巧，他让编码 agent 遍历 Awesome-Agent-Memory 列表中约 300 个仓库，并精读其中 11 个的检索代码，挑出三种 BM25 技巧进行实测。结果三种技巧中有两种反而降低了搜索质量，只有一种带来改善。文章记录了这些技巧的具体做法、实验对比与失败原因，说明在 agent 记忆检索场景中，盲目照搬其他仓库的调参经验并不可靠，需要结合自身语料与查询分布验证。",
-      "title_zh": "我试了三个从其他 agent-memory 仓库借来的 BM25 技巧，其中两个让搜索变差了",
-      "weighted_score": 0.47,
-      "score_breakdown": {
-        "source_authority": 0.35,
-        "novelty": 0.6,
-        "impact": 0.3,
-        "practical_value": 0.7
-      },
-      "story_id": "b7270d9863a9656d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1wzio85/i_tried_three_bm25_tricks_borrowed_from_other/"
-        }
-      ]
-    },
-    {
-      "id": "0f218c412fa63a23",
-      "source_id": "aws-ml-blog",
-      "title": "How Cornerstone OnDemand cut database diagnosis by 78% with Amazon Bedrock",
-      "url": "https://aws.amazon.com/blogs/machine-learning/how-cornerstone-ondemand-cut-database-diagnosis-by-78-with-amazon-bedrock/",
-      "published_at": "2026-10-07T15:38:28+00:00",
-      "raw_text": "Cornerstone OnDemand built Orion AI, a multi-agent system on Amazon Bedrock and Strands Agents, to turn database operations from reactive firefighting into proactive automation. A three-person team cut database diagnosis from 45 minutes to 10, a 78% reduction, in six months. See the design decisions other teams can reuse.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/02/ML-20695-1.png",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "AWS官方博客复盘Cornerstone用Bedrock多智能体系统将数据库诊断时间缩短78%，设计取舍可复用，工程参考价值高。",
-      "summary_zh": "Cornerstone OnDemand基于Amazon Bedrock与Strands Agents构建了多智能体系统Orion AI，将数据库运维从被动救火转为主动自动化。一个三人团队在六个月内把数据库诊断时间从45分钟压缩到10分钟，降幅达78%。文章详细介绍了该系统的架构设计、智能体分工与落地过程中的关键决策，并提炼出其他团队可直接复用的经验，例如如何界定智能体边界、如何与现有运维流程集成等，对构建企业级agent系统的工程师具有实操参考价值。",
-      "title_zh": "Cornerstone OnDemand如何借助Amazon Bedrock将数据库诊断时间缩短78%",
-      "weighted_score": 0.675,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "19d0b490765f5b56",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/how-cornerstone-ondemand-cut-database-diagnosis-by-78-with-amazon-bedrock/"
         }
       ]
     }
