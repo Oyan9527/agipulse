@@ -1,5 +1,10 @@
 feedparser==6.0.11
 requests==2.32.3
-PyYAML==6.0.2
-rapidfuzz==3.9.7
+# 6.0.2 没有 Python 3.14 的预编译 wheel，装的时候会回落到源码编译并失败；
+# 6.0.3 起才带 cp314。对 3.12（CI 用的版本）同样有 wheel，是纯补丁升级。
+PyYAML==6.0.3
+# 同上：3.9.7 最高只到 cp313，3.14 上无 wheel。3.14.x 才支持。
+# 跨了五个小版本，所以拿 12720 对真实标题在两版上对过 token_sort_ratio——
+# 分数逐对完全相同，dedupe 的阈值归属没有一对换边，去重行为不变。
+rapidfuzz==3.14.6
 python-dateutil==2.9.0.post0
