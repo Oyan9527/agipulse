@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-08",
-  "generated_at": "2026-10-08T22:14:18.288626+00:00",
+  "date": "2026-10-09",
+  "generated_at": "2026-10-09T01:22:07.678255+00:00",
   "items": [
     {
       "id": "719f0c4d20808b9e",
@@ -274,6 +274,39 @@
       ]
     },
     {
+      "id": "10485e3f0e415867",
+      "source_id": "zh-ithome",
+      "title": "字节 Seed 团队发现 DeepSeek“抽风”原因，长上下文可能性能漂移",
+      "url": "https://www.ithome.com/1/010/780.htm",
+      "published_at": "2026-10-09T00:49:58+00:00",
+      "raw_text": "<p>IT之家 10 月 9 日消息，字节 Seed 团队今年 9 月底在预印本平台 arXiv 提交了一篇论文，谈到分块 KV 缓存压缩带来的相位敏感性，<strong>直指 DeepSeek“抽风”原因</strong>。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/10/75fe8dba-9765-48df-8a7b-b608722be99c.png\" /></p><p style=\"text-align: justify;\">该研究评估了基础版和后训练版的 DeepSeek-V4-Flash 和 DeepSeek-V4-Pro，以及后训练后的 DeepSeek-V4.1-Flash。</p><p style=\"text-align: justify;\">模型通过分块 KV 缓存压缩以固定步幅将连续标记的窗口压缩为更少的缓存条目，能够减少长上下文推理的内存和注意力成本。</p><p style=\"text-align: justify;\">然而，这种压缩还引入了一个新的位置坐标：<strong>Token 的相位</strong>，或其相对于压缩窗口边界的位置。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/10/688e8ffe-ae69-49f0-9e26-3128705eaa18.png?x-bce-process=image/format,f_auto\" /></p><p style=\"text-align: justify;\">该团队发现使用这种压缩的模型中存在系统性不对称性：<strong>相同的信息在一个阶段很容易检索，但在另一个阶段很难检索</strong>。团队将这种检索性能的周期性变化称为相位敏感性（phase sensitivity）。</p><p style=\"text-align: justify;\">在采用此类压缩的大型开放权重模型中，长上下文检索准确度在各个阶段之间可能<strong>相差高达 40",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://img.ithome.com/newsuploadfiles/2026/10/75fe8dba-9765-48df-8a7b-b608722be99c.png",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "字节 Seed 团队论文揭示分块 KV 缓存压缩导致相位敏感性，解释 DeepSeek 长上下文性能漂移的机制。",
+      "summary_zh": "字节 Seed 团队于 9 月底在 arXiv 提交论文，研究分块 KV 缓存压缩带来的相位敏感性问题，直指 DeepSeek 模型“抽风”的原因。该研究评估了基础版和后训练版的 DeepSeek-V4-Flash、DeepSeek-V4-Pro，以及后训练后的 DeepSeek-V4.1-Flash。研究发现，长上下文场景下 KV 缓存压缩可能引发性能漂移，导致模型输出不稳定。这一发现为理解大模型长上下文推理中的退化现象提供了新视角，对优化 KV 缓存策略具有参考价值。",
+      "title_zh": null,
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.65
+      },
+      "story_id": "75a176b476d054ce",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-ithome",
+          "url": "https://www.ithome.com/1/010/780.htm"
+        }
+      ]
+    },
+    {
       "id": "8a512be14970635b",
       "source_id": "infoq-cn-ai",
       "title": "从 Rollout 到权重同步：Mooncake 如何支撑高性能强化学习系统｜QCon上海",
@@ -308,35 +341,35 @@
       ]
     },
     {
-      "id": "c628cda7f178466a",
-      "source_id": "zh-meituan-tech",
-      "title": "MTFM：美团统一推荐基座大模型在外卖多业务场景的落地实践",
-      "url": "https://tech.meituan.com/2026/09/22/Meituan-Foundation-Model-for-Recommendation.html",
-      "published_at": "2026-10-08T21:51:35.786902+00:00",
-      "raw_text": "美团在 MTGR 基础上提出统一推荐基座大模型 MTFM，首次实现外卖多个主要业务的统一精排模型。",
+      "id": "82d927d20c4644b7",
+      "source_id": "zh-tonybai",
+      "title": "微软刚用 Go 重写完 tsc，有人就用 AI 写出了 Rust 版：比 Go 版快 1.61 倍",
+      "url": "https://tonybai.com/2026/10/09/ts-rust-ai-ported-typescript-compiler/",
+      "published_at": "2026-10-08T22:00:00+00:00",
+      "raw_text": "2026 年 10 月 7 日，开发者 Theo 在 X 上发布 tsc-rs（又名 ts-rust），一个用 Rust 编写的 TypeScript 编译器、类型检查器和语言服务器。他先用 OpenAI 模型烧掉超过 40 万美元，只做到约 84% 兼容；换成 Opus 5.5 后，2 周、约 2.4 万美元就跑通了。实测中它比微软的 Go 版 tsc 7 快约 1.61 倍，而作者自称从未读过其中任何一行代码。本文拆解它的数据、方法、争议与局限，并讨论它真正证明了什么。",
       "category_hint": [
         "技巧与观点"
       ],
-      "image_url": "https://p0.meituan.net/meituantechblog/5dcc2af83b5b9da04717c9fcff76b69a1943722.png",
-      "category": "论文研究",
+      "image_url": null,
+      "category": "开源项目",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "美团公开统一推荐基座大模型 MTFM 在外卖多业务精排的落地实践，对推荐系统与大模型结合的工程读者有较高参考价值。",
-      "summary_zh": "美团技术团队在 MTGR 的基础上提出统一推荐基座大模型 MTFM，首次实现了外卖多个主要业务的统一精排模型。文章介绍了该模型在外卖多业务场景中的落地实践，涵盖如何用统一基座替代以往各业务分散建模的思路，以及在真实业务中推进统一精排所面临的工程与效果挑战。作为大模型与推荐系统结合的工业级案例，内容对从事推荐、搜索与广告排序的工程师具有较高的实践参考价值。",
-      "title_zh": null,
-      "weighted_score": 0.705,
+      "reason_zh": "用 AI 两周重写 tsc 为 Rust 版并快于 Go 版，文章拆解成本、方法与争议，对 AI 编程能力边界有启发。",
+      "summary_zh": "文章讲述开发者 Theo 于 2026 年 10 月发布 tsc-rs（ts-rust），一个用 Rust 编写的 TypeScript 编译器、类型检查器和语言服务器。他先用 OpenAI 模型花费超 40 万美元仅做到约 84% 兼容，改用 Opus 5.5 后两周、约 2.4 万美元即跑通，实测比微软 Go 版 tsc 7 快约 1.61 倍，作者自称从未读过其中任何一行代码。文章拆解其数据、方法、争议与局限，并讨论这究竟证明了什么。",
+      "title_zh": "微软刚用 Go 重写完 tsc，有人就用 AI 写出了 Rust 版：比 Go 版快 1.61 倍",
+      "weighted_score": 0.695,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.7,
         "practical_value": 0.7
       },
-      "story_id": "9ab92ff72578de75",
+      "story_id": "880844dfa6c68e7c",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/09/22/Meituan-Foundation-Model-for-Recommendation.html"
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/10/09/ts-rust-ai-ported-typescript-compiler/"
         }
       ]
     },
@@ -370,39 +403,6 @@
         {
           "source_id": "zh-atbug",
           "url": "https://atbug.com/steve-eisman-ai-bubble-risk-map/"
-        }
-      ]
-    },
-    {
-      "id": "09e62eb15568147b",
-      "source_id": "zh-meituan-tech",
-      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
-      "published_at": "2026-10-08T21:51:35.787058+00:00",
-      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "美团开源LoHoSearch，一个基于知识图谱校准AI能力认知的下一代搜索智能体评测基准，应对现有基准饱和问题，为评估Search Agent提供新标准。",
-      "summary_zh": "美团开源了下一代搜索智能体评测基准LoHoSearch。文章指出，过去一年Search Agent能力显著演进，在BrowseComp等评测上顶尖模型准确率从30%区间迅速攀升至90%以上，导致基准饱和、区分度下降。LoHoSearch利用知识图谱来校准AI能力认知，旨在更准确地评估搜索智能体的真实能力，为社区提供新的评测标准，推动Search Agent技术持续进步。",
-      "title_zh": null,
-      "weighted_score": 0.755,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "eb00a4db4521a3f4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
         }
       ]
     }
