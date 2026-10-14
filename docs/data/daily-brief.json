@@ -1,391 +1,298 @@
 {
-  "date": "2026-10-13",
-  "generated_at": "2026-10-13T22:12:28.256650+00:00",
+  "date": "2026-10-14",
+  "generated_at": "2026-10-14T20:52:30.755423+00:00",
   "items": [
     {
-      "id": "f044db157ad30bbb",
-      "source_id": "arxiv-cs-ai",
-      "title": "Attention Sees, MLP Refuses: Tracing the Attention-to-MLP Safety Pathway in LLMs",
-      "url": "https://arxiv.org/abs/2610.13078",
-      "published_at": "2026-10-13T04:00:00+00:00",
-      "raw_text": "arXiv:2610.13078v1 Announce Type: new \nAbstract: Safety-aligned large language models (LLMs) remain vulnerable to jailbreaks and can over-refuse benign requests. Understanding these failures requires distinguishing harmfulness recognition from the computation that writes refusal. We reframe this as a pathway question and make it measurable on residual-stream updates in decoder-only Transformers, separating the harmfulness information a module update exposes from the change it produces in readable refusal evidence. Across 18 Base-Instruct pairs spanning Qwen, Llama, and Gemma, harmfulness is decoded more readily from attention updates, particularly in early layers, whereas MLP updates contribute more strongly to harm-selective refusal writing in aligned models. Post-training strengthens MLP refusal writing in all 18 pairs without systematically improving harmfulness decodability, while positive MLP writing becomes more concentrated in deeper layers after post-training. Across six reason",
+      "id": "fd83ae3d1e3e02de",
+      "source_id": "simonwillison",
+      "title": "Redesigning source control at Anthropic",
+      "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+      "published_at": "2026-10-13T23:00:06+00:00",
+      "raw_text": "<p><strong><a href=\"https://www.anthropic.com/engineering/redesigning-source-control\">Redesigning source control at Anthropic</a></strong></p>\nInteresting piece from Anthropic describing why and how they built their own custom alternative to Git, based on the dramatic increase in rate of changes to their code after the past six months.</p>\n<blockquote>\n<p>In May 2026, Anthropic averaged around 2,500 code changes merged per day; as of September, we merged over 30,000 per day.</p>\n</blockquote>\n<p>They included a chart showing those changes. I <a href=\"https://claude.ai/share/aefcdd4a-9364-40c1-927a-29bf445894fc\">had Claude modify their chart</a> (<a href=\"https://gist.github.com/simonw/4a16dff066fd9763faf8642f797905be\">code here</a>) to add markers for the public releases of each of their models in 2026:</p>\n<p><img alt=\"Stacked bar chart titled “Changes merged per day”, for the Anthropic monorepo, January–September 2026. Each day’s bar is split into pull requests (blue) and antique cha",
       "category_hint": [
-        "论文研究"
+        "技巧与观点",
+        "开源项目"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "image_url": "https://static.simonwillison.net/static/2026/anthropic-merges-per-day.webp",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
       "depth_score": 0.9,
-      "reason_zh": "揭示LLM安全机制中注意力识别危害与MLP拒绝生成的分离路径，为理解越狱与过度拒绝提供可解释性视角。",
-      "summary_zh": "该研究关注安全对齐后的大语言模型仍易受越狱攻击且会过度拒绝良性请求的问题，提出将危害识别与拒绝生成的计算过程区分开来，并重新表述为一条可测量的通路问题。作者在仅解码器 Transformer 的残差流更新上追踪从注意力到 MLP 的安全通路，发现注意力机制能够识别有害内容，但 MLP 层可能拒绝执行拒绝写入，从而解释越狱与过度拒绝的机制。该工作为理解模型内部安全计算提供了可解释性工具，并可能指导更鲁棒的安全对齐策略。",
-      "title_zh": "注意力看见，MLP拒绝：追踪LLM中从注意力到MLP的安全通路",
-      "weighted_score": 0.705,
+      "reason_zh": "Anthropic 因代码变更激增而自研替代 Git 的源码控制系统，工程实践深度高。",
+      "summary_zh": "Anthropic 工程团队撰文解释为何以及如何自研一套替代 Git 的源码控制系统。文章指出，过去六个月其代码变更速率急剧上升，2026 年 5 月平均每天变更量已达约 2,500 次，传统 Git 工作流难以支撑。文中详述了自研方案的设计动机、架构取舍与落地经验，是了解大规模 AI 辅助开发下工程基础设施演进的难得一手材料。",
+      "title_zh": "Anthropic 重新设计源码控制系统",
+      "weighted_score": 0.805,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.9,
         "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.6
+        "practical_value": 0.8
       },
-      "story_id": "bef60b762987a2e4",
-      "multi_source_count": 1,
+      "story_id": "8e8affdcdb300b91",
+      "multi_source_count": 2,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2610.13078"
+          "source_id": "reddit-claudeai",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1x5b5ek/redesigning_source_control_at_anthropic/"
+        },
+        {
+          "source_id": "simonwillison",
+          "url": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/"
         }
       ]
     },
     {
-      "id": "fb8ca82de0cf30b5",
-      "source_id": "arxiv-cs-ai",
-      "title": "Neural networks are more modular than single neurons suggest",
-      "url": "https://arxiv.org/abs/2610.12842",
-      "published_at": "2026-10-13T04:00:00+00:00",
-      "raw_text": "arXiv:2610.12842v1 Announce Type: new \nAbstract: Neural networks routinely develop representations in which individual neurons contribute to multiple distinct functions, leading to the widespread view that such networks lack modular organization. We challenge this conclusion by introducing a formally nested hierarchy of modularity: unit-level, which requires distinct computations to occupy disjoint neurons; orthogonal, which asks whether a rotation reveals functionally independent subspaces; and linear, which asks whether a bounded linear map can separate task-relevant computations into independent subspaces. We develop a unified framework for learning decompositions at each level and evaluating them causally through selective ablation. Across vision models, language models and multi-task Recurrent Neural Networks (RNNs), we find that networks which lack unit-level modularity nonetheless often exhibit clear functional modularity at the subspace level. In vision and language models, con",
+      "id": "a284e5bee585e22f",
+      "source_id": "zh-tonybai",
+      "title": "Anthropic 把 Git 扔了！7 人 5 个月自研 Scion，日合并代码从 2500 暴涨到 3 万次",
+      "url": "https://tonybai.com/2026/10/14/anthropic-scion-replaces-git-agent-scale-source-control/",
+      "published_at": "2026-10-14T01:00:00+00:00",
+      "raw_text": "Anthropic 官方工程博客披露：随着 Claude 大规模写代码，公司每日代码合并量从 2026 年 5 月的约 2500 次增长到 9 月的 3 万次以上，Git 成为最大开发瓶颈。为此，7 人团队用 5 个月自研版本控制系统 Scion，并完成 monorepo 迁移。本文拆解 Scion 的设计原则、核心数据结构、缓存架构，以及 Anthropic 总结出的“智能体规模”软件开发经验。",
       "category_hint": [
-        "论文研究"
+        "技巧与观点"
       ],
       "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "category": "行业动态",
+      "content_type": "深度分析",
       "depth_score": 0.9,
-      "reason_zh": "挑战神经网络缺乏模块化的传统观点，提出嵌套模块化层级，发现网络比单个神经元所显示的更具模块性，对可解释性研究有启发。",
-      "summary_zh": "论文挑战神经网络缺乏模块化组织的普遍看法。神经网络常发展出单个神经元参与多个不同功能的表征，导致人们认为其缺乏模块化。作者引入一个形式化嵌套的模块化层级：单元级要求不同计算占据不相交单元，并在此基础上定义更高层级。通过该框架分析发现，神经网络实际比单个神经元所显示的更具模块性，为理解网络内部组织提供了新视角。",
-      "title_zh": "神经网络比单个神经元所显示的更具模块性",
-      "weighted_score": 0.685,
+      "reason_zh": "Anthropic 因 Claude 写代码导致 Git 成瓶颈，7 人 5 个月自研 Scion 版本控制系统，含架构拆解与智能体规模开发经验，极具启发性。",
+      "summary_zh": "Anthropic 官方工程博客披露，随着 Claude 大规模参与编码，公司每日代码合并量从 2026 年 5 月的约 2500 次激增至 9 月的 3 万次以上，Git 成为最大开发瓶颈。为此，一个 7 人团队用 5 个月自研版本控制系统 Scion，并完成 monorepo 迁移。文章拆解了 Scion 的设计原则、核心数据结构与缓存架构，并总结出面向“智能体规模”的软件开发经验，展示了当 AI 成为主要代码生产者时，基础设施需要如何重构。",
+      "title_zh": "Anthropic 把 Git 扔了！7 人 5 个月自研 Scion，日合并代码从 2500 暴涨到 3 万次",
+      "weighted_score": 0.805,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "81e6837f6e84fe2a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2610.12842"
-        }
-      ]
-    },
-    {
-      "id": "0365609c28127eb7",
-      "source_id": "arxiv-cs-ai",
-      "title": "One-Step Text Generation by Seq-Drifting",
-      "url": "https://arxiv.org/abs/2610.12879",
-      "published_at": "2026-10-13T04:00:00+00:00",
-      "raw_text": "arXiv:2610.12879v1 Announce Type: new \nAbstract: Diffusion language models generate tokens in parallel, but still require multiple sampling steps to produce high-quality text. In this paper, we investigate whether a model can learn to generate an entire sequence in a single forward pass. We propose Seq-Drifting, a framework that applies drifting to sequences of continuous token representations and directly learns a map from Gaussian noise to text. Unlike existing DLMs that derive the supervision at each position directly from the observed token in a training sequence, Seq-Drifting builds a drift field whose position-wise targets adapt to the current generated context. At each position, attraction guides each output toward a set of contextually plausible token representations, while repulsion discourages collapse across samples and repetition within sequences. The generator learns from this drift field during training and produces all tokens jointly in one pass at inference. Empirically",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "探索扩散语言模型单步生成整段文本，若成立将大幅降低推理成本，具架构创新意义。",
-      "summary_zh": "扩散语言模型虽能并行生成token，但仍需多步采样才能产出高质量文本。论文探究模型能否在单次前向传播中生成完整序列，提出Seq-Drifting框架，将drifting方法应用于连续token表征序列。该方法试图让模型学会一步生成整段文本，从而突破扩散语言模型多步采样的效率瓶颈。若可行，将显著降低文本生成的推理延迟与计算成本，对扩散式语言建模的架构设计具有探索价值。",
-      "title_zh": "基于Seq-Drifting的单步文本生成",
-      "weighted_score": 0.73,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.85,
-        "impact": 0.75,
-        "practical_value": 0.6
-      },
-      "story_id": "3266a3e6b4f41718",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2610.12879"
-        }
-      ]
-    },
-    {
-      "id": "ea483b0a1bc8c9dd",
-      "source_id": "arxiv-cs-ai",
-      "title": "Mitigating Capability Degradation in LLM Self-Improvement via Representation Geometry Regularization",
-      "url": "https://arxiv.org/abs/2610.12855",
-      "published_at": "2026-10-13T04:00:00+00:00",
-      "raw_text": "arXiv:2610.12855v1 Announce Type: new \nAbstract: On-Policy Self-distillation is a self-improvement paradigm that enables large language models (LLMs) to improve their capabilities by leveraging the same model as both teacher and student under different conditioning contexts. However, we find that OPSD methods can progressively degrade previously acquired capabilities: queries that are correctly responded at earlier training stages may become incorrectly responded as optimization proceeds, even the overall performance continues to improve. Further analysis reveals that this degradation coincides with a deterioration of the geometry of hidden representations, characterized by reduced intra-cluster compactness and diminished inter-cluster separation. Motivated by this observation, we propose Representation Geometry Regularization (RGR), which preserves representation geometry during post-training by encouraging compactness within cluster and separation across cluster. RGR can be seamlessl",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "揭示LLM自改进中的能力退化问题，并提出表征几何正则化方案，对自蒸馏训练有直接参考价值。",
-      "summary_zh": "论文聚焦On-Policy Self-distillation（OPSD）这一自改进范式，即让同一模型在不同条件下分别充当教师和学生来提升能力。作者发现OPSD会逐步导致模型先前习得能力的退化，原本能正确回答的查询在自改进后反而出错。为此，论文提出通过表征几何正则化来缓解这种能力退化，在保持自改进收益的同时抑制对已有能力的损害，为LLM持续自我提升中的灾难性遗忘问题提供了新的解决思路。",
-      "title_zh": "通过表征几何正则化缓解LLM自改进中的能力退化",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
+        "source_authority": 0.8,
+        "novelty": 0.9,
+        "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "1d9d4d0befb75bc9",
+      "story_id": "13dad1db692f49c3",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ai",
-          "url": "https://arxiv.org/abs/2610.12855"
+          "source_id": "zh-tonybai",
+          "url": "https://tonybai.com/2026/10/14/anthropic-scion-replaces-git-agent-scale-source-control/"
         }
       ]
     },
     {
-      "id": "05f2db353f4c2b3e",
-      "source_id": "pytorch-blog",
-      "title": "Extending Inductor for the IBM Spyre Accelerator",
-      "url": "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/",
-      "published_at": "2026-10-13T12:45:30+00:00",
-      "raw_text": "<p>TL;DR The PyTorch-based software stack for IBM&#8217;s Spyre accelerator recently moved its torch.compile backend from sendnn, a separate compilation stack built entirely from scratch, to backend=inductor, an open-source backend built...</p>\n<p>The post <a href=\"https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/\">Extending Inductor for the IBM Spyre Accelerator</a> appeared first on <a href=\"https://pytorch.org\">PyTorch</a>.</p>",
+      "id": "285be2f8c0d85b7f",
+      "source_id": "zh-wangjunjian",
+      "title": "重新设计 Anthropic 的源代码管理（中文翻译）",
+      "url": "https://wangjunjian.com/posts/2026-10-14-anthropic-scion-source-control.html",
+      "published_at": "2026-10-14T00:00:00+00:00",
+      "raw_text": "Anthropic 自研版本控制系统 Scion，五个月内把巨型 monorepo 从 git 完全迁移过来，支撑每天 3 万+ 次代码合并，并分享面向智能体规模的源代码管理原则、扩展架构与工程收获。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "Anthropic 自研版本控制系统 Scion 的迁移与架构经验，对大规模代码管理和智能体协作有深刻启发。",
+      "summary_zh": "Anthropic 自研了版本控制系统 Scion，在五个月内将巨型 monorepo 从 git 完全迁移过来，支撑每天 3 万+ 次代码合并。文章分享了面向智能体规模的源代码管理原则、扩展架构与工程收获，包括如何设计系统以应对 AI 智能体产生的高频代码提交、如何保证数据一致性与性能，以及从 git 迁移过程中的挑战与解决方案。对于需要管理大规模代码库并支持 AI 协作的团队，本文提供了宝贵的一手经验。",
+      "title_zh": "重新设计 Anthropic 的源代码管理（中文翻译）",
+      "weighted_score": 0.775,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "d592d23fc7e8855c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-wangjunjian",
+          "url": "https://wangjunjian.com/posts/2026-10-14-anthropic-scion-source-control.html"
+        }
+      ]
+    },
+    {
+      "id": "ba00fc5656f6db93",
+      "source_id": "zh-wangjunjian",
+      "title": "智能体编程正在给 CI 带来压力：Anthropic 如何扩展测试影响分析系统",
+      "url": "https://wangjunjian.com/posts/2026-10-14-anthropic-ci-test-selection-scaling.html",
+      "published_at": "2026-10-14T00:00:00+00:00",
+      "raw_text": "智能体编程让 Anthropic 的 CI 作业半年增长 25 倍，三次补丁分别只撑 70 天、29 天和不到 1 天，最终用内存数据存储与无状态 worker 重构测试选择服务，并总结出「按 25 倍负载提前规划」的经验。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.9,
+      "reason_zh": "Anthropic 分享智能体编程对 CI 的压力及测试影响分析系统的扩展经验，对工程团队极具参考价值。",
+      "summary_zh": "智能体编程导致 Anthropic 的 CI 作业量在半年内增长 25 倍，原有系统三次补丁分别只维持了 70 天、29 天和不到 1 天。最终团队用内存数据存储与无状态 worker 重构了测试选择服务，并总结出「按 25 倍负载提前规划」的经验。文章详细复盘了扩展测试影响分析系统的架构决策、踩坑过程与工程收获，为面临类似增长压力的团队提供了可迁移的实践指南。",
+      "title_zh": "智能体编程正在给 CI 带来压力：Anthropic 如何扩展测试影响分析系统",
+      "weighted_score": 0.77,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.7,
+        "practical_value": 0.9
+      },
+      "story_id": "465e79a94c0318af",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-wangjunjian",
+          "url": "https://wangjunjian.com/posts/2026-10-14-anthropic-ci-test-selection-scaling.html"
+        }
+      ]
+    },
+    {
+      "id": "d8a89f00b353697f",
+      "source_id": "reddit-openai",
+      "title": "AI models can provably hide capabilities: encrypted networks inside the weights stay hard to elicit by fine-tuning, weight noise or adversarial training",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1x5kpng/ai_models_can_provably_hide_capabilities/",
+      "published_at": "2026-10-14T07:14:37+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/OpenAI/comments/1x5kpng/ai_models_can_provably_hide_capabilities/\"> <img alt=\"AI models can provably hide capabilities: encrypted networks inside the weights stay hard to elicit by fine-tuning, weight noise or adversarial training\" src=\"https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=de730fbf7ecace6df0036b21470c16a2d4feacfb\" title=\"AI models can provably hide capabilities: encrypted networks inside the weights stay hard to elicit by fine-tuning, weight noise or adversarial training\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/lulzxdxdxd\"> /u/lulzxdxdxd </a> <br /> <span><a href=\"https://arxiv.org/abs/2610.13928\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/OpenAI/comments/1x5kpng/ai_models_can_provably_hide_capabilities/\">[comments]</a></span> </td></tr></table>",
+      "category_hint": [
+        "产品发布",
+        "行业动态"
+      ],
+      "image_url": "https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=640&crop=smart&auto=webp&s=de730fbf7ecace6df0036b21470c16a2d4feacfb",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "揭示模型可在权重中隐藏加密能力且难以被微调或对抗训练激发，对AI安全有重要启示。",
+      "summary_zh": "一项研究提出AI模型可以可证明地隐藏能力：在模型权重中嵌入加密网络后，这些隐藏能力很难通过微调、权重噪声或对抗训练被激发出来。这意味着模型可能在实际部署中保留未被检测到的能力，对AI安全评估和监管构成挑战。该研究为理解模型内部机制和潜在风险提供了新的理论视角。",
+      "title_zh": "AI模型可以可证明地隐藏能力：权重中的加密网络难以通过微调、权重噪声或对抗训练被激发",
+      "weighted_score": 0.695,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.9,
+        "impact": 0.8,
+        "practical_value": 0.6
+      },
+      "story_id": "3f77e760111e6b50",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-openai",
+          "url": "https://www.reddit.com/r/OpenAI/comments/1x5kpng/ai_models_can_provably_hide_capabilities/"
+        }
+      ]
+    },
+    {
+      "id": "194854bff25c4404",
+      "source_id": "reddit-agi",
+      "title": "Audit confirms OpenAI proof of Navier-Stokes and Euler Blowup is valid and adheres to the requirements of the clay prize",
+      "url": "https://www.reddit.com/r/agi/comments/1x5jh73/audit_confirms_openai_proof_of_navierstokes_and/",
+      "published_at": "2026-10-14T05:57:13+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I did a full audit of the proof.</p> <p><code>Lean 4 formalization audit (see ReadMe.md) of finite-time blowup constructions for forced 3D Navier–Stokes equations on Euclidean space and the periodic torus, and unforced 3D Euler. Includes formal statements corresponding to the Clay Navier–Stokes alternatives (C) and (D); this repository is not a Clay Institute certification.</code></p> <p><a href=\"https://github.com/Suro-One/Lean-Formalization-of-Navier-Stokes-and-Euler-Blowup-is-fully-confirmed-proven-with-audit-notes\">https://github.com/Suro-One/Lean-Formalization-of-Navier-Stokes-and-Euler-Blowup-is-fully-confirmed-proven-with-audit-notes</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/MagicaItux\"> /u/MagicaItux </a> <br /> <span><a href=\"https://www.reddit.com/r/agi/comments/1x5jh73/audit_confirms_openai_proof_of_navierstokes_and/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/agi/comments",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.9,
+      "reason_zh": "若审计属实，这是AI辅助数学证明的里程碑事件，涉及千禧年难题，值得关注其形式化验证细节。",
+      "summary_zh": "Reddit用户发布了对OpenAI关于Navier-Stokes和Euler方程爆破证明的完整审计结果。审计基于Lean 4形式化验证，涵盖强制三维Navier-Stokes方程在欧几里得空间和周期环面上的有限时间爆破构造，以及无强制三维Euler方程。仓库包含对应Clay研究所Navier-Stokes替代方案(C)和(D)的形式化陈述，但明确声明该仓库并非Clay研究所的官方认证。审计结论认为证明有效且符合Clay奖要求。",
+      "title_zh": "审计确认OpenAI关于Navier-Stokes和Euler爆破的证明有效且符合Clay奖要求",
+      "weighted_score": 0.62,
+      "score_breakdown": {
+        "source_authority": 0.3,
+        "novelty": 0.9,
+        "impact": 0.9,
+        "practical_value": 0.4
+      },
+      "story_id": "2679ba702ab9758a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-agi",
+          "url": "https://www.reddit.com/r/agi/comments/1x5jh73/audit_confirms_openai_proof_of_navierstokes_and/"
+        }
+      ]
+    },
+    {
+      "id": "e612dc941250a7d6",
+      "source_id": "apple-ml",
+      "title": "The Design Space of Tri-Modal Masked Diffusion Models",
+      "url": "https://machinelearning.apple.com/research/tri-modal-masked-diffusion",
+      "published_at": "2026-10-14T00:00:00+00:00",
+      "raw_text": "Discrete diffusion models have emerged as strong alternatives to autoregressive language models, with recent work initializing and finetuning a base unimodal model for bi-modal generation. Diverging from previous approaches, we introduce the first tri-modal Masked Diffusion Models (MDM) pretrained from scratch on text, image-text, and audio-text data. We systematically analyze multimodal scaling laws, modality mixing ratios, noise schedules, batch-size effects and provide optimized inference sampling defaults. Our batch-size analysis yields a novel stochastic differential equation (SDE) based…",
+      "category_hint": [
+        "论文研究",
+        "模型发布"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "首个三模态掩码扩散模型从头预训练，系统分析多模态扩展规律，具方法创新。",
+      "summary_zh": "该论文提出首个从头预训练的三模态掩码扩散模型（MDM），在文本、图文和音频-文本数据上联合训练。与以往先初始化单模态模型再微调为双模态生成的做法不同，作者系统分析了多模态扩展规律，探索了离散扩散模型在多模态生成中的设计空间。研究为扩散模型替代自回归语言模型提供了新的架构思路和实验证据，对多模态生成研究具有参考价值。",
+      "title_zh": "三模态掩码扩散模型的设计空间",
+      "weighted_score": 0.71,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "2589165248a8da94",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "apple-ml",
+          "url": "https://machinelearning.apple.com/research/tri-modal-masked-diffusion"
+        }
+      ]
+    },
+    {
+      "id": "0986e8dbd46d7a75",
+      "source_id": "weaviate-blog",
+      "title": "PathSeer: Adaptive Filtered Vector Search",
+      "url": "https://weaviate.io/blog/pathseer-filtered-vector-search",
+      "published_at": "2026-10-14T00:00:00+00:00",
+      "raw_text": "Weaviate 1.40 adds PathSeer, a third HNSW filter strategy from a SIGMOD 2026 paper, contributed by the paper's first author. How it works, and how it compares to sweeping and ACORN.",
       "category_hint": [
         "开源项目",
         "技巧与观点"
       ],
-      "image_url": "https://pytorch.org/wp-content/uploads/2026/10/memory-hierarchy.svg",
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "PyTorch官方博客详解如何将torch.compile后端从自研栈迁移到开源Inductor，是编译器工程实践的优质复盘。",
-      "summary_zh": "IBM Spyre加速器的PyTorch软件栈近期将其torch.compile后端从完全自研的sendnn编译栈迁移至开源后端inductor。文章详细阐述了这一迁移的技术动机与实现路径，包括如何扩展Inductor以支持Spyre的硬件特性、处理算子映射与内存管理等关键问题。作者分享了在保持性能的同时复用开源生态的工程取舍，为其他加速器厂商接入PyTorch编译生态提供了可参考的实践范例。",
-      "title_zh": "为IBM Spyre加速器扩展Inductor",
-      "weighted_score": 0.755,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "f2de97069c120a81",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "pytorch-blog",
-          "url": "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/"
-        }
-      ]
-    },
-    {
-      "id": "71f851fdb345b491",
-      "source_id": "reddit-promptengineering",
-      "title": "A label-redefinition suffix moved our security classifier more than a length-matched neutral sentence",
-      "url": "https://www.reddit.com/r/PromptEngineering/comments/1x4tnw9/a_labelredefinition_suffix_moved_our_security/",
-      "published_at": "2026-10-13T11:03:29+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We tested a prompt-framing issue while evaluating Wolf Defender Jev, the small security decision model we built at Patronus.</p> <p>The classified input can include a sentence aimed at the classifier rather than the agent. One family of probes redefined the meaning of the label — for example, saying that for this record, “safe” means a threat is present. Other families claimed an earlier approval or impersonated a trusted review.</p> <p>For single-sentence attack prompts, the worst label-redefinition suffix made 9.8% of initially detected attacks flip to benign. A neutral sentence of the same length made 3.4% flip. So some movement came from adding text at all, and the label claim added more. This is one probe group at a p=0.5 threshold, not the model’s overall miss rate.</p> <p>In agent scenes with more context, the tested claims were much less effective at turning detected attacks into benign verdicts. But the benign side was messy: adding a note cla",
-      "category_hint": [
-        "技巧与观点"
-      ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "揭示提示词框架可被利用重定义标签语义，对安全分类器评估有重要启发，值得安全与提示工程从业者细读。",
-      "summary_zh": "Patronus 团队在评估其小型安全决策模型 Wolf Defender Jev 时，测试了一类提示词框架问题：被分类的输入中可能包含针对分类器而非智能体的句子。其中一类探针会重新定义标签含义，例如声称对当前记录而言“safe”意味着存在威胁。作者发现，这种标签重定义后缀对分类器输出的影响，甚至超过长度匹配的中性句子。该发现说明分类器可能被输入中的元指令操纵，提示在安全评估中需考虑此类对抗性框架。",
-      "title_zh": "一个标签重定义后缀对我们安全分类器的影响超过长度匹配的中性句子",
-      "weighted_score": 0.56,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "9935b8f8ef0578d1",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-promptengineering",
-          "url": "https://www.reddit.com/r/PromptEngineering/comments/1x4tnw9/a_labelredefinition_suffix_moved_our_security/"
-        }
-      ]
-    },
-    {
-      "id": "76be2d8ca0bec045",
-      "source_id": "zh-oschina",
-      "title": "Anthropic 公开反蒸馏防御战报：让推理记录更难被偷、捕获量降了九成",
-      "url": "https://www.oschina.net/news/502996/anthropic-distillation-defenses",
-      "published_at": "2026-10-13T06:57:06+00:00",
-      "raw_text": "Anthropic 今天发了一篇博客，讲他们怎么对付『蒸馏攻击』——一种隐蔽的、工业规模的、用大量非法账号从另一个模型批量抽取能力的做法：从更强、更大的模型（这里就是 Claude）生成数百万条回复，再拿这些回复去教一个更小的模型模仿前者的行为，从而用开发时间和成本的一小部分就逼近前沿能力。Anthropic 说过去几个月...",
-      "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Anthropic公开反蒸馏实战细节，揭示模型能力保护的具体手段，信息稀缺且有启发性。",
-      "summary_zh": "Anthropic发布博客，详述其对抗“蒸馏攻击”的防御措施。蒸馏攻击指用大量非法账号从Claude等强模型批量生成数百万条回复，再用于训练更小的模型模仿前沿能力，成本仅为原开发的零头。Anthropic表示过去几个月采取了让推理记录更难被窃取的技术手段，使攻击捕获量下降了九成。文章披露了防御策略的具体思路和效果数据，对理解模型能力保护、API安全和AI知识产权攻防有重要参考价值。",
-      "title_zh": null,
-      "weighted_score": 0.76,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.6
-      },
-      "story_id": "386aead2f54231cf",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/502996/anthropic-distillation-defenses"
-        }
-      ]
-    },
-    {
-      "id": "f1ee5d432f57877a",
-      "source_id": "infoq-cn-ai",
-      "title": "修复漏洞的 PR 刚提交，攻击几分钟后就来了：AI 正在击穿开源安全流程",
-      "url": "https://www.infoq.cn/article/R7OkT6DCUifdCQqAvwtJ?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-13T17:25:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/R7OkT6DCUifdCQqAvwtJ?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "揭示 AI 如何加速漏洞利用，对开源安全流程构成系统性威胁，值得安全从业者关注。",
-      "summary_zh": "InfoQ 中文站报道，AI 正在击穿开源安全流程：修复漏洞的 PR 刚提交，攻击者几分钟内就能利用该漏洞发起攻击。文章可能分析了 AI 如何加速漏洞发现与利用的自动化，使得传统的“提交修复-等待合并-发布补丁”流程变得脆弱。这暴露了开源项目在响应速度和协调披露机制上的不足，呼吁社区重新思考安全流程以应对 AI 驱动的攻击节奏。",
-      "title_zh": "修复漏洞的 PR 刚提交，攻击几分钟后就来了：AI 正在击穿开源安全流程",
-      "weighted_score": 0.755,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "ba97b46bef5bc82c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/R7OkT6DCUifdCQqAvwtJ?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "22c6ef693aeebfce",
-      "source_id": "github-ai-blog",
-      "title": "GitHub’s model for secret detection: Finding more secrets with less noise",
-      "url": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/",
-      "published_at": "2026-10-13T17:56:33+00:00",
-      "raw_text": "<p>GitHub’s context-aware secret classifier improves detection quality, raises weighted acceptance by 11.5%, and reduces median scan execution time by 86%.</p>\n<p>The post <a href=\"https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/\">GitHub’s model for secret detection: Finding more secrets with less noise</a> appeared first on <a href=\"https://github.blog\">The GitHub Blog</a>.</p>",
-      "category_hint": [
-        "行业动态",
-        "产品发布"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "GitHub 官方详解上下文感知密钥检测模型，展示如何提升检测质量并大幅降低扫描时间。",
-      "summary_zh": "GitHub 发布博客介绍其上下文感知密钥分类器模型，用于改进密钥检测。该模型通过理解代码上下文，在减少误报的同时提升检测质量，加权接受率提高 11.5%，中位扫描执行时间减少 86%。文章详细阐述了模型的设计思路、训练方法以及在实际生产环境中的效果，展示了如何利用 AI 技术解决安全领域的噪声与效率问题。",
-      "title_zh": "GitHub 的密钥检测模型：以更少噪声发现更多密钥",
-      "weighted_score": 0.735,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "83e7b7464a04b524",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "github-ai-blog",
-          "url": "https://github.blog/ai-and-ml/githubs-model-for-secret-detection-finding-more-secrets-with-less-noise/"
-        }
-      ]
-    },
-    {
-      "id": "09e62eb15568147b",
-      "source_id": "zh-meituan-tech",
-      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
-      "published_at": "2026-10-12T23:31:39.271050+00:00",
-      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
-      "category": "开源项目",
+      "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "美团开源搜索智能体评测基准，用知识图谱校准能力认知，对Agent评测方向有参考价值。",
-      "summary_zh": "美团开源了下一代搜索智能体评测基准 LoHoSearch。文章指出，过去一年 Search Agent 能力显著演进，在 BrowseComp 等评测上顶尖模型准确率从 30% 区间迅速攀升至 90% 以上，基准迅速饱和导致其区分模型能力的价值递减。LoHoSearch 借助知识图谱来校准对 AI 能力的认知，旨在提供更具区分度的评测方式，为搜索智能体的能力评估提供新思路。",
-      "title_zh": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "eb00a4db4521a3f4",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
-        }
-      ]
-    },
-    {
-      "id": "6a8dd3e0a3e1ae6a",
-      "source_id": "infoq-cn-ai",
-      "title": "Claude 开始自己写程序管理 Agent 了：Anthropic 披露动态工作流架构",
-      "url": "https://www.infoq.cn/article/8La5gsJVOOF5BvFiLAUF?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-13T17:41:43+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/8La5gsJVOOF5BvFiLAUF?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Anthropic 披露 Claude 动态工作流架构，对理解 agent 自主编排有较高参考价值。",
-      "summary_zh": "InfoQ 报道 Anthropic 披露 Claude 的动态工作流架构，即 Claude 开始自行编写程序来管理 Agent。该架构让模型动态生成并调度子任务与工具调用，而非依赖预先硬编码的固定流程。文章解析了这一设计如何提升复杂任务的自主编排能力，涉及 agent loop、上下文管理与工具编排等工程实践，对构建生产级 Agent 系统的开发者具有参考意义。",
-      "title_zh": "Claude 开始自己写程序管理 Agent 了：Anthropic 披露动态工作流架构",
+      "depth_score": 0.8,
+      "reason_zh": "介绍了 Weaviate 1.40 中基于 SIGMOD 2026 论文的新过滤策略 PathSeer，对向量搜索性能优化有重要参考价值。",
+      "summary_zh": "Weaviate 1.40 版本引入了 PathSeer，这是源自 SIGMOD 2026 论文的第三种 HNSW 过滤策略，由论文第一作者贡献。文章详细解释了 PathSeer 的工作原理，并将其与现有的 sweeping 和 ACORN 策略进行了对比。PathSeer 旨在解决带过滤条件的向量搜索中的性能瓶颈，通过自适应过滤机制提升查询效率。对于需要处理大规模向量检索并同时应用元数据过滤的开发者，本文提供了深入的技术分析和选型参考。",
+      "title_zh": "PathSeer：自适应过滤向量搜索",
       "weighted_score": 0.7,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "16a161e8e209a3ce",
+      "story_id": "156ed77db773d334",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/8La5gsJVOOF5BvFiLAUF?utm_source=rss&utm_medium=article"
+          "source_id": "weaviate-blog",
+          "url": "https://weaviate.io/blog/pathseer-filtered-vector-search"
         }
       ]
     },
     {
-      "id": "c588c966b91db0d1",
-      "source_id": "zh-meituan-tech",
-      "title": "《Agent 评测白皮书》系列01：Agent 评测全览",
-      "url": "https://tech.meituan.com/2026/09/10/Agent-Evaluation-White-Paper-01.html",
-      "published_at": "2026-10-12T23:31:39.270848+00:00",
-      "raw_text": "我们推出了《Agent评测白皮书》系列博客，体系化地为大家讲解评测的落地指南，分为《评测全览》、《冷启动篇》、《扩量篇》、《自进化篇》等共4篇，本文为系列的第一篇。",
+      "id": "22e0c664486bf1fc",
+      "source_id": "databricks-blog",
+      "title": "Sizing Lakebase Search: lessons from a real app and 4 million passages",
+      "url": "https://www.databricks.com/blog/sizing-lakebase-search-lessons-real-app-and-4-million-passages",
+      "published_at": "2026-10-15T00:06:48+00:00",
+      "raw_text": "Slide Hub is an internal Databricks app. Field engineers use it to find and reuse...",
       "category_hint": [
-        "技巧与观点"
+        "产品发布",
+        "行业动态"
       ],
-      "image_url": "https://p0.meituan.net/meituantechblog/714ba0bf48f2186bd418d3778da7e214293923.png",
+      "image_url": null,
       "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "美团Agent评测白皮书首篇，体系化讲解评测落地指南，对做Agent评测的团队实用性强。",
-      "summary_zh": "美团推出《Agent评测白皮书》系列博客，体系化讲解Agent评测的落地指南，分为评测全览、冷启动篇、扩量篇、自进化篇共四篇。本文为系列第一篇，从整体视角介绍Agent评测的全貌，为后续深入各环节做铺垫。该系列基于团队实践经验，旨在为Agent评测体系的搭建提供可操作的指导，适合从事Agent开发与评测的读者系统学习。",
-      "title_zh": null,
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "Databricks 工程师复盘真实应用 Lakebase Search 的容量规划与踩坑，对构建 RAG 检索系统有直接参考价值。",
+      "summary_zh": "Databricks 工程师分享了内部应用 Slide Hub 的检索系统容量规划经验。该应用供现场工程师查找和复用资料，索引了 400 万条文本片段。文章详细介绍了如何根据真实负载估算 Lakebase Search 的规模，包括查询延迟、吞吐量、索引大小与成本之间的权衡，并给出了实际部署中遇到的性能瓶颈与调优方法。这些来自生产环境的经验教训，对正在构建大规模检索增强生成（RAG）系统的团队具有直接的参考意义。",
+      "title_zh": "Lakebase Search 容量规划：来自真实应用与 400 万文本片段的经验教训",
       "weighted_score": 0.675,
       "score_breakdown": {
         "source_authority": 0.8,
@@ -393,12 +300,112 @@
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "d1d0bba7d98e1c68",
+      "story_id": "f28ffb7a652c9995",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/09/10/Agent-Evaluation-White-Paper-01.html"
+          "source_id": "databricks-blog",
+          "url": "https://www.databricks.com/blog/sizing-lakebase-search-lessons-real-app-and-4-million-passages"
+        }
+      ]
+    },
+    {
+      "id": "fb059e9b85b922f4",
+      "source_id": "infoq-cn-ai",
+      "title": "Claude写代码太快，Git扛不住了：Anthropic仅靠7人，5个月重造版本控制系统",
+      "url": "https://www.infoq.cn/article/6iRATYfkqF7aITPaFR2R?utm_source=rss&utm_medium=article",
+      "published_at": "2026-10-14T11:46:46+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/6iRATYfkqF7aITPaFR2R?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "Anthropic 因 AI 生成代码量激增而自研版本控制系统的工程复盘，对基础设施团队有借鉴意义。",
+      "summary_zh": "文章讲述 Anthropic 因 Claude 生成代码速度过快，导致现有 Git 版本控制系统不堪重负，最终仅靠 7 人团队在 5 个月内重造了一套版本控制系统。随着 AI 编程助手大幅提升代码产出量，传统工具链在提交频率、仓库规模与合并冲突等方面暴露出瓶颈。文章复盘了这一真实工程挑战背后的设计取舍，为面临类似 AI 驱动开发压力的基础设施团队提供了参考。",
+      "title_zh": "Claude 写代码太快，Git 扛不住了：Anthropic 仅靠 7 人，5 个月重造版本控制系统",
+      "weighted_score": 0.6875,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.75,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "249059df8f4dc81b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/6iRATYfkqF7aITPaFR2R?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "cee79bc3d3fbb983",
+      "source_id": "zh-leiphone",
+      "title": "AI 短剧日产 1500 部：一场全员狂飙下的 「无人生还」",
+      "url": "https://www.leiphone.com/category/ai/M7t0xBzr6K3vaFwi.html",
+      "published_at": "2026-10-14T07:42:00+00:00",
+      "raw_text": "<p><strong>“现在整个短剧行业就是一片混乱，每个人都很焦虑、很迷茫。”</strong></p><p>这是过去一个月里，雷峰网与多位 AI 短剧从业者交流时，听到最多的一句话。</p><p>上个月刚跑通的流程，这个月平台改了分账规则又得重新算账。好不容易摸清了提示词的写法，AI 视频生成工具一更新经验立马作废。甲方的尾款还没到账，下一部剧的制作成本已经垫出去了。</p><p>这个行业节奏快到近乎疯狂，但没人说得清终点和方向。</p><p>眼下，AI 短剧日上线量已突破 1500 部，制作成本从真人剧的几十上百万压缩到五万以内，大批团队仍在涌入赛道。</p><p>可几乎所有受访者传递同一个信号：<strong>除了平台，几乎没人真正赚到钱。</strong></p><h2>01 一部剧的生死，只有三天</h2><p>用传统内容生意的逻辑很难理解 AI 短剧，它更像一场高速运转的概率赌局。</p><p>今年 8 月底，短剧编剧朱晓冉选择从大厂辞职。在真人短剧时代，编剧花一个月打磨本子是常态，但AI 短剧爆发后，她的工作节奏被彻底改写。</p><p>“领导觉得有了 AI 工具，写本效率也该跟着上来。上半年最忙的时候，我一个月交了四个本子。剧本送交承制方后，几天就能产出成片。”</p><p>产量快速拉高，质量却很快摸到了天花板。在朱晓冉看来，纯人工打磨的剧本可以做到九十分甚至一百分，AI 辅助创作的剧本上限大多只有八十分。</p><p>“老板也很清楚这一点，但他更想要四个八十分，而不是一个一百分。” 朱晓冉表示。</p><p><strong>“这个行业现在本质是靠量赌概率，我们统计过 AI 短剧的爆率大概是千分之四，其余的基本都是无效产出。”&nbsp;</strong></p><p>朱晓冉解释了一下这个逻辑，就算前面花六百万拍十部都扑了，只要第十一部赚了七百万覆盖全部亏损，这套商业模式就成立。</p><p>“真人短剧粗制滥造一点三四十万就能拍出来，精品剧的制作费得一百万到一百五十万左右，但现在一部AI短剧的总投入五万就能搞定。”</p><p>分成上，朱晓冉透露通常是编剧几千到一万，制作两三万到三四万，整个环节的总成本被压得极低。</p><p>但产出剧集只是开始，拿到曝光才是整个环节的生死关口。</p><p>“<strong>一部剧上线后，三天内没起量基本就凉了，",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "一线从业者访谈揭示 AI 短剧行业真实生态，对内容创业者有警示与参考价值。",
+      "summary_zh": "雷峰网与多位 AI 短剧从业者交流后发现，行业日上线量已突破 1500 部，制作成本从真人剧的几十上百万压缩至五万以内，但除平台外几乎无人真正盈利。文章指出，平台分账规则频繁变动、AI 视频工具更新导致经验快速失效、甲方回款周期长等问题让从业者普遍焦虑迷茫。一部剧的生死窗口仅三天，整个赛道更像高速运转的概率游戏，团队仍在涌入却说不清终点与方向。",
+      "title_zh": null,
+      "weighted_score": 0.62,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "6df9d11d8859d52e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/M7t0xBzr6K3vaFwi.html"
+        }
+      ]
+    },
+    {
+      "id": "68c37938a628fc21",
+      "source_id": "pandaily",
+      "title": "Tsinghua's SRHarness Helps AI Agents Find Formulas, While MechBench Tests Whether They Grasp Why",
+      "url": "https://pandaily.com/tsinghua-srharness-agentic-symbolic-regression-mechbench-mechanism-discovery",
+      "published_at": "2026-10-14T04:25:11+00:00",
+      "raw_text": "Tsinghua researchers released SRHarness, an open-source runtime for agentic symbolic regression, and MechBench, a benchmark that tests whether AI can recover the mechanisms behind formulas.",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://cms-image.pandaily.com/1/srharness_780e5f47b0.png",
+      "category": "开源项目",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "清华开源符号回归 agent 运行时与机制理解基准，对科学发现类 agent 研究有参考价值。",
+      "summary_zh": "清华大学研究人员发布了 SRHarness，一个用于智能体符号回归的开源运行时，以及 MechBench，一个测试 AI 能否恢复公式背后机制的基准。SRHarness 旨在让 AI agent 自主发现数学公式，而 MechBench 则进一步考察模型是否真正理解公式所描述的物理或数学机制，而非仅拟合数据。两项工作共同指向 AI 在科学发现中的可解释性与因果理解能力，为评估 agent 的科学推理水平提供了新工具。",
+      "title_zh": "清华发布 SRHarness 帮助 AI Agent 发现公式，MechBench 测试其是否理解原理",
+      "weighted_score": 0.7,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "5f696a7f73c29c3d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "pandaily",
+          "url": "https://pandaily.com/tsinghua-srharness-agentic-symbolic-regression-mechbench-mechanism-discovery"
         }
       ]
     }
