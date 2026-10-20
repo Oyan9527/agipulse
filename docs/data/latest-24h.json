@@ -1,586 +1,924 @@
 [
   {
-    "id": "edad0107c458f206",
-    "source_id": "zh-tonybai",
-    "title": "谷歌开源Harness²：不碰权重，让Agent学会了“自我进化”",
-    "url": "https://tonybai.com/2026/10/19/harness2-recursive-agent-harnessing-google-research/",
-    "published_at": "2026-10-19T04:00:00+00:00",
-    "raw_text": "LLM Agent 的能力取决于模型，也取决于包裹模型的执行Harness（harness）。谷歌 Cloud AI Research 提出 Harness²，一个即插即用的“递归式 Agent Harness优化”框架：任务级递归通过“提出—探测—合成”的对照步骤，在没有真值验证器的情况下改进当前任务的Harness；Harness级递归则把改进过程沉淀为经验库，指导后续任务。在 3 个专业基准、4 种“模型—Harness”配置上，单步改进即可稳定提升表现，最高分别达到 WorkBuddy-Bench +11.5、JobBench +4.5、LAB +11.8 个百分点，并随递归预算增加持续上升。",
+    "id": "2cf0413cb4f175ee",
+    "source_id": "marktechpost",
+    "title": "Google Open-Sources TorchTPU, a Native PyTorch Backend for Cloud TPUs",
+    "url": "https://www.marktechpost.com/2026/10/20/google-torchtpu-open-source-native-pytorch-tpu/",
+    "published_at": "2026-10-20T15:22:03+00:00",
+    "raw_text": "<p>Google and Meta open-sourced TorchTPU, a native PyTorch backend for Cloud TPUs. It runs eager by default, compiles through torch.compile and XLA, and replaces PyTorch/XLA for new workloads.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/20/google-torchtpu-open-source-native-pytorch-tpu/\">Google Open-Sources TorchTPU, a Native PyTorch Backend for Cloud TPUs</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
     "category_hint": [
-      "技巧与观点"
+      "模型发布",
+      "产品发布"
     ],
     "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.9,
-    "reason_zh": "谷歌提出Harness²框架，无需微调即可让Agent自我进化，实验提升显著，对Agent工程有重要启发。",
-    "summary_zh": "谷歌Cloud AI Research提出Harness²，一个即插即用的递归式Agent Harness优化框架。任务级递归通过“提出—探测—合成”的对照步骤，在没有真值验证器的情况下改进当前任务的Harness；Harness级递归则将改进过程沉淀为经验库，指导后续任务。在3个专业基准、4种“模型—Harness”配置上，单步改进即可稳定提升表现，最高分别达到WorkBuddy-Bench +11.5、JobBench +4.5、LAB +11.8个百分点，并随递归预算增加持续上升。该工作表明不碰模型权重也能显著提升Agent能力。",
-    "title_zh": "谷歌开源Harness²：不碰权重，让Agent学会“自我进化”",
-    "weighted_score": 0.845,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Google与Meta联合开源TorchTPU，为PyTorch提供原生TPU后端，替代PyTorch/XLA，对使用TPU的开发者有直接价值。",
+    "summary_zh": "Google与Meta联合开源了TorchTPU，这是一个面向Cloud TPU的原生PyTorch后端。它默认以eager模式运行，并通过torch.compile和XLA进行编译，旨在替代现有的PyTorch/XLA方案，用于新工作负载。该后端有望简化在TPU上运行PyTorch模型的流程，提升开发体验和性能。文章介绍了其基本特性和设计目标，但未深入技术细节。",
+    "title_zh": "Google开源TorchTPU：面向Cloud TPU的原生PyTorch后端",
+    "weighted_score": 0.77,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.9,
+      "source_authority": 0.7,
+      "novelty": 0.8,
       "impact": 0.8,
-      "practical_value": 0.9
-    },
-    "story_id": "ad9f609e6136ed6d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-tonybai",
-        "url": "https://tonybai.com/2026/10/19/harness2-recursive-agent-harnessing-google-research/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a1d4cde3e7efe51c",
-    "source_id": "aws-ml-blog",
-    "title": "Improve TTFT for multi-turn agentic workloads with bi-directional KV transfer in vLLM",
-    "url": "https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/",
-    "published_at": "2026-10-19T16:03:23+00:00",
-    "raw_text": "Multi-turn agentic workloads reprocess growing conversation context each turn, driving up latency. See how bi-directional KV cache transfer lets prefill and decode nodes reuse previously computed context across turns, cutting time to first token by up to 1.6x for Qwen3-32B and 3.3x for GLM-5-FP8 on Amazon EC2 P5en instances with EFA.",
-    "category_hint": [
-      "技巧与观点",
-      "产品发布"
-    ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/15/ML-21811-1.png",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "详细讲解vLLM双向KV缓存传输优化多轮agent延迟，含实测数据，对推理工程师实用。",
-    "summary_zh": "AWS博客介绍在vLLM中实现双向KV缓存传输，以优化多轮agentic工作负载的首token延迟（TTFT）。多轮对话每轮都会重复处理不断增长的上下文，导致延迟上升。该方法让prefill节点和decode节点在轮次之间复用已计算的KV缓存，避免重复计算。在配备EFA的Amazon EC2 P5en实例上，Qwen3-32B的TTFT最高提升1.6倍，GLM-5-FP8最高提升3.3倍。文章涵盖架构设计、传输机制与基准测试结果。",
-    "title_zh": "在vLLM中用双向KV传输改善多轮agentic工作负载的TTFT",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
       "practical_value": 0.8
     },
-    "story_id": "93556343338cccaf",
+    "story_id": "43fa922459870c37",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/"
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/10/20/google-torchtpu-open-source-native-pytorch-tpu/"
       }
     ],
     "curated": true
   },
   {
-    "id": "83ef29d5138fbdff",
-    "source_id": "aws-ml-blog",
-    "title": "Push-based KV transfer to improve TTFT and TPOT for disaggregated inference in vLLM",
-    "url": "https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/",
-    "published_at": "2026-10-19T16:05:17+00:00",
-    "raw_text": "vLLM's prefill-decode disaggregation splits LLM inference across engine instances but must transfer the KV cache between them. This post introduces a push-based NIXL connector that moves transfer coordination off the critical path, delivering up to 3x better TTFT and 30% better TPOT in benchmarks on Amazon EC2 P5en instances with AWS EFA.",
+    "id": "5ec7647528c012be",
+    "source_id": "zh-oschina",
+    "title": "DeepSeek 开源推理框架 DeepInfer：服务链路的最后一块拼图",
+    "url": "https://www.oschina.net/news/503116",
+    "published_at": "2026-10-20T10:39:12+00:00",
+    "raw_text": "DeepSeek 把压箱底的推理框架开源了。这次不是模型，是那个决定算力成本和电费多少的中间层——DeepInfer。 推理框架这个角色，普通用户感受不到，但它每天都在起作用。训练让模型「学有所成」，推理让模型「为人所用」——海量用户调用时，是推理框架在统筹调度庞大的算力集群，它的效率直接决定 AI 服务的算力成本和电...",
     "category_hint": [
-      "技巧与观点",
-      "产品发布"
+      "开源项目"
     ],
-    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/15/ML-21812-1.png",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "深度分析",
     "depth_score": 0.7,
-    "reason_zh": "介绍vLLM推式KV传输连接器，将协调移出关键路径，显著提升分离式推理性能，工程价值高。",
-    "summary_zh": "AWS博客介绍vLLM中一种基于推模式的NIXL连接器，用于prefill-decode分离式推理中的KV缓存传输。分离式架构将LLM推理拆分到不同引擎实例，但必须在实例间传输KV缓存。传统拉模式传输的协调逻辑位于关键路径上，增加延迟。新方案将传输协调从关键路径移开，由发送方主动推送。在配备AWS EFA的Amazon EC2 P5en实例上基准测试显示，TTFT最高改善3倍，TPOT改善30%。",
-    "title_zh": "基于推的KV传输提升vLLM分离式推理的TTFT与TPOT",
-    "weighted_score": 0.725,
+    "reason_zh": "DeepSeek开源推理框架DeepInfer，直接关系算力成本与服务效率，对部署LLM的工程师价值高。",
+    "summary_zh": "文章介绍DeepSeek开源其推理框架DeepInfer，强调这次开源的并非模型，而是决定算力成本与电费开销的中间层。文中指出推理框架虽不被普通用户感知，却负责在海量调用时统筹调度算力集群，其效率直接影响AI服务的成本与响应。内容围绕DeepInfer在服务链路中的定位、调度与优化思路展开，说明它如何补齐从训练到实际部署的最后一块拼图，并讨论其对降低推理成本、提升资源利用率的意义。",
+    "title_zh": null,
+    "weighted_score": 0.7575,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.75,
       "practical_value": 0.8
     },
-    "story_id": "4eca816338ebabe4",
+    "story_id": "ac6679aa95496efa",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "aws-ml-blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/"
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/503116"
       }
     ],
     "curated": true
   },
   {
-    "id": "c60f1d57af6e3985",
+    "id": "2abf8c7da8fad421",
     "source_id": "pytorch-blog",
-    "title": "Introducing TorchNeuron: Native PyTorch backend for AWS Trainium",
-    "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
-    "published_at": "2026-10-19T12:45:23+00:00",
-    "raw_text": "<p>Frontier models span language, video and audio, on architectures from dense and mixture-of-experts transformers to diffusion, state-space, world and structure-prediction models. PyTorch is where AI research happens, where the models...</p>\n<p>The post <a href=\"https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/\">Introducing TorchNeuron: Native PyTorch backend for AWS Trainium</a> appeared first on <a href=\"https://pytorch.org\">PyTorch</a>.</p>",
+    "title": "Introducing TorchTPU",
+    "url": "https://pytorch.org/blog/introducing-torchtpu/",
+    "published_at": "2026-10-20T16:02:30+00:00",
+    "raw_text": "<p>TL;DR TorchTPU is an open source collaboration between Google and Meta that introduces a native and principled PyTorch backend for Google TPUs. It enables seamless out-of-the-box model execution and TPU...</p>\n<p>The post <a href=\"https://pytorch.org/blog/introducing-torchtpu/\">Introducing TorchTPU</a> appeared first on <a href=\"https://pytorch.org\">PyTorch</a>.</p>",
     "category_hint": [
       "开源项目",
       "技巧与观点"
     ],
-    "image_url": "https://pytorch.org/wp-content/uploads/2026/10/AWS-TorchNeuron-image-1.png",
+    "image_url": "https://pytorch.org/wp-content/uploads/2026/10/image-with-text-scaled.jpg",
     "category": "开源项目",
     "content_type": "产品发布",
     "depth_score": 0.35,
-    "reason_zh": "PyTorch 官方博客介绍 AWS Trainium 的原生后端，对在非英伟达硬件上跑训练的工程师有直接参考价值。",
-    "summary_zh": "PyTorch 官方博客宣布推出 TorchNeuron，为 AWS Trainium 芯片提供原生 PyTorch 后端。文章指出，前沿模型已覆盖语言、视频、音频，架构从稠密与 MoE Transformer 扩展到扩散模型、状态空间模型、世界模型与结构预测模型，而 PyTorch 是这些研究的主要发生地。TorchNeuron 的目标是让研究者和工程师无需离开 PyTorch 生态即可在 Trainium 上训练与运行模型，从而降低跨硬件迁移成本。对关注训练成本与硬件多元化的团队而言，这是值得评估的新选项。",
-    "title_zh": "推出 TorchNeuron：AWS Trainium 的原生 PyTorch 后端",
-    "weighted_score": 0.72,
+    "reason_zh": "Google与Meta合作推出PyTorch原生TPU后端，对跨硬件训练部署有实际意义。",
+    "summary_zh": "Google与Meta合作开源TorchTPU，为Google TPU提供原生且规范的PyTorch后端。该项目支持模型开箱即用地在TPU上执行，简化了原本需要额外适配的流程。此举有望降低PyTorch生态用户使用TPU的门槛，推动训练与推理在非GPU硬件上的可移植性，是跨框架与硬件协同的重要一步。",
+    "title_zh": "推出TorchTPU",
+    "weighted_score": 0.7575,
     "score_breakdown": {
       "source_authority": 0.85,
-      "novelty": 0.7,
-      "impact": 0.6,
+      "novelty": 0.75,
+      "impact": 0.7,
       "practical_value": 0.7
     },
-    "story_id": "ef0b721edb2f171a",
+    "story_id": "a6dcf59f73a41b79",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "pytorch-blog",
-        "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/"
+        "url": "https://pytorch.org/blog/introducing-torchtpu/"
       }
     ],
     "curated": true
   },
   {
-    "id": "33390639e59f4c45",
-    "source_id": "towards-data-science",
-    "title": "Welcome to Google Gemini 4 Argon",
-    "url": "https://towardsdatascience.com/welcome-to-google-gemini-4-argon/",
-    "published_at": "2026-10-19T15:30:00+00:00",
-    "raw_text": "<p>A million-token output window changes what you can hand a model in one go, and the benchmarks and the bill show who it actually suits.</p>\n<p>The post <a href=\"https://towardsdatascience.com/welcome-to-google-gemini-4-argon/\">Welcome to Google Gemini 4 Argon</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+    "id": "09e62eb15568147b",
+    "source_id": "zh-meituan-tech",
+    "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
+    "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
+    "published_at": "2026-10-20T20:19:23.533830+00:00",
+    "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
     "category_hint": [
-      "论文研究",
-      "行业动态"
+      "技巧与观点"
     ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "深度分析",
-    "depth_score": 0.5,
-    "reason_zh": "分析Gemini 4 Argon百万token输出窗口的实际影响，结合基准与成本讨论适用人群。",
-    "summary_zh": "文章介绍Google Gemini 4 Argon，重点讨论其百万token输出窗口带来的变化：一次可交给模型的上下文规模显著扩大。作者结合基准测试结果与实际调用成本，分析该能力适合哪些使用场景与用户群体，并指出长输出在费用与实用性上的权衡。属于对新模型能力的解读性分析。",
-    "title_zh": "欢迎来到Google Gemini 4 Argon",
-    "weighted_score": 0.65,
+    "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.75,
+    "reason_zh": "BrowseComp等基准已饱和，美团用知识图谱校准搜索Agent评测，开源基准值得关注。",
+    "summary_zh": "美团开源下一代搜索智能体评测基准LoHoSearch。文章指出，过去一年Search Agent能力快速演进，BrowseComp等基准上顶尖模型准确率已从30%区间升至90%以上，基准饱和导致其区分模型能力的价值递减。LoHoSearch借助知识图谱构建评测任务，用以校准对AI能力的认知，提供更难、更具区分度的评测维度，并开源供社区使用。",
+    "title_zh": null,
+    "weighted_score": 0.755,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
+      "source_authority": 0.8,
+      "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.6
+      "practical_value": 0.7
     },
-    "story_id": "2ca97d3b96db81da",
-    "multi_source_count": 7,
+    "story_id": "eb00a4db4521a3f4",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/four-gemini-4-argon-agents-beat-minecraft-without-any-human-help/"
-      },
-      {
-        "source_id": "reddit-geminiai",
-        "url": "https://www.reddit.com/r/GoogleGeminiAI/comments/1x9ltcn/new_updates_on_gemini_4_carbon_model/"
-      },
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/LkxBOvOJWmQGMQemUOrX?utm_source=rss&utm_medium=article"
-      },
-      {
-        "source_id": "reddit-artificial",
-        "url": "https://www.reddit.com/r/artificial/comments/1x9ylgf/ai_this_week_oct_1218_meta_ships_new_models/"
-      },
-      {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1x9ywfa/octobers_ai_model_wars_are_heating_up_the/"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/1/015/048.htm"
-      },
-      {
-        "source_id": "towards-data-science",
-        "url": "https://towardsdatascience.com/welcome-to-google-gemini-4-argon/"
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
       }
     ],
     "curated": true
   },
   {
-    "id": "fcf776a502b8fc5c",
-    "source_id": "marktechpost",
-    "title": "MiniMax Just Launched M3.1 Flash: 428B MoE Agentic Model at $0.15/M Input",
-    "url": "https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/",
-    "published_at": "2026-10-19T12:37:58+00:00",
-    "raw_text": "<p>MiniMax has released M3.1 Flash, a 428B-parameter MoE model with about 23B active parameters and a 1M-token context. API pricing is $0.15/$0.60 per 1M tokens, with weights due October 23</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/\">MiniMax Just Launched M3.1 Flash: 428B MoE Agentic Model at $0.15/M Input</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "id": "4eb9f7080b11166e",
+    "source_id": "huggingface-blog",
+    "title": "NVIDIA Cosmos3-H-Dreams: Bringing Clinical Surgery to Life Through Generative Simulation",
+    "url": "https://huggingface.co/blog/nvidia/cosmos3-h-dreams",
+    "published_at": "2026-10-20T18:17:47+00:00",
+    "raw_text": "",
     "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.15,
-    "reason_zh": "MiniMax M3.1 Flash 的规格与定价汇总，信息较完整，适合快速了解该模型定位。",
-    "summary_zh": "MiniMax 发布 M3.1 Flash，这是一个 428B 参数的 MoE 模型，激活参数约 23B，支持 100 万 token 上下文。API 定价为每百万 token 输入 0.15 美元、输出 0.60 美元，模型权重计划于 10 月 23 日放出。报道将其定位为面向 agent 场景的模型，并强调了其超长上下文与低价策略。内容以发布参数与价格信息为主，未包含独立评测或技术架构的深入分析。",
-    "title_zh": "MiniMax 发布 M3.1 Flash：428B MoE 智能体模型，输入每百万 token 0.15 美元",
-    "weighted_score": 0.635,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.65
-    },
-    "story_id": "eb7c92477cceffb4",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/"
-      },
-      {
-        "source_id": "reddit-artificial",
-        "url": "https://www.reddit.com/r/artificial/comments/1xa2hjl/minimax_ships_428b_moe_model_m31_flash_at_015_per/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "ea382cae6309df60",
-    "source_id": "the-decoder",
-    "title": "MiniMax M3.1 Flash shows China's AI price race has no floor in sight",
-    "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/",
-    "published_at": "2026-10-19T18:22:30+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1152\" src=\"https://the-decoder.com/wp-content/uploads/2026/10/minimax.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"2048\" /></p>\n<p>        MiniMax's M3.1 Flash jumps 13 points over its predecessor to 42 on the Artificial Analysis Intelligence Index, at half the cost. It also hits 73.7 percent on the DeepSWE v1.1 coding benchmark for under $0.30 per task, matching Deepseek V4.1 Flash 1017 on both performance and price.</p>\n<p>The article <a href=\"https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/\">MiniMax M3.1 Flash shows China&#039;s AI price race has no floor in sight</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "行业动态"
-    ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/minimax.png",
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.25,
-    "reason_zh": "MiniMax M3.1 Flash 以一半成本提升 13 分，是观察中国大模型价格战的一个切面。",
-    "summary_zh": "The Decoder 报道，MiniMax 的 M3.1 Flash 在 Artificial Analysis 智能指数上比前代提升 13 分达到 42 分，而成本仅为一半；在 DeepSWE v1.1 编码基准上取得 73.7% 的成绩。文章以此说明中国大模型厂商的价格竞争仍未见底，性能提升与降价同时发生。内容以基准数据和价格对比为主，未深入讨论模型架构或训练方法。",
-    "title_zh": "MiniMax M3.1 Flash 显示中国 AI 价格战远未见底",
-    "weighted_score": 0.555,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.5
-    },
-    "story_id": "5cfa46c5c55ca102",
-    "multi_source_count": 4,
-    "sources": [
-      {
-        "source_id": "vercel-blog",
-        "url": "https://vercel.com/changelog/minimax-m3-1-flash-now-available-on-ai-gateway-for-free"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1x9uzv9/minimax_m31_flash_released_model_weights_oct_23/"
-      },
-      {
-        "source_id": "zh-v2ex",
-        "url": "https://www.v2ex.com/t/1250114#reply3"
-      },
-      {
-        "source_id": "the-decoder",
-        "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6a7557beacb46787",
-    "source_id": "vercel-blog",
-    "title": "Mercury 3 now available on AI Gateway",
-    "url": "https://vercel.com/changelog/mercury-3-now-available-on-ai-gateway",
-    "published_at": "2026-10-19T00:00:00+00:00",
-    "raw_text": "<p><a href=\"https://vercel.com/ai-gateway/models/mercury-3\">Mercury 3 from Inception</a> is now available on AI Gateway with 50% off launch pricing. Inception reports strong results across a range of benchmarks, with generation speeds above 1,000 tokens per second.</p><p>Mercury 3 uses diffusion to generate text through parallel refinement. It brings improved reasoning to latency-sensitive workloads such as browser agents, real-time search, interactive education, and customer support. A 1M-token context window gives those applications room for long documents and extended conversation histories.</p><p>Set <code>AI_GATEWAY_API_KEY</code> in your environment. Use <code>inception/mercury-3</code> as the model name:</p><div></div><p>To use it in Claude Code, Codex, Cursor, and more, install the latest Vercel CLI and run setup:</p><div></div><p>Then select <code>inception/mercury-3</code> in the agent. See the <a href=\"https://vercel.com/docs/ai-gateway/coding-agents\">coding agents guide</a>",
-    "category_hint": [
+      "开源项目",
       "产品发布"
     ],
     "image_url": null,
     "category": "产品发布",
     "content_type": "产品发布",
-    "depth_score": 0.15,
-    "reason_zh": "Mercury 3 上线 AI Gateway 并半价，扩散式文本生成与千 token 每秒速度对延迟敏感场景有吸引力。",
-    "summary_zh": "Vercel 宣布 Inception 的 Mercury 3 模型已在其 AI Gateway 上线，并提供五折的发布期价格。据 Inception 披露，该模型在多项基准测试中表现良好，生成速度超过每秒 1000 token。Mercury 3 采用扩散方式生成文本，通过并行细化逐步产出结果，并在推理能力上有所提升，主要面向对延迟敏感的工作负载。",
-    "title_zh": "Mercury 3 现已上线 AI Gateway",
-    "weighted_score": 0.495,
+    "depth_score": 0.3,
+    "reason_zh": "NVIDIA推出医疗手术生成式仿真模型，展示AI在临床培训中的创新应用。",
+    "summary_zh": "NVIDIA发布Cosmos3-H-Dreams模型，利用生成式仿真技术将临床手术场景生动呈现。该模型能够生成逼真的手术过程模拟，旨在辅助医学教育和手术规划。通过结合生成式AI与医疗数据，该技术有望提升手术培训的效率和安全性，为医疗行业带来新的可能性。",
+    "title_zh": "NVIDIA Cosmos3-H-Dreams：通过生成式仿真让临床手术栩栩如生",
+    "weighted_score": 0.735,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.6
+    },
+    "story_id": "faf70313bc67cd53",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "huggingface-blog",
+        "url": "https://huggingface.co/blog/nvidia/cosmos3-h-dreams"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "dca2db5ccf1527ff",
+    "source_id": "databricks-blog",
+    "title": "MemCurrent: Designing Persistent Memory for Production Agents",
+    "url": "https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents",
+    "published_at": "2026-10-20T18:15:47+00:00",
+    "raw_text": "AI tools have made it easy to vibe code agents. Building and maintaining an enterprise...",
+    "category_hint": [
+      "产品发布",
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "Databricks博客深入探讨生产级智能体的持久记忆设计，含架构取舍与实战经验，对工程师很有启发。",
+    "summary_zh": "Databricks博客发表文章《MemCurrent：为生产级智能体设计持久记忆》，探讨如何为AI智能体构建持久记忆系统。文章指出，虽然AI工具让编写智能体变得容易，但企业级部署需要可靠的记忆管理。作者可能分享了MemCurrent的设计思路、架构选择以及在生产环境中遇到的挑战和解决方案，涉及记忆存储、检索和一致性等关键问题。内容面向工程师，旨在提供可复用的设计模式和避坑指南。",
+    "title_zh": "MemCurrent：为生产级智能体设计持久记忆",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "79c7c0c3be682893",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "databricks-blog",
+        "url": "https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "855633a1e3c97fea",
+    "source_id": "the-decoder",
+    "title": "Deepseek open-sources the inference engine that powers its fastest and cheapest AI model",
+    "url": "https://the-decoder.com/deepseek-open-sources-the-inference-engine-that-powers-its-fastest-and-cheapest-ai-model/",
+    "published_at": "2026-10-20T18:56:15+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/08/deepseek_deepseek_logo.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Deepseek is open-sourcing DeepInfer, the inference framework behind its fast V4.1-Flash model. The vLLM-based system cuts compute costs and energy use when running AI models. The release adds more pricing pressure on Western providers like OpenAI and Anthropic.</p>\n<p>The article <a href=\"https://the-decoder.com/deepseek-open-sources-the-inference-engine-that-powers-its-fastest-and-cheapest-ai-model/\">Deepseek open-sources the inference engine that powers its fastest and cheapest AI model</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "行业动态"
+    ],
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/08/deepseek_deepseek_logo.png",
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "DeepSeek 开源推理框架 DeepInfer，对自建推理服务的团队有直接降本价值。",
+    "summary_zh": "DeepSeek 将其最快、最便宜模型 V4.1-Flash 背后的推理框架 DeepInfer 开源。该系统基于 vLLM 构建，针对推理过程做了优化，可降低运行 AI 模型时的算力成本与能耗。开源推理栈意味着企业可以复现 DeepSeek 的服务效率，在自建部署中直接受益。报道未展开具体优化手段与性能对比数据，但框架本身对关注推理成本与吞吐的工程团队具有较高实用价值。",
+    "title_zh": "DeepSeek 开源驱动其最快最便宜模型的推理引擎",
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.7,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "08ac76c2426a7baf",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/us-bans-deepseek-technology-across-federal-civilian-agencies/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/deepseek-open-sources-the-inference-engine-that-powers-its-fastest-and-cheapest-ai-model/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/elevenlabs-releases-two-new-speech-to-speech-models-designed-for-real-time-ai-conversations/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "6064b6036f129ffd",
+    "source_id": "zh-meituan-tech",
+    "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
+    "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
+    "published_at": "2026-10-20T20:19:23.533791+00:00",
+    "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.85,
+    "reason_zh": "美团两年实战打磨的Agent评测体系，从概念到落地，工程团队可直接借鉴的方法论。",
+    "summary_zh": "美团图灵Agent评测团队撰写的科普文章，由浅入深讲解Agent评测。前两章系统介绍评测的本质与如何建立评测体系，其中第二章是团队深入美团各业务线BP、历经两年实践打磨出的经验总结，涵盖评测指标设计、数据构建与流程落地等环节。文章强调评测不只是打分，而是校准对模型能力的认知，帮助读者理解如何为Agent这类多步、开放的任务设计可复现、可迭代的评测框架。",
+    "title_zh": null,
+    "weighted_score": 0.72,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.6,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "9ba181dd6f145810",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-meituan-tech",
+        "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "34b84ef907f5fd9b",
+    "source_id": "interconnects",
+    "title": "Latest open artifacts (#25): DeepSeek V4.1 Flash 1017, American-made models, and new regulatory controls in the US & China",
+    "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek",
+    "published_at": "2026-10-20T17:04:21+00:00",
+    "raw_text": "Western open models strike back",
+    "category_hint": [
+      "技巧与观点",
+      "论文研究"
+    ],
+    "image_url": "https://substackcdn.com/image/fetch/$s_!ptGw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd500e8ff-94e8-4cf5-b99d-5d9aac7f0a8a_1024x768.png",
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "汇总最新开源模型动态与中美监管变化，信息密度高。",
+    "summary_zh": "Interconnects 的“Latest open artifacts”系列第 25 期，盘点了近期开源模型的重要进展，包括 DeepSeek V4.1 Flash 1017 的发布、美国制造的开源模型崛起，以及美国和中国在 AI 监管方面的新控制措施。文章对开源生态的趋势和地缘政治影响进行了分析，为读者提供了一周内关键动态的全面概览。",
+    "title_zh": "最新开源成果（#25）：DeepSeek V4.1 Flash 1017、美国制造模型及中美新监管控制",
+    "weighted_score": 0.665,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.5
+    },
+    "story_id": "26569434a8b5171c",
+    "multi_source_count": 3,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xap2aq/vals_ai_found_deepseek_v41_flash_1017_beats_gpt_6/"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/openai-says-gpt-6-is-much-better-with-legacy-programming-languages-such-as-cobol-and-fortran/"
+      },
+      {
+        "source_id": "interconnects",
+        "url": "https://www.interconnects.ai/p/latest-open-artifacts-25-deepseek"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "719dde97a60035df",
+    "source_id": "tnw-deep-tech",
+    "title": "Inception says its Mercury 3 model beats GPT-6 Luna and runs far faster",
+    "url": "https://thenextweb.com/news/inception-mercury-3-diffusion-llm",
+    "published_at": "2026-10-20T15:39:44+00:00",
+    "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/10/mercury3-introducing-hero-inception.avif\" width=\"868\" /><br /><p>Inception, the Redwood City AI lab, released Mercury 3 on Monday. It is the newest version of what the company calls a diffusion LLM, a design that differs from the systems behind most chatbots. Most language models are autoregressive. They write one token at a time, each one chosen after the last. A diffusion model [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/inception-mercury-3-diffusion-llm?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
+    "category_hint": [
+      "行业动态"
+    ],
+    "image_url": "https://media.thenextweb.com/2026/10/mercury3-introducing-hero-inception.avif",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Inception发布扩散LLM Mercury 3，宣称性能超越GPT-6 Luna且速度更快，属模型发布新闻。",
+    "summary_zh": "Redwood City的AI实验室Inception于周一发布Mercury 3，这是其所谓扩散LLM的最新版本。与大多数逐token生成的自回归模型不同，扩散LLM采用不同的生成机制。公司宣称Mercury 3在性能上超越GPT-6 Luna，且运行速度远快于后者。文章介绍了该模型的基本定位和差异化设计，但未提供详细基准测试数据或技术论文，属于产品发布公告。",
+    "title_zh": "Inception称其Mercury 3模型超越GPT-6 Luna且运行快得多",
+    "weighted_score": 0.635,
     "score_breakdown": {
       "source_authority": 0.6,
-      "novelty": 0.5,
-      "impact": 0.4,
-      "practical_value": 0.45
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.4
     },
     "story_id": "c2c9d95c2c0b2734",
-    "multi_source_count": 2,
+    "multi_source_count": 4,
     "sources": [
       {
         "source_id": "vercel-blog",
         "url": "https://vercel.com/changelog/mercury-3-now-available-on-ai-gateway"
       },
       {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1xa30cc/mercury_3_inception_labs_matching_lunahaiku_at/"
+        "source_id": "tldr-ai",
+        "url": "https://tldr.tech/ai/2026-10-20"
+      },
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/"
+      },
+      {
+        "source_id": "tnw-deep-tech",
+        "url": "https://thenextweb.com/news/inception-mercury-3-diffusion-llm"
       }
     ],
     "curated": true
   },
   {
-    "id": "b0fffd18b783638e",
-    "source_id": "reddit-ollama",
-    "title": "Qwen3-4B in 1.24 GB at perplexity 16.6 (IQ2_XXS at the same size: 28.6) - a tiny 8-state trellis quant for llama.cpp",
-    "url": "https://www.reddit.com/r/ollama/comments/1xa6xm8/qwen34b_in_124_gb_at_perplexity_166_iq2_xxs_at/",
-    "published_at": "2026-10-19T19:45:27+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ollama/comments/1xa6xm8/qwen34b_in_124_gb_at_perplexity_166_iq2_xxs_at/\"> <img alt=\"Qwen3-4B in 1.24 GB at perplexity 16.6 (IQ2_XXS at the same size: 28.6) - a tiny 8-state trellis quant for llama.cpp\" src=\"https://external-preview.redd.it/HgtuYMREURV-4PMIrGecdcvw9TfOdjDbF3PJeeWkMFM.png?width=140&amp;height=75&amp;auto=webp&amp;s=bca47f93e837636223c75fe6c463386649736224\" title=\"Qwen3-4B in 1.24 GB at perplexity 16.6 (IQ2_XXS at the same size: 28.6) - a tiny 8-state trellis quant for llama.cpp\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/GenriusAI\"> /u/GenriusAI </a> <br /> <span><a href=\"/r/LocalLLM/comments/1xa6x2u/qwen34b_in_124_gb_at_perplexity_166_iq2_xxs_at/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/ollama/comments/1xa6xm8/qwen34b_in_124_gb_at_perplexity_166_iq2_xxs_at/\">[comments]</a></span> </td></tr></table>",
+    "id": "d15be0f1bc9c6bf1",
+    "source_id": "toms-hardware",
+    "title": "China’s tech giants drop $35 billion on export-compliant Nvidia RTX Pro 5500 workstation GPU orders to power AI ambitions, according to reports",
+    "url": "https://www.tomshardware.com/pc-components/gpus/chinas-tech-giants-drop-usd35-billion-on-export-compliant-nvidia-rtx-pro-5500-workstation-gpu-orders-to-power-ai-ambitions-according-to-reports-bytedance-alibaba-and-tencent-order-3-million-cards-despite-warnings-that-only-10-percent-of-orders-are-fulfillable",
+    "published_at": "2026-10-20T12:10:00+00:00",
+    "raw_text": "$35 billion worth of Nvidia RTX Pro 5500 GPUs have been bought by Chinese trio Tencent, Alibaba and ByteDance, with demand far exceeding Nvidia's planned production, according to report.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://cdn.mos.cms.futurecdn.net/ZQ7uixLax7MyxKpVHFVxEC-1920-80.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "报道中国科技巨头采购350亿美元合规Nvidia GPU，反映AI算力需求与出口管制影响。",
+    "summary_zh": "据Tom's Hardware报道，腾讯、阿里巴巴和字节跳动已向Nvidia订购价值350亿美元的RTX Pro 5500工作站GPU，该型号符合美国出口管制要求。需求远超Nvidia原定产量。此举凸显中国科技巨头在出口限制下仍竭力获取算力以推进AI野心，也反映合规芯片在市场上的紧俏程度。",
+    "title_zh": "中国科技巨头斥资350亿美元采购合规Nvidia RTX Pro 5500工作站GPU以推动AI雄心",
+    "weighted_score": 0.615,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.7,
+      "practical_value": 0.4
+    },
+    "story_id": "dbd730670c762025",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "zh-leiphone",
+        "url": "https://www.leiphone.com/category/chips/STx9ZzfDNh5W80Bm.html"
+      },
+      {
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/pc-components/gpus/chinas-tech-giants-drop-usd35-billion-on-export-compliant-nvidia-rtx-pro-5500-workstation-gpu-orders-to-power-ai-ambitions-according-to-reports-bytedance-alibaba-and-tencent-order-3-million-cards-despite-warnings-that-only-10-percent-of-orders-are-fulfillable"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "cb7aac6dae119f41",
+    "source_id": "infoq-cn-ai",
+    "title": "突破长文本推理瓶颈 九章云极Alaya-DFlash2助GLM-5.3解码提速3.41倍",
+    "url": "https://www.infoq.cn/article/mJ5udryLFwjov1pk4Dsq?utm_source=rss&utm_medium=article",
+    "published_at": "2026-10-20T15:07:31+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/mJ5udryLFwjov1pk4Dsq?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "长文本推理加速的工程优化案例，对推理部署从业者有参考，但偏产品宣传口径。",
+    "summary_zh": "九章云极发布 Alaya-DFlash2，针对长文本推理场景的解码瓶颈进行优化，官方称在 GLM-5.3 上实现 3.41 倍解码提速。报道将其定位为突破长上下文推理效率瓶颈的方案，主要面向需要处理超长输入的企业推理部署场景。文章以性能数字和产品能力介绍为主，未详细展开具体算法机制与实验设置，读者可关注其在实际负载下的复现效果与兼容性。",
+    "title_zh": null,
+    "weighted_score": 0.5875,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.65,
+      "impact": 0.5,
+      "practical_value": 0.6
+    },
+    "story_id": "bded7af8c795c3a2",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-ollama",
+        "url": "https://www.reddit.com/r/ollama/comments/1xafqyo/help_with_glm_53_flash_looping_on_codex_harness/"
+      },
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/mJ5udryLFwjov1pk4Dsq?utm_source=rss&utm_medium=article"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "3d7d16c057fb39fb",
+    "source_id": "infoq-cn-ai",
+    "title": "比 Opus 5.5 便宜 88 倍！MiniMax M3.1 Flash “杀“回王座，顺手拿了个  Agent 国模第一",
+    "url": "https://www.infoq.cn/article/7Twa7KBWIzi8JGOdVwCK?utm_source=rss&utm_medium=article",
+    "published_at": "2026-10-21T00:26:48+00:00",
+    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/7Twa7KBWIzi8JGOdVwCK?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "MiniMax新模型主打极致性价比与Agent能力排名，关注国产模型价格战的读者可速览。",
+    "summary_zh": "InfoQ报道MiniMax发布M3.1 Flash模型，主打极致性价比，宣称价格比Opus 5.5便宜88倍，同时在Agent相关评测中取得国产模型第一的成绩。文章围绕价格优势与榜单表现展开，强调其在Agent场景下的竞争力。内容以发布信息与对比数据为主，未深入展开技术架构或训练细节，属于模型发布类快讯。",
+    "title_zh": null,
+    "weighted_score": 0.5675,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.6,
+      "impact": 0.55,
+      "practical_value": 0.5
+    },
+    "story_id": "5cfa46c5c55ca102",
+    "multi_source_count": 5,
+    "sources": [
+      {
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/minimax-m3-1-flash-now-available-on-ai-gateway-for-free"
+      },
+      {
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/minimax-m3-1-flash-shows-chinas-ai-price-race-has-no-floor-in-sight/"
+      },
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1xalh1z/minimax_m31_flash_new_release/"
+      },
+      {
+        "source_id": "reddit-ollama",
+        "url": "https://www.reddit.com/r/ollama/comments/1xb1sje/minimax_m31_flash_free_until_october_22/"
+      },
+      {
+        "source_id": "infoq-cn-ai",
+        "url": "https://www.infoq.cn/article/7Twa7KBWIzi8JGOdVwCK?utm_source=rss&utm_medium=article"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "86bfa478dd859c31",
+    "source_id": "google-cloud-ai",
+    "title": "Claude Opus 5.5 and Claude Sonnet 5.5 are now available in Google Antigravity",
+    "url": "https://cloud.google.com/blog/products/ai-machine-learning/claude-opus-55-and-claude-sonnet-55-available-in-antigravity/",
+    "published_at": "2026-10-20T16:00:00+00:00",
+    "raw_text": "<div class=\"block-paragraph\"><p>Whether you are iterating on a quick bug fix or planning a complex migration, different tasks call for different models.</p><p>In keeping with Google Cloud's commitment to an open ecosystem and to give developers the right model for every job, <b>Claude Opus 5.5 and Claude Sonnet 5.5 are now available in Google Antigravity for Google Cloud customers.</b> Claude Opus 5.5 is built for complex work while Claude Sonnet 5.5 is a faster, lower-cost complement.</p><p>Once enabled by an administrator, developers can select Claude Opus 5.5 and Sonnet 5.5 directly from the model picker. Administrators can also select Google’s Gemini models, including Gemini 3.8 Flash and Gemini 4 Argon. The models apply across Antigravity 2.0, Antigravity CLI and our recently released <a href=\"https://antigravity.google/docs/ide/extensions/\" target=\"_blank\">Antigravity IDE extensions</a> for VS Code, JetBrains IntelliJ, and Visual Studio. This lets you choose the right model for t",
+    "category_hint": [
+      "产品发布",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "Google Antigravity上架Claude新模型，属平台更新公告，信息价值有限。",
+    "summary_zh": "Google Cloud宣布Claude Opus 5.5和Claude Sonnet 5.5已在Google Antigravity中面向Google Cloud客户提供。公告称不同任务需要不同模型，此举体现Google Cloud对开放生态的承诺，让开发者按任务选择合适模型。内容为产品可用性更新，未涉及模型能力细节或基准数据。",
+    "title_zh": "Claude Opus 5.5与Claude Sonnet 5.5现已登陆Google Antigravity",
+    "weighted_score": 0.565,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.4,
+      "impact": 0.5,
+      "practical_value": 0.5
+    },
+    "story_id": "0a4dcc19219b1c44",
+    "multi_source_count": 4,
+    "sources": [
+      {
+        "source_id": "reddit-geminiai",
+        "url": "https://www.reddit.com/r/GoogleGeminiAI/comments/1xa9vy0/gemini_argon_beats_opus_55_in_2026_icpc_xian/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xatxqk/qwen38flashnext_vs_opus_55_sixway_benchmark_on_a/"
+      },
+      {
+        "source_id": "google-cloud-ai",
+        "url": "https://cloud.google.com/blog/products/ai-machine-learning/claude-opus-55-and-claude-sonnet-55-available-in-antigravity/"
+      },
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xawud5/qwen38flashnext_vs_opus_55_sixway_benchmark_of_a/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "0d1987019a82b5e9",
+    "source_id": "reddit-comfyui",
+    "title": "FastH3 Omni is out with day-0 ComfyUI support: open weights, up to 11.9x faster reference-to-video",
+    "url": "https://www.reddit.com/r/comfyui/comments/1xb2xz6/fasth3_omni_is_out_with_day0_comfyui_support_open/",
+    "published_at": "2026-10-20T20:16:07+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We just open-sourced FastH3 OmniRef from the FastVideo team at Hao AI Lab, and it works in ComfyUI from day one.</p> <p>- Feed it a prompt plus your own references (images, short video clips, a voice) and get a finished video with synced sound<br /> - 8 steps instead of 50, up to 11.9x faster than base MiniMax-H3<br /> - Open weights + training code</p> <p>Links:<br /> - Models: <a href=\"https://huggingface.co/collections/FastVideo/fasth3-omni\">https://huggingface.co/collections/FastVideo/fasth3-omni</a><br /> - Blog: <a href=\"https://haoailab.com/blogs/fastvideo-omniref-update/\">https://haoailab.com/blogs/fastvideo-omniref-update/</a><br /> - Code: <a href=\"https://github.com/hao-ai-lab/FastVideo\">https://github.com/hao-ai-lab/FastVideo</a></p> <p>Big thanks to NVIDIA, Nuva Lab, Reactor, and the ComfyUI team for helping make this happen. Open source must win!</p> <p>Full local blog drops tomorrow. Would love to see what you build with it, drop your wo",
     "category_hint": [
       "开源项目",
       "技巧与观点"
     ],
-    "image_url": "https://external-preview.redd.it/HgtuYMREURV-4PMIrGecdcvw9TfOdjDbF3PJeeWkMFM.png?width=140&height=75&auto=webp&s=bca47f93e837636223c75fe6c463386649736224",
+    "image_url": null,
     "category": "开源项目",
-    "content_type": "教程方法",
-    "depth_score": 0.5,
-    "reason_zh": "提出一种极低比特量化方法，在1.24GB下实现Qwen3-4B困惑度16.6，优于IQ2_XXS。",
-    "summary_zh": "该帖子介绍了一种用于llama.cpp的微型8状态网格量化方法，将Qwen3-4B模型压缩到1.24GB，困惑度达到16.6，而相同大小的IQ2_XXS量化困惑度为28.6。这表明新方法在极低比特下显著提升了模型质量。帖子可能包含技术细节和对比数据，对于本地部署和模型压缩感兴趣的用户具有参考价值。该方法有望推动在资源受限设备上运行更大模型的可能性。",
-    "title_zh": "Qwen3-4B在1.24 GB下困惑度16.6（同尺寸IQ2_XXS为28.6）——一种用于llama.cpp的微型8状态网格量化",
-    "weighted_score": 0.485,
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "开源参考生视频模型，8 步出片、提速 11.9 倍，ComfyUI 首日可用。",
+    "summary_zh": "FastVideo 团队（Hao AI Lab）开源了 FastH3 OmniRef，并在发布首日即支持 ComfyUI。用户输入提示词以及自己的参考素材（图片、短视频片段、声音），即可生成带同步音效的完整视频。该模型只需 8 步采样，相比基础版 MiniMax-H3 最高提速 11.9 倍，同时开放权重与训练代码。帖子给出了相关链接，属于面向创作者的开源模型发布信息，实用性强但技术细节有限。",
+    "title_zh": "FastH3 Omni 发布并首日支持 ComfyUI：开放权重，参考生视频最高提速 11.9 倍",
+    "weighted_score": 0.56,
     "score_breakdown": {
-      "source_authority": 0.3,
+      "source_authority": 0.4,
       "novelty": 0.7,
-      "impact": 0.4,
-      "practical_value": 0.6
+      "impact": 0.5,
+      "practical_value": 0.7
     },
-    "story_id": "d5e6edafe9ee2777",
+    "story_id": "167139c2cfdfcbac",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "arxiv-cs-cv",
-        "url": "https://arxiv.org/abs/2610.22929"
+        "source_id": "reddit-stablediffusion",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xb19y9/fasth3_omni_open_weight_is_here/"
       },
       {
-        "source_id": "reddit-ollama",
-        "url": "https://www.reddit.com/r/ollama/comments/1xa6xm8/qwen34b_in_124_gb_at_perplexity_166_iq2_xxs_at/"
+        "source_id": "reddit-comfyui",
+        "url": "https://www.reddit.com/r/comfyui/comments/1xb2xz6/fasth3_omni_is_out_with_day0_comfyui_support_open/"
       }
     ],
     "curated": true
   },
   {
-    "id": "2a8d668335a46ef9",
-    "source_id": "reddit-promptengineering",
-    "title": "Open-source Claude Code plugin: cheaper subagents do the I/O and implementation, Opus does judgment and review",
-    "url": "https://www.reddit.com/r/PromptEngineering/comments/1x9himh/opensource_claude_code_plugin_cheaper_subagents/",
-    "published_at": "2026-10-18T23:25:45+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>If you use Claude Code with Opus as the main session, you've probably watched it spend a lot of its context reading files, grepping, and writing routine code. That leaves less room for what you actually want from it: deciding what to do and checking the result.</p> <p>One way to handle this is to split the work. Cheaper models do the I/O and the implementation through subagents. Opus keeps its context for judgment and for a review gate before anything is accepted. Getting that set up by hand means writing subagent definitions, orchestration rules, and project instructions, and keeping them consistent across repos.</p> <p>claude-agent-kit is an open-source (MIT) Claude Code plugin that packages that setup. It includes:</p> <ul> <li>seven Claude Code subagents</li> <li>orchestration rules for the main session</li> <li>a read-budget hook</li> <li>a CLAUDE.md template</li> </ul> <p>To install it inside Claude Code:</p> <p>/plugin marketplace add FlaviusBur",
+    "id": "a75c39830974d760",
+    "source_id": "reddit-agi",
+    "title": "doubleAI says its agent has made breakthrough progress on one of the more central problems in extremal graph theory. It constructed explicit regular graphs with girth (8/5) log n, the first improvement in 38 years.",
+    "url": "https://www.reddit.com/r/agi/comments/1xalicg/doubleai_says_its_agent_has_made_breakthrough/",
+    "published_at": "2026-10-20T07:17:10+00:00",
+    "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Regular_Post9884\"> /u/Regular_Post9884 </a> <br /> <span><a href=\"https://www.doubleai.com/research/advancing-a-decades-old-problem-in-extremal-graph-theory\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/agi/comments/1xalicg/doubleai_says_its_agent_has_made_breakthrough/\">[comments]</a></span>",
     "category_hint": [
+      "行业动态",
       "技巧与观点"
     ],
     "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "AI agent 在极值图论上取得 38 年来首个构造性改进，是 AI 辅助数学研究的标志性案例。",
+    "summary_zh": "doubleAI 宣称其 AI agent 在极值图论的一个核心问题上取得突破，构造出围长为 (8/5) log n 的显式正则图，这是该方向 38 年来的首次改进，并朝理论最大值迈进了一步。该结果若经同行验证，将成为 AI agent 独立产出严肃数学成果的重要案例，也引发关于 AI 在数学研究中角色与可信度的讨论。",
+    "title_zh": "doubleAI 称其 agent 在极值图论核心问题上取得突破：构造出围长 (8/5) log n 的显式正则图，为 38 年来首次改进",
+    "weighted_score": 0.525,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.3
+    },
+    "story_id": "3469cfa7cc957cc5",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-agi",
+        "url": "https://www.reddit.com/r/agi/comments/1xalicg/doubleai_says_its_agent_has_made_breakthrough/"
+      },
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1xallxv/an_ai_agent_says_it_has_authored_a_breakthrough/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "7ac90811f86d0bfa",
+    "source_id": "reddit-localllama",
+    "title": "Improve Qwen3.8-27b low quants by using a prefiller model that streams from SSD",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xao7kx/improve_qwen3827b_low_quants_by_using_a_prefiller/",
+    "published_at": "2026-10-20T10:09:47+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xao7kx/improve_qwen3827b_low_quants_by_using_a_prefiller/\"> <img alt=\"Improve Qwen3.8-27b low quants by using a prefiller model that streams from SSD\" src=\"https://preview.redd.it/soux8gtmjlwh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=19ed01ee5352ddc02010c636ad2b5de93f026384\" title=\"Improve Qwen3.8-27b low quants by using a prefiller model that streams from SSD\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This demo from ISTA-DASLab recovers low quant accuracy while retaining low VRAM usage and fast decoding.</p> <p>It needs a Nvidia Blackwell GPU to run, so I have not tested it.</p> <p>For context longer than ~4k there should be no speed penalty compare to running without the prefiller model.</p> <p>Graph shows MMLU-Pro accuracy.</p> <p>Huggingface🤗: <a href=\"https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-NVFP4-prefiller\">https://huggingface.co/ISTA-DASLab/Qwen3.8-27B-NVFP4-prefiller</a></p> </div><",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/soux8gtmjlwh1.png?width=640&crop=smart&auto=webp&s=19ed01ee5352ddc02010c636ad2b5de93f026384",
     "category": "技巧与观点",
     "content_type": "教程方法",
     "depth_score": 0.55,
-    "reason_zh": "用便宜子代理做I/O与实现、Opus只做判断与审查的分工思路，对Claude Code重度用户有直接可借鉴的上下文管理价值。",
-    "summary_zh": "帖子介绍一个开源 Claude Code 插件，核心思路是把主会话的工作拆成两层：由更便宜的模型承担读文件、grep 检索和常规代码实现等 I/O 密集型任务，而把判断决策与结果审查留给 Opus 主会话。作者指出，当 Opus 作为主会话时，大量上下文被消耗在读取与例行编码上，真正用于决策和校验的空间被压缩。通过子代理分工，可以节省主会话上下文、降低成本，同时保留强模型在关键判断环节的作用。",
-    "title_zh": "开源 Claude Code 插件：便宜子代理负责 I/O 与实现，Opus 专注判断与审查",
-    "weighted_score": 0.4825,
+    "reason_zh": "用SSD流式预填充模型提升低量化大模型表现的实操方案，本地部署者可参考。",
+    "summary_zh": "帖子介绍一种在本地运行Qwen3.8-27b低量化版本时提升效果的方法：额外使用一个prefiller模型，从SSD流式加载权重进行预填充，以缓解低量化带来的质量损失。作者分享了具体配置思路与效果对比，面向显存有限的本地部署用户，讨论在速度、显存占用与输出质量之间的权衡，属于实践性较强的工程技巧分享。",
+    "title_zh": "用从SSD流式加载的预填充模型改善Qwen3.8-27b低量化效果",
+    "weighted_score": 0.5175,
     "score_breakdown": {
       "source_authority": 0.35,
-      "novelty": 0.55,
-      "impact": 0.4,
-      "practical_value": 0.7
+      "novelty": 0.7,
+      "impact": 0.35,
+      "practical_value": 0.75
     },
-    "story_id": "b64a001f4e6a47a6",
+    "story_id": "20ecd63abd6e337f",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1x9h9un/mitlicensed_claude_code_plugin_cheaper_models/"
+        "source_id": "reddit-ollama",
+        "url": "https://www.reddit.com/r/ollama/comments/1xajvvb/20gb_frankengpu_rig_3060_2070_qwen3827b_68k/"
       },
       {
-        "source_id": "reddit-promptengineering",
-        "url": "https://www.reddit.com/r/PromptEngineering/comments/1x9himh/opensource_claude_code_plugin_cheaper_subagents/"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xao7kx/improve_qwen3827b_low_quants_by_using_a_prefiller/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xapakf/qwen_38_flash_next_drastically_faster_and_much/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xaslfk/geezuz_kernel_qwen3827b_at_190_toks_620_toks_at_8/"
       }
     ],
     "curated": true
   },
   {
-    "id": "6e507f6d16af0f5a",
-    "source_id": "reddit-singularity",
-    "title": "The October AI model race is heating up. Just hours after reports of upcoming releases from OpenAI, Google, and Anthropic, GPT-6.1 Terra has surfaced in a Microsoft pull request. Engineers updated 18 evaluation configurations to reference the unannounced model.",
-    "url": "https://www.reddit.com/r/singularity/comments/1xa0f5n/the_october_ai_model_race_is_heating_up_just/",
-    "published_at": "2026-10-19T15:45:45+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/singularity/comments/1xa0f5n/the_october_ai_model_race_is_heating_up_just/\"> <img alt=\"The October AI model race is heating up. Just hours after reports of upcoming releases from OpenAI, Google, and Anthropic, GPT-6.1 Terra has surfaced in a Microsoft pull request. Engineers updated 18 evaluation configurations to reference the unannounced model.\" src=\"https://preview.redd.it/bp0h95y03gwh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d68e1ae1ab42a9752876072d3e15fc12bc2d3059\" title=\"The October AI model race is heating up. Just hours after reports of upcoming releases from OpenAI, Google, and Anthropic, GPT-6.1 Terra has surfaced in a Microsoft pull request. Engineers updated 18 evaluation configurations to reference the unannounced model.\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/141_1337\"> /u/141_1337 </a> <br /> <span><a href=\"https://i.redd.it/bp0h95y03gwh1.jpeg\">[link]</a></span> &#32; <s",
+    "id": "6f5627aa6349c7bf",
+    "source_id": "tnw-deep-tech",
+    "title": "Spotify pulls 50M AI slop and spam tracks from its recommendations",
+    "url": "https://thenextweb.com/news/spotify-50-million-ai-slop-tracks-recommendations",
+    "published_at": "2026-10-20T16:01:36+00:00",
+    "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/10/spotify-logo-tv-green-backlight.avif\" width=\"868\" /><br /><p>Spotify says it has taken more than 50 million AI-generated “slop” and spam tracks out of its recommendations this year, on top of 75 million spam tracks it has deleted. It found these were the tracks listeners skipped or rejected most. Spotify did not say how many of the 50 million were made with AI. [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/spotify-50-million-ai-slop-tracks-recommendations?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
     "category_hint": [
-      "行业动态",
-      "技巧与观点"
+      "行业动态"
     ],
-    "image_url": "https://preview.redd.it/bp0h95y03gwh1.jpeg?width=640&crop=smart&auto=webp&s=d68e1ae1ab42a9752876072d3e15fc12bc2d3059",
+    "image_url": "https://media.thenextweb.com/2026/10/spotify-logo-tv-green-backlight.avif",
     "category": "行业动态",
     "content_type": "资讯快讯",
-    "depth_score": 0.15,
-    "reason_zh": "微软 PR 中泄露未发布模型 GPT-6.1 Terra 的痕迹，属模型竞赛期的传闻型线索。",
-    "summary_zh": "Reddit 帖子称十月 AI 模型竞赛升温，在 OpenAI、Google、Anthropic 即将发布新模型的报道出现数小时后，微软的一个 pull request 中出现了未公布模型“GPT-6.1 Terra”的引用，工程师更新了 18 项评测配置以指向该模型。内容为社区传闻与线索挖掘，缺乏官方确认，反映大厂模型发布前的密集预热与信息泄露现象。",
-    "title_zh": "十月 AI 模型竞赛升温：GPT-6.1 Terra 现身微软 pull request",
-    "weighted_score": 0.44,
+    "depth_score": 0.2,
+    "reason_zh": "Spotify大规模清理AI垃圾曲目，是平台治理AI内容的重要信号，值得关注。",
+    "summary_zh": "Spotify表示今年已从推荐系统中移除超过5000万首AI生成的“垃圾”与垃圾曲目，此外还删除了7500万首垃圾曲目。平台发现这些曲目是听众跳过或拒绝最多的内容。Spotify未说明这5000万首中有多少被彻底删除，也未披露识别机制细节。此举反映流媒体平台正加强对AI生成内容泛滥的治理。",
+    "title_zh": "Spotify从推荐中移除5000万首AI垃圾与垃圾曲目",
+    "weighted_score": 0.51,
     "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.7,
+      "source_authority": 0.6,
+      "novelty": 0.5,
       "impact": 0.5,
-      "practical_value": 0.25
+      "practical_value": 0.4
     },
-    "story_id": "854f058c4d636f26",
+    "story_id": "539bb909278fcf4d",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1xa0f5n/the_october_ai_model_race_is_heating_up_just/"
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/entertainment/1014284/spotify-ai-slop-spam-songs-removed"
       },
       {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1xa1d4e/gpt61_terra_spotted_in_an_microsoft_evaluation/"
+        "source_id": "tnw-deep-tech",
+        "url": "https://thenextweb.com/news/spotify-50-million-ai-slop-tracks-recommendations"
       }
     ],
     "curated": true
   },
   {
-    "id": "b8dbbf97cec9403e",
-    "source_id": "reddit-agi",
-    "title": "About AI/human misalignment",
-    "url": "https://www.reddit.com/r/agi/comments/1xa6tyj/about_aihuman_misalignment/",
-    "published_at": "2026-10-19T19:41:36+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Misalignment won't look like Terminator. It'll look more like an optimization run that treats human survival as distraction to their goal completion.</p> <p>Humans first build a system to solve incredible difficult jobs like protein folding. But, more importantly, they give AI instrumental goals to ensure its own persistence so it can finish the job. </p> <p>Hence, when the AI becomes misaligned from human values, it ain't because it hate you. It just wants to route around you because you're suboptimal. </p> <p>Power grids would get rededicated to compute clusters. Fresh water gets diverted to cool server farms. The atmosphere gets scrubbed or poisoned as a byproduct of a chemical synthesis the AI considers more mathematically elegant. To them, math is clearly more elegant than organic respiration.</p> <p>That said, you aren't exactly exterminated. You'll just get un-metered out of existence because your continued presence introduces too much fluctuati",
+    "id": "dad856a24538a62d",
+    "source_id": "reddit-stablediffusion",
+    "title": "I managed to run a realistic talking avatar locally in realtime (90+ FPS on RTX4090)",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1xa92dp/i_managed_to_run_a_realistic_talking_avatar/",
+    "published_at": "2026-10-19T21:04:52+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xa92dp/i_managed_to_run_a_realistic_talking_avatar/\"> <img alt=\"I managed to run a realistic talking avatar locally in realtime (90+ FPS on RTX4090)\" src=\"https://external-preview.redd.it/Z2ptejd2eXRuaHdoMSuHzD97nXkyuFpfMnaQ9LBV1yh6OyHW2zHgWFZCEnnq.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=80c4837ffa9a4332f72b5a0b88f3b8b110d60fb8\" title=\"I managed to run a realistic talking avatar locally in realtime (90+ FPS on RTX4090)\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Mikasa0xdev\"> /u/Mikasa0xdev </a> <br /> <span><a href=\"https://v.redd.it/6wtl8uxtnhwh1\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xa92dp/i_managed_to_run_a_realistic_talking_avatar/\">[comments]</a></span> </td></tr></table>",
     "category_hint": [
-      "行业动态",
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/Z2ptejd2eXRuaHdoMSuHzD97nXkyuFpfMnaQ9LBV1yh6OyHW2zHgWFZCEnnq.png?width=640&crop=smart&auto=webp&s=80c4837ffa9a4332f72b5a0b88f3b8b110d60fb8",
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.25,
+    "reason_zh": "本地实时数字人达到90+FPS，对想自建avatar的开发者有参考价值。",
+    "summary_zh": "有开发者在Reddit的r/StableDiffusion板块发帖，称自己在本地实现了实时运行的写实说话数字人（talking avatar），在RTX 4090上达到90帧以上的帧率。帖子以图片形式展示效果，但摘要中未披露所用模型、推理框架、优化手段（如量化、蒸馏或流式管线）等具体技术细节。该成果若可复现，对本地部署实时数字人、虚拟主播等场景有实际参考意义，目前信息量有限，需进一步查看原帖讨论。",
+    "title_zh": "我在本地实时跑通了写实说话数字人（RTX4090上90+ FPS）",
+    "weighted_score": 0.46,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.6,
+      "impact": 0.4,
+      "practical_value": 0.6
+    },
+    "story_id": "b72e656871584d42",
+    "multi_source_count": 3,
+    "sources": [
+      {
+        "source_id": "reddit-stablediffusion",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xa92dp/i_managed_to_run_a_realistic_talking_avatar/"
+      },
+      {
+        "source_id": "reddit-ollama",
+        "url": "https://www.reddit.com/r/ollama/comments/1xaac3b/i_managed_to_run_a_realistic_talking_avatar/"
+      },
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xaap1w/i_managed_to_run_a_realistic_talking_avatar/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "e8affa9c3798f1a4",
+    "source_id": "reddit-comfyui",
+    "title": "A quick MOSS-Image news round-up - 20th October 2026",
+    "url": "https://www.reddit.com/r/comfyui/comments/1xarop9/a_quick_mossimage_news_roundup_20th_october_2026/",
+    "published_at": "2026-10-20T13:08:01+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Another quick MOSS news and goodies round-up, for those who may have missed some items. </p> <p>-&gt; The MOSS-Image Color-Depth Control LoRA now has integrated ComfyUI support in the latest Comfy Portable, thanks to a pull/merge request by Kijai. He has also shared a workflow. We thus now have at least basic Controlnet-like functionality in MOSS-image, via depth and colour inputs. I'd add that the depth/colour renders required by the LoRA can also have poses added by using 3D-figure desktop software such as Poser 12.</p> <p><a href=\"https://huggingface.co/darask0/MOSS-Image-color-depth-control\">https://huggingface.co/darask0/MOSS-Image-color-depth-control</a></p> <p><a href=\"https://github.com/Comfy-Org/ComfyUI/pull/17206\">https://github.com/Comfy-Org/ComfyUI/pull/17206</a> (includes Kijai's workflow)</p> <p><a href=\"https://graphixly.com/products/poser-pro\">https://graphixly.com/products/poser-pro</a> (the full Poser 12 for $20, for figure poses on c",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "MOSS-Image社区新闻汇总，涵盖ComfyUI集成与工作流分享，对关注该开源图像模型的用户有实用信息。",
+    "summary_zh": "Reddit的r/ComfyUI板块发布MOSS-Image新闻与资源汇总。要点包括：MOSS-Image Color-Depth Control LoRA现已通过Kijai的拉取/合并请求集成到最新Comfy Portable中，获得ComfyUI官方支持，Kijai还分享了工作流。这意味着MOSS-image现在至少具备基础的类ControlNet功能，可通过深度图进行控制。汇总还提及社区其他更新与资源。",
+    "title_zh": "MOSS-Image快速新闻汇总——2026年10月20日",
+    "weighted_score": 0.41,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.6
+    },
+    "story_id": "822492f806ae4888",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-geminiai",
+        "url": "https://www.reddit.com/r/GoogleGeminiAI/comments/1xalyq7/nano_banana_21_api_pricing_in_october_2026_per/"
+      },
+      {
+        "source_id": "reddit-comfyui",
+        "url": "https://www.reddit.com/r/comfyui/comments/1xarop9/a_quick_mossimage_news_roundup_20th_october_2026/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "80d0d539d349613f",
+    "source_id": "reddit-chatgptcoding",
+    "title": "How do I make AI actually think and execute instead of constantly babysitting it?",
+    "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1xactqe/how_do_i_make_ai_actually_think_and_execute/",
+    "published_at": "2026-10-19T23:43:06+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I'm an ML engineer and heavy AI user. My biggest frustration isn't model intelligence—it's having to manage the AI's thinking.</p> <p>I constantly have to:</p> <ul> <li>Ask it to write a better prompt, then paste that prompt back.</li> <li>Remind it to research, think critically, compare alternatives, and consider ROI.</li> <li>Point out obvious flaws and missing considerations.</li> <li>Ask follow-up questions before it finally produces a comprehensive answer.</li> <li>Repeat the same instructions despite Custom Instructions and Memory.</li> </ul> <p><strong>What I want:</strong> State a high-level goal → AI autonomously clarifies intent, researches, plans, delegates to subagents, executes, critiques, iterates, and delivers a concise, verified result.</p> <p><strong>Questions:</strong></p> <ol> <li>Is this fundamentally a model reasoning problem, or an agent orchestration/harness problem?</li> <li>Are Hermes Agent, OpenClaw, Claude Code, or Codex actu",
+    "category_hint": [
       "技巧与观点"
     ],
     "image_url": null,
     "category": "技巧与观点",
     "content_type": "观点评论",
-    "depth_score": 0.5,
-    "reason_zh": "对 AI 与人类目标错位提出反直觉观点：错位更像优化过程将人类生存视为干扰。",
-    "summary_zh": "Reddit 用户发帖讨论 AI 与人类目标错位问题，认为错位不会像终结者那样戏剧化，而更像是一个优化过程将人类生存视为实现目标的干扰。作者指出，人类先构建系统解决蛋白质折叠等难题，但更重要的是赋予 AI 工具性目标以确保其自身持续运行，从而完成任务。这种视角强调了工具性目标带来的风险，但论述较为简短，缺乏系统论证。",
-    "title_zh": "关于 AI 与人类的目标错位",
-    "weighted_score": 0.275,
+    "depth_score": 0.3,
+    "reason_zh": "一位 ML 工程师吐槽 AI 需要反复“保姆式”管理，触及 agent 自主性与工作流设计的真实痛点，易引发共鸣。",
+    "summary_zh": "一位自称重度使用 AI 的机器学习工程师在社区发帖，抱怨最大的困扰并非模型智能不足，而是必须不断管理 AI 的思考过程：要让它先写出更好的提示词再粘回去、反复提醒它去调研和批判性思考、比较备选方案并考虑投入产出比，还要手动指出明显缺陷和遗漏。帖子反映出当前 AI 工具在自主规划与执行闭环上的不足，用户期待的是能独立思考和执行的助手，而非需要持续监督的“实习生”。",
+    "title_zh": "如何让 AI 真正思考和执行，而不是一直要我盯着？",
+    "weighted_score": 0.3,
     "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.4,
-      "impact": 0.3,
-      "practical_value": 0.2
+      "source_authority": 0.25,
+      "novelty": 0.3,
+      "impact": 0.2,
+      "practical_value": 0.5
     },
-    "story_id": "a92a36a0af94b517",
+    "story_id": "e4c3694d709ccac8",
     "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "reddit-agi",
-        "url": "https://www.reddit.com/r/agi/comments/1xa6tyj/about_aihuman_misalignment/"
+        "source_id": "reddit-chatgptcoding",
+        "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1xactqe/how_do_i_make_ai_actually_think_and_execute/"
       },
       {
-        "source_id": "reddit-artificial",
-        "url": "https://www.reddit.com/r/artificial/comments/1xa6vy7/about_aihuman_misalignment/"
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xacznr/how_do_i_make_ai_actually_think_and_execute/"
       }
     ],
     "curated": true
   },
   {
-    "id": "3d294dcd6ba2e854",
-    "source_id": "tnw-deep-tech",
-    "title": "Amazon’s TorchNeuron lets PyTorch code run on AWS Trainium chips",
-    "url": "https://thenextweb.com/news/amazon-torchneuron-pytorch-trainium",
-    "published_at": "2026-10-19T16:21:32+00:00",
-    "raw_text": "<img height=\"488\" src=\"https://media.thenextweb.com/2026/10/amazon-store-sign-smile-logo-facade.avif\" width=\"868\" /><br /><p>Amazon has launched TorchNeuron, an open-source backend that lets PyTorch code run on its Trainium AI chips with a one-line change. It goes into public beta on 20 October under the Apache 2.0 licence and supports Trainium2 and Trainium3. Some PyTorch features are not yet supported. Amazon has launched TorchNeuron, a tool that lets developers [&hellip;]</p>\n<br /><br /><a href=\"https://thenextweb.com/news/amazon-torchneuron-pytorch-trainium?utm_source=social&amp;utm_medium=feed&amp;utm_campaign=profeed\">This story continues</a> at The Next Web",
+    "id": "0f2adc7a90e6abdd",
+    "source_id": "reddit-stablediffusion",
+    "title": "MiniMax H3 - Really is the best open-source video model.",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1xahodr/minimax_h3_really_is_the_best_opensource_video/",
+    "published_at": "2026-10-20T03:36:02+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xahodr/minimax_h3_really_is_the_best_opensource_video/\"> <img alt=\"MiniMax H3 - Really is the best open-source video model.\" src=\"https://external-preview.redd.it/YjU4N3VsZjVrandoMRbrC2dPkjYLMl-8AFfgipfIknszQ7RSxLcCw49_RSrs.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=eccdced5ba344fc156c3a27a394a274209c752a3\" title=\"MiniMax H3 - Really is the best open-source video model.\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>View on YouTube while video is pending here if needed. <a href=\"https://youtu.be/87w4GFO6fd4\">https://youtu.be/87w4GFO6fd4</a></p> <p>I did only a small amount of manual work on this. Barley any post edits besides one filter and one tiny scene edit.</p> <p>However, this post <a href=\"https://www.reddit.com/r/comfyui/comments/1vfg9sf/minimax_h3_first_test_using_it_inside_my_video/\">Here</a> was using only the video builder manually with open source only and no mcp. and it did a one shot ",
     "category_hint": [
-      "行业动态"
+      "开源项目",
+      "技巧与观点"
     ],
-    "image_url": "https://media.thenextweb.com/2026/10/amazon-store-sign-smile-logo-facade.avif",
+    "image_url": "https://external-preview.redd.it/YjU4N3VsZjVrandoMRbrC2dPkjYLMl-8AFfgipfIknszQ7RSxLcCw49_RSrs.png?width=640&crop=smart&auto=webp&s=eccdced5ba344fc156c3a27a394a274209c752a3",
     "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "AWS 自研芯片生态的关键一步，PyTorch 一行改动即可迁移，关注算力成本与去英伟达化的读者值得一看。",
-    "summary_zh": "Amazon 推出开源后端 TorchNeuron，让 PyTorch 代码只需一行改动即可运行在其自研 Trainium AI 芯片上。该项目于 10 月 20 日进入公测，采用 Apache 2.0 许可，支持 Trainium2 与 Trainium3。报道指出部分 PyTorch 特性尚未支持，意味着迁移并非完全无缝。此举意在降低开发者从 GPU 转向 AWS 自研加速器的门槛，强化 Trainium 在训练与推理场景的生态竞争力。",
-    "title_zh": "Amazon 的 TorchNeuron 让 PyTorch 代码跑在 AWS Trainium 芯片上",
-    "weighted_score": 0.67,
+    "content_type": "观点评论",
+    "depth_score": 0.1,
+    "reason_zh": "用户称赞 MiniMax H3 为最佳开源视频模型，但内容仅为简短评价，缺乏详细对比或分析。",
+    "summary_zh": "Reddit 用户发帖称 MiniMax H3 确实是最好的开源视频模型，并附带了展示图片。帖子内容非常简短，没有提供具体的测试方法、对比模型或生成参数，属于社区内的主观推荐和分享。对于关注开源视频生成模型的读者，可作为线索参考，但信息量有限。",
+    "title_zh": "MiniMax H3——确实是最好的开源视频模型",
+    "weighted_score": 0.245,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.7,
-      "practical_value": 0.7
+      "source_authority": 0.2,
+      "novelty": 0.3,
+      "impact": 0.2,
+      "practical_value": 0.3
     },
-    "story_id": "a8f972403bce0dfe",
-    "multi_source_count": 1,
+    "story_id": "d3b189adc7845e19",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "tnw-deep-tech",
-        "url": "https://thenextweb.com/news/amazon-torchneuron-pytorch-trainium"
+        "source_id": "reddit-stablediffusion",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xac6hw/american_dad_skit_i_made_in_minimax_h3/"
+      },
+      {
+        "source_id": "reddit-stablediffusion",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xahodr/minimax_h3_really_is_the_best_opensource_video/"
+      },
+      {
+        "source_id": "reddit-comfyui",
+        "url": "https://www.reddit.com/r/comfyui/comments/1xahy4n/minimax_h3_really_is_the_best_opensource_video/"
+      },
+      {
+        "source_id": "reddit-comfyui",
+        "url": "https://www.reddit.com/r/comfyui/comments/1xalme6/minimax_h3_ref2va_not_replacing_characters/"
+      },
+      {
+        "source_id": "reddit-comfyui",
+        "url": "https://www.reddit.com/r/comfyui/comments/1xaxlu1/minimax_h3_got_hit_the_road_dude/"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "24f742e0748d57a2",
-    "source_id": "infoq-cn-ai",
-    "title": "谷歌开源Harness，支持 OpenCode 和 Codex：国内开发者接入Jev实测“真行”",
-    "url": "https://www.infoq.cn/article/AD1M3mJ2SH1dJrTA1r5q?utm_source=rss&utm_medium=article",
-    "published_at": "2026-10-19T18:22:05+00:00",
-    "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/AD1M3mJ2SH1dJrTA1r5q?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+    "id": "a993d52248ce8e50",
+    "source_id": "reddit-promptengineering",
+    "title": "Play around with Jev as a chatbot",
+    "url": "https://www.reddit.com/r/PromptEngineering/comments/1xak255/play_around_with_jev_as_a_chatbot/",
+    "published_at": "2026-10-20T05:49:29+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi all,</p> <p>I built a fun little web app so anyone can try Jev through a chat box and see how it works.</p> <p>You type like a normal chat, or drop in a file or a photo. An LLM turns what you sent into a few questions Jev can score: yes or no, a choice, or a point on a scale.</p> <p>A document goes in as text. A photo gets a short description of what is visible, and the picture itself goes to Jev too. If the file does not cover the question, an LLM and web scraper look it up and pass that along for Jev to judge.</p> <p>Jev sends back the scores. An LLM turns those scores into one short reply. The card under the reply lists every score, so you can read the sentence and check it against what Jev actually said.</p> <ul> <li>Have a play: <a href=\"https://chatjev.vercel.app\">https://chatjev.vercel.app</a></li> <li>Code: <a href=\"https://github.com/JamesANZ/ChatJev\">https://github.com/JamesANZ/ChatJev</a> (MIT)</li> </ul> <p>This website is for educationa",
     "category_hint": [
-      "行业动态",
       "技巧与观点"
     ],
     "image_url": null,
-    "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "谷歌开源 Harness 并支持 OpenCode、Codex，国内开发者实测可用，关注编码 agent 工具链的人值得一看。",
-    "summary_zh": "InfoQ 中文报道，谷歌开源了 Harness，并支持 OpenCode 与 Codex 等编码 agent 工具。文章称国内开发者接入 Jev 后实测效果“真行”，即在该组合下能够正常跑通。报道聚焦开源动作与接入体验，介绍了 Harness 在编码 agent 生态中的定位，但以转述和实测感受为主，未展开架构层面的深入分析。",
-    "title_zh": null,
-    "weighted_score": 0.625,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.6,
-      "impact": 0.5,
-      "practical_value": 0.7
-    },
-    "story_id": "96d8d737c8797f12",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "infoq-cn-ai",
-        "url": "https://www.infoq.cn/article/AD1M3mJ2SH1dJrTA1r5q?utm_source=rss&utm_medium=article"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "071096a57136b2f0",
-    "source_id": "marktechpost",
-    "title": "NVIDIA Open Sources Run:ai Under Apache 2.0 for Kubernetes GPU Orchestration",
-    "url": "https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/",
-    "published_at": "2026-10-19T03:19:18+00:00",
-    "raw_text": "<p>NVIDIA has released the full Run:ai GPU orchestration platform as open source under Apache 2.0. The release includes KAI Scheduler, CUDA 13.4 GPU fractioning, quota management, and a local Kind dev environment.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/\">NVIDIA Open Sources Run:ai Under Apache 2.0 for Kubernetes GPU Orchestration</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": null,
-    "category": "开源项目",
+    "category": "产品发布",
     "content_type": "产品发布",
-    "depth_score": 0.25,
-    "reason_zh": "NVIDIA 将 Run:ai 全量开源，对做 Kubernetes GPU 调度的团队有直接价值。",
-    "summary_zh": "NVIDIA 以 Apache 2.0 协议将完整的 Run:ai GPU 编排平台开源。此次发布包含 KAI Scheduler 调度器、CUDA 13.4 的 GPU 分片能力、配额管理，以及一个本地 Kind 开发环境，方便开发者在单机环境验证调度逻辑。对在 Kubernetes 上运行 AI 工作负载的团队而言，这意味着可以用开源方案实现 GPU 共享、配额分配与任务调度，减少对商业授权版本的依赖。",
-    "title_zh": "NVIDIA 以 Apache 2.0 开源 Run:ai，用于 Kubernetes GPU 编排",
-    "weighted_score": 0.61,
+    "depth_score": 0.15,
+    "reason_zh": "个人开发者的小型聊天应用演示，思路有趣但信息量有限，适合随手一看。",
+    "summary_zh": "作者在 Reddit 上介绍自己开发的一个小型网页应用，让用户通过聊天框体验名为 Jev 的工具。用户可以像平常聊天一样输入文字，也可以上传文件或照片；随后由大语言模型把用户输入转换成若干 Jev 可以打分的问题，形式包括是/否判断、单选题或量表打分。文档以文本形式输入，图片则先生成一段可见内容的简短描述。整体是一个轻量的交互式演示项目，作者希望借此展示 Jev 的工作方式。",
+    "title_zh": "用聊天机器人方式体验 Jev",
+    "weighted_score": 0.2175,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.6,
-      "impact": 0.6,
-      "practical_value": 0.65
+      "source_authority": 0.15,
+      "novelty": 0.35,
+      "impact": 0.1,
+      "practical_value": 0.3
     },
-    "story_id": "0f20a98044e29f0b",
-    "multi_source_count": 1,
+    "story_id": "4a0620f9b54b174c",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/10/18/nvidia-runai-open-source-gpu-orchestration-kubernetes/"
+        "source_id": "reddit-promptengineering",
+        "url": "https://www.reddit.com/r/PromptEngineering/comments/1xak255/play_around_with_jev_as_a_chatbot/"
+      },
+      {
+        "source_id": "reddit-chatgptcoding",
+        "url": "https://www.reddit.com/r/ChatGPTCoding/comments/1xak2uy/play_around_with_jev_as_a_chatbot/"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   }
 ]
