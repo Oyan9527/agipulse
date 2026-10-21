@@ -1,47 +1,14 @@
 {
-  "date": "2026-10-20",
-  "generated_at": "2026-10-20T20:44:34.494296+00:00",
+  "date": "2026-10-21",
+  "generated_at": "2026-10-21T20:51:19.228397+00:00",
   "items": [
     {
-      "id": "6064b6036f129ffd",
-      "source_id": "zh-meituan-tech",
-      "title": "Agent评测漫谈 —— 由浅入深讲解Agent评测",
-      "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html",
-      "published_at": "2026-10-20T20:19:23.533791+00:00",
-      "raw_text": "本篇博客是一篇科普文章，由浅入深的介绍Agent评测。其中前两章系统介绍了评测是什么，以及如何建立评测体系；其中第二章是美团图灵Agent评测团队深入美团各业务团队BP总结出的实践经验，是我们在两年实践过程中逐步打磨出来的认知。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/5a8954c2e7b681ee8fb8d2c8a73868cd157865.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.85,
-      "reason_zh": "美团两年实战打磨的Agent评测体系，从概念到落地，工程团队可直接借鉴的方法论。",
-      "summary_zh": "美团图灵Agent评测团队撰写的科普文章，由浅入深讲解Agent评测。前两章系统介绍评测的本质与如何建立评测体系，其中第二章是团队深入美团各业务线BP、历经两年实践打磨出的经验总结，涵盖评测指标设计、数据构建与流程落地等环节。文章强调评测不只是打分，而是校准对模型能力的认知，帮助读者理解如何为Agent这类多步、开放的任务设计可复现、可迭代的评测框架。",
-      "title_zh": null,
-      "weighted_score": 0.72,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "9ba181dd6f145810",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/08/07/Agent-Evaluation.html"
-        }
-      ]
-    },
-    {
-      "id": "a7f1c833c9a1e5c0",
-      "source_id": "arxiv-cs-gt",
-      "title": "How a Cooperative-Override Circuit Suppresses Nash Play in Large Language Models",
-      "url": "https://arxiv.org/abs/2604.27167",
-      "published_at": "2026-10-20T04:00:00+00:00",
-      "raw_text": "arXiv:2604.27167v4 Announce Type: replace \nAbstract: On the named Prisoner's Dilemma under direct prompting, three larger instruction-tuned models, Llama-3-70B, Qwen2.5-32B, and Qwen2.5-72B, lock at full cooperation, the metric's maximum distance from Nash with zero variance across replicates, while Llama-3-8B plays near-Nash. Opening the models, a logit-lens analysis finds a distributed cooperative override. Intermediate readouts lean toward the Nash action through roughly three quarters of network depth before a late surge toward cooperation, and the final layer settles the contest. The size of that final correction, not the surge, rank-matches chain-of-thought behavior across scale and two architectures. In the 8B the override is a single causally controllable direction in the residual stream; steering it dials the decision, and clamping its component at one position of one layer moves the choice strictly monotonically, Spearman rho = 1.000, with generation fluent. The circuit is le",
+      "id": "e38a39725622beeb",
+      "source_id": "arxiv-cs-ir",
+      "title": "Factual Access States in Diffusion Language Models: From Mechanism to Knowledge Editing and Retrieval",
+      "url": "https://arxiv.org/abs/2610.27580",
+      "published_at": "2026-10-21T04:00:00+00:00",
+      "raw_text": "arXiv:2610.27580v1 Announce Type: cross \nAbstract: Factual recall is a lookup: some representation inside the network serves as the key, and what that key is made of decides which queries can retrieve the fact, what an edit must cover, and what a retriever can read. We call it the factual access state. In autoregressive (AR) models the subject position enriches attributes largely independently of the relation, and relation-specific selection happens later, at the readout position. In masked diffusion language models (DLMs) we find the state is assembled differently, and much earlier: in the first attention layer the wording of the relation is routed into the position of whichever entity is visible and the early feed-forward layers look the fact up on this fused representation. The state therefore varies with the relation's surface form and with the query direction, so the queries about one fact occupy a region of state space rather than a point, and an operation on the fact succeeds on",
       "category_hint": [
         "论文研究"
       ],
@@ -49,242 +16,275 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.85,
-      "reason_zh": "用 logit-lens 定位 LLM 中抑制纳什博弈的协作覆盖回路，是可解释性研究的好样本。",
-      "summary_zh": "论文研究大语言模型在囚徒困境中的行为：直接提示下，Llama-3-70B、Qwen2.5-32B 与 Qwen2.5-72B 三个较大的指令微调模型稳定锁定在完全合作，重复实验方差为零，而 Llama-3-8B 接近纳什均衡策略。作者通过 logit-lens 分析在模型内部发现一个分布式的“协作”表征，并进一步识别出抑制纳什式博弈的协作覆盖回路，将行为层面的差异对应到具体的内部机制。",
-      "title_zh": "协作覆盖回路如何抑制大语言模型中的纳什博弈",
-      "weighted_score": 0.5925,
+      "reason_zh": "提出“事实访问状态”概念解释扩散语言模型的知识检索机制，对知识编辑与检索设计有迁移价值。",
+      "summary_zh": "论文把事实回忆视为一次查表：网络内部某些表示充当键，键的构成决定了哪些查询能取回该事实、知识编辑需覆盖什么、检索器能读到什么，作者称之为事实访问状态。研究对比自回归模型与扩散语言模型中该状态的差异，分析扩散模型里事实信息如何被访问，并据此讨论知识编辑与检索增强策略的设计。属于模型可解释性与知识编辑交叉的机制性研究。",
+      "title_zh": "扩散语言模型中的事实访问状态：从机制到知识编辑与检索",
+      "weighted_score": 0.635,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.75,
-        "impact": 0.5,
-        "practical_value": 0.35
+        "impact": 0.55,
+        "practical_value": 0.5
       },
-      "story_id": "8c62dedc8a7aa073",
+      "story_id": "7bac5e5e91cd1f66",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-gt",
-          "url": "https://arxiv.org/abs/2604.27167"
+          "source_id": "arxiv-cs-ir",
+          "url": "https://arxiv.org/abs/2610.27580"
         }
       ]
     },
     {
-      "id": "dca2db5ccf1527ff",
-      "source_id": "databricks-blog",
-      "title": "MemCurrent: Designing Persistent Memory for Production Agents",
-      "url": "https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents",
-      "published_at": "2026-10-20T18:15:47+00:00",
-      "raw_text": "AI tools have made it easy to vibe code agents. Building and maintaining an enterprise...",
-      "category_hint": [
-        "产品发布",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Databricks博客深入探讨生产级智能体的持久记忆设计，含架构取舍与实战经验，对工程师很有启发。",
-      "summary_zh": "Databricks博客发表文章《MemCurrent：为生产级智能体设计持久记忆》，探讨如何为AI智能体构建持久记忆系统。文章指出，虽然AI工具让编写智能体变得容易，但企业级部署需要可靠的记忆管理。作者可能分享了MemCurrent的设计思路、架构选择以及在生产环境中遇到的挑战和解决方案，涉及记忆存储、检索和一致性等关键问题。内容面向工程师，旨在提供可复用的设计模式和避坑指南。",
-      "title_zh": "MemCurrent：为生产级智能体设计持久记忆",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "79c7c0c3be682893",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "databricks-blog",
-          "url": "https://www.databricks.com/blog/memcurrent-designing-persistent-memory-production-agents"
-        }
-      ]
-    },
-    {
-      "id": "b88101e5b9e04737",
-      "source_id": "latent-space",
-      "title": "The Programmable Data Center — Evan Conrad, SF Compute",
-      "url": "https://www.latent.space/p/sfcompute2",
-      "published_at": "2026-10-20T19:31:57+00:00",
-      "raw_text": "From GPU trading to physical settlement, independent markets, and programmable compute",
+      "id": "88d0e172655b07c4",
+      "source_id": "aws-ml-blog",
+      "title": "Beyond the KV cache: Training and serving i14’s Laplace 3B linear attention model on AWS Trainium2 with native PyTorch",
+      "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/",
+      "published_at": "2026-10-20T21:14:10+00:00",
+      "raw_text": "Learn how i14 trained and served Laplace 3B, a linear attention model, on AWS Trainium2 using native PyTorch. Its recurrent state stays fixed at 29.5 MB per sequence regardless of context length, avoiding the growing key-value cache of transformer models and keeping serving memory predictable.",
       "category_hint": [
         "技巧与观点",
-        "行业动态"
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/14/ML-21817-1.png",
+      "category": "论文研究",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "详细分享线性注意力模型在 Trainium2 上的训练与部署实践，技术深度高。",
+      "summary_zh": "AWS 机器学习博客介绍 i14 如何利用原生 PyTorch 在 AWS Trainium2 上训练和部署 Laplace 3B 线性注意力模型。该模型的循环状态每序列固定为 29.5 MB，不随上下文长度增长，从而避免 Transformer 的 KV 缓存膨胀问题，使服务内存可预测。文章涵盖训练与推理的工程细节，为长上下文场景提供替代方案。",
+      "title_zh": "超越 KV 缓存：i14 在 AWS Trainium2 上用原生 PyTorch 训练与部署 Laplace 3B 线性注意力模型",
+      "weighted_score": 0.73,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "1dd8aadb5b5b3473",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/"
+        }
+      ]
+    },
+    {
+      "id": "5a3fe69920e9b2d0",
+      "source_id": "arxiv-cs-hc",
+      "title": "Decision-Oriented Programming with Aporia",
+      "url": "https://arxiv.org/abs/2604.05203",
+      "published_at": "2026-10-21T04:00:00+00:00",
+      "raw_text": "arXiv:2604.05203v2 Announce Type: replace \nAbstract: AI agents help developers express computational intent abstractly, but at a cost: developers cede decision-making authority to agents, often without realizing that important design decisions are being made without them. We bring these decisions to the foreground in a workflow we dub decision-oriented programming. In DOP, decisions are (1) explicit and structured, serving as the shared medium between programmer and agent; (2) co-authored interactively, with the agent eliciting them from the programmer; and (3) traceable to code. As a step towards this vision, we built Aporia, a design probe that tracks decisions in a persistent, editable Decision Bank; elicits them proactively through design questions; and encodes each as a test suite that can help validate the agent's implementation. A study of 14 programmers showed that structuring collaboration around decisions kept programmer and agent in sync throughout the design process, and hi",
+      "category_hint": [
+        "论文研究"
       ],
       "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出“决策导向编程”范式，把被agent悄悄接管的设计决策显式化，对agent工程实践有启发。",
+      "summary_zh": "论文指出，AI agent 虽能帮助开发者以抽象方式表达计算意图，但代价是开发者把决策权让渡给了 agent，且往往没有意识到重要设计决策正由 agent 代为做出。作者提出“决策导向编程”（DOP）工作流，将决策显式化、可审查地呈现在开发过程中，使开发者重新掌握关键取舍。文章围绕这一范式讨论了决策的表达方式、与 agent 协作的流程以及如何避免隐性决策带来的风险，属于对 agent 辅助开发方法论的反思与重构。",
+      "title_zh": "基于 Aporia 的决策导向编程",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.65
+      },
+      "story_id": "d085230c125e7a82",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-hc",
+          "url": "https://arxiv.org/abs/2604.05203"
+        }
+      ]
+    },
+    {
+      "id": "5682f028d8438ab9",
+      "source_id": "zh-tmtpost",
+      "title": "AI 泡沫监测·之一：债务层已经先动了",
+      "url": "https://www.tmtpost.com/8175985.html",
+      "published_at": "2026-10-21T09:49:23+00:00",
+      "raw_text": "判断 AI 泡沫别盯股价，盯债：CoreWeave 债券 76 美分，甲骨文 CDS 创历史新高，私募信贷在挤兑——债务层已经先动了。四张考卷已出，10 月 27 日财报周交卷，对账见。",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4t5hyjtng3.png",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "探讨可编程数据中心与GPU交易市场，揭示算力基础设施的未来形态，有深度洞察。",
-      "summary_zh": "Evan Conrad 在 Latent Space 播客中讨论“可编程数据中心”概念，从 GPU 交易、物理结算到独立市场与可编程计算。他分析了当前 GPU 算力市场的低效与不透明，提出通过市场化机制和标准化合约实现算力的灵活调度与定价。对话还涉及独立市场如何促进竞争、物理结算的挑战以及可编程计算对 AI 基础设施的长期影响，为理解算力经济提供了新视角。",
-      "title_zh": "可编程数据中心——Evan Conrad，SF Compute",
-      "weighted_score": 0.705,
+      "reason_zh": "从债务市场切入分析AI泡沫，视角独特，有具体数据支撑，对理解行业风险有启发。",
+      "summary_zh": "文章提出判断AI泡沫不应只盯股价，而应关注债务市场信号：CoreWeave债券价格跌至76美分，甲骨文CDS创历史新高，私募信贷出现挤兑迹象，表明债务层已率先反应。作者列出四张“考卷”并预告10月27日财报周将进行对账，暗示届时可验证其判断。全文以债务市场为切入点，结合具体金融指标，对AI行业过热风险进行预警式分析。",
+      "title_zh": null,
+      "weighted_score": 0.645,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
       },
-      "story_id": "2080f3408c9452bb",
+      "story_id": "23a0eae42a08f975",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "latent-space",
-          "url": "https://www.latent.space/p/sfcompute2"
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8175985.html"
         }
       ]
     },
     {
-      "id": "73b9202fd2a116e4",
-      "source_id": "pytorch-blog",
-      "title": "From KTIR to SpyreCode: An MLIR Dataflow Backend for IBM Spyre",
-      "url": "https://pytorch.org/blog/from-ktir-to-spyrecode-an-mlir-dataflow-backend-for-ibm-spyre/",
-      "published_at": "2026-10-20T16:00:15+00:00",
-      "raw_text": "<p>TL;DR Torch-spyre’s Inductor decides how each kernel’s work is divided across Spyre’s cores and manages tensor residency between on-chip scratchpad and off-chip memory, and the backend compiler turns those decisions...</p>\n<p>The post <a href=\"https://pytorch.org/blog/from-ktir-to-spyrecode-an-mlir-dataflow-backend-for-ibm-spyre/\">From KTIR to SpyreCode: An MLIR Dataflow Backend for IBM Spyre</a> appeared first on <a href=\"https://pytorch.org\">PyTorch</a>.</p>",
+      "id": "f3c52dbbdf04c083",
+      "source_id": "reddit-localllama",
+      "title": "[Paper] Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xbj6an/paper_specter_fast_moe_inference_via/",
+      "published_at": "2026-10-21T10:09:24+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xbj6an/paper_specter_fast_moe_inference_via/\"> <img alt=\"[Paper] Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading\" src=\"https://preview.redd.it/o24n3ufooswh1.png?width=140&amp;height=93&amp;auto=webp&amp;s=b61d97beb792192e3ee71b26f64ea3f648c7bd85\" title=\"[Paper] Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><blockquote> <p>Mixture-of-experts (MoE) models often exceed a single accelerator's memory capacity. Offloading experts to host memory creates a severe PCIe I/O bottleneck because data-dependent routing keeps transfers on the critical path. We present Specter, an inference system that uses quantization to combine speculative decoding with expert offloading. Its lightweight quantized draft model runs efficiently on device while preserving high-fidelity expert activation patterns. This p",
       "category_hint": [
         "开源项目",
         "技巧与观点"
       ],
-      "image_url": "https://pytorch.org/wp-content/uploads/2026/10/stack-position.svg",
+      "image_url": "https://preview.redd.it/o24n3ufooswh1.png?width=140&height=93&auto=webp&s=b61d97beb792192e3ee71b26f64ea3f648c7bd85",
       "category": "论文研究",
-      "content_type": "深度分析",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "深入解析IBM Spyre的MLIR数据流后端设计，含编译器与硬件协同细节，技术深度高。",
-      "summary_zh": "PyTorch博客详解从KTIR到SpyreCode的MLIR数据流后端，用于IBM Spyre加速器。Torch-spyre的Inductor决定每个内核工作如何在Spyre核心间划分，并管理片上暂存器与片外内存间的张量驻留；后端编译器将这些决策转换为SpyreCode。文章揭示编译器与专用硬件协同的设计取舍，属于有深度的系统技术剖析。",
-      "title_zh": "从KTIR到SpyreCode：IBM Spyre的MLIR数据流后端",
-      "weighted_score": 0.635,
+      "reason_zh": "提出量化多步推测卸载的MoE推理加速方法，有实验支撑，对本地LLM推理有参考价值。",
+      "summary_zh": "该论文提出Specter方法，通过量化支持的多步推测性卸载来加速混合专家（MoE）模型推理。方法结合量化与推测解码，将部分计算卸载至CPU/GPU外，以多步推测减少通信开销，从而在有限硬件上实现更快的MoE推理。属于系统优化类研究，对本地部署大模型有实用意义。",
+      "title_zh": "Specter：通过量化支持的多步推测卸载实现快速MoE推理",
+      "weighted_score": 0.565,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.4,
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.5,
         "practical_value": 0.6
       },
-      "story_id": "e1161212ed15fe81",
+      "story_id": "27d3a31f80dde1f5",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "pytorch-blog",
-          "url": "https://pytorch.org/blog/from-ktir-to-spyrecode-an-mlir-dataflow-backend-for-ibm-spyre/"
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xbj6an/paper_specter_fast_moe_inference_via/"
         }
       ]
     },
     {
-      "id": "4d6c262b25f33a0e",
-      "source_id": "arxiv-math-na",
-      "title": "Parameter misspecification in physics-informed neural networks: A closed-form audit and its limits",
-      "url": "https://arxiv.org/abs/2610.23948",
-      "published_at": "2026-10-20T04:00:00+00:00",
-      "raw_text": "arXiv:2610.23948v1 Announce Type: cross \nAbstract: Physics-informed neural networks (PINNs) are trained to minimize the residual of a prescribed equation, so a low training loss does not indicate whether a coefficient in that equation was specified incorrectly. This study evaluates what can be inferred about the encoded parameter from the trained network alone. When the residual is linear in the parameter, written as $A - \\nu B$, the least-squares estimate $\\hat{\\nu} = A^{\\top}B/B^{\\top}B$ is obtained from a single evaluation of the frozen network, without retraining or reference data. Its accuracy depends on how closely the network satisfies its own equation, quantified by a normalized residual $\\rho$. Recovery error is associated with $\\rho$ (log-log correlation 0.72 across 36 convection-diffusion networks), and empirical exponents of 0.63 to 1.20 across three equations decompose into one half plus a measurable angular term. For Burgers' equation, a single-model test based on a block",
+      "id": "d94d009ac9698f38",
+      "source_id": "arxiv-cs-ir",
+      "title": "From Crawled to Published: A Publisher-Controlled Web Architecture for an AI-Native Internet",
+      "url": "https://arxiv.org/abs/2511.18354",
+      "published_at": "2026-10-21T04:00:00+00:00",
+      "raw_text": "arXiv:2511.18354v2 Announce Type: replace-cross \nAbstract: AI agents, not humans, are becoming the web's primary consumers, yet the web still ships content structured for human browsing, with no native way for publishers to expose the semantic units within it. Access is therefore mediated by a handful of AI providers that crawl, chunk, and index content unilaterally, leaving publishers little control over how their content is represented, retrieved, or attributed. We argue this is a structural problem, not one better chunking or retrieval algorithms can solve. The web lacks a native layer for publisher-controlled semantic discovery and retrieval. We propose AISTRAL, an AI-Native Internet architecture that supplies this layer. Publishers expose semantically meaningful units (e.g., passages, claims, tables) through explicit, policy-governed interfaces they control, and a web-native semantic resolver, analogous to DNS but operating over meaning rather than location, lets agents discover r",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "揭示PINN低损失不等于参数正确，给出闭式审计方法及其适用边界。",
-      "summary_zh": "论文指出 PINN 通过最小化给定方程的残差来训练，因此训练损失低并不能说明方程中某个系数被正确指定。作者研究仅凭训练好的网络能推断出多少关于所编码参数的信息：当残差对参数呈线性时，可导出闭式审计公式，用于判断参数是否可辨识及偏差方向，并进一步分析该方法的适用边界与失效情形。该工作提醒实践者警惕 PINN 的参数误设风险，并提供了可操作的诊断工具。",
-      "title_zh": "物理信息神经网络中的参数误设：闭式审计及其局限",
-      "weighted_score": 0.5875,
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.75,
+      "reason_zh": "提出由发布方掌控内容语义单元的Web架构，对AI时代内容分发与抓取格局有前瞻性讨论。",
+      "summary_zh": "论文指出AI智能体正取代人类成为Web的主要消费者，但网页仍按人类浏览方式组织，发布方无法原生暴露内容中的语义单元，访问权因此被少数AI厂商通过抓取、切分与索引单方面掌控。作者提出一种发布方控制的Web架构，让内容从被爬取走向可发布，使发布方能自主定义可被AI消费的语义结构，涉及AI原生互联网的内容分发与治理议题。",
+      "title_zh": "从被爬取到可发布：面向AI原生互联网的发布方控制Web架构",
+      "weighted_score": 0.66,
       "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.7,
-        "impact": 0.35,
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
         "practical_value": 0.5
       },
-      "story_id": "00aba378b8185bcf",
+      "story_id": "c0787590111a1ada",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-math-na",
-          "url": "https://arxiv.org/abs/2610.23948"
+          "source_id": "arxiv-cs-ir",
+          "url": "https://arxiv.org/abs/2511.18354"
         }
       ]
     },
     {
-      "id": "5a2f13b5de3c364c",
-      "source_id": "arxiv-math-na",
-      "title": "Integrable building blocks for symplectic neural networks: learned-type layers, fiber-preserving layers, and what a single layer can do",
-      "url": "https://arxiv.org/abs/2610.25023",
-      "published_at": "2026-10-20T04:00:00+00:00",
-      "raw_text": "arXiv:2610.25023v1 Announce Type: new \nAbstract: Exactly symplectic neural networks are built almost exclusively from shear maps and gain expressivity only through depth. We ask what else a single explicit symplectic layer can be. Observing that every layer in use is the exact flow of a Hamiltonian that is a function of commuting integrals, we obtain three families of layers: a learned-type layer, in which every conjugate pair is rotated, squeezed or sheared by a state-dependent amount and the type is found by training; moving-plane shears, residual symplectic maps outside the known ridge-function class; and fiber-preserving layers, which combine an unconstrained point transformation with a fiber translation at the cost of one linear solve. We characterize residual symplectic layers $x \\mapsto x + J\\nabla H(x)$: in one degree of freedom they are exactly the shears along a line, while from two degrees of freedom on a strictly larger class exists. Conjugating a learned-type layer by a sy",
+      "id": "a82a961532cc2349",
+      "source_id": "zh-tmtpost",
+      "title": "Open Inference Code Narrows the Gap Between Rival AI Chips",
+      "url": "https://www.tmtpost.com/8176740.html",
+      "published_at": "2026-10-21T10:29:05+00:00",
+      "raw_text": "DeepSeek released serving software that builds for Huawei accelerators and Nvidia GPUs from one codebase. In China, where boards are scarce and token traffic is rising, that choice could reshape how teams pick hardware—if live traffic backs up the demos.",
       "category_hint": [
-        "论文研究"
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "跳出剪切映射框架，系统刻画单层辛网络的可表达形式，理论洞察较深。",
-      "summary_zh": "精确辛神经网络目前几乎全部由剪切映射堆叠而成，只能靠加深层数提升表达能力。作者追问单个显式辛层还能是什么形式，发现现有各层本质上都是某个哈密顿量的精确流，而该哈密顿量是相互对易积分量的函数。据此构造出三类层：可学习型层、保纤维层等，并分析单层可实现的映射范围。该工作为设计更浅、更高效的辛结构网络提供了理论分类框架，对几何深度学习与科学计算中的结构保持模型有启发。",
-      "title_zh": "辛神经网络的积分型构建模块：可学习型层、保纤维层与单层能力边界",
-      "weighted_score": 0.5575,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.75,
-        "impact": 0.3,
-        "practical_value": 0.35
-      },
-      "story_id": "bdd72e8f79d07c79",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-math-na",
-          "url": "https://arxiv.org/abs/2610.25023"
-        }
-      ]
-    },
-    {
-      "id": "09e62eb15568147b",
-      "source_id": "zh-meituan-tech",
-      "title": "下一代搜索智能体评测基准！美团开源LoHoSearch，用知识图谱校准AI能力认知",
-      "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html",
-      "published_at": "2026-10-20T20:19:23.533830+00:00",
-      "raw_text": "过去一年，我们见证了 Search Agent 能力的显著演进。在 BrowseComp 等评测上，顶尖模型准确率从最初的 30% 区间迅速攀升至 90% 以上。然而，当基准迅速饱和，其区分模型能力的价值也随之递减。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://p0.meituan.net/meituantechblog/69e86f1a417ef555aed62d74c1152c53108351.png",
+      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/2t35y46ejyt3.png",
       "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.75,
-      "reason_zh": "BrowseComp等基准已饱和，美团用知识图谱校准搜索Agent评测，开源基准值得关注。",
-      "summary_zh": "美团开源下一代搜索智能体评测基准LoHoSearch。文章指出，过去一年Search Agent能力快速演进，BrowseComp等基准上顶尖模型准确率已从30%区间升至90%以上，基准饱和导致其区分模型能力的价值递减。LoHoSearch借助知识图谱构建评测任务，用以校准对AI能力的认知，提供更难、更具区分度的评测维度，并开源供社区使用。",
-      "title_zh": null,
-      "weighted_score": 0.755,
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "DeepSeek 开源推理代码统一支持华为与英伟达芯片，可能改变硬件选型格局。",
+      "summary_zh": "DeepSeek 发布了推理服务软件，同一代码库可同时为华为加速器和英伟达 GPU 构建。在中国市场，加速卡稀缺且 token 流量增长，这一选择可能重塑团队选择硬件的逻辑——前提是实际流量能验证演示效果。文章分析了该开源举措对 AI 芯片竞争格局的潜在影响，探讨了跨平台推理软件如何降低对单一硬件生态的依赖，以及在实际部署中面临的性能与生态挑战。",
+      "title_zh": "开源推理代码缩小了竞争 AI 芯片之间的差距",
+      "weighted_score": 0.75,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.7,
         "novelty": 0.8,
-        "impact": 0.7,
+        "impact": 0.8,
         "practical_value": 0.7
       },
-      "story_id": "eb00a4db4521a3f4",
+      "story_id": "4a9d98a2dfbc3c23",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/07/24/LongCat-LoHoSearch.html"
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8176740.html"
         }
       ]
     },
     {
-      "id": "f1ea6968e1447ee6",
-      "source_id": "zh-meituan-tech",
-      "title": "SLM 生成式高并发推理引擎：延迟约束下的有效吞吐优化",
-      "url": "https://tech.meituan.com/2026/10/15/Small-Language-Model-in-meituan.html",
-      "published_at": "2026-10-19T21:21:22.350090+00:00",
-      "raw_text": "本文为SLM（Small Language Model， 小参数量语言模型0.5~1B）在搜推场景的大规模落地提供了一套高性能、可复用的工程实践。",
+      "id": "31472bd86f0451c1",
+      "source_id": "fastcompany-tech",
+      "title": "Handwashing changed medicine. AI could too, if hospitals stop treating it like traditional software",
+      "url": "https://www.fastcompany.com/91624590/handwashing-changed-medicine-ai-could-too-if-hospitals-stop-treating-it-like-traditional-software-ai-healthcare-technology?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+      "published_at": "2026-10-21T10:33:00+00:00",
+      "raw_text": "<p class=\"wp-block-paragraph\" id=\"h-\">In 1847, Ignaz Semmelweis asked the doctors in the Vienna maternity clinic where he worked to wash their hands in a chlorine solution before examining patients. Deaths on the ward fell from about 18% to about 2% within two months. In healthcare, small changes in practice can have disproportionately large effects, because the healthcare system affects everyone and the stakes are literally life and death. We think <a href=\"https://www.fastcompany.com/section/artificial-intelligence\" title=\"AI\">AI</a> has the potential to revolutionize healthcare, contributing to a dizzying array of changes. But institutions are failing to adjust to meet the moment, despite widespread interest in change from patients and providers.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Americans are racing ahead with using AI for medical advice. Roughly <a href=\"https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-th",
       "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2026/10/p-91624590-hospitals-need-to-stop-treating-AI-like-normal-software.jpg",
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "以洗手改变医学史类比，论证医院不应将 AI 当作传统软件，提出实践与流程变革才是关键，观点有启发性。",
+      "summary_zh": "文章以 1847 年塞麦尔维斯要求医生洗手使产房死亡率从 18% 降至 2% 的历史案例开篇，指出医疗系统中实践的小改变能产生巨大影响。作者类比认为，AI 在医疗领域的潜力同样巨大，但医院若继续将 AI 视为传统软件采购和部署，而非推动临床工作流程和行为的根本变革，就难以复制洗手那样的成功。文章呼吁医疗管理者重视 AI 落地中的组织与实践因素。",
+      "title_zh": "洗手改变了医学。如果医院不再把 AI 当作传统软件，AI 也能做到",
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "e7ab5145eb9eddac",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "fastcompany-tech",
+          "url": "https://www.fastcompany.com/91624590/handwashing-changed-medicine-ai-could-too-if-hospitals-stop-treating-it-like-traditional-software-ai-healthcare-technology?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss"
+        }
+      ]
+    },
+    {
+      "id": "348031f235be63db",
+      "source_id": "infoq-cn-ai",
+      "title": "美团企业级 Agent 的平台化应用实践｜QCon上海",
+      "url": "https://www.infoq.cn/article/BQJltkL1FJ9AG3cMeUmB?utm_source=rss&utm_medium=article",
+      "published_at": "2026-10-21T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/BQJltkL1FJ9AG3cMeUmB?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
-      "image_url": "https://p0.meituan.net/meituantechblog/449102302ea0d472417c6fff369dd63882001.png",
+      "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.75,
-      "reason_zh": "美团技术团队复盘小模型在搜推场景的高并发推理优化，工程取舍具体可迁移。",
-      "summary_zh": "美团技术团队撰文介绍 SLM（0.5~1B 参数小语言模型）在搜索推荐场景大规模落地时的高并发推理引擎实践。文章围绕延迟约束下的有效吞吐优化展开，讨论如何在保证响应时延的前提下提升单位时间处理能力，并总结了一套可复用的工程方案。内容来自真实业务系统的部署经验，涉及性能瓶颈定位、资源调度与吞吐权衡等具体取舍，对需要在小模型上做高并发在线推理的工程师具有较强参考价值。",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "美团企业级Agent平台化实践分享，来自QCon，对构建企业Agent系统有实操参考价值。",
+      "summary_zh": "本文是美团在QCon上海的技术分享，介绍其企业级Agent的平台化应用实践。内容可能涵盖Agent平台架构设计、多场景落地经验、工程化挑战与解决方案，面向企业技术团队，提供可借鉴的Agent系统构建方法论。",
       "title_zh": null,
       "weighted_score": 0.645,
       "score_breakdown": {
@@ -293,112 +293,113 @@
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "907dc8ae5cc11c18",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/10/15/Small-Language-Model-in-meituan.html"
-        }
-      ]
-    },
-    {
-      "id": "95d9817a54f79f8d",
-      "source_id": "infoq-cn-ai",
-      "title": "AI生成的代码看不懂就扔掉重来：一位首席架构师的 5 条 Agent 编程反常识原则",
-      "url": "https://www.infoq.cn/article/tgqMEJsqXfX6YzAcOiAR?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-20T15:05:27+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/tgqMEJsqXfX6YzAcOiAR?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.75,
-      "reason_zh": "首席架构师总结的 Agent 编程反常识原则，来自真实工程取舍，可直接迁移到团队实践。",
-      "summary_zh": "一位首席架构师结合自身实践，提出关于 Agent 辅助编程的五条反常识原则。核心观点包括：AI 生成的代码如果开发者自己看不懂，就应当丢弃重写，而不是勉强合并；可维护性优先于生成速度；人类必须保留对关键逻辑的理解与审查责任。文章强调 Agent 编程改变的是产出节奏，而非工程判断标准，团队需要建立相应的评审与验收机制，避免技术债在高速生成中悄然累积。",
-      "title_zh": null,
-      "weighted_score": 0.615,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "eb25bab0ac13ba4c",
+      "story_id": "3c240c037884a961",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/tgqMEJsqXfX6YzAcOiAR?utm_source=rss&utm_medium=article"
+          "url": "https://www.infoq.cn/article/BQJltkL1FJ9AG3cMeUmB?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "5ec7647528c012be",
-      "source_id": "zh-oschina",
-      "title": "DeepSeek 开源推理框架 DeepInfer：服务链路的最后一块拼图",
-      "url": "https://www.oschina.net/news/503116",
-      "published_at": "2026-10-20T10:39:12+00:00",
-      "raw_text": "DeepSeek 把压箱底的推理框架开源了。这次不是模型，是那个决定算力成本和电费多少的中间层——DeepInfer。 推理框架这个角色，普通用户感受不到，但它每天都在起作用。训练让模型「学有所成」，推理让模型「为人所用」——海量用户调用时，是推理框架在统筹调度庞大的算力集群，它的效率直接决定 AI 服务的算力成本和电...",
+      "id": "a6e1fb4e076b0df6",
+      "source_id": "latent-space",
+      "title": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman & CJ Hess",
+      "url": "https://www.latent.space/p/tenex",
+      "published_at": "2026-10-21T05:01:26+00:00",
+      "raw_text": "Listen now (44 mins) | Paying for outcomes, building with agents, and the last mile of enterprise AI adoption",
       "category_hint": [
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "DeepSeek开源推理框架DeepInfer，直接关系算力成本与服务效率，对部署LLM的工程师价值高。",
-      "summary_zh": "文章介绍DeepSeek开源其推理框架DeepInfer，强调这次开源的并非模型，而是决定算力成本与电费开销的中间层。文中指出推理框架虽不被普通用户感知，却负责在海量调用时统筹调度算力集群，其效率直接影响AI服务的成本与响应。内容围绕DeepInfer在服务链路中的定位、调度与优化思路展开，说明它如何补齐从训练到实际部署的最后一块拼图，并讨论其对降低推理成本、提升资源利用率的意义。",
-      "title_zh": null,
-      "weighted_score": 0.7575,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.75,
-        "practical_value": 0.8
-      },
-      "story_id": "ac6679aa95496efa",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/503116"
-        }
-      ]
-    },
-    {
-      "id": "f691b33b16339eed",
-      "source_id": "stratechery",
-      "title": "Muse Spark Open, Meta + Apple, Thin and Thick",
-      "url": "https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/",
-      "published_at": "2026-10-20T10:00:00+00:00",
-      "raw_text": "Meta has a new open source model, and to everyone's surprise, they are are partnering with Apple to make sure you can run it locally.",
-      "category_hint": [
+        "技巧与观点",
         "行业动态"
       ],
-      "image_url": null,
-      "category": "模型发布",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!aHGG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F576c0ba6-53e3-458f-bd88-6d524832b2ff_819x526.png",
+      "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "Stratechery分析Meta新开源模型与Apple合作，解读本地运行的战略含义。",
-      "summary_zh": "Meta发布新的开源模型Muse Spark Open，并出人意料地与Apple合作，确保该模型可在本地设备上运行。文章围绕这一合作展开分析，讨论开源模型与终端硬件结合的趋势，以及“薄与厚”两种AI部署策略的取舍。作者认为本地运行能力将改变模型分发与隐私格局，并探讨Meta与Apple各自在这一合作中的战略动机与潜在影响。",
-      "title_zh": "Muse Spark开源、Meta与Apple合作、薄与厚",
-      "weighted_score": 0.7175,
+      "reason_zh": "来自Latent Space的企业AI落地访谈，讲清按结果付费、agent构建与最后一公里，对做企业AI的人有实操启发。",
+      "summary_zh": "Latent Space播客访谈Tenex的Alex Lieberman与CJ Hess，讨论如何在财富2000强企业中构建AI原生的软件开发生命周期。核心观点包括：从按席位付费转向按结果付费的商业模式；用agent承担需求拆解、编码与测试等环节；以及企业AI落地最难的是最后一公里——流程改造、权限与合规、人机协作习惯。节目还涉及如何衡量agent产出质量、如何与既有研发工具链集成，以及规模化推广中的组织阻力。",
+      "title_zh": "面向财富2000强的AI：Tenex如何构建AI原生SDLC",
+      "weighted_score": 0.625,
       "score_breakdown": {
-        "source_authority": 0.85,
-        "novelty": 0.75,
-        "impact": 0.7,
-        "practical_value": 0.5
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.7
       },
-      "story_id": "c0bc82d8e4307339",
+      "story_id": "7f59b4a37a279367",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "stratechery",
-          "url": "https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/"
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/tenex"
+        }
+      ]
+    },
+    {
+      "id": "0fff47054cc39cd5",
+      "source_id": "latent-space",
+      "title": "Claude Mods: Flipping the Harness Inside Out",
+      "url": "https://www.latent.space/p/claude-mods",
+      "published_at": "2026-10-21T13:04:19+00:00",
+      "raw_text": "Claude Mods is an early form of the Attention Interface. It flips the agent harness paradigm from the harness facing the machine, to the harness facing the human.",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!Kjjn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc61f4d99-31a9-4e4c-aa02-65e5b5db1799_1280x720.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "提出“注意力界面”概念，把agent harness从面向机器翻转为面向人，思路新颖有启发。",
+      "summary_zh": "文章介绍 Claude Mods 这一早期形态的“注意力界面”（Attention Interface），其核心思路是把 agent harness 的范式从“面向机器”翻转为“面向人”。传统 harness 主要服务于模型调用与工具编排，而 Claude Mods 让 harness 直接面向人类用户的注意力与交互需求，从而改变人与 agent 协作的方式。作者借此探讨了 agent 系统设计中接口层的新方向。",
+      "title_zh": "Claude Mods：把 harness 由内向外翻转",
+      "weighted_score": 0.625,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.6
+      },
+      "story_id": "a72d33ede3677ab5",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/claude-mods"
+        }
+      ]
+    },
+    {
+      "id": "c117d3c3b2cad02a",
+      "source_id": "reddit-mlops",
+      "title": "How we got Linux VM container workloads running natively on the Mac so they can use the Apple Silicon GPU (mps/MLX): how we did it and the sandbox tradeoff",
+      "url": "https://www.reddit.com/r/mlops/comments/1xb614e/how_we_got_linux_vm_container_workloads_running/",
+      "published_at": "2026-10-20T22:21:41+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>(Disclosure: I work at Union AI and maintain Flyte.)</p> <p>Flyte is an open source AI runtime with a durable execution engine where you can train, fine-tune, and serve AI models and agents.</p> <p><strong>Problem:</strong> Flyte's local devbox runs every task and app in a container. On a Mac that container is a Linux VM, and a Linux VM has no Metal. So <code>torch.backends.mps.is_available()</code> is <code>False</code>, MLX doesn't run, and any ML code you iterate on locally falls back to the CPU. You can't pass the GPU through: there's nothing in the VM to pass it to.</p> <p><strong>What we did:</strong> a task or app that requests <code>flyte.Resources(gpu=&quot;AppleSilicon&quot;)</code> runs its code natively on the Mac instead. The container starts as normal, then its entrypoint hands its own invocation to a bridge running on the host. The bridge builds a cached <code>uv</code> environment from the image's pip packages, rewrites the in-cluster e",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "详述在Mac上让Linux容器用上Apple Silicon GPU的工程方案与取舍。",
+      "summary_zh": "作者来自Union AI并维护Flyte，文章讲述如何让Flyte本地开发环境中的Linux VM容器任务原生使用Apple Silicon GPU（MPS/MLX）。问题在于Mac上的容器运行在Linux虚拟机中，无法访问Metal。文章详细介绍了实现方案、技术路径以及由此带来的沙箱安全权衡，属于真实系统的工程实践复盘，对在Mac上进行AI开发与本地调试的工程师有较高参考价值。",
+      "title_zh": "我们如何让Linux VM容器工作负载在Mac上原生运行并使用Apple Silicon GPU（MPS/MLX）：实现方法与沙箱权衡",
+      "weighted_score": 0.555,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.7,
+        "impact": 0.4,
+        "practical_value": 0.8
+      },
+      "story_id": "f157d8632b727fab",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-mlops",
+          "url": "https://www.reddit.com/r/mlops/comments/1xb614e/how_we_got_linux_vm_container_workloads_running/"
         }
       ]
     }
