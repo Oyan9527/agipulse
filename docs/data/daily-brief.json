@@ -1,280 +1,315 @@
 {
-  "date": "2026-10-21",
-  "generated_at": "2026-10-21T20:51:19.228397+00:00",
+  "date": "2026-10-22",
+  "generated_at": "2026-10-22T20:55:18.574093+00:00",
   "items": [
     {
-      "id": "e38a39725622beeb",
-      "source_id": "arxiv-cs-ir",
-      "title": "Factual Access States in Diffusion Language Models: From Mechanism to Knowledge Editing and Retrieval",
-      "url": "https://arxiv.org/abs/2610.27580",
-      "published_at": "2026-10-21T04:00:00+00:00",
-      "raw_text": "arXiv:2610.27580v1 Announce Type: cross \nAbstract: Factual recall is a lookup: some representation inside the network serves as the key, and what that key is made of decides which queries can retrieve the fact, what an edit must cover, and what a retriever can read. We call it the factual access state. In autoregressive (AR) models the subject position enriches attributes largely independently of the relation, and relation-specific selection happens later, at the readout position. In masked diffusion language models (DLMs) we find the state is assembled differently, and much earlier: in the first attention layer the wording of the relation is routed into the position of whichever entity is visible and the early feed-forward layers look the fact up on this fused representation. The state therefore varies with the relation's surface form and with the query direction, so the queries about one fact occupy a region of state space rather than a point, and an operation on the fact succeeds on",
+      "id": "60d99c2090da828b",
+      "source_id": "arxiv-cs-se",
+      "title": "Do Coding Agents Understand Why Systems Crash---and Why They Don't?",
+      "url": "https://arxiv.org/abs/2610.29332",
+      "published_at": "2026-10-22T04:00:00+00:00",
+      "raw_text": "arXiv:2610.29332v1 Announce Type: new \nAbstract: Coding agents are increasingly capable of fixing real-world bugs, yet they still struggle with large systems codebases such as the Linux kernel. To understand why, we test how agents reason about execution in these codebases through crash reasoning: predicting from source code whether a given input crashes the system. A correct prediction alone, however, does not establish this ability, since it may come from merely spotting suspicious code. In this paper, we propose source interventions: we pair source trees that differ by a single commit, so that the same input crashes only one of them, and test whether agents predict crashes more often on the crashing tree. Experiments with four coding agents on SysRB, our dataset of 934 such pairs from Linux and OSS-Fuzz projects, yield three main findings. First, agents are biased toward predicting no crash: they rarely raise false alarms but miss many real crashes, and even the best agent misses ov",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "提出“事实访问状态”概念解释扩散语言模型的知识检索机制，对知识编辑与检索设计有迁移价值。",
-      "summary_zh": "论文把事实回忆视为一次查表：网络内部某些表示充当键，键的构成决定了哪些查询能取回该事实、知识编辑需覆盖什么、检索器能读到什么，作者称之为事实访问状态。研究对比自回归模型与扩散语言模型中该状态的差异，分析扩散模型里事实信息如何被访问，并据此讨论知识编辑与检索增强策略的设计。属于模型可解释性与知识编辑交叉的机制性研究。",
-      "title_zh": "扩散语言模型中的事实访问状态：从机制到知识编辑与检索",
-      "weighted_score": 0.635,
+      "depth_score": 0.8,
+      "reason_zh": "揭示编码智能体在大型系统代码库中推理执行路径的短板，对理解 agent 能力边界有启发。",
+      "summary_zh": "该论文研究编码智能体为何难以处理 Linux 内核这类大型系统代码库，提出以“崩溃推理”作为测试手段：让智能体仅凭源码预测给定输入是否会导致系统崩溃。作者指出，仅看预测是否正确并不足够，还需考察其推理过程是否真正理解了执行语义。研究通过这一任务刻画智能体在系统级代码理解上的能力与局限，为改进面向大型代码库的编码智能体提供依据。",
+      "title_zh": "编码智能体真的理解系统为何崩溃吗——以及为何不理解？",
+      "weighted_score": 0.7075,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.75,
-        "impact": 0.55,
-        "practical_value": 0.5
+        "source_authority": 0.75,
+        "novelty": 0.8,
+        "impact": 0.65,
+        "practical_value": 0.6
       },
-      "story_id": "7bac5e5e91cd1f66",
+      "story_id": "4c7f0a725f11a97d",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ir",
-          "url": "https://arxiv.org/abs/2610.27580"
+          "source_id": "arxiv-cs-se",
+          "url": "https://arxiv.org/abs/2610.29332"
         }
       ]
     },
     {
-      "id": "88d0e172655b07c4",
-      "source_id": "aws-ml-blog",
-      "title": "Beyond the KV cache: Training and serving i14’s Laplace 3B linear attention model on AWS Trainium2 with native PyTorch",
-      "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/",
-      "published_at": "2026-10-20T21:14:10+00:00",
-      "raw_text": "Learn how i14 trained and served Laplace 3B, a linear attention model, on AWS Trainium2 using native PyTorch. Its recurrent state stays fixed at 29.5 MB per sequence regardless of context length, avoiding the growing key-value cache of transformer models and keeping serving memory predictable.",
+      "id": "7ee8d60e8c50e3b9",
+      "source_id": "marktechpost",
+      "title": "Perplexity and NVIDIA Researchers Introduce JOLT: a Joint Teacher-Student Reinforcement Learning Method",
+      "url": "https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/",
+      "published_at": "2026-10-22T04:56:31+00:00",
+      "raw_text": "<p>Perplexity and NVIDIA introduced JOLT, a post-training method that trains one model as both teacher and student. On MATH it matched GRPO’s accuracy with 6.5x fewer processed training tokens.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/\">Perplexity and NVIDIA Researchers Introduce JOLT: a Joint Teacher-Student Reinforcement Learning Method</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
       "category_hint": [
-        "技巧与观点",
+        "模型发布",
         "产品发布"
       ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/14/ML-21817-1.png",
+      "image_url": null,
       "category": "论文研究",
-      "content_type": "教程方法",
+      "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "详细分享线性注意力模型在 Trainium2 上的训练与部署实践，技术深度高。",
-      "summary_zh": "AWS 机器学习博客介绍 i14 如何利用原生 PyTorch 在 AWS Trainium2 上训练和部署 Laplace 3B 线性注意力模型。该模型的循环状态每序列固定为 29.5 MB，不随上下文长度增长，从而避免 Transformer 的 KV 缓存膨胀问题，使服务内存可预测。文章涵盖训练与推理的工程细节，为长上下文场景提供替代方案。",
-      "title_zh": "超越 KV 缓存：i14 在 AWS Trainium2 上用原生 PyTorch 训练与部署 Laplace 3B 线性注意力模型",
-      "weighted_score": 0.73,
+      "reason_zh": "提出联合师生强化学习新方法，在MATH上以6.5倍更少token达到GRPO精度，对RL后训练有直接启发。",
+      "summary_zh": "Perplexity与NVIDIA研究人员提出JOLT，一种联合师生强化学习后训练方法，让同一个模型同时充当教师和学生。在MATH基准上，JOLT以比GRPO少6.5倍的已处理训练token达到同等准确率，显著提升训练效率。该方法通过联合优化师生角色，减少对大量采样数据的依赖，为强化学习后训练提供更经济的路径。",
+      "title_zh": "Perplexity与NVIDIA研究人员推出JOLT：一种联合师生强化学习方法",
+      "weighted_score": 0.695,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.6,
         "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.7
+      },
+      "story_id": "5124755cda40b9f9",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "marktechpost",
+          "url": "https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/"
+        }
+      ]
+    },
+    {
+      "id": "3fb6826c85351d36",
+      "source_id": "zh-meituan-tech",
+      "title": "从 LOOP 到图探索 —— 算法模型的 AutoResearch 自进化系统架构演进之路",
+      "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html",
+      "published_at": "2026-10-22T20:26:23.769042+00:00",
+      "raw_text": "本文分享这套系统的设计理念、架构演进与可信度设计，希望对大家有所帮助或启发。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/f96887d93b880574e0fb9ebad114faba529816.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "美团技术团队分享AutoResearch自进化系统从LOOP到图探索的架构演进与可信度设计，有真实工程取舍。",
+      "summary_zh": "美团技术团队撰文分享其AutoResearch自进化系统的设计理念、架构演进与可信度设计。文章梳理了系统从早期LOOP式迭代到图探索架构的转变过程，讨论了在自动化研究场景中如何平衡探索广度与深度、如何保证生成结果的可信度，并总结了架构演进中遇到的工程取舍与踩坑经验。内容面向希望构建自动化研究或自进化Agent系统的工程师，提供了可迁移的系统设计思路。",
+      "title_zh": "从LOOP到图探索——算法模型的AutoResearch自进化系统架构演进之路",
+      "weighted_score": 0.675,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
         "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "1dd8aadb5b5b3473",
+      "story_id": "2e9ee6491b654f3b",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/"
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html"
         }
       ]
     },
     {
-      "id": "5a3fe69920e9b2d0",
-      "source_id": "arxiv-cs-hc",
-      "title": "Decision-Oriented Programming with Aporia",
-      "url": "https://arxiv.org/abs/2604.05203",
-      "published_at": "2026-10-21T04:00:00+00:00",
-      "raw_text": "arXiv:2604.05203v2 Announce Type: replace \nAbstract: AI agents help developers express computational intent abstractly, but at a cost: developers cede decision-making authority to agents, often without realizing that important design decisions are being made without them. We bring these decisions to the foreground in a workflow we dub decision-oriented programming. In DOP, decisions are (1) explicit and structured, serving as the shared medium between programmer and agent; (2) co-authored interactively, with the agent eliciting them from the programmer; and (3) traceable to code. As a step towards this vision, we built Aporia, a design probe that tracks decisions in a persistent, editable Decision Bank; elicits them proactively through design questions; and encodes each as a test suite that can help validate the agent's implementation. A study of 14 programmers showed that structuring collaboration around decisions kept programmer and agent in sync throughout the design process, and hi",
+      "id": "d636564ee5d912b3",
+      "source_id": "latent-space",
+      "title": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
+      "url": "https://www.latent.space/p/modal-d",
+      "published_at": "2026-10-22T17:40:57+00:00",
+      "raw_text": "Elastic GPUs, sandbox growth, and the economics of the agent cloud",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "Modal CEO 谈弹性 GPU、沙箱增长与 agent 云经济，含真实系统取舍，值得工程师细读。",
+      "summary_zh": "Latent Space 播客对话 Modal CEO Erik Bernhardsson，围绕“为什么 AI 算力是矩形”展开，讨论弹性 GPU 的调度与利用率、沙箱（sandbox）工作负载的快速增长，以及 agent 云的经济模型。内容涉及 Modal 在真实系统中对冷启动、资源隔离与成本结构的工程取舍，并分析 agent 类应用对基础设施形态的影响。适合关注 AI 基础设施与平台经济的读者。",
+      "title_zh": "为什么 AI 算力是矩形——对话 Modal CEO Erik Bernhardsson",
+      "weighted_score": 0.65,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "3a658262156b750b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://www.latent.space/p/modal-d"
+        }
+      ]
+    },
+    {
+      "id": "2be42d4f2c4b9413",
+      "source_id": "reddit-promptengineering",
+      "title": "13 context engineering lessons learned from running long-term agents across large repos",
+      "url": "https://www.reddit.com/r/PromptEngineering/comments/1xcl3vm/13_context_engineering_lessons_learned_from/",
+      "published_at": "2026-10-22T15:06:31+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi all, saw several threads discussing how quickly Claude Code and terminal agents degrade when working across long multi-hour sessions or multi-package codebases. The failure mode is almost always the same: after turn ten, the agent starts forgetting earlier constraints, hallucinating file paths, and making syntax mistakes on basic edits.</p> <p>The issue is rarely model reasoning capability. It is almost always context engineering: how project state, tool outputs, and historical memories are structured inside the prompt buffer.</p> <p>Here are 13 practical context engineering patterns and harness workflows that keep agent reliability consistent over long-running development loops:</p> <ol> <li><p>Path-based memory retrieval over raw context dumps: Storing multi-session knowledge in bloated conversation transcripts degrades attention. Using tools like <em>agent-memory</em>, project decisions are logged directly into repository markdown files indexed b",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "来自真实大型代码库长期运行代理的13条上下文工程经验，极具实践价值。",
+      "summary_zh": "作者在Reddit上分享了在大型代码库中长期运行AI代理时学到的13条上下文工程经验。文章指出，Claude Code和终端代理在长时间会话或多包代码库中性能会迅速下降，典型故障模式是：十轮对话后，代理开始忘记早期约束、幻觉文件路径、在基本编辑上犯语法错误。作者分析了问题根源，并给出了具体的上下文管理策略，如定期总结、分块处理、显式约束提醒等，这些经验来自实际项目踩坑，对构建可靠代理系统的开发者很有参考价值。",
+      "title_zh": "在大型代码库中运行长期代理学到的13条上下文工程经验",
+      "weighted_score": 0.525,
+      "score_breakdown": {
+        "source_authority": 0.3,
+        "novelty": 0.7,
+        "impact": 0.4,
+        "practical_value": 0.8
+      },
+      "story_id": "76e41c54b79ef0ee",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-promptengineering",
+          "url": "https://www.reddit.com/r/PromptEngineering/comments/1xcl3vm/13_context_engineering_lessons_learned_from/"
+        }
+      ]
+    },
+    {
+      "id": "edc36cfd3a88be8a",
+      "source_id": "arxiv-cs-se",
+      "title": "Who Verifies the Agent's Success Claim? Self-Report Leakage in GUI-Agent Completion Judging",
+      "url": "https://arxiv.org/abs/2610.29609",
+      "published_at": "2026-10-22T04:00:00+00:00",
+      "raw_text": "arXiv:2610.29609v1 Announce Type: new \nAbstract: In automation pipelines, a GUI agent's confident success report can let downstream stages proceed even when the recorded execution trace does not show that the agent produced the requested outcome. We call this case a dangerous misreport: an unhedged success claim that the trace does not support as causal accomplishment during the run. We study report--trace auditing, which checks an agent's completion claim against an independently recorded trace.\n  A controlled aware/blind intervention reveals self-report leakage: the agent's own self-report changes how completion is judged. The same judge reads the same task and trace; only that self-report is included or withheld. Withholding it improves trace-only dangerous-misreport recall by 43.4 percentage points with Qwen3.5-35B-A3B and 13.3 percentage points with DeepSeek-284B-A13B, with the same trend on held-out Batch 2. This motivates report isolation. The report records what the agent claim",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出“决策导向编程”范式，把被agent悄悄接管的设计决策显式化，对agent工程实践有启发。",
-      "summary_zh": "论文指出，AI agent 虽能帮助开发者以抽象方式表达计算意图，但代价是开发者把决策权让渡给了 agent，且往往没有意识到重要设计决策正由 agent 代为做出。作者提出“决策导向编程”（DOP）工作流，将决策显式化、可审查地呈现在开发过程中，使开发者重新掌握关键取舍。文章围绕这一范式讨论了决策的表达方式、与 agent 协作的流程以及如何避免隐性决策带来的风险，属于对 agent 辅助开发方法论的反思与重构。",
-      "title_zh": "基于 Aporia 的决策导向编程",
-      "weighted_score": 0.705,
+      "depth_score": 0.75,
+      "reason_zh": "指出 GUI 智能体自报成功与执行轨迹不符的风险，对构建可靠自动化流水线很实用。",
+      "summary_zh": "论文研究 GUI 智能体在自动化流水线中的“危险误报”问题：智能体自信地宣称任务成功，但实际执行轨迹并不能证明其因果性地完成了目标，下游环节却据此继续推进。作者将这类缺乏轨迹支撑的成功声明定义为危险误报，并分析其成因与判定方式。该工作提醒依赖智能体自报结果的系统需要独立验证机制，对构建可靠的 GUI 自动化流水线具有实践意义。",
+      "title_zh": "谁来验证智能体的成功声明？GUI 智能体完成判定中的自报泄漏",
+      "weighted_score": 0.715,
       "score_breakdown": {
         "source_authority": 0.75,
         "novelty": 0.8,
         "impact": 0.6,
-        "practical_value": 0.65
-      },
-      "story_id": "d085230c125e7a82",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-hc",
-          "url": "https://arxiv.org/abs/2604.05203"
-        }
-      ]
-    },
-    {
-      "id": "5682f028d8438ab9",
-      "source_id": "zh-tmtpost",
-      "title": "AI 泡沫监测·之一：债务层已经先动了",
-      "url": "https://www.tmtpost.com/8175985.html",
-      "published_at": "2026-10-21T09:49:23+00:00",
-      "raw_text": "判断 AI 泡沫别盯股价，盯债：CoreWeave 债券 76 美分，甲骨文 CDS 创历史新高，私募信贷在挤兑——债务层已经先动了。四张考卷已出，10 月 27 日财报周交卷，对账见。",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/4t5hyjtng3.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "从债务市场切入分析AI泡沫，视角独特，有具体数据支撑，对理解行业风险有启发。",
-      "summary_zh": "文章提出判断AI泡沫不应只盯股价，而应关注债务市场信号：CoreWeave债券价格跌至76美分，甲骨文CDS创历史新高，私募信贷出现挤兑迹象，表明债务层已率先反应。作者列出四张“考卷”并预告10月27日财报周将进行对账，暗示届时可验证其判断。全文以债务市场为切入点，结合具体金融指标，对AI行业过热风险进行预警式分析。",
-      "title_zh": null,
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "23a0eae42a08f975",
+      "story_id": "d6a54229e9271f58",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8175985.html"
+          "source_id": "arxiv-cs-se",
+          "url": "https://arxiv.org/abs/2610.29609"
         }
       ]
     },
     {
-      "id": "f3c52dbbdf04c083",
-      "source_id": "reddit-localllama",
-      "title": "[Paper] Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xbj6an/paper_specter_fast_moe_inference_via/",
-      "published_at": "2026-10-21T10:09:24+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xbj6an/paper_specter_fast_moe_inference_via/\"> <img alt=\"[Paper] Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading\" src=\"https://preview.redd.it/o24n3ufooswh1.png?width=140&amp;height=93&amp;auto=webp&amp;s=b61d97beb792192e3ee71b26f64ea3f648c7bd85\" title=\"[Paper] Specter: Fast MoE Inference via Quantization-Enabled Multi-Step Speculative Offloading\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><blockquote> <p>Mixture-of-experts (MoE) models often exceed a single accelerator's memory capacity. Offloading experts to host memory creates a severe PCIe I/O bottleneck because data-dependent routing keeps transfers on the critical path. We present Specter, an inference system that uses quantization to combine speculative decoding with expert offloading. Its lightweight quantized draft model runs efficiently on device while preserving high-fidelity expert activation patterns. This p",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://preview.redd.it/o24n3ufooswh1.png?width=140&height=93&auto=webp&s=b61d97beb792192e3ee71b26f64ea3f648c7bd85",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出量化多步推测卸载的MoE推理加速方法，有实验支撑，对本地LLM推理有参考价值。",
-      "summary_zh": "该论文提出Specter方法，通过量化支持的多步推测性卸载来加速混合专家（MoE）模型推理。方法结合量化与推测解码，将部分计算卸载至CPU/GPU外，以多步推测减少通信开销，从而在有限硬件上实现更快的MoE推理。属于系统优化类研究，对本地部署大模型有实用意义。",
-      "title_zh": "Specter：通过量化支持的多步推测卸载实现快速MoE推理",
-      "weighted_score": 0.565,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.6
-      },
-      "story_id": "27d3a31f80dde1f5",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xbj6an/paper_specter_fast_moe_inference_via/"
-        }
-      ]
-    },
-    {
-      "id": "d94d009ac9698f38",
-      "source_id": "arxiv-cs-ir",
-      "title": "From Crawled to Published: A Publisher-Controlled Web Architecture for an AI-Native Internet",
-      "url": "https://arxiv.org/abs/2511.18354",
-      "published_at": "2026-10-21T04:00:00+00:00",
-      "raw_text": "arXiv:2511.18354v2 Announce Type: replace-cross \nAbstract: AI agents, not humans, are becoming the web's primary consumers, yet the web still ships content structured for human browsing, with no native way for publishers to expose the semantic units within it. Access is therefore mediated by a handful of AI providers that crawl, chunk, and index content unilaterally, leaving publishers little control over how their content is represented, retrieved, or attributed. We argue this is a structural problem, not one better chunking or retrieval algorithms can solve. The web lacks a native layer for publisher-controlled semantic discovery and retrieval. We propose AISTRAL, an AI-Native Internet architecture that supplies this layer. Publishers expose semantically meaningful units (e.g., passages, claims, tables) through explicit, policy-governed interfaces they control, and a web-native semantic resolver, analogous to DNS but operating over meaning rather than location, lets agents discover r",
+      "id": "80b3cfce672c0fbc",
+      "source_id": "arxiv-cs-se",
+      "title": "Who Approved This? Coding Agents, Human Accounts, and Merge-Gate Evidence at a Fintech Startup",
+      "url": "https://arxiv.org/abs/2610.28683",
+      "published_at": "2026-10-22T04:00:00+00:00",
+      "raw_text": "arXiv:2610.28683v1 Announce Type: new \nAbstract: From 3 October, every non-bot merge into our main branch passed a non-author review gate, yet 71 of those 263 merges (27%) rested only on an approval that a coding agent had submitted through the technical lead's GitHub account, and the platform recorded each one as an ordinary approval by the lead. We report twelve weeks of agent-driven development at Bashi AI, a fintech startup preparing for a SOC 2 audit: 786 merged pull requests, 657 of them associated with agents by explicit markers or by inference, analysed from platform records and saved agent-session transcripts. In the gated phase, an agent session submitted every approval the lead's account gave on a colleague's pull request, and issued nearly all of its merges; the records cannot show who decided any of them. We recompute, for every merge, a core gate property: a non-author approval and a passing required check, both before the merge and both on the exact revision merged. The ",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "观点评论",
-      "depth_score": 0.75,
-      "reason_zh": "提出由发布方掌控内容语义单元的Web架构，对AI时代内容分发与抓取格局有前瞻性讨论。",
-      "summary_zh": "论文指出AI智能体正取代人类成为Web的主要消费者，但网页仍按人类浏览方式组织，发布方无法原生暴露内容中的语义单元，访问权因此被少数AI厂商通过抓取、切分与索引单方面掌控。作者提出一种发布方控制的Web架构，让内容从被爬取走向可发布，使发布方能自主定义可被AI消费的语义结构，涉及AI原生互联网的内容分发与治理议题。",
-      "title_zh": "从被爬取到可发布：面向AI原生互联网的发布方控制Web架构",
-      "weighted_score": 0.66,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "c0787590111a1ada",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ir",
-          "url": "https://arxiv.org/abs/2511.18354"
-        }
-      ]
-    },
-    {
-      "id": "a82a961532cc2349",
-      "source_id": "zh-tmtpost",
-      "title": "Open Inference Code Narrows the Gap Between Rival AI Chips",
-      "url": "https://www.tmtpost.com/8176740.html",
-      "published_at": "2026-10-21T10:29:05+00:00",
-      "raw_text": "DeepSeek released serving software that builds for Huawei accelerators and Nvidia GPUs from one codebase. In China, where boards are scarce and token traffic is rising, that choice could reshape how teams pick hardware—if live traffic backs up the demos.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/2t35y46ejyt3.png",
-      "category": "开源项目",
+      "category": "论文研究",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "DeepSeek 开源推理代码统一支持华为与英伟达芯片，可能改变硬件选型格局。",
-      "summary_zh": "DeepSeek 发布了推理服务软件，同一代码库可同时为华为加速器和英伟达 GPU 构建。在中国市场，加速卡稀缺且 token 流量增长，这一选择可能重塑团队选择硬件的逻辑——前提是实际流量能验证演示效果。文章分析了该开源举措对 AI 芯片竞争格局的潜在影响，探讨了跨平台推理软件如何降低对单一硬件生态的依赖，以及在实际部署中面临的性能与生态挑战。",
-      "title_zh": "开源推理代码缩小了竞争 AI 芯片之间的差距",
-      "weighted_score": 0.75,
+      "depth_score": 0.75,
+      "reason_zh": "用真实数据揭示coding agent借人类账号过审的治理漏洞，对团队落地agent有警示意义。",
+      "summary_zh": "论文基于一家金融科技公司十二周的 agent 驱动开发实践：自10月3日起，所有非机器人合并都需通过非作者评审门禁，但263次合并中有71次（27%）仅依赖 coding agent 通过技术负责人 GitHub 账号提交的批准，平台却将其记录为负责人的普通批准。研究揭示了 agent 参与代码合并时审批证据失真与责任归属模糊的问题，并讨论合并门禁证据的治理含义。",
+      "title_zh": "谁批准的？Coding Agent、人类账号与金融科技公司的合并门禁证据",
+      "weighted_score": 0.6875,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.8,
+        "novelty": 0.75,
+        "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "4a9d98a2dfbc3c23",
+      "story_id": "0d41711f22004444",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8176740.html"
+          "source_id": "arxiv-cs-se",
+          "url": "https://arxiv.org/abs/2610.28683"
         }
       ]
     },
     {
-      "id": "31472bd86f0451c1",
-      "source_id": "fastcompany-tech",
-      "title": "Handwashing changed medicine. AI could too, if hospitals stop treating it like traditional software",
-      "url": "https://www.fastcompany.com/91624590/handwashing-changed-medicine-ai-could-too-if-hospitals-stop-treating-it-like-traditional-software-ai-healthcare-technology?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
-      "published_at": "2026-10-21T10:33:00+00:00",
-      "raw_text": "<p class=\"wp-block-paragraph\" id=\"h-\">In 1847, Ignaz Semmelweis asked the doctors in the Vienna maternity clinic where he worked to wash their hands in a chlorine solution before examining patients. Deaths on the ward fell from about 18% to about 2% within two months. In healthcare, small changes in practice can have disproportionately large effects, because the healthcare system affects everyone and the stakes are literally life and death. We think <a href=\"https://www.fastcompany.com/section/artificial-intelligence\" title=\"AI\">AI</a> has the potential to revolutionize healthcare, contributing to a dizzying array of changes. But institutions are failing to adjust to meet the moment, despite widespread interest in change from patients and providers.</p>\n\n\n\n<p class=\"wp-block-paragraph\">Americans are racing ahead with using AI for medical advice. Roughly <a href=\"https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-th",
+      "id": "34c595c5b3624ee3",
+      "source_id": "databricks-blog",
+      "title": "The new economics of AI cost management",
+      "url": "https://www.databricks.com/blog/ai-cost-management",
+      "published_at": "2026-10-22T19:14:24+00:00",
+      "raw_text": "For the past two years, the story around enterprise AI adoption has mostly been about...",
       "category_hint": [
+        "产品发布",
         "行业动态"
       ],
-      "image_url": "https://images.fastcompany.com/image/upload/w_1280,q_auto,f_auto,fl_lossy/f_webp,q_auto,c_fit/wp-cms-2/2026/10/p-91624590-hospitals-need-to-stop-treating-AI-like-normal-software.jpg",
-      "category": "技巧与观点",
-      "content_type": "观点评论",
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "以洗手改变医学史类比，论证医院不应将 AI 当作传统软件，提出实践与流程变革才是关键，观点有启发性。",
-      "summary_zh": "文章以 1847 年塞麦尔维斯要求医生洗手使产房死亡率从 18% 降至 2% 的历史案例开篇，指出医疗系统中实践的小改变能产生巨大影响。作者类比认为，AI 在医疗领域的潜力同样巨大，但医院若继续将 AI 视为传统软件采购和部署，而非推动临床工作流程和行为的根本变革，就难以复制洗手那样的成功。文章呼吁医疗管理者重视 AI 落地中的组织与实践因素。",
-      "title_zh": "洗手改变了医学。如果医院不再把 AI 当作传统软件，AI 也能做到",
-      "weighted_score": 0.655,
+      "reason_zh": "Databricks 博客深入分析企业 AI 成本管理的新经济学，对实践有指导意义。",
+      "summary_zh": "Databricks 博客文章探讨了企业 AI 成本管理的新经济学。文章指出，过去两年企业 AI  adoption 主要关注模型能力，而现在成本优化成为关键议题。随着模型规模扩大和推理需求增长，企业需要更精细地管理 AI 工作负载的成本，包括选择合适的模型、优化推理效率、利用混合云策略等。文章可能结合 Databricks 自身的平台经验，提供成本控制的框架和最佳实践，帮助企业在预算内最大化 AI 价值。",
+      "title_zh": "AI 成本管理的新经济学",
+      "weighted_score": 0.7,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
+        "source_authority": 0.8,
+        "novelty": 0.6,
         "impact": 0.6,
-        "practical_value": 0.6
+        "practical_value": 0.8
       },
-      "story_id": "e7ab5145eb9eddac",
+      "story_id": "8942e95814a23efb",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "fastcompany-tech",
-          "url": "https://www.fastcompany.com/91624590/handwashing-changed-medicine-ai-could-too-if-hospitals-stop-treating-it-like-traditional-software-ai-healthcare-technology?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss"
+          "source_id": "databricks-blog",
+          "url": "https://www.databricks.com/blog/ai-cost-management"
         }
       ]
     },
     {
-      "id": "348031f235be63db",
+      "id": "6879b8adb92746d1",
       "source_id": "infoq-cn-ai",
-      "title": "美团企业级 Agent 的平台化应用实践｜QCon上海",
-      "url": "https://www.infoq.cn/article/BQJltkL1FJ9AG3cMeUmB?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-21T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/BQJltkL1FJ9AG3cMeUmB?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "title": "GitHub 通过 AI 辅助重构，将 Copilot 运行时迁移至 Rust",
+      "url": "https://www.infoq.cn/article/zGqDWHF8tHDtlYcImAJS?utm_source=rss&utm_medium=article",
+      "published_at": "2026-10-22T13:17:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/zGqDWHF8tHDtlYcImAJS?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "GitHub用AI辅助将Copilot运行时迁移至Rust，是工程实践与AI结合的典型案例。",
+      "summary_zh": "InfoQ报道，GitHub通过AI辅助重构，成功将Copilot运行时从原有技术栈迁移至Rust。这一迁移旨在提升性能、安全性和并发能力。文章可能详细介绍了迁移的背景、挑战、AI工具在代码转换和测试中的作用，以及迁移后的收益。该案例展示了AI在大型软件工程重构中的实际应用价值，为其他团队提供了参考。",
+      "title_zh": "GitHub 通过 AI 辅助重构，将 Copilot 运行时迁移至 Rust",
+      "weighted_score": 0.68,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "15357a9adea10802",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/zGqDWHF8tHDtlYcImAJS?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "cedc3a999b7c4be7",
+      "source_id": "infoq-cn-ai",
+      "title": "面向 Qwen 系列模型线性注意力的高性能优化实践",
+      "url": "https://www.infoq.cn/article/o9OcWNkkwgKvsZmgY45d?utm_source=rss&utm_medium=article",
+      "published_at": "2026-10-22T17:08:07+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/o9OcWNkkwgKvsZmgY45d?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
         "技巧与观点"
@@ -283,9 +318,9 @@
       "category": "技巧与观点",
       "content_type": "教程方法",
       "depth_score": 0.7,
-      "reason_zh": "美团企业级Agent平台化实践分享，来自QCon，对构建企业Agent系统有实操参考价值。",
-      "summary_zh": "本文是美团在QCon上海的技术分享，介绍其企业级Agent的平台化应用实践。内容可能涵盖Agent平台架构设计、多场景落地经验、工程化挑战与解决方案，面向企业技术团队，提供可借鉴的Agent系统构建方法论。",
-      "title_zh": null,
+      "reason_zh": "针对Qwen线性注意力的高性能优化实践，包含工程细节与调优经验，对推理优化工程师有直接参考价值。",
+      "summary_zh": "文章面向Qwen系列模型的线性注意力机制，分享高性能优化实践。内容可能涵盖线性注意力的计算特性、内存访问优化、算子融合与并行策略，以及在真实推理场景中的性能调优经验。通过具体工程案例，展示如何提升线性注意力模块的吞吐与延迟表现，为部署Qwen模型的开发者提供可复用的优化方法。",
+      "title_zh": "面向Qwen系列模型线性注意力的高性能优化实践",
       "weighted_score": 0.645,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -293,33 +328,32 @@
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "3c240c037884a961",
+      "story_id": "d167ad97933284a3",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/BQJltkL1FJ9AG3cMeUmB?utm_source=rss&utm_medium=article"
+          "url": "https://www.infoq.cn/article/o9OcWNkkwgKvsZmgY45d?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "a6e1fb4e076b0df6",
-      "source_id": "latent-space",
-      "title": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC — Alex Lieberman & CJ Hess",
-      "url": "https://www.latent.space/p/tenex",
-      "published_at": "2026-10-21T05:01:26+00:00",
-      "raw_text": "Listen now (44 mins) | Paying for outcomes, building with agents, and the last mile of enterprise AI adoption",
+      "id": "f046c69816ab88bb",
+      "source_id": "practical-ai",
+      "title": "Exploit Development, Agentic Vulnerability Discovery, and Fake PoCs",
+      "url": "https://share.transistor.fm/s/9a42098b",
+      "published_at": "2026-10-22T09:00:00+00:00",
+      "raw_text": "<p>AI is changing cybersecurity, accelerating vulnerability research and exploit development while raising new questions about reliability, risk, and  guardrails. Daniel and Chris talk with Spencer McIntyre, Director of Exploit Development at VulnCheck, about how agents are being used to discover vulnerabilities, why many proof-of-concept exploits (POCs) fail to deliver, and how initial access intelligence helps security teams prioritize real threats. They also explore the limitations of AI-assisted exploitation, the challenges of AI guardrails for security researchers, and what these developments mean for the future of threat intelligence.</p><p>Featuring: </p><ul><li>Spencer McIntyre – <a href=\"https://www.linkedin.com/in/spencer-mcintyre-b48987194/\">LinkedIn</a></li><li>Daniel Whitenack – <a href=\"https://www.datadan.io/\">Website</a>, <a href=\"https://github.com/dwhitena\">GitHub</a>, <a href=\"https://x.com/dwhitena\">X</a></li><li>Chris Benson – <a href=\"https://chrisbenson.com/\">Web",
       "category_hint": [
-        "技巧与观点",
         "行业动态"
       ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!aHGG!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F576c0ba6-53e3-458f-bd88-6d524832b2ff_819x526.png",
-      "category": "技巧与观点",
+      "image_url": null,
+      "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "来自Latent Space的企业AI落地访谈，讲清按结果付费、agent构建与最后一公里，对做企业AI的人有实操启发。",
-      "summary_zh": "Latent Space播客访谈Tenex的Alex Lieberman与CJ Hess，讨论如何在财富2000强企业中构建AI原生的软件开发生命周期。核心观点包括：从按席位付费转向按结果付费的商业模式；用agent承担需求拆解、编码与测试等环节；以及企业AI落地最难的是最后一公里——流程改造、权限与合规、人机协作习惯。节目还涉及如何衡量agent产出质量、如何与既有研发工具链集成，以及规模化推广中的组织阻力。",
-      "title_zh": "面向财富2000强的AI：Tenex如何构建AI原生SDLC",
+      "reason_zh": "深入探讨AI在漏洞挖掘与利用开发中的实际应用，揭示PoC可靠性问题，对安全从业者有启发。",
+      "summary_zh": "本期播客邀请VulnCheck漏洞利用开发总监Spencer McIntyre，讨论AI如何加速漏洞研究与利用开发。对话重点包括：智能体在漏洞发现中的使用方式、为何许多概念验证（PoC）利用无法真正生效、以及初始访问情报的演变。节目还探讨了AI安全工具在可靠性、风险与防护措施方面引发的新问题，为安全工程师提供了实践视角。",
+      "title_zh": "漏洞利用开发、智能体漏洞发现与虚假PoC",
       "weighted_score": 0.625,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -327,79 +361,46 @@
         "impact": 0.5,
         "practical_value": 0.7
       },
-      "story_id": "7f59b4a37a279367",
+      "story_id": "b3d451629109156e",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "latent-space",
-          "url": "https://www.latent.space/p/tenex"
+          "source_id": "practical-ai",
+          "url": "https://share.transistor.fm/s/9a42098b"
         }
       ]
     },
     {
-      "id": "0fff47054cc39cd5",
-      "source_id": "latent-space",
-      "title": "Claude Mods: Flipping the Harness Inside Out",
-      "url": "https://www.latent.space/p/claude-mods",
-      "published_at": "2026-10-21T13:04:19+00:00",
-      "raw_text": "Claude Mods is an early form of the Attention Interface. It flips the agent harness paradigm from the harness facing the machine, to the harness facing the human.",
+      "id": "ece244a82d3ea239",
+      "source_id": "amazon-science",
+      "title": "The science behind TorchNeuron, Amazon&#8217;s new PyTorch backend for AWS Trainium chips",
+      "url": "https://www.amazon.science/blog/the-science-behind-torchneuron-amazons-new-pytorch-backend-for-aws-trainium-chips",
+      "published_at": "2026-10-22T19:36:42+00:00",
+      "raw_text": "Runtime optimizations and a thorough evaluation process driven by agentic AI help ensure that models written in PyTorch will execute efficiently and reliably on Trainium systems.",
       "category_hint": [
-        "技巧与观点",
+        "论文研究",
         "行业动态"
       ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!Kjjn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc61f4d99-31a9-4e4c-aa02-65e5b5db1799_1280x720.png",
+      "image_url": null,
       "category": "产品发布",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "提出“注意力界面”概念，把agent harness从面向机器翻转为面向人，思路新颖有启发。",
-      "summary_zh": "文章介绍 Claude Mods 这一早期形态的“注意力界面”（Attention Interface），其核心思路是把 agent harness 的范式从“面向机器”翻转为“面向人”。传统 harness 主要服务于模型调用与工具编排，而 Claude Mods 让 harness 直接面向人类用户的注意力与交互需求，从而改变人与 agent 协作的方式。作者借此探讨了 agent 系统设计中接口层的新方向。",
-      "title_zh": "Claude Mods：把 harness 由内向外翻转",
-      "weighted_score": 0.625,
+      "depth_score": 0.6,
+      "reason_zh": "Amazon Science详解TorchNeuron——AWS Trainium芯片的PyTorch后端，涉及运行时优化与评估流程，对关注AI芯片软件栈的读者有价值。",
+      "summary_zh": "Amazon Science发文介绍TorchNeuron，这是AWS为Trainium芯片打造的新PyTorch后端。文章阐述了其运行时优化策略，以及由agentic AI驱动的系统性评估流程，确保用PyTorch编写的模型能在Trainium系统上高效可靠地执行。内容涵盖后端如何将PyTorch计算图映射到Trainium硬件、优化内存与调度，并说明了评估方法如何覆盖正确性与性能。对关注AI芯片软件栈和PyTorch生态扩展的读者有参考价值。",
+      "title_zh": "TorchNeuron背后的科学：Amazon为AWS Trainium芯片打造的新PyTorch后端",
+      "weighted_score": 0.715,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.5,
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.6,
         "practical_value": 0.6
       },
-      "story_id": "a72d33ede3677ab5",
+      "story_id": "510f749f972b6316",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "latent-space",
-          "url": "https://www.latent.space/p/claude-mods"
-        }
-      ]
-    },
-    {
-      "id": "c117d3c3b2cad02a",
-      "source_id": "reddit-mlops",
-      "title": "How we got Linux VM container workloads running natively on the Mac so they can use the Apple Silicon GPU (mps/MLX): how we did it and the sandbox tradeoff",
-      "url": "https://www.reddit.com/r/mlops/comments/1xb614e/how_we_got_linux_vm_container_workloads_running/",
-      "published_at": "2026-10-20T22:21:41+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>(Disclosure: I work at Union AI and maintain Flyte.)</p> <p>Flyte is an open source AI runtime with a durable execution engine where you can train, fine-tune, and serve AI models and agents.</p> <p><strong>Problem:</strong> Flyte's local devbox runs every task and app in a container. On a Mac that container is a Linux VM, and a Linux VM has no Metal. So <code>torch.backends.mps.is_available()</code> is <code>False</code>, MLX doesn't run, and any ML code you iterate on locally falls back to the CPU. You can't pass the GPU through: there's nothing in the VM to pass it to.</p> <p><strong>What we did:</strong> a task or app that requests <code>flyte.Resources(gpu=&quot;AppleSilicon&quot;)</code> runs its code natively on the Mac instead. The container starts as normal, then its entrypoint hands its own invocation to a bridge running on the host. The bridge builds a cached <code>uv</code> environment from the image's pip packages, rewrites the in-cluster e",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "详述在Mac上让Linux容器用上Apple Silicon GPU的工程方案与取舍。",
-      "summary_zh": "作者来自Union AI并维护Flyte，文章讲述如何让Flyte本地开发环境中的Linux VM容器任务原生使用Apple Silicon GPU（MPS/MLX）。问题在于Mac上的容器运行在Linux虚拟机中，无法访问Metal。文章详细介绍了实现方案、技术路径以及由此带来的沙箱安全权衡，属于真实系统的工程实践复盘，对在Mac上进行AI开发与本地调试的工程师有较高参考价值。",
-      "title_zh": "我们如何让Linux VM容器工作负载在Mac上原生运行并使用Apple Silicon GPU（MPS/MLX）：实现方法与沙箱权衡",
-      "weighted_score": 0.555,
-      "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.7,
-        "impact": 0.4,
-        "practical_value": 0.8
-      },
-      "story_id": "f157d8632b727fab",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-mlops",
-          "url": "https://www.reddit.com/r/mlops/comments/1xb614e/how_we_got_linux_vm_container_workloads_running/"
+          "source_id": "amazon-science",
+          "url": "https://www.amazon.science/blog/the-science-behind-torchneuron-amazons-new-pytorch-backend-for-aws-trainium-chips"
         }
       ]
     }
