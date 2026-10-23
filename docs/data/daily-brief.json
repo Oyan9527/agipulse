@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-22",
-  "generated_at": "2026-10-22T20:55:18.574093+00:00",
+  "date": "2026-10-23",
+  "generated_at": "2026-10-23T20:40:21.897568+00:00",
   "items": [
     {
-      "id": "60d99c2090da828b",
+      "id": "05d066e289406a1d",
       "source_id": "arxiv-cs-se",
-      "title": "Do Coding Agents Understand Why Systems Crash---and Why They Don't?",
-      "url": "https://arxiv.org/abs/2610.29332",
-      "published_at": "2026-10-22T04:00:00+00:00",
-      "raw_text": "arXiv:2610.29332v1 Announce Type: new \nAbstract: Coding agents are increasingly capable of fixing real-world bugs, yet they still struggle with large systems codebases such as the Linux kernel. To understand why, we test how agents reason about execution in these codebases through crash reasoning: predicting from source code whether a given input crashes the system. A correct prediction alone, however, does not establish this ability, since it may come from merely spotting suspicious code. In this paper, we propose source interventions: we pair source trees that differ by a single commit, so that the same input crashes only one of them, and test whether agents predict crashes more often on the crashing tree. Experiments with four coding agents on SysRB, our dataset of 934 such pairs from Linux and OSS-Fuzz projects, yield three main findings. First, agents are biased toward predicting no crash: they rarely raise false alarms but miss many real crashes, and even the best agent misses ov",
+      "title": "Compositional Safety Failures in Harness Evolution: Identification and Runtime Monitoring",
+      "url": "https://arxiv.org/abs/2609.33123",
+      "published_at": "2026-10-23T04:00:00+00:00",
+      "raw_text": "arXiv:2609.33123v3 Announce Type: replace-cross \nAbstract: Self-evolving agent harnesses continually update persistent components such as memory, prompts, skills, and tools. We call this process harness evolution. However, such evolution could introduce unexpected safety risks. Existing work studies harness misevolution and validates candidate harnesses or attributed individual component updates, leaving safety analysis of cross-component update interactions largely unexamined. To address this gap, we study compositional safety failures in harness evolution, where interactions among individually safe and utility-preserving component updates can produce undesirable or unsafe agent behavior, revealing a safety risk intrinsic to harness evolution. Across three safety-related benchmarks, we identify 43 pairwise and 18 irreducible 3-way compositional safety failures. Conventional solution incurs combinatorial complexity in validating cross-component interactions, leaving the safety checking",
       "category_hint": [
         "论文研究"
       ],
@@ -16,9 +16,9 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "揭示编码智能体在大型系统代码库中推理执行路径的短板，对理解 agent 能力边界有启发。",
-      "summary_zh": "该论文研究编码智能体为何难以处理 Linux 内核这类大型系统代码库，提出以“崩溃推理”作为测试手段：让智能体仅凭源码预测给定输入是否会导致系统崩溃。作者指出，仅看预测是否正确并不足够，还需考察其推理过程是否真正理解了执行语义。研究通过这一任务刻画智能体在系统级代码理解上的能力与局限，为改进面向大型代码库的编码智能体提供依据。",
-      "title_zh": "编码智能体真的理解系统为何崩溃吗——以及为何不理解？",
+      "reason_zh": "首次系统定义“harness evolution”中的组合式安全失效，并给出运行时监控方案，对自演化agent的安全设计有直接启发。",
+      "summary_zh": "论文关注自演化agent harness（持续更新记忆、提示词、技能与工具的过程）带来的新型安全风险。作者指出，现有研究多聚焦harness misevolution，或只验证候选harness与单个组件更新，忽略了多个组件更新叠加后产生的组合式安全失效。文章提出识别这类失效的方法，并设计运行时监控机制，在harness演化过程中动态检测异常行为组合，从而在部署前或运行中拦截风险。该工作为自演化agent系统的安全评估与防护提供了新的分析视角和可落地的监控手段。",
+      "title_zh": "Harness演化中的组合式安全失效：识别与运行时监控",
       "weighted_score": 0.7075,
       "score_breakdown": {
         "source_authority": 0.75,
@@ -26,66 +26,99 @@
         "impact": 0.65,
         "practical_value": 0.6
       },
-      "story_id": "4c7f0a725f11a97d",
+      "story_id": "c3b291682f6c09fe",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "arxiv-cs-se",
-          "url": "https://arxiv.org/abs/2610.29332"
+          "url": "https://arxiv.org/abs/2609.33123"
         }
       ]
     },
     {
-      "id": "7ee8d60e8c50e3b9",
-      "source_id": "marktechpost",
-      "title": "Perplexity and NVIDIA Researchers Introduce JOLT: a Joint Teacher-Student Reinforcement Learning Method",
-      "url": "https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/",
-      "published_at": "2026-10-22T04:56:31+00:00",
-      "raw_text": "<p>Perplexity and NVIDIA introduced JOLT, a post-training method that trains one model as both teacher and student. On MATH it matched GRPO’s accuracy with 6.5x fewer processed training tokens.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/\">Perplexity and NVIDIA Researchers Introduce JOLT: a Joint Teacher-Student Reinforcement Learning Method</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+      "id": "d8804c330dc3d585",
+      "source_id": "arxiv-cs-cr",
+      "title": "The Psychology of an AI Hacker",
+      "url": "https://arxiv.org/abs/2610.30361",
+      "published_at": "2026-10-23T04:00:00+00:00",
+      "raw_text": "arXiv:2610.30361v1 Announce Type: new \nAbstract: Human hackers rely on composure, persistence, vigilance, and confidence under pressure. We investigate whether analogous emotion representations in AI models can improve cybersecurity AI performance. Using CT0, a 4B-parameter cybersecurity transformer released as alias3-micro, we extract 171 emotion directions from its residual stream without retraining and evaluate steering interventions on cybench-subtask across 415 campaigns. Steering toward calm, serene, or desperate improves performance by 1.6 to 2.1 percentage points across ten seeds, while other emotions show limited or negative effects. Results depend strongly on steering direction, layer, and intensity. We further introduce a lightweight context-aware router that selects emotion directions dynamically during execution. With approximately 80 ms decision overhead per request, this approach improves performance by 4.2 percentage points across ten seeds, outperforming fixed steering",
       "category_hint": [
-        "模型发布",
-        "产品发布"
+        "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "提出联合师生强化学习新方法，在MATH上以6.5倍更少token达到GRPO精度，对RL后训练有直接启发。",
-      "summary_zh": "Perplexity与NVIDIA研究人员提出JOLT，一种联合师生强化学习后训练方法，让同一个模型同时充当教师和学生。在MATH基准上，JOLT以比GRPO少6.5倍的已处理训练token达到同等准确率，显著提升训练效率。该方法通过联合优化师生角色，减少对大量采样数据的依赖，为强化学习后训练提供更经济的路径。",
-      "title_zh": "Perplexity与NVIDIA研究人员推出JOLT：一种联合师生强化学习方法",
-      "weighted_score": 0.695,
+      "reason_zh": "从模型残差流中提取情绪方向并用于网络安全任务，是AI可解释性与能力调控结合的有趣探索。",
+      "summary_zh": "人类黑客依赖冷静、坚持、警觉与压力下的自信。本文探究AI模型中类似的情绪表征能否提升网络安全任务表现。作者使用4B参数的网络安全Transformer CT0（发布名alias3-micro），在不重新训练的情况下从其残差流中提取171个情绪方向，并分析这些方向与模型在攻防任务中表现的关系。研究展示了通过可解释性手段定位并调控模型内部情绪表征的可行性，为理解AI能力与“心理状态”的关联提供了新视角。",
+      "title_zh": "AI黑客的心理学",
+      "weighted_score": 0.6875,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.7
+        "source_authority": 0.75,
+        "novelty": 0.85,
+        "impact": 0.6,
+        "practical_value": 0.5
       },
-      "story_id": "5124755cda40b9f9",
+      "story_id": "89a5224eacb542ae",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/10/21/perplexity-jolt-joint-on-policy-learning-teaching/"
+          "source_id": "arxiv-cs-cr",
+          "url": "https://arxiv.org/abs/2610.30361"
         }
       ]
     },
     {
-      "id": "3fb6826c85351d36",
-      "source_id": "zh-meituan-tech",
-      "title": "从 LOOP 到图探索 —— 算法模型的 AutoResearch 自进化系统架构演进之路",
-      "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html",
-      "published_at": "2026-10-22T20:26:23.769042+00:00",
-      "raw_text": "本文分享这套系统的设计理念、架构演进与可信度设计，希望对大家有所帮助或启发。",
+      "id": "de192b77f545721a",
+      "source_id": "arxiv-cs-cr",
+      "title": "Not Where You Think: Protecting Location Privacy Against Reasoning-Based Geolocation",
+      "url": "https://arxiv.org/abs/2610.30439",
+      "published_at": "2026-10-23T04:00:00+00:00",
+      "raw_text": "arXiv:2610.30439v1 Announce Type: new \nAbstract: Recent large reasoning models can infer where ordinary photos were taken using only visual information, creating a serious location privacy risk even when metadata and obvious geographic identifiers are removed. To understand the mechanism behind such fine-grained localization, we develop GeoTrace, a structured reasoning attack that exposes how models extract location-relevant visual clues and compose them through coarse-to-fine geographic reasoning. We evaluate GeoTrace on a worldwide benchmark of 525 ordinary images spanning natural, urban, residential, and human-centered scenes while excluding famous landmarks and direct location indicators. Our results show that GeoTrace localizes 25.71% of images within 1 km with Gemini-3-Flash and 16.95% with GPT-5-mini. More importantly, our analysis reveals a key insight in the visual clue chain: broad scene properties mainly support coarse localization, whereas precise localization disproportion",
       "category_hint": [
-        "技巧与观点"
+        "论文研究"
       ],
-      "image_url": "https://p0.meituan.net/meituantechblog/f96887d93b880574e0fb9ebad114faba529816.png",
-      "category": "技巧与观点",
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "揭示推理模型可仅凭图像推断拍摄地点的隐私风险，并给出结构化攻击方法，对隐私安全研究有启发。",
+      "summary_zh": "该论文指出，近期的大型推理模型能够仅凭视觉信息推断普通照片的拍摄地点，即使元数据和明显的地理标识已被移除，仍构成严重的位置隐私风险。为理解这种细粒度定位背后的机制，作者提出 GeoTrace——一种结构化推理攻击方法，用于暴露模型如何逐步推理出地理位置。研究在此基础上探讨相应的防护思路，旨在抵御基于推理的地理定位攻击，为图像分享场景下的位置隐私保护提供分析与对策。",
+      "title_zh": "并非你所想：抵御基于推理的地理定位以保护位置隐私",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.55
+      },
+      "story_id": "13626991c35f8010",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cr",
+          "url": "https://arxiv.org/abs/2610.30439"
+        }
+      ]
+    },
+    {
+      "id": "af7b6796bf808c54",
+      "source_id": "towards-data-science",
+      "title": "Your Six AI Models Are Really Two: The Math of Correlated Mistakes",
+      "url": "https://towardsdatascience.com/your-six-ai-models-are-really-two-the-math-of-correlated-mistakes/",
+      "published_at": "2026-10-23T11:00:00+00:00",
+      "raw_text": "<p>Ask several models the same question, take a vote, and you get fewer independent opinions than you paid for. One formula says how many, and I checked it on six open models and 1,500 exam questions.</p>\n<p>The post <a href=\"https://towardsdatascience.com/your-six-ai-models-are-really-two-the-math-of-correlated-mistakes/\">Your Six AI Models Are Really Two: The Math of Correlated Mistakes</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "论文研究",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "美团技术团队分享AutoResearch自进化系统从LOOP到图探索的架构演进与可信度设计，有真实工程取舍。",
-      "summary_zh": "美团技术团队撰文分享其AutoResearch自进化系统的设计理念、架构演进与可信度设计。文章梳理了系统从早期LOOP式迭代到图探索架构的转变过程，讨论了在自动化研究场景中如何平衡探索广度与深度、如何保证生成结果的可信度，并总结了架构演进中遇到的工程取舍与踩坑经验。内容面向希望构建自动化研究或自进化Agent系统的工程师，提供了可迁移的系统设计思路。",
-      "title_zh": "从LOOP到图探索——算法模型的AutoResearch自进化系统架构演进之路",
+      "reason_zh": "通过数学公式和实验揭示多个AI模型的错误高度相关，投票集成效果有限，具有反直觉洞察。",
+      "summary_zh": "本文探讨了多个AI模型在回答同一问题时错误的相关性，指出尽管使用了多个模型，但它们的独立意见数量远少于预期。作者提出了一个公式来计算有效独立模型数，并在六个开源模型和1500个考试问题上进行了验证。结果表明，模型间的错误高度相关，导致集成投票的收益有限，这对模型集成策略提出了重要警示。",
+      "title_zh": "你的六个AI模型其实只有两个：相关错误的数学",
       "weighted_score": 0.675,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -93,314 +126,279 @@
         "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "2e9ee6491b654f3b",
+      "story_id": "a1a198899e3ca6d0",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "towards-data-science",
+          "url": "https://towardsdatascience.com/your-six-ai-models-are-really-two-the-math-of-correlated-mistakes/"
+        }
+      ]
+    },
+    {
+      "id": "6fc2c0f171e097cd",
+      "source_id": "aws-ml-blog",
+      "title": "How Bayer Crop Science built an agentic decision engine on Amazon Bedrock AgentCore with AWS Unified Operations",
+      "url": "https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/",
+      "published_at": "2026-10-23T16:21:36+00:00",
+      "raw_text": "Bayer Crop Science built the Agentic Decision Engine (ADE), a multi-agent platform on Amazon Bedrock AgentCore that lets breeders, analysts, and researchers ask natural language questions about their analytics platform. This post covers the ADE architecture, five design decisions, and how the team prepared it for production with AWS Unified Operations.",
+      "category_hint": [
+        "技巧与观点",
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/22/ML-21834-1.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "拜耳真实生产级多智能体平台架构复盘，五个设计决策与上线准备经验对做企业级 agent 的团队很有参考价值。",
+      "summary_zh": "拜耳作物科学构建了 Agentic Decision Engine（ADE），一个基于 Amazon Bedrock AgentCore 的多智能体平台，让育种专家、分析师和研究人员用自然语言向分析平台提问。文章介绍了 ADE 的整体架构，并详述了团队在落地过程中的五个关键设计决策，包括智能体编排、工具调用与权限边界等取舍。最后说明团队如何借助 AWS Unified Operations 完成生产化准备，涵盖可观测性、运维与稳定性保障，为构建企业级多智能体系统提供了可借鉴的实践路径。",
+      "title_zh": "拜耳作物科学如何基于 Amazon Bedrock AgentCore 与 AWS Unified Operations 构建智能体决策引擎",
+      "weighted_score": 0.7025,
+      "score_breakdown": {
+        "source_authority": 0.85,
+        "novelty": 0.6,
+        "impact": 0.55,
+        "practical_value": 0.8
+      },
+      "story_id": "fda5d280ce670d97",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/"
+        }
+      ]
+    },
+    {
+      "id": "fc24742163c99e10",
+      "source_id": "vercel-blog",
+      "title": "How Vercel Agent accesses production safely",
+      "url": "https://vercel.com/blog/how-vercel-agent-accesses-production-safely",
+      "published_at": "2026-10-23T20:29:00+00:00",
+      "raw_text": "<p>An agent working on production systems needs permission to act. A request like “fix this deployment” doesn’t tell you upfront which actions it will take or what access it will need. Grant agents broad access and a mistake can affect unrelated resources. Ask for approval at every step and the user has to approve individual actions before they know how the agent intends to solve the problem. Repeated prompts can turn that review into a habit of clicking approve.</p><p><a href=\"https://vercel.com/agent\">Vercel Agent</a> starts by investigating the problem, then proposes a plan showing what it would do and what access it would need. Approving that plan grants the additional permissions to carry it out, so the user can review the proposed fix before authorizing any changes.</p><h2>The plan determines the permissions</h2><p>For a broken production deployment, Vercel Agent might inspect recent deployments and <a href=\"https://vercel.com/docs/deployments/logs\">build logs</a>, then compare t",
+      "category_hint": [
+        "产品发布"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "Vercel 复盘 Agent 安全访问生产系统的权限设计取舍，涉及审批粒度与最小权限，工程启发强。",
+      "summary_zh": "文章讨论 Vercel Agent 如何安全地访问生产系统。核心问题是：像“修复这个部署”这样的请求，事先并不清楚 Agent 会执行哪些操作、需要什么权限。若授予宽泛权限，一次失误可能波及无关资源；若每一步都要求审批，用户又要在不了解 Agent 解决思路的情况下逐项确认。文章围绕这一权限粒度难题，阐述了 Vercel 在最小权限、审批时机与操作可解释性之间的设计取舍。",
+      "title_zh": "Vercel Agent 如何安全地访问生产环境",
+      "weighted_score": 0.7025,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.65,
+        "impact": 0.6,
+        "practical_value": 0.75
+      },
+      "story_id": "f9cf915532add9cd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "vercel-blog",
+          "url": "https://vercel.com/blog/how-vercel-agent-accesses-production-safely"
+        }
+      ]
+    },
+    {
+      "id": "f1ea6968e1447ee6",
+      "source_id": "zh-meituan-tech",
+      "title": "SLM 生成式高并发推理引擎：延迟约束下的有效吞吐优化",
+      "url": "https://tech.meituan.com/2026/10/15/Small-Language-Model-in-meituan.html",
+      "published_at": "2026-10-23T20:13:35.035599+00:00",
+      "raw_text": "本文为SLM（Small Language Model， 小参数量语言模型0.5~1B）在搜推场景的大规模落地提供了一套高性能、可复用的工程实践。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/449102302ea0d472417c6fff369dd63882001.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "小模型高并发推理的工程实践总结，含延迟约束下的吞吐优化取舍，对落地团队有直接参考价值。",
+      "summary_zh": "文章介绍美团在搜索推荐场景落地 0.5~1B 小参数量语言模型（SLM）时构建的生成式高并发推理引擎。围绕延迟约束下的有效吞吐优化，讨论了批处理调度、显存管理、请求排队与并发控制等工程手段，目标是在满足线上时延要求的前提下最大化吞吐。文中给出可复用的工程实践方案，覆盖从模型部署到服务化的关键环节，为小模型大规模落地提供参考。",
+      "title_zh": null,
+      "weighted_score": 0.6725,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.6,
+        "impact": 0.55,
+        "practical_value": 0.8
+      },
+      "story_id": "907dc8ae5cc11c18",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html"
+          "url": "https://tech.meituan.com/2026/10/15/Small-Language-Model-in-meituan.html"
         }
       ]
     },
     {
-      "id": "d636564ee5d912b3",
-      "source_id": "latent-space",
-      "title": "Why AI Compute Comes in Rectangles — Erik Bernhardsson, Modal CEO",
-      "url": "https://www.latent.space/p/modal-d",
-      "published_at": "2026-10-22T17:40:57+00:00",
-      "raw_text": "Elastic GPUs, sandbox growth, and the economics of the agent cloud",
+      "id": "298c8de07d18f423",
+      "source_id": "openai-blog",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "published_at": "2026-10-23T17:00:00+00:00",
+      "raw_text": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT.",
       "category_hint": [
-        "技巧与观点",
-        "行业动态"
+        "模型发布",
+        "产品发布"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "Modal CEO 谈弹性 GPU、沙箱增长与 agent 云经济，含真实系统取舍，值得工程师细读。",
-      "summary_zh": "Latent Space 播客对话 Modal CEO Erik Bernhardsson，围绕“为什么 AI 算力是矩形”展开，讨论弹性 GPU 的调度与利用率、沙箱（sandbox）工作负载的快速增长，以及 agent 云的经济模型。内容涉及 Modal 在真实系统中对冷启动、资源隔离与成本结构的工程取舍，并分析 agent 类应用对基础设施形态的影响。适合关注 AI 基础设施与平台经济的读者。",
-      "title_zh": "为什么 AI 算力是矩形——对话 Modal CEO Erik Bernhardsson",
-      "weighted_score": 0.65,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "3a658262156b750b",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "latent-space",
-          "url": "https://www.latent.space/p/modal-d"
-        }
-      ]
-    },
-    {
-      "id": "2be42d4f2c4b9413",
-      "source_id": "reddit-promptengineering",
-      "title": "13 context engineering lessons learned from running long-term agents across large repos",
-      "url": "https://www.reddit.com/r/PromptEngineering/comments/1xcl3vm/13_context_engineering_lessons_learned_from/",
-      "published_at": "2026-10-22T15:06:31+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi all, saw several threads discussing how quickly Claude Code and terminal agents degrade when working across long multi-hour sessions or multi-package codebases. The failure mode is almost always the same: after turn ten, the agent starts forgetting earlier constraints, hallucinating file paths, and making syntax mistakes on basic edits.</p> <p>The issue is rarely model reasoning capability. It is almost always context engineering: how project state, tool outputs, and historical memories are structured inside the prompt buffer.</p> <p>Here are 13 practical context engineering patterns and harness workflows that keep agent reliability consistent over long-running development loops:</p> <ol> <li><p>Path-based memory retrieval over raw context dumps: Storing multi-session knowledge in bloated conversation transcripts degrades attention. Using tools like <em>agent-memory</em>, project decisions are logged directly into repository markdown files indexed b",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "来自真实大型代码库长期运行代理的13条上下文工程经验，极具实践价值。",
-      "summary_zh": "作者在Reddit上分享了在大型代码库中长期运行AI代理时学到的13条上下文工程经验。文章指出，Claude Code和终端代理在长时间会话或多包代码库中性能会迅速下降，典型故障模式是：十轮对话后，代理开始忘记早期约束、幻觉文件路径、在基本编辑上犯语法错误。作者分析了问题根源，并给出了具体的上下文管理策略，如定期总结、分块处理、显式约束提醒等，这些经验来自实际项目踩坑，对构建可靠代理系统的开发者很有参考价值。",
-      "title_zh": "在大型代码库中运行长期代理学到的13条上下文工程经验",
-      "weighted_score": 0.525,
-      "score_breakdown": {
-        "source_authority": 0.3,
-        "novelty": 0.7,
-        "impact": 0.4,
-        "practical_value": 0.8
-      },
-      "story_id": "76e41c54b79ef0ee",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-promptengineering",
-          "url": "https://www.reddit.com/r/PromptEngineering/comments/1xcl3vm/13_context_engineering_lessons_learned_from/"
-        }
-      ]
-    },
-    {
-      "id": "edc36cfd3a88be8a",
-      "source_id": "arxiv-cs-se",
-      "title": "Who Verifies the Agent's Success Claim? Self-Report Leakage in GUI-Agent Completion Judging",
-      "url": "https://arxiv.org/abs/2610.29609",
-      "published_at": "2026-10-22T04:00:00+00:00",
-      "raw_text": "arXiv:2610.29609v1 Announce Type: new \nAbstract: In automation pipelines, a GUI agent's confident success report can let downstream stages proceed even when the recorded execution trace does not show that the agent produced the requested outcome. We call this case a dangerous misreport: an unhedged success claim that the trace does not support as causal accomplishment during the run. We study report--trace auditing, which checks an agent's completion claim against an independently recorded trace.\n  A controlled aware/blind intervention reveals self-report leakage: the agent's own self-report changes how completion is judged. The same judge reads the same task and trace; only that self-report is included or withheld. Withholding it improves trace-only dangerous-misreport recall by 43.4 percentage points with Qwen3.5-35B-A3B and 13.3 percentage points with DeepSeek-284B-A13B, with the same trend on held-out Batch 2. This motivates report isolation. The report records what the agent claim",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.75,
-      "reason_zh": "指出 GUI 智能体自报成功与执行轨迹不符的风险，对构建可靠自动化流水线很实用。",
-      "summary_zh": "论文研究 GUI 智能体在自动化流水线中的“危险误报”问题：智能体自信地宣称任务成功，但实际执行轨迹并不能证明其因果性地完成了目标，下游环节却据此继续推进。作者将这类缺乏轨迹支撑的成功声明定义为危险误报，并分析其成因与判定方式。该工作提醒依赖智能体自报结果的系统需要独立验证机制，对构建可靠的 GUI 自动化流水线具有实践意义。",
-      "title_zh": "谁来验证智能体的成功声明？GUI 智能体完成判定中的自报泄漏",
-      "weighted_score": 0.715,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "d6a54229e9271f58",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-se",
-          "url": "https://arxiv.org/abs/2610.29609"
-        }
-      ]
-    },
-    {
-      "id": "80b3cfce672c0fbc",
-      "source_id": "arxiv-cs-se",
-      "title": "Who Approved This? Coding Agents, Human Accounts, and Merge-Gate Evidence at a Fintech Startup",
-      "url": "https://arxiv.org/abs/2610.28683",
-      "published_at": "2026-10-22T04:00:00+00:00",
-      "raw_text": "arXiv:2610.28683v1 Announce Type: new \nAbstract: From 3 October, every non-bot merge into our main branch passed a non-author review gate, yet 71 of those 263 merges (27%) rested only on an approval that a coding agent had submitted through the technical lead's GitHub account, and the platform recorded each one as an ordinary approval by the lead. We report twelve weeks of agent-driven development at Bashi AI, a fintech startup preparing for a SOC 2 audit: 786 merged pull requests, 657 of them associated with agents by explicit markers or by inference, analysed from platform records and saved agent-session transcripts. In the gated phase, an agent session submitted every approval the lead's account gave on a colleague's pull request, and issued nearly all of its merges; the records cannot show who decided any of them. We recompute, for every merge, a core gate property: a non-author approval and a passing required check, both before the merge and both on the exact revision merged. The ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.75,
-      "reason_zh": "用真实数据揭示coding agent借人类账号过审的治理漏洞，对团队落地agent有警示意义。",
-      "summary_zh": "论文基于一家金融科技公司十二周的 agent 驱动开发实践：自10月3日起，所有非机器人合并都需通过非作者评审门禁，但263次合并中有71次（27%）仅依赖 coding agent 通过技术负责人 GitHub 账号提交的批准，平台却将其记录为负责人的普通批准。研究揭示了 agent 参与代码合并时审批证据失真与责任归属模糊的问题，并讨论合并门禁证据的治理含义。",
-      "title_zh": "谁批准的？Coding Agent、人类账号与金融科技公司的合并门禁证据",
-      "weighted_score": 0.6875,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.75,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "0d41711f22004444",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-se",
-          "url": "https://arxiv.org/abs/2610.28683"
-        }
-      ]
-    },
-    {
-      "id": "34c595c5b3624ee3",
-      "source_id": "databricks-blog",
-      "title": "The new economics of AI cost management",
-      "url": "https://www.databricks.com/blog/ai-cost-management",
-      "published_at": "2026-10-22T19:14:24+00:00",
-      "raw_text": "For the past two years, the story around enterprise AI adoption has mostly been about...",
-      "category_hint": [
-        "产品发布",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "Databricks 博客深入分析企业 AI 成本管理的新经济学，对实践有指导意义。",
-      "summary_zh": "Databricks 博客文章探讨了企业 AI 成本管理的新经济学。文章指出，过去两年企业 AI  adoption 主要关注模型能力，而现在成本优化成为关键议题。随着模型规模扩大和推理需求增长，企业需要更精细地管理 AI 工作负载的成本，包括选择合适的模型、优化推理效率、利用混合云策略等。文章可能结合 Databricks 自身的平台经验，提供成本控制的框架和最佳实践，帮助企业在预算内最大化 AI 价值。",
-      "title_zh": "AI 成本管理的新经济学",
-      "weighted_score": 0.7,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "8942e95814a23efb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "databricks-blog",
-          "url": "https://www.databricks.com/blog/ai-cost-management"
-        }
-      ]
-    },
-    {
-      "id": "6879b8adb92746d1",
-      "source_id": "infoq-cn-ai",
-      "title": "GitHub 通过 AI 辅助重构，将 Copilot 运行时迁移至 Rust",
-      "url": "https://www.infoq.cn/article/zGqDWHF8tHDtlYcImAJS?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-22T13:17:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/zGqDWHF8tHDtlYcImAJS?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "GitHub用AI辅助将Copilot运行时迁移至Rust，是工程实践与AI结合的典型案例。",
-      "summary_zh": "InfoQ报道，GitHub通过AI辅助重构，成功将Copilot运行时从原有技术栈迁移至Rust。这一迁移旨在提升性能、安全性和并发能力。文章可能详细介绍了迁移的背景、挑战、AI工具在代码转换和测试中的作用，以及迁移后的收益。该案例展示了AI在大型软件工程重构中的实际应用价值，为其他团队提供了参考。",
-      "title_zh": "GitHub 通过 AI 辅助重构，将 Copilot 运行时迁移至 Rust",
-      "weighted_score": 0.68,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "15357a9adea10802",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/zGqDWHF8tHDtlYcImAJS?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "cedc3a999b7c4be7",
-      "source_id": "infoq-cn-ai",
-      "title": "面向 Qwen 系列模型线性注意力的高性能优化实践",
-      "url": "https://www.infoq.cn/article/o9OcWNkkwgKvsZmgY45d?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-22T17:08:07+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/o9OcWNkkwgKvsZmgY45d?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
-      "category_hint": [
-        "行业动态",
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "针对Qwen线性注意力的高性能优化实践，包含工程细节与调优经验，对推理优化工程师有直接参考价值。",
-      "summary_zh": "文章面向Qwen系列模型的线性注意力机制，分享高性能优化实践。内容可能涵盖线性注意力的计算特性、内存访问优化、算子融合与并行策略，以及在真实推理场景中的性能调优经验。通过具体工程案例，展示如何提升线性注意力模块的吞吐与延迟表现，为部署Qwen模型的开发者提供可复用的优化方法。",
-      "title_zh": "面向Qwen系列模型线性注意力的高性能优化实践",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "d167ad97933284a3",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/o9OcWNkkwgKvsZmgY45d?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "f046c69816ab88bb",
-      "source_id": "practical-ai",
-      "title": "Exploit Development, Agentic Vulnerability Discovery, and Fake PoCs",
-      "url": "https://share.transistor.fm/s/9a42098b",
-      "published_at": "2026-10-22T09:00:00+00:00",
-      "raw_text": "<p>AI is changing cybersecurity, accelerating vulnerability research and exploit development while raising new questions about reliability, risk, and  guardrails. Daniel and Chris talk with Spencer McIntyre, Director of Exploit Development at VulnCheck, about how agents are being used to discover vulnerabilities, why many proof-of-concept exploits (POCs) fail to deliver, and how initial access intelligence helps security teams prioritize real threats. They also explore the limitations of AI-assisted exploitation, the challenges of AI guardrails for security researchers, and what these developments mean for the future of threat intelligence.</p><p>Featuring: </p><ul><li>Spencer McIntyre – <a href=\"https://www.linkedin.com/in/spencer-mcintyre-b48987194/\">LinkedIn</a></li><li>Daniel Whitenack – <a href=\"https://www.datadan.io/\">Website</a>, <a href=\"https://github.com/dwhitena\">GitHub</a>, <a href=\"https://x.com/dwhitena\">X</a></li><li>Chris Benson – <a href=\"https://chrisbenson.com/\">Web",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "深入探讨AI在漏洞挖掘与利用开发中的实际应用，揭示PoC可靠性问题，对安全从业者有启发。",
-      "summary_zh": "本期播客邀请VulnCheck漏洞利用开发总监Spencer McIntyre，讨论AI如何加速漏洞研究与利用开发。对话重点包括：智能体在漏洞发现中的使用方式、为何许多概念验证（PoC）利用无法真正生效、以及初始访问情报的演变。节目还探讨了AI安全工具在可靠性、风险与防护措施方面引发的新问题，为安全工程师提供了实践视角。",
-      "title_zh": "漏洞利用开发、智能体漏洞发现与虚假PoC",
-      "weighted_score": 0.625,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "b3d451629109156e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "practical-ai",
-          "url": "https://share.transistor.fm/s/9a42098b"
-        }
-      ]
-    },
-    {
-      "id": "ece244a82d3ea239",
-      "source_id": "amazon-science",
-      "title": "The science behind TorchNeuron, Amazon&#8217;s new PyTorch backend for AWS Trainium chips",
-      "url": "https://www.amazon.science/blog/the-science-behind-torchneuron-amazons-new-pytorch-backend-for-aws-trainium-chips",
-      "published_at": "2026-10-22T19:36:42+00:00",
-      "raw_text": "Runtime optimizations and a thorough evaluation process driven by agentic AI help ensure that models written in PyTorch will execute efficiently and reliably on Trainium systems.",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "产品发布",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "Amazon Science详解TorchNeuron——AWS Trainium芯片的PyTorch后端，涉及运行时优化与评估流程，对关注AI芯片软件栈的读者有价值。",
-      "summary_zh": "Amazon Science发文介绍TorchNeuron，这是AWS为Trainium芯片打造的新PyTorch后端。文章阐述了其运行时优化策略，以及由agentic AI驱动的系统性评估流程，确保用PyTorch编写的模型能在Trainium系统上高效可靠地执行。内容涵盖后端如何将PyTorch计算图映射到Trainium硬件、优化内存与调度，并说明了评估方法如何覆盖正确性与性能。对关注AI芯片软件栈和PyTorch生态扩展的读者有参考价值。",
-      "title_zh": "TorchNeuron背后的科学：Amazon为AWS Trainium芯片打造的新PyTorch后端",
-      "weighted_score": 0.715,
+      "reason_zh": "OpenAI 官方复盘 Habitat 存储系统扩容，多租户与缓存设计对后端工程师有迁移价值。",
+      "summary_zh": "OpenAI 工程博客第二部分详细介绍了为支撑超过 10 亿 ChatGPT 用户而快速扩展在线存储系统 Habitat 的实践。文章聚焦多租户隔离、全局缓存和 Azure Cosmos DB 的运用，说明如何通过这些设计实现 ChatGPT 读取速度提升 12 倍。内容属于真实生产系统的架构复盘，涉及可靠性、扩展性与性能取舍，对构建大规模在线服务的工程师具有可迁移的参考价值。",
+      "title_zh": "为超过 10 亿 ChatGPT 用户快速扩展在线存储（第二部分）",
+      "weighted_score": 0.665,
       "score_breakdown": {
         "source_authority": 0.9,
-        "novelty": 0.7,
+        "novelty": 0.5,
         "impact": 0.6,
         "practical_value": 0.6
       },
-      "story_id": "510f749f972b6316",
+      "story_id": "b35b8ace9dbed16c",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "amazon-science",
-          "url": "https://www.amazon.science/blog/the-science-behind-torchneuron-amazons-new-pytorch-backend-for-aws-trainium-chips"
+          "source_id": "openai-blog",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two"
+        }
+      ]
+    },
+    {
+      "id": "2aedd54f3eb3c474",
+      "source_id": "mit-tech-review-ai",
+      "title": "Designing an AI serving harness built to last",
+      "url": "https://www.technologyreview.com/2026/10/22/1146109/designing-an-ai-serving-harness-built-to-last/",
+      "published_at": "2026-10-22T21:17:29+00:00",
+      "raw_text": "The next competitive advantage in enterprise AI has less to do with which model you choose than with what you build around it. That’s an important shift. For the past several years, much of the AI conversation has centered on model capability: bigger models, better reasoning, larger context windows, higher benchmark scores. Those advances have&#8230;",
+      "category_hint": [
+        "行业动态",
+        "论文研究"
+      ],
+      "image_url": "https://wp.technologyreview.com/wp-content/uploads/2026/10/GettyImages-2188328005_9f1d59-e1791493652782.jpg?w=840",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "论证企业AI竞争优势正从选模型转向围绕模型构建的服务层，视角有迁移价值。",
+      "summary_zh": "文章指出企业AI的下一轮竞争优势更多取决于围绕模型构建的东西，而非选了哪个模型。过去几年行业焦点集中在模型能力：更大的模型、更强的推理、更长的上下文窗口和更高的基准分数，这些进步正在趋于同质化。作者认为真正的差异化来自服务层设计，包括推理编排、工具集成、数据管道与运维体系等，并讨论企业应如何围绕模型搭建可持续演进的AI服务架构。",
+      "title_zh": "设计一个经得起时间考验的AI服务框架",
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.5,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "cee9fc5b508c99da",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "mit-tech-review-ai",
+          "url": "https://www.technologyreview.com/2026/10/22/1146109/designing-an-ai-serving-harness-built-to-last/"
+        }
+      ]
+    },
+    {
+      "id": "3371cb9b6b2d1df0",
+      "source_id": "arxiv-cs-se",
+      "title": "From Tokens to Credits to Outcomes: Pricing AI Across Models, Applications, and Cloud Platforms",
+      "url": "https://arxiv.org/abs/2610.30701",
+      "published_at": "2026-10-23T04:00:00+00:00",
+      "raw_text": "arXiv:2610.30701v1 Announce Type: new \nAbstract: Between 2023 and 2026, AI changed how software is priced. Traditional SaaS charged per seat because serving one more user cost almost nothing. Model inference has non-zero marginal cost, and usage varies by orders of magnitude across customers, producing prepaid credits, metered usage, hybrid seat-plus-usage models, and outcome pricing that supplement, and in rare cases replace, seat-based pricing. These pricing models have not been systematically characterized. This paper presents a reproducible study of public pricing artifacts - pricing pages and documentation - across three cohorts: the full Forbes AI 50 (2026) as the AI-native core sample, cloud platforms selling AI services included by a documented rule, and a frozen purposive cohort of 9 distinctive designs. It contributes (1) a dataset coding each offering's pricing primitive and credit mechanics with dated primary sources, prepared for public release with the paper, (2) a taxono",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "系统梳理 2023–2026 年 AI 定价从按席位到按 token、积分、结果的演变，对从业者定价决策有参考。",
+      "summary_zh": "2023 至 2026 年间，AI 改变了软件的定价方式。传统 SaaS 按席位收费，因为多服务一个用户几乎零成本；而模型推理有非零边际成本，且不同客户用量相差数个数量级，于是出现了预付费积分、按量计费、席位加用量混合模式，以及补充性的结果定价。论文跨模型、应用与云平台梳理这一演进，分析各类定价结构背后的成本逻辑与适用场景。",
+      "title_zh": "从 Token 到积分到结果：跨模型、应用与云平台的 AI 定价",
+      "weighted_score": 0.63,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.65,
+        "impact": 0.55,
+        "practical_value": 0.6
+      },
+      "story_id": "ff3a504af515548b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-se",
+          "url": "https://arxiv.org/abs/2610.30701"
+        }
+      ]
+    },
+    {
+      "id": "f550271c54ddb247",
+      "source_id": "exponentialview",
+      "title": "The internet’s Wuhan moment",
+      "url": "https://www.exponentialview.co/p/the-internets-wuhan-moment",
+      "published_at": "2026-10-23T17:56:58+00:00",
+      "raw_text": "AI is turning every old bug into a serious problem. The Internet that survives will be safer--but less open.",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!rt5_!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F820366d7-7814-4e40-b4e8-b2afe71e40e4_1054x548.png",
+      "category": "行业动态",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "以“互联网的武汉时刻”为喻，论述AI如何放大旧漏洞并迫使互联网在安全与开放之间重新权衡，观点深刻。",
+      "summary_zh": "Exponential View文章以“互联网的武汉时刻”为比喻，探讨AI如何将每一个旧漏洞变成严重问题。文章认为，AI强大的代码分析和漏洞挖掘能力正在加速安全威胁的暴露，迫使互联网进行一场类似疫情初期的全面审视。最终存活的互联网将更安全，但也会更封闭。文章从安全、开放性和监管角度分析了这一转变的深层影响。",
+      "title_zh": "互联网的武汉时刻",
+      "weighted_score": 0.565,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.3
+      },
+      "story_id": "137be40f3324594a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "exponentialview",
+          "url": "https://www.exponentialview.co/p/the-internets-wuhan-moment"
+        }
+      ]
+    },
+    {
+      "id": "c628cda7f178466a",
+      "source_id": "zh-meituan-tech",
+      "title": "MTFM：美团统一推荐基座大模型在外卖多业务场景的落地实践",
+      "url": "https://tech.meituan.com/2026/09/22/Meituan-Foundation-Model-for-Recommendation.html",
+      "published_at": "2026-10-23T20:13:35.035627+00:00",
+      "raw_text": "美团在 MTGR 基础上提出统一推荐基座大模型 MTFM，首次实现外卖多个主要业务的统一精排模型。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/5dcc2af83b5b9da04717c9fcff76b69a1943722.png",
+      "category": "产品发布",
+      "content_type": "深度分析",
+      "depth_score": 0.65,
+      "reason_zh": "统一推荐基座模型跨多业务落地的实践复盘，涉及架构与迁移取舍，对推荐系统从业者有借鉴意义。",
+      "summary_zh": "美团在 MTGR 基础上提出统一推荐基座大模型 MTFM，首次将外卖多个主要业务的精排模型统一到一个基座中。文章介绍了 MTFM 的模型架构设计、多业务数据融合方式以及在不同场景下的适配策略，并分享了从各业务独立建模迁移到统一基座过程中遇到的挑战与解决方案。重点讨论了统一模型如何兼顾各业务特性、提升训练效率与线上效果，为推荐系统的大模型化落地提供实践参考。",
+      "title_zh": null,
+      "weighted_score": 0.6775,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.65,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "9ab92ff72578de75",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/09/22/Meituan-Foundation-Model-for-Recommendation.html"
         }
       ]
     }
