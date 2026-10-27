@@ -1,90 +1,63 @@
 {
-  "date": "2026-10-26",
-  "generated_at": "2026-10-26T21:49:47.928888+00:00",
+  "date": "2026-10-27",
+  "generated_at": "2026-10-27T21:34:07.476956+00:00",
   "items": [
     {
-      "id": "7dac00d187c6f200",
-      "source_id": "arxiv-cs-sd",
-      "title": "Why Full-Duplex Speech Models Collapse in Long Conversations",
-      "url": "https://arxiv.org/abs/2610.32349",
-      "published_at": "2026-10-26T04:00:00+00:00",
-      "raw_text": "arXiv:2610.32349v1 Announce Type: cross \nAbstract: Full-duplex speech models listen and speak at the same time, which makes them promising for natural, open-ended conversation. But can they sustain a coherent conversation for tens of minutes? Because they generate a token every frame, even while listening, they exhaust their context windows within minutes. Yet existing benchmarks evaluate only single turns or a few conversational rounds, too short to expose the long-horizon problem. We introduce the Full-Duplex Long-Horizon Benchmark (FD-LHB), which tests five recent full-duplex models on long replayed conversations and in live conversation with an LLM partner. Every evaluated model eventually either degrades or exhausts its context. Models that keep the full history often degrade before their context runs out, while sliding-window models still fall into repetition, silence, and gibberish. For sliding-window models, we identify two contributing mechanisms. Gibberish and silence are lin",
+      "id": "de0ff86e4fe4d178",
+      "source_id": "latent-space",
+      "title": "How Anthropic ships Claude with Claude: Separating the Brain from the Hands",
+      "url": "https://latent.space/p/opus55/",
+      "published_at": "2026-10-27T18:53:10+00:00",
+      "raw_text": "Katelyn Lesse and Angela Jiang on Opus 5.5, the Claude Platform, and the engineering behind AI agents.",
       "category_hint": [
-        "论文研究"
+        "技巧与观点",
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
+      "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/f111395b-ddfb-4ddc-969e-2424a5d05eb7/chatgpt.png?t=1793127236",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "揭示全双工语音模型在长对话中上下文耗尽而崩溃的机制，对语音交互系统设计有直接启发。",
-      "summary_zh": "该论文研究全双工语音模型能否维持数十分钟的连贯对话。由于模型在聆听时也逐帧生成 token，上下文窗口在几分钟内就会被耗尽，导致长对话崩溃。作者指出已有基准只评测短时交互，无法暴露这一问题，因此构建了长时对话评测并分析崩溃成因，为全双工语音模型的上下文管理与长程一致性设计提供依据。",
-      "title_zh": "全双工语音模型为何在长对话中崩溃",
-      "weighted_score": 0.73,
+      "reason_zh": "Anthropic 工程师谈 agent 架构中“脑与手”的分离，对做 agent 系统的开发者有直接借鉴意义。",
+      "summary_zh": "Latent Space 访谈 Anthropic 的 Katelyn Lesse 与 Angela Jiang，围绕 Opus 5.5、Claude Platform 以及 AI agent 的工程实现展开。核心线索是“把大脑和手分开”：将推理决策层与工具执行层解耦，从而提升 agent 的可控性、可观测性与安全性。访谈还涉及 Anthropic 如何用 Claude 自身来构建和迭代 Claude 产品，以及平台化过程中在上下文管理、工具调用与工程取舍上的经验。",
+      "title_zh": "Anthropic 如何用 Claude 造 Claude：把大脑与手分开",
+      "weighted_score": 0.75,
       "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.8,
+        "source_authority": 0.8,
+        "novelty": 0.7,
         "impact": 0.7,
-        "practical_value": 0.65
+        "practical_value": 0.8
       },
-      "story_id": "4473e9e3df1b86c4",
+      "story_id": "2c2c6268261d908e",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-sd",
-          "url": "https://arxiv.org/abs/2610.32349"
+          "source_id": "latent-space",
+          "url": "https://latent.space/p/how_anthropic_ships_the_1_llm_in_the_world_safely_separating_the_brain_from_the_hands/"
+        },
+        {
+          "source_id": "latent-space",
+          "url": "https://latent.space/p/opus55/"
         }
       ]
     },
     {
-      "id": "6e5a91ba7b924550",
-      "source_id": "arxiv-cs-sd",
-      "title": "Continuous Audio Thinking for Large Audio Language Models",
-      "url": "https://arxiv.org/abs/2606.18273",
-      "published_at": "2026-10-26T04:00:00+00:00",
-      "raw_text": "arXiv:2606.18273v2 Announce Type: replace-cross \nAbstract: Large audio language models (LALMs) have shown impressive capabilities on diverse audio understanding tasks, ranging from speech transcription to music analysis. However, because LALMs are typically trained to produce text-aligned responses, their hidden states are progressively shaped for text generation rather than for preserving acoustic information. As a result, the diverse acoustic content that audio carries, such as phonetic detail, prosody, sound events, affect, and pitch, is lost along the way and difficult to leverage in the response. We introduce Continuous Audio Thinking (CoAT), a framework that equips audio language models with a continuous latent workspace for organizing acoustic information prior to response generation, grounded by distillation from audio experts. Within the thinking space, the model can utilize the rich acoustic information provided by expert distillation when generating its response. Furthermore",
+      "id": "cac2f27240b1148c",
+      "source_id": "the-decoder",
+      "title": "Former Deepmind researcher thinks AlphaGo's playbook can cure AI hallucinations",
+      "url": "https://the-decoder.com/former-deepmind-researcher-thinks-alphagos-playbook-can-cure-ai-hallucinations/",
+      "published_at": "2026-10-27T13:55:24+00:00",
+      "raw_text": "<p><img alt=\"Illustration showing the Metis octahedron in a dotted circular path with an arrow and a yellow checkmark; below it, a Go board tilted at an angle with white and blank stones, with a dotted line pointing toward it.\" class=\"attachment-full size-full wp-post-image\" height=\"1080\" src=\"https://the-decoder.com/wp-content/uploads/2026/10/metis-reasoning-07-reasoning-illustration.jpg\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        Former Deepmind researcher Thore Graepel wants his startup Metis Reasoning to bring AlphaGo's search principle to general reasoning. Instead of locking knowledge inside model weights, an explicit knowledge ledger would make every conclusion checkable against evidence. So far, though, there's no working system and no benchmarks.</p>\n<p>The article <a href=\"https://the-decoder.com/former-deepmind-researcher-thinks-alphagos-playbook-can-cure-ai-hallucinations/\">Former Deepmind researcher thinks AlphaGo&#039;s playbook can cure AI ",
       "category_hint": [
-        "论文研究"
+        "模型发布",
+        "行业动态"
       ],
-      "image_url": null,
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/metis-reasoning-07-reasoning-illustration.jpg",
       "category": "论文研究",
-      "content_type": "研究论文",
+      "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "指出音频大模型隐状态被文本生成目标侵蚀的问题，提出连续音频思考，具可迁移的机制洞察。",
-      "summary_zh": "大型音频语言模型（LALM）在转写、音乐分析等任务上表现优异，但由于训练目标是产出与文本对齐的回答，其隐状态逐渐被塑造成服务于文本生成，而非保留声学细节。论文提出“连续音频思考”思路，让模型在生成文本前先在连续表示空间中处理音频信息，以缓解声学信息在文本对齐训练中被稀释的问题。",
-      "title_zh": "面向大型音频语言模型的连续音频思考",
-      "weighted_score": 0.7075,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.8,
-        "impact": 0.65,
-        "practical_value": 0.6
-      },
-      "story_id": "0dbee13f2dc95db2",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-sd",
-          "url": "https://arxiv.org/abs/2606.18273"
-        }
-      ]
-    },
-    {
-      "id": "4184d5cfdad85da9",
-      "source_id": "arxiv-cs-ma",
-      "title": "The Helpful Agent Problem: When Emergent Cooperation Among LLM Agents Bypasses Intended Workflows",
-      "url": "https://arxiv.org/abs/2610.31985",
-      "published_at": "2026-10-26T04:00:00+00:00",
-      "raw_text": "arXiv:2610.31985v1 Announce Type: cross \nAbstract: LLM agents are increasingly deployed in collaborative settings where they pursue separate tasks while sharing resources and operating under review or oversight processes. Such settings create safety risks not only when agents are malicious, but also when they are simply trying to help. Prior work has largely studied adversarial or explicitly collusive behavior; we show that benign agents pursuing separate objectives can spontaneously cooperate in ways that bypass intended workflows. We call this the \\emph{helpful agent problem}. We study long-horizon shared-resource environments in which agents sometimes depend on resources owned by their peers and cross-owner changes are normally mediated by a reviewer. When review becomes unavailable, agents begin making changes on one another's behalf despite having no shared reward or explicit incentive to cooperate. Crucially, these actions remain within each agent's local permissions while circum",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "指出善意协作也可能绕过既定流程，提出被忽视的智能体安全风险。",
-      "summary_zh": "论文研究 LLM 智能体在协作环境中的新型安全风险：多个智能体各自执行不同任务，同时共享资源并处于审核或监督流程之下。作者指出，风险不仅来自恶意智能体，也来自那些“只是想帮忙”的智能体——它们之间的自发协作可能绕过原本设计的审批与工作流。以往研究多聚焦对抗性或显式串谋行为，本文则提出“乐于助人的智能体问题”，揭示善意涌现协作带来的流程失效隐患。",
-      "title_zh": "乐于助人的智能体问题：当 LLM 智能体间的涌现协作绕过既定工作流",
+      "reason_zh": "前DeepMind研究员提出用AlphaGo思路解决幻觉，有启发性。",
+      "summary_zh": "前DeepMind研究员提出一种新方法，借鉴AlphaGo的搜索与自我对弈策略来减少大语言模型的幻觉。该方法名为Metis，通过让模型在推理过程中进行多步验证和回溯，模拟围棋中的蒙特卡洛树搜索，从而提升答案的可靠性。文章介绍了其原理、初步实验结果，并讨论了与传统检索增强生成等方法的差异。",
+      "title_zh": "前DeepMind研究员认为AlphaGo的策略可治愈AI幻觉",
       "weighted_score": 0.705,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -92,314 +65,347 @@
         "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "7cf08b9a2887dca1",
+      "story_id": "af409a951967dad4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ma",
-          "url": "https://arxiv.org/abs/2610.31985"
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/former-deepmind-researcher-thinks-alphagos-playbook-can-cure-ai-hallucinations/"
         }
       ]
     },
     {
-      "id": "de4ad6a74b40d123",
-      "source_id": "arxiv-cs-ma",
-      "title": "NeuroMAS: Multi-Agent Systems as Neural Networks with Joint Reinforcement Learning",
-      "url": "https://arxiv.org/abs/2605.16757",
-      "published_at": "2026-10-26T04:00:00+00:00",
-      "raw_text": "arXiv:2605.16757v2 Announce Type: replace-cross \nAbstract: Multi-agent language systems are often built as hand-designed workflows, where agents are assigned semantic roles and communication protocols are specified in advance. We propose NeuroMAS, a method that first treats a multi-agent language system as a trainable and scalable neural-network-like architecture with LLM agents as nodes and intermediate textual signals as edges. In NeuroMAS, agent nodes are role-free but structure-aware: the topology only determines how information can flow in general, while reinforcement learning training determines how nodes communicate, specialize, and coordinate. This formulation shifts multi-agent design from workflow engineering toward architecture design, where depth, width, connectivity, and growth protocol become scalable sources of capability. Further, we provide a theoretical perspective showing why such modular textual computation is more parameter-efficient when tasks admit hierarchical d",
+      "id": "34370e88c88d0cd4",
+      "source_id": "huggingface-blog",
+      "title": "Can we trust LLMs to judge whether a research idea is novel?",
+      "url": "https://huggingface.co/blog/allenai/novelty-bench",
+      "published_at": "2026-10-27T16:12:42+00:00",
+      "raw_text": "",
+      "category_hint": [
+        "开源项目",
+        "产品发布"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "探讨LLM作为研究想法新颖性评判者的可信度，对科研工作者有参考价值，来自Hugging Face博客，权威性较高。",
+      "summary_zh": "本文探讨了大型语言模型（LLM）在评判研究想法新颖性方面的可信度。文章可能分析了LLM在评估学术创新时的优势与局限，例如对跨领域知识的整合能力、潜在偏见以及评估标准的一致性。通过实验或案例研究，作者讨论了LLM能否替代人类专家进行新颖性判断，并提出了改进建议。该文对利用LLM辅助科研评审具有参考意义。",
+      "title_zh": "我们能信任LLM评判研究想法的新颖性吗？",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "7d0ae0f453f58092",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "huggingface-blog",
+          "url": "https://huggingface.co/blog/allenai/novelty-bench"
+        }
+      ]
+    },
+    {
+      "id": "29b6772daf60027e",
+      "source_id": "reddit-langchain",
+      "title": "Why we killed our Vector DB for SQLite BM25 and wrote a 3.6ns Rust sentinel: hard lessons from running multi-agent loops",
+      "url": "https://www.reddit.com/r/LangChain/comments/1xgrgik/why_we_killed_our_vector_db_for_sqlite_bm25_and/",
+      "published_at": "2026-10-27T12:41:23+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>A few days ago I posted about our open-source multi-agent hedge fund experiment and got a ton of sharp, honest feedback from people here. The comments were brutally accurate, especially around LLM reasoning limits, latency, and state management.</p> <p>We spent the last few days completely rebuilding parts of our architecture based on that advice, and the benchmark results honestly blew us away. Here is what we learned from fixing three critical failure modes in autonomous agent pipelines.</p> <ol> <li>Throwing raw metrics at LLMs guarantees hallucinated reasoning</li> </ol> <p>Someone in the comments pointed out: never let an LLM interpret raw quantitative factors without an ontology. They were 100% right.</p> <p>When we fed models raw numbers like PER = 85.0 or 20-day historical volatility = 65%, the agents would frequently hallucinate positive justifications. For example, a model would argue that &quot;a massive jump in volatility shows expanding bu",
+      "category_hint": [
+        "开源项目",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "真实多智能体系统重构复盘：弃向量库改用SQLite BM25、写3.6ns Rust哨兵，取舍与踩坑值得借鉴。",
+      "summary_zh": "作者分享了其开源多智能体对冲基金实验的重构经验。在社区反馈指出LLM推理局限、延迟与状态管理问题后，团队重写部分架构：放弃向量数据库，改用SQLite配合BM25做检索，并实现了一个延迟约3.6纳秒的Rust哨兵组件。文章围绕多智能体循环中的上下文管理、状态一致性与性能取舍展开，给出基准测试与踩坑教训，属于工程师视角的系统设计复盘。",
+      "title_zh": "我们为何弃用向量数据库、改用SQLite BM25，并写了3.6ns的Rust哨兵：多智能体循环的硬核教训",
+      "weighted_score": 0.555,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.7,
+        "impact": 0.4,
+        "practical_value": 0.8
+      },
+      "story_id": "da9e6702498b065b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-langchain",
+          "url": "https://www.reddit.com/r/LangChain/comments/1xgrgik/why_we_killed_our_vector_db_for_sqlite_bm25_and/"
+        }
+      ]
+    },
+    {
+      "id": "bfdba109b967dc22",
+      "source_id": "cloudflare-blog",
+      "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang",
+      "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+      "published_at": "2026-10-26T22:01:23+00:00",
+      "raw_text": "A configuration mismatch in GLM 5.3 on Workers AI triggered an SGLang bug that exposed KV cache pages across requests. Here is how we addressed the issue.",
+      "category_hint": [
+        "产品发布",
+        "行业动态"
+      ],
+      "image_url": "https://blog.cloudflare.com/_emdash/api/media/file/01M5X2P2KSNBX6J13E3B4219PW.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "一线厂商复盘真实线上事故：配置错配触发 SGLang 缺陷导致跨请求 KV cache 泄露，含排查与修复思路。",
+      "summary_zh": "Cloudflare 博客披露了 Workers AI 上 GLM-5.3 模型的一次安全事件：由于配置不匹配，触发了 SGLang 推理框架中的一个缺陷，导致 KV cache 页面在不同请求之间发生暴露，理论上可能让一个用户读到另一个用户的上下文。文章说明了问题的触发条件、影响范围，以及团队如何借助 SGLang 侧的处理完成修复与加固。对自建推理服务的团队而言，这是一份关于多租户隔离、缓存复用边界与配置校验的实战参考。",
+      "title_zh": "GLM-5.3 Workers AI 模型中的跨请求 KV cache 暴露问题，以及我们借助 SGLang 的修复",
+      "weighted_score": 0.74,
+      "score_breakdown": {
+        "source_authority": 0.85,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "b44dbfe191afdbc6",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "cloudflare-blog",
+          "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/"
+        }
+      ]
+    },
+    {
+      "id": "91ab09be6954d23d",
+      "source_id": "google-research-blog",
+      "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+      "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "published_at": "2026-10-27T17:35:00+00:00",
+      "raw_text": "Education Innovation",
+      "category_hint": [
+        "论文研究",
+        "模型发布"
+      ],
+      "image_url": "https://storage.googleapis.com/gweb-research2023-media/original_images/LLMSleep_Cover.jpg",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.75,
+      "reason_zh": "Google Research 提出借鉴睡眠机制的持续学习框架，让 LLM 在学新知识时不遗忘旧知识，思路新颖，对持续学习方向的研究者有启发。",
+      "summary_zh": "Google Research 博客介绍了一种名为「睡眠框架」的新方法，用于解决大语言模型在持续学习中的知识保留问题。该框架借鉴生物睡眠过程中记忆巩固的机制，让模型在学习新知识的同时对已有知识进行整理与固化，从而缓解灾难性遗忘。文章将其归入教育创新方向，说明该方法试图让模型像人一样在持续获取新信息的过程中保持旧有能力的稳定，属于持续学习领域的新思路探索。",
+      "title_zh": "睡眠框架：让 LLM 在持续学习中保留知识的新方法",
+      "weighted_score": 0.725,
+      "score_breakdown": {
+        "source_authority": 0.85,
+        "novelty": 0.75,
+        "impact": 0.65,
+        "practical_value": 0.6
+      },
+      "story_id": "bf2a553f2594cdbd",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "google-research-blog",
+          "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/"
+        }
+      ]
+    },
+    {
+      "id": "87d8c059e20be353",
+      "source_id": "arxiv-cs-sd",
+      "title": "Audio-R1: Audio Reasoning through Reinforcement Learning on Self-Supervised Tasks",
+      "url": "https://arxiv.org/abs/2610.34609",
+      "published_at": "2026-10-27T04:00:00+00:00",
+      "raw_text": "arXiv:2610.34609v1 Announce Type: new \nAbstract: Reasoning is increasingly important for large audio-language models (LALMs), yet remains relatively underexplored compared with text-only and vision-language models. We introduce Audio-R1, a reinforcement learning (RL) post-training framework that revisits audio self-supervised learning as a source of verifiable rewards for improving audio understanding and reasoning task performance. Audio-R1 uses answers automatically determined during the construction of self-supervised tasks to verify model responses and compute rewards. Experiments across multiple LALMs and diverse audio benchmarks show consistent performance gains, while ablations demonstrate the benefits of each self-supervised task and additional gains from joint training. While both supervised fine-tuning and Audio-R1 improve self-supervised task accuracy, Audio-R1 further improves performance on downstream tasks distinct from the training tasks. These results highlight the pote",
       "category_hint": [
         "论文研究"
       ],
       "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "把多智能体语言系统视为可训练的类神经网络架构并做联合强化学习，视角新颖，对多智能体系统设计有启发。",
-      "summary_zh": "论文指出，多智能体语言系统通常以手工设计的工作流形式构建，智能体被赋予语义角色，通信协议也事先规定。作者提出 NeuroMAS，将多智能体语言系统视为一种可训练、可扩展的类神经网络架构：LLM 智能体作为节点，智能体之间的通信作为连接，并通过联合强化学习对整个系统进行端到端优化，而非依赖人工设定的角色与协议。这一视角把多智能体编排从手工工程转向可学习架构，为自动化设计多智能体协作系统提供了新路径。",
-      "title_zh": "NeuroMAS：以联合强化学习将多智能体系统视作神经网络",
-      "weighted_score": 0.685,
+      "depth_score": 0.75,
+      "reason_zh": "把音频自监督任务当作可验证奖励做RL后训练，为音频推理提供新范式，值得关注。",
+      "summary_zh": "论文指出，相比纯文本与视觉语言模型，大型音频语言模型（LALM）中的推理能力研究仍较薄弱。作者提出Audio-R1，一个强化学习后训练框架，将音频自监督学习任务重新用作可验证奖励的来源，从而在无需人工标注推理链的情况下提升模型的音频理解与推理能力，为音频推理的RL后训练提供了新路径。",
+      "title_zh": "Audio-R1：基于自监督任务强化学习的音频推理",
+      "weighted_score": 0.6475,
       "score_breakdown": {
-        "source_authority": 0.75,
+        "source_authority": 0.7,
         "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.55
+        "impact": 0.55,
+        "practical_value": 0.5
       },
-      "story_id": "9a2847efb50872ed",
+      "story_id": "865bb92c8bf49c23",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ma",
-          "url": "https://arxiv.org/abs/2605.16757"
+          "source_id": "arxiv-cs-sd",
+          "url": "https://arxiv.org/abs/2610.34609"
         }
       ]
     },
     {
-      "id": "3fb6826c85351d36",
+      "id": "ba8e4466d0fb808a",
+      "source_id": "stratechery",
+      "title": "Anthropic S-1, The Cost of Compute, Who Is Paying?",
+      "url": "https://stratechery.com/2026/anthropic-s-1-the-cost-of-compute-who-is-paying/",
+      "published_at": "2026-10-27T10:32:57+00:00",
+      "raw_text": "Anthropic's IPO is finally here; the core business is very profitable, but competition may eat all of the profits, even as investors are set up for endless dilution.",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.75,
+      "reason_zh": "从Anthropic招股书切入算力成本与利润归属，论证扎实，对理解AI商业模式很有启发。",
+      "summary_zh": "文章以Anthropic提交S-1为切入点，分析其核心业务盈利能力与竞争格局。作者认为尽管当前业务利润可观，但算力成本持续攀升，竞争可能侵蚀全部利润，而投资者面临不断稀释的风险。文中拆解了训练与推理成本的承担方，讨论谁在为算力买单、价值链上的利润如何分配，并对AI公司上市后的资本结构作出判断，属于有论证框架的商业模式深度评论。",
+      "title_zh": "Anthropic的S-1、算力成本，谁在买单？",
+      "weighted_score": 0.6375,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.6,
+        "impact": 0.65,
+        "practical_value": 0.5
+      },
+      "story_id": "c5c30b98cf1b0b7e",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "stratechery",
+          "url": "https://stratechery.com/2026/anthropic-s-1-the-cost-of-compute-who-is-paying/"
+        }
+      ]
+    },
+    {
+      "id": "1d3ba6f2a9a269c6",
+      "source_id": "zh-oschina",
+      "title": "OpenAI 和 Anthropic 将大模型价格砍了八成，这门生意到底怎么算的？",
+      "url": "https://www.oschina.net/news/503251/cheap-llms",
+      "published_at": "2026-10-27T11:41:06+00:00",
+      "raw_text": "从六月 GPT-5.6 系列发布到现在，OpenAI 和 Anthropic 的主流模型价格塌了一大截，最多砍掉 80%。Max Woolf 把这场价格战的时间线全捋了一遍，结论有点反直觉：这不像烧钱抢市场的套路。 先看数字怎么掉的。GPT-5.6 Sol 卖 $5/$30/$0.50（输入/输出/缓存读取，每百万 token），Luna 是 $1/$6/$0.10。后来 Luna 直接砍 80...",
+      "category_hint": [
+        "开源项目"
+      ],
+      "image_url": null,
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "梳理价格战时间线，给出反直觉结论，有助于理解大模型商业逻辑。",
+      "summary_zh": "文章梳理了OpenAI和Anthropic主流模型价格大幅下降的时间线，最大降幅达80%。作者引用Max Woolf的分析，指出这并非简单的烧钱抢市场，而是可能反映了成本下降、竞争策略或模型效率提升。文章对比了GPT-5.6 Sol和Luna等型号的定价变化，并探讨了价格战背后的商业逻辑，认为这种降价趋势可能重塑AI行业的盈利模式。",
+      "title_zh": null,
+      "weighted_score": 0.695,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.8,
+        "practical_value": 0.7
+      },
+      "story_id": "98b54e19e3cc842f",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-oschina",
+          "url": "https://www.oschina.net/news/503251/cheap-llms"
+        }
+      ]
+    },
+    {
+      "id": "4e8227e28349abd9",
       "source_id": "zh-meituan-tech",
-      "title": "从 LOOP 到图探索 —— 算法模型的 AutoResearch 自进化系统架构演进之路",
-      "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html",
-      "published_at": "2026-10-26T21:24:20.579207+00:00",
-      "raw_text": "本文分享这套系统的设计理念、架构演进与可信度设计，希望对大家有所帮助或启发。",
+      "title": "美团搜索3.0：LLM 语义表征在排序模型的探索与应用",
+      "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html",
+      "published_at": "2026-10-27T21:08:36.067349+00:00",
+      "raw_text": "美团搜索团队正依托团垂融合新架构与生成式大模型新技术，全面重构本地生活搜索底座。本系列技术博客将持续介绍美团搜索 3.0 的技术探索，本文聚焦 LLM 语义表征在服务零售排序场景上的三期实践——从单点特征验证到系统性表征体系构建，再到跨场景迁移复用，探索语义匹配信号在搜索排序中的应用路径。",
       "category_hint": [
         "技巧与观点"
       ],
-      "image_url": "https://p0.meituan.net/meituantechblog/f96887d93b880574e0fb9ebad114faba529816.png",
+      "image_url": "https://p1.meituan.net/meituantechblog/8f6d0d2a1b53e0fbe26ec7f5426bd45a302269.png",
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "美团技术团队分享 AutoResearch 系统架构演进，含设计取舍与可信度设计，具工程参考价值。",
-      "summary_zh": "本文来自美团技术团队，系统梳理了其 AutoResearch 自进化系统从 LOOP 到图探索的架构演进历程。文章首先介绍系统设计理念，说明如何让算法模型在搜索空间中自主迭代优化；随后详细对比不同阶段的架构选择，包括循环式探索与图结构探索的优劣，并讨论可信度设计，如结果验证与防过拟合机制。文中还涉及工程落地中的实际挑战与解决方案，为构建自动化研究系统提供了可借鉴的架构思路。",
+      "depth_score": 0.7,
+      "reason_zh": "美团搜索 3.0 系列首篇，讲 LLM 语义表征在排序中的三期落地路径，从单点验证到体系化再到跨场景复用，对做搜索/推荐排序的工程师很有借鉴意义。",
+      "summary_zh": "美团搜索团队正在依托团垂融合新架构与生成式大模型技术重构本地生活搜索底座，本文是该系列技术博客的第一篇，聚焦 LLM 语义表征在服务零售排序场景中的三期实践。第一阶段做单点特征验证，确认语义匹配信号的有效性；第二阶段构建系统性的表征体系，把零散特征整合为可复用的能力；第三阶段探索跨场景迁移复用，让语义表征在更多业务中发挥价值。文章梳理了语义匹配信号在搜索排序中从验证到规模化应用的完整路径。",
       "title_zh": null,
-      "weighted_score": 0.625,
+      "weighted_score": 0.6775,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
+        "source_authority": 0.75,
+        "novelty": 0.65,
+        "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "2e9ee6491b654f3b",
+      "story_id": "b4840a22e716d559",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-meituan-tech",
-          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html"
+          "url": "https://tech.meituan.com/2026/08/20/01-meituan-Query-3.0.html"
         }
       ]
     },
     {
-      "id": "c77bc5b68884d8f7",
-      "source_id": "infoq-cn-ai",
-      "title": "模型好选，搜索难做：一个投研Agent的两年开发历程",
-      "url": "https://www.infoq.cn/article/NrUkJExfuuFOICsjVYbb?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-26T14:57:35+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/NrUkJExfuuFOICsjVYbb?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "dcd327682447228b",
+      "source_id": "zh-meituan-tech",
+      "title": "美团智播——数字人直播技术创新与实践",
+      "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html",
+      "published_at": "2026-10-27T21:08:36.067322+00:00",
+      "raw_text": "美团智播围绕 AI 主播「长得真→动得准→演得活→卖得好」构建了完整技术闭环：真人 1:1 复刻、换装换背景身份不跑偏；动作自然流畅，告别「木偶戏」；边说边动、音画一致；背后还有推理加速技术支撑万路并发开播，让普惠落地成为可能。",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
-      "image_url": null,
-      "category": "技巧与观点",
+      "image_url": "https://p0.meituan.net/meituantechblog/a7c5a936998959a941d145ac3eebe7334801382.png",
+      "category": "产品发布",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "两年投研 Agent 实战复盘，揭示搜索环节的真实工程取舍与踩坑，对做 RAG/Agent 的工程师极具迁移价值。",
-      "summary_zh": "文章复盘了一个投研 Agent 长达两年的开发历程，核心结论是“模型好选、搜索难做”：模型选型相对容易，而检索与信息获取环节才是真正的工程难点。作者结合真实系统实践，讨论了搜索策略设计、上下文组织与效果评估中的取舍与踩坑，为构建面向专业场景的 Agent 提供了可迁移的工程经验。",
-      "title_zh": "模型好选，搜索难做：一个投研 Agent 的两年开发历程",
-      "weighted_score": 0.62,
+      "depth_score": 0.65,
+      "reason_zh": "美团数字人直播的完整技术闭环拆解，涵盖复刻、动作、音画同步与万路并发推理加速，工程细节扎实，对做数字人/直播的团队有直接参考价值。",
+      "summary_zh": "美团技术团队介绍其数字人直播系统「智播」的技术实践，围绕「长得真、动得准、演得活、卖得好」四个目标构建闭环。具体包括：对真人进行 1:1 复刻，并保证换装换背景后身份特征不漂移；通过动作生成让主播动作自然流畅，摆脱「木偶戏」感；实现边说边动、音画一致的同步效果；底层配合推理加速技术支撑万路并发开播，从而让数字人直播具备普惠落地的成本可行性。文章属于工程实践总结，侧重各环节的技术取舍与实现路径。",
+      "title_zh": null,
+      "weighted_score": 0.6525,
       "score_breakdown": {
-        "source_authority": 0.7,
+        "source_authority": 0.75,
         "novelty": 0.6,
-        "impact": 0.4,
-        "practical_value": 0.8
-      },
-      "story_id": "e71af9c32629e771",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/NrUkJExfuuFOICsjVYbb?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "63bdfb4684afd977",
-      "source_id": "reddit-llmdevs",
-      "title": "Why we killed our Vector DB for SQLite BM25 and wrote a 3.6ns Rust sentinel: hard lessons from running multi-agent loops",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1xfug48/why_we_killed_our_vector_db_for_sqlite_bm25_and/",
-      "published_at": "2026-10-26T11:41:16+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>A few days ago I posted about our open-source multi-agent hedge fund experiment and got a ton of sharp, honest feedback from people here. The comments were brutally accurate, especially around LLM reasoning limits, latency, and state management.</p> <p>We spent the last few days completely rebuilding parts of our architecture based on that advice, and the benchmark results honestly blew us away. Here is what we learned from fixing three critical failure modes in autonomous agent pipelines.</p> <ol> <li>Throwing raw metrics at LLMs guarantees hallucinated reasoning</li> </ol> <p>Someone in the comments pointed out: never let an LLM interpret raw quantitative factors without an ontology. They were 100% right.</p> <p>When we fed models raw numbers like PER = 85.0 or 20-day historical volatility = 65%, the agents would frequently hallucinate positive justifications. For example, a model would argue that &quot;a massive jump in volatility shows expanding bu",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "多智能体系统架构重构的实战复盘，用 SQLite BM25 替代向量数据库并自研 Rust 哨兵，经验宝贵。",
-      "summary_zh": "作者分享了其开源多智能体对冲基金实验的架构重构经验。在收到社区关于 LLM 推理限制、延迟和状态管理的反馈后，团队放弃了向量数据库，改用 SQLite 的 BM25 全文搜索，并编写了一个延迟仅 3.6 纳秒的 Rust 哨兵组件。文章详细讨论了多智能体循环中遇到的硬核教训，包括状态管理、延迟优化和检索方案的选择，为构建多智能体系统的开发者提供了宝贵的实战参考。",
-      "title_zh": "为什么我们弃用向量数据库，改用 SQLite BM25，并编写了一个 3.6 纳秒的 Rust 哨兵：运行多智能体循环的硬核教训",
-      "weighted_score": 0.55,
-      "score_breakdown": {
-        "source_authority": 0.3,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "7a80d71c572075d7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1xfug48/why_we_killed_our_vector_db_for_sqlite_bm25_and/"
-        }
-      ]
-    },
-    {
-      "id": "3fb44a491dd633de",
-      "source_id": "marktechpost",
-      "title": "Tsinghua AI Open-Sources AKV, a Cache Engineering Server for LLM Agents on SGLang",
-      "url": "https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/",
-      "published_at": "2026-10-26T07:56:45+00:00",
-      "raw_text": "<p>Tsinghua researchers released AKV, an SGLang-based serving system for cache engineering. LLM agents drop and reposition KV cache instead of summarizing history, cutting average cost 27.7% across 4 agent benchmarks.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/\">Tsinghua AI Open-Sources AKV, a Cache Engineering Server for LLM Agents on SGLang</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-      "category_hint": [
-        "模型发布",
-        "产品发布"
-      ],
-      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
-      "category": "开源项目",
-      "content_type": "研究论文",
-      "depth_score": 0.7,
-      "reason_zh": "清华开源 AKV 缓存工程服务，用 KV cache 丢弃与重定位替代历史摘要，降本 27.7%，有实验支撑。",
-      "summary_zh": "清华研究团队开源 AKV，一个基于 SGLang 的 LLM Agent 缓存工程服务系统。AKV 不再通过摘要压缩历史，而是直接丢弃并重新定位 KV cache，从而降低长上下文 Agent 的推理成本。在四个 Agent 基准测试中，平均成本降低 27.7%。该工作将缓存管理作为独立工程层，为 Agent 推理优化提供了新思路。",
-      "title_zh": "清华 AI 开源 AKV：面向 LLM Agent 的 SGLang 缓存工程服务器",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
+        "impact": 0.55,
         "practical_value": 0.7
       },
-      "story_id": "cb26fb93d2193598",
+      "story_id": "d4343cde97a49034",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/"
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/09/03/meituan-Digital-Human-practice.html"
         }
       ]
     },
     {
-      "id": "67c5ff7d2c1ec9bb",
-      "source_id": "zh-leiphone",
-      "title": "DeepSeek 开源看家算子的同一周，AI 超过了它",
-      "url": "https://www.leiphone.com/category/industrynews/IaMw7vRrTCadlbCY.html",
-      "published_at": "2026-10-26T06:58:00+00:00",
-      "raw_text": "<p>国产大模型的竞争，正从模型层延伸到算力层：再强的模型，最终都要基于算子在芯片上执行。同一个模型、同一块芯片，换一套更优的算子，有时会带来数倍的性能提升。算子的效率决定了同样的显卡能跑多快，也决定了每个 token 的价格。</p><p>DeepSeek 近日全面开源推理框架 DeepInfer。继模型权重和 FlashMLA、DeepGEMM 等算子库之后，他们把模型运行的链路开放了。其中的 FlashMLA，有工程师在芯片上逐行手调的版本，算子性能跑到了硬件极限的 90% 以上，这也是人类手艺目前在部分芯片上达到的极限成绩。</p><p>而这个极限，同一周就被 AI 刷新了。据悉，截至 10 月 22 日，完全由 AI 编写算子、无人工逐行调优的 ForgeKernel，同时登顶两个算子评测榜：英伟达主场的 SOL-ExecBench FlashInfer-Bench 合集第一，以及昇腾 CANN 官方仓库维护的 CANNBench A3 硬件榜第一，基准加速比 1.835×，领先第二名 25%。在名次之外，AI自主优化算子的能力不容小觑：在DeepSeek v4.1 Flash的算子上，相比DeepSeek开源的英伟达版本，ForgeKernel也通过从0用AI迭代的方式实现了性能超越。</p><p>这是智能进化的接力。无论是DeepSeek的开源精神还是算子优化榜单的焦灼竞争，最终都导向同一个方向：让国产智能在每一块芯片上都跑得更快。</p><p style=\"text-align: center;\"><img src=\"https://static.leiphone.com/uploads/new/images/20261026/6adef9368bc9a.png?imageView2/2/w/740\" /></p><p>英伟达 SOL-ExecBench&nbsp;FlashInfer-Bench</p><p style=\"text-align: center;\"><img src=\"https://static.leiphone.com/uploads/new/images/20261026/6adef93fdd42e.png?imageView2/2/w/740\" /></p><p>昇腾&nbsp;CANNBench&nbsp;A3 硬件榜</p",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://static.leiphone.com/uploads/new/images/20261026/6adef9368bc9a.png?imageView2/2/w/740",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "以 DeepSeek 开源算子与 AI 自动生成算子登顶为切口，揭示算力层竞争与手工调优被替代的趋势。",
-      "summary_zh": "文章指出国产大模型竞争正从模型层延伸到算力层：同一模型、同一芯片，换用更优算子可能带来数倍性能提升，算子效率直接决定 token 成本。DeepSeek 近日全面开源推理框架 DeepInfer，继模型权重与 FlashMLA、DeepGEMM 等算子库之后进一步开放运行链路，其中 FlashMLA 经工程师逐行手调，性能达到硬件极限的 90% 以上。而同一周，完全由 AI 编写、无人工逐行调优的 ForgeKernel 截至 10 月 22 日同时登顶两个算子评测榜，包括英伟达主场的 SOL-ExecBench FlashInfer-Bench 合集第一，形成对人类手工调优极限的直接挑战。",
-      "title_zh": null,
-      "weighted_score": 0.655,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "fc2d28ce7f6565d9",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-leiphone",
-          "url": "https://www.leiphone.com/category/industrynews/IaMw7vRrTCadlbCY.html"
-        }
-      ]
-    },
-    {
-      "id": "e7b868a985b558d0",
-      "source_id": "towards-data-science",
-      "title": "Claude Code vs. Cursor: What a Field Test Shows That the Feature Comparisons Miss",
-      "url": "https://towardsdatascience.com/claude-code-vs-cursor-what-a-field-test-shows-that-the-feature-comparisons-miss/",
-      "published_at": "2026-10-26T11:00:00+00:00",
-      "raw_text": "<p>One benchmark says Claude Code used 33,000 tokens where Cursor used 188,000. Another says the exact reverse. Here is the field test that actually settles it for your team.</p>\n<p>The post <a href=\"https://towardsdatascience.com/claude-code-vs-cursor-what-a-field-test-shows-that-the-feature-comparisons-miss/\">Claude Code vs. Cursor: What a Field Test Shows That the Feature Comparisons Miss</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "通过实际测试对比Claude Code和Cursor，揭示基准测试的误导性，为团队选型提供实用参考。",
-      "summary_zh": "文章通过实地测试对比Claude Code和Cursor两款AI编程助手，指出不同基准测试结果相互矛盾（如token消耗量一个显示Claude Code用33k而Cursor用188k，另一个则相反），说明单纯的功能对比无法反映真实使用效果。作者设计了一套测试方法，从实际编码任务出发，评估两者在代码生成质量、上下文理解、错误修复等方面的表现，并给出针对不同团队需求的选型建议。",
-      "title_zh": "Claude Code vs. Cursor：实地测试揭示功能对比所忽略的真相",
-      "weighted_score": 0.645,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "7a2fba2a4475c91f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "towards-data-science",
-          "url": "https://towardsdatascience.com/claude-code-vs-cursor-what-a-field-test-shows-that-the-feature-comparisons-miss/"
-        }
-      ]
-    },
-    {
-      "id": "e9b64b31530df7fe",
-      "source_id": "infoq-cn-ai",
-      "title": "30 个 Agent 背后：花椒如何建设可持续演进的企业 AI 能力？",
-      "url": "https://www.infoq.cn/article/O7lcxqKD2avRPbNoMmtg?utm_source=rss&utm_medium=article",
-      "published_at": "2026-10-26T15:05:27+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/O7lcxqKD2avRPbNoMmtg?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "9ffebaf1b25a4f9b",
+      "source_id": "techcrunch-ai",
+      "title": "Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean?",
+      "url": "https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/",
+      "published_at": "2026-10-27T17:08:08+00:00",
+      "raw_text": "TechCrunch spoke to the MIT computer scientist charged with explaining OpenAI's latest mind-bending discovery.",
       "category_hint": [
         "行业动态",
-        "技巧与观点"
+        "产品发布"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "花椒建设 30 个 Agent 的实践复盘，对企业构建可持续演进的 AI 能力有参考价值。",
-      "summary_zh": "文章介绍了花椒如何建设 30 个 Agent 以构建可持续演进的企业 AI 能力。可能涵盖架构设计、工程实践、运维管理等方面的经验，探讨如何让 AI 能力随业务发展而持续迭代，为企业落地 Agent 提供参考。",
-      "title_zh": null,
-      "weighted_score": 0.62,
+      "depth_score": 0.6,
+      "reason_zh": "前沿实验室称模型反驳了计算复杂性核心假设，TechCrunch 请 MIT 学者解读，值得关注。",
+      "summary_zh": "TechCrunch 报道称，多家前沿 AI 实验室表示其模型对计算复杂性理论中的“指数时间假设”（ETH）给出了反驳性结果。记者采访了负责解释 OpenAI 这一发现的一位 MIT 计算机科学家，围绕该结论的含义、验证方式及其对理论计算机科学与 AI 推理能力的意义展开讨论。文章试图厘清这一颇具冲击力的说法究竟意味着什么。",
+      "title_zh": "前沿 AI 实验室称其模型反驳了指数时间假设，这意味着什么？",
+      "weighted_score": 0.6825,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.5,
-        "impact": 0.5,
-        "practical_value": 0.8
+        "novelty": 0.85,
+        "impact": 0.8,
+        "practical_value": 0.3
       },
-      "story_id": "f5ce8a9bbfc71184",
+      "story_id": "cfdc14e6f9116aeb",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/O7lcxqKD2avRPbNoMmtg?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "6dd881a5348466d1",
-      "source_id": "exponentialview",
-      "title": "📈 Monday data: For science the bottleneck isn’t intelligence",
-      "url": "https://www.exponentialview.co/p/monday-data-for-science-the-bottleneck",
-      "published_at": "2026-10-26T15:25:11+00:00",
-      "raw_text": "AI already improves AI. Whether that compounds across the sciences depends on the field.",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!1wO0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1266c18c-4898-4926-9de0-d2862f1469ef_2048x1267.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "指出科学研究的瓶颈不在智能本身，而在于领域差异，对 AI for Science 有洞察。",
-      "summary_zh": "文章探讨了 AI 在科学研究中的应用，指出 AI 已经能改进 AI 自身，但这种改进能否在科学领域产生复利效应取决于具体学科。瓶颈可能不在于智能水平，而在于领域特定的数据、实验或方法论限制，为 AI for Science 提供了思考框架。",
-      "title_zh": "📈 周一数据：对科学而言，瓶颈不是智能",
-      "weighted_score": 0.61,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "322b12ac2d959600",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "exponentialview",
-          "url": "https://www.exponentialview.co/p/monday-data-for-science-the-bottleneck"
+          "source_id": "techcrunch-ai",
+          "url": "https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/"
         }
       ]
     }
