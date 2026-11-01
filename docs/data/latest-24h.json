@@ -1,11 +1,437 @@
 [
   {
-    "id": "b2a08cbfc96da15a",
+    "id": "09b190866b6eb4eb",
+    "source_id": "zh-tonybai",
+    "title": "递归自我改进（RSI）的 Harness 长什么样？英伟达 SoL-Pi 给出了第一份工程答卷",
+    "url": "https://tonybai.com/2026/11/01/rsi-harness-nvidia-sol-pi-recursive-self-improvement-agent/",
+    "published_at": "2026-10-31T22:00:00+00:00",
+    "raw_text": "英伟达提出 SoL-Pi：一套受递归自我改进（RSI）启发、作用于 Agent Harness 层的自动研究流水线。系统在 535 个可执行环境中筛选 152 个候选想法，留下 Action Fusion、Online Context Compact、ObservationPack、Evidence-Preserving Reducer 四个机制。EdgeBench 上完整方案保留约 94% 的 Pi 得分，Token 降低约 45%～49%，成本降低约三分之一。本文解读其 RSI 闭环、四个机制、实验结果，并给出面向工程师的 RSI Harness 搭建清单。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "深度分析",
+    "depth_score": 0.9,
+    "reason_zh": "英伟达 SoL-Pi 提出 RSI 启发的 Agent Harness 自动研究流水线，实验数据扎实，对工程师有高参考价值。",
+    "summary_zh": "英伟达提出 SoL-Pi，一套受递归自我改进（RSI）启发、作用于 Agent Harness 层的自动研究流水线。系统在 535 个可执行环境中筛选 152 个候选想法，最终保留 Action Fusion、Online Context Compact、ObservationPack、Evidence-Preserving Reducer 四个机制。在 EdgeBench 上，完整方案保留约 94% 的 Pi 得分，同时 Token 降低约 45%～49%，成本降低约三分之一。文章解读了 RSI 闭环、四个机制、实验结果，并给出面向工程师的 RSI Harness 搭建清单。",
+    "title_zh": "递归自我改进（RSI）的 Harness 长什么样？英伟达 SoL-Pi 给出了第一份工程答卷",
+    "weighted_score": 0.795,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.8
+    },
+    "story_id": "916558aa2fa7d3fc",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/11/01/rsi-harness-nvidia-sol-pi-recursive-self-improvement-agent/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "174be371aa8d34c2",
+    "source_id": "reddit-localllama",
+    "title": "tandem.cpp: Qwen3.8-Flash-Next at 97 tok/s on a single 4090 + 64 GB RAM, 3.3× llama.cpp, works for any MoE",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xldent/tandemcpp_qwen38flashnext_at_97_toks_on_a_single/",
+    "published_at": "2026-11-01T20:23:50+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>tandem.cpp is a patch set for llama.cpp that makes MoE models that don't fit in VRAM run faster. It keeps the most-used experts on the GPU and lets the CPU help with the rest, for any MoE model llama.cpp supports. Single-user decode is the target.</p> <p>Consumer PC (i5-12400F, 64 GB DDR4, RTX 4090), GSM8K, decode tok/s:</p> <table><thead> <tr> <th align=\"left\">Model</th> <th align=\"left\">llama.cpp</th> <th align=\"left\">tandem.cpp</th> <th align=\"left\">Strata</th> </tr> </thead><tbody> <tr> <td align=\"left\">Qwen3.8-Flash-Next IQ3_S + MTP, greedy</td> <td align=\"left\">29.8</td> <td align=\"left\"><strong>97.3</strong> (3.3×)</td> <td align=\"left\">103.6</td> </tr> <tr> <td align=\"left\">same, Qwen's default sampling</td> <td align=\"left\">29.4</td> <td align=\"left\"><strong>96.1</strong> (3.3×)</td> <td align=\"left\">98.1</td> </tr> <tr> <td align=\"left\">gpt-oss-120b, greedy</td> <td align=\"left\">27.8</td> <td align=\"left\"><strong>51.5</strong> (1.85×)</td> <t",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "tandem.cpp 通过专家卸载显著提升 MoE 模型在消费级硬件上的推理速度，对本地部署有实用价值。",
+    "summary_zh": "tandem.cpp 是 llama.cpp 的一个补丁集，旨在让无法完全放入显存的 MoE 模型运行得更快。它通过将最常用的专家保留在 GPU 上，并让 CPU 协助处理其余专家，从而加速任何 llama.cpp 支持的 MoE 模型。在消费级 PC（i5-12400F、64 GB DDR4、RTX 4090）上，GSM8K 解码速度达到 97 tok/s，是 llama.cpp 的 3.3 倍。该项目针对单用户解码场景，为本地运行大模型提供了高效解决方案。",
+    "title_zh": "tandem.cpp：在单张 4090 + 64 GB 内存上以 97 tok/s 运行 Qwen3.8-Flash-Next，速度是 llama.cpp 的 3.3 倍，适用于任何 MoE 模型",
+    "weighted_score": 0.62,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.9
+    },
+    "story_id": "95a6329f6e19f9de",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkxt7a/memdoor_a_team_of_5_qwen3827b_models_beats_fable/"
+      },
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xlcgww/speedy_custom_strata_for_singledual_rtx_tested_on/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xldent/tandemcpp_qwen38flashnext_at_97_toks_on_a_single/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "b78eced8d414e07d",
+    "source_id": "marktechpost",
+    "title": "Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon",
+    "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/",
+    "published_at": "2026-11-01T08:10:07+00:00",
+    "raw_text": "<p>Nace AI open-sources Drex Max v1, a 27B multimodal decision model scoring 67.52 that runs on Apple Silicon.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/\">Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "Nace AI开源27B决策模型Drex Max v1，可在Apple Silicon本地运行，适合关注端侧部署的读者。",
+    "summary_zh": "Nace AI开源了Drex Max v1，这是一个27B参数的多模态决策模型，得分67.52，可在Apple Silicon上本地运行。该模型面向决策任务，强调本地推理能力，降低了部署门槛。开源发布为开发者提供了在个人设备上运行较大规模模型的新选择。",
+    "title_zh": "Nace AI开源Drex Max v1：可在Apple Silicon本地运行的27B决策模型",
+    "weighted_score": 0.6,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.7,
+      "impact": 0.5,
+      "practical_value": 0.6
+    },
+    "story_id": "b86c991698a2cfd8",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xl5yfs/release_drex_max_v1_openweight_27b_multimodal/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "c68cb2af21319a75",
+    "source_id": "reddit-localllama",
+    "title": "Silencio-2: an 18M TTS with emotion and sound tags, ~20x realtime on CPU (open weights)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xl9yfi/silencio2_an_18m_tts_with_emotion_and_sound_tags/",
+    "published_at": "2026-11-01T18:07:34+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I made this, so treat it as biased. It is free and open, with no paid tier or API behind it.</p> <p>Silencio-2 is a fine-tune of Kyutai's Pocket TTS 18M that follows tags written inside the text:</p> <pre><code>What a long day. [sigh] &lt;whisper&gt; Keep your voice down. &lt;whisper&gt; Keep your voice down. &lt;angry&gt; I said stop! </code></pre> <p>Weights and code: <a href=\"https://huggingface.co/BlueRoseLabs/Silencio-2\">https://huggingface.co/BlueRoseLabs/Silencio-2</a></p> <p>Try it in your browser, no setup: <a href=\"https://colab.research.google.com/drive/1d6GSiRgXbYyBo91DCMrSr5y2LR_peJKy?usp=sharing\">https://colab.research.google.com/drive/1d6GSiRgXbYyBo91DCMrSr5y2LR_peJKy?usp=sharing</a></p> <p><strong>The numbers</strong></p> <ul> <li>18.2M parameters for speech, 27.9M with the encoder that voice cloning needs, 112 MB on disk</li> <li>About 20x realtime on an Apple M4 with 4 CPU threads, no GPU. That is one long-text run on my laptop, not a",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "18M 超小 TTS 支持情感与音效标签、CPU 上约 20 倍实时，端侧语音场景值得关注。",
+    "summary_zh": "作者发布了 Silencio-2，一个基于 Kyutai Pocket TTS 18M 微调的开源 TTS 模型，权重公开、无付费层或 API。模型支持在文本中内嵌标签来控制情感与音效，例如叹气、耳语、愤怒等，示例展示了同一句话在不同标签下的表达差异。其卖点是体积极小、在 CPU 上可达约 20 倍实时速度，适合端侧与低资源部署。作者自述存在主观偏向，帖子主要介绍能力与用法，未给出系统性主观评测数据。",
+    "title_zh": "Silencio-2：带情感与音效标签的 18M TTS，CPU 上约 20 倍实时（开放权重）",
+    "weighted_score": 0.4875,
+    "score_breakdown": {
+      "source_authority": 0.35,
+      "novelty": 0.65,
+      "impact": 0.4,
+      "practical_value": 0.6
+    },
+    "story_id": "0cfc67b9147aa09f",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xl9yfi/silencio2_an_18m_tts_with_emotion_and_sound_tags/"
+      },
+      {
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1xl9yxs/silencio2_an_18m_tts_with_emotion_and_sound_tags/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "2f3360ff4613a2ba",
+    "source_id": "reddit-llmdevs",
+    "title": "Source-grounded long documents: our per-sentence citations now cost more output than the prose. How do you keep numbers verifiable without strangling the writer?",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1xl8yg3/sourcegrounded_long_documents_our_persentence/",
+    "published_at": "2026-11-01T17:29:12+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I’m working on a long-form LLM generation system where outputs must be well-written, factually accurate, and traceable to source documents.</p> <p>The challenge is balancing two things:<br /> <strong>Accuracy:</strong> Every financial figure must be correct and traceable to its original source. A wrong number can sink an application.<br /> <strong>Writing quality:</strong> The model must produce persuasive narratives, not just repeat extracted facts. Reasonable inferences should be allowed without inventing information.<br /> We’ve tried two approaches.</p> <p><strong>Attempt 1: Strict templates</strong><br /> Every sentence had to be constructed from predefined prose and fact references. Figures were safe, but the writing was mechanical, repetitive and unconvincing. The model couldn’t build proper arguments.</p> <p><strong>Attempt 2: Free writing with structured citations (current)</strong><br /> Python extracts facts and fills tables. The LLM writes ",
+    "category_hint": [
+      "技巧与观点",
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.6,
+    "reason_zh": "讨论长文档生成中逐句引用导致输出成本过高的问题，提出平衡准确性与写作质量的挑战。",
+    "summary_zh": "用户正在开发一个长文档LLM生成系统，要求输出文笔好、事实准确且可追溯至源文档。当前挑战在于平衡准确性与写作质量：每个财务数字必须正确且可溯源，但逐句引用会占用大量输出token，成本高昂。用户询问如何在不扼杀写作流畅性的情况下保持数字可验证。帖子引发了关于引用策略、成本优化和评估方法的讨论。",
+    "title_zh": "基于源文档的长文档：我们逐句引用现在比正文花费更多输出。如何在不扼杀作者的情况下保持数字可验证？",
+    "weighted_score": 0.44,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.6
+    },
+    "story_id": "cb3b4683863a2163",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xl8yg3/sourcegrounded_long_documents_our_persentence/"
+      },
+      {
+        "source_id": "reddit-rag",
+        "url": "https://www.reddit.com/r/Rag/comments/1xlacmo/how_do_you_balance_freeform_llm_writing_with/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a9ae06ee37222d97",
+    "source_id": "reddit-computervision",
+    "title": "I trained YOLO26 on a 50,000 image AI-generated dataset and tested it on real COCO photos, it reached 59% of a real-photo model",
+    "url": "https://www.reddit.com/r/computervision/comments/1xl0vv8/i_trained_yolo26_on_a_50000_image_aigenerated/",
+    "published_at": "2026-11-01T11:36:18+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1xl0vv8/i_trained_yolo26_on_a_50000_image_aigenerated/\"> <img alt=\"I trained YOLO26 on a 50,000 image AI-generated dataset and tested it on real COCO photos, it reached 59% of a real-photo model\" src=\"https://preview.redd.it/o6fx78lxkzyh1.jpeg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=d125200e0f04e1d595a0e11e474351bc5eed778a\" title=\"I trained YOLO26 on a 50,000 image AI-generated dataset and tested it on real COCO photos, it reached 59% of a real-photo model\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This is a <strong>proof of concept</strong> for training on synthetic data. I'm not planning to develop it further, but the dataset and the tool are open for anyone who wants to.</p> <p>How far does AI-generated (synthetic) training data get you? I generated a 50K image dataset with my open-source project <a href=\"https://github.com/0xAthkot/aionvis\">aionVIS</a> (self-hosted), then I ",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/o6fx78lxkzyh1.jpeg?width=140&height=140&crop=1:1,smart&auto=webp&s=d125200e0f04e1d595a0e11e474351bc5eed778a",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.5,
+    "reason_zh": "实验展示AI生成数据集训练YOLO26在真实照片上仅达59%性能，揭示合成数据与真实数据的差距。",
+    "summary_zh": "作者在Reddit上分享实验：使用5万张AI生成图像训练YOLO26，并在真实COCO照片上测试，模型性能仅达到真实照片训练模型的59%。该实验表明合成数据虽能提供一定泛化能力，但与真实数据仍有显著差距。帖子可能包含训练细节和结果分析，为使用合成数据的研究者提供参考。",
+    "title_zh": "我在5万张AI生成数据集上训练YOLO26，并在真实COCO照片上测试，性能达到真实照片模型的59%",
+    "weighted_score": 0.34,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.4
+    },
+    "story_id": "1143f83e50bbb1a7",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-mlops",
+        "url": "https://www.reddit.com/r/mlops/comments/1xkau5x/composite_modelresnet50fpnyolo26_detection_head/"
+      },
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1xkauix/composite_modelresnet50fpnyolo26_detection_head/"
+      },
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1xl0vv8/i_trained_yolo26_on_a_50000_image_aigenerated/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "04e496f5dc64878f",
+    "source_id": "reddit-machinelearning",
+    "title": "I animated what GPT-4o's tokenizer does to \"strawberry\": real token ids, a tiny BPE run, and why the space belongs to the word (6 min video) [D]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1xl9sv7/i_animated_what_gpt4os_tokenizer_does_to/",
+    "published_at": "2026-11-01T18:01:28+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I made this explainer for my small channel and would like feedback from people learning this, especially if anything is wrong.</p> <p>It follows one word the whole way:</p> <ul> <li>&quot;How many r's are in strawberry?&quot; is 8 tokens in o200k_base (the GPT-4o / GPT-5 tokenizer). &quot; strawberry&quot; is a single token, id 101830, so the three r's are hidden inside one id.</li> <li>Why pieces of words: letters make sequences about 4x longer, whole words need a huge vocabulary and can't handle new words.</li> <li>A tiny byte pair encoding run on a made-up text, merge by merge, until strawberry becomes st | raw | berry.</li> <li>The space belongs to the word: &quot;strawberry&quot;, &quot; strawberry&quot; and &quot;Strawberry&quot; are three different token sequences.</li> <li>Why reasoning models count letters better: in OpenAI's 2025 paper &quot;Why Language Models Hallucinate&quot;, DeepSeek-R1 spells DEEPSEEK out letter by letter before countin",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "教程方法",
+    "depth_score": 0.6,
+    "reason_zh": "用动画直观解释GPT-4o分词器如何处理'strawberry'，揭示BPE机制，适合初学者理解tokenization。",
+    "summary_zh": "作者制作了一个6分钟的视频，动画演示GPT-4o的tokenizer（o200k_base）如何处理单词'strawberry'。视频展示了真实的token id，并运行了一个小型BPE过程，解释为什么空格属于单词的一部分，以及' strawberry'作为一个单独token（id 101830）导致三个'r'被隐藏。该视频旨在帮助学习者理解分词机制，作者也寻求反馈以确保准确性。",
+    "title_zh": "我制作了动画展示GPT-4o的分词器如何处理“strawberry”：真实token id、小型BPE运行，以及为什么空格属于单词（6分钟视频）",
+    "weighted_score": 0.31,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.4,
+      "impact": 0.2,
+      "practical_value": 0.5
+    },
+    "story_id": "85abefe9c2105785",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xl7l45/i_animated_what_gpt4os_tokenizer_does_to/"
+      },
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1xl9sv7/i_animated_what_gpt4os_tokenizer_does_to/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "1ff0975b4a482fb8",
+    "source_id": "reddit-llmdevs",
+    "title": "why do we need query expansion in RAG when semantic search already handles similar value matching?",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/",
+    "published_at": "2026-11-01T13:00:09+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Can some one who used query expansion, let us know what technique you used and why? Also why do we need query expansion in RAG when semantic search already handles similar value matching with specific examples</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/DueBid3298\"> /u/DueBid3298 </a> <br /> <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/\">[comments]</a></span>",
+    "category_hint": [
+      "技巧与观点",
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.2,
+    "reason_zh": "开发者提问RAG中查询扩展的必要性，触及检索增强的常见困惑，但帖子本身无实质解答。",
+    "summary_zh": "Reddit的LLMDevs板块用户提问：既然语义搜索已经能处理相似语义匹配，为什么RAG中还需要查询扩展（query expansion）？该用户希望有实际使用经验的人分享所用技术与理由。帖子本身是提问，未提供答案，核心议题在于语义检索与查询改写之间的互补关系及适用边界。",
+    "title_zh": "语义搜索已能处理相似语义匹配，为什么RAG还需要查询扩展？",
+    "weighted_score": 0.215,
+    "score_breakdown": {
+      "source_authority": 0.2,
+      "novelty": 0.2,
+      "impact": 0.1,
+      "practical_value": 0.4
+    },
+    "story_id": "8f50673d4d33da13",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/"
+      },
+      {
+        "source_id": "reddit-langchain",
+        "url": "https://www.reddit.com/r/LangChain/comments/1xl2h3l/why_do_we_need_query_expansion_in_rag_when/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "fd4d7eb3942abcc0",
+    "source_id": "reddit-claudeai",
+    "title": "GPT-6 xHigh, ladies and gentlemen",
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/",
+    "published_at": "2026-11-01T16:48:33+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/\"> <img alt=\"GPT-6 xHigh, ladies and gentlemen\" src=\"https://preview.redd.it/edged4s261zh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9be5b7b5ed9decf4b6cc0eca7a55c22b6cfc28c1\" title=\"GPT-6 xHigh, ladies and gentlemen\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/py-net\"> /u/py-net </a> <br /> <span><a href=\"https://i.redd.it/edged4s261zh1.jpeg\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/\">[comments]</a></span> </td></tr></table>",
+    "category_hint": [
+      "产品发布",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/edged4s261zh1.jpeg?width=640&crop=smart&auto=webp&s=9be5b7b5ed9decf4b6cc0eca7a55c22b6cfc28c1",
+    "category": "行业动态",
+    "content_type": "观点评论",
+    "depth_score": 0.05,
+    "reason_zh": "仅一张截图配标题的社区玩梗帖，无实质信息，可跳过。",
+    "summary_zh": "该帖来自 r/ClaudeAI，标题为“GPT-6 xHigh，女士们先生们”，正文仅附一张截图，未提供任何文字说明、来源或上下文。从形式看属于社区用户对所谓 GPT-6 高算力档位的调侃或晒图，可能涉及某界面截图，但缺乏可核实信息。此类内容不构成模型发布或技术披露，对了解行业进展没有实际帮助。",
+    "title_zh": "GPT-6 xHigh，女士们先生们",
+    "weighted_score": 0.13,
+    "score_breakdown": {
+      "source_authority": 0.15,
+      "novelty": 0.2,
+      "impact": 0.1,
+      "practical_value": 0.05
+    },
+    "story_id": "07c8eda6d0cd4c19",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-claudeai",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1xld5pr/is_the_instant_model_actually_gpt6_sol_level/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "3cc4ce3d743f12b3",
+    "source_id": "marktechpost",
+    "title": "DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent",
+    "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/",
+    "published_at": "2026-11-01T07:47:17+00:00",
+    "raw_text": "<p>DeepSeek released dsh-superagent, an MIT-licensed research prototype that turns GitHub and Feishu requests into parallel worker sessions. In DeepSeek’s own simulation, p95 task completion fell to 15.7 minutes from 29.5 minutes.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/\">DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "DeepSeek开源路由-工作者编码代理，p95任务完成时间减半，值得关注其架构与性能。",
+    "summary_zh": "DeepSeek开源了MIT许可的研究原型dsh-superagent，可将GitHub和飞书请求转化为并行工作者会话。在DeepSeek自身的模拟中，p95任务完成时间从29.5分钟降至15.7分钟。该代理采用路由-工作者架构，旨在提升编码任务的并行处理效率。",
+    "title_zh": "DeepSeek开源dsh-superagent：路由-工作者编码代理",
+    "weighted_score": 0.645,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "651537c0e107acde",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "marktechpost",
+        "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "2f4805dc65730523",
+    "source_id": "reddit-localllama",
+    "title": "FineDNA: the largest dataset to teach any LLM DNA (midtraining, SFT, RL)",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkwvwg/finedna_the_largest_dataset_to_teach_any_llm_dna/",
+    "published_at": "2026-11-01T07:24:09+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xkwvwg/finedna_the_largest_dataset_to_teach_any_llm_dna/\"> <img alt=\"FineDNA: the largest dataset to teach any LLM DNA (midtraining, SFT, RL)\" src=\"https://preview.redd.it/cdh8dfe7dyyh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2bcb8a1f8ea085584833a21ecfd76e8dd63d9986\" title=\"FineDNA: the largest dataset to teach any LLM DNA (midtraining, SFT, RL)\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hi everyone, we're releasing FineDNA, all the data we used to turn Qwen3-14B into Carbon-X, the strongest open language model on DNA. It contains:</p> <ul> <li>Midtraining: 300B+ tokens of genomes and DNA-rich text</li> <li>SFT: ~200K conversations</li> <li>RL: ~98K verifiable prompts</li> </ul> <p>Code and recipe are open too, so you can apply it to other LLMs.</p> <p>Dataset: <a href=\"https://huggingface.co/datasets/HuggingFaceBio/FineDNA\">https://huggingface.co/datasets/HuggingFaceBio/FineDNA</a><br /> Code: <",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/cdh8dfe7dyyh1.png?width=640&crop=smart&auto=webp&s=2bcb8a1f8ea085584833a21ecfd76e8dd63d9986",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "发布迄今最大的DNA教学数据集FineDNA，支持midtraining、SFT和RL，对生物信息学LLM应用有推动。",
+    "summary_zh": "FineDNA是一个旨在教任何LLM理解DNA的大型数据集，号称目前最大的DNA教学数据集。它支持多种训练阶段：midtraining、监督微调（SFT）和强化学习（RL）。该数据集可能包含DNA序列及其功能注释，用于训练模型学习基因组语言。发布在r/LocalLLaMA社区，面向本地LLM爱好者，有望推动生物信息学与LLM结合的研究和应用。",
+    "title_zh": "FineDNA：教任何LLM学习DNA的最大数据集（midtraining、SFT、RL）",
+    "weighted_score": 0.61,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.8,
+      "impact": 0.6,
+      "practical_value": 0.7
+    },
+    "story_id": "ee4393e8b9d8d0c4",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkwvwg/finedna_the_largest_dataset_to_teach_any_llm_dna/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "96603222f1ad2f3a",
     "source_id": "qbitai",
-    "title": "世界模型首次指导设计芯片！超大核NPU700TOPS，99%算力可用",
-    "url": "https://www.qbitai.com/2026/10/506866.html",
-    "published_at": "2026-10-31T05:11:19+00:00",
-    "raw_text": "AI算力利用“九九成”",
+    "title": "清华姚期智团队新作：代数世界模型，让AI像牛顿一样思考",
+    "url": "https://www.qbitai.com/2026/11/507031.html",
+    "published_at": "2026-11-01T08:02:37+00:00",
+    "raw_text": "让AI像牛顿一样思考",
     "category_hint": [
       "行业动态",
       "模型发布"
@@ -14,467 +440,22 @@
     "category": "论文研究",
     "content_type": "研究论文",
     "depth_score": 0.8,
-    "reason_zh": "世界模型首次用于芯片设计，创新性强，展示AI在硬件设计中的潜力，具有启发性。",
-    "summary_zh": "文章报道了世界模型首次指导芯片设计，实现超大核NPU 700TOPS算力，99%算力可用。这标志着AI在硬件设计领域的突破，可能加速芯片研发流程。内容涉及技术细节和性能指标，展示了AI与芯片设计的深度融合，对行业有重要参考价值。",
-    "title_zh": "世界模型首次指导设计芯片！超大核NPU700TOPS，99%算力可用",
-    "weighted_score": 0.755,
+    "reason_zh": "姚期智团队提出代数世界模型，让AI像牛顿一样思考，思想深刻，值得研读。",
+    "summary_zh": "清华姚期智团队发表新研究，提出“代数世界模型”，旨在让AI像牛顿一样进行抽象推理与规律发现。该方法可能通过代数结构建模世界知识，使模型具备更强的泛化与符号推理能力。文章介绍了其核心思想与潜在应用，属于基础性研究突破。",
+    "title_zh": null,
+    "weighted_score": 0.715,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.8,
-      "practical_value": 0.6
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.5
     },
-    "story_id": "25cd7d4c7e0bd1b5",
+    "story_id": "3fbcbd220f79e035",
     "multi_source_count": 1,
     "sources": [
       {
         "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/10/506866.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "755df7eb2f3d342e",
-    "source_id": "zh-ithome",
-    "title": "DeepSeek 提出 Super-agent 架构设计：Router 与 Worker 双层架构，探索更自主的 Agent 系统",
-    "url": "https://www.ithome.com/1/020/615.htm",
-    "published_at": "2026-10-31T13:36:35+00:00",
-    "raw_text": "<p>IT之家 10 月 31 日消息，DeepSeek Harness 官方团队今日发布《Super-agent 设计探索：迈向更自主的 Agent 系统》一文，介绍了其面向工程实践的 Super-agent 架构设计思路。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/10/0a2e0db3-13b7-4ee2-a54c-3ac7e6ce3d2b.jpg\" /></p><p>随着大模型执行单个任务时越来越不需要人的干预，限制生产力进一步提升的因素正逐渐转向人的注意力，Agent 系统需要从被动响应指令的单任务工具，向持续在线、能够并行处理多项任务的自主协作者演进。</p><p>DeepSeek 表示，现有主流 Agent 设计仍以单一 Session（会话）为基本单位，不同 Session 之间相互独立。用户并行推进多项工作时，需要手动切换并维护各个 Session 的上下文。</p><p>根据 DeepSeek 团队观察，一个人通常只能同时跟进 3 至 5 个活跃 Session。即使通过 CLI、MCP 或外部连接器扩展本地 Agent，也仍可能面临单会话同步阻塞、多任务上下文混乱，以及本地设备离线后任务停止等问题。</p><p>他们将这种新型 Agent 形态及其系统架构称为 Super-agent，并归纳出四项基础特征：连续、高效、主动和持久。</p><p>首先，连续意味着用户可以在即时通讯、GitHub 评论等不同渠道与同一个 Agent 交互；高效意味着能够并行处理多个复杂任务；主动意味着系统可以持续观察环境事件并自行推进值得处理的事项；持久则要求 Agent 始终在线，并能在长期运行中从异常状态恢复。</p><p style=\"text-align: center;\"><img class=\"no-alt-img\" src=\"https://img.ithome.com/newsuploadfiles/2026/10/65c20720-3877-4377-b042-c97a464a4458.jpg\" /></p><figcaption>▲ 同一个任务在 IM 群聊与 GitHub P",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://img.ithome.com/newsuploadfiles/2026/10/0a2e0db3-13b7-4ee2-a54c-3ac7e6ce3d2b.jpg",
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.75,
-    "reason_zh": "DeepSeek 官方提出的 Router+Worker 双层 Agent 架构，对构建自主 Agent 系统有直接参考价值。",
-    "summary_zh": "DeepSeek Harness 官方团队发布《Super-agent 设计探索：迈向更自主的 Agent 系统》，提出 Router 与 Worker 双层架构。文章指出，随着模型执行单任务所需人工干预减少，制约生产力提升的瓶颈正从模型能力转向人的注意力，Agent 需从被动响应的单任务工具，演进为持续在线、可并行处理多任务的自主协作者。文中还分析了现有主流 Agent 架构的局限，并给出面向工程实践的设计取舍。",
-    "title_zh": "DeepSeek 提出 Super-agent 架构设计：Router 与 Worker 双层架构，探索更自主的 Agent 系统",
-    "weighted_score": 0.7525,
-    "score_breakdown": {
-      "source_authority": 0.75,
-      "novelty": 0.8,
-      "impact": 0.75,
-      "practical_value": 0.7
-    },
-    "story_id": "79d51e4c47e61cd2",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/1/020/615.htm"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "f1ea6968e1447ee6",
-    "source_id": "zh-meituan-tech",
-    "title": "SLM 生成式高并发推理引擎：延迟约束下的有效吞吐优化",
-    "url": "https://tech.meituan.com/2026/10/15/Small-Language-Model-in-meituan.html",
-    "published_at": "2026-10-30T21:24:20.660862+00:00",
-    "raw_text": "本文为SLM（Small Language Model， 小参数量语言模型0.5~1B）在搜推场景的大规模落地提供了一套高性能、可复用的工程实践。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p0.meituan.net/meituantechblog/449102302ea0d472417c6fff369dd63882001.png",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "美团分享SLM高并发推理优化实践，对工程落地有高参考价值。",
-    "summary_zh": "美团技术团队分享了 SLM（小参数量语言模型，0.5~1B）在搜索推荐场景下的高并发推理引擎实践。文章聚焦延迟约束下的有效吞吐优化，提供了一套高性能、可复用的工程方案，涵盖模型部署、并发调度和资源管理等方面。该实践对于在真实业务中落地小模型具有重要参考价值，尤其适合面临高并发和低延迟挑战的工程师。",
-    "title_zh": "SLM 生成式高并发推理引擎：延迟约束下的有效吞吐优化",
-    "weighted_score": 0.745,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "907dc8ae5cc11c18",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/10/15/Small-Language-Model-in-meituan.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c628cda7f178466a",
-    "source_id": "zh-meituan-tech",
-    "title": "MTFM：美团统一推荐基座大模型在外卖多业务场景的落地实践",
-    "url": "https://tech.meituan.com/2026/09/22/Meituan-Foundation-Model-for-Recommendation.html",
-    "published_at": "2026-10-30T21:24:20.660875+00:00",
-    "raw_text": "美团在 MTGR 基础上提出统一推荐基座大模型 MTFM，首次实现外卖多个主要业务的统一精排模型。",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": "https://p0.meituan.net/meituantechblog/5dcc2af83b5b9da04717c9fcff76b69a1943722.png",
-    "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.7,
-    "reason_zh": "美团统一推荐基座大模型落地实践，对推荐系统从业者有借鉴意义。",
-    "summary_zh": "美团在 MTGR 基础上提出统一推荐基座大模型 MTFM，首次实现外卖多个主要业务的统一精排模型。文章详细介绍了 MTFM 的架构设计、训练方法和在多业务场景下的落地实践，包括如何处理业务差异、提升模型泛化能力以及工程部署挑战。该实践为大规模推荐系统的统一建模提供了宝贵经验，对推荐算法工程师具有较高参考价值。",
-    "title_zh": "MTFM：美团统一推荐基座大模型在外卖多业务场景的落地实践",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "9ab92ff72578de75",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/09/22/Meituan-Foundation-Model-for-Recommendation.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "ff5fe3b2ecfb23b0",
-    "source_id": "pandaily",
-    "title": "Tsinghua and Zhipu's HarnessPro Lets Agents Rewrite Their Own Harness, Cutting Task Costs 26%",
-    "url": "https://pandaily.com/tsinghua-zhipu-harnesspro-recursive-harness-self-improvement-pareto-cost-26-percent-terminal-bench-2",
-    "published_at": "2026-10-31T07:15:42+00:00",
-    "raw_text": "HarnessPro, from Tsinghua, Zhipu and partners, has agents study their own runs and rewrite their harness without reference answers, raising pass rates 2 points and cutting cost per task 26.1%.",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://cms-image.pandaily.com/1/hp_9dc600f68a.png",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出让智能体自我改写运行框架的新方法，无需参考答案即可提升通过率并降低成本，具有较强启发性。",
-    "summary_zh": "清华大学与智谱等机构联合提出HarnessPro方法，让智能体通过分析自身运行轨迹来自动改写其运行框架（harness），且无需依赖参考答案。实验结果显示，该方法将任务通过率提升约2个百分点，同时将单任务成本降低26.1%。这一工作展示了智能体在无需人工干预的情况下实现自我优化的潜力，为降低AI应用成本提供了新思路。",
-    "title_zh": "清华与智谱的HarnessPro让智能体自我改写运行框架，任务成本降低26%",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.7
-    },
-    "story_id": "0b0670f9de7983f7",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "pandaily",
-        "url": "https://pandaily.com/tsinghua-zhipu-harnesspro-recursive-harness-self-improvement-pareto-cost-26-percent-terminal-bench-2"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a0c6fb982e443c52",
-    "source_id": "reddit-stablediffusion",
-    "title": "Pika H3 Flex + open-h3-egenerate-2K running locally on Mac",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk4xpd/pika_h3_flex_openh3egenerate2k_running_locally_on/",
-    "published_at": "2026-10-31T08:35:59+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xk4xpd/pika_h3_flex_openh3egenerate2k_running_locally_on/\"> <img alt=\"Pika H3 Flex + open-h3-egenerate-2K running locally on Mac\" src=\"https://external-preview.redd.it/ODAxeHVkMmFscnloMVpzPPkiuvGnWlejtwgBdt6wFlKkKOqgyr0vAuCDMiJ2.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=9e9cd7dbfd400056c4852cff9c19c0e0bee22e78\" title=\"Pika H3 Flex + open-h3-egenerate-2K running locally on Mac\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>* Pika H3 Flex: A distilled MiniMax H3 model that reduces generation from 50 steps to just 6.</p> <p>* NVIDIA Open-H3-Regenerate-2K: Uses latent upscaling followed by 3 diffusion steps to regenerate details at higher resolution, rather than conventional pixel-space upscaling.</p> <p>Workflow shown in the video:</p> <ol> <li><p>Generate a 15-second video at 768p with Pika H3 Flex.</p></li> <li><p>Apply NVIDIA’s Regenerate-2K for high-resolution refinement.</p></li> <li><p>Final ou",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/ODAxeHVkMmFscnloMVpzPPkiuvGnWlejtwgBdt6wFlKkKOqgyr0vAuCDMiJ2.png?width=640&crop=smart&auto=webp&s=9e9cd7dbfd400056c4852cff9c19c0e0bee22e78",
-    "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "展示了在 Mac 本地跑 Pika H3 Flex 与开源 2K 生成模型的实践，对本地部署视频生成感兴趣者可参考。",
-    "summary_zh": "Reddit 用户分享在 Mac 上本地运行 Pika H3 Flex 与 open-h3-egenerate-2K 的成果，帖子以图片形式展示生成效果，说明该开源视频生成模型已能在消费级苹果设备上跑通。内容偏展示性质，未展开具体硬件配置、推理耗时与显存占用等细节，更多是给关注本地视频生成的社区用户一个可行性信号。",
-    "title_zh": "Pika H3 Flex 与 open-h3-egenerate-2K 在 Mac 本地运行",
-    "weighted_score": 0.415,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.55,
-      "impact": 0.35,
-      "practical_value": 0.5
-    },
-    "story_id": "fb2d1dad62b89e91",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xk05kp/pika_h3_flexing_its_muscles/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk4xpd/pika_h3_flex_openh3egenerate2k_running_locally_on/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "18b1b11195a5d6f5",
-    "source_id": "reddit-llmdevs",
-    "title": "Best PDF parser / OCR for extracting structured data from invoices – What works in production?",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1xkb441/best_pdf_parser_ocr_for_extracting_structured/",
-    "published_at": "2026-10-31T14:05:49+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><strong>Looking for recommendations: Best PDF parser / OCR for extracting invoice data</strong></p> <p>Has anyone worked on invoice parsing or document extraction and experimented with different PDF parsers or OCR solutions?</p> <p>I'm building an application that needs to extract structured data from invoices in different formats and layouts.</p> <p>Currently, I'm using:</p> <ul> <li><strong>PDFPlumber</strong> – For text-based PDFs.</li> <li><strong>RapidOCR</strong> – For scanned PDFs or image-based invoices.</li> </ul> <p>I'm looking for a reliable solution that can handle different invoice formats, layouts, and varying document quality.</p> <p>A few things I'm trying to figure out:</p> <ol> <li>Which PDF parser or OCR solution works best for extracting structured invoice data?</li> <li>How well do these tools handle poor-quality scans, blurry images, rotated documents, etc.?</li> <li>Is it better to reject low-quality uploads and ask users to uplo",
-    "category_hint": [
-      "技巧与观点",
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "征集生产环境发票PDF解析与OCR方案，对文档提取实践有参考价值。",
-    "summary_zh": "用户发帖寻求从发票中提取结构化数据的最佳 PDF 解析器或 OCR 方案，并询问在生产环境中的实际效果。发帖人正在构建一个需要处理多种格式和版式的发票提取应用，希望了解他人对不同解析器和 OCR 工具的实践经验。讨论聚焦于文档智能领域的工具选型与落地挑战。",
-    "title_zh": "用于从发票中提取结构化数据的最佳 PDF 解析器/OCR——生产环境中什么方案有效？",
-    "weighted_score": 0.335,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.3,
-      "impact": 0.2,
-      "practical_value": 0.6
-    },
-    "story_id": "898d6a32ad1405a8",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1xkb441/best_pdf_parser_ocr_for_extracting_structured/"
-      },
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1xkb6p7/best_pdf_parser_ocr_for_extracting_structured/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c0212dfde71938bf",
-    "source_id": "reddit-comfyui",
-    "title": "LayerShop update: now with Regions",
-    "url": "https://www.reddit.com/r/comfyui/comments/1xkef1v/layershop_update_now_with_regions/",
-    "published_at": "2026-10-31T16:21:03+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/comfyui/comments/1xkef1v/layershop_update_now_with_regions/\"> <img alt=\"LayerShop update: now with Regions\" src=\"https://external-preview.redd.it/bXBibG12ZjZ2dHloMVyS-98_EOmenBDxUrXmylCRQwLXzuOm3L8vhEaR2_t_.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=52a0de0389d879423e87fe2e9e411e279e5651f7\" title=\"LayerShop update: now with Regions\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This is just a quick announcement, I have now<a href=\"https://layershop.aardvarkstudios.net/download/\"> released v0.17 </a>which supports the creation with regions for following local models: </p> <ul> <li>MOSS Image </li> <li>Flux 3 Klein </li> <li>Ideogram 4 </li> <li>FIBO 2 Dev</li> </ul> <p>I found MOSS Image support the best in class, while FIBO 2 is worst, sometime this model treats the bounding boxes as suggestions of approximate placement , but still better then nothing I guess :)</p> <p>Give it a go, download from <a href=\"https://layershop.",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/bXBibG12ZjZ2dHloMVyS-98_EOmenBDxUrXmylCRQwLXzuOm3L8vhEaR2_t_.png?width=640&crop=smart&auto=webp&s=52a0de0389d879423e87fe2e9e411e279e5651f7",
-    "category": "产品发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "ComfyUI插件LayerShop新增Regions功能，对图像分层编辑用户有实用价值。",
-    "summary_zh": "该帖来自Reddit的ComfyUI社区，宣布LayerShop插件更新，新增Regions（区域）功能。LayerShop是ComfyUI生态中用于图像分层编辑的工具，Regions功能可能允许用户对图像的不同区域进行独立控制或编辑。帖子以图片形式展示更新效果，但文字说明较少，未详细解释Regions的具体用法和技术实现。对于使用ComfyUI进行AI图像创作的用户，这是一个值得关注的功能更新，可提升局部编辑的灵活性。",
-    "title_zh": "LayerShop更新：新增Regions功能",
-    "weighted_score": 0.32,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.4,
-      "impact": 0.2,
-      "practical_value": 0.4
-    },
-    "story_id": "c927ad099aea0e31",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xkef1v/layershop_update_now_with_regions/"
-      },
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xkjuxa/new_version_of_layershop_now_supports_regions/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "10a6f5ca1640e707",
-    "source_id": "reddit-machinelearning",
-    "title": "Is it okay to share my experiments implementing research papers on my own LLM here? [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1xkgtly/is_it_okay_to_share_my_experiments_implementing/",
-    "published_at": "2026-10-31T17:57:22+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hey everyone!</p> <p>I've built and trained a small LLM (~8M parameters) from scratch using PyTorch, mainly as an experimental lab where I can implement and test ideas from different research papers.</p> <p>I've been documenting the whole journey through casual blogs, including my mistakes, experiments, and things I've learned.</p> <p>So far:</p> <ul> <li><a href=\"https://medium.com/@sulavstha007/i-stopped-watching-tutorials-and-built-a-transformer-5abbcfbfcc44\">Building the Transformer</a></li> <li><a href=\"https://medium.com/@sulavstha007/60-000-training-steps-a-loss-plateau-and-a-simple-fix-cf9aba7fe0a9\">Training it for 60,000 steps</a></li> </ul> <p>Next up is KV caching, followed by PagedAttention, Orca, and whatever else I find interesting.</p> <p>Just wanted to ask if sharing these experiments and blogs here would be welcome. Nothing promotional, just me experimenting, learning, and hopefully getting feedback from people who know more than I do.",
-    "category_hint": [
-      "论文研究",
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.3,
-    "reason_zh": "作者分享从零训练小型LLM并复现论文的实验经历，对想动手实践的人有启发。",
-    "summary_zh": "作者在Reddit上询问能否分享自己从零构建并训练小型LLM（约800万参数）的实验。作者使用PyTorch，将其作为实验平台，实现并测试不同论文中的想法，并通过博客记录过程、错误和心得。帖子旨在寻求社区反馈，并可能引发关于个人研究分享的讨论。内容偏向个人经验分享，技术深度有限。",
-    "title_zh": "我可以在这里分享我自己实现论文实验的LLM吗？[P]",
-    "weighted_score": 0.295,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.3,
-      "impact": 0.2,
-      "practical_value": 0.4
-    },
-    "story_id": "7028aa88818fd7aa",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1xkgtly/is_it_okay_to_share_my_experiments_implementing/"
-      },
-      {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1xkgwoz/is_it_okay_to_share_my_experiments_implementing/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "09dd0b7beeaa9df8",
-    "source_id": "reddit-ollama",
-    "title": "Row-Bot 5.3.1 is out",
-    "url": "https://www.reddit.com/r/ollama/comments/1xk8d4a/rowbot_531_is_out/",
-    "published_at": "2026-10-31T11:59:34+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ollama/comments/1xk8d4a/rowbot_531_is_out/\"> <img alt=\"Row-Bot 5.3.1 is out\" src=\"https://preview.redd.it/1hpkxt1glsyh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3c593ec0c8a34ece546ee5ea4e651b65fc42e172\" title=\"Row-Bot 5.3.1 is out\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p><a href=\"https://github.com/siddsachar/row-bot\">Row-Bot</a> 5.3.1 brings linked conversations, waits and an expanded video workspace.</p> <p>• Start another chat, send messages and receive replies.<br /> • Wait for a process, command/page check, time or conversation without model usage while waiting.<br /> • Edit video on a scene timeline with versions, narration, music, captions and multiple aspect ratios.<br /> • Run workflows as scheduled conversations with their own skills, notes, time zones and helpers.<br /> • Review scheduled X posts together and upload pictures and video. </p> <p>Stable adds weekday cron fixes, clearer message origins, narra",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://preview.redd.it/1hpkxt1glsyh1.png?width=640&crop=smart&auto=webp&s=3c593ec0c8a34ece546ee5ea4e651b65fc42e172",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.1,
-    "reason_zh": "小型开源项目版本更新，仅对特定用户有参考价值。",
-    "summary_zh": "Row-Bot 5.3.1版本发布，帖子链接到GitHub仓库。Row-Bot是一个开源项目，从上下文看可能与Ollama相关，但具体功能未在片段中说明。该帖子属于版本更新公告，内容简短，仅告知新版本可用，未提供更新日志或功能改进细节。适合关注该项目的开发者了解版本动态，对一般读者价值有限。",
-    "title_zh": "Row-Bot 5.3.1发布",
-    "weighted_score": 0.22,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.3,
-      "impact": 0.1,
-      "practical_value": 0.3
-    },
-    "story_id": "91699a31a97c3af2",
-    "multi_source_count": 3,
-    "sources": [
-      {
-        "source_id": "reddit-ollama",
-        "url": "https://www.reddit.com/r/ollama/comments/1xk8d4a/rowbot_531_is_out/"
-      },
-      {
-        "source_id": "reddit-artificial",
-        "url": "https://www.reddit.com/r/artificial/comments/1xk8dzk/rowbot_531_is_out/"
-      },
-      {
-        "source_id": "reddit-langchain",
-        "url": "https://www.reddit.com/r/LangChain/comments/1xk8g3n/rowbot_531_is_out/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "133e9d097a092b02",
-    "source_id": "reddit-stablediffusion",
-    "title": "hairstyle gallery, 800+ hairstyle",
-    "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk4pxu/hairstyle_gallery_800_hairstyle/",
-    "published_at": "2026-10-31T08:21:24+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xk4pxu/hairstyle_gallery_800_hairstyle/\"> <img alt=\"hairstyle gallery, 800+ hairstyle\" src=\"https://external-preview.redd.it/LYUhlbXYzx6pH5LI_1SyxK-dlaLPgB1pWpqxJmMDeck.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=8dcc593d50d8ce62ff4dd180da1c9908181a8f42\" title=\"hairstyle gallery, 800+ hairstyle\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p><a href=\"https://github.com/wangweihong/comfyui-hairstyle-gallery\">https://github.com/wangweihong/comfyui-hairstyle-gallery</a><br /> Workflow included in repo</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Mysterious_Pride_858\"> /u/Mysterious_Pride_858 </a> <br /> <span><a href=\"https://youtube.com/watch?v=nw9YzsNrzKY&amp;si=9RKD-VkMgQfAaYtt\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xk4pxu/hairstyle_gallery_800_hairstyle/\">[comments]</a></span> </td></tr></table>",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": "https://external-preview.redd.it/LYUhlbXYzx6pH5LI_1SyxK-dlaLPgB1pWpqxJmMDeck.jpeg?width=320&crop=smart&auto=webp&s=8dcc593d50d8ce62ff4dd180da1c9908181a8f42",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.1,
-    "reason_zh": "分享800多种发型图库，对AI绘画爱好者有参考价值，但内容较简单。",
-    "summary_zh": "Reddit用户分享了一个包含800多种发型的图库，并附有预览图。该资源可能用于AI图像生成中的发型参考或提示词灵感。帖子发布在StableDiffusion板块，属于社区资源分享，未提供详细的技术说明或使用方法。",
-    "title_zh": "发型图库，800+发型",
-    "weighted_score": 0.195,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.2,
-      "impact": 0.1,
-      "practical_value": 0.3
-    },
-    "story_id": "654da33073ebba3e",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-stablediffusion",
-        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xk4pxu/hairstyle_gallery_800_hairstyle/"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xk4qdo/hairstyle_gallery_800_hairstyle/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "78c1c1a14c878c2e",
-    "source_id": "marktechpost",
-    "title": "Vercel Labs Open-Sources agent-desktop for Agent Computer Use",
-    "url": "https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/",
-    "published_at": "2026-10-31T10:10:28+00:00",
-    "raw_text": "<p>Vercel Labs released agent-desktop, an Apache-2.0 Rust CLI that gives any AI agent computer use on macOS, Windows and Linux by reading OS accessibility trees and acting on stable refs instead of pixels.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/\">Vercel Labs Open-Sources agent-desktop for Agent Computer Use</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-    "category_hint": [
-      "模型发布",
-      "产品发布"
-    ],
-    "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/25b6.png",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "Vercel Labs开源跨平台agent计算机操作CLI，基于可访问性树而非像素，工程实用性强。",
-    "summary_zh": "Vercel Labs发布开源项目agent-desktop，采用Apache-2.0协议的Rust命令行工具，可让任意AI agent在macOS、Windows和Linux上获得计算机操作能力。其核心思路是读取操作系统的可访问性树（accessibility tree），并基于稳定的元素引用执行操作，而非依赖屏幕像素识别。这一设计有望提升agent操作桌面应用的稳定性与跨平台一致性，为构建通用计算机使用型agent提供基础设施。",
-    "title_zh": "Vercel Labs开源agent-desktop，面向Agent计算机操作",
-    "weighted_score": 0.6325,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.55,
-      "practical_value": 0.7
-    },
-    "story_id": "f8a1bcf86087df4b",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "1649c5dd07045357",
-    "source_id": "simonwillison",
-    "title": "dbreunig/nesformer",
-    "url": "https://simonwillison.net/2026/Oct/30/nesformer/",
-    "published_at": "2026-10-30T21:59:22+00:00",
-    "raw_text": "<p><strong><a href=\"https://github.com/dbreunig/nesformer\">dbreunig/nesformer</a></strong></p>\nInspired by <a href=\"https://divagr.com/blog/qwenputer\">qwenputer</a> by Divyansh Agrawal, Drew Breunig baked a working emulator for a Nintendo Entertainment System 6502 CPU into the weights of Qwen3.5-4B. You can now play NES ROMs such as Super Mario Bros (very slowly) running inside Qwen!</p>\n<p>In <a href=\"https://news.ycombinator.com/item?id=50306442#50307402\">a comment on Hacker News</a> Drew reveals the Opus 5.5 prompts he used to build this system:</p>\n<blockquote>\n<p><code>Read this article and any relevant source code: https://divagr.com/blog/qwenputer. Then explore if you could emulate the chip and ram in a Nintendo Entertainment System (as people do today with FPGAs in MISTRs) using this technique. If so, what size model would you have to build and if you could use smaller faster ones, could you get it to be at the standard clockspeed.</code></p>\n</blockquote>\n<p>Followed by:</p>\n<",
-    "category_hint": [
-      "技巧与观点",
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "研究论文",
-    "depth_score": 0.7,
-    "reason_zh": "将NES模拟器烧录进Qwen3.5-4B权重，展示模型权重可承载完整程序，极具启发性。",
-    "summary_zh": "Drew Breunig受qwenputer启发，将任天堂NES的6502 CPU模拟器嵌入Qwen3.5-4B模型的权重中，使得用户可以在Qwen模型内部（非常缓慢地）运行《超级马里奥兄弟》等NES ROM。该项目展示了模型权重作为计算载体的可能性，探索了神经网络与经典计算机架构的融合，具有实验性和启发性。",
-    "title_zh": "dbreunig/nesformer",
-    "weighted_score": 0.61,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.9,
-      "impact": 0.5,
-      "practical_value": 0.4
-    },
-    "story_id": "368d31c95d1c129d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "simonwillison",
-        "url": "https://simonwillison.net/2026/Oct/30/nesformer/"
+        "url": "https://www.qbitai.com/2026/11/507031.html"
       }
     ],
     "curated": true,
