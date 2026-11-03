@@ -1,88 +1,46 @@
 [
   {
-    "id": "09b190866b6eb4eb",
-    "source_id": "zh-tonybai",
-    "title": "递归自我改进（RSI）的 Harness 长什么样？英伟达 SoL-Pi 给出了第一份工程答卷",
-    "url": "https://tonybai.com/2026/11/01/rsi-harness-nvidia-sol-pi-recursive-self-improvement-agent/",
-    "published_at": "2026-10-31T22:00:00+00:00",
-    "raw_text": "英伟达提出 SoL-Pi：一套受递归自我改进（RSI）启发、作用于 Agent Harness 层的自动研究流水线。系统在 535 个可执行环境中筛选 152 个候选想法，留下 Action Fusion、Online Context Compact、ObservationPack、Evidence-Preserving Reducer 四个机制。EdgeBench 上完整方案保留约 94% 的 Pi 得分，Token 降低约 45%～49%，成本降低约三分之一。本文解读其 RSI 闭环、四个机制、实验结果，并给出面向工程师的 RSI Harness 搭建清单。",
+    "id": "e49f46b109f68045",
+    "source_id": "mit-tech-review-ai",
+    "title": "The agentic web is here",
+    "url": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/",
+    "published_at": "2026-11-02T09:35:19+00:00",
+    "raw_text": "In 2001, a decade after he invented the World Wide Web, Tim Berners-Lee articulated a new vision. Together with two colleagues, he published an article in the magazine Scientific American in which he outlined what he called the “Semantic Web”: an internet designed to be navigated by autonomous software agents that could address our every&#8230;",
     "category_hint": [
-      "技巧与观点"
+      "行业动态",
+      "论文研究"
     ],
-    "image_url": null,
-    "category": "论文研究",
+    "image_url": "https://wp.technologyreview.com/wp-content/uploads/2026/10/spot1.jpg",
+    "category": "行业动态",
     "content_type": "深度分析",
-    "depth_score": 0.9,
-    "reason_zh": "英伟达 SoL-Pi 提出 RSI 启发的 Agent Harness 自动研究流水线，实验数据扎实，对工程师有高参考价值。",
-    "summary_zh": "英伟达提出 SoL-Pi，一套受递归自我改进（RSI）启发、作用于 Agent Harness 层的自动研究流水线。系统在 535 个可执行环境中筛选 152 个候选想法，最终保留 Action Fusion、Online Context Compact、ObservationPack、Evidence-Preserving Reducer 四个机制。在 EdgeBench 上，完整方案保留约 94% 的 Pi 得分，同时 Token 降低约 45%～49%，成本降低约三分之一。文章解读了 RSI 闭环、四个机制、实验结果，并给出面向工程师的 RSI Harness 搭建清单。",
-    "title_zh": "递归自我改进（RSI）的 Harness 长什么样？英伟达 SoL-Pi 给出了第一份工程答卷",
-    "weighted_score": 0.795,
+    "depth_score": 0.8,
+    "reason_zh": "MIT科技评论深度剖析agentic web的演进与挑战，揭示自主智能体重塑互联网的路径。",
+    "summary_zh": "文章回顾Tim Berners-Lee提出的语义网愿景，并对比当前由大模型驱动的“智能体网络”（agentic web）的兴起。作者指出，自主软件代理正从实验室走向实际应用，能够代表用户执行搜索、交易、协调等任务，但同时也带来身份认证、安全、责任归属和互操作性等新问题。文章采访了多位研究者和创业者，探讨协议标准、信任机制以及监管框架的缺失，认为agentic web将重塑互联网的经济与权力结构。",
+    "title_zh": "智能体网络已然到来",
+    "weighted_score": 0.765,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
+      "source_authority": 0.9,
+      "novelty": 0.7,
       "impact": 0.8,
-      "practical_value": 0.8
+      "practical_value": 0.6
     },
-    "story_id": "916558aa2fa7d3fc",
+    "story_id": "b84d88d8e43806e2",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-tonybai",
-        "url": "https://tonybai.com/2026/11/01/rsi-harness-nvidia-sol-pi-recursive-self-improvement-agent/"
+        "source_id": "mit-tech-review-ai",
+        "url": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/"
       }
     ],
     "curated": true
   },
   {
-    "id": "174be371aa8d34c2",
-    "source_id": "reddit-localllama",
-    "title": "tandem.cpp: Qwen3.8-Flash-Next at 97 tok/s on a single 4090 + 64 GB RAM, 3.3× llama.cpp, works for any MoE",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xldent/tandemcpp_qwen38flashnext_at_97_toks_on_a_single/",
-    "published_at": "2026-11-01T20:23:50+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>tandem.cpp is a patch set for llama.cpp that makes MoE models that don't fit in VRAM run faster. It keeps the most-used experts on the GPU and lets the CPU help with the rest, for any MoE model llama.cpp supports. Single-user decode is the target.</p> <p>Consumer PC (i5-12400F, 64 GB DDR4, RTX 4090), GSM8K, decode tok/s:</p> <table><thead> <tr> <th align=\"left\">Model</th> <th align=\"left\">llama.cpp</th> <th align=\"left\">tandem.cpp</th> <th align=\"left\">Strata</th> </tr> </thead><tbody> <tr> <td align=\"left\">Qwen3.8-Flash-Next IQ3_S + MTP, greedy</td> <td align=\"left\">29.8</td> <td align=\"left\"><strong>97.3</strong> (3.3×)</td> <td align=\"left\">103.6</td> </tr> <tr> <td align=\"left\">same, Qwen's default sampling</td> <td align=\"left\">29.4</td> <td align=\"left\"><strong>96.1</strong> (3.3×)</td> <td align=\"left\">98.1</td> </tr> <tr> <td align=\"left\">gpt-oss-120b, greedy</td> <td align=\"left\">27.8</td> <td align=\"left\"><strong>51.5</strong> (1.85×)</td> <t",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "tandem.cpp 通过专家卸载显著提升 MoE 模型在消费级硬件上的推理速度，对本地部署有实用价值。",
-    "summary_zh": "tandem.cpp 是 llama.cpp 的一个补丁集，旨在让无法完全放入显存的 MoE 模型运行得更快。它通过将最常用的专家保留在 GPU 上，并让 CPU 协助处理其余专家，从而加速任何 llama.cpp 支持的 MoE 模型。在消费级 PC（i5-12400F、64 GB DDR4、RTX 4090）上，GSM8K 解码速度达到 97 tok/s，是 llama.cpp 的 3.3 倍。该项目针对单用户解码场景，为本地运行大模型提供了高效解决方案。",
-    "title_zh": "tandem.cpp：在单张 4090 + 64 GB 内存上以 97 tok/s 运行 Qwen3.8-Flash-Next，速度是 llama.cpp 的 3.3 倍，适用于任何 MoE 模型",
-    "weighted_score": 0.62,
-    "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.9
-    },
-    "story_id": "95a6329f6e19f9de",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkxt7a/memdoor_a_team_of_5_qwen3827b_models_beats_fable/"
-      },
-      {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1xlcgww/speedy_custom_strata_for_singledual_rtx_tested_on/"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xldent/tandemcpp_qwen38flashnext_at_97_toks_on_a_single/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "b78eced8d414e07d",
+    "id": "6eb1302ea527f246",
     "source_id": "marktechpost",
-    "title": "Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon",
-    "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/",
-    "published_at": "2026-11-01T08:10:07+00:00",
-    "raw_text": "<p>Nace AI open-sources Drex Max v1, a 27B multimodal decision model scoring 67.52 that runs on Apple Silicon.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/\">Nace AI Open-Sources Drex Max v1: A 27B Decision Model That Runs Locally on Apple Silicon</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "title": "NVIDIA Releases Auto Ontology: An Open Semantic Layer That Grounds AI Agent SQL",
+    "url": "https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/",
+    "published_at": "2026-11-02T07:47:12+00:00",
+    "raw_text": "<p>NVIDIA released Auto Ontology, an Apache 2.0 library that generates a semantic layer from enterprise metadata. It grounds agent SQL in certified definitions and serves context through MCP, CLI and API.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/\">NVIDIA Releases Auto Ontology: An Open Semantic Layer That Grounds AI Agent SQL</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
     "category_hint": [
       "模型发布",
       "产品发布"
@@ -90,372 +48,607 @@
     "image_url": null,
     "category": "开源项目",
     "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "Nace AI开源27B决策模型Drex Max v1，可在Apple Silicon本地运行，适合关注端侧部署的读者。",
-    "summary_zh": "Nace AI开源了Drex Max v1，这是一个27B参数的多模态决策模型，得分67.52，可在Apple Silicon上本地运行。该模型面向决策任务，强调本地推理能力，降低了部署门槛。开源发布为开发者提供了在个人设备上运行较大规模模型的新选择。",
-    "title_zh": "Nace AI开源Drex Max v1：可在Apple Silicon本地运行的27B决策模型",
-    "weighted_score": 0.6,
+    "depth_score": 0.3,
+    "reason_zh": "NVIDIA开源语义层，让Agent SQL基于认证定义，实用性强，值得关注。",
+    "summary_zh": "NVIDIA发布Auto Ontology，一个Apache 2.0许可的开源库，可从企业元数据自动生成语义层。该语义层为AI Agent的SQL查询提供经过认证的业务定义作为 grounding，并通过MCP、CLI和API三种方式向Agent提供上下文。此举旨在解决Agent直接生成SQL时容易误解表结构、指标口径的问题，让Agent的查询建立在企业统一的数据语义之上，提升可靠性与可审计性。",
+    "title_zh": "NVIDIA发布Auto Ontology：一个为AI Agent SQL提供基础的开源语义层",
+    "weighted_score": 0.745,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.5,
-      "practical_value": 0.6
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
     },
-    "story_id": "b86c991698a2cfd8",
-    "multi_source_count": 2,
+    "story_id": "cff624a739f668f9",
+    "multi_source_count": 1,
     "sources": [
       {
         "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/11/01/nace-ai-open-sources-drex-max-v1-local-inference/"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xl5yfs/release_drex_max_v1_openweight_27b_multimodal/"
+        "url": "https://www.marktechpost.com/2026/11/01/nvidia-auto-ontology-open-source-semantic-layer-ai-agents/"
       }
     ],
     "curated": true
   },
   {
-    "id": "c68cb2af21319a75",
-    "source_id": "reddit-localllama",
-    "title": "Silencio-2: an 18M TTS with emotion and sound tags, ~20x realtime on CPU (open weights)",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xl9yfi/silencio2_an_18m_tts_with_emotion_and_sound_tags/",
-    "published_at": "2026-11-01T18:07:34+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I made this, so treat it as biased. It is free and open, with no paid tier or API behind it.</p> <p>Silencio-2 is a fine-tune of Kyutai's Pocket TTS 18M that follows tags written inside the text:</p> <pre><code>What a long day. [sigh] &lt;whisper&gt; Keep your voice down. &lt;whisper&gt; Keep your voice down. &lt;angry&gt; I said stop! </code></pre> <p>Weights and code: <a href=\"https://huggingface.co/BlueRoseLabs/Silencio-2\">https://huggingface.co/BlueRoseLabs/Silencio-2</a></p> <p>Try it in your browser, no setup: <a href=\"https://colab.research.google.com/drive/1d6GSiRgXbYyBo91DCMrSr5y2LR_peJKy?usp=sharing\">https://colab.research.google.com/drive/1d6GSiRgXbYyBo91DCMrSr5y2LR_peJKy?usp=sharing</a></p> <p><strong>The numbers</strong></p> <ul> <li>18.2M parameters for speech, 27.9M with the encoder that voice cloning needs, 112 MB on disk</li> <li>About 20x realtime on an Apple M4 with 4 CPU threads, no GPU. That is one long-text run on my laptop, not a",
-    "category_hint": [
-      "开源项目",
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "18M 超小 TTS 支持情感与音效标签、CPU 上约 20 倍实时，端侧语音场景值得关注。",
-    "summary_zh": "作者发布了 Silencio-2，一个基于 Kyutai Pocket TTS 18M 微调的开源 TTS 模型，权重公开、无付费层或 API。模型支持在文本中内嵌标签来控制情感与音效，例如叹气、耳语、愤怒等，示例展示了同一句话在不同标签下的表达差异。其卖点是体积极小、在 CPU 上可达约 20 倍实时速度，适合端侧与低资源部署。作者自述存在主观偏向，帖子主要介绍能力与用法，未给出系统性主观评测数据。",
-    "title_zh": "Silencio-2：带情感与音效标签的 18M TTS，CPU 上约 20 倍实时（开放权重）",
-    "weighted_score": 0.4875,
-    "score_breakdown": {
-      "source_authority": 0.35,
-      "novelty": 0.65,
-      "impact": 0.4,
-      "practical_value": 0.6
-    },
-    "story_id": "0cfc67b9147aa09f",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xl9yfi/silencio2_an_18m_tts_with_emotion_and_sound_tags/"
-      },
-      {
-        "source_id": "reddit-huggingface",
-        "url": "https://www.reddit.com/r/huggingface/comments/1xl9yxs/silencio2_an_18m_tts_with_emotion_and_sound_tags/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "2f3360ff4613a2ba",
-    "source_id": "reddit-llmdevs",
-    "title": "Source-grounded long documents: our per-sentence citations now cost more output than the prose. How do you keep numbers verifiable without strangling the writer?",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1xl8yg3/sourcegrounded_long_documents_our_persentence/",
-    "published_at": "2026-11-01T17:29:12+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I’m working on a long-form LLM generation system where outputs must be well-written, factually accurate, and traceable to source documents.</p> <p>The challenge is balancing two things:<br /> <strong>Accuracy:</strong> Every financial figure must be correct and traceable to its original source. A wrong number can sink an application.<br /> <strong>Writing quality:</strong> The model must produce persuasive narratives, not just repeat extracted facts. Reasonable inferences should be allowed without inventing information.<br /> We’ve tried two approaches.</p> <p><strong>Attempt 1: Strict templates</strong><br /> Every sentence had to be constructed from predefined prose and fact references. Figures were safe, but the writing was mechanical, repetitive and unconvincing. The model couldn’t build proper arguments.</p> <p><strong>Attempt 2: Free writing with structured citations (current)</strong><br /> Python extracts facts and fills tables. The LLM writes ",
+    "id": "1a6e22a433cc4d88",
+    "source_id": "latent-space",
+    "title": "Building Legal Agents When You Can't See the Data - Jacob Lauritzen, CTO of Legora",
+    "url": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/",
+    "published_at": "2026-11-02T22:54:03+00:00",
+    "raw_text": "Legora can’t read a single trace of what its agent does for a lawyer. The data belongs to the law firm’s clients. How do you build and test an agent when you can’t see its work? Jacob Lauritzen is the CTO of Legora, one of the fastest-growing companies...",
     "category_hint": [
       "技巧与观点",
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.6,
-    "reason_zh": "讨论长文档生成中逐句引用导致输出成本过高的问题，提出平衡准确性与写作质量的挑战。",
-    "summary_zh": "用户正在开发一个长文档LLM生成系统，要求输出文笔好、事实准确且可追溯至源文档。当前挑战在于平衡准确性与写作质量：每个财务数字必须正确且可溯源，但逐句引用会占用大量输出token，成本高昂。用户询问如何在不扼杀写作流畅性的情况下保持数字可验证。帖子引发了关于引用策略、成本优化和评估方法的讨论。",
-    "title_zh": "基于源文档的长文档：我们逐句引用现在比正文花费更多输出。如何在不扼杀作者的情况下保持数字可验证？",
-    "weighted_score": 0.44,
-    "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.6
-    },
-    "story_id": "cb3b4683863a2163",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1xl8yg3/sourcegrounded_long_documents_our_persentence/"
-      },
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1xlacmo/how_do_you_balance_freeform_llm_writing_with/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a9ae06ee37222d97",
-    "source_id": "reddit-computervision",
-    "title": "I trained YOLO26 on a 50,000 image AI-generated dataset and tested it on real COCO photos, it reached 59% of a real-photo model",
-    "url": "https://www.reddit.com/r/computervision/comments/1xl0vv8/i_trained_yolo26_on_a_50000_image_aigenerated/",
-    "published_at": "2026-11-01T11:36:18+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/computervision/comments/1xl0vv8/i_trained_yolo26_on_a_50000_image_aigenerated/\"> <img alt=\"I trained YOLO26 on a 50,000 image AI-generated dataset and tested it on real COCO photos, it reached 59% of a real-photo model\" src=\"https://preview.redd.it/o6fx78lxkzyh1.jpeg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=d125200e0f04e1d595a0e11e474351bc5eed778a\" title=\"I trained YOLO26 on a 50,000 image AI-generated dataset and tested it on real COCO photos, it reached 59% of a real-photo model\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This is a <strong>proof of concept</strong> for training on synthetic data. I'm not planning to develop it further, but the dataset and the tool are open for anyone who wants to.</p> <p>How far does AI-generated (synthetic) training data get you? I generated a 50K image dataset with my open-source project <a href=\"https://github.com/0xAthkot/aionvis\">aionVIS</a> (self-hosted), then I ",
-    "category_hint": [
-      "论文研究",
-      "技巧与观点"
-    ],
-    "image_url": "https://preview.redd.it/o6fx78lxkzyh1.jpeg?width=140&height=140&crop=1:1,smart&auto=webp&s=d125200e0f04e1d595a0e11e474351bc5eed778a",
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.5,
-    "reason_zh": "实验展示AI生成数据集训练YOLO26在真实照片上仅达59%性能，揭示合成数据与真实数据的差距。",
-    "summary_zh": "作者在Reddit上分享实验：使用5万张AI生成图像训练YOLO26，并在真实COCO照片上测试，模型性能仅达到真实照片训练模型的59%。该实验表明合成数据虽能提供一定泛化能力，但与真实数据仍有显著差距。帖子可能包含训练细节和结果分析，为使用合成数据的研究者提供参考。",
-    "title_zh": "我在5万张AI生成数据集上训练YOLO26，并在真实COCO照片上测试，性能达到真实照片模型的59%",
-    "weighted_score": 0.34,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.4
-    },
-    "story_id": "1143f83e50bbb1a7",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-mlops",
-        "url": "https://www.reddit.com/r/mlops/comments/1xkau5x/composite_modelresnet50fpnyolo26_detection_head/"
-      },
-      {
-        "source_id": "reddit-computervision",
-        "url": "https://www.reddit.com/r/computervision/comments/1xkauix/composite_modelresnet50fpnyolo26_detection_head/"
-      },
-      {
-        "source_id": "reddit-computervision",
-        "url": "https://www.reddit.com/r/computervision/comments/1xl0vv8/i_trained_yolo26_on_a_50000_image_aigenerated/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "04e496f5dc64878f",
-    "source_id": "reddit-machinelearning",
-    "title": "I animated what GPT-4o's tokenizer does to \"strawberry\": real token ids, a tiny BPE run, and why the space belongs to the word (6 min video) [D]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1xl9sv7/i_animated_what_gpt4os_tokenizer_does_to/",
-    "published_at": "2026-11-01T18:01:28+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I made this explainer for my small channel and would like feedback from people learning this, especially if anything is wrong.</p> <p>It follows one word the whole way:</p> <ul> <li>&quot;How many r's are in strawberry?&quot; is 8 tokens in o200k_base (the GPT-4o / GPT-5 tokenizer). &quot; strawberry&quot; is a single token, id 101830, so the three r's are hidden inside one id.</li> <li>Why pieces of words: letters make sequences about 4x longer, whole words need a huge vocabulary and can't handle new words.</li> <li>A tiny byte pair encoding run on a made-up text, merge by merge, until strawberry becomes st | raw | berry.</li> <li>The space belongs to the word: &quot;strawberry&quot;, &quot; strawberry&quot; and &quot;Strawberry&quot; are three different token sequences.</li> <li>Why reasoning models count letters better: in OpenAI's 2025 paper &quot;Why Language Models Hallucinate&quot;, DeepSeek-R1 spells DEEPSEEK out letter by letter before countin",
-    "category_hint": [
-      "论文研究",
       "行业动态"
     ],
-    "image_url": null,
+    "image_url": "https://i.ytimg.com/vi/bJBEFzlKPoQ/maxresdefault.jpg",
     "category": "技巧与观点",
-    "content_type": "教程方法",
-    "depth_score": 0.6,
-    "reason_zh": "用动画直观解释GPT-4o分词器如何处理'strawberry'，揭示BPE机制，适合初学者理解tokenization。",
-    "summary_zh": "作者制作了一个6分钟的视频，动画演示GPT-4o的tokenizer（o200k_base）如何处理单词'strawberry'。视频展示了真实的token id，并运行了一个小型BPE过程，解释为什么空格属于单词的一部分，以及' strawberry'作为一个单独token（id 101830）导致三个'r'被隐藏。该视频旨在帮助学习者理解分词机制，作者也寻求反馈以确保准确性。",
-    "title_zh": "我制作了动画展示GPT-4o的分词器如何处理“strawberry”：真实token id、小型BPE运行，以及为什么空格属于单词（6分钟视频）",
-    "weighted_score": 0.31,
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "Legora CTO分享在无法查看数据的情况下构建法律AI agent的挑战与方案，对agent开发者有很高参考价值。",
+    "summary_zh": "Legora CTO Jacob Lauritzen在访谈中讨论了为法律行业构建AI agent的独特挑战：由于客户数据保密，公司无法查看agent在律师工作中的任何执行轨迹。他分享了如何在缺乏可观测性的情况下进行开发、测试和评估，包括使用合成数据、设计无痕评估方法，以及处理百万单元格级别的表格审查。还探讨了按小时计费商业模式受到的冲击。",
+    "title_zh": "在看不到数据的情况下构建法律智能体——Legora CTO Jacob Lauritzen",
+    "weighted_score": 0.725,
     "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.4,
-      "impact": 0.2,
-      "practical_value": 0.5
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
     },
-    "story_id": "85abefe9c2105785",
-    "multi_source_count": 2,
+    "story_id": "f7b71cd8ec546e00",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1xl7l45/i_animated_what_gpt4os_tokenizer_does_to/"
+        "source_id": "latent-space",
+        "url": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "19ed9c0e8a91e21d",
+    "source_id": "latent-space",
+    "title": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
+    "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
+    "published_at": "2026-11-02T23:01:02+00:00",
+    "raw_text": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
+    "category_hint": [
+      "技巧与观点",
+      "行业动态"
+    ],
+    "image_url": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/4df2c736-d45f-4b0a-9748-cba4ed1d6f72/legora-thumbnail.png?t=1793660014",
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "深入探讨法律AI agent的评估、数据隐私与商业模式变革，对垂直领域AI落地有启发。",
+    "summary_zh": "这是Legora CTO Jacob Lauritzen的访谈，聚焦于为律师构建AI产品的实践。内容涵盖在没有执行轨迹的情况下进行evals（评估）、处理百万单元格的表格审查，以及按小时计费商业模式出现的裂痕。访谈还涉及如何平衡数据隐私与模型能力，以及法律AI agent的设计取舍，为垂直领域AI应用提供了宝贵经验。",
+    "title_zh": "为律师构建 AI——Legora CTO Jacob Lauritzen",
+    "weighted_score": 0.725,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
+    },
+    "story_id": "7ce7e78425c7ba65",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "latent-space",
+        "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "319f63fc52423553",
+    "source_id": "reddit-singularity",
+    "title": "Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights",
+    "url": "https://www.reddit.com/r/singularity/comments/1xm5oy9/sparks_of_weightspace_programming_llms_can/",
+    "published_at": "2026-11-02T18:45:06+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/singularity/comments/1xm5oy9/sparks_of_weightspace_programming_llms_can/\"> <img alt=\"Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights\" src=\"https://external-preview.redd.it/oEQ_iy2p0YcBT2b7BpNa0_EiZvhUep-rTfmJxckhbF0.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=ff25fc65a316d6e0bbb62899c176adbe4e92e516\" title=\"Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>You read it right: Astra was asked to edit Qwen3.5-0.8B weights to improve math.</p> <p>It directly changed only 0.016% of weights, fixing 0.8B's reasoning loops &amp; improving math up to 6x and even instruction following 3x, without gradients or training.</p> <p>Next step: Models that can edit themselves.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Pyros-SD-Models\"> /u/Pyros-SD-Models </a> <br ",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/oEQ_iy2p0YcBT2b7BpNa0_EiZvhUep-rTfmJxckhbF0.png?width=640&crop=smart&auto=webp&s=ff25fc65a316d6e0bbb62899c176adbe4e92e516",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "探索LLM直接读写神经网络权重的新能力，概念新颖，有可迁移认知。",
+    "summary_zh": "Reddit 帖子分享了一项研究，探讨大语言模型能否原生地读取和写入神经网络权重，即“权重空间编程”。该概念若成立，意味着模型可以理解和修改其他模型的参数，而不仅限于文本层面的交互。帖子标题强调“火花”，暗示初步但值得关注的实验证据，可能为模型编辑、迁移学习和可解释性开辟新路径。",
+    "title_zh": "权重空间编程的火花：LLM 能原生读写神经网络权重",
+    "weighted_score": 0.645,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.5
+    },
+    "story_id": "de35273a195ee914",
+    "multi_source_count": 3,
+    "sources": [
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1xm5oy9/sparks_of_weightspace_programming_llms_can/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm6jow/sparks_of_weightspace_programming_llms_can/"
       },
       {
         "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1xl9sv7/i_animated_what_gpt4os_tokenizer_does_to/"
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1xm89ef/sparks_of_weightspace_programming_llms_can/"
       }
     ],
     "curated": true
   },
   {
-    "id": "1ff0975b4a482fb8",
-    "source_id": "reddit-llmdevs",
-    "title": "why do we need query expansion in RAG when semantic search already handles similar value matching?",
-    "url": "https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/",
-    "published_at": "2026-11-01T13:00:09+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Can some one who used query expansion, let us know what technique you used and why? Also why do we need query expansion in RAG when semantic search already handles similar value matching with specific examples</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/DueBid3298\"> /u/DueBid3298 </a> <br /> <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/\">[comments]</a></span>",
+    "id": "6a2d4104abb10ebf",
+    "source_id": "zh-leiphone",
+    "title": "美团发布LongCat-2.5大模型，“国芯国模”实现新突破",
+    "url": "https://www.leiphone.com/category/industrynews/mUPVr3RF0MHNmn3t.html",
+    "published_at": "2026-11-02T07:23:00+00:00",
+    "raw_text": "<p>11月2日，美团发布新一代大模型LongCat-2.5，这是一款面向长程智能体任务的原生多模态模型，总参数1.6万亿。LongCat-2.5延续了此前LongCat系列模型的研发方向，全程在国产算力上训练，是目前国产算力上完成的最大训练任务。</p>",
     "category_hint": [
-      "技巧与观点",
-      "开源项目"
+      "行业动态"
     ],
     "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.2,
-    "reason_zh": "开发者提问RAG中查询扩展的必要性，触及检索增强的常见困惑，但帖子本身无实质解答。",
-    "summary_zh": "Reddit的LLMDevs板块用户提问：既然语义搜索已经能处理相似语义匹配，为什么RAG中还需要查询扩展（query expansion）？该用户希望有实际使用经验的人分享所用技术与理由。帖子本身是提问，未提供答案，核心议题在于语义检索与查询改写之间的互补关系及适用边界。",
-    "title_zh": "语义搜索已能处理相似语义匹配，为什么RAG还需要查询扩展？",
-    "weighted_score": 0.215,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.25,
+    "reason_zh": "国产算力训练的最大规模模型之一，关注国产芯片与大模型协同进展的读者值得一看。",
+    "summary_zh": "美团发布新一代大模型LongCat-2.5，定位为面向长程智能体任务的原生多模态模型，总参数达1.6万亿。官方称其延续LongCat系列研发方向，全程在国产算力上完成训练，是目前国产算力上完成的最大规模训练任务，被视为“国芯国模”协同的一次突破。报道未披露具体评测成绩、上下文长度、推理成本及开源计划等细节。",
+    "title_zh": null,
+    "weighted_score": 0.6425,
     "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.2,
-      "impact": 0.1,
-      "practical_value": 0.4
+      "source_authority": 0.6,
+      "novelty": 0.75,
+      "impact": 0.7,
+      "practical_value": 0.5
     },
-    "story_id": "8f50673d4d33da13",
-    "multi_source_count": 2,
+    "story_id": "829ffebb7b6b5691",
+    "multi_source_count": 3,
     "sources": [
       {
-        "source_id": "reddit-llmdevs",
-        "url": "https://www.reddit.com/r/LLMDevs/comments/1xl2gqb/why_do_we_need_query_expansion_in_rag_when/"
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/longcat-2-5-now-available-on-ai-gateway"
       },
       {
-        "source_id": "reddit-langchain",
-        "url": "https://www.reddit.com/r/LangChain/comments/1xl2h3l/why_do_we_need_query_expansion_in_rag_when/"
+        "source_id": "pandaily",
+        "url": "https://pandaily.com/meituan-longcat-2-5-official-release-1-6t-native-multimodal-long-horizon-agentic-coding-w4a4"
+      },
+      {
+        "source_id": "zh-leiphone",
+        "url": "https://www.leiphone.com/category/industrynews/mUPVr3RF0MHNmn3t.html"
       }
     ],
     "curated": true
   },
   {
-    "id": "fd4d7eb3942abcc0",
-    "source_id": "reddit-claudeai",
-    "title": "GPT-6 xHigh, ladies and gentlemen",
-    "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/",
-    "published_at": "2026-11-01T16:48:33+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/\"> <img alt=\"GPT-6 xHigh, ladies and gentlemen\" src=\"https://preview.redd.it/edged4s261zh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9be5b7b5ed9decf4b6cc0eca7a55c22b6cfc28c1\" title=\"GPT-6 xHigh, ladies and gentlemen\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/py-net\"> /u/py-net </a> <br /> <span><a href=\"https://i.redd.it/edged4s261zh1.jpeg\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/\">[comments]</a></span> </td></tr></table>",
+    "id": "5b5463a9d15d8e20",
+    "source_id": "reddit-singularity",
+    "title": "MIT researchers say GPT-6 Astra improved a small Qwen model’s math score from 7.9% to 48.1% by directly editing just 0.016% of its weights, without gradient-based training.",
+    "url": "https://www.reddit.com/r/singularity/comments/1xm89o3/mit_researchers_say_gpt6_astra_improved_a_small/",
+    "published_at": "2026-11-02T20:18:42+00:00",
+    "raw_text": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/troll_khan\"> /u/troll_khan </a> <br /> <span><a href=\"https://x.com/rikiyatakehi/status/2117313742891327994\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/singularity/comments/1xm89o3/mit_researchers_say_gpt6_astra_improved_a_small/\">[comments]</a></span>",
     "category_hint": [
-      "产品发布",
+      "行业动态",
       "技巧与观点"
     ],
-    "image_url": "https://preview.redd.it/edged4s261zh1.jpeg?width=640&crop=smart&auto=webp&s=9be5b7b5ed9decf4b6cc0eca7a55c22b6cfc28c1",
-    "category": "行业动态",
-    "content_type": "观点评论",
-    "depth_score": 0.05,
-    "reason_zh": "仅一张截图配标题的社区玩梗帖，无实质信息，可跳过。",
-    "summary_zh": "该帖来自 r/ClaudeAI，标题为“GPT-6 xHigh，女士们先生们”，正文仅附一张截图，未提供任何文字说明、来源或上下文。从形式看属于社区用户对所谓 GPT-6 高算力档位的调侃或晒图，可能涉及某界面截图，但缺乏可核实信息。此类内容不构成模型发布或技术披露，对了解行业进展没有实际帮助。",
-    "title_zh": "GPT-6 xHigh，女士们先生们",
-    "weighted_score": 0.13,
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "声称仅改 0.016% 权重、无需梯度训练即大幅提升数学能力，若属实极具启发性，但来源为二手转述需谨慎。",
+    "summary_zh": "Reddit 帖子转述称，MIT 研究人员表示 GPT-6 Astra 通过直接编辑一个小型 Qwen 模型约 0.016% 的权重，将其数学成绩从 7.9% 提升至 48.1%，且全程未使用基于梯度的训练。该说法指向一种通过外部模型定位并改写关键权重、实现能力迁移的权重编辑方法，若得到验证，将挑战传统微调范式。但信息源自社交媒体转述，缺少论文细节与复现证据，需谨慎对待。",
+    "title_zh": "MIT 研究人员称 GPT-6 Astra 仅直接编辑 0.016% 权重、无需梯度训练，即将小型 Qwen 模型数学成绩从 7.9% 提升至 48.1%",
+    "weighted_score": 0.615,
     "score_breakdown": {
-      "source_authority": 0.15,
-      "novelty": 0.2,
-      "impact": 0.1,
-      "practical_value": 0.05
+      "source_authority": 0.3,
+      "novelty": 0.9,
+      "impact": 0.8,
+      "practical_value": 0.5
     },
-    "story_id": "07c8eda6d0cd4c19",
-    "multi_source_count": 2,
+    "story_id": "740b205e42363480",
+    "multi_source_count": 3,
     "sources": [
       {
-        "source_id": "reddit-claudeai",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1xl7wdv/gpt6_xhigh_ladies_and_gentlemen/"
+        "source_id": "tldr-ai",
+        "url": "https://tldr.tech/ai/2026-11-02"
       },
       {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1xld5pr/is_the_instant_model_actually_gpt6_sol_level/"
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1xm89o3/mit_researchers_say_gpt6_astra_improved_a_small/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xma0tw/gpt6_astra_edits_qwen_weights_math500_79_to_481/"
       }
     ],
     "curated": true
   },
   {
-    "id": "3cc4ce3d743f12b3",
+    "id": "dc6c7ef2ed74ce88",
+    "source_id": "verge-ai",
+    "title": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls",
+    "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
+    "published_at": "2026-11-02T17:51:19+00:00",
+    "raw_text": "The New York Times and a group of other publications have filed lawsuits against the company that makes the Brave web browser over alleged unlawful scraping to train AI and also letting users bypass their paywalls, as reported by Reuters. According to a complaint filed by the New York Daily News, the Chicago Tribune, and [&#8230;]",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2289911637.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "主流媒体起诉 Brave 抓取训练数据并绕过付费墙，是 AI 版权诉讼潮的重要进展。",
+    "summary_zh": "据 Reuters 报道，《纽约时报》联合《纽约每日新闻》《芝加哥论坛报》等多家出版机构起诉 Brave 浏览器背后的公司，指控其非法抓取内容用于训练 AI，并允许用户绕过付费墙。这是媒体行业针对 AI 数据抓取发起的最新一轮法律行动，进一步加剧了内容版权方与 AI 公司之间的紧张关系。",
+    "title_zh": "《纽约时报》起诉 Brave 浏览器：AI 抓取并绕过付费墙",
+    "weighted_score": 0.595,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.5,
+      "impact": 0.6,
+      "practical_value": 0.4
+    },
+    "story_id": "0d345429aa617507",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "verge-ai",
+        "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times"
+      },
+      {
+        "source_id": "techcrunch-ai",
+        "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "f2dd5ffff01232a9",
     "source_id": "marktechpost",
-    "title": "DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent",
-    "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/",
-    "published_at": "2026-11-01T07:47:17+00:00",
-    "raw_text": "<p>DeepSeek released dsh-superagent, an MIT-licensed research prototype that turns GitHub and Feishu requests into parallel worker sessions. In DeepSeek’s own simulation, p95 task completion fell to 15.7 minutes from 29.5 minutes.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/\">DeepSeek Open-Sources dsh-superagent, a Router-Worker Coding Agent</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
+    "title": "Meet qwenGPU: Qwen3.5-2B With 45 Compiled GPU Layers That Run CUDA",
+    "url": "https://www.marktechpost.com/2026/11/01/qwengpu-simt-gpu-compiled-into-qwen3-5-2b-weights-runs-cuda/",
+    "published_at": "2026-11-02T07:28:29+00:00",
+    "raw_text": "<p>qwenGPU compiles a 4-lane SIMT GPU into Qwen3.5-2B as 45 untrained layers. The model writes every step of real CUDA launches itself, using Gated DeltaNet state as registers and memory.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/01/qwengpu-simt-gpu-compiled-into-qwen3-5-2b-weights-runs-cuda/\">Meet qwenGPU: Qwen3.5-2B With 45 Compiled GPU Layers That Run CUDA</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
     "category_hint": [
       "模型发布",
       "产品发布"
     ],
     "image_url": null,
     "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "DeepSeek开源路由-工作者编码代理，p95任务完成时间减半，值得关注其架构与性能。",
-    "summary_zh": "DeepSeek开源了MIT许可的研究原型dsh-superagent，可将GitHub和飞书请求转化为并行工作者会话。在DeepSeek自身的模拟中，p95任务完成时间从29.5分钟降至15.7分钟。该代理采用路由-工作者架构，旨在提升编码任务的并行处理效率。",
-    "title_zh": "DeepSeek开源dsh-superagent：路由-工作者编码代理",
-    "weighted_score": 0.645,
+    "content_type": "研究论文",
+    "depth_score": 0.7,
+    "reason_zh": "把GPU执行逻辑编译进模型权重的实验，思路反直觉，对理解模型计算范式有启发。",
+    "summary_zh": "qwenGPU项目将4路SIMT GPU编译进Qwen3.5-2B，作为45个未经训练的新增层，使模型能够自行写出真实CUDA启动的每一步，并用Gated DeltaNet状态充当寄存器与内存。该实验探索把硬件执行语义嵌入模型权重而非依赖外部工具调用，属于模型内部计算范式的非常规尝试。文章介绍了层结构设计与运行方式，但未给出完整基准评测与稳定性数据。",
+    "title_zh": "qwenGPU：Qwen3.5-2B 内置45个可运行CUDA的编译GPU层",
+    "weighted_score": 0.5925,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
+      "source_authority": 0.5,
+      "novelty": 0.9,
+      "impact": 0.55,
+      "practical_value": 0.4
     },
-    "story_id": "651537c0e107acde",
-    "multi_source_count": 1,
+    "story_id": "e8195b1967fe9448",
+    "multi_source_count": 2,
     "sources": [
       {
         "source_id": "marktechpost",
-        "url": "https://www.marktechpost.com/2026/11/01/deepseek-dsh-superagent-router-worker-coding-agent/"
+        "url": "https://www.marktechpost.com/2026/11/01/qwengpu-simt-gpu-compiled-into-qwen3-5-2b-weights-runs-cuda/"
+      },
+      {
+        "source_id": "reddit-ollama",
+        "url": "https://www.reddit.com/r/ollama/comments/1xlv36d/finetuned_qwen354b_on_441_examples_from_my_own/"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "2f4805dc65730523",
-    "source_id": "reddit-localllama",
-    "title": "FineDNA: the largest dataset to teach any LLM DNA (midtraining, SFT, RL)",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkwvwg/finedna_the_largest_dataset_to_teach_any_llm_dna/",
-    "published_at": "2026-11-01T07:24:09+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xkwvwg/finedna_the_largest_dataset_to_teach_any_llm_dna/\"> <img alt=\"FineDNA: the largest dataset to teach any LLM DNA (midtraining, SFT, RL)\" src=\"https://preview.redd.it/cdh8dfe7dyyh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2bcb8a1f8ea085584833a21ecfd76e8dd63d9986\" title=\"FineDNA: the largest dataset to teach any LLM DNA (midtraining, SFT, RL)\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Hi everyone, we're releasing FineDNA, all the data we used to turn Qwen3-14B into Carbon-X, the strongest open language model on DNA. It contains:</p> <ul> <li>Midtraining: 300B+ tokens of genomes and DNA-rich text</li> <li>SFT: ~200K conversations</li> <li>RL: ~98K verifiable prompts</li> </ul> <p>Code and recipe are open too, so you can apply it to other LLMs.</p> <p>Dataset: <a href=\"https://huggingface.co/datasets/HuggingFaceBio/FineDNA\">https://huggingface.co/datasets/HuggingFaceBio/FineDNA</a><br /> Code: <",
+    "id": "3ace5a62609891e3",
+    "source_id": "toms-hardware",
+    "title": "Anthropic confirms new Claude Code limits to prevent game cloning, users report blocking reverse engineering tasks",
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks",
+    "published_at": "2026-11-02T12:30:00+00:00",
+    "raw_text": "Anthropic employee confirms that Claude Code now has orders not to reproduce game IP — company \"iterating to ensure [...] the right balance\"",
     "category_hint": [
-      "开源项目",
-      "技巧与观点"
+      "行业动态",
+      "产品发布"
     ],
-    "image_url": "https://preview.redd.it/cdh8dfe7dyyh1.png?width=640&crop=smart&auto=webp&s=2bcb8a1f8ea085584833a21ecfd76e8dd63d9986",
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "发布迄今最大的DNA教学数据集FineDNA，支持midtraining、SFT和RL，对生物信息学LLM应用有推动。",
-    "summary_zh": "FineDNA是一个旨在教任何LLM理解DNA的大型数据集，号称目前最大的DNA教学数据集。它支持多种训练阶段：midtraining、监督微调（SFT）和强化学习（RL）。该数据集可能包含DNA序列及其功能注释，用于训练模型学习基因组语言。发布在r/LocalLLaMA社区，面向本地LLM爱好者，有望推动生物信息学与LLM结合的研究和应用。",
-    "title_zh": "FineDNA：教任何LLM学习DNA的最大数据集（midtraining、SFT、RL）",
-    "weighted_score": 0.61,
+    "image_url": "https://cdn.mos.cms.futurecdn.net/qziRh5FuRAUAAnNS3QuCiU-1920-80.jpg",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "Claude Code 新增限制引发争议，涉及 AI 编程工具的版权边界。",
+    "summary_zh": "Anthropic 员工确认 Claude Code 现已加入指令，禁止复现游戏知识产权内容，公司表示正在“迭代以找到合适的平衡”。用户报告称该限制同时拦截了逆向工程类任务，引发对 AI 编程工具能力边界的讨论。报道呈现了厂商版权合规诉求与开发者实际使用需求之间的张力，但未给出限制的具体触发规则。",
+    "title_zh": "Anthropic 确认 Claude Code 新增限制以防克隆游戏，用户称逆向工程任务被拦截",
+    "weighted_score": 0.53,
     "score_breakdown": {
-      "source_authority": 0.4,
-      "novelty": 0.8,
-      "impact": 0.6,
-      "practical_value": 0.7
+      "source_authority": 0.55,
+      "novelty": 0.6,
+      "impact": 0.5,
+      "practical_value": 0.45
     },
-    "story_id": "ee4393e8b9d8d0c4",
-    "multi_source_count": 1,
+    "story_id": "039db8ecadb67c7a",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xkwvwg/finedna_the_largest_dataset_to_teach_any_llm_dna/"
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropic-confirms-new-claude-code-limits-to-prevent-game-cloning-users-report-opus-5-5-is-also-actively-blocking-reverse-engineering-tasks"
+      },
+      {
+        "source_id": "reddit-claudeai",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1xm5vdp/anthropic_confirms_new_claude_code_limits_to/"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "96603222f1ad2f3a",
+    "id": "34a3fd5177bcc847",
     "source_id": "qbitai",
-    "title": "清华姚期智团队新作：代数世界模型，让AI像牛顿一样思考",
-    "url": "https://www.qbitai.com/2026/11/507031.html",
-    "published_at": "2026-11-01T08:02:37+00:00",
-    "raw_text": "让AI像牛顿一样思考",
+    "title": "GPT-6.2 Astra开启灰测！Claude Mythos 5.5同日曝光",
+    "url": "https://www.qbitai.com/2026/11/507082.html",
+    "published_at": "2026-11-02T04:28:53+00:00",
+    "raw_text": "HuggingFace疑似泄露权重已被下5000次",
     "category_hint": [
       "行业动态",
       "模型发布"
     ],
     "image_url": null,
+    "category": "模型发布",
+    "content_type": "资讯快讯",
+    "depth_score": 0.2,
+    "reason_zh": "涉及两款未发布模型的灰测与泄露传闻，信息未经证实，宜谨慎看待。",
+    "summary_zh": "量子位报道称，GPT-6.2 Astra 已开启灰度测试，同日 Claude Mythos 5.5 也被曝光。文中提到 HuggingFace 上疑似出现相关权重文件，且已被下载约 5000 次。报道将两条消息并列呈现，属于典型的模型发布前传闻类快讯，未提供官方确认、模型能力细节或基准测试数据。读者需注意此类泄露与灰测消息真实性存疑，应以厂商官方公告为准。",
+    "title_zh": "GPT-6.2 Astra 开启灰测！Claude Mythos 5.5 同日曝光",
+    "weighted_score": 0.505,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.3
+    },
+    "story_id": "74ffb0674a146505",
+    "multi_source_count": 3,
+    "sources": [
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1xl0rs3/openai_is_testing_gpt62_astra/"
+      },
+      {
+        "source_id": "ifanr",
+        "url": "https://www.ifanr.com/1687071?utm_source=rss&utm_medium=rss&utm_campaign="
+      },
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/11/507082.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "b810030289ed799f",
+    "source_id": "google-ai-blog",
+    "title": "The latest AI news we announced in October 2026",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+    "published_at": "2026-11-02T17:45:00+00:00",
+    "raw_text": "Animated carousel of images from AI posts in October",
+    "category_hint": [
+      "模型发布",
+      "产品发布"
+    ],
+    "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Oct_AI_Recap_social.max-600x600.format-webp.webp",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "官方月度新闻汇总，适合快速了解 Google AI 当月动态，但无深度内容。",
+    "summary_zh": "Google 官方博客发布的 2026 年 10 月 AI 新闻月度汇总，以图片轮播形式回顾当月发布的 AI 相关公告与产品更新。内容属于官方例行盘点，覆盖范围广但每条仅点到为止，未提供技术细节或深度分析，适合作为了解 Google AI 当月整体动向的索引。",
+    "title_zh": "我们在 2026 年 10 月发布的最新 AI 新闻",
+    "weighted_score": 0.4525,
+    "score_breakdown": {
+      "source_authority": 0.85,
+      "novelty": 0.2,
+      "impact": 0.35,
+      "practical_value": 0.3
+    },
+    "story_id": "43297a88c32086a3",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-stablediffusion",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xlwezy/local_ai_news_you_missed_october_2026/"
+      },
+      {
+        "source_id": "google-ai-blog",
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "71c3d26ea05160f9",
+    "source_id": "reddit-machinelearning",
+    "title": "LightMIS: Ultra-lightweight medical image segmentation for edge devices [R]",
+    "url": "https://www.reddit.com/r/MachineLearning/comments/1xm8dbo/lightmis_ultralightweight_medical_image/",
+    "published_at": "2026-11-02T20:22:30+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi everyone,</p> <p>I am one of the authors of LightMIS, and I would like to share our work on 2D binary medical image segmentation. LightMIS has 131K parameters and aggregates multi-scale encoder features directly, without a learned stage-wise decoder. It achieves close observed modality-macro Dice and IoU averages to nnWNet, while using 98.14% fewer parameters and 94.58% fewer GFLOPs, with both models trained and evaluated under the same nnU-Net protocol.</p> <p>Paper: <a href=\"https://arxiv.org/abs/2609.28327\">https://arxiv.org/abs/2609.28327</a> </p> <p>Code: <a href=\"https://github.com/AndreiiArhire/LightMIS\">https://github.com/AndreiiArhire/LightMIS</a></p> <p>We also tested LightMIS and the reference models on a real edge device with an Arm Mali-G52 MC2 GPU, where the full LightMIS model ran around 10.5× faster than nnWNet. All LightMIS variants achieved 100% GPU operator coverage, without CPU fallback.</p> <p>We started by training several popu",
+    "category_hint": [
+      "论文研究",
+      "行业动态"
+    ],
+    "image_url": null,
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "姚期智团队提出代数世界模型，让AI像牛顿一样思考，思想深刻，值得研读。",
-    "summary_zh": "清华姚期智团队发表新研究，提出“代数世界模型”，旨在让AI像牛顿一样进行抽象推理与规律发现。该方法可能通过代数结构建模世界知识，使模型具备更强的泛化与符号推理能力。文章介绍了其核心思想与潜在应用，属于基础性研究突破。",
-    "title_zh": null,
-    "weighted_score": 0.715,
+    "depth_score": 0.55,
+    "reason_zh": "同一轻量分割工作的另一板块发布，边缘部署读者可关注。",
+    "summary_zh": "这是LightMIS作者在机器学习板块的重复发布，内容与计算机视觉板块一致：面向边缘设备的2D二值医学图像分割模型，参数量仅131K，通过直接聚合多尺度编码器特征替代逐阶段学习的解码器，在模态宏平均Dice与IoU上接近nnWNet，参数量减少98.14%。属于作者自述的研究分享，缺少完整实验与评审信息，可作为轻量化医学影像方向的线索。",
+    "title_zh": "LightMIS：面向边缘设备的超轻量医学图像分割 [R]",
+    "weighted_score": 0.4525,
     "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.5
+      "source_authority": 0.35,
+      "novelty": 0.6,
+      "impact": 0.35,
+      "practical_value": 0.55
     },
-    "story_id": "3fbcbd220f79e035",
+    "story_id": "70834488473e66ba",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1xm8dbo/lightmis_ultralightweight_medical_image/"
+      },
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1xm9lu7/lightmis_ultralightweight_medical_image/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "3f0fb7fc9395db0c",
+    "source_id": "reddit-rag",
+    "title": "EmbeddingGemma-2 on Edge with LiteRT",
+    "url": "https://www.reddit.com/r/Rag/comments/1xm18qn/embeddinggemma2_on_edge_with_litert/",
+    "published_at": "2026-11-02T16:06:17+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>LiteRT now supports the Embedding Engine, making it possible to run EmbeddingGemma-2 and other embedding models directly on edge devices.</p> <p>Built a 100% offline, fast RAG system that runs without an internet connection or cloud APIs, using Qdrant Edge and LiteRT.</p> <p>The demo covers the entire pipeline, from using EdgeParse to extract text from PDFs and convert it into Markdown chunks, generating embeddings on-device with EmbeddingGemma-2, indexing them in Qdrant Edge for vector search, and finally retrieving relevant context and answering questions locally using Gemma 4 E2B running on LiteRT.</p> <p>🔗 Video: <a href=\"https://www.youtube.com/watch?v=4Nl1tv9J5ew\">https://www.youtube.com/watch?v=4Nl1tv9J5ew</a> </p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/External_Ad_11\"> /u/External_Ad_11 </a> <br /> <span><a href=\"https://www.reddit.com/r/Rag/comments/1xm18qn/embeddinggemma2_on_edge_with_litert/\">[link",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "教程方法",
+    "depth_score": 0.3,
+    "reason_zh": "展示端侧离线 RAG 完整管线，对边缘部署感兴趣的开发者有参考价值。",
+    "summary_zh": "Reddit 用户分享基于 LiteRT 和 Qdrant Edge 构建的完全离线 RAG 系统，可在边缘设备上运行 EmbeddingGemma-2 等嵌入模型。演示覆盖从 PDF 文本提取到向量检索的完整流程，无需联网或云 API。内容为项目展示，介绍了 LiteRT 新增的 Embedding Engine 支持，适合关注端侧 AI 和隐私保护场景的开发者参考。",
+    "title_zh": "在边缘设备上用 LiteRT 运行 EmbeddingGemma-2",
+    "weighted_score": 0.41,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.6
+    },
+    "story_id": "9e9179f6057bd318",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-rag",
+        "url": "https://www.reddit.com/r/Rag/comments/1xm18qn/embeddinggemma2_on_edge_with_litert/"
+      },
+      {
+        "source_id": "reddit-ollama",
+        "url": "https://www.reddit.com/r/ollama/comments/1xm1a6k/embeddinggemma2_for_ondevice/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "bef898c908743bd6",
+    "source_id": "reddit-computervision",
+    "title": "How to handle object deduplication across multiple camera angles using YOLO (especially for tiny 20x22px crops) across isolated user sessions?",
+    "url": "https://www.reddit.com/r/computervision/comments/1xloloh/how_to_handle_object_deduplication_across/",
+    "published_at": "2026-11-02T05:12:09+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I’m building a computer vision pipeline where users upload multiple photos of the same physical scene taken from different angles (front view, side view, close-up) to build a clean list of unique objects and their attributes.<br /> I’m running <strong>YOLO</strong> for object detection to extract bounding boxes and crop each detected object into lightweight ⁠.webp⁠ images. Because the same physical object appears across 3 or 4 different photos from different angles, I need to make sure each unique object is only counted <strong>once per session</strong>, and avoid running expensive downstream AI calls to re-describe an object we already processed from an earlier photo.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Expert-Ad598\"> /u/Expert-Ad598 </a> <br /> <span><a href=\"https://www.reddit.com/r/computervision/comments/1xloloh/how_to_handle_object_deduplication_across/\">[link]</a></span> &#32; <span><a href=\"htt",
+    "category_hint": [
+      "论文研究",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "观点评论",
+    "depth_score": 0.3,
+    "reason_zh": "真实工程场景下的多视角去重难题，涉及小目标裁剪与会话隔离，对做CV流水线的开发者有参考价值。",
+    "summary_zh": "一位开发者在构建计算机视觉流水线：用户上传同一物理场景的多角度照片（正面、侧面、特写），系统需输出去重后的唯一物体清单及其属性。当前用 YOLO 做目标检测，提取边界框并把每个物体裁剪成轻量 webp 图，但面临跨视角物体去重困难，尤其是仅 20x22 像素的极小裁剪块，且需在不同用户会话之间隔离处理。发帖者希望获得关于小目标特征匹配、跨视角关联以及会话级去重策略的具体建议。",
+    "title_zh": "如何用 YOLO 处理多相机视角下的物体去重（尤其是 20x22 像素的微小裁剪块），并跨隔离的用户会话？",
+    "weighted_score": 0.3225,
+    "score_breakdown": {
+      "source_authority": 0.25,
+      "novelty": 0.35,
+      "impact": 0.2,
+      "practical_value": 0.55
+    },
+    "story_id": "8478d9d88ce77c3b",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-computervision",
+        "url": "https://www.reddit.com/r/computervision/comments/1xloloh/how_to_handle_object_deduplication_across/"
+      },
+      {
+        "source_id": "reddit-machinelearning",
+        "url": "https://www.reddit.com/r/MachineLearning/comments/1xloo4i/how_to_handle_object_deduplication_across/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "06b08e3f2b84d5f6",
+    "source_id": "toms-hardware",
+    "title": "AI model gets a 32-bit RISC-V CPU compiled directly into its weights, then runs DOOM on it",
+    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-engineer-successfully-compiles-a-32-bit-risc-v-cpu-in-qwen-3-5-4b-llm-inserted-directly-into-its-weights-built-in-cpu-can-run-processor-arithmetic-operations-code-and-of-course-doom",
+    "published_at": "2026-11-02T13:30:00+00:00",
+    "raw_text": "Qwenputer is an experimental blend of the stock Qwen 3.5 4B LLM with a 32-bit RISC-V CPU compiled and inserted directly into its weights.",
+    "category_hint": [
+      "行业动态",
+      "产品发布"
+    ],
+    "image_url": "https://cdn.mos.cms.futurecdn.net/vDamaQXjMra2LE6RAc87N6-1920-80.jpg",
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.5,
+    "reason_zh": "把 RISC-V CPU 编译进模型权重的奇思妙想，虽属实验性玩具，但创意极具启发性。",
+    "summary_zh": "Tom's Hardware 报道了一个名为 Qwenputer 的实验项目，将 32 位 RISC-V CPU 直接编译并嵌入 Qwen 3.5 4B 大模型的权重之中，使模型能够运行 DOOM 游戏。该项目把计算单元与神经网络权重融合，属于概念验证性质的极客实验，展示了模型权重作为通用计算载体的可能性，但实际用途与性能表现尚不明确。",
+    "title_zh": "AI 模型把 32 位 RISC-V CPU 直接编译进权重，然后在上面跑起了 DOOM",
+    "weighted_score": 0.61,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.9,
+      "impact": 0.5,
+      "practical_value": 0.4
+    },
+    "story_id": "090feb7b2a2a1ce9",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/11/507031.html"
+        "source_id": "toms-hardware",
+        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-engineer-successfully-compiles-a-32-bit-risc-v-cpu-in-qwen-3-5-4b-llm-inserted-directly-into-its-weights-built-in-cpu-can-run-processor-arithmetic-operations-code-and-of-course-doom"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "fa2ef67428f42214",
+    "source_id": "reddit-localllama",
+    "title": "Builders got MiniMax M3.1 Flash's open weights from 252.4 GB down to 93 GB in 10 days, and the lab thanked them by name",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm0b7r/builders_got_minimax_m31_flashs_open_weights_from/",
+    "published_at": "2026-11-02T15:31:39+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p><a href=\"https://x.com/MiniMax_AI/status/2116996123164569606\">MiniMax posted a thank-you yesterday</a> for everyone quantizing M3.1 Flash (428B, 252.4 GB), and I went through the ones they named. Numbers are each builder's, separate eval sets, not comparable.</p> <ul> <li>128 GB PC: <a href=\"https://huggingface.co/peasantsmith/MiniMax-M3.1-Flash-Maya-GGUF\">Maya-XS</a> by PeasantSmith, 93 GB. 88.8% top-1 agreement (tool calls, agents).</li> <li>One DGX Spark: <a href=\"https://huggingface.co/vcruz305/MiniMax-M3.1-Flash-EXL3-SAGE-2.15bpw\">SAGE-EXL3</a> by ViC305, 108.64 GiB. 96.89% top-1, held-out sequences. 24.37 to 29.72 tok/s decode at 48K context.</li> <li>160 GB+: <a href=\"https://huggingface.co/unsloth/MiniMax-M3.1-Flash-GGUF\">Unsloth UD-Q2_K_XL</a>, 143.9 GB. 91.5% top-1 weighted, seven categories.</li> <li>4x 3090: <a href=\"https://x.com/superalesha/status/2117007753898074529\">superalesha</a>, own engine, Unsloth 2-bit, 23 to 31 tok/s decode, 1120",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "资讯快讯",
+    "depth_score": 0.3,
+    "reason_zh": "量化社区把428B模型从252GB压到93GB的实测汇总，对本地部署玩家有直接参考价值。",
+    "summary_zh": "帖子汇总了社区开发者对MiniMax M3.1 Flash（428B参数、原始252.4GB）的量化成果，多位构建者将其压缩到93GB，使128GB内存的PC也能运行。MiniMax官方在X上发帖致谢并点名了这些贡献者。作者逐一梳理了被点名的量化版本，包括Maya-XS等GGUF变体，并提醒各构建者使用的评测集不同，数字之间不可直接比较。内容属于社区实测信息汇总，对关注本地大模型部署与量化技术的读者有实用参考意义。",
+    "title_zh": "开发者10天内将MiniMax M3.1 Flash开放权重从252.4 GB压到93 GB，官方点名致谢",
+    "weighted_score": 0.5575,
+    "score_breakdown": {
+      "source_authority": 0.4,
+      "novelty": 0.65,
+      "impact": 0.5,
+      "practical_value": 0.75
+    },
+    "story_id": "01f5ef67603f8fb1",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xm0b7r/builders_got_minimax_m31_flashs_open_weights_from/"
       }
     ],
     "curated": true,
