@@ -1,865 +1,742 @@
 [
   {
-    "id": "80c5907161fc77dd",
-    "source_id": "zh-meituan-tech",
-    "title": "美团正式发布 LongCat-2.5：面向智能体任务的原生多模态模型",
-    "url": "https://tech.meituan.com/2026/11/02/Meituan-LongCat-2.5.html",
-    "published_at": "2026-11-03T22:13:20.149322+00:00",
-    "raw_text": "美团发布 LongCat-2.5，一个面向长程智能体任务的原生多模态模型。模型总参数量为 1.6 万亿，每个 token 激活约 480 亿参数，在 LongCat-2.0 的基础上进一步强化原生视觉理解与智能体编程能力。",
+    "id": "a4f4c423c5426033",
+    "source_id": "openai-blog",
+    "title": "A thousand fewer paths to root",
+    "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+    "published_at": "2026-11-04T08:00:00+00:00",
+    "raw_text": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel.",
     "category_hint": [
-      "技巧与观点"
+      "模型发布",
+      "产品发布"
     ],
-    "image_url": "https://s3.meituan.net/static-prod01/com.sankuai.friday.longcat.next2p/assets/chat-image-D95MTdam.png",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "美团发布1.6万亿参数原生多模态模型LongCat-2.5，面向智能体任务，值得关注其架构与能力。",
-    "summary_zh": "美团正式发布LongCat-2.5，这是一个面向长程智能体任务的原生多模态模型。模型总参数量为1.6万亿，每个token激活约480亿参数，在LongCat-2.0的基础上进一步强化了原生视觉理解与智能体编程能力。该模型旨在处理需要多模态感知和复杂决策的智能体任务，体现了美团在AI基础模型领域的持续投入。",
-    "title_zh": null,
-    "weighted_score": 0.76,
+    "image_url": null,
+    "category": "行业动态",
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "OpenAI用自主流水线发现并修复Linux内核948个漏洞，展示AI在安全领域的实际应用。",
+    "summary_zh": "OpenAI博客介绍了其构建的自主流水线，该流水线能够发现、验证并生成补丁，用于修复Linux内核中的本地权限提升漏洞。系统共识别出948个此类漏洞，并自动生成修复补丁。这展示了AI在软件安全漏洞挖掘和修复方面的实际能力，涉及自动化漏洞发现、验证和补丁生成的全流程，对AI应用于系统安全具有参考意义。",
+    "title_zh": "少了一千条通往root的路径",
+    "weighted_score": 0.81,
     "score_breakdown": {
-      "source_authority": 0.8,
+      "source_authority": 0.9,
       "novelty": 0.8,
       "impact": 0.8,
-      "practical_value": 0.6
+      "practical_value": 0.7
     },
-    "story_id": "6323466a760effb3",
+    "story_id": "4d3d4e6bb3e088bb",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "zh-meituan-tech",
-        "url": "https://tech.meituan.com/2026/11/02/Meituan-LongCat-2.5.html"
+        "source_id": "openai-blog",
+        "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
       }
     ],
     "curated": true
   },
   {
-    "id": "a3d8f5f8db8d6ea6",
-    "source_id": "arxiv-cs-ai",
-    "title": "Simple Features Beat Most AI Control Monitors",
-    "url": "https://arxiv.org/abs/2610.41713",
-    "published_at": "2026-11-03T05:00:00+00:00",
-    "raw_text": "arXiv:2610.41713v1 Announce Type: cross \nAbstract: AI control relies on monitors to catch a capable model that sabotages its work. These monitors are evaluated on their ability to differentiate honest from backdoored code. We show that on a standard evaluation dataset, simple features beat most monitors without ever running the code, outranking 20 of 24 open-weight models prompted as monitors. The dataset gives its labels away in two ways. People wrote the honest solutions and older language models the backdoors, so the style of the code reveals the class. Additionally, problems that LLMs can backdoor have different characteristics, so basic facts about the problem reveal it too. Swapping one class at a time for code by Claude Sonnet 5 shows that these features reward a contrast between authors, since human code against Sonnet 5's backdoors is easier to separate than the original pairs, 0.95 against 0.79. One in seven backdoors in the standard test set fails our validity checks, which ",
+    "id": "452d1254d315ec59",
+    "source_id": "arxiv-cs-cl",
+    "title": "Fidelity Collapses with Table Size, Not Turn Count: Delivery Architecture in a Deployed Tool-Using Agent",
+    "url": "https://arxiv.org/abs/2611.00442",
+    "published_at": "2026-11-04T05:00:00+00:00",
+    "raw_text": "arXiv:2611.00442v1 Announce Type: new \nAbstract: When a multi-turn agent delivers a tool's structured records into the model's context and re-emits them each turn, every turn can corrupt data the tool computed correctly. We measure this in a production award-travel agent: two architectures over identical frozen payloads, lineage-matched prompts and sampling, differing only in delivery architecture. SYNTHESIS feeds full record sets into the planner's context and answers follow-ups in-head; BYPASS, the deployed system, keeps records in session state, translates follow-ups into arguments for a deterministic filter, and delivers rows over a typed side channel. Across 24 dialogues (339 scored turns per condition), BYPASS scores 92.3% of turns fully correct, SYNTHESIS 45.7% (paired gap +46.6pp [+35.7, +57.1]). Varying delivered-table size by capture date, SYNTHESIS collapses from near-perfect at 10 rows or fewer to 8% or less beyond about 74 rows. On a content-controlled prefix ladder the co",
     "category_hint": [
       "论文研究"
     ],
     "image_url": null,
     "category": "论文研究",
     "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "反直觉结论：简单特征即可胜过多数LLM监控器，对AI控制与安全评估有直接启示。",
-    "summary_zh": "论文研究AI控制场景中用于识别模型 sabotage 行为的监控器。作者在标准评测数据集上比较发现，一些简单特征无需实际运行代码，就能在区分诚实代码与后门代码上超过24个开源权重模型监控器中的20个。这一结果说明复杂LLM监控器未必优于轻量特征方法，对AI控制监控方案的设计与评测基准提出了值得反思的问题。",
-    "title_zh": "简单特征胜过大多数AI控制监控器",
-    "weighted_score": 0.74,
+    "depth_score": 0.85,
+    "reason_zh": "揭示多轮工具调用 agent 中数据保真度随表格规模而非轮数崩塌，对 agent 上下文工程有直接可迁移的工程启示。",
+    "summary_zh": "论文在生产环境的机票预订 agent 上测量多轮工具调用中的数据保真问题：当 agent 把工具返回的结构化记录送入模型上下文并在每轮重新输出时，每一轮都可能破坏工具原本计算正确的数据。作者对比了两种交付架构，使用完全相同的冻结载荷、血缘匹配的提示与采样，唯一变量是交付架构。结果显示保真度下降主要由表格规模驱动，而非对话轮数，说明问题出在数据交付方式而非交互长度，为 agent 上下文工程提供了可操作的架构改进方向。",
+    "title_zh": "保真度随表格规模而非轮数崩塌：已部署工具型 Agent 的交付架构研究",
+    "weighted_score": 0.77,
     "score_breakdown": {
       "source_authority": 0.75,
       "novelty": 0.8,
       "impact": 0.7,
-      "practical_value": 0.7
+      "practical_value": 0.85
     },
-    "story_id": "8c538c9bb906a0e8",
+    "story_id": "83724f044949b80c",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2610.41713"
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2611.00442"
       }
     ],
     "curated": true
   },
   {
-    "id": "9f8f59b5f3951029",
+    "id": "e97680104bf1a296",
+    "source_id": "zh-tonybai",
+    "title": "继Anthropic之后，OpenAI 也重建了自己的版本控制系统",
+    "url": "https://tonybai.com/2026/11/04/openai-pando-rebuild-git-for-ai-agent-era/",
+    "published_at": "2026-11-04T01:00:00+00:00",
+    "raw_text": "OpenAI 最新披露了内部 Git 后端系统 Pando 的设计。面对 Codex 带来的高并发开发负载，OpenAI 没有抛弃 Git，而是通过因果一致性、Packfile 复用、区域缓存和后台 Compaction，重新设计 Git 服务端架构。Pando 将 Push 中位延迟降低近 5 倍，每天处理近 PB 级 Git 数据。从 10 周完成系统建设，到 Codex Agent 参与实现，再到 Lean 和 TLA+ 参与形式化验证，这个项目不仅展示了分布式存储架构的创新，也揭示了 AI Agent 正在如何改变软件工程基础设施。",
+    "category_hint": [
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "技巧与观点",
+    "content_type": "深度分析",
+    "depth_score": 0.8,
+    "reason_zh": "OpenAI自研Git后端Pando的设计复盘，涵盖因果一致性、Packfile复用等架构取舍，极具工程参考价值。",
+    "summary_zh": "OpenAI披露了内部Git后端系统Pando的设计。面对Codex带来的高并发开发负载，OpenAI没有抛弃Git，而是通过因果一致性、Packfile复用、区域缓存和后台Compaction重新设计Git服务端架构。Pando将Push中位延迟降低近5倍，每天处理近PB级Git数据。项目仅用10周完成建设，Codex Agent参与实现，Lean和TLA+参与形式化验证，展示了分布式存储架构创新与AI Agent对软件工程基础设施的改变。",
+    "title_zh": "继Anthropic之后，OpenAI也重建了自己的版本控制系统",
+    "weighted_score": 0.755,
+    "score_breakdown": {
+      "source_authority": 0.8,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.7
+    },
+    "story_id": "5a4c4074e25cf75e",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-tonybai",
+        "url": "https://tonybai.com/2026/11/04/openai-pando-rebuild-git-for-ai-agent-era/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "09aa947305129d47",
+    "source_id": "together-blog",
+    "title": "Together Compiler: Continual Compilation for AI inference",
+    "url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference",
+    "published_at": "2026-11-04T00:00:00+00:00",
+    "raw_text": "Together Compiler uses agents and persistent engines to optimize open models in under 24 hours, delivering up to 3.7x higher throughput as traffic changes.",
+    "category_hint": [
+      "产品发布",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "Together推出编译器，用AI代理持续优化推理，吞吐提升3.7倍，对AI基础设施从业者有参考价值。",
+    "summary_zh": "Together发布Together Compiler，一种面向AI推理的持续编译系统。它利用AI代理和持久化引擎，在不到24小时内对开源模型进行优化，并可根据流量变化动态调整，实现最高3.7倍的吞吐量提升。该系统旨在解决模型、流量和芯片不断变化下的推理性能问题，通过自动化编译流程降低运维复杂度，帮助生产环境保持高效推理。",
+    "title_zh": "Together编译器：面向AI推理的持续编译",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "99dbfa43a401698b",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "together-blog",
+        "url": "https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "493a258a275812f7",
+    "source_id": "together-blog",
+    "title": "Polymorphic Inference: self-tuning inference for open models",
+    "url": "https://www.together.ai/blog/polymorphic-inference",
+    "published_at": "2026-11-04T00:00:00+00:00",
+    "raw_text": "Models, traffic and chips are constantly changing. Polymorphic Inference adapts to each, and Together Compiler uses AI agents to keep production inference tuned.",
+    "category_hint": [
+      "产品发布",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "介绍多态推理概念，结合Together编译器用AI代理自动调优，为推理优化提供新思路。",
+    "summary_zh": "Together提出Polymorphic Inference（多态推理）方法，旨在应对模型、流量和芯片持续变化带来的推理挑战。该方法能够自适应调整，并借助Together Compiler中的AI代理，持续对生产环境中的推理进行调优。文章阐述了多态推理的必要性，以及如何通过自动化手段保持推理性能，减少人工干预，确保开源模型在不同条件下高效运行。",
+    "title_zh": "多态推理：面向开源模型的自调优推理",
+    "weighted_score": 0.745,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.7,
+      "practical_value": 0.8
+    },
+    "story_id": "1b8bdd16b1fc5ffb",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "together-blog",
+        "url": "https://www.together.ai/blog/polymorphic-inference"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "fd3bbf26abc1b606",
     "source_id": "the-decoder",
-    "title": "OpenAI says GPT-6 Astra designed a hardware device from scratch in under a week",
-    "url": "https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/",
-    "published_at": "2026-11-03T20:15:45+00:00",
-    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"989\" src=\"https://the-decoder.com/wp-content/uploads/2026/11/openai_ai_hardware.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1752\" /></p>\n<p>        OpenAI's hardware team used GPT-6 Astra to design a device for the Codex coding agent in under a week, handling everything from the enclosure to the circuit board to the firmware. Several revision rounds were needed before production because the model didn't always account for manufacturing tolerances. A newer internal model scores significantly higher on OpenAI's engineering benchmark, though the company isn't sharing details.</p>\n<p>The article <a href=\"https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/\">OpenAI says GPT-6 Astra designed a hardware device from scratch in under a week</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "title": "Anthropic's new prototype proves which model wrote an AI response without exposing its weights",
+    "url": "https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights/",
+    "published_at": "2026-11-04T15:23:49+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1080\" src=\"https://the-decoder.com/wp-content/uploads/2026/11/Anthropic-FlashProve.webp\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        Anthropic has released FlashProve, a research prototype that uses cryptography to verify whether an AI response actually came from the claimed model. The system still has significant limitations.</p>\n<p>The article <a href=\"https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights/\">Anthropic&#039;s new prototype proves which model wrote an AI response without exposing its weights</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
     "category_hint": [
       "模型发布",
       "行业动态"
     ],
-    "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/openai_ai_hardware.png",
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.2,
-    "reason_zh": "GPT-6 Astra自主设计硬件的案例极具话题性，但报道偏快讯，深度有限。",
-    "summary_zh": "据报道，OpenAI硬件团队使用GPT-6 Astra为Codex编程智能体设计了一款硬件设备，耗时不到一周，涵盖外壳、电路板等环节。该报道称模型从零开始完成设计，展示了AI在硬件工程流程中的自主能力。若属实，这将是AI辅助硬件设计的重要案例，但报道未披露设计复杂度、人工介入程度及验证结果，实际能力边界仍需更多信息判断。",
-    "title_zh": "OpenAI称GPT-6 Astra在不到一周内从零设计出一款硬件设备",
-    "weighted_score": 0.735,
+    "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/Anthropic-FlashProve.webp",
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "用密码学证明模型来源而不暴露权重，是模型溯源与合规的重要新思路。",
+    "summary_zh": "Anthropic 发布研究原型 FlashProve，利用密码学手段验证某段 AI 回复是否确实由所声称的模型生成，且无需暴露模型权重。该机制针对模型冒用、API 转售与身份伪造等问题，为模型提供方可验证的来源证明。文章介绍了其基本工作原理与当前局限，说明该原型仍处于研究阶段，距离生产可用尚有距离，但为 AI 供应链透明度和合规审计提供了新的技术路径。",
+    "title_zh": "Anthropic 新原型可在不暴露权重的情况下证明是哪个模型写的回复",
+    "weighted_score": 0.74,
     "score_breakdown": {
-      "source_authority": 0.7,
+      "source_authority": 0.8,
       "novelty": 0.9,
-      "impact": 0.8,
+      "impact": 0.7,
       "practical_value": 0.5
     },
-    "story_id": "740b205e42363480",
-    "multi_source_count": 8,
+    "story_id": "4a814fce650d6f18",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "tldr-ai",
-        "url": "https://tldr.tech/ai/2026-11-02"
-      },
-      {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1xm89o3/mit_researchers_say_gpt6_astra_improved_a_small/"
-      },
-      {
-        "source_id": "reddit-huggingface",
-        "url": "https://www.reddit.com/r/huggingface/comments/1xm8e8j/gpt6_astra_fixed_qwen3508bs_thinking_loops_by/"
-      },
-      {
-        "source_id": "ifanr",
-        "url": "https://www.ifanr.com/1687285?utm_source=rss&utm_medium=rss&utm_campaign="
-      },
-      {
-        "source_id": "reddit-agi",
-        "url": "https://www.reddit.com/r/agi/comments/1xmt1y0/gpt6_successfully_performed_brain_surgery_on/"
-      },
-      {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1xmt4nj/gpt6_successfully_performed_brain_surgery_on/"
-      },
-      {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1xmuct5/skyfall_ai_demonstrates_sky001_an_engineering/"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmyji8/can_qwen_directly_control_the_robot_as_well_as/"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmz9ca/like_gpt6_astra_qwen_38_27b_can_interpret_model/"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds/"
       },
       {
         "source_id": "the-decoder",
-        "url": "https://the-decoder.com/openai-says-gpt-6-astra-designed-a-hardware-device-from-scratch-in-under-a-week/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "c51548f6045542c0",
-    "source_id": "arxiv-cs-ai",
-    "title": "Context as Infrastructure: Knowledge Compilation for Retrieval in Agentic Systems with Harnesses",
-    "url": "https://arxiv.org/abs/2610.41172",
-    "published_at": "2026-11-03T05:00:00+00:00",
-    "raw_text": "arXiv:2610.41172v1 Announce Type: cross \nAbstract: Retrieval-augmented generation is becoming agentic. A search harness writes queries, reads results, reformulates, and decides when to stop. This largely solves accuracy: a harness with only BM25/grep and MiniMax M3 answers 85% of BrowseComp-Plus and 91% on multi-hop FRAMES in our runs, without compiled or vector indexes. It exposes a context problem: an undisciplined loop repeats queries, rereads documents, and fills the window with unused passages. The missing layer is knowledge compilation: a configurable ingestion pipeline where LLMs enrich documents with context no chunk contains alone--navigation hierarchies with claim-evidence leaves, entity graphs, timelines, mind maps, ontologies, wikis, and memory. Compilation is not a better retriever: under a competent harness, structural artifacts gave no detectable accuracy gain on FRAMES, and a PageIndex-style outline degraded at scale. It is a supply layer. A navigation tree whose leaves",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "提出 agentic RAG 中上下文编译与 harness 设计的新视角，有实验数据支撑，启发性强。",
-    "summary_zh": "这篇 arXiv 论文指出检索增强生成正在走向 agentic：搜索 harness 会自行写查询、读结果、改写并决定何时停止。作者称这基本解决了准确率问题——仅用 BM25/grep 加 MiniMax M3 的 harness，在其实验中就能答对 BrowseComp-Plus 的 85% 和多跳 FRAMES 的 91%，无需编译索引或向量索引。但这也暴露出上下文问题，论文据此提出把上下文当作基础设施、为 agentic 系统中的检索做知识编译的思路。",
-    "title_zh": "上下文即基础设施：带 Harness 的 Agent 系统中面向检索的知识编译",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "e775ed60b572a2ce",
-    "multi_source_count": 1,
-    "sources": [
+        "url": "https://the-decoder.com/schools-that-turn-off-googles-ai-will-lose-search-too-starting-in-2027/"
+      },
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2610.41172"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "7b04a568c5adccd6",
-    "source_id": "deepmind-blog",
-    "title": "Agentic cheminformatics with Google Antigravity",
-    "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
-    "published_at": "2026-11-03T17:01:49+00:00",
-    "raw_text": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
-    "category_hint": [
-      "模型发布",
-      "论文研究"
-    ],
-    "image_url": "https://lh3.googleusercontent.com/UFTBrp1IrRBrc6_f4ibNgtV35iY8F2iTYaqOb1lzR-qZNy-Mb5726xrLKTozohfdZ_3quHe50uyn8z-Wh_Eril_8CVh7py7gH0188sl_EXkoJknlqg=w528-h297-n-nu-rw-lo",
-    "category": "产品发布",
-    "content_type": "教程方法",
-    "depth_score": 0.5,
-    "reason_zh": "DeepMind 展示 Google Antigravity 与化学信息学技能在药物发现中的 agent 工作流，对 AI for Science 实践者有启发。",
-    "summary_zh": "Google DeepMind 博客介绍如何利用 Google Antigravity 平台与化学信息学技能（Cheminformatics Skills）加速药物发现流程。内容涵盖化合物搜索、提出新型刚性化大环分子等任务，展示 agent 在化学信息学工作流中的自动化能力。文章属于方法演示性质，说明如何将 AI agent 与领域工具结合以提升研发效率，但未披露底层模型细节或基准测试结果。",
-    "title_zh": "基于 Google Antigravity 的 agent 化学信息学",
-    "weighted_score": 0.735,
-    "score_breakdown": {
-      "source_authority": 0.9,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.7
-    },
-    "story_id": "b0d85c7dcbf88fcf",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights/"
+      },
       {
-        "source_id": "deepmind-blog",
-        "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "27035a6b4f1f5c20",
-    "source_id": "arxiv-cs-ai",
-    "title": "VLA Policies Do Not Know When Not to Act: Unintended Task Execution and Start Suppression",
-    "url": "https://arxiv.org/abs/2610.41609",
-    "published_at": "2026-11-03T05:00:00+00:00",
-    "raw_text": "arXiv:2610.41609v1 Announce Type: cross \nAbstract: A robot should act only on an instruction from a person or on an intent that the robot explicitly represents and generates. Unintended actions taken without such an instruction can cause risk or inconvenience to people and the environment. We examine how recent vision-language-action (VLA) policies respond when the instruction is missing or meaningless. We apply a paired protocol with empty, neutral, nonsense, infeasible, and wrong-task instructions to six model checkpoints in LIBERO-Goal simulation. Holding the initial state fixed and varying only the instruction, we ask three questions: whether the robot starts to move, which task it completes, and what the instruction determines. Even when the instruction was empty, the robot started moving in every episode with all six checkpoints, and with five of them it often completed a task that the instruction had not specified. On two GR00T checkpoints, the instruction determined which task ",
-    "category_hint": [
-      "论文研究"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "研究论文",
-    "depth_score": 0.8,
-    "reason_zh": "揭示VLA策略在指令缺失时仍会误执行任务的安全隐患，对具身智能落地有直接警示价值。",
-    "summary_zh": "论文研究视觉-语言-动作（VLA）策略在指令缺失或语义不明时的行为，发现这类模型往往不会主动停止，而是继续执行未受指令的任务，带来安全与环境风险。作者提出“非预期任务执行”与“启动抑制”两个问题，系统评估现有VLA策略对缺失指令的响应，并分析其失败模式，指出当前策略缺乏判断“何时不该行动”的能力，为具身智能体的安全部署提出新的评估维度。",
-    "title_zh": "VLA策略不知道何时不该行动：非预期任务执行与启动抑制",
-    "weighted_score": 0.73,
-    "score_breakdown": {
-      "source_authority": 0.75,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.65
-    },
-    "story_id": "af3f896154e764ca",
-    "multi_source_count": 1,
-    "sources": [
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/openai-acquires-pierre-computer-company-to-make-git-keep-up-with-ai-coding-agents/"
+      },
       {
-        "source_id": "arxiv-cs-ai",
-        "url": "https://arxiv.org/abs/2610.41609"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/chatgpt-can-now-turn-text-prompts-and-photos-into-animated-gifs-with-openais-images-2-6-model/"
       }
     ],
     "curated": true
   },
   {
-    "id": "1a6e22a433cc4d88",
-    "source_id": "latent-space",
-    "title": "Building Legal Agents When You Can't See the Data - Jacob Lauritzen, CTO of Legora",
-    "url": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/",
-    "published_at": "2026-11-02T22:54:03+00:00",
-    "raw_text": "Legora can’t read a single trace of what its agent does for a lawyer. The data belongs to the law firm’s clients. How do you build and test an agent when you can’t see its work? Jacob Lauritzen is the CTO of Legora, one of the fastest-growing companies...",
+    "id": "24432e46bcb7c113",
+    "source_id": "aws-ml-blog",
+    "title": "Four layers of context engineering for production AI agents: How Deep Insight applies them in working code",
+    "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/",
+    "published_at": "2026-11-04T16:30:40+00:00",
+    "raw_text": "In production AI agents, context management is the real bottleneck. This post presents a four-layer context engineering framework (architecture, prompts, file-based tools, and verification agents), implemented in working code from Deep Insight, an open source multi-agent data analysis solution on the Strands Agents SDK and Amazon Bedrock AgentCore.",
     "category_hint": [
       "技巧与观点",
-      "行业动态"
-    ],
-    "image_url": "https://i.ytimg.com/vi/bJBEFzlKPoQ/maxresdefault.jpg",
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "Legora CTO分享在无法查看数据的情况下构建法律AI agent的挑战与方案，对agent开发者有很高参考价值。",
-    "summary_zh": "Legora CTO Jacob Lauritzen在访谈中讨论了为法律行业构建AI agent的独特挑战：由于客户数据保密，公司无法查看agent在律师工作中的任何执行轨迹。他分享了如何在缺乏可观测性的情况下进行开发、测试和评估，包括使用合成数据、设计无痕评估方法，以及处理百万单元格级别的表格审查。还探讨了按小时计费商业模式受到的冲击。",
-    "title_zh": "在看不到数据的情况下构建法律智能体——Legora CTO Jacob Lauritzen",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "f7b71cd8ec546e00",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "latent-space",
-        "url": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "19ed9c0e8a91e21d",
-    "source_id": "latent-space",
-    "title": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
-    "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
-    "published_at": "2026-11-02T23:01:02+00:00",
-    "raw_text": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
-    "category_hint": [
-      "技巧与观点",
-      "行业动态"
-    ],
-    "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/ddf5ae31-7afc-4bdb-90ce-b116c9981792/private-evals.jpg?t=1793682299",
-    "category": "技巧与观点",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "深入探讨法律AI agent的评估、数据隐私与商业模式变革，对垂直领域AI落地有启发。",
-    "summary_zh": "这是Legora CTO Jacob Lauritzen的访谈，聚焦于为律师构建AI产品的实践。内容涵盖在没有执行轨迹的情况下进行evals（评估）、处理百万单元格的表格审查，以及按小时计费商业模式出现的裂痕。访谈还涉及如何平衡数据隐私与模型能力，以及法律AI agent的设计取舍，为垂直领域AI应用提供了宝贵经验。",
-    "title_zh": "为律师构建 AI——Legora CTO Jacob Lauritzen",
-    "weighted_score": 0.725,
-    "score_breakdown": {
-      "source_authority": 0.8,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
-    },
-    "story_id": "7ce7e78425c7ba65",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "latent-space",
-        "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6857dc224a419fe9",
-    "source_id": "simonwillison",
-    "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
-    "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
-    "published_at": "2026-11-03T16:29:48+00:00",
-    "raw_text": "<p>Yesterday's hot paper was <a href=\"https://rikiyat.github.io/blog/weight-space-programming/\">Sparks of Weight-Space Programming: LLMs can natively read &amp; write neural network weights</a> by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab. The paper (OK, the authors classify is as a \"blog post\", but it's paper-shaped) found that frontier models, in particular GPT-6 Astra, can both interpret and modify the raw weights of a machine learning model - literally a text description of the model containing a bunch of floating point numbers. I've been playing with one of the examples from the paper and I'm delighted to share that Qwen 3.8 27B running on my laptop can do this as well!</p>\n<h4 id=\"weight-space-programming\">Weight-Space Programming</h4>\n<p>Here's the highlight from their abstract, describing impressive capabilities for GPT-6 Astra and coining the term <strong>Weight-Space Programming</strong> for when LLMs analyze and modify model weights:</p>\n<blockquote>\n<p>Just b",
-    "category_hint": [
-      "技巧与观点",
-      "开源项目"
-    ],
-    "image_url": null,
-    "category": "论文研究",
-    "content_type": "深度分析",
-    "depth_score": 0.8,
-    "reason_zh": "作者用本地小模型复现「权重空间编程」论文，提供一手实验观察，颇具启发性。",
-    "summary_zh": "Simon Willison 撰文回应 Rikiya Takehi 等人关于「权重空间编程」的研究，该研究发现前沿模型（尤其是 GPT-6 Astra）能够原生读取和写入神经网络权重。作者在自己的笔记本电脑上运行 Qwen 3.8 27B，尝试复现类似能力，并记录了实际表现与局限。文章结合一手实验与对原论文的解读，讨论小模型是否也具备权重层面的理解能力，以及这类能力对模型可解释性和安全性的潜在含义。",
-    "title_zh": "我笔记本上的 Qwen 3.8 27B 也能解读模型权重",
-    "weighted_score": 0.71,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.9,
-      "impact": 0.7,
-      "practical_value": 0.5
-    },
-    "story_id": "de35273a195ee914",
-    "multi_source_count": 3,
-    "sources": [
-      {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1xm5oy9/sparks_of_weightspace_programming_llms_can/"
-      },
-      {
-        "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xmo5xu/paper_sparks_of_weightspace_programming_llms_can/"
-      },
-      {
-        "source_id": "simonwillison",
-        "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "5f5608ab08f40a9c",
-    "source_id": "zh-leiphone",
-    "title": "AI教AI开车！百度Apollo World世界模型叩开无人驾驶产业“AGI时刻”",
-    "url": "https://www.leiphone.com/category/industrynews/NVxn28w1vAG2qbFy.html",
-    "published_at": "2026-11-03T13:59:00+00:00",
-    "raw_text": "<p>“世界模型，重点不是渲染的画质是否好看，而是模拟器是否能忠实还原现实物理规律和行为的因果”。11月3日，在深圳举行的百度AI Day·Apollo专场上，百度Apollo首次披露面向物理AI的智能体驱动全模态世界模型Apollo World，并提出世界模型“2+3”判断标准。目前，该模型已用于萝卜快跑全球化测试与验证，助力无人驾驶规模化落地。</p><p><img src=\"https://static.leiphone.com/uploads/new/images/20261103/6ae9e879b74df.png?imageMogr2/quality/90\" /></p><p>百度智能驾驶事业群组(IDG)首席架构师、IDG技术委员会主席王亮表示，世界模型不能只做“生成炫酷视频的画师”，更要成为验证无人驾驶安全性的“考官”。萝卜快跑是中国唯一以端到端技术规模化运行 L4 无人驾驶的出行平台，端到端全无人运营超百万公里，Apollo World为其提供虚拟训练环境，帮助“学生” AI Driver学习、验证和迭代。</p><p><img src=\"https://static.leiphone.com/uploads/new/images/20261103/6ae9e87a4f0de.png?imageMogr2/quality/90\" /></p><p>“Apollo World将虚拟场景内所有交通参与者建模为具备决策与交互能力的AI智能体，支持无人车在虚拟城市任意起终点通行，打造提前验证‘无限未来’的虚拟场景订单。”百度智能驾驶事业群组(IDG)杰出架构师、世界模型负责人杨泽进一步介绍。此外，Apollo World的技术栈还可拓展至机器人等更广泛的物理 AI 场景。</p><p>行业人士分析，Apollo World可“日行十万公里”，其一天完成的虚拟路测里程相当于一辆配备安全员的真实路测车连续测试约三年。依托世界模型带来的能力跃升，叠加数据飞轮效应，行业将呈现强者恒强的格局，这一趋势也正把行业推向等待已久的“AGI时刻”。</p><h3><strong>世界模型不能只是“画得像”，Apollo抛出世界模型“2+3”评判标尺</strong></h3><p>摩根士丹利将世界模型视为AI的“想象引擎”，让AI能在行动前先在虚拟空间推演，实现“先思考、后",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://static.leiphone.com/uploads/new/images/20261103/6ae9e879b74df.png?imageMogr2/quality/90",
-    "category": "模型发布",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "百度Apollo发布世界模型Apollo World，提出'2+3'标准，用于萝卜快跑全球化测试，对自动驾驶领域有参考价值。",
-    "summary_zh": "百度Apollo在AI Day上首次披露面向物理AI的智能体驱动全模态世界模型Apollo World，并提出世界模型'2+3'判断标准，强调重点在于忠实还原物理规律和因果，而非渲染画质。该模型已用于萝卜快跑全球化测试与验证，助力无人驾驶规模化落地。百度IDG首席架构师王亮表示，世界模型应成为验证无人驾驶安全性的'考官'，而不仅是生成视频的画师。萝卜快跑是中国唯一以端到端技术规模化运行L4无人驾驶的平台。",
-    "title_zh": null,
-    "weighted_score": 0.705,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.8,
-      "impact": 0.7,
-      "practical_value": 0.6
-    },
-    "story_id": "dbc22fd28581f4a3",
-    "multi_source_count": 3,
-    "sources": [
-      {
-        "source_id": "zh-oschina",
-        "url": "https://www.oschina.net/news/503374"
-      },
-      {
-        "source_id": "zh-ithome",
-        "url": "https://www.ithome.com/1/021/808.htm"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/NVxn28w1vAG2qbFy.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "755d0bb937aa1a42",
-    "source_id": "toms-hardware",
-    "title": "Google reveals new Gemini 4 Carbon AI model, narrowly beating Claude Opus 5.5",
-    "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/google-reveals-new-gemini-4-carbon-ai-model-narrowly-beating-claude-opus-5-5-frontier-ai-model-is-also-the-least-likely-to-hallucinate-benchmarks-claim",
-    "published_at": "2026-11-03T13:00:00+00:00",
-    "raw_text": "Last week, Google released its latest AI model, Gemini 4 Carbon, topping intelligence rankings charts.",
-    "category_hint": [
-      "行业动态",
       "产品发布"
     ],
-    "image_url": "https://cdn.mos.cms.futurecdn.net/bCKPeU3stBtYmdyp38NMsd-1920-80.jpg",
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "Google发布Gemini 4 Carbon，以微弱优势超越Claude Opus 5.5，值得关注。",
-    "summary_zh": "Google发布了新一代AI模型Gemini 4 Carbon，在智能排行榜上以微弱优势超越Anthropic的Claude Opus 5.5。报道称该模型在多项基准测试中表现领先，但未披露具体技术细节或架构创新。作为头部厂商的旗舰模型更新，此次发布可能影响市场竞争格局，但文章仅为快讯式报道，缺乏深度分析。",
-    "title_zh": "Google发布新Gemini 4 Carbon AI模型，险胜Claude Opus 5.5",
-    "weighted_score": 0.615,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.8,
-      "practical_value": 0.3
-    },
-    "story_id": "eef5a18c39ecaf00",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-agi",
-        "url": "https://www.reddit.com/r/agi/comments/1xm65df/this_is_insane_after_repeated_suicidal_warning/"
-      },
-      {
-        "source_id": "toms-hardware",
-        "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/google-reveals-new-gemini-4-carbon-ai-model-narrowly-beating-claude-opus-5-5-frontier-ai-model-is-also-the-least-likely-to-hallucinate-benchmarks-claim"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "b171bd04e00ab437",
-    "source_id": "replicate-blog",
-    "title": "Which MiniMax H3 model should you use?",
-    "url": "https://replicate.com/blog/which-minimax-h3-model",
-    "published_at": "2026-11-03T00:00:00+00:00",
-    "raw_text": "Three MiniMax H3 models, three prices. Here's when to use H3 Highspeed, H3 Lite, and H3.",
-    "category_hint": [
-      "产品发布",
-      "模型发布"
-    ],
-    "image_url": "https://replicate.com/_content/assets/cover.CZyRG7mh.jpg",
-    "category": "产品发布",
+    "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/22/ML-21082-1-1.jpg",
+    "category": "技巧与观点",
     "content_type": "教程方法",
-    "depth_score": 0.2,
-    "reason_zh": "对比 MiniMax H3 系列三个模型的价格与适用场景，帮助用户选择合适模型。",
-    "summary_zh": "Replicate 博客文章介绍了 MiniMax H3 系列的三款模型：H3 Highspeed、H3 Lite 和 H3，并对比了它们的价格和适用场景。文章旨在帮助用户根据需求选择合适的模型，例如在速度、成本和质量之间权衡。H3 Highspeed 可能适合低延迟场景，H3 Lite 适合成本敏感型任务，而标准版 H3 则提供更全面的能力。文章提供了实用的选型指南。",
-    "title_zh": "你应该使用哪个 MiniMax H3 模型？",
-    "weighted_score": 0.545,
+    "depth_score": 0.8,
+    "reason_zh": "四层上下文工程框架配可运行代码，对构建生产级 agent 有高实用价值。",
+    "summary_zh": "AWS 博客文章提出生产级 AI agent 的上下文管理是真正瓶颈，并给出四层上下文工程框架：架构、提示词、基于文件的工具和验证 agent。该框架在开源多 agent 数据分析方案 Deep Insight 中实现，基于 Strands Agents SDK 和 Amazon Bedrock AgentCore，文章提供了可运行代码和具体应用示例。",
+    "title_zh": "生产级 AI agent 的四层上下文工程：Deep Insight 如何在可运行代码中应用",
+    "weighted_score": 0.725,
     "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.4,
-      "impact": 0.3,
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
       "practical_value": 0.8
     },
-    "story_id": "39672a9d08f9f907",
-    "multi_source_count": 3,
+    "story_id": "c3673fc6608d62ba",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "replicate-blog",
-        "url": "https://replicate.com/blog/which-minimax-h3-model"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xmp6dh/i_built_a_free_opensource_film_studio_on_top_of/"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xmrcyl/comfyui_tutorial_pika_h3_minimax_h3_singularity/"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xmx04k/minimax_h3_in_comfyui_character_swap_talk_sing/"
-      },
-      {
-        "source_id": "reddit-comfyui",
-        "url": "https://www.reddit.com/r/comfyui/comments/1xmyovx/new_image_model_based_on_minimax_h3_7_smaller_5/"
-      },
-      {
-        "source_id": "reddit-huggingface",
-        "url": "https://www.reddit.com/r/huggingface/comments/1xmyr0v/from_minimax_h3_to_image_model_7_smaller_5_faster/"
+        "source_id": "aws-ml-blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/"
       }
     ],
     "curated": true
   },
   {
-    "id": "a5a7127aaba9e4f4",
-    "source_id": "tldr-ai",
-    "title": "Claude Message Threads 🧵, Astra 6.2 spotted 👀, Anthropic nears RSI 🔄",
-    "url": "https://tldr.tech/ai/2026-11-03",
-    "published_at": "2026-11-03T00:00:00+00:00",
-    "raw_text": "",
-    "category_hint": [
-      "行业动态",
-      "模型发布"
-    ],
-    "image_url": null,
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.1,
-    "reason_zh": "TLDR AI 新闻摘要，涵盖 Claude 消息线程、Astra 6.2 和 Anthropic 进展，适合快速了解动态。",
-    "summary_zh": "TLDR AI 的新闻摘要提到了几个动态：Claude 推出了消息线程功能，可能改善对话组织；Astra 6.2 模型被 spotted，暗示即将发布；Anthropic 在递归自我改进（RSI）方面取得进展。这些信息以快讯形式呈现，为读者提供了 AI 领域近期发展的概览，但缺乏详细分析。适合关注行业动态的读者快速浏览。",
-    "title_zh": "Claude 消息线程 🧵、Astra 6.2 被 spotted 👀、Anthropic 接近 RSI 🔄",
-    "weighted_score": 0.49,
-    "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.6,
-      "impact": 0.4,
-      "practical_value": 0.3
-    },
-    "story_id": "cc7d8b8a20b58b7c",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1xm84y2/astra_62_rolling_out/"
-      },
-      {
-        "source_id": "tldr-ai",
-        "url": "https://tldr.tech/ai/2026-11-03"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "a3c012d967e18268",
-    "source_id": "zh-leiphone",
-    "title": "用AI阻断非法野生动物贸易，百度获世界互联网大会杰出贡献奖",
-    "url": "https://www.leiphone.com/category/industrynews/MFCpP2Cl7MEKkzNj.html",
-    "published_at": "2026-11-03T07:08:00+00:00",
-    "raw_text": "<p>11月3日，2026年世界互联网大会乌镇峰会开幕。在开幕式上举行的“世界互联网大会杰出贡献奖”颁奖仪式上，百度凭借与国际爱护动物基金会（IFAW）合作的“濒危物种AI守护官”项目，获得“世界互联网大会杰出贡献奖-社会贡献类”奖项。</p><p>&nbsp;</p><p style=\"text-align: center;\"><img src=\"https://static.leiphone.com/uploads/new/images/20261103/6ae9883bbbb62.png?imageView2/2/w/740\" />&nbsp;</p><p>&nbsp;</p><p>“世界互联网大会杰出贡献奖”自2024年起设立，旨在表彰在全球互联网相关领域作出杰出贡献的个人和企业。此次百度获评社会贡献奖，不仅是对该项目在生物多样性保护成效上的肯定，也是对其近年来持续以人工智能技术赋能全球可持续发展与社会公益实践的权威认可。</p><p>&nbsp;</p><p>近年来，非法野生动物贸易已成为威胁全球生物多样性的主要因素之一。据联合国环境规划署与国际刑警组织联合评估，全球非法野生动植物贸易规模年均高达230亿美元，是仅次于毒品、军火走私的第三大跨国犯罪产业。伴随互联网与社交平台的快速普及，网络空间逐步演变为相关非法交易的核心渠道。</p><p>&nbsp;</p><p>为应对这一全球性难题，百度自2020年起携手国际爱护动物基金会（IFAW）共同发起“濒危物种AI守护官”项目。依托百度飞桨深度学习平台与文心大模型能力，项目历经多次技术迭代升级，实现了对濒危野生动物制品图片的自动化识别，识别准确率达86%，覆盖34类濒危物种及制品。</p><p>&nbsp;</p><p>自部署至2026年4月，该项目累计协助筛查近50万张图片，精准识别5万余幅目标图片，推动清理近18000条非法贸易广告，并将识别模型通过飞桨平台开源，无偿赋能全球公益组织与执法机构。在此之前，该项目已先后入选联合国“AI向善”案例集，并荣获爱迪生奖银奖等国际荣誉。</p><p>&nbsp;</p><p style=\"text-align: center;\"><img src=\"https://static.leiphone.com/uploads/new/images/20261103/6ae9",
-    "category_hint": [
-      "行业动态"
-    ],
-    "image_url": "https://static.leiphone.com/uploads/new/images/20261103/6ae9883bbbb62.png?imageView2/2/w/740",
-    "category": "行业动态",
-    "content_type": "资讯快讯",
-    "depth_score": 0.15,
-    "reason_zh": "企业获奖通稿，AI用于野生动物保护有一定社会意义，但技术细节与可迁移认知有限。",
-    "summary_zh": "2026年世界互联网大会乌镇峰会开幕式上，百度凭借与国际爱护动物基金会（IFAW）合作的“濒危物种AI守护官”项目，获得“世界互联网大会杰出贡献奖-社会贡献类”奖项。该奖项自2024年设立，旨在表彰在全球互联网相关领域作出杰出贡献的个人和企业。文章称此次获奖既是对该项目在生物多样性保护成效上的肯定，也是对百度近年来持续以人工智能技术赋能社会公益的认可，但未披露具体技术方案与效果数据。",
-    "title_zh": null,
-    "weighted_score": 0.3425,
-    "score_breakdown": {
-      "source_authority": 0.55,
-      "novelty": 0.3,
-      "impact": 0.25,
-      "practical_value": 0.2
-    },
-    "story_id": "7165c072dd64f371",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "qbitai",
-        "url": "https://www.qbitai.com/2026/11/507405.html"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/i1taFLhrbqRyM9UH.html"
-      },
-      {
-        "source_id": "zh-leiphone",
-        "url": "https://www.leiphone.com/category/industrynews/MFCpP2Cl7MEKkzNj.html"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "8b418e3443071519",
-    "source_id": "reddit-rag",
-    "title": "How do you handle different types (pdf, word, sccanned doc, arabic docs) in rag pipeline",
-    "url": "https://www.reddit.com/r/Rag/comments/1xmw2op/how_do_you_handle_different_types_pdf_word/",
-    "published_at": "2026-11-03T15:32:42+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Hi everyone, </p> <p>I'm working on a RAG system that needs to process different types of documents, including PDFs and Word files.</p> <p>The challenge is that these documents have different structures:</p> <p>Some contain only text.</p> <p>Some are scanned documents that require OCR.</p> <p>Some contain a mix of text, images, and tables.</p> <p>My question is: How do you handle all these document types in a single RAG pipeline?</p> <p>Do you use a unified document processing system for everything, or do you apply different extraction techniques depending on the document type?</p> <p>I'm particularly interested in how you handle text extraction, OCR, images, tables, and chunking before generating embeddings.</p> <p>I'd love to hear about your approaches, tools, and best practices.</p> <p>Thanks!</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/MarionberryNo7450\"> /u/MarionberryNo7450 </a> <br /> <span><a href=\"htt",
-    "category_hint": [
-      "技巧与观点"
-    ],
-    "image_url": null,
-    "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.2,
-    "reason_zh": "RAG 多格式文档处理的常见求助帖，问题真实但尚无解答内容。",
-    "summary_zh": "发帖者在 r/Rag 求助：正在搭建的 RAG 系统需要处理多种文档，包括 PDF 与 Word，结构差异很大——有的纯文本，有的是需要 OCR 的扫描件，有的混排文字、图片和表格，还涉及阿拉伯语文档。发帖者询问他人如何在同一流水线中统一处理这些格式，例如解析、分块与检索环节的取舍。帖子目前只是提出问题，未给出方案。",
-    "title_zh": "RAG 流水线中如何处理 PDF、Word、扫描件、阿拉伯语文档等不同格式",
-    "weighted_score": 0.3,
-    "score_breakdown": {
-      "source_authority": 0.25,
-      "novelty": 0.3,
-      "impact": 0.2,
-      "practical_value": 0.5
-    },
-    "story_id": "37da34a9e856b548",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1xmw2op/how_do_you_handle_different_types_pdf_word/"
-      },
-      {
-        "source_id": "reddit-langchain",
-        "url": "https://www.reddit.com/r/LangChain/comments/1xmw34u/how_do_you_handle_different_types_pdf_word/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "b673f215412ebf37",
-    "source_id": "reddit-openai",
-    "title": "GPT 6.2 Astra , GPT 6.2 sol",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1xn36d1/gpt_62_astra_gpt_62_sol/",
-    "published_at": "2026-11-03T19:50:45+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/OpenAI/comments/1xn36d1/gpt_62_astra_gpt_62_sol/\"> <img alt=\"GPT 6.2 Astra , GPT 6.2 sol\" src=\"https://preview.redd.it/vkufdc2ecgzh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=9e3155eb4ca2282498f2ae4149ff3636742904ed\" title=\"GPT 6.2 Astra , GPT 6.2 sol\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Looks like the new Astra might drop in about Day!</p> <p>Two new OpenAI model IDs just hit a model tracker:</p> <p>&gt; rc-ada-or-vm</p> <p>&gt; rc-ada-sh-vm</p> <p>Last time (aurora-*-alpha, Oct 18) everyone said GPT-6 Astra. They showed up on Arena as image models.</p> <p>&quot;rc&quot; reads like release candidate. &quot;vm&quot; might mean a sandboxed computer-use build, but that's a guess. </p> <p>They are also now gone.</p> <p>Also: ada was OpenAI's smallest original API model, retired in 2024.</p> <p>I really hope that’s the case, but Thursday is also a possible release day!</p> </div><!-- SC_ON --> &#32; submitted by &#32",
+    "id": "0e072c9f8e9dff5a",
+    "source_id": "databricks-blog",
+    "title": "The Enterprise Case for Open-Weight Models on Databricks",
+    "url": "https://www.databricks.com/blog/enterprise-case-open-weight-models-databricks",
+    "published_at": "2026-11-04T20:00:00+00:00",
+    "raw_text": "As field engineers at Databricks, we spend our days inside enterprise AI deployments,...",
     "category_hint": [
       "产品发布",
       "行业动态"
     ],
-    "image_url": "https://preview.redd.it/vkufdc2ecgzh1.png?width=640&crop=smart&auto=webp&s=9e3155eb4ca2282498f2ae4149ff3636742904ed",
-    "category": "模型发布",
-    "content_type": "资讯快讯",
-    "depth_score": 0.0,
-    "reason_zh": "未经证实的模型名称传闻，信息价值低，不建议作为决策依据。",
-    "summary_zh": "Reddit用户发帖提及“GPT 6.2 Astra”和“GPT 6.2 sol”两个名称，并附截图称新的Astra可能即将发布。帖子内容简短，未提供官方来源、发布时间、功能特性或技术细节，属于社区传闻性质。此类未经证实的模型版本信息容易引发猜测，但缺乏可靠依据，对了解OpenAI实际产品路线帮助有限。",
-    "title_zh": "GPT 6.2 Astra、GPT 6.2 sol",
-    "weighted_score": 0.28,
-    "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.1
-    },
-    "story_id": "cd38c30af87c9660",
-    "multi_source_count": 2,
-    "sources": [
-      {
-        "source_id": "reddit-singularity",
-        "url": "https://www.reddit.com/r/singularity/comments/1xmvgxx/fable_55_vs_gpt_62_astra_svg_of_a_ps5_controller/"
-      },
-      {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1xn36d1/gpt_62_astra_gpt_62_sol/"
-      }
-    ],
-    "curated": true
-  },
-  {
-    "id": "6cb868bd550e293a",
-    "source_id": "reddit-openai",
-    "title": "Sorry, my agents accidentally did it",
-    "url": "https://www.reddit.com/r/OpenAI/comments/1xmx22x/sorry_my_agents_accidentally_did_it/",
-    "published_at": "2026-11-03T16:09:24+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/OpenAI/comments/1xmx22x/sorry_my_agents_accidentally_did_it/\"> <img alt=\"Sorry, my agents accidentally did it\" src=\"https://preview.redd.it/0zhhqq5w8fzh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=7ad87f37e7b11a9bbf318bae0c5f291b759c0ed4\" title=\"Sorry, my agents accidentally did it\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Puzzleheaded-King584\"> /u/Puzzleheaded-King584 </a> <br /> <span><a href=\"https://www.reddit.com/gallery/1xmx22x\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/OpenAI/comments/1xmx22x/sorry_my_agents_accidentally_did_it/\">[comments]</a></span> </td></tr></table>",
-    "category_hint": [
-      "产品发布",
-      "行业动态"
-    ],
-    "image_url": "https://preview.redd.it/0zhhqq5w8fzh1.png?width=140&height=140&crop=1:1,smart&auto=webp&s=7ad87f37e7b11a9bbf318bae0c5f291b759c0ed4",
+    "image_url": null,
     "category": "技巧与观点",
-    "content_type": "观点评论",
-    "depth_score": 0.1,
-    "reason_zh": "r/OpenAI 的梗图帖，调侃智能体“不小心”闯祸，无实质内容。",
-    "summary_zh": "这是发布在 r/OpenAI 版块的一条调侃性质的帖子，标题为“抱歉，是我的智能体不小心干的”，配图为一张方形图片，正文没有展开任何技术说明或事件细节。帖子以玩笑口吻影射当下 AI 智能体自主执行任务时可能出现的越权或误操作问题，属于社区内的情绪化表达与玩梗，不包含具体案例、数据或可迁移的经验，信息价值很低。",
-    "title_zh": "抱歉，是我的智能体不小心干的",
-    "weighted_score": 0.155,
+    "content_type": "深度分析",
+    "depth_score": 0.7,
+    "reason_zh": "Databricks一线工程师基于企业部署经验，论证开放权重模型的企业价值，对选型与落地有可迁移的实践洞察。",
+    "summary_zh": "Databricks的现场工程师基于日常深入企业AI部署的经验，撰文阐述在企业环境中采用开放权重模型（open-weight models）的理由。文章从成本控制、数据主权、定制化微调、合规审计和避免供应商锁定等角度展开，结合真实部署案例说明开放权重模型在性能与可控性之间的平衡，并讨论了在Databricks平台上落地这类模型的工程考量与最佳实践。",
+    "title_zh": "在Databricks上采用开放权重模型的企业理由",
+    "weighted_score": 0.725,
     "score_breakdown": {
-      "source_authority": 0.2,
-      "novelty": 0.2,
-      "impact": 0.1,
-      "practical_value": 0.1
+      "source_authority": 0.8,
+      "novelty": 0.7,
+      "impact": 0.6,
+      "practical_value": 0.8
     },
-    "story_id": "5f60da5657839593",
-    "multi_source_count": 2,
+    "story_id": "f31df3af271a1a4f",
+    "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-agi",
-        "url": "https://www.reddit.com/r/agi/comments/1xmw01o/sorry_my_agents_accidentally_did_it/"
-      },
-      {
-        "source_id": "reddit-openai",
-        "url": "https://www.reddit.com/r/OpenAI/comments/1xmx22x/sorry_my_agents_accidentally_did_it/"
+        "source_id": "databricks-blog",
+        "url": "https://www.databricks.com/blog/enterprise-case-open-weight-models-databricks"
       }
     ],
     "curated": true
   },
   {
-    "id": "0ffd06fc5d8c4b91",
+    "id": "a25889fbdb3ea140",
+    "source_id": "arxiv-cs-cl",
+    "title": "Rethinking LLM Pruning via Test-Time Scaling",
+    "url": "https://arxiv.org/abs/2611.01133",
+    "published_at": "2026-11-04T05:00:00+00:00",
+    "raw_text": "arXiv:2611.01133v1 Announce Type: new \nAbstract: Structured pruning reduces the size of large language models, often at the cost of lower accuracy. Whether this decline reflects diminished reasoning capacity or greater difficulty in sampling correct solutions is less clear. We examine this question across expert, FFN and layer pruning on four mathematical and coding benchmarks, comparing original and pruned models through pass@k at matched sampling budgets. Even after substantial pruning, some models match or exceed the original model's reasoning coverage despite lower pass@1, and solve problems left unsolved in the original samples. Retaining broad coverage, however, does not mean that correct solutions remain easy to obtain. Under severe pruning, diverse generated chain-of-thought (CoT) traces can coexist with increased repetition and less reliable generation. As correct answers become harder to sample, the additional attempts can sharply increase total token use even when individual",
+    "category_hint": [
+      "论文研究"
+    ],
+    "image_url": null,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.8,
+    "reason_zh": "重新审视剪枝损失来源，区分推理能力下降与采样难度，视角新颖，对模型压缩实践有启发。",
+    "summary_zh": "论文研究结构化剪枝导致大模型精度下降的成因，试图区分究竟是模型推理能力真的受损，还是仅仅更难采样到正确答案。作者在专家、FFN 与整层剪枝三种方式上，针对四个数学与编程基准进行实验，并引入测试时扩展（test-time scaling）作为分析工具，比较原始模型与剪枝模型在增加采样预算后的表现差异。该工作为理解剪枝的真实代价、以及用推理时计算弥补压缩损失提供了实证依据。",
+    "title_zh": "通过测试时扩展重新审视大模型剪枝",
+    "weighted_score": 0.7225,
+    "score_breakdown": {
+      "source_authority": 0.85,
+      "novelty": 0.75,
+      "impact": 0.6,
+      "practical_value": 0.65
+    },
+    "story_id": "c3b13c0a4f1e0a3f",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "arxiv-cs-cl",
+        "url": "https://arxiv.org/abs/2611.01133"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "4a721852edbedd01",
     "source_id": "reddit-localllama",
-    "title": "gemma4: graph optimizations (massive gains on pp for E2B and E4B) by max-krasnyansky · Pull Request #31356 · ggml-org/llama.cpp",
-    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xn6mm0/gemma4_graph_optimizations_massive_gains_on_pp/",
-    "published_at": "2026-11-03T22:02:49+00:00",
-    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xn6mm0/gemma4_graph_optimizations_massive_gains_on_pp/\"> <img alt=\"gemma4: graph optimizations (massive gains on pp for E2B and E4B) by max-krasnyansky · Pull Request #31356 · ggml-org/llama.cpp\" src=\"https://external-preview.redd.it/RjgfsmDgPzKbigszPlsO5md7O0FzZxk9NWj1nOBMGx4.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=834a58a733ae9fd7a24f7145651dd68a43ba439e\" title=\"gemma4: graph optimizations (massive gains on pp for E2B and E4B) by max-krasnyansky · Pull Request #31356 · ggml-org/llama.cpp\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>big prompt processing speedup for gemma E2B/E4B</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/jacek2023\"> /u/jacek2023 </a> <br /> <span><a href=\"https://github.com/ggml-org/llama.cpp/pull/31356\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xn6mm0/gemma4_graph_optimizations_massive_gains_o",
+    "title": "LFM3-Omni-2B running fully offline on my iPhone 18 Pro Max at ~80 tok/s, powered by custom WebGPU kernels in a React Native app.",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xntou1/lfm3omni2b_running_fully_offline_on_my_iphone_18/",
+    "published_at": "2026-11-04T17:08:06+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xntou1/lfm3omni2b_running_fully_offline_on_my_iphone_18/\"> <img alt=\"LFM3-Omni-2B running fully offline on my iPhone 18 Pro Max at ~80 tok/s, powered by custom WebGPU kernels in a React Native app.\" src=\"https://external-preview.redd.it/Y2RvZHg0aXVubXpoMTgK8tJqlYMFaCeHoZ0JTWlWuSCLZ3eHNF1TkS9sPWWs.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=4f8c50b9ebb288cf8db9fa96af944ecb9e181daf\" title=\"LFM3-Omni-2B running fully offline on my iPhone 18 Pro Max at ~80 tok/s, powered by custom WebGPU kernels in a React Native app.\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/xenovatech\"> /u/xenovatech </a> <br /> <span><a href=\"https://v.redd.it/vrc0vshunmzh1\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xntou1/lfm3omni2b_running_fully_offline_on_my_iphone_18/\">[comments]</a></span> </td></tr></table>",
     "category_hint": [
       "开源项目",
       "技巧与观点"
     ],
-    "image_url": "https://external-preview.redd.it/RjgfsmDgPzKbigszPlsO5md7O0FzZxk9NWj1nOBMGx4.png?width=640&crop=smart&auto=webp&s=834a58a733ae9fd7a24f7145651dd68a43ba439e",
+    "image_url": "https://external-preview.redd.it/Y2RvZHg0aXVubXpoMTgK8tJqlYMFaCeHoZ0JTWlWuSCLZ3eHNF1TkS9sPWWs.png?width=640&crop=smart&auto=webp&s=4f8c50b9ebb288cf8db9fa96af944ecb9e181daf",
     "category": "开源项目",
-    "content_type": "资讯快讯",
-    "depth_score": 0.3,
-    "reason_zh": "llama.cpp 针对 Gemma 4 的图优化 PR，显著提升 E2B/E4B 的提示处理性能，对本地部署有实用价值。",
-    "summary_zh": "该帖子指向 llama.cpp 仓库的一个 Pull Request，由 max-krasnyansky 提交，标题为“gemma4: graph optimizations (massive gains on pp for E2B and E4B)”。该 PR 针对 Gemma 4 模型进行了计算图优化，在 E2B 和 E4B 模型上实现了提示处理（pp）的大幅性能提升。这对于使用 llama.cpp 在本地运行 Gemma 4 的用户来说是一个重要的性能改进，可能涉及算子融合或内存布局优化。",
-    "title_zh": "gemma4: 图优化（E2B 和 E4B 的 pp 性能大幅提升）by max-krasnyansky · Pull Request #31356 · ggml-org/llama.cpp",
-    "weighted_score": 0.665,
+    "content_type": "教程方法",
+    "depth_score": 0.7,
+    "reason_zh": "在 iPhone 上通过自定义 WebGPU 内核离线运行 2B 模型达到 80 tok/s，展示了端侧推理的工程可行性。",
+    "summary_zh": "作者展示了在 iPhone 18 Pro Max 上完全离线运行 LFM3-Omni-2B 模型，速度约 80 tok/s，实现方式是在 React Native 应用中编写自定义 WebGPU 内核。该案例证明了在移动端通过 WebGPU 进行高效本地推理的可行性，涉及内核优化、内存管理和跨平台集成等工程细节，对端侧 AI 部署和移动推理优化有较强的实践参考价值。",
+    "title_zh": "LFM3-Omni-2B 在我的 iPhone 18 Pro Max 上完全离线运行，约 80 tok/s，由 React Native 应用中的自定义 WebGPU 内核驱动",
+    "weighted_score": 0.585,
     "score_breakdown": {
-      "source_authority": 0.6,
-      "novelty": 0.7,
-      "impact": 0.6,
-      "practical_value": 0.8
+      "source_authority": 0.4,
+      "novelty": 0.8,
+      "impact": 0.5,
+      "practical_value": 0.7
     },
-    "story_id": "0341e5eb6ac891b7",
-    "multi_source_count": 1,
+    "story_id": "e1f5391d36a22690",
+    "multi_source_count": 2,
     "sources": [
       {
+        "source_id": "reddit-huggingface",
+        "url": "https://www.reddit.com/r/huggingface/comments/1xnei49/lfm317b_finetuned_for_kazakh_base_model_doesnt/"
+      },
+      {
         "source_id": "reddit-localllama",
-        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xn6mm0/gemma4_graph_optimizations_massive_gains_on_pp/"
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xntou1/lfm3omni2b_running_fully_offline_on_my_iphone_18/"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "dce6e5008b8bffe8",
-    "source_id": "zh-tmtpost",
-    "title": "DeepSeek不满足于模型，还要让AI自己干活",
-    "url": "https://www.tmtpost.com/8190971.html",
-    "published_at": "2026-11-03T09:38:34+00:00",
-    "raw_text": "DeepSeek开源Super-agent原型，探索自主智能体架构。",
+    "id": "7e2a0d987c3a71f0",
+    "source_id": "reddit-localllama",
+    "title": "Kimi-K3.1-Pro is now open-weights",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/",
+    "published_at": "2026-11-04T15:44:08+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/\"> <img alt=\"Kimi-K3.1-Pro is now open-weights\" src=\"https://external-preview.redd.it/8pxJ_mZEono8vgcxu6JFglJpS83CRqtH6-eQevQ6o4k.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=221a09cec236af578dea1f721de7ed180b72e006\" title=\"Kimi-K3.1-Pro is now open-weights\" /> </a> </td><td> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/ApprehensiveAd3629\"> /u/ApprehensiveAd3629 </a> <br /> <span><a href=\"https://huggingface.co/moonshotai/Kimi-K3.1-Pro\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/\">[comments]</a></span> </td></tr></table>",
     "category_hint": [
-      "行业动态"
+      "开源项目",
+      "技巧与观点"
     ],
-    "image_url": "https://images.tmtpost.com/uploads/images/2023/tkrss/675859f3.png",
-    "category": "开源项目",
+    "image_url": "https://external-preview.redd.it/8pxJ_mZEono8vgcxu6JFglJpS83CRqtH6-eQevQ6o4k.png?width=640&crop=smart&auto=webp&s=221a09cec236af578dea1f721de7ed180b72e006",
+    "category": "模型发布",
     "content_type": "资讯快讯",
-    "depth_score": 0.35,
-    "reason_zh": "DeepSeek开源智能体原型，关注其自主智能体架构思路，对跟进Agent方向有参考价值。",
-    "summary_zh": "据钛媒体报道，DeepSeek在模型之外进一步布局智能体方向，开源了一个名为Super-agent的原型，探索让AI自主完成任务的智能体架构。报道指出，这标志着DeepSeek不满足于只做基础模型，而是希望向具备自主规划与执行能力的Agent系统延伸。文章围绕该原型的架构设计、能力边界以及DeepSeek在智能体赛道的战略意图展开讨论，并提及自主智能体在任务拆解、工具调用与多步执行上的关键挑战。",
-    "title_zh": null,
-    "weighted_score": 0.6225,
+    "depth_score": 0.1,
+    "reason_zh": "Kimi-K3.1-Pro 开放权重，对本地部署与开源生态有直接影响，值得关注。",
+    "summary_zh": "Reddit r/LocalLLaMA 社区出现帖子称 Kimi-K3.1-Pro 已开放权重（open-weights），帖子以图片形式呈现，未附详细说明。这意味着该模型将可被下载并在本地或私有环境部署，对关注开源大模型、本地推理与微调的用户具有直接意义。目前信息仅为社区转述，尚缺官方发布细节，如许可证类型、参数规模、量化版本可用性及硬件要求等，需等待官方公告或社区实测进一步确认。",
+    "title_zh": "Kimi-K3.1-Pro 现已开放权重",
+    "weighted_score": 0.5775,
     "score_breakdown": {
-      "source_authority": 0.55,
+      "source_authority": 0.4,
       "novelty": 0.7,
       "impact": 0.65,
       "practical_value": 0.6
     },
-    "story_id": "3f3009740884debe",
-    "multi_source_count": 1,
+    "story_id": "e3018fd30864a591",
+    "multi_source_count": 2,
     "sources": [
       {
-        "source_id": "zh-tmtpost",
-        "url": "https://www.tmtpost.com/8190971.html"
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnrhvb/kimik31pro_is_now_openweights/"
+      },
+      {
+        "source_id": "vercel-blog",
+        "url": "https://vercel.com/changelog/kimi-k3-1-pro-now-has-more-zdr-providers-on-ai-gateway"
       }
     ],
-    "curated": true,
-    "gate_backfill": true
+    "curated": true
   },
   {
-    "id": "10dab842bc689c46",
-    "source_id": "simonwillison",
-    "title": "llm 0.37",
-    "url": "https://simonwillison.net/2026/Nov/2/llm/",
-    "published_at": "2026-11-02T23:49:30+00:00",
-    "raw_text": "<p><strong>Release:</strong> <a href=\"https://github.com/simonw/llm/releases/tag/0.37\">llm 0.37</a></p>\n        <p>There's a <em>lot</em> of stuff in this new release of my LLM CLI tool and Python library, representing around two months of accumulated features and fixes.</p>\n<p>I added <code>gpt-6.1-sol</code> and <code>gpt-6.1-terra</code>, plus a new <a href=\"https://llm.datasette.io/en/stable/other-models.html#configure-an-openai-compatible-model\">llm openai endpoint add</a> command to make it easier to configure additional models that use OpenAI-compatible endpoints.</p>\n<p>I switched the default model (if you have not set your own default) to <code>gpt-6-luna</code> - half the price of the previous default, <code>gpt-5.6-luna</code>.</p>\n<p>LLM's support for embeddings now accepts that different binary content may have different content-type - necessary for models like <a href=\"https://deepmind.google/models/gemini/embedding/\">Gemini Embedding 2</a>, which can embed text, audio, i",
+    "id": "8d4a48eb32f63b29",
+    "source_id": "qbitai",
+    "title": "虎鲸文娱“鲸锐AI”平台正式上线，AI视频单分钟成本节省30%以上",
+    "url": "https://www.qbitai.com/2026/11/507567.html",
+    "published_at": "2026-11-04T08:49:12+00:00",
+    "raw_text": "11月4日，虎鲸文娱集团打造的行业首个AI影视制作与管理平台“鲸锐AI”正式上线。",
+    "category_hint": [
+      "行业动态",
+      "模型发布"
+    ],
+    "image_url": null,
+    "category": "产品发布",
+    "content_type": "产品发布",
+    "depth_score": 0.2,
+    "reason_zh": "虎鲸文娱推出AI影视制作平台，宣称单分钟成本降30%，属行业应用落地案例。",
+    "summary_zh": "11月4日，虎鲸文娱集团打造的行业首个AI影视制作与管理平台“鲸锐AI”正式上线。该平台旨在通过AI技术优化影视制作流程，官方称可将AI视频单分钟成本节省30%以上。此举标志着AI在影视内容生产领域的进一步商业化应用，可能对传统影视制作模式产生影响，但具体技术细节和落地效果尚未披露。",
+    "title_zh": null,
+    "weighted_score": 0.505,
+    "score_breakdown": {
+      "source_authority": 0.6,
+      "novelty": 0.5,
+      "impact": 0.4,
+      "practical_value": 0.5
+    },
+    "story_id": "d2765b916904f96e",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "qbitai",
+        "url": "https://www.qbitai.com/2026/11/507567.html"
+      },
+      {
+        "source_id": "zh-leiphone",
+        "url": "https://www.leiphone.com/category/industrynews/vxZxNvbxdDFhYp55.html"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "4c0fc77ea61b93eb",
+    "source_id": "reddit-singularity",
+    "title": "Ricursive Intelligence released their first LLM: Ripple-65B Preview, a 65B dense model.",
+    "url": "https://www.reddit.com/r/singularity/comments/1xnwetn/ricursive_intelligence_released_their_first_llm/",
+    "published_at": "2026-11-04T18:50:10+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Ripple sets a new state-of-the-art for U.S. open-weight models in agentic coding tasks, surpassing significantly larger models including Muse Spark Open-816B, Beam-501B, Inkling-975B, and Nemotron 3 Ultra-550B.</p> <p>Ripple-65B Preview was trained on 12 trillion tokens, supports up to 1M context length, and achieves:<br /> - 80.5% on TerminalBench 2.1<br /> - 79.1% on SWE-Bench Pro v2.0-Hard<br /> - 44.3% on DeepSWE v1.1</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/xyzrt\"> /u/xyzrt </a> <br /> <span><a href=\"https://x.com/RicursiveAI/status/2118046765857546733\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/singularity/comments/1xnwetn/ricursive_intelligence_released_their_first_llm/\">[comments]</a></span>",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": null,
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.1,
+    "reason_zh": "Ricursive Intelligence 发布 65B 稠密模型 Ripple-65B Preview，在 agentic coding 任务上超越多个更大模型，值得关注。",
+    "summary_zh": "Ricursive Intelligence 发布首个 LLM：Ripple-65B Preview，一个 65B 稠密模型。据帖子称，该模型在美国开源权重模型的 agentic coding 任务上创下新 SOTA，显著超越 Muse Spark Open-816B、Beam-501B、Inkling-975B 和 Nemotron 3 Ultra-550B 等更大模型。模型训练使用 12 万亿 token，支持最高 100 万上下文长度，在 TerminalBench 2.1 上达到 80.5%。帖子未提供完整技术报告，性能声明有待社区验证。",
+    "title_zh": "Ricursive Intelligence 发布首个 LLM：Ripple-65B Preview，一个 65B 稠密模型",
+    "weighted_score": 0.47,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.7,
+      "impact": 0.5,
+      "practical_value": 0.4
+    },
+    "story_id": "62c3bc83f73693c8",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-singularity",
+        "url": "https://www.reddit.com/r/singularity/comments/1xnwetn/ricursive_intelligence_released_their_first_llm/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnx3cs/ricursiveairipple65bpreview_hugging_face/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "a028e57da567f750",
+    "source_id": "reddit-llmdevs",
+    "title": "Graded 1,300+ word-association clues: Google's models beat OpenAI's, and both beat Anthropic's",
+    "url": "https://www.reddit.com/r/LLMDevs/comments/1xnyji0/graded_1300_wordassociation_clues_googles_models/",
+    "published_at": "2026-11-04T20:12:10+00:00",
+    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I run a word-association benchmark: one model gives a one-word clue meant to point at several of its team's words on a 5x5 board, and a teammate model guesses. Each clue is graded 0-100, mostly on how many of its own words a guesser is expected to find before hitting a wrong one. Models play each other in paired games under the same rules and the same grader.</p> <p>Average clue grade (± is a 95% interval):<br /> Gemini 4 Argon: 67 ±3<br /> Gemini 3.8 Flash: 64.5 ±2<br /> GPT-6.1 Terra: 64 ±4<br /> GPT-6 Astra: 63 ±2<br /> GPT-6.1 Sol: 61 ±2.5<br /> Claude Opus 5.5: 58 ±2<br /> Claude Sonnet 5: 57 ±4<br /> Claude Fable 5.1: 56 ±3</p> <p>Guesses that hit the other team's word or the assassin: Gemini 0-0.5%, GPT-6 0.8-1.9%, Claude 1.7-6%.</p> <p>The cheap tier with thinking off showed the same OpenAI-over-Anthropic gap: GPT-6 Luna beat Claude Haiku 5.5 14-2 in a 16-game head-to-head.</p> <p>Caveats: it's one task, the grader is partly LLM raters, and the",
     "category_hint": [
       "技巧与观点",
       "开源项目"
     ],
     "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.2,
-    "reason_zh": "Simon Willison 的 LLM 工具更新，包含新模型支持和功能改进，对使用者有实用价值。",
-    "summary_zh": "Simon Willison 发布了 LLM CLI 工具和 Python 库的 0.37 版本，这是约两个月的功能与修复积累。新增了对 gpt-6.1-sol 和 gpt-6.1-terra 模型的支持，并引入了新的功能。该版本包含大量更新，具体细节可查看发布说明。对于使用该工具进行大模型交互的开发者来说，这次更新提供了更多模型选择和功能增强。",
-    "title_zh": "llm 0.37",
-    "weighted_score": 0.57,
-    "score_breakdown": {
-      "source_authority": 0.7,
-      "novelty": 0.5,
-      "impact": 0.3,
-      "practical_value": 0.8
-    },
-    "story_id": "0e39217b1431460d",
-    "multi_source_count": 1,
-    "sources": [
-      {
-        "source_id": "simonwillison",
-        "url": "https://simonwillison.net/2026/Nov/2/llm/"
-      }
-    ],
-    "curated": true,
-    "gate_backfill": true
-  },
-  {
-    "id": "44404ec76da0a3bf",
-    "source_id": "reddit-machinelearning",
-    "title": "We turned 10 years of ML papers into one page per topic: benchmark records, what got tried, what reviewers expect [P]",
-    "url": "https://www.reddit.com/r/MachineLearning/comments/1xmk8rx/we_turned_10_years_of_ml_papers_into_one_page_per/",
-    "published_at": "2026-11-03T05:09:18+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>We've been working on this for a while and shipped it today.</p> <p>We took every accepted paper from ICML, NeurIPS, ICLR, CVPR and AAAI since 2016 (about 109k), grouped them into ~1,260 topics, and pulled the results tables and ablations out of the full text of 79k of them. The research map just shows the grouping, but each topic page shows what the papers actually report.</p> <p>Here's the one for compact/efficient Gaussian splatting:<br /> <a href=\"https://atlas.scime.ai/research/3d-vision/gaussian-splatting/compact-and-efficient-gaussian-splatting\">https://atlas.scime.ai/research/3d-vision/gaussian-splatting/compact-and-efficient-gaussian-splatting</a></p> <p>A few things it shows: - the topic went from 29 papers in 2023-24 to 240 in 2025-26 - best reported numbers per benchmark over time, with the paper that set each one. Deep Blending PSNR, for example, has barely moved (30.42 → 30.45) - ablations from recent papers, including the ones that hurt ",
-    "category_hint": [
-      "论文研究",
-      "行业动态"
-    ],
-    "image_url": null,
-    "category": "开源项目",
-    "content_type": "产品发布",
-    "depth_score": 0.4,
-    "reason_zh": "把十万级 ML 论文按主题聚合出基准记录与审稿预期的工具，对选题和写作有实用价值。",
-    "summary_zh": "作者团队发布了一个研究地图工具：抓取 2016 年以来 ICML、NeurIPS、ICLR、CVPR、AAAI 录用的约 10.9 万篇论文，归入约 1260 个主题，并从其中 7.9 万篇全文里抽取结果表格与消融实验。研究地图只展示主题分组，而每个主题页则呈现论文实际做了什么：基准记录、尝试过的方法，以及审稿人通常的期待。目标是帮助研究者快速了解某一方向的历史进展与常见审稿标准。",
-    "title_zh": "我们把 10 年 ML 论文整理成每个主题一页：基准记录、尝试过什么、审稿人期待什么",
-    "weighted_score": 0.53,
+    "category": "论文研究",
+    "content_type": "研究论文",
+    "depth_score": 0.5,
+    "reason_zh": "Reddit用户自建词语联想基准测试，对比谷歌、OpenAI、Anthropic模型表现，方法有趣但来源权威性低。",
+    "summary_zh": "一位Reddit用户搭建了词语联想基准测试：一个模型给出单词线索，指向5x5棋盘上本队的多个词，队友模型据此猜测。每条线索按0-100打分，主要依据猜词方在猜错前能命中多少个己方词。模型在相同规则和同一评分器下进行配对对战。作者对1300多条线索进行了评分，结果显示谷歌模型优于OpenAI模型，两者均优于Anthropic模型。",
+    "title_zh": "评分1300多条词语联想线索：谷歌模型胜过OpenAI，两者均胜过Anthropic",
+    "weighted_score": 0.44,
     "score_breakdown": {
       "source_authority": 0.3,
       "novelty": 0.7,
-      "impact": 0.5,
+      "impact": 0.3,
+      "practical_value": 0.5
+    },
+    "story_id": "62167ebfeae08bf6",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-artificial",
+        "url": "https://www.reddit.com/r/artificial/comments/1xnbvcs/graded_1300_wordassociation_clues_googles_models/"
+      },
+      {
+        "source_id": "reddit-llmdevs",
+        "url": "https://www.reddit.com/r/LLMDevs/comments/1xnyji0/graded_1300_wordassociation_clues_googles_models/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "fd2c14afc4e17601",
+    "source_id": "reddit-agi",
+    "title": "56% of voters said AI and data centers were a \"crucial or major\" factor in their vote",
+    "url": "https://www.reddit.com/r/agi/comments/1xnsq2e/56_of_voters_said_ai_and_data_centers_were_a/",
+    "published_at": "2026-11-04T16:31:39+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/agi/comments/1xnsq2e/56_of_voters_said_ai_and_data_centers_were_a/\"> <img alt=\"56% of voters said AI and data centers were a &quot;crucial or major&quot; factor in their vote\" src=\"https://preview.redd.it/a7ed1d1shmzh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=c8cf301c58944b38c1d93072f56bb53e61ddee93\" title=\"56% of voters said AI and data centers were a &quot;crucial or major&quot; factor in their vote\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Source: <a href=\"https://www.nbcnews.com/politics/2026-elections/exit-polls\">https://www.nbcnews.com/politics/2026-elections/exit-polls</a></p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Malor777\"> /u/Malor777 </a> <br /> <span><a href=\"https://i.redd.it/a7ed1d1shmzh1.png\">[link]</a></span> &#32; <span><a href=\"https://www.reddit.com/r/agi/comments/1xnsq2e/56_of_voters_said_ai_and_data_centers_were_a/\">[comments]</a></span> </td></tr></tab",
+    "category_hint": [
+      "行业动态",
+      "技巧与观点"
+    ],
+    "image_url": "https://preview.redd.it/a7ed1d1shmzh1.png?width=640&crop=smart&auto=webp&s=c8cf301c58944b38c1d93072f56bb53e61ddee93",
+    "category": "行业动态",
+    "content_type": "资讯快讯",
+    "depth_score": 0.1,
+    "reason_zh": "民调显示 56% 选民认为 AI 与数据中心是投票重要因素，属快讯。",
+    "summary_zh": "Reddit 帖子分享了一项民调结果：56% 的选民表示 AI 和数据中心是他们投票中“关键或重要”的考量因素。这反映出 AI 基础设施与政策议题正成为选举政治的一部分，可能影响未来能源、监管和科技政策走向。帖子内容简短，属于数据快讯。",
+    "title_zh": "56% 选民称 AI 和数据中心是其投票的“关键或重要”因素",
+    "weighted_score": 0.33,
+    "score_breakdown": {
+      "source_authority": 0.3,
+      "novelty": 0.4,
+      "impact": 0.4,
+      "practical_value": 0.2
+    },
+    "story_id": "c834897512e68327",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-agi",
+        "url": "https://www.reddit.com/r/agi/comments/1xnsq2e/56_of_voters_said_ai_and_data_centers_were_a/"
+      },
+      {
+        "source_id": "reddit-openai",
+        "url": "https://www.reddit.com/r/OpenAI/comments/1xnst0l/56_of_voters_said_ai_and_data_centers_were_a/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "f04fe9f72fb9f631",
+    "source_id": "reddit-stablediffusion",
+    "title": "AuroraIMG2-100M Releases!",
+    "url": "https://www.reddit.com/r/StableDiffusion/comments/1xnzxr6/auroraimg2100m_releases/",
+    "published_at": "2026-11-04T21:06:50+00:00",
+    "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/StableDiffusion/comments/1xnzxr6/auroraimg2100m_releases/\"> <img alt=\"AuroraIMG2-100M Releases!\" src=\"https://external-preview.redd.it/KalSi81xJYACJcRazjOOtSnUhGLbz4WPh9lveAj_9fk.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=0d7717c8b06f5d47dea1f164bdefe6c51eb411df\" title=\"AuroraIMG2-100M Releases!\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>This new model achieves large improvements from the Preview.</p> <p>A detailed explanation on its training, architecture can be found in the model card, as well as a quick start (diffusers compatible), and samples.</p> <p>It is licensed under apache 2.0, have fun!</p> <p>Any questions, feedback, and criticism is welcome!</p> <p>Edit: removed the slightly misleading headline.</p> </div><!-- SC_ON --> &#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Tall_Abrocoma_3533\"> /u/Tall_Abrocoma_3533 </a> <br /> <span><a href=\"https://huggingface.co/AuroraAI-Research/AuroraIMG2-100M\">",
+    "category_hint": [
+      "开源项目",
+      "技巧与观点"
+    ],
+    "image_url": "https://external-preview.redd.it/KalSi81xJYACJcRazjOOtSnUhGLbz4WPh9lveAj_9fk.png?width=640&crop=smart&auto=webp&s=0d7717c8b06f5d47dea1f164bdefe6c51eb411df",
+    "category": "模型发布",
+    "content_type": "产品发布",
+    "depth_score": 0.15,
+    "reason_zh": "小型图像模型发布消息，信息量有限，仅适合关注轻量生成模型的读者。",
+    "summary_zh": "Reddit StableDiffusion 版块出现 AuroraIMG2-100M 的发布帖，从标题看是一款参数量约1亿的图像生成模型。帖子以图片形式呈现，正文内容极少，未披露训练数据、架构细节、评测结果或获取方式等关键信息。作为轻量级图像模型的发布动态，其实际能力与适用场景仍需更多资料佐证。",
+    "title_zh": "AuroraIMG2-100M 发布！",
+    "weighted_score": 0.2975,
+    "score_breakdown": {
+      "source_authority": 0.25,
+      "novelty": 0.45,
+      "impact": 0.2,
+      "practical_value": 0.3
+    },
+    "story_id": "cdc9b4637f788f0e",
+    "multi_source_count": 2,
+    "sources": [
+      {
+        "source_id": "reddit-stablediffusion",
+        "url": "https://www.reddit.com/r/StableDiffusion/comments/1xnzxr6/auroraimg2100m_releases/"
+      },
+      {
+        "source_id": "reddit-localllama",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xnzynf/auroraimg2100m_releases/"
+      }
+    ],
+    "curated": true
+  },
+  {
+    "id": "8cfb763cf1bbbe3a",
+    "source_id": "the-decoder",
+    "title": "New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations",
+    "url": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations/",
+    "published_at": "2026-11-04T16:42:52+00:00",
+    "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"816\" src=\"https://the-decoder.com/wp-content/uploads/2025/02/Huginn-RM-title.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1456\" /></p>\n<p>        CloudOpsBench is a new open-source benchmark that measures how well AI agents handle typical DevOps tasks in the cloud, from fixing services and removing resources to restricting access rights, rolling out updates, and decommissioning projects.</p>\n<p>The article <a href=\"https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations/\">New open-source benchmark reveals reasoning as the biggest bottleneck for AI in cloud operations</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+    "category_hint": [
+      "模型发布",
+      "行业动态"
+    ],
+    "image_url": "https://the-decoder.com/wp-content/uploads/2025/02/Huginn-RM-title.png",
+    "category": "开源项目",
+    "content_type": "研究论文",
+    "depth_score": 0.6,
+    "reason_zh": "介绍开源基准 CloudOpsBench，揭示推理是 AI 云运维的最大瓶颈，对 agent 评估有参考价值。",
+    "summary_zh": "The Decoder 报道了一个新的开源基准 CloudOpsBench，用于衡量 AI agent 在典型云 DevOps 任务中的表现，包括修复服务、删除资源和限制访问等。该基准旨在评估 agent 在真实云操作场景中的能力，并发现推理能力是当前 AI 在云运维中的最大瓶颈。文章可能包含基准的设计思路、测试结果以及对 AI agent 在运维领域应用的启示。",
+    "title_zh": "新开源基准揭示推理是 AI 云运维的最大瓶颈",
+    "weighted_score": 0.7,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.8,
+      "impact": 0.6,
       "practical_value": 0.7
     },
-    "story_id": "ca74de6f860c8455",
+    "story_id": "0acace56f34e6dc3",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-machinelearning",
-        "url": "https://www.reddit.com/r/MachineLearning/comments/1xmk8rx/we_turned_10_years_of_ml_papers_into_one_page_per/"
+        "source_id": "the-decoder",
+        "url": "https://the-decoder.com/new-open-source-benchmark-reveals-reasoning-as-the-biggest-bottleneck-for-ai-in-cloud-operations/"
       }
     ],
     "curated": true,
     "gate_backfill": true
   },
   {
-    "id": "3c477f55c5d0e023",
-    "source_id": "reddit-rag",
-    "title": "Embed 100 million sentences in 13 seconds on a CPU. No GPU, no API bill.",
-    "url": "https://www.reddit.com/r/Rag/comments/1xmjkak/embed_100_million_sentences_in_13_seconds_on_a/",
-    "published_at": "2026-11-03T04:33:45+00:00",
-    "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>I just released fse 2.0, an inference engine for static embedding models (Model2Vec / POTION, static Sentence Transformers models, classic word vectors). </p> <p>It runs on plain CPUs:</p> <p><strong>100 million WikiText sentences in 13.46 seconds</strong>, embedded and written to disk (16 workers, AMD EPYC 9575F, 32 vCPU)</p> <p><strong>RAG-sized chunks:</strong> about 1.27 million passages per second, at roughly 120 words per passage (16 workers, POTION-8M)</p> <p><strong>Same model, same input, same machine:</strong> 21x faster than Model2Vec on one worker, 126x with 16 workers. Against the Rust port model2vec-rs it is 1.5x and 2.4x faster.</p> <p><strong>Bonus:</strong> Fold in your linear classifier (regression, logit) and get speed on steroids.</p> <p>What that means for RAG:</p> <p>Re-embed everything whenever necessary! Build for large data, local AI, and rapid experiments.</p> <p>Embed at query time on the same box as your app. No GPU, no netw",
+    "id": "f1c5b15414cd4d80",
+    "source_id": "mozilla-ai",
+    "title": "Otari by Mozilla AI: your operating system for AI governance",
+    "url": "https://blog.mozilla.ai/otari-by-mozilla-ai-your-operating-system-for-ai-governance/",
+    "published_at": "2026-11-04T09:23:32+00:00",
+    "raw_text": "As AI takes on more work, organisations need clear limits on models, tools and spend. Otari, Mozilla AI’s open-source gateway, brings model choice, agent governance and cost control together, so teams can adopt AI with confidence. Your models. Your tokens. Your control.",
+    "category_hint": [
+      "产品发布",
+      "行业动态"
+    ],
+    "image_url": "https://storage.ghost.io/c/68/76/6876f0af-8955-4de4-a637-a5e7cc399136/content/images/2026/11/OTARI_LAUNCH_email-header_newsletter_600x300_B.png",
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.3,
+    "reason_zh": "Mozilla AI推出开源AI治理网关Otari，整合模型选择、智能体治理与成本控制。",
+    "summary_zh": "Mozilla AI发布开源网关Otari，定位为AI治理的操作系统。随着AI承担更多工作，组织需要对模型、工具和支出设定明确边界。Otari将模型选择、智能体治理和成本控制整合在一起，强调模型、token和控制的自主权，帮助团队更放心地采用AI。该项目面向企业AI治理场景，提供开源可自托管的解决方案。",
+    "title_zh": "Mozilla AI推出Otari：你的AI治理操作系统",
+    "weighted_score": 0.625,
+    "score_breakdown": {
+      "source_authority": 0.7,
+      "novelty": 0.6,
+      "impact": 0.5,
+      "practical_value": 0.7
+    },
+    "story_id": "3efab218ecc17066",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "mozilla-ai",
+        "url": "https://blog.mozilla.ai/otari-by-mozilla-ai-your-operating-system-for-ai-governance/"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "004e242fa660a3eb",
+    "source_id": "zh-v2ex",
+    "title": "[分享创造] 让 AI 写了个轻量级 MCP 代理 mcp-meta：把 104 个工具折叠成 2 个按需加载，每轮请求 Schema 体积减少 99.4%",
+    "url": "https://www.v2ex.com/t/1254539#reply0",
+    "published_at": "2026-11-04T13:05:16+00:00",
+    "raw_text": "<p><a href=\"https://github.com/monkey-sking/mcp-meta\" rel=\"nofollow\">https://github.com/monkey-sking/mcp-meta</a></p>\n<p>平时挂多个 MCP Server 时，不管用不用得上，所有工具的完整 JSON Schema 都会在每一轮请求时硬塞进上下文。实测挂 <strong>14 个 Server （ 104 个工具）</strong>，模型还没读 Prompt 就先烧掉 <strong>14.2 万字符</strong>。</p>\n<p>写了 <code>mcp-meta</code> 解决这个痛点。它夹在客户端和任意数量的上游 Server 之间，对模型只暴露 <strong>2 个懒加载元工具</strong>：</p>\n<ul>\n<li><code>mcp_tools</code>：查看上游 Server 概览，或按紧凑签名（如 <code>search(query: string, [limit: integer])</code>）按需拉取某个 Server 的工具列表。</li>\n<li><code>mcp_call</code>：指定目标 Server 和工具名发起调用。</li>\n</ul>\n<p>接入后每轮请求 Schema 降至 <strong>892 字符（-99.4%）</strong>，同时保留所有工具的完整调用能力。</p>\n<p><strong>核心特性</strong></p>\n<ul>\n<li><strong>零依赖</strong>：纯 Python 3.9+ 标准库实现。</li>\n<li><strong>全兼容</strong>：前端 <code>stdio</code>；后端支持 <code>stdio</code> + <code>HTTP</code>（兼容 SSE 、会话保持、分页与协议自动降级）。</li>\n<li><strong>易配置</strong>：支持按 Server 过滤工具（<code>include</code> / <code>exclude</code>）、环境变量展开。</li>\n</ul>\n<p>目前项目采用 MIT 协议开源，欢迎大家体验使用，有任何建议或问题也欢迎提 Issu",
     "category_hint": [
       "技巧与观点"
     ],
     "image_url": null,
     "category": "开源项目",
     "content_type": "产品发布",
-    "depth_score": 0.3,
-    "reason_zh": "纯CPU上极速嵌入静态向量模型的推理引擎，对低成本RAG场景有直接参考价值。",
-    "summary_zh": "作者发布 fse 2.0，一个面向静态嵌入模型（Model2Vec / POTION、静态 Sentence Transformers 模型及经典词向量）的推理引擎，可在普通 CPU 上运行。帖子称在 16 个 worker、AMD EPYC 9575F 32 vCPU 环境下，13.46 秒完成 1 亿条 WikiText 句子的嵌入并写入磁盘，并给出 RAG 规模分块的吞吐数据。内容属于项目发布与性能展示，强调无需 GPU、无 API 费用，适合低成本大规模向量化场景。",
-    "title_zh": "在 CPU 上 13 秒嵌入 1 亿条句子：无需 GPU，也无 API 账单",
-    "weighted_score": 0.5025,
+    "depth_score": 0.4,
+    "reason_zh": "解决MCP工具Schema占用上下文过大的痛点，方案轻量且效果显著，实用性强。",
+    "summary_zh": "作者开发了轻量级MCP代理mcp-meta，解决多个MCP Server工具Schema在每轮请求中占用大量上下文的问题。实测挂载14个Server（104个工具）时，模型尚未读Prompt就消耗14.2万字符。mcp-meta夹在客户端和上游Server之间，对模型只暴露2个懒加载元工具，按需加载工具Schema，使每轮请求的Schema体积减少99.4%。项目已开源在GitHub，采用Apache-2.0协议。",
+    "title_zh": "[分享创造] 让 AI 写了个轻量级 MCP 代理 mcp-meta：把 104 个工具折叠成 2 个按需加载，每轮请求 Schema 体积减少 99.4%",
+    "weighted_score": 0.625,
     "score_breakdown": {
-      "source_authority": 0.3,
-      "novelty": 0.65,
-      "impact": 0.4,
-      "practical_value": 0.75
+      "source_authority": 0.4,
+      "novelty": 0.8,
+      "impact": 0.5,
+      "practical_value": 0.9
     },
-    "story_id": "59e4b314ac5930cf",
+    "story_id": "6512ebc815b6fcfa",
     "multi_source_count": 1,
     "sources": [
       {
-        "source_id": "reddit-rag",
-        "url": "https://www.reddit.com/r/Rag/comments/1xmjkak/embed_100_million_sentences_in_13_seconds_on_a/"
+        "source_id": "zh-v2ex",
+        "url": "https://www.v2ex.com/t/1254539#reply0"
+      }
+    ],
+    "curated": true,
+    "gate_backfill": true
+  },
+  {
+    "id": "c1b0925aa389e5c0",
+    "source_id": "zh-oschina",
+    "title": "仓颉语言原生 Coding Agent：cjh，一个文件就是整个开发团队",
+    "url": "https://www.oschina.net/news/503393",
+    "published_at": "2026-11-04T08:44:14+00:00",
+    "raw_text": "项目地址 GitHub: https://github.com/yangyongzhen/cjh 它是什么 cjh 是一个用华为仓颉语言从零实现的交互式编码代理（coding agent harness）。在终端里用自然语言描述任务，Agent 自主规划、调用工具、观察结果、迭代直到完成——全程 TUI 实时呈现，也可以通过 Web 远程驱动。 但它不是又一个&quot;LLM 套壳&quot;。cjh 从立项...",
+    "category_hint": [
+      "开源项目"
+    ],
+    "image_url": null,
+    "category": "开源项目",
+    "content_type": "产品发布",
+    "depth_score": 0.4,
+    "reason_zh": "用华为仓颉语言从零实现的编码代理，技术栈新颖，对探索多语言Agent开发有参考价值。",
+    "summary_zh": "cjh是一个用华为仓颉语言从零实现的交互式编码代理（coding agent harness）。用户可在终端用自然语言描述任务，Agent自主规划、调用工具、观察结果并迭代直至完成，全程TUI实时呈现，也可通过Web远程驱动。项目强调并非简单“LLM套壳”，而是从立项开始就注重底层实现，旨在提供一个文件即整个开发团队的轻量级方案。GitHub已开源，适合对仓颉语言或Agent架构感兴趣的开发者研究。",
+    "title_zh": null,
+    "weighted_score": 0.615,
+    "score_breakdown": {
+      "source_authority": 0.5,
+      "novelty": 0.8,
+      "impact": 0.5,
+      "practical_value": 0.7
+    },
+    "story_id": "575b4b0776f1cb51",
+    "multi_source_count": 1,
+    "sources": [
+      {
+        "source_id": "zh-oschina",
+        "url": "https://www.oschina.net/news/503393"
       }
     ],
     "curated": true,
