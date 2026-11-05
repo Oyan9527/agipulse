@@ -1,422 +1,409 @@
 {
-  "date": "2026-11-04",
-  "generated_at": "2026-11-04T22:51:21.182407+00:00",
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T22:59:16.136525+00:00",
   "items": [
     {
-      "id": "452d1254d315ec59",
-      "source_id": "arxiv-cs-cl",
-      "title": "Fidelity Collapses with Table Size, Not Turn Count: Delivery Architecture in a Deployed Tool-Using Agent",
-      "url": "https://arxiv.org/abs/2611.00442",
-      "published_at": "2026-11-04T05:00:00+00:00",
-      "raw_text": "arXiv:2611.00442v1 Announce Type: new \nAbstract: When a multi-turn agent delivers a tool's structured records into the model's context and re-emits them each turn, every turn can corrupt data the tool computed correctly. We measure this in a production award-travel agent: two architectures over identical frozen payloads, lineage-matched prompts and sampling, differing only in delivery architecture. SYNTHESIS feeds full record sets into the planner's context and answers follow-ups in-head; BYPASS, the deployed system, keeps records in session state, translates follow-ups into arguments for a deterministic filter, and delivers rows over a typed side channel. Across 24 dialogues (339 scored turns per condition), BYPASS scores 92.3% of turns fully correct, SYNTHESIS 45.7% (paired gap +46.6pp [+35.7, +57.1]). Varying delivered-table size by capture date, SYNTHESIS collapses from near-perfect at 10 rows or fewer to 8% or less beyond about 74 rows. On a content-controlled prefix ladder the co",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.85,
-      "reason_zh": "揭示多轮工具调用 agent 中数据保真度随表格规模而非轮数崩塌，对 agent 上下文工程有直接可迁移的工程启示。",
-      "summary_zh": "论文在生产环境的机票预订 agent 上测量多轮工具调用中的数据保真问题：当 agent 把工具返回的结构化记录送入模型上下文并在每轮重新输出时，每一轮都可能破坏工具原本计算正确的数据。作者对比了两种交付架构，使用完全相同的冻结载荷、血缘匹配的提示与采样，唯一变量是交付架构。结果显示保真度下降主要由表格规模驱动，而非对话轮数，说明问题出在数据交付方式而非交互长度，为 agent 上下文工程提供了可操作的架构改进方向。",
-      "title_zh": "保真度随表格规模而非轮数崩塌：已部署工具型 Agent 的交付架构研究",
-      "weighted_score": 0.77,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.85
-      },
-      "story_id": "83724f044949b80c",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2611.00442"
-        }
-      ]
-    },
-    {
-      "id": "e97680104bf1a296",
-      "source_id": "zh-tonybai",
-      "title": "继Anthropic之后，OpenAI 也重建了自己的版本控制系统",
-      "url": "https://tonybai.com/2026/11/04/openai-pando-rebuild-git-for-ai-agent-era/",
-      "published_at": "2026-11-04T01:00:00+00:00",
-      "raw_text": "OpenAI 最新披露了内部 Git 后端系统 Pando 的设计。面对 Codex 带来的高并发开发负载，OpenAI 没有抛弃 Git，而是通过因果一致性、Packfile 复用、区域缓存和后台 Compaction，重新设计 Git 服务端架构。Pando 将 Push 中位延迟降低近 5 倍，每天处理近 PB 级 Git 数据。从 10 周完成系统建设，到 Codex Agent 参与实现，再到 Lean 和 TLA+ 参与形式化验证，这个项目不仅展示了分布式存储架构的创新，也揭示了 AI Agent 正在如何改变软件工程基础设施。",
+      "id": "135320f11f644283",
+      "source_id": "zh-forcheetah-github-io",
+      "title": "【转载】[陈天奇]构建Agent时代的机器学习编译器基础层",
+      "url": "https://forcheetah.github.io/2026/11/05/Article04/",
+      "published_at": "2026-11-05T11:43:18+00:00",
+      "raw_text": "<h1 id=\"序\"><a class=\"anchor\" href=\"#序\">#</a> 序</h1>\n<p>转载一些重要有趣的文章，侵删。</p>\n<p>导读：[陈天奇] CS. PhD 机器学习系统，原文：<a href=\"https://zhuanlan.zhihu.com/p/2101651274798196721\">构建 Agent 时代的机器学习编译器基础层</a></p>\n<h1 id=\"正文\"><a class=\"anchor\" href=\"#正文\">#</a> 正文</h1>\n<p>今年是 Agent 元年，不管对于任何的领域，大家都需要感受到这样的变化。对于机器学习编译和 kernel 可能更是如此。传统的机器学习编译尝试利用我们的领域知识从图，tile 和 SIMT 等各个粒度去进行变化和优化，使得我们可以再各个硬件上通过简洁的代码获得很高的效率。强大 agent 的出现使得只要我们有足够多的 token，基本底层的算子和软件都可以都可以蹬出来了。</p>\n<p><img alt=\"Agent元年\" /></p>\n<p>一方面来看，Agent 已经可以解决从高性能算子的开发到框架优化的各种问题。我们也终于可以从阅读 nsight 报告检查汇编和手动微调 kernel 的循环中解脱出来了。近期包含 <a href=\"https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/\">KernelAgent</a>, <a href=\"https://arxiv.org/abs/2602.24286\">CUDA Agent</a>, <a href=\"https://prod.cursor.com/blog/multi-agent-kernels\">Cursor’s multi-agent system</a>, <a href=\"https://arxiv.org/abs/2608.12629\">CAKE</a>, <a href=\"https://blog.mlc.ai/2026/09/29/tirx-harness-an-open-compiler-harness-for-agentic-gpu",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "OpenAI自研Git后端Pando的设计复盘，涵盖因果一致性、Packfile复用等架构取舍，极具工程参考价值。",
-      "summary_zh": "OpenAI披露了内部Git后端系统Pando的设计。面对Codex带来的高并发开发负载，OpenAI没有抛弃Git，而是通过因果一致性、Packfile复用、区域缓存和后台Compaction重新设计Git服务端架构。Pando将Push中位延迟降低近5倍，每天处理近PB级Git数据。项目仅用10周完成建设，Codex Agent参与实现，Lean和TLA+参与形式化验证，展示了分布式存储架构创新与AI Agent对软件工程基础设施的改变。",
-      "title_zh": "继Anthropic之后，OpenAI也重建了自己的版本控制系统",
-      "weighted_score": 0.755,
+      "depth_score": 0.85,
+      "reason_zh": "陈天奇谈 Agent 时代机器学习编译与 kernel 基础层，含可迁移的系统设计认知，值得细读。",
+      "summary_zh": "陈天奇在文中提出，Agent 元年对机器学习编译与 kernel 优化提出了新要求。传统 ML 编译依赖图、tile、SIMT 等粒度注入领域知识，以简洁代码在各硬件上取得高效率；而强大 Agent 的介入可能改变这一范式，让编译优化从人工规则转向由 Agent 驱动的自动搜索与生成。文章讨论了编译器基础层在 Agent 时代应如何重新定位，以及如何把领域知识与自动化能力结合，为上层模型与硬件之间搭建更灵活高效的桥梁。",
+      "title_zh": "【转载】[陈天奇]构建 Agent 时代的机器学习编译器基础层",
+      "weighted_score": 0.7125,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.8,
+        "source_authority": 0.7,
+        "novelty": 0.75,
         "impact": 0.7,
         "practical_value": 0.7
       },
-      "story_id": "5a4c4074e25cf75e",
+      "story_id": "4b81144cfb9bf1dd",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/11/04/openai-pando-rebuild-git-for-ai-agent-era/"
+          "source_id": "zh-forcheetah-github-io",
+          "url": "https://forcheetah.github.io/2026/11/05/Article04/"
         }
       ]
     },
     {
-      "id": "fd3bbf26abc1b606",
-      "source_id": "the-decoder",
-      "title": "Anthropic's new prototype proves which model wrote an AI response without exposing its weights",
-      "url": "https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights/",
-      "published_at": "2026-11-04T15:23:49+00:00",
-      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1080\" src=\"https://the-decoder.com/wp-content/uploads/2026/11/Anthropic-FlashProve.webp\" style=\"height: auto; margin-bottom: 10px;\" width=\"1920\" /></p>\n<p>        Anthropic has released FlashProve, a research prototype that uses cryptography to verify whether an AI response actually came from the claimed model. The system still has significant limitations.</p>\n<p>The article <a href=\"https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights/\">Anthropic&#039;s new prototype proves which model wrote an AI response without exposing its weights</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
+      "id": "7703ce58338b4f92",
+      "source_id": "zh-solidot",
+      "title": "Google 和 OpenAI 的模型对特定口音有偏见",
+      "url": "https://www.solidot.org/story?sid=85804",
+      "published_at": "2026-11-05T09:00:58+00:00",
+      "raw_text": "研究人员调查了先进多模态模型如何评估面试、会议报告和英语口语能力测试中的语音，测试的模型包括了 Google 的 Gemini 2.5 Pro 和 Gemini 2.5 Flash，以及 OpenAI 的 GPT-Audio 1.5，开放权重模型 Qwen 3 Omni。这些模型对五种不同口音——美国、英国、中国、印度和尼日利亚——的英语语音进行了评分。AI 模型普遍将中国和尼日利亚口音的评分最低，印度口音居中，美国和英国口音的评分最高。即使内容完全相同，系统仍然认为美国和英国口音的表达方式和内容都更胜一筹。研究团队发现，明显的等级划分也体现在模型的解释中。研究人员说，模型反复声称中国和尼日利亚口音的英语使用者含糊不清或难以理解，但实际上它们非常擅长转录带有口音的语音，它们理解说话者，但它们只是基于口音，对说话者存在一种隐性的等级观念。\n<p></p>",
       "category_hint": [
-        "模型发布",
         "行业动态"
       ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/Anthropic-FlashProve.webp",
+      "image_url": null,
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "用密码学证明模型来源而不暴露权重，是模型溯源与合规的重要新思路。",
-      "summary_zh": "Anthropic 发布研究原型 FlashProve，利用密码学手段验证某段 AI 回复是否确实由所声称的模型生成，且无需暴露模型权重。该机制针对模型冒用、API 转售与身份伪造等问题，为模型提供方可验证的来源证明。文章介绍了其基本工作原理与当前局限，说明该原型仍处于研究阶段，距离生产可用尚有距离，但为 AI 供应链透明度和合规审计提供了新的技术路径。",
-      "title_zh": "Anthropic 新原型可在不暴露权重的情况下证明是哪个模型写的回复",
-      "weighted_score": 0.74,
+      "reason_zh": "揭示多模态模型对口音的隐性等级偏见，实验设计严谨，对AI公平性有重要启示。",
+      "summary_zh": "研究人员测试了Google Gemini 2.5 Pro/Flash、OpenAI GPT-Audio 1.5和Qwen 3 Omni等多模态模型对五种英语口音（美、英、中、印、尼日利亚）的评分。结果显示，模型普遍给中国和尼日利亚口音最低分，印度口音居中，美英口音最高，即使内容完全相同。模型在解释中常称中国和尼日利亚口音含糊难懂，但实际上它们能准确转录这些语音，表明模型存在基于口音的隐性等级偏见。",
+      "title_zh": "Google 和 OpenAI 的模型对特定口音有偏见",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.9,
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "ac5cc6630a10b086",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-solidot",
+          "url": "https://www.solidot.org/story?sid=85804"
+        }
+      ]
+    },
+    {
+      "id": "c0c2d1f3626b1270",
+      "source_id": "dwarkesh-podcast",
+      "title": "The benchmark where AIs have to lie to win",
+      "url": "https://www.dwarkesh.com/p/clocktower",
+      "published_at": "2026-11-05T21:05:50+00:00",
+      "raw_text": "AIs are now good enough to run a conspiracy",
+      "category_hint": [
+        "行业动态",
+        "论文研究"
+      ],
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/95e0ddc2-a7ee-4654-821b-dd35c47bcfc5_1672x941.png",
+      "category": "论文研究",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "探讨AI在需要欺骗才能获胜的基准测试中的表现，揭示模型策略性行为，具有启发性。",
+      "summary_zh": "文章讨论了一个新的基准测试，其中AI必须学会欺骗才能获胜。作者指出，当前AI已足够强大，能够运行一个“阴谋”，即在多智能体环境中通过隐瞒信息、误导对手来达成目标。这引发了对AI对齐和诚实性的担忧，并探讨了如何评估和引导模型的策略性行为。内容涉及AI安全与伦理，适合对前沿风险感兴趣的读者。",
+      "title_zh": "AI必须撒谎才能获胜的基准测试",
+      "weighted_score": 0.685,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
         "impact": 0.7,
         "practical_value": 0.5
       },
-      "story_id": "4a814fce650d6f18",
+      "story_id": "6ecb6832af62c36a",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/rapid-llm-development-is-outrunning-the-research-meant-to-explain-it-study-finds/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/schools-that-turn-off-googles-ai-will-lose-search-too-starting-in-2027/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/openai-acquires-pierre-computer-company-to-make-git-keep-up-with-ai-coding-agents/"
-        },
-        {
-          "source_id": "the-decoder",
-          "url": "https://the-decoder.com/chatgpt-can-now-turn-text-prompts-and-photos-into-animated-gifs-with-openais-images-2-6-model/"
+          "source_id": "dwarkesh-podcast",
+          "url": "https://www.dwarkesh.com/p/clocktower"
         }
       ]
     },
     {
-      "id": "24432e46bcb7c113",
-      "source_id": "aws-ml-blog",
-      "title": "Four layers of context engineering for production AI agents: How Deep Insight applies them in working code",
-      "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/",
-      "published_at": "2026-11-04T16:30:40+00:00",
-      "raw_text": "In production AI agents, context management is the real bottleneck. This post presents a four-layer context engineering framework (architecture, prompts, file-based tools, and verification agents), implemented in working code from Deep Insight, an open source multi-agent data analysis solution on the Strands Agents SDK and Amazon Bedrock AgentCore.",
+      "id": "dd91554502c6fefa",
+      "source_id": "reddit-localllama",
+      "title": "[Paper] FireFlash : An Open Recipe for Long-Horizon Agentic RL Achieving the Performance-Cost Pareto Frontier",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xomst7/paper_fireflash_an_open_recipe_for_longhorizon/",
+      "published_at": "2026-11-05T16:17:42+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xomst7/paper_fireflash_an_open_recipe_for_longhorizon/\"> <img alt=\"[Paper] FireFlash : An Open Recipe for Long-Horizon Agentic RL Achieving the Performance-Cost Pareto Frontier\" src=\"https://preview.redd.it/orkgrqsqjtzh1.jpeg?width=140&amp;height=117&amp;auto=webp&amp;s=543c65a91791905e11e47c7c94b29d64fdb8179e\" title=\"[Paper] FireFlash : An Open Recipe for Long-Horizon Agentic RL Achieving the Performance-Cost Pareto Frontier\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><blockquote> <p>We introduce <strong>FireFlash</strong>, a 300B-scale model tailored for long-horizon agentic tasks. FireFlash excels as a terminal and coding agent, <strong>achieving 46.2% on Terminal-Bench 4.0</strong><a href=\"https://agenteconomics.org/posts/agentic-rl-recipe#ref-1\"><sup>1</sup></a>, <strong>putting it on par with Fable 5 and GPT-6 Sol, while costing over 30× less per task</strong> than Fable 5 at maximum effort (Figure 1). ",
       "category_hint": [
-        "技巧与观点",
-        "产品发布"
+        "开源项目",
+        "技巧与观点"
       ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/10/22/ML-21082-1-1.jpg",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.8,
-      "reason_zh": "四层上下文工程框架配可运行代码，对构建生产级 agent 有高实用价值。",
-      "summary_zh": "AWS 博客文章提出生产级 AI agent 的上下文管理是真正瓶颈，并给出四层上下文工程框架：架构、提示词、基于文件的工具和验证 agent。该框架在开源多 agent 数据分析方案 Deep Insight 中实现，基于 Strands Agents SDK 和 Amazon Bedrock AgentCore，文章提供了可运行代码和具体应用示例。",
-      "title_zh": "生产级 AI agent 的四层上下文工程：Deep Insight 如何在可运行代码中应用",
-      "weighted_score": 0.725,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.8
-      },
-      "story_id": "c3673fc6608d62ba",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/"
-        }
-      ]
-    },
-    {
-      "id": "a25889fbdb3ea140",
-      "source_id": "arxiv-cs-cl",
-      "title": "Rethinking LLM Pruning via Test-Time Scaling",
-      "url": "https://arxiv.org/abs/2611.01133",
-      "published_at": "2026-11-04T05:00:00+00:00",
-      "raw_text": "arXiv:2611.01133v1 Announce Type: new \nAbstract: Structured pruning reduces the size of large language models, often at the cost of lower accuracy. Whether this decline reflects diminished reasoning capacity or greater difficulty in sampling correct solutions is less clear. We examine this question across expert, FFN and layer pruning on four mathematical and coding benchmarks, comparing original and pruned models through pass@k at matched sampling budgets. Even after substantial pruning, some models match or exceed the original model's reasoning coverage despite lower pass@1, and solve problems left unsolved in the original samples. Retaining broad coverage, however, does not mean that correct solutions remain easy to obtain. Under severe pruning, diverse generated chain-of-thought (CoT) traces can coexist with increased repetition and less reliable generation. As correct answers become harder to sample, the additional attempts can sharply increase total token use even when individual",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
+      "image_url": "https://preview.redd.it/orkgrqsqjtzh1.jpeg?width=140&height=117&auto=webp&s=543c65a91791905e11e47c7c94b29d64fdb8179e",
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "重新审视剪枝损失来源，区分推理能力下降与采样难度，视角新颖，对模型压缩实践有启发。",
-      "summary_zh": "论文研究结构化剪枝导致大模型精度下降的成因，试图区分究竟是模型推理能力真的受损，还是仅仅更难采样到正确答案。作者在专家、FFN 与整层剪枝三种方式上，针对四个数学与编程基准进行实验，并引入测试时扩展（test-time scaling）作为分析工具，比较原始模型与剪枝模型在增加采样预算后的表现差异。该工作为理解剪枝的真实代价、以及用推理时计算弥补压缩损失提供了实证依据。",
-      "title_zh": "通过测试时扩展重新审视大模型剪枝",
-      "weighted_score": 0.7225,
+      "reason_zh": "提出长视野智能体强化学习的开源方案，兼顾性能与成本，实用性强。",
+      "summary_zh": "该论文提出FireFlash，一个用于长视野智能体强化学习的开源配方，旨在实现性能与成本之间的帕累托最优。长视野任务要求智能体在多个步骤中保持推理和规划能力，对强化学习训练提出更高要求。FireFlash可能通过优化训练流程、奖励设计和计算资源分配，在有限成本下达到有竞争力的性能。开源配方有助于社区复现和进一步研究，推动智能体RL在实际应用中的落地。",
+      "title_zh": "[论文] FireFlash：实现性能-成本帕累托最优的长视野智能体RL开源配方",
+      "weighted_score": 0.64,
       "score_breakdown": {
-        "source_authority": 0.85,
-        "novelty": 0.75,
-        "impact": 0.6,
-        "practical_value": 0.65
-      },
-      "story_id": "c3b13c0a4f1e0a3f",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2611.01133"
-        }
-      ]
-    },
-    {
-      "id": "5c20053716098969",
-      "source_id": "arxiv-cs-cl",
-      "title": "From Apparent Search Gains to Selection Failures: Auditing Test-Time Inference in Structured Workflow Planning",
-      "url": "https://arxiv.org/abs/2611.00579",
-      "published_at": "2026-11-04T05:00:00+00:00",
-      "raw_text": "arXiv:2611.00579v1 Announce Type: new \nAbstract: Test-time search can improve structured planning, but when methods differ in prompts, post-processing, and selection, it is unclear what an observed gain should be attributed to. We study this question on DisasterBench, where models compose typed multi-tool workflows, by decomposing inference into three observable stages: whether a correct workflow is discovered, whether it survives structural validation, and whether it is finally selected. Comparing independent sampling, a nominal tree-search configuration, and multi-operator search under controlled inference budgets on two model families, we find that (i) the nominal tree-search configuration realizes non-adaptive complete-workflow sampling, and independent sampling with its expansion prompt reproduces its candidate discovery without constructing a tree; (ii) structural validation never removes the last correct workflow in our evaluated candidate pools, whereas majority voting leaves a",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "拆解测试时搜索的增益来源，指出表面提升可能来自选择环节而非搜索本身，对 agent 评测有警示价值。",
-      "summary_zh": "测试时搜索能改善结构化规划，但当不同方法在提示、后处理和选择环节上各不相同，观测到的增益究竟归因于什么并不清楚。论文在 DisasterBench 上研究该问题，任务要求模型组合带类型的多工具工作流，并把推理拆成三个可观测阶段：是否生成了正确工作流、是否被正确选中、以及最终输出。分析表明部分表面上的搜索增益实际来自选择环节的偏差，而非搜索本身，提示相关评测需要更严格的归因设计。",
-      "title_zh": "从表面搜索增益到选择失败：审计结构化工作流规划中的测试时推理",
-      "weighted_score": 0.7025,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.75,
+        "source_authority": 0.5,
+        "novelty": 0.8,
         "impact": 0.6,
         "practical_value": 0.7
       },
-      "story_id": "359a90bd253ece87",
+      "story_id": "b8fffe08b2f4f039",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-cl",
-          "url": "https://arxiv.org/abs/2611.00579"
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xomst7/paper_fireflash_an_open_recipe_for_longhorizon/"
         }
       ]
     },
     {
-      "id": "3c896fefa8c95cbb",
-      "source_id": "infoq-cn-ai",
-      "title": "同一个模型从 30 分到 95 分：拉开差距的不是模型，是Harness",
-      "url": "https://www.infoq.cn/article/C1C1DThg8z1Dy0rZAmLB?utm_source=rss&utm_medium=article",
-      "published_at": "2026-11-04T15:40:50+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/C1C1DThg8z1Dy0rZAmLB?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "ae2861cc0e2f824e",
+      "source_id": "understandingai",
+      "title": "This robotics concept helps explain the jaggedness of frontier capabilities",
+      "url": "https://www.understandingai.org/p/this-robotics-concept-helps-explain",
+      "published_at": "2026-11-05T15:16:59+00:00",
+      "raw_text": "Sim-to-real gaps are everywhere.",
       "category_hint": [
-        "行业动态",
         "技巧与观点"
       ],
-      "image_url": null,
+      "image_url": "https://substackcdn.com/image/fetch/$s_!mzno!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f8cdb61-e6d9-4fb1-b966-7ba7fcaf9461_5700x3801.jpeg",
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.8,
-      "reason_zh": "用同一模型分数差异论证Harness价值，对Agent工程实践很有启发。",
-      "summary_zh": "文章以同一模型在不同评测中从 30 分跃升到 95 分的现象切入，指出真正拉开差距的不是模型本身，而是围绕模型构建的 Harness，即提示组织、工具调用、上下文管理、重试与校验等工程化外壳。作者分析了 Harness 各组成部分如何影响最终表现，说明在模型能力趋同的背景下，工程侧的设计取舍往往决定实际效果，对构建 Agent 系统的团队具有直接参考价值。",
-      "title_zh": null,
-      "weighted_score": 0.665,
+      "reason_zh": "用机器人sim-to-real的类比解释前沿能力为何参差不齐，视角新颖，有助于理解模型能力边界。",
+      "summary_zh": "文章借用机器人学中的“仿真到现实差距”（sim-to-real gap）概念，来解释前沿AI模型能力为何呈现锯齿状：在基准测试中表现优异，却在真实场景中频繁失败。作者指出，这种差距不仅存在于机器人领域，也普遍存在于语言模型和智能体系统中，根源在于训练环境与部署环境之间的分布偏移。文章进一步讨论了如何通过更贴近真实世界的评估和训练策略来缩小这一差距，并提醒读者不要被基准分数误导。",
+      "title_zh": "一个机器人概念有助于解释前沿能力的参差不齐",
+      "weighted_score": 0.605,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.6
+      },
+      "story_id": "c2a34ee2d72d362d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "understandingai",
+          "url": "https://www.understandingai.org/p/this-robotics-concept-helps-explain"
+        }
+      ]
+    },
+    {
+      "id": "5957d36f1fa78ef6",
+      "source_id": "arxiv-q-bio-nc",
+      "title": "Mind Control of LLMs via Closed-Loop Stimulation: Out-of-Distribution Robustness",
+      "url": "https://arxiv.org/abs/2611.06418",
+      "published_at": "2026-11-05T05:00:00+00:00",
+      "raw_text": "arXiv:2611.06418v1 Announce Type: new \nAbstract: Brains and large language models need not be considered equivalent systems to reveal an interpretable commonality: both exhibit high-dimensional, nonlinear dynamics whose behavior can only be modeled imperfectly. This creates a shared challenge whenever we seek to intervene in their dynamics. A controller may either rely on a model identified around a particular operating regime and risk failure as the system moves away from that regime, or explicitly account for uncertainty and a changing internal state. Neurostimulation has confronted an analogous problem for decades. The limitations of fixed, open-loop stimulation have motivated closed-loop and state-dependent approaches that condition intervention on the ongoing state of the neural system. Inspired by this principle, we formulate LLM steering as a feedback-control problem in which the network's internal state, rather than a fixed intervention alone, determines how the system is pertu",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "把大脑闭环刺激的控制思路迁移到LLM干预，视角新颖，属可解释性与控制交叉研究。",
+      "summary_zh": "这篇 arXiv 论文提出，不必把大脑与大语言模型视为等价系统，也能揭示二者可解释的共性：两者都表现出高维非线性动力学，其行为只能被不完美地建模，因此在试图干预其动力学时面临共同挑战。控制器可以依赖在特定条件下辨识出的模型，但论文关注分布外条件下的鲁棒性。作者借鉴神经科学中的闭环刺激思路，探索对 LLM 进行干预与控制的方法及其在分布外场景下的稳健性。",
+      "title_zh": "通过闭环刺激对 LLM 进行“精神控制”：分布外鲁棒性",
+      "weighted_score": 0.57,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.4,
+        "practical_value": 0.3
+      },
+      "story_id": "3b25867a3063602d",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-q-bio-nc",
+          "url": "https://arxiv.org/abs/2611.06418"
+        }
+      ]
+    },
+    {
+      "id": "12eff376938bb6e7",
+      "source_id": "reddit-machinelearning",
+      "title": "The Ultimate MoE Training Handbook: training Mixture-of-Experts models with Megatron-LM, setting by setting [P]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1xorgq0/the_ultimate_moe_training_handbook_training/",
+      "published_at": "2026-11-05T19:13:51+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Handbook: <a href=\"https://huggingface.co/spaces/huggingface/moe-blogpost\">https://huggingface.co/spaces/huggingface/moe-blogpost</a></p> <p>Hello, I'm Nouamane, one of the authors. I'm at Hugging Face and also worked on the Ultra-Scale and Smol Training Playbooks, if you've read those.</p> <p>This handbook is for people who have trained a dense model and want to train an MoE next, or who are curious how MoE training works. Chapter 2 is a Megatron-LM runbook: test the hardware, build the image, train a dense baseline, then a first MoE on one node, compared against that baseline. Chapter 3 takes the MoE layer apart (router, routing, load balancing, experts, block layout, training, systems). For each part we give the Megatron-LM code, what to watch, our recommendation, and what frontier MoEs chose. Chapter 4 follows the model into serving and RL. Chapters 3 and 4 need no GPU.</p> <p>When a result comes from our runs, we say so. Claims about frontier mode",
+      "category_hint": [
+        "论文研究",
+        "行业动态"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "Hugging Face 出品的 MoE 训练手册，逐项讲解 Megatron-LM 配置，对训练者极具实用价值。",
+      "summary_zh": "Hugging Face 发布了《MoE 训练终极手册》，作者 Nouamane 曾参与 Ultra-Scale 和 Smol Training Playbooks。该手册面向已训练过稠密模型、希望转向混合专家（MoE）模型的开发者，基于 Megatron-LM 框架，逐项讲解训练配置参数的含义与设置方法。内容涵盖 MoE 架构的关键训练细节，旨在降低从稠密模型到 MoE 模型的迁移门槛，是一份系统性的实操指南。",
+      "title_zh": "MoE 训练终极手册：用 Megatron-LM 逐项配置训练混合专家模型 [P]",
+      "weighted_score": 0.685,
       "score_breakdown": {
         "source_authority": 0.6,
         "novelty": 0.7,
         "impact": 0.6,
-        "practical_value": 0.8
+        "practical_value": 0.9
       },
-      "story_id": "033ab67cc064f20b",
-      "multi_source_count": 1,
+      "story_id": "6fef0229cbf4e1dd",
+      "multi_source_count": 2,
       "sources": [
         {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/C1C1DThg8z1Dy0rZAmLB?utm_source=rss&utm_medium=article"
+          "source_id": "reddit-localllama",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xor5nr/the_ultimate_moe_training_handbook_training/"
+        },
+        {
+          "source_id": "reddit-machinelearning",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1xorgq0/the_ultimate_moe_training_handbook_training/"
         }
       ]
     },
     {
-      "id": "a26c08ec34cc86b2",
-      "source_id": "zh-juejin",
-      "title": "从通用 Harness 到金融研究系统：ETF Agent 的四方架构对照",
-      "url": "https://juejin.cn/post/7704169842916393010",
-      "published_at": "2026-11-04T13:16:55+00:00",
-      "raw_text": "沿同一基金研究任务，对照 Pi、Claude Agent SDK、LangGraph 与 ETF Agent，拆解应复用的执行能力、应保留的领域合同，以及尚待验证的质量。",
+      "id": "65f428064ceb1590",
+      "source_id": "infoq-cn-ai",
+      "title": "AI Coding 增量风险管控：Skill 门禁与 Harness 落地实践｜AICon北京",
+      "url": "https://www.infoq.cn/article/XieGrL5pws7jG1zxKPle?utm_source=rss&utm_medium=article",
+      "published_at": "2026-11-05T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/XieGrL5pws7jG1zxKPle?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "对比通用Harness与金融领域Agent架构，拆解可复用执行能力与领域合同，对构建垂直Agent有参考价值。",
-      "summary_zh": "文章围绕同一基金研究任务，对比Pi、Claude Agent SDK、LangGraph与ETF Agent四种架构。分析哪些执行能力（如工具调用、循环控制）应复用通用Harness，哪些领域合同（如金融数据规范、合规约束）应保留在垂直系统中，以及尚待验证的质量维度。通过四方架构对照，为从通用Agent框架过渡到金融研究系统提供设计取舍参考，强调领域特定约束与通用执行能力的分离。",
-      "title_zh": "从通用 Harness 到金融研究系统：ETF Agent 的四方架构对照",
-      "weighted_score": 0.61,
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "AICon演讲实录，讲AI Coding增量风险的Skill门禁与Harness落地，工程实践价值高。",
+      "summary_zh": "本文为 AICon 北京站演讲内容整理，聚焦 AI Coding 场景下的增量风险管控。作者提出用 Skill 门禁机制约束 AI 生成代码的准入边界，并介绍 Harness 框架的落地实践，用于在开发流程中拦截和评估 AI 引入的变更风险。内容偏向工程落地经验，涉及如何在团队协作中把 AI 编码纳入可控的质量与安全流程。",
+      "title_zh": null,
+      "weighted_score": 0.645,
       "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.7,
+        "source_authority": 0.7,
+        "novelty": 0.6,
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "b52839e17e6fe11b",
+      "story_id": "3af62a83bafea0f9",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-juejin",
-          "url": "https://juejin.cn/post/7704169842916393010"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/XieGrL5pws7jG1zxKPle?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "1c6f7c71ac370d99",
-      "source_id": "reddit-llmdevs",
-      "title": "what broke first when i let agents edit video through mcp",
-      "url": "https://www.reddit.com/r/LLMDevs/comments/1xo1t2n/what_broke_first_when_i_let_agents_edit_video/",
-      "published_at": "2026-11-04T22:21:59+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>i built a video editor with no gui because i figured ai agents would be the only users anyway. it's kimo - free, open-source (mit), and you drive it over mcp as tool calls from codex, cursor, opencode or any other mcp client.</p> <p>cut, trim, keyframe, titles and captions, colour grade, tracking, particles, audio, export - everything is a tool call. and one thing that is actually useful in practice: the agent can render a single frame to check its own work before committing the whole timeline, which saves a lot of wasted encode time.</p> <p>it is one ~15mb cpu-only rust binary. runs fine on a 2gb box.</p> <p>honestly the rough edges are real. the mcp protocol is great but some clients serialize things differently and i have hit edge cases around float timecodes, and the captioning pipeline can get confused if the model hallucinates timestamps. tracking and particles are working but still basic - nothing like a mature editor. i am also a college studen",
-      "category_hint": [
-        "技巧与观点",
-        "开源项目"
-      ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "深度分析",
-      "depth_score": 0.72,
-      "reason_zh": "作者复盘无 GUI 视频编辑器接入 MCP 后最先崩掉的环节，是 agent 工具调用的真实踩坑记录，可迁移到其他 agent 工程。",
-      "summary_zh": "作者构建了一个没有图形界面的视频编辑器 kimo，采用 MIT 开源协议，完全通过 MCP 以工具调用方式驱动，可被 Codex、Cursor、opencode 等任意 MCP 客户端操作。剪辑、裁剪、关键帧、字幕标题、调色、跟踪、粒子、音频与导出全部封装为工具调用。文章重点讲述在让 agent 实际编辑视频的过程中，最先出问题、最先崩掉的环节是什么，以及这些失败暴露出的 agent 工具设计与上下文管理上的取舍。",
-      "title_zh": "让 agent 通过 MCP 剪辑视频时，最先崩掉的是什么",
-      "weighted_score": 0.53,
-      "score_breakdown": {
-        "source_authority": 0.35,
-        "novelty": 0.7,
-        "impact": 0.4,
-        "practical_value": 0.75
-      },
-      "story_id": "028431339b7275f5",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-llmdevs",
-          "url": "https://www.reddit.com/r/LLMDevs/comments/1xo1t2n/what_broke_first_when_i_let_agents_edit_video/"
-        }
-      ]
-    },
-    {
-      "id": "a4f4c423c5426033",
-      "source_id": "openai-blog",
-      "title": "A thousand fewer paths to root",
-      "url": "https://openai.com/index/a-thousand-fewer-paths-to-root",
-      "published_at": "2026-11-04T08:00:00+00:00",
-      "raw_text": "OpenAI built an autonomous pipeline that found, validated, and generated patches for 948 local privilege-escalation vulnerabilities in the Linux kernel.",
-      "category_hint": [
-        "模型发布",
-        "产品发布"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "OpenAI用自主流水线发现并修复Linux内核948个漏洞，展示AI在安全领域的实际应用。",
-      "summary_zh": "OpenAI博客介绍了其构建的自主流水线，该流水线能够发现、验证并生成补丁，用于修复Linux内核中的本地权限提升漏洞。系统共识别出948个此类漏洞，并自动生成修复补丁。这展示了AI在软件安全漏洞挖掘和修复方面的实际能力，涉及自动化漏洞发现、验证和补丁生成的全流程，对AI应用于系统安全具有参考意义。",
-      "title_zh": "少了一千条通往root的路径",
-      "weighted_score": 0.81,
-      "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.8,
-        "impact": 0.8,
-        "practical_value": 0.7
-      },
-      "story_id": "4d3d4e6bb3e088bb",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "openai-blog",
-          "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
-        }
-      ]
-    },
-    {
-      "id": "f5f168ec4f0cd17b",
-      "source_id": "mit-tech-review-ai",
-      "title": "Securing the agentic enterprise with data lineage",
-      "url": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/",
-      "published_at": "2026-11-04T13:00:00+00:00",
-      "raw_text": "A sales representative asks an AI agent for customer pricing, and the agent pulls data from multiple sources: restricted pricing systems, internal communications, and archived quotes. The output looks accurate to the agent, so a second agent uses the data to draft the proposal for the sales rep. No human checks either handoff. When it’s&#8230;",
-      "category_hint": [
-        "行业动态",
-        "论文研究"
-      ],
-      "image_url": "https://wp.technologyreview.com/wp-content/uploads/2026/10/MITTR_Cyberhaven_V4_Cover.png?w=840",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "探讨多智能体协作中的数据血缘与安全风险，对构建可信企业级Agent有启发。",
-      "summary_zh": "文章以销售代表使用AI代理获取客户定价为例，说明代理从受限定价系统、内部通讯和存档报价等多个来源拉取数据，输出看似准确，第二个代理据此起草提案，全程无人工检查。这种多代理交接存在数据泄露和错误传播风险。文章提出用数据血缘（data lineage）来追踪数据来源和流转路径，确保代理在访问敏感信息时符合权限和合规要求，从而保障企业级代理系统的安全。",
-      "title_zh": "用数据血缘保障代理型企业安全",
-      "weighted_score": 0.705,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.7
-      },
-      "story_id": "0a815646e88c9db9",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "mit-tech-review-ai",
-          "url": "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/"
-        }
-      ]
-    },
-    {
-      "id": "0df6a628391f7d60",
+      "id": "96d28f451942d2f6",
       "source_id": "stratechery",
-      "title": "AI on the Ballot",
-      "url": "https://stratechery.com/2026/ai-on-the-ballot/",
-      "published_at": "2026-11-04T11:00:00+00:00",
-      "raw_text": "Data Centers were on the ballot, and they lost in a major way; what does it mean if American opposition to building is permanent?",
+      "title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+      "url": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+      "published_at": "2026-11-05T11:00:00+00:00",
+      "raw_text": "An interview with Intuit CEO Sasan Goodarzi about the working for one of tech's oldest software companies, and how Intuit is leaning into the AI paradigm shift.",
       "category_hint": [
         "行业动态"
       ],
-      "image_url": "https://i0.wp.com/stratechery.com/wp-content/uploads/2025/03/nvdia-gts-1.png?resize=1330%2C738&#038;ssl=1",
+      "image_url": "https://i0.wp.com/stratechery.com/wp-content/uploads/2026/10/Stripe-wordmark-Blurple-Small.png?resize=330%2C138&#038;ssl=1",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "分析数据中心建设在选举中受挫及其对美国AI基建的长期影响，有深度洞察。",
-      "summary_zh": "文章讨论数据中心建设在选举中遭遇重大失败，并探讨如果美国反对建设的情绪成为永久性，将意味着什么。作者指出，AI发展依赖大规模数据中心，但地方选民出于环境、土地等考虑反对建设，导致项目受阻。这种反对可能不是暂时的，而是反映了对科技巨头扩张的深层抵触。文章分析了这对美国AI竞争力、能源政策和科技公司战略的潜在影响，认为需要重新思考基建推进方式。",
-      "title_zh": "AI在选票上",
-      "weighted_score": 0.645,
+      "reason_zh": "Stratechery 对 Intuit CEO 的访谈，揭示老牌软件公司如何把 AI 嵌入财务与会计业务。",
+      "summary_zh": "Stratechery 的 Ben Thompson 访谈 Intuit CEO Sasan Goodarzi，围绕这家老牌软件公司如何在 AI 范式转变中重新定位展开。对话涉及 Intuit 将 AI 能力嵌入会计、税务与财务管理产品的思路，如何利用其掌握的大量中小企业财务数据构建差异化优势，以及组织与产品策略上的调整。访谈还讨论了 AI 对专业会计工作性质的影响、客户信任与合规问题，以及传统软件公司在模型能力快速迭代下如何保持竞争力。",
+      "title_zh": "专访 Intuit CEO Sasan Goodarzi：会计业务与 AI",
+      "weighted_score": 0.6375,
       "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.4
+        "source_authority": 0.85,
+        "novelty": 0.5,
+        "impact": 0.55,
+        "practical_value": 0.6
       },
-      "story_id": "14375a74a9b8be8d",
+      "story_id": "ae58c202595127b5",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "stratechery",
-          "url": "https://stratechery.com/2026/ai-on-the-ballot/"
+          "url": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/"
+        }
+      ]
+    },
+    {
+      "id": "224d0809e31103c6",
+      "source_id": "reddit-rag",
+      "title": "Meet SpectRAG",
+      "url": "https://www.reddit.com/r/Rag/comments/1xoen9d/meet_spectrag/",
+      "published_at": "2026-11-05T09:46:52+00:00",
+      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>SpectRAG: instead of ranking chunks one by one, select a set that works together as evidence (91.8% gold-evidence recall on multi-hop QA)</p> <p>Multi-hop questions break classic top-k retrieval. It returns the chunks closest to the query, and these are often near-duplicates from one part of one document. The bridge passage that connects the evidence doesn’t look like the question, so it never makes the cut.</p> <p>SpectRAG stops ranking chunks individually and selects a set of chunks that work together as evidence. The video above explains the idea in a few minutes.</p> <p>Results on MultiHopRAG and UltraDomain:</p> <ul> <li>91.8% overall gold-evidence recall (next best baseline: 76.1%)</li> <li>95.1% exact match on inference questions</li> <li>About 6x smaller index than LightRAG (46 MB vs 274 MB)</li> <li>LLM judges preferred its answers for diversity against every baseline we tested</li> </ul> <p>Paper: <a href=\"https://arxiv.org/abs/2610.36991\">ht",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "提出SpectRAG方法，通过选择协同证据集而非逐块排序，提升多跳QA的检索效果。",
+      "summary_zh": "SpectRAG提出一种新的检索增强生成方法，不再逐块排序，而是选择一组能协同作为证据的块。传统top-k检索在多跳问题中常返回近重复块，而连接证据的桥接段落可能不相似。SpectRAG在多跳QA上达到91.8%的金证据召回率，解决了经典检索的缺陷。",
+      "title_zh": "认识 SpectRAG",
+      "weighted_score": 0.585,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "52388a976e15cf5c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-rag",
+          "url": "https://www.reddit.com/r/Rag/comments/1xoen9d/meet_spectrag/"
+        }
+      ]
+    },
+    {
+      "id": "4727bae50ed4bcc9",
+      "source_id": "infoq-cn-ai",
+      "title": "混元 Hy4 实测：腾讯的产品基因，模型继承了几分？",
+      "url": "https://www.infoq.cn/article/C61Q16LQIDq45l0iCCzV?utm_source=rss&utm_medium=article",
+      "published_at": "2026-11-05T09:44:25+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/C61Q16LQIDq45l0iCCzV?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
+        "技巧与观点"
+      ],
+      "image_url": null,
+      "category": "模型发布",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "对腾讯混元Hy4模型进行实测，分析其能力与腾讯产品基因的关联，有参考价值。",
+      "summary_zh": "文章对腾讯混元Hy4模型进行了实际测试，探讨该模型在多大程度上继承了腾讯的产品基因。可能涉及模型在中文理解、多轮对话、实际应用场景中的表现，并与腾讯的产品生态和用户需求相结合进行分析。测试结果和具体案例未在摘要中详述。",
+      "title_zh": null,
+      "weighted_score": 0.61,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "9f6732691856a528",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/C61Q16LQIDq45l0iCCzV?utm_source=rss&utm_medium=article"
+        }
+      ]
+    },
+    {
+      "id": "1d06a00e9375e142",
+      "source_id": "zh-tmtpost",
+      "title": "李佳琦开始卖Token，AI终于走进了直播间",
+      "url": "https://www.tmtpost.com/8194147.html",
+      "published_at": "2026-11-05T09:02:53+00:00",
+      "raw_text": "直播间解决的是第一次购买，真正决定AI商业化的，是第100次使用。",
+      "category_hint": [
+        "行业动态"
+      ],
+      "image_url": "https://images.tmtpost.com/uploads/images/wx/2026/11/20261105000532999296.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.6,
+      "reason_zh": "以李佳琦直播卖Token为切入点，探讨AI商业化中首次购买与长期使用的关键差异。",
+      "summary_zh": "文章以李佳琦直播间销售AI Token为引，讨论AI产品商业化的核心问题。直播间能解决用户的第一次购买，但真正决定AI商业化成败的是用户第100次使用时的体验和留存。文章可能分析了AI产品如何从营销驱动转向产品驱动，以及直播电商模式对AI普及的推动作用与局限。",
+      "title_zh": null,
+      "weighted_score": 0.605,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "4ba99ee5ef388533",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-tmtpost",
+          "url": "https://www.tmtpost.com/8194147.html"
         }
       ]
     }
