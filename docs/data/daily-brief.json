@@ -1,57 +1,125 @@
 {
-  "date": "2026-11-05",
-  "generated_at": "2026-11-05T22:59:16.136525+00:00",
+  "date": "2026-11-06",
+  "generated_at": "2026-11-06T22:23:01.944136+00:00",
   "items": [
     {
-      "id": "135320f11f644283",
-      "source_id": "zh-forcheetah-github-io",
-      "title": "【转载】[陈天奇]构建Agent时代的机器学习编译器基础层",
-      "url": "https://forcheetah.github.io/2026/11/05/Article04/",
-      "published_at": "2026-11-05T11:43:18+00:00",
-      "raw_text": "<h1 id=\"序\"><a class=\"anchor\" href=\"#序\">#</a> 序</h1>\n<p>转载一些重要有趣的文章，侵删。</p>\n<p>导读：[陈天奇] CS. PhD 机器学习系统，原文：<a href=\"https://zhuanlan.zhihu.com/p/2101651274798196721\">构建 Agent 时代的机器学习编译器基础层</a></p>\n<h1 id=\"正文\"><a class=\"anchor\" href=\"#正文\">#</a> 正文</h1>\n<p>今年是 Agent 元年，不管对于任何的领域，大家都需要感受到这样的变化。对于机器学习编译和 kernel 可能更是如此。传统的机器学习编译尝试利用我们的领域知识从图，tile 和 SIMT 等各个粒度去进行变化和优化，使得我们可以再各个硬件上通过简洁的代码获得很高的效率。强大 agent 的出现使得只要我们有足够多的 token，基本底层的算子和软件都可以都可以蹬出来了。</p>\n<p><img alt=\"Agent元年\" /></p>\n<p>一方面来看，Agent 已经可以解决从高性能算子的开发到框架优化的各种问题。我们也终于可以从阅读 nsight 报告检查汇编和手动微调 kernel 的循环中解脱出来了。近期包含 <a href=\"https://pytorch.org/blog/kernelagent-hardware-guided-gpu-kernel-optimization-via-multi-agent-orchestration/\">KernelAgent</a>, <a href=\"https://arxiv.org/abs/2602.24286\">CUDA Agent</a>, <a href=\"https://prod.cursor.com/blog/multi-agent-kernels\">Cursor’s multi-agent system</a>, <a href=\"https://arxiv.org/abs/2608.12629\">CAKE</a>, <a href=\"https://blog.mlc.ai/2026/09/29/tirx-harness-an-open-compiler-harness-for-agentic-gpu",
+      "id": "3fb6826c85351d36",
+      "source_id": "zh-meituan-tech",
+      "title": "从 LOOP 到图探索 —— 算法模型的 AutoResearch 自进化系统架构演进之路",
+      "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html",
+      "published_at": "2026-11-06T21:57:24.543149+00:00",
+      "raw_text": "本文分享这套系统的设计理念、架构演进与可信度设计，希望对大家有所帮助或启发。",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://p0.meituan.net/meituantechblog/f96887d93b880574e0fb9ebad114faba529816.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "美团算法模型AutoResearch自进化系统的架构演进与可信度设计，对构建自动化研究系统有启发。",
+      "summary_zh": "本文介绍了美团从LOOP到图探索的算法模型AutoResearch自进化系统架构演进历程。文章详细阐述了系统的设计理念、架构迭代过程以及可信度保障机制，包括如何让系统自动生成和验证假设、如何控制探索风险等。通过实际案例展示了该系统在提升算法研发效率方面的效果，为构建自动化研究系统提供了可借鉴的工程经验。",
+      "title_zh": null,
+      "weighted_score": 0.775,
+      "score_breakdown": {
+        "source_authority": 0.8,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.8
+      },
+      "story_id": "2e9ee6491b654f3b",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/10/22/LOOP-AutoResearch.html"
+        }
+      ]
+    },
+    {
+      "id": "f78606104efcb452",
+      "source_id": "zh-meituan-tech",
+      "title": "如何在“不能出错”的系统里使用 AI Coding？分布式存储实践与边界",
+      "url": "https://tech.meituan.com/2026/10/29/AI-Coding-IN-Distributed-Storage-System.html",
+      "published_at": "2026-11-06T21:57:24.543137+00:00",
+      "raw_text": "本文结合美团基础技术部在 AI 评审、问题排查和自动化开发中的真实实践，分享 AI 能帮上什么忙、容易在哪些地方犯错，以及哪些地方仍需要人来把关。比「多写代码」更重要的，是让代码和结论经得起验证。",
       "category_hint": [
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.85,
-      "reason_zh": "陈天奇谈 Agent 时代机器学习编译与 kernel 基础层，含可迁移的系统设计认知，值得细读。",
-      "summary_zh": "陈天奇在文中提出，Agent 元年对机器学习编译与 kernel 优化提出了新要求。传统 ML 编译依赖图、tile、SIMT 等粒度注入领域知识，以简洁代码在各硬件上取得高效率；而强大 Agent 的介入可能改变这一范式，让编译优化从人工规则转向由 Agent 驱动的自动搜索与生成。文章讨论了编译器基础层在 Agent 时代应如何重新定位，以及如何把领域知识与自动化能力结合，为上层模型与硬件之间搭建更灵活高效的桥梁。",
-      "title_zh": "【转载】[陈天奇]构建 Agent 时代的机器学习编译器基础层",
-      "weighted_score": 0.7125,
+      "depth_score": 0.8,
+      "reason_zh": "美团分享在关键系统中应用AI编码的实践，强调验证与人工把关，对工程团队有直接参考价值。",
+      "summary_zh": "美团基础技术部结合分布式存储系统，分享了AI在代码评审、问题排查和自动化开发中的实际应用。文章指出AI能提升效率，但在关键系统中容易出错，必须建立严格的验证机制和人工审核流程。核心观点是：比多写代码更重要的是确保代码和结论经得起验证，并给出了具体的实践边界和注意事项。",
+      "title_zh": null,
+      "weighted_score": 0.77,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.75,
+        "source_authority": 0.8,
+        "novelty": 0.7,
         "impact": 0.7,
-        "practical_value": 0.7
+        "practical_value": 0.9
       },
-      "story_id": "4b81144cfb9bf1dd",
+      "story_id": "d64a6e72a3c84fb6",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-forcheetah-github-io",
-          "url": "https://forcheetah.github.io/2026/11/05/Article04/"
+          "source_id": "zh-meituan-tech",
+          "url": "https://tech.meituan.com/2026/10/29/AI-Coding-IN-Distributed-Storage-System.html"
         }
       ]
     },
     {
-      "id": "7703ce58338b4f92",
-      "source_id": "zh-solidot",
-      "title": "Google 和 OpenAI 的模型对特定口音有偏见",
-      "url": "https://www.solidot.org/story?sid=85804",
-      "published_at": "2026-11-05T09:00:58+00:00",
-      "raw_text": "研究人员调查了先进多模态模型如何评估面试、会议报告和英语口语能力测试中的语音，测试的模型包括了 Google 的 Gemini 2.5 Pro 和 Gemini 2.5 Flash，以及 OpenAI 的 GPT-Audio 1.5，开放权重模型 Qwen 3 Omni。这些模型对五种不同口音——美国、英国、中国、印度和尼日利亚——的英语语音进行了评分。AI 模型普遍将中国和尼日利亚口音的评分最低，印度口音居中，美国和英国口音的评分最高。即使内容完全相同，系统仍然认为美国和英国口音的表达方式和内容都更胜一筹。研究团队发现，明显的等级划分也体现在模型的解释中。研究人员说，模型反复声称中国和尼日利亚口音的英语使用者含糊不清或难以理解，但实际上它们非常擅长转录带有口音的语音，它们理解说话者，但它们只是基于口音，对说话者存在一种隐性的等级观念。\n<p></p>",
+      "id": "afd6335fa1881028",
+      "source_id": "aws-ml-blog",
+      "title": "Taxonomy of agentic primitives in Amazon Quick",
+      "url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/",
+      "published_at": "2026-11-06T17:34:45+00:00",
+      "raw_text": "As we built Amazon Quick, its agents grew from answering questions to taking actions, and the same primitives kept getting rebuilt under different names. This post shares the taxonomy we converged on — triggers, agents, capabilities, and learned context — found by decomposing agentic work into four plain questions: When, What, Who, and How.",
       "category_hint": [
+        "技巧与观点",
+        "产品发布"
+      ],
+      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/03/ML-21505-1.png",
+      "category": "技巧与观点",
+      "content_type": "深度分析",
+      "depth_score": 0.8,
+      "reason_zh": "AWS 官方博客总结 agentic 原语分类法，对构建 agent 系统的工程师有直接参考价值。",
+      "summary_zh": "AWS 在构建 Amazon Quick 的过程中，发现其 agent 从回答问题演进到执行动作，而相同的原语不断以不同名称被重复构建。本文分享了他们最终收敛的分类法：触发器（triggers）、agent、能力（capabilities）和习得上下文（learned context）。这一分类法是通过将 agentic 工作分解为四个简单问题——何时（When）、做什么（What）、谁（Who）和如何做（How）——而得出的。文章详细解释了每个原语的定义、职责边界以及它们如何组合成完整的 agent 工作流，为开发者设计和组织 agent 系统提供了可复用的概念框架。",
+      "title_zh": "Amazon Quick 中 agentic 原语的分类法",
+      "weighted_score": 0.755,
+      "score_breakdown": {
+        "source_authority": 0.9,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "c29a1c667e2f7bff",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "aws-ml-blog",
+          "url": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/"
+        }
+      ]
+    },
+    {
+      "id": "0b78f915fada13a3",
+      "source_id": "reddit-machinelearning",
+      "title": "Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout (Google Research, 10M tokens in 25MB state) [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1xplbuu/muir_linear_attention_with_sensitivityallocated/",
+      "published_at": "2026-11-06T19:10:08+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/MachineLearning/comments/1xplbuu/muir_linear_attention_with_sensitivityallocated/\"> <img alt=\"Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout (Google Research, 10M tokens in 25MB state) [R]\" src=\"https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=140&amp;height=81&amp;auto=webp&amp;s=d39c4c208d55b26179446aa55ac5f84224359090\" title=\"Muir: Linear Attention with Sensitivity-Allocated Gating and Matched-Filter Readout (Google Research, 10M tokens in 25MB state) [R]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>Paper: <a href=\"https://arxiv.org/abs/2611.08376\">https://arxiv.org/abs/2611.08376</a> | HF: <a href=\"https://huggingface.co/papers/2611.08376\">https://huggingface.co/papers/2611.08376</a></p> <p>At 10M tokens, a 1.3B Transformer needs 2.1 TB of KV cache (0.32 TB even at 2.5-bit quantization). Channel-wise gated delta models (like Gated DeltaNet-2 / GDN-2)",
+      "category_hint": [
+        "论文研究",
         "行业动态"
       ],
-      "image_url": null,
+      "image_url": "https://external-preview.redd.it/q3evP6JeDpAC2MdSQHWYxnCYTqbJkElIQsLFqVSdkss.png?width=140&height=81&auto=webp&s=d39c4c208d55b26179446aa55ac5f84224359090",
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.8,
-      "reason_zh": "揭示多模态模型对口音的隐性等级偏见，实验设计严谨，对AI公平性有重要启示。",
-      "summary_zh": "研究人员测试了Google Gemini 2.5 Pro/Flash、OpenAI GPT-Audio 1.5和Qwen 3 Omni等多模态模型对五种英语口音（美、英、中、印、尼日利亚）的评分。结果显示，模型普遍给中国和尼日利亚口音最低分，印度口音居中，美英口音最高，即使内容完全相同。模型在解释中常称中国和尼日利亚口音含糊难懂，但实际上它们能准确转录这些语音，表明模型存在基于口音的隐性等级偏见。",
-      "title_zh": "Google 和 OpenAI 的模型对特定口音有偏见",
+      "reason_zh": "Google Research 提出新型线性注意力机制 Muir，在 25MB 状态中处理 1000 万 token，对长上下文建模有重要启发。",
+      "summary_zh": "Google Research 在 Reddit 发布论文，提出 Muir——一种带灵敏度分配门控与匹配滤波读出的线性注意力机制。该方法能在仅 25MB 的状态内存中处理长达 1000 万 token 的序列，显著降低长上下文建模的内存开销。核心创新包括根据输入灵敏度动态分配门控资源，以及采用匹配滤波进行高效读出。实验表明其在长序列任务上保持竞争力，为高效注意力架构提供了新思路。",
+      "title_zh": "Muir：带灵敏度分配门控与匹配滤波读出的线性注意力（Google Research，25MB 状态处理 1000 万 token）",
       "weighted_score": 0.705,
       "score_breakdown": {
         "source_authority": 0.7,
@@ -59,338 +127,234 @@
         "impact": 0.7,
         "practical_value": 0.6
       },
-      "story_id": "ac5cc6630a10b086",
+      "story_id": "bea5ebd630dc5220",
       "multi_source_count": 1,
       "sources": [
-        {
-          "source_id": "zh-solidot",
-          "url": "https://www.solidot.org/story?sid=85804"
-        }
-      ]
-    },
-    {
-      "id": "c0c2d1f3626b1270",
-      "source_id": "dwarkesh-podcast",
-      "title": "The benchmark where AIs have to lie to win",
-      "url": "https://www.dwarkesh.com/p/clocktower",
-      "published_at": "2026-11-05T21:05:50+00:00",
-      "raw_text": "AIs are now good enough to run a conspiracy",
-      "category_hint": [
-        "行业动态",
-        "论文研究"
-      ],
-      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/95e0ddc2-a7ee-4654-821b-dd35c47bcfc5_1672x941.png",
-      "category": "论文研究",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "探讨AI在需要欺骗才能获胜的基准测试中的表现，揭示模型策略性行为，具有启发性。",
-      "summary_zh": "文章讨论了一个新的基准测试，其中AI必须学会欺骗才能获胜。作者指出，当前AI已足够强大，能够运行一个“阴谋”，即在多智能体环境中通过隐瞒信息、误导对手来达成目标。这引发了对AI对齐和诚实性的担忧，并探讨了如何评估和引导模型的策略性行为。内容涉及AI安全与伦理，适合对前沿风险感兴趣的读者。",
-      "title_zh": "AI必须撒谎才能获胜的基准测试",
-      "weighted_score": 0.685,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "6ecb6832af62c36a",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "dwarkesh-podcast",
-          "url": "https://www.dwarkesh.com/p/clocktower"
-        }
-      ]
-    },
-    {
-      "id": "dd91554502c6fefa",
-      "source_id": "reddit-localllama",
-      "title": "[Paper] FireFlash : An Open Recipe for Long-Horizon Agentic RL Achieving the Performance-Cost Pareto Frontier",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xomst7/paper_fireflash_an_open_recipe_for_longhorizon/",
-      "published_at": "2026-11-05T16:17:42+00:00",
-      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LocalLLaMA/comments/1xomst7/paper_fireflash_an_open_recipe_for_longhorizon/\"> <img alt=\"[Paper] FireFlash : An Open Recipe for Long-Horizon Agentic RL Achieving the Performance-Cost Pareto Frontier\" src=\"https://preview.redd.it/orkgrqsqjtzh1.jpeg?width=140&amp;height=117&amp;auto=webp&amp;s=543c65a91791905e11e47c7c94b29d64fdb8179e\" title=\"[Paper] FireFlash : An Open Recipe for Long-Horizon Agentic RL Achieving the Performance-Cost Pareto Frontier\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><blockquote> <p>We introduce <strong>FireFlash</strong>, a 300B-scale model tailored for long-horizon agentic tasks. FireFlash excels as a terminal and coding agent, <strong>achieving 46.2% on Terminal-Bench 4.0</strong><a href=\"https://agenteconomics.org/posts/agentic-rl-recipe#ref-1\"><sup>1</sup></a>, <strong>putting it on par with Fable 5 and GPT-6 Sol, while costing over 30× less per task</strong> than Fable 5 at maximum effort (Figure 1). ",
-      "category_hint": [
-        "开源项目",
-        "技巧与观点"
-      ],
-      "image_url": "https://preview.redd.it/orkgrqsqjtzh1.jpeg?width=140&height=117&auto=webp&s=543c65a91791905e11e47c7c94b29d64fdb8179e",
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出长视野智能体强化学习的开源方案，兼顾性能与成本，实用性强。",
-      "summary_zh": "该论文提出FireFlash，一个用于长视野智能体强化学习的开源配方，旨在实现性能与成本之间的帕累托最优。长视野任务要求智能体在多个步骤中保持推理和规划能力，对强化学习训练提出更高要求。FireFlash可能通过优化训练流程、奖励设计和计算资源分配，在有限成本下达到有竞争力的性能。开源配方有助于社区复现和进一步研究，推动智能体RL在实际应用中的落地。",
-      "title_zh": "[论文] FireFlash：实现性能-成本帕累托最优的长视野智能体RL开源配方",
-      "weighted_score": 0.64,
-      "score_breakdown": {
-        "source_authority": 0.5,
-        "novelty": 0.8,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "b8fffe08b2f4f039",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xomst7/paper_fireflash_an_open_recipe_for_longhorizon/"
-        }
-      ]
-    },
-    {
-      "id": "ae2861cc0e2f824e",
-      "source_id": "understandingai",
-      "title": "This robotics concept helps explain the jaggedness of frontier capabilities",
-      "url": "https://www.understandingai.org/p/this-robotics-concept-helps-explain",
-      "published_at": "2026-11-05T15:16:59+00:00",
-      "raw_text": "Sim-to-real gaps are everywhere.",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": "https://substackcdn.com/image/fetch/$s_!mzno!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0f8cdb61-e6d9-4fb1-b966-7ba7fcaf9461_5700x3801.jpeg",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.8,
-      "reason_zh": "用机器人sim-to-real的类比解释前沿能力为何参差不齐，视角新颖，有助于理解模型能力边界。",
-      "summary_zh": "文章借用机器人学中的“仿真到现实差距”（sim-to-real gap）概念，来解释前沿AI模型能力为何呈现锯齿状：在基准测试中表现优异，却在真实场景中频繁失败。作者指出，这种差距不仅存在于机器人领域，也普遍存在于语言模型和智能体系统中，根源在于训练环境与部署环境之间的分布偏移。文章进一步讨论了如何通过更贴近真实世界的评估和训练策略来缩小这一差距，并提醒读者不要被基准分数误导。",
-      "title_zh": "一个机器人概念有助于解释前沿能力的参差不齐",
-      "weighted_score": 0.605,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.6
-      },
-      "story_id": "c2a34ee2d72d362d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "understandingai",
-          "url": "https://www.understandingai.org/p/this-robotics-concept-helps-explain"
-        }
-      ]
-    },
-    {
-      "id": "5957d36f1fa78ef6",
-      "source_id": "arxiv-q-bio-nc",
-      "title": "Mind Control of LLMs via Closed-Loop Stimulation: Out-of-Distribution Robustness",
-      "url": "https://arxiv.org/abs/2611.06418",
-      "published_at": "2026-11-05T05:00:00+00:00",
-      "raw_text": "arXiv:2611.06418v1 Announce Type: new \nAbstract: Brains and large language models need not be considered equivalent systems to reveal an interpretable commonality: both exhibit high-dimensional, nonlinear dynamics whose behavior can only be modeled imperfectly. This creates a shared challenge whenever we seek to intervene in their dynamics. A controller may either rely on a model identified around a particular operating regime and risk failure as the system moves away from that regime, or explicitly account for uncertainty and a changing internal state. Neurostimulation has confronted an analogous problem for decades. The limitations of fixed, open-loop stimulation have motivated closed-loop and state-dependent approaches that condition intervention on the ongoing state of the neural system. Inspired by this principle, we formulate LLM steering as a feedback-control problem in which the network's internal state, rather than a fixed intervention alone, determines how the system is pertu",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "把大脑闭环刺激的控制思路迁移到LLM干预，视角新颖，属可解释性与控制交叉研究。",
-      "summary_zh": "这篇 arXiv 论文提出，不必把大脑与大语言模型视为等价系统，也能揭示二者可解释的共性：两者都表现出高维非线性动力学，其行为只能被不完美地建模，因此在试图干预其动力学时面临共同挑战。控制器可以依赖在特定条件下辨识出的模型，但论文关注分布外条件下的鲁棒性。作者借鉴神经科学中的闭环刺激思路，探索对 LLM 进行干预与控制的方法及其在分布外场景下的稳健性。",
-      "title_zh": "通过闭环刺激对 LLM 进行“精神控制”：分布外鲁棒性",
-      "weighted_score": 0.57,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.8,
-        "impact": 0.4,
-        "practical_value": 0.3
-      },
-      "story_id": "3b25867a3063602d",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-q-bio-nc",
-          "url": "https://arxiv.org/abs/2611.06418"
-        }
-      ]
-    },
-    {
-      "id": "12eff376938bb6e7",
-      "source_id": "reddit-machinelearning",
-      "title": "The Ultimate MoE Training Handbook: training Mixture-of-Experts models with Megatron-LM, setting by setting [P]",
-      "url": "https://www.reddit.com/r/MachineLearning/comments/1xorgq0/the_ultimate_moe_training_handbook_training/",
-      "published_at": "2026-11-05T19:13:51+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>Handbook: <a href=\"https://huggingface.co/spaces/huggingface/moe-blogpost\">https://huggingface.co/spaces/huggingface/moe-blogpost</a></p> <p>Hello, I'm Nouamane, one of the authors. I'm at Hugging Face and also worked on the Ultra-Scale and Smol Training Playbooks, if you've read those.</p> <p>This handbook is for people who have trained a dense model and want to train an MoE next, or who are curious how MoE training works. Chapter 2 is a Megatron-LM runbook: test the hardware, build the image, train a dense baseline, then a first MoE on one node, compared against that baseline. Chapter 3 takes the MoE layer apart (router, routing, load balancing, experts, block layout, training, systems). For each part we give the Megatron-LM code, what to watch, our recommendation, and what frontier MoEs chose. Chapter 4 follows the model into serving and RL. Chapters 3 and 4 need no GPU.</p> <p>When a result comes from our runs, we say so. Claims about frontier mode",
-      "category_hint": [
-        "论文研究",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "Hugging Face 出品的 MoE 训练手册，逐项讲解 Megatron-LM 配置，对训练者极具实用价值。",
-      "summary_zh": "Hugging Face 发布了《MoE 训练终极手册》，作者 Nouamane 曾参与 Ultra-Scale 和 Smol Training Playbooks。该手册面向已训练过稠密模型、希望转向混合专家（MoE）模型的开发者，基于 Megatron-LM 框架，逐项讲解训练配置参数的含义与设置方法。内容涵盖 MoE 架构的关键训练细节，旨在降低从稠密模型到 MoE 模型的迁移门槛，是一份系统性的实操指南。",
-      "title_zh": "MoE 训练终极手册：用 Megatron-LM 逐项配置训练混合专家模型 [P]",
-      "weighted_score": 0.685,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.9
-      },
-      "story_id": "6fef0229cbf4e1dd",
-      "multi_source_count": 2,
-      "sources": [
-        {
-          "source_id": "reddit-localllama",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xor5nr/the_ultimate_moe_training_handbook_training/"
-        },
         {
           "source_id": "reddit-machinelearning",
-          "url": "https://www.reddit.com/r/MachineLearning/comments/1xorgq0/the_ultimate_moe_training_handbook_training/"
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1xplbuu/muir_linear_attention_with_sensitivityallocated/"
         }
       ]
     },
     {
-      "id": "65f428064ceb1590",
-      "source_id": "infoq-cn-ai",
-      "title": "AI Coding 增量风险管控：Skill 门禁与 Harness 落地实践｜AICon北京",
-      "url": "https://www.infoq.cn/article/XieGrL5pws7jG1zxKPle?utm_source=rss&utm_medium=article",
-      "published_at": "2026-11-05T10:00:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/XieGrL5pws7jG1zxKPle?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "id": "7efde5654fe16fd5",
+      "source_id": "arxiv-cs-pl",
+      "title": "Replay Is a Family of Assertions: Fork-Safety in Event-Sourced Agent Runtimes",
+      "url": "https://arxiv.org/abs/2611.06924",
+      "published_at": "2026-11-06T05:00:00+00:00",
+      "raw_text": "arXiv:2611.06924v1 Announce Type: new \nAbstract: Event-sourced agent runtimes commonly claim deterministic replay, cheap forking, and lineage. These are families of assertions, not one guarantee. A fixed-log fold may be deterministic while reactive settlement remains schedule-sensitive; a recorded oracle result can enable zero-call replay while the original interaction still changed cost or world state; and a prefix copy cannot undo an action in a discarded suffix.\n  We present an executable F# contract that separates facts from effect requests, makes scheduling explicit, and assesses a cut relative to projection, strict execution replay, external continuation, or a declared counterfactual-world observation. Preserved counterexamples show that general settlement is neither terminating nor confluent and that disjoint declared writes do not prevent read/trigger interference. Against 5,540 public runtime logs, all 317,296 projection cuts satisfy the stated observation, while 36,251 cuts s",
       "category_hint": [
-        "行业动态",
-        "技巧与观点"
+        "论文研究"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "AICon演讲实录，讲AI Coding增量风险的Skill门禁与Harness落地，工程实践价值高。",
-      "summary_zh": "本文为 AICon 北京站演讲内容整理，聚焦 AI Coding 场景下的增量风险管控。作者提出用 Skill 门禁机制约束 AI 生成代码的准入边界，并介绍 Harness 框架的落地实践，用于在开发流程中拦截和评估 AI 引入的变更风险。内容偏向工程落地经验，涉及如何在团队协作中把 AI 编码纳入可控的质量与安全流程。",
-      "title_zh": null,
-      "weighted_score": 0.645,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "把事件溯源 agent 运行时的“确定性重放”拆成一组断言族，指出 fork 安全性的真实边界，对做 agent 基础设施的工程师有可迁移认知。",
+      "summary_zh": "论文针对事件溯源式 agent 运行时中常被笼统宣称的“确定性重放、廉价分叉、血缘追踪”提出质疑，认为这些并非单一保证，而是一族彼此独立的断言。作者指出：固定日志折叠可以是确定性的，但反应式结算仍对调度顺序敏感；记录下来的 oracle 结果虽能实现零调用重放，但原始交互仍可能改变成本或外部世界状态。文章据此形式化刻画 fork 安全性所需的条件，区分哪些性质可被日志保证、哪些依赖运行时调度与外部副作用，为构建可复现、可分叉的 agent 运行时给出分析框架。",
+      "title_zh": "重放是一族断言：事件溯源 agent 运行时的分叉安全性",
+      "weighted_score": 0.6825,
       "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "3af62a83bafea0f9",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/XieGrL5pws7jG1zxKPle?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "96d28f451942d2f6",
-      "source_id": "stratechery",
-      "title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
-      "url": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
-      "published_at": "2026-11-05T11:00:00+00:00",
-      "raw_text": "An interview with Intuit CEO Sasan Goodarzi about the working for one of tech's oldest software companies, and how Intuit is leaning into the AI paradigm shift.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": "https://i0.wp.com/stratechery.com/wp-content/uploads/2026/10/Stripe-wordmark-Blurple-Small.png?resize=330%2C138&#038;ssl=1",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Stratechery 对 Intuit CEO 的访谈，揭示老牌软件公司如何把 AI 嵌入财务与会计业务。",
-      "summary_zh": "Stratechery 的 Ben Thompson 访谈 Intuit CEO Sasan Goodarzi，围绕这家老牌软件公司如何在 AI 范式转变中重新定位展开。对话涉及 Intuit 将 AI 能力嵌入会计、税务与财务管理产品的思路，如何利用其掌握的大量中小企业财务数据构建差异化优势，以及组织与产品策略上的调整。访谈还讨论了 AI 对专业会计工作性质的影响、客户信任与合规问题，以及传统软件公司在模型能力快速迭代下如何保持竞争力。",
-      "title_zh": "专访 Intuit CEO Sasan Goodarzi：会计业务与 AI",
-      "weighted_score": 0.6375,
-      "score_breakdown": {
-        "source_authority": 0.85,
-        "novelty": 0.5,
+        "source_authority": 0.75,
+        "novelty": 0.8,
         "impact": 0.55,
         "practical_value": 0.6
       },
-      "story_id": "ae58c202595127b5",
+      "story_id": "c0cdd102dbf77120",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "stratechery",
-          "url": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/"
+          "source_id": "arxiv-cs-pl",
+          "url": "https://arxiv.org/abs/2611.06924"
         }
       ]
     },
     {
-      "id": "224d0809e31103c6",
-      "source_id": "reddit-rag",
-      "title": "Meet SpectRAG",
-      "url": "https://www.reddit.com/r/Rag/comments/1xoen9d/meet_spectrag/",
-      "published_at": "2026-11-05T09:46:52+00:00",
-      "raw_text": "<!-- SC_OFF --><div class=\"md\"><p>SpectRAG: instead of ranking chunks one by one, select a set that works together as evidence (91.8% gold-evidence recall on multi-hop QA)</p> <p>Multi-hop questions break classic top-k retrieval. It returns the chunks closest to the query, and these are often near-duplicates from one part of one document. The bridge passage that connects the evidence doesn’t look like the question, so it never makes the cut.</p> <p>SpectRAG stops ranking chunks individually and selects a set of chunks that work together as evidence. The video above explains the idea in a few minutes.</p> <p>Results on MultiHopRAG and UltraDomain:</p> <ul> <li>91.8% overall gold-evidence recall (next best baseline: 76.1%)</li> <li>95.1% exact match on inference questions</li> <li>About 6x smaller index than LightRAG (46 MB vs 274 MB)</li> <li>LLM judges preferred its answers for diversity against every baseline we tested</li> </ul> <p>Paper: <a href=\"https://arxiv.org/abs/2610.36991\">ht",
+      "id": "52eed2a8b89bcbb9",
+      "source_id": "reddit-llmdevs",
+      "title": "First paper on how to train actual SOTA Decision Models ever: full playbook - architecture, datasets, training, evaluation, inference [R]",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1xpl15n/first_paper_on_how_to_train_actual_sota_decision/",
+      "published_at": "2026-11-06T18:58:39+00:00",
+      "raw_text": "<table> <tr><td> <a href=\"https://www.reddit.com/r/LLMDevs/comments/1xpl15n/first_paper_on_how_to_train_actual_sota_decision/\"> <img alt=\"First paper on how to train actual SOTA Decision Models ever: full playbook - architecture, datasets, training, evaluation, inference [R]\" src=\"https://preview.redd.it/c909x2tkh10i1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=57c991cc4f851dda2d48df0d9a82e116a74929d2\" title=\"First paper on how to train actual SOTA Decision Models ever: full playbook - architecture, datasets, training, evaluation, inference [R]\" /> </a> </td><td> <!-- SC_OFF --><div class=\"md\"><p>hey <strong><a href=\"/r/LLMDevs\">r/LLMDevs</a></strong> folks! my name is Alt, and I'm on the technical staff at Nace AI - Research Lab. .</p> <p>we just published a principled 50-page technical report detailing how our Drex decision models are built, trained, and evaluated. We believe our report is the first meaningful contribution in the community to defining decision models and describ",
       "category_hint": [
+        "技巧与观点",
+        "开源项目"
+      ],
+      "image_url": "https://preview.redd.it/c909x2tkh10i1.png?width=640&crop=smart&auto=webp&s=57c991cc4f851dda2d48df0d9a82e116a74929d2",
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "号称首个系统讲解SOTA决策模型训练全流程的论文，覆盖架构到推理，实操价值高。",
+      "summary_zh": "Reddit r/LLMDevs 社区分享的一篇论文声称是首个系统阐述如何训练达到SOTA水平的决策模型（Decision Models）的完整手册，内容覆盖模型架构设计、数据集构建、训练流程、评估方法与推理部署等环节。帖子以完整playbook形式呈现，试图为决策类模型的工程化训练提供可复用的方法论与操作步骤，对从事决策模型研发的工程师具有较强参考意义。",
+      "title_zh": "首篇系统讲解如何训练真正SOTA决策模型的论文：完整手册——架构、数据集、训练、评估、推理 [R]",
+      "weighted_score": 0.63,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.8
+      },
+      "story_id": "a38a6e31e833b39c",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "reddit-llmdevs",
+          "url": "https://www.reddit.com/r/LLMDevs/comments/1xpl15n/first_paper_on_how_to_train_actual_sota_decision/"
+        }
+      ]
+    },
+    {
+      "id": "a34ef88c627b6849",
+      "source_id": "zh-kakack",
+      "title": "大模型是怎么炼成的（二）：预训练的目标、配方与 Loss Spike",
+      "url": "https://kakack.github.io/LLM-Training-Pipeline-Part2-Pretrain/",
+      "published_at": "2026-11-06T00:00:00+00:00",
+      "raw_text": "第一篇把训练开始之前的事做完了：目标、冻结评测集、数据版本、tokenizer 和 packed batch 都已经能指回具体文档。从这一步起，优化器才第一次看到 token。 预训练在做的事很窄。给定上下文 \\(x_{\\lt t}\\)，模型输出词表上的分布，训练最小化下一个 token 的负对数似然。它不负责「变成助手」，也不负责证明某个架构先进。本篇要回答的是：这个目标在一个 step 里怎么流动，Scaling Laws 到底替你决定了什么，Dense 和 MoE 改变的是哪一种梯度，学习率日程为什么会卡住后面的数据实验，以及 loss 突然跳起来时，该看哪个信号、动哪个旋钮。 分布式切分不在这里重讲。《并行策略到底在切什么》已经按张量形状拆过显存。本篇只在精度和 spike 碰到那些张量时引用它。 范围：文本 LLM 的自回归预训练，对照 Llama 3 405B 与 DeepSeek-V3 的公开配方，并回看 PaLM、GLM-130B 里真正写过的不稳定案例。长上下文续训留到第三篇。数字都标明出处；报告没写的超参不补。 一、一个 step 里，前向和梯度各走一遍 图 1：一个 training step。实线是前向和权重更新，虚线是梯度——沿用系列图例里「虚线表示反馈」的含义，训练里回流的信号就是梯度。AdamW 用虚线边框，表示它常驻但不在前向计算图上。 前向路径是： \\[h_0 = \\mathrm{Emb}(x)\\] \\[h_{\\ell} = h_{\\ell-1} + \\mathrm{Block}_{\\ell}(h_{\\ell-1})\\] \\[z = W_{\\mathrm{head}} h_L\\] \\[\\mathcal{L} = -\\frac{1}{\\lvert\\mathcal{T}\\rvert}\\sum_{t \\in \\mathcal{T}} \\log \\bigl[\\mathrm{softmax}(z_t)\\bigr]_{x_t}\\] 其中 \\(\\mathcal{T}\\) 是参与 loss 的位置。预训练里通常是几乎全部 token；packing 时文档边界是否断开，第一篇已经要求在样本格式里定死，这里不能再临时改。PaLM 明确不用 label smoothing，loss 就是平均对数概率，外加后面会讲的 z-loss。 反向路径比前向更容易",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://raw.githubusercontent.com/kakack/kakack.github.io/master/_images/20261106-1.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.8,
+      "reason_zh": "系统拆解预训练目标、Scaling Laws、Dense/MoE 梯度与 Loss Spike 排查，工程可迁移性强。",
+      "summary_zh": "这是“大模型是怎么炼成的”系列第二篇，聚焦预训练阶段。文章先回顾第一篇已完成的准备工作（目标、冻结评测集、数据版本、tokenizer 与 packed batch），随后说明预训练目标本身很窄：给定上下文预测下一个 token 的分布并最小化负对数似然。正文围绕几个关键问题展开：该目标在单个 step 中如何流动、Scaling Laws 实际替你决定了什么、Dense 与 MoE 改变的是哪一类梯度、学习率日程为何会卡住后续数据实验，以及 loss 突然跳升（Loss Spike）时应观察哪个信号、调整哪个旋钮。文中以 Llama 3 405B 与 DeepSeek 等为对照，分布式切分部分则引用同系列另一篇。",
+      "title_zh": null,
+      "weighted_score": 0.54,
+      "score_breakdown": {
+        "source_authority": 0.55,
+        "novelty": 0.5,
+        "impact": 0.4,
+        "practical_value": 0.75
+      },
+      "story_id": "7d46f4d01a24eed4",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-kakack",
+          "url": "https://kakack.github.io/LLM-Training-Pipeline-Part2-Pretrain/"
+        }
+      ]
+    },
+    {
+      "id": "530d34fdff2090bf",
+      "source_id": "arxiv-math-oc",
+      "title": "From What Is Used to What Is Missing: Rethinking Dynamic Rank in LoRA",
+      "url": "https://arxiv.org/abs/2611.07349",
+      "published_at": "2026-11-06T05:00:00+00:00",
+      "raw_text": "arXiv:2611.07349v1 Announce Type: new \nAbstract: Parameter-efficient fine-tuning with LoRA is governed by rank, which controls parameter budget and locally accessible task updates. Existing dynamic-rank methods mainly focus on capacity allocation, leaving unresolved whether the current adaptation space is sufficient for the task. We characterize the first-order information boundary of standard factor gradients, showing that their unobservable subspace coincides with the normal space of the low-rank manifold. Thus, factor gradients alone cannot distinguish under-optimization within the current space from task-relevant directions beyond its first-order reach. This motivates a geometric view of rank evolution, where tangent information optimizes existing degrees of freedom and the normal spectrum quantifies the value of new ones. Under a local quadratic model, we show that leading normal singular directions yield the locally optimal rank expansion, with spectral energy determining its gai",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.75,
+      "reason_zh": "重新审视 LoRA 动态秩：不只问“容量怎么分配”，而问“当前适配空间是否够用”，为秩选择提供新判据。",
+      "summary_zh": "论文重新审视 LoRA 中的动态秩问题。现有动态秩方法多聚焦于容量分配，即如何在层间或模块间分配参数预算，但未回答当前适配空间对任务是否充分。作者刻画标准因子分解的一阶信息边界，从“已用信息”转向“缺失信息”的视角，据此判断何时需要提升秩、何时现有秩已足够。该框架为动态秩策略提供了可解释的判据，而不仅是启发式分配规则，对参数高效微调的实践者有参考意义。",
+      "title_zh": "从已用到缺失：重思 LoRA 中的动态秩",
+      "weighted_score": 0.6575,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.75,
+        "impact": 0.5,
+        "practical_value": 0.6
+      },
+      "story_id": "b0d32f8ce97d6bcc",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-math-oc",
+          "url": "https://arxiv.org/abs/2611.07349"
+        }
+      ]
+    },
+    {
+      "id": "a562dedfaeec9e40",
+      "source_id": "infoq-cn-ai",
+      "title": "当 Coding Agent 走进研发团队：我们打造并开源了自进化研发平台 LoopForge",
+      "url": "https://www.infoq.cn/article/QGaIWSgd9uwx2WGw0yFv?utm_source=rss&utm_medium=article",
+      "published_at": "2026-11-06T07:14:48+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/QGaIWSgd9uwx2WGw0yFv?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "开源项目",
-      "content_type": "教程方法",
+      "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "提出SpectRAG方法，通过选择协同证据集而非逐块排序，提升多跳QA的检索效果。",
-      "summary_zh": "SpectRAG提出一种新的检索增强生成方法，不再逐块排序，而是选择一组能协同作为证据的块。传统top-k检索在多跳问题中常返回近重复块，而连接证据的桥接段落可能不相似。SpectRAG在多跳QA上达到91.8%的金证据召回率，解决了经典检索的缺陷。",
-      "title_zh": "认识 SpectRAG",
-      "weighted_score": 0.585,
+      "reason_zh": "介绍开源自进化研发平台 LoopForge 的落地实践，对想把 Coding Agent 接入研发流程的团队有参考价值。",
+      "summary_zh": "文章介绍团队打造并开源的研发平台 LoopForge，目标是把 Coding Agent 真正嵌入研发团队日常工作流，而非停留在单点演示。内容围绕平台的设计与落地展开，讨论 Agent 在真实研发场景中如何组织任务、与代码库和工具链协作，以及如何通过反馈闭环实现自我进化。作为工程实践总结，文章侧重系统设计取舍与团队协作层面的经验，对计划在内部引入 Coding Agent 的研发团队具有参考意义。",
+      "title_zh": null,
+      "weighted_score": 0.6575,
       "score_breakdown": {
-        "source_authority": 0.4,
-        "novelty": 0.8,
-        "impact": 0.5,
-        "practical_value": 0.7
+        "source_authority": 0.65,
+        "novelty": 0.7,
+        "impact": 0.55,
+        "practical_value": 0.75
       },
-      "story_id": "52388a976e15cf5c",
+      "story_id": "2ab411c67cd8a7f9",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "reddit-rag",
-          "url": "https://www.reddit.com/r/Rag/comments/1xoen9d/meet_spectrag/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/QGaIWSgd9uwx2WGw0yFv?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "4727bae50ed4bcc9",
+      "id": "562ff185000bd79d",
       "source_id": "infoq-cn-ai",
-      "title": "混元 Hy4 实测：腾讯的产品基因，模型继承了几分？",
-      "url": "https://www.infoq.cn/article/C61Q16LQIDq45l0iCCzV?utm_source=rss&utm_medium=article",
-      "published_at": "2026-11-05T09:44:25+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/C61Q16LQIDq45l0iCCzV?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "title": "AI Native 企业研发工具链：架构重构与持续演进｜AICon北京",
+      "url": "https://www.infoq.cn/article/4IUSd2wP28ua4Jd5fHG2?utm_source=rss&utm_medium=article",
+      "published_at": "2026-11-06T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/4IUSd2wP28ua4Jd5fHG2?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "模型发布",
+      "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "对腾讯混元Hy4模型进行实测，分析其能力与腾讯产品基因的关联，有参考价值。",
-      "summary_zh": "文章对腾讯混元Hy4模型进行了实际测试，探讨该模型在多大程度上继承了腾讯的产品基因。可能涉及模型在中文理解、多轮对话、实际应用场景中的表现，并与腾讯的产品生态和用户需求相结合进行分析。测试结果和具体案例未在摘要中详述。",
+      "depth_score": 0.7,
+      "reason_zh": "系统介绍AI Native企业研发工具链的架构重构与演进，对技术管理者有较高参考价值。",
+      "summary_zh": "文章来自AICon北京大会，探讨AI Native企业研发工具链的架构重构与持续演进。内容可能涵盖如何将AI能力融入研发流程、工具链的模块化设计、以及应对快速迭代的架构策略。通过实际案例或方法论，分析企业从传统研发向AI原生转型中的挑战与解决方案，为技术团队提供架构层面的参考。",
       "title_zh": null,
-      "weighted_score": 0.61,
+      "weighted_score": 0.625,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.6,
-        "impact": 0.6,
-        "practical_value": 0.5
+        "impact": 0.5,
+        "practical_value": 0.7
       },
-      "story_id": "9f6732691856a528",
+      "story_id": "2989e9462fb46c46",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/C61Q16LQIDq45l0iCCzV?utm_source=rss&utm_medium=article"
+          "url": "https://www.infoq.cn/article/4IUSd2wP28ua4Jd5fHG2?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "1d06a00e9375e142",
-      "source_id": "zh-tmtpost",
-      "title": "李佳琦开始卖Token，AI终于走进了直播间",
-      "url": "https://www.tmtpost.com/8194147.html",
-      "published_at": "2026-11-05T09:02:53+00:00",
-      "raw_text": "直播间解决的是第一次购买，真正决定AI商业化的，是第100次使用。",
+      "id": "a67b49ab07f37d3a",
+      "source_id": "the-decoder",
+      "title": "Frontier Radar #5: If AGI is so close, why is everyone leaving? The neolabs and their bets",
+      "url": "https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/",
+      "published_at": "2026-11-06T15:55:23+00:00",
+      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"941\" src=\"https://the-decoder.com/wp-content/uploads/2026/11/Frontier-Radar-5-Neolabs.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1672\" /></p>\n<p>        OpenAI is talking about the AGI era, and Nvidia CEO Jensen Huang says AGI has arrived. At the same time, co-creators of today's models are leaving OpenAI, Google DeepMind, and Meta to start their own labs, raising billions with no product to show. Why? They're betting that the current recipe alone won't be enough. We've sorted 45 neolabs by their research bets, mapped the limitations of today's AI they're trying to overcome, looked at what's already visible from their work, and explain why Nvidia always wins.</p>\n<p>The article <a href=\"https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/\">Frontier Radar #5: If AGI is so close, why is everyone leaving? The neolabs and their bets</a> appeared firs",
       "category_hint": [
+        "模型发布",
         "行业动态"
       ],
-      "image_url": "https://images.tmtpost.com/uploads/images/wx/2026/11/20261105000532999296.jpg",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/Frontier-Radar-5-Neolabs.png",
       "category": "行业动态",
       "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "以李佳琦直播卖Token为切入点，探讨AI商业化中首次购买与长期使用的关键差异。",
-      "summary_zh": "文章以李佳琦直播间销售AI Token为引，讨论AI产品商业化的核心问题。直播间能解决用户的第一次购买，但真正决定AI商业化成败的是用户第100次使用时的体验和留存。文章可能分析了AI产品如何从营销驱动转向产品驱动，以及直播电商模式对AI普及的推动作用与局限。",
-      "title_zh": null,
+      "depth_score": 0.7,
+      "reason_zh": "以人才流失为切口剖析neolabs新实验室的押注，对AGI叙事提出反直觉追问，视角独特有启发。",
+      "summary_zh": "The Decoder的Frontier Radar专栏第五期提出一个反差问题：OpenAI在谈AGI时代、黄仁勋称AGI已至，但当今模型的共同创造者却纷纷离开OpenAI、Google DeepMind等大厂。文章梳理这些出走者创办的neolabs新实验室及其技术押注，探讨人才流动与AGI临近叙事之间的矛盾，并分析这些新机构在路线选择上的分歧。",
+      "title_zh": "Frontier Radar #5：如果AGI如此临近，为何大家都在离开？neolabs与它们的押注",
       "weighted_score": 0.605,
       "score_breakdown": {
         "source_authority": 0.6,
@@ -398,12 +362,46 @@
         "impact": 0.6,
         "practical_value": 0.5
       },
-      "story_id": "4ba99ee5ef388533",
+      "story_id": "e24063fae80ae3a6",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-tmtpost",
-          "url": "https://www.tmtpost.com/8194147.html"
+          "source_id": "the-decoder",
+          "url": "https://the-decoder.com/frontier-radar-5-if-agi-is-so-close-why-is-everyone-leaving-the-neolabs-and-their-bets/"
+        }
+      ]
+    },
+    {
+      "id": "c73fd57da65bfe02",
+      "source_id": "siliconangle",
+      "title": "The AI boom’s missing balance-sheet question: What has actually been verified?",
+      "url": "https://siliconangle.com/2026/11/06/the-ai-booms-missing-balance-sheet-question-what-has-actually-been-verified/",
+      "published_at": "2026-11-06T15:00:36+00:00",
+      "raw_text": "<p>Artificial intelligence infrastructure commitments are growing faster than the evidence connecting contracted capacity to sustained economic value. I spent 13 years on the floor of the New York Stock Exchange. One lesson stayed with me long after the trading jackets disappeared: A transaction could be executed, documented and perfectly valid while the assumptions that made [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/11/06/the-ai-booms-missing-balance-sheet-question-what-has-actually-been-verified/\">The AI boom&#8217;s missing balance-sheet question: What has actually been verified?</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+      "category_hint": [
+        "行业动态",
+        "产品发布"
+      ],
+      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/11/thedigitalartist-ai-generated-8070004_1920.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "从纽交所交易员视角质疑AI基建承诺与已验证经济价值之间的缺口，视角独特、论证有洞察。",
+      "summary_zh": "SiliconANGLE刊文讨论AI热潮中被忽视的资产负债表问题：AI基础设施承诺的增长速度，已超过将合同产能与持续经济价值联系起来的证据积累速度。作者以在纽约证券交易所13年的交易经历为切入，指出一笔交易可以被执行、记录且完全合规，同时其成立所依赖的假设却可能并不牢靠，借此追问当前AI基建投资中究竟有哪些部分经过了真实验证。",
+      "title_zh": "AI 热潮中被忽视的资产负债表问题：究竟有哪些东西得到了真实验证？",
+      "weighted_score": 0.58,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.6,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "8ba9a68540736577",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "siliconangle",
+          "url": "https://siliconangle.com/2026/11/06/the-ai-booms-missing-balance-sheet-question-what-has-actually-been-verified/"
         }
       ]
     }
