@@ -1,405 +1,406 @@
 {
-  "date": "2026-11-19",
-  "generated_at": "2026-11-19T23:50:08.361079+00:00",
+  "date": "2026-11-20",
+  "generated_at": "2026-11-20T23:21:47.276095+00:00",
   "items": [
     {
-      "id": "59447981850018cd",
-      "source_id": "zh-tonybai",
-      "title": "AI Agent 的安全边界：深入 OpenAI Codex Sandbox 设计",
-      "url": "https://tonybai.com/2026/11/19/inside-openai-codex-sandbox/",
-      "published_at": "2026-11-19T04:00:00+00:00",
-      "raw_text": "当 AI Agent 获得 Shell 权限，仅靠 System Prompt 的口头约束已经无法抵御提示词注入、凭证泄露与环境破坏。OpenAI 官方近期揭秘了 Codex Sandbox 的工程设计：摒弃脱离宿主环境的传统 Docker 容器，利用 macOS Seatbelt、Linux Bubblewrap+seccomp 与 Windows MXC 原生机制，在文件系统与网络两条核心边界上构建不可随意突破的操作系统级强制隔离。本文深入拆解其 Harness 权限申请与审批分离、子进程安全继承、MCP Server 专属沙箱以及企业级策略治理的完整落地实践。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.85,
-      "reason_zh": "拆解 Codex Sandbox 的 OS 级隔离设计，对构建带 Shell 权限 Agent 的工程师极具参考价值。",
-      "summary_zh": "文章深入剖析 OpenAI Codex Sandbox 的工程设计，指出当 AI Agent 获得 Shell 权限后，仅靠 System Prompt 无法抵御提示词注入、凭证泄露与环境破坏。Codex 摒弃传统 Docker 容器，转而利用 macOS Seatbelt、Linux Bubblewrap+seccomp 与 Windows MXC 等原生机制，在文件系统与网络两条边界上构建操作系统级强制隔离。文章还拆解了 Harness 权限申请与审批分离、子进程安全继承、MCP Server 专属沙箱以及企业级策略治理的完整落地实践。",
-      "title_zh": null,
-      "weighted_score": 0.74,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.9
-      },
-      "story_id": "2109525c5e6303aa",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/11/19/inside-openai-codex-sandbox/"
-        }
-      ]
-    },
-    {
-      "id": "c760a48bb65c9d5f",
+      "id": "e83910e8b6b7256d",
       "source_id": "zh-oschina",
-      "title": "Claude Code 团队怎么让 agent 自己证明活干对了",
-      "url": "https://www.oschina.net/news/503667/claude-dev-how-the-claude-code-team-thinks-about-verification",
-      "published_at": "2026-11-19T06:44:55+00:00",
-      "raw_text": "Claude Code 团队公开了一个数字：他们的代码大约 90% 由 Claude 编写和评审。 该团队工程师 Addy Osmani 在 claude.dev 上写了篇文章，讲这个规模下他们怎么让 agent 验证自己的工作。核心判断很直接——没有验证回路，你最多同时跑一两个 Claude，因为每个都得自己盯着；有了验证回路，可以同时跑几十上百个。 文章开头...",
+      "title": "哈佛大学研究人员：AI 编程目前的瓶颈是“Code Review”",
+      "url": "https://www.oschina.net/news/503706/harvard-researchers-find-ai-coding-agents-shifted",
+      "published_at": "2026-11-20T09:00:13+00:00",
+      "raw_text": "哈佛大学两位博士候选人做了一份工作论文，把 AI 编程 Agent 的真实效果算了一遍。样本是 718 家公司、725938 名员工。 结论不太好看。 用上 AI 编程 Agent 之后，人均每月新增代码行数从 5017 涨到 6511，多了约 30%。提交数增长 20%，Pull Request 增长 23%。该有的增长都出现了。 但活干完了吗？没有。 论文用 Jira i...",
       "category_hint": [
         "开源项目"
       ],
       "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.85,
-      "reason_zh": "Claude Code 团队讲如何让 agent 自我验证，是 agent 工程实践的高价值经验总结。",
-      "summary_zh": "文章介绍 Claude Code 团队的工程实践：其代码约 90% 由 Claude 编写和评审。工程师 Addy Osmani 在 claude.dev 撰文，讲述在这一规模下如何让 agent 验证自己的工作。核心判断是：没有验证回路时，最多只能同时跑一两个 Claude，因为每个都需要人工盯着；一旦建立验证回路，就可以同时运行几十上百个 agent。文章围绕如何设计让 agent 自证任务完成正确的机制展开，属于 agent 工程的一线经验分享。",
-      "title_zh": null,
-      "weighted_score": 0.74,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "基于大样本实证揭示AI编程瓶颈在代码审查，对工程实践有直接指导意义。",
+      "summary_zh": "哈佛大学两位博士候选人的工作论文基于718家公司、725938名员工的样本，评估AI编程Agent的实际效果。研究发现，使用AI编程Agent后，人均每月新增代码行数从5017行增至6511行，增长约30%；提交数增长20%，Pull Request增长23%。然而，通过Jira数据分析发现，任务完成情况并未同步提升，表明当前AI编程的瓶颈在于代码审查（Code Review）环节。",
+      "title_zh": "哈佛大学研究人员：AI编程目前的瓶颈是“Code Review”",
+      "weighted_score": 0.745,
       "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.7,
+        "novelty": 0.8,
         "impact": 0.7,
-        "practical_value": 0.9
+        "practical_value": 0.8
       },
-      "story_id": "eb47731a7b251485",
+      "story_id": "584c8bb691ec6b8a",
       "multi_source_count": 1,
       "sources": [
         {
           "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/503667/claude-dev-how-the-claude-code-team-thinks-about-verification"
+          "url": "https://www.oschina.net/news/503706/harvard-researchers-find-ai-coding-agents-shifted"
         }
       ]
     },
     {
-      "id": "0d1d007c5bf37216",
-      "source_id": "cmu-ml-blog",
-      "title": "Towards a Science of Capable Autonomous Agents & Provable Safety — Part II",
-      "url": "https://blog.ml.cmu.edu/2026/11/19/towards-a-science-of-capable-autonomous-agents-provable-safety-part-ii/",
-      "published_at": "2026-11-19T15:13:59+00:00",
-      "raw_text": "Part II: Provable Safety In Part I, I talked about what agents must contain as they become increasingly capable. Here, I talk about having provable guarantees on their safety, in spite of these capabilities. This is in large part a contrast from what AI safety used to be like, where more capability ensured more safety: e.g. if a self-driving car can’t reliably detect objects, it’s obviously unsafe. Instead, what we are talking about is: how do we ensure capable systems remain open to human correction, even when it’s otherwise suboptimal for completing the task?&#160; Suppose an agent is editing a document when a notification announces that its computer will shut down. It knows this will prevent it from finishing, and it knows how to cancel the shutdown. If the priority is completing the document, the next step seems obvious. We would welcome this resourcefulness if the obstacle were a broken application. We would be less pleased if it were our request for the agent to stop. An agent th",
+      "id": "790fce6927eb43ee",
+      "source_id": "latent-space",
+      "title": "The War Against Slop and an Emerging Weapon to Fight it: Formal Verification",
+      "url": "https://latent.space/p/formal-verification/",
+      "published_at": "2026-11-20T21:18:41+00:00",
+      "raw_text": "Proving software correct with math has traditionally required specialist work. Now AI and Lean are helping automate the process.",
       "category_hint": [
-        "论文研究"
+        "技巧与观点",
+        "行业动态"
       ],
-      "image_url": "https://blog.ml.cmu.edu/wp-content/uploads/2026/11/image-5.png",
-      "category": "论文研究",
+      "image_url": "https://beehiiv-images-production.s3.amazonaws.com/uploads/asset/file/b6f560cd-a37a-4d62-8d6b-da5b59cf4790/formal-verification-feature.png?t=1795207886",
+      "category": "技巧与观点",
       "content_type": "深度分析",
-      "depth_score": 0.85,
-      "reason_zh": "CMU博客探讨能力更强的自主智能体如何获得可证明的安全保证，观点反直觉，具理论启发性。",
-      "summary_zh": "这是CMU机器学习博客系列文章的第二部分，主题为可证明安全。作者在第一部分讨论了智能体能力增强后必须具备的构成要素，本文则探讨在能力提升的同时如何为其安全性提供可证明的保证。文章指出这与传统AI安全思路形成对比：过去认为能力越强越安全，例如自动驾驶汽车若无法可靠检测物体显然不安全。作者由此论证需要新的安全范式来应对高能力自主智能体。",
-      "title_zh": "迈向有能力的自主智能体科学及可证明安全——第二部分",
-      "weighted_score": 0.65,
+      "depth_score": 0.8,
+      "reason_zh": "探讨用形式化验证对抗AI垃圾内容，结合Lean与AI自动化证明，有启发性。",
+      "summary_zh": "文章探讨了形式化验证作为对抗低质量 AI 生成内容（slop）的新兴武器。传统上，用数学证明软件正确性需要专家工作，但现在 AI 和 Lean 定理证明器正在帮助自动化这一过程。作者认为，形式化验证能提供数学上的正确性保证，从而区分高质量内容与 AI 生成的垃圾。文章可能涉及 Lean 语言、AI 辅助证明的进展以及面临的挑战。",
+      "title_zh": "对抗垃圾内容的战争与新兴武器：形式化验证",
+      "weighted_score": 0.705,
       "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
       },
-      "story_id": "039ce274ce72e09f",
+      "story_id": "98124135d4e4eed0",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "cmu-ml-blog",
-          "url": "https://blog.ml.cmu.edu/2026/11/19/towards-a-science-of-capable-autonomous-agents-provable-safety-part-ii/"
+          "source_id": "latent-space",
+          "url": "https://latent.space/p/formal-verification/"
         }
       ]
     },
     {
-      "id": "9f1b23444f9ffbe0",
-      "source_id": "zh-tonybai",
-      "title": "重读 How Complex Systems Fail 后，我发现：AI 正在制造我们无法驾驭的复杂系统",
-      "url": "https://tonybai.com/2026/11/20/ai-is-creating-complex-systems-we-cannot-control/",
-      "published_at": "2026-11-19T22:00:00+00:00",
-      "raw_text": "AI 正在让软件开发变得前所未有地高效，但也让构建复杂系统的门槛大幅降低。重读 Richard I. Cook 在 1998 年提出的《How Complex Systems Fail》，我们会发现，复杂系统的失效规律并没有因为 AI 而改变，反而可能因为 Agent 自主性、自动化执行和多智能体协作而变得更加突出。本文从故障级联、潜伏缺陷、系统退化、人机协作和安全防御五个维度，重新审视这 18 条经典原则，并探讨 AI 时代软件工程应该如何应对复杂性失控。",
+      "id": "319979159460f238",
+      "source_id": "arxiv-cs-cv",
+      "title": "Keel: A Frontier Model Teaches a Vision-Language Model by Rewriting Its Weights",
+      "url": "https://arxiv.org/abs/2611.25257",
+      "published_at": "2026-11-20T05:00:00+00:00",
+      "raw_text": "arXiv:2611.25257v1 Announce Type: new \nAbstract: Can a frontier model repair a vision-language model (VLM) by rewriting its weights? Small reasoning VLMs such as Qwen3.5 need such a repair: in thinking mode they fall into loops on many image questions, repeating themselves until the token limit, spending the whole budget and losing the answer. The usual remedies act on the decoding, leaving the looping model as it was, or must be told what to change. Yet the cause is written in the weights. Keel, the first agentic weight-editing method for VLMs on image tasks, finds and removes it there. Told only the symptom, an editor, a frontier multimodal LLM acting as an agent, locates the cause, edits the weights and tests them, with a failure census and instruments showing it the failing images and where the VLM attends; among several editors, the harness keeps only edits that clearly reduce the failure without lowering accuracy on questions no editor saw. The repair needs no training, keeps the",
       "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出用前沿模型直接改写小 VLM 权重来修复思考模式死循环，思路新颖，对模型修复与权重编辑有启发。",
+      "summary_zh": "论文提出一个大胆问题：前沿模型能否通过改写权重来修复一个视觉语言模型。作者以 Qwen3.5 这类小型推理 VLM 为对象，指出其在思考模式下遇到许多图像问题会陷入循环，反复重复直到耗尽 token 预算而丢失答案。常规补救手段作用在解码层面，无法触及模型内部。Keel 方法让前沿模型直接改写目标 VLM 的权重，从参数层面修复该缺陷，为模型修复与权重编辑提供了新路径。",
+      "title_zh": "Keel：前沿模型通过改写权重来教视觉语言模型",
+      "weighted_score": 0.66,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.5
+      },
+      "story_id": "7edaef79ca4a5dff",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cv",
+          "url": "https://arxiv.org/abs/2611.25257"
+        }
+      ]
+    },
+    {
+      "id": "ea61a67485e155a5",
+      "source_id": "arxiv-cs-cv",
+      "title": "Channel-wise Vector Quantization: Native 1D Visual Tokenization with Learnable Ordering",
+      "url": "https://arxiv.org/abs/2605.26089",
+      "published_at": "2026-11-20T05:00:00+00:00",
+      "raw_text": "arXiv:2605.26089v3 Announce Type: replace \nAbstract: We present Channel-wise Vector Quantization (CVQ), a novel image tokenization paradigm that replaces patch-wise tokens with channel-wise tokens. Unlike conventional vector quantization, which assigns a discrete token to each patch feature vector, CVQ quantizes each channel of the feature map. This represents an image as a 1D channel sequence with learnable coarse-to-fine ordering, rather than a 2D patch grid. Based on CVQ, we introduce a new visual autoregressive framework with \"next-channel prediction\". Instead of rendering images patch by patch in raster order, our Channel-wise Autoregressive (CAR) model predicts image channels sequentially, producing progressively enriched visual details. Specifically, it first sketches global structure and then refines fine-grained attributes, akin to a human artist's workflow. Empirically, we show that: (1) CVQ exhibits strong codebook scalability, maintaining 95%+ utilization with up to $2^{16}",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "提出通道级向量量化，用一维通道序列替代patch级token并引入可学习排序，是视觉tokenizer的新架构思路。",
+      "summary_zh": "论文提出通道级向量量化（CVQ），一种新的图像token化范式。与传统方法为每个patch特征向量分配离散token不同，CVQ对特征图的每个通道进行量化，将图像表示为一维通道序列，并引入可学习排序机制。这种设计改变了视觉token的粒度与组织方式，为视觉tokenizer提供了不同于patch-wise方案的新路径。论文给出方法框架与实验验证，可能对多模态模型的视觉编码效率与表示质量产生影响。",
+      "title_zh": "通道级向量量化：带可学习排序的原生一维视觉token化",
+      "weighted_score": 0.6575,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.75,
+        "impact": 0.6,
+        "practical_value": 0.55
+      },
+      "story_id": "96e82322b38a23b2",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cv",
+          "url": "https://arxiv.org/abs/2605.26089"
+        }
+      ]
+    },
+    {
+      "id": "a541e3150ccdb642",
+      "source_id": "arxiv-cs-cv",
+      "title": "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks",
+      "url": "https://arxiv.org/abs/2611.25179",
+      "published_at": "2026-11-20T05:00:00+00:00",
+      "raw_text": "arXiv:2611.25179v1 Announce Type: new \nAbstract: Simulated manipulation benchmarks measure policy performance using hand-written success checkers that label each episode as a success or failure. Passing an expert demonstration shows that a checker accepts one way of completing the task. Learned policies, however, may stop after partial progress or complete the task in a different way. A checker may then accept an incomplete execution (phantom success) or reject an execution that satisfies the instruction (silent failure). In this paper, we introduce SimAudit, an LLM-based pipeline that audits success checkers against task instructions. SimAudit analyzes the instruction and checker code to identify scenarios where the two may disagree, recreates those scenarios in simulation, and runs the original checker. Multi-view renderings are then used to verify whether the observed behavior satisfies the instruction. Across RoboTwin 2.0, RoboCasa365, and RoboDojo, 183 simulated test cases produce",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "系统审计仿真操作基准的成功判定器，揭示虚假成功与静默失败，对做具身评测的研究者极具警示价值。",
+      "summary_zh": "仿真操作基准通常用手写的成功判定器为每个回合打上成功或失败标签，但专家演示通过只说明判定器接受了一种完成任务的方式。学习到的策略可能在中途停下，或以不同方式完成任务，判定器却仍可能误判。论文系统审计了这类成功判定器，揭示出虚假成功与静默失败两类问题，说明基准分数可能高估策略能力。该工作对具身智能评测方法的可靠性提出了重要质疑。",
+      "title_zh": "虚假成功与静默失败：审计仿真操作基准的成功判定器",
+      "weighted_score": 0.655,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.7,
+        "impact": 0.6,
+        "practical_value": 0.6
+      },
+      "story_id": "7fba8a05783daa02",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-cv",
+          "url": "https://arxiv.org/abs/2611.25179"
+        }
+      ]
+    },
+    {
+      "id": "830d746a50656bbd",
+      "source_id": "infoq-cn-ai",
+      "title": "火山引擎 Agent-Native 团队的上下文管理实践｜AICon北京",
+      "url": "https://www.infoq.cn/article/YTGHxcabs0RI3btLIUxm?utm_source=rss&utm_medium=article",
+      "published_at": "2026-11-20T10:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/YTGHxcabs0RI3btLIUxm?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "category_hint": [
+        "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
       "category": "技巧与观点",
-      "content_type": "深度分析",
+      "content_type": "教程方法",
       "depth_score": 0.8,
-      "reason_zh": "将经典复杂系统理论与AI工程实践结合，提供可迁移的认知框架，对构建可靠AI系统有启发。",
-      "summary_zh": "文章重读Richard I. Cook 1998年的《How Complex Systems Fail》，指出AI虽提升开发效率，却降低了构建复杂系统的门槛，使失效规律更突出。作者从故障级联、潜伏缺陷、系统退化、人机协作和安全防御五个维度，重新审视18条原则，探讨AI时代软件工程如何应对复杂性失控，强调Agent自主性、自动化执行和多智能体协作带来的新挑战。",
+      "reason_zh": "火山引擎 Agent-Native 团队复盘上下文管理实践，属真实系统设计取舍，可迁移认知强。",
+      "summary_zh": "火山引擎 Agent-Native 团队在 AICon 北京站分享了其在 Agent 上下文管理方面的工程实践。内容围绕 Agent 运行过程中上下文的组织、压缩与检索等核心问题，介绍团队在真实系统中如何设计上下文管理策略、平衡信息完整性与 token 成本，以及在多轮任务中保持上下文有效性的取舍经验。该分享来自一线工程团队，对构建 Agent 系统的开发者具有较高的实践参考价值。",
       "title_zh": null,
       "weighted_score": 0.645,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.7
-      },
-      "story_id": "e5146cb52e5c5a6e",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/11/20/ai-is-creating-complex-systems-we-cannot-control/"
-        }
-      ]
-    },
-    {
-      "id": "634bef00fa06541c",
-      "source_id": "arxiv-cs-ro",
-      "title": "BiCAT: Bimanual Coordination Action Tokenization",
-      "url": "https://arxiv.org/abs/2611.23499",
-      "published_at": "2026-11-19T05:00:00+00:00",
-      "raw_text": "arXiv:2611.23499v1 Announce Type: new \nAbstract: Autoregressive vision-language-action (VLA) models predict discrete action tokens with the next-token objective of their vision-language backbone, so the action tokenizer defines the interface between the policy and the robot. In bimanual manipulation, the two arms share a repertoire of movements yet coordinate through complementary roles, and an action representation should capture both. However, most existing tokenizers encode both arms as a single concatenated action vector, in which motion patterns common to the two arms are not shared and cross-arm dependencies remain entangled within each token. The policy must therefore learn both aspects implicitly. We propose Bimanual Coordination Action Tokenization (BiCAT), which shares one motion representation across arms while conditioning each arm's tokens on its partner through symmetric cross-arm attention and a joint decoder. The policy then predicts all tokens of each arm in parallel, ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "提出双臂协调动作tokenization方法BiCAT，针对VLA模型的动作接口设计，具方法创新与实验价值。",
-      "summary_zh": "该论文关注自回归视觉-语言-动作（VLA）模型中的动作tokenization问题：这类模型以视觉语言主干的下一token目标预测离散动作token，因此动作tokenizer定义了策略与机器人之间的接口。在双臂操作中，两条手臂共享动作库却通过互补角色协调，论文提出BiCAT方法针对这一特性设计协调动作tokenization，以更好适配双臂场景下的VLA策略学习。",
-      "title_zh": "BiCAT：双臂协调动作Token化",
-      "weighted_score": 0.6225,
-      "score_breakdown": {
         "source_authority": 0.7,
-        "novelty": 0.75,
-        "impact": 0.5,
-        "practical_value": 0.5
-      },
-      "story_id": "2d8505cbae58bd91",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ro",
-          "url": "https://arxiv.org/abs/2611.23499"
-        }
-      ]
-    },
-    {
-      "id": "86b67ca93f266b70",
-      "source_id": "marktechpost",
-      "title": "Meta FAIR Self-Improving Memory Hits 56.0 on Continual Learning Bench",
-      "url": "https://www.marktechpost.com/2026/11/19/meta-fair-self-improving-memory-harness-distillation/",
-      "published_at": "2026-11-19T21:46:22+00:00",
-      "raw_text": "<p>Meta FAIR’s Self-Improving Memory lets Kimi-K2.6 write its own LOAD and OFFLOAD memory prompts, then distills them into its weights. Optimized prompts score 56.0 versus 44.6 for the best hand-written harness on Continual Learning Bench.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/19/meta-fair-self-improving-memory-harness-distillation/\">Meta FAIR Self-Improving Memory Hits 56.0 on Continual Learning Bench</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
-      "category_hint": [
-        "模型发布",
-        "产品发布"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.75,
-      "reason_zh": "让模型自行编写并蒸馏记忆管理提示词，在持续学习基准上显著超越人工设计，方法可迁移性强。",
-      "summary_zh": "Meta FAIR 提出 Self-Improving Memory 方法，让 Kimi-K2.6 模型自行编写 LOAD 与 OFFLOAD 记忆提示词，再将这些提示词蒸馏进模型权重。在 Continual Learning Bench 上，优化后的提示词取得 56.0 分，而最佳人工编写 harness 仅为 44.6 分。该工作展示了模型通过自我改进记忆管理策略来提升持续学习能力的路径，并给出了与手工基线对比的实验证据，说明自动生成的记忆操作提示可显著优于人工设计。",
-      "title_zh": "Meta FAIR自改进记忆在持续学习基准上达到56.0分",
-      "weighted_score": 0.7025,
-      "score_breakdown": {
-        "source_authority": 0.65,
-        "novelty": 0.85,
-        "impact": 0.7,
-        "practical_value": 0.6
-      },
-      "story_id": "d06eba8a9a256859",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "marktechpost",
-          "url": "https://www.marktechpost.com/2026/11/19/meta-fair-self-improving-memory-harness-distillation/"
-        }
-      ]
-    },
-    {
-      "id": "5f201657355d2231",
-      "source_id": "arxiv-cs-ro",
-      "title": "Ego2X: Contact-aware Transfer from Egocentric Human Data to Any Robot",
-      "url": "https://arxiv.org/abs/2611.24138",
-      "published_at": "2026-11-19T05:00:00+00:00",
-      "raw_text": "arXiv:2611.24138v1 Announce Type: new \nAbstract: Embodied models depend on real interaction data, yet collecting it on physical robots is slow and labor-intensive. Recent ego-to-robot pipelines retarget first-person view human videos to robot data via transferring hand and arm motion. They judge fidelity mainly by visual appearance. However, trajectories often fail in terms of physics: fingers hover beside objects, and grippers close on empty space. We argue that how the object moves and the contacts that drive the motion count. Thus, we present Ego2X, an object-centric framework that converts monocular egocentric video into physically executable robot data across dexterous hands and parallel grippers. Ego2X centers on CORE (Contact-centric Object-interaction REpresentation), which records each contact on the object by its surface anchor, as well as relative force, grasp mode, and interaction state. Throughout the pipeline, CORE corrects hand-object drift via object-relative constraint",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.75,
-      "reason_zh": "指出自我中心视频转机器人数据只看视觉保真不够，强调物理可行性，对具身数据采集有实用启示。",
-      "summary_zh": "具身模型依赖真实交互数据，但在实体机器人上采集缓慢且昂贵。现有从第一人称人类视频到机器人数据的流程通过迁移手部与手臂动作实现重定向，却主要以视觉外观评判保真度。作者指出这些轨迹常在物理层面失效，例如手指悬空、接触不真实。论文提出Ego2X，一种考虑接触的迁移方法，将自我中心人类数据转换为任意机器人可用的数据，提升物理可行性。",
-      "title_zh": "Ego2X：从自我中心人类数据到任意机器人的接触感知迁移",
-      "weighted_score": 0.6925,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.75,
-        "impact": 0.6,
-        "practical_value": 0.65
-      },
-      "story_id": "cab4c9840a331f72",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ro",
-          "url": "https://arxiv.org/abs/2611.24138"
-        }
-      ]
-    },
-    {
-      "id": "28154b6180726e22",
-      "source_id": "aws-ml-blog",
-      "title": "How the BMW Group governs hundreds of agents across thousands of developers",
-      "url": "https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers/",
-      "published_at": "2026-11-19T22:20:23+00:00",
-      "raw_text": "When hundreds of agents serve thousands of developers, governance cannot be an afterthought. The BMW Group shares the practices and patterns its R&amp;D teams use to build, govern, and operate AI agents at enterprise scale without sacrificing speed, quality, or compliance.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/16/ML-20698-1.png",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "宝马集团大规模AI agent治理的实战经验，对企业级AI部署有直接参考价值。",
-      "summary_zh": "宝马集团研发团队分享了在数千名开发者中治理数百个AI agent的实践与模式，涵盖构建、治理和运营企业级AI agent的方法，强调在不牺牲速度、质量和合规性的前提下实现规模化。文章可能涉及治理框架、权限管理、监控和合规策略，为大型组织部署AI agent提供参考。",
-      "title_zh": "宝马集团如何治理数千名开发者使用的数百个智能体",
-      "weighted_score": 0.675,
-      "score_breakdown": {
-        "source_authority": 0.8,
         "novelty": 0.6,
         "impact": 0.5,
         "practical_value": 0.8
       },
-      "story_id": "d7d1657739df335c",
+      "story_id": "fcc70acae50e71cd",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/YTGHxcabs0RI3btLIUxm?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "1810ca1f74cea5bd",
-      "source_id": "stratechery",
-      "title": "An Interview With Eric Seufert About Agentic Commerce",
-      "url": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/",
-      "published_at": "2026-11-19T11:00:00+00:00",
-      "raw_text": "An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents.",
-      "category_hint": [
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Stratechery访谈深入探讨代理商务的广告模式与零售商策略，有洞察。",
-      "summary_zh": "Stratechery的Ben Thompson采访Eric Seufert，讨论代理商务（agentic commerce）的兴起。Seufert认为广告将成为代理商务的核心答案，并解释为何他期待面向AI代理的零售商出现。访谈涉及AI代理如何改变购物决策、广告投放和零售竞争格局，提供了对代理经济商业模式的深度思考，适合关注AI商业化的读者。",
-      "title_zh": "Eric Seufert访谈：代理商务",
-      "weighted_score": 0.665,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.7,
-        "impact": 0.6,
-        "practical_value": 0.5
-      },
-      "story_id": "b3cfe97b2a0a31e7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "stratechery",
-          "url": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/"
-        }
-      ]
-    },
-    {
-      "id": "4919d4812c882cd5",
-      "source_id": "aws-ml-blog",
-      "title": "Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
-      "url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/",
-      "published_at": "2026-11-19T00:15:58+00:00",
-      "raw_text": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows how to get started.",
-      "category_hint": [
-        "技巧与观点",
-        "产品发布"
-      ],
-      "image_url": "https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/11/16/ML-21644-1.png",
-      "category": "技巧与观点",
-      "content_type": "教程方法",
-      "depth_score": 0.7,
-      "reason_zh": "深入对比全参数微调与 LoRA 的优劣，分析权重矩阵谱特性，给出实用调参指南。",
-      "summary_zh": "AWS 博客介绍 SageMaker AI Serverless Model Customization 现已支持全参数微调（FFT）。文章对比了 FFT 与 LoRA 在关键基准上的表现，探讨了模型权重矩阵的谱特性如何解释质量差异，并分享了实用的超参数调优指南和上手步骤。为需要高质量微调的开发者提供了方法参考。",
-      "title_zh": "SageMaker AI 无服务器模型定制支持全参数微调（FFT）",
-      "weighted_score": 0.65,
-      "score_breakdown": {
-        "source_authority": 0.8,
-        "novelty": 0.5,
-        "impact": 0.5,
-        "practical_value": 0.8
-      },
-      "story_id": "e6486b79ce174ea7",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "aws-ml-blog",
-          "url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/"
-        }
-      ]
-    },
-    {
-      "id": "6687f7be62c34e4a",
-      "source_id": "openai-blog",
-      "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
-      "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-      "published_at": "2026-11-19T08:00:00+00:00",
-      "raw_text": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
+      "id": "20109fb1b569d923",
+      "source_id": "marktechpost",
+      "title": "NVIDIA AI Releases Nemotron-Labs-Sigma, a Continuous Diffusion Language Model with 14 checkpoints at 3B/8B",
+      "url": "https://www.marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model/",
+      "published_at": "2026-11-20T14:44:52+00:00",
+      "raw_text": "<p>NVIDIA released Nemotron-Labs-Sigma, 14 open 3B and 8B continuous diffusion language model checkpoints. Sigma denoises text in a learned 16-D embedding space, distills to few-step samplers, and decodes up to 4.20x faster than autoregressive decoding.</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model/\">NVIDIA AI Releases Nemotron-Labs-Sigma, a Continuous Diffusion Language Model with 14 checkpoints at 3B/8B</a> appeared first on <a href=\"https://www.marktechpost.com\">MarkTechPost</a>.</p>",
       "category_hint": [
         "模型发布",
         "产品发布"
+      ],
+      "image_url": "https://s.w.org/images/core/emoji/17.0.2/72x72/25c0.png",
+      "category": "模型发布",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "NVIDIA发布连续扩散语言模型Sigma，开源14个检查点，解码速度提升显著，技术新颖。",
+      "summary_zh": "NVIDIA发布了Nemotron-Labs-Sigma，这是一个连续扩散语言模型系列，包含14个开源检查点，参数规模为3B和8B。Sigma在学习到的16维嵌入空间中对文本进行去噪，并蒸馏为少步采样器，解码速度最高可达自回归解码的4.20倍。该模型采用扩散方法生成文本，与主流自回归模型不同，可能在生成效率和多模态扩展方面具有潜力。开源检查点将促进相关研究和应用开发。",
+      "title_zh": "NVIDIA AI发布Nemotron-Labs-Sigma：连续扩散语言模型，含3B/8B共14个检查点",
+      "weighted_score": 0.705,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "9e6e7f1b6e17c665",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "marktechpost",
+          "url": "https://www.marktechpost.com/2026/11/20/nvidia-nemotron-labs-sigma-continuous-diffusion-language-model/"
+        }
+      ]
+    },
+    {
+      "id": "3e97e19d49f6ea71",
+      "source_id": "qbitai",
+      "title": "双系统决策+双层自进化，Agnes让Agent效率最高提速14倍，成本骤降至1/27！",
+      "url": "https://www.qbitai.com/2026/11/511582.html",
+      "published_at": "2026-11-20T05:24:11+00:00",
+      "raw_text": "已开源Agnes Harness",
+      "category_hint": [
+        "行业动态",
+        "模型发布"
+      ],
+      "image_url": null,
+      "category": "开源项目",
+      "content_type": "研究论文",
+      "depth_score": 0.7,
+      "reason_zh": "提出双系统决策与双层自进化方法并开源，给出效率与成本的量化收益，值得 agent 开发者细读。",
+      "summary_zh": "量子位报道，Agnes 提出“双系统决策 + 双层自进化”的方法，用于提升 Agent 的运行效率并降低成本。据称在该方法下 Agent 效率最高可提速 14 倍，成本骤降至原来的 1/27。团队同时开源了 Agnes Harness，便于开发者复现与集成。文章介绍了双系统决策的分工思路与双层自进化的机制设计，并给出对应的性能与成本对比数据。",
+      "title_zh": null,
+      "weighted_score": 0.67,
+      "score_breakdown": {
+        "source_authority": 0.6,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "27f83437c04b1864",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "qbitai",
+          "url": "https://www.qbitai.com/2026/11/511582.html"
+        }
+      ]
+    },
+    {
+      "id": "53258ed2c52a8e75",
+      "source_id": "latent-space",
+      "title": "Scaling Linear’s GTM to $100M ARR — Cristina Cordova, COO",
+      "url": "https://latent.space/p/linear-scaling/",
+      "published_at": "2026-11-19T23:58:21+00:00",
+      "raw_text": ">50% of tickets written by agents, the AI budgets behind $100M-in-months ARR, and selling without SDRs or FDEs",
+      "category_hint": [
+        "技巧与观点",
+        "行业动态"
+      ],
+      "image_url": "https://i.ytimg.com/vi/x0VSm6IjcDQ/maxresdefault.jpg",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "Linear COO复盘GTM规模化到1亿美元ARR，含agent处理过半工单与AI预算的真实取舍。",
+      "summary_zh": "播客访谈中，Linear COO Cristina Cordova 复盘公司 GTM 体系如何扩张至 1 亿美元 ARR。要点包括：超过一半的客服工单由 agent 撰写，数月内冲到 1 亿美元 ARR 背后的 AI 预算安排，以及在不设 SDR 和 FDE 岗位的情况下完成销售的组织设计。内容涉及 AI 在销售与支持环节的真实落地取舍，对 SaaS 团队有借鉴意义。",
+      "title_zh": "Linear 如何将 GTM 规模化到 1 亿美元 ARR——对话 COO Cristina Cordova",
+      "weighted_score": 0.625,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.7
+      },
+      "story_id": "1b006f3cdf5460ab",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "latent-space",
+          "url": "https://latent.space/p/linear-scaling/"
+        }
+      ]
+    },
+    {
+      "id": "5eaa9c7e7b032f26",
+      "source_id": "noahpinion",
+      "title": "Does it really matter if there’s an intelligence explosion?",
+      "url": "https://www.noahpinion.blog/p/does-it-really-matter-if-theres-an",
+      "published_at": "2026-11-20T10:13:06+00:00",
+      "raw_text": "Maybe this is the wrong frame for the AI safety discussion.",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://substackcdn.com/image/fetch/$s_!K2Dk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F83c7465d-0a2a-4032-b386-8b2c83298ba1_1086x611.jpeg",
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.7,
+      "reason_zh": "反思智能爆炸框架是否适用于AI安全讨论，提供反直觉视角，有启发性。",
+      "summary_zh": "文章质疑“智能爆炸”这一概念在AI安全讨论中的核心地位，认为这可能是一个错误的框架。作者可能论证，过度关注智能爆炸会分散对更现实风险的注意力，或导致政策与研究方向偏差。文章旨在重新审视AI安全讨论的优先事项，提出替代性思考角度。",
+      "title_zh": "智能爆炸真的重要吗？",
+      "weighted_score": 0.505,
+      "score_breakdown": {
+        "source_authority": 0.5,
+        "novelty": 0.6,
+        "impact": 0.5,
+        "practical_value": 0.4
+      },
+      "story_id": "7ca37cc96359e4d1",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "noahpinion",
+          "url": "https://www.noahpinion.blog/p/does-it-really-matter-if-theres-an"
+        }
+      ]
+    },
+    {
+      "id": "01449c61c8b86a22",
+      "source_id": "mit-tech-review-ai",
+      "title": "The most misunderstood graph in AI just got a major update",
+      "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+      "published_at": "2026-11-20T18:15:15+00:00",
+      "raw_text": "A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding.  The report is an update to the organization’s time horizon plot, which was widely&#8230;",
+      "category_hint": [
+        "行业动态",
+        "论文研究"
       ],
       "image_url": null,
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.65,
-      "reason_zh": "OpenAI 官方披露用 Codex 自动发现并修复性能问题的工程体系，可借鉴。",
-      "summary_zh": "OpenAI 官方博客介绍其内部系统 Performance Factory：一套由 Codex 驱动的自动化工作流，用于持续发现并修复 ChatGPT 的性能问题，从而维持服务的响应速度。文章描述了该系统如何把性能问题的定位、修复与验证环节交给模型驱动的流程，减少人工介入。属于一线工程团队对真实生产系统设计取舍的复盘，对构建类似自动化运维与 agent 工作流的团队有参考价值。",
-      "title_zh": "OpenAI 的 Performance Factory 如何让 ChatGPT 保持高速",
-      "weighted_score": 0.6975,
+      "reason_zh": "METR 时间跨度图更新，揭示能力指数增长但判断类任务落后，值得关注 AI 能力评估的边界。",
+      "summary_zh": "AI 评估非营利机构 METR 发布报告，更新其广受关注的“时间跨度”图表。报告显示，部分 AI 能力仍沿指数轨迹持续提升，模型可自主完成的任务时长不断延长；但同时指出，模型在需要判断力的任务上表现明显弱于编程类任务。这一差异说明能力增长并非全面均衡，评估基准的选择会显著影响对进展的判断。报告为理解 AI 能力演进的真实速度与短板提供了量化视角。",
+      "title_zh": "AI 领域最被误解的图表迎来重大更新",
+      "weighted_score": 0.7375,
       "score_breakdown": {
-        "source_authority": 0.9,
-        "novelty": 0.65,
-        "impact": 0.5,
-        "practical_value": 0.7
+        "source_authority": 0.85,
+        "novelty": 0.7,
+        "impact": 0.75,
+        "practical_value": 0.6
       },
-      "story_id": "23781a71a90f0c94",
+      "story_id": "bfbd2af573258337",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "openai-blog",
-          "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast"
+          "source_id": "mit-tech-review-ai",
+          "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/"
         }
       ]
     },
     {
-      "id": "49a8216d8602f0ad",
-      "source_id": "siliconangle",
-      "title": "AI’s next build-out: Inference racks that resize themselves for every new model",
-      "url": "https://siliconangle.com/2026/11/19/memory-pooling-helps-liqid-fix-ai-inference-tokenomics-sc26/",
-      "published_at": "2026-11-19T15:43:30+00:00",
-      "raw_text": "<p>Memory pooling is fast becoming one of the sharpest tools in AI inference economics, with companies racing to wring more output from every graphics processing unit. Most AI servers still ship with a fixed GPU-to-memory ratio that holds for the life of the machine. But that is a poor fit when nobody knows what model [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/11/19/memory-pooling-helps-liqid-fix-ai-inference-tokenomics-sc26/\">AI&#8217;s next build-out: Inference racks that resize themselves for every new model</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+      "id": "268720fa5fb3425b",
+      "source_id": "ml-mastery",
+      "title": "7 Ways AI Agents Fail in Production (and How to Catch Each One)",
+      "url": "https://machinelearningmastery.com/7-ways-ai-agents-fail-in-production-and-how-to-catch-each-one/",
+      "published_at": "2026-11-20T11:00:00+00:00",
+      "raw_text": "Three events that look alike need separate names.",
       "category_hint": [
-        "行业动态",
-        "产品发布"
+        "技巧与观点"
       ],
-      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/11/IMG_5938-scaled-e1795102211294.jpg",
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.6,
-      "reason_zh": "分析 AI 推理基础设施的新趋势：内存池化与自适应机架，以应对模型快速迭代带来的硬件挑战。",
-      "summary_zh": "文章探讨了 AI 推理基础设施领域的一个新兴趋势：内存池化正成为优化推理经济性的关键工具。目前大多数 AI 服务器在生命周期内都采用固定的 GPU 与内存配比，但这难以适应模型快速迭代、需求未知的场景。因此，业界开始竞相研发能够根据新模型动态调整内存配置的推理机架，以从每块 GPU 中榨取更多输出。这反映了 AI 算力部署正从静态硬件向更灵活、可重构的架构演进。",
-      "title_zh": "AI 下一阶段建设：为每个新模型自我调整的推理机架",
-      "weighted_score": 0.65,
+      "image_url": "https://machinelearningmastery.com/wp-content/uploads/2026/11/mlm-7-ways-ai-agents-fail-in-production-and-how-to-catch-each-one-illustration-1200x600-feature.png",
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.65,
+      "reason_zh": "系统梳理 AI Agent 在生产环境中的七类失败模式及对应检测手段，工程实用性强。",
+      "summary_zh": "文章总结 AI Agent 在生产环境中常见的七种失败方式，并针对每一种给出可落地的检测与拦截手段。作者强调，看似相似的失败事件其实需要分别命名和归因，否则监控与告警会失效。内容围绕真实部署中的故障模式展开，涉及如何区分不同失败信号、在链路中设置检查点，以及把失败分类转化为可观测指标，属于面向工程团队的实践方法总结，而非理论综述。",
+      "title_zh": "AI Agent 在生产中失败的 7 种方式（以及如何逐一捕获）",
+      "weighted_score": 0.6175,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.7,
-        "practical_value": 0.6
+        "source_authority": 0.65,
+        "novelty": 0.55,
+        "impact": 0.5,
+        "practical_value": 0.8
       },
-      "story_id": "5eda8b0698f333c9",
+      "story_id": "31b391285093c957",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "siliconangle",
-          "url": "https://siliconangle.com/2026/11/19/memory-pooling-helps-liqid-fix-ai-inference-tokenomics-sc26/"
+          "source_id": "ml-mastery",
+          "url": "https://machinelearningmastery.com/7-ways-ai-agents-fail-in-production-and-how-to-catch-each-one/"
         }
       ]
     }
