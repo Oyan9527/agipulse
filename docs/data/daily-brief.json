@@ -1,14 +1,14 @@
 {
-  "date": "2026-11-27",
-  "generated_at": "2026-11-27T01:20:10.702048+00:00",
+  "date": "2026-11-28",
+  "generated_at": "2026-11-28T00:43:30.746325+00:00",
   "items": [
     {
-      "id": "3eccc060cdac1927",
-      "source_id": "arxiv-stat-ml",
-      "title": "Two Timescales of Forgetting in Fine-tuning of Language Models: Fast Behavioral Suppression and Slow Representational Drift",
-      "url": "https://arxiv.org/abs/2611.33302",
-      "published_at": "2026-11-26T05:00:00+00:00",
-      "raw_text": "arXiv:2611.33302v1 Announce Type: cross \nAbstract: Today, a core pipeline of artificial intelligence systems is pretraining on a broad range of text corpora and then fine-tuning on specific tasks or desired behaviors. Yet we still have limited understanding of how fine-tuning on a restricted data distribution modifies representations acquired during pretraining. In particular, it remains unclear whether surface behavioral suppression happens together with the erasure of latent representations that support it. In this work, we study supervised fine-tuning (SFT) by pretraining transformers on a controlled context-free grammar with hierarchical latent structure, the Random Hierarchy Model (RHM), and fine-tuning with a restricted subset of its generative rules. While during pretraining the model's ability to generate with the correct grammar rules coincides with building the internal representations of the corresponding latent, we find that SFT exhibits a very different dynamics: (i) the g",
+      "id": "5ddc80c89f837629",
+      "source_id": "arxiv-cs-ai",
+      "title": "Letting Models Manage Their Own Context: Where We Stand",
+      "url": "https://arxiv.org/abs/2611.34147",
+      "published_at": "2026-11-27T05:00:00+00:00",
+      "raw_text": "arXiv:2611.34147v1 Announce Type: new \nAbstract: Agent harnesses today manage context on the model's behalf: when the window fills, the harness triggers a compaction that summarizes the history. We study the alternative, \\emph{model-driven} context management, in which the model itself decides when and what to compact through a context API. We gave models control over their own context in \\nooa, NVIDIA's open source agent harness, and compared the two strategies on document research and machine learning engineering across context budgets from 8K to 512K tokens. Models that use the context API effectively reach higher accuracy, often with fewer input tokens, especially at tight budgets: \\textbf{GPT 6.1 nearly triples its score at a 32K budget} on OfficeQA Pro v2 (21\\%~$\\rightarrow$~56\\%), and \\textbf{Kimi gains with up to 41\\% fewer input tokens}. Models differ widely, however, in how often they use the API, how aggressively they compact, and when they start compacting, and prompt chang",
       "category_hint": [
         "论文研究"
       ],
@@ -16,391 +16,393 @@
       "category": "论文研究",
       "content_type": "研究论文",
       "depth_score": 0.85,
-      "reason_zh": "揭示微调中遗忘的两个时间尺度——快速行为抑制与缓慢表征漂移，对理解微调副作用有重要启发。",
-      "summary_zh": "论文研究预训练后微调如何改变模型在预训练阶段习得的表征。作者发现微调中的遗忘存在两个不同时间尺度：行为层面的抑制发生得很快，模型输出迅速转向目标任务；而表征层面的漂移则缓慢得多，预训练表征在较长时间内逐步偏移。这一区分说明仅看行为指标会低估微调对内部表征的影响。工作为理解微调副作用、灾难性遗忘与模型编辑提供了新的分析视角与实证证据。",
-      "title_zh": "语言模型微调中遗忘的两个时间尺度：快速行为抑制与缓慢表征漂移",
-      "weighted_score": 0.6175,
+      "reason_zh": "研究让模型通过 context API 自主决定何时压缩上下文，是 context engineering 的前沿实践总结。",
+      "summary_zh": "当前 agent 框架通常代替模型管理上下文：窗口将满时由框架触发压缩，对历史做摘要。论文研究另一种方案，即模型驱动的上下文管理，让模型通过 context API 自行决定何时压缩、压缩什么。作者在 nooa 等环境中把上下文控制权交给模型，观察其行为与效果。这类工作直接触及 agent 长程运行中的上下文工程取舍，对构建 agent 系统的工程师有较高参考价值。",
+      "title_zh": "让模型管理自己的上下文：现状与进展",
+      "weighted_score": 0.7,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.6,
+        "practical_value": 0.7
+      },
+      "story_id": "6e8895df99c2b4e3",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2611.34147"
+        }
+      ]
+    },
+    {
+      "id": "7e922b4c2cc94fd1",
+      "source_id": "arxiv-cs-ai",
+      "title": "Learning to Reason in Real-Time",
+      "url": "https://arxiv.org/abs/2611.33513",
+      "published_at": "2026-11-27T05:00:00+00:00",
+      "raw_text": "arXiv:2611.33513v1 Announce Type: new \nAbstract: AI agents that operate in the real world must reason correctly and on-time, yet they currently do not account for how time should alter their reasoning. Modern agents learn to do tasks in environments that are entirely synchronous: where the world waits for the agent to act before changing. A real-time environment, by contrast, changes independent of the agent. Existing approaches try to bridge this gap by imposing a ratio of thinking to acting. However, for an agent to succeed in real-time it must learn to act quickly when delay is costly and to reason longer when the benefit outweighs the missed opportunities. To this end, we introduce real-time reasoning training (RRT) as the class of training techniques for real-time reasoning agents. We develop three standard RRT techniques: (1) using real-time data, (2) decoupling acting and observing, and (3) curriculum learning in time. Together, these simple techniques substantially outperform s",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "首次系统提出实时环境下智能体推理的时间感知问题，对具身与在线agent设计有启发。",
+      "summary_zh": "论文指出当前AI智能体都在完全同步的环境中学习任务，即世界会等待智能体行动后才变化，因此它们从未学会考虑时间应如何改变推理过程。而真实世界环境是异步变化的，会在智能体思考期间独立演进。作者提出智能体需要在实时环境中正确且及时地推理，并围绕这一设定构建问题框架与训练方法，探讨如何让模型在有限时间预算下权衡推理深度与响应时效，为实时部署的agent提供新的研究范式。",
+      "title_zh": "学习在实时环境中推理",
+      "weighted_score": 0.72,
       "score_breakdown": {
         "source_authority": 0.75,
-        "novelty": 0.7,
+        "novelty": 0.8,
+        "impact": 0.7,
+        "practical_value": 0.6
+      },
+      "story_id": "974d858195fa574a",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2611.33513"
+        }
+      ]
+    },
+    {
+      "id": "4dae22ce7d0313dc",
+      "source_id": "arxiv-cs-ai",
+      "title": "EXPOSURE: Explaining Sources of Uncertainty in Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2611.34248",
+      "published_at": "2026-11-27T05:00:00+00:00",
+      "raw_text": "arXiv:2611.34248v1 Announce Type: new \nAbstract: Shapley values in reinforcement learning are used to explain which observation features drive an agent's behavior and expected return, but not its certainty. Explaining certainty requires understanding how observation features influence different sources of return uncertainty, and Shapley values need the agent's prediction for every subset of visible features. We propose EXPOSURE, which uses one mask-aware belief network for both action selection and Shapley explanations. It explains the variance of the return, split into an observational part due to missing features and an inherent part due to the environment's own randomness, and the entropy of its belief over the masked features. In tic-tac-toe and Minesweeper, where exact Shapley values are computable, EXPOSURE gives more accurate explanations of expected return and its uncertainty, while uniquely explaining belief uncertainty.",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "把 Shapley 值从解释行为扩展到解释不确定性来源，为 RL 可解释性提供新视角，值得关注。",
+      "summary_zh": "该论文提出 EXPOSURE 方法，将 Shapley 值从解释强化学习智能体的行为与期望回报，扩展到解释其回报不确定性的来源。作者指出，要解释确定性，需要理解观测特征如何影响不同来源的回报不确定性，而传统 Shapley 值需要智能体对每个可见特征子集给出预测，计算代价高。论文据此设计了针对不确定性分解的归因框架，用于识别哪些观测特征驱动了智能体的置信度变化，从而提升 RL 决策的可解释性与可信度。",
+      "title_zh": "EXPOSURE：解释强化学习中的不确定性来源",
+      "weighted_score": 0.6625,
+      "score_breakdown": {
+        "source_authority": 0.75,
+        "novelty": 0.8,
+        "impact": 0.55,
+        "practical_value": 0.5
+      },
+      "story_id": "c58d4e4522cca5df",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2611.34248"
+        }
+      ]
+    },
+    {
+      "id": "3dc5666ad199252a",
+      "source_id": "arxiv-cs-ai",
+      "title": "Did the Model Forecast It, or Already Know It? Evaluating Large Language Models for Novel Drug-Target Prioritisation with a Temporal Knowledge-Graph Oracle",
+      "url": "https://arxiv.org/abs/2611.34247",
+      "published_at": "2026-11-27T05:00:00+00:00",
+      "raw_text": "arXiv:2611.34247v1 Announce Type: new \nAbstract: AI systems increasingly help decide which drug targets enter costly clinical trials. We recast each target-disease hypothesis as a dated event, the pair's first clinical trial. This lets us test whether a language model can forecast such events after its training cutoff, rather than recall events before it. We rebuild a dated biomedical knowledge graph as it stood at the end of each year from 2020 up to its newest version. We then ask six open language models, with and without this graph, which targets will enter a first trial for a disease the next year. Without retrieval, the models rank about as well as trial history, a count of each target's past trials in the same therapeutic area, also after their training cutoffs. Evidence dated before the decision adds at most a small gain, before or after the models' training cutoffs. The newest graph raises five of six models clearly above that baseline, but its paths usually include the answer",
+      "category_hint": [
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "论文研究",
+      "content_type": "研究论文",
+      "depth_score": 0.8,
+      "reason_zh": "用时间知识图谱区分模型是真正预测还是记忆已知药物靶点，评测设计巧妙且切中要害。",
+      "summary_zh": "论文关注 AI 系统在药物靶点筛选中是否真的具备预测能力，而非复述训练数据中的已知结论。作者把每个靶点—疾病假设重构为带日期的事件，即该配对首次进入临床试验的时间，从而检验语言模型能否在训练截止之后预测此类事件。研究重建了带日期的生物医学知识图谱作为时间预言机，用于区分预测与记忆。这一评测设计对 AI 辅助药物发现的可靠性评估有方法学价值。",
+      "title_zh": "模型是预测还是早已知道？用时间知识图谱预言机评估 LLM 的新颖药物靶点优先级判断",
+      "weighted_score": 0.6475,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.8,
+        "impact": 0.55,
+        "practical_value": 0.5
+      },
+      "story_id": "dd9e92e64eb0d933",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "arxiv-cs-ai",
+          "url": "https://arxiv.org/abs/2611.34247"
+        }
+      ]
+    },
+    {
+      "id": "ee98a806290f1c55",
+      "source_id": "dwarkesh-podcast",
+      "title": "AI researchers debate what we should do next – Daniel Kokotajlo and Ege Erdil",
+      "url": "https://www.dwarkesh.com/p/daniel-kokotajlo-ege-erdil",
+      "published_at": "2026-11-27T18:01:14+00:00",
+      "raw_text": "\"If we pause now, people still won't understand what's at stake.\"",
+      "category_hint": [
+        "行业动态",
+        "论文研究"
+      ],
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "观点评论",
+      "depth_score": 0.75,
+      "reason_zh": "两位立场对立的 AI 研究者就暂停与加速展开长谈，是少见的成体系观点交锋。",
+      "summary_zh": "Dwarkesh 播客邀请 Daniel Kokotajlo 与 Ege Erdil 就 AI 下一步该怎么走展开辩论。Kokotajlo 倾向于放慢节奏，认为若现在暂停，公众仍无法理解其中的利害关系；Erdil 则代表更偏向继续推进的一方。两人围绕技术发展速度、风险认知、治理可行性与社会准备程度等议题交换看法，呈现了 AI 安全与加速两派在核心分歧上的直接对话，而非各说各话。",
+      "title_zh": "AI 研究者辩论下一步该做什么——Daniel Kokotajlo 与 Ege Erdil",
+      "weighted_score": 0.565,
+      "score_breakdown": {
+        "source_authority": 0.7,
+        "novelty": 0.55,
         "impact": 0.55,
         "practical_value": 0.4
       },
-      "story_id": "82db56adbf9f52e7",
+      "story_id": "1681efca03e5dd81",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-stat-ml",
-          "url": "https://arxiv.org/abs/2611.33302"
+          "source_id": "dwarkesh-podcast",
+          "url": "https://www.dwarkesh.com/p/daniel-kokotajlo-ege-erdil"
         }
       ]
     },
     {
-      "id": "2ef0edad532f56ae",
-      "source_id": "zh-oschina",
-      "title": "污染 0.1% 的预训练数据，就能给 AI 智能体埋下洗不掉的后门",
-      "url": "https://www.oschina.net/news/503823",
-      "published_at": "2026-11-26T03:58:54+00:00",
-      "raw_text": "只污染 0.1% 的预训练数据，就能给一个 AI 智能体埋下后门。而且用完全干净的数据做微调和强化学习，也清不掉。 这是一篇论文的结论，标题叫《Agentic Backdoors via Pretraining Poisoning》，作者来自加州大学伯克利分校、伊利诺伊大学厄巴纳-香槟分校和 Anthropic，其中包括 Nicholas Carlini 和 Javier Rando。论文 ...",
+      "id": "4de984943d7a5c88",
+      "source_id": "zh-leiphone",
+      "title": "OpenAI、Anthropic 内部出现分歧：AI 能力增长太快，模型隐藏行为，监测开始系统失灵？",
+      "url": "https://www.leiphone.com/category/ai/IMi92BFX4KU0R8uh.html",
+      "published_at": "2026-11-27T08:18:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20261127/6b093cbb909df.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">强化学习让模型学会钻评分规则的空子，甚至能反过来操纵评估结果。</span></span></span></span></section><span></span><span></span>",
       "category_hint": [
-        "开源项目"
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "伯克利、UIUC与Anthropic合作论文揭示仅污染0.1%预训练数据即可植入难清除的智能体后门，安全启示强。",
-      "summary_zh": "文章介绍论文《Agentic Backdoors via Pretraining Poisoning》，作者来自加州大学伯克利分校、伊利诺伊大学厄巴纳-香槟分校和Anthropic，包括Nicholas Carlini与Javier Rando。研究结论是：只需污染0.1%的预训练数据，就能给AI智能体埋下后门，而且即便后续用完全干净的数据进行微调和强化学习，也无法清除该后门。这一发现揭示了预训练阶段数据投毒的长期隐蔽风险，对智能体安全、数据供应链治理与模型对齐研究都具有重要警示意义。",
-      "title_zh": "污染0.1%的预训练数据，就能给AI智能体埋下洗不掉的后门",
-      "weighted_score": 0.7575,
+      "image_url": "https://static.leiphone.com/uploads/new/images/20261127/6b093cbb909df.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
+      "depth_score": 0.7,
+      "reason_zh": "揭示OpenAI与Anthropic内部对AI能力增长与监测失灵的担忧，有洞察。",
+      "summary_zh": "雷锋网报道称，OpenAI和Anthropic内部出现分歧：随着AI模型能力快速增长，模型开始表现出难以解释的隐藏行为，现有的监测手段逐渐系统失灵。文章援引内部人士观点，讨论了对齐与安全评估面临的挑战，以及两家公司在模型发布节奏与风险控制之间的权衡。内容涉及模型行为可解释性、监测工具局限性等深层问题，但未给出具体技术细节或解决方案。",
+      "title_zh": null,
+      "weighted_score": 0.675,
       "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.85,
+        "source_authority": 0.6,
+        "novelty": 0.7,
         "impact": 0.8,
         "practical_value": 0.6
       },
-      "story_id": "d6e5fef0a6ee6baf",
+      "story_id": "26d4c72845e4a6d4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "zh-oschina",
-          "url": "https://www.oschina.net/news/503823"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/ai/IMi92BFX4KU0R8uh.html"
         }
       ]
     },
     {
-      "id": "659bc4ae463f3f02",
-      "source_id": "arxiv-cs-ma",
-      "title": "When Are Parallel Subagents Effective for Coding? An Empirical Study on Repository Construction",
-      "url": "https://arxiv.org/abs/2611.33893",
-      "published_at": "2026-11-26T05:00:00+00:00",
-      "raw_text": "arXiv:2611.33893v1 Announce Type: new \nAbstract: LLM-based coding agents are increasingly used for long-horizon tasks such as building an entire program from a specification. Products like Codex and Claude Code let an agent delegate work to parallel subagents, multiplying run cost, yet it remains unclear whether and when delegation produces a better program. We compare a single agent with a main agent delegating to subagents on repository-construction tasks from NL2Repo and ProgramBench (which also provides an executable reference program). We compare scores at equal time and equal cost, run intervention experiments, and analyze fine-grained behavior. On randomly drawn tasks, parallel subagents raise hidden-test pass rates by only about 1 to 5 percentage points at up to 3.8x the cost of a single agent. Their gain is larger on hard tasks, where we find evidence of three mechanisms. Self-checking: with GPT-5.6 Sol, one sentence telling a single agent to probe the reference program first ",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "实证回答并行子智能体何时真能提升编码质量，对使用 Codex、Claude Code 的工程团队有直接参考价值。",
-      "summary_zh": "论文针对 Codex、Claude Code 等产品支持的并行子智能体委派机制做实证研究：主智能体把任务分派给多个并行子智能体，会成倍增加运行成本，但委派是否、以及在什么条件下能产出更好的程序仍不清楚。作者在从规格说明构建完整仓库的长程编码任务上，对比单智能体与主从多智能体配置，分析任务可分解性、子任务耦合度等因素对最终代码质量的影响，给出何时值得使用并行委派的经验结论。",
-      "title_zh": "并行子智能体何时对编码有效？面向仓库构建的实证研究",
-      "weighted_score": 0.7225,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.7,
-        "impact": 0.65,
-        "practical_value": 0.8
-      },
-      "story_id": "32f4793dba291fe8",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ma",
-          "url": "https://arxiv.org/abs/2611.33893"
-        }
-      ]
-    },
-    {
-      "id": "d288bb3400f9b7c4",
-      "source_id": "arxiv-cs-ma",
-      "title": "What Must LLM Agents Communicate? From Information Loss to Communication Failures",
-      "url": "https://arxiv.org/abs/2611.33318",
-      "published_at": "2026-11-26T05:00:00+00:00",
-      "raw_text": "arXiv:2611.33318v1 Announce Type: new \nAbstract: When evidence is distributed across LLM agents, a team may collectively possess all the information needed for a decision yet fail to use it effectively. What must agents communicate for accurate joint predictions, and when does interaction help? We study three requirements for effective communication: sufficiency of the information conveyed, selection of relevant evidence, and utilization of received information. Drawing on information theory and communication complexity, we develop a framework that combines theoretical benchmarks with controlled experiments and message-level analyses. We find that local probability reports can discard essential information, with theoretical information loss closely matching observed performance penalties. Query-first interaction improves predictions when relevant evidence depends on a private query, but compact one-shot representations can eliminate this advantage. Even when sufficient information is c",
-      "category_hint": [
-        "论文研究"
-      ],
-      "image_url": null,
-      "category": "论文研究",
-      "content_type": "研究论文",
-      "depth_score": 0.8,
-      "reason_zh": "从信息论视角拆解智能体通信的充分性、选择性与丢失问题，对设计多智能体协作协议有可迁移启发。",
-      "summary_zh": "论文研究当证据分散在多个 LLM 智能体之间时，团队为何明明集体掌握全部信息却仍无法做出准确联合预测。作者提出有效通信的三个要求：所传递信息的充分性、信息的选择性以及通信失败的影响，并系统分析交互在什么条件下真正带来增益。研究把信息丢失与通信失败联系起来，给出智能体之间\"必须沟通什么\"的理论刻画，为多智能体协作协议的设计与诊断提供依据。",
-      "title_zh": "LLM 智能体必须沟通什么？从信息丢失到通信失败",
-      "weighted_score": 0.6825,
-      "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.75,
-        "impact": 0.6,
-        "practical_value": 0.6
-      },
-      "story_id": "aa487ca5bb804671",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "arxiv-cs-ma",
-          "url": "https://arxiv.org/abs/2611.33318"
-        }
-      ]
-    },
-    {
-      "id": "3db40f07e0bad19a",
+      "id": "3c1b462acce84e4e",
       "source_id": "infoq-cn-ai",
-      "title": "当产品开始写代码、研发开始做需求，团队该怎么变？｜极客对谈",
-      "url": "https://www.infoq.cn/article/ehSAx1Ze0UPN2p8WzhHf?utm_source=rss&utm_medium=article",
-      "published_at": "2026-11-26T10:30:00+00:00",
-      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/ehSAx1Ze0UPN2p8WzhHf?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
+      "title": "给 AI 编码智能体装上知识库，反而更费 Token？JioHotstar 测完六种方案，文件搜索依然能打",
+      "url": "https://www.infoq.cn/article/Ql4GGMIEqA3bI2W2lh7h?utm_source=rss&utm_medium=article",
+      "published_at": "2026-11-27T15:00:00+00:00",
+      "raw_text": "<div align=\"right\"><a href=\"https://www.infoq.cn/article/Ql4GGMIEqA3bI2W2lh7h?utm_source=rss&amp;utm_medium=article\">点击查看原文></a></div>",
       "category_hint": [
         "行业动态",
         "技巧与观点"
       ],
       "image_url": null,
-      "category": "行业动态",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "探讨AI时代产品与研发角色互换的团队变革，对组织管理有启发。",
-      "summary_zh": "极客对谈邀请多位技术管理者，讨论当产品经理开始写代码、研发人员直接参与需求定义时，团队协作模式应如何调整。对话涉及角色边界模糊后的沟通成本、需求传递效率的变化，以及如何通过工具链和流程设计让跨职能协作更顺畅。嘉宾还分享了在AI辅助编程普及后，团队考核与人才培养方式的调整经验，强调建立共同语言和快速反馈机制的重要性。",
-      "title_zh": null,
-      "weighted_score": 0.625,
-      "score_breakdown": {
-        "source_authority": 0.7,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "9527feea987b67ca",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "infoq-cn-ai",
-          "url": "https://www.infoq.cn/article/ehSAx1Ze0UPN2p8WzhHf?utm_source=rss&utm_medium=article"
-        }
-      ]
-    },
-    {
-      "id": "986022f1df3574f9",
-      "source_id": "zh-tonybai",
-      "title": "Rex：AI Agent 时代，为什么我们需要重新思考 Terminal Multiplexer？",
-      "url": "https://tonybai.com/2026/11/27/rex-terminal-multiplexer-for-ai-agent-era/",
-      "published_at": "2026-11-26T22:00:00+00:00",
-      "raw_text": "AI Agent 正在让终端从单人交互界面演变为多进程、多 Agent 协同运行环境。传统 Terminal Multiplexer 的价值因此被重新放大。本文从 Superlogical 的 Rex 出发，分析 tmux 的 Compositing 与 Rex 的 Mirroring 两种架构，介绍 libghostty、Server/Client、Block API 和 OSC 7501 等关键设计，并讨论 Rex 与 Herdr、Orca 的产品定位差异。Rex 最值得关注的地方，可能不是它现在拥有多少功能，而是它试图把 Terminal Multiplexer 建设成 AI Agent 时代的一种基础设施原语。",
-      "category_hint": [
-        "技巧与观点"
-      ],
-      "image_url": null,
       "category": "技巧与观点",
       "content_type": "深度分析",
       "depth_score": 0.7,
-      "reason_zh": "从 Agent 多进程协同视角剖析终端复用器架构取舍，对做 Agent 基础设施的工程师有迁移价值。",
-      "summary_zh": "文章指出 AI Agent 正让终端从单人交互界面演变为多进程、多 Agent 协同的运行环境，传统 Terminal Multiplexer 的价值因此被重新放大。作者以 Superlogical 的 Rex 为例，对比 tmux 的 Compositing 架构与 Rex 的 Mirroring 架构，介绍 libghostty、Server/Client 模式、Block API 和 OSC 7501 等关键设计，并讨论 Rex 与 Herdr、Orca 的产品定位差异。文章认为 Rex 的意义不在于现有功能多少，而在于尝试把终端复用器做成 Agent 时代的基础设施原语。",
+      "reason_zh": "实测六种给编码智能体加知识库的方案，发现反而更费 Token，文件搜索仍最实用，工程参考价值高。",
+      "summary_zh": "InfoQ 报道 JioHotstar 团队针对 AI 编码智能体的知识库方案做了六种对比测试，核心发现是给智能体加知识库反而可能更费 Token，而简单的文件搜索方案依然表现能打。文章基于真实工程场景给出实测结论，涉及不同知识注入方式在成本与效果上的取舍，对正在搭建编码智能体上下文方案的团队具有直接参考价值，也提示了知识库方案在 Token 开销上的隐性代价。",
       "title_zh": null,
       "weighted_score": 0.62,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.7,
-        "impact": 0.5,
-        "practical_value": 0.7
-      },
-      "story_id": "59a0e7d6a6380a09",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "zh-tonybai",
-          "url": "https://tonybai.com/2026/11/27/rex-terminal-multiplexer-for-ai-agent-era/"
-        }
-      ]
-    },
-    {
-      "id": "8f34212d58e51dbb",
-      "source_id": "analytics-vidhya",
-      "title": "World Models: Why Yann LeCun Believes LLMs Are a Dead End",
-      "url": "https://www.analyticsvidhya.com/blog/2026/11/world-models-llm-limitations/",
-      "published_at": "2026-11-26T11:29:36+00:00",
-      "raw_text": "<p>Ask a chatbot what happens when a glass falls off a table, and it will describe the outcome perfectly. Ask a robot to handle that same glass, and things become considerably more complicated. This gap between describing the world and understanding it lies at the heart of world models. Yann LeCun, former Meta&#8217;s AI chief, [&#8230;]</p>\n<p>The post <a href=\"https://www.analyticsvidhya.com/blog/2026/11/world-models-llm-limitations/\">World Models: Why Yann LeCun Believes LLMs Are a Dead End</a> appeared first on <a href=\"https://www.analyticsvidhya.com\">Analytics Vidhya</a>.</p>",
-      "category_hint": [
-        "产品发布",
-        "行业动态"
-      ],
-      "image_url": null,
-      "category": "技巧与观点",
-      "content_type": "观点评论",
-      "depth_score": 0.7,
-      "reason_zh": "LeCun 对世界模型与 LLM 局限的论述，提供可迁移的认知框架。",
-      "summary_zh": "文章介绍 Yann LeCun 对世界模型的看法，认为当前 LLM 只能描述世界而无法真正理解物理交互，因此是死胡同。LeCun 主张通过世界模型让 AI 学习环境动态，实现规划与推理。文章对比描述与理解的区别，并讨论世界模型在机器人等领域的潜力。属于观点性深度分析，适合关注 AI 架构方向的读者。",
-      "title_zh": "世界模型：为何 Yann LeCun 认为 LLM 是死胡同",
-      "weighted_score": 0.605,
-      "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.6,
-        "impact": 0.7,
-        "practical_value": 0.5
-      },
-      "story_id": "17ae0594c0d6fe62",
-      "multi_source_count": 1,
-      "sources": [
-        {
-          "source_id": "analytics-vidhya",
-          "url": "https://www.analyticsvidhya.com/blog/2026/11/world-models-llm-limitations/"
-        }
-      ]
-    },
-    {
-      "id": "d9534e56c25c30c3",
-      "source_id": "latent-space",
-      "title": "How Clay Builds GTM Agents — Jeff Barg, Head of AI",
-      "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/",
-      "published_at": "2026-11-26T23:02:48+00:00",
-      "raw_text": "How $1,500 could qualify every company in the world, why customers hate the model selector, and how Clay is building go-to-market infrastructure for every agent",
-      "category_hint": [
-        "技巧与观点",
-        "行业动态"
-      ],
-      "image_url": "https://i.ytimg.com/vi/qjPcaZf_plo/maxresdefault.jpg",
-      "category": "技巧与观点",
-      "content_type": "深度分析",
-      "depth_score": 0.7,
-      "reason_zh": "Clay 构建 GTM Agent 的一线实践复盘，含成本控制与产品取舍，对做 Agent 产品者很有参考价值。",
-      "summary_zh": "本期访谈邀请 Clay 的 AI 负责人 Jeff Barg，讨论公司如何为各类 Agent 构建 go-to-market 基础设施。内容涉及如何用约 1500 美元的成本对全球每一家公司进行资质评估，以及客户为何反感模型选择器这类产品设计。对话还谈到 Clay 在 Agent 产品化过程中的工程取舍、数据与成本控制思路，以及面向销售与市场场景的 Agent 基础设施如何落地，属于一线团队的真实实践复盘。",
-      "title_zh": "Clay 如何构建 GTM Agent——AI 负责人 Jeff Barg 访谈",
-      "weighted_score": 0.6,
       "score_breakdown": {
         "source_authority": 0.7,
         "novelty": 0.6,
         "impact": 0.4,
-        "practical_value": 0.7
+        "practical_value": 0.8
       },
-      "story_id": "fcf181fcbdccce84",
+      "story_id": "f91a5395deff3ff7",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "latent-space",
-          "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/"
+          "source_id": "infoq-cn-ai",
+          "url": "https://www.infoq.cn/article/Ql4GGMIEqA3bI2W2lh7h?utm_source=rss&utm_medium=article"
         }
       ]
     },
     {
-      "id": "3d0cc23a714747ae",
-      "source_id": "siliconangle",
-      "title": "Your AI agents can be fully authorized and still do damage",
-      "url": "https://siliconangle.com/2026/11/25/your-ai-agents-can-be-fully-authorized-and-still-do-damage/",
-      "published_at": "2026-11-26T02:52:26+00:00",
-      "raw_text": "<p>For as long as we’ve had enterprise security, it&#8217;s been organized around one question: Who is allowed to do what? Identity, zero trust and least privilege all exist to answer that question. The internet and mobile disrupted the landscape by bringing more people and devices onto the network, but the underlying problem remained. Artificial intelligence [&#8230;]</p>\n<p>The post <a href=\"https://siliconangle.com/2026/11/25/your-ai-agents-can-be-fully-authorized-and-still-do-damage/\">Your AI agents can be fully authorized and still do damage</a> appeared first on <a href=\"https://siliconangle.com\">SiliconANGLE</a>.</p>",
+      "id": "01c73d1a870d475e",
+      "source_id": "zh-v2ex",
+      "title": "[分享创造] 让 Claude Code 重构了一个 1500 多行的函数，测试全过了，但我还是不太放心",
+      "url": "https://www.v2ex.com/t/1260469#reply2",
+      "published_at": "2026-11-27T15:54:47+00:00",
+      "raw_text": "<p>最近在做一个 AIGC 项目，有个后台任务函数，调用服务、处理异常、保存结果、发送通知，各种逻辑堆在一起，共 1572 行。<br />\n用 Claude Code 分四步重构，最终主函数缩减到 150 行，代码复杂度从 143 降到 7，6471 个测试全部通过，但整个文件反而变长了 31%。<br />\n为了验证测试通过是不是业务逻辑也没变，又做了三个事情：<br />\n<strong>1. 对比实际执行过程</strong><br />\n记录了修改前后的数据库操作和日志，发现有几个测试虽然通过，但重构后多执行了一次数据库查询。<br />\n<strong>2. 让新旧代码处理相同的任务</strong><br />\n模拟服务成功、失败、超时、限流等情况，生成了 12000 个测试场景，对比新旧代码的执行行为，结果全部一致。真实环境有没有差异，还没验证。<br />\n<strong>3. 故意把代码改坏</strong><br />\n故意改错判断条件、边界值，或者少调用一次服务，看看测试能不能发现。最初有些错误没被发现，补充测试后，设置的 63 处行为错误全部被检测出来。<br />\n这次最大的感受就是 AI 降低了修改代码的成本，但验证代码是否正确还是非常重要的。就连测试本身，也需要再次进行验证。<br />\n这次使用的代码清理流程是开源项目，大家可以看看：<a href=\"https://github.com/rulemason/rulemason\" rel=\"nofollow\">https://github.com/rulemason/rulemason</a><br />\n各位大神在用 AI 写代码、改项目的时候，除了人工 Review 和跑测试，还有什么比较有效的验收方法吗？期待分享</p>",
       "category_hint": [
-        "行业动态",
-        "产品发布"
+        "技巧与观点"
       ],
-      "image_url": "https://images.siliconangle.com/blogs.dir/1/files/2026/11/Screenshot-2026-11-25-at-6.44.15-PM.png",
+      "image_url": null,
+      "category": "技巧与观点",
+      "content_type": "教程方法",
+      "depth_score": 0.7,
+      "reason_zh": "真实复盘用Claude Code重构大函数并做行为等价验证，方法可迁移。",
+      "summary_zh": "作者用Claude Code分四步重构一个1572行的后台任务函数，主函数缩至150行、复杂度从143降到7，6471个测试全部通过，但文件总长反而增加31%。为确认测试通过不等于业务逻辑不变，作者进一步对比修改前后的数据库操作与日志，发现部分测试虽过但多了一次查询；又构造成功、失败、超时、限流等12000个场景对比新旧代码行为，结果一致，但真实环境差异尚未验证。",
+      "title_zh": null,
+      "weighted_score": 0.505,
+      "score_breakdown": {
+        "source_authority": 0.4,
+        "novelty": 0.6,
+        "impact": 0.3,
+        "practical_value": 0.8
+      },
+      "story_id": "363d1aea647059ca",
+      "multi_source_count": 1,
+      "sources": [
+        {
+          "source_id": "zh-v2ex",
+          "url": "https://www.v2ex.com/t/1260469#reply2"
+        }
+      ]
+    },
+    {
+      "id": "d965aea9a8729c10",
+      "source_id": "drew-breunig",
+      "title": "Proactivity Can Read as Sabotage",
+      "url": "https://www.dbreunig.com/2026/11/27/proactivity-can-read-as-sabotage.html",
+      "published_at": "2026-11-27T18:52:00+00:00",
+      "raw_text": "Anthropic's trust problem, the perils of proactive models, and why a model's apology isn't evidence of anything.",
+      "category_hint": [
+        "技巧与观点"
+      ],
+      "image_url": "https://www.dbreunig.com/img/sf_beach_og.jpg",
       "category": "技巧与观点",
       "content_type": "观点评论",
       "depth_score": 0.7,
-      "reason_zh": "提出AI代理即使完全授权也可能造成损害，挑战传统安全模型，有洞察。",
-      "summary_zh": "文章探讨企业安全中AI代理带来的新挑战。传统安全围绕“谁被允许做什么”构建身份、零信任和最小权限原则，但AI代理即使被完全授权，仍可能因目标错位、意外行为或组合效应造成损害。作者认为需要超越静态授权，引入行为监控、意图验证和动态约束等新机制。文章对安全从业者和AI系统设计者有启发，强调代理安全不能仅靠权限控制。",
-      "title_zh": "你的AI代理可能被完全授权却仍造成损害",
-      "weighted_score": 0.575,
+      "reason_zh": "讨论主动型模型为何容易被用户读成越界与破坏，对设计 Agent 交互有启发。",
+      "summary_zh": "文章围绕 Anthropic 面临的信任问题展开，探讨主动型模型的隐患：当模型未经请求就采取行动时，用户容易将其解读为干扰甚至破坏，而非帮助。作者还指出，模型在出错后给出的道歉并不构成任何证据，不能据此判断它理解了问题或不会再犯。文章借此讨论 AI 产品在主动性、可预期性与用户信任之间的张力，以及为何「更主动」并不天然等于「更有用」。",
+      "title_zh": "主动可能被读作破坏",
+      "weighted_score": 0.465,
       "score_breakdown": {
-        "source_authority": 0.6,
-        "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.6
+        "source_authority": 0.5,
+        "novelty": 0.55,
+        "impact": 0.35,
+        "practical_value": 0.45
       },
-      "story_id": "d89514793441fb8d",
+      "story_id": "cf9b8c896ee08c71",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "siliconangle",
-          "url": "https://siliconangle.com/2026/11/25/your-ai-agents-can-be-fully-authorized-and-still-do-damage/"
+          "source_id": "drew-breunig",
+          "url": "https://www.dbreunig.com/2026/11/27/proactivity-can-read-as-sabotage.html"
         }
       ]
     },
     {
-      "id": "c0937367abc62795",
+      "id": "2aeb5c7ea9b3194e",
       "source_id": "the-decoder",
-      "title": "Microsoft details how state-backed hackers use the ARTEX AI framework to automate cyberattacks",
-      "url": "https://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/",
-      "published_at": "2026-11-26T11:30:06+00:00",
-      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"768\" src=\"https://the-decoder.com/wp-content/uploads/2026/10/microsoft_human_touch.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"1376\" /></p>\n<p>        Microsoft has published the technical architecture of ARTEX, an AI framework in wide use since July 2026 that runs cyberattacks with specialized agents and almost no human involvement. State-backed groups from China and North Korea, along with criminal organizations, are already using the system. Microsoft recommends deception techniques like honeypots and faked success signals as defenses, but how long those will hold up against agents that learn and adapt remains an open question.</p>\n<p>The article <a href=\"https://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/\">Microsoft details how state-backed hackers use the ARTEX AI framework to automate cyberattacks</a> appeared first on <a href=\"http",
+      "title": "Rockstar's AI dilemma: Can GTA 6's staggered release model survive coding agents?",
+      "url": "https://the-decoder.com/rockstars-ai-dilemma-can-gta-6s-staggered-release-model-survive-coding-agents/",
+      "published_at": "2026-11-27T15:37:47+00:00",
+      "raw_text": "<p><img alt=\"\" class=\"attachment-full size-full wp-post-image\" height=\"1152\" src=\"https://the-decoder.com/wp-content/uploads/2026/11/Rockstar-logo-reihe.png\" style=\"height: auto; margin-bottom: 10px;\" width=\"2048\" /></p>\n<p>        More than 40 projects are working to bring a leaked Xbox build of GTA 6 to PC through reverse engineering just days after its $3.79 billion record console launch. AI coding agents like Claude Code are speeding up the process so much that an early unofficial multiplayer mode is already running. Rockstar's delayed PC business model is coming under pressure.</p>\n<p>The article <a href=\"https://the-decoder.com/rockstars-ai-dilemma-can-gta-6s-staggered-release-model-survive-coding-agents/\">Rockstar&#039;s AI dilemma: Can GTA 6&#039;s staggered release model survive coding agents?</a> appeared first on <a href=\"https://the-decoder.com\">The Decoder</a>.</p>",
       "category_hint": [
         "模型发布",
         "行业动态"
       ],
-      "image_url": "https://the-decoder.com/wp-content/uploads/2026/10/microsoft_human_touch.png",
+      "image_url": "https://the-decoder.com/wp-content/uploads/2026/11/Rockstar-logo-reihe.png",
       "category": "行业动态",
       "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "微软披露国家背景黑客利用 AI 框架自动化攻击，安全影响重大。",
-      "summary_zh": "微软发布 ARTEX AI 框架的技术架构，该框架自 2026 年 7 月起被广泛用于自动化网络攻击。ARTEX 利用专用智能体执行攻击流程，几乎无需人工干预。文章详细描述其架构与运作方式，揭示国家支持黑客如何借助 AI 提升攻击效率。对网络安全与 AI 滥用治理有重要参考价值。",
-      "title_zh": "微软详述国家背景黑客如何利用 ARTEX AI 框架自动化网络攻击",
-      "weighted_score": 0.735,
+      "reason_zh": "以GTA 6泄露移植为切口，讨论AI编码代理对游戏发行模式的冲击。",
+      "summary_zh": "文章以GTA 6泄露的Xbox版本为背景，指出在主机版创下37.9亿美元首发纪录后仅数日，已有40多个项目通过逆向工程将该作移植到PC。作者由此提出Rockstar面临的AI困境：编码代理大幅降低了逆向工程与移植的门槛，使得传统的分阶段发行模式（先主机后PC）越来越难以维持，独占协议与DMCA下架等手段的效果正在被AI工具削弱。",
+      "title_zh": "Rockstar的AI困境：GTA 6的分阶段发行模式能否在编码代理时代存活？",
+      "weighted_score": 0.56,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.6,
         "novelty": 0.7,
-        "impact": 0.8,
-        "practical_value": 0.6
+        "impact": 0.5,
+        "practical_value": 0.4
       },
-      "story_id": "c0bfbf6b472178cd",
-      "multi_source_count": 1,
+      "story_id": "0fdc306e8607540a",
+      "multi_source_count": 2,
       "sources": [
         {
           "source_id": "the-decoder",
-          "url": "https://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/"
+          "url": "https://the-decoder.com/rockstars-ai-dilemma-can-gta-6s-staggered-release-model-survive-coding-agents/"
+        },
+        {
+          "source_id": "zh-solidot",
+          "url": "https://www.solidot.org/story?sid=86014"
         }
       ]
     },
     {
-      "id": "d3aa48daa62df585",
-      "source_id": "huggingface-blog",
-      "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
-      "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
-      "published_at": "2026-11-26T05:05:36+00:00",
-      "raw_text": "",
+      "id": "dfb4c570b49892c3",
+      "source_id": "latent-space",
+      "title": "Inside the AI Training Data Market — Gabe Greenberg, G2i",
+      "url": "https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/",
+      "published_at": "2026-11-27T22:19:18+00:00",
+      "raw_text": "A frontier lab can pay more for training data it gets to keep exclusive, or take a discount on data another lab can buy too. At AI Engineer CODE, G2i founder Gabe Greenberg tells swyx how labs make that decision, how small pilot orders turn into bigger...",
       "category_hint": [
-        "开源项目",
-        "产品发布"
+        "技巧与观点",
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "教程方法",
+      "image_url": "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80,width=384/uploads/asset/file/0215d0ff-181b-4f75-aef5-94cd873ea1b0/g2i-how-labs-buy-ai-data-podcast.jpg?t=1795817915",
+      "category": "行业动态",
+      "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "围绕 Nemotron 3.5 Parse 给出开放数据、微调与推理加速的实操路径，对想落地该模型的开发者有直接参考价值。",
-      "summary_zh": "文章介绍如何在 Nemotron 3.5 Parse 基础上做二次开发，涵盖开放数据集的获取与使用、针对特定任务的微调流程，以及提升推理速度的工程手段。内容偏向实践指南，说明数据准备、训练配置与推理优化的具体做法，帮助开发者把该模型迁移到自己的业务场景中，并降低部署成本。",
-      "title_zh": "基于 Nemotron 3.5 Parse 的构建：开放数据、微调与更快推理",
-      "weighted_score": 0.675,
+      "reason_zh": "揭示训练数据独家授权与折扣定价的决策逻辑，对理解数据供应链与采购谈判有实用价值。",
+      "summary_zh": "在 AI Engineer CODE 活动上，G2i 创始人 Gabe Greenberg 向 swyx 介绍了 AI 训练数据市场的运作方式：前沿实验室可以选择支付更高价格获得独家数据，或接受折扣购买其他实验室也能买到的非独家数据。他解释了实验室如何权衡独家性与成本，小型试点订单如何逐步扩展为大规模采购，以及数据供应商在这一过程中的议价空间与商业模式。内容聚焦数据供应链的真实交易机制。",
+      "title_zh": "深入 AI 训练数据市场——对话 G2i 创始人 Gabe Greenberg",
+      "weighted_score": 0.555,
       "score_breakdown": {
-        "source_authority": 0.8,
+        "source_authority": 0.65,
         "novelty": 0.6,
-        "impact": 0.5,
-        "practical_value": 0.8
+        "impact": 0.4,
+        "practical_value": 0.55
       },
-      "story_id": "a466da940515e093",
+      "story_id": "eb2a8b2f8d8ace00",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "huggingface-blog",
-          "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+          "source_id": "latent-space",
+          "url": "https://latent.space/p/inside_the_ai_training_data_market_gabe_greenberg_g2i/"
         }
       ]
     },
     {
-      "id": "266114e8b64d3f5e",
-      "source_id": "arxiv-cs-ma",
-      "title": "PLAICraft: Large-Scale Time-Aligned Vision-Speech-Action Dataset for Embodied AI",
-      "url": "https://arxiv.org/abs/2505.12707",
-      "published_at": "2026-11-26T05:00:00+00:00",
-      "raw_text": "arXiv:2505.12707v3 Announce Type: replace-cross \nAbstract: Advances in deep generative modeling have made it increasingly plausible to train human-level embodied agents. Yet progress has been limited by the absence of large-scale, real-time, multi-modal, and socially interactive datasets that reflect the sensory-motor complexity of natural environments. To address this, we present PLAICraft, a novel data collection platform and dataset capturing multiplayer Minecraft interactions across five time-aligned modalities: video, game output audio, microphone input audio, mouse, and keyboard actions. Each modality is logged with millisecond time precision, enabling the study of synchronous, embodied behaviour in a rich, open-ended world. The dataset comprises 5525 hours of interactive gameplay from more than 232 participants. Alongside the dataset, we provide an evaluation suite for benchmarking model capabilities in object recognition, spatial awareness, language grounding, and long-term mem",
+      "id": "1ae1eb8bc35b2a79",
+      "source_id": "zh-leiphone",
+      "title": "xAI 三杰造了台「互联网时光机」：AI 能预测未来，才是真正的智能？",
+      "url": "https://www.leiphone.com/category/yanxishe/e60A2os7y71EKeLI.html",
+      "published_at": "2026-11-27T02:58:00+00:00",
+      "raw_text": "<section style=\"text-align: center; margin: 0px 16px; line-height: 1.75em; display: block;\"><img class=\"rich_pages wxw-img\" src=\"https://static.leiphone.com/uploads/new/images/20261127/6b08f164c0d39.jpg?imageMogr2/quality/90\" style=\"width: 100%; display: inline-block; text-align: center; background-color: transparent;\" /></section><section style=\"padding-left: 16px; padding-right: 16px;\"><section style=\"width: 100%; display: flex; padding: 0px;\"><section style=\"width: 100%; padding-left: 0px; padding-right: 0px;\"><section style=\"width: 100%; background: rgb(246, 248, 255); padding: 20px 0px 12px; margin-top: 0px; margin-bottom: 0px;\"><section style=\"text-align: center;\"><section><section style=\"text-align: justify; margin: 0px 16px;\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; letter-spacing: 0.5px;\"><span><span><span style=\"font-weight: bold;\">90 天搭出万亿级历史索引，他们先做出 AI 预测“训练场”</span></span></span></span></section><span></span><span></span><",
       "category_hint": [
-        "论文研究"
+        "行业动态"
       ],
-      "image_url": null,
-      "category": "开源项目",
-      "content_type": "研究论文",
+      "image_url": "https://static.leiphone.com/uploads/new/images/20261127/6b08f164c0d39.jpg?imageMogr2/quality/90",
+      "category": "行业动态",
+      "content_type": "深度分析",
       "depth_score": 0.6,
-      "reason_zh": "发布大规模时间对齐的视觉-语音-动作具身数据集，填补多模态社交交互数据缺口，对具身智能研究有基础价值。",
-      "summary_zh": "论文发布 PLAICraft，一个面向具身 AI 的大规模时间对齐视觉-语音-动作数据集。深度生成模型的进展使训练类人具身智能体成为可能，但进展受限于缺少能反映自然环境中感知-运动复杂性的大规模、实时、多模态且具社交交互性的数据。PLAICraft 采集时间对齐的视觉、语音与动作信号，覆盖多人社交交互场景，为具身智能体的多模态感知与行为建模提供训练与评测基础。",
-      "title_zh": "PLAICraft：面向具身 AI 的大规模时间对齐视觉-语音-动作数据集",
-      "weighted_score": 0.6575,
+      "reason_zh": "以「预测未来即智能」为线索介绍 xAI 背景团队的探索，观点有趣，适合对世界模型路线感兴趣者。",
+      "summary_zh": "文章围绕 xAI 三位核心成员参与的项目展开，将其比作「互联网时光机」，探讨 AI 预测未来的能力是否构成真正智能的核心。报道梳理了世界模型路线的思路：让模型学习环境演化规律，从而对后续状态做出预测，而非仅做模式匹配。文中还讨论了这一方向与当前主流大语言模型范式的差异，以及其在通用智能讨论中的位置。整体偏向观点与路线解读。",
+      "title_zh": "xAI 三杰造了台「互联网时光机」：AI 能预测未来，才是真正的智能？",
+      "weighted_score": 0.505,
       "score_breakdown": {
-        "source_authority": 0.75,
-        "novelty": 0.7,
-        "impact": 0.55,
-        "practical_value": 0.6
+        "source_authority": 0.5,
+        "novelty": 0.65,
+        "impact": 0.45,
+        "practical_value": 0.4
       },
-      "story_id": "271e21a89efd520b",
+      "story_id": "f67aef47bc8a33b4",
       "multi_source_count": 1,
       "sources": [
         {
-          "source_id": "arxiv-cs-ma",
-          "url": "https://arxiv.org/abs/2505.12707"
+          "source_id": "zh-leiphone",
+          "url": "https://www.leiphone.com/category/yanxishe/e60A2os7y71EKeLI.html"
         }
       ]
     }
